@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-08-31T18:01:10 IST" name="Default suite" finished-at="2023-08-31T18:02:01 IST" duration-ms="51392">
+  <suite started-at="2023-09-01T18:36:49 IST" name="Default suite" finished-at="2023-09-01T18:37:42 IST" duration-ms="52143">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@5f049ea1]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-08-31T18:01:10 IST" name="Default test" finished-at="2023-08-31T18:02:01 IST" duration-ms="51392">
+    <test started-at="2023-09-01T18:36:49 IST" name="Default test" finished-at="2023-09-01T18:37:42 IST" duration-ms="52143">
       <class name="Runner.TestApplication">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@5f049ea1]" started-at="2023-08-31T18:01:10 IST" name="setUpClass" finished-at="2023-08-31T18:01:11 IST" duration-ms="928" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@5f049ea1]" started-at="2023-09-01T18:36:49 IST" name="setUpClass" finished-at="2023-09-01T18:36:51 IST" duration-ms="1052" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@5f049ea1]" started-at="2023-08-31T18:01:11 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-08-31T18:01:47 IST" duration-ms="36047" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@5f049ea1]" started-at="2023-09-01T18:36:51 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-09-01T18:37:30 IST" duration-ms="39132" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -27,10 +27,36 @@
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[javascript error: Cannot read properties of null (reading 'shadowRoot')
+  (Session info: chrome=116.0.5845.141)
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [288b94d2dde3971e8c756991ac92132e, executeScript {script=return document.querySelector('ion-toast[role="status"]').shadowRoot.querySelector('div[part="message"]').textContent, args=[]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.141, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61766}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61766/devtoo..., se:cdpVersion: 116.0.5845.141, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 288b94d2dde3971e8c756991ac92132e]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: javascript error: Cannot read properties of null (reading 'shadowRoot')
+  (Session info: chrome=116.0.5845.141)
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [288b94d2dde3971e8c756991ac92132e, executeScript {script=return document.querySelector('ion-toast[role="status"]').shadowRoot.querySelector('div[part="message"]').textContent, args=[]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.141, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61766}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61766/devtoo..., se:cdpVersion: 116.0.5845.141, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 288b94d2dde3971e8c756991ac92132e
+at org.testng.Assert.fail(Assert.java:99)
+at stepdefinitions.AppDataEntry_LivingExpense_Steps.user_verify_the_please_fill_mandatory_field(AppDataEntry_LivingExpense_Steps.java:461)
+at ✽.user verify the Please fill Mandatory field(file:///C:/Users/inindc00606/git/KarthikeyanIjara/Ijara_Karthi2/src/test/java/features/Ijara_AppDataEntry_LivingExpense.feature:93)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@5f049ea1]" started-at="2023-08-31T18:01:47 IST" name="tearDownClass" finished-at="2023-08-31T18:02:01 IST" duration-ms="14371" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@5f049ea1]" started-at="2023-09-01T18:37:30 IST" name="tearDownClass" finished-at="2023-09-01T18:37:42 IST" duration-ms="11910" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
