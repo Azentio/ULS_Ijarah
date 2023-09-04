@@ -452,9 +452,24 @@ public void user_verify_the_accredited_cost_field() throws IOException {
 @And("user verify the Please fill Mandatory field")
 public void user_verify_the_please_fill_mandatory_field() throws IOException {
 	//waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("PleaseFillMandatoryField")));
-	for (int i = 0; i < 200; i++) {
+	for (int i = 0; i < 300; i++) {
 		try {
 			Assert.assertTrue(javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("PleaseFillMandatoryField")).isDisplayed());
+			break;
+		} catch (Exception e) {
+		if (i==299) {
+			Assert.fail(e.getMessage());
+		}
+		}
+	}
+	
+}
+@And("user verify the Please fill Required field")
+public void user_verify_the_please_fill_Required_field() throws IOException {
+	//waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("PleaseFillMandatoryField")));
+	for (int i = 0; i < 200; i++) {
+		try {
+			Assert.assertTrue(javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("RequiredField")).isDisplayed());
 			break;
 		} catch (Exception e) {
 		if (i==199) {

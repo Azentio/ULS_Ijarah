@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Sep 01 18:36:49 IST 2023</td>
+<td>Started on:</td><td>Mon Sep 04 18:54:17 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>52 seconds (52143 ms)</td>
+<tr><td>Total time:</td><td>57 seconds (57507 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,41 +67,18 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Creation of Living Expense with valid data.", "Optional[Verify the functionalities for AppDataEntry(LivingExpenses)]"</td>
-<td><div><pre>java.lang.AssertionError: javascript error: Cannot read properties of null (reading &apos;shadowRoot&apos;)
-  (Session info: chrome=116.0.5845.141)
-Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [288b94d2dde3971e8c756991ac92132e, executeScript {script=return document.querySelector(&apos;ion-toast[role=&quot;status&quot;]&apos;).shadowRoot.querySelector(&apos;div[part=&quot;message&quot;]&apos;).textContent, args=[]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.141, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61766}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61766/devtoo..., se:cdpVersion: 116.0.5845.141, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 288b94d2dde3971e8c756991ac92132e
-	at org.testng.Assert.fail(Assert.java:99)
-	at stepdefinitions.AppDataEntry_LivingExpense_Steps.user_verify_the_please_fill_mandatory_field(AppDataEntry_LivingExpense_Steps.java:461)
-	at ✽.user verify the Please fill Mandatory field(file:///C:/Users/inindc00606/git/KarthikeyanIjara/Ijara_Karthi2/src/test/java/features/Ijara_AppDataEntry_LivingExpense.feature:93)
-</pre></div><a href='#' onClick='toggleBox("stack-trace448512468", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace448512468'><pre>java.lang.AssertionError: javascript error: Cannot read properties of null (reading &apos;shadowRoot&apos;)
-  (Session info: chrome=116.0.5845.141)
-Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [288b94d2dde3971e8c756991ac92132e, executeScript {script=return document.querySelector(&apos;ion-toast[role=&quot;status&quot;]&apos;).shadowRoot.querySelector(&apos;div[part=&quot;message&quot;]&apos;).textContent, args=[]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.141, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61766}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61766/devtoo..., se:cdpVersion: 116.0.5845.141, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 288b94d2dde3971e8c756991ac92132e
-	at org.testng.Assert.fail(Assert.java:99)
-	at stepdefinitions.AppDataEntry_LivingExpense_Steps.user_verify_the_please_fill_mandatory_field(AppDataEntry_LivingExpense_Steps.java:461)
-	at ✽.user verify the Please fill Mandatory field(file:///C:/Users/inindc00606/git/KarthikeyanIjara/Ijara_Karthi2/src/test/java/features/Ijara_AppDataEntry_LivingExpense.feature:93)
-</pre></div></td>
-<td>39</td>
-<td>Runner.TestApplication@5f049ea1</td></tr>
+<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Creation of Insurance Info record with valid data", "Optional[Verify the functionalities for AppDataEntry(Insurance Info)]"</td>
+<td></td>
+<td>44</td>
+<td>Runner.TestApplication@72cc7e6f</td></tr>
 </table><p>
 </body>
 </html>

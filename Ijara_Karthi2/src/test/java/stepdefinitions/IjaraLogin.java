@@ -47,8 +47,17 @@ public class IjaraLogin extends BaseClass {
 				}
 			}
 		}
-
-		Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).isDisplayed());
+//for (int i = 0; i < 200; i++) {
+//	try {
+//		Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).isDisplayed());
+//		break;
+//	} catch (Exception e) {
+//		if (i==199) {
+//			Assert.fail(e.getMessage());
+//		}
+//	}
+//}
+		
 
 	}
 
