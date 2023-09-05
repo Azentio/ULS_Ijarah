@@ -455,7 +455,6 @@ public class New_Application {
 
 	@Given("User_607 Check Sub Product field should be mandatory")
 	public void user_check_sub_product_field_should_be_mandatory() {
-	    
 		  for (int i = 0; i <2000; i++) {
               try {
               	String repayment = New_ApplicationPaths.getElement("Subproduct*");
@@ -477,7 +476,1071 @@ public class New_Application {
 	  
 		for (int i = 0; i < 700; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("Subproduct*")).click();
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("Subproduct")).click();
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+				}
+			}
+		
+			String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+
+			String dropdownLength = "";
+
+			boolean isDropdownValueSelected = false;
+
+			String dropdownString = "";
+
+			for (int i = 0; i <= 300; i++) {
+
+				try {
+
+					dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+					System.out.println("Dropdown length " + dropdownLength);
+
+					if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (i == 300) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+			}
+
+			int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+			for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+				for (int l = 0; l <= 300; l++) {
+
+					try {
+
+						System.out.println("L value is " + l);
+
+						System.out
+								.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+						dropdownString = javascriptHelper.executeScript(
+
+								"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+								.toString();
+
+						if (!(dropdownString.isEmpty())) {
+
+							System.out.println(dropdownString);
+
+							System.out.println("Loop count " + l + " got breaked");
+
+							break;
+
+						}
+
+					} catch (Exception e) {
+
+						if (l == 300 && !(dropdownString.isBlank())) {
+
+							Assert.fail(e.getMessage());
+
+						}
+
+					}
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				}
+
+				System.out.println("String " + dropdownString.trim());
+
+				System.out.println("Map " + ("LPO Financing-LPO Financing").trim());
+				
+				
+				if ((dropdownString.trim())
+						.equalsIgnoreCase("LPO Financing-LPO Financing".trim())) {
+
+					for (int k = 0; k <= 300; k++) {
+
+						try {
+
+							clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+							clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+							isDropdownValueSelected = true;
+
+							break;
+
+						} catch (Exception e) {
+
+							if (k == 300) {
+
+								Assert.fail(e.getMessage());
+							}
+						}
+					}
+				}
+				if (isDropdownValueSelected == true) {
+
+					break;
+
+				}
+			}
+	}
+
+	@Given("User_607 Check Total Finance Amount Requested should be mandatory")
+	public void user_check_total_finance_amount_requested_should_be_mandatory() throws Throwable {
+		Thread.sleep(3000);
+		 for (int i = 0; i <2000; i++) {
+             try {
+             	String repayment = New_ApplicationPaths.getElement("TotalFinanceAmountRequested*");
+                // String repayment ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+                 String accountholdername = (String) javascriptHelper.executeScript("return "+repayment);
+                 System.out.println(accountholdername);
+                 Assert.assertTrue(accountholdername.contains("*"));
+                 break;
+             } catch (Exception e) {
+                 if (i==1999) {
+                     Assert.fail(e.getMessage());
+                 }
+             }
+         }
+	}
+
+	@Given("User_607 Check Total Finance Amount Requested should be editable")
+	public void user_check_total_finance_amount_requested_should_be_editable() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				//javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("TotalFinanceAmountRequested")).click();
+				clicksAndActionsHelper.doubleClick((javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("TotalFinanceAmountRequested"))));
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("TotalFinanceAmountRequested")).sendKeys("1000");
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+				}
+			}
+		
+		
+			
+	    
+	}
+
+	@Given("User_607 Check Declared Net Monthly Income should be mandatory")
+	public void user_check_declared_net_monthly_income_should_be_mandatory() {
+		 for (int i = 0; i <2000; i++) {
+             try {
+             	String repayment = New_ApplicationPaths.getElement("DeclaredNetMonthlyIncome*");
+                // String repayment ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+                 String accountholdername = (String) javascriptHelper.executeScript("return "+repayment);
+                 System.out.println(accountholdername);
+                 Assert.assertTrue(accountholdername.contains("*"));
+                 break;
+             } catch (Exception e) {
+                 if (i==1999) {
+                     Assert.fail(e.getMessage());
+                 }
+             }
+         }
+	    
+	}
+
+	@Given("User_607 Check Declared Net Monthly Income should be editable")
+	public void user_check_declared_net_monthly_income_should_be_editable() {
+	    
+		for (int i = 0; i < 700; i++) {
+			try {
+			//	javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("DeclaredNetMonthlyIncome")).click();
+				clicksAndActionsHelper.doubleClick((javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("DeclaredNetMonthlyIncome"))));
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("DeclaredNetMonthlyIncome")).sendKeys("1000");
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+				}
+			}
+		
+	}
+
+	@Given("User_607 Check Declared Current Obligations should be non mandatory")
+	public void user_check_declared_current_obligations_should_be_non_mandatory() {
+		for (int i = 0; i <2000; i++) {
+            try {
+            	String repayment = New_ApplicationPaths.getElement("CheckNonManDeclaredCurrentObligations");
+               // String repayment ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+                String accountholdername = (String) javascriptHelper.executeScript("return "+repayment);
+                System.out.println(accountholdername);
+                Assert.assertTrue(!accountholdername.contains("*"));
+                break;
+            } catch (Exception e) {
+                if (i==1999) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+        }
+	}
+
+	@Given("User_607 Check Declared Current Obligations should be editable")
+	public void user_check_declared_current_obligations_should_be_editable() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				//javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("DeclaredCurrentObligations")).click();
+				clicksAndActionsHelper.doubleClick((javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("DeclaredCurrentObligations"))));
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("DeclaredNetMonthlyIncome")).sendKeys("1000");
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+				}
+			}
+			}
+
+	@Given("User_607 Check Special Promotion Campaign should be non mandatory")
+	public void user_check_special_promotion_campaign_should_be_non_mandatory() {
+		for (int i = 0; i <2000; i++) {
+            try {
+            	String repayment = New_ApplicationPaths.getElement("SpecialPromotion/CampaignCheckNonMan");
+               // String repayment ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+                String accountholdername = (String) javascriptHelper.executeScript("return "+repayment);
+                System.out.println(accountholdername);
+                Assert.assertTrue(!accountholdername.contains("*"));
+                break;
+            } catch (Exception e) {
+                if (i==1999) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+        }
+	}
+
+	@Given("User_607 Check Special Promotion Campaign should be editable")
+	public void user_check_special_promotion_campaign_should_be_editable() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("Special Promotion/Campaign")).click();
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+				}
+			}
+		
+		
+			String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+
+			String dropdownLength = "";
+
+			boolean isDropdownValueSelected = false;
+
+			String dropdownString = "";
+
+			for (int i = 0; i <= 300; i++) {
+
+				try {
+
+					dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+					System.out.println("Dropdown length " + dropdownLength);
+
+					if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (i == 300) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+			}
+
+			int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+			for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+				for (int l = 0; l <= 300; l++) {
+
+					try {
+
+						System.out.println("L value is " + l);
+
+						System.out
+								.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+						dropdownString = javascriptHelper.executeScript(
+
+								"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+								.toString();
+
+						if (!(dropdownString.isEmpty())) {
+
+							System.out.println(dropdownString);
+
+							System.out.println("Loop count " + l + " got breaked");
+
+							break;
+
+						}
+
+					} catch (Exception e) {
+
+						if (l == 300 && !(dropdownString.isBlank())) {
+
+							Assert.fail(e.getMessage());
+
+						}
+
+					}
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				}
+
+				System.out.println("String " + dropdownString.trim());
+
+				System.out.println("Map " + "Honda Car Promation scheme".trim());
+
+				if ((dropdownString.trim())
+						.equalsIgnoreCase("Honda Car Promation scheme".trim())) {
+
+					for (int k = 0; k <= 300; k++) {
+
+						try {
+
+							clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+							clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+							isDropdownValueSelected = true;
+
+							break;
+
+						} catch (Exception e) {
+
+							if (k == 300) {
+
+								Assert.fail(e.getMessage());
+							}
+						}
+					}
+				}
+				if (isDropdownValueSelected == true) {
+
+					break;
+
+				}
+			}
+	    
+	}
+
+	@Given("User_607 Check Sourcing Channel should be mandatory")
+	public void user_check_sourcing_channel_should_be_mandatory() {
+		for (int i = 0; i <2000; i++) {
+            try {
+            	String repayment = New_ApplicationPaths.getElement("SourcingChannel*");
+               // String repayment ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+                String accountholdername = (String) javascriptHelper.executeScript("return "+repayment);
+                System.out.println(accountholdername);
+                Assert.assertTrue(accountholdername.contains("*"));
+                break;
+            } catch (Exception e) {
+                if (i==1999) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+        }
+	    
+	}
+
+	@Given("User_607 Check Sourcing Channel should be editable")
+	public void user_check_sourcing_channel_should_be_editable() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("SourcingChannel")).click();
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+				}
+			}
+		
+		
+			String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+
+			String dropdownLength = "";
+
+			boolean isDropdownValueSelected = false;
+
+			String dropdownString = "";
+
+			for (int i = 0; i <= 300; i++) {
+
+				try {
+
+					dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+					System.out.println("Dropdown length " + dropdownLength);
+
+					if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (i == 300) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+			}
+
+			int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+			for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+				for (int l = 0; l <= 300; l++) {
+
+					try {
+
+						System.out.println("L value is " + l);
+
+						System.out
+								.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+						dropdownString = javascriptHelper.executeScript(
+
+								"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+								.toString();
+
+						if (!(dropdownString.isEmpty())) {
+
+							System.out.println(dropdownString);
+
+							System.out.println("Loop count " + l + " got breaked");
+
+							break;
+
+						}
+
+					} catch (Exception e) {
+
+						if (l == 300 && !(dropdownString.isBlank())) {
+
+							Assert.fail(e.getMessage());
+
+						}
+
+					}
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				}
+
+				System.out.println("String " + dropdownString.trim());
+
+				System.out.println("Map " + "DST".trim());
+
+				if ((dropdownString.trim())
+						.equalsIgnoreCase("DST".trim())) {
+
+					for (int k = 0; k <= 300; k++) {
+
+						try {
+
+							clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+							clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+							isDropdownValueSelected = true;
+
+							break;
+
+						} catch (Exception e) {
+
+							if (k == 300) {
+
+								Assert.fail(e.getMessage());
+							}
+						}
+					}
+				}
+				if (isDropdownValueSelected == true) {
+
+					break;
+
+				}
+			}
+	    
+	    
+	}
+
+	@Given("User_607 Check Business Center Code should be mandatory")
+	public void user_check_business_center_code_should_be_mandatory() {
+		for (int i = 0; i <2000; i++) {
+            try {
+            	String repayment = New_ApplicationPaths.getElement("BusinessCenterCode*");
+               // String repayment ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+                String accountholdername = (String) javascriptHelper.executeScript("return "+repayment);
+                System.out.println(accountholdername);
+                Assert.assertTrue(accountholdername.contains("*"));
+                break;
+            } catch (Exception e) {
+                if (i==1999) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+        }
+	    
+	}
+
+	@Given("User_607 Check Business Center Code should be editable")
+	public void user_check_business_center_code_should_be_editable() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("BusinessCenterCode")).click();
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+				}
+			}
+		
+		
+			String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+
+			String dropdownLength = "";
+
+			boolean isDropdownValueSelected = false;
+
+			String dropdownString = "";
+
+			for (int i = 0; i <= 300; i++) {
+
+				try {
+
+					dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+					System.out.println("Dropdown length " + dropdownLength);
+
+					if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (i == 300) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+			}
+
+			int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+			for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+				for (int l = 0; l <= 300; l++) {
+
+					try {
+
+						System.out.println("L value is " + l);
+
+						System.out
+								.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+						dropdownString = javascriptHelper.executeScript(
+
+								"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+								.toString();
+
+						if (!(dropdownString.isEmpty())) {
+
+							System.out.println(dropdownString);
+
+							System.out.println("Loop count " + l + " got breaked");
+
+							break;
+
+						}
+
+					} catch (Exception e) {
+
+						if (l == 300 && !(dropdownString.isBlank())) {
+
+							Assert.fail(e.getMessage());
+
+						}
+
+					}
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				}
+
+				System.out.println("String " + dropdownString.trim());
+
+				System.out.println("Map " + " Business Center-Retail Banking ".trim());
+
+				if ((dropdownString.trim())
+						.equalsIgnoreCase(" Business Center-Retail Banking ".trim())) {
+
+					for (int k = 0; k <= 300; k++) {
+
+						try {
+
+							clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+							clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+							isDropdownValueSelected = true;
+
+							break;
+
+						} catch (Exception e) {
+
+							if (k == 300) {
+
+								Assert.fail(e.getMessage());
+							}
+						}
+					}
+				}
+				if (isDropdownValueSelected == true) {
+
+					break;
+
+				}
+			} 
+	    
+	}
+
+	@Given("User_607 Check Servicing Type should be mandatory")
+	public void user_check_servicing_type_should_be_mandatory() {
+		for (int i = 0; i <2000; i++) {
+            try {
+            	String repayment = New_ApplicationPaths.getElement("ServicingType*");
+               // String repayment ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+                String accountholdername = (String) javascriptHelper.executeScript("return "+repayment);
+                System.out.println(accountholdername);
+                Assert.assertTrue(accountholdername.contains("*"));
+                break;
+            } catch (Exception e) {
+                if (i==1999) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+        }
+	    
+	}
+
+	@Given("User_607 Check Servicing Type should be editable")
+	public void user_check_servicing_type_should_be_editable() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("ServicingType")).click();
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+				}
+			}
+		
+		
+			String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+
+			String dropdownLength = "";
+
+			boolean isDropdownValueSelected = false;
+
+			String dropdownString = "";
+
+			for (int i = 0; i <= 300; i++) {
+
+				try {
+
+					dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+					System.out.println("Dropdown length " + dropdownLength);
+
+					if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (i == 300) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+			}
+
+			int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+			for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+				for (int l = 0; l <= 300; l++) {
+
+					try {
+
+						System.out.println("L value is " + l);
+
+						System.out
+								.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+						dropdownString = javascriptHelper.executeScript(
+
+								"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+								.toString();
+
+						if (!(dropdownString.isEmpty())) {
+
+							System.out.println(dropdownString);
+
+							System.out.println("Loop count " + l + " got breaked");
+
+							break;
+
+						}
+
+					} catch (Exception e) {
+
+						if (l == 300 && !(dropdownString.isBlank())) {
+
+							Assert.fail(e.getMessage());
+
+						}
+
+					}
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				}
+
+				System.out.println("String " + dropdownString.trim());
+
+				System.out.println("Map " + "Financier".trim());
+
+				if ((dropdownString.trim())
+						.equalsIgnoreCase("Financier".trim())) {
+
+					for (int k = 0; k <= 300; k++) {
+
+						try {
+
+							clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+							clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+							isDropdownValueSelected = true;
+
+							break;
+
+						} catch (Exception e) {
+
+							if (k == 300) {
+
+								Assert.fail(e.getMessage());
+							}
+						}
+					}
+				}
+				if (isDropdownValueSelected == true) {
+
+					break;
+
+				}
+			} 
+	    
+	}
+
+	@Given("User_607 Check Region should be mandatory")
+	public void user_check_region_should_be_mandatory() {
+		for (int i = 0; i <2000; i++) {
+            try {
+            	String repayment = New_ApplicationPaths.getElement("Region*");
+               // String repayment ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+                String accountholdername = (String) javascriptHelper.executeScript("return "+repayment);
+                System.out.println(accountholdername);
+                Assert.assertTrue(accountholdername.contains("*"));
+                break;
+            } catch (Exception e) {
+                if (i==1999) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+        }
+	    
+	}
+
+	@Given("User_607 Check Region should be editable")
+	public void user_check_region_should_be_editable() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("Region")).click();
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+				}
+			}
+		
+		
+			String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+
+			String dropdownLength = "";
+
+			boolean isDropdownValueSelected = false;
+
+			String dropdownString = "";
+
+			for (int i = 0; i <= 300; i++) {
+
+				try {
+
+					dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+					System.out.println("Dropdown length " + dropdownLength);
+
+					if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (i == 300) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+			}
+
+			int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+			for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+				for (int l = 0; l <= 300; l++) {
+
+					try {
+
+						System.out.println("L value is " + l);
+
+						System.out
+								.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+						dropdownString = javascriptHelper.executeScript(
+
+								"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+								.toString();
+
+						if (!(dropdownString.isEmpty())) {
+
+							System.out.println(dropdownString);
+
+							System.out.println("Loop count " + l + " got breaked");
+
+							break;
+
+						}
+
+					} catch (Exception e) {
+
+						if (l == 300 && !(dropdownString.isBlank())) {
+
+							Assert.fail(e.getMessage());
+
+						}
+
+					}
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				}
+
+				System.out.println("String " + dropdownString.trim());
+
+				System.out.println("Map " + "Azentio Vs".trim());
+
+				if ((dropdownString.trim())
+						.equalsIgnoreCase("Azentio Vs".trim())) {
+
+					for (int k = 0; k <= 300; k++) {
+
+						try {
+
+							clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+							clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+							isDropdownValueSelected = true;
+
+							break;
+
+						} catch (Exception e) {
+
+							if (k == 300) {
+
+								Assert.fail(e.getMessage());
+							}
+						}
+					}
+				}
+				if (isDropdownValueSelected == true) {
+
+					break;
+
+				}
+			} 
+	    
+	    
+	}
+
+	@Given("User_607 Check Servicing Branch should be mandatory")
+	public void user_check_servicing_branch_should_be_mandatory() {
+		for (int i = 0; i <2000; i++) {
+            try {
+            	String repayment = New_ApplicationPaths.getElement("ServicingBranch*");
+               // String repayment ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+                String accountholdername = (String) javascriptHelper.executeScript("return "+repayment);
+                System.out.println(accountholdername);
+                Assert.assertTrue(accountholdername.contains("*"));
+                break;
+            } catch (Exception e) {
+                if (i==1999) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+        }
+	    
+	}
+
+	@Given("User_607 Check Servicing Branch should be editable")
+	public void user_check_servicing_branch_should_be_editable() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("ServicingBranch")).click();
 				break;
 			} catch (Exception e) {
 				if (i==699) {
@@ -609,7 +1672,647 @@ public class New_Application {
 					break;
 
 				}
+			} 
+	    
+	    
+	}
+
+	@Given("User_607 Check Spoke Location should be Non mandatory")
+	public void user_check_spoke_location_should_be_non_mandatory() {
+		for (int i = 0; i <2000; i++) {
+            try {
+            	String repayment = New_ApplicationPaths.getElement("SpokeLocationCheckNonMan");
+               // String repayment ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+                String accountholdername = (String) javascriptHelper.executeScript("return "+repayment);
+                System.out.println(accountholdername);
+                Assert.assertTrue(accountholdername.contains("*"));
+                break;
+            } catch (Exception e) {
+                if (i==1999) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+        }
+	    
+	}
+
+	@Given("User_607 Check Spoke Location should be editable")
+	public void user_check_spoke_location_should_be_editable() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("SpokeLocation")).click();
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+				}
 			}
+		
+		
+			String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+
+			String dropdownLength = "";
+
+			boolean isDropdownValueSelected = false;
+
+			String dropdownString = "";
+
+			for (int i = 0; i <= 300; i++) {
+
+				try {
+
+					dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+					System.out.println("Dropdown length " + dropdownLength);
+
+					if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (i == 300) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+			}
+
+			int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+			for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+				for (int l = 0; l <= 300; l++) {
+
+					try {
+
+						System.out.println("L value is " + l);
+
+						System.out
+								.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+						dropdownString = javascriptHelper.executeScript(
+
+								"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+								.toString();
+
+						if (!(dropdownString.isEmpty())) {
+
+							System.out.println(dropdownString);
+
+							System.out.println("Loop count " + l + " got breaked");
+
+							break;
+
+						}
+
+					} catch (Exception e) {
+
+						if (l == 300 && !(dropdownString.isBlank())) {
+
+							Assert.fail(e.getMessage());
+
+						}
+
+					}
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				}
+
+				System.out.println("String " + dropdownString.trim());
+
+				System.out.println("Map " + testData.get("SelectOptionInSubProduct").trim());
+
+				if ((dropdownString.trim())
+						.equalsIgnoreCase((testData.get("SelectOptionInSubProduct")).trim())) {
+
+					for (int k = 0; k <= 300; k++) {
+
+						try {
+
+							clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+							clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+							isDropdownValueSelected = true;
+
+							break;
+
+						} catch (Exception e) {
+
+							if (k == 300) {
+
+								Assert.fail(e.getMessage());
+							}
+						}
+					}
+				}
+				if (isDropdownValueSelected == true) {
+
+					break;
+
+				}
+			} 
+	    
+	    
+	}
+
+	@Given("User_607 Check Closing Staff Or Servicing Staff Or RM should be mandatory")
+	public void user_check_closing_staff_or_servicing_staff_or_rm_should_be_mandatory() {
+		for (int i = 0; i <2000; i++) {
+            try {
+            	String repayment = New_ApplicationPaths.getElement("ClosingStaffOrServicingStaffOrRM*");
+               // String repayment ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+                String accountholdername = (String) javascriptHelper.executeScript("return "+repayment);
+                System.out.println(accountholdername);
+                Assert.assertTrue(accountholdername.contains("*"));
+                break;
+            } catch (Exception e) {
+                if (i==1999) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+        }
+	    
+	}
+
+	@Given("User_607 Check Closing Staff Or Servicing Staff Or RM should be editable")
+	public void user_check_closing_staff_or_servicing_staff_or_rm_should_be_editable() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("ClosingStaffOrServicingStaffOrRM")).click();
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+				}
+			}
+		
+		
+			String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+
+			String dropdownLength = "";
+
+			boolean isDropdownValueSelected = false;
+
+			String dropdownString = "";
+
+			for (int i = 0; i <= 300; i++) {
+
+				try {
+
+					dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+					System.out.println("Dropdown length " + dropdownLength);
+
+					if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (i == 300) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+			}
+
+			int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+			for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+				for (int l = 0; l <= 300; l++) {
+
+					try {
+
+						System.out.println("L value is " + l);
+
+						System.out
+								.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+						dropdownString = javascriptHelper.executeScript(
+
+								"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+								.toString();
+
+						if (!(dropdownString.isEmpty())) {
+
+							System.out.println(dropdownString);
+
+							System.out.println("Loop count " + l + " got breaked");
+
+							break;
+
+						}
+
+					} catch (Exception e) {
+
+						if (l == 300 && !(dropdownString.isBlank())) {
+
+							Assert.fail(e.getMessage());
+
+						}
+
+					}
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				}
+
+				System.out.println("String " + dropdownString.trim());
+
+				System.out.println("Map " + testData.get("SelectOptionInSubProduct").trim());
+
+				if ((dropdownString.trim())
+						.equalsIgnoreCase((testData.get("SelectOptionInSubProduct")).trim())) {
+
+					for (int k = 0; k <= 300; k++) {
+
+						try {
+
+							clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+							clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+							isDropdownValueSelected = true;
+
+							break;
+
+						} catch (Exception e) {
+
+							if (k == 300) {
+
+								Assert.fail(e.getMessage());
+							}
+						}
+					}
+				}
+				if (isDropdownValueSelected == true) {
+
+					break;
+
+				}
+			} 
+	    
+	}
+
+	@Given("User_607 Check Topup Type should be Non mandatory")
+	public void user_check_topup_type_should_be_non_mandatory() {
+		for (int i = 0; i <2000; i++) {
+            try {
+            	String repayment = New_ApplicationPaths.getElement("TopupTypeCheckNonMan");
+               // String repayment ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+                String accountholdername = (String) javascriptHelper.executeScript("return "+repayment);
+                System.out.println(accountholdername);
+                Assert.assertTrue(accountholdername.contains("*"));
+                break;
+            } catch (Exception e) {
+                if (i==1999) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+        }
+	    
+	}
+
+	@Given("User_607 Check Topup Type should be editable")
+	public void user_check_topup_type_should_be_editable() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("TopupType")).click();
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+				}
+			}
+		
+		
+			String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+
+			String dropdownLength = "";
+
+			boolean isDropdownValueSelected = false;
+
+			String dropdownString = "";
+
+			for (int i = 0; i <= 300; i++) {
+
+				try {
+
+					dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+					System.out.println("Dropdown length " + dropdownLength);
+
+					if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (i == 300) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+			}
+
+			int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+			for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+				for (int l = 0; l <= 300; l++) {
+
+					try {
+
+						System.out.println("L value is " + l);
+
+						System.out
+								.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+						dropdownString = javascriptHelper.executeScript(
+
+								"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+								.toString();
+
+						if (!(dropdownString.isEmpty())) {
+
+							System.out.println(dropdownString);
+
+							System.out.println("Loop count " + l + " got breaked");
+
+							break;
+
+						}
+
+					} catch (Exception e) {
+
+						if (l == 300 && !(dropdownString.isBlank())) {
+
+							Assert.fail(e.getMessage());
+
+						}
+
+					}
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				}
+
+				System.out.println("String " + dropdownString.trim());
+
+				System.out.println("Map " + testData.get("SelectOptionInSubProduct").trim());
+
+				if ((dropdownString.trim())
+						.equalsIgnoreCase((testData.get("SelectOptionInSubProduct")).trim())) {
+
+					for (int k = 0; k <= 300; k++) {
+
+						try {
+
+							clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+							clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+							isDropdownValueSelected = true;
+
+							break;
+
+						} catch (Exception e) {
+
+							if (k == 300) {
+
+								Assert.fail(e.getMessage());
+							}
+						}
+					}
+				}
+				if (isDropdownValueSelected == true) {
+
+					break;
+
+				}
+			} 
+	    
+	    
+	}
+
+	@Given("User_607 Check Topup Application No should be Non mandatory")
+	public void user_check_topup_application_no_should_be_non_mandatory() {
+		for (int i = 0; i <2000; i++) {
+            try {
+            	String repayment = New_ApplicationPaths.getElement("TopupApplicationNoCheckNonMan");
+               // String repayment ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+                String accountholdername = (String) javascriptHelper.executeScript("return "+repayment);
+                System.out.println(accountholdername);
+                Assert.assertTrue(accountholdername.contains("*"));
+                break;
+            } catch (Exception e) {
+                if (i==1999) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+        }
+	}
+
+	@Given("User_607 Check Topup Application No should be editable")
+	public void user_check_topup_application_no_should_be_editable() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("TopupApplicationNo")).click();
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+				}
+			}
+		
+		
+			String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+
+			String dropdownLength = "";
+
+			boolean isDropdownValueSelected = false;
+
+			String dropdownString = "";
+
+			for (int i = 0; i <= 300; i++) {
+
+				try {
+
+					dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+					System.out.println("Dropdown length " + dropdownLength);
+
+					if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (i == 300) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+			}
+
+			int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+			for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+				for (int l = 0; l <= 300; l++) {
+
+					try {
+
+						System.out.println("L value is " + l);
+
+						System.out
+								.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+						dropdownString = javascriptHelper.executeScript(
+
+								"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+								.toString();
+
+						if (!(dropdownString.isEmpty())) {
+
+							System.out.println(dropdownString);
+
+							System.out.println("Loop count " + l + " got breaked");
+
+							break;
+
+						}
+
+					} catch (Exception e) {
+
+						if (l == 300 && !(dropdownString.isBlank())) {
+
+							Assert.fail(e.getMessage());
+
+						}
+
+					}
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				}
+
+				System.out.println("String " + dropdownString.trim());
+
+				System.out.println("Map " + testData.get("SelectOptionInSubProduct").trim());
+
+				if ((dropdownString.trim())
+						.equalsIgnoreCase((testData.get("SelectOptionInSubProduct")).trim())) {
+
+					for (int k = 0; k <= 300; k++) {
+
+						try {
+
+							clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+							clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+							isDropdownValueSelected = true;
+
+							break;
+
+						} catch (Exception e) {
+
+							if (k == 300) {
+
+								Assert.fail(e.getMessage());
+							}
+						}
+					}
+				}
+				if (isDropdownValueSelected == true) {
+
+					break;
+
+				}
+			} 
+	    
+	    
 	}
 
 
