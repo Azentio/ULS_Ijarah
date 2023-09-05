@@ -562,8 +562,9 @@ public class IncomeDetailsList {
 			SoftAssert.fail();
 		}
 		
-		
 	}
+	
+
 	
 	
 	

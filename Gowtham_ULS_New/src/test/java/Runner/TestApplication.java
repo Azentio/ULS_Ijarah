@@ -9,12 +9,12 @@ import utilities.ExtentManager;
 import utilities.ExtentTestManager;
 
 @CucumberOptions(features = { // "src/test/java/features/CSM_TransactionsFEATURE.feature",
-		"src/test/java/features/IncomeDetailsList.feature" }, glue = "stepdefinitions",
+		"src/test/java/features/NewApplication.feature" }, glue = "stepdefinitions",
 		// monochrome=false, //to make steps in color
 		plugin = { "pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 				"rerun:ReRunScenarios/FailedReRun.txt" }
 // ,dryRun = false //to check compilation errors
- , tags = "@AT_INC_01"
+ , tags = "@AT_NEWAPP_02"
 )
 public class TestApplication extends AbstractTestNGCucumberTests {
 	/*
@@ -27,7 +27,6 @@ public class TestApplication extends AbstractTestNGCucumberTests {
 	@Before
 	public void beforeExecution() {
 		System.out.println("*** Test Execution started ***");
-
 	}
 
 	@After

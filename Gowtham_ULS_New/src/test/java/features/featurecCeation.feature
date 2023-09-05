@@ -5,4 +5,8 @@ Feature: Title of your feature
 
   @tag1
   Scenario: Title of your scenario
-  And User_607 check value auto populated
+  And User_607 Check GoBack Field
+ 		And User_607 Check Save button Field
+ 		And User_607 Check Submit button Field 
+ 		And User_607 Check Return button Field
+ 		And User_607 Check Views ummary Field
