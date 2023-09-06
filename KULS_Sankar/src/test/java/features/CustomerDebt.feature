@@ -10,7 +10,7 @@ And User click the module name dropdown in ULS application
 And User select the module name as LOS in ULS application
 And User click the Mail box in ULS application
 And User click the Search button under inbox
-And User enter the Ref id under inbox searchbox
+And User search the Ref id under inbox
 And User click the Entitle button under inbox
 And User click the Customer Financials tab
 And User click the pencil icon under Customer Financials tab
@@ -59,7 +59,7 @@ And User click the module name dropdown in ULS application
 And User select the module name as LOS in ULS application
 And User click the Mail box in ULS application
 And User click the Search button under inbox
-And User enter the Ref id under inbox searchbox
+And User search the Ref id under inbox
 And User click the Entitle button under inbox
 And User click the Customer Financials tab
 And User click the pencil icon under Customer Financials tab
@@ -87,7 +87,7 @@ And User click the module name dropdown in ULS application
 And User select the module name as LOS in ULS application
 And User click the Mail box in ULS application
 And User click the Search button under inbox
-And User enter the Ref id under inbox searchbox
+And User search the Ref id under inbox
 And User click the Entitle button under inbox
 And User click the Customer Financials tab
 And User click the pencil icon under Customer Financials tab
@@ -103,8 +103,28 @@ And User click the Back button in Customer Debt screen navigate to the previous 
 Then logout from the ijaraApplication
 
 
+@AT_CUD_004
+Scenario: To verify user is able to Add Customer Debt record in the system
 
+Given navigate the IJARA URL
+And login with valid credentials
+And User get the test data for test case AT_CUD_005
+And User click the module name dropdown in ULS application
+And User select the module name as LOS in ULS application
+And User click the Mail box in ULS application
+And User click the Search button under inbox
+And User search the Ref id under inbox
+And User click the Entitle button under inbox
+And User click the Customer Financials tab
+And User click the pencil icon under Customer Financials tab
 
+#And User click Search button in Financial Commitments under Customer Financials tab
+#And User search the record in Financial Commitments under Customer Financials tab
+#And User validate the available record status in Financial Commitments under Customer Financials tab
+
+And User click the Export button in Financial Commitments under Customer Financials tab
+
+Then logout from the ijaraApplication
 
 
 
@@ -119,7 +139,7 @@ And User click the module name dropdown in ULS application
 And User select the module name as LOS in ULS application
 And User click the Mail box in ULS application
 And User click the Search button under inbox
-And User enter the Ref id under inbox searchbox
+And User search the Ref id under inbox
 And User click the Entitle button under inbox
 And User click the Customer Financials tab
 And User click the pencil icon under Customer Financials tab
