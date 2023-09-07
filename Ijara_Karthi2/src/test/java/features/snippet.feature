@@ -5,4 +5,4 @@ Feature: Title of your feature
 
   @tag1
   Scenario: Title of your scenario
- And user verify the success pop up
+And user verify the same record got saved in screen

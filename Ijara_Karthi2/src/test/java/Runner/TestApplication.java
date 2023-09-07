@@ -9,12 +9,12 @@ import utilities.ExtentManager;
 import utilities.ExtentTestManager;
 
 @CucumberOptions(features = { // "src/test/java/features/CSM_TransactionsFEATURE.feature",
-		"src/test/java/features/ijara_AppDataEntry_InsuranceInfo.feature" }, glue = "stepdefinitions",
+		"src/test/java/features/Ijarah_AdditionalCustomerInfo.feature" }, glue = "stepdefinitions",
 		// monochrome=false, //to make steps in color
 		plugin = { "pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 				"rerun:ReRunScenarios/FailedReRun.txt" }
 // ,dryRun = false //to check compilation errors
- //, tags = "@AT_LEA_006"
+ , tags = "@AT_IDA_01"
 // , tags="@CW_032_03"
 // , tags = "@TSA_044_04"
 
