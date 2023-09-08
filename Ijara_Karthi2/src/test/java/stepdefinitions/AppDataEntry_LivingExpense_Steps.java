@@ -434,6 +434,200 @@ public class AppDataEntry_LivingExpense_Steps {
 		
 	    
 	}
+	@And("user Enter the Value ExpectedCostOfLiving field")
+	public void user_enter_the_value_expected_cost_of_living_field() {
+//		for (int i = 0; i < 200; i++) {
+//			try {
+//				
+//				javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("ExpectedCostOfLiving")).sendKeys(testData.get("ExpectedCostOfLiving"));
+//				//javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("ExpectedCostOfLiving")).sendKeys(Keys.TAB);
+//				break;
+//			} catch (Exception e) {
+//				if (i==199) {
+//					Assert.fail(e.getMessage());
+//				}
+//			}
+//		}
+		for (int i = 0; i <= 300; i++) {
+
+			try {
+
+			javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("ExpectedCostOfLiving")).click();
+			break;
+			} catch (Exception e) {
+			if (i == 300) {
+			Assert.fail(e.getMessage());
+			}
+			}
+			}			 
+			String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+			String dropdownLength = "";
+			boolean isDropdownValueSelected = false;
+			String dropdownString = "";
+			for (int i = 0; i <= 300; i++) {
+			try {
+			dropdownLength = javaScriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+			System.out.println("Dropdown length " + dropdownLength);
+			if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+			break;
+			}
+			} catch (Exception e) {
+			if (i == 300) {
+			Assert.fail(e.getMessage());
+			}
+			}
+			}
+			int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+			for (int j = 0; j <= premitiveDropdownLength; j++) {			 
+			for (int l = 0; l <= 300; l++) {
+			try {
+			System.out.println("L value is " + l);
+			System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+			dropdownString = javaScriptHelper.executeScript(
+			"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+			.toString();
+			if (!(dropdownString.isEmpty())) {
+			System.out.println(dropdownString);
+			System.out.println("Loop count " + l + " got breaked");
+			break;
+			}
+			} catch (Exception e) {
+			if (l == 300 && !(dropdownString.isBlank())) {
+			Assert.fail(e.getMessage());
+			}
+			}
+			if (!(dropdownString.isEmpty())) {
+			System.out.println(dropdownString);
+			System.out.println("Loop count " + l + " got breaked");
+			break;
+			}
+			}
+			System.out.println("String "+dropdownString.trim());
+			System.out.println("Map "+testData.get("ExpectedCostOfLiving").trim());
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("ExpectedCostOfLiving")).trim())) {			 
+			for (int k = 0; k <= 300; k++) {
+			try {			 
+			clicksAndActionsHelper.moveToElement(javaScriptHelper.executeScriptWithWebElement(
+			"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+			clicksAndActionsHelper.clickOnElement(javaScriptHelper.executeScriptWithWebElement(
+			"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+			isDropdownValueSelected = true;
+			break;
+			} catch (Exception e) {
+			if (k == 300) {
+			Assert.fail(e.getMessage());			 
+			}
+			}
+			}
+			}
+			if (isDropdownValueSelected == true) {
+			break;
+			}			 
+			}
+	}
+
+	@And("user Enter the Value MinimumCostOfLiving Field")
+	public void user_enter_the_value_minimum_cost_of_living_field() {
+//		for (int i = 0; i < 200; i++) {
+//			try {
+//				
+//				javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("MinimumCostOfLiving")).sendKeys(testData.get("MinimumCostOfLiving"));
+//				//javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("MinimumCostOfLiving")).sendKeys(Keys.TAB);
+//				break;
+//			} catch (Exception e) {
+//				if (i==199) {
+//					Assert.fail(e.getMessage());
+//				}
+//			}
+//		}
+		for (int i = 0; i <= 300; i++) {
+
+			try {
+
+			javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("MinimumCostOfLiving")).click();
+			break;
+			} catch (Exception e) {
+			if (i == 300) {
+			Assert.fail(e.getMessage());
+			}
+			}
+			}			 
+			String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+			String dropdownLength = "";
+			boolean isDropdownValueSelected = false;
+			String dropdownString = "";
+			for (int i = 0; i <= 300; i++) {
+			try {
+			dropdownLength = javaScriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+			System.out.println("Dropdown length " + dropdownLength);
+			if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+			break;
+			}
+			} catch (Exception e) {
+			if (i == 300) {
+			Assert.fail(e.getMessage());
+			}
+			}
+			}
+			int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+			for (int j = 0; j <= premitiveDropdownLength; j++) {			 
+			for (int l = 0; l <= 300; l++) {
+			try {
+			System.out.println("L value is " + l);
+			System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+			dropdownString = javaScriptHelper.executeScript(
+			"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+			.toString();
+			if (!(dropdownString.isEmpty())) {
+			System.out.println(dropdownString);
+			System.out.println("Loop count " + l + " got breaked");
+			break;
+			}
+			} catch (Exception e) {
+			if (l == 300 && !(dropdownString.isBlank())) {
+			Assert.fail(e.getMessage());
+			}
+			}
+			if (!(dropdownString.isEmpty())) {
+			System.out.println(dropdownString);
+			System.out.println("Loop count " + l + " got breaked");
+			break;
+			}
+			}
+			System.out.println("String "+dropdownString.trim());
+			System.out.println("Map "+testData.get("MinimumCostOfLiving").trim());
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("MinimumCostOfLiving")).trim())) {			 
+			for (int k = 0; k <= 300; k++) {
+			try {			 
+			clicksAndActionsHelper.moveToElement(javaScriptHelper.executeScriptWithWebElement(
+			"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+			clicksAndActionsHelper.clickOnElement(javaScriptHelper.executeScriptWithWebElement(
+			"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+			isDropdownValueSelected = true;
+			break;
+			} catch (Exception e) {
+			if (k == 300) {
+			Assert.fail(e.getMessage());			 
+			}
+			}
+			}
+			}
+			if (isDropdownValueSelected == true) {
+			break;
+			}			 
+			}
+	}
+
+	@And("user verify the ExpectedCostOfLiving field")
+	public void user_verify_the_expected_cost_of_living_field() {
+		Assert.assertTrue(javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("ExpectedCostOfLiving")).isDisplayed());
+	}
+
+	@And("user Verify the MinimumCostOfLiving Field")
+	public void user_verify_the_minimum_cost_of_living_field() {
+		Assert.assertTrue(javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("ExpectedCostOfLiving")).isDisplayed());
+	}
+
 
 @And("user verify the Total living expense field")
 public void user_verify_the_total_living_expense_field() throws IOException {

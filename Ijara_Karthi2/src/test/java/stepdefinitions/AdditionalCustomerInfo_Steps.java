@@ -2,6 +2,7 @@ package stepdefinitions;
 
 import java.util.Map;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
@@ -37,6 +38,10 @@ public class AdditionalCustomerInfo_Steps {
 	@And("^user update test data set id for AT_IDA_01$")
 	public void user_update_test_data_set_id_for_at_ida_01() throws Throwable {
 		testData = excelDataForAdditionalCustomerInfo.getTestdata("AT_IDA_01_D1");
+	}
+	@And("^user update test data set id for AT_IDA_02$")
+	public void user_update_test_data_set_id_for_at_ida_02() throws Throwable {
+		testData = excelDataForAdditionalCustomerInfo.getTestdata("AT_IDA_02_D1");
 	}
 
 	@And("user Enter the clientname under searchButton for AdditionalCustomerInfo")
@@ -163,7 +168,15 @@ public class AdditionalCustomerInfo_Steps {
 
 	@And("user click the EditButton in additional customer info tab")
 	public void user_click_the_edit_button_in_additional_customer_info_tab() {
-		javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("EditButton")).click();
+		for (int i = 0; i < 200; i++) {
+		try {
+			javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("EditButton")).click();
+			break;
+		} catch (Exception e) {
+			Assert.fail(e.getMessage());
+		}	
+		}
+		
 	    
 	}
 	@And("user click the FirstAddButton in additional customer info tab")
@@ -323,6 +336,10 @@ public class AdditionalCustomerInfo_Steps {
 
 	@And("user click and enter the value IdNumber in additional customer info tab")
 	public void user_click_and_enter_the_value_id_number_in_additional_customer_info_tab() {
+		for (int i = 0; i <25; i++) {
+			javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("IdNumber")).sendKeys(Keys.BACK_SPACE);
+		}
+		
 		javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("IdNumber")).sendKeys(testData.get("IdNumber"));
 	   
 	}
@@ -602,6 +619,11 @@ public class AdditionalCustomerInfo_Steps {
 		javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("SaveButton")).click();
 	   
 	}
+	@And("user click the UpdateButton in additional customer info tab")
+	public void user_click_the_Update_button_in_additional_customer_info_tab() {
+		javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("UpdateButton")).click();
+	   
+	}
 	
 	@And("user verify the same record got saved in screen")
 	public void user_verify_the_same_record_got_saved_in_screen() {
@@ -616,8 +638,28 @@ public class AdditionalCustomerInfo_Steps {
 		  Assert.assertEquals(verification,testData.get("IdNumber"));
 		
 	}
-
-
+	@And("user verify the Success pop")
+	public void user_verify_the_success_pop() {
+		for (int i = 0; i < 200; i++) {
+			try {
+				Assert.assertTrue( javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("successMsg")).isDisplayed());
+				break;
+			} catch (Exception e) {
+			if (i==199) {
+				Assert.fail(e.getMessage());
+			}
+			}
+			
+		}
+		
+	}
+	
+	@And("Arrange the Record in Decending Order")
+	public void arrange_the_record_in_decending_order() {
+		javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("DateOfExpiryDecs")).click();
+		javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("DateOfExpiryDecs")).click();
+		
+	}
 
 	
 }

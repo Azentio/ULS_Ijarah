@@ -24,7 +24,8 @@ And user verify and click the Additional customer Info tab
 And user scroll down to view the tabs
 And user verify and click the Living Expense tab
 And user scroll down to view the tabs
-#And user verify and click the Facility Details tab
+And user verify and click the Facility Details tab
+And user scroll down to view the tabs
 And user verify and click the Asset Details tab
 And user scroll down to view the tabs
 And user verify and click the Policy Check tab

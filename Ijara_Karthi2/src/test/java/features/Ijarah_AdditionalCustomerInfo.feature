@@ -29,14 +29,14 @@ And user verify IdNumberMandatory in additional customer info tab
 And user verify IssueingAuthorityMandatory in additional customer info tab
 And user verify CountryOfIssueMandatory in additional customer info tab
 And user click the SaveButton in additional customer info tab
-
-
-
+And user verify the Success pop 
+#And Arrange the Record in Decending Order
+#And user verify the same record got saved in screen
 
   @AT_IDA_02
   Scenario: Creation of Identification Details record with valid data
 Given navigate the IJARA URL
-And user update test data set id for AT_LEA_001
+And user update test data set id for AT_IDA_02
 And login with valid credentials
 #And user click the module in select field
 #And user click the LOS in select field
@@ -53,5 +53,15 @@ And user verify the IssueDateCalender in additional customer info tab
 And user verify the ExpiryDateCalender in additional customer info tab
 And user verify the IssueingAuthority in additional customer info tab
 And user verify the CountryOfIssue in additional customer info tab
+And user click and enter the value IdType in additional customer info tab
+And user click and enter the value IdNumber in additional customer info tab
+And user click the IssueDateCalender in additional customer info tab
+And user click the IssueDateToday in additional customer info tab
+And user click the ExpiryDateCalender in additional customer info tab
+And user click the ExpireDateToday in additional customer info tab
+And user click and enter the value IssueingAuthority in additional customer info tab
+And user click and enter the value CountryOfIssue in additional customer info tab
+And user click the UpdateButton in additional customer info tab
+
 
 

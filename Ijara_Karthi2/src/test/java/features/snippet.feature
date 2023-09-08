@@ -5,4 +5,7 @@ Feature: Title of your feature
 
   @tag1
   Scenario: Title of your scenario
-And user verify the same record got saved in screen
+And user Enter the Value ExpectedCostOfLiving field
+And user Enter the Value MinimumCostOfLiving Field
+And user verify the ExpectedCostOfLiving field
+And user Verify the MinimumCostOfLiving Field

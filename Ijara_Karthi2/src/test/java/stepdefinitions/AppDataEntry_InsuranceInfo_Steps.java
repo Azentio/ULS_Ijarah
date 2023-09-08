@@ -117,10 +117,91 @@ public class AppDataEntry_InsuranceInfo_Steps {
 	@And("user Enter the value in insuranceQuotationId field")
 	public void user_enter_the_value_in_insurance_quotation_id_field() throws Throwable {
 		//waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("insuranceQuotationId")));
+	
+				for (int i = 0; i < 500; i++) {
+					try {
+						javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("insuranceQuotationId")).click();
+						break;
+					} catch (Exception e) {
+					if (i==499) {
+						Assert.fail(e.getMessage());
+					}
+					}
+				}
+			
+				
+				String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+				String dropdownLength = "";
+				boolean isDropdownValueSelected = false;
+				String dropdownString = "";
+				for (int i = 0; i <= 300; i++) {
+				try {
+				dropdownLength = javaScriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+				System.out.println("Dropdown length " + dropdownLength);
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				break;
+				}
+				} catch (Exception e) {
+				if (i == 300) {
+				Assert.fail(e.getMessage());
+				}
+				}
+				}
+				int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+				for (int j = 0; j <= premitiveDropdownLength; j++) {			 
+				for (int l = 0; l <= 300; l++) {
+				try {
+				System.out.println("L value is " + l);
+				System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+				dropdownString = javaScriptHelper.executeScript(
+				"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+				.toString();
+				if (!(dropdownString.isEmpty())) {
+				System.out.println(dropdownString);
+				System.out.println("Loop count " + l + " got breaked");
+				break;
+				}
+				} catch (Exception e) {
+				if (l == 300 && !(dropdownString.isBlank())) {
+				Assert.fail(e.getMessage());
+				}
+				}
+				if (!(dropdownString.isEmpty())) {
+				System.out.println(dropdownString);
+				System.out.println("Loop count " + l + " got breaked");
+				break;
+				}
+				}
+				System.out.println("String "+dropdownString.trim());
+				System.out.println("Map "+testData.get("insuranceQuotationId").trim());
+				if ((dropdownString.trim()).equalsIgnoreCase((testData.get("insuranceQuotationId")).trim())) {			 
+				for (int k = 0; k <= 300; k++) {
+				try {			 
+				clicksAndActionsHelper.moveToElement(javaScriptHelper.executeScriptWithWebElement(
+				"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+				clicksAndActionsHelper.clickOnElement(javaScriptHelper.executeScriptWithWebElement(
+				"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+				isDropdownValueSelected = true;
+				break;
+				} catch (Exception e) {
+				if (k == 300) {
+				Assert.fail(e.getMessage());			 
+				}
+				}
+				}
+				}
+				if (isDropdownValueSelected == true) {
+				break;
+				}			 
+				}	
+	}
+
+	@And("user Enter the value in insuranceYear field")
+	public void user_enter_the_value_in_insurance_year_field() throws Throwable {
+		//waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("insuranceYear")));
 		for (int i = 0; i < 200; i++) {
 			try {
-				javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("insuranceQuotationId")).click();
-				javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("insuranceQuotationId")).sendKeys(testData.get("insuranceQuotationId"));
+				javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("insuranceYear")).click();
 				break;
 			} catch (Exception e) {
 				if (i==199) {
@@ -129,13 +210,6 @@ public class AppDataEntry_InsuranceInfo_Steps {
 			}
 		}
 		
-	    
-	}
-
-	@And("user Enter the value in insuranceYear field")
-	public void user_enter_the_value_in_insurance_year_field() throws Throwable {
-		//waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("insuranceYear")));
-		javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("insuranceYear")).click();
 		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
 		String dropdownLength = "";
 		boolean isDropdownValueSelected = false;

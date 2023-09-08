@@ -17,6 +17,8 @@ And user verify the field saveButton
 And user verify the field BackButton
 And user verify the field DeleteButton
 And user verify the field ExpenseType
+And user verify the ExpectedCostOfLiving field
+And user Verify the MinimumCostOfLiving Field
 And user verify the field Amount
 
 @AT_LEA_002
@@ -42,6 +44,8 @@ And user verify the field DeleteButton
 And user click the select check box
 And user select the type in expeseType select box
 And user Enter the Amount in Amount field
+And user Enter the Value ExpectedCostOfLiving field
+And user Enter the Value MinimumCostOfLiving Field
 
 
 @AT_LEA_003
@@ -65,6 +69,9 @@ And user select the type in expeseType select box
 And user Enter the Amount in Amount field
 And user verify the Total living expense field
 And user verify the Accredited Cost field
+And user verify the ExpectedCostOfLiving field
+And user Verify the MinimumCostOfLiving Field
+
 
 
 @AT_LEA_004
@@ -88,6 +95,8 @@ And user verify the field DeleteButton
 And user click the select check box
 And user select the type in expeseType select box
 And user Enter the Amount in Amount field
+And user Enter the Value ExpectedCostOfLiving field
+And user Enter the Value MinimumCostOfLiving Field
 
 
 @AT_LEA_005
@@ -110,6 +119,8 @@ And user select the type in expeseType select box
 And user Enter the Special Char in Amount field
 And user Enter the String value in Amount field
 And user Enter the Amount in Amount field
+And user Enter the Value ExpectedCostOfLiving field
+And user Enter the Value MinimumCostOfLiving Field
 And user click the field saveButton
 And user verify the Please fill Required field
 
@@ -148,6 +159,8 @@ And user modify the Amount field
 And user click the field saveButton
 #And user verify the Please fill Mandatory field 
 And user Enter the Amount in Amount field
+And user Enter the Value ExpectedCostOfLiving field
+And user Enter the Value MinimumCostOfLiving Field
 And user click the field saveButton
 
 
