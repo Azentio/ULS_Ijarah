@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Sep 05 17:45:34 IST 2023</td>
+<td>Started on:</td><td>Fri Sep 08 09:45:34 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>23 seconds (23825 ms)</td>
+<tr><td>Total time:</td><td>144 seconds (144068 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,18 +76,32 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Application Detail", "Optional[New Application]"</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.click()&quot; because the return value of &quot;helper.JavascriptHelper.executeScriptWithWebElement(String)&quot; is null
-	at stepdefinitions.IjaraLogin.loginWithIjaraApplication(IjaraLogin.java:29)
-	at stepdefinitions.IjaraTest.login_with_valid_credentials(IjaraTest.java:22)
-	at ✽.login with valid credentials(file:///C:/Users/ININDC00074/git/ULS_Ijarah/Gowtham_ULS_New/src/test/java/features/NewApplication.feature:60)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1109979753", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1109979753'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.click()&quot; because the return value of &quot;helper.JavascriptHelper.executeScriptWithWebElement(String)&quot; is null
-	at stepdefinitions.IjaraLogin.loginWithIjaraApplication(IjaraLogin.java:29)
-	at stepdefinitions.IjaraTest.login_with_valid_credentials(IjaraTest.java:22)
-	at ✽.login with valid credentials(file:///C:/Users/ININDC00074/git/ULS_Ijarah/Gowtham_ULS_New/src/test/java/features/NewApplication.feature:60)
+<td><div><pre>java.lang.AssertionError: javascript error: Cannot read properties of null (reading &apos;nextElementSibling&apos;)
+  (Session info: chrome=116.0.5845.141)
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d0823045024acec67828d02398c8fc61, executeScript {script=return document.querySelector(&apos;ion-label[ng-reflect-text=&quot;Topup Type.TOOLTIP&quot;]&apos;).nextElementSibling, args=[]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.141, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55650}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55650/devtoo..., se:cdpVersion: 116.0.5845.141, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d0823045024acec67828d02398c8fc61
+	at org.testng.Assert.fail(Assert.java:99)
+	at stepdefinitions.New_Application.user_check_topup_type_should_be_editable(New_Application.java:2036)
+	at ✽.User_607 Check Topup Type should be editable(file:///C:/Users/inindc00607/git/ULS_Ijarah_1/Gowtham_ULS_New/src/test/java/features/NewApplication.feature:183)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1175005248", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1175005248'><pre>java.lang.AssertionError: javascript error: Cannot read properties of null (reading &apos;nextElementSibling&apos;)
+  (Session info: chrome=116.0.5845.141)
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d0823045024acec67828d02398c8fc61, executeScript {script=return document.querySelector(&apos;ion-label[ng-reflect-text=&quot;Topup Type.TOOLTIP&quot;]&apos;).nextElementSibling, args=[]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.141, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55650}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55650/devtoo..., se:cdpVersion: 116.0.5845.141, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d0823045024acec67828d02398c8fc61
+	at org.testng.Assert.fail(Assert.java:99)
+	at stepdefinitions.New_Application.user_check_topup_type_should_be_editable(New_Application.java:2036)
+	at ✽.User_607 Check Topup Type should be editable(file:///C:/Users/inindc00607/git/ULS_Ijarah_1/Gowtham_ULS_New/src/test/java/features/NewApplication.feature:183)
 </pre></div></td>
-<td>17</td>
-<td>Runner.TestApplication@7bba5817</td></tr>
+<td>105</td>
+<td>Runner.TestApplication@5f049ea1</td></tr>
 </table><p>
 </body>
 </html>

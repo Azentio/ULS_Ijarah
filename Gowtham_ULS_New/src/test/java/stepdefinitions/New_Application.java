@@ -1,9 +1,11 @@
 package stepdefinitions;
 
+import java.util.Iterator;
 import java.util.Map;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
@@ -37,10 +39,22 @@ public class New_Application {
 	SoftAssert SoftAssert = new SoftAssert();
 	
 	@Given("User_607 Update testdata from AT_NEWAPP_02")
-	public void user_update_testdata_from_at_newapp() {
+	public void user_update_testdata_from_at_newapp_02() {
 		testData = IncomeDetailsListexelData.getTestdata("DS_AT_NEWAPP_02");
 	}
-
+	
+	@Given("User_607 Update testdata from AT_NWP_03")
+	public void user_update_testdata_from_at_nwp_03() {
+		testData = IncomeDetailsListexelData.getTestdata("DS_AT_NWP_03");
+	}
+	
+	@Given("User_607 Update testdata from AT_NWP_04")
+	public void user_update_testdata_from_at_nwp_04() {
+		testData = IncomeDetailsListexelData.getTestdata("DS_AT_NWP_04");
+	}
+	
+	
+	
 	@Given("User_607 Check GoBack Field")
 	public void user_check_go_back_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("GoBack")).isDisplayed()) {
@@ -572,11 +586,11 @@ public class New_Application {
 
 				System.out.println("String " + dropdownString.trim());
 
-				System.out.println("Map " + ("LPO Financing-LPO Financing").trim());
+				System.out.println("Map " + (testData.get("SubProductField")).trim());
 				
 				
 				if ((dropdownString.trim())
-						.equalsIgnoreCase("LPO Financing-LPO Financing".trim())) {
+						.equalsIgnoreCase(testData.get("SubProductField").trim())) {
 
 					for (int k = 0; k <= 300; k++) {
 
@@ -636,7 +650,7 @@ public class New_Application {
 			try {
 				//javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("TotalFinanceAmountRequested")).click();
 				clicksAndActionsHelper.doubleClick((javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("TotalFinanceAmountRequested"))));
-				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("TotalFinanceAmountRequested")).sendKeys("1000");
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("TotalFinanceAmountRequested")).sendKeys(testData.get("TotalFinanceAmountRequested"));
 				break;
 			} catch (Exception e) {
 				if (i==699) {
@@ -676,7 +690,7 @@ public class New_Application {
 			try {
 			//	javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("DeclaredNetMonthlyIncome")).click();
 				clicksAndActionsHelper.doubleClick((javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("DeclaredNetMonthlyIncome"))));
-				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("DeclaredNetMonthlyIncome")).sendKeys("1000");
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("DeclaredNetMonthlyIncome")).sendKeys(testData.get("DeclaredNetMonthlyIncome"));
 				break;
 			} catch (Exception e) {
 				if (i==699) {
@@ -709,9 +723,7 @@ public class New_Application {
 	public void user_check_declared_current_obligations_should_be_editable() {
 		for (int i = 0; i < 700; i++) {
 			try {
-				//javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("DeclaredCurrentObligations")).click();
-				clicksAndActionsHelper.doubleClick((javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("DeclaredCurrentObligations"))));
-				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("DeclaredNetMonthlyIncome")).sendKeys("1000");
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("DeclaredCurrentObligations")).sendKeys(testData.get("DeclaredCurrentObligations"));
 				break;
 			} catch (Exception e) {
 				if (i==699) {
@@ -840,10 +852,10 @@ public class New_Application {
 
 				System.out.println("String " + dropdownString.trim());
 
-				System.out.println("Map " + "Honda Car Promation scheme".trim());
+				System.out.println("Map " + testData.get("Special Promotion/Campaign").trim());
 
 				if ((dropdownString.trim())
-						.equalsIgnoreCase("Honda Car Promation scheme".trim())) {
+						.equalsIgnoreCase(testData.get("Special Promotion/Campaign").trim())) {
 
 					for (int k = 0; k <= 300; k++) {
 
@@ -895,7 +907,6 @@ public class New_Application {
                 }
             }
         }
-	    
 	}
 
 	@Given("User_607 Check Sourcing Channel should be editable")
@@ -999,10 +1010,10 @@ public class New_Application {
 
 				System.out.println("String " + dropdownString.trim());
 
-				System.out.println("Map " + "DST".trim());
+				System.out.println("Map " + testData.get("SourcingChannel").trim());
 
 				if ((dropdownString.trim())
-						.equalsIgnoreCase("DST".trim())) {
+						.equalsIgnoreCase(testData.get("SourcingChannel").trim())) {
 
 					for (int k = 0; k <= 300; k++) {
 
@@ -1159,10 +1170,10 @@ public class New_Application {
 
 				System.out.println("String " + dropdownString.trim());
 
-				System.out.println("Map " + " Business Center-Retail Banking ".trim());
+				System.out.println("Map " + testData.get("BusinessCenterCode").trim());
 
 				if ((dropdownString.trim())
-						.equalsIgnoreCase(" Business Center-Retail Banking ".trim())) {
+						.equalsIgnoreCase(testData.get("BusinessCenterCode").trim())) {
 
 					for (int k = 0; k <= 300; k++) {
 
@@ -1318,10 +1329,10 @@ public class New_Application {
 
 				System.out.println("String " + dropdownString.trim());
 
-				System.out.println("Map " + "Financier".trim());
+				System.out.println("Map " + testData.get("ServicingType").trim());
 
 				if ((dropdownString.trim())
-						.equalsIgnoreCase("Financier".trim())) {
+						.equalsIgnoreCase(testData.get("ServicingType").trim())) {
 
 					for (int k = 0; k <= 300; k++) {
 
@@ -1477,10 +1488,10 @@ public class New_Application {
 
 				System.out.println("String " + dropdownString.trim());
 
-				System.out.println("Map " + "Azentio Vs".trim());
+				System.out.println("Map " + testData.get("Region").trim());
 
 				if ((dropdownString.trim())
-						.equalsIgnoreCase("Azentio Vs".trim())) {
+						.equalsIgnoreCase(testData.get("Region").trim())) {
 
 					for (int k = 0; k <= 300; k++) {
 
@@ -1518,7 +1529,8 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Servicing Branch should be mandatory")
-	public void user_check_servicing_branch_should_be_mandatory() {
+	public void user_check_servicing_branch_should_be_mandatory() throws Throwable {
+		Thread.sleep(3000);
 		for (int i = 0; i <2000; i++) {
             try {
             	String repayment = New_ApplicationPaths.getElement("ServicingBranch*");
@@ -1637,10 +1649,10 @@ public class New_Application {
 
 				System.out.println("String " + dropdownString.trim());
 
-				System.out.println("Map " + testData.get("SelectOptionInSubProduct").trim());
+				System.out.println("Map " + testData.get("ServicingBranch").trim());
 
 				if ((dropdownString.trim())
-						.equalsIgnoreCase((testData.get("SelectOptionInSubProduct")).trim())) {
+						.equalsIgnoreCase(testData.get("ServicingBranch").trim())) {
 
 					for (int k = 0; k <= 300; k++) {
 
@@ -1685,7 +1697,7 @@ public class New_Application {
                // String repayment ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
                 String accountholdername = (String) javascriptHelper.executeScript("return "+repayment);
                 System.out.println(accountholdername);
-                Assert.assertTrue(accountholdername.contains("*"));
+                Assert.assertTrue(!accountholdername.contains("*"));
                 break;
             } catch (Exception e) {
                 if (i==1999) {
@@ -1708,8 +1720,6 @@ public class New_Application {
 				}
 				}
 			}
-		
-		
 			String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
 
 			String dropdownLength = "";
@@ -1797,10 +1807,10 @@ public class New_Application {
 
 				System.out.println("String " + dropdownString.trim());
 
-				System.out.println("Map " + testData.get("SelectOptionInSubProduct").trim());
+				System.out.println("Map " + testData.get("SpokeLocation").trim());
 
 				if ((dropdownString.trim())
-						.equalsIgnoreCase((testData.get("SelectOptionInSubProduct")).trim())) {
+						.equalsIgnoreCase(testData.get("SpokeLocation").trim())) {
 
 					for (int k = 0; k <= 300; k++) {
 
@@ -1957,10 +1967,10 @@ public class New_Application {
 
 				System.out.println("String " + dropdownString.trim());
 
-				System.out.println("Map " + testData.get("SelectOptionInSubProduct").trim());
+				System.out.println("Map " + testData.get("ClosingStaffOrServicingStaffOrRM").trim());
 
 				if ((dropdownString.trim())
-						.equalsIgnoreCase((testData.get("SelectOptionInSubProduct")).trim())) {
+						.equalsIgnoreCase(testData.get("ClosingStaffOrServicingStaffOrRM").trim())) {
 
 					for (int k = 0; k <= 300; k++) {
 
@@ -2004,7 +2014,7 @@ public class New_Application {
                // String repayment ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
                 String accountholdername = (String) javascriptHelper.executeScript("return "+repayment);
                 System.out.println(accountholdername);
-                Assert.assertTrue(accountholdername.contains("*"));
+                Assert.assertTrue(!accountholdername.contains("*"));
                 break;
             } catch (Exception e) {
                 if (i==1999) {
@@ -2116,10 +2126,10 @@ public class New_Application {
 
 				System.out.println("String " + dropdownString.trim());
 
-				System.out.println("Map " + testData.get("SelectOptionInSubProduct").trim());
+				System.out.println("Map " + testData.get("TopupType").trim());
 
 				if ((dropdownString.trim())
-						.equalsIgnoreCase((testData.get("SelectOptionInSubProduct")).trim())) {
+						.equalsIgnoreCase(" BT Topup ".trim())) {
 
 					for (int k = 0; k <= 300; k++) {
 
@@ -2164,7 +2174,7 @@ public class New_Application {
                // String repayment ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
                 String accountholdername = (String) javascriptHelper.executeScript("return "+repayment);
                 System.out.println(accountholdername);
-                Assert.assertTrue(accountholdername.contains("*"));
+                Assert.assertTrue(!accountholdername.contains("*"));
                 break;
             } catch (Exception e) {
                 if (i==1999) {
@@ -2179,6 +2189,7 @@ public class New_Application {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("TopupApplicationNo")).click();
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("TopupApplicationNo")).sendKeys(testData.get("TopupApplicationNo"));
 				break;
 			} catch (Exception e) {
 				if (i==699) {
@@ -2186,80 +2197,79 @@ public class New_Application {
 				}
 				}
 			}
+	}
+	
+	@Given("User_607 Check Sourcing Type should be mandatory")
+	public void user_check_sourcing_type_should_be_mandatory() {
+		for (int i = 0; i <2000; i++) {
+            try {
+            	String repayment = New_ApplicationPaths.getElement("SourcingType*");
+               // String repayment ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+                String accountholdername = (String) javascriptHelper.executeScript("return "+repayment);
+                System.out.println(accountholdername);
+                Assert.assertTrue(accountholdername.contains("*"));
+                break;
+            } catch (Exception e) {
+                if (i==1999) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+        }
+	}
+
+	@Given("User_607 Check Sourcing Type should be editable")
+	public void user_check_sourcing_type_should_be_editable() {
 		
-		
-			String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("SourcingType")).click();
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+				}
+			}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
 
-			String dropdownLength = "";
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 
-			boolean isDropdownValueSelected = false;
+				System.out.println("Dropdown length " + dropdownLength);
 
-			String dropdownString = "";
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
 
-			for (int i = 0; i <= 300; i++) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+			for (int l = 0; l <= 300; l++) {
 
 				try {
 
-					dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+					System.out.println("L value is " + l);
 
-					System.out.println("Dropdown length " + dropdownLength);
+					System.out
+							.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
 
-					if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+					dropdownString = javascriptHelper.executeScript(
 
-						break;
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
 
-					}
-
-				} catch (Exception e) {
-
-					if (i == 300) {
-
-						Assert.fail(e.getMessage());
-
-					}
-
-				}
-
-			}
-
-			int premitiveDropdownLength = Integer.parseInt(dropdownLength);
-
-			for (int j = 0; j <= premitiveDropdownLength; j++) {
-
-				for (int l = 0; l <= 300; l++) {
-
-					try {
-
-						System.out.println("L value is " + l);
-
-						System.out
-								.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
-
-						dropdownString = javascriptHelper.executeScript(
-
-								"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
-
-								.toString();
-
-						if (!(dropdownString.isEmpty())) {
-
-							System.out.println(dropdownString);
-
-							System.out.println("Loop count " + l + " got breaked");
-
-							break;
-
-						}
-
-					} catch (Exception e) {
-
-						if (l == 300 && !(dropdownString.isBlank())) {
-
-							Assert.fail(e.getMessage());
-
-						}
-
-					}
+							.toString();
 
 					if (!(dropdownString.isEmpty())) {
 
@@ -2271,53 +2281,1264 @@ public class New_Application {
 
 					}
 
-				}
+				} catch (Exception e) {
 
-				System.out.println("String " + dropdownString.trim());
+					if (l == 300 && !(dropdownString.isBlank())) {
 
-				System.out.println("Map " + testData.get("SelectOptionInSubProduct").trim());
+						Assert.fail(e.getMessage());
 
-				if ((dropdownString.trim())
-						.equalsIgnoreCase((testData.get("SelectOptionInSubProduct")).trim())) {
-
-					for (int k = 0; k <= 300; k++) {
-
-						try {
-
-							clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
-
-									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-
-							clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
-
-									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-
-							isDropdownValueSelected = true;
-
-							break;
-
-						} catch (Exception e) {
-
-							if (k == 300) {
-
-								Assert.fail(e.getMessage());
-							}
-						}
 					}
+
 				}
-				if (isDropdownValueSelected == true) {
+
+				if (!(dropdownString.isEmpty())) {
+
+					System.out.println(dropdownString);
+
+					System.out.println("Loop count " + l + " got breaked");
 
 					break;
 
 				}
-			} 
+
+			}
+
+			System.out.println("String " + dropdownString.trim());
+
+			System.out.println("Map " + testData.get("SourcingType").trim());
+
+			if ((dropdownString.trim())
+					.equalsIgnoreCase(testData.get("SourcingType").trim())) {
+
+				for (int k = 0; k <= 300; k++) {
+
+					try {
+
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						isDropdownValueSelected = true;
+
+						break;
+
+					} catch (Exception e) {
+
+						if (k == 300) {
+
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+
+				break;
+
+			}
+		} 
+	}
+	
+	
+	@Given("User_607 Check Sourcing Office should be mandatory")
+	public void user_check_sourcing_office_should_be_mandatory() throws Throwable {
+		for (int i = 0; i <2000; i++) {
+            try {
+            	javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("Status")));
+                break;
+            } catch (Exception e) {
+                if (i==1999) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+        }
+		
+		Thread.sleep(2000);
+		for (int i = 0; i <2000; i++) {
+            try {
+            	String repayment = New_ApplicationPaths.getElement("SourcingOffice*");
+               // String repayment ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+                String accountholdername = (String) javascriptHelper.executeScript("return "+repayment);
+                System.out.println(accountholdername);
+                Assert.assertTrue(accountholdername.contains("*"));
+                break;
+            } catch (Exception e) {
+                if (i==1999) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+        }
+	    
+	}
+
+	@Given("User_607 Check Sourcing Office should be editable")
+	public void user_check_sourcing_office_should_be_editable() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("SourcingOffice")).click();
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+				}
+			}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+				System.out.println("Dropdown length " + dropdownLength);
+
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+			for (int l = 0; l <= 300; l++) {
+
+				try {
+
+					System.out.println("L value is " + l);
+
+					System.out
+							.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+					dropdownString = javascriptHelper.executeScript(
+
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+							.toString();
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (l == 300 && !(dropdownString.isBlank())) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+				if (!(dropdownString.isEmpty())) {
+
+					System.out.println(dropdownString);
+
+					System.out.println("Loop count " + l + " got breaked");
+
+					break;
+
+				}
+
+			}
+
+			System.out.println("String " + dropdownString.trim());
+
+			System.out.println("Map " + " Bangalore ".trim());
+
+			if ((dropdownString.trim())
+					.equalsIgnoreCase(" Bangalore ".trim())) {
+
+				for (int k = 0; k <= 300; k++) {
+
+					try {
+
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						isDropdownValueSelected = true;
+
+						break;
+
+					} catch (Exception e) {
+
+						if (k == 300) {
+
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+
+				break;
+
+			}
+		} 
+	    
+	}
+
+	@Given("User_607 Check Sourcing Entity should be mandatory")
+	public void user_check_sourcing_entity_should_be_mandatory() {
+		for (int i = 0; i <2000; i++) {
+            try {
+            	String repayment = New_ApplicationPaths.getElement("SourcingEntity*");
+               // String repayment ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+                String accountholdername = (String) javascriptHelper.executeScript("return "+repayment);
+                System.out.println(accountholdername);
+                Assert.assertTrue(accountholdername.contains("*"));
+                break;
+            } catch (Exception e) {
+                if (i==1999) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+        }
+	    
+	}
+
+	@Given("User_607 Check Sourcing Entity should be editable")
+	public void user_check_sourcing_entity_should_be_editable() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("SourcingEntity")).click();
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+				}
+			}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+				System.out.println("Dropdown length " + dropdownLength);
+
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+			for (int l = 0; l <= 300; l++) {
+
+				try {
+
+					System.out.println("L value is " + l);
+
+					System.out
+							.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+					dropdownString = javascriptHelper.executeScript(
+
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+							.toString();
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (l == 300 && !(dropdownString.isBlank())) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+				if (!(dropdownString.isEmpty())) {
+
+					System.out.println(dropdownString);
+
+					System.out.println("Loop count " + l + " got breaked");
+
+					break;
+
+				}
+
+			}
+
+			System.out.println("String " + dropdownString.trim());
+
+			System.out.println("Map " + " Cent Bank Finance LTD. ".trim());
+
+			if ((dropdownString.trim())
+					.equalsIgnoreCase(" Cent Bank Finance LTD. ".trim())) {
+
+				for (int k = 0; k <= 300; k++) {
+
+					try {
+
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						isDropdownValueSelected = true;
+
+						break;
+
+					} catch (Exception e) {
+
+						if (k == 300) {
+
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+
+				break;
+
+			}
+		}  
+	    
+	}
+
+	@Given("User_607 Check Sourcing Staff should be mandatory")
+	public void user_check_sourcing_staff_should_be_mandatory() {
+		for (int i = 0; i <2000; i++) {
+            try {
+            	String repayment = New_ApplicationPaths.getElement("SourcingStaff*");
+               // String repayment ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+                String accountholdername = (String) javascriptHelper.executeScript("return "+repayment);
+                System.out.println(accountholdername);
+                Assert.assertTrue(accountholdername.contains("*"));
+                break;
+            } catch (Exception e) {
+                if (i==1999) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+		}
+	}
+
+	@Given("User_607 Check Sourcing Staff should be editable")
+	public void user_check_sourcing_staff_should_be_editable() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("SourcingStaff")).click();
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+				}
+			}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+				System.out.println("Dropdown length " + dropdownLength);
+
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+			for (int l = 0; l <= 300; l++) {
+
+				try {
+
+					System.out.println("L value is " + l);
+
+					System.out
+							.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+					dropdownString = javascriptHelper.executeScript(
+
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+							.toString();
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (l == 300 && !(dropdownString.isBlank())) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+				if (!(dropdownString.isEmpty())) {
+
+					System.out.println(dropdownString);
+
+					System.out.println("Loop count " + l + " got breaked");
+
+					break;
+
+				}
+
+			}
+
+			System.out.println("String " + dropdownString.trim());
+
+			System.out.println("Map " + " Narayan Shrivastava ".trim());
+
+			if ((dropdownString.trim())
+					.equalsIgnoreCase(" Narayan Shrivastava ".trim())) {
+
+				for (int k = 0; k <= 300; k++) {
+
+					try {
+
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						isDropdownValueSelected = true;
+
+						break;
+
+					} catch (Exception e) {
+
+						if (k == 300) {
+
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+
+				break;
+
+			}
+		}  
+	    
+	}
+
+	@Given("User_607 Check Reference Type should be non mandatory")
+	public void user_check_reference_type_should_be_non_mandatory() {
+		for (int i = 0; i <2000; i++) {
+            try {
+            	String repayment = New_ApplicationPaths.getElement("ReferenceTypeCheckNonMan");
+               // String repayment ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+                String accountholdername = (String) javascriptHelper.executeScript("return "+repayment);
+                System.out.println(accountholdername);
+                Assert.assertTrue(!accountholdername.contains("*"));
+                break;
+            } catch (Exception e) {
+                if (i==1999) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+		} 
+	    
+	}
+
+	@Given("User_607 Check Reference Type should be editable")
+	public void user_check_reference_type_should_be_editable() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("ReferenceType")).click();
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+				}
+			}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+				System.out.println("Dropdown length " + dropdownLength);
+
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+			for (int l = 0; l <= 300; l++) {
+
+				try {
+
+					System.out.println("L value is " + l);
+
+					System.out
+							.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+					dropdownString = javascriptHelper.executeScript(
+
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+							.toString();
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (l == 300 && !(dropdownString.isBlank())) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+				if (!(dropdownString.isEmpty())) {
+
+					System.out.println(dropdownString);
+
+					System.out.println("Loop count " + l + " got breaked");
+
+					break;
+
+				}
+
+			}
+
+			System.out.println("String " + dropdownString.trim());
+
+			System.out.println("Map " + " Bank ".trim());
+
+			if ((dropdownString.trim())
+					.equalsIgnoreCase(" Bank ".trim())) {
+
+				for (int k = 0; k <= 300; k++) {
+
+					try {
+
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						isDropdownValueSelected = true;
+
+						break;
+
+					} catch (Exception e) {
+
+						if (k == 300) {
+
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+
+				break;
+
+			}
+		} 
+	    
+	}
+
+	@Given("User_607 Check Reference Entity should be non mandatory")
+	public void user_check_reference_entity_should_be_non_mandatory() {
+		for (int i = 0; i <2000; i++) {
+            try {
+            	String repayment = New_ApplicationPaths.getElement("ReferenceEntityCheckNonMan");
+               // String repayment ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+                String accountholdername = (String) javascriptHelper.executeScript("return "+repayment);
+                System.out.println(accountholdername);
+                Assert.assertTrue(!accountholdername.contains("*"));
+                break;
+            } catch (Exception e) {
+                if (i==1999) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+		} 
+	    
+	}
+
+	@Given("User_607 Check Reference Entity should be editable")
+	public void user_check_reference_entity_should_be_editable() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("ReferenceEntity")).click();
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+				}
+			}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+				System.out.println("Dropdown length " + dropdownLength);
+
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+			for (int l = 0; l <= 300; l++) {
+
+				try {
+
+					System.out.println("L value is " + l);
+
+					System.out
+							.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+					dropdownString = javascriptHelper.executeScript(
+
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+							.toString();
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (l == 300 && !(dropdownString.isBlank())) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+				if (!(dropdownString.isEmpty())) {
+
+					System.out.println(dropdownString);
+
+					System.out.println("Loop count " + l + " got breaked");
+
+					break;
+
+				}
+
+			}
+
+			System.out.println("String " + dropdownString.trim());
+
+			System.out.println("Map " + " Azentio Vs ".trim());
+
+			if ((dropdownString.trim())
+					.equalsIgnoreCase(" Azentio Vs ".trim())) {
+
+				for (int k = 0; k <= 300; k++) {
+
+					try {
+
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						isDropdownValueSelected = true;
+
+						break;
+
+					} catch (Exception e) {
+
+						if (k == 300) {
+
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+
+				break;
+
+			}
+		} 
 	    
 	    
 	}
 
+	@Given("User_607 Check Reference Code should be non mandatory")
+	public void user_check_reference_code_should_be_non_mandatory() {
+		for (int i = 0; i <2000; i++) {
+            try {
+            	String repayment = New_ApplicationPaths.getElement("ReferenceCodeCheckNonMan");
+               // String repayment ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+                String accountholdername = (String) javascriptHelper.executeScript("return "+repayment);
+                System.out.println(accountholdername);
+                Assert.assertTrue(!accountholdername.contains("*"));
+                break;
+            } catch (Exception e) {
+                if (i==1999) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+		} 
+	    
+	    
+	}
 
+	@Given("User_607 Check Reference Code should be editable")
+	public void user_check_reference_code_should_be_editable() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("ReferenceCode")).sendKeys("1500");
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+				}
+			}
+	}
+
+
+	@Given("User_607 Click Back button")
+	public void user_click_back_button() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("GoBack")));
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+				}
+			}
+	}
+
+	@Given("User_607 Check system should navigate to the previous screen")
+	public void user_check_system_should_navigate_to_the_previous_screen() {
+		if (!javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("selectRecord")).isDisplayed()) {
+			Assert.fail();
+		}
+	
+	}
+	
+	@Given("User_607 Click Add button in application details")
+	public void user_click_add_button_in_application_details() throws Throwable {
+		Thread.sleep(3000);
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("AddButton")));
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+				}
+			}
+	}
+	
+
+	@Given("User_607 Select Customer type")
+	public void user_select_customer_type() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("CustomerType")).click();
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+				}
+			}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+				System.out.println("Dropdown length " + dropdownLength);
+
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+			for (int l = 0; l <= 300; l++) {
+
+				try {
+
+					System.out.println("L value is " + l);
+
+					System.out
+							.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+					dropdownString = javascriptHelper.executeScript(
+
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+							.toString();
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (l == 300 && !(dropdownString.isBlank())) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+				if (!(dropdownString.isEmpty())) {
+
+					System.out.println(dropdownString);
+
+					System.out.println("Loop count " + l + " got breaked");
+
+					break;
+
+				}
+
+			}
+
+			System.out.println("String " + dropdownString.trim());
+
+			System.out.println("Map " + " Individual Customer ".trim());
+
+			if ((dropdownString.trim())
+					.equalsIgnoreCase(" Individual Customer ".trim())) {
+
+				for (int k = 0; k <= 300; k++) {
+
+					try {
+
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						isDropdownValueSelected = true;
+
+						break;
+
+					} catch (Exception e) {
+
+						if (k == 300) {
+
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+
+				break;
+
+			}
+		} 
+		
+	}
+
+	@Given("User_607 Enter Customer Name")
+	public void user_enter_customer_name() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("CustomerName")).sendKeys("MNW");
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+				}
+			}
+		
+	}
+
+	@Given("User_607 Select ID type")
+	public void user_select_id_type() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("IdType")).click();
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+				}
+			}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+				System.out.println("Dropdown length " + dropdownLength);
+
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+			for (int l = 0; l <= 300; l++) {
+
+				try {
+
+					System.out.println("L value is " + l);
+
+					System.out
+							.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+					dropdownString = javascriptHelper.executeScript(
+
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+							.toString();
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (l == 300 && !(dropdownString.isBlank())) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+				if (!(dropdownString.isEmpty())) {
+
+					System.out.println(dropdownString);
+
+					System.out.println("Loop count " + l + " got breaked");
+
+					break;
+
+				}
+
+			}
+
+			System.out.println("String " + dropdownString.trim());
+
+			System.out.println("Map " + " AADHAR CARD ".trim());
+
+			if ((dropdownString.trim())
+					.equalsIgnoreCase(" AADHAR CARD ".trim())) {
+
+				for (int k = 0; k <= 300; k++) {
+
+					try {
+
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						isDropdownValueSelected = true;
+
+						break;
+
+					} catch (Exception e) {
+
+						if (k == 300) {
+
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+
+				break;
+
+			}
+		} 
+		
+	}
+
+	@Given("User_607 Enter Customer ID number")
+	public void user_enter_customer_id_number() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("IdNumber")).sendKeys("1234");
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+				}
+			}
+		
+		
+	}
+
+	@Given("User_607 Enter date of birth")
+	public void user_enter_date_of_birth() throws Throwable {
+		javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("DateOfBirth")).click();
+		javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("DateOfBirth"))
+				.sendKeys("27-Aug-2000");
+		Thread.sleep(3000);
+		javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("SelectDate")).click();
+			
+		
+	}
+
+	@Given("User_607 Click Search button after filled the fields")
+	public void user_click_search_button_after_filled_the_fields() throws Throwable {
+		for (int i = 0; i < 700; i++) {
+			try {
+				//javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("SearchButton")).click();
+				WebElement search = javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("SearchButton"));
+				javascriptHelper.JSEClick(search);
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+				}
+			}
+		
+	}
+
+	@Given("User_607 Click Create New button")
+	public void user_click_create_new_button() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("CreateNewbutton")).click();
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+				}
+			}
+		
+	}
+	
+	@Given("User_607 Click save button in creating new reord screen")
+	public void user_click_save_button_in_creating_new_reord_screen() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("Savebutton")).click();
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+				}
+			}
+	}
+
+	@Given("User_607 Check Please Fill Details Popup showing or not")
+	public void user_check_please_fill_details_popup_showing_or_not() throws Throwable {
+		Thread.sleep(1000);
+		for (int i = 0; i <2000; i++) {
+            try {
+            	String repayment = New_ApplicationPaths.getElement("PleaseFillDetailsPopup");
+               // String repayment ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+                String accountholdername = (String) javascriptHelper.executeScript("return "+repayment);
+                System.out.println(accountholdername);
+                Assert.assertTrue(!accountholdername.contains("'Please fill all the details'"));
+                break;
+            } catch (Exception e) {
+                if (i==1999) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+		} 
+	}
+	
+	@Given("User_607 User Check negative value accepct or not in the numaric field")
+	public void user_user_check_negative_value_accepct_or_not_in_the_numaric_field() {
+		javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("TotalFinanceAmountRequested")).sendKeys("-10");
+		for (int i = 0; i <2000; i++) {
+            try {
+            	String CheckField = javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("TotalFinanceAmountRequested")).getAttribute("aria-valuenow");
+               // String repayment ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+                String accountholdername = javascriptHelper.executeScript("return "+CheckField).toString();
+                System.out.println(accountholdername);
+                Assert.assertFalse(accountholdername.contains("-"));
+                break;
+            } catch (Exception e) {
+                if (i==1999) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+		} 
+		
+	}
 	
 	
 	
 	
+	
+	
+	
+	
+
 }

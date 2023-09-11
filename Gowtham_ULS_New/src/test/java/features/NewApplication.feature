@@ -58,6 +58,7 @@ Feature: New Application
     Scenario: Application Detail
     Given navigate the IJARA URL
     And login with valid credentials
+    And User_607 Update testdata from AT_NWP_03
     And User_607 Click inbox in the home page
 	  And User_607 Click Search in inbox
 	  And User_607 Search in the search box
@@ -82,7 +83,12 @@ Feature: New Application
  		@AT_NWP_04
     Scenario: Application Detail
     Given navigate the IJARA URL
+    And User_607 Update testdata from AT_NWP_04
     And login with valid credentials
+    And User_607 Click inbox in the home page
+	  And User_607 Click Search in inbox
+	  And User_607 Search in the search box
+	  And User_607 Select record after search
  		And User_607 Check Servicing Branch should be mandatory
  		And User_607 Check Servicing Branch should be editable
  		And User_607 Check Spoke Location should be Non mandatory
@@ -93,28 +99,96 @@ Feature: New Application
  		And User_607 Check Topup Type should be editable
  		And User_607 Check Topup Application No should be Non mandatory
  		And User_607 Check Topup Application No should be editable
+ 		And User_607 Check Sourcing Type should be mandatory
+ 		And User_607 Check Sourcing Type should be editable
  		
+ 		@AT_NWP_05
+ 		Scenario: Application Detail
+ 		Given navigate the IJARA URL
+    And login with valid credentials
+    And User_607 Click inbox in the home page
+	  And User_607 Click Search in inbox
+	  And User_607 Search in the search box
+	  And User_607 Select record after search
+ 		And User_607 Check Sourcing Office should be mandatory
+ 		And User_607 Check Sourcing Office should be editable
+ 		And User_607 Check Sourcing Entity should be mandatory
+ 		And User_607 Check Sourcing Entity should be editable
+ 		And User_607 Check Sourcing Staff should be mandatory
+ 		And User_607 Check Sourcing Staff should be editable
+ 		And User_607 Check Reference Type should be non mandatory
+ 		And User_607 Check Reference Type should be editable
+ 		And User_607 Check Reference Entity should be non mandatory
+ 		And User_607 Check Reference Entity should be editable
+ 		And User_607 Check Reference Code should be non mandatory
+ 		And User_607 Check Reference Code should be editable
+ 		And User_607 Click Back button
+ 		And User_607 Check system should navigate to the previous screen
+ 		And User_607 Select record after search
  		
+ 		@AT_NWP_06
+ 		Scenario: Application Detail
+ 		Given navigate the IJARA URL
+    And login with valid credentials
+ 		And User_607 Click inbox in the home page
+	  And User_607 Click Search in inbox
+	  And User_607 Search in the search box
+	  And User_607 Select record after search
+ 		And User_607 Save the record
+ 		And User_607 Click Add button in application details
+ 		And User_607 Select Customer type
+ 		And User_607 Enter Customer Name
+ 		And User_607 Select ID type
+ 		And User_607 Enter Customer ID number
+ 		And User_607 Enter date of birth
+ 		And User_607 Click Search button after filled the fields
+ 		And User_607 Click Create New button
+ 		And User_607 Click save button in creating new reord screen
+ 		And User_607 Check Please Fill Details Popup showing or not
  		
- 		
- 		
- 		
- 		
- 		
- 		
- 		
- 		
- 		
- 		
- 		
- 		
- 		
- 		
- 		
- 		
- 		
- 		
- 		
+ 		@AT_NWP_07
+ 		Scenario: Application Detail
+ 		Given navigate the IJARA URL
+    And login with valid credentials
+ 		And User_607 Click inbox in the home page
+	  And User_607 Click Search in inbox
+	  And User_607 Search in the search box
+	  And User_607 Select record after search
+ 		And User_607 Save the record
+ 		And User_607 Click Add button in application details
+ 		And User_607 Select Customer type
+ 		And User_607 Enter Customer Name
+ 		And User_607 Select ID type
+ 		And User_607 Enter Customer ID number
+ 		And User_607 Enter date of birth
+ 		And User_607 Click Search button after filled the fields
+ 		And User_607 Click Create New button
+ 		And User_607 User Check negative value accepct or not in the numaric field
+ 		And User_607 Update testdata from AT_NEWAPP_02
+ 		And User_607 Check Product Field should be editable
+ 		And User_607 Check Sub Product Field should be editable
+ 		And User_607 Update testdata from AT_NWP_03
+ 		And User_607 Check Total Finance Amount Requested should be editable
+		And User_607 Check Declared Net Monthly Income should be editable
+		And User_607 Check Declared Current Obligations should be editable
+		And User_607 Check Special Promotion Campaign should be editable
+		And User_607 Check Sourcing Channel should be editable
+		And User_607 Check Business Center Code should be editable
+		And User_607 Check Servicing Type should be editable
+		And User_607 Check Region should be editable
+		And User_607 Update testdata from AT_NWP_04
+		And User_607 Check Servicing Branch should be editable
+		And User_607 Check Spoke Location should be editable
+		And User_607 Check Closing Staff Or Servicing Staff Or RM should be editable
+		And User_607 Check Topup Type should be editable
+		And User_607 Check Topup Application No should be editable
+		And User_607 Check Sourcing Type should be editable
+		And User_607 Check Sourcing Office should be editable
+		And User_607 Check Sourcing Entity should be editable
+		And User_607 Check Sourcing Staff should be editable
+		And User_607 Check Reference Type should be editable
+		And User_607 Check Reference Entity should be editable
+		And User_607 Check Reference Code should be editable
  		
  		
  		

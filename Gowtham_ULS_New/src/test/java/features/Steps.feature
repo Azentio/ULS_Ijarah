@@ -1,7 +1,7 @@
+@tag
 Feature: Title of your feature
   I want to use this template for my feature file
 
   @tag1
   Scenario: Title of your scenario
-  And User_607 Check Sourcing Type should be mandatory
- 		And User_607 Check Sourcing Type should be editable
+ And User_607 User Check negative value accepct or not in the numaric field
