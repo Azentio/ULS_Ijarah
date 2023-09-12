@@ -103,12 +103,13 @@ And User click the Back button in Customer Debt screen navigate to the previous 
 Then logout from the ijaraApplication
 
 
+# CUD_04_04, CUD_04_05, CUD_04_06, CUD_04_07
 @AT_CUD_004
 Scenario: To verify user is able to Add Customer Debt record in the system
 
 Given navigate the IJARA URL
 And login with valid credentials
-And User get the test data for test case AT_CUD_005
+And User get the test data for test case AT_CUD_004
 And User click the module name dropdown in ULS application
 And User select the module name as LOS in ULS application
 And User click the Mail box in ULS application
@@ -118,11 +119,23 @@ And User click the Entitle button under inbox
 And User click the Customer Financials tab
 And User click the pencil icon under Customer Financials tab
 
-#And User click Search button in Financial Commitments under Customer Financials tab
-#And User search the record in Financial Commitments under Customer Financials tab
-#And User validate the available record status in Financial Commitments under Customer Financials tab
+And User verify the Financial Institution field is displayed in list view under Financial Commitments
+And User verify the Loan Amount field is displayed in list view under Financial Commitments
+And User verify the Installment Amount field is displayed in list view under Financial Commitments
+And User verify the Tenure field is displayed in list view under Financial Commitments
+And User verify the Next Due Date field is displayed in list view under Financial Commitments
+And User verify the Principal Balance field is displayed in list view under Financial Commitments
+And User verify the Currency field is displayed in list view under Financial Commitments
 
+And User verify list view values should be not editable under FInancial Commitments
+
+And User click Search button in Financial Commitments under Customer Financials tab
+And User search the matched record in Financial Commitments under Customer Financials tab
+And User search the mismatched record in Financial Commitments under Customer Financials tab
 And User click the Export button in Financial Commitments under Customer Financials tab
+And User click the PDF and verify under Export in Financial Commitments
+And User click the Export button in Financial Commitments under Customer Financials tab
+And User click the XLS and verify under Export in Financial Commitments
 
 Then logout from the ijaraApplication
 
@@ -156,9 +169,50 @@ Then logout from the ijaraApplication
 
 
 
+# CUD_04_08
+@AT_CUD_006
+@AT_CUD_006_01
+Scenario: To verify user is able to Add Customer Debt record in the system
+
+Given navigate the IJARA URL
+And login with valid credentials
+And User get the test data for test case AT_CUD_005
+And User click the module name dropdown in ULS application
+And User select the module name as LOS in ULS application
+And User click the Mail box in ULS application
+And User click the Search button under inbox
+And User search the Ref id under inbox
+And User click the Entitle button under inbox
+And User click the Customer Financials tab
+And User click the pencil icon under Customer Financials tab
+And User click the first row pencil icon under Financial Commitments in Customer Financials tab
+And User click the Stats Radio button under Customer Debt screen
+When User click the Update button in Customer Debt screen
+And User verify the first row status as In-Active under Financial Commitments in Customer Financials tab
+Then logout from the ijaraApplication
 
 
 
+# CUD_04_09
+@AT_CUD_006
+@AT_CUD_006_02
+Scenario: To verify user is able to Add Customer Debt record in the system
+Given navigate the IJARA URL
+And login with valid credentials
+And User get the test data for test case AT_CUD_005
+And User click the module name dropdown in ULS application
+And User select the module name as LOS in ULS application
+And User click the Mail box in ULS application
+And User click the Search button under inbox
+And User search the Ref id under inbox
+And User click the Entitle button under inbox
+And User click the Customer Financials tab
+And User click the pencil icon under Customer Financials tab
+And User click the first row pencil icon under Financial Commitments in Customer Financials tab
+And User click the Stats Radio button under Customer Debt screen
+When User click the Update button in Customer Debt screen
+And User verify the first row status as Active under Financial Commitments in Customer Financials tab
+Then logout from the ijaraApplication
 
 
 

@@ -21,7 +21,7 @@ public class IjaraLogin extends BaseClass {
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
 
 	public void loginWithIjaraApplication() {
-		loginTestData = exelData.getTestdata("userType01");
+		loginTestData = exelData.getTestdata("userType05");
 		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName")).click();
 		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName"))
 				.sendKeys(loginTestData.get("UserName"));

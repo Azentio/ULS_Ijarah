@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -7,8 +8,10 @@ import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.asserts.SoftAssert;
 
 import dataProvider.ExcelData;
+import helper.BrowserHelper;
 import helper.ClicksAndActionsHelper;
 import helper.DropDownHelper;
 import helper.JavascriptHelper;
@@ -29,6 +32,9 @@ public class IJARAH_Steps {
 	JSPaths jsPaths = new JSPaths(excelPath, "Ijara_loginElements", "Ijara_LoginFieldName", "JSPath");
 	JSPaths customerDebtJsPaths = new JSPaths(excelPath, "CF_Debt_Elements", "CF_Debt FieldName", "JSPath");
 	JSPaths underWriterJsPaths = new JSPaths(excelPath, "Underwriter_Elements", "Underwriter_FieldName", "JSPath");
+	JSPaths additionalCustInfoJsPaths = new JSPaths(excelPath, "AdditionalCustInfo_Elements", "AdditionalCustInfo_FieldName", "JSPath");
+	JSPaths dataCheck_IncomeJsPaths = new JSPaths(excelPath, "DataCheckIncome_Elements", "DataCheckIncome_FieldName", "JSPath");
+	
 	
 	ExcelData exelData = new ExcelData(excelTestDataPath, "ijara_LoginCredentials", "UserType");
 	Map<String, String> loginTestData = new HashMap<>();
@@ -36,10 +42,14 @@ public class IJARAH_Steps {
 	ClicksAndActionsHelper clicksAndActionsHelper = new ClicksAndActionsHelper(driver);
 	DropDownHelper dropDownHelper = new DropDownHelper(driver);
 	Selenium_Actions selenium_Actions = new Selenium_Actions(driver);
+	BrowserHelper browserHelper = new BrowserHelper(driver);
 	WaitHelper waitHelper = new WaitHelper(driver);
+	SoftAssert softAssert = new SoftAssert();
 	
 	ExcelData customerDebtExcelData  = new ExcelData(excelTestDataPath,"CF_DebtTestData","DataSet ID");
 	ExcelData underWriterExcelData  = new ExcelData(excelTestDataPath,"UnderWriter_TestData","DataSet ID");
+	ExcelData additinalCustomerInfoExcelData  = new ExcelData(excelTestDataPath,"AdditionalCustomerInfo","DataSet ID");
+	ExcelData dataCheck_IncomeExcelData  = new ExcelData(excelTestDataPath,"DataCheck_Income","DataSet ID");
 	
 	Map<String, String> testExecutionData;
 	Map<String, String> testData;
@@ -61,6 +71,12 @@ public class IJARAH_Steps {
 	@And("^User get the test data for test case AT_CUD_003$")
     public void get_the_test_data_for_test_case_AT_CUD_003() throws Throwable {
 		testData = customerDebtExcelData.getTestdata("DS_AT_CUD_003");
+    }
+	
+//	@AT_CUD_004
+	@And("^User get the test data for test case AT_CUD_004$")
+    public void get_the_test_data_for_test_case_AT_CUD_004() throws Throwable {
+		testData = customerDebtExcelData.getTestdata("DS_AT_CUD_004");
     }
 	
 //	@AT_CUD_005
@@ -90,14 +106,23 @@ public class IJARAH_Steps {
     }
 	
 	
+//	Additional Customer Info	
+	@And("^User get the test data for test case AT_IDA_03$")
+    public void get_the_test_data_for_test_case_AT_IDA_03() throws Throwable {
+		testData = additinalCustomerInfoExcelData.getTestdata("DS_AT_IDA_03");
+    }
 	
 	
+//	App Data Check -- Income 
+	@And("^User get the test data for test case AT_INCD_01$")
+    public void get_the_test_data_for_test_case_AT_INCD_01() throws Throwable {
+		testData = dataCheck_IncomeExcelData.getTestdata("DS_AT_INCD_01");
+    }
 	
-	
-	
-	
-	
-	
+	@And("^User get the test data for test case AT_INCD_02$")
+    public void get_the_test_data_for_test_case_AT_INCD_02() throws Throwable {
+		testData = dataCheck_IncomeExcelData.getTestdata("DS_AT_INCD_02");
+    }
 	
 	
 	
@@ -274,16 +299,16 @@ public class IJARAH_Steps {
 			}
 		}
 		int premitiveListOfAddButton = Integer.parseInt(listOfAddButton);
-		for (int i = 0; i <= 300; i++) {
-			try {
-				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentsRefreshBtn")));
-				break;
-			} catch (Exception e) {
-				if (i == 300) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
+//		for (int i = 0; i <= 300; i++) {
+//			try {
+//				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentsRefreshBtn")));
+//				break;
+//			} catch (Exception e) {
+//				if (i == 300) {
+//					Assert.fail(e.getMessage());
+//				}
+//			}
+//		}
 		for (int j = 0; j < premitiveListOfAddButton; j++) {
 			for (int k = 0; k <= 300; k++) {
 				try {
@@ -297,6 +322,10 @@ public class IJARAH_Steps {
 						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Financial Commitments").trim())) {
 							System.out.println("Inside nested loop");
 							System.out.println("document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]");
+//							javascriptHelper
+//							.executeScriptWithWebElement(
+//									"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "].parentElement.parentElement.parentElement.nextElementSibling.querySelectorAll('table tbody tr td span button[icon=\"pi pi-pencil\"]')[0]")
+//									.click();
 							javascriptHelper
 									.executeScriptWithWebElement(
 											"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]")
@@ -331,7 +360,7 @@ public class IJARAH_Steps {
 					Assert.fail(e.getMessage());
 				}
 			}
-		}		
+		}
 	}
 	
 	@And("User validate the Save button available in Customer Debt screen")
@@ -379,6 +408,7 @@ public class IJARAH_Steps {
 				}
 			}
 		}
+		
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerDebtBackBtn")).click();
@@ -3036,90 +3066,46 @@ public class IJARAH_Steps {
 		}
 	}
 
-	@And("User search the record in Financial Commitments under Customer Financials tab")
-	public void user_search_the_record_in_financial_commitments_under_customer_financials_tab() throws Throwable {
+	@And("User search the matched record in Financial Commitments under Customer Financials tab")
+	public void user_search_the_matched_record_in_financial_commitments_under_customer_financials_tab() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentSearchInput")));
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentSearchInput"))
-				.sendKeys("usd");
 //				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentSearchInput"))
-//				.sendKeys(testData.get("Currency Value"));
+//				.sendKeys("USD");
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentSearchInput"))
+				.sendKeys(testData.get("Matched Currency"));
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
 					Assert.fail(e.getMessage());
 				}
 			}
-		}
-	}
-
-	@And("User validate the available record status in Financial Commitments under Customer Financials tab")
-	public void user_validate_the_available_record_status_in_financial_commitments_under_customer_financials_tab() throws Throwable {
-		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
-		String listOfAddButton = "";
-		String addButtonScreenName = "";
-		boolean isAddButtonClicked = false;
-		for (int i = 0; i <= 300; i++) {
-			try {
-				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
-				System.out.println("List of add button " + listOfAddButton);
-				if (!(listOfAddButton.isBlank())) {
-					break;
-				}
-			} catch (Exception e) {
-				if (i == 300) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-		for (int i = 0; i <= 300; i++) {
-			try {
-				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentsRefreshBtn")));
-				break;
-			} catch (Exception e) {
-				if (i == 300) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-		int premitiveListOfAddButton = Integer.parseInt(listOfAddButton);
-		for (int j = 0; j < premitiveListOfAddButton; j++) {
-			for (int k = 0; k <= 300; k++) {
-				try {
-					addButtonScreenName = javascriptHelper.executeScript(
-							"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
-									+ j + "].textContent")
-							.toString();
-					System.out.println("Screen Name " + addButtonScreenName);
-					if (!(addButtonScreenName.isBlank())) {
-						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
-						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Financial Commitments").trim())) {
-							System.out.println("Inside nested loop");
-//							System.out.println("document.querySelectorAll('button[icon=\"pi pi-search\"]')[" + j + "]");
-							javascriptHelper
-									.executeScriptWithWebElement(
-											"document.querySelectorAll('p-paginator[ng-reflect-style-class=\"p-paginator-bottom\"]')[" + j + "].querySelector('button[ng-reflect-text=\"Refresh\"]")
-									.click();
-							isAddButtonClicked = true;
-							break;
-						}
-					}
-//document.querySelectorAll('p-paginator[ng-reflect-style-class="p-paginator-bottom"]')[4].querySelector('button[ng-reflect-text="Refresh"]')				
-				} catch (Exception e) {
-					if (k == 300) {
-						Assert.fail(e.getMessage());
-					}
-				}
-
-			}
-			if (isAddButtonClicked == true) {
-				break;
-			}
-		}
+		}		
 	}
 	
-	//
+	@And("User search the mismatched record in Financial Commitments under Customer Financials tab")
+	public void user_search_the_mismatched_record_in_financial_commitments_under_customer_financials_tab() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentSearchInput")));
+		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentSearchInput")).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
+		for (int i = 0; i <= 500; i++) {
+			try {
+//				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentSearchInput"))
+//				.sendKeys("USD");
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentSearchInput"))
+				.sendKeys(testData.get("Mismatched Currency"));
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}		
+	}
+
+	
+	
+	// CUD_04_06 & CUD_04_06
 	@And("User click the Export button in Financial Commitments under Customer Financials tab")
 	public void user_click_the_export_button_in_financial_commitments_under_customer_financials_tab() throws Throwable {
 		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
@@ -3139,16 +3125,16 @@ public class IJARAH_Steps {
 				}
 			}
 		}
-		for (int i = 0; i <= 300; i++) {
-			try {
-				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentsRefreshBtn")));
-				break;
-			} catch (Exception e) {
-				if (i == 300) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
+//		for (int i = 0; i <= 300; i++) {
+//			try {
+//				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentsRefreshBtn")));
+//				break;
+//			} catch (Exception e) {
+//				if (i == 300) {
+//					Assert.fail(e.getMessage());
+//				}
+//			}
+//		}
 		int premitiveListOfAddButton = Integer.parseInt(listOfAddButton);
 		for (int j = 0; j < premitiveListOfAddButton; j++) {
 			for (int k = 0; k <= 300; k++) {
@@ -3187,8 +3173,1603 @@ public class IJARAH_Steps {
 	}
 	
 	
+	@And("User click the PDF and verify under Export in Financial Commitments")
+	public void user_click_the_pdf_and_verify_under_export_in_financial_commitments() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentExportPDF")));
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentExportPDF")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		browserHelper.SwitchToWindow(1);
+		browserHelper.switchToParentWithChildClose();
+		String homePath = System.getProperty("user.home");
+		String filePath = homePath + "/Downloads";
+		File file = new File(filePath);
+		File[] listFiles = file.listFiles();
+		file.delete();
+		for (File downloadsFile : listFiles) {
+			System.out.println(downloadsFile.getName());
+			if (downloadsFile.getName().contains("CustomerDebtDataFile")) {
+				System.out.println("If condition " + downloadsFile.getName());
+				softAssert.assertTrue(downloadsFile.getName().contains("CustomerDebtDataFile"),
+						"File is nott downloaded hence failed");
+				downloadsFile.delete();
+			}
+        }
+	}
+
+	@And("User click the XLS and verify under Export in Financial Commitments")
+	public void user_click_the_xls_and_verify_under_export_in_financial_commitments() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentExportXLS")));
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentExportXLS")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String homePath = System.getProperty("user.home");
+		String filePath = homePath + "/Downloads";
+		File file = new File(filePath);
+		File[] listFiles = file.listFiles();
+		file.delete();
+		for (File downloadsFile : listFiles) {
+			System.out.println(downloadsFile.getName());
+			if (downloadsFile.getName().contains("CustomerDebtDataFile")) {
+				System.out.println("If condition " + downloadsFile.getName());
+				softAssert.assertTrue(downloadsFile.getName().contains("CustomerDebtDataFile"),
+						"File is nott downloaded hence failed");
+				downloadsFile.delete();
+			}
+        }
+	}
+	
+	
+//	AT_CUD_006
+	@And("User click the first row pencil icon under Financial Commitments in Customer Financials tab")
+	public void user_click_the_first_row_pencil_icon_under_financial_commitments_in_customer_financials_tab() throws Throwable {
+		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
+		String listOfAddButton = "";
+		String addButtonScreenName = "";
+		boolean isAddButtonClicked = false;
+		for (int i = 0; i <= 300; i++) {
+			try {
+				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
+				System.out.println("List of add button " + listOfAddButton);
+				if (!(listOfAddButton.isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		int premitiveListOfAddButton = Integer.parseInt(listOfAddButton);
+		for (int j = 0; j < premitiveListOfAddButton; j++) {
+			for (int k = 0; k <= 300; k++) {
+				try {
+					addButtonScreenName = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
+									+ j + "].textContent")
+							.toString();					
+					System.out.println("Screen Name " + addButtonScreenName);
+					if (!(addButtonScreenName.isBlank())) {
+						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
+						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Financial Commitments").trim())) {
+							System.out.println("Inside nested loop");
+							System.out.println("document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]");
+							javascriptHelper
+							.executeScriptWithWebElement(
+									"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "].parentElement.parentElement.parentElement.nextElementSibling.querySelectorAll('table tbody tr td span button[icon=\"pi pi-pencil\"]')[0]")
+									.click();
+							isAddButtonClicked = true;
+							break;
+						}
+					}
+				} catch (Exception e) {
+					if (k == 300) {
+						Assert.fail(e.getMessage());
+					}
+				}
+
+			}
+			if (isAddButtonClicked == true) {
+				break;
+			}
+		}
+	}
+	
+	
+	@And("User click the Stats Radio button under Customer Debt screen")
+	public void user_click_the_stats_radio_button_under_customer_debt_screen() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerDebtStatusRatioBtn")));
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	
+		
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerDebtStatusRatioBtn")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		} 
+	}
+	
+	
+	@And("User verify the first row status as In-Active under Financial Commitments in Customer Financials tab")
+	public void user_verify_the_first_row_status_under_financial_commitments_in_customer_financials_tab() throws Throwable {
+		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
+		String listOfAddButton = "";
+		String addButtonScreenName = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
+				System.out.println("List of add button " + listOfAddButton);
+				if (!(listOfAddButton.isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		int premitiveListOfAddButton = Integer.parseInt(listOfAddButton);
+		for (int j = 0; j < premitiveListOfAddButton; j++) {
+			for (int k = 0; k <= 300; k++) {
+				try {
+					addButtonScreenName = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
+									+ j + "].textContent")
+							.toString();
+					System.out.println("Screen Name " + addButtonScreenName);
+					if (!(addButtonScreenName.isBlank())) {
+						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
+						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Financial Commitments").trim())) {
+							System.out.println("Inside nested loop");
+							System.out.println("document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]");
+							WebElement status = javascriptHelper.executeScriptWithWebElement(
+									"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "].parentElement.parentElement.parentElement.nextElementSibling.querySelectorAll('table tbody tr td span[class*=\"p-tag p-component\"]')[0]");
+							System.out.println("Record status1:"+status.getText());
+							Assert.assertTrue(status.getText().equalsIgnoreCase("In-Active"));
+							break;
+						}
+					}
+				} catch (Exception e) {
+					if (k == 300) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+		}
+		
+	}
+	
+	@And("User verify the first row status as Active under Financial Commitments in Customer Financials tab")
+	public void user_verify_the_first_row_status_as_active_under_financial_commitments_in_customer_financials_tab() throws Throwable {
+		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
+		String listOfAddButton = "";
+		String addButtonScreenName = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
+				System.out.println("List of add button " + listOfAddButton);
+				if (!(listOfAddButton.isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		int premitiveListOfAddButton = Integer.parseInt(listOfAddButton);
+		for (int j = 0; j < premitiveListOfAddButton; j++) {
+			for (int k = 0; k <= 300; k++) {
+				try {
+					addButtonScreenName = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
+									+ j + "].textContent")
+							.toString();
+					System.out.println("Screen Name " + addButtonScreenName);
+					if (!(addButtonScreenName.isBlank())) {
+						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
+						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Financial Commitments").trim())) {
+							System.out.println("Inside nested loop");
+							System.out.println("document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]");
+							WebElement status = javascriptHelper.executeScriptWithWebElement(
+									"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "].parentElement.parentElement.parentElement.nextElementSibling.querySelectorAll('table tbody tr td span[class*=\"p-tag p-component\"]')[0]");
+							System.out.println("Record status2:"+status.getText());
+							Assert.assertTrue(status.getText().equalsIgnoreCase("Active"));
+							break;
+						}
+					}
+				} catch (Exception e) {
+					if (k == 300) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+		}
+		
+	}
+	
+	
+	// CUD_04_01
+	@And("User verify the Financial Institution field is displayed in list view under Financial Commitments")
+	public void user_verify_the_financial_institution_field_is_displayed_in_list_view_under_financial_commitments() throws Throwable {
+		WebElement financialInstitution = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommit_FinancialInstitution"));
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.scrollIntoView(financialInstitution);
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		for (int i = 0; i <= 500; i++) {
+			try {
+				Assert.assertTrue(financialInstitution.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User verify the Loan Amount field is displayed in list view under Financial Commitments")
+	public void user_verify_the_loan_amount_field_is_displayed_in_list_view_under_financial_commitments() throws Throwable {
+		WebElement loanAmount = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommit_LoanAmount"));
+		for (int i = 0; i <= 500; i++) {
+			try {
+				Assert.assertTrue(loanAmount.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User verify the Installment Amount field is displayed in list view under Financial Commitments")
+	public void user_verify_the_installment_amount_field_is_displayed_in_list_view_under_financial_commitments() throws Throwable {
+		WebElement installmentAmount = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommit_InstallmentAmount"));
+		for (int i = 0; i <= 500; i++) {
+			try {
+				Assert.assertTrue(installmentAmount.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User verify the Tenure field is displayed in list view under Financial Commitments")
+	public void user_verify_the_tenure_field_is_displayed_in_list_view_under_financial_commitments() throws Throwable {
+		WebElement tenure = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommit_Tenure"));
+		for (int i = 0; i <= 500; i++) {
+			try {
+				Assert.assertTrue(tenure.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User verify the Next Due Date field is displayed in list view under Financial Commitments")
+	public void user_verify_the_next_due_date_field_is_displayed_in_list_view_under_financial_commitments() throws Throwable {
+		WebElement nextDueDate = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommit_NextDueDate"));
+		for (int i = 0; i <= 500; i++) {
+			try {
+				Assert.assertTrue(nextDueDate.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User verify the Principal Balance field is displayed in list view under Financial Commitments")
+	public void user_verify_the_principal_balance_field_is_displayed_in_list_view_under_financial_commitments() throws Throwable {
+		WebElement principalAmount = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommit_PrincipalAmount"));
+		for (int i = 0; i <= 500; i++) {
+			try {
+				Assert.assertTrue(principalAmount.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User verify the Currency field is displayed in list view under Financial Commitments")
+	public void user_verify_the_currency_field_is_displayed_in_list_view_under_financial_commitments() throws Throwable {
+		WebElement currency = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommit_Currency"));
+		for (int i = 0; i <= 500; i++) {
+			try {
+				Assert.assertTrue(currency.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
 	
 	
 	
+//	CUD_04_02
+	@And("User verify list view values should be not editable under FInancial Commitments")
+	public void user_verify_list_view_values_should_be_not_editable_under_f_inancial_commitments() throws Throwable {
+		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
+		String listOfAddButton = "";
+		String addButtonScreenName = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
+				System.out.println("List of add button " + listOfAddButton);
+				if (!(listOfAddButton.isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		int premitiveListOfAddButton = Integer.parseInt(listOfAddButton);
+		for (int j = 0; j < premitiveListOfAddButton; j++) {
+			for (int k = 0; k <= 300; k++) {
+				try {
+					addButtonScreenName = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
+									+ j + "].textContent")
+							.toString();					
+					System.out.println("Screen Name " + addButtonScreenName);
+					if (!(addButtonScreenName.isBlank())) {
+						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
+						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Financial Commitments").trim())) {
+							System.out.println("Inside nested loop");
+							System.out.println("document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]");
+							WebElement nonEdit = javascriptHelper
+							.executeScriptWithWebElement(
+									"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "].parentElement.parentElement.parentElement.nextElementSibling.querySelectorAll('table tbody tr td p-celleditor')[1]");
+							System.out.println("Is Non Editable: "+javascriptHelper.executeScript("return arguments[0].readOnly",nonEdit));
+							System.out.println("Field Name: "+nonEdit.getText());
+//							Assert.assertTrue(javascriptHelper.executeScript("return arguments[0].readOnly",nonEdit));
+							break;
+						}
+					}
+				} catch (Exception e) {
+					if (k == 300) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+		}
+	}
 	
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//	Additional Customer Info Tab
+	@And("User click the Additional Customer Info tab")
+	public void user_click_the_additional_customer_info_tab() throws Throwable {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(additionalCustInfoJsPaths.getElement("additionalCustomerInfoTab")).click();
+				break;
+			} catch (Exception e) { 
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User click the Add button in Customer Personal Info section under Additional Customer Info tab")
+	public void user_click_the_add_button_in_customer_personal_info_section_under_additional_customer_info_tab() throws Throwable {
+		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
+		String listOfAddButton = "";
+		String addButtonScreenName = "";
+		boolean isAddButtonClicked = false;
+		for (int i = 0; i <= 300; i++) {
+			try {
+				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
+				System.out.println("List of add button " + listOfAddButton);
+				if (!(listOfAddButton.isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		int premitiveListOfAddButton = Integer.parseInt(listOfAddButton);
+		for (int j = 0; j < premitiveListOfAddButton; j++) {
+			for (int k = 0; k <= 300; k++) {
+				try {
+					addButtonScreenName = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
+									+ j + "].textContent")
+							.toString();
+					System.out.println("Screen Name " + addButtonScreenName);
+					if (!(addButtonScreenName.isBlank())) {
+						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
+						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Customer Personal Information").trim())) {
+							System.out.println("Inside nested loop");
+							System.out.println("document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]");
+							javascriptHelper
+									.executeScriptWithWebElement(
+											"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]")
+									.click();
+							isAddButtonClicked = true;
+							break;
+						}
+					}
+				} catch (Exception e) {
+					if (k == 300) {
+						Assert.fail(e.getMessage());
+					}
+				}
+
+			}
+			if (isAddButtonClicked == true) {
+				break;
+			}
+		}	    
+	}
+
+	@And("User click the Add button in Customer Identification under Additional Customer Info tab")
+	public void user_click_the_add_button_in_customer_identification_under_additional_customer_info_tab() throws Throwable {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(additionalCustInfoJsPaths.getElement("customerIdentificationAddBtn")).click();
+				break;
+			} catch (Exception e) { 
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User select the ID Type in Customer Identification screen")
+	public void user_select_the_id_type_in_customer_identification_screen() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(additionalCustInfoJsPaths.getElement("cust_Identification_IDType")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+				System.out.println("Dropdown length " + dropdownLength);
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+			for (int l = 0; l <= 300; l++) {
+				try {
+					System.out.println("L value is " + l);
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+					dropdownString = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText").toString();
+					if (!(dropdownString.isEmpty())) {
+						System.out.println(dropdownString);
+						System.out.println("Loop count " + l + " got breaked");
+						break;
+					}
+				} catch (Exception e) {
+					if (l == 300 && !(dropdownString.isBlank())) {
+						Assert.fail(e.getMessage());
+					}
+				}
+				if (!(dropdownString.isEmpty())) {
+					System.out.println(dropdownString);
+					System.out.println("Loop count " + l + " got breaked");
+					break;
+				}
+			}
+			System.out.println("String " + dropdownString.trim());
+			System.out.println("Map " + testData.get("ID Type").trim());
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("ID Type")).trim())) {
+				for (int k = 0; k <= 300; k++) {
+					try {
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						isDropdownValueSelected = true;
+						break;
+					} catch (Exception e) {
+						if (k == 300) {
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+				break;
+			}
+		}
+	    
+	}
+
+	@And("User enter the invalid ID number in Customer Identification screen")
+	public void user_enter_the_invalid_id_number_in_customer_identification_screen() throws Throwable {
+		javascriptHelper.executeScriptWithWebElement(additionalCustInfoJsPaths.getElement("cust_Identification_IDNumber")).click();
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(additionalCustInfoJsPaths.getElement("cust_Identification_IDNumber"))
+				.sendKeys(testData.get("ID Number"));
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User select the Issuing Authority in Customer Identification screen")
+	public void user_select_the_issuing_authority_in_customer_identification_screen() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(additionalCustInfoJsPaths.getElement("cust_Identification_IssueAuthority")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+				System.out.println("Dropdown length " + dropdownLength);
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+			for (int l = 0; l <= 300; l++) {
+				try {
+					System.out.println("L value is " + l);
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+					dropdownString = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText").toString();
+					if (!(dropdownString.isEmpty())) {
+						System.out.println(dropdownString);
+						System.out.println("Loop count " + l + " got breaked");
+						break;
+					}
+				} catch (Exception e) {
+					if (l == 300 && !(dropdownString.isBlank())) {
+						Assert.fail(e.getMessage());
+					}
+				}
+				if (!(dropdownString.isEmpty())) {
+					System.out.println(dropdownString);
+					System.out.println("Loop count " + l + " got breaked");
+					break;
+				}
+			}
+			System.out.println("String " + dropdownString.trim());
+			System.out.println("Map " + testData.get("Issuing Authority").trim());
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("Issuing Authority")).trim())) {
+				for (int k = 0; k <= 300; k++) {
+					try {
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						isDropdownValueSelected = true;
+						break;
+					} catch (Exception e) {
+						if (k == 300) {
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+				break;
+			}
+		}
+	    
+	}
+
+	
+	@And("User verify the invalid data validation in Customer Identification screen")
+	public void user_verify_the_invalid_data_validation_in_customer_identification_screen() throws Throwable {
+		WebElement invalidData = javascriptHelper.executeScriptWithWebElement(additionalCustInfoJsPaths.getElement("invalidDataError"));
+		System.err.println("Mandatory Error : "+invalidData.getText());
+		for (int i = 0; i<2000; i++) {
+          try {
+              Assert.assertTrue(invalidData.isDisplayed());
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              }
+          	}
+		}	    
+	}
+	
+	@And("User enter the special characters in ID number under Customer Identification screen")
+	public void user_enter_the_special_characters_in_id_number_under_customer_identification_screen() throws Throwable {
+		javascriptHelper.executeScriptWithWebElement(additionalCustInfoJsPaths.getElement("cust_Identification_IDNumber")).click();
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(additionalCustInfoJsPaths.getElement("cust_Identification_IDNumber"))
+				.sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
+				javascriptHelper.executeScriptWithWebElement(additionalCustInfoJsPaths.getElement("cust_Identification_IDNumber"))
+				.sendKeys(testData.get("ID Number_SpecialChar"));
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@And("User verify the Special character validation in Customer Identification screen")
+	public void user_verify_the_special_character_validation_in_customer_identification_screen() throws Throwable {
+		String specialChar = javascriptHelper.executeScriptWithWebElement(additionalCustInfoJsPaths.getElement("specialCharError")).getText().trim();
+		System.err.println("Speacial Char : "+specialChar);
+		for (int i = 0; i<2000; i++) {
+          try {
+              Assert.assertTrue(specialChar.equalsIgnoreCase("Alphanumeric characters allowed"));
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              }
+          }
+		}  
+	}
+
+	@And("User click the save button with mandatory field blank in Customer Identification screen")
+	public void user_click_the_save_button_with_mandatory_field_blank_in_customer_identification_screen() throws Throwable {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(additionalCustInfoJsPaths.getElement("customerIdentificationSaveBtn")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User verify the Validation error msg in Customer Identification screen")
+	public void user_verify_the_validation_error_msg_in_customer_identification_screen() throws Throwable {
+		String madatoryErrorMsg = javascriptHelper.executeScriptWithWebElement(additionalCustInfoJsPaths.getElement("mandatoryFillToastMsg")).getText();
+		System.err.println("Mandatory Error : "+madatoryErrorMsg);
+		for (int i = 0; i<2000; i++) {
+          try {
+              Assert.assertTrue(madatoryErrorMsg.contains("Please fill all the details"));
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              }
+          	}
+		}
+		
+		WebElement reqFieldError = javascriptHelper.executeScriptWithWebElement(additionalCustInfoJsPaths.getElement("requiredFieldError"));
+		System.err.println("Mandatory Error : "+reqFieldError.getText());
+		for (int i = 0; i<2000; i++) {
+          try {
+              Assert.assertTrue(reqFieldError.isDisplayed());
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              }
+          	}
+		}		
+	}
+	
+	
+	
+//	App Data Check -- Income
+	@And("User click the Eye button under Customer Financials tab")
+	public void user_click_the_eye_button_under_customer_financials_tab() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				if(javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("customerFinancialsTabEyeBtn")).isDisplayed()) {
+					javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("customerFinancialsTabEyeBtn")).click();
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@And("User click the Eye button under Income section in Customer Financials Tab")
+	public void user_click_the_eye_button_under_income_section_in_customer_financials_tab() throws Throwable {
+		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
+		String listOfAddButton = "";
+		String addButtonScreenName = "";
+		boolean isAddButtonClicked = false;
+		for (int i = 0; i <= 300; i++) {
+			try {
+				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
+				System.out.println("List of add button " + listOfAddButton);
+				if (!(listOfAddButton.isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		int premitiveListOfAddButton = Integer.parseInt(listOfAddButton);
+		for (int j = 0; j < premitiveListOfAddButton; j++) {
+			for (int k = 0; k <= 300; k++) {
+				try {
+					addButtonScreenName = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
+									+ j + "].textContent")
+							.toString();
+					System.out.println("Screen Name " + addButtonScreenName);
+					if (!(addButtonScreenName.isBlank())) {
+						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
+						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Income").trim())) {
+							System.out.println("Inside nested loop");
+							System.out.println("document.querySelectorAll('button[icon=\"pi pi-eye\"]')[" + j + "]");
+							javascriptHelper
+									.executeScriptWithWebElement(
+											"document.querySelectorAll('button[icon=\"pi pi-eye\"]')[" + j + "]")
+									.click();
+							isAddButtonClicked = true;
+							break;
+						}
+					}
+				} catch (Exception e) {
+					if (k == 300) {
+						Assert.fail(e.getMessage());
+					}
+				}
+
+			}
+			if (isAddButtonClicked == true) {
+				break;
+			}
+		}
+	}
+	
+	
+	@And("User validate Save button available under Income details screen")
+	public void user_validate_save_button_available_under_income_details_screen() throws Throwable {
+		WebElement incomeSaveBtn = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("incomeSaveBtn"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(incomeSaveBtn.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User validate Back button available under Income details screen")
+	public void user_validate_back_button_available_under_income_details_screen() throws Throwable {
+		WebElement incomeBackBtn = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("incomeBackBtn"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(incomeBackBtn.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User validate Employment Type field available under Income details screen")
+	public void user_validate_employment_type_field_available_under_income_details_screen() throws Throwable {
+		WebElement employementTypeLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("employementTypeLabel"));
+		System.out.println("Field Name: "+employementTypeLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(employementTypeLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		WebElement employementTypeInput = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("employementTypeInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(employementTypeInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User validate Lumpsum Amount field available under Income details screen")
+	public void user_validate_lumpsum_amount_field_available_under_income_details_screen() throws Throwable {
+		WebElement lumpsumAmtLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("lumpsumAmtLabel"));
+		System.out.println("Field Name: "+lumpsumAmtLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(lumpsumAmtLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		WebElement lumpsumAmtInput = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("lumpsumAmtInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(lumpsumAmtInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User validate Financial Year field available under Income details screen")
+	public void user_validate_financial_year_field_available_under_income_details_screen() throws Throwable {
+		WebElement financialYearLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("financialYearLabel"));
+		System.out.println("Field Name: "+financialYearLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(financialYearLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		WebElement financialYearInput = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("financialYearInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(financialYearInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User validate Filing Date field available under Income details screen")
+	public void user_validate_filing_date_field_available_under_income_details_screen() throws Throwable {
+		WebElement filingDateLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("filingDateLabel"));
+		System.out.println("Field Name: "+filingDateLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(filingDateLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		WebElement filingDateInput = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("filingDateInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(filingDateInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User validate Income field available under Income details screen")
+	public void user_validate_income_field_available_under_income_details_screen() throws Throwable {
+		WebElement incomeLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("incomeLabel"));
+		System.out.println("Field Name: "+incomeLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(incomeLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		WebElement incomeDropdown = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("incomeDropdown"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(incomeDropdown.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User validate Frequency field available under Income details screen")
+	public void user_validate_frequency_field_available_under_income_details_screen() throws Throwable {
+		WebElement frequencyLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("frequencyLabel"));
+		System.out.println("Field Name: "+frequencyLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(frequencyLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		WebElement frequencyDropdown = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("frequencyDropdown"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(frequencyDropdown.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User validate Amount field available under Income details screen")
+	public void user_validate_amount_field_available_under_income_details_screen() throws Throwable {
+		WebElement amountLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("amountLabel"));
+		System.out.println("Field Name: "+amountLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(amountLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		WebElement amountInput = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("amountInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(amountInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User validate Defined % field available under Income details screen")
+	public void user_validate_defined_field_available_under_income_details_screen() throws Throwable {
+		WebElement defined_Label = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("defined%_Label"));
+		System.out.println("Field Name: "+defined_Label.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(defined_Label.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		WebElement defined_Input = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("defined%_Input"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(defined_Input.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User validate Adjusted % field available under Income details screen")
+	public void user_validate_adjusted_field_available_under_income_details_screen() throws Throwable {
+		WebElement adjusted_Label = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("adjusted%_Label"));
+		System.out.println("Field Name: "+adjusted_Label.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(adjusted_Label.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		WebElement adjusted_Input = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("adjusted%_Input"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(adjusted_Input.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User validate Amount Considered field available under Income details screen")
+	public void user_validate_amount_considered_field_available_under_income_details_screen() throws Throwable {
+		WebElement amountConsideredLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("amountConsideredLabel"));
+		System.out.println("Field Name: "+amountConsideredLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(amountConsideredLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		WebElement amountConsideredInput = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("amountConsideredInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(amountConsideredInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User validate Action button available under Income details screen")
+	public void user_validate_action_button_available_under_income_details_screen() throws Throwable {
+		WebElement actionLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("actionLabel"));
+		System.out.println("Field Name: "+actionLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(actionLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		WebElement actionAddBtn = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("actionAddBtn"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(actionAddBtn.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User validate Total Income field available under Income details screen")
+	public void user_validate_total_income_field_available_under_income_details_screen() throws Throwable {
+		WebElement totalIncomeLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("totalIncomeLabel"));
+		System.out.println("Field Name: "+totalIncomeLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(totalIncomeLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		WebElement totalIncomeInput = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("totalIncomeInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(totalIncomeInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User validate Total Income considered field available under Income details screen")
+	public void user_validate_total_income_considered_field_available_under_income_details_screen() throws Throwable {
+		WebElement totalIncomeConsideredLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("totalIncomeConsideredLabel"));
+		System.out.println("Field Name: "+totalIncomeConsideredLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(totalIncomeConsideredLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		WebElement totalIncomeConsideredInput = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("totalIncomeConsideredInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(totalIncomeConsideredInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User validate Salary credited to Bank field available under Income details screen")
+	public void user_validate_salary_credited_to_bank_field_available_under_income_details_screen() throws Throwable {
+		WebElement salaryCreditedToBankLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("salaryCreditedToBankLabel"));
+		System.out.println("Field Name: "+salaryCreditedToBankLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(salaryCreditedToBankLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		WebElement salaryCreditedToBankDropdown = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("salaryCreditedToBankDropdown"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(salaryCreditedToBankDropdown.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User validate Deduction field available under Income details screen")
+	public void user_validate_deduction_field_available_under_income_details_screen() throws Throwable {
+		WebElement deductionLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("deductionLabel"));
+		System.out.println("Field Name: "+deductionLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(deductionLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		WebElement deductionDropdown = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("deductionDropdown"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(deductionDropdown.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User validate Deduction Frequency field available under Income details screen")
+	public void user_validate_deduction_frequency_field_available_under_income_details_screen() throws Throwable {
+		WebElement deductionFrequencyLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("deductionFrequencyLabel"));
+		System.out.println("Field Name: "+deductionFrequencyLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(deductionFrequencyLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		WebElement deductionFrequencyDropdown = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("deductionFrequencyDropdown"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(deductionFrequencyDropdown.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User validate Deduction Amount field available under Income details screen")
+	public void user_validate_deduction_amount_field_available_under_income_details_screen() throws Throwable {
+		WebElement deductionAmtLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("deductionAmtLabel"));
+		System.out.println("Field Name: "+deductionAmtLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(deductionAmtLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		WebElement deductionAmtInput = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("deductionAmtInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(deductionAmtInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User validate Deduction Def % field available under Income details screen")
+	public void user_validate_deduction_def_field_available_under_income_details_screen() throws Throwable {
+		WebElement deductionDef_Label = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("deductionDef%_Label"));
+		System.out.println("Field Name: "+deductionDef_Label.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(deductionDef_Label.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		WebElement deductionDef_Input = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("deductionDef%_Input"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(deductionDef_Input.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User validate Deduction Adj % field available under Income details screen")
+	public void user_validate_deduction_adj_field_available_under_income_details_screen() throws Throwable {
+		WebElement deductionAdj_Label = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("deductionAdj%_Label"));
+		System.out.println("Field Name: "+deductionAdj_Label.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(deductionAdj_Label.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		WebElement deductionAdj_Input = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("deductionAdj%_Input"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(deductionAdj_Input.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User validate Deduction Considered field available under Income details screen")
+	public void user_validate_deduction_considered_field_available_under_income_details_screen() throws Throwable {
+		WebElement deductionConsideredLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("deductionConsideredLabel"));
+		System.out.println("Field Name: "+deductionConsideredLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(deductionConsideredLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		WebElement deductionConsideredInput = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("deductionConsideredInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(deductionConsideredInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User validate Deduction Action button field available under Income details screen")
+	public void user_validate_deduction_action_button_field_available_under_income_details_screen() throws Throwable {
+		WebElement deductionActionLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("deductionActionLabel"));
+		System.out.println("Field Name: "+deductionActionLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(deductionActionLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		WebElement deductionActionAddBtn = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("deductionActionAddBtn"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(deductionActionAddBtn.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User validate Total Deduction field available under Income details screen")
+	public void user_validate_total_deduction_field_available_under_income_details_screen() throws Throwable {
+		WebElement totalDeductionLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("totalDeductionLabel"));
+		System.out.println("Field Name: "+totalDeductionLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(totalDeductionLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		WebElement totalDeductionInput = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("totalDeductionInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(totalDeductionInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User validate Total Deduction Considered field available under Income details screen")
+	public void user_validate_total_deduction_considered_field_available_under_income_details_screen() throws Throwable {
+		WebElement totalDeductionConsideredLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("totalDeductionConsideredLabel"));
+		System.out.println("Field Name: "+totalDeductionConsideredLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(totalDeductionConsideredLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		WebElement totalDeductionConsideredInput = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("totalDeductionConsideredInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(totalDeductionConsideredInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User validate Currency field available under Income details screen")
+	public void user_validate_currency_field_available_under_income_details_screen() throws Throwable {
+		WebElement currencyLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("currencyLabel"));
+		System.out.println("Field Name: "+currencyLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(currencyLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		WebElement currencyDropdown = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("currencyDropdown"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(currencyDropdown.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+	
+	@And("User click the Save button under Income details screen")
+	public void user_click_the_save_button_under_income_details_screen() throws Throwable {
+		WebElement incomeSaveBtn = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("incomeSaveBtn"));
+		for (int i = 0; i <= 5000; i++) {
+			try {
+				incomeSaveBtn.click();
+				break;
+			} catch (Exception e) {
+				if (i == 5000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User validate the confirmation message under Income details screen")
+	public void user_validate_the_confirmation_message_under_income_details_screen() throws Throwable {
+		WebElement successToastMsg = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("successToastMsg"));
+		for (int i = 0; i <= 5000; i++) {
+			try {
+				Assert.assertTrue(successToastMsg.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 5000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		WebElement successToastCloseBtn = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("successToastCloseBtn"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				successToastCloseBtn.click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User click the Back button under Income details screen")
+	public void user_click_the_back_button_under_income_details_screen() throws Throwable {
+		WebElement incomeBackBtn = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("incomeBackBtn"));
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				javascriptHelper.JSEClick(incomeBackBtn);
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	
+
 }
