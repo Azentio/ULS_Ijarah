@@ -62,7 +62,7 @@ public class CucumberRunner {
 		
 	
 
-	public static void testRunner(String[] argv, ClassLoader classLoader) {
+	public static void testRunner(String[] argv, final ClassLoader classLoader) {
 		
 			RuntimeOptions propertiesFileOptions = new CucumberPropertiesParser()
 					.parse(CucumberProperties.fromPropertiesFile()).build();

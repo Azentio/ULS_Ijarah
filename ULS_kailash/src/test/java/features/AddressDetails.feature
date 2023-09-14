@@ -106,7 +106,7 @@ Then verify Zip code should be mandatory
 Then verify Zip code should be display only 
 Then verify Zip code should be text box
 @AT_NADC_06
-Scenario: To verify the field
+Scenario: To verify the field PO Box Number,Mobile number, Duration Of Stay, Latitude Details Of The Address, Longitude Details Of The Address
 #ADC_01_17 To verify the field PO Box Number
 Then verify PO Box Number should be display only 
 Then verify PO Box Number should be text box
@@ -122,5 +122,21 @@ Then verify Latitude Details Of The Address should be text box
 #ADC_01_21	To verify the field Longitude Details Of The Address
 Then verify Longitude Details Of The Address should be display only 
 Then verify Longitude Details Of The Address should be text box
+@AT_NADC_07
+Scenario: To verify the field Land Mark,Occupancy Date,Landlord Name,Landlord Mobile Number
+#ADC_01_22 To verify the field 'Land Mark'
+Then verify Land Mark should be display only 
+Then verify Land Mark should be text box
+#ADC_01_23 To verify the field 'Occupancy Date'
+Then verify Occupancy Date should be mandatory
+Then verify Occupancy Date should be display only 
+Then verify Occupancy Date should be Date
+#ADC_01_24	To verify the field 'Landlord Name'
+Then verify Landlord Name should be display only 
+Then verify Landlord Name should be text box
+#ADC_01_25	To verify the field 'Landlord Mobile Number'
+Then verify Landlord Mobile Number should be display only 
+Then verify Landlord Mobile Number should be text box
+
 
 

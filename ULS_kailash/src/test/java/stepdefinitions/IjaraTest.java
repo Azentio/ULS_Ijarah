@@ -2517,11 +2517,11 @@ public class IjaraTest extends BaseClass {
 
 		@Then("verify Location Category should be dropdown")
 		public void verify_location_category_should_be_dropdown() {
-			String Residentialdropdown = javascriptHelper.executeScriptWithWebElement(CustomerAddressDetails.getElement("location_category")).getAttribute("ng-reflect-placeholder");
+			String Location = javascriptHelper.executeScriptWithWebElement(CustomerAddressDetails.getElement("location_category")).getAttribute("ng-reflect-placeholder");
 
 			for (int i = 0; i <2000; i++) {
 	            try {
-	                Assert.assertTrue(Residentialdropdown.contains("select"));
+	                Assert.assertTrue(Location.contains("select"));
 	                break;
 	            } catch (Exception e) {
 	                if (i==1999) {
@@ -2593,10 +2593,10 @@ public class IjaraTest extends BaseClass {
 
 		@Then("verify Address line2 should be display only")
 		public void verify_address_line2_should_be_display_only() {
-			String Addressline1= javascriptHelper.executeScriptWithWebElement(CustomerAddressDetails.getElement("address_line2_display")).getAttribute("ng-reflect-readonly");
+			String Addressline2= javascriptHelper.executeScriptWithWebElement(CustomerAddressDetails.getElement("address_line2_display")).getAttribute("ng-reflect-readonly");
 			for (int i = 0; i <2000; i++) {
 	            try {
-	                Assert.assertTrue(Addressline1.contains("true"));
+	                Assert.assertTrue(Addressline2.contains("true"));
 	                break;
 	            } catch (Exception e) {
 	                if (i==1999) {
@@ -2608,10 +2608,10 @@ public class IjaraTest extends BaseClass {
 
 		@Then("verify Address line2 should be text box")
 		public void verify_address_line2_should_be_text_box() {
-			String Addressline1text= javascriptHelper.executeScriptWithWebElement(CustomerAddressDetails.getElement("address_line2_display")).getAttribute("type");
+			String Addressline2text= javascriptHelper.executeScriptWithWebElement(CustomerAddressDetails.getElement("address_line2_display")).getAttribute("type");
 			for (int i = 0; i <2000; i++) {
 	            try {
-	                Assert.assertTrue(Addressline1text.contains("text"));
+	                Assert.assertTrue(Addressline2text.contains("text"));
 	                break;
 	            } catch (Exception e) {
 	                if (i==1999) {
@@ -2637,10 +2637,10 @@ public class IjaraTest extends BaseClass {
 
 		@Then("verify Country should be display only")
 		public void verify_country_should_be_display_only() {
-			String Addressline1= javascriptHelper.executeScriptWithWebElement(CustomerAddressDetails.getElement("country_text")).getAttribute("aria_disabled");
+			String CountryText= javascriptHelper.executeScriptWithWebElement(CustomerAddressDetails.getElement("country_text")).getAttribute("aria_disabled");
 			for (int i = 0; i <2000; i++) {
 	            try {
-	                Assert.assertTrue(Addressline1.contains("true"));
+	                Assert.assertTrue(CountryText.contains("true"));
 	                break;
 	            } catch (Exception e) {
 	                if (i==1999) {
@@ -2744,10 +2744,10 @@ public class IjaraTest extends BaseClass {
 
 		@Then("verify Neighbourhood District Name should be text box")
 		public void verify_neighbourhood_district_name_should_be_text_box() {
-			String Provincetext = javascriptHelper.executeScriptWithWebElement(CustomerAddressDetails.getElement("neighbourhood_display")).getAttribute("ng-reflect-placeholder");
+			String Neighbourhood = javascriptHelper.executeScriptWithWebElement(CustomerAddressDetails.getElement("neighbourhood_display")).getAttribute("ng-reflect-placeholder");
 			for (int i = 0; i <2000; i++) {
 	            try {
-	                Assert.assertTrue(Provincetext.contains("select"));
+	                Assert.assertTrue(Neighbourhood.contains("select"));
 	                break;
 	            } catch (Exception e) {
 	                if (i==1999) {
@@ -2758,10 +2758,10 @@ public class IjaraTest extends BaseClass {
 		}
 		@Then("verify City should be mandatory")
 		public void verify_city_should_be_mandatory() {
-			String neighbourhoodText = javascriptHelper.executeScriptWithWebElement(CustomerAddressDetails.getElement("city")).getText();
+			String CityText = javascriptHelper.executeScriptWithWebElement(CustomerAddressDetails.getElement("city")).getText();
 			for (int i = 0; i <2000; i++) {
 	            try {
-	                Assert.assertTrue(neighbourhoodText.contains("*"));
+	                Assert.assertTrue(CityText.contains("*"));
 	                break;
 	            } catch (Exception e) {
 	                if (i==1999) {
@@ -2773,10 +2773,10 @@ public class IjaraTest extends BaseClass {
 
 		@Then("verify City should be display only")
 		public void verify_city_should_be_display_only() {
-			String Addressline1= javascriptHelper.executeScriptWithWebElement(CustomerAddressDetails.getElement("city_display")).getAttribute("ng-reflect-readonly");
+			String City1= javascriptHelper.executeScriptWithWebElement(CustomerAddressDetails.getElement("city_display")).getAttribute("ng-reflect-readonly");
 			for (int i = 0; i <2000; i++) {
 	            try {
-	                Assert.assertTrue(Addressline1.contains("true"));
+	                Assert.assertTrue(City1.contains("true"));
 	                break;
 	            } catch (Exception e) {
 	                if (i==1999) {
@@ -2788,10 +2788,10 @@ public class IjaraTest extends BaseClass {
 
 		@Then("verify City should be text box")
 		public void verify_city_should_be_text_box() {
-			String Addressline1text= javascriptHelper.executeScriptWithWebElement(CustomerAddressDetails.getElement("city_display")).getAttribute("type");
+			String City1= javascriptHelper.executeScriptWithWebElement(CustomerAddressDetails.getElement("city_display")).getAttribute("type");
 			for (int i = 0; i <2000; i++) {
 	            try {
-	                Assert.assertTrue(Addressline1text.contains("text"));
+	                Assert.assertTrue(City1.contains("text"));
 	                break;
 	            } catch (Exception e) {
 	                if (i==1999) {
@@ -2904,10 +2904,10 @@ public class IjaraTest extends BaseClass {
 		}
 		@Then("verify  Duration Of Stay should be display only")
 		public void verify_duration_of_stay_should_be_display_only() {
-			String Addressline1= javascriptHelper.executeScriptWithWebElement(CustomerAddressDetails.getElement("duration_on_stay")).getAttribute("ng-reflect-readonly");
+			String Duration= javascriptHelper.executeScriptWithWebElement(CustomerAddressDetails.getElement("duration_on_stay")).getAttribute("ng-reflect-readonly");
 			for (int i = 0; i <2000; i++) {
 	            try {
-	                Assert.assertTrue(Addressline1.contains("true"));
+	                Assert.assertTrue(Duration.contains("true"));
 	                break;
 	            } catch (Exception e) {
 	                if (i==1999) {
@@ -2919,10 +2919,10 @@ public class IjaraTest extends BaseClass {
 
 		@Then("verify  Duration Of Stay should be text box")
 		public void verify_duration_of_stay_should_be_text_box() {
-			String Mobile= javascriptHelper.executeScriptWithWebElement(CustomerAddressDetails.getElement("duration_on_stay")).getAttribute("type");
+			String Duration= javascriptHelper.executeScriptWithWebElement(CustomerAddressDetails.getElement("duration_on_stay")).getAttribute("type");
 			for (int i = 0; i <2000; i++) {
 	            try {
-	                Assert.assertTrue(Mobile.contains("number"));
+	                Assert.assertTrue(Duration.contains("number"));
 	                break;
 	            } catch (Exception e) {
 	                if (i==1999) {
@@ -2995,7 +2995,139 @@ public class IjaraTest extends BaseClass {
 		    
 		}
 
-	
+		@Then("verify Land Mark should be display only")
+		public void verify_land_mark_should_be_display_only() {
+			String landmark= javascriptHelper.executeScriptWithWebElement(CustomerAddressDetails.getElement("landmark")).getAttribute("ng-reflect-readonly");
+		for (int i = 0; i <2000; i++) {
+            try {
+                Assert.assertTrue(landmark.contains("true"));
+                break;
+            } catch (Exception e) {
+                if (i==1999) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+        }
+		    
+		}
+
+		@Then("verify Land Mark should be text box")
+		public void verify_land_mark_should_be_text_box() {
+			String landmark= javascriptHelper.executeScriptWithWebElement(CustomerAddressDetails.getElement("landmark")).getAttribute("type");
+			for (int i = 0; i <2000; i++) {
+	            try {
+	                Assert.assertTrue(landmark.contains("text"));
+	                break;
+	            } catch (Exception e) {
+	                if (i==1999) {
+	                    Assert.fail(e.getMessage());
+	                }
+	            }
+	        } 
+		}
+		@Then("verify Occupancy Date should be mandatory")
+		public void verify_occupancy_date_should_be_mandatory() {
+			String Occupancy = javascriptHelper.executeScriptWithWebElement(CustomerAddressDetails.getElement("occupency_date_mandatory_verification")).getText();
+			for (int i = 0; i <2000; i++) {
+	            try {
+	                Assert.assertTrue(Occupancy.contains("*"));
+	                break;
+	            } catch (Exception e) {
+	                if (i==1999) {
+	                    Assert.fail(e.getMessage());
+	                }
+	            }
+	        }
+		}
+
+		@Then("verify Occupancy Date should be display only")
+		public void verify_occupancy_date_should_be_display_only() {
+			String Occupancy = javascriptHelper.executeScriptWithWebElement(CustomerAddressDetails.getElement("occupency_date_mandatory_verification")).getAttribute("ng-reflect-readonly");
+			for (int i = 0; i <2000; i++) {
+	            try {
+	                Assert.assertTrue(Occupancy.contains("true"));
+	                break;
+	            } catch (Exception e) {
+	                if (i==1999) {
+	                    Assert.fail(e.getMessage());
+	                }
+	            }
+	        }
+		}
+
+		@Then("verify Occupancy Date should be Date")
+		public void verify_occupancy_date_should_be_date() {
+			String occupency_AS_date = javascriptHelper.executeScriptWithWebElement(CustomerAddressDetails.getElement("occupency_AS_date")).getAttribute("ng-reflect-view");
+		for (int i = 0; i <2000; i++) {
+            try {
+                Assert.assertTrue(occupency_AS_date.contains("date"));
+                break;
+            } catch (Exception e) {
+                if (i==1999) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+        }
+		    
+		}
+		@Then("verify Landlord Name should be display only")
+		public void verify_landlord_name_should_be_display_only() {
+			String Landlord = javascriptHelper.executeScriptWithWebElement(CustomerAddressDetails.getElement("landlord_name")).getAttribute("ng-reflect-readonly");
+		for (int i = 0; i <2000; i++) {
+            try {
+                Assert.assertTrue(Landlord.contains("true"));
+                break;
+            } catch (Exception e) {
+                if (i==1999) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+        }
+		}
+
+		@Then("verify Landlord Name should be text box")
+		public void verify_landlord_name_should_be_text_box() {
+			String Landlord = javascriptHelper.executeScriptWithWebElement(CustomerAddressDetails.getElement("landlord_name")).getAttribute("type");
+			for (int i = 0; i <2000; i++) {
+	            try {
+	                Assert.assertTrue(Landlord.contains("text"));
+	                break;
+	            } catch (Exception e) {
+	                if (i==1999) {
+	                    Assert.fail(e.getMessage());
+	                }
+	            }
+	        }
+		}
+		@Then("verify Landlord Mobile Number should be display only")
+		public void verify_landlord_mobile_number_should_be_display_only() {
+			String LandlordMobile= javascriptHelper.executeScriptWithWebElement(CustomerAddressDetails.getElement("landlord_mobile_number")).getAttribute("ng-reflect-readonly");
+			for (int i = 0; i <2000; i++) {
+	            try {
+	                Assert.assertTrue(LandlordMobile.contains("true"));
+	                break;
+	            } catch (Exception e) {
+	                if (i==1999) {
+	                    Assert.fail(e.getMessage());
+	                }
+	            }
+	        }
+		}
+
+		@Then("verify Landlord Mobile Number should be text box")
+		public void verify_landlord_mobile_number_should_be_text_box() {
+			String LandlordMobile = javascriptHelper.executeScriptWithWebElement(CustomerAddressDetails.getElement("landlord_mobile_number")).getAttribute("type");
+			for (int i = 0; i <2000; i++) {
+	            try {
+	                Assert.assertTrue(LandlordMobile.contains("text"));
+	                break;
+	            } catch (Exception e) {
+	                if (i==1999) {
+	                    Assert.fail(e.getMessage());
+	                }
+	            }
+	        }
+		}
 	
 	
 	
