@@ -24,6 +24,7 @@ public class IjaraTest extends BaseClass{
 
 	@Then("logout from the ijaraApplication")
 	public void logout_from_the_ijara_application()throws Throwable {
+		
 		ijaraLogin.logoutFromIjara();
 	}
 	

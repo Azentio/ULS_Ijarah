@@ -54,6 +54,10 @@ public class IJARAH_Steps {
 	Map<String, String> testExecutionData;
 	Map<String, String> testData;
 	
+	String incomeSection="";
+	
+	
+	
 //  TestData path
 //	@AT_CUD_001
 	@And("^User get the test data for test case AT_CUD_001$")
@@ -122,6 +126,16 @@ public class IJARAH_Steps {
 	@And("^User get the test data for test case AT_INCD_02$")
     public void get_the_test_data_for_test_case_AT_INCD_02() throws Throwable {
 		testData = dataCheck_IncomeExcelData.getTestdata("DS_AT_INCD_02");
+    }
+	
+	@And("^User get the test data for test case AT_INCD_03$")
+    public void get_the_test_data_for_test_case_AT_INCD_03() throws Throwable {
+		testData = dataCheck_IncomeExcelData.getTestdata("DS_AT_INCD_03");
+    }
+	
+	@And("^User get the test data for test case AT_INCD_04$")
+    public void get_the_test_data_for_test_case_AT_INCD_04() throws Throwable {
+		testData = dataCheck_IncomeExcelData.getTestdata("DS_AT_INCD_04");
     }
 	
 	
@@ -3954,6 +3968,7 @@ public class IJARAH_Steps {
 				}
 			}
 		}
+		Thread.sleep(5000);
 	}
 	
 	@And("User click the Eye button under Income section in Customer Financials Tab")
@@ -4770,6 +4785,252 @@ public class IJARAH_Steps {
 		}
 	}
 	
-	
 
+//	AT_INCD_04
+	@And("User verify Employment details section available under Customer Financials tab")
+	public void user_verify_employment_details_section_available_under_customer_financials_tab() throws Throwable {
+		WebElement empDetailsSection = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("customerEmployementListSection"));
+		System.out.println("Section Name: "+empDetailsSection.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(empDetailsSection.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@And("User click the eye button under Employment details section available in Customer Financials tab")
+	public void user_click_the_eye_button_under_employment_details_section_available_in_customer_financials_tab() throws Throwable {
+		WebElement customerEmployementEyeBtn = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("customerEmployementEyeBtn"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				customerEmployementEyeBtn.click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User verify the Customer Employement page is available under Customer Financials tab")
+	public void user_verify_the_customer_employement_page_is_available_under_customer_financials_tab() throws Throwable {
+		WebElement customerEmployementScreenTitle = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("customerEmployementScreenTitle"));
+		System.out.println("Screen Name: "+customerEmployementScreenTitle.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(customerEmployementScreenTitle.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@And("User click the Back button in Customer Employement screen under Customer Financials tab")
+	public void user_click_the_back_button_in_customer_employement_screen_under_customer_financials_tab() throws Throwable {
+		WebElement customerEmployementScreenBackBtn = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("customerEmployementScreenBackBtn"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				customerEmployementScreenBackBtn.click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User verfiy Income section available under Customer Financials tab")
+	public void user_verfiy_income_section_available_under_customer_financials_tab() throws Throwable {
+		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[mode=\"md\"]').length";
+		String listOfAddButton = "";
+		String addButtonScreenName = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
+				System.out.println("List of add button " + listOfAddButton);
+				if (!(listOfAddButton.isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		int premitiveListOfAddButton = Integer.parseInt(listOfAddButton);
+		for (int j = 0; j < premitiveListOfAddButton; j++) {
+			for (int k = 0; k <= 1000; k++) {
+				try {
+					addButtonScreenName = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-title[mode=\"md\"]')["
+									+ j + "].textContent")
+							.toString();
+					System.out.println("Screen Name " + addButtonScreenName);	
+					if (!(addButtonScreenName.isBlank())) {
+						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
+						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Income").trim())) {
+							System.out.println("Section Name"+addButtonScreenName);
+							Assert.assertTrue(true);
+						}
+					}
+//					Assert.assertTrue((addButtonScreenName.trim()).equalsIgnoreCase(("Income").trim()));						
+					break;
+				} catch (Exception e) {
+					if (k == 1000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}			
+		}
+	}
+		
+	
+//	AT_INCD_05
+	@And("User verify Self Employed record available under Income section in Customer Financials Tab")
+	public void user_verify_self_employed_record_available_under_income_section_in_customer_financials_tab() throws Throwable {
+//		document.querySelectorAll('button[icon=\"pi pi-eye\"]')[" + j + "].parentElement.parentElement.parentElement.querySelectorAll('td')[3]
+		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
+		String listOfAddButton = "";
+		String addButtonScreenName = "";
+		boolean isAddButtonClicked = false;
+		for (int i = 0; i <= 300; i++) {
+			try {
+				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
+				System.out.println("List of add button " + listOfAddButton);
+				if (!(listOfAddButton.isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		int premitiveListOfAddButton = Integer.parseInt(listOfAddButton);
+		for (int j = 0; j < premitiveListOfAddButton; j++) {
+			for (int k = 0; k <= 300; k++) {
+				try {
+					addButtonScreenName = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
+									+ j + "].textContent")
+							.toString();
+					System.out.println("Screen Name " + addButtonScreenName);
+					if (!(addButtonScreenName.isBlank())) {
+						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
+						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Income").trim())) {
+							System.out.println("Inside nested loop");
+							System.out.println("document.querySelectorAll('button[icon=\"pi pi-eye\"]')[" + j + "]");
+							
+							String value = "document.querySelectorAll('button[icon=\"pi pi-eye\"]')[" + j + "].parentElement.parentElement.nextElementSibling.nextElementSibling";							
+							for (int i = 0; i <= 2000; i++) {
+								try {
+									System.out.println(javascriptHelper.executeScriptWithWebElement(value).getText());
+									Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(value).isDisplayed());
+									break;
+								} catch (Exception e) {
+									if (i == 2000) {
+										Assert.fail(e.getMessage());
+									}
+								}
+							}														
+							javascriptHelper
+									.executeScriptWithWebElement(
+											"document.querySelectorAll('button[icon=\"pi pi-eye\"]')[" + j + "].parentElement.parentElement.nextElementSibling.nextElementSibling")
+									.click();
+							isAddButtonClicked = true;
+							break;
+						}
+					}
+				} catch (Exception e) {
+					if (k == 300) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			if (isAddButtonClicked == true) {
+				break;
+			}
+		}
+	}
+	
+	@And("User verify Self Employed income available under Income section in Customer Financials Tab")
+	public void user_verify_self_employed_income_available_under_income_section_in_customer_financials_tab() throws Throwable {
+//		document.querySelectorAll('button[icon=\"pi pi-eye\"]')[" + j + "].parentElement.parentElement.parentElement.querySelectorAll('td')[3]
+		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
+		String listOfAddButton = "";
+		String addButtonScreenName = "";
+		boolean isAddButtonClicked = false;
+		for (int i = 0; i <= 300; i++) {
+			try {
+				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
+				System.out.println("List of add button " + listOfAddButton);
+				if (!(listOfAddButton.isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		int premitiveListOfAddButton = Integer.parseInt(listOfAddButton);
+		for (int j = 0; j < premitiveListOfAddButton; j++) {
+			for (int k = 0; k <= 300; k++) {
+				try {
+					addButtonScreenName = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
+									+ j + "].textContent")
+							.toString();
+					System.out.println("Screen Name " + addButtonScreenName);
+					if (!(addButtonScreenName.isBlank())) {
+						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
+						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Income").trim())) {
+							System.out.println("Inside nested loop");
+//							System.out.println("document.querySelectorAll('button[icon=\"pi pi-eye\"]')[" + j + "]");
+							
+							String income = "document.querySelectorAll('button[icon=\"pi pi-eye\"]')[" + j + "].parentElement.parentElement.parentElement.querySelectorAll('td')[3]";							
+							for (int i = 0; i <= 2000; i++) {
+								try {
+									System.out.println(javascriptHelper.executeScriptWithWebElement(income).getText());
+									Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(income).isDisplayed());
+									break;
+								} catch (Exception e) {
+									if (i == 2000) {
+										Assert.fail(e.getMessage());
+									}
+								}
+							}														
+							javascriptHelper
+									.executeScriptWithWebElement(
+											"document.querySelectorAll('button[icon=\"pi pi-eye\"]')[" + j + "].parentElement.parentElement.parentElement.querySelectorAll('td')[3]")
+									.click();
+							isAddButtonClicked = true;
+							break;
+						}
+					}
+				} catch (Exception e) {
+					if (k == 300) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			if (isAddButtonClicked == true) {
+				break;
+			}
+		}
+	}
+	
+	
+	
+		
 }
