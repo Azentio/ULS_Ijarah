@@ -4,4 +4,4 @@ Feature: Title of your feature
 
   @tag1
   Scenario: Title of your scenario
- And User_607 User Check negative value accepct or not in the numaric field
+ And User_607 Check clicking on back button system should navigate to the previous screen

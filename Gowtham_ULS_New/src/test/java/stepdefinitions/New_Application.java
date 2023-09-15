@@ -2522,6 +2522,8 @@ public class New_Application {
 
 	@Given("User_607 Check Sourcing Entity should be editable")
 	public void user_check_sourcing_entity_should_be_editable() {
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("ReferenceCode")));
+		
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("SourcingEntity")).click();
@@ -3533,7 +3535,23 @@ public class New_Application {
 		
 	}
 	
-	
+	@Given("User_607 Check Negative Total Finance Amount Requested should be editable")
+	public void user_check_negative_total_finance_amount_requested_should_be_editable() {
+	  
+		for (int i = 0; i < 700; i++) {
+			try {
+				//javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("TotalFinanceAmountRequested")).click();
+				clicksAndActionsHelper.doubleClick((javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("TotalFinanceAmountRequested"))));
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("TotalFinanceAmountRequested")).sendKeys("-100");
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+				}
+			}
+	}
+
 	
 	
 	

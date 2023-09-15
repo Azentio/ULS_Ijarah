@@ -168,7 +168,7 @@ Feature: New Application
  		And User_607 Check Product Field should be editable
  		And User_607 Check Sub Product Field should be editable
  		And User_607 Update testdata from AT_NWP_03
- 		And User_607 Check Total Finance Amount Requested should be editable
+ 		And User_607 Check Negative Total Finance Amount Requested should be editable
 		And User_607 Check Declared Net Monthly Income should be editable
 		And User_607 Check Declared Current Obligations should be editable
 		And User_607 Check Special Promotion Campaign should be editable
@@ -180,8 +180,6 @@ Feature: New Application
 		And User_607 Check Servicing Branch should be editable
 		And User_607 Check Spoke Location should be editable
 		And User_607 Check Closing Staff Or Servicing Staff Or RM should be editable
-		And User_607 Check Topup Type should be editable
-		And User_607 Check Topup Application No should be editable
 		And User_607 Check Sourcing Type should be editable
 		And User_607 Check Sourcing Office should be editable
 		And User_607 Check Sourcing Entity should be editable

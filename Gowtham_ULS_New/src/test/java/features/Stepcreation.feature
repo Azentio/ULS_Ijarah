@@ -3,5 +3,4 @@ Feature: Title of your feature
 
   @tag1
   Scenario: Title of your scenario
-  And User_607 Check Sourcing Type should be mandatory
- 		And User_607 Check Sourcing Type should be editable
+  And User_607 Check clicking on back button system should navigate to the previous screen

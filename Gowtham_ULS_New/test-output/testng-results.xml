@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-08T09:45:34 IST" name="Default suite" finished-at="2023-09-08T09:47:58 IST" duration-ms="144068">
+  <suite started-at="2023-09-11T15:07:32 IST" name="Default suite" finished-at="2023-09-11T15:09:05 IST" duration-ms="93547">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@5f049ea1]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@72cc7e6f]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-09-08T09:45:34 IST" name="Default test" finished-at="2023-09-08T09:47:58 IST" duration-ms="144068">
+    <test started-at="2023-09-11T15:07:32 IST" name="Default test" finished-at="2023-09-11T15:09:05 IST" duration-ms="93547">
       <class name="Runner.TestApplication">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@5f049ea1]" started-at="2023-09-08T09:45:34 IST" name="setUpClass" finished-at="2023-09-08T09:45:38 IST" duration-ms="3178" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2023-09-11T15:07:32 IST" name="setUpClass" finished-at="2023-09-11T15:07:33 IST" duration-ms="1458" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@5f049ea1]" started-at="2023-09-08T09:45:38 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-09-08T09:47:23 IST" duration-ms="105483" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2023-09-11T15:07:33 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-09-11T15:08:33 IST" duration-ms="59363" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -27,36 +27,10 @@
               </value>
             </param>
           </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[javascript error: Cannot read properties of null (reading 'nextElementSibling')
-  (Session info: chrome=116.0.5845.141)
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [d0823045024acec67828d02398c8fc61, executeScript {script=return document.querySelector('ion-label[ng-reflect-text="Topup Type.TOOLTIP"]').nextElementSibling, args=[]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.141, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55650}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55650/devtoo..., se:cdpVersion: 116.0.5845.141, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d0823045024acec67828d02398c8fc61]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: javascript error: Cannot read properties of null (reading 'nextElementSibling')
-  (Session info: chrome=116.0.5845.141)
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [d0823045024acec67828d02398c8fc61, executeScript {script=return document.querySelector('ion-label[ng-reflect-text="Topup Type.TOOLTIP"]').nextElementSibling, args=[]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.141, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55650}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55650/devtoo..., se:cdpVersion: 116.0.5845.141, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d0823045024acec67828d02398c8fc61
-at org.testng.Assert.fail(Assert.java:99)
-at stepdefinitions.New_Application.user_check_topup_type_should_be_editable(New_Application.java:2036)
-at ✽.User_607 Check Topup Type should be editable(file:///C:/Users/inindc00607/git/ULS_Ijarah_1/Gowtham_ULS_New/src/test/java/features/NewApplication.feature:183)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@5f049ea1]" started-at="2023-09-08T09:47:23 IST" name="tearDownClass" finished-at="2023-09-08T09:47:58 IST" duration-ms="35228" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2023-09-11T15:08:33 IST" name="tearDownClass" finished-at="2023-09-11T15:09:05 IST" duration-ms="32664" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

@@ -1,7 +1,5 @@
 package stepdefinitions;
 
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 import org.openqa.selenium.Keys;
@@ -176,7 +174,7 @@ public class IncomeDetailsList {
 	@Given("User_607 Check saveButton")
 	public void user_check_save_button() {
 		if (!javascriptHelper.executeScriptWithWebElement(IncomeDetailsListPaths.getElement("saveButton")).isDisplayed()) {
-			SoftAssert.fail();
+			Assert.fail();
 		}
 	    
 	}
@@ -184,7 +182,7 @@ public class IncomeDetailsList {
 	@Given("User_607 Check Lumpsum Amount field")
 	public void user_check_lumpsum_amount_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(IncomeDetailsListPaths.getElement("Lumpsum Amount")).isDisplayed()) {
-			SoftAssert.fail();
+			Assert.fail();
 		}
 	    
 	}
@@ -193,7 +191,7 @@ public class IncomeDetailsList {
 	@Given("User_607 Check Financial Year")
 	public void user_check_financial_year() {
 		if (!javascriptHelper.executeScriptWithWebElement(IncomeDetailsListPaths.getElement("Financial Year")).isDisplayed()) {
-			SoftAssert.fail();
+			Assert.fail();
 		}
 		
 	}
@@ -201,7 +199,7 @@ public class IncomeDetailsList {
 	@Given("User_607 Check Filing Date")
 	public void user_check_filing_date() {
 		if (!javascriptHelper.executeScriptWithWebElement(IncomeDetailsListPaths.getElement("Filing Date")).isDisplayed()) {
-			SoftAssert.fail();
+			Assert.fail();
 		}
 		
 		
@@ -210,7 +208,7 @@ public class IncomeDetailsList {
 	@Given("User_607 Check Income field")
 	public void user_check_income_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(IncomeDetailsListPaths.getElement("Income")).isDisplayed()) {
-			SoftAssert.fail();
+			Assert.fail();
 		}
 	    
 	}
@@ -218,7 +216,7 @@ public class IncomeDetailsList {
 	@Given("User_607 Check Frequency field")
 	public void user_check_frequency_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(IncomeDetailsListPaths.getElement("Frequency")).isDisplayed()) {
-			SoftAssert.fail();
+			Assert.fail();
 		}
 	    
 	}
@@ -226,7 +224,7 @@ public class IncomeDetailsList {
 	@Given("User_607 Check Amount field")
 	public void user_check_amount_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(IncomeDetailsListPaths.getElement("Amount")).isDisplayed()) {
-			SoftAssert.fail();
+			Assert.fail();
 		}
 	    
 	}
@@ -234,7 +232,7 @@ public class IncomeDetailsList {
 	@Given("User_607 Check Defined field")
 	public void user_check_defined_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(IncomeDetailsListPaths.getElement("Defined")).isDisplayed()) {
-			SoftAssert.fail();
+			Assert.fail();
 		}
 	    
 	}
@@ -242,7 +240,7 @@ public class IncomeDetailsList {
 	@Given("User_607 Check Adjusted field")
 	public void user_check_adjusted_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(IncomeDetailsListPaths.getElement("Adjusted")).isDisplayed()) {
-			SoftAssert.fail();
+			Assert.fail();
 		}
 	    
 	}
@@ -250,7 +248,7 @@ public class IncomeDetailsList {
 	@Given("User_607 Check Amount Considered field")
 	public void user_check_amount_considered_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(IncomeDetailsListPaths.getElement("Amount Considered")).isDisplayed()) {
-			SoftAssert.fail();
+			Assert.fail();
 		}
 	    
 	}
@@ -258,7 +256,7 @@ public class IncomeDetailsList {
 	@Given("User_607 Check Action field")
 	public void user_check_action_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(IncomeDetailsListPaths.getElement("Action")).isDisplayed()) {
-			SoftAssert.fail();
+			Assert.fail();
 		}
 	    
 	}
@@ -266,7 +264,7 @@ public class IncomeDetailsList {
 	@Given("User_607 Check Total Income field")
 	public void user_check_total_income_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(IncomeDetailsListPaths.getElement("Total Income")).isDisplayed()) {
-			SoftAssert.fail();
+			Assert.fail();
 		}
 	    
 	}
@@ -274,7 +272,7 @@ public class IncomeDetailsList {
 	@Given("User_607 Check Total Income Considered field")
 	public void user_check_total_income_considered_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(IncomeDetailsListPaths.getElement("Total Income Considered")).isDisplayed()) {
-			SoftAssert.fail();
+			Assert.fail();
 		}
 	    
 	}
@@ -282,7 +280,7 @@ public class IncomeDetailsList {
 	@Given("User_607 Check Salary Credited To Bank field")
 	public void user_check_salary_credited_to_bank_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(IncomeDetailsListPaths.getElement("Salary Credited To Bank")).isDisplayed()) {
-			SoftAssert.fail();
+			Assert.fail();
 		}
 	    
 	}
@@ -290,7 +288,7 @@ public class IncomeDetailsList {
 	@Given("User_607 Check Deduction field")
 	public void user_check_deduction_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(IncomeDetailsListPaths.getElement("Deduction")).isDisplayed()) {
-			SoftAssert.fail();
+			Assert.fail();
 		}
 	    
 	}
@@ -298,7 +296,7 @@ public class IncomeDetailsList {
 	@Given("User_607 Check Deduction Amt field")
 	public void user_check_deduction_amt_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(IncomeDetailsListPaths.getElement("Deduction Amt")).isDisplayed()) {
-			SoftAssert.fail();
+			Assert.fail();
 		}
 	    
 	}
@@ -306,7 +304,7 @@ public class IncomeDetailsList {
 	@Given("User_607 Check Deduction Def field")
 	public void user_check_deduction_def_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(IncomeDetailsListPaths.getElement("Deduction Def")).isDisplayed()) {
-			SoftAssert.fail();
+			Assert.fail();
 		}
 	    
 	}
@@ -314,7 +312,7 @@ public class IncomeDetailsList {
 	@Given("User_607 Check Deduction Adj field")
 	public void user_check_deduction_adj_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(IncomeDetailsListPaths.getElement("Deduction Adj")).isDisplayed()) {
-			SoftAssert.fail();
+			Assert.fail();
 		}
 	    
 	}
@@ -322,7 +320,7 @@ public class IncomeDetailsList {
 	@Given("User_607 Check Deduction Considered field")
 	public void user_check_deduction_considered_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(IncomeDetailsListPaths.getElement("Deduction Considered")).isDisplayed()) {
-			SoftAssert.fail();
+			Assert.fail();
 		}
 	    
 	}
@@ -330,7 +328,7 @@ public class IncomeDetailsList {
 	@Given("User_607 Check Total Deduction field")
 	public void user_check_total_deduction_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(IncomeDetailsListPaths.getElement("Total Deduction")).isDisplayed()) {
-			SoftAssert.fail();
+			Assert.fail();
 		}
 	    
 	}
@@ -338,7 +336,7 @@ public class IncomeDetailsList {
 	@Given("User_607 Check Total Deduction Considered field")
 	public void user_check_total_deduction_considered_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(IncomeDetailsListPaths.getElement("Total Deduction Considered")).isDisplayed()) {
-			SoftAssert.fail();
+			Assert.fail();
 		}
 	    
 	}
@@ -346,7 +344,7 @@ public class IncomeDetailsList {
 	@Given("User_607 Check Currency field")
 	public void user_check_currency_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(IncomeDetailsListPaths.getElement("Currency")).isDisplayed()) {
-			SoftAssert.fail();
+			Assert.fail();
 		}
 		
 	}
@@ -525,7 +523,7 @@ public class IncomeDetailsList {
 	@Given("User_607 Check record save successfully")
 	public void user_check_record_save_successfully() {
 		if (!javascriptHelper.executeScriptWithWebElement(IncomeDetailsListPaths.getElement("SucessSavePopup")).isDisplayed()) {
-			SoftAssert.fail();
+			Assert.fail();
 		}
 		SoftAssert.assertAll();
 	}
@@ -550,7 +548,7 @@ public class IncomeDetailsList {
 	public void user_check_go_to_previous_page() throws Throwable {
 		Thread.sleep(5000);
 		if (!javascriptHelper.executeScriptWithWebElement(IncomeDetailsListPaths.getElement("AddButtonInIncome")).isDisplayed()) {
-			SoftAssert.fail();
+			Assert.fail();
 		}
 	}
 
@@ -559,12 +557,17 @@ public class IncomeDetailsList {
 	public void user_check_value_auto_populated() {
 		String text = javascriptHelper.executeScriptWithWebElement(IncomeDetailsListPaths.getElement("Employment Type")).getText();
 		if (text.isEmpty()||text.isBlank()) {
-			SoftAssert.fail();
+			Assert.fail();
 		}
 		
 	}
 	
-
+	@Given("User_607 Check clicking on back button system should navigate to the previous screen")
+	public void user_check_clicking_on_back_button_system_should_navigate_to_the_previous_screen() {
+	    if (!javascriptHelper.executeScriptWithWebElement(IncomeDetailsListPaths.getElement("selectRecord")).isDisplayed()) {
+	    	Assert.fail();
+		}
+	}
 	
 	
 	
