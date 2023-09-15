@@ -1,36 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-07T12:17:47 IST" name="Default suite" finished-at="2023-09-07T12:18:36 IST" duration-ms="48842">
+  <suite started-at="2023-09-15T15:49:10 IST" name="Default suite" finished-at="2023-09-15T15:50:15 IST" duration-ms="65137">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@5f049ea1]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-09-07T12:17:47 IST" name="Default test" finished-at="2023-09-07T12:18:36 IST" duration-ms="48842">
+    <test started-at="2023-09-15T15:49:10 IST" name="Default test" finished-at="2023-09-15T15:50:15 IST" duration-ms="65137">
       <class name="Runner.TestApplication">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@5f049ea1]" started-at="2023-09-07T12:17:47 IST" name="setUpClass" finished-at="2023-09-07T12:17:48 IST" duration-ms="1033" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@5f049ea1]" started-at="2023-09-15T15:49:10 IST" name="setUpClass" finished-at="2023-09-15T15:49:11 IST" duration-ms="928" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@5f049ea1]" started-at="2023-09-07T12:17:48 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-09-07T12:18:28 IST" duration-ms="40107" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@5f049ea1]" started-at="2023-09-15T15:49:11 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-09-15T15:50:06 IST" duration-ms="55056" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Customer FollowUp Details"]]>
+                <![CDATA["Identifications Details"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[App Data Customer FollowUp Details]"]]>
+                <![CDATA["Optional[Identifications Details under Data Check Stage]"]]>
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[javascript error: Cannot read properties of null (reading 'innerText')
+  (Session info: chrome=116.0.5845.188)
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f21040dbaf31d6b2e275fb858bf6e700, executeScript {script=return document.querySelector('ion-label[ng-reflect-text="Issue Date"').innerText, args=[]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58751}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58751/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f21040dbaf31d6b2e275fb858bf6e700]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: javascript error: Cannot read properties of null (reading 'innerText')
+  (Session info: chrome=116.0.5845.188)
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f21040dbaf31d6b2e275fb858bf6e700, executeScript {script=return document.querySelector('ion-label[ng-reflect-text="Issue Date"').innerText, args=[]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58751}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58751/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f21040dbaf31d6b2e275fb858bf6e700
+at org.testng.Assert.fail(Assert.java:99)
+at stepdefinitions.Ijara_AD_DocumentDetails_Steps_610.user_verify_id_type_field_should_be_non_mandatory_display_and_calender(Ijara_AD_DocumentDetails_Steps_610.java:1689)
+at ✽.User_610 verify Issue Date field should be non mandatory display and calender(file:///C:/Users/inindc00610/git/ULS_Jay1/ULS_Jay/src/test/java/features/CD_IdentificationDetails_610.feature:84)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@5f049ea1]" started-at="2023-09-07T12:18:28 IST" name="tearDownClass" finished-at="2023-09-07T12:18:36 IST" duration-ms="7659" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@5f049ea1]" started-at="2023-09-15T15:50:06 IST" name="tearDownClass" finished-at="2023-09-15T15:50:15 IST" duration-ms="9109" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

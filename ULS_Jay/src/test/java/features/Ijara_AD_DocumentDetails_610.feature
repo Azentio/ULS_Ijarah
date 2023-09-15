@@ -3,6 +3,7 @@ Feature: App Data Document Details
 Scenario: Documents Details
 Given navigate the IJARA URL
 And login with valid credentials
+ And User_610 get the test data set id for DS_AT_DC_ID_001
 #And User_610 click the module name
 #And User_610 select the LOS in module name 
 And User_610 click Inbox

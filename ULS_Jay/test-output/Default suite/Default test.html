@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Sep 07 12:17:47 IST 2023</td>
+<td>Started on:</td><td>Fri Sep 15 15:49:10 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>48 seconds (48842 ms)</td>
+<tr><td>Total time:</td><td>65 seconds (65137 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,17 +67,40 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Customer FollowUp Details", "Optional[App Data Customer FollowUp Details]"</td>
-<td></td>
-<td>40</td>
+<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Identifications Details", "Optional[Identifications Details under Data Check Stage]"</td>
+<td><div><pre>java.lang.AssertionError: javascript error: Cannot read properties of null (reading &apos;innerText&apos;)
+  (Session info: chrome=116.0.5845.188)
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f21040dbaf31d6b2e275fb858bf6e700, executeScript {script=return document.querySelector(&apos;ion-label[ng-reflect-text=&quot;Issue Date&quot;&apos;).innerText, args=[]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58751}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58751/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f21040dbaf31d6b2e275fb858bf6e700
+	at org.testng.Assert.fail(Assert.java:99)
+	at stepdefinitions.Ijara_AD_DocumentDetails_Steps_610.user_verify_id_type_field_should_be_non_mandatory_display_and_calender(Ijara_AD_DocumentDetails_Steps_610.java:1689)
+	at ✽.User_610 verify Issue Date field should be non mandatory display and calender(file:///C:/Users/inindc00610/git/ULS_Jay1/ULS_Jay/src/test/java/features/CD_IdentificationDetails_610.feature:84)
+</pre></div><a href='#' onClick='toggleBox("stack-trace862708292", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace862708292'><pre>java.lang.AssertionError: javascript error: Cannot read properties of null (reading &apos;innerText&apos;)
+  (Session info: chrome=116.0.5845.188)
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f21040dbaf31d6b2e275fb858bf6e700, executeScript {script=return document.querySelector(&apos;ion-label[ng-reflect-text=&quot;Issue Date&quot;&apos;).innerText, args=[]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.188, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58751}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58751/devtoo..., se:cdpVersion: 116.0.5845.188, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f21040dbaf31d6b2e275fb858bf6e700
+	at org.testng.Assert.fail(Assert.java:99)
+	at stepdefinitions.Ijara_AD_DocumentDetails_Steps_610.user_verify_id_type_field_should_be_non_mandatory_display_and_calender(Ijara_AD_DocumentDetails_Steps_610.java:1689)
+	at ✽.User_610 verify Issue Date field should be non mandatory display and calender(file:///C:/Users/inindc00610/git/ULS_Jay1/ULS_Jay/src/test/java/features/CD_IdentificationDetails_610.feature:84)
+</pre></div></td>
+<td>55</td>
 <td>Runner.TestApplication@5f049ea1</td></tr>
 </table><p>
 </body>

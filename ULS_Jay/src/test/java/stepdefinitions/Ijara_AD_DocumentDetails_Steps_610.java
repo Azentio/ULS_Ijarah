@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,6 +41,14 @@ public class Ijara_AD_DocumentDetails_Steps_610 {
 	public void get_the_test_data_set_id_for_DS_AT_AD_FU_002() {
 		testData = ad_CustomerFolllowUpDetails_610.getTestdata("DS_AT_AD_FU_002");
 	}
+	
+	// ------------data check identification details 
+
+	@And("User_610 get the test data set id for DS_AT_DC_ID_001")
+	public void get_the_test_data_set_id_for_DS_AT_DC_ID_001() {
+		testData = ad_CustomerFolllowUpDetails_610.getTestdata("DS_AT_DC_ID_001");
+	}
+	
 
 	// -------------steps ---------------
 	@And("User_{int} click the module name")
@@ -82,11 +91,14 @@ public class Ijara_AD_DocumentDetails_Steps_610 {
 
 	@And("User_{int} enter the value in search button")
 	public void user_enter_the_value_in_search_button(Integer int1) throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver,
-				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("enter_theName_InSearchBtn_610")));
-		javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("enter_theName_InSearchBtn_610"))
-				.sendKeys("2972");
+		waitHelper.waitForElementwithFluentwait(driver,javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("enter_theName_InSearchBtn_610")));
+		javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("enter_theName_InSearchBtn_610")).sendKeys(testData.get("Search Button Value"));
+		
+		
 		System.out.println(jsPaths2.getElement("clickEditBtnIn_FirstRow_UnderInbox_610"));
+		
+		//document.querySelectorAll('ion-label')[2]
+		
 	}
 
 	@And("User_{int} click edit button under inbox screen")
@@ -110,7 +122,7 @@ public class Ijara_AD_DocumentDetails_Steps_610 {
 		waitHelper.waitForElementwithFluentwait(driver,
 				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("click_DocumentDetails_610")));
 		// javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("click_DocumentDetails_610")));
-
+   
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("click_DocumentDetails_610")).click();
@@ -1076,6 +1088,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 
 	@And("User_{int} validate export to PDF and EXCEL field enabled or not under customer follow details")
 	public void user_validate_export_to_pdf_and_excel_field_enabled_or_not_under_customer_follow_details(Integer int1) {
+		
 		for (int a = 0; a < 300; a++) {
 			try {
 			 javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("click_ExportBtn_UnderFollowUp_610")).click();;
@@ -1124,48 +1137,132 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 	//----------------------------------------@AT_AD_FU_005------------------------
 	
 	@And("User_{int} to verify the values in list view should be not editable")
-	public void user_to_verify_the_values_in_list_view_should_be_not_editable(Integer int1) {
+	public void user_to_verify_the_values_in_list_view_should_be_not_editable(Integer int1) throws Throwable {
 		
 	    for (int i = 0; i < 200; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("toastMsgCloseBtn_610")).sendKeys("test");
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("clickActiveBtn_Status_underListView_610")).sendKeys("test");
+				break;
+				} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+	    Thread.sleep(5000); 
+	}
+
+	@And("User_{int} to verify the functionality of add button should allow create new record")
+	public void user_to_verify_the_functionality_of_add_button_should_allow_create_new_record(Integer int1) throws Throwable {
+		
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("followUpDetailsScreen_610")).isDisplayed()) {
+					softAssert.fail();
+				}
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
 		}
-	    
-	}
-
-	@And("User_{int} to verify the functionality of add button should allow create new record")
-	public void user_to_verify_the_functionality_of_add_button_should_allow_create_new_record(Integer int1) {
-	    
-	    
-	}
+		
+		//-----back btn  validate
+		
+		for (int k = 0; k < 200; k++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("BackBtn_underFollowUpList_610")).click();
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+		
+		
+	}	
 
 	@And("User_{int} to verify the functionality of edit button should redirct the edit page")
-	public void user_to_verify_the_functionality_of_edit_button_should_redirct_the_edit_page(Integer int1) {
+	public void user_to_verify_the_functionality_of_edit_button_should_redirct_the_edit_page(Integer int1) throws Throwable {
 	    
-	    
+		for (int i = 0; i < 200; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("editBtn_UnderFollowUp_610")).click();;
+				break;
+				} catch (Exception e) {
+				// TODO: handle exception			
+				}
+	       }
+		Thread.sleep(3000);
+		
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("followUpDetailsScreen_610")).isDisplayed()) {
+					softAssert.fail();
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+		
+		
+		for (int k = 0; k < 200; k++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("BackBtn_underFollowUpList_610")).click();
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
 	}
 
 	@And("User_{int} to verify the functionality of search box with matching data should be show matching data")
-	public void user_to_verify_the_functionality_of_search_box_with_matching_data_should_be_show_matching_data(Integer int1) {
-	    
-	    
+	public void user_to_verify_the_functionality_of_search_box_with_matching_data_should_be_show_matching_data(Integer int1) throws Throwable {
+		
+		for (int k = 0; k < 200; k++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("searchBtn_underFollowUpList_610")).click();
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("inputBox_searchBtn_underFollowUpDetails_610")).sendKeys("22");
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+	    Thread.sleep(4000);
+	    for (int j = 0; j < 200; j++) {
+			try {
+				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("validate_theMatchingData_610")).isDisplayed()) {
+					softAssert.fail();
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
 	}
 
 	@And("User_{int} to verfiy the functionality of search box with not matching data should not be show no data")
-	public void user_to_verfiy_the_functionality_of_search_box_with_not_matching_data_should_not_be_show_no_data(Integer int1) {
+	public void user_to_verfiy_the_functionality_of_search_box_with_not_matching_data_should_not_be_show_no_data(Integer int1) throws Throwable {
 	    
+		for (int k = 0; k < 200; k++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("inputBox_searchBtn_underFollowUpDetails_610")).clear();
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("searchBtn_underFollowUpList_610")).click();
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("inputBox_searchBtn_underFollowUpDetails_610")).sendKeys("22222");
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+	    Thread.sleep(4000);
+	    for (int j = 0; j < 200; j++) {
+			try {
+				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("vaildate_theMisMatchingData_610")).isDisplayed()) {
+					softAssert.fail();
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}	
 	    
+	    softAssert.assertAll();
 	}
 
-	@And("User_{int} to verify the functioality of back button should navigate the previous screen")
-	public void user_to_verify_the_functioality_of_back_button_should_navigate_the_previous_screen(Integer int1) {
-	    
-	    
-	}
-
+	
 	@And("User_{int} to verify the functionality of export to PDF button should download PDF file")
 	public void user_to_verify_the_functionality_of_export_to_pdf_button_should_download_pdf_file(Integer int1) {
 	    
@@ -1177,6 +1274,586 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 	    
 	    
 	}
+	
+	
+	
+	//---------------------------------identification details
+	
+	
+	@And("User_{int} verify the field Save button under identification details")
+	public void user_verify_the_field_save_button_under_identification_details(Integer int1) {
+		for (int i = 0; i < 200; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("click_SaveButton_UnderFollowUp_610")).click();
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+	}
+
+	@And("User_{int} verify the field Back button under identification details")
+	public void user_verify_the_field_back_button_under_identification_details(Integer int1) {
+		for (int i = 0; i < 200; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("backBtn_UnderCustomerDetails_610")).click();
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+	}
+	
+	
+	@And("User_{int} click additional customer info")
+	public void user_click_additional_customer_info(Integer int1) throws Throwable {
+		for (int i = 0; i < 200; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("additionalCustomerInfo_610")).click();
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+	}
+
+	@And("User_{int} click edit button under additional customer info")
+	public void user_click_edit_button_under_additional_customer_info(Integer int1) throws Throwable {
+		for (int i = 0; i < 200; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("editBtn_UnderFollowUp_610")).click();
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+	}
+
+	@And("User_{int} click add button in customer identification")
+	public void user_click_add_button_in_customer_identification(Integer int1) throws Throwable {
+
+		for (int i = 0; i < 200; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("identificationAddBtn")).click();
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+			Thread.sleep(4000);
+	}
+	
+	@And("User_{int} click view button in customer identification")
+	public void user_click_view_button_in_customer_identification(Integer int1) throws Throwable {
+
+		for (int i = 0; i < 200; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("viewIcon_610")).click();
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+			Thread.sleep(4000);
+	}
+	
+	@And("User_{int} click eye button in customer identification")
+	public void user_click_eye_button_in_customer_identification(Integer int1) throws Throwable {
+		
+		for (int i = 0; i < 200; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("identificationEyeBtn_610")).click();
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+		
+		//-----select particular eye button
+		
+//		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[mode=\"md\"]').length";
+//		String listOfAddButton = "";
+//		String addButtonScreenName = "";
+//		boolean isAddButtonClicked = false;
+//		for (int i = 0; i <= 300; i++) {
+//			try {
+//				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
+//				System.out.println("List of add button " + listOfAddButton);
+//				if (!(listOfAddButton.isBlank())) {
+//					break;
+//				}
+//			} catch (Exception e) {
+//				if (i == 300) {
+//					Assert.fail(e.getMessage());
+//				}
+//			}
+//		}
+//		int premitiveListOfAddButton = Integer.parseInt(listOfAddButton);
+//		for (int j = 0; j < premitiveListOfAddButton; j++) {
+//			for (int k = 0; k <= 300; k++) {
+//				try {
+//					addButtonScreenName = javascriptHelper.executeScript(
+//							"return document.querySelectorAll('ion-title[mode=\"md\"]')["
+//									+ j + "].textContent")
+//							.toString();
+//					System.out.println("Screen Name " + addButtonScreenName);
+//
+//					if (!(addButtonScreenName.isBlank())) {
+//						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
+//						
+//					if ((addButtonScreenName.trim()).equalsIgnoreCase(("Customer Identification").trim())) {
+//							System.out.println("Inside nested loop");
+//
+//							System.out.println("document.querySelectorAll('button[icon=\"pi pi-eye\"]')[" + j + "]");
+//
+//							javascriptHelper.executeScriptWithWebElement("document.querySelectorAll('button[icon=\"pi pi-eye\"]')[" + j + "]").click();
+//							isAddButtonClicked = true;
+//							break;
+//						}
+//					}
+//				} catch (Exception e) {
+//					if (k == 300) {
+//						Assert.fail(e.getMessage());
+//					}
+//				}
+//			}
+//			if (isAddButtonClicked == true) {
+//				break;
+//			}
+//		}
+		
+		Thread.sleep(5000);
+	}
+	
+	@And("User_{int} verify the field ID Type under identification details")
+	public void user_verify_the_field_id_type_under_identification_details(Integer int1) {
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Id_Type_UnderCustomerIdentificationDetails_610")).isDisplayed()) {
+					softAssert.fail();
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+	    
+	}
+
+	@And("User_{int} verify the field ID Number under identification details")
+	public void user_verify_the_field_id_number_under_identification_details(Integer int1) {
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Id_Number_UnderCustomerIdentificationDetails_610")).isDisplayed()) {
+					softAssert.fail();
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+	    
+	}
+
+	@And("User_{int} verify the field ID Issue Date under identification details")
+	public void user_verify_the_field_id_issue_date_under_identification_details(Integer int1) {
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Issue_Date_UnderCustomerIdentificationDetails_610")).isDisplayed()) {
+					softAssert.fail();
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+	    
+	}
+
+	@And("User_{int} verify the field ID Expiry identification details")
+	public void user_verify_the_field_id_expiry_identification_details(Integer int1) {
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Expiry_Date_UnderCustomerIdentificationDetails_610")).isDisplayed()) {
+					softAssert.fail();
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+	    
+	}
+
+	@And("User_{int} verify the field Issuing Authority under identification details")
+	public void user_verify_the_field_issuing_authority_under_identification_details(Integer int1) {
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("IssuingAuthority_UnderCustomerIdentificationDetails_610")).isDisplayed()) {
+					softAssert.fail();
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+	    
+	}
+
+	@And("User_{int} verify the field Control Of Issue under identification details")
+	public void user_verify_the_field_control_of_issue_under_identification_details(Integer int1) {
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("CountryOfIssue_UnderCustomerIdentificationDetails_610")).isDisplayed()) {
+					softAssert.fail();
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+	    
+	}
+	
+	//----------------verify data display
+	
+	@And("User_{int} verify the Data Display in ID Type under identification details")
+	public void user_verify_the_data_display_in_id_type_under_identification_details(Integer int1) {
+		String IDVerify = javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Id_Type_UnderCustomerIdentificationDetails_610"))
+				.getAttribute("aria-label");
+		String IDVerify1 =IDVerify.substring(1,7);
+		
+		String IDVeriy = "AADHAR";
+		
+		System.err.println("first print  " + IDVerify1);
+		
+		Assert.assertEquals(IDVeriy, IDVerify1);
+	    
+	}
+
+	@And("User_{int} verify the Data Display in ID Number under identification details")
+	public void user_verify_the_data_display_in_id_number_under_identification_details(Integer int1) {
+		String IDNumber = javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Id_Number_UnderCustomerIdentificationDetails_610"))
+				.getAttribute("ng-reflect-model");
+	//	String IDNumber1 =IDVerify.substring(1,7);
+		
+		String IDNumber1 = "586489705642";
+		
+		System.err.println("IDNumber :" + IDNumber);
+		
+		Assert.assertEquals(IDNumber1, IDNumber);
+	    
+	}
+
+	@And("User_{int} verify the Data Display in ID Issue Date under identification details")
+	public void user_verify_the_data_display_in_id_issue_date_under_identification_details(Integer int1) {
+		String IDIssueData1 = javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Issue_Date_UnderCustomerIdentificationDetails_610"))
+				.getAttribute("ng-reflect-max-date");
+		String IDIssueData2 =IDIssueData1.substring(4,15);
+		
+		String IDIssueData = "Jan 31 2023";
+		
+		System.err.println("IDIssueData :" + IDIssueData2);
+		
+		Assert.assertEquals(IDIssueData, IDIssueData2);
+	    
+	}
+
+	@And("User_{int} verify the Data Display in ID Expiry identification details")
+	public void user_verify_the_data_display_in_id_expiry_identification_details(Integer int1) {
+		String IDExpiryData1 = javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Expiry_Date_UnderCustomerIdentificationDetails_610"))
+				.getAttribute("ng-reflect-model");
+		String IDExpiryData2 =IDExpiryData1.substring(4,15);
+		
+		String IDExpiryData = "May 01 2045";
+		
+		System.err.println("IDIssueData :" + IDExpiryData2);
+		
+		Assert.assertEquals(IDExpiryData, IDExpiryData2);
+	    
+	}
+
+	@And("User_{int} verify the Data Display in Issuing Authority under identification details")
+	public void user_verify_the_data_display_in_issuing_authority_under_identification_details(Integer int1) {
+		String IssuingAuthority1 = javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("IssuingAuthority_UnderCustomerIdentificationDetails_610"))
+				.getAttribute("aria-label");
+		String IssuingAuthority2 =IssuingAuthority1.substring(1,20);
+		
+		String IssuingAuthority = "Government of India";
+		
+		System.err.println("IDIssueData :" + IssuingAuthority2);
+		
+		Assert.assertEquals(IssuingAuthority, IssuingAuthority2);
+	    
+	}
+
+	@And("User_{int} verify the Data Display in Control Of Issue under identification details")
+	public void user_verify_the_data_display_in_control_of_issue_under_identification_details(Integer int1) {
+		String ControlOfIssue1 = javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("CountryOfIssue_UnderCustomerIdentificationDetails_610"))
+				.getAttribute("aria-label");
+		String ControlOfIssue2 =ControlOfIssue1.substring(1,6);
+		
+		String ControlOfIssue = "INDIA";
+		
+		System.err.println("ControlOfIssue :" + ControlOfIssue2);
+		
+		Assert.assertEquals(ControlOfIssue, ControlOfIssue2);
+	    
+	}
+	
+	
+	//------------------------@AT_DC_ID_005-----------------------------------
+	
+	
+	@And("User_{int} verify ID Type field should be mandatory display and text box")
+	public void user_verify_id_type_field_should_be_mandatory_display_and_text_box(Integer int1) throws Throwable {
+		
+		// ----------------validate mandatory field
+
+				for (int i = 0; i < 2000; i++) {
+					try {
+						String IdType = "document.querySelector('[ng-reflect-text=\\\"ID Type tooltip\\\"]').innerText";
+						String IdTypeName = (String) javascriptHelper.executeScript("return " + IdType);
+						
+						System.err.println("IdType:"+IdTypeName);
+						System.out.println("print");
+						
+						Assert.assertTrue(IdTypeName.contains("*"));
+						break;
+					} catch (Exception e) {
+						if (i == 1999) {
+							Assert.fail(e.getMessage());
+						}
+					}
+									}
+				
+				//---------------display
+				
+				for (int j = 0; j < 200; j++) {
+					try {
+						if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Id_Type_UnderCustomerIdentificationDetails_610")).isDisplayed()) {
+							softAssert.fail();
+						}
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+				}
+										
+					}
+
+	@And("User_{int} verify ID Type number should be mandatory display and numberic")
+	public void user_verify_id_type_number_should_be_mandatory_display_and_numberic(Integer int1) throws Throwable {
+		
+		// ----------------validate mandatory field
+
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String IdNumber = "document.querySelector('[ng-reflect-text=\\\"SCR.ID_NUMBER.TOOLTIP\\\"]').innerText";
+				String IdNumberName = (String) javascriptHelper.executeScript("return " + IdNumber);
+				
+				System.err.println("IdNumber:"+ IdNumberName);
+				Assert.assertTrue(IdNumberName.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+					}
+		
+		//-----------display
+		
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Id_Number_UnderCustomerIdentificationDetails_610")).isDisplayed()) {
+					softAssert.fail();
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+		
+		
+	}
+
+	@And("User_{int} verify Issue Date field should be non mandatory display and calender")
+	public void user_verify_id_type_field_should_be_non_mandatory_display_and_calender(Integer int1) throws Throwable {
+	    
+		// ----------------validate non-mandatory field
+
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String IssueDate = "document.querySelector('ion-label[ng-reflect-text=\"Issue Date\"').innerText";
+				String IssueDateName = (String) javascriptHelper.executeScript("return " + IssueDate);
+				
+				System.err.println("IssueDate:"+IssueDateName);
+				Assert.assertTrue(!IssueDateName.contains("*"));
+				
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+					}
+		
+		//-------------------display
+		
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Issue_Date_UnderCustomerIdentificationDetails_610")).isDisplayed()) {
+					softAssert.fail();
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+		
+		// -------------------validate type  date
+
+		Thread.sleep(3000);
+		
+		String IssueDateFormat = javascriptHelper
+				.executeScriptWithWebElement(jsPaths2.getElement("getAtribute_InIssueDate_610"))
+				.getAttribute("ng-reflect-icon");
+		
+		System.err.println("IdType:  " + IssueDateFormat);
+
+		String assertIssueDateFormat = "pi pi-calendar";
+		
+		Assert.assertEquals(assertIssueDateFormat, IssueDateFormat);
+		
+		
+	}
+	
+	//-----------------------------@AT_DC_ID_006-----------------------------------
+	
+	
+	@And("User_610 verify Expiry Date field should be non mandatory display and text box")
+	public void user_verify_expiry_date_field_should_be_mandatory_display_and_text_box(Integer int1) throws Throwable {
+		
+		// ----------------validate non-mandatory field
+
+				for (int i = 0; i < 2000; i++) {
+					try {
+						String ExpiryDate = "document.querySelector('ion-label[ng-reflect-text=\"Country of Issue\"').innerText";
+						String ExpiryDateName = (String) javascriptHelper.executeScript("return " + ExpiryDate);
+						
+						System.err.println("ExpiryDate:"+ExpiryDateName);
+						Assert.assertTrue(!ExpiryDateName.contains("*"));
+						
+						break;
+					} catch (Exception e) {
+						if (i == 1999) {
+							Assert.fail(e.getMessage());
+						}
+					}
+							}
+				
+				//---------------display
+				
+				for (int j = 0; j < 200; j++) {
+					try {
+						if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Expiry_Date_UnderCustomerIdentificationDetails_610")).isDisplayed()) {
+							softAssert.fail();
+						}
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+				}
+				
+				// -------------------validate type  date
+
+				Thread.sleep(3000);
+				
+				String ExpiryDateFormat = javascriptHelper
+						.executeScriptWithWebElement(jsPaths2.getElement("getAtribute_InExpiryeDate_610"))
+						.getAttribute("ng-reflect-icon");
+				
+				System.err.println("ExpiryDate:  " + ExpiryDateFormat);
+
+				String assertExpiryDateFormat = "pi pi-calendar";
+				
+				Assert.assertEquals(assertExpiryDateFormat, ExpiryDateFormat);
+	    
+	}
+
+	@And("User_610 verify Issuing Authority number should be non mandatory display and numberic")
+	public void user_verify_issuing_authority_number_should_be_mandatory_display_and_numberic(Integer int1) {
+		
+		// ----------------validate non-mandatory field
+
+//				for (int i = 0; i < 2000; i++) {
+//					try {
+//						String IssuingAuthority = "document.querySelector('ion-label[ng-reflect-text="Issuing Authority"').innerText";
+//						String IssuingAuthorityName = (String) javascriptHelper.executeScript("return " + IssuingAuthority);
+//						
+//						System.err.println("IssuingAuthority:"+IssuingAuthorityName);
+//						Assert.assertTrue(!IssuingAuthorityName.contains("*"));
+//						
+//						break;
+//					} catch (Exception e) {
+//						if (i == 1999) {
+//							Assert.fail(e.getMessage());
+//						}
+//					}
+//							}
+		
+		//----------------------display
+		
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("IssuingAuthority_UnderCustomerIdentificationDetails_610")).isDisplayed()) {
+					softAssert.fail();
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+	    
+	}
+
+	@And("User_610 verify Country of Issue field should be non mandatory display and calender")
+	public void user_verify_country_of_issue_field_should_be_non_mandatory_display_and_calender(Integer int1) {
+		
+		// ----------------validate non-mandatory field
+
+//				for (int i = 0; i < 2000; i++) {
+//					try {
+//						String CountryofIssue = "document.querySelector('ion-label[ng-reflect-text=\"Country of Issue\"').innerText";
+//						String CountryofIssueName = (String) javascriptHelper.executeScript("return " + CountryofIssue);
+//						
+//						System.err.println("CountryofIssue:"+CountryofIssueName);
+//						Assert.assertTrue(!CountryofIssueName.contains("*"));
+//						
+//						break;
+//					} catch (Exception e) {
+//						if (i == 1999) {
+//							Assert.fail(e.getMessage());
+//						}
+//					}
+//							}
+		
+		//---------------------display
+		
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("CountryOfIssue_UnderCustomerIdentificationDetails_610")).isDisplayed()) {
+					softAssert.fail();
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+	    
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }

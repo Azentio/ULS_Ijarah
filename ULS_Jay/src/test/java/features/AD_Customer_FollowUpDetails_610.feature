@@ -5,6 +5,7 @@ Feature: App Data Customer FollowUp Details
   
     Given navigate the IJARA URL
     And login with valid credentials
+    And User_610 get the test data set id for DS_AT_DC_ID_001
     #And User_610 click the module name
     #And User_610 select the LOS in module name
     And User_610 click Inbox
@@ -98,12 +99,12 @@ Feature: App Data Customer FollowUp Details
     #And User_610 validate export to PDF and EXCEL field enabled or not under customer follow details
     #And User_610 validate followUp details field enabled or not under customer follow details
     #
-    And User_610 to verify the values in list view should be not editable
-    #And User_610 to verify the functionality of add button should allow create new record
-    #And User_610 to verify the functionality of edit button should redirct the edit page
-    #And User_610 to verify the functionality of search box with matching data should be show matching data
-    #And User_610 to verfiy the functionality of search box with not matching data should not be show no data
-    #And User_610 to verify the functioality of back button should navigate the previous screen
+    #And User_610 to verify the values in list view should be not editable
+    And User_610 click add button under customer follow details
+    And User_610 to verify the functionality of add button should allow create new record
+    And User_610 to verify the functionality of edit button should redirct the edit page
+    And User_610 to verify the functionality of search box with matching data should be show matching data
+    And User_610 to verfiy the functionality of search box with not matching data should not be show no data
     #And User_610 to verify the functionality of export to PDF button should download PDF file
     #And User_610 to verify the functionality of export to EXCEL button should download EXCEL file
     
