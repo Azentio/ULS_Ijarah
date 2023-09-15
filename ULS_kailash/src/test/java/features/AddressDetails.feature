@@ -8,12 +8,12 @@ And click on LOS option in module dropdown
 And get the test data for test case ID AT_NADC_01
 And click on mail box
 And click on search box upon click on the mail box
-And click on search text box upon click the search button
 And search the record reference number in search text box
-And select the record form mail box
+And Select record after search
 And click on additional customer info tab
-And click on search text box upon click the search button
 And click on action button below the Address details
+And click on search text box upon click the search button
+And Select record after search
 Then verify Address type should visible in address details screen
 Then verify Address Status should visible in address details screen
 Then verify Residential or Occupancy Status should visible in address details screen
@@ -30,7 +30,7 @@ Then verify PO BOX Number should visible in address details screen
 Then verify Mobile Number should visible in address details screen
 Then verify Duration Of Stay should visible in address details screen
 Then verify Latitude Details Of The Address  should visible in address details screen
-Then verify Longitude Details Of The Address should visible in address details screen
+Then verify Longitude Details Of The Address should visible in address details screen 
 Then verify Land Mark should visible in address details screen
 Then verify Occupancy Date should visible in address details screen
 Then verify Landlord Name  should visible in address details screen
@@ -137,6 +137,5 @@ Then verify Landlord Name should be text box
 #ADC_01_25	To verify the field 'Landlord Mobile Number'
 Then verify Landlord Mobile Number should be display only 
 Then verify Landlord Mobile Number should be text box
-
 
 

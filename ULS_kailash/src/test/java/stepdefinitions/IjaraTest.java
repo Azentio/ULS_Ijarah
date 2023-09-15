@@ -3128,7 +3128,19 @@ public class IjaraTest extends BaseClass {
 	            }
 	        }
 		}
-	
+		@Given("Select record after search")
+		public void select_record_after_search() {
+			for (int i = 0; i < 700; i++) {
+				try {
+					javascriptHelper.executeScriptWithWebElement(CustomerAddressDetails.getElement("selectRecord1")).click();
+					break;
+				} catch (Exception e) {
+					if (i==699) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+		}
 	
 	
 	
