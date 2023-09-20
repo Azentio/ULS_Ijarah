@@ -108,6 +108,7 @@ public class Ijara_AD_DocumentDetails_Steps_610 {
 		javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("clickEditBtnIn_FirstRow_UnderInbox_610"))
 				.click();
 		System.err.println(jsPaths2.getElement("click_DocumentDetails_610"));
+		Thread.sleep(5000);
 	}
 
 	@And("User_{int} click document details")
@@ -1842,18 +1843,369 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 	    
 	}
 	
+	//--------------------------CD product details or facility details 
+	
+	@And("User_{int} click Facility Info Screen")
+	public void user_click_facility_info_screen(Integer int1) {
+		for (int i = 0; i < 200; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FacilityInfo_610")).click();
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+	    
+	}
+
+	@And("User_{int} verify the Scheme field")
+	public void user_verify_the_scheme_field(Integer int1) {
+		
+		//---------------------display
+		
+				for (int j = 0; j < 200; j++) {
+					try {
+						if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Scheme_610")).isDisplayed()) {
+							softAssert.fail();
+						}
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+				}
+		}
+
+	@And("User_{int} verify the product field")
+	public void user_verify_the_product_field(Integer int1) {
+		
+		//---------------------display
+		
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Product_610")).isDisplayed()) {
+					softAssert.fail();
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+	    
+	}
+
+	@And("User_{int} verify the Request Amount field")
+	public void user_verify_the_request_amount_field(Integer int1) {
+		
+		//---------------------display
+		
+				for (int j = 0; j < 200; j++) {
+					try {
+						if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("RequestAmount_610")).isDisplayed()) {
+							softAssert.fail();
+						}
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+				}
+	    
+	}
+
+	@And("User_{int} verify the Loan Tenure field")
+	public void user_verify_the_loan_tenure_field(Integer int1) {
+	    
+		//---------------------display
+		
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("LoanTenure_610")).isDisplayed()) {
+					softAssert.fail();
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+	    
+	}
 	
 	
+	//------------data under product of facility details @AT_DC_PD_003
 	
 	
+	@And("User_{int} verify the Data under Scheme field")
+	public void user_verify_the_data_under_scheme_field(Integer int1) {
+		String scheme1 = javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Scheme_610")).getAttribute("aria-label");
+		String scheme2 =scheme1.substring(1,32);
+		
+		String scheme = "Ijara auto retail loan scheme A";
+		
+		System.err.println("scheme :" + scheme2);
+		
+		Assert.assertEquals(scheme, scheme2);
+	    
+	}
+
+	@And("User_{int} verify the Data under product field")
+	public void user_verify_the_data_under_product_field(Integer int1) {
+		
+		String product1 = javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Product_610"))
+				.getAttribute("aria-label");
+		String product2 =product1.substring(1,51);
+		
+		String product = "Ijara Auto Retail Loan-Ijara Auto Retails Loan Sub";
+		
+		System.err.println("product :" + product2);
+		
+		Assert.assertEquals(product, product2);
+	    
+	}
+
+	@And("User_{int} verify the Data under Request Amount field")
+	public void user_verify_the_data_under_request_amount_field(Integer int1) {
+		String RequestAmt1 = javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("RequestAmount_610"))
+				.getAttribute("ng-reflect-model");
+		String RequestAmt2 =RequestAmt1.substring(0,7);
+		
+		String RequestAmt = "1405000";
+		
+		System.err.println("RequestAmt :" + RequestAmt2);
+		
+		Assert.assertEquals(RequestAmt1, RequestAmt2);
+	    
+	}
+
+	@And("User_{int} verify the Data under Loan Tenure field")
+	public void user_verify_the_data_under_loan_tenure_field(Integer int1) {
+	    
+		String LoanTenure1 = javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("LoanTenure_610"))
+				.getAttribute("ng-reflect-model");
+		String LoanTenure2 =LoanTenure1.substring(0,2);
+		
+		String LoanTenure = "48";
+		
+		System.err.println("LoanTenure :" + LoanTenure2);
+		
+		Assert.assertEquals(LoanTenure, LoanTenure2);
+	}
 	
 	
+	//-------------------------@AT_DC_PD_005
+	
+	@And("User_{int} verify the Product field should be mandatory Display and field should text")
+	public void user_verify_the_product_field_should_be_mandatory_display_and_field_should_text(Integer int1) {
+	    
+		//---------------------display
+		
+				for (int j = 0; j < 200; j++) {
+					try {
+						if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Product_610")).isDisplayed()) {
+							softAssert.fail();
+						}
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+				}
+				
+				// ----------------validate mandatory field
+
+				for (int i = 0; i < 2000; i++) {
+					try {
+						String productMandtory = "document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+						String productMandtoryName = (String) javascriptHelper.executeScript("return " + productMandtory);
+						
+						System.err.println("productMandtory:"+productMandtoryName);
+										
+						Assert.assertTrue(productMandtoryName.contains("*"));
+						break;
+					} catch (Exception e) {
+						if (i == 1999) {
+							Assert.fail(e.getMessage());
+						}
+					}
+									}
+			// -----------------select format 
+				
+				String productSelectFormat = javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("getAttribute_InProduct_610"))
+						.getAttribute("ng-reflect-placeholder");
+				
+				System.err.println("productSelect:  " + productSelectFormat);
+
+				String assertProductSelectFormat = "Select";
+				
+				Assert.assertEquals(assertProductSelectFormat, productSelectFormat);		
+	    
+	}
+
+	@And("User_{int} verify the Request Type field should be mandatory Display and field should text")
+	public void user_verify_the_request_type_field_should_be_mandatory_display_and_field_should_text(Integer int1) {
+	    
+		//---------------------display
+		
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("facilityType_610")).isDisplayed()) {
+					softAssert.fail();
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
 	
 	
+	// -----------------select format 
+	
+	String facilityTypeSelectFormat = javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("getAttribute_InFacilityType_610"))
+			.getAttribute("ng-reflect-placeholder");
+	
+	System.err.println("facilityTypeSelectFormat:  " + facilityTypeSelectFormat);
+
+	String assertfacilityTypeSelectFormat = "Select";
+	
+	Assert.assertEquals(assertfacilityTypeSelectFormat, facilityTypeSelectFormat);		
 	
 	
+}
 	
+	//-----------------  @AT_DC_PD_006 
 	
+	@And("User_{int} verify the Scheme field should be mandatory Display and field should text")
+	public void user_verify_the_scheme_field_should_be_mandatory_display_and_field_should_text(Integer int1) {
+	    
+		//---------------------display
+		
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Scheme_610")).isDisplayed()) {
+					softAssert.fail();
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+		
+		// ----------------validate mandatory field
+
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String schemeMandtory = "document.querySelector('ion-label[ng-reflect-text=\"SCR.MODULE.FACILITY_DETAILS.SC\"]').innerText";
+				String schemeMandtoryName = (String) javascriptHelper.executeScript("return " + schemeMandtory);
+				
+				System.err.println("schemeMandtoryName:"+schemeMandtoryName);
+								
+				Assert.assertTrue(schemeMandtoryName.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+							}
+		
+		// -----------------select format 
+		
+		String schemeSelectFormat = javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("getAttribute_InFacilityType_610"))
+				.getAttribute("ng-reflect-placeholder");
+		
+		System.err.println("schemeSelectFormat:  " + schemeSelectFormat);
+
+		String assertschemeSelectFormat= "Select";
+		
+		Assert.assertEquals(assertschemeSelectFormat, schemeSelectFormat);
+	    
+	}
+
+	@And("User_{int} verify the Request Amount field should be Non mandatory Display and field should text")
+	public void user_verify_the_request_amount_field_should_be_non_mandatory_display_and_field_should_text(Integer int1) {
+	    
+		//---------------------display
+		
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("RequestAmount_610")).isDisplayed()) {
+					softAssert.fail();
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+		
+		
+		// ----------------validate mandatory field
+
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String requestAmountMandtory = "document.querySelector('ion-label[ng-reflect-text=\"SCR.MODULE.FACILITY_DETAILS.AM\"]').innerText";
+				String requestAmountMandtoryName = (String) javascriptHelper.executeScript("return " + requestAmountMandtory);
+				
+				System.err.println("requestAmountMandtoryName:"+requestAmountMandtoryName);
+								
+				Assert.assertTrue(requestAmountMandtoryName.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+							}
+		
+		// -----------------select numeric 
+		
+		String requestAmtNumericFormat = javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("RequestAmount_610"))
+				.getAttribute("mode");
+		
+		System.err.println("requestAmtNumericFormat:  " + requestAmtNumericFormat);
+
+		String assertrequestAmtNumericFormat = "decimal";
+		
+		Assert.assertEquals(assertrequestAmtNumericFormat, requestAmtNumericFormat);
+		
+	    
+	}
 	
+	 //--------------------------------------@AT_DC_PD_007
 	
+	@And("User_{int} verify the Tenure Months field should be mandatory Display and field should text")
+	public void user_verify_the_tenure_months_field_should_be_mandatory_display_and_field_should_text(Integer int1) {
+	    
+		//---------------------display
+		
+				for (int j = 0; j < 200; j++) {
+					try {
+						if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("LoanTenure_610")).isDisplayed()) {
+							softAssert.fail();
+						}
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+				}
+				
+				
+				// ----------------validate mandatory field
+
+				for (int i = 0; i < 2000; i++) {
+					try {
+						String tenureMonthMandtory = "document.querySelector('ion-label[ng-reflect-text=\"SCR.MODULE.FACILITY_DETAILS.TE\"]').innerText";
+						String tenureMonthMandtoryName = (String) javascriptHelper.executeScript("return " + tenureMonthMandtory);
+						
+						System.err.println("tenureMonthMandtoryName:"+tenureMonthMandtoryName);
+										
+						Assert.assertTrue(tenureMonthMandtoryName.contains("*"));
+						break;
+					} catch (Exception e) {
+						if (i == 1999) {
+							Assert.fail(e.getMessage());
+						}
+					}
+									}
+				
+				// -----------------select numeric 
+				
+				String requestAmtNumericFormat = javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("getAttribute_InTenure_610"))
+						.getAttribute("type");
+				
+				System.err.println("requestAmtNumericFormat:  " + requestAmtNumericFormat);
+
+				String assertrequestAmtNumericFormat = "number";
+				
+				Assert.assertEquals(assertrequestAmtNumericFormat, requestAmtNumericFormat);
+				
+				
+	}
 }

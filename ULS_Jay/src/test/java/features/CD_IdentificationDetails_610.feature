@@ -3,7 +3,7 @@ Feature: Identifications Details under Data Check Stage
   Scenario: Identifications Details
     Given navigate the IJARA URL
     And login with valid credentials02
-    And User_610 get the test data set id for DS_AT_AD_FU_002
+    And User_610 get the test data set id for DS_AT_DC_ID_001
     And User_610 click Inbox
     And User_610 click search button
     And User_610 enter the value in search button
