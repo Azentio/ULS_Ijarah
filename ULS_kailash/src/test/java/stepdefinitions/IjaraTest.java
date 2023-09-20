@@ -3637,7 +3637,37 @@ public class IjaraTest extends BaseClass {
 				}
 			}
 		}
-		
+
+		@Then("verify Closed Date field below the Customber debt should be display only")
+		public void verify_closed_date_field_below_the_customber_debt_should_be_display_only() {
+			String CloseDate_Display= javascriptHelper.executeScriptWithWebElement(Ijarah_CustomerDebt.getElement("CloseDate_Display")).getAttribute("ng-reflect-readonly");
+		for (int i = 0; i <2000; i++) {
+            try {
+                Assert.assertTrue(CloseDate_Display.contains("true"));
+                break;
+            } catch (Exception e) {
+                if (i==1999) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+        }
+		}
+
+		@Then("verify Status field below the Customber debt should be display only")
+		public void verify_status_field_below_the_customber_debt_should_be_display_only() {
+			String StatusDisplay= javascriptHelper.executeScriptWithWebElement(Ijarah_CustomerDebt.getElement("StatusDisplay")).getAttribute("ng-reflect-readonly");
+		for (int i = 0; i <2000; i++) {
+            try {
+                Assert.assertTrue(StatusDisplay.contains("true"));
+                break;
+            } catch (Exception e) {
+                if (i==1999) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+        }
+		   
+		}
 		
 		
 		
