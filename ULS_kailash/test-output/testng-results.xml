@@ -2,47 +2,47 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-14T15:50:27 IST" name="Default suite" finished-at="2023-09-14T15:50:47 IST" duration-ms="19946">
+  <suite started-at="2023-09-19T18:16:40 IST" name="Default suite" finished-at="2023-09-19T18:17:25 IST" duration-ms="44482">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@69ee81fc]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@1224144a]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-09-14T15:50:27 IST" name="Default test" finished-at="2023-09-14T15:50:47 IST" duration-ms="19946">
+    <test started-at="2023-09-19T18:16:40 IST" name="Default test" finished-at="2023-09-19T18:17:25 IST" duration-ms="44482">
       <class name="Runner.TestApplication">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@69ee81fc]" started-at="2023-09-14T15:50:27 IST" name="setUpClass" finished-at="2023-09-14T15:50:28 IST" duration-ms="890" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@1224144a]" started-at="2023-09-19T18:16:40 IST" name="setUpClass" finished-at="2023-09-19T18:16:41 IST" duration-ms="860" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@69ee81fc]" started-at="2023-09-14T15:50:28 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-09-14T15:50:43 IST" duration-ms="14263" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@1224144a]" started-at="2023-09-19T18:16:41 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-09-19T18:17:19 IST" duration-ms="37803" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Address details at Data Check stage"]]>
+                <![CDATA["To verify if Customer Debt record is available in the system"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[Test the IJARA URL]"]]>
+                <![CDATA["Optional[Test the Customer Debt Module in IJARA URL]"]]>
               </value>
             </param>
           </params>
-          <exception class="java.lang.NullPointerException">
+          <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[Cannot invoke "org.openqa.selenium.WebElement.click()" because the return value of "helper.JavascriptHelper.executeScriptWithWebElement(String)" is null]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.click()" because the return value of "helper.JavascriptHelper.executeScriptWithWebElement(String)" is null
-at stepdefinitions.IjaraLogin.loginWithIjaraApplication(IjaraLogin.java:29)
-at stepdefinitions.IjaraTest.login_with_valid_credentials(IjaraTest.java:51)
-at ✽.login with valid credentials(file:///C:/Users/inindc00615/git/ULS_Kailash/ULS_kailash/src/test/java/features/AddressDetails.feature:5)
+              <![CDATA[java.lang.AssertionError: Cannot invoke "org.openqa.selenium.WebElement.click()" because the return value of "helper.JavascriptHelper.executeScriptWithWebElement(String)" is null
+at org.junit.Assert.fail(Assert.java:88)
+at stepdefinitions.IjaraTest.user_click_the_entitle_button_under_inbox(IjaraTest.java:3377)
+at ✽.User click the Entitle button under inbox(file:///C:/Users/inindc00626/git/ULS_Ijarahkk/ULS_kailash/src/test/java/features/CustomerDebt.feature:11)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@69ee81fc]" started-at="2023-09-14T15:50:43 IST" name="tearDownClass" finished-at="2023-09-14T15:50:47 IST" duration-ms="4720" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@1224144a]" started-at="2023-09-19T18:17:19 IST" name="tearDownClass" finished-at="2023-09-19T18:17:25 IST" duration-ms="5745" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

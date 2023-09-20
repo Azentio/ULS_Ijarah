@@ -137,5 +137,20 @@ Then verify Landlord Name should be text box
 #ADC_01_25	To verify the field 'Landlord Mobile Number'
 Then verify Landlord Mobile Number should be display only 
 Then verify Landlord Mobile Number should be text box
+@AT_NADC_08
+Scenario: To verify field Rent Amount,Frequency Of Rent
+#ADC_01_26 To verify field Rent Amount
+Then verify Rent Amount should be display only 
+Then verify Rent Amount should be text box
+#ADC_01_27 To verify field Frequency Of Rent
+Then verify Frequency Of Rent should be display only 
+Then verify Frequency Of Rent should be text box
+@AT_NADC_09
+Scenario: To verify field Status, Functionality back button
+#ADC_01_28 To verify the field Status
+Then verify field Status should be display only
+Then verify field Status should be toggle status  
+#ADC_01_29 To verify the functionality of Back button
+Then clicking on back button system should navigate to the previous screen
 
 
