@@ -1,5 +1,7 @@
 Feature: To check the underwriter feature
 
+# Underwriter userName: 0345 Pwd: Admin@1
+
 # Unw_01
 @AT_UNW_001_01
 Scenario: To verify user is able to add under underwriter

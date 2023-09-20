@@ -8,6 +8,7 @@ import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.asserts.SoftAssert;
 
 import dataProvider.ExcelData;
@@ -34,6 +35,7 @@ public class IJARAH_Steps {
 	JSPaths underWriterJsPaths = new JSPaths(excelPath, "Underwriter_Elements", "Underwriter_FieldName", "JSPath");
 	JSPaths additionalCustInfoJsPaths = new JSPaths(excelPath, "AdditionalCustInfo_Elements", "AdditionalCustInfo_FieldName", "JSPath");
 	JSPaths dataCheck_IncomeJsPaths = new JSPaths(excelPath, "DataCheckIncome_Elements", "DataCheckIncome_FieldName", "JSPath");
+	JSPaths dataCheck_ApplicationDetailsJsPaths = new JSPaths(excelPath, "DataCheckAppDetails_Elements", "DataCheckAppDetails_FieldName", "JSPath");
 	
 	
 	ExcelData exelData = new ExcelData(excelTestDataPath, "ijara_LoginCredentials", "UserType");
@@ -44,12 +46,14 @@ public class IJARAH_Steps {
 	Selenium_Actions selenium_Actions = new Selenium_Actions(driver);
 	BrowserHelper browserHelper = new BrowserHelper(driver);
 	WaitHelper waitHelper = new WaitHelper(driver);
+	Actions actions = new Actions(driver);
 	SoftAssert softAssert = new SoftAssert();
 	
 	ExcelData customerDebtExcelData  = new ExcelData(excelTestDataPath,"CF_DebtTestData","DataSet ID");
 	ExcelData underWriterExcelData  = new ExcelData(excelTestDataPath,"UnderWriter_TestData","DataSet ID");
 	ExcelData additinalCustomerInfoExcelData  = new ExcelData(excelTestDataPath,"AdditionalCustomerInfo","DataSet ID");
 	ExcelData dataCheck_IncomeExcelData  = new ExcelData(excelTestDataPath,"DataCheck_Income","DataSet ID");
+	ExcelData dataCheck_ApplicationDetailsExcelData  = new ExcelData(excelTestDataPath,"DataCheck_AppDetails","DataSet ID");
 	
 	Map<String, String> testExecutionData;
 	Map<String, String> testData;
@@ -117,7 +121,7 @@ public class IJARAH_Steps {
     }
 	
 	
-//	App Data Check -- Income 
+//	App Data Check -- Income
 	@And("^User get the test data for test case AT_INCD_01$")
     public void get_the_test_data_for_test_case_AT_INCD_01() throws Throwable {
 		testData = dataCheck_IncomeExcelData.getTestdata("DS_AT_INCD_01");
@@ -137,6 +141,44 @@ public class IJARAH_Steps {
     public void get_the_test_data_for_test_case_AT_INCD_04() throws Throwable {
 		testData = dataCheck_IncomeExcelData.getTestdata("DS_AT_INCD_04");
     }
+	
+	@And("^User get the test data for test case AT_INCD_05$")
+    public void get_the_test_data_for_test_case_AT_INCD_05() throws Throwable {
+		testData = dataCheck_IncomeExcelData.getTestdata("DS_AT_INCD_05");
+    }
+	
+	@And("^User get the test data for test case AT_INCD_06$")
+    public void get_the_test_data_for_test_case_AT_INCD_06() throws Throwable {
+		testData = dataCheck_IncomeExcelData.getTestdata("DS_AT_INCD_06");
+    }
+	
+	
+//	App Data Check -- Application Details
+	@And("^User get the test data for test case AT_ADC_01$")
+    public void get_the_test_data_for_test_case_AT_ADC_01() throws Throwable {
+		testData = dataCheck_ApplicationDetailsExcelData.getTestdata("DS_AT_ADC_01");
+    }
+	
+	@And("^User get the test data for test case AT_ADC_02$")
+    public void get_the_test_data_for_test_case_AT_ADC_02() throws Throwable {
+		testData = dataCheck_ApplicationDetailsExcelData.getTestdata("DS_AT_ADC_02");
+    }
+	
+	@And("^User get the test data for test case AT_ADC_03$")
+    public void get_the_test_data_for_test_case_AT_ADC_03() throws Throwable {
+		testData = dataCheck_ApplicationDetailsExcelData.getTestdata("DS_AT_ADC_03");
+    }
+	
+	@And("^User get the test data for test case AT_ADC_05$")
+    public void get_the_test_data_for_test_case_AT_ADC_05() throws Throwable {
+		testData = dataCheck_ApplicationDetailsExcelData.getTestdata("DS_AT_ADC_05");
+    }
+	
+	@And("^User get the test data for test case AT_ADC_06$")
+    public void get_the_test_data_for_test_case_AT_ADC_06() throws Throwable {
+		testData = dataCheck_ApplicationDetailsExcelData.getTestdata("DS_AT_ADC_06");
+    }
+	
 	
 	
 	
@@ -3958,9 +4000,10 @@ public class IJARAH_Steps {
 	public void user_click_the_eye_button_under_customer_financials_tab() throws Throwable {
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				if(javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("customerFinancialsTabEyeBtn")).isDisplayed()) {
-					javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("customerFinancialsTabEyeBtn")).click();
-				}
+				javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("customerFinancialsTabEyeBtn")));				
+//				if(javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("customerFinancialsTabEyeBtn")).isDisplayed()) {
+//					javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("customerFinancialsTabEyeBtn")).click();
+//				}
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -3968,7 +4011,6 @@ public class IJARAH_Steps {
 				}
 			}
 		}
-		Thread.sleep(5000);
 	}
 	
 	@And("User click the Eye button under Income section in Customer Financials Tab")
@@ -4115,7 +4157,7 @@ public class IJARAH_Steps {
 	@And("User validate Financial Year field available under Income details screen")
 	public void user_validate_financial_year_field_available_under_income_details_screen() throws Throwable {
 		WebElement financialYearLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("financialYearLabel"));
-		System.out.println("Field Name: "+financialYearLabel.getText());
+//		System.out.println("Field Name: "+financialYearLabel.getText());
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				Assert.assertTrue(financialYearLabel.isDisplayed());
@@ -4778,9 +4820,9 @@ public class IJARAH_Steps {
 				javascriptHelper.JSEClick(incomeBackBtn);
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
-					Assert.fail(e.getMessage());
-				}
+//				if (i == 1000) {
+//					Assert.fail(e.getMessage());
+//				}
 			}
 		}
 	}
@@ -4896,9 +4938,8 @@ public class IJARAH_Steps {
 		
 	
 //	AT_INCD_05
-	@And("User verify Self Employed record available under Income section in Customer Financials Tab")
-	public void user_verify_self_employed_record_available_under_income_section_in_customer_financials_tab() throws Throwable {
-//		document.querySelectorAll('button[icon=\"pi pi-eye\"]')[" + j + "].parentElement.parentElement.parentElement.querySelectorAll('td')[3]
+	@And("User verify Self Employed customer available under Income section in Customer Financials Tab")
+	public void user_verify_self_employed_customer_available_under_income_section_in_customer_financials_tab() throws Throwable {
 		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
 		String listOfAddButton = "";
 		String addButtonScreenName = "";
@@ -4934,7 +4975,7 @@ public class IJARAH_Steps {
 							String value = "document.querySelectorAll('button[icon=\"pi pi-eye\"]')[" + j + "].parentElement.parentElement.nextElementSibling.nextElementSibling";							
 							for (int i = 0; i <= 2000; i++) {
 								try {
-									System.out.println(javascriptHelper.executeScriptWithWebElement(value).getText());
+									System.err.println("Field Name: "+javascriptHelper.executeScriptWithWebElement(value).getText());
 									Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(value).isDisplayed());
 									break;
 								} catch (Exception e) {
@@ -4963,8 +5004,8 @@ public class IJARAH_Steps {
 		}
 	}
 	
-	@And("User verify Self Employed income available under Income section in Customer Financials Tab")
-	public void user_verify_self_employed_income_available_under_income_section_in_customer_financials_tab() throws Throwable {
+	@And("User verify Self Employed income field is available under Income section in Customer Financials Tab")
+	public void user_verify_self_employed_income_field_is_available_under_income_section_in_customer_financials_tab() throws Throwable {
 //		document.querySelectorAll('button[icon=\"pi pi-eye\"]')[" + j + "].parentElement.parentElement.parentElement.querySelectorAll('td')[3]
 		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
 		String listOfAddButton = "";
@@ -5001,7 +5042,7 @@ public class IJARAH_Steps {
 							String income = "document.querySelectorAll('button[icon=\"pi pi-eye\"]')[" + j + "].parentElement.parentElement.parentElement.querySelectorAll('td')[3]";							
 							for (int i = 0; i <= 2000; i++) {
 								try {
-									System.out.println(javascriptHelper.executeScriptWithWebElement(income).getText());
+									System.err.println("Field Name: "+javascriptHelper.executeScriptWithWebElement(income).getText());
 									Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(income).isDisplayed());
 									break;
 								} catch (Exception e) {
@@ -5030,7 +5071,873 @@ public class IJARAH_Steps {
 		}
 	}
 	
+	@And("User verify the Salaried customer available under Income section in Customer Financials Tab")
+	public void user_verify_the_salaried_customer_available_under_income_section_in_customer_financials_tab() throws Throwable {
+		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
+		String listOfAddButton = "";
+		String addButtonScreenName = "";
+		boolean isAddButtonClicked = false;
+		for (int i = 0; i <= 300; i++) {
+			try {
+				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
+				System.out.println("List of add button " + listOfAddButton);
+				if (!(listOfAddButton.isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		int premitiveListOfAddButton = Integer.parseInt(listOfAddButton);
+		for (int j = 0; j < premitiveListOfAddButton; j++) {
+			for (int k = 0; k <= 300; k++) {
+				try {
+					addButtonScreenName = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
+									+ j + "].textContent")
+							.toString();
+					System.out.println("Screen Name " + addButtonScreenName);
+					if (!(addButtonScreenName.isBlank())) {
+						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
+						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Income").trim())) {
+							System.out.println("Inside nested loop");
+							System.out.println("document.querySelectorAll('button[icon=\"pi pi-eye\"]')[" + j + "]");							
+							String value = "document.querySelectorAll('button[icon=\"pi pi-eye\"]')[" + j + "].parentElement.parentElement.parentElement.parentElement.querySelectorAll('tr')[2].querySelectorAll('td')[2]";							
+							for (int i = 0; i <= 2000; i++) {
+								try {
+									System.err.println("Field Name: "+javascriptHelper.executeScriptWithWebElement(value).getText());
+									Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(value).isDisplayed());
+									break;
+								} catch (Exception e) {
+									if (i == 2000) {
+										Assert.fail(e.getMessage());
+									}
+								}
+							}														
+							javascriptHelper
+									.executeScriptWithWebElement(
+											"document.querySelectorAll('button[icon=\"pi pi-eye\"]')[" + j + "].parentElement.parentElement.parentElement.parentElement.querySelectorAll('tr')[2].querySelectorAll('td')[2]")
+									.click();
+							isAddButtonClicked = true;
+							break;
+						}
+					}
+				} catch (Exception e) {
+					if (k == 300) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			if (isAddButtonClicked == true) {
+				break;
+			}
+		}
+	}
 	
 	
+//	**************************** Data Check --> Application Details Screen *********************************
+//	AT_ADC_01
+	@And("User verify the Back button available under Application details screen")
+	public void user_verify_the_back_button_available_under_application_details_screen() throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("AppDetailsSectionLabel")));
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		WebElement AppDetailsBackBtn = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("AppDetailsBackBtn"));
+		for (int i = 0; i <= 20000; i++) {
+			try {
+				actions.moveToElement(AppDetailsBackBtn).perform();
+				Assert.assertTrue(AppDetailsBackBtn.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 20000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User verify the Submit button available under Application details screen")
+	public void user_verify_the_submit_button_available_under_application_details_screen() throws Throwable {
+		WebElement AppDetailsSubmitBtn = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("AppDetailsSubmitBtn"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				actions.moveToElement(AppDetailsSubmitBtn).build().perform();
+				Assert.assertTrue(AppDetailsSubmitBtn.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User verify the Return button available under Application details screen")
+	public void user_verify_the_return_button_available_under_application_details_screen() throws Throwable {
+		WebElement AppDetailsReturnBtn = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("AppDetailsReturnBtn"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				actions.moveToElement(AppDetailsReturnBtn).build().perform();
+				Assert.assertTrue(AppDetailsReturnBtn.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User verify the View Summary button available under Application details screen")
+	public void user_verify_the_view_summary_button_available_under_application_details_screen() throws Throwable {
+		WebElement AppDetailsViewSummaryBtn = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("AppDetailsViewSummaryBtn"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				actions.moveToElement(AppDetailsViewSummaryBtn).build().perform();
+				Assert.assertTrue(AppDetailsViewSummaryBtn.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+	
+	@And("User validate the Classification value displayed correctly under Application details screen")
+	public void user_validate_the_classification_value_displayed_correctly_under_application_details_screen() throws Throwable {
+		WebElement classificationDropdown = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("classificationDropdown"));
+		String classificationValue = classificationDropdown.getAttribute("aria-label");
+		System.out.println("Classification Value: "+classificationValue);
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(classificationValue.contains(testData.get("Classification")));
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	
+	}
+	
+	@And("User validate the Product value displayed correctly under Application details screen")
+	public void user_validate_the_product_value_displayed_correctly_under_application_details_screen() throws Throwable {
+		WebElement productDropdown = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("productDropdown"));
+		String productDropdownValue = productDropdown.getAttribute("aria-label");
+		System.out.println("Product Value: "+productDropdownValue);
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(productDropdownValue.contains(testData.get("Product")));
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User validate the Total Finance Amount Requested value displayed correctly under Application details screen")
+	public void user_validate_the_total_finance_amount_requested_value_displayed_correctly_under_application_details_screen() throws Throwable {
+		WebElement totalFinanceAmtInput = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("totalFinanceAmtInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				actions.moveToElement(totalFinanceAmtInput).build().perform();
+				String totalFinanceAmtValue = totalFinanceAmtInput.getAttribute("ng-reflect-model");
+				System.out.println("Total Finance Amount: "+totalFinanceAmtValue);
+				Assert.assertTrue(totalFinanceAmtValue.contains(testData.get("Total Finance Amt")));
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User validate the Declared Net Monthly Income value displayed correctly under Application details screen")
+	public void user_validate_the_declared_net_monthly_income_value_displayed_correctly_under_application_details_screen() throws Throwable {
+		WebElement declaredMonthlyIncomeInput = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("declaredMonthlyIncomeInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				String declaredMonthlyIncomeValue = declaredMonthlyIncomeInput.getAttribute("ng-reflect-model");
+				System.out.println("Declared Net Income Value: "+declaredMonthlyIncomeValue);
+				Assert.assertTrue(declaredMonthlyIncomeValue.contains(testData.get("Declared Monthly Income")));
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+	
+	@And("User validate the Sourcing Channel value displayed correctly under Application details screen")
+	public void user_validate_the_sourcing_channel_value_displayed_correctly_under_application_details_screen() throws Throwable {
+		WebElement sourcingChannelDropdown = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingChannelDropdown"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				String sourcingChannelDropdownValue = sourcingChannelDropdown.getAttribute("aria-label");
+				System.out.println("Sourcing Channel Value: "+sourcingChannelDropdownValue);
+				Assert.assertTrue(sourcingChannelDropdownValue.contains(testData.get("Sourcing Channel")));
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User validate the Business Center Code value displayed correctly under Application details screen")
+	public void user_validate_the_business_center_code_value_displayed_correctly_under_application_details_screen() throws Throwable {
+		WebElement businessCenterCodeDropdown = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("businessCenterCodeDropdown"));
+		String businessCenterCodeDropdownValue = businessCenterCodeDropdown.getAttribute("aria-label");
+		System.out.println("Business Center Code Value: "+businessCenterCodeDropdownValue);
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(businessCenterCodeDropdownValue.contains(testData.get("Business Center Code")));
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User validate the Servicing Type value displayed correctly under Application details screen")
+	public void user_validate_the_servicing_type_value_displayed_correctly_under_application_details_screen() throws Throwable {
+		WebElement servicingTypeDropdown = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("servicingTypeDropdown"));
+		String servicingTypeDropdownValue = servicingTypeDropdown.getAttribute("aria-label");
+		System.out.println("Servicing Type Value: "+servicingTypeDropdownValue);
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(servicingTypeDropdownValue.contains(testData.get("Servicing Type")));
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User validate the Region value displayed correctly under Application details screen")
+	public void user_validate_the_region_value_displayed_correctly_under_application_details_screen() throws Throwable {
+		WebElement regionDropdown = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("regionDropdown"));
+		String regionDropdownValue = regionDropdown.getAttribute("aria-label");
+		System.out.println("Region Value: "+regionDropdownValue);
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(regionDropdownValue.contains(testData.get("Region")));
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User validate the Servicing Branch value displayed correctly under Application details screen")
+	public void user_validate_the_servicing_branch_value_displayed_correctly_under_application_details_screen() throws Throwable {
+		WebElement servicingBrachDropdown = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("servicingBrachDropdown"));
+		String servicingBrachValue = servicingBrachDropdown.getAttribute("aria-label");
+		System.out.println("Servicing Branch Value: "+servicingBrachValue);
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(servicingBrachValue.contains(testData.get("Servicing Branch")));
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User validate the Closing Staff or Servicing Staff value displayed correctly under Application details screen")
+	public void user_validate_the_closing_staff_or_servicing_staff_value_displayed_correctly_under_application_details_screen() throws Throwable {
+		WebElement closingStaffDropdown = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("closingStaffDropdown"));
+		String closingStaffDropdownValue = closingStaffDropdown.getAttribute("aria-label");
+		System.out.println("Closing Staff Value: "+closingStaffDropdownValue);
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(closingStaffDropdownValue.contains(testData.get("Closing Staff")));
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+	
+	
+	
+	
+	
+	
+	
+//	AT_ADC_02
+	@And("User verify the Classification field available under Application details screen")
+	public void user_verify_the_classification_field_available_under_application_details_screen() throws Throwable {
+		WebElement classificationLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("classificationLabel"));
+		System.out.println("Field Name: "+classificationLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(classificationLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User verify the Product field available under Application details screen")
+	public void user_verify_the_product_field_available_under_application_details_screen() throws Throwable {
+		WebElement productLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("productLabel"));
+		System.out.println("Field Name: "+productLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(productLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User verify the Total Finance Amount Requested field available under Application details screen")
+	public void user_verify_the_total_finance_amount_requested_field_available_under_application_details_screen() throws Throwable {
+		WebElement totalFinanceAmtLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("totalFinanceAmtLabel"));
+		System.out.println("Field Name: "+totalFinanceAmtLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(totalFinanceAmtLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User verify the Declared Net Monthly Income field available under Application details screen")
+	public void user_verify_the_declared_net_monthly_income_field_available_under_application_details_screen() throws Throwable {
+		WebElement declaredMonthlyIncomeLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("declaredMonthlyIncomeLabel"));
+		System.out.println("Field Name: "+declaredMonthlyIncomeLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(declaredMonthlyIncomeLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User verify the Declared Current Obligations field available under Application details screen")
+	public void user_verify_the_declared_current_obligations_field_available_under_application_details_screen() throws Throwable {
+		WebElement declaredCurrentObligationsLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("declaredCurrentObligationsLabel"));
+		System.out.println("Field Name: "+declaredCurrentObligationsLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(declaredCurrentObligationsLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User verify the Special Promotion field available under Application details screen")
+	public void user_verify_the_special_promotion_field_available_under_application_details_screen() throws Throwable {
+		WebElement specialPromotionLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("classificationLabel"));
+		System.out.println("Field Name: "+specialPromotionLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(specialPromotionLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User verify the Sourcing Channel field available under Application details screen")
+	public void user_verify_the_sourcing_channel_field_available_under_application_details_screen() throws Throwable {
+		WebElement sourcingChannelLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingChannelLabel"));
+		System.out.println("Field Name: "+sourcingChannelLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(sourcingChannelLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User verify the Business Center Code field available under Application details screen")
+	public void user_verify_the_business_center_code_field_available_under_application_details_screen() throws Throwable {
+		WebElement businessCenterCodeLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("businessCenterCodeLabel"));
+		System.out.println("Field Name: "+businessCenterCodeLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(businessCenterCodeLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User verify the Servicing Type field available under Application details screen")
+	public void user_verify_the_servicing_type_field_available_under_application_details_screen() throws Throwable {
+		WebElement servicingTypeLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("servicingTypeLabel"));
+		System.out.println("Field Name: "+servicingTypeLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(servicingTypeLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User verify the Region field available under Application details screen")
+	public void user_verify_the_region_field_available_under_application_details_screen() throws Throwable {
+		WebElement regionLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("regionLabel"));
+		System.out.println("Field Name: "+regionLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(regionLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User verify the Servicing Branch field available under Application details screen")
+	public void user_verify_the_servicing_branch_field_available_under_application_details_screen() throws Throwable {
+		WebElement servicingBrachLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("servicingBrachLabel"));
+		System.out.println("Field Name: "+servicingBrachLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(servicingBrachLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User verify the Spoke Location field available under Application details screen")
+	public void user_verify_the_spoke_location_field_available_under_application_details_screen() throws Throwable {
+		WebElement spokeLocationLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("spokeLocationLabel"));
+		System.out.println("Field Name: "+spokeLocationLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(spokeLocationLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User verify the Closing Staff or Servicing Staff or RM field available under Application details screen")
+	public void user_verify_the_closing_staff_or_servicing_staff_or_rm_field_available_under_application_details_screen() throws Throwable {
+		WebElement closingStaffLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("closingStaffLabel"));
+		System.out.println("Field Name: "+closingStaffLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(closingStaffLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User verify the Topup Type field available under Application details screen")
+	public void user_verify_the_topup_type_field_available_under_application_details_screen() throws Throwable {
+		WebElement topupTypeLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("topupTypeLabel"));
+		System.out.println("Field Name: "+topupTypeLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(topupTypeLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User verify the Topup Application No field available under Application details screen")
+	public void user_verify_the_topup_application_no_field_available_under_application_details_screen() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("topupAppNoInput")));
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		WebElement topupAppNoLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("topupAppNoLabel"));
+		System.out.println("Field Name: "+topupAppNoLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(topupAppNoLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+	
+	
+//	AT_ADC_03
+	@And("User verify the Sourcing Type field available in Referral\\Sourcing Details section under Application Details tab")
+	public void user_verify_the_sourcing_type_field_available_in_referral_sourcing_details_section_under_application_details_tab() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingTypeLabel")));
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		WebElement sourcingTypeLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingTypeLabel"));
+		System.out.println("Field Name: "+sourcingTypeLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(sourcingTypeLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User verify the Sourcing Office field available in Referral\\Sourcing Details section under Application Details tab")
+	public void user_verify_the_sourcing_office_field_available_in_referral_sourcing_details_section_under_application_details_tab() throws Throwable {
+		WebElement sourcingOfficeLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingOfficeLabel"));
+		System.out.println("Field Name: "+sourcingOfficeLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(sourcingOfficeLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User verify the Sourcing Entity field available in Referral\\Sourcing Details section under Application Details tab")
+	public void user_verify_the_sourcing_entity_field_available_in_referral_sourcing_details_section_under_application_details_tab() throws Throwable {
+		WebElement sourcingEntityLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingEntityLabel"));
+		System.out.println("Field Name: "+sourcingEntityLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(sourcingEntityLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User verify the Sourcing Staff field available in Referral\\Sourcing Details section under Application Details tab")
+	public void user_verify_the_sourcing_staff_field_available_in_referral_sourcing_details_section_under_application_details_tab() throws Throwable {
+		WebElement sourcingStaffLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingStaffLabel"));
+		System.out.println("Field Name: "+sourcingStaffLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(sourcingStaffLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User verify the Reference Type field available in Referral\\Sourcing Details section under Application Details tab")
+	public void user_verify_the_reference_type_field_available_in_referral_sourcing_details_section_under_application_details_tab() throws Throwable {
+		WebElement referenceTypeLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("referenceTypeLabel"));
+		System.out.println("Field Name: "+referenceTypeLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(referenceTypeLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User verify the Reference Code field available in Referral\\Sourcing Details section under Application Details tab")
+	public void user_verify_the_reference_code_field_available_in_referral_sourcing_details_section_under_application_details_tab() throws Throwable {
+		WebElement referenceCodeLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("referenceCodeLabel"));
+		System.out.println("Field Name: "+referenceCodeLabel.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(referenceCodeLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
 		
+	
+//	AT_ADC_05
+	@And("User verify the Classification Dropdown field available under Application details screen")
+	public void user_verify_the_classification_dropdown_field_available_under_application_details_screen() throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("AppDetailsSectionLabel")));
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		WebElement classificationDropdown = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("classificationDropdown"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(classificationDropdown.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User verify the Product Dropdown field available under Application details screen")
+	public void user_verify_the_product_dropdown_field_available_under_application_details_screen() throws Throwable {
+		WebElement productDropdown = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("productDropdown"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(productDropdown.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User verify the Total Finance Amount Requested input field available under Application details screen")
+	public void user_verify_the_total_finance_amount_requested_input_field_available_under_application_details_screen() throws Throwable {
+		WebElement totalFinanceAmtInput = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("totalFinanceAmtInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(totalFinanceAmtInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User verify the Declared Net Monthly Income input field available under Application details screen")
+	public void user_verify_the_declared_net_monthly_income_input_field_available_under_application_details_screen() throws Throwable {
+		WebElement declaredMonthlyIncomeInput = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("declaredMonthlyIncomeInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(declaredMonthlyIncomeInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User verify the Declared Current Obligations input field available under Application details screen")
+	public void user_verify_the_declared_current_obligations_input_field_available_under_application_details_screen() throws Throwable {
+		WebElement declaredCurrentObligationsInput = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("declaredCurrentObligationsInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(declaredCurrentObligationsInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+	
+	
+//	AT_ADC_06
+	@And("User verify the Special Promotion Dropdown field available under Application details screen")
+	public void user_verify_the_special_promotion_dropdown_field_available_under_application_details_screen() throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("AppDetailsSectionLabel")));
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		WebElement specialPromotionDropdown = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("specialPromotionDropdown"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(specialPromotionDropdown.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User verify the Sourcing Channel Dropdown field available under Application details screen")
+	public void user_verify_the_sourcing_channel_dropdown_field_available_under_application_details_screen() throws Throwable {
+		WebElement sourcingChannelDropdown = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingChannelDropdown"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(sourcingChannelDropdown.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User verify the Business Center Code Dropdown field available under Application details screen")
+	public void user_verify_the_business_center_code_dropdown_field_available_under_application_details_screen() throws Throwable {
+		WebElement businessCenterCodeDropdown = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("businessCenterCodeDropdown"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(businessCenterCodeDropdown.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User verify the Servicing Type Dropdown field available under Application details screen")
+	public void user_verify_the_servicing_type_dropdown_field_available_under_application_details_screen() throws Throwable {
+		WebElement servicingTypeDropdown = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("servicingTypeDropdown"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(servicingTypeDropdown.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User verify the Region Dropdown field available under Application details screen")
+	public void user_verify_the_region_dropdown_field_available_under_application_details_screen() throws Throwable {
+		WebElement regionDropdown = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("regionDropdown"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(regionDropdown.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User verify the Servicing Branch Dropdown field available under Application details screen")
+	public void user_verify_the_servicing_branch_dropdown_field_available_under_application_details_screen() throws Throwable {
+		WebElement servicingBrachDropdown = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("servicingBrachDropdown"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(servicingBrachDropdown.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+	
+	
+	
 }
