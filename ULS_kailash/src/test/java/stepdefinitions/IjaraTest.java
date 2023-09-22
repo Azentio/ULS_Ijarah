@@ -3263,7 +3263,7 @@ public class IjaraTest extends BaseClass {
 	    public void get_the_test_data_for_test_case_AT_DC_CD_001() throws Throwable {
 			testData =  customerDebtExcelData.getTestdata("AT_DC_CD_001");
 	    }	
-		
+		 
 		@And("User click the module name dropdown in ULS application")
 		public void user_click_the_module_name_dropdown_in_uls_application() throws Throwable {
 			waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(Ijarah_CustomerDebt.getElement("moduleNameDropdown")));
@@ -3669,7 +3669,33 @@ public class IjaraTest extends BaseClass {
 		   
 		}
 		
-		
+		@Then("verify Frequency field below the Customber debt should be display only")
+		public void verify_frequency_field_below_the_customber_debt_should_be_display_only() {
+			String Frequency= javascriptHelper.executeScriptWithWebElement(Ijarah_CustomerDebt.getElement("frequencyDisplay")).getAttribute("ng-reflect-readonly");
+			for (int i = 0; i <2000; i++) {
+	            try {
+	                Assert.assertTrue(Frequency.contains("true"));
+	                break;
+	            } catch (Exception e) {
+	                if (i==1999) {
+	                    Assert.fail(e.getMessage());
+	                }
+	            }
+	        }
+		}
+
+		@Then("verify Last Payment Date field below the Customber debt should be display only")
+		public void verify_last_payment_date_field_below_the_customber_debt_should_be_display_only() {
+		    
+		}
+
+		@Then("verify Next Due Date field below the Customber debt should be display only")
+		public void verify_next_due_date_field_below_the_customber_debt_should_be_display_only() {
+		    
+		}
+
+
+
 		
 		
 		

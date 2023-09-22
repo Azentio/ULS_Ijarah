@@ -26,11 +26,11 @@ And user verify the Include in Eligibility field below the Customber debt detail
 Then verify Closed Date field below the Customber debt should be display only 
 Then verify Status field below the Customber debt should be display only 
 Then verify Frequency field below the Customber debt should be display only 
-Then verify Installment Amount field below the Customber debt should be display only 
 Then verify Last Payment Date field below the Customber debt should be display only 
 Then verify Next Due Date field below the Customber debt should be display only 
 Then verify Last Cycle field below the Customber debt should be display only 
 Then verify Include in Eligibility below the Customber debt should be display only
+Then verify Installment Amount field below the Customber debt should be Same As AppDataCheck Stage
 And User click the Back button in Customer Debt screen navigate to the previous screen
 Then logout from the ijaraApplication
 
