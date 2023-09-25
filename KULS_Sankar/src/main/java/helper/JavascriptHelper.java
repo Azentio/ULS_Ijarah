@@ -96,4 +96,12 @@ public JavascriptHelper(WebDriver driver)
 		executeScript("document.body.style.zoom='100%'");
 		//ExtentTestManager.getTest().info("ZoomBy100percentage");
 	}
+	
+	
+//	Element background style
+	public void backgroundStyle(WebElement element) {
+		executeScript("arguments[0].style.background='yellow'", element);
+		// Log.info(element);
+		// ExtentTestManager.getTest().info("Scrolled to that view");
+	}
 }

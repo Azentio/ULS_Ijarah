@@ -21,14 +21,12 @@ public class IjaraLogin extends BaseClass {
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
 
 	public void loginWithIjaraApplication() {
-		loginTestData = exelData.getTestdata("userType05");
+		loginTestData = exelData.getTestdata("userType01");
 		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName")).click();
 		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName"))
 				.sendKeys(loginTestData.get("UserName"));
 		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("continueButton")).click();
-		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
-		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
-				.sendKeys(loginTestData.get("Password"));
+
 		for (int i = 0; i <= 300; i++) {
 			try {
 
@@ -37,7 +35,6 @@ public class IjaraLogin extends BaseClass {
 				if (!(javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString()
 						.isBlank())) {
 
-					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
 					break;
 				}
 			} catch (Exception e) {
@@ -46,6 +43,10 @@ public class IjaraLogin extends BaseClass {
 				}
 			}
 		}
+		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
+		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
+				.sendKeys(loginTestData.get("Password"));
+		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
 
 		Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).isDisplayed());
 
@@ -64,11 +65,7 @@ public class IjaraLogin extends BaseClass {
 			}
 		}
 	}
-	
-	
-	
-	
-	
+
 	// This login used to another link don't use , I used only take JS path purpose
 	public void loginWithIjaraApplication1() {
 		loginTestData = exelData.getTestdata("userType04");
@@ -100,12 +97,5 @@ public class IjaraLogin extends BaseClass {
 		Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).isDisplayed());
 
 	}
-	
-	
-	
-	
-	
-	
-	
 
 }

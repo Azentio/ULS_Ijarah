@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Sep 20 19:01:09 IST 2023</td>
+<td>Started on:</td><td>Mon Sep 25 18:26:12 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>26 seconds (26773 ms)</td>
+<tr><td>Total time:</td><td>69 seconds (69393 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,19 +75,33 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "To verify the field.", "Optional[To check the App Data Check - Application Details feature]"</td>
-<td><div><pre>java.lang.AssertionError: Cannot invoke &quot;org.openqa.selenium.WebElement.isDisplayed()&quot; because &quot;classificationDropdown&quot; is null
+<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "To verify user is able to Add Customer Debt record in the system", "Optional[To check the Customer debt details feature]"</td>
+<td><div><pre>java.lang.AssertionError: javascript error: Cannot read properties of null (reading &apos;style&apos;)
+  (Session info: chrome=117.0.5938.89)
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7eb9b3c6dcda8f45536b365565341de5, executeScript {script=arguments[0].style.background=&apos;yellow&apos;, args=[null]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.89, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59458}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59458/devtoo..., se:cdpVersion: 117.0.5938.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7eb9b3c6dcda8f45536b365565341de5
 	at org.junit.Assert.fail(Assert.java:88)
-	at stepdefinitions.IJARAH_Steps.user_verify_the_classification_dropdown_field_available_under_application_details_screen(IJARAH_Steps.java:5763)
-	at ✽.User verify the Classification Dropdown field available under Application details screen(file:///C:/Users/inindc00608/git/KULS_Sankar/KULS_Sankar/src/test/java/features/DataCheck_ApplicationDetails.feature:92)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1021786447", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1021786447'><pre>java.lang.AssertionError: Cannot invoke &quot;org.openqa.selenium.WebElement.isDisplayed()&quot; because &quot;classificationDropdown&quot; is null
+	at stepdefinitions.IJARAH_Steps.user_validate_the_balance_transfer_flag_field_is_available_in_customer_debt_screen(IJARAH_Steps.java:1117)
+	at ✽.User_608 validate the Balance Transfer flag field is available in Customer Debt screen(file:///C:/Users/inindc00608/git/KULS_Sankar/KULS_Sankar/src/test/java/features/AppData_CustomerDebt.feature:44)
+</pre></div><a href='#' onClick='toggleBox("stack-trace660792935", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace660792935'><pre>java.lang.AssertionError: javascript error: Cannot read properties of null (reading &apos;style&apos;)
+  (Session info: chrome=117.0.5938.89)
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7eb9b3c6dcda8f45536b365565341de5, executeScript {script=arguments[0].style.background=&apos;yellow&apos;, args=[null]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.89, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59458}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59458/devtoo..., se:cdpVersion: 117.0.5938.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7eb9b3c6dcda8f45536b365565341de5
 	at org.junit.Assert.fail(Assert.java:88)
-	at stepdefinitions.IJARAH_Steps.user_verify_the_classification_dropdown_field_available_under_application_details_screen(IJARAH_Steps.java:5763)
-	at ✽.User verify the Classification Dropdown field available under Application details screen(file:///C:/Users/inindc00608/git/KULS_Sankar/KULS_Sankar/src/test/java/features/DataCheck_ApplicationDetails.feature:92)
+	at stepdefinitions.IJARAH_Steps.user_validate_the_balance_transfer_flag_field_is_available_in_customer_debt_screen(IJARAH_Steps.java:1117)
+	at ✽.User_608 validate the Balance Transfer flag field is available in Customer Debt screen(file:///C:/Users/inindc00608/git/KULS_Sankar/KULS_Sankar/src/test/java/features/AppData_CustomerDebt.feature:44)
 </pre></div></td>
-<td>18</td>
-<td>Runner.TestApplication@7ce026d3</td></tr>
+<td>47</td>
+<td>Runner.TestApplication@1caa0244</td></tr>
 </table><p>
 </body>
 </html>

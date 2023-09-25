@@ -1,5 +1,7 @@
 Feature: To check the App Data Check - Application Details feature
 
+# **************** userType05 **********************
+
 # Defect ID: AZ1LN-6679
 # ADC_01_01, ADC_01_02
 @AT_ADC_01
@@ -16,7 +18,6 @@ And User verify the Back button available under Application details screen
 And User verify the Submit button available under Application details screen
 And User verify the Return button available under Application details screen
 And User verify the View Summary button available under Application details screen
-
 And User validate the Classification value displayed correctly under Application details screen
 And User validate the Product value displayed correctly under Application details screen
 And User validate the Total Finance Amount Requested value displayed correctly under Application details screen
@@ -78,7 +79,7 @@ And User verify the Reference Type field available in Referral\Sourcing Details 
 And User verify the Reference Code field available in Referral\Sourcing Details section under Application Details tab
 Then logout from the ijaraApplication
 
-
+#ADC_01_07, ADC_01_08, ADC_01_09, ADC_01_10, ADC_01_11
 @AT_ADC_05
 Scenario: To verify the field.
 
@@ -96,7 +97,7 @@ And User verify the Declared Net Monthly Income input field available under Appl
 And User verify the Declared Current Obligations input field available under Application details screen
 Then logout from the ijaraApplication
 
-
+#ADC_01_12, ADC_01_13, ADC_01_14, ADC_01_15, ADC_01_16, ADC_01_17
 @AT_ADC_06
 Scenario: To verify the field.
 

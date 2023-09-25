@@ -8,14 +8,14 @@ import io.cucumber.testng.CucumberOptions;
 import utilities.ExtentManager;
 import utilities.ExtentTestManager;
 
-@CucumberOptions(features = {"src/test/java/features/DataCheck_ApplicationDetails.feature" }
+@CucumberOptions(features = {"src/test/java/features/AppData_CustomerDebt.feature" }
 //		"src/test/java/features/CustomerDebt.feature" }
 		, glue = "stepdefinitions",
 		 monochrome=false, //to make steps in color
 		plugin = { "pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 				"rerun:ReRunScenarios/FailedReRun.txt" }
 //		,dryRun = false //to check compilation errors
-		, tags = "@AT_ADC_05"
+		, tags = "@AT_CUD_001"
 
 )
 public class TestApplication extends AbstractTestNGCucumberTests {

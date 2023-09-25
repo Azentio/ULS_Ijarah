@@ -36,6 +36,7 @@ public class IJARAH_Steps {
 	JSPaths additionalCustInfoJsPaths = new JSPaths(excelPath, "AdditionalCustInfo_Elements", "AdditionalCustInfo_FieldName", "JSPath");
 	JSPaths dataCheck_IncomeJsPaths = new JSPaths(excelPath, "DataCheckIncome_Elements", "DataCheckIncome_FieldName", "JSPath");
 	JSPaths dataCheck_ApplicationDetailsJsPaths = new JSPaths(excelPath, "DataCheckAppDetails_Elements", "DataCheckAppDetails_FieldName", "JSPath");
+	JSPaths offering_OfferDetailsJsPaths = new JSPaths(excelPath, "OfferingOfferDetails_Elements", "Offering_OfferDetails_FieldName", "JSPath");
 	
 	
 	ExcelData exelData = new ExcelData(excelTestDataPath, "ijara_LoginCredentials", "UserType");
@@ -48,12 +49,14 @@ public class IJARAH_Steps {
 	WaitHelper waitHelper = new WaitHelper(driver);
 	Actions actions = new Actions(driver);
 	SoftAssert softAssert = new SoftAssert();
+
 	
 	ExcelData customerDebtExcelData  = new ExcelData(excelTestDataPath,"CF_DebtTestData","DataSet ID");
 	ExcelData underWriterExcelData  = new ExcelData(excelTestDataPath,"UnderWriter_TestData","DataSet ID");
 	ExcelData additinalCustomerInfoExcelData  = new ExcelData(excelTestDataPath,"AdditionalCustomerInfo","DataSet ID");
 	ExcelData dataCheck_IncomeExcelData  = new ExcelData(excelTestDataPath,"DataCheck_Income","DataSet ID");
 	ExcelData dataCheck_ApplicationDetailsExcelData  = new ExcelData(excelTestDataPath,"DataCheck_AppDetails","DataSet ID");
+	ExcelData offering_OfferDetailsExcelData  = new ExcelData(excelTestDataPath,"Offering_OfferDetails","DataSet ID");
 	
 	Map<String, String> testExecutionData;
 	Map<String, String> testData;
@@ -64,31 +67,31 @@ public class IJARAH_Steps {
 	
 //  TestData path
 //	@AT_CUD_001
-	@And("^User get the test data for test case AT_CUD_001$")
+	@And("^User_608 get the test data for test case AT_CUD_001$")
     public void get_the_test_data_for_test_case_AT_CUD_001() throws Throwable {
 		testData = customerDebtExcelData.getTestdata("DS_AT_CUD_001");
     }	
 	
 //	@AT_CUD_002
-	@And("^User get the test data for test case AT_CUD_002$")
+	@And("^User_608 get the test data for test case AT_CUD_002$")
     public void get_the_test_data_for_test_case_AT_CUD_002() throws Throwable {
 		testData = customerDebtExcelData.getTestdata("DS_AT_CUD_002");
     }
 	
 //	@AT_CUD_003
-	@And("^User get the test data for test case AT_CUD_003$")
+	@And("^User_608 get the test data for test case AT_CUD_003$")
     public void get_the_test_data_for_test_case_AT_CUD_003() throws Throwable {
 		testData = customerDebtExcelData.getTestdata("DS_AT_CUD_003");
     }
 	
 //	@AT_CUD_004
-	@And("^User get the test data for test case AT_CUD_004$")
+	@And("^User_608 get the test data for test case AT_CUD_004$")
     public void get_the_test_data_for_test_case_AT_CUD_004() throws Throwable {
 		testData = customerDebtExcelData.getTestdata("DS_AT_CUD_004");
     }
 	
 //	@AT_CUD_005
-	@And("^User get the test data for test case AT_CUD_005$")
+	@And("^User_608 get the test data for test case AT_CUD_005$")
     public void get_the_test_data_for_test_case_AT_CUD_005() throws Throwable {
 		testData = customerDebtExcelData.getTestdata("DS_AT_CUD_005");
     }
@@ -179,11 +182,26 @@ public class IJARAH_Steps {
 		testData = dataCheck_ApplicationDetailsExcelData.getTestdata("DS_AT_ADC_06");
     }
 	
+
+//	Offering Stage -- Offer Details tab
+	@And("^User get the test data for test case AT_OFO_01$")
+    public void get_the_test_data_for_test_case_AT_OFO_01() throws Throwable {
+		testData = offering_OfferDetailsExcelData.getTestdata("DS_AT_OFO_01");
+    }
+	
+	@And("^User get the test data for test case AT_OFO_02$")
+    public void get_the_test_data_for_test_case_AT_OFO_02() throws Throwable {
+		testData = offering_OfferDetailsExcelData.getTestdata("DS_AT_OFO_02");
+    }
+	
+	@And("^User get the test data for test case AT_OFO_03$")
+    public void get_the_test_data_for_test_case_AT_OFO_03() throws Throwable {
+		testData = offering_OfferDetailsExcelData.getTestdata("DS_AT_OFO_03");
+    }
 	
 	
 	
-	
-	@And("User click the module name dropdown in ULS application")
+	@And("User_608 click the module name dropdown in ULS application")
 	public void user_click_the_module_name_dropdown_in_uls_application() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("moduleNameDropdown")));
 		for (int i = 0; i <= 500; i++) {
@@ -198,7 +216,7 @@ public class IJARAH_Steps {
 		}
 	}
 	
-	@And("User select the module name as LOS in ULS application")
+	@And("User_608 select the module name as LOS in ULS application")
 	public void user_select_the_module_name_as_los_in_uls_application() throws Throwable {
 		String moduleListJSpath = "document.querySelectorAll('ion-radio-group ion-item').length";
         String moduleLength = "";
@@ -241,7 +259,7 @@ public class IJARAH_Steps {
         }	
 	}	
 	
-	@And("User click the Mail box in ULS application")
+	@And("User_608 click the Mail box in ULS application")
 	public void user_click_the_mail_box_in_uls_application() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("mailBox")));
 		for (int i = 0; i <= 500; i++) {
@@ -256,7 +274,7 @@ public class IJARAH_Steps {
 		}
 	}
 
-	@And("User click the Search button under inbox")
+	@And("User_608 click the Search button under inbox")
 	public void user_click_the_search_button_under_inbox() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("mailInboxSearchBtn")));
 		for (int i = 0; i <= 500; i++) {
@@ -271,7 +289,7 @@ public class IJARAH_Steps {
 		}	    
 	}
 
-	@And("User search the Ref id under inbox")
+	@And("User_608 search the Ref id under inbox")
 	public void user_search_the_ref_id_under_inbox() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("inboxSearchInput")));
 		for (int i = 0; i <= 500; i++) {
@@ -288,11 +306,13 @@ public class IJARAH_Steps {
 	    
 	}
 
-	@And("User click the Entitle button under inbox")
+	@And("User_608 click the Entitle button under inbox")
 	public void user_click_the_entitle_button_under_inbox() throws Throwable {
+//		WebElement inboxEntitleBtn = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("inboxEntitleBtn"));
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("inboxEntitleBtn")).click();
+//				javascriptHelper.JSEClick(inboxEntitleBtn);
 				break;
 			} catch (Exception e) {
 				if (i == 1000) {
@@ -303,26 +323,28 @@ public class IJARAH_Steps {
 	}
 	
 	
-	@And("User click the Customer Financials tab")
+	@And("User_608 click the Customer Financials tab")
 	public void user_click_the_customer_financials_tab() throws Throwable {
-//		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerFinancialsTab")));
-		for (int i = 0; i <= 1000; i++) {
+		WebElement customerFinancialsTab = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerFinancialsTab"));
+		for (int i = 0; i <= 2000; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerFinancialsTab")).click();
+				javascriptHelper.backgroundStyle(customerFinancialsTab);
+				javascriptHelper.JSEClick(customerFinancialsTab);
 				break;
 			} catch (Exception e) { 
-				if (i == 1000) {
+				if (i == 2000) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 	}
 	
-	@And("User click the pencil icon under Customer Financials tab")
+	@And("User_608 click the pencil icon under Customer Financials tab")
 	public void user_click_the_pencil_icon_under_customer_financials_tab() throws Throwable {
-//		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerFinancialsPencilEditBtn")));
+		WebElement customerFinancialsPencilEditBtn = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerFinancialsPencilEditBtn"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
+				javascriptHelper.backgroundStyle(customerFinancialsPencilEditBtn);
 				if(javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerFinancialsPencilEditBtn")).isDisplayed()) {
 					javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerFinancialsPencilEditBtn")).click();
 				}
@@ -335,7 +357,7 @@ public class IJARAH_Steps {
 		}
 	}	
 	
-	@And("User click Add button in Financial Commitments under Customer Financials tab")
+	@And("User_608 click Add button in Financial Commitments under Customer Financials tab")
 	public void user_click_add_button_in_financial_commitments_under_customer_financials_tab() throws Throwable {
 		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
 		String listOfAddButton = "";
@@ -355,16 +377,6 @@ public class IJARAH_Steps {
 			}
 		}
 		int premitiveListOfAddButton = Integer.parseInt(listOfAddButton);
-//		for (int i = 0; i <= 300; i++) {
-//			try {
-//				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentsRefreshBtn")));
-//				break;
-//			} catch (Exception e) {
-//				if (i == 300) {
-//					Assert.fail(e.getMessage());
-//				}
-//			}
-//		}
 		for (int j = 0; j < premitiveListOfAddButton; j++) {
 			for (int k = 0; k <= 300; k++) {
 				try {
@@ -382,6 +394,7 @@ public class IJARAH_Steps {
 //							.executeScriptWithWebElement(
 //									"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "].parentElement.parentElement.parentElement.nextElementSibling.querySelectorAll('table tbody tr td span button[icon=\"pi pi-pencil\"]')[0]")
 //									.click();
+							
 							javascriptHelper
 									.executeScriptWithWebElement(
 											"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]")
@@ -403,28 +416,28 @@ public class IJARAH_Steps {
 		}
 	}
 
-	@And("User validate the Customer Debt screen is available in Financial Commitments")
+	@And("User_608 validate the Customer Debt screen is available in Financial Commitments")
 	public void user_validate_the_customer_debt_screen_is_available_in_financial_commitments() throws Throwable {
-//		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerDebtDetailsScreen")));
 		WebElement customerDebtDetailsScreen = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerDebtDetailsScreen"));
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <= 2000; i++) {
 			try {
+				javascriptHelper.backgroundStyle(customerDebtDetailsScreen);
 				Assert.assertTrue(customerDebtDetailsScreen.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i == 2000) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 	}
 	
-	@And("User validate the Save button available in Customer Debt screen")
+	@And("User_608 validate the Save button available in Customer Debt screen")
 	public void user_validate_the_save_button_available_in_customer_debt_screen() throws Throwable {
 		WebElement customerDebtSaveBtn = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerDebtSaveBtn"));
-//		waitHelper.waitForElementwithFluentwait(driver, customerDebtSaveBtn);
 		for (int i = 0; i <= 2000; i++) {
 			try {
+				actions.moveToElement(customerDebtSaveBtn).perform();
 				Assert.assertTrue(customerDebtSaveBtn.isDisplayed());
 				break;
 			} catch (Exception e) {
@@ -435,12 +448,13 @@ public class IJARAH_Steps {
 		}		
 	}
 
-	@And("User validate the Back button available in Customer Debt screen")
+	@And("User_608 validate the Back button available in Customer Debt screen")
 	public void user_validate_the_back_button_available_in_customer_debt_screen() throws Throwable {
 		WebElement customerDebtBackBtn = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerDebtBackBtn"));
 		waitHelper.waitForElementwithFluentwait(driver, customerDebtBackBtn);
 		for (int i = 0; i <= 1000; i++) {
 			try {
+				actions.moveToElement(customerDebtBackBtn).perform();
 				Assert.assertTrue(customerDebtBackBtn.isDisplayed());
 				break;
 			} catch (Exception e) {
@@ -451,7 +465,7 @@ public class IJARAH_Steps {
 		}		    
 	}
 	
-	@And("User click the Back button in Customer Debt screen navigate to the previous screen")
+	@And("User_608 click the Back button in Customer Debt screen navigate to the previous screen")
 	public void user_click_the_back_button_in_customer_debt_screen_navigate_to_the_previous_screen() throws Throwable {
 		WebElement pageTop = javascriptHelper.executeScriptWithWebElement("document.querySelector('[ng-reflect-layout=\"COMPACT\"]')");
 		for (int i = 0; i <= 1000; i++) {
@@ -477,12 +491,13 @@ public class IJARAH_Steps {
 		}
 	}
 
-	@And("User validate the Finance type field available in Customer Debt screen")
+	@And("User_608 validate the Finance type field available in Customer Debt screen")
 	public void user_validate_the_finance_type_field_available_in_customer_debt_screen() throws Throwable {
 		WebElement financeTypeField = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financeTypeField"));
 		waitHelper.waitForElementwithFluentwait(driver, financeTypeField);
 		for (int i = 0; i <= 2000; i++) {
 			try {
+				javascriptHelper.backgroundStyle(financeTypeField);
 				Assert.assertTrue(financeTypeField.isDisplayed());
 				break;
 			} catch (Exception e) {
@@ -490,11 +505,9 @@ public class IJARAH_Steps {
 					Assert.fail(e.getMessage());
 				}
 			}
-		}	
-		
+		}
 		
 		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financeTypeField")).getText();
-//        System.err.println(financeTypeText);
 		for (int i = 0; i <2000; i++) {
             try {
                 Assert.assertTrue(financeTypeText.contains("*"));
@@ -508,7 +521,761 @@ public class IJARAH_Steps {
 
 	}
 
-	@And("User select the Finanacy type in Customer Debt screen")
+	
+	    
+	
+	@And("User_608 validate the Financial Institution field is available in Customer Debt screen")
+	public void user_validate_the_financial_institution_field_is_available_in_customer_debt_screen() throws Throwable {
+		WebElement financialInstitutionlabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialInstitutionlabel"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(financialInstitutionlabel);
+				Assert.assertTrue(financialInstitutionlabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+//		Validate Non_mandatory
+		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialInstitutionlabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+              Assert.assertTrue(!(financeTypeText.contains("*")));
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              }
+          }
+      }
+	}
+
+	@And("User_608 validate the Account Number field is available in Customer Debt screen")
+	public void user_validate_the_account_number_field_is_available_in_customer_debt_screen() throws Throwable {
+		WebElement accountNumberLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("accountNumberLabel"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(accountNumberLabel);
+				Assert.assertTrue(accountNumberLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+//		Validate Non_mandatory
+		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("accountNumberLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+              Assert.assertTrue(!(financeTypeText.contains("*")));
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              }
+          }
+      }
+	    
+	}
+
+	@And("User_608 validate the Sanction Date field is available in Customer Debt screen")
+	public void user_validate_the_sanction_date_field_is_available_in_customer_debt_screen() throws Throwable {
+		WebElement sanctionDataLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionDataLabel"));
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.backgroundStyle(sanctionDataLabel);
+				Assert.assertTrue(sanctionDataLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+//		Validate Non_mandatory
+		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionDataLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+              Assert.assertTrue(!(financeTypeText.contains("*")));
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              }
+          }
+		}
+	}
+
+	@And("User_608 validate the Sanction Amount field is available in Customer Debt screen")
+	public void user_validate_the_sanction_amount_field_is_available_in_customer_debt_screen() throws Throwable {
+		WebElement sanctionAmtLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionAmtLabel"));
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.backgroundStyle(sanctionAmtLabel);
+				Assert.assertTrue(sanctionAmtLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	
+//		Validate Mandatory
+		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionAmtLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+              Assert.assertTrue(financeTypeText.contains("*"));
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              }
+          	}
+		}
+	}
+
+	@And("User_608 validate the Interest Rate % field is available in Customer Debt screen")
+	public void user_validate_the_interest_rate_field_is_available_in_customer_debt_screen() throws Throwable {
+		WebElement interestRateLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("interestRateLabel"));
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.backgroundStyle(interestRateLabel);
+				Assert.assertTrue(interestRateLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+//		Validate Non_mandatory
+		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("interestRateLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+              Assert.assertTrue(!(financeTypeText.contains("*")));
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              }
+          	}
+		}
+	}
+
+	@And("User_608 validate the Current Principal balance field is available in Customer Debt screen")
+	public void user_validate_the_current_principal_balance_field_is_available_in_customer_debt_screen() throws Throwable {
+		WebElement currentPrincipalBalanceLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("currentPrincipalBalanceLabel"));
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.backgroundStyle(currentPrincipalBalanceLabel);
+				Assert.assertTrue(currentPrincipalBalanceLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+//		Validate Non_mandatory
+		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("currentPrincipalBalanceLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+              Assert.assertTrue(!(financeTypeText.contains("*")));
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              }
+          	}
+		}
+	}
+
+	@And("User_608 validate the Tenure field is available in Customer Debt screen")
+	public void user_validate_the_tenure_field_is_available_in_customer_debt_screen() throws Throwable {
+		WebElement tenureMonthLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("tenureMonthLabel"));
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.backgroundStyle(tenureMonthLabel);
+				Assert.assertTrue(tenureMonthLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	
+//		Validate Mandatory
+		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("tenureMonthLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+              Assert.assertTrue(financeTypeText.contains("*"));
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              }
+          	}
+		}
+	}
+
+	@And("User_608 validate the Maturity Date field is available in Customer Debt screen")
+	public void user_validate_the_maturity_date_field_is_available_in_customer_debt_screen() throws Throwable {
+		WebElement maturityDateLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("maturityDateLabel"));
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.backgroundStyle(maturityDateLabel);
+				Assert.assertTrue(maturityDateLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	
+//		Validate Non_mandatory
+		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("maturityDateLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+              Assert.assertTrue(!(financeTypeText.contains("*")));
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              }
+          	}
+		}
+	}
+
+	@And("User_608 validate the Installment Amount field is available in Customer Debt screen")
+	public void user_validate_the_installment_amount_field_is_available_in_customer_debt_screen() throws Throwable {
+		WebElement installmentAmtLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtLabel"));
+		for (int i = 0; i <= 11000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(installmentAmtLabel);
+				Assert.assertTrue(installmentAmtLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	
+//		Validate Mandatory
+		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+              Assert.assertTrue(financeTypeText.contains("*"));
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              }
+          	}
+		}
+	}
+
+	@And("User_608 validate the Amount considered field is available in Customer Debt screen")
+	public void user_validate_the_amount_considered_field_is_available_in_customer_debt_screen() throws Throwable {
+		WebElement amountConsideredLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("amountConsideredLabel"));
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.backgroundStyle(amountConsideredLabel);
+				Assert.assertTrue(amountConsideredLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+//		Validate Non_mandatory
+		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("amountConsideredLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+              Assert.assertTrue(!(financeTypeText.contains("*")));
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              }
+          	}
+		}
+	}
+
+	@And("User_608 validate the Currency field is available in Customer Debt screen")
+	public void user_validate_the_currency_field_is_available_in_customer_debt_screen() throws Throwable {
+		WebElement currencyLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("currencyLabel"));
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				javascriptHelper.scrollIntoView(currencyLabel);
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(currencyLabel);
+				Assert.assertTrue(currencyLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+//		Validate Non_mandatory
+		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("currencyLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+              Assert.assertTrue(!(financeTypeText.contains("*")));
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              }
+          	}
+		}
+	}
+
+	@And("User_608 validate the Remarks field is available in Customer Debt screen")
+	public void user_validate_the_remarks_field_is_available_in_customer_debt_screen() throws Throwable {
+		WebElement remarksLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("remarksLabel"));
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(remarksLabel);
+				Assert.assertTrue(remarksLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+//		Validate Non_mandatory
+		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("remarksLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+              Assert.assertTrue(!(financeTypeText.contains("*")));
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              }
+          	}
+		}
+	}
+
+	@And("User_608 validate the Next Due Date field is available in Customer Debt screen")
+	public void user_validate_the_next_due_date_field_is_available_in_customer_debt_screen() throws Throwable {
+		WebElement nextDueDateLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("nextDueDateLabel"));
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.backgroundStyle(nextDueDateLabel);
+				Assert.assertTrue(nextDueDateLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+//		Validate Non_mandatory
+		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("nextDueDateLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+              Assert.assertTrue(!(financeTypeText.contains("*")));
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              }
+          	}
+		}		
+	}
+
+	@And("User_608 validate the Collateral Type is available in Customer Debt screen")
+	public void user_validate_the_collateral_type_is_available_in_customer_debt_screen() throws Throwable {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("NPAClassificationLabel")));
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		WebElement collateralTypeLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("collateralTypeLabel"));
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.backgroundStyle(collateralTypeLabel);
+				Assert.assertTrue(collateralTypeLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	 
+//		Validate Non_mandatory
+		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("collateralTypeLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+              Assert.assertTrue(!(financeTypeText.contains("*")));
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              }
+          	}
+		}
+	}
+
+	@And("User_608 validate the Close Date field is available in Customer Debt screen")
+	public void user_validate_the_close_date_field_is_available_in_customer_debt_screen() throws Throwable {
+		WebElement closeDateLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("closeDateLabel"));
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.backgroundStyle(closeDateLabel);
+				Assert.assertTrue(closeDateLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	
+//		Validate Non_mandatory
+		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("closeDateLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+              Assert.assertTrue(!(financeTypeText.contains("*")));
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              }
+          	}
+		}
+	}
+
+	@And("User_608 validate the Frequency field is available in Customer Debt screen")
+	public void user_validate_the_frequency_field_is_available_in_customer_debt_screen() throws Throwable {
+		WebElement frequencyLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("frequencyLabel"));
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.backgroundStyle(frequencyLabel);
+				Assert.assertTrue(frequencyLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	
+//		Validate Non_mandatory
+		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("frequencyLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+              Assert.assertTrue(!(financeTypeText.contains("*")));
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              }
+          	}
+		}
+	}
+
+	@And("User_608 validate the Last payment amount field is available in Customer Debt screen")
+	public void user_validate_the_last_payment_amount_field_is_available_in_customer_debt_screen() throws Throwable {
+		WebElement lastPaymentAmtLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("lastPaymentAmtLabel"));
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.backgroundStyle(lastPaymentAmtLabel);
+				Assert.assertTrue(lastPaymentAmtLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	
+//		Validate Non_mandatory
+		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("lastPaymentAmtLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+              Assert.assertTrue(!(financeTypeText.contains("*")));
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              }
+          	}
+		}
+	}
+
+	@And("User_608 validate the Last payment date field is available in Customer Debt screen")
+	public void user_validate_the_last_payment_date_field_is_available_in_customer_debt_screen() throws Throwable {
+		WebElement lastPaymentDateLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("lastPaymentDateLabel"));
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.backgroundStyle(lastPaymentDateLabel);
+				Assert.assertTrue(lastPaymentDateLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+//		Validate Non_mandatory
+		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("lastPaymentDateLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+              Assert.assertTrue(!(financeTypeText.contains("*")));
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              }
+          	}
+		}
+	}
+
+	@And("User_608 validate the Product Name field is available in Customer Debt screen")
+	public void user_validate_the_product_name_field_is_available_in_customer_debt_screen() throws Throwable {
+		WebElement productNameLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("productNameLabel"));
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.backgroundStyle(productNameLabel);
+				Assert.assertTrue(productNameLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	
+//		Validate Non_mandatory
+		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("productNameLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+              Assert.assertTrue(!(financeTypeText.contains("*")));
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              }
+          	}
+		}
+	}
+
+	@And("User_608 validate the Last24 cycle field is available in Customer Debt screen")
+	public void user_validate_the_last24_cycle_field_is_available_in_customer_debt_screen() throws Throwable {
+		WebElement last24CycleLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("last24CycleLabel"));
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.backgroundStyle(last24CycleLabel);
+				Assert.assertTrue(last24CycleLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+//		Validate Non_mandatory
+		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("last24CycleLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+              Assert.assertTrue(!(financeTypeText.contains("*")));
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              }
+          	}
+		}
+	}
+
+	@And("User_608 validate the Balance Transfer flag field is available in Customer Debt screen")
+	public void user_validate_the_balance_transfer_flag_field_is_available_in_customer_debt_screen() throws Throwable {
+		WebElement balanceTransferFlagLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("balanceTransferFlagLabel"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(balanceTransferFlagLabel);
+				Assert.assertTrue(balanceTransferFlagLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	
+//		Validate Non_mandatory
+		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("balanceTransferFlagLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+              Assert.assertTrue(!(financeTypeText.contains("*")));
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              }
+          	}
+		}
+	}
+
+	@And("User_608 validate the Facility Status field is available in Customer Debt screen")
+	public void user_validate_the_facility_status_field_is_available_in_customer_debt_screen() throws Throwable {
+		WebElement facilityStatusLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("facilityStatusLabel"));
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.backgroundStyle(facilityStatusLabel);
+				Assert.assertTrue(facilityStatusLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+//		Validate Non_mandatory
+		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("facilityStatusLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+              Assert.assertTrue(!(financeTypeText.contains("*")));
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              }
+          	}
+		}
+	}
+
+	@And("User_608 validate the Remaining Tenure field is available in Customer Debt screen")
+	public void user_validate_the_remaining_tenure_field_is_available_in_customer_debt_screen() throws Throwable {
+		WebElement remainingTenureLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("remainingTenureLabel"));
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.backgroundStyle(remainingTenureLabel);
+				Assert.assertTrue(remainingTenureLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	
+//		Validate Mandatory
+		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("remainingTenureLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+              Assert.assertTrue(financeTypeText.contains("*"));
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              }
+          	}
+		}
+	}
+
+	@And("User_608 validate the Disbursement Date field is available in Customer Debt screen")
+	public void user_validate_the_disbursement_date_field_is_available_in_customer_debt_screen() throws Throwable {
+		WebElement disbursementDateLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("disbursementDateLabel"));
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.backgroundStyle(disbursementDateLabel);
+				Assert.assertTrue(disbursementDateLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+//		Validate Non_mandatory
+		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("disbursementDateLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+              Assert.assertTrue(!(financeTypeText.contains("*")));
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              }
+          	}
+		}
+	}
+
+	@And("User_608 validate the Request for Balance Takeover field is available in Customer Debt screen")
+	public void user_validate_the_request_for_balance_takeover_field_is_available_in_customer_debt_screen() throws Throwable {
+		WebElement reqForBalanceTakeoverLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("reqForBalanceTakeoverLabel"));
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.backgroundStyle(reqForBalanceTakeoverLabel);
+				Assert.assertTrue(reqForBalanceTakeoverLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	  
+//		Validate Non_mandatory
+		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("reqForBalanceTakeoverLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+              Assert.assertTrue(!(financeTypeText.contains("*")));
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              }
+          	}
+		}
+	}
+
+	@And("User_608 validate the NPA Classification field is available in Customer Debt screen")
+	public void user_validate_the_npa_classification_field_is_available_in_customer_debt_screen() throws Throwable {
+		WebElement NPAClassificationLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("NPAClassificationLabel"));
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.backgroundStyle(NPAClassificationLabel);
+				Assert.assertTrue(NPAClassificationLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+//		Validate Non_mandatory
+		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("NPAClassificationLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+              Assert.assertTrue(!(financeTypeText.contains("*")));
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              }
+          	}
+		}
+	}
+	
+	
+//	AT_CUD_002
+	@And("User_608 select the Finanacy type in Customer Debt screen")
 	public void user_select_the_finanacy_type_in_customer_debt_screen() throws Throwable {
 		for (int i = 0; i <= 2000; i++) {
 			try {
@@ -584,723 +1351,7 @@ public class IJARAH_Steps {
 			}
 		}
 	}
-	    
-	
-	@And("User validate the Financial Institution field is available in Customer Debt screen")
-	public void user_validate_the_financial_institution_field_is_available_in_customer_debt_screen() throws Throwable {
-		WebElement financialInstitutionlabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialInstitutionlabel"));
-		for (int i = 0; i <= 2000; i++) {
-			try {
-				Assert.assertTrue(financialInstitutionlabel.isDisplayed());
-				break;
-			} catch (Exception e) {
-				if (i == 2000) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-//		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialInstitutionlabel")).getText();
-		for (int i = 0; i <2000; i++) {
-          try {
-              Assert.assertTrue(!(financeTypeText.contains("*")));
-              break;
-          } catch (Exception e) {
-              if (i==1999) {
-                  Assert.fail(e.getMessage());
-              }
-          }
-      }
-	}
-
-	@And("User validate the Account Number field is available in Customer Debt screen")
-	public void user_validate_the_account_number_field_is_available_in_customer_debt_screen() throws Throwable {
-		WebElement accountNumberLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("accountNumberLabel"));
-		for (int i = 0; i <= 2000; i++) {
-			try {
-				Assert.assertTrue(accountNumberLabel.isDisplayed());
-				break;
-			} catch (Exception e) {
-				if (i == 2000) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-//		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("accountNumberLabel")).getText();
-		for (int i = 0; i <2000; i++) {
-          try {
-              Assert.assertTrue(!(financeTypeText.contains("*")));
-              break;
-          } catch (Exception e) {
-              if (i==1999) {
-                  Assert.fail(e.getMessage());
-              }
-          }
-      }
-	    
-	}
-
-	@And("User validate the Sanction Date field is available in Customer Debt screen")
-	public void user_validate_the_sanction_date_field_is_available_in_customer_debt_screen() throws Throwable {
-		WebElement sanctionDataLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionDataLabel"));
-		for (int i = 0; i <= 500; i++) {
-			try {
-				Assert.assertTrue(sanctionDataLabel.isDisplayed());
-				break;
-			} catch (Exception e) {
-				if (i == 500) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-//		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionDataLabel")).getText();
-		for (int i = 0; i <2000; i++) {
-          try {
-              Assert.assertTrue(!(financeTypeText.contains("*")));
-              break;
-          } catch (Exception e) {
-              if (i==1999) {
-                  Assert.fail(e.getMessage());
-              }
-          }
-		}
-	}
-
-	@And("User validate the Sanction Amount field is available in Customer Debt screen")
-	public void user_validate_the_sanction_amount_field_is_available_in_customer_debt_screen() throws Throwable {
-		WebElement sanctionAmtLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionAmtLabel"));
-		for (int i = 0; i <= 500; i++) {
-			try {
-				Assert.assertTrue(sanctionAmtLabel.isDisplayed());
-				break;
-			} catch (Exception e) {
-				if (i == 500) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}	
-//		Validate Mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionAmtLabel")).getText();
-		for (int i = 0; i <2000; i++) {
-          try {
-              Assert.assertTrue(financeTypeText.contains("*"));
-              break;
-          } catch (Exception e) {
-              if (i==1999) {
-                  Assert.fail(e.getMessage());
-              }
-          	}
-		}
-	}
-
-	@And("User validate the Interest Rate % field is available in Customer Debt screen")
-	public void user_validate_the_interest_rate_field_is_available_in_customer_debt_screen() throws Throwable {
-		WebElement interestRateLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("interestRateLabel"));
-		for (int i = 0; i <= 500; i++) {
-			try {
-				Assert.assertTrue(interestRateLabel.isDisplayed());
-				break;
-			} catch (Exception e) {
-				if (i == 500) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-//		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("interestRateLabel")).getText();
-		for (int i = 0; i <2000; i++) {
-          try {
-              Assert.assertTrue(!(financeTypeText.contains("*")));
-              break;
-          } catch (Exception e) {
-              if (i==1999) {
-                  Assert.fail(e.getMessage());
-              }
-          	}
-		}
-	}
-
-	@And("User validate the Current Principal balance field is available in Customer Debt screen")
-	public void user_validate_the_current_principal_balance_field_is_available_in_customer_debt_screen() throws Throwable {
-		WebElement currentPrincipalBalanceLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("currentPrincipalBalanceLabel"));
-		for (int i = 0; i <= 500; i++) {
-			try {
-				Assert.assertTrue(currentPrincipalBalanceLabel.isDisplayed());
-				break;
-			} catch (Exception e) {
-				if (i == 500) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-//		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("currentPrincipalBalanceLabel")).getText();
-		for (int i = 0; i <2000; i++) {
-          try {
-              Assert.assertTrue(!(financeTypeText.contains("*")));
-              break;
-          } catch (Exception e) {
-              if (i==1999) {
-                  Assert.fail(e.getMessage());
-              }
-          	}
-		}
-	}
-
-	@And("User validate the Tenure field is available in Customer Debt screen")
-	public void user_validate_the_tenure_field_is_available_in_customer_debt_screen() throws Throwable {
-		WebElement tenureMonthLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("tenureMonthLabel"));
-		for (int i = 0; i <= 500; i++) {
-			try {
-				Assert.assertTrue(tenureMonthLabel.isDisplayed());
-				break;
-			} catch (Exception e) {
-				if (i == 500) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}	
-//		Validate Mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("tenureMonthLabel")).getText();
-		for (int i = 0; i <2000; i++) {
-          try {
-              Assert.assertTrue(financeTypeText.contains("*"));
-              break;
-          } catch (Exception e) {
-              if (i==1999) {
-                  Assert.fail(e.getMessage());
-              }
-          	}
-		}
-	}
-
-	@And("User validate the Maturity Date field is available in Customer Debt screen")
-	public void user_validate_the_maturity_date_field_is_available_in_customer_debt_screen() throws Throwable {
-		WebElement maturityDateLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("maturityDateLabel"));
-		for (int i = 0; i <= 500; i++) {
-			try {
-				Assert.assertTrue(maturityDateLabel.isDisplayed());
-				break;
-			} catch (Exception e) {
-				if (i == 500) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}	
-//		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("maturityDateLabel")).getText();
-		for (int i = 0; i <2000; i++) {
-          try {
-              Assert.assertTrue(!(financeTypeText.contains("*")));
-              break;
-          } catch (Exception e) {
-              if (i==1999) {
-                  Assert.fail(e.getMessage());
-              }
-          	}
-		}
-	}
-
-	@And("User validate the Installment Amount field is available in Customer Debt screen")
-	public void user_validate_the_installment_amount_field_is_available_in_customer_debt_screen() throws Throwable {
-		WebElement installmentAmtLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtLabel"));
-		for (int i = 0; i <= 11000; i++) {
-			try {
-				Assert.assertTrue(installmentAmtLabel.isDisplayed());
-				break;
-			} catch (Exception e) {
-				if (i == 1000) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}	
-//		Validate Mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtLabel")).getText();
-		for (int i = 0; i <2000; i++) {
-          try {
-              Assert.assertTrue(financeTypeText.contains("*"));
-              break;
-          } catch (Exception e) {
-              if (i==1999) {
-                  Assert.fail(e.getMessage());
-              }
-          	}
-		}
-	}
-
-	@And("User validate the Amount considered field is available in Customer Debt screen")
-	public void user_validate_the_amount_considered_field_is_available_in_customer_debt_screen() throws Throwable {
-		WebElement amountConsideredLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("amountConsideredLabel"));
-		for (int i = 0; i <= 500; i++) {
-			try {
-				Assert.assertTrue(amountConsideredLabel.isDisplayed());
-				break;
-			} catch (Exception e) {
-				if (i == 500) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-//		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("amountConsideredLabel")).getText();
-		for (int i = 0; i <2000; i++) {
-          try {
-              Assert.assertTrue(!(financeTypeText.contains("*")));
-              break;
-          } catch (Exception e) {
-              if (i==1999) {
-                  Assert.fail(e.getMessage());
-              }
-          	}
-		}
-	}
-
-	@And("User validate the Currency field is available in Customer Debt screen")
-	public void user_validate_the_currency_field_is_available_in_customer_debt_screen() throws Throwable {
-		WebElement currencyLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("currencyLabel"));
-		for (int i = 0; i <= 1000; i++) {
-			try {
-				Assert.assertTrue(currencyLabel.isDisplayed());
-				break;
-			} catch (Exception e) {
-				if (i == 1000) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-//		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("currencyLabel")).getText();
-		for (int i = 0; i <2000; i++) {
-          try {
-              Assert.assertTrue(!(financeTypeText.contains("*")));
-              break;
-          } catch (Exception e) {
-              if (i==1999) {
-                  Assert.fail(e.getMessage());
-              }
-          	}
-		}
-	}
-
-	@And("User validate the Remarks field is available in Customer Debt screen")
-	public void user_validate_the_remarks_field_is_available_in_customer_debt_screen() throws Throwable {
-		WebElement remarksLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("remarksLabel"));
-		for (int i = 0; i <= 1000; i++) {
-			try {
-				Assert.assertTrue(remarksLabel.isDisplayed());
-				break;
-			} catch (Exception e) {
-				if (i == 1000) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-//		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("remarksLabel")).getText();
-		for (int i = 0; i <2000; i++) {
-          try {
-              Assert.assertTrue(!(financeTypeText.contains("*")));
-              break;
-          } catch (Exception e) {
-              if (i==1999) {
-                  Assert.fail(e.getMessage());
-              }
-          	}
-		}
-	}
-
-	@And("User validate the Next Due Date field is available in Customer Debt screen")
-	public void user_validate_the_next_due_date_field_is_available_in_customer_debt_screen() throws Throwable {
-		WebElement nextDueDateLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("nextDueDateLabel"));
-		for (int i = 0; i <= 500; i++) {
-			try {
-				Assert.assertTrue(nextDueDateLabel.isDisplayed());
-				break;
-			} catch (Exception e) {
-				if (i == 500) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-//		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("nextDueDateLabel")).getText();
-		for (int i = 0; i <2000; i++) {
-          try {
-              Assert.assertTrue(!(financeTypeText.contains("*")));
-              break;
-          } catch (Exception e) {
-              if (i==1999) {
-                  Assert.fail(e.getMessage());
-              }
-          	}
-		}		
-	}
-
-	@And("User validate the Collateral Type is available in Customer Debt screen")
-	public void user_validate_the_collateral_type_is_available_in_customer_debt_screen() throws Throwable {
-		for (int i = 0; i <= 1000; i++) {
-			try {
-				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("NPAClassificationLabel")));
-				break;
-			} catch (Exception e) {
-				if (i == 1000) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-		WebElement collateralTypeLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("collateralTypeLabel"));
-		for (int i = 0; i <= 500; i++) {
-			try {
-				Assert.assertTrue(collateralTypeLabel.isDisplayed());
-				break;
-			} catch (Exception e) {
-				if (i == 500) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}	 
-//		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("collateralTypeLabel")).getText();
-		for (int i = 0; i <2000; i++) {
-          try {
-              Assert.assertTrue(!(financeTypeText.contains("*")));
-              break;
-          } catch (Exception e) {
-              if (i==1999) {
-                  Assert.fail(e.getMessage());
-              }
-          	}
-		}
-	}
-
-	@And("User validate the Close Date field is available in Customer Debt screen")
-	public void user_validate_the_close_date_field_is_available_in_customer_debt_screen() throws Throwable {
-		WebElement closeDateLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("closeDateLabel"));
-		for (int i = 0; i <= 500; i++) {
-			try {
-				Assert.assertTrue(closeDateLabel.isDisplayed());
-				break;
-			} catch (Exception e) {
-				if (i == 500) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}	
-//		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("closeDateLabel")).getText();
-		for (int i = 0; i <2000; i++) {
-          try {
-              Assert.assertTrue(!(financeTypeText.contains("*")));
-              break;
-          } catch (Exception e) {
-              if (i==1999) {
-                  Assert.fail(e.getMessage());
-              }
-          	}
-		}
-	}
-
-	@And("User validate the Frequency field is available in Customer Debt screen")
-	public void user_validate_the_frequency_field_is_available_in_customer_debt_screen() throws Throwable {
-		WebElement frequencyLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("frequencyLabel"));
-		for (int i = 0; i <= 500; i++) {
-			try {
-				Assert.assertTrue(frequencyLabel.isDisplayed());
-				break;
-			} catch (Exception e) {
-				if (i == 500) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}	
-//		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("frequencyLabel")).getText();
-		for (int i = 0; i <2000; i++) {
-          try {
-              Assert.assertTrue(!(financeTypeText.contains("*")));
-              break;
-          } catch (Exception e) {
-              if (i==1999) {
-                  Assert.fail(e.getMessage());
-              }
-          	}
-		}
-	}
-
-	@And("User validate the Last payment amount field is available in Customer Debt screen")
-	public void user_validate_the_last_payment_amount_field_is_available_in_customer_debt_screen() throws Throwable {
-		WebElement lastPaymentAmtLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("lastPaymentAmtLabel"));
-		for (int i = 0; i <= 500; i++) {
-			try {
-				Assert.assertTrue(lastPaymentAmtLabel.isDisplayed());
-				break;
-			} catch (Exception e) {
-				if (i == 500) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}	
-//		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("lastPaymentAmtLabel")).getText();
-		for (int i = 0; i <2000; i++) {
-          try {
-              Assert.assertTrue(!(financeTypeText.contains("*")));
-              break;
-          } catch (Exception e) {
-              if (i==1999) {
-                  Assert.fail(e.getMessage());
-              }
-          	}
-		}
-	}
-
-	@And("User validate the Last payment date field is available in Customer Debt screen")
-	public void user_validate_the_last_payment_date_field_is_available_in_customer_debt_screen() throws Throwable {
-		WebElement lastPaymentDateLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("lastPaymentDateLabel"));
-		for (int i = 0; i <= 500; i++) {
-			try {
-				Assert.assertTrue(lastPaymentDateLabel.isDisplayed());
-				break;
-			} catch (Exception e) {
-				if (i == 500) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-//		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("lastPaymentDateLabel")).getText();
-		for (int i = 0; i <2000; i++) {
-          try {
-              Assert.assertTrue(!(financeTypeText.contains("*")));
-              break;
-          } catch (Exception e) {
-              if (i==1999) {
-                  Assert.fail(e.getMessage());
-              }
-          	}
-		}
-	}
-
-	@And("User validate the Product Name field is available in Customer Debt screen")
-	public void user_validate_the_product_name_field_is_available_in_customer_debt_screen() throws Throwable {
-		WebElement productNameLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("productNameLabel"));
-		for (int i = 0; i <= 500; i++) {
-			try {
-				Assert.assertTrue(productNameLabel.isDisplayed());
-				break;
-			} catch (Exception e) {
-				if (i == 500) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}	
-//		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("productNameLabel")).getText();
-		for (int i = 0; i <2000; i++) {
-          try {
-              Assert.assertTrue(!(financeTypeText.contains("*")));
-              break;
-          } catch (Exception e) {
-              if (i==1999) {
-                  Assert.fail(e.getMessage());
-              }
-          	}
-		}
-	}
-
-	@And("User validate the Last24 cycle field is available in Customer Debt screen")
-	public void user_validate_the_last24_cycle_field_is_available_in_customer_debt_screen() throws Throwable {
-		WebElement last24CycleLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("last24CycleLabel"));
-		for (int i = 0; i <= 500; i++) {
-			try {
-				Assert.assertTrue(last24CycleLabel.isDisplayed());
-				break;
-			} catch (Exception e) {
-				if (i == 500) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-//		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("last24CycleLabel")).getText();
-		for (int i = 0; i <2000; i++) {
-          try {
-              Assert.assertTrue(!(financeTypeText.contains("*")));
-              break;
-          } catch (Exception e) {
-              if (i==1999) {
-                  Assert.fail(e.getMessage());
-              }
-          	}
-		}
-	}
-
-	@And("User validate the Balance Transfer flag field is available in Customer Debt screen")
-	public void user_validate_the_balance_transfer_flag_field_is_available_in_customer_debt_screen() throws Throwable {
-		WebElement balanceTransferFlagLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("balanceTransferFlagLabel"));
-		for (int i = 0; i <= 500; i++) {
-			try {
-				Assert.assertTrue(balanceTransferFlagLabel.isDisplayed());
-				break;
-			} catch (Exception e) {
-				if (i == 500) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}	
-//		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("balanceTransferFlagLabel")).getText();
-		for (int i = 0; i <2000; i++) {
-          try {
-              Assert.assertTrue(!(financeTypeText.contains("*")));
-              break;
-          } catch (Exception e) {
-              if (i==1999) {
-                  Assert.fail(e.getMessage());
-              }
-          	}
-		}
-	}
-
-	@And("User validate the Facility Status field is available in Customer Debt screen")
-	public void user_validate_the_facility_status_field_is_available_in_customer_debt_screen() throws Throwable {
-		WebElement facilityStatusLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("facilityStatusLabel"));
-		for (int i = 0; i <= 500; i++) {
-			try {
-				Assert.assertTrue(facilityStatusLabel.isDisplayed());
-				break;
-			} catch (Exception e) {
-				if (i == 500) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-//		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("facilityStatusLabel")).getText();
-		for (int i = 0; i <2000; i++) {
-          try {
-              Assert.assertTrue(!(financeTypeText.contains("*")));
-              break;
-          } catch (Exception e) {
-              if (i==1999) {
-                  Assert.fail(e.getMessage());
-              }
-          	}
-		}
-	}
-
-	@And("User validate the Remaining Tenure field is available in Customer Debt screen")
-	public void user_validate_the_remaining_tenure_field_is_available_in_customer_debt_screen() throws Throwable {
-		WebElement remainingTenureLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("remainingTenureLabel"));
-		for (int i = 0; i <= 500; i++) {
-			try {
-				Assert.assertTrue(remainingTenureLabel.isDisplayed());
-				break;
-			} catch (Exception e) {
-				if (i == 500) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}	
-//		Validate Mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("remainingTenureLabel")).getText();
-		for (int i = 0; i <2000; i++) {
-          try {
-              Assert.assertTrue(financeTypeText.contains("*"));
-              break;
-          } catch (Exception e) {
-              if (i==1999) {
-                  Assert.fail(e.getMessage());
-              }
-          	}
-		}
-	}
-
-	@And("User validate the Disbursement Date field is available in Customer Debt screen")
-	public void user_validate_the_disbursement_date_field_is_available_in_customer_debt_screen() throws Throwable {
-		WebElement disbursementDateLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("disbursementDateLabel"));
-		for (int i = 0; i <= 500; i++) {
-			try {
-				Assert.assertTrue(disbursementDateLabel.isDisplayed());
-				break;
-			} catch (Exception e) {
-				if (i == 500) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-//		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("disbursementDateLabel")).getText();
-		for (int i = 0; i <2000; i++) {
-          try {
-              Assert.assertTrue(!(financeTypeText.contains("*")));
-              break;
-          } catch (Exception e) {
-              if (i==1999) {
-                  Assert.fail(e.getMessage());
-              }
-          	}
-		}
-	}
-
-	@And("User validate the Request for Balance Takeover field is available in Customer Debt screen")
-	public void user_validate_the_request_for_balance_takeover_field_is_available_in_customer_debt_screen() throws Throwable {
-		WebElement reqForBalanceTakeoverLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("reqForBalanceTakeoverLabel"));
-		for (int i = 0; i <= 500; i++) {
-			try {
-				Assert.assertTrue(reqForBalanceTakeoverLabel.isDisplayed());
-				break;
-			} catch (Exception e) {
-				if (i == 500) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}	  
-//		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("reqForBalanceTakeoverLabel")).getText();
-		for (int i = 0; i <2000; i++) {
-          try {
-              Assert.assertTrue(!(financeTypeText.contains("*")));
-              break;
-          } catch (Exception e) {
-              if (i==1999) {
-                  Assert.fail(e.getMessage());
-              }
-          	}
-		}
-	}
-
-	@And("User validate the NPA Classification field is available in Customer Debt screen")
-	public void user_validate_the_npa_classification_field_is_available_in_customer_debt_screen() throws Throwable {
-		WebElement NPAClassificationLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("NPAClassificationLabel"));
-		for (int i = 0; i <= 500; i++) {
-			try {
-				Assert.assertTrue(NPAClassificationLabel.isDisplayed());
-				break;
-			} catch (Exception e) {
-				if (i == 500) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-//		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("NPAClassificationLabel")).getText();
-		for (int i = 0; i <2000; i++) {
-          try {
-              Assert.assertTrue(!(financeTypeText.contains("*")));
-              break;
-          } catch (Exception e) {
-              if (i==1999) {
-                  Assert.fail(e.getMessage());
-              }
-          	}
-		}
-	}
-	
-	///////////////////////////////////////////////////////////////////////////////////////////
-	@And("User enter the Sanction Amount in Customer Debt screen")
+	@And("User_608 enter the Sanction Amount in Customer Debt screen")
 	public void user_enter_the_sanction_amount_in_customer_debt_screen() throws Throwable {
 		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionAmtInput")).click();
 		for (int i = 0; i <= 500; i++) {
@@ -1317,7 +1368,7 @@ public class IJARAH_Steps {
 	    
 	}
 
-	@And("User enter the Tenure in Customer Debt screen")
+	@And("User_608 enter the Tenure in Customer Debt screen")
 	public void user_enter_the_tenure_in_customer_debt_screen() throws Throwable {
 		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("tenureMonthInput")).click();
 		for (int i = 0; i <= 500; i++) {
@@ -1333,7 +1384,7 @@ public class IJARAH_Steps {
 		}	    
 	}
 
-	@And("User enter the Installment Amount in Customer Debt screen")
+	@And("User_608 enter the Installment Amount in Customer Debt screen")
 	public void user_enter_the_installment_amount_in_customer_debt_screen() throws Throwable {
 		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtInput")).click();
 		for (int i = 0; i <= 500; i++) {
@@ -1359,7 +1410,7 @@ public class IJARAH_Steps {
 		}
 	}
 
-	@And("User enter the Remaining Tenure in Customer Debt screen")
+	@And("User_608 enter the Remaining Tenure in Customer Debt screen")
 	public void user_enter_the_remaining_tenure_in_customer_debt_screen() throws Throwable {
 		for (int i = 0; i <= 1000; i++) {
 			try {
@@ -1395,7 +1446,7 @@ public class IJARAH_Steps {
 		}		
 	}
 	
-	@When("User click the Save button in Customer Debt screen")
+	@When("User_608 click the Save button in Customer Debt screen")
 	public void user_click_the_save_button_in_customer_debt_screen() throws Throwable {
 		WebElement pageTop = javascriptHelper.executeScriptWithWebElement("document.querySelector('[ng-reflect-layout=\"COMPACT\"]')");
 		for (int i = 0; i <= 1000; i++) {
@@ -1420,7 +1471,7 @@ public class IJARAH_Steps {
 		}	    
 	}
 
-	@Then("User validate the confirm message in Customer Debt screen")
+	@Then("User_608 validate the confirm message in Customer Debt screen")
 	public void user_validate_the_confirm_message_in_customer_debt_screen() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("successMsg")));
 		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("successMsg")).getText();
@@ -1437,7 +1488,7 @@ public class IJARAH_Steps {
 	}
 	
 	
-	@And("User validate the mandatory field blank message in Customer Debt screen")
+	@And("User_608 validate the mandatory field blank message in Customer Debt screen")
 	public void user_validate_the_mandatory_field_blank_message_in_customer_debt_screen() throws Throwable {
 //		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("mandatoryFillToastMsg")));
 		String madatoryErrorMsg = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("mandatoryFillToastMsg")).getText();
@@ -1454,7 +1505,7 @@ public class IJARAH_Steps {
 		}
 	}
 
-	@And("User enter the Text value in numeric field and validate the error message in Customer Debt screen")
+	@And("User_608 enter the Text value in numeric field and validate the error message in Customer Debt screen")
 	public void user_enter_the_text_value_in_numeric_field_and_validate_the_error_message_in_customer_debt_screen() throws Throwable {
 		for (int i = 0; i <= 1000; i++) {
 			try {
@@ -1505,7 +1556,7 @@ public class IJARAH_Steps {
 		}	    
 	}
 
-	@And("User validate the message for invalid data in Customer Debt screen")
+	@And("User_608 validate the message for invalid data in Customer Debt screen")
 	public void user_validate_the_message_for_invalid_data_in_customer_debt_screen() throws Throwable {
 		String madatoryErrorMsg = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("mandatoryFillToastMsg")).getText();
 		System.err.println("Mandatory Error : "+madatoryErrorMsg);
@@ -1521,8 +1572,8 @@ public class IJARAH_Steps {
 		}	    
 	}
 	
-
-	@And("User click the pencil button under Financial Commitments in Customer Financials tab")
+//	AT_CUD_003
+	@And("User_608 click the pencil button under Financial Commitments in Customer Financials tab")
 	public void user_click_the_pencil_button_under_financial_commitments_in_customer_financials_tab() throws Throwable {
 		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
 		String listOfAddButton = "";
@@ -1589,7 +1640,7 @@ public class IJARAH_Steps {
 	
 	
 //	AT_CUD_003
-	@And("User modify the Sanction amount in Customer Debt screen")
+	@And("User_608 modify the Sanction amount in Customer Debt screen")
 	public void user_modify_the_sanction_amount_in_customer_debt_screen() throws Throwable {
 		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionAmtInput")).click();
 		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionAmtInput")).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
@@ -1607,7 +1658,7 @@ public class IJARAH_Steps {
 	    
 	}
 
-	@And("User enter the invalid data and verify in Installment field under Customer Debt screen")
+	@And("User_608 enter the invalid data and verify in Installment field under Customer Debt screen")
 	public void user_enter_the_invalid_data_and_verify_in_installment_field_under_customer_debt_screen() throws Throwable {
 		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtInput")).click();
 		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtInput")).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
@@ -1649,13 +1700,13 @@ public class IJARAH_Steps {
 		}	    
 	}
 
-	@And("User clear the mandatory field value in Customer Debt screen")
+	@And("User_608 clear the mandatory field value in Customer Debt screen")
 	public void user_clear_the_mandatory_field_value_in_customer_debt_screen() throws Throwable {
 		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtInput")).click();
 		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtInput")).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));	    
 	}
 
-	@And("User Update the record with mandatory field blank in Customer Debt screen")
+	@And("User_608 Update the record with mandatory field blank in Customer Debt screen")
 	public void user_update_the_record_with_mandatory_field_blank_in_customer_debt_screen() throws Throwable {
 		WebElement pageTop = javascriptHelper.executeScriptWithWebElement("document.querySelector('[ng-reflect-layout=\"COMPACT\"]')");
 		for (int i = 0; i <= 1000; i++) {
@@ -1680,7 +1731,7 @@ public class IJARAH_Steps {
 		}	    
 	}
 	
-	@When("User click the Update button in Customer Debt screen")
+	@When("User_608 click the Update button in Customer Debt screen")
 	public void user_click_the_update_button_in_customer_debt_screen() throws Throwable {
 		WebElement pageTop = javascriptHelper.executeScriptWithWebElement("document.querySelector('[ng-reflect-layout=\"COMPACT\"]')");
 		for (int i = 0; i <= 1000; i++) {
@@ -3058,7 +3109,7 @@ public class IJARAH_Steps {
 	
 	
 //	AT_CUD_004
-	@And("User click Search button in Financial Commitments under Customer Financials tab")
+	@And("User_608 click Search button in Financial Commitments under Customer Financials tab")
 	public void user_click_search_button_in_financial_commitments_under_customer_financials_tab() throws Throwable {
 		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
 		String listOfAddButton = "";
@@ -3122,7 +3173,7 @@ public class IJARAH_Steps {
 		}
 	}
 
-	@And("User search the matched record in Financial Commitments under Customer Financials tab")
+	@And("User_608 search the matched record in Financial Commitments under Customer Financials tab")
 	public void user_search_the_matched_record_in_financial_commitments_under_customer_financials_tab() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentSearchInput")));
 		for (int i = 0; i <= 500; i++) {
@@ -3140,7 +3191,7 @@ public class IJARAH_Steps {
 		}		
 	}
 	
-	@And("User search the mismatched record in Financial Commitments under Customer Financials tab")
+	@And("User_608 search the mismatched record in Financial Commitments under Customer Financials tab")
 	public void user_search_the_mismatched_record_in_financial_commitments_under_customer_financials_tab() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentSearchInput")));
 		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentSearchInput")).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
@@ -3162,7 +3213,7 @@ public class IJARAH_Steps {
 	
 	
 	// CUD_04_06 & CUD_04_06
-	@And("User click the Export button in Financial Commitments under Customer Financials tab")
+	@And("User_608 click the Export button in Financial Commitments under Customer Financials tab")
 	public void user_click_the_export_button_in_financial_commitments_under_customer_financials_tab() throws Throwable {
 		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
 		String listOfAddButton = "";
@@ -3229,7 +3280,7 @@ public class IJARAH_Steps {
 	}
 	
 	
-	@And("User click the PDF and verify under Export in Financial Commitments")
+	@And("User_608 click the PDF and verify under Export in Financial Commitments")
 	public void user_click_the_pdf_and_verify_under_export_in_financial_commitments() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentExportPDF")));
 		for (int i = 0; i <= 300; i++) {
@@ -3261,7 +3312,7 @@ public class IJARAH_Steps {
         }
 	}
 
-	@And("User click the XLS and verify under Export in Financial Commitments")
+	@And("User_608 click the XLS and verify under Export in Financial Commitments")
 	public void user_click_the_xls_and_verify_under_export_in_financial_commitments() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentExportXLS")));
 		for (int i = 0; i <= 300; i++) {
@@ -3292,7 +3343,7 @@ public class IJARAH_Steps {
 	
 	
 //	AT_CUD_006
-	@And("User click the first row pencil icon under Financial Commitments in Customer Financials tab")
+	@And("User_608 click the first row pencil icon under Financial Commitments in Customer Financials tab")
 	public void user_click_the_first_row_pencil_icon_under_financial_commitments_in_customer_financials_tab() throws Throwable {
 		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
 		String listOfAddButton = "";
@@ -3347,7 +3398,7 @@ public class IJARAH_Steps {
 	}
 	
 	
-	@And("User click the Stats Radio button under Customer Debt screen")
+	@And("User_608 click the Stats Radio button under Customer Debt screen")
 	public void user_click_the_stats_radio_button_under_customer_debt_screen() throws Throwable {
 		for (int i = 0; i <= 300; i++) {
 			try {
@@ -3373,7 +3424,7 @@ public class IJARAH_Steps {
 	}
 	
 	
-	@And("User verify the first row status as In-Active under Financial Commitments in Customer Financials tab")
+	@And("User_608 verify the first row status as In-Active under Financial Commitments in Customer Financials tab")
 	public void user_verify_the_first_row_status_under_financial_commitments_in_customer_financials_tab() throws Throwable {
 		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
 		String listOfAddButton = "";
@@ -3422,7 +3473,7 @@ public class IJARAH_Steps {
 		
 	}
 	
-	@And("User verify the first row status as Active under Financial Commitments in Customer Financials tab")
+	@And("User_608 verify the first row status as Active under Financial Commitments in Customer Financials tab")
 	public void user_verify_the_first_row_status_as_active_under_financial_commitments_in_customer_financials_tab() throws Throwable {
 		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
 		String listOfAddButton = "";
@@ -3473,7 +3524,7 @@ public class IJARAH_Steps {
 	
 	
 	// CUD_04_01
-	@And("User verify the Financial Institution field is displayed in list view under Financial Commitments")
+	@And("User_608 verify the Financial Institution field is displayed in list view under Financial Commitments")
 	public void user_verify_the_financial_institution_field_is_displayed_in_list_view_under_financial_commitments() throws Throwable {
 		WebElement financialInstitution = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommit_FinancialInstitution"));
 		for (int i = 0; i <= 500; i++) {
@@ -3489,6 +3540,7 @@ public class IJARAH_Steps {
 		
 		for (int i = 0; i <= 500; i++) {
 			try {
+				javascriptHelper.backgroundStyle(financialInstitution);
 				Assert.assertTrue(financialInstitution.isDisplayed());
 				break;
 			} catch (Exception e) {
@@ -3499,11 +3551,12 @@ public class IJARAH_Steps {
 		}	    
 	}
 
-	@And("User verify the Loan Amount field is displayed in list view under Financial Commitments")
+	@And("User_608 verify the Loan Amount field is displayed in list view under Financial Commitments")
 	public void user_verify_the_loan_amount_field_is_displayed_in_list_view_under_financial_commitments() throws Throwable {
 		WebElement loanAmount = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommit_LoanAmount"));
 		for (int i = 0; i <= 500; i++) {
 			try {
+				javascriptHelper.backgroundStyle(loanAmount);
 				Assert.assertTrue(loanAmount.isDisplayed());
 				break;
 			} catch (Exception e) {
@@ -3514,11 +3567,12 @@ public class IJARAH_Steps {
 		}	    
 	}
 
-	@And("User verify the Installment Amount field is displayed in list view under Financial Commitments")
+	@And("User_608 verify the Installment Amount field is displayed in list view under Financial Commitments")
 	public void user_verify_the_installment_amount_field_is_displayed_in_list_view_under_financial_commitments() throws Throwable {
 		WebElement installmentAmount = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommit_InstallmentAmount"));
 		for (int i = 0; i <= 500; i++) {
 			try {
+				javascriptHelper.backgroundStyle(installmentAmount);
 				Assert.assertTrue(installmentAmount.isDisplayed());
 				break;
 			} catch (Exception e) {
@@ -3529,11 +3583,12 @@ public class IJARAH_Steps {
 		}	    
 	}
 
-	@And("User verify the Tenure field is displayed in list view under Financial Commitments")
+	@And("User_608 verify the Tenure field is displayed in list view under Financial Commitments")
 	public void user_verify_the_tenure_field_is_displayed_in_list_view_under_financial_commitments() throws Throwable {
 		WebElement tenure = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommit_Tenure"));
 		for (int i = 0; i <= 500; i++) {
 			try {
+				javascriptHelper.backgroundStyle(tenure);
 				Assert.assertTrue(tenure.isDisplayed());
 				break;
 			} catch (Exception e) {
@@ -3544,11 +3599,12 @@ public class IJARAH_Steps {
 		}	    
 	}
 
-	@And("User verify the Next Due Date field is displayed in list view under Financial Commitments")
+	@And("User_608 verify the Next Due Date field is displayed in list view under Financial Commitments")
 	public void user_verify_the_next_due_date_field_is_displayed_in_list_view_under_financial_commitments() throws Throwable {
 		WebElement nextDueDate = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommit_NextDueDate"));
 		for (int i = 0; i <= 500; i++) {
 			try {
+				javascriptHelper.backgroundStyle(nextDueDate);
 				Assert.assertTrue(nextDueDate.isDisplayed());
 				break;
 			} catch (Exception e) {
@@ -3559,11 +3615,12 @@ public class IJARAH_Steps {
 		}	    
 	}
 
-	@And("User verify the Principal Balance field is displayed in list view under Financial Commitments")
+	@And("User_608 verify the Principal Balance field is displayed in list view under Financial Commitments")
 	public void user_verify_the_principal_balance_field_is_displayed_in_list_view_under_financial_commitments() throws Throwable {
 		WebElement principalAmount = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommit_PrincipalAmount"));
 		for (int i = 0; i <= 500; i++) {
 			try {
+				javascriptHelper.backgroundStyle(principalAmount);
 				Assert.assertTrue(principalAmount.isDisplayed());
 				break;
 			} catch (Exception e) {
@@ -3574,11 +3631,12 @@ public class IJARAH_Steps {
 		}	    
 	}
 
-	@And("User verify the Currency field is displayed in list view under Financial Commitments")
+	@And("User_608 verify the Currency field is displayed in list view under Financial Commitments")
 	public void user_verify_the_currency_field_is_displayed_in_list_view_under_financial_commitments() throws Throwable {
 		WebElement currency = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommit_Currency"));
 		for (int i = 0; i <= 500; i++) {
 			try {
+				javascriptHelper.backgroundStyle(currency);
 				Assert.assertTrue(currency.isDisplayed());
 				break;
 			} catch (Exception e) {
@@ -3592,7 +3650,7 @@ public class IJARAH_Steps {
 	
 	
 //	CUD_04_02
-	@And("User verify list view values should be not editable under FInancial Commitments")
+	@And("User_608 verify list view values should be not editable under FInancial Commitments")
 	public void user_verify_list_view_values_should_be_not_editable_under_f_inancial_commitments() throws Throwable {
 		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
 		String listOfAddButton = "";
@@ -5382,18 +5440,14 @@ public class IJARAH_Steps {
 				}
 			}
 		}	    
-	}
-	
-	
-	
-	
-	
+	}	
 	
 	
 //	AT_ADC_02
 	@And("User verify the Classification field available under Application details screen")
 	public void user_verify_the_classification_field_available_under_application_details_screen() throws Throwable {
 		WebElement classificationLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("classificationLabel"));
+		waitHelper.waitForElementwithFluentwait(driver, classificationLabel);
 		System.out.println("Field Name: "+classificationLabel.getText());
 		for (int i = 0; i <= 2000; i++) {
 			try {
@@ -5937,6 +5991,973 @@ public class IJARAH_Steps {
 			}
 		}	    
 	}
+	
+	
+//	************************* Offering Stage -- Offer Details Tab *************************************
+//	AT_OFO_01
+	@And("User_608 click the pencil icon button under Offer Details tab")
+	public void user_click_the_pencil_icon_button_under_offer_details_tab() throws Throwable {
+		Thread.sleep(2000);
+		WebElement offerDetailsTabPencilIcon = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("offerDetailsTabPencilIcon"));	
+		for (int i = 0; i <= 5000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(offerDetailsTabPencilIcon);
+				javascriptHelper.JSEClick(offerDetailsTabPencilIcon);
+				break;
+			} catch (Exception e) {
+				if (i == 5000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	   
+	}
+
+	@And("User_608 verify the Offer Details section available under Offer Details tab")
+	public void user_verify_the_offer_details_section_available_under_offer_details_tab() throws Throwable {
+		WebElement offerDetailsSection = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("offerDetailsSection"));
+		waitHelper.waitForElementwithFluentwait(driver, offerDetailsSection);
+		System.out.println("Section Name: "+offerDetailsSection.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(offerDetailsSection);
+				Assert.assertTrue(offerDetailsSection.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	   
+	}
+
+	@And("User_608 verify the Finance Details section available under Offer Details tab")
+	public void user_verify_the_finance_details_section_available_under_offer_details_tab() throws Throwable {
+		WebElement financeDetailsSection = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetailsSection"));
+		System.out.println("Section Name: "+financeDetailsSection.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(financeDetailsSection);
+				Assert.assertTrue(financeDetailsSection.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	   
+	}
+
+	@And("User_608 verify the Credit Risk Factor section available under Offer Details tab")
+	public void user_verify_the_credit_risk_factor_section_available_under_offer_details_tab() throws Throwable {
+		WebElement creditRiskFactorSection = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("creditRiskFactorSection"));
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				javascriptHelper.scrollIntoView(creditRiskFactorSection);
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		System.out.println("Section Name: "+creditRiskFactorSection.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(creditRiskFactorSection);
+				Assert.assertTrue(creditRiskFactorSection.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	   
+	}
+
+	@And("User_608 verify the Credit Score Details section available under Offer Details tab")
+	public void user_verify_the_credit_score_details_section_available_under_offer_details_tab() throws Throwable {
+		WebElement creditScoreDetailsSection = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("creditScoreDetailsSection"));
+		System.out.println("Section Name: "+creditScoreDetailsSection.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(creditScoreDetailsSection);
+				Assert.assertTrue(creditScoreDetailsSection.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	   
+	}
+
+	@And("User_608 verify the Eligibility Details section available under Offer Details tab")
+	public void user_verify_the_eligibility_details_section_available_under_offer_details_tab() throws Throwable {
+		WebElement eligibilityDetailsSection = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("eligibilityDetailsSection"));
+		System.out.println("Section Name: "+eligibilityDetailsSection.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(eligibilityDetailsSection);
+				Assert.assertTrue(eligibilityDetailsSection.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	   
+	}
+
+	@And("User_608 verify the Interest Rate Structure section available under Offer Details tab")
+	public void user_verify_the_interest_rate_structure_section_available_under_offer_details_tab() throws Throwable {
+		WebElement interestRateStructureSection = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("interestRateStructureSection"));
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				javascriptHelper.scrollIntoView(interestRateStructureSection);
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		System.out.println("Section Name: "+interestRateStructureSection.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(interestRateStructureSection);
+				Assert.assertTrue(interestRateStructureSection.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	   
+	}
+
+	@And("User_608 verify the Installments section available under Offer Details tab")
+	public void user_verify_the_installments_section_available_under_offer_details_tab() throws Throwable {
+		WebElement installmentsSection = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("installmentsSection"));
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				javascriptHelper.scrollIntoView(installmentsSection);
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		System.out.println("Section Name: "+installmentsSection.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(installmentsSection);
+				Assert.assertTrue(installmentsSection.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	   
+	}
+
+	@And("User_608 verify the Appeal Request section available under Offer Details tab")
+	public void user_verify_the_appeal_request_section_available_under_offer_details_tab() throws Throwable {
+		WebElement appealRequestSection = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("appealRequestSection"));
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				javascriptHelper.scrollIntoView(appealRequestSection);
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		System.out.println("Section Name: "+appealRequestSection.getText());
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(appealRequestSection);
+				Assert.assertTrue(appealRequestSection.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	   
+	}
+	
+	
+//	AT_OFO_02
+	@And("User_608 verify Product field available under Offer Details section")
+	public void user_verify_product_field_available_under_offer_details_section() throws Throwable {
+		WebElement offerDetailsSection = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("offerDetailsSection"));
+		waitHelper.waitForElementwithFluentwait(driver, offerDetailsSection);
+		WebElement offerDetails_productLabel = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("offerDetails_productLabel"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(offerDetails_productLabel);
+				Assert.assertTrue(offerDetails_productLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		WebElement offerDetails_productInput = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("offerDetails_productInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(offerDetails_productInput);
+				Assert.assertTrue(offerDetails_productInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_608 verify Sub-Product field available under Offer Details section")
+	public void user_verify_sub_product_field_available_under_offer_details_section() throws Throwable {
+		WebElement offerDetails_subProductLabel = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("offerDetails_subProductLabel"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(offerDetails_subProductLabel);
+				Assert.assertTrue(offerDetails_subProductLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	
+		WebElement offerDetails_subProductInput = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("offerDetails_subProductInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(offerDetails_subProductInput);
+				Assert.assertTrue(offerDetails_subProductInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_608 verify Scheme field available under Offer Details section")
+	public void user_verify_scheme_field_available_under_offer_details_section() throws Throwable {
+		WebElement offerDetails_schemeLabel = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("offerDetails_schemeLabel"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(offerDetails_schemeLabel);
+				Assert.assertTrue(offerDetails_schemeLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	
+		WebElement offerDetails_schemeInput = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("offerDetails_schemeInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(offerDetails_schemeInput);
+				Assert.assertTrue(offerDetails_schemeInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_608 verify Pricing Indicator field available under Offer Details section")
+	public void user_verify_pricing_indicator_field_available_under_offer_details_section() throws Throwable {
+		WebElement offerDetails_pricingIndicatorLabel = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("offerDetails_pricingIndicatorLabel"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(offerDetails_pricingIndicatorLabel);
+				Assert.assertTrue(offerDetails_pricingIndicatorLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		WebElement offerDetails_pricingIndicatorInput = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("offerDetails_pricingIndicatorInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(offerDetails_pricingIndicatorInput);
+				Assert.assertTrue(offerDetails_pricingIndicatorInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_608 verify Offered Amount field available under Offer Details section")
+	public void user_verify_offered_amount_field_available_under_offer_details_section() throws Throwable {
+		WebElement offerDetails_offeredAmountLabel = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("offerDetails_offeredAmountLabel"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(offerDetails_offeredAmountLabel);
+				Assert.assertTrue(offerDetails_offeredAmountLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		WebElement offerDetails_offeredAmountInput = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("offerDetails_offeredAmountInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(offerDetails_offeredAmountInput);
+				Assert.assertTrue(offerDetails_offeredAmountInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_608 verify Tenure field available under Offer Details section")
+	public void user_verify_tenure_field_available_under_offer_details_section() throws Throwable {
+		WebElement offerDetails_tenureLabel = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("offerDetails_tenureLabel"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(offerDetails_tenureLabel);
+				Assert.assertTrue(offerDetails_tenureLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	
+		WebElement offerDetails_tenureInput = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("offerDetails_tenureInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(offerDetails_tenureInput);
+				Assert.assertTrue(offerDetails_tenureInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_608 verify Nature of Finance field available under Offer Details section")
+	public void user_verify_nature_of_finance_field_available_under_offer_details_section() throws Throwable {
+		WebElement offerDetails_natureOfFinanceLabel = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("offerDetails_natureOfFinanceLabel"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(offerDetails_natureOfFinanceLabel);
+				Assert.assertTrue(offerDetails_natureOfFinanceLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		WebElement offerDetails_natureOfFinanceInput = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("offerDetails_natureOfFinanceInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(offerDetails_natureOfFinanceInput);
+				Assert.assertTrue(offerDetails_natureOfFinanceInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_608 verify Currency field available under Offer Details section")
+	public void user_verify_currency_field_available_under_offer_details_section() throws Throwable {
+		WebElement offerDetails_currencyLabel = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("offerDetails_currencyLabel"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(offerDetails_currencyLabel);
+				Assert.assertTrue(offerDetails_currencyLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	
+		WebElement offerDetails_currencyInput = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("offerDetails_currencyInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(offerDetails_currencyInput);
+				Assert.assertTrue(offerDetails_currencyInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_608 verify Eligible Income field available under Offer Details section")
+	public void user_verify_eligible_income_field_available_under_offer_details_section() throws Throwable {
+		WebElement offerDetails_eligibleIncomeLabel = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("offerDetails_eligibleIncomeLabel"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(offerDetails_eligibleIncomeLabel);
+				Assert.assertTrue(offerDetails_eligibleIncomeLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		WebElement offerDetails_eligibleIncomeInput = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("offerDetails_eligibleIncomeInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(offerDetails_eligibleIncomeInput);
+				Assert.assertTrue(offerDetails_eligibleIncomeInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	
+//	AT_OFO_03
+	@And("User_608 verify Total Obligations field available under Finance Details section")
+	public void user_verify_total_obligations_field_available_under_finance_details_section() throws Throwable {
+		WebElement financeDetailsSection = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("offerDetailsSection"));
+		waitHelper.waitForElementwithFluentwait(driver, financeDetailsSection);
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				javascriptHelper.scrollIntoView(financeDetailsSection);
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		WebElement financeDetails_totalObligationsLabel = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_totalObligationsLabel"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(financeDetails_totalObligationsLabel);
+				Assert.assertTrue(financeDetails_totalObligationsLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	  
+		WebElement financeDetails_totalObligationsInput = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_totalObligationsInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(financeDetails_totalObligationsInput);
+				Assert.assertTrue(financeDetails_totalObligationsInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_608 verify Total Net Income field available under Finance Details section")
+	public void user_verify_total_net_income_field_available_under_finance_details_section() throws Throwable {
+		WebElement financeDetails_totalnetIncomeLabel = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_totalnetIncomeLabel"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(financeDetails_totalnetIncomeLabel);
+				Assert.assertTrue(financeDetails_totalnetIncomeLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		WebElement financeDetails_totalnetIncomeInput = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_totalnetIncomeInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(financeDetails_totalnetIncomeInput);
+				Assert.assertTrue(financeDetails_totalnetIncomeInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_608 verify Total Income field available under Finance Details section")
+	public void user_verify_total_income_field_available_under_finance_details_section() throws Throwable {
+		WebElement financeDetails_totalIncomeLabel = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_totalIncomeLabel"));
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				javascriptHelper.scrollIntoView(financeDetails_totalIncomeLabel);
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(financeDetails_totalIncomeLabel);
+				Assert.assertTrue(financeDetails_totalIncomeLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		WebElement financeDetails_totalIncomeInput = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_totalIncomeInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(financeDetails_totalIncomeInput);
+				Assert.assertTrue(financeDetails_totalIncomeInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_608 verify Total Fees field available under Finance Details section")
+	public void user_verify_total_fees_field_available_under_finance_details_section() throws Throwable {
+		WebElement financeDetails_totalFeesLabel = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_totalFeesLabel"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(financeDetails_totalFeesLabel);
+				Assert.assertTrue(financeDetails_totalFeesLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		WebElement financeDetails_totalFeesInput = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_totalFeesInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(financeDetails_totalFeesInput);
+				Assert.assertTrue(financeDetails_totalFeesInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_608 verify Total Down Payment Amount field available under Finance Details section")
+	public void user_verify_total_down_payment_amount_field_available_under_finance_details_section() throws Throwable {
+		WebElement financeDetails_totalDownPaymentAmtLabel = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_totalDownPaymentAmtLabel"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(financeDetails_totalDownPaymentAmtLabel);
+				Assert.assertTrue(financeDetails_totalDownPaymentAmtLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		WebElement financeDetails_totalDownPaymentAmtInput = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_totalDownPaymentAmtInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(financeDetails_totalDownPaymentAmtInput);
+				Assert.assertTrue(financeDetails_totalDownPaymentAmtInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_608 verify Total Contract Value field available under Finance Details section")
+	public void user_verify_total_contract_value_field_available_under_finance_details_section() throws Throwable {
+		WebElement financeDetails_totalContractValueLabel = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_totalContractValueLabel"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(financeDetails_totalContractValueLabel);
+				Assert.assertTrue(financeDetails_totalContractValueLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		WebElement financeDetails_totalContractValueInput = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_totalContractValueInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(financeDetails_totalContractValueInput);
+				Assert.assertTrue(financeDetails_totalContractValueInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_608 verify Number of Installments field available under Finance Details section")
+	public void user_verify_number_of_installments_field_available_under_finance_details_section() throws Throwable {
+		WebElement financeDetails_noOfInstallmentsLabel = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_noOfInstallmentsLabel"));
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				javascriptHelper.scrollIntoView(financeDetails_noOfInstallmentsLabel);
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(financeDetails_noOfInstallmentsLabel);
+				Assert.assertTrue(financeDetails_noOfInstallmentsLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		WebElement financeDetails_noOfInstallmentsInput = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_noOfInstallmentsInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(financeDetails_noOfInstallmentsInput);
+				Assert.assertTrue(financeDetails_noOfInstallmentsInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_608 verify Last Installment Amount field available under Finance Details section")
+	public void user_verify_last_installment_amount_field_available_under_finance_details_section() throws Throwable {
+		WebElement financeDetails_lastInstallmentLabel = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_lastInstallmentLabel"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(financeDetails_lastInstallmentLabel);
+				Assert.assertTrue(financeDetails_lastInstallmentLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		WebElement financeDetails_lastInstallmentInput = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_lastInstallmentInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(financeDetails_lastInstallmentInput);
+				Assert.assertTrue(financeDetails_lastInstallmentInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_608 verify IRR field available under Finance Details section")
+	public void user_verify_irr_field_available_under_finance_details_section() throws Throwable {
+		WebElement financeDetails_IRRLabel = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_IRRLabel"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(financeDetails_IRRLabel);
+				Assert.assertTrue(financeDetails_IRRLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		WebElement financeDetails_IRRInput = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_IRRInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(financeDetails_IRRInput);
+				Assert.assertTrue(financeDetails_IRRInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_608 verify Installment Frequency field available under Finance Details section")
+	public void user_verify_installment_frequency_field_available_under_finance_details_section() throws Throwable {
+		WebElement financeDetails_InstallmentFrequencyLabel = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_InstallmentFrequencyLabel"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(financeDetails_InstallmentFrequencyLabel);
+				Assert.assertTrue(financeDetails_InstallmentFrequencyLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		WebElement financeDetails_InstallmentFrequencyInput = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_InstallmentFrequencyInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(financeDetails_InstallmentFrequencyInput);
+				Assert.assertTrue(financeDetails_InstallmentFrequencyInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_608 verify APR field available under Finance Details section")
+	public void user_verify_apr_field_available_under_finance_details_section() throws Throwable {
+		WebElement financeDetails_APRLabel = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_APRLabel"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(financeDetails_APRLabel);
+				Assert.assertTrue(financeDetails_APRLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		WebElement financeDetails_APRInput = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_APRInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(financeDetails_APRInput);
+				Assert.assertTrue(financeDetails_APRInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_608 verify Amount Requested field available under Finance Details section")
+	public void user_verify_amount_requested_field_available_under_finance_details_section() throws Throwable {
+		WebElement financeDetails_AmountRequestedLabel = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_AmountRequestedLabel"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(financeDetails_AmountRequestedLabel);
+				Assert.assertTrue(financeDetails_AmountRequestedLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		WebElement financeDetails_AmountRequestedInput = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_AmountRequestedInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(financeDetails_AmountRequestedInput);
+				Assert.assertTrue(financeDetails_AmountRequestedInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_608 verify Additional Down Payment field available under Finance Details section")
+	public void user_verify_additional_down_payment_field_available_under_finance_details_section() throws Throwable {
+		WebElement financeDetails_AdditionalDownPaymentLabel = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_AdditionalDownPaymentLabel"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(financeDetails_AdditionalDownPaymentLabel);
+				Assert.assertTrue(financeDetails_AdditionalDownPaymentLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		WebElement financeDetails_AdditionalDownPaymentInput = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_AdditionalDownPaymentInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(financeDetails_AdditionalDownPaymentInput);
+				Assert.assertTrue(financeDetails_AdditionalDownPaymentInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_608 verify Down Payment Percentage field available under Finance Details section")
+	public void user_verify_down_payment_percentage_field_available_under_finance_details_section() throws Throwable {
+		WebElement financeDetails_downPaymentPercentLabel = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_downPaymentPercentLabel"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(financeDetails_downPaymentPercentLabel);
+				Assert.assertTrue(financeDetails_downPaymentPercentLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		WebElement financeDetails_downPaymentPercentInput = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_downPaymentPercentInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(financeDetails_downPaymentPercentInput);
+				Assert.assertTrue(financeDetails_downPaymentPercentInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_608 verify Tenure field available under Finance Details section")
+	public void user_verify_tenure_field_available_under_finance_details_section() throws Throwable {
+		WebElement financeDetails_tenureLabel = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_tenureLabel"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(financeDetails_tenureLabel);
+				Assert.assertTrue(financeDetails_tenureLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		WebElement financeDetails_tenureInput = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_tenureInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(financeDetails_tenureInput);
+				Assert.assertTrue(financeDetails_tenureInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_608 verify Profit Amount field available under Finance Details section")
+	public void user_verify_profit_amount_field_available_under_finance_details_section() throws Throwable {
+		WebElement financeDetails_profitAmtLabel = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_profitAmtLabel"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(financeDetails_profitAmtLabel);
+				Assert.assertTrue(financeDetails_profitAmtLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		WebElement financeDetails_profitAmtInput = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_profitAmtInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(financeDetails_profitAmtInput);
+				Assert.assertTrue(financeDetails_profitAmtInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_608 verify Down Payment Amount field available under Finance Details section")
+	public void user_verify_down_payment_amount_field_available_under_finance_details_section() throws Throwable {
+		WebElement financeDetails_downPaymentAmtLabel = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_downPaymentAmtLabel"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(financeDetails_downPaymentAmtLabel);
+				Assert.assertTrue(financeDetails_downPaymentAmtLabel.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	
+		WebElement financeDetails_downPaymentAmtInput = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_downPaymentAmtInput"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundStyle(financeDetails_downPaymentAmtInput);
+				Assert.assertTrue(financeDetails_downPaymentAmtInput.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	
+	
+	
 	
 	
 	
