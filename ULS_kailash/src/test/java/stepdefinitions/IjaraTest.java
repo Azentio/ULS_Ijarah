@@ -18,6 +18,7 @@ import helper.WaitHelper;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import net.bytebuddy.implementation.bytecode.Throw;
 import pageobjects.JSPaths;
 import resources.BaseClass;
 
@@ -46,6 +47,12 @@ public class IjaraTest extends BaseClass {
 	WaitHelper waitHelper = new WaitHelper(driver);
 	JSPaths Ijarah_CustomerDebt = new JSPaths(excelPath, "CustomerDebt", "Ijarah_CustomerDebt", "JSPath");
 	JSPaths iJarah_CommonElements = new JSPaths(excelPath, "iJarah_CommonElements", "Ijarah_CommonFieldName", "JSPath");
+	Map<String, String> AssetDetailsTestData = new HashMap<>();
+	ExcelData excelDataForAssetDetailsTestData = new ExcelData(excelTestDataPath, "AssetDetailsTestData",
+			"Dataset ID");
+	JSPaths AssetDetailElements = new JSPaths(excelPath, "AssetDetailElements",
+			"Ijarah_AssetDetailsFieldName", "JSPath");
+	
 	@Given("navigate the IJARA URL")
 	public void navigate_the_ijara_url() throws Throwable {
 		driver.get(configFileReader.getIjaraApplicationURL());
@@ -86,7 +93,7 @@ public class IjaraTest extends BaseClass {
 				moduleLength = javascriptHelper.executeScript("return " + moduleListJSpath).toString();
 				System.out.println("Module Length " + moduleLength);
 				if (!(moduleLength.isBlank())) {
-
+ 
 					break;
 				}
 			} catch (Exception e) {
@@ -173,7 +180,7 @@ public class IjaraTest extends BaseClass {
 			try {
 				searchTextBox = javascriptHelper
 						.executeScriptWithWebElement(commonJSPaths.getElement("mail_box_search_text"));
-				searchTextBox.sendKeys(addressDetailsTestData.get("record_reference_number"));
+				searchTextBox.sendKeys(AssetDetailsTestData.get("Ref No"));
 				break;
 			} catch (Exception e) {
 				if (i == 300) {
@@ -3475,7 +3482,7 @@ public class IjaraTest extends BaseClass {
 				}
 			}
 		}
-		@Given("user verify the account number field below the Customber debt details")
+		@Given("user verify the account number field below the Customer debt details")
 		public void user_verify_the_account_number_field_below_the_customber_debt_details() {
 			WebElement accountNumberLabel = javascriptHelper.executeScriptWithWebElement(Ijarah_CustomerDebt.getElement("accountNumberLabel"));
 			for (int i = 0; i <= 2000; i++) {
@@ -3490,7 +3497,7 @@ public class IjaraTest extends BaseClass {
 			}
 		}
 
-		@Given("user verify the  Closed Date field below the Customber debt details")
+		@Given("user verify the  Closed Date field below the Customer debt details")
 		public void user_verify_the_closed_date_field_below_the_customber_debt_details() {
 			WebElement closeDateLabel = javascriptHelper.executeScriptWithWebElement(Ijarah_CustomerDebt.getElement("closeDateLabel"));
 			for (int i = 0; i <= 500; i++) {
@@ -3505,7 +3512,7 @@ public class IjaraTest extends BaseClass {
 			}	
 		}
 
-		@Given("user verify the Status field below the Customber debt details")
+		@Given("user verify the Status field below the Customer debt details")
 		public void user_verify_the_status_field_below_the_customber_debt_details() {
 			WebElement DebtStatus = javascriptHelper.executeScriptWithWebElement(Ijarah_CustomerDebt.getElement("DebtStatus"));
 		for (int i = 0; i <= 500; i++) {
@@ -3521,7 +3528,7 @@ public class IjaraTest extends BaseClass {
 		    
 		}
 
-		@Given("user verify the Frequency field below the Customber debt details")
+		@Given("user verify the Frequency field below the Customer debt details")
 		public void user_verify_the_frequency_field_below_the_customber_debt_details() {
 			WebElement frequencyLabel = javascriptHelper.executeScriptWithWebElement(Ijarah_CustomerDebt.getElement("frequencyLabel"));
 			for (int i = 0; i <= 500; i++) {
@@ -3537,7 +3544,7 @@ public class IjaraTest extends BaseClass {
 			
 		}
 
-		@Given("user verify the Installment Amount field below the Customber debt details")
+		@Given("user verify the Installment Amount field below the Customer debt details")
 		public void user_verify_the_installment_amount_field_below_the_customber_debt_details() {
 			WebElement installmentAmtLabel = javascriptHelper.executeScriptWithWebElement(Ijarah_CustomerDebt.getElement("installmentAmtLabel"));
 			for (int i = 0; i <= 11000; i++) {
@@ -3552,7 +3559,7 @@ public class IjaraTest extends BaseClass {
 			}	
 		}
 
-		@Given("user verify the Last Payment Date field below the Customber debt details")
+		@Given("user verify the Last Payment Date field below the Customer debt details")
 		public void user_verify_the_last_payment_date_field_below_the_customber_debt_details() {
 			WebElement lastPaymentDateLabel = javascriptHelper.executeScriptWithWebElement(Ijarah_CustomerDebt.getElement("lastPaymentDateLabel"));
 			for (int i = 0; i <= 500; i++) {
@@ -3567,7 +3574,7 @@ public class IjaraTest extends BaseClass {
 			}
 		}
 
-		@Given("user verify the Next Due Date field below the Customber debt details")
+		@Given("user verify the Next Due Date field below the Customer debt details")
 		public void user_verify_the_next_due_date_field_below_the_customber_debt_details() {
 			WebElement nextDueDateLabel = javascriptHelper.executeScriptWithWebElement(Ijarah_CustomerDebt.getElement("nextDueDateLabel"));
 			for (int i = 0; i <= 500; i++) {
@@ -3582,7 +3589,7 @@ public class IjaraTest extends BaseClass {
 			}
 		}
 
-		@Given("user verify the Last Cycle field below the Customber debt details")
+		@Given("user verify the Last Cycle field below the Customer debt details")
 		public void user_verify_the_last_cycle_field_below_the_customber_debt_details() {
 			WebElement last24CycleLabel = javascriptHelper.executeScriptWithWebElement(Ijarah_CustomerDebt.getElement("last24CycleLabel"));
 			for (int i = 0; i <= 500; i++) {
@@ -3597,7 +3604,7 @@ public class IjaraTest extends BaseClass {
 			}
 		}
 
-		@Given("user verify the Include in Eligibility field below the Customber debt details")
+		@Given("user verify the Include in Eligibility field below the Customer debt details")
 		public void user_verify_the_include_in_eligibility_field_below_the_customber_debt_details() {
 			WebElement includeEligiblity = javascriptHelper.executeScriptWithWebElement(Ijarah_CustomerDebt.getElement("includeEligiblity"));
 		for (int i = 0; i <= 500; i++) {
@@ -3638,7 +3645,7 @@ public class IjaraTest extends BaseClass {
 			}
 		}
 
-		@Then("verify Closed Date field below the Customber debt should be display only")
+		@Then("verify Closed Date field below the Customer debt should be display only")
 		public void verify_closed_date_field_below_the_customber_debt_should_be_display_only() {
 			String CloseDate_Display= javascriptHelper.executeScriptWithWebElement(Ijarah_CustomerDebt.getElement("CloseDate_Display")).getAttribute("ng-reflect-readonly");
 		for (int i = 0; i <2000; i++) {
@@ -3653,7 +3660,7 @@ public class IjaraTest extends BaseClass {
         }
 		}
 
-		@Then("verify Status field below the Customber debt should be display only")
+		@Then("verify Status field below the Customer debt should be display only")
 		public void verify_status_field_below_the_customber_debt_should_be_display_only() {
 			String StatusDisplay= javascriptHelper.executeScriptWithWebElement(Ijarah_CustomerDebt.getElement("StatusDisplay")).getAttribute("ng-reflect-readonly");
 		for (int i = 0; i <2000; i++) {
@@ -3669,7 +3676,7 @@ public class IjaraTest extends BaseClass {
 		   
 		}
 		
-		@Then("verify Frequency field below the Customber debt should be display only")
+		@Then("verify Frequency field below the Customer debt should be display only")
 		public void verify_frequency_field_below_the_customber_debt_should_be_display_only() {
 			String Frequency= javascriptHelper.executeScriptWithWebElement(Ijarah_CustomerDebt.getElement("frequencyDisplay")).getAttribute("ng-reflect-readonly");
 			for (int i = 0; i <2000; i++) {
@@ -3684,14 +3691,572 @@ public class IjaraTest extends BaseClass {
 	        }
 		}
 
-		@Then("verify Last Payment Date field below the Customber debt should be display only")
+		@Then("verify Last Payment Date field below the Customer debt should be display only")
 		public void verify_last_payment_date_field_below_the_customber_debt_should_be_display_only() {
+			String lastPaymentDateDisplay= javascriptHelper.executeScriptWithWebElement(Ijarah_CustomerDebt.getElement("lastPaymentDateDisplay")).getAttribute("ng-reflect-disabled");
+		for (int i = 0; i <2000; i++) {
+            try {
+                Assert.assertTrue(lastPaymentDateDisplay.contains("true"));
+                break;
+            } catch (Exception e) {
+                if (i==1999) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+        }
+	}
+
+		@Then("verify Next Due Date field below the Customer debt should be display only")
+		public void verify_next_due_date_field_below_the_customber_debt_should_be_display_only() {
+			String nextDueDateDisplay= javascriptHelper.executeScriptWithWebElement(Ijarah_CustomerDebt.getElement("nextDueDateDisplay")).getAttribute("ng-reflect-disabled");
+		for (int i = 0; i <2000; i++) {
+            try {
+                Assert.assertTrue(nextDueDateDisplay.contains("true"));
+                break;
+            } catch (Exception e) {
+                if (i==1999) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+        }
+	}
+		@Then("verify Last Cycle field below the Customer debt should be display only")
+		public void verify_last_cycle_field_below_the_customber_debt_should_be_display_only() {
+			String last24CycleDisplay= javascriptHelper.executeScriptWithWebElement(Ijarah_CustomerDebt.getElement("last24CycleDisplay")).getAttribute("ng-reflect-readonly");
+			for (int i = 0; i <2000; i++) {
+	            try {
+	                Assert.assertTrue(last24CycleDisplay.contains("true"));
+	                break;
+	            } catch (Exception e) {
+	                if (i==1999) {
+	                    Assert.fail(e.getMessage());
+	                }
+	            }
+	        }
+		}
+
+		@Then("verify Include in Eligibility below the Customer debt should be display only")
+		public void verify_include_in_eligibility_below_the_customber_debt_should_be_display_only() {
+			String includeEligiblityDisplay= javascriptHelper.executeScriptWithWebElement(Ijarah_CustomerDebt.getElement("includeEligiblityDisplay")).getAttribute("ng-reflect-disabled");
+		for (int i = 0; i <2000; i++) {
+            try {
+                Assert.assertTrue(includeEligiblityDisplay.contains("true"));
+                break;
+            } catch (Exception e) {
+                if (i==1999) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+        }
 		    
 		}
 
-		@Then("verify Next Due Date field below the Customber debt should be display only")
-		public void verify_next_due_date_field_below_the_customber_debt_should_be_display_only() {
+		@Then("verify Installment Amount field below the Customer debt should be Same As AppDataCheck Stage")
+		public void verify_installment_amount_field_below_the_customer_debt_should_be_same_as_app_data_check_stage() {
+			String installmentAmtValidation= javascriptHelper.executeScriptWithWebElement(Ijarah_CustomerDebt.getElement("installmentAmtValidation")).getAttribute("ng-reflect-model");
+			for (int i = 0; i <2000; i++) {
+	            try {
+	                Assert.assertTrue(installmentAmtValidation.contains("4000"));
+	                break;
+	            } catch (Exception e) {
+	                if (i==1999) {
+	                    Assert.fail(e.getMessage());
+	                }
+	            }
+	        }
+			    
+		}
+		@Given("get the test data for test case ID AT_ASD_ADC_001")
+		public void get_the_test_data_for_test_case_id_at_asd_adc() {
+			AssetDetailsTestData = excelDataForAssetDetailsTestData.getTestdata("DS01_AT_ASD_ADC_001");
+		}
+		
+		@Given("click on Asset Details tab")
+		public void click_on_asset_details_tab() {
+			for (int i = 0; i <= 300; i++) {
+				try {
+					javascriptHelper
+							.executeScriptWithWebElement(AssetDetailElements.getElement("AssetDetailsTab"))
+							.click();
+					break;
+				} catch (Exception e) {
+					if (i == 300) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+		}
+
+		@Given("click on the Action View button Below the Asset Details")
+		public void click_on_the_action_view_button_below_the_asset_details() {
+			for (int i = 0; i <= 300; i++) {
+				try {
+					javascriptHelper
+							.executeScriptWithWebElement(AssetDetailElements.getElement("ActionButton"))
+							.click();
+					break;
+				} catch (Exception e) {
+					if (i == 300) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+		}
+		@Then("verify Asset Details Section should visible in Asset details screen")
+		public void verify_asset_details_section_should_visible_in_asset_details_screen() throws InterruptedException {
+			Thread.sleep(5000);
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("AssetDetailsVerification")).isDisplayed()) {
+				SoftAssert.fail("Check Asset Details Field");
+		}
+		}
+
+		@Then("verify Dealer Deatils Section should visible in Asset details screen")
+		public void verify_dealer_deatils_section_should_visible_in_asset_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("DealerDetailsVerification")).isDisplayed()) {
+				SoftAssert.fail("Check Dealer Details Field");
+		}
+		}
+
+		@Then("verify  Registration Details Section should visible in Asset details screen")
+		public void verify_registration_details_section_should_visible_in_asset_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("RegistrationDetailsVerification")).isDisplayed()) {
+				SoftAssert.fail("Check Registration Details Field");
+		}
+		}
+
+		@Then("verify Asset Price and Down Payment Details should visible in Asset details screen")
+		public void verify_asset_price_and_down_payment_details_should_visible_in_asset_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("AssetPriceVerification")).isDisplayed()) {
+				SoftAssert.fail("Check Asset Price Details Field");
+			}
+		}
+		@Then("verify Asset Manufacture Field should visible in Asset details screen")
+		public void verify_asset_manufacture_field_should_visible_in_asset_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("AssetManufacture")).isDisplayed()) {
+				SoftAssert.fail("Check Asset Manufacture Details Field");
+			}
+		}
+
+		@Then("verify Asset Model Field should visible in Asset details screen")
+		public void verify_asset_model_field_should_visible_in_asset_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("AssetModel")).isDisplayed()) {
+				SoftAssert.fail("Check Asset Model Details Field");
+			}
+		}
+
+		@Then("verify Asset Model Type Field should visible in Asset details screen")
+		public void verify_asset_model_type_field_should_visible_in_asset_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("AssetModelType")).isDisplayed()) {
+				SoftAssert.fail("Check Asset Model Type Details Field");
+			}
+		}
+
+		@Then("verify Year of Manufacture Field should visible in Asset details screen")
+		public void verify_year_of_manufacture_field_should_visible_in_asset_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("YearOfManufacture")).isDisplayed()) {
+				SoftAssert.fail("Check Year Details Field");
+			}
+		}
+
+		@Then("verify Asset Condition Field should visible in Asset details screen")
+		public void verify_asset_condition_field_should_visible_in_asset_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("AssetCondition")).isDisplayed()) {
+				SoftAssert.fail("Check Asset Condition Details Field");
+			}
+		}
+		@Then("verify Asset Color Field should visible in Asset details screen")
+		public void verify_asset_color_field_should_visible_in_asset_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("Assetcolor")).isDisplayed()) {
+				SoftAssert.fail("Check Asset Color Details Field");
+			}  
+		}
+
+		@Then("verify Driver Train Field should visible in Asset details screen")
+		public void verify_driver_train_field_should_visible_in_asset_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("DriveTrain")).isDisplayed()) {
+				SoftAssert.fail("Check Driver Train Details Field");
+			} 	    
+		}
+
+		@Then("verify No Of Cylinder Field should visible in Asset details screen")
+		public void verify_no_of_cylinder_field_should_visible_in_asset_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("NoOfCylinder")).isDisplayed()) {
+				SoftAssert.fail("Check No of Cylinder Details Field");
+			}		    
+		}
+
+		@Then("verify Volume Of Engine Field should visible in Asset details screen")
+		public void verify_volume_of_engine_field_should_visible_in_asset_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("VolOfEngine")).isDisplayed()) {
+				SoftAssert.fail("Check Volume Of Engine Details Field");
+			}		    
+		}
+
+		@Then("verify No of Units Field should visible in Asset details screen")
+		public void verify_no_of_units_field_should_visible_in_asset_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("NoOfUnits")).isDisplayed()) {
+				SoftAssert.fail("Check No Of Units Details Field");
+			}		    
+		}
+
+		@Then("verify Chasis Number Field should visible in Asset details screen")
+		public void verify_chasis_number_field_should_visible_in_asset_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("ChasisNumber")).isDisplayed()) {
+				SoftAssert.fail("Check Chasis Number Details Field");
+			}		    
+		}
+		@Then("verify Plate NumberField should visible in Asset details screen")
+		public void verify_plate_number_field_should_visible_in_asset_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("PlateNumber")).isDisplayed()) {
+				SoftAssert.fail("Check Plate Number Details Field");
+			}		    
+		}
+
+		@Then("verify Plate Number Arabic Field should visible in Asset details screen")
+		public void verify_plate_number_arabic_field_should_visible_in_asset_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("PlateNumberArabic")).isDisplayed()) {
+				SoftAssert.fail("Check Plate Number Arabic Details Field");
+			}		    
+		}
+
+		@Then("verify Asset Dealer Field should visible in Asset details screen")
+		public void verify_asset_dealer_field_should_visible_in_asset_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("AssetDealer")).isDisplayed()) {
+				SoftAssert.fail("Check Asset Dealer Details Field");
+			}		    
+		}
+
+		@Then("verify Deposit Account No Field should visible in Asset details screen")
+		public void verify_deposit_account_no_field_should_visible_in_asset_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("DepositAccNo")).isDisplayed()) {
+				SoftAssert.fail("Check DepositAccNo Details Field");
+			}		    
+		}
+
+		@Then("verify Dealer Email Id Field should visible in Asset details screen")
+		public void verify_dealer_email_id_field_should_visible_in_asset_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("DealerEmailId")).isDisplayed()) {
+				SoftAssert.fail("Check DealerEmailId Details Field");
+			}				    
+		}
+		@Then("verify Dealer Contact Number Field should visible in Asset details screen")
+		public void verify_dealer_contact_number_field_should_visible_in_asset_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("DealerContactNo")).isDisplayed()) {
+				SoftAssert.fail("Check DealerContactNo Details Field");
+			}		    
+		}
+
+		@Then("verify Dealer Location Field should visible in Asset details screen")
+		public void verify_dealer_location_field_should_visible_in_asset_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("DealerLocation")).isDisplayed()) {
+				SoftAssert.fail("Check DealerLocation Details Field");
+			}		    
+		}
+
+		@Then("verify Sales Person Name Field should visible in Asset details screen")
+		public void verify_sales_person_name_field_should_visible_in_asset_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("SalesPersonName")).isDisplayed()) {
+				SoftAssert.fail("Check SalesPersonName Details Field");
+			}			    
+		}
+
+		@Then("verify Agent Name Field should visible in Asset details screen")
+		public void verify_agent_name_field_should_visible_in_asset_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("AgentName")).isDisplayed()) {
+				SoftAssert.fail("Check AgentName Details Field");
+			}			    
+		}
+
+		@Then("verify Agent Email IdField should visible in Asset details screen")
+		public void verify_agent_email_id_field_should_visible_in_asset_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("AgentEmailId")).isDisplayed()) {
+				SoftAssert.fail("Check AgentEmailId Details Field");
+			}			    
+		}
+
+		@Then("verify Agent Mobile Number Field should visible in Asset details screen")
+		public void verify_agent_mobile_number_field_should_visible_in_asset_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("AgentMobileNumber")).isDisplayed()) {
+				SoftAssert.fail("Check AgentMobileNumber Details Field");
+			}			    
+		}
+		@Then("verify Asset Price Field should visible in Asset details screen")
+		public void verify_asset_price_field_should_visible_in_asset_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("AssetPrice")).isDisplayed()) {
+				SoftAssert.fail("Check AssetPrice Details Field");
+			}			    
+		}
+
+		@Then("verify Down Payment Field should visible in Asset details screen")
+		public void verify_down_payment_field_should_visible_in_asset_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("DownPayment")).isDisplayed()) {
+				SoftAssert.fail("Check DownPayment Details Field");
+			}			    
+		}
+
+		@Then("verify Down Payment Percentage Field should visible in Asset details screen")
+		public void verify_down_payment_percentage_field_should_visible_in_asset_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("DownPaymentPerCentage")).isDisplayed()) {
+				SoftAssert.fail("Check DownPaymentPerCentage Details Field");
+			}			    
+		}
+
+		@Then("verify Green Issue Date Field should visible in Asset details screen")
+		public void verify_green_issue_date_field_should_visible_in_asset_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("GreenIssueDate")).isDisplayed()) {
+				SoftAssert.fail("Check GreenIssueDate Details Field");
+			}			    
+		}
+
+		@Then("verify Residual Value Field should visible in Asset details screen")
+		public void verify_residual_value_field_should_visible_in_asset_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("ResidualValue")).isDisplayed()) {
+				SoftAssert.fail("Check ResidualValue Details Field");
+			}			    
+		}
+
+		@Then("verify Green Card No Field should visible in Asset details screen")
+		public void verify_green_card_no_field_should_visible_in_asset_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("GreenCardNo")).isDisplayed()) {
+				SoftAssert.fail("Check GreenCardNo Details Field");
+			}			    
+		}
+
+		@Then("verify Weight in Tons Field should visible in Asset details screen")
+		public void verify_weight_in_tons_field_should_visible_in_asset_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("WeightInTons")).isDisplayed()) {
+				SoftAssert.fail("Check WeightInTons Details Field");
+			}			    
+		}
+		@Then("verify Asset FulFill Field should visible in Asset details screen")
+		public void verify_asset_ful_fill_field_should_visible_in_asset_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("AssetFulfil")).isDisplayed()) {
+				SoftAssert.fail("Check AssetFulfil Details Field");
+			}			    
+		}
+
+		@Then("verify Location of Sign in Field should visible in Asset details screen")
+		public void verify_location_of_sign_in_field_should_visible_in_asset_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("LocationOfSignin")).isDisplayed()) {
+				SoftAssert.fail("Check LocationOfSignin Details Field");
+			}			    
+		}
+
+		@Then("verify Received Location Field should visible in Asset details screen")
+		public void verify_received_location_field_should_visible_in_asset_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("ReceivedLocation")).isDisplayed()) {
+				SoftAssert.fail("Check ReceivedLocation Details Field");
+			}			    
+		}
+
+		@Then("verify Remarks Field should visible in Asset details screen")
+		public void verify_remarks_field_should_visible_in_asset_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("ReMarks")).isDisplayed()) {
+				SoftAssert.fail("Check ReMarks Details Field");
+			}			    
+		}
+
+		@Then("verify Status Field should visible in Asset details screen")
+		public void verify_status_field_should_visible_in_asset_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("Status")).isDisplayed()) {
+				SoftAssert.fail("Check Status Details Field");
+			}			    
+		}
+		@Given("verify Asset Manufacture Data should visible As Data Entry stage screen")
+		public void verify_asset_manufacture_data_should_visible_as_data_entry_stage_screen() {
+			String AssetmanufactureDC = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("AssetmanufactureDC")).getAttribute("aria-label");
+
+			for (int i = 0; i <2000; i++) {
+	            try {
+	                Assert.assertTrue(AssetmanufactureDC.contains("JAGUAR"));
+	                break;
+	            } catch (Exception e) {
+	                if (i==1999) {
+	                    Assert.fail(e.getMessage());
+	                }
+	            }
+	        }		    
+		}
+
+		@Given("verify Asset model Data should visible As Data Entry stage screen")
+		public void verify_asset_model_data_should_visible_as_data_entry_stage_screen() {
+			String AssetModelDC = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("AssetModelDC")).getAttribute("aria-label");
+
+			for (int i = 0; i <2000; i++) {
+	            try {
+	                Assert.assertTrue(AssetModelDC.contains("Test"));
+	                break;
+	            } catch (Exception e) {
+	                if (i==1999) {
+	                    Assert.fail(e.getMessage());
+	                }
+	            }
+	        }		    
 		    
+		}
+
+		@Given("verify Asset type Data should visible As Data Entry stage screen")
+		public void verify_asset_type_data_should_visible_as_data_entry_stage_screen() {
+			String AssetModelTypeDC = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("AssetModelTypeDC")).getAttribute("aria-label");
+			for (int i = 0; i <2000; i++) {
+            try {
+                Assert.assertTrue(AssetModelTypeDC.contains("1.6"));
+                break;
+            } catch (Exception e) {
+                if (i==1999) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+        }		    
+		}
+
+		@Given("verify Asset Condition Data should visible As Data Entry stage screen")
+		public void verify_asset_condition_data_should_visible_as_data_entry_stage_screen() {
+			String AssetConditionDC = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("AssetConditionDC")).getAttribute("aria-label");
+		for (int i = 0; i <2000; i++) {
+        try {
+            Assert.assertTrue(AssetConditionDC.contains("New"));
+            break;
+        } catch (Exception e) {
+            if (i==1999) {
+                Assert.fail(e.getMessage());
+            }
+        }
+    }		       		    
+		}
+
+		@Given("verify Asset Color Data should visible As Data Entry stage screen")
+		public void verify_asset_color_data_should_visible_as_data_entry_stage_screen() {
+			String AssetcolorDC = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("AssetcolorDC")).getAttribute("aria-label");
+		for (int i = 0; i <2000; i++) {
+        try {
+            Assert.assertTrue(AssetcolorDC.contains("Blue"));
+            break;
+        } catch (Exception e) {
+            if (i==1999) {
+                Assert.fail(e.getMessage());
+            }
+        }
+    }		       		    
+		}
+		@Given("verify Chasis number Data should visible As Data Entry stage screen")
+		public void verify_chasis_number_data_should_visible_as_data_entry_stage_screen() {
+			String ChasisNumberDC = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("ChasisNumberDC")).getAttribute("ng-reflect-model");
+		for (int i = 0; i <2000; i++) {
+        try {
+            Assert.assertTrue(ChasisNumberDC.contains("454545"));
+            break;
+        } catch (Exception e) {
+            if (i==1999) {
+                Assert.fail(e.getMessage());
+            }
+        }
+    }		       	  
+		}
+
+		@Given("verify Plate Number Data should visible As Data Entry stage screen")
+		public void verify_plate_number_data_should_visible_as_data_entry_stage_screen() {
+			String plateNumberDC = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("plateNumberDC")).getAttribute("ng-reflect-model");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(plateNumberDC.contains("45"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		       	  		    
+		}
+
+		@Given("verify Asset dealer Data should visible As Data Entry stage screen")
+		public void verify_asset_dealer_data_should_visible_as_data_entry_stage_screen() {
+			String AssetDealerDC = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("AssetDealerDC")).getAttribute("aria-label");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(AssetDealerDC.contains("TATA"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		       		    		    
+		}
+
+		@Given("verify Asset Price Data should visible As Data Entry stage screen")
+		public void verify_asset_price_data_should_visible_as_data_entry_stage_screen() {
+			String AssetPriceDC = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("AssetPriceDC")).getAttribute("ng-reflect-model");
+		for (int i = 0; i <2000; i++) {
+        try {
+            Assert.assertTrue(AssetPriceDC.contains("500000"));
+            break;
+        } catch (Exception e) {
+            if (i==1999) {
+                Assert.fail(e.getMessage());
+            }
+        }
+    }		       	  
+		    }
+
+		@Given("verify Asset Fulfil Data should visible As Data Entry stage screen")
+		public void verify_asset_fulfil_data_should_visible_as_data_entry_stage_screen() {
+			String AssetFulfilDC = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("AssetFulfilDC")).getAttribute("aria-label");
+		for (int i = 0; i <2000; i++) {
+        try {
+            Assert.assertTrue(AssetFulfilDC.contains("MUMBAI"));
+            break;
+        } catch (Exception e) {
+            if (i==1999) {
+                Assert.fail(e.getMessage());
+            }
+        }
+    }	   	  	    
+		}
+
+		@Given("verify Location of signin Data should visible As Data Entry stage screen")
+		public void verify_location_of_signin_data_should_visible_as_data_entry_stage_screen() {	    
+			String LocationOfSigninDC = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("LocationOfSigninDC")).getAttribute("aria-label");
+		for (int i = 0; i <2000; i++) {
+        try {
+            Assert.assertTrue(LocationOfSigninDC.contains("LUCKNOW"));
+            break;
+        } catch (Exception e) {
+            if (i==1999) {
+                Assert.fail(e.getMessage());
+            }
+        }
+    }	   	  	    
+		}
+		@Given("verify Asset Received Data should visible As Data Entry stage screen")
+		public void verify_asset_received_data_should_visible_as_data_entry_stage_screen() {
+			String ReceivedLocationDC = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("ReceivedLocationDC")).getAttribute("aria-label");
+		for (int i = 0; i <2000; i++) {
+        try {
+            Assert.assertTrue(ReceivedLocationDC.contains("JODHPUR"));
+            break;
+        } catch (Exception e) {
+            if (i==1999) {
+                Assert.fail(e.getMessage());
+            }
+        }
+    }	   	  	    
+		}
+
+		@Given("verify remarks Data should visible As Data Entry stage screen")
+		public void verify_remarks_data_should_visible_as_data_entry_stage_screen() {
+			String ReMarksDC = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("ReMarksDC")).getAttribute("ng-reflect-model");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(ReMarksDC.contains("Test"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		       	  
+			    
 		}
 
 
