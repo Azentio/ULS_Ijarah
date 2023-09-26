@@ -6,7 +6,7 @@ Feature: To check the Customer debt details feature
 Scenario: To verify user is able to Add Customer Debt record in the system
 
 Given navigate the IJARA URL
-And login with valid credentials
+And login with valid credentials-App Data Entry
 And User_608 get the test data for test case AT_CUD_001
 And User_608 click the module name dropdown in ULS application
 And User_608 select the module name as LOS in ULS application
@@ -55,7 +55,7 @@ Then logout from the ijaraApplication
 Scenario: To verify user is able to Add Customer Debt record in the system
 
 Given navigate the IJARA URL
-And login with valid credentials
+And login with valid credentials-App Data Entry
 And User_608 get the test data for test case AT_CUD_002
 And User_608 click the module name dropdown in ULS application
 And User_608 select the module name as LOS in ULS application
@@ -83,7 +83,7 @@ Then logout from the ijaraApplication
 Scenario: To verify user is able to Add Customer Debt record in the system
 
 Given navigate the IJARA URL
-And login with valid credentials
+And login with valid credentials-App Data Entry
 And User_608 get the test data for test case AT_CUD_003
 And User_608 click the module name dropdown in ULS application
 And User_608 select the module name as LOS in ULS application
@@ -101,7 +101,6 @@ And User_608 Update the record with mandatory field blank in Customer Debt scree
 And User_608 validate the mandatory field blank message in Customer Debt screen 
 And User_608 enter the Installment Amount in Customer Debt screen
 When User_608 click the Update button in Customer Debt screen
-And User_608 click the Back button in Customer Debt screen navigate to the previous screen
 Then logout from the ijaraApplication
 
 
@@ -110,7 +109,7 @@ Then logout from the ijaraApplication
 Scenario: To verify user is able to Add Customer Debt record in the system
 
 Given navigate the IJARA URL
-And login with valid credentials
+And login with valid credentials-App Data Entry
 And User_608 get the test data for test case AT_CUD_004
 And User_608 click the module name dropdown in ULS application
 And User_608 select the module name as LOS in ULS application
@@ -146,7 +145,7 @@ Then logout from the ijaraApplication
 Scenario: To verify user is able to Add Customer Debt record in the system
 
 Given navigate the IJARA URL
-And login with valid credentials
+And login with valid credentials-App Data Entry
 And User_608 get the test data for test case AT_CUD_005
 And User_608 click the module name dropdown in ULS application
 And User_608 select the module name as LOS in ULS application
@@ -175,7 +174,7 @@ Then logout from the ijaraApplication
 Scenario: To verify user is able to Add Customer Debt record in the system
 
 Given navigate the IJARA URL
-And login with valid credentials
+And login with valid credentials-App Data Entry
 And User_608 get the test data for test case AT_CUD_005
 And User_608 click the module name dropdown in ULS application
 And User_608 select the module name as LOS in ULS application
@@ -198,7 +197,7 @@ Then logout from the ijaraApplication
 @AT_CUD_006_02
 Scenario: To verify user is able to Add Customer Debt record in the system
 Given navigate the IJARA URL
-And login with valid credentials
+And login with valid credentials-App Data Entry
 And User_608 get the test data for test case AT_CUD_005
 And User_608 click the module name dropdown in ULS application
 And User_608 select the module name as LOS in ULS application

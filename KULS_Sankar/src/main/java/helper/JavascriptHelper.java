@@ -98,10 +98,14 @@ public JavascriptHelper(WebDriver driver)
 	}
 	
 	
-//	Element background style
-	public void backgroundStyle(WebElement element) {
+//	Element background color
+	public void backgroundColor(WebElement element) {
 		executeScript("arguments[0].style.background='yellow'", element);
-		// Log.info(element);
-		// ExtentTestManager.getTest().info("Scrolled to that view");
+//		executeScript("arguments[0].setAttribute('style', 'border:2px solid black; background:yellow')", element);
+	}
+	
+//	Element background border
+	public void backgroundBorder(WebElement element) {
+		executeScript("arguments[0].style.border='2px solid black'", element);
 	}
 }

@@ -44,16 +44,6 @@ public class ConfigFileReader {
 			throw new RuntimeException("url not specified in the Configuration.properties file.");
 	}
 	
-	// Port:4080- Testing purpose only don't use this URL
-	public String getIjaraApplicationURL1() {
-		String url = properties.getProperty("IjaraApplicationURL1");
-		if (url != null)
-			return url;
-		else
-			throw new RuntimeException("url not specified in the Configuration.properties file.");
-	}
-	
-	
 	
 	public String getBrowser() {
 		String browser = properties.getProperty("browser");
