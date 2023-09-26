@@ -52,6 +52,8 @@ public class IjaraTest extends BaseClass {
 			"Dataset ID");
 	JSPaths AssetDetailElements = new JSPaths(excelPath, "AssetDetailElements",
 			"Ijarah_AssetDetailsFieldName", "JSPath");
+	JSPaths DocumentDetailsElements = new JSPaths(excelPath, "DocumentDetailsElements",
+			"Ijarah_DocmentDetailsFieldName", "JSPath");
 	
 	@Given("navigate the IJARA URL")
 	public void navigate_the_ijara_url() throws Throwable {
@@ -64,7 +66,7 @@ public class IjaraTest extends BaseClass {
 		ijaraLogin.loginWithIjaraApplication();
 	}
 
-	@Then("logout from the ijaraApplication")
+	@Then("User_626 logout from the ijaraApplication")
 	public void logout_from_the_ijara_application() throws Throwable {
 		ijaraLogin.logoutFromIjara();
 	}
@@ -3250,13 +3252,13 @@ public class IjaraTest extends BaseClass {
 	        }
     
 		}
-		@Then("clicking on back button system should navigate to the previous screen")
+		@Then("User_626 clicking on back button system should navigate to the previous screen")
 		public void clicking_on_back_button_system_should_navigate_to_the_previous_screen() {
-			javascriptHelper.executeScriptWithWebElement(CustomerAddressDetails.getElement("Back_button")).click();
-			String Back_button_verify= javascriptHelper.executeScriptWithWebElement(CustomerAddressDetails.getElement("Back_button_verify")).getAttribute("aria-checked");
+			javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("Back_button")).click();
+			String Back_button_verify= javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("BackButtonVerify")).getAttribute("Style");
 			for (int i = 0; i <2000; i++) {
 	            try {
-	                Assert.assertTrue(Back_button_verify.contains("Customer "));
+	                Assert.assertTrue(Back_button_verify.contains("flex"));
 	                break;
 	            } catch (Exception e) {
 	                if (i==1999) {
@@ -4258,11 +4260,717 @@ public class IjaraTest extends BaseClass {
 	    }		       	  
 			    
 		}
+		@Given("get the test data for test case ID AT_DOC_01")
+		public void get_the_test_data_for_test_case_id_at_doc() {
+			AssetDetailsTestData = excelDataForAssetDetailsTestData.getTestdata("DS01_AT_DOC_001");
+		}
 
 
-
+		@Given("User_626 click on Next and Document Details tab")
+		public void user_click_on_document_details_tab() {
+			for (int i = 0; i <= 4; i++) {
+				try {
+					javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("nextBtn")).click();
+					break;
+				} catch (Exception e) {
+					if (i == 4) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			for (int i = 0; i <= 1000; i++) {
+				try {
+					javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("DocumentDetails_Button")));
+					break;
+				} catch (Exception e) { 
+					if (i == 1000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+		}
 		
-		
+
+		@Given("User_626 click on the Action View button Below the Document Details")
+		public void user_click_on_the_action_view_button_below_the_asset_details() {
+			for (int i = 0; i <= 300; i++) {
+				try {
+					javascriptHelper
+							.executeScriptWithWebElement(AssetDetailElements.getElement("ActionButton"))
+							.click();
+					break;
+				} catch (Exception e) {
+					if (i == 300) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+		}
+
+		@Given("User_626 verify Customer Name field should visible in Document details screen")
+		public void user_verify_customer_name_field_should_visible_in_document_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("CustomerName")).isDisplayed()) {
+				SoftAssert.fail("Check CustomerName Field");
+			}		
+		}
+
+		@Given("User_626 verify Document Namefield should visible in Document details screen")
+		public void user_verify_document_namefield_should_visible_in_document_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("DocumentName")).isDisplayed()) {
+				SoftAssert.fail("Check DocumentName Field");
+			}	
+		}
+
+		@Given("User_626 verify Required At Stage field should visible in Document details screen")
+		public void user_verify_required_at_stage_field_should_visible_in_document_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("RequiredAtStage")).isDisplayed()) {
+				SoftAssert.fail("Check RequiredAtStage Field");
+			}	
+		}
+
+		@Given("User_626 verify Document Status field should visible in Document details screen")
+		public void user_verify_document_status_field_should_visible_in_document_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("DocumentStatus")).isDisplayed()) {
+				SoftAssert.fail("Check DocumentStatus Field");
+			}	
+		}
+
+		@Given("User_626 verify ManDatory field should visible in Document details screen")
+		public void user_verify_man_datory_field_should_visible_in_document_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("MandatoryOptional")).isDisplayed()) {
+				SoftAssert.fail("Check MandatoryOptional Field");
+			}	
+		}
+		@Given("User_626 verify Document Category field should visible in Document details screen")
+		public void user_verify_document_category_field_should_visible_in_document_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("DocumentCategory")).isDisplayed()) {
+				SoftAssert.fail("Check DocumentCategory Field");
+			}			    
+		}
+
+		@Given("User_626 verify Upload Date field should visible in Document details screen")
+		public void user_verify_upload_date_field_should_visible_in_document_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("UploadDate")).isDisplayed()) {
+				SoftAssert.fail("Check UploadDate Field");
+			}			    
+		}
+
+		@Given("User_626 verify Expected Receipt Date field should visible in Document details screen")
+		public void user_verify_expected_receipt_date_field_should_visible_in_document_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("ExpectedReceiptDate")).isDisplayed()) {
+				SoftAssert.fail("Check ExpectedReceiptDate Field");
+			}			    
+		}
+
+		@Given("User_626 verify Deferral Stage field should visible in Document details screen")
+		public void user_verify_deferral_stage_field_should_visible_in_document_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("DeferralStage")).isDisplayed()) {
+				SoftAssert.fail("Check DeferralStage Field");
+			}			    
+		}
+
+		@Given("User_626 verify Def Approval byfield should visible in Document details screen")
+		public void user_verify_def_approval_byfield_should_visible_in_document_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("DefApprovedBy")).isDisplayed()) {
+				SoftAssert.fail("Check DefApprovedBy Field");
+			}			    
+		}
+
+		@Given("User_626 verify Change In Nature field should visible in Document details screen")
+		public void user_verify_change_in_nature_field_should_visible_in_document_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("ChangeInNatureApprovedBy")).isDisplayed()) {
+				SoftAssert.fail("Check ChangeInNatureApprovedBy Field");
+			}			    
+		}
+
+		@Given("User_626 verify Document Form field should visible in Document details screen")
+		public void user_verify_document_form_field_should_visible_in_document_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("DocumentForm")).isDisplayed()) {
+				SoftAssert.fail("Check DocumentForm Field");
+			}			    
+		}
+
+		@Given("User_626 verify Document Quality field should visible in Document details screen")
+		public void user_verify_document_quality_field_should_visible_in_document_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("DocumentQuality")).isDisplayed()) {
+				SoftAssert.fail("Check DocumentQuality Field");
+			}			    
+		}
+
+		@Given("User_626 verify Document ref No field should visible in Document details screen")
+		public void user_verify_document_ref_no_field_should_visible_in_document_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("DocumentReferenceNumber")).isDisplayed()) {
+				SoftAssert.fail("Check DocumentReferenceNumber Field");
+			}			    
+		}
+		@Given("User_626 verify Document Received By field should visible in Document details screen")
+		public void user_verify_document_received_by_field_should_visible_in_document_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("DocumentReceivedBy")).isDisplayed()) {
+				SoftAssert.fail("Check DocumentReceivedBy Field");
+			}
+		}
+
+		@Given("User_626 verify Location field should visible in Document details screen")
+		public void user_verify_location_field_should_visible_in_document_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("LocationWhereReceived")).isDisplayed()) {
+				SoftAssert.fail("Check LocationWhereReceived Field");
+			}
+		}
+
+		@Given("User_626 verify Rack No field should visible in Document details screen")
+		public void user_verify_rack_no_field_should_visible_in_document_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("RackNo")).isDisplayed()) {
+				SoftAssert.fail("Check RackNo Field");
+			}
+		}
+
+		@Given("User_626 verify Shelf No field should visible in Document details screen")
+		public void user_verify_shelf_no_field_should_visible_in_document_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("ShelfNo")).isDisplayed()) {
+				SoftAssert.fail("Check ShelfNo Field");
+			}
+		}
+
+		@Given("User_626 verify Box No field should visible in Document details screen")
+		public void user_verify_box_no_field_should_visible_in_document_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("BoxNo")).isDisplayed()) {
+				SoftAssert.fail("Check BoxNo Field");
+			}
+		}
+
+		@Given("User_626 verify Date Of Expiry field should visible in Document details screen")
+		public void user_verify_date_of_expiry_field_should_visible_in_document_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("DateOfExpiry")).isDisplayed()) {
+				SoftAssert.fail("Check DateOfExpiry Field");
+			}
+		}
+
+		@Given("User_626 verify Lodgement Amount field should visible in Document details screen")
+		public void user_verify_lodgement_amount_field_should_visible_in_document_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("LodgementAmount")).isDisplayed()) {
+				SoftAssert.fail("Check LodgementAmount Field");
+			}
+		}
+
+		@Given("User_626 verify Remarks field should visible in Document details screen")
+		public void user_verify_remarks_field_should_visible_in_document_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("Remarks")).isDisplayed()) {
+				SoftAssert.fail("Check Remarks Field");
+			} 
+		}
+		@Given("User_626 verify View field should visible in Document details screen")
+		public void user_verify_view_field_should_visible_in_document_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("ViewDocumentButton")).isDisplayed()) {
+				SoftAssert.fail("Check ViewDocumentButton Field");
+		}
+		}
+		@Given("User_626 verify Generate Doc field should visible in Document details screen")
+		public void user_verify_generate_doc_field_should_visible_in_document_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("FileUploadButton")).isDisplayed()) {
+				SoftAssert.fail("Check FileUploadButton Field");
+		}
+		}
+		@Given("User_626 verify Status field should visible in Document details screen")
+		public void user_verify_status_field_should_visible_in_document_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("Status")).isDisplayed()) {
+				SoftAssert.fail("Check Status Field");
+		}
+		}
+		@Given("User_626 verify Help field should visible in Document details screen")
+		public void user_verify_help_field_should_visible_in_document_details_screen() {
+			if (!javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("Remarks")).isDisplayed()) {
+				SoftAssert.fail("Check Remarks Field");
+			}
+		}
+		@Given("User_626 verify Customer Name Data should visible As Entry stage screen")
+		public void user_verify_customer_name_data_should_visible_as_entry_stage_screen() {
+			String CustomerName = javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("CustomerName")).getAttribute("aria-label");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(CustomerName.contains("David "));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		       	  
+		}
+
+		@Given("User_626 verify Document Name Data should visible As Entry stage screen")
+		public void user_verify_document_name_data_should_visible_as_entry_stage_screen() {
+			String DocumentName = javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("DocumentName")).getAttribute("aria-label");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(DocumentName.contains("AADHAAR "));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		       	  
+		}
+
+		@Given("User_626 verify Document status Data should visible As Entry stage screen")
+		public void user_verify_document_status_data_should_visible_as_entry_stage_screen() {
+			String DocumentStatus = javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("DocumentStatus")).getAttribute("aria-label");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(DocumentStatus.contains("Received "));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		       	  
+		}
+
+		@Given("User_626 verify Mandatory optional Data should visible As Entry stage screen")
+		public void user_verify_mandatory_optional_data_should_visible_as_entry_stage_screen() {
+			String MandatoryOptional = javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("MandatoryOptional")).getAttribute("aria-label");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(MandatoryOptional.contains("Optional "));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		       	 
+		}
+		@Given("User_626 verify Document Category Data should visible As Entry stage screen")
+		public void user_verify_document_category_data_should_visible_as_entry_stage_screen() {
+			String DocumentCategory = javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("DocumentCategory")).getAttribute("aria-label");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(DocumentCategory.contains("Document "));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		       	
+		}
+
+		@Given("User_626 verify Deferred Stage Data should visible As Entry stage screen")
+		public void user_verify_deferred_stage_data_should_visible_as_entry_stage_screen() {
+			String DeferralStage = javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("DeferralStage")).getAttribute("aria-label");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(DeferralStage.contains("New Application"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		       	
+		}
+
+		@Given("User_626 verify quality Data should visible As Entry stage screen")
+		public void user_verify_quality_data_should_visible_as_entry_stage_screen() {
+			String DocumentQuality = javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("DocumentQuality")).getAttribute("aria-label");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(DocumentQuality.contains("Not Clear"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		      
+		}
+
+		@Given("User_626 verify remarks Data should visible As Entry stage screen")
+		public void user_verify_remarks_data_should_visible_as_entry_stage_screen() {
+			String Remarks_Verify = javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("Remarks_Verify")).getAttribute("ng-reflect-model");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(Remarks_Verify.contains("Test"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		      
+		}
+		@Given("User_626 verify Customer Name field should visible in DisPlay Only")
+		public void user_verify_customer_name_field_should_visible_in_dis_play_only() {
+			String CustomerName = javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("CustomerName")).getAttribute("aria-disabled");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(CustomerName.contains("true"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		      
+		}
+
+		@Given("User_626 verify Document Namefield should visible in DisPlay Only")
+		public void user_verify_document_namefield_should_visible_in_dis_play_only() {
+			String DocumentName = javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("DocumentName")).getAttribute("aria-disabled");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(DocumentName.contains("true"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		      
+		}
+
+		@Given("User_626 verify Required At Stage field should visible in DisPlay Only")
+		public void user_verify_required_at_stage_field_should_visible_in_dis_play_only() {
+			String RequiredAtStage = javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("RequiredAtStage")).getAttribute("aria-disabled");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(RequiredAtStage.contains("true"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		      
+		}
+
+		@Given("User_626 verify Document Status field should visible in DisPlay Only")
+		public void user_verify_document_status_field_should_visible_in_dis_play_only() {
+			String DocumentStatus = javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("DocumentStatus")).getAttribute("aria-disabled");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(DocumentStatus.contains("true"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		      
+		}
+
+		@Given("User_626 verify ManDatory field should visible in DisPlay Only")
+		public void user_verify_man_datory_field_should_visible_in_dis_play_only() {
+			String MandatoryOptional = javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("MandatoryOptional")).getAttribute("aria-disabled");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(MandatoryOptional.contains("true"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		      
+		}
+		@Given("User_626 verify Document Category field should visible in DisPlay Only")
+		public void user_verify_document_category_field_should_visible_in_dis_play_only() {
+			String DocumentCategory = javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("DocumentCategory")).getAttribute("aria-disabled");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(DocumentCategory.contains("true"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		      
+		}
+
+		@Given("User_626 verify Upload Date field should visible in DisPlay Only")
+		public void user_verify_upload_date_field_should_visible_in_dis_play_only() {
+			String UploadDate_verify = javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("UploadDate_verify")).getAttribute("ng-reflect-disabled");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(UploadDate_verify.contains("true"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		      
+		}
+
+		@Given("User_626 verify Expected Receipt Date field should visible in DisPlay Only")
+		public void user_verify_expected_receipt_date_field_should_visible_in_dis_play_only() {
+			String ExpectedReceiptDate_verify = javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("ExpectedReceiptDate_verify")).getAttribute("ng-reflect-disabled");
+		for (int i = 0; i <2000; i++) {
+        try {
+            Assert.assertTrue(ExpectedReceiptDate_verify.contains("true"));
+            break;
+        } catch (Exception e) {
+            if (i==1999) {
+                Assert.fail(e.getMessage());
+            }
+        }
+    }		      
+		}
+
+		@Given("User_626 verify Deferral Stage field should visible in DisPlay Only")
+		public void user_verify_deferral_stage_field_should_visible_in_dis_play_only() {
+			String DeferralStage = javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("DeferralStage")).getAttribute("ng-reflect-disabled");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(DeferralStage.contains("true"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		      
+		}
+
+		@Given("User_626 verify Def Approval byfield should visible in DisPlay Only")
+		public void user_verify_def_approval_byfield_should_visible_in_dis_play_only() {
+			String DefApprovedBy = javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("DefApprovedBy")).getAttribute("ng-reflect-disabled");
+		for (int i = 0; i <2000; i++) {
+        try {
+            Assert.assertTrue(DefApprovedBy.contains("true"));
+            break;
+        } catch (Exception e) {
+            if (i==1999) {
+                Assert.fail(e.getMessage());
+            }
+        }
+    }		      
+		}
+		@Given("User_626 verify Change In Nature field should visible in DisPlay Only")
+		public void user_verify_change_in_nature_field_should_visible_in_dis_play_only() {
+			String ChangeInNatureApprovedBy = javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("ChangeInNatureApprovedBy")).getAttribute("ng-reflect-disabled");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(ChangeInNatureApprovedBy.contains("true"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		      
+		}
+		@Given("User_626 verify Document Form field should visible in DisPlay Only")
+		public void user_verify_document_form_field_should_visible_in_dis_play_only() {
+			String DocumentForm = javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("DocumentForm")).getAttribute("ng-reflect-disabled");
+		for (int i = 0; i <2000; i++) {
+        try {
+            Assert.assertTrue(DocumentForm.contains("true"));
+            break;
+        } catch (Exception e) {
+            if (i==1999) {
+                Assert.fail(e.getMessage());
+            }
+        }
+    }		      
+		}
+
+		@Given("User_626 verify Document Quality field should visible in DisPlay Only")
+		public void user_verify_document_quality_field_should_visible_in_dis_play_only() {
+			String DocumentQuality = javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("DocumentQuality")).getAttribute("ng-reflect-disabled");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(DocumentQuality.contains("true"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		      
+		}
+
+		@Given("User_626 verify Document ref No field should visible in DisPlay Only")
+		public void user_verify_document_ref_no_field_should_visible_in_dis_play_only() {
+			String DocumentRefNoDisplay = javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("DocumentRefNoDisplay")).getAttribute("ng-reflect-readonly");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(DocumentRefNoDisplay.contains("true"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		      
+		}
+
+		@Given("User_626 verify Document Received By field should visible in DisPlay Only")
+		public void user_verify_document_received_by_field_should_visible_in_dis_play_only() {
+			String DocumentReceivedBy = javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("DocumentReceivedBy")).getAttribute("ng-reflect-disabled");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(DocumentReceivedBy.contains("true"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		      
+		}
+
+		@Given("User_626 verify Location field should visible in DisPlay Only")
+		public void user_verify_location_field_should_visible_in_dis_play_only() {
+			String LocationWhereReceived = javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("LocationWhereReceived")).getAttribute("ng-reflect-disabled");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(LocationWhereReceived.contains("true"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		      
+		}
+
+		@Given("User_626 verify Rack No field should visible in DisPlay Only")
+		public void user_verify_rack_no_field_should_visible_in_dis_play_only() {
+			String RackNo_Display = javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("RackNo_Display")).getAttribute("ng-reflect-readonly");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(RackNo_Display.contains("true"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		      
+		}
+
+		@Given("User_626 verify Shelf No field should visible in DisPlay Only")
+		public void user_verify_shelf_no_field_should_visible_in_dis_play_only() {
+			String shelfNo_Display = javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("shelfNo_Display")).getAttribute("ng-reflect-readonly");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(shelfNo_Display.contains("true"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		      
+		}
+		@Given("User_626 verify Box No field should visible in DisPlay Only")
+		public void user_verify_box_no_field_should_visible_in_dis_play_only() {
+			String boxNo_Display = javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("boxNo_Display")).getAttribute("ng-reflect-readonly");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(boxNo_Display.contains("true"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		  
+		}
+
+		@Given("User_626 verify Date Of Expiry field should visible in DisPlay Only")
+		public void user_verify_date_of_expiry_field_should_visible_in_dis_play_only() {
+			String DateOfExpiry_Display = javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("DateOfExpiry_Display")).getAttribute("ng-reflect-readonly");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(DateOfExpiry_Display.contains("true"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		  
+		}
+		@Given("User_626 verify Lodgement Amount field should visible in DisPlay Only")
+		public void user_verify_lodgement_amount_field_should_visible_in_dis_play_only() {
+			String lodgementAmount_display = javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("lodgementAmount_display")).getAttribute("ng-reflect-readonly");
+		for (int i = 0; i <2000; i++) {
+        try {
+            Assert.assertTrue(lodgementAmount_display.contains("true"));
+            break;
+        } catch (Exception e) {
+            if (i==1999) {
+                Assert.fail(e.getMessage());
+            }
+        }
+    }		  
+		}
+		@Given("User_626 verify Remarks field should visible in DisPlay Only")
+		public void user_verify_remarks_field_should_visible_in_dis_play_only() {
+			String Remarks_Display = javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("Remarks_Display")).getAttribute("ng-reflect-readonly");
+		for (int i = 0; i <2000; i++) {
+        try {
+            Assert.assertTrue(Remarks_Display.contains("true"));
+            break;
+        } catch (Exception e) {
+            if (i==1999) {
+                Assert.fail(e.getMessage());
+            }
+        }
+    }		  
+		}
+		@Given("User_626 verify View field should visible in DisPlay Only")
+		public void user_verify_view_field_should_visible_in_dis_play_only() {
+			String ViewDocumentButton = javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("ViewDocumentButton")).getAttribute("ng-reflect-is-disabled");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(ViewDocumentButton.contains("false"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		  
+		}
+
+		@Given("User_626 verify Generate Doc field should visible in DisPlay Only")
+		public void user_verify_generate_doc_field_should_visible_in_dis_play_only() {
+			String FileUploadButton = javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("FileUploadButton")).getAttribute("ng-reflect-is-disabled");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(FileUploadButton.contains("true"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		  
+		}
+
+		@Given("User_626 verify Status field should visible in DisPlay Only")
+		public void user_verify_status_field_should_visible_in_dis_play_only() {
+			String Status = javascriptHelper.executeScriptWithWebElement(DocumentDetailsElements.getElement("Status")).getAttribute("ng-reflect-readonly");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(Status.contains("true"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		  
+		}
+
+
+
+
 		
 		
 		

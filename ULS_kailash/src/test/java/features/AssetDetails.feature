@@ -66,5 +66,5 @@ And verify Location of signin Data should visible As Data Entry stage screen
 And verify Asset Received Data should visible As Data Entry stage screen
 And verify remarks Data should visible As Data Entry stage screen
 #displayOnly
-Then clicking on back button system should navigate to the previous screen
+Then User_626 clicking on back button system should navigate to the previous screen
 Then logout from the ijaraApplication

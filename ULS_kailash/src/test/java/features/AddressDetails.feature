@@ -37,7 +37,7 @@ Then verify Landlord Name  should visible in address details screen
 Then verify Landlord Mobile Number should visible in address details screen
 Then verify Rent Amount should visible in address details screen
 Then verify Frequency Of Rent should visible in address details screen
-Then logout from the ijaraApplication
+Then User_626 logout from the ijaraApplication
 
 @AT_NADC_03
 Scenario: To verify the field Address Type,Address Status,Residential or occupancy status,Communication address
@@ -151,6 +151,6 @@ Scenario: To verify field Status, Functionality back button
 Then verify field Status should be display only
 Then verify field Status should be toggle status  
 #ADC_01_29 To verify the functionality of Back button
-Then clicking on back button system should navigate to the previous screen
+Then User_626 clicking on back button system should navigate to the previous screen
 
 
