@@ -66,5 +66,39 @@ And verify Location of signin Data should visible As Data Entry stage screen
 And verify Asset Received Data should visible As Data Entry stage screen
 And verify remarks Data should visible As Data Entry stage screen
 #displayOnly
-Then User_626 clicking on back button system should navigate to the previous screen
-Then logout from the ijaraApplication
+Then User_626 verify Asset Manufacture Field should visible in Display Only
+Then User_626 verify Asset Model Field should visible in Display Only
+Then User_626 verify Asset Model Type Field should visible in Display Only
+Then User_626 verify Year of Manufacture Field should visible in Display Only
+Then User_626 verify Asset Condition Field should visible in Display Only
+Then User_626 verify Asset Color Field should visible in Display Only
+Then User_626 verify Driver Train Field should visible in Display Only
+Then User_626 verify No Of Cylinder Field should visible in Display Only
+Then User_626 verify Volume Of Engine Field should visible in Display Only
+Then User_626 verify No of Units Field should visible in Display Only
+Then User_626 verify Chasis Number Field should visible in Display Only
+Then User_626 verify Plate NumberField should visible in Display Only
+Then User_626 verify Plate Number Arabic Field should visible in Display Only
+Then User_626 verify Asset Dealer Field should visible in Display Only
+Then User_626 verify Deposit Account No Field should visible in Display Only
+Then User_626 verify Dealer Email Id Field should visible in Display Only
+Then User_626 verify Dealer Contact Number Field should visible in Display Only
+Then User_626 verify Dealer Location Field should visible in Display Only
+Then User_626 verify Sales Person Name Field should visible in Display Only
+Then User_626 verify Agent Name Field should visible in Display Only
+Then User_626 verify Agent Email IdField should visible in Display Only
+Then User_626 verify Agent Mobile Number Field should visible in Display Only
+Then User_626 verify Asset Price Field should visible in Display Only
+Then User_626 verify Down Payment Field should visible in Display Only
+Then User_626 verify Down Payment Percentage Field should visible in Display Only
+Then User_626 verify Green Issue Date Field should visible in Display Only
+Then User_626 verify Residual Value Field should visible in Display Only
+Then User_626 verify Green Card No Field should visible in Display Only
+Then User_626 verify Weight in Tons Field should visible in Display Only
+Then User_626 verify Asset FulFill Field should visible in Display Only
+Then User_626 verify Location of Sign in Field should visible in Display Only
+Then User_626 verify Received Location Field should visible in Display Only
+Then User_626 verify Remarks Field should visible in Display Only
+Then User_626 verify Status Field should visible in Display Only
+Then User_626 clicking on back button system should navigate to the previous screen From Asset Details
+Then User_626 logout from the ijaraApplication

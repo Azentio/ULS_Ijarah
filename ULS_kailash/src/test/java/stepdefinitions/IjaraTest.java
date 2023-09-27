@@ -3266,8 +3266,7 @@ public class IjaraTest extends BaseClass {
 	                }
 	            }
 	        }
-
-		}
+			}
 		@And("^User get the test data for test case AT_DC_CD_001")
 	    public void get_the_test_data_for_test_case_AT_DC_CD_001() throws Throwable {
 			testData =  customerDebtExcelData.getTestdata("AT_DC_CD_001");
@@ -4188,10 +4187,12 @@ public class IjaraTest extends BaseClass {
 
 		@Given("verify Asset Price Data should visible As Data Entry stage screen")
 		public void verify_asset_price_data_should_visible_as_data_entry_stage_screen() {
+			javascriptHelper.scrollIntoView(javascriptHelper
+					.executeScriptWithWebElement(AssetDetailElements.getElement("Status")));
 			String AssetPriceDC = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("AssetPriceDC")).getAttribute("ng-reflect-model");
 		for (int i = 0; i <2000; i++) {
         try {
-            Assert.assertTrue(AssetPriceDC.contains("500000"));
+            Assert.assertTrue(AssetPriceDC.contains("5000000"));
             break;
         } catch (Exception e) {
             if (i==1999) {
@@ -4206,7 +4207,7 @@ public class IjaraTest extends BaseClass {
 			String AssetFulfilDC = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("AssetFulfilDC")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
         try {
-            Assert.assertTrue(AssetFulfilDC.contains("MUMBAI"));
+            Assert.assertTrue(AssetFulfilDC.contains("Mumbai"));
             break;
         } catch (Exception e) {
             if (i==1999) {
@@ -4221,7 +4222,7 @@ public class IjaraTest extends BaseClass {
 			String LocationOfSigninDC = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("LocationOfSigninDC")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
         try {
-            Assert.assertTrue(LocationOfSigninDC.contains("LUCKNOW"));
+            Assert.assertTrue(LocationOfSigninDC.contains("Lucknow"));
             break;
         } catch (Exception e) {
             if (i==1999) {
@@ -4258,7 +4259,525 @@ public class IjaraTest extends BaseClass {
 	            }
 	        }
 	    }		       	  
-			    
+		}
+		@Then("User_626 verify Asset Manufacture Field should visible in Display Only")
+		public void user_verify_asset_manufacture_field_should_visible_in_display_only() {
+			String AssetManufactureDP = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("AssetManufactureDP")).getAttribute("aria-disabled");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(AssetManufactureDP.contains("true"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		      
+		}
+		@Then("User_626 verify Asset Model Field should visible in Display Only")
+		public void user_verify_asset_model_field_should_visible_in_display_only() {
+			String AssetModelDC = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("AssetModelDC")).getAttribute("aria-disabled");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(AssetModelDC.contains("true"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		      
+		}
+
+		@Then("User_626 verify Asset Model Type Field should visible in Display Only")
+		public void user_verify_asset_model_type_field_should_visible_in_display_only() {
+			String AssetModelTypeDC = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("AssetModelTypeDC")).getAttribute("aria-disabled");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(AssetModelTypeDC.contains("true"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		      
+		}
+
+		@Then("User_626 verify Year of Manufacture Field should visible in Display Only")
+		public void user_verify_year_of_manufacture_field_should_visible_in_display_only() {
+			String YearOfManufacture = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("YearOfManufacture")).getAttribute("ng-reflect-readonly");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(YearOfManufacture.contains("true"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		      
+		}
+
+		@Then("User_626 verify Asset Condition Field should visible in Display Only")
+		public void user_verify_asset_condition_field_should_visible_in_display_only() {
+			String AssetConditionDC = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("AssetConditionDC")).getAttribute("aria-disabled");
+		for (int i = 0; i <2000; i++) {
+        try {
+            Assert.assertTrue(AssetConditionDC.contains("true"));
+            break;
+        } catch (Exception e) {
+            if (i==1999) {
+                Assert.fail(e.getMessage());
+            }
+        }
+    }		      
+		}
+		@Then("User_626 verify Asset Color Field should visible in Display Only")
+		public void user_verify_asset_color_field_should_visible_in_display_only() {
+			String Assetcolor = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("Assetcolor")).getAttribute("ng-reflect-readonly");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(Assetcolor.contains("true"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		      
+		}
+
+		@Then("User_626 verify Driver Train Field should visible in Display Only")
+		public void user_verify_driver_train_field_should_visible_in_display_only() {
+			String DriveTrain = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("DriveTrain")).getAttribute("ng-reflect-readonly");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(DriveTrain.contains("true"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		      
+		}
+
+		@Then("User_626 verify No Of Cylinder Field should visible in Display Only")
+		public void user_verify_no_of_cylinder_field_should_visible_in_display_only() {
+			String NoOfCylinder = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("NoOfCylinder")).getAttribute("ng-reflect-readonly");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(NoOfCylinder.contains("true"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		      
+		}
+
+		@Then("User_626 verify Volume Of Engine Field should visible in Display Only")
+		public void user_verify_volume_of_engine_field_should_visible_in_display_only() {
+			String VolOfEngine = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("VolOfEngine")).getAttribute("ng-reflect-readonly");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(VolOfEngine.contains("true"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		      
+		}
+
+		@Then("User_626 verify No of Units Field should visible in Display Only")
+		public void user_verify_no_of_units_field_should_visible_in_display_only() {
+			String NoOfUnits = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("NoOfUnits")).getAttribute("ng-reflect-readonly");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(NoOfUnits.contains("true"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		      
+		}
+
+		@Then("User_626 verify Chasis Number Field should visible in Display Only")
+		public void user_verify_chasis_number_field_should_visible_in_display_only() {
+			String ChasisNumber = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("ChasisNumber")).getAttribute("ng-reflect-readonly");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(ChasisNumber.contains("true"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		      
+		}
+		@Then("User_626 verify Plate NumberField should visible in Display Only")
+		public void user_verify_plate_number_field_should_visible_in_display_only() {
+			String PlateNumber = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("PlateNumber")).getAttribute("ng-reflect-readonly");
+		for (int i = 0; i <2000; i++) {
+        try {
+            Assert.assertTrue(PlateNumber.contains("true"));
+            break;
+        } catch (Exception e) {
+            if (i==1999) {
+                Assert.fail(e.getMessage());
+            }
+        }
+    }		      
+		}
+
+		@Then("User_626 verify Plate Number Arabic Field should visible in Display Only")
+		public void user_verify_plate_number_arabic_field_should_visible_in_display_only() {
+			String PlateNumberArabic = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("PlateNumberArabic")).getAttribute("ng-reflect-readonly");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(PlateNumberArabic.contains("true"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		      
+		}
+
+		@Then("User_626 verify Asset Dealer Field should visible in Display Only")
+		public void user_verify_asset_dealer_field_should_visible_in_display_only() {
+			String AssetDealer = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("AssetDealer")).getAttribute("ng-reflect-readonly");
+		for (int i = 0; i <2000; i++) {
+        try {
+            Assert.assertTrue(AssetDealer.contains("true"));
+            break;
+        } catch (Exception e) {
+            if (i==1999) {
+                Assert.fail(e.getMessage());
+            }
+        }
+    }		      
+		}
+
+		@Then("User_626 verify Deposit Account No Field should visible in Display Only")
+		public void user_verify_deposit_account_no_field_should_visible_in_display_only() {
+			String DepositAccNo = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("DepositAccNo")).getAttribute("ng-reflect-readonly");
+			for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(DepositAccNo.contains("true"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		      
+		}
+
+		@Then("User_626 verify Dealer Email Id Field should visible in Display Only")
+		public void user_verify_dealer_email_id_field_should_visible_in_display_only() {
+			String DealerEmailId = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("DealerEmailId")).getAttribute("ng-reflect-readonly");
+		for (int i = 0; i <2000; i++) {
+        try {
+            Assert.assertTrue(DealerEmailId.contains("true"));
+            break;
+        } catch (Exception e) {
+            if (i==1999) {
+                Assert.fail(e.getMessage());
+            }
+        }
+    }		      
+		}
+
+		@Then("User_626 verify Dealer Contact Number Field should visible in Display Only")
+		public void user_verify_dealer_contact_number_field_should_visible_in_display_only() {
+			String DealerContactNo = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("DealerContactNo")).getAttribute("ng-reflect-readonly");
+		for (int i = 0; i <2000; i++) {
+        try {
+            Assert.assertTrue(DealerContactNo.contains("true"));
+            break;
+        } catch (Exception e) {
+            if (i==1999) {
+                Assert.fail(e.getMessage());
+            }
+        }
+    }		      
+		}
+		@Then("User_626 verify Dealer Location Field should visible in Display Only")
+		public void user_verify_dealer_location_field_should_visible_in_display_only() {
+			String DealerLocation = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("DealerLocation")).getAttribute("ng-reflect-readonly");
+		for (int i = 0; i <2000; i++) {
+        try {
+            Assert.assertTrue(DealerLocation.contains("true"));
+            break;
+        } catch (Exception e) {
+            if (i==1999) {
+                Assert.fail(e.getMessage());
+            }
+        }
+    }		      
+		}
+		@Then("User_626 verify Sales Person Name Field should visible in Display Only")
+		public void user_verify_sales_person_name_field_should_visible_in_display_only() {
+			String SalesPersonName = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("SalesPersonName")).getAttribute("ng-reflect-readonly");
+		for (int i = 0; i <2000; i++) {
+        try {
+            Assert.assertTrue(SalesPersonName.contains("true"));
+            break;
+        } catch (Exception e) {
+            if (i==1999) {
+                Assert.fail(e.getMessage());
+            }
+        }
+    }		      
+		}
+
+		@Then("User_626 verify Agent Name Field should visible in Display Only")
+		public void user_verify_agent_name_field_should_visible_in_display_only() {
+			String AgentName = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("AgentName")).getAttribute("ng-reflect-readonly");
+		for (int i = 0; i <2000; i++) {
+        try {
+            Assert.assertTrue(AgentName.contains("true"));
+            break;
+        } catch (Exception e) {
+            if (i==1999) {
+                Assert.fail(e.getMessage());
+            }
+        }
+    }		      
+		}
+
+		@Then("User_626 verify Agent Email IdField should visible in Display Only")
+		public void user_verify_agent_email_id_field_should_visible_in_display_only() {
+		String AgentEmailId = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("AgentEmailId")).getAttribute("ng-reflect-readonly");
+			for (int i = 0; i <2000; i++) {
+		        try {
+		            Assert.assertTrue(AgentEmailId.contains("true"));
+		            break;
+		        } catch (Exception e) {
+		            if (i==1999) {
+		                Assert.fail(e.getMessage());
+		            }
+		        }
+		    }		      
+		}
+		@Then("User_626 verify Agent Mobile Number Field should visible in Display Only")
+		public void user_verify_agent_mobile_number_field_should_visible_in_display_only() {
+			String AgentMobileNumber = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("AgentMobileNumber")).getAttribute("ng-reflect-readonly");
+		for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(AgentMobileNumber.contains("true"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		      
+		}
+
+		@Then("User_626 verify Asset Price Field should visible in Display Only")
+		public void user_verify_asset_price_field_should_visible_in_display_only() {
+			String AssetPrice = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("AssetPrice")).getAttribute("ng-reflect-readonly");
+			for (int i = 0; i <2000; i++) {
+		        try {
+		            Assert.assertTrue(AssetPrice.contains("true"));
+		            break;
+		        } catch (Exception e) {
+		            if (i==1999) {
+		                Assert.fail(e.getMessage());
+		            }
+		        }
+		    }		      
+		}
+
+		@Then("User_626 verify Down Payment Field should visible in Display Only")
+		public void user_verify_down_payment_field_should_visible_in_display_only() {
+			String DownPayment = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("DownPayment")).getAttribute("ng-reflect-readonly");
+		for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(DownPayment.contains("true"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		       
+		}
+		@Then("User_626 verify Down Payment Percentage Field should visible in Display Only")
+		public void user_verify_down_payment_percentage_field_should_visible_in_display_only() {
+			String DownPaymentPerCentage = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("DownPaymentPerCentage")).getAttribute("ng-reflect-readonly");
+		for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(DownPaymentPerCentage.contains("true"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		       
+		}
+
+		@Then("User_626 verify Green Issue Date Field should visible in Display Only")
+		public void user_verify_green_issue_date_field_should_visible_in_display_only() {
+			String GreenIssueDate = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("GreenIssueDate")).getAttribute("ng-reflect-readonly");
+			for (int i = 0; i <2000; i++) {
+		        try {
+		            Assert.assertTrue(GreenIssueDate.contains("true"));
+		            break;
+		        } catch (Exception e) {
+		            if (i==1999) {
+		                Assert.fail(e.getMessage());
+		            }
+		        }
+		    }		      
+		}
+
+		@Then("User_626 verify Residual Value Field should visible in Display Only")
+		public void user_verify_residual_value_field_should_visible_in_display_only() {
+			String ResidualValue = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("ResidualValue")).getAttribute("ng-reflect-readonly");
+			for (int i = 0; i <2000; i++) {
+		        try {
+		            Assert.assertTrue(ResidualValue.contains("true"));
+		            break;
+		        } catch (Exception e) {
+		            if (i==1999) {
+		                Assert.fail(e.getMessage());
+		            }
+		        }
+		    }		      
+		}
+
+		@Then("User_626 verify Green Card No Field should visible in Display Only")
+		public void user_verify_green_card_no_field_should_visible_in_display_only() {
+			String GreenCardNo = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("GreenCardNo")).getAttribute("ng-reflect-readonly");
+			for (int i = 0; i <2000; i++) {
+		        try {
+		            Assert.assertTrue(GreenCardNo.contains("true"));
+		            break;
+		        } catch (Exception e) {
+		            if (i==1999) {
+		                Assert.fail(e.getMessage());
+		            }
+		        }
+		    }		      
+		}
+
+		@Then("User_626 verify Weight in Tons Field should visible in Display Only")
+		public void user_verify_weight_in_tons_field_should_visible_in_display_only() {
+			String WeightInTons = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("WeightInTons")).getAttribute("ng-reflect-readonly");
+			for (int i = 0; i <2000; i++) {
+		        try {
+		            Assert.assertTrue(WeightInTons.contains("true"));
+		            break;
+		        } catch (Exception e) {
+		            if (i==1999) {
+		                Assert.fail(e.getMessage());
+		            }
+		        }
+		    }		      
+		}
+
+		@Then("User_626 verify Asset FulFill Field should visible in Display Only")
+		public void user_verify_asset_ful_fill_field_should_visible_in_display_only() {
+			String AssetFulfil = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("AssetFulfil")).getAttribute("ng-reflect-readonly");
+			for (int i = 0; i <2000; i++) {
+		        try {
+		            Assert.assertTrue(AssetFulfil.contains("true"));
+		            break;
+		        } catch (Exception e) {
+		            if (i==1999) {
+		                Assert.fail(e.getMessage());
+		            }
+		        }
+		    }		  
+		}
+
+		@Then("User_626 verify Location of Sign in Field should visible in Display Only")
+		public void user_verify_location_of_sign_in_field_should_visible_in_display_only() {
+			String LocationOfSignin = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("LocationOfSignin")).getAttribute("ng-reflect-readonly");
+			for (int i = 0; i <2000; i++) {
+		        try {
+		            Assert.assertTrue(LocationOfSignin.contains("true"));
+		            break;
+		        } catch (Exception e) {
+		            if (i==1999) {
+		                Assert.fail(e.getMessage());
+		            }
+		        }
+		    }		  
+		}
+
+		@Then("User_626 verify Received Location Field should visible in Display Only")
+		public void user_verify_received_location_field_should_visible_in_display_only() {
+			String ReceivedLocation = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("ReceivedLocation")).getAttribute("ng-reflect-readonly");
+			for (int i = 0; i <2000; i++) {
+		        try {
+		            Assert.assertTrue(ReceivedLocation.contains("true"));
+		            break;
+		        } catch (Exception e) {
+		            if (i==1999) {
+		                Assert.fail(e.getMessage());
+		            }
+		        }
+		    }		  
+		}
+
+		@Then("User_626 verify Remarks Field should visible in Display Only")
+		public void user_verify_remarks_field_should_visible_in_display_only() {
+			String ReMarks = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("ReMarks")).getAttribute("ng-reflect-readonly");
+			for (int i = 0; i <2000; i++) {
+		        try {
+		            Assert.assertTrue(ReMarks.contains("true"));
+		            break;
+		        } catch (Exception e) {
+		            if (i==1999) {
+		                Assert.fail(e.getMessage());
+		            }
+		        }
+		    }		  
+		}
+
+		@Then("User_626 verify Status Field should visible in Display Only")
+		public void user_verify_status_field_should_visible_in_display_only() {
+			String Status = javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("Status")).getAttribute("ng-reflect-readonly");
+		for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(Status.contains("true"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+	    }		  
+		}	
+		@Then("User_626 clicking on back button system should navigate to the previous screen From Asset Details")
+		public void user_clicking_on_back_button_system_should_navigate_to_the_previous_screen_from_asset_details() throws InterruptedException {
+//			javascriptHelper.scrollIntoView(javascriptHelper
+//					.executeScriptWithWebElement(AssetDetailElements.getElement("Back_ButtonAD")));
+			javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("Back_ButtonAD")));
+			String Back_button_verify= javascriptHelper.executeScriptWithWebElement(AssetDetailElements.getElement("BackButtonVerify")).getAttribute("ng-reflect-size");
+			for (int i = 0; i <2000; i++) {
+	            try {
+	                Assert.assertTrue(Back_button_verify.contains("12"));
+	                break;
+	            } catch (Exception e) {
+	                if (i==1999) {
+	                    Assert.fail(e.getMessage());
+	                }
+	            }
+	        }
 		}
 		@Given("get the test data for test case ID AT_DOC_01")
 		public void get_the_test_data_for_test_case_id_at_doc() {
