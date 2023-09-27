@@ -11,6 +11,8 @@ And click on search box upon click on the mail box
 And search the record reference number in search text box
 And Select record after search
 And User_626 click on Next and Document Details tab
+#At_DOC_04
+#And User_626 Search 
 And User_626 click on the Action View button Below the Document Details
 And User_626 verify Customer Name field should visible in Document details screen
 And User_626 verify Document Namefield should visible in Document details screen

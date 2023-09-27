@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-27T15:09:03 IST" name="Default suite" finished-at="2023-09-27T15:10:31 IST" duration-ms="88150">
+  <suite started-at="2023-09-27T17:45:20 IST" name="Default suite" finished-at="2023-09-27T17:46:14 IST" duration-ms="53668">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@1224144a]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-09-27T15:09:03 IST" name="Default test" finished-at="2023-09-27T15:10:31 IST" duration-ms="88150">
+    <test started-at="2023-09-27T17:45:20 IST" name="Default test" finished-at="2023-09-27T17:46:14 IST" duration-ms="53668">
       <class name="Runner.TestApplication">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@1224144a]" started-at="2023-09-27T15:09:03 IST" name="setUpClass" finished-at="2023-09-27T15:09:04 IST" duration-ms="846" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@1224144a]" started-at="2023-09-27T17:45:20 IST" name="setUpClass" finished-at="2023-09-27T17:45:21 IST" duration-ms="871" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@1224144a]" started-at="2023-09-27T15:09:04 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-09-27T15:09:46 IST" duration-ms="42843" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@1224144a]" started-at="2023-09-27T17:45:21 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-09-27T17:46:07 IST" duration-ms="46531" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -23,14 +23,40 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[To Test All Datas in Asset Details In App Data Check Stage]"]]>
+                <![CDATA["Optional[To Test All Datas in Document Details In Offering Stage]"]]>
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[javascript error: Cannot read properties of null (reading 'click')
+  (Session info: chrome=117.0.5938.92)
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [fa32bebf40754454fa30da254b9e2d9a, executeScript {script=arguments[0].click();, args=[null]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.92, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59749}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59749/devtoo..., se:cdpVersion: 117.0.5938.92, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: fa32bebf40754454fa30da254b9e2d9a]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: javascript error: Cannot read properties of null (reading 'click')
+  (Session info: chrome=117.0.5938.92)
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [fa32bebf40754454fa30da254b9e2d9a, executeScript {script=arguments[0].click();, args=[null]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.92, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59749}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59749/devtoo..., se:cdpVersion: 117.0.5938.92, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: fa32bebf40754454fa30da254b9e2d9a
+at org.junit.Assert.fail(Assert.java:88)
+at stepdefinitions.IjaraTest.user_click_on_document_details_tab(IjaraTest.java:4806)
+at ✽.User_626 click on Next and Document Details tab(file:///C:/Users/inindc00626/git/ULS_Ijarahkk/ULS_kailash/src/test/java/features/OfferDocumentDetails.feature:13)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@1224144a]" started-at="2023-09-27T15:09:46 IST" name="tearDownClass" finished-at="2023-09-27T15:10:31 IST" duration-ms="44407" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@1224144a]" started-at="2023-09-27T17:46:07 IST" name="tearDownClass" finished-at="2023-09-27T17:46:14 IST" duration-ms="6200" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

@@ -32,6 +32,6 @@ Then verify Last Cycle field below the Customer debt should be display only
 Then verify Include in Eligibility below the Customer debt should be display only
 Then verify Installment Amount field below the Customer debt should be Same As AppDataCheck Stage
 And User click the Back button in Customer Debt screen navigate to the previous screen
-Then logout from the ijaraApplication
+Then User_626 logout from the ijaraApplication
 
 
