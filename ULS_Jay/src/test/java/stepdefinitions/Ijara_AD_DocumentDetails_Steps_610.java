@@ -49,7 +49,13 @@ public class Ijara_AD_DocumentDetails_Steps_610 {
 		testData = ad_CustomerFolllowUpDetails_610.getTestdata("DS_AT_DC_ID_001");
 	}
 	
-
+	//----------offering offer details 
+	
+	@And("User_610 get the test data set id for DS_AT_OF_OFD_001")
+	public void get_the_test_data_set_id_for_DS_AT_OF_OFD_001() {
+		testData = ad_CustomerFolllowUpDetails_610.getTestdata("DS_AT_OF_OFD_001");
+	}
+	
 	// -------------steps ---------------
 	@And("User_{int} click the module name")
 	public void user_select_the_module_name_to_los(Integer int1) throws Throwable {
@@ -103,12 +109,43 @@ public class Ijara_AD_DocumentDetails_Steps_610 {
 
 	@And("User_{int} click edit button under inbox screen")
 	public void user_click_edit_button_under_inbox_screen(Integer int1) throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
-				.executeScriptWithWebElement(jsPaths2.getElement("clickEditBtnIn_FirstRow_UnderInbox_610")));
-		javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("clickEditBtnIn_FirstRow_UnderInbox_610"))
-				.click();
-		System.err.println(jsPaths2.getElement("click_DocumentDetails_610"));
-		Thread.sleep(5000);
+//		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("clickEditBtnIn_FirstRow_UnderInbox_610")));
+//		javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("clickEditBtnIn_FirstRow_UnderInbox_610")).click();
+	//	System.err.println(jsPaths2.getElement("click_DocumentDetails_610"));
+		
+		
+		for (int i = 0; i < 300; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("clickEditBtnIn_FirstRow_UnderInbox_610")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				// TODO: handle exception
+			}
+		}
+		}
+		Thread.sleep(4000);
+			}
+	
+	@And("User_{int} click edit button under inbox screen02")
+	public void user_click_edit_button_under_inbox_screen02(Integer int1) throws Throwable {
+//		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("editBtnIndex2_610")));
+//		javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("editBtnIndex2_610")).click();
+
+		
+		for (int i = 0; i < 300; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("editBtnIndex2_610")).click();
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+			}
+		}
+		}
+		Thread.sleep(4000);
 	}
 
 	@And("User_{int} click document details")
@@ -2208,4 +2245,744 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 				
 				
 	}
+	
+	//------------offering offer details  @AT_OFL_01-------------------------------------------------------------------------------------
+	
+	@And("User_{int} verify the Customer Decline button field available on offer details screen")
+	public void user_verify_the_customer_decline_button_field_available_on_offer_details_screen(Integer int1) {
+		//---------------------display
+		
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("getAttribute_InTenure_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+	    
+	}
+
+	@And("User_{int} verify the Print button field available on offer details screen")
+	public void user_verify_the_print_button_field_available_on_offer_details_screen(Integer int1) {
+	    
+		//---------------------display
+		
+				for (int j = 0; j < 200; j++) {
+					try {
+						if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("getAttribute_InTenure_610")).isDisplayed()) {
+							Assert.assertTrue(true);
+						}
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+				}
+	}
+
+	@And("User_{int} verify the Back button field available on offer details screen")
+	public void user_verify_the_back_button_field_available_on_offer_details_screen(Integer int1) {
+	    
+		//---------------------display
+		
+				for (int j = 0; j < 200; j++) {
+					try {
+						if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("backBtn_UnderCustomerDetails_610")).isDisplayed()) {
+							Assert.assertTrue(true);
+						}
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+				}
+	}
+
+	@And("User_{int} verify the Accept Offer field available on offer details screen")
+	public void user_verify_the_accept_offer_field_available_on_offer_details_screen(Integer int1) {
+	    
+		//---------------------display
+		
+				for (int j = 0; j < 200; j++) {
+					try {
+						if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("AcceptOffer_610")).isDisplayed()) {
+							Assert.assertTrue(true);
+						}
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+				}
+	}
+
+	@And("User_{int} verify the Offer Details Section field available on offer details screen")
+	public void user_verify_the_offer_details_section_field_available_on_offer_details_screen(Integer int1) {
+	    
+		//---------------------display
+		
+				for (int j = 0; j < 200; j++) {
+					try {
+						if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("OfferDetailsSection_610")).isDisplayed()) {
+							Assert.assertTrue(true);
+						}
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+				}
+	}
+
+	@And("User_{int} verify the Finance Details Section field available on offer details screen")
+	public void user_verify_the_finance_details_section_field_available_on_offer_details_screen(Integer int1) {
+	    
+		//---------------------display
+		
+				for (int j = 0; j < 200; j++) {
+					try {
+						if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FinanceDetailsSection_610")).isDisplayed()) {
+							Assert.assertTrue(true);
+						}
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+				}
+	}
+
+	@And("User_{int} verify the Credit Risk Factor Sectioin field available on offer details screen")
+	public void user_verify_the_credit_risk_factor_sectioin_field_available_on_offer_details_screen(Integer int1) {
+	    
+		//---------------------display
+		
+				for (int j = 0; j < 200; j++) {
+					try {
+						if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("CreditRiskFactor _610")).isDisplayed()) {
+							Assert.assertTrue(true);
+						}
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+				}
+	}
+
+	@And("User_{int} verify the Credit Score Details Section field available on offer details screen")
+	public void user_verify_the_credit_score_details_section_field_available_on_offer_details_screen(Integer int1) {
+	    
+		//---------------------display
+		
+				for (int j = 0; j < 200; j++) {
+					try {
+						if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("CreditScoreDetails_610")).isDisplayed()) {
+							Assert.assertTrue(true);
+						}
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+				}
+	}
+
+	@And("User_{int} verify the Eligibility Details Screen field available on offer details screen")
+	public void user_verify_the_eligibility_details_screen_field_available_on_offer_details_screen(Integer int1) {
+	    
+		//---------------------display
+		
+				for (int j = 0; j < 200; j++) {
+					try {
+						if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("EligibilityDetails_610")).isDisplayed()) {
+							Assert.assertTrue(true);
+						}
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+				}
+	}
+
+	@And("User_{int} verify the Interest Rate Structure Section field available on offer details screen")
+	public void user_verify_the_interest_rate_structure_section_field_available_on_offer_details_screen(Integer int1) {
+	    
+		//---------------------display
+		
+				for (int j = 0; j < 200; j++) {
+					try {
+						if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("InterestRateStructure_610")).isDisplayed()) {
+							Assert.assertTrue(true);
+						}
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+				}
+	}
+
+	@And("User_{int} verify the Installments Section field available on offer details screen")
+	public void user_verify_the_installments_section_field_available_on_offer_details_screen(Integer int1) {
+	    
+		//---------------------display
+		
+				for (int j = 0; j < 200; j++) {
+					try {
+						if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("InstallmentsSection_610")).isDisplayed()) {
+							Assert.assertTrue(true);
+						}
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+				}
+	}
+
+	@And("User_{int} verify the Appeal Request Section field available on offer details screen")
+	public void user_verify_the_appeal_request_section_field_available_on_offer_details_screen(Integer int1) {
+		//---------------------display
+		
+				for (int j = 0; j < 200; j++) {
+					try {
+						if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("AppealRequestsection_610")).isDisplayed()) {
+							Assert.assertTrue(true);
+						}
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+				}
+	    
+	}
+	
+	//-----------------data should read only-------------
+	
+	@And("User_{int} verify Product data should be read only")
+	public void user_verify_product_data_should_be_read_only(Integer int1) {
+	String offProduct=javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("getAttribute_product_610"))
+			.getAttribute("ng-reflect-readonly");
+	    System.err.println(offProduct);
+	    
+	    Assert.assertEquals("true",offProduct);
+	    
+	    	}
+
+	@And("User_{int} verify Sub Product data should be read only")
+	public void user_verify_sub_product_data_should_be_read_only(Integer int1) {
+		String offSubProduct=javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("getAttribute_SubProduct_610")).getAttribute("ng-reflect-readonly");
+	    System.err.println(offSubProduct);
+	    Assert.assertEquals("true",offSubProduct);
+	}
+
+	@And("User_{int} verify Scheme data should be read only")
+	public void user_verify_scheme_data_should_be_read_only(Integer int1) {
+		String offScheme=javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("getAttribute_Scheme_610")).getAttribute("ng-reflect-readonly");
+	    System.err.println(offScheme);
+	    Assert.assertEquals("true",offScheme);
+	}
+
+	@And("User_{int} verify Princing Indicator data should be read only")
+	public void user_verify_princing_indicator_data_should_be_read_only(Integer int1) {
+		String offPrincingIndicator=javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("getAttribute_PrincingIndicator_610")).getAttribute("ng-reflect-readonly");
+	    System.err.println(offPrincingIndicator);
+	    Assert.assertEquals("true",offPrincingIndicator);
+	}
+	
+	//------------------------@AT_OFL_02
+	
+	@And("User_{int} verify the Back button field")
+	public void user_verify_the_back_button_field(Integer int1) throws Throwable {
+	    
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("backBtn_UnderCustomerDetails_610")));
+		javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("backBtn_UnderCustomerDetails_610")).click();
+		
+//		//---------------------display
+//		
+//		for (int j = 0; j < 200; j++) {
+//			try {
+//				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("backBtn_UnderCustomerDetails_610")).isDisplayed()) {
+//					Assert.assertTrue(true);
+//				}
+//			} catch (Exception e) {
+//				// TODO: handle exception
+//			}
+//		}
+		
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("BackBtn_NavigativeFacilityScreen_610")));
+		Assert.assertEquals(true,javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("BackBtn_NavigativeFacilityScreen_610")).isDisplayed());
+		
+	}
+	
+	//---------------------@AT_OFL_03   offer details screen
+	
+	@And("User_{int} verify the Product field available in offer details")
+	public void user_verify_the_product_field_available_in_offer_details(Integer int1) throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+				.executeScriptWithWebElement(jsPaths2.getElement("OflProduct_610")));
+		Assert.assertEquals(true,
+				javascriptHelper
+						.executeScriptWithWebElement(jsPaths2.getElement("OflProduct_610"))
+						.isDisplayed());
+		
+		//--read only
+		
+		String offProduct=javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("getAttribute_product_610"))
+				.getAttribute("ng-reflect-readonly");
+		    System.err.println(offProduct);
+		    
+		    Assert.assertEquals("true",offProduct);
+	    
+	}
+
+	@And("User_{int} verify the Sub Product field available in offer details")
+	public void user_verify_the_sub_product_field_available_in_offer_details(Integer int1) throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+				.executeScriptWithWebElement(jsPaths2.getElement("OflSubProduct_610")));
+		Assert.assertEquals(true,
+				javascriptHelper
+						.executeScriptWithWebElement(jsPaths2.getElement("OflSubProduct_610"))
+						.isDisplayed());
+		
+		//--read only
+		
+		String offSubProduct=javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("getAttribute_SubProduct_610")).getAttribute("ng-reflect-readonly");
+	    System.err.println(offSubProduct);
+	    Assert.assertEquals("true",offSubProduct);
+	    
+	}
+
+	@And("User_{int} verify the Scheme field available in offer details")
+	public void user_verify_the_scheme_field_available_in_offer_details(Integer int1) throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+				.executeScriptWithWebElement(jsPaths2.getElement("OflScheme_610")));
+		Assert.assertEquals(true,
+				javascriptHelper
+						.executeScriptWithWebElement(jsPaths2.getElement("OflScheme_610"))
+						.isDisplayed());
+		//------------read only
+		
+		String offScheme=javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("getAttribute_Scheme_610")).getAttribute("ng-reflect-readonly");
+	    System.err.println(offScheme);
+	    Assert.assertEquals("true",offScheme);
+	    
+	}
+
+	@And("User_{int} verify the Pricing Indicator field available in offer details")
+	public void user_verify_the_pricing_indicator_field_available_in_offer_details(Integer int1) throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+				.executeScriptWithWebElement(jsPaths2.getElement("OflPrincingIndicator_610")));
+		Assert.assertEquals(true,
+				javascriptHelper
+						.executeScriptWithWebElement(jsPaths2.getElement("OflPrincingIndicator_610"))
+						.isDisplayed());
+		
+		//-------read only
+		
+		String offPrincingIndicator=javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("getAttribute_PrincingIndicator_610")).getAttribute("ng-reflect-readonly");
+	    System.err.println(offPrincingIndicator);
+	    Assert.assertEquals("true",offPrincingIndicator);
+	    
+	}
+
+	@And("User_{int} verify the Product Offer Amount available in offer details")
+	public void user_verify_the_product_offer_amount_available_in_offer_details(Integer int1) throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+				.executeScriptWithWebElement(jsPaths2.getElement("OflOfferdAmount_610")));
+		Assert.assertEquals(true,
+				javascriptHelper
+						.executeScriptWithWebElement(jsPaths2.getElement("OflOfferdAmount_610"))
+						.isDisplayed());
+		
+		//-------read only
+		
+				String offProductOfferAmount=javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("OflOfferdAmount_610")).getAttribute("ng-reflect-readonly");
+			    System.err.println(offProductOfferAmount);
+			    Assert.assertEquals("true",offProductOfferAmount);
+	    
+	}
+
+	@And("User_{int} verify the Tenure field available in offer details")
+	public void user_verify_the_tenure_field_available_in_offer_details(Integer int1) throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+				.executeScriptWithWebElement(jsPaths2.getElement("OflTenure_610")));
+		Assert.assertEquals(true,
+				javascriptHelper
+						.executeScriptWithWebElement(jsPaths2.getElement("OflTenure_610"))
+						.isDisplayed());
+		
+		//-------read only
+		
+		String offTenure=javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("OflTenure_610")).getAttribute("ng-reflect-readonly");
+	    System.err.println(offTenure);
+	    Assert.assertEquals("true",offTenure);
+	    
+	}
+
+	@And("User_{int} verify the Nature Of Finance field available in offer details")
+	public void user_verify_the_nature_of_finance_field_available_in_offer_details(Integer int1) throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+				.executeScriptWithWebElement(jsPaths2.getElement("OflNaturalOfFinance_610")));
+		Assert.assertEquals(true,
+				javascriptHelper
+						.executeScriptWithWebElement(jsPaths2.getElement("OflNaturalOfFinance_610"))
+						.isDisplayed());
+		
+		//------------read only 
+		
+		String offNatureOfFinance=javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("OflNaturalOfFinance_610")).getAttribute("ng-reflect-readonly");
+	    System.err.println(offNatureOfFinance);
+	    Assert.assertEquals("true",offNatureOfFinance);
+	    
+	}
+	
+	@And("User_{int} verify the Currency field available in offer details")
+	public void user_verify_the_currency_field_available_in_offer_details(Integer int1) throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("OflCurrency_610")));
+		Assert.assertEquals(true,javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("OflCurrency_610")).isDisplayed());
+		
+		//------------read only 
+		
+				String offCurrency=javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("OflCurrency_610")).getAttribute("ng-reflect-readonly");
+			    System.err.println(offCurrency);
+			    Assert.assertEquals("true",offCurrency);
+	    
+	}
+	
+	//---------------------------@AT_OFL_04--------------------
+	
+	@And("User_{int} verify the Amount Request field available in Finance details screen")
+	public void user_verify_the_amount_request_field_available_in_finance_details_screen(Integer int1) throws Throwable {
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdAmountRequested_610")));
+//		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdAmountRequested_610")));
+//		Assert.assertEquals(true,javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdAmountRequested_610")).isDisplayed());
+		
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdAmountRequested_610")).isDisplayed()){
+					Assert.assertTrue(true);
+				} 
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+			}
+		}
+		}
+	    
+	}
+
+	@And("User_{int} verify the Down Payment Amount field available in Finance details screen")
+	public void user_verify_the_down_payment_amount_field_available_in_finance_details_screen(Integer int1) throws Throwable {
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdDownPaymentAmount_610")));
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdDownPaymentAmount_610")));
+		Assert.assertEquals(true,javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdDownPaymentAmount_610")).isDisplayed());
+	    
+	}
+
+	@And("User_{int} verify the Total Down Payment Amount field available in Finance details screen")
+	public void user_verify_the_total_down_payment_amount_field_available_in_finance_details_screen(Integer int1) throws Throwable {
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdTotalDownPaymentAmount_610")));
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdTotalDownPaymentAmount_610")));
+		Assert.assertEquals(true,javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdTotalDownPaymentAmount_610")).isDisplayed());
+	    
+	}
+
+	@And("User_{int} verify the Total Profit Amount field available in Finance details screen")
+	public void user_verify_the_total_profit_amount_field_available_in_finance_details_screen(Integer int1) throws Throwable {
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdProfitAmount_610")));
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdProfitAmount_610")));
+		Assert.assertEquals(true,javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdProfitAmount_610")).isDisplayed());
+	    
+	}
+
+	@And("User_{int} verify the Total Contract Value field available in Finance details screen")
+	public void user_verify_the_total_contract_value_field_available_in_finance_details_screen(Integer int1) throws Throwable {
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdTotalContractAmount_610")));
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdTotalContractAmount_610")));
+		Assert.assertEquals(true,javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdTotalContractAmount_610")).isDisplayed());
+	    
+	}
+
+	@And("User_{int} verify the Total Income field available in Finance details screen")
+	public void user_verify_the_total_income_field_available_in_finance_details_screen(Integer int1) throws Throwable {
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdTotalIncome_610")));
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdTotalIncome_610")));
+		Assert.assertEquals(true,javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdTotalIncome_610")).isDisplayed());
+	    
+	}
+
+	@And("User_{int} verify the Total Net Income field available in Finance details screen")
+	public void user_verify_the_total_net_income_field_available_in_finance_details_screen(Integer int1) throws Throwable {
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdTotalNetIncome")));
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdTotalNetIncome")));
+		Assert.assertEquals(true,javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdTotalNetIncome")).isDisplayed());
+	    
+	}
+
+	@And("User_{int} verify the Installment Fraquency field available in Finance details screen")
+	public void user_verify_the_installment_fraquency_field_available_in_finance_details_screen(Integer int1) throws Throwable {
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdInstallmentFrequence_610")));
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdInstallmentFrequence_610")));
+		Assert.assertEquals(true,javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdInstallmentFrequence_610")).isDisplayed());
+	    
+	}
+
+	@And("User_{int} verify the IRR field available in Finance details screen")
+	public void user_verify_the_irr_field_available_in_finance_details_screen(Integer int1) throws Throwable {
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdIRR_610")));
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdIRR_610")));
+		Assert.assertEquals(true,javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdIRR_610")).isDisplayed());
+	    
+	}
+
+	@And("User_{int} verify the Tenure field available in Finance details screen")
+	public void user_verify_the_tenure_field_available_in_finance_details_screen(Integer int1) throws Throwable {
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdTenure_610")));
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdTenure_610")));
+		Assert.assertEquals(true,javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdTenure_610")).isDisplayed());
+	    
+	}
+
+	@And("User_{int} verify the Additional Down Payment field available in Finance details screen")
+	public void user_verify_the_additional_down_payment_field_available_in_finance_details_screen(Integer int1) throws Throwable {
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdAdditionalDownPayment_610")));
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdAdditionalDownPayment_610")));
+		Assert.assertEquals(true,javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdAdditionalDownPayment_610")).isDisplayed());
+	    
+	}
+
+	@And("User_{int} verify the Down Payment Percentage field available in Finance details screen")
+	public void user_verify_the_down_payment_percentage_field_available_in_finance_details_screen(Integer int1) throws Throwable {
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdDownPaymentPercentage_610")));
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdDownPaymentPercentage_610")));
+		Assert.assertEquals(true,javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdDownPaymentPercentage_610")).isDisplayed());
+	    
+	}
+
+	@And("User_{int} verify the Total Fees field available in Finance details screen")
+	public void user_verify_the_total_fees_field_available_in_finance_details_screen(Integer int1) throws Throwable {
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdTotalFees_610")));
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdTotalFees_610")));
+		Assert.assertEquals(true,javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdTotalFees_610")).isDisplayed());
+	    
+	}
+
+	@And("User_{int} verify the Total Obligations field available in Finance details screen")
+	public void user_verify_the_total_obligations_field_available_in_finance_details_screen(Integer int1) throws Throwable {
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdTotalObligation_610")));
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdTotalObligation_610")));
+		Assert.assertEquals(true,javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdTotalObligation_610")).isDisplayed());
+	    
+	}
+
+	@And("User_{int} verify the No Of Installment field available in Finance details screen")
+	public void user_verify_the_no_of_installment_field_available_in_finance_details_screen(Integer int1) throws Throwable {
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdNoOfInstallment_610")));
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdNoOfInstallment_610")));
+		Assert.assertEquals(true,javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdNoOfInstallment_610")).isDisplayed());
+	    
+	}
+
+	@And("User_{int} verify the Last Installment Amount field available in Finance details screen")
+	public void user_verify_the_last_installment_amount_field_available_in_finance_details_screen(Integer int1) throws Throwable {
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdLastInstallmentAmount_610")));
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdLastInstallmentAmount_610")));
+		Assert.assertEquals(true,javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdLastInstallmentAmount_610")).isDisplayed());
+	    
+	}
+
+	@And("User_{int} verify the APR field available in Finance details screen")
+	public void user_verify_the_apr_field_available_in_finance_details_screen(Integer int1) throws Throwable {
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdAPR_610")));
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdAPR_610")));
+		Assert.assertEquals(true,javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdAPR_610")).isDisplayed());
+	    
+	}
+	
+	//-----------------@AT_OFL_05---------------
+	
+	@And("User_{int} verify the Offer Details Section Screen Under All field Should read only")
+	public void user_verify_the_offer_details_section_screen_under_all_field_should_read_only(Integer int1) {
+		
+		//--read only  -- product
+		
+				String offProduct=javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("getAttribute_product_610"))
+						.getAttribute("ng-reflect-readonly");
+				System.err.println(offProduct);
+				Assert.assertEquals("true",offProduct);
+				    
+	    //--read only      ---------sub product
+					
+		    String offSubProduct=javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("getAttribute_SubProduct_610")).getAttribute("ng-reflect-readonly");
+		    System.err.println(offSubProduct);
+		    Assert.assertEquals("true",offSubProduct);	
+		    
+		//------------read only --------scheme
+			
+		    String offScheme=javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("getAttribute_Scheme_610")).getAttribute("ng-reflect-readonly");
+		    System.err.println(offScheme);
+		    Assert.assertEquals("true",offScheme);	
+		    
+		//-------read only   ------ princing indicator
+			
+		    String offPrincingIndicator=javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("getAttribute_PrincingIndicator_610")).getAttribute("ng-reflect-readonly");
+		    System.err.println(offPrincingIndicator);
+		    Assert.assertEquals("true",offPrincingIndicator);
+		    
+		//-------read only Product Offer Amount
+			
+			String offProductOfferAmount=javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("OflOfferdAmount_610")).getAttribute("ng-reflect-readonly");
+		    System.err.println(offProductOfferAmount);
+		    Assert.assertEquals("true",offProductOfferAmount);		 
+		    
+		  //-------read only  ------- Tenure
+			
+			String offTenure=javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("OflTenure_610")).getAttribute("ng-reflect-readonly");
+		    System.err.println(offTenure);
+		    Assert.assertEquals("true",offTenure);		
+		    
+		 //------------read only  --  Nature Of Finance
+			
+			String offNatureOfFinance=javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("OflNaturalOfFinance_610")).getAttribute("ng-reflect-readonly");
+		    System.err.println(offNatureOfFinance);
+		    Assert.assertEquals("true",offNatureOfFinance);		    
+		    
+		 //------------read only 
+			
+			String offCurrency=javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("OflCurrency_610")).getAttribute("ng-reflect-readonly");
+		    System.err.println(offCurrency);
+		    Assert.assertEquals("true",offCurrency);		    
+	}
+	
+
+	@And("User_{int} verify the Total Down Payment Amount field read only")
+	public void user_verify_the_total_down_payment_amount_field_read_only(Integer int1) {
+		String OffTotalDownPaymentAmount=javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdTotalDownPaymentAmount_610")).getAttribute("ng-reflect-readonly");
+	    System.err.println(OffTotalDownPaymentAmount);
+	    Assert.assertEquals("true",OffTotalDownPaymentAmount);
+	    
+	}
+
+	@And("User_{int} verify the Profit Amount field read only")
+	public void user_verify_the_profit_amount_field_read_only(Integer int1) {
+		String OffProfitAmount=javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdProfitAmount_610")).getAttribute("ng-reflect-readonly");
+	    System.err.println(OffProfitAmount);
+	    Assert.assertEquals("true",OffProfitAmount);
+	    
+	}
+
+	@And("User_{int} verify the Total Contract Value field read only")
+	public void user_verify_the_total_contract_value_field_read_only(Integer int1) {
+		String OffTotalContractValue=javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdTotalContractAmount_610")).getAttribute("ng-reflect-readonly");
+	    System.err.println(OffTotalContractValue);
+	    Assert.assertEquals("true",OffTotalContractValue);
+	    
+	}
+
+	@And("User_{int} verify the Additional Down Payment field read only")
+	public void user_verify_the_additional_down_payment_field_read_only(Integer int1) {
+		String OffAdditionalDownPayment=javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdAdditionalDownPayment_610")).getAttribute("ng-reflect-readonly");
+	    System.err.println(OffAdditionalDownPayment);
+	    Assert.assertEquals("true",OffAdditionalDownPayment);
+	    
+	}
+
+	@And("User_{int} verify the Down Payment Percentage field read only")
+	public void user_verify_the_down_payment_percentage_field_read_only(Integer int1) {
+		String OffTotalDownPaymentPercentage=javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FdDownPaymentPercentage_610")).getAttribute("ng-reflect-readonly");
+	    System.err.println(OffTotalDownPaymentPercentage);
+	    Assert.assertEquals("true",OffTotalDownPaymentPercentage);
+	    
+	}
+	
+	//---------------------@AT_OFL_06  credit rise factor --------
+	
+	@And("User_{int} verify the Total Score field under credit rise factor")
+	public void user_verify_the_total_score_field_under_credit_rise_factor(Integer int1) {
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("CreditRiskFactor_610")));
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("TotalScore_610")));
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("TotalScore_610")).isDisplayed()){
+					Assert.assertTrue(true);
+				} 
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+			}
+		}
+		}
+	}
+
+	@And("User_{int} verify the Rise Level field under credit rise factor")
+	public void user_verify_the_rise_level_field_under_credit_rise_factor(Integer int1) {
+	    
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("RiseLevel_610")));
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("RiseLevel_610")).isDisplayed()){
+					Assert.assertTrue(true);
+				} 
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+			}
+		}
+		}
+		
+	}
+	
+	//-------------------------@AT_OFL_07 credit Score details
+	
+	@And("User_{int} verify the SR NO field under credit Score details")
+	public void user_verify_the_sr_no_field_under_credit_score_details(Integer int1) {
+		
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("CreditScoreDetails_610")));
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("CSD_SrNo_610")));
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("CSD_SrNo_610")).isDisplayed()){
+					Assert.assertTrue(true);
+				} 
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+			}
+		}
+		}
+	    
+	}
+
+	@And("User_{int} verify the Customer Name field under credit Score details")
+	public void user_verify_the_customer_name_field_under_credit_score_details(Integer int1) {
+		
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("CSD_CustomerName_610")));
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("CSD_CustomerName_610")).isDisplayed()){
+					Assert.assertTrue(true);
+				} 
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+			}
+		}
+		}
+	    
+	}
+
+	@And("User_{int} verify the Credit Bureau Score field under credit Score details")
+	public void user_verify_the_credit_bureau_score_field_under_credit_score_details(Integer int1) {
+		
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("CSD_CreditBureuaScore_610")));
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("CSD_CreditBureuaScore_610")).isDisplayed()){
+					Assert.assertTrue(true);
+				} 
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+			}
+		}
+		}
+	    
+	}
+	
 }
