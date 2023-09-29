@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Sep 27 17:45:20 IST 2023</td>
+<td>Started on:</td><td>Fri Sep 29 10:03:38 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>53 seconds (53668 ms)</td>
+<tr><td>Total time:</td><td>10 seconds (10201 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,32 +76,18 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "To verify Asset Details at App data entry stage is visible at data check stage", "Optional[To Test All Datas in Document Details In Offering Stage]"</td>
-<td><div><pre>java.lang.AssertionError: javascript error: Cannot read properties of null (reading &apos;click&apos;)
-  (Session info: chrome=117.0.5938.92)
-Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [fa32bebf40754454fa30da254b9e2d9a, executeScript {script=arguments[0].click();, args=[null]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.92, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59749}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59749/devtoo..., se:cdpVersion: 117.0.5938.92, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: fa32bebf40754454fa30da254b9e2d9a
-	at org.junit.Assert.fail(Assert.java:88)
-	at stepdefinitions.IjaraTest.user_click_on_document_details_tab(IjaraTest.java:4806)
-	at ✽.User_626 click on Next and Document Details tab(file:///C:/Users/inindc00626/git/ULS_Ijarahkk/ULS_kailash/src/test/java/features/OfferDocumentDetails.feature:13)
-</pre></div><a href='#' onClick='toggleBox("stack-trace598208731", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace598208731'><pre>java.lang.AssertionError: javascript error: Cannot read properties of null (reading &apos;click&apos;)
-  (Session info: chrome=117.0.5938.92)
-Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [fa32bebf40754454fa30da254b9e2d9a, executeScript {script=arguments[0].click();, args=[null]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.92, chrome: {chromedriverVersion: 117.0.5938.92 (67649b10b92b..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59749}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59749/devtoo..., se:cdpVersion: 117.0.5938.92, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: fa32bebf40754454fa30da254b9e2d9a
-	at org.junit.Assert.fail(Assert.java:88)
-	at stepdefinitions.IjaraTest.user_click_on_document_details_tab(IjaraTest.java:4806)
-	at ✽.User_626 click on Next and Document Details tab(file:///C:/Users/inindc00626/git/ULS_Ijarahkk/ULS_kailash/src/test/java/features/OfferDocumentDetails.feature:13)
+<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "enter a data", "Optional[L1 Apporval]"</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.click()&quot; because the return value of &quot;helper.JavascriptHelper.executeScriptWithWebElement(String)&quot; is null
+	at stepdefinitions.IjaraLogin.loginWithIjaraApplication(IjaraLogin.java:25)
+	at stepdefinitions.IjaraTest.login_with_valid_credentials(IjaraTest.java:69)
+	at ✽.login with valid credentials(file:///C:/Users/inindc00626/git/ULS_Ijarahkk/ULS_kailash/src/test/java/features/L1Approval.feature:5)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1542155234", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1542155234'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.click()&quot; because the return value of &quot;helper.JavascriptHelper.executeScriptWithWebElement(String)&quot; is null
+	at stepdefinitions.IjaraLogin.loginWithIjaraApplication(IjaraLogin.java:25)
+	at stepdefinitions.IjaraTest.login_with_valid_credentials(IjaraTest.java:69)
+	at ✽.login with valid credentials(file:///C:/Users/inindc00626/git/ULS_Ijarahkk/ULS_kailash/src/test/java/features/L1Approval.feature:5)
 </pre></div></td>
-<td>46</td>
+<td>5</td>
 <td>Runner.TestApplication@1224144a</td></tr>
 </table><p>
 </body>
