@@ -1,7 +1,7 @@
 Feature: To check the App Data Check - Income feature
 
 # AT_INCD_01-- Income -- Self Employed
-
+# IDC_01_01, IDC_01_02
 @AT_INCD_01
 Scenario: Income Summary Detail records for display only at Data Check stage.
 
@@ -44,8 +44,9 @@ And User_608 validate Currency field available under Income details screen
 Then logout from the ijaraApplication
 
 
+# IDC_01_03, IDC_01_04
 @AT_INCD_02
-Scenario: Income Summary Detail records for display only at Data Check stage.
+Scenario: To verify the functionality of Save button and Back button
 
 Given navigate the IJARA URL
 And login with valid credentials-Data Check
@@ -57,14 +58,16 @@ And User_608 click the Entitle button under inbox
 And User_608 click the Customer Financials tab
 And User_608 click the Eye button under Customer Financials tab
 And User_608 click the Eye button under Income section in Customer Financials Tab
-And User click the Save button under Income details screen
-And User validate the confirmation message under Income details screen
-And User click the Back button under Income details screen
+And User_608 click the Save button under Income details screen
+And User_608 validate the confirmation message under Income details screen
+And User_608 click the Eye button under Income section in Customer Financials Tab
+And User_608 click the Back button under Income details screen
 Then logout from the ijaraApplication
 
 
+# IDC_01_05 <--> IDC_01_25
 @AT_INCD_03
-Scenario: Income Summary Detail records for display only at Data Check stage.
+Scenario: To verify the fields available under income details section. 
 
 Given navigate the IJARA URL
 And login with valid credentials-Data Check
@@ -97,11 +100,12 @@ And User_608 validate Deduction Adj % field available under Income details scree
 And User_608 validate Deduction Considered field available under Income details screen
 And User_608 validate Total Deduction field available under Income details screen
 And User_608 validate Total Deduction Considered field available under Income details screen
-
 Then logout from the ijaraApplication
 
+
+# IDC_01_26, IDC_01_27
 @AT_INCD_04
-Scenario: Income Summary Detail records for display only at Data Check stage.
+Scenario: To verify Empoyment details and Income details tab is mandatory for eligibility
 
 Given navigate the IJARA URL
 And login with valid credentials-Data Check
@@ -112,16 +116,16 @@ And User_608 search the Ref id under inbox
 And User_608 click the Entitle button under inbox
 And User_608 click the Customer Financials tab
 And User_608 click the Eye button under Customer Financials tab
-And User verify Employment details section available under Customer Financials tab
-And User click the eye button under Employment details section available in Customer Financials tab
-And User verify the Customer Employement page is available under Customer Financials tab
-And User click the Back button in Customer Employement screen under Customer Financials tab
-And User verfiy Income section available under Customer Financials tab
+And User_608 verify Employment details section available under Customer Financials tab
+And User_608 click the eye button under Employment details section available in Customer Financials tab
+And User_608 verify the Customer Employement page is available under Customer Financials tab
+And User_608 click the Back button in Customer Employement screen under Customer Financials tab
+And User_608 verfiy Income section available under Customer Financials tab
 And User_608 click the Eye button under Income section in Customer Financials Tab
-
 Then logout from the ijaraApplication
 
 
+# IDC_01_28, IDC_01_29
 @AT_INCD_05
 Scenario: Income Summary Detail records for display only at Data Check stage.
 
@@ -134,11 +138,11 @@ And User_608 search the Ref id under inbox
 And User_608 click the Entitle button under inbox
 And User_608 click the Customer Financials tab
 And User_608 click the Eye button under Customer Financials tab
-And User verify Self Employed customer available under Income section in Customer Financials Tab
-And User verify Self Employed income field is available under Income section in Customer Financials Tab
+And User_608 verify Self Employed customer available under Income section in Customer Financials Tab
+And User_608 verify Self Employed income field is available under Income section in Customer Financials Tab
 Then logout from the ijaraApplication
 
-
+# IDC_01_30
 @AT_INCD_06
 Scenario: Income Summary Detail records for display only at Data Check stage.
 
@@ -151,9 +155,7 @@ And User_608 search the Ref id under inbox
 And User_608 click the Entitle button under inbox
 And User_608 click the Customer Financials tab
 And User_608 click the Eye button under Customer Financials tab
-
-And User verify the Salaried customer available under Income section in Customer Financials Tab
-
+And User_608 verify the Salaried customer available under Income section in Customer Financials Tab
 Then logout from the ijaraApplication
 
 

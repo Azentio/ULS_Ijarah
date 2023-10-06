@@ -41,16 +41,18 @@ public class IjaraTest extends BaseClass{
 		ijaraLogin.loginWithIjaraApplicationDataCheck();
 	}
 	
+//	Offering Stage --> UserType04
+	@And("login with valid credentials-Offering")
+	public void login_with_valid_credentials_offering()throws Throwable {
+		ijaraLogin.loginWithIjaraApplicationOfferingStage();
+	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+//	Contract Signing Stage -- UserType05
+	@And("login with valid credentials-Contract Signing")
+	public void login_with_valid_credentials_contract_signing()throws Throwable {
+		ijaraLogin.loginWithIjaraApplicationContractSigning();
+	}
+		
 	
 	
 	@Then("logout from the ijaraApplication")

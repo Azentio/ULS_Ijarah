@@ -145,7 +145,68 @@ public class IjaraLogin extends BaseClass {
 	}
 	
 	
+//	Offering Stage
+	public void loginWithIjaraApplicationOfferingStage() {
+		loginTestData = exelData.getTestdata("userType04");
+		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName")).click();
+		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName"))
+				.sendKeys(loginTestData.get("UserName"));
+		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("continueButton")).click();
+		for (int i = 0; i <= 300; i++) {
+			try {
+
+				String otp = javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString();
+				System.out.println("OTP is " + otp);
+				if (!(javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString()
+						.isBlank())) {
+
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
+		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
+				.sendKeys(loginTestData.get("Password"));
+		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
+
+		Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).isDisplayed());
+	}
 	
+	
+//	Contract Signing Stage
+	public void loginWithIjaraApplicationContractSigning() {
+		loginTestData = exelData.getTestdata("userType05");
+		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName")).click();
+		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName"))
+				.sendKeys(loginTestData.get("UserName"));
+		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("continueButton")).click();
+		for (int i = 0; i <= 300; i++) {
+			try {
+
+				String otp = javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString();
+				System.out.println("OTP is " + otp);
+				if (!(javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString()
+						.isBlank())) {
+
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
+		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
+				.sendKeys(loginTestData.get("Password"));
+		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
+
+		Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).isDisplayed());
+	}
 	
 	
 	
@@ -160,7 +221,7 @@ public class IjaraLogin extends BaseClass {
 	
 
 	public void logoutFromIjara() throws Throwable {
-		Thread.sleep(1000);
+//		Thread.sleep(1000);
 		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userProfile")).click();
 		for (int i = 0; i <= 300; i++) {
 			try {

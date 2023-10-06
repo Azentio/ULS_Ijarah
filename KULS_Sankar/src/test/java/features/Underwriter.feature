@@ -1,10 +1,10 @@
-Feature: To check the underwriter feature
+Feature: To check the IJARAH -- Underwriter stage features
 
 # Underwriter userName: 0371 Pwd: Admin@1
 
 # Unw_01
 @AT_UNW_001_01
-Scenario: To verify user is able to add under underwriter
+Scenario: To verify the Underwriter screen
 
 Given navigate the IJARA URL
 And login with valid credentials-Underwriter
@@ -29,7 +29,7 @@ Then logout from the ijaraApplication
 
 # Unw_02, Unw_03, Unw_04, Unw_05
 @AT_UNW_001_02
-Scenario: To verify user is able to add under underwriter
+Scenario: To verify the Tab - Offer decision in Underwriter Stage
 
 Given navigate the IJARA URL
 And login with valid credentials-Underwriter
@@ -59,7 +59,7 @@ Then logout from the ijaraApplication
 
 # Unw_14, Unw_07, Unw_08, Unw_09. Unw_10
 @AT_UNW_002_01
-Scenario: To verify user is able to add under underwriter
+Scenario: To verify the Facility Details, Finance configuration, Pricing Details,Installment Details section fields and buttons under Offer decision screen.
 
 Given navigate the IJARA URL
 And login with valid credentials-Underwriter
@@ -108,7 +108,7 @@ Then logout from the ijaraApplication
 
 
 @AT_UNW_002_02
-Scenario: To verify user is able to add under underwriter
+Scenario: To verify the Save button and Offer button functionality under offer decision scrren.
 
 Given navigate the IJARA URL
 And login with valid credentials-Underwriter

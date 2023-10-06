@@ -1,36 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-26T18:43:32 IST" name="Default suite" finished-at="2023-09-26T18:44:38 IST" duration-ms="65695">
+  <suite started-at="2023-10-06T15:35:28 IST" name="Default suite" finished-at="2023-10-06T15:37:53 IST" duration-ms="145058">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7ce026d3]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@1caa0244]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-09-26T18:43:32 IST" name="Default test" finished-at="2023-09-26T18:44:38 IST" duration-ms="65695">
+    <test started-at="2023-10-06T15:35:28 IST" name="Default test" finished-at="2023-10-06T15:37:53 IST" duration-ms="145058">
       <class name="Runner.TestApplication">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@7ce026d3]" started-at="2023-09-26T18:43:32 IST" name="setUpClass" finished-at="2023-09-26T18:43:33 IST" duration-ms="952" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@1caa0244]" started-at="2023-10-06T15:35:28 IST" name="setUpClass" finished-at="2023-10-06T15:35:29 IST" duration-ms="885" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7ce026d3]" started-at="2023-09-26T18:43:33 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-09-26T18:44:18 IST" duration-ms="44638" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@1caa0244]" started-at="2023-10-06T15:35:29 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-10-06T15:35:55 IST" duration-ms="25396" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Income Summary Detail records for display only at Data Check stage."]]>
+                <![CDATA["To verify the availability of Application Details tab  under Contract signing stage"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[To check the App Data Check - Income feature]"]]>
+                <![CDATA["Optional[To check the Contract Signing Stage - Application Details feature]"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@7ce026d3]" started-at="2023-09-26T18:44:18 IST" name="tearDownClass" finished-at="2023-09-26T18:44:38 IST" duration-ms="20063" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@1caa0244]" started-at="2023-10-06T15:35:55 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-10-06T15:36:14 IST" duration-ms="19006" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To verify post clicking on Application Detail tab system opens Application Details section."]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To check the Contract Signing Stage - Application Details feature]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@1caa0244]" started-at="2023-10-06T15:36:14 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-10-06T15:36:30 IST" duration-ms="16656" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To verify post clicking on Application Detail tab system opens Referral/Sourcing Details section."]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To check the Contract Signing Stage - Application Details feature]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@1caa0244]" started-at="2023-10-06T15:36:30 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-10-06T15:36:50 IST" duration-ms="20074" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To Validate the below field values are populated correct data & Data should not editable under Application Details tab"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To check the Contract Signing Stage - Application Details feature]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@1caa0244]" started-at="2023-10-06T15:36:50 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-10-06T15:37:07 IST" duration-ms="17065" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To Validate the below fields in Referral/Sourcing Details section under Application Details tab"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To check the Contract Signing Stage - Application Details feature]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@1caa0244]" started-at="2023-10-06T15:37:07 IST" name="tearDownClass" finished-at="2023-10-06T15:37:53 IST" duration-ms="45903" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
