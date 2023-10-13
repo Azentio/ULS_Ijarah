@@ -326,9 +326,7 @@ public class New_Application {
             for (int i = 0; i <2000; i++) {
                 try {
                 	String repayment = New_ApplicationPaths.getElement("Product*");
-                   // String repayment ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
                     String accountholdername = (String) javascriptHelper.executeScript("return "+repayment);
-                    System.out.println(accountholdername);
                     Assert.assertTrue(accountholdername.contains("*"));
                     break;
                 } catch (Exception e) {
@@ -3118,6 +3116,7 @@ public class New_Application {
 
 	@Given("User_607 Check Reference Code should be editable")
 	public void user_check_reference_code_should_be_editable() {
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("ReferenceCode")));
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("ReferenceCode")).sendKeys("1500");
@@ -3367,11 +3366,8 @@ public class New_Application {
 		Thread.sleep(1000);
 		for (int i = 0; i <2000; i++) {
             try {
-            	String repayment = New_ApplicationPaths.getElement("PleaseFillDetailsPopup");
-               // String repayment ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
-                String accountholdername = (String) javascriptHelper.executeScript("return "+repayment);
-                System.out.println(accountholdername);
-                Assert.assertTrue(!accountholdername.contains("'Please fill all the details'"));
+            	String text = javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("PleaseFillDetailsPopup")).getText();
+                Assert.assertTrue(text.contains("Please fill all the details"));
                 break;
             } catch (Exception e) {
                 if (i==1999) {
@@ -3387,9 +3383,7 @@ public class New_Application {
 		for (int i = 0; i <2000; i++) {
             try {
             	String CheckField = javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("TotalFinanceAmountRequested")).getAttribute("aria-valuenow");
-               // String repayment ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
                 String accountholdername = javascriptHelper.executeScript("return "+CheckField).toString();
-                System.out.println(accountholdername);
                 Assert.assertFalse(accountholdername.contains("-"));
                 break;
             } catch (Exception e) {
@@ -4099,8 +4093,8 @@ public class New_Application {
 	@Given("User_607 Check able to enter characters value in numeric field")
 	public void user_check_able_to_enter_characters_value_in_numeric_field() throws Throwable {
 		Thread.sleep(1000);
-		javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("TotalFinanceAmountRequested")).sendKeys("enter characters value in numeric field");
-		String attribute = javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("TotalFinanceAmountRequested")).getAttribute("aria-valuenow");
+		javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("DeclaredNetMonthlyIncome")).sendKeys("enter");
+		String attribute = javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("DeclaredNetMonthlyIncome")).getAttribute("aria-valuenow");
 	    if (!(attribute==null)) {
 			Assert.fail();
 		}
@@ -4239,10 +4233,91 @@ public class New_Application {
 		} 
 	}
 
+	@Given("User_607 Check Sourcing Office should be mandatory in application Details")
+	public void user_check_sourcing_office_should_be_mandatory_in_application_details() {
+		for (int i = 0; i <2000; i++) {
+            try {
+            	String repayment = New_ApplicationPaths.getElement("SourcingOffice*");
+               // String repayment ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+                String accountholdername = (String) javascriptHelper.executeScript("return "+repayment);
+                System.out.println(accountholdername);
+                Assert.assertTrue(accountholdername.contains("*"));
+                break;
+            } catch (Exception e) {
+                if (i==1999) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+        }
+	}
+	
+	
+	@Given("User_607 Enter characters in Total Finance Amount Requested")
+	public void user_enter_characters_in_total_finance_amount_requested() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				//javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("TotalFinanceAmountRequested")).click();
+				clicksAndActionsHelper.doubleClick((javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("TotalFinanceAmountRequested"))));
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("TotalFinanceAmountRequested")).sendKeys("Test");
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+				}
+			}
+	    
+	}
 
-	
-	
-	
+	@Given("User_607 Enter characters in Declared Net Monthly Income")
+	public void user_enter_characters_in_declared_net_monthly_income() {
+		for (int i = 0; i < 700; i++) {
+			try {
+			//	javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("DeclaredNetMonthlyIncome")).click();
+				clicksAndActionsHelper.doubleClick((javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("DeclaredNetMonthlyIncome"))));
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("DeclaredNetMonthlyIncome")).sendKeys("Test");
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+				}
+			}
+	    
+	}
+
+	@Given("User_607 Enter characters in characters in Declared Current Obligations")
+	public void user_enter_characters_in_characters_in_declared_current_obligations() {
+		for (int i = 0; i < 700; i++) {
+			try {
+			//	javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("DeclaredNetMonthlyIncome")).click();
+				clicksAndActionsHelper.doubleClick((javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("DeclaredNetMonthlyIncome"))));
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("DeclaredNetMonthlyIncome")).sendKeys("Test");
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+				}
+			}
+	    
+	}
+
+	@Given("User_607 Enter characters in Reference Code")
+	public void user_enter_characters_in_reference_code() {
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("ReferenceCode")));
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("ReferenceCode")).sendKeys("Test");
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+				}
+			}
+	    
+	}
 	
 	
 	

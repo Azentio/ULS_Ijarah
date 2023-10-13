@@ -107,6 +107,7 @@ Feature: New Application
  		Given navigate the IJARA URL
     And login with valid credentials
     And User_607 Click inbox in the home page
+    And User_607 Update testdata from AT_NWP_04
 	  And User_607 Click Search in inbox
 	  And User_607 Search in the search box
 	  And User_607 Select record after search
@@ -118,6 +119,7 @@ Feature: New Application
  		And User_607 Check Sourcing Staff should be editable
  		And User_607 Check Reference Type should be non mandatory
  		And User_607 Check Reference Type should be editable
+ #		Reference Entity field missing it is bug
  		And User_607 Check Reference Entity should be non mandatory
  		And User_607 Check Reference Entity should be editable
  		And User_607 Check Reference Code should be non mandatory
@@ -150,6 +152,7 @@ Feature: New Application
  		Scenario: Application Detail
  		Given navigate the IJARA URL
     And login with valid credentials
+    And User_607 Update testdata from AT_IJCS_03
  		And User_607 Click inbox in the home page
 	  And User_607 Click Search in inbox
 	  And User_607 Search in the search box

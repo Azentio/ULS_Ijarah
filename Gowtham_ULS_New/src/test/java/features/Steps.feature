@@ -4,4 +4,7 @@ Feature: Title of your feature
 
   @tag1
   Scenario: Title of your scenario
- And User_607 Check clicking on back button system should navigate to the previous screen
+ 		And User_607 Enter characters in Total Finance Amount Requested
+		And User_607 Enter characters in Declared Net Monthly Income
+		And User_607 Enter characters in characters in Declared Current Obligations
+		And User_607 Enter characters in Reference Code
