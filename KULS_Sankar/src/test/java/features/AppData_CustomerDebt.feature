@@ -20,6 +20,7 @@ And User_608 click Add button in Financial Commitments under Customer Financials
 And User_608 validate the Customer Debt screen is available in Financial Commitments
 And User_608 validate the Save button available in Customer Debt screen
 And User_608 validate the Back button available in Customer Debt screen
+
 And User_608 validate the Finance type field available in Customer Debt screen
 And User_608 validate the Financial Institution field is available in Customer Debt screen
 And User_608 validate the Account Number field is available in Customer Debt screen
@@ -93,6 +94,8 @@ And User_608 search the Ref id under inbox
 And User_608 click the Entitle button under inbox
 And User_608 click the Customer Financials tab
 And User_608 click the pencil icon under Customer Financials tab
+And User_608 validate the Update button available in Customer Debt screen
+And User_608 validate the Back button available in Customer Debt screen
 And User_608 click the pencil button under Financial Commitments in Customer Financials tab
 And User_608 modify the Sanction amount in Customer Debt screen
 And User_608 enter the invalid data and verify in Installment field under Customer Debt screen

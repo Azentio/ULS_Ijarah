@@ -67,7 +67,7 @@ public class IJARAH_Steps {
 	
 	
 	
-//  TestData path
+//  App Data Entry -- Customer Debt screen
 //	@AT_CUD_001
 	@And("^User_608 get the test data for test case AT_CUD_001$")
     public void get_the_test_data_for_test_case_AT_CUD_001() throws Throwable {
@@ -288,8 +288,8 @@ public class IJARAH_Steps {
                             "return  document.querySelectorAll('ion-radio-group ion-item')[" + i + "].textContent")
                             .toString();
                     System.out.println("Module name " + moduleName);
-//                    if (moduleName.equalsIgnoreCase("LOS")) {
-                    if (moduleName.equalsIgnoreCase(testData.get("Module Name"))) {
+                    if (moduleName.equalsIgnoreCase("LOS")) {
+//                    if (moduleName.equalsIgnoreCase(testData.get("Module Name"))) {
                         System.out
                                 .println("document.querySelectorAll('ion-radio-group ion-item ion-radio')[" + i + "]");
                         javascriptHelper
@@ -347,8 +347,7 @@ public class IJARAH_Steps {
 					Assert.fail(e.getMessage());
 				}
 			}
-		} 
-	    
+		}	    
 	}
 
 	@And("User_608 click the Entitle button under inbox")
@@ -369,12 +368,13 @@ public class IJARAH_Steps {
 	
 	@And("User_608 click the Customer Financials tab")
 	public void user_click_the_customer_financials_tab() throws Throwable {
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		WebElement customerFinancialsTab = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerFinancialsTab"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundColor(customerFinancialsTab);
-				customerFinancialsTab.click();
+				javascriptHelper.JSEClick(customerFinancialsTab);
+//				customerFinancialsTab.click();
 				break;
 			} catch (Exception e) { 
 				if (i == 2000) {
@@ -403,32 +403,6 @@ public class IJARAH_Steps {
 	
 	@And("User_608 click Add button in Financial Commitments under Customer Financials tab")
 	public void user_click_add_button_in_financial_commitments_under_customer_financials_tab() throws Throwable {
-//		Thread.sleep(1000);
-//		WebElement title = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("financialCommitmentsTitle"));
-//		for (int i = 0; i <= 2000; i++) {
-//			try {
-//				javascriptHelper.scrollIntoView(title);
-//				break;
-//			} catch (Exception e) {
-//				if (i == 2000) {
-//					Assert.fail(e.getMessage());
-//				}
-//			}
-//		}
-//		Thread.sleep(1000);
-//		WebElement financialCommitmentsAddBtn = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("financialCommitmentsAddBtn"));
-//		for (int i = 0; i <= 2000; i++) {
-//			try {
-//				javascriptHelper.backgroundColor(financialCommitmentsAddBtn);
-//				financialCommitmentsAddBtn.click();
-//				break;
-//			} catch (Exception e) {
-//				if (i == 2000) {
-//					Assert.fail(e.getMessage());
-//				}
-//			}
-//		}
-		
 		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
 		String listOfAddButton = "";
 		String addButtonScreenName = "";
@@ -461,6 +435,9 @@ public class IJARAH_Steps {
 						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Financial Commitments").trim())) {
 							System.out.println("Inside nested loop");
 							System.out.println("document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]");
+							javascriptHelper
+							.scrollIntoView(
+									javascriptHelper.executeScriptWithWebElement("document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')[" + j + "]"));
 							javascriptHelper
 									.executeScriptWithWebElement(
 											"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]")
@@ -505,6 +482,22 @@ public class IJARAH_Steps {
 			try {
 				actions.moveToElement(customerDebtSaveBtn).perform();
 				Assert.assertTrue(customerDebtSaveBtn.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}		
+	}
+	
+	@And("User_608 validate the Update button available in Customer Debt screen")
+	public void user_validate_the_update_button_available_in_customer_debt_screen() throws Throwable {
+		WebElement updateBtn = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerDebtUpdateBtn"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				actions.moveToElement(updateBtn).perform();
+				Assert.assertTrue(updateBtn.isDisplayed());
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -611,9 +604,9 @@ public class IJARAH_Steps {
           } catch (Exception e) {
               if (i==1999) {
                   Assert.fail(e.getMessage());
-              }
-          }
-      }
+              	}
+          	}
+		}
 	}
 
 	@And("User_608 validate the Account Number field is available in Customer Debt screen")
@@ -661,15 +654,15 @@ public class IJARAH_Steps {
 		}
 //		Validate Non_mandatory
 		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionDataLabel")).getText();
-		for (int i = 0; i <2000; i++) {
-          try {
-              Assert.assertTrue(!(financeTypeText.contains("*")));
-              break;
-          } catch (Exception e) {
-              if (i==1999) {
-                  Assert.fail(e.getMessage());
-              }
-          }
+		for (int i = 0; i < 2000; i++) {
+			try {
+				Assert.assertTrue(!(financeTypeText.contains("*")));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
 		}
 	}
 
@@ -688,10 +681,10 @@ public class IJARAH_Steps {
 			}
 		}	
 //		Validate Mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionAmtLabel")).getText();
+		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionAmtLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
-              Assert.assertTrue(financeTypeText.contains("*"));
+              Assert.assertTrue(text.contains("*"));
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -716,10 +709,10 @@ public class IJARAH_Steps {
 			}
 		}
 //		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("interestRateLabel")).getText();
+		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("interestRateLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
-              Assert.assertTrue(!(financeTypeText.contains("*")));
+              Assert.assertTrue(!(text.contains("*")));
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -744,10 +737,10 @@ public class IJARAH_Steps {
 			}
 		}
 //		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("currentPrincipalBalanceLabel")).getText();
+		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("currentPrincipalBalanceLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
-              Assert.assertTrue(!(financeTypeText.contains("*")));
+              Assert.assertTrue(!(text.contains("*")));
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -772,10 +765,10 @@ public class IJARAH_Steps {
 			}
 		}	
 //		Validate Mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("tenureMonthLabel")).getText();
+		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("tenureMonthLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
-              Assert.assertTrue(financeTypeText.contains("*"));
+              Assert.assertTrue(text.contains("*"));
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -800,10 +793,10 @@ public class IJARAH_Steps {
 			}
 		}	
 //		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("maturityDateLabel")).getText();
+		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("maturityDateLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
-              Assert.assertTrue(!(financeTypeText.contains("*")));
+              Assert.assertTrue(!(text.contains("*")));
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -828,10 +821,10 @@ public class IJARAH_Steps {
 			}
 		}	
 //		Validate Mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtLabel")).getText();
+		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
-              Assert.assertTrue(financeTypeText.contains("*"));
+              Assert.assertTrue(text.contains("*"));
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -856,10 +849,10 @@ public class IJARAH_Steps {
 			}
 		}
 //		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("amountConsideredLabel")).getText();
+		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("amountConsideredLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
-              Assert.assertTrue(!(financeTypeText.contains("*")));
+              Assert.assertTrue(!(text.contains("*")));
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -894,10 +887,10 @@ public class IJARAH_Steps {
 			}
 		}
 //		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("currencyLabel")).getText();
+		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("currencyLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
-              Assert.assertTrue(!(financeTypeText.contains("*")));
+              Assert.assertTrue(!(text.contains("*")));
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -922,15 +915,15 @@ public class IJARAH_Steps {
 			}
 		}
 //		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("remarksLabel")).getText();
+		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("remarksLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
-              Assert.assertTrue(!(financeTypeText.contains("*")));
+              Assert.assertTrue(!(text.contains("*")));
               break;
           } catch (Exception e) {
               if (i==1999) {
                   Assert.fail(e.getMessage());
-              }
+               }
           	}
 		}
 	}
@@ -950,10 +943,10 @@ public class IJARAH_Steps {
 			}
 		}
 //		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("nextDueDateLabel")).getText();
+		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("nextDueDateLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
-              Assert.assertTrue(!(financeTypeText.contains("*")));
+              Assert.assertTrue(!(text.contains("*")));
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1072,10 +1065,10 @@ public class IJARAH_Steps {
 			}
 		}	
 //		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("lastPaymentAmtLabel")).getText();
+		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("lastPaymentAmtLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
-              Assert.assertTrue(!(financeTypeText.contains("*")));
+              Assert.assertTrue(!(text.contains("*")));
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1100,10 +1093,10 @@ public class IJARAH_Steps {
 			}
 		}
 //		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("lastPaymentDateLabel")).getText();
+		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("lastPaymentDateLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
-              Assert.assertTrue(!(financeTypeText.contains("*")));
+              Assert.assertTrue(!(text.contains("*")));
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1156,10 +1149,10 @@ public class IJARAH_Steps {
 			}
 		}
 //		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("last24CycleLabel")).getText();
+		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("last24CycleLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
-              Assert.assertTrue(!(financeTypeText.contains("*")));
+              Assert.assertTrue(!(text.contains("*")));
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1184,10 +1177,10 @@ public class IJARAH_Steps {
 			}
 		}	
 //		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("balanceTransferFlagLabel")).getText();
+		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("balanceTransferFlagLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
-              Assert.assertTrue(!(financeTypeText.contains("*")));
+              Assert.assertTrue(!(text.contains("*")));
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1212,10 +1205,10 @@ public class IJARAH_Steps {
 			}
 		}
 //		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("facilityStatusLabel")).getText();
+		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("facilityStatusLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
-              Assert.assertTrue(!(financeTypeText.contains("*")));
+              Assert.assertTrue(!(text.contains("*")));
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1240,10 +1233,10 @@ public class IJARAH_Steps {
 			}
 		}	
 //		Validate Mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("remainingTenureLabel")).getText();
+		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("remainingTenureLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
-              Assert.assertTrue(financeTypeText.contains("*"));
+              Assert.assertTrue(text.contains("*"));
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1268,10 +1261,10 @@ public class IJARAH_Steps {
 			}
 		}
 //		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("disbursementDateLabel")).getText();
+		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("disbursementDateLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
-              Assert.assertTrue(!(financeTypeText.contains("*")));
+              Assert.assertTrue(!(text.contains("*")));
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1296,10 +1289,10 @@ public class IJARAH_Steps {
 			}
 		}	  
 //		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("reqForBalanceTakeoverLabel")).getText();
+		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("reqForBalanceTakeoverLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
-              Assert.assertTrue(!(financeTypeText.contains("*")));
+              Assert.assertTrue(!(text.contains("*")));
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1324,10 +1317,10 @@ public class IJARAH_Steps {
 			}
 		}
 //		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("NPAClassificationLabel")).getText();
+		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("NPAClassificationLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
-              Assert.assertTrue(!(financeTypeText.contains("*")));
+              Assert.assertTrue(!(text.contains("*")));
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1393,7 +1386,7 @@ public class IJARAH_Steps {
 				}
 			}
 			System.out.println("String " + dropdownString.trim());
-			System.out.println("Map " + testData.get("Finance Type").trim());
+//			System.out.println("Map " + testData.get("Finance Type").trim());
 			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("Finance Type")).trim())) {
 				for (int k = 0; k <= 300; k++) {
 					try {
@@ -1415,6 +1408,7 @@ public class IJARAH_Steps {
 			}
 		}
 	}
+	
 	@And("User_608 enter the Sanction Amount in Customer Debt screen")
 	public void user_enter_the_sanction_amount_in_customer_debt_screen() throws Throwable {
 		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionAmtInput")).click();
@@ -1428,8 +1422,7 @@ public class IJARAH_Steps {
 					Assert.fail(e.getMessage());
 				}
 			}
-		}
-	    
+		}	    
 	}
 
 	@And("User_608 enter the Tenure in Customer Debt screen")
@@ -1578,13 +1571,25 @@ public class IJARAH_Steps {
               }
           	}
 		}
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("toastMsgCloseBtn")).click();				
+				break;
+			} catch (Exception e) {
+//				if (i == 500) {
+//					Assert.fail(e.getMessage());
+//				}
+			}
+		}
 	}
-
+	
 	@And("User_608 enter the Text value in numeric field and validate the error message in Customer Debt screen")
-	public void user_enter_the_text_value_in_numeric_field_and_validate_the_error_message_in_customer_debt_screen() throws Throwable {
+	public void user_enter_the_text_value_in_numeric_field_and_validate_the_error_message_in_customer_debt_screen()
+			throws Throwable {
 		for (int i = 0; i <= 1000; i++) {
 			try {
-				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("remainingTenureLabel")));
+				javascriptHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(customerDebtJsPaths.getElement("remainingTenureLabel")));
 				break;
 			} catch (Exception e) {
 				if (i == 1000) {
@@ -1596,7 +1601,8 @@ public class IJARAH_Steps {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("remainingTenureInput"))
-				.sendKeys(testData.get("Remaining Tenure"),Keys.TAB);;
+						.sendKeys(testData.get("Remaining Tenure"), Keys.TAB);
+				;
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -1604,11 +1610,14 @@ public class IJARAH_Steps {
 				}
 			}
 		}
-		
+
 		for (int i = 0; i <= 500; i++) {
 			try {
-				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("mandatoryFillToastMsg")).isDisplayed());
-				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("toastMsgCloseBtn")).click();			
+				Assert.assertTrue(javascriptHelper
+						.executeScriptWithWebElement(customerDebtJsPaths.getElement("mandatoryFillToastMsg"))
+						.isDisplayed());
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("toastMsgCloseBtn"))
+						.click();
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -1616,7 +1625,7 @@ public class IJARAH_Steps {
 				}
 			}
 		}
-		
+
 		// Validate the numeric error
 //		String numericError = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("textInNumericFieldError")).getText();
 //		System.err.println("Numeric Error: "+numericError);
@@ -1628,7 +1637,7 @@ public class IJARAH_Steps {
 //              if (i==1999) {
 //                  Assert.fail(e.getMessage());
 //              }
-//          	}
+//          }
 //		}	    
 	}
 
@@ -1659,6 +1668,7 @@ public class IJARAH_Steps {
 //	AT_CUD_003
 	@And("User_608 click the pencil button under Financial Commitments in Customer Financials tab")
 	public void user_click_the_pencil_button_under_financial_commitments_in_customer_financials_tab() throws Throwable {
+		Thread.sleep(1000);
 		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
 		String listOfAddButton = "";
 		String addButtonScreenName = "";
@@ -1677,16 +1687,6 @@ public class IJARAH_Steps {
 			}
 		}
 		int premitiveListOfAddButton = Integer.parseInt(listOfAddButton);
-		for (int i = 0; i <= 300; i++) {
-			try {
-				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentsRefreshBtn")));
-				break;
-			} catch (Exception e) {
-				if (i == 300) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
 		for (int j = 0; j < premitiveListOfAddButton; j++) {
 			for (int k = 0; k <= 300; k++) {
 				try {
@@ -1701,10 +1701,70 @@ public class IJARAH_Steps {
 							System.out.println("Inside nested loop");
 							System.out.println("document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]");
 							javascriptHelper
+							.scrollIntoView(
+									javascriptHelper.executeScriptWithWebElement("document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]"));							
+							javascriptHelper
 									.executeScriptWithWebElement(
 											"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "].parentElement.parentElement.parentElement.nextElementSibling.querySelector(\"table tbody tr td button\")")
 									.click();
 // document.querySelectorAll('button[icon="pi pi-plus"]')[3].parentElement.parentElement.parentElement.nextElementSibling.querySelector("table tbody tr td button")
+							isAddButtonClicked = true;
+							break;
+						}
+					}
+				} catch (Exception e) {
+					if (k == 300) {
+						Assert.fail(e.getMessage());
+					}
+				}
+
+			}
+			if (isAddButtonClicked == true) {
+				break;
+			}
+		}
+	}
+	
+	@And("User_608 again click the first row pencil button under Financial Commitments in Customer Financials tab")
+	public void user_again_click_the_first_row_pencil_button_under_financial_commitments_in_customer_financials_tab() throws Throwable {
+		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
+		String listOfAddButton = "";
+		String addButtonScreenName = "";
+		boolean isAddButtonClicked = false;
+		for (int i = 0; i <= 300; i++) {
+			try {
+				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
+				System.out.println("List of add button " + listOfAddButton);
+				if (!(listOfAddButton.isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		int premitiveListOfAddButton = Integer.parseInt(listOfAddButton);
+		for (int j = 0; j < premitiveListOfAddButton; j++) {
+			for (int k = 0; k <= 300; k++) {
+				try {
+					addButtonScreenName = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
+									+ j + "].textContent")
+							.toString();
+					System.out.println("Screen Name " + addButtonScreenName);
+					if (!(addButtonScreenName.isBlank())) {
+						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
+						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Financial Commitments").trim())) {
+							System.out.println("Inside nested loop");
+							System.out.println("document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]");
+							javascriptHelper
+							.scrollIntoView(
+									javascriptHelper.executeScriptWithWebElement("document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]"));							
+							javascriptHelper.JSEClick(javascriptHelper
+									.executeScriptWithWebElement(
+											"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "].parentElement.parentElement.parentElement.nextElementSibling.querySelectorAll(\"table tbody tr td button\")[2]")
+									);
 							isAddButtonClicked = true;
 							break;
 						}
@@ -1849,8 +1909,7 @@ public class IJARAH_Steps {
 					Assert.fail(e.getMessage());
 				}
 			}
-		}
-		
+		}		
 	}
 	
 	
