@@ -56,7 +56,8 @@ public class Ijara_AppDataCheck_RepaymentMode_Step {
 	public void user_navigate_to_repayment_mode_module() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
-				javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement(repaymentModeJsPaths.getElement("RepaymentModeButton")));
+				javascriptHelper.executeScriptWithWebElement(repaymentModeJsPaths.getElement("RepaymentMode")).click();
+				//javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement(repaymentModeJsPaths.getElement("RepaymentMode")));
 				break;
 			} catch (Exception e) { 
 				if (i == 1000) {

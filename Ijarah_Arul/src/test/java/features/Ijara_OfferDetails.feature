@@ -28,7 +28,7 @@ And User click the Mail box in ULS application
 And User click the Search button under inbox
 And User search the Ref id under inbox for offer details
 And User click the Entitle button under inbox
-And Click on Pencil icon of existing record
+And Click on Pencil icon of existing record in offer details
 And Validate the Period field is displayed in Interest rate structure section
 And Validate the Rate definition field is displayed in Interest rate structure section
 And Validate the Effective Rate field is displayed in Interest rate structure section
@@ -50,7 +50,7 @@ And User click the Mail box in ULS application
 And User click the Search button under inbox
 And User search the Ref id under inbox for offer details
 And User click the Entitle button under inbox
-And Click on Pencil icon of existing record
+And Click on Pencil icon of existing record in offer details
 And Validate the Instalment Period field is displayed in Interest rate structure section
 And Validate the Installment Amount field is displayed in Interest rate structure section
 And Validate the Accept offer button is present in Offering page
@@ -65,7 +65,7 @@ And User click the Mail box in ULS application
 And User click the Search button under inbox
 And User search the Ref id under inbox for offer details
 And User click the Entitle button under inbox
-And Click on Pencil icon of existing record
+And Click on Pencil icon of existing record in offer details
 And Click on Accept offer button in offering page
 
 @AT_OFL_12
@@ -77,7 +77,7 @@ And User click the Mail box in ULS application
 And User click the Search button under inbox
 And User search the Ref id under inbox for offer details
 And User click the Entitle button under inbox
-And Click on Pencil icon of existing record
+And Click on Pencil icon of existing record in offer details
 And Validate the Original requested amount field is displayed in Appeal request section
 And Validate the Original requested tenure field is displayed in Appeal request section
 And Validate the New requested amount field in Appeal request section
@@ -94,7 +94,7 @@ And User click the Mail box in ULS application
 And User click the Search button under inbox
 And User search the Ref id under inbox for offer details
 And User click the Entitle button under inbox
-And Click on Pencil icon of existing record
+And Click on Pencil icon of existing record in offer details
 And Validate the Original requested amount field is displayed in Appeal request section
 And Validate the Original requested tenure field is displayed in Appeal request section
 And Enter the value in New requested amount field in Appeal request section
@@ -112,7 +112,7 @@ And User click the Mail box in ULS application
 And User click the Search button under inbox
 And User search the Ref id under inbox for offer details
 And User click the Entitle button under inbox
-And Click on Pencil icon of existing record
+And Click on Pencil icon of existing record in offer details
 And Validate the Recommendations sanction Conditions link is displayed in Appeal request section
 And Validate the Approval History link is displayed in Appeal request section
 

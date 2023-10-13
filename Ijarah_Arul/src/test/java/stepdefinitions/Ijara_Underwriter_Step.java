@@ -181,9 +181,9 @@ public class Ijara_Underwriter_Step {
 
 	@Then("Enter Number in Sequence Number Field Below the Conditions")
 	public void enter_number_in_sequence_number_field_below_the_conditions() {
-		javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("SequenceNumber")).click();
 		for (int i = 0; i <= 500; i++) {
 			try {
+				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("SequenceNumber")).click();
 				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("SequenceNumber"))
 				.sendKeys(testData.get("SequenceNumber"),Keys.TAB);
 				break;
@@ -349,7 +349,7 @@ public class Ijara_Underwriter_Step {
 				}
 			}
 			System.out.println("String " + dropdownString.trim());
-			System.out.println("Map " + testData.get("CustomerName").trim());
+			//System.out.println("Map " + testData.get("CustomerName").trim());
 			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("fullfill")).trim())) {
 				for (int k = 0; k <= 300; k++) {
 					try {
@@ -394,7 +394,17 @@ public class Ijara_Underwriter_Step {
 	}
 	@Then("Click on the Save button To Save The Conditions Record")
 	public void click_on_the_save_button_to_save_the_conditions_record() {
-		javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("Save")).click();
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("SaveIcon")));
+				//javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("SaveIcon")).click();
+				break;
+			} catch (Exception e) { 
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
 	}
 	@Given("User search the Ref id under inbox for underwriter")
 	public void user_search_the_ref_id_under_inbox_for_underwriter() throws IOException {

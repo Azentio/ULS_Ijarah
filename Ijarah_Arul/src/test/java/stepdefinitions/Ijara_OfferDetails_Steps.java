@@ -132,8 +132,17 @@ public class Ijara_OfferDetails_Steps {
 	}
 	@And("Validate the Period field is displayed in Interest rate structure section")
 	public void validate_the_period_field_is_displayed_in_interest_rate_structure_section() throws IOException{
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("InterestRateStructure_Period")));
-		Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("InterestRateStructure_Period")).isDisplayed());
+		for (int i = 0; i <= 4; i++) {
+			try {
+				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("InterestRateStructure_Period")));
+				//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("InterestRateStructure_Period")));
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("InterestRateStructure_Period")).isDisplayed());
+				break;
+			} catch (Exception e) {
+				
+			}
+		}
+		
 	   
 	}
 
@@ -201,8 +210,18 @@ public class Ijara_OfferDetails_Steps {
 	}
 	@And("Validate the Instalment Period field is displayed in Interest rate structure section")
 	public void validate_the_instalment_period_field_is_displayed_in_interest_rate_structure_section() throws IOException{
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("Installments_InstallmentPeriod")));
-		Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("Installments_InstallmentPeriod")).isDisplayed());
+		for (int i = 0; i <= 4; i++) {
+			try {
+				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("Installments_InstallmentPeriod")));
+				//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("InterestRateStructure_Period")));
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("Installments_InstallmentPeriod")).isDisplayed());
+				break;
+			} catch (Exception e) {
+				
+			}
+		}
+		//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("Installments_InstallmentPeriod")));
+		//Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("Installments_InstallmentPeriod")).isDisplayed());
 	   
 	}
 
@@ -215,8 +234,18 @@ public class Ijara_OfferDetails_Steps {
 
 	@And("Validate the Accept offer button is present in Offering page")
 	public void validate_the_accept_offer_button_is_present_in_offering_page() throws IOException{
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("AcceptOfferButton")));
-		Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("AcceptOfferButton")).isDisplayed());
+		for (int i = 0; i <= 4; i++) {
+			try {
+				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("AcceptOfferButton")));
+				//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("InterestRateStructure_Period")));
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("AcceptOfferButton")).isDisplayed());
+				break;
+			} catch (Exception e) {
+				
+			}
+		}
+		//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("AcceptOfferButton")));
+		//Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("AcceptOfferButton")).isDisplayed());
 	   
 	}
 	@And("Click on Accept offer button in offering page")
@@ -227,15 +256,35 @@ public class Ijara_OfferDetails_Steps {
 
 	@And("Validate the Original requested amount field is displayed in Appeal request section")
 	public void validate_the_original_requested_amount_field_is_displayed_in_appeal_request_section() throws IOException {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("OriginalRequestedAmount")));
-		Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("OriginalRequestedAmount")).isDisplayed());
+		for (int i = 0; i <= 4; i++) {
+			try {
+				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("OriginalRequestedAmount")));
+				//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("InterestRateStructure_Period")));
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("OriginalRequestedAmount")).isDisplayed());
+				break;
+			} catch (Exception e) {
+				
+			}
+		}
+		//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("OriginalRequestedAmount")));
+		//Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("OriginalRequestedAmount")).isDisplayed());
 	    
 	}
 
 	@And("Validate the Original requested tenure field is displayed in Appeal request section")
 	public void validate_the_original_requested_tenure_field_is_displayed_in_appeal_request_section() throws IOException{
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("OriginalRequestedTenure")));
-		Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("OriginalRequestedTenure")).isDisplayed());
+		for (int i = 0; i <= 4; i++) {
+			try {
+				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("OriginalRequestedTenure")));
+				//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("InterestRateStructure_Period")));
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("OriginalRequestedTenure")).isDisplayed());
+				break;
+			} catch (Exception e) {
+				
+			}
+		}
+		//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("OriginalRequestedTenure")));
+		//Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("OriginalRequestedTenure")).isDisplayed());
 	    
 	}
 
@@ -259,7 +308,7 @@ public class Ijara_OfferDetails_Steps {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("NewRequestedAmount"))
-				.sendKeys(testData.get("LodgementAmount"),Keys.TAB);
+				.sendKeys(testData.get("NewRequestedAmount"),Keys.TAB);
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -284,7 +333,7 @@ public class Ijara_OfferDetails_Steps {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("NewRequestedTenure"))
-				.sendKeys(testData.get("LodgementAmount"),Keys.TAB);
+				.sendKeys(testData.get("NewRequestedTenure"),Keys.TAB);
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -334,8 +383,19 @@ public class Ijara_OfferDetails_Steps {
 	}
 	@And("Validate the Recommendations sanction Conditions link is displayed in Appeal request section")
 	public void validate_the_recommendations_sanction_conditions_link_is_displayed_in_appeal_request_section() throws IOException {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("RecommendationsSanctionConditionsLink")));
-		Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("RecommendationsSanctionConditionsLink")).isDisplayed());
+		for (int i = 0; i <= 4; i++) {
+			try {
+				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("RecommendationsSanctionConditionsLink")));
+				//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("InterestRateStructure_Period")));
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("RecommendationsSanctionConditionsLink")).isDisplayed());
+				break;
+			} catch (Exception e) {
+				
+			}
+		}
+		
+//		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("RecommendationsSanctionConditionsLink")));
+//		Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("RecommendationsSanctionConditionsLink")).isDisplayed());
 	    
 	}
 

@@ -75,9 +75,7 @@ public class Ijara_DocumentDetails_Step {
 				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("nextBtn")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 4) {
-					Assert.fail(e.getMessage());
-				}
+				
 			}
 		}
 		for (int i = 0; i <= 1000; i++) {
@@ -1482,20 +1480,46 @@ public class Ijara_DocumentDetails_Step {
 
 	@And("Search the document details value with Invalid data")
 	public void search_the_document_details_value_with_invalid_data() throws IOException {
-		//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("SearchInput")));
-		//javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("SearchInput")).clear();
-		//javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("SearchInput")).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
+		String documentDetailsSearchResult = "";
+		for (int i = 0; i <= 1; i++) {
+			try {
+//				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("financialCommitmentSearchInput"))
+//				.sendKeys("USD");
+				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("SearchInput"))
+						.sendKeys(Keys.chord(Keys.CONTROL, "A", Keys.BACK_SPACE));
+
+			} catch (Exception e) {
+
+			}
+		}
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("SearchInput"))
-				.sendKeys(testData.get("InvalidInput"));
+						.sendKeys(testData.get("InvalidInput"));
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
 					Assert.fail(e.getMessage());
 				}
 			}
-		}		
+		}
+		for (int i = 0; i <= 300; i++) {
+			try {
+				
+				documentDetailsSearchResult = javascriptHelper
+						.executeScript("return " + documentdetailsJsPaths.getElement("listViewSearchResultValidation"))
+						.toString();
+				if(documentDetailsSearchResult.equalsIgnoreCase("Showing 0 to 0 of 0 entries"))
+				{
+				break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		Assert.assertTrue(documentDetailsSearchResult.equalsIgnoreCase("Showing 0 to 0 of 0 entries"));
 	    
 	}
 

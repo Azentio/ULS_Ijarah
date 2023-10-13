@@ -1,6 +1,6 @@
 Feature: L1 Apporval
 @AT_UNW_003
-Scenario: 
+Scenario: Validate that user can able to save the condition in offering page
 Given navigate the IJARA URL
 And login with valid credentials
 And User get the test data for test case AT_UNW_003

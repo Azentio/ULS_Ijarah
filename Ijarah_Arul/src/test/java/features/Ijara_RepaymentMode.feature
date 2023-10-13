@@ -5,6 +5,8 @@ Scenario: To verify that user can able to update repayment mode record
 Given navigate the IJARA URL
 And login with valid credentials
 And User get the test data for test case AT_IRM_007
+And User click the module name dropdown in ULS application
+And User select the module name as LOS in ULS application
 And User click the Mail box in ULS application
 And User click the Search button under inbox
 And User search the Ref id under inbox for Ijara repayment mode

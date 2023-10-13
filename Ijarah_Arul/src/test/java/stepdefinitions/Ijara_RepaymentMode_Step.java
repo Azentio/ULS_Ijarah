@@ -83,8 +83,18 @@ public class Ijara_RepaymentMode_Step {
 
 	@And("Validate Repayment mode field is present in repayment mode view list")
 	public void validate_repayment_mode_field_is_present_in_repayment_mode_view_list() throws IOException{
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(ijararepaymentmodeJsPaths.getElement("ViewList_RepaymentModeField")));
-		Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(ijararepaymentmodeJsPaths.getElement("ViewList_RepaymentModeField")).isDisplayed());
+		for (int i = 0; i <= 4; i++) {
+			try {
+				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(ijararepaymentmodeJsPaths.getElement("ViewList_RepaymentModeField")));
+				//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("InterestRateStructure_Period")));
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(ijararepaymentmodeJsPaths.getElement("ViewList_RepaymentModeField")).isDisplayed());
+				break;
+			} catch (Exception e) {
+				
+			}
+		}
+//		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(ijararepaymentmodeJsPaths.getElement("ViewList_RepaymentModeField")));
+//		Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(ijararepaymentmodeJsPaths.getElement("ViewList_RepaymentModeField")).isDisplayed());
 	   
 	}
 

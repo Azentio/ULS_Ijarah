@@ -126,7 +126,7 @@ public class IJARAH_Steps {
             try {
                 moduleLength = javascriptHelper.executeScript("return " + moduleListJSpath).toString();
                 System.out.println("Module Length " + moduleLength);
-                if (!(moduleLength.isBlank())) {
+                if (!moduleLength.isBlank()&&!moduleLength.equalsIgnoreCase("0")) {
                     break;
                 }
             } catch (Exception e) {
@@ -136,8 +136,7 @@ public class IJARAH_Steps {
             }
         }
         int premitiveIntegerLength = Integer.parseInt(moduleLength);
-        
-//		document.querySelectorAll('ion-radio-group ion-item')[0].textContent
+
         for (int i = 0; i < premitiveIntegerLength; i++) {
             for (int j = 0; j <= 300; j++) {
                 try {
@@ -145,8 +144,7 @@ public class IJARAH_Steps {
                             "return  document.querySelectorAll('ion-radio-group ion-item')[" + i + "].textContent")
                             .toString();
                     System.out.println("Module name " + moduleName);
-//                    if (moduleName.equalsIgnoreCase("LOS")) {
-                    if (moduleName.equalsIgnoreCase(testData.get("Module Name"))) {
+                    if (moduleName.equalsIgnoreCase("LOS")) {
                         System.out
                                 .println("document.querySelectorAll('ion-radio-group ion-item ion-radio')[" + i + "]");
                         javascriptHelper
@@ -154,11 +152,13 @@ public class IJARAH_Steps {
                                         "document.querySelectorAll('ion-radio-group ion-item ion-radio')[" + i + "]")
                                 .click();
                     }
-                } catch (Exception e) { 
+                } catch (Exception e) {
+
+ 
 
                 }
             }
-        }	
+        }
 	}	
 	
 	@And("User click the Mail box in ULS application")

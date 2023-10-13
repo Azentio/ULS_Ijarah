@@ -60,7 +60,8 @@ public class Ijara_LivingExpenses_Steps {
 	public void navigate_to_living_expenses_section() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
-				javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement(livingexpensesJsPaths.getElement("LivingExpensesButton")));
+				javascriptHelper.executeScriptWithWebElement(livingexpensesJsPaths.getElement("LivingExpensesButton")).click();
+				//javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement(livingexpensesJsPaths.getElement("LivingExpensesButton")));
 				break;
 			} catch (Exception e) { 
 				if (i == 1000) {
