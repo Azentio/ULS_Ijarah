@@ -10,7 +10,7 @@ And User_610 click Inbox
 And User_610 click search button
 And User_610 enter the value in search button
 And User_610 click edit button under inbox screen
-And User_610 click document details 
+And User_610 click document details  
 And User_610 click add button under document details 
 And User_610 validate customer name field enabled or not under document details 
 And User_610 validate document name field enabled or not under document details 

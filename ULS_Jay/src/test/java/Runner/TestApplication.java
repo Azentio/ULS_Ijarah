@@ -9,15 +9,16 @@ import utilities.ExtentManager;
 import utilities.ExtentTestManager;
 
 @CucumberOptions(features = { // "src/test/java/features/CSM_TransactionsFEATURE.feature",
-		"src/test/java/features/OFF_OfferDetails_610.feature"}, glue = "stepdefinitions",
+		"src/test/java/features/morabha_AppDataEnte"
+		+ "ry_DocumentDetails.feature"}, glue = "stepdefinitions",
 		// monochrome=false, //to make steps in color
 		plugin = { "pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 				"rerun:ReRunScenarios/FailedReRun.txt" }
 // ,dryRun = false //to check compilation errors
- , tags = "@AT_OFL_04"
+ , tags = "@AT_MU_DOC_05"
 // , tags="@CW_032_03"
 // , tags = "@TSA_044_04"
-
+ 
 )
 public class TestApplication extends AbstractTestNGCucumberTests {
 	/*

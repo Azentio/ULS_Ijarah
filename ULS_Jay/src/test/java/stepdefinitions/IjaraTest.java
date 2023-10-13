@@ -62,6 +62,34 @@ public class IjaraTest extends BaseClass{
             }
         }
 	}
+	
+	@And("login with valid credentials04")
+	public void login_with_valid_credentials04()throws Throwable {
+		for (int i = 0; i < 200; i++) {
+            try {
+                ijaraLogin.loginWithIjaraApplication04();
+                break;
+            } catch (Exception e) {
+                if (i==199) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+        }
+	}
+	
+	@And("login with valid credentials05")
+	public void login_with_valid_credentials05()throws Throwable {
+		for (int i = 0; i < 200; i++) {
+            try {
+                ijaraLogin.loginWithIjaraApplication05();
+                break;
+            } catch (Exception e) {
+                if (i==199) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+        }
+	}
 
 	@Then("logout from the ijaraApplication")
 	public void logout_from_the_ijara_application()throws Throwable {

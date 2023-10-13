@@ -56,27 +56,87 @@ public class Ijara_AD_DocumentDetails_Steps_610 {
 		testData = ad_CustomerFolllowUpDetails_610.getTestdata("DS_AT_OF_OFD_001");
 	}
 	
+	//----------New Application Customer Reference
+	
+		@And("User_610 get the test data set id for DS_AT_NEWAPP_CR_001")
+		public void get_the_test_data_set_id_for_DS_AT_NEWAPP_CR_001() {
+			testData = ad_CustomerFolllowUpDetails_610.getTestdata("DS_AT_NEWAPP_CR_001");
+		}
+		
+		
+	//----------Murabha app data entery documents details 
+		
+		@And("User_610 get the test data set id for DS_AT_MU_DOC_01")
+		public void get_the_test_data_set_id_for_DS_AT_MU_DOC_01() {
+			testData = ad_CustomerFolllowUpDetails_610.getTestdata("DS_AT_MU_DOC_01");
+		}
+			
+	
 	// -------------steps ---------------
 	@And("User_{int} click the module name")
 	public void user_select_the_module_name_to_los(Integer int1) throws Throwable {
-		javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Select_ModuleName_610")).click();
-		Thread.sleep(5000);
+		
+		for (int i = 0; i < 200; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Select_ModuleName_610")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
 
 	}
 
 	@And("User_{int} select the LOS in module name")
 	public void user_select_the_los_in_module_name(Integer int1) {
-		javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Select_inbox_610")).click();
-	}
+		
+			String moduleListJSpath = "document.querySelectorAll('ion-radio-group ion-item').length";
+	        String moduleLength = "";
+	        for (int i = 0; i <= 300; i++) {
+	            try {
+	                moduleLength = javascriptHelper.executeScript("return " + moduleListJSpath).toString();
+	                System.out.println("Module Length " + moduleLength);
+	                if (!(moduleLength.isBlank())) {
+	                    break;
+	                }
+	            } catch (Exception e) {
+	                if (i == 300) {
+	                    Assert.fail(e.getMessage());
+	                }
+	            }
+	        }
+	        int premitiveIntegerLength = Integer.parseInt(moduleLength);
+
+//			document.querySelectorAll('ion-radio-group ion-item')[0].textContent
+	        for (int i = 0; i < premitiveIntegerLength; i++) {
+	            for (int j = 0; j <= 300; j++) {
+	                try {
+	                    String moduleName = javascriptHelper.executeScript(
+	                            "return  document.querySelectorAll('ion-radio-group ion-item')[" + i + "].textContent")
+	                            .toString();
+	                    System.out.println("Module name " + moduleName);
+	                    if (moduleName.equalsIgnoreCase("LOS")) {
+	                    //if (moduleName.equalsIgnoreCase(testData.get("Module Name"))) {
+	                        System.out
+	                                .println("document.querySelectorAll('ion-radio-group ion-item ion-radio')[" + i + "]");
+	                        javascriptHelper
+	                                .executeScriptWithWebElement(
+	                                        "document.querySelectorAll('ion-radio-group ion-item ion-radio')[" + i + "]")
+	                                .click();
+	                    }
+	                } catch (Exception e) {
+	 	                }
+	            }
+	        }	
+	        	}
 
 	// -------------------
 
 	@And("User_{int} click Inbox")
 	public void user_click_inbox(Integer int1) throws Throwable {
-		// waitHelper.waitForElementwithFluentwait(driver,
-		// javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Select_inbox_610")));
-		// javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Select_inbox_610")).click();
-
+		
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Select_inbox_610")).click();
@@ -102,17 +162,14 @@ public class Ijara_AD_DocumentDetails_Steps_610 {
 		
 		
 		System.out.println(jsPaths2.getElement("clickEditBtnIn_FirstRow_UnderInbox_610"));
-		
+		Thread.sleep(3000);
 		//document.querySelectorAll('ion-label')[2]
 		
 	}
 
 	@And("User_{int} click edit button under inbox screen")
 	public void user_click_edit_button_under_inbox_screen(Integer int1) throws Throwable {
-//		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("clickEditBtnIn_FirstRow_UnderInbox_610")));
-//		javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("clickEditBtnIn_FirstRow_UnderInbox_610")).click();
-	//	System.err.println(jsPaths2.getElement("click_DocumentDetails_610"));
-		
+	
 		
 		for (int i = 0; i < 300; i++) {
 			try {
@@ -125,7 +182,7 @@ public class Ijara_AD_DocumentDetails_Steps_610 {
 			}
 		}
 		}
-		Thread.sleep(4000);
+		Thread.sleep(5000);
 			}
 	
 	@And("User_{int} click edit button under inbox screen02")
@@ -176,10 +233,21 @@ public class Ijara_AD_DocumentDetails_Steps_610 {
 
 	@And("User_{int} click add button under document details")
 	public void user_click_add_button_under_document_details(Integer int1) throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
-				.executeScriptWithWebElement(jsPaths2.getElement("clickAddBtn_UnderDocumentDetails_610")));
-		javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("clickAddBtn_UnderDocumentDetails_610"))
-				.click();
+//		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+//				.executeScriptWithWebElement(jsPaths2.getElement("clickAddBtn_UnderDocumentDetails_610")));
+		
+		
+		for (int i = 0; i < 300; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("clickAddBtn_UnderDocumentDetails_610")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		Thread.sleep(2000);
 	}
 
 	@And("User_{int} validate customer name field enabled or not under document details")
@@ -1407,59 +1475,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			}
 		}
 		
-		//-----select particular eye button
-		
-//		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[mode=\"md\"]').length";
-//		String listOfAddButton = "";
-//		String addButtonScreenName = "";
-//		boolean isAddButtonClicked = false;
-//		for (int i = 0; i <= 300; i++) {
-//			try {
-//				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
-//				System.out.println("List of add button " + listOfAddButton);
-//				if (!(listOfAddButton.isBlank())) {
-//					break;
-//				}
-//			} catch (Exception e) {
-//				if (i == 300) {
-//					Assert.fail(e.getMessage());
-//				}
-//			}
-//		}
-//		int premitiveListOfAddButton = Integer.parseInt(listOfAddButton);
-//		for (int j = 0; j < premitiveListOfAddButton; j++) {
-//			for (int k = 0; k <= 300; k++) {
-//				try {
-//					addButtonScreenName = javascriptHelper.executeScript(
-//							"return document.querySelectorAll('ion-title[mode=\"md\"]')["
-//									+ j + "].textContent")
-//							.toString();
-//					System.out.println("Screen Name " + addButtonScreenName);
-//
-//					if (!(addButtonScreenName.isBlank())) {
-//						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
-//						
-//					if ((addButtonScreenName.trim()).equalsIgnoreCase(("Customer Identification").trim())) {
-//							System.out.println("Inside nested loop");
-//
-//							System.out.println("document.querySelectorAll('button[icon=\"pi pi-eye\"]')[" + j + "]");
-//
-//							javascriptHelper.executeScriptWithWebElement("document.querySelectorAll('button[icon=\"pi pi-eye\"]')[" + j + "]").click();
-//							isAddButtonClicked = true;
-//							break;
-//						}
-//					}
-//				} catch (Exception e) {
-//					if (k == 300) {
-//						Assert.fail(e.getMessage());
-//					}
-//				}
-//			}
-//			if (isAddButtonClicked == true) {
-//				break;
-//			}
-//		}
-		
+			
 		Thread.sleep(5000);
 	}
 	
@@ -2349,9 +2365,10 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 	    
 		//---------------------display
 		
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("CreditRiskFactor_610")));
 				for (int j = 0; j < 200; j++) {
 					try {
-						if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("CreditRiskFactor _610")).isDisplayed()) {
+						if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("CreditRiskFactor_610")).isDisplayed()) {
 							Assert.assertTrue(true);
 						}
 					} catch (Exception e) {
@@ -2364,7 +2381,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 	public void user_verify_the_credit_score_details_section_field_available_on_offer_details_screen(Integer int1) {
 	    
 		//---------------------display
-		
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("CreditScoreDetails_610")));
 				for (int j = 0; j < 200; j++) {
 					try {
 						if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("CreditScoreDetails_610")).isDisplayed()) {
@@ -2380,7 +2397,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 	public void user_verify_the_eligibility_details_screen_field_available_on_offer_details_screen(Integer int1) {
 	    
 		//---------------------display
-		
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("EligibilityDetails_610")));
 				for (int j = 0; j < 200; j++) {
 					try {
 						if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("EligibilityDetails_610")).isDisplayed()) {
@@ -2396,7 +2413,8 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 	public void user_verify_the_interest_rate_structure_section_field_available_on_offer_details_screen(Integer int1) {
 	    
 		//---------------------display
-		
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("InterestRateStructure_610")));
+
 				for (int j = 0; j < 200; j++) {
 					try {
 						if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("InterestRateStructure_610")).isDisplayed()) {
@@ -2412,7 +2430,8 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 	public void user_verify_the_installments_section_field_available_on_offer_details_screen(Integer int1) {
 	    
 		//---------------------display
-		
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("InstallmentsSection_610")));
+
 				for (int j = 0; j < 200; j++) {
 					try {
 						if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("InstallmentsSection_610")).isDisplayed()) {
@@ -2427,7 +2446,8 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 	@And("User_{int} verify the Appeal Request Section field available on offer details screen")
 	public void user_verify_the_appeal_request_section_field_available_on_offer_details_screen(Integer int1) {
 		//---------------------display
-		
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("AppealRequestsection_610")));
+
 				for (int j = 0; j < 200; j++) {
 					try {
 						if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("AppealRequestsection_610")).isDisplayed()) {
@@ -2984,5 +3004,1861 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 		}
 	    
 	}
+	
+	//-------------New Application Customer reference---------------------- @AT_IJ_NewApp_CR_01
+	
+	@And("User_{int} click Addition Customer Info Under New Application")
+	public void user_click_addition_customer_info_under_new_application(Integer int1) {
+	    
+		for (int a = 0; a < 300; a++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("additionalCustomerInfo_610")).click();
+				break;
+			} catch (Exception e) {
+				if (a == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+			}
+
+	@And("User_{int} click edit button Info Under New Application")
+	public void user_click_edit_button_info_under_new_application(Integer int1) {
+	    
+		for (int a = 0; a < 300; a++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("editBtnIndex2_610")).click();
+				break;
+			} catch (Exception e) {
+				if (a == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+					
+	}
+
+	@And("User_{int} click Add button Info in Reference List View Under New Application")
+	public void user_click_add_button_info_in_reference_list_view_under_new_application(Integer int1) {
+		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
+		String listOfAddButton = "";
+		String addButtonScreenName = "";
+		boolean isAddButtonClicked = false;
+		for (int i = 0; i <= 300; i++) {
+			try {
+				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
+				System.out.println("List of add button " + listOfAddButton);
+				if (!(listOfAddButton.isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		int premitiveListOfAddButton = Integer.parseInt(listOfAddButton);
+		for (int j = 0; j < premitiveListOfAddButton; j++) {
+			for (int k = 0; k <= 300; k++) {
+				try {
+					addButtonScreenName = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
+									+ j + "].textContent")
+							.toString();
+					System.out.println("Screen Name " + addButtonScreenName);
+					if (!(addButtonScreenName.isBlank())) {
+						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
+						if ((addButtonScreenName.trim()).equalsIgnoreCase((" References List View ").trim())) {
+							System.out.println("Inside nested loop");
+							System.out.println("document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]");
+							javascriptHelper
+									.executeScriptWithWebElement(
+											"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]")
+									.click();
+							isAddButtonClicked = true;
+							break;
+						}
+					}
+				} catch (Exception e) {
+					if (k == 300) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			if (isAddButtonClicked == true) {
+				break;
+			}
+		}
+	    
+	}
+	
+	//-------------verify fields in reference customer
+	
+	@And("User_{int} verify the Add And Save button field in Reference List View Under New Application")
+	public void user_verify_the_add_and_save_button_field_in_reference_list_view_under_new_application(Integer int1) {
+	   
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("click_SaveButton_UnderFollowUp_610")).isDisplayed()){
+					Assert.assertTrue(true);
+				} 
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+			}
+		}
+		}
+		
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("backBtn02_610")).isDisplayed()){
+					Assert.assertTrue(true);
+				} 
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+			}
+		}
+		}
+	}
+	
+	
+	@And("User_{int} verify the Relationship Type field in Reference List View Under New Application")
+	public void user_verify_the_relationship_type_field_in_reference_list_view_under_new_application(Integer int1) {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("relationshipType_610")).isDisplayed()){
+					Assert.assertTrue(true);
+				} 
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+			}
+		}
+		}
+	    
+	}
+
+	@And("User_{int} verify the Salutation field in Reference List View Under New Application")
+	public void user_verify_the_salutation_field_in_reference_list_view_under_new_application(Integer int1) {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("salutation_610")).isDisplayed()){
+					Assert.assertTrue(true);
+				} 
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+			}
+		}
+		}
+	}
+
+	@And("User_{int} verify the First Name field in Reference List View Under New Application")
+	public void user_verify_the_first_name_field_in_reference_list_view_under_new_application(Integer int1) {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("firstName_610")).isDisplayed()){
+					Assert.assertTrue(true);
+				} 
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+			}
+		}
+		}
+	}
+
+	@And("User_{int} verify the Middle Name field in Reference List View Under New Application")
+	public void user_verify_the_middle_name_field_in_reference_list_view_under_new_application(Integer int1) {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("middleName_610")).isDisplayed()){
+					Assert.assertTrue(true);
+				} 
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+			}
+		}
+		}
+	}
+
+	@And("User_{int} verify the Last Name field in Reference List View Under New Application")
+	public void user_verify_the_last_name_field_in_reference_list_view_under_new_application(Integer int1) {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("lastName_610")).isDisplayed()){
+					Assert.assertTrue(true);
+				} 
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+			}
+		}
+		}
+	}
+
+	@And("User_{int} verify the Customer Full Name field in Reference List View Under New Application")
+	public void user_verify_the_customer_full_name_field_in_reference_list_view_under_new_application(Integer int1) {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("customerFullName_610")).isDisplayed()){
+					Assert.assertTrue(true);
+				} 
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+			}
+		}
+		}
+	}
+
+	@And("User_{int} verify the Identification Type field in Reference List View Under New Application")
+	public void user_verify_the_identification_type_field_in_reference_list_view_under_new_application(Integer int1) {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("identificationType_610")).isDisplayed()){
+					Assert.assertTrue(true);
+				} 
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+			}
+		}
+		}
+	}
+
+	@And("User_{int} verify the Identification Number field in Reference List View Under New Application")
+	public void user_verify_the_identification_number_field_in_reference_list_view_under_new_application(Integer int1) {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("IidentificationNumber_610")).isDisplayed()){
+					Assert.assertTrue(true);
+				} 
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+			}
+		}
+		}
+	}
+
+	@And("User_{int} verify the Residence Address field in Reference List View Under New Application")
+	public void user_verify_the_residence_address_field_in_reference_list_view_under_new_application(Integer int1) {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("residenceAddress_610")).isDisplayed()){
+					Assert.assertTrue(true);
+				} 
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+			}
+		}
+		}
+	}
+
+	@And("User_{int} verify the Office Address field in Reference List View Under New Application")
+	public void user_verify_the_office_address_field_in_reference_list_view_under_new_application(Integer int1) {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("officeAddress_610")).isDisplayed()){
+					Assert.assertTrue(true);
+				} 
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+			}
+		}
+		}
+	}
+
+	@And("User_{int} verify the Contact Number field in Reference List View Under New Application")
+	public void user_verify_the_contact_number_field_in_reference_list_view_under_new_application(Integer int1) {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("contactNumber_610")).isDisplayed()){
+					Assert.assertTrue(true);
+				} 
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+			}
+		}
+		}
+	}
+
+	@And("User_{int} verify the Office Phone Number field in Reference List View Under New Application")
+	public void user_verify_the_office_phone_number_field_in_reference_list_view_under_new_application(Integer int1) {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("officePhoneNumber_610")).isDisplayed()){
+					Assert.assertTrue(true);
+				} 
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+			}
+		}
+		}
+	}
+
+	@And("User_{int} verify the Primary Mobile Number Number field in Reference List View Under New Application")
+	public void user_verify_the_primary_mobile_number_number_field_in_reference_list_view_under_new_application(Integer int1) {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("primaryMobileNumber_610")).isDisplayed()){
+					Assert.assertTrue(true);
+				} 
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+			}
+		}
+		}
+	}
+
+	@And("User_{int} verify the Alternative Mobile field in Reference List View Under New Application")
+	public void user_verify_the_alternative_mobile_field_in_reference_list_view_under_new_application(Integer int1) {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("alternativeMobileNumber_610")).isDisplayed()){
+					Assert.assertTrue(true);
+				} 
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+			}
+		}
+		}
+	}
+
+	@And("User_{int} verify the Email ID field in Reference List View Under New Application")
+	public void user_verify_the_email_id_field_in_reference_list_view_under_new_application(Integer int1) {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("emailID_610")).isDisplayed()){
+					Assert.assertTrue(true);
+				} 
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+			}
+		}
+		}
+	}
+
+	@And("User_{int} verify the No Of Year Known field in Reference List View Under New Application")
+	public void user_verify_the_no_of_year_known_field_in_reference_list_view_under_new_application(Integer int1) {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("NoOfYearKnow_610")).isDisplayed()){
+					Assert.assertTrue(true);
+				} 
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+			}
+		}
+		}
+	}
+
+	@And("User_{int} verify the Cif NUmber field in Reference List View Under New Application")
+	public void user_verify_the_cif_n_umber_field_in_reference_list_view_under_new_application(Integer int1) {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("CIFnumber_610")).isDisplayed()){
+					Assert.assertTrue(true);
+				} 
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+			}
+		}
+		}
+	}
+	
+	///---------------------------@AT_IJ_NewApp_CR_02
+	
+	@And("User_{int} verify the any mandatory field blank and save system should not allow user to save the record")
+	public void user_verify_the_any_mandatory_field_blank_and_save_system_should_not_allow_user_to_save_the_record(Integer int1) throws Throwable {
+	   
+		for (int i = 0; i < 3000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("click_SaveButton_UnderFollowUp_610")).click();
+				break;		}
+			catch (Exception e) {
+				// TODO: handle exception
+				if (i==299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+	for (int i = 0; i < 3000; i++) {
+		try {
+			if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("click_SaveButton_UnderFollowUp_610")).isDisplayed()) {
+				Assert.assertTrue(true);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			if (i==299) {
+				Assert.fail(e.getMessage());
+			}
+		}
+	}
+	    Thread.sleep(3000);
+	}
+
+	@And("User_{int} verify enter numeric value in character field system should not allow user to save the record")
+	public void user_verify_enter_numeric_value_in_character_field_system_should_not_allow_user_to_save_the_record(Integer int1) {
+	    	    
+	}
+
+	@And("User_{int} verfiy enter character value in numeric field system should not allow user to save the record")
+	public void user_verfiy_enter_character_value_in_numeric_field_system_should_not_allow_user_to_save_the_record(Integer int1) {
+	    	    
+	}
+
+	@And("User_{int} verify enters only special characters value in any field system should not allow user to save the record")
+	public void user_verify_enters_only_special_characters_value_in_any_field_system_should_not_allow_user_to_save_the_record(Integer int1) {
+		
+		javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("firstName_610")).click();
+		for (int i = 0; i < 3000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("firstName_610")).sendKeys("@#$@");
+				break;
+				}
+			 catch (Exception e) {
+				// TODO: handle exception
+				if (i==299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		for (int i = 0; i < 3000; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("onlyAlphaNumericCharterPopup_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+				if (i==299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	    
+	}
+	
+	                                 //************************************  Murabha Product ***************************************
+	
+	@And("User_{int} click document details in murabha")
+	public void user_click_document_details_in_murabha(Integer int1) {
+	   					
+			for (int i = 0; i < 300; i++) {
+				try {
+					javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Murabha_DocumentsDetailsScreen_610")).click();
+					break;
+				} catch (Exception e) {
+					if (i == 299) {
+						Assert.fail(e.getMessage());
+					// TODO: handle exception
+				}
+			}
+			}
+					
+	}
+	
+	
+	@And("User_{int} verify the Required At Stage field is displayed in document details screen")
+	public void user_verify_the_required_at_stage_field_is_displayed_in_document_details_screen(Integer int1) {
+		
+	    for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("RequiredAtStage_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+				}
+			} catch (Exception e) {
+				if (i==299) {
+					Assert.fail(e.getMessage());
+				}
+				// TODO: handle exception
+			}
+		}
+	    
+	}
+
+	@And("User_{int} verify the Documents Status field is displayed in document details screen")
+	public void user_verify_the_documents_status_field_is_displayed_in_document_details_screen(Integer int1) {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("DocumentStatus_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+				}
+			} catch (Exception e) {
+				if (i==299) {
+					Assert.fail(e.getMessage());
+				}
+				// TODO: handle exception
+			}
+		}
+		
+	}
+
+	@And("User_{int} verify the Mandatory Optional field is displayed in document details screen")
+	public void user_verify_the_mandatory_optional_field_is_displayed_in_document_details_screen(Integer int1) {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Mandatory_Optional_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+				}
+			} catch (Exception e) {
+				if (i==299) {
+					Assert.fail(e.getMessage());
+				}
+				// TODO: handle exception
+			}
+		}
+		
+	}
+
+	@And("User_{int} verify the Document categeroy field is displayed in document details screen")
+	public void user_verify_the_document_categeroy_field_is_displayed_in_document_details_screen(Integer int1) {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("DocumentCategeroy_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+				}
+			} catch (Exception e) {
+				if (i==299) {
+					Assert.fail(e.getMessage());
+				}
+				// TODO: handle exception
+			}
+		}
+		
+	}
+
+	@And("User_{int} verify the Defferral Stage field is displayed in document details screen")
+	public void user_verify_the_defferral_stage_field_is_displayed_in_document_details_screen(Integer int1) {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("DefferralStage_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+				}
+			} catch (Exception e) {
+				if (i==299) {
+					Assert.fail(e.getMessage());
+				}
+				// TODO: handle exception
+			}
+		}
+		
+	}
+
+	@And("User_{int} verify the Def Approved By field is displayed in document details screen")
+	public void user_verify_the_def_approved_by_field_is_displayed_in_document_details_screen(Integer int1) {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("DefApprovedBy_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+				}
+			} catch (Exception e) {
+				if (i==299) {
+					Assert.fail(e.getMessage());
+				}
+				// TODO: handle exception
+			}
+		}
+		
+	}
+
+	@And("User_{int} verify the Change In Natural By field is displayed in document details screen")
+	public void user_verify_the_change_in_natural_by_field_is_displayed_in_document_details_screen(Integer int1) {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("ChangeInNaturalBy_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+				}
+			} catch (Exception e) {
+				if (i==299) {
+					Assert.fail(e.getMessage());
+				}
+				// TODO: handle exception
+			}
+		}
+		
+	}
+
+	@And("User_{int} verify the Documents Form field is displayed in document details screen")
+	public void user_verify_the_documents_form_field_is_displayed_in_document_details_screen(Integer int1) {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("DocumentsFrom_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+				}
+			} catch (Exception e) {
+				if (i==299) {
+					Assert.fail(e.getMessage());
+				}
+				// TODO: handle exception
+			}
+		}
+		
+	}
+
+	@And("User_{int} verify the Documents Quality field is displayed in document details screen")
+	public void user_verify_the_documents_quality_field_is_displayed_in_document_details_screen(Integer int1) {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("DocumentQuality_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+				}
+			} catch (Exception e) {
+				if (i==299) {
+					Assert.fail(e.getMessage());
+				}
+				// TODO: handle exception
+			}
+		}
+		
+	}
+
+	@And("User_{int} verify the Documents Recevied By field is displayed in document details screen")
+	public void user_verify_the_documents_recevied_by_field_is_displayed_in_document_details_screen(Integer int1) {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("DocumentRecivedBy")).isDisplayed()) {
+					Assert.assertTrue(true);
+				}
+			} catch (Exception e) {
+				if (i==299) {
+					Assert.fail(e.getMessage());
+				}
+				// TODO: handle exception
+			}
+		}
+		
+	}
+
+	@And("User_{int} verify the Upload BY field is displayed in document details screen")
+	public void user_verify_the_upload_by_field_is_displayed_in_document_details_screen(Integer int1) {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("UploadDate_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+				}
+			} catch (Exception e) {
+				if (i==299) {
+					Assert.fail(e.getMessage());
+				}
+				// TODO: handle exception
+			}
+		}
+		
+	}
+
+	@And("User_{int} verify the Expected Recepited Date field is displayed in document details screen")
+	public void user_verify_the_expected_recepited_date_field_is_displayed_in_document_details_screen(Integer int1) {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("ExpectedRecepitedDate_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+				}
+			} catch (Exception e) {
+				if (i==299) {
+					Assert.fail(e.getMessage());
+				}
+				// TODO: handle exception
+			}
+		}
+		
+	}
+
+	@And("User_{int} verify the Data of Expiry field is displayed in document details screen")
+	public void user_verify_the_data_of_expiry_field_is_displayed_in_document_details_screen(Integer int1) {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("DataOfExpiry_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+				}
+			} catch (Exception e) {
+				if (i==299) {
+					Assert.fail(e.getMessage());
+				}
+				// TODO: handle exception
+			}
+		}
+		
+	}
+
+	@And("User_{int} verify the Documents Reference Number field is displayed in document details screen")
+	public void user_verify_the_documents_reference_number_field_is_displayed_in_document_details_screen(Integer int1) {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("DocumentReferenceNumber_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+				}
+			} catch (Exception e) {
+				if (i==299) {
+					Assert.fail(e.getMessage());
+				}
+				// TODO: handle exception
+			}
+		}
+		
+	}
+
+	@And("User_{int} verify the Rack No field is displayed in document details screen")
+	public void user_verify_the_rack_no_field_is_displayed_in_document_details_screen(Integer int1) {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("RackNo_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+				}
+			} catch (Exception e) {
+				if (i==299) {
+					Assert.fail(e.getMessage());
+				}
+				// TODO: handle exception
+			}
+		}
+		
+	}
+
+	@And("User_{int} verify the Shall No field is displayed in document details screen")
+	public void user_verify_the_shall_no_field_is_displayed_in_document_details_screen(Integer int1) {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("ShelfN0_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+				}
+			} catch (Exception e) {
+				if (i==299) {
+					Assert.fail(e.getMessage());
+				}
+				// TODO: handle exception
+			}
+		}
+		
+	}
+
+	@And("User_{int} verify the Box No field is displayed in document details screen")
+	public void user_verify_the_box_no_field_is_displayed_in_document_details_screen(Integer int1) {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("BoxNo_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+				}
+			} catch (Exception e) {
+				if (i==299) {
+					Assert.fail(e.getMessage());
+				}
+				// TODO: handle exception
+			}
+		}
+		
+	}
+	
+	
+	                                                    //---------------------- @AT_MU_DOC_02 --------
+	
+	
+	@And("User_{int} select the optional in Mandatory Optional field")
+	public void user_select_the_optional_in_mandatory_optional_field(Integer int1) throws Throwable {
+		
+		
+		for (int i = 0; i < 300; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Mandatory_Optional_610")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				// TODO: handle exception
+			}
+		}
+		}
+		
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+				System.out.println("Dropdown length " + dropdownLength);
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+			for (int l = 0; l <= 300; l++) {
+				try {
+					System.out.println("L value is " + l);
+					System.out
+							.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+					dropdownString = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+							.toString();
+
+					if (!(dropdownString.isEmpty())) {
+						System.out.println(dropdownString);
+						System.out.println("Loop count " + l + " got breaked");
+						break;
+					}
+
+				} catch (Exception e) {
+					if (l == 300 && !(dropdownString.isBlank())) {
+						Assert.fail(e.getMessage());
+					}
+				}
+
+				if (!(dropdownString.isEmpty())) {
+					System.out.println(dropdownString);
+					System.out.println("Loop count " + l + " got breaked");
+					break;
+				}
+			}
+
+			System.out.println("String " + dropdownString.trim());
+
+		//	System.out.println("Map " + testData.get("ID Type").trim());
+
+			if ((dropdownString.trim())
+					.equalsIgnoreCase("Optional")) {
+
+				for (int k = 0; k <= 300; k++) {
+					try {
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						isDropdownValueSelected = true;
+						break;
+					} catch (Exception e) {
+						if (k == 300) {
+						Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+				break;
+			}
+		} 
+		Thread.sleep(3000);
+	}
+
+	@And("User_{int} select the Pan Card in Document Name")
+	public void user_select_the_pan_card_in_document_name(Integer int1) throws Throwable {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("DocumentName_610")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				// TODO: handle exception
+			}
+		}
+		}
+		
+		//----------- Pan Card  dropdown
+		
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+				System.out.println("Dropdown length " + dropdownLength);
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+			for (int l = 0; l <= 300; l++) {
+				try {
+					System.out.println("L value is " + l);
+					System.out
+							.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+					dropdownString = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+							.toString();
+
+					if (!(dropdownString.isEmpty())) {
+						System.out.println(dropdownString);
+						System.out.println("Loop count " + l + " got breaked");
+						break;
+					}
+
+				} catch (Exception e) {
+					if (l == 300 && !(dropdownString.isBlank())) {
+						Assert.fail(e.getMessage());
+					}
+				}
+
+				if (!(dropdownString.isEmpty())) {
+					System.out.println(dropdownString);
+					System.out.println("Loop count " + l + " got breaked");
+					break;
+				}
+			}
+
+			System.out.println("String " + dropdownString.trim());
+
+		//	System.out.println("Map " + testData.get("ID Type").trim());
+
+			if ((dropdownString.trim())
+					.equalsIgnoreCase("Pan Card")) {
+
+				for (int k = 0; k <= 300; k++) {
+					try {
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						isDropdownValueSelected = true;
+						break;
+					} catch (Exception e) {
+						if (k == 300) {
+						Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+				break;
+			}
+		} 
+		Thread.sleep(3000);
+	}
+	
+
+	@And("User_{int} select the Not Received in Documents Status")
+	public void user_select_the_not_received_in_documents_status(Integer int1) throws Throwable {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("DocumentStatus_610")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				// TODO: handle exception
+			}
+		}
+		}
+		
+		//---------------dropdown
+		
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+				System.out.println("Dropdown length " + dropdownLength);
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+			for (int l = 0; l <= 300; l++) {
+				try {
+					System.out.println("L value is " + l);
+					System.out
+							.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+					dropdownString = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+							.toString();
+
+					if (!(dropdownString.isEmpty())) {
+						System.out.println(dropdownString);
+						System.out.println("Loop count " + l + " got breaked");
+						break;
+					}
+
+				} catch (Exception e) {
+					if (l == 300 && !(dropdownString.isBlank())) {
+						Assert.fail(e.getMessage());
+					}
+				}
+
+				if (!(dropdownString.isEmpty())) {
+					System.out.println(dropdownString);
+					System.out.println("Loop count " + l + " got breaked");
+					break;
+				}
+			}
+
+			System.out.println("String " + dropdownString.trim());
+
+		//	System.out.println("Map " + testData.get("ID Type").trim());
+
+			if ((dropdownString.trim())
+					.equalsIgnoreCase("Not Received")) {
+
+				for (int k = 0; k <= 300; k++) {
+					try {
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						isDropdownValueSelected = true;
+						break;
+					} catch (Exception e) {
+						if (k == 300) {
+						Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+				break;
+			}
+		} 
+		Thread.sleep(2000);
+		
+	}
+
+	@And("User_{int} select the KYC Document in Document Categery")
+	public void user_select_the_kyc_document_in_document_categery(Integer int1) throws Throwable {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("DocumentCategeroy_610")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				// TODO: handle exception
+			}
+		}
+		}
+		
+		//------------dropdown
+		
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+				System.out.println("Dropdown length " + dropdownLength);
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+			for (int l = 0; l <= 300; l++) {
+				try {
+					System.out.println("L value is " + l);
+					System.out
+							.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+					dropdownString = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+							.toString();
+
+					if (!(dropdownString.isEmpty())) {
+						System.out.println(dropdownString);
+						System.out.println("Loop count " + l + " got breaked");
+						break;
+					}
+
+				} catch (Exception e) {
+					if (l == 300 && !(dropdownString.isBlank())) {
+						Assert.fail(e.getMessage());
+					}
+				}
+
+				if (!(dropdownString.isEmpty())) {
+					System.out.println(dropdownString);
+					System.out.println("Loop count " + l + " got breaked");
+					break;
+				}
+			}
+
+			System.out.println("String " + dropdownString.trim());
+
+		//	System.out.println("Map " + testData.get("ID Type").trim());
+
+			if ((dropdownString.trim())
+					.equalsIgnoreCase("KYC Document")) {
+
+				for (int k = 0; k <= 300; k++) {
+					try {
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						isDropdownValueSelected = true;
+						break;
+					} catch (Exception e) {
+						if (k == 300) {
+						Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+				break;
+			}
+		} 
+		Thread.sleep(2000);
+		
+	}
+
+	@And("User_{int} select the optional in Document Quality")
+	public void user_select_the_optional_in_document_quality(Integer int1) throws Throwable {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("DocumentQuality_610")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				// TODO: handle exception
+			}
+		}
+		}
+		
+		//------------dropdown
+		
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+				System.out.println("Dropdown length " + dropdownLength);
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+			for (int l = 0; l <= 300; l++) {
+				try {
+					System.out.println("L value is " + l);
+					System.out
+							.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+					dropdownString = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+							.toString();
+
+					if (!(dropdownString.isEmpty())) {
+						System.out.println(dropdownString);
+						System.out.println("Loop count " + l + " got breaked");
+						break;
+					}
+
+				} catch (Exception e) {
+					if (l == 300 && !(dropdownString.isBlank())) {
+						Assert.fail(e.getMessage());
+					}
+				}
+
+				if (!(dropdownString.isEmpty())) {
+					System.out.println(dropdownString);
+					System.out.println("Loop count " + l + " got breaked");
+					break;
+				}
+			}
+
+			System.out.println("String " + dropdownString.trim());
+
+		//	System.out.println("Map " + testData.get("ID Type").trim());
+
+			if ((dropdownString.trim())
+					.equalsIgnoreCase("Not Clear")) {
+
+				for (int k = 0; k <= 300; k++) {
+					try {
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						isDropdownValueSelected = true;
+						break;
+					} catch (Exception e) {
+						if (k == 300) {
+						Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+				break;
+			}
+		} 
+		Thread.sleep(3000);
+		
+	}
+
+	@And("User_{int} enter the value in Remarks")
+	public void user_enter_the_value_in_remarks(Integer int1) throws Throwable {
+	    
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Remarks_610")));
+		javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Remarks_610")).click();
+		
+		for (int i = 0; i < 300; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Remarks_610")).sendKeys("test");
+				break;
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				// TODO: handle exception
+			}
+		}
+		}
+		Thread.sleep(4000);
+			}
+	
+	//------------------Validate  the success message
+	
+	@And("User_{int} save button and verify the success message")
+	public void user_save_button_and_verify_the_success_meassage(Integer int1) {
+		
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("ApplicationID_610")));
+		
+		for (int i = 0; i < 300; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("click_SaveButton_UnderFollowUp_610")).click();;
+				break;
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				// TODO: handle exception
+			}
+		}
+			
+		}
+		
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("successMsg_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				// TODO: handle exception
+			}
+		}
+			
+		}
+		
+		
+	}
+	
+                                 	//-------------------------------- @AT_MU_DOC_03     ---------------------------
+	
+	
+	@And("User_{int} verify the Documents Name field should be mandatory")
+	public void user_verify_the_documents_name_field_should_be_mandatory(Integer int1) {
+	    
+		// ----------------validate mandatory field
+
+				for (int i = 0; i < 2000; i++) {
+					try {
+						String DocumentsName = "document.querySelector('ion-label[ng-reflect-text=\"DOCUMENT_NAME.TOOLTIP\"]').innerText";
+						String DocumentsNameName2 = (String) javascriptHelper.executeScript("return " + DocumentsName);
+						
+						System.err.println("Documents:"+ DocumentsNameName2);
+						Assert.assertTrue(DocumentsNameName2.contains("*"));
+						break;
+					} catch (Exception e) {
+						if (i == 1999) {
+							Assert.fail(e.getMessage());
+						}
+					}
+							}
+				
+				// -------------------validate type should be dropdown  --- Select
+
+				
+				String DocumentNameFormat = javascriptHelper
+						.executeScriptWithWebElement(jsPaths2.getElement("DocumentName_610"))
+						.getAttribute("ng-reflect-placeholder");
+				System.err.println("first print  " + DocumentNameFormat);
+
+				String assertDocumentNameFormat = "Select";
+				Assert.assertEquals(assertDocumentNameFormat, DocumentNameFormat);
+				
+				//---------field should be editable
+				
+				String DocumentNameEditable = javascriptHelper
+						.executeScriptWithWebElement(jsPaths2.getElement("EditableDocumentName_610"))
+						.getAttribute("ng-reflect-readonly");
+				System.err.println("first print  " + DocumentNameEditable);
+
+				String assertDocumentNameEditable = "false";
+				Assert.assertEquals(assertDocumentNameEditable, DocumentNameEditable);
+	    
+	}
+
+	@And("User_{int} verify the status field should be mandator editable dropdown")
+	public void user_verify_the_status_field_should_be_mandator_editable_dropdown(Integer int1) {
+		
+		// ----------------validate mandatory field
+
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String DocumentStatus = "document.querySelector('ion-label[ng-reflect-text=\"DOCUMENT_NAME.TOOLTIP\"]').innerText";
+				String DocumentStatusName = (String) javascriptHelper.executeScript("return " + DocumentStatus);
+				
+				System.err.println("DocumentStatus:"+ DocumentStatusName);
+				Assert.assertTrue(DocumentStatusName.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+					}
+		
+		// -------------------validate type should be dropdown  --- Select
+
+		
+				String DocumentStatusFormat = javascriptHelper
+						.executeScriptWithWebElement(jsPaths2.getElement("DocumentStatus_610"))
+						.getAttribute("ng-reflect-placeholder");
+				System.err.println("first print  " + DocumentStatusFormat);
+
+				String assertDocumentStatusFormat = "Select";
+				Assert.assertEquals(assertDocumentStatusFormat, DocumentStatusFormat);
+	    
+				
+        //---------field should be editable
+				
+				String DocumentNameEditable = javascriptHelper
+						.executeScriptWithWebElement(jsPaths2.getElement("EditableDocumentStatus_610"))
+						.getAttribute("ng-reflect-readonly");
+				System.err.println("first print  " + DocumentNameEditable);
+				String assertDocumentNameEditable = "false";
+				
+				Assert.assertEquals(assertDocumentNameEditable, DocumentNameEditable);
+				
+
+	}
+
+	@And("User_{int} verify the quality field should be mandatory editable drpodown")
+	public void user_verify_the_quality_field_should_be_mandatory_editable_drpodown(Integer int1) {
+	    
+		// ----------------validate mandatory field
+
+				for (int i = 0; i < 200; i++) {
+					try {
+						String DocumentQuality = "document.querySelector('ion-label[ng-reflect-text=\"Document Quality.TOOLTIP\"]').innerText";
+						String DocumentQualityName = (String) javascriptHelper.executeScript("return " + DocumentQuality);
+						
+						System.err.println("DocumentQuality:"+ DocumentQualityName);
+						Assert.assertTrue(DocumentQualityName.contains("*"));
+						
+						//-------Non Mandatory
+						//	Assert.assertEquals(false, DocumentQualityName.contains("*"));
+						
+						break;
+					} catch (Exception e) {
+						if (i == 199) {
+							Assert.fail(e.getMessage());
+						}
+					}
+							}
+				
+				// -------------------validate type should be dropdown  --- Select
+
+				
+				String DocumentQualityFormat = javascriptHelper
+						.executeScriptWithWebElement(jsPaths2.getElement("DocumentStatus_610"))
+						.getAttribute("ng-reflect-placeholder");
+				System.err.println("first print  " + DocumentQualityFormat);
+
+				String assertDocumentQualityFormat = "Select";
+				Assert.assertEquals(assertDocumentQualityFormat, DocumentQualityFormat);
+				
+          //---------field should be editable
+				
+				String DocumentQualityEditable = javascriptHelper
+						.executeScriptWithWebElement(jsPaths2.getElement("EditableDocumentQuality_610"))
+						.getAttribute("ng-reflect-readonly");
+				System.err.println("first print  " + DocumentQualityEditable);
+				String assertDocumentQualityEditable = "false";
+				
+				Assert.assertEquals(assertDocumentQualityEditable, DocumentQualityEditable);
+	    
+	}
+
+	@And("User_{int} verify the date field should be non mandatory and date")
+	public void user_verify_the_date_field_should_be_non_mandatory_and_date(Integer int1) {
+	    
+		// ----------------validate non mandatory field
+
+		for (int i = 0; i < 200; i++) {
+			try {
+				String UploadDate = "document.querySelector('digital-prime-date[ng-reflect-title=\"UPLOAD_DATE\"]').innerText";
+				String UploadDateName = (String) javascriptHelper.executeScript("return " + UploadDate);
+				
+				System.err.println("UploadDateName:"+ UploadDateName);
+			
+				Assert.assertEquals(false, UploadDateName.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+					}
+		
+		// -------------------validate type should be date
+
+		
+		String UpLoadFormat = javascriptHelper
+				.executeScriptWithWebElement(jsPaths2.getElement("UploadDate_610"))
+				.getAttribute("ng-reflect-date-format");
+		System.err.println("first print  " + UpLoadFormat);
+
+		String assertUpLoadFormat = "dd-M-yy";
+		Assert.assertEquals(assertUpLoadFormat, UpLoadFormat);
+		
+	}
+	
+	
+	                                            //--------------------------  @AT_MU_DOC_04  --------------
+	
+	
+	@And("User_{int} verify the Location field should non be mandatory Select")
+	public void user_verify_the_location_field_should_non_be_mandatory_Select(Integer int1) {
+	    
+		// ----------------validate non mandatory field
+
+				for (int i = 0; i < 200; i++) {
+					try {
+						String UploadDate = "document.querySelector('ion-label[ng-reflect-text=\"DOCUMENT_DETAILS_LOCATION_WHER\"]').parentElement.lastChild.innerText";
+						String UploadDateName = (String) javascriptHelper.executeScript("return " + UploadDate);
+						
+						System.err.println("UploadDateName:"+ UploadDateName);
+					
+						Assert.assertEquals(false, UploadDateName.contains("*"));
+						break;
+					} catch (Exception e) {
+						if (i == 199) {
+							Assert.fail(e.getMessage());
+						}
+					}
+							}
+				
+				
+             // -------------------validate type should be dropdown  --- Select
+
+				
+				String LocationFormat = javascriptHelper
+						.executeScriptWithWebElement(jsPaths2.getElement("LocationRecivedBy_610"))
+						.getAttribute("ng-reflect-placeholder");
+				System.err.println("first print  " + LocationFormat);
+
+				String assertDocumentQualityFormat = "Select";
+				Assert.assertEquals(assertDocumentQualityFormat, LocationFormat);
+				
+				
+	    
+	}
+
+	@And("User_{int} verify the Rack No field should be non mandator TextBox")
+	public void user_verify_the_rack_no_field_should_be_non_mandator_text_box(Integer int1) {
+	    
+		// ----------------validate non mandatory field
+
+				for (int i = 0; i < 200; i++) {
+					try {
+						String RackNo = "document.querySelector('ion-label[ng-reflect-text=\"FORM.RACK_NUMBER.TOOLTIP\"]').parentElement.innerText";
+						String RackNoName = (String) javascriptHelper.executeScript("return " + RackNo);
+						
+						System.err.println("RackNoName:"+ RackNoName);
+					
+						Assert.assertEquals(false, RackNoName.contains("*"));
+						break;
+					} catch (Exception e) {
+						if (i == 199) {
+							Assert.fail(e.getMessage());
+						}
+					}
+							}
+				
+				// -------------------validate type should be Text
+
+				
+				String RackNoFormat = javascriptHelper
+						.executeScriptWithWebElement(jsPaths2.getElement("RackNo_610"))
+						.getAttribute("ng-reflect-type");
+				System.err.println("first print  " + RackNoFormat);
+
+				String assertRackNoFormat = "text";
+				Assert.assertEquals(assertRackNoFormat, RackNoFormat);
+				
+	}
+
+	@And("User_{int} verify the Self No field should be non mandatory TextBox")
+	public void user_verify_the_self_no_field_should_be_non_mandatory_text_box(Integer int1) {
+	    
+		// ----------------validate non mandatory field
+
+				for (int i = 0; i < 200; i++) {
+					try {
+						String SelfNo = "document.querySelector('ion-label[ng-reflect-text=\"FORM.SHELF_NUMBER.TOOLTIP\"]').parentElement.innerText";
+						String SelfNoName = (String) javascriptHelper.executeScript("return " + SelfNo);
+						
+						System.err.println("SelfNoName:"+ SelfNoName);
+					
+						Assert.assertEquals(false, SelfNoName.contains("*"));
+						break;
+					} catch (Exception e) {
+						if (i == 199) {
+							Assert.fail(e.getMessage());
+						}
+					}
+							}
+				
+       // -------------------validate type should be Text
+
+				
+				String SelfNoFormat = javascriptHelper
+						.executeScriptWithWebElement(jsPaths2.getElement("ShelfN0_610"))
+						.getAttribute("ng-reflect-type");
+				System.err.println("first print  " + SelfNoFormat);
+
+				String assertSelfNoFormat = "text";
+				Assert.assertEquals(assertSelfNoFormat, SelfNoFormat);
+				
+	}
+
+	@And("User_{int} verify the Box No field should be non mandatory TextBox")
+	public void user_verify_the_box_no_field_should_be_non_mandatory_text_box(Integer int1) {
+	    
+		// ----------------validate non mandatory field
+
+				for (int i = 0; i < 200; i++) {
+					try {
+						String BoxNo = "document.querySelector('ion-label[ng-reflect-text=\"FORM.BOX_NUMBER.TOOLTIP\"]').parentElement.innerText";
+						String BoxNoName = (String) javascriptHelper.executeScript("return " + BoxNo);
+						
+						System.err.println("BoxNoName:"+ BoxNoName);
+					
+						Assert.assertEquals(false, BoxNoName.contains("*"));
+						break;
+					} catch (Exception e) {
+						if (i == 199) {
+							Assert.fail(e.getMessage());
+						}
+					}
+							}
+				
+         // -------------------validate type should be Text
+
+				
+				String BoxNoFormat = javascriptHelper
+						.executeScriptWithWebElement(jsPaths2.getElement("BoxNo_610"))
+						.getAttribute("ng-reflect-type");
+				System.err.println("first print  " + BoxNoFormat);
+
+				String assertBoxNoFormat = "text";
+				Assert.assertEquals(assertBoxNoFormat, BoxNoFormat);
+	}
+	
+	
+	                     //--------------------------  @AT_MU_DOC_05  --------------
+	
+	@And("User_{int} verify the Documents Category field should be mandatory Select")
+	public void user_verify_the_documents_category_field_should_be_mandatory_select(Integer int1) {
+	    
+		// ----------------validate mandatory field
+
+		for (int i = 0; i < 200; i++) {
+			try {
+				String DocumentCategory = "document.querySelector('ion-label[ng-reflect-text=\"DOCUMENT_CATEGORY.TOOLTIP\"]').parentElement.innerText";
+				String DocumentCategoryName = (String) javascriptHelper.executeScript("return " + DocumentCategory);
+				
+				System.err.println("DocumentCategory:"+ DocumentCategoryName);
+			
+				Assert.assertEquals(true, DocumentCategoryName.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+					}
+		
+		// -------------------validate type should be dropdown  --- Select
+
+		
+		String DocumentCategoryFormat = javascriptHelper
+				.executeScriptWithWebElement(jsPaths2.getElement("DocumentCategeroy_610"))
+				.getAttribute("ng-reflect-placeholder");
+		System.err.println("first print  " + DocumentCategoryFormat);
+
+		String assertDocumentCategoryFormat = "Select";
+		Assert.assertEquals(assertDocumentCategoryFormat, DocumentCategoryFormat);
+				
+	         
+	}
+
+	@And("User_{int} verify the Document From field should be non mandator select")
+	public void user_verify_the_document_from_field_should_be_non_mandator_select(Integer int1) {
+	    
+		// ----------------validate non mandatory field
+
+		for (int i = 0; i < 200; i++) {
+			try {
+				String DocumentFrom = "document.querySelector('ion-label[ng-reflect-text=\"Document Form.TOOLTIP\"]').parentElement.innerText";
+				String DocumentFromName = (String) javascriptHelper.executeScript("return " + DocumentFrom);
+				
+				System.err.println("BoxNoName:"+ DocumentFromName);
+			
+				Assert.assertEquals(false, DocumentFromName.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+					}
+		
+		// -------------------validate type should be select
+
+		
+		String DocumentFrom = javascriptHelper
+				.executeScriptWithWebElement(jsPaths2.getElement("DocumentsFrom_610"))
+				.getAttribute("ng-reflect-placeholder");
+		System.err.println("first print  " + DocumentFrom);
+
+		String assertDocumentFrom = "Select";
+		Assert.assertEquals(assertDocumentFrom, DocumentFrom);
+		
+		
+	 	//---------field should be editable
+		
+			String DocumentNameEditable = javascriptHelper
+					.executeScriptWithWebElement(jsPaths2.getElement("EditableDocumentForm_610"))
+					.getAttribute("ng-reflect-readonly");
+			System.err.println("first print  " + DocumentNameEditable);
+			String assertDocumentNameEditable = "false";
+			
+			Assert.assertEquals(assertDocumentNameEditable, DocumentNameEditable);
+
+		
+	}
+
+	@And("User_{int} verify the Expected date Of Receipt field should be non mandatory date")
+	public void user_verify_the_expected_date_of_receipt_field_should_be_non_mandatory_date(Integer int1) {
+	    
+		// ----------------validate non mandatory field
+
+		for (int i = 0; i < 200; i++) {
+			try {
+				String ExpectedDateOfReceipt = "document.querySelector('digital-prime-date[ng-reflect-title=\"Expected Receipt Date\"]').innerText";
+				String ExpectedDateOfReceiptName = (String) javascriptHelper.executeScript("return " + ExpectedDateOfReceipt);
+				
+				System.err.println("BoxNoName:"+ ExpectedDateOfReceiptName);
+			
+				Assert.assertEquals(false, ExpectedDateOfReceiptName.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+					}
+		
+		// -------------------validate type should be date
+
+		
+				String ExpectedDateOfReceiptFormat = javascriptHelper
+						.executeScriptWithWebElement(jsPaths2.getElement("ExpectedRecepitedDate_610"))
+						.getAttribute("ng-reflect-date-format");
+				System.err.println("first print  " + ExpectedDateOfReceiptFormat);
+
+				String assertUpLoadFormat = "dd-M-yy";
+				Assert.assertEquals(assertUpLoadFormat, ExpectedDateOfReceiptFormat);
+				
+		
+	}
+
+	@And("User_{int} verify the Waiver Defferral Approved By field should be non mandatory TextBox")
+	public void user_verify_the_waiver_defferral_approved_by_field_should_be_non_mandatory_text_box(Integer int1) {
+	    
+		// ----------------validate non mandatory field
+
+		for (int i = 0; i < 200; i++) {
+			try {
+				String DefApprovedBy = "document.querySelector('ion-label[ng-reflect-text=\"DEF_APPROVED_BY.TOOLTIP\"]').parentElement.innerText";
+				String DefApprovedByName = (String) javascriptHelper.executeScript("return " + DefApprovedBy);
+				
+				System.err.println("BoxNoName:"+ DefApprovedByName);
+			
+				Assert.assertEquals(false, DefApprovedByName.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+					}
+		
+	}
+
+	@And("User_{int} verify the Change in Nature of Document Approved By field should be non mandatory TextBox")
+	public void user_verify_the_change_in_nature_of_document_approved_by_field_should_be_non_mandatory_text_box(Integer int1) {
+	    
+		// ----------------validate non mandatory field
+
+		for (int i = 0; i < 200; i++) {
+			try {
+				String ChangeNatureOfDocumentApp = "document.querySelector('ion-label[ng-reflect-text=\"Change In Nature Approved By.T\"]').parentElement.innerText";
+				String ChangeNatureOfDocumentAppName = (String) javascriptHelper.executeScript("return " + ChangeNatureOfDocumentApp);
+				
+				System.err.println("ChangeNatureOfDocumentAppName:"+ ChangeNatureOfDocumentAppName);
+			
+				Assert.assertEquals(false, ChangeNatureOfDocumentAppName.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+					}
+		
+	}
+	
+	
+	
+	
+	
+	
 	
 }
