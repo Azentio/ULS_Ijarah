@@ -5,4 +5,4 @@ Feature: Title of your feature
 
   @tag1
   Scenario: Title of your scenario
-   Then Check the clear field final is available or not
+ Then Check CIF ID field is editable

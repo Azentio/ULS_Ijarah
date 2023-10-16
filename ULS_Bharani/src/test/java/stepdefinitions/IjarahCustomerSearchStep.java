@@ -568,11 +568,190 @@ public class IjarahCustomerSearchStep extends BaseClass {
 		} catch (Exception e) {
 			Assert.assertTrue(true);
 		}
-	     
-	     
+	       
 	    
 	}
+
+	@Then("Check Customer field type is mandatory or not")
+	public void check_customer_field_type_is_mandatory_or_not() throws Throwable  {
+		for (int i = 0; i <2000; i++) {
+            try {
+            	String repayment = CustomerSearchPaths.getElement("CustomerType*");
+               // String repayment ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+                String accountholdername = (String) javascriptHelper.executeScript("return "+repayment);
+                System.out.println(accountholdername);
+                Assert.assertTrue(accountholdername.contains("*"));
+                break;
+            } catch (Exception e) {
+                if (i==1999) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+        }
 	}
+	
+	@Given("Check Customer field type is List of View")
+	public void check_customer_field_type_is_list_of_view() throws Throwable {
+		for (int i = 0; i < 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(CustomerSearchPaths.getElement("CustomerTypeIndividual")).click();
+				break;
+			} catch (Exception e) {
+				if (i==499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+
+			String dropdownLength = "";
+
+			boolean isDropdownValueSelected = false;
+
+			String dropdownString = "";
+
+			for (int i = 0; i <= 300; i++) {
+
+			try {
+
+			dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+			System.out.println("Dropdown length " + dropdownLength);
+
+			if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+			break;
+
+			}
+
+			} catch (Exception e) {
+
+			if (i == 300) {
+
+			Assert.fail(e.getMessage());
+
+			}
+
+			}
+
+			}
+
+			int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+			for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+			 
+
+			for (int l = 0; l <= 300; l++) {
+
+			try {
+
+			System.out.println("L value is " + l);
+
+			System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+			dropdownString = javascriptHelper.executeScript(
+
+			"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+			.toString();
+
+			if (!(dropdownString.isEmpty())) {
+
+			System.out.println(dropdownString);
+
+			System.out.println("Loop count " + l + " got breaked");
+
+			break;
+
+			}
+
+			} catch (Exception e) {
+
+			if (l == 300 && !(dropdownString.isBlank())) {
+
+			Assert.fail(e.getMessage());
+
+			}
+
+			}
+
+			if (!(dropdownString.isEmpty())) {
+
+			System.out.println(dropdownString);
+
+			System.out.println("Loop count " + l + " got breaked");
+
+			break;
+
+			}
+
+			}
+
+			System.out.println("String "+dropdownString.trim());
+
+			System.out.println("Map "+" Individual Customer ".trim());
+
+			if ((dropdownString.trim()).equalsIgnoreCase(" Individual Customer ".trim())) {
+
+			 
+
+			for (int k = 0; k <= 300; k++) {
+
+			try {
+
+			 
+
+				clickAndActions.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+			"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+				clickAndActions.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+			"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+			isDropdownValueSelected = true;
+
+			break;
+
+			} catch (Exception e) {
+
+			if (k == 300) {
+
+			Assert.fail(e.getMessage());
+
+			 
+
+			}
+
+			}
+
+			}
+
+			}
+
+			if (isDropdownValueSelected == true) {
+
+			break;
+
+			}
+
+			 
+
+			}
+		
+	}
+	
+	@Then("Check CIF ID field is editable")
+	public void check_cif_id_field_is_editable()  throws Throwable {
+		javascriptHelper.executeScriptWithWebElement(CustomerSearchPaths.getElement("CIFID")).sendKeys("6565");	
+	
+	}
+}
+	   
+	    
+	
+
 	
 	
 	

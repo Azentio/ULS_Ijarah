@@ -22,4 +22,7 @@ And Check the Email ID field is available or not
 Then Enter the mandetory fields
 And Check the Create new request fiels is available or not
 Then Check the clear field final is available or not
+And Check Customer field type is mandatory or not
+And Check Customer field type is List of View
+Then Check CIF ID field is editable
 #Then logout from the ijaraApplication
