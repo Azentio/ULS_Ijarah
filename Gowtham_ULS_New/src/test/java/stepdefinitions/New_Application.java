@@ -283,7 +283,7 @@ public class New_Application {
 //			}
 //		}	
 //		}
-		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("ScrollToInbox")));
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("Application Details Text")));
 		Thread.sleep(3000);
 		for (int i = 0; i < 700; i++) {
 			try {
