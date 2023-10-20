@@ -60,6 +60,12 @@ public class IjaraTest extends BaseClass{
 		ijaraLogin.loginWithMurabahaApplicationAppDataEntry();
 	}
 	
+//	Murabaha Product -- App Data Check Stage ---> UserType07
+	@And("login with valid credentials-Murabaha Data Check stage")
+	public void login_with_valid_credentials_murabaha_data_check_stage()throws Throwable {
+		ijaraLogin.loginWithMurabahaApplicationDataCheck();
+	}
+	
 	
 	@Then("logout from the ijaraApplication")
 	public void logout_from_the_ijara_application()throws Throwable {		

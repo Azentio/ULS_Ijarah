@@ -80,6 +80,7 @@ Then User_608 validate the confirm message in Customer Debt screen
 Then logout from the ijaraApplication
 
 
+#CUD_01_05 -->  CUD_01_30
 @AT_MCUD_03
 Scenario: To verify the below fields are mantatory/non-mandatory and LOV in Customer Debt screen
 
@@ -126,6 +127,7 @@ And User_608 verify NPA Classification as Non-Mandatory and LOV field under Cust
 Then logout from the ijaraApplication
 
 
+#CUD_02_01, CUD_02_02, CUD_02_03
 @AT_MCUD_05
 Scenario: To verify the impact when user keep any mandatory field blank, enter character value in numeric filed and click on save button
 
@@ -156,6 +158,7 @@ And User_608 validate the message for invalid data in Customer Debt screen
 Then logout from the ijaraApplication
 
 
+#CUD_03_01 --> CUD_03_07
 @AT_MCUD_06
 Scenario: To verify while modification system allow user to save the record with valid data
 
@@ -172,23 +175,112 @@ And User_608 click the Customer Financials tab
 And User_608 click the pencil icon under Customer Financials tab
 And User_608 click the pencil button under Financial Commitments in Customer Financials tab
 And User_608 validate the Customer Debt screen is available in Financial Commitments
-
 And User_608 validate the Update button available in Customer Debt screen
 And User_608 validate the Back button available in Customer Debt screen
-
 And User_608 modify the Sanction Amount under Customer Debt screen in Customer Financials tab
 When User_608 click the Update button in Customer Debt screen
-
 And User_608 again click the first row pencil button under Financial Commitments in Customer Financials tab
 And User_608 clear the mandatory field value in Customer Debt screen
 And User_608 Update the record with mandatory field blank in Customer Debt screen
 And User_608 validate the mandatory field blank message in Customer Debt screen
-
 And User_608 enter the invalid data in any one field under Customer Debt screen in Customer Financials tab
 And User_608 Update the record with mandatory field blank in Customer Debt screen
 And User_608 validate the Error message in Customer Debt screen
-
-
-
 Then logout from the ijaraApplication
 
+
+#CUD_04_01, CUD_04_02, CUD_04_03
+@AT_MCUD_07
+Scenario: To verify the Customer Debt details List view
+
+Given navigate the IJARA URL
+And login with valid credentials-Murabaha App Data Entry
+And User_608 get the test data for test case AT_MCUD_07
+And User_608 click the module name dropdown in ULS application
+And User_608 select the module name as LOS in ULS application
+And User_608 click the Mail box in ULS application
+And User_608 click the Search button under inbox
+And User_608 search the Ref id under inbox in ULS Application
+And User_608 click the Entitle button under inbox
+And User_608 click the Customer Financials tab
+And User_608 click the pencil icon under Customer Financials tab
+And User_608 scroll into view the financial commitments section under Customer Financials tab
+And User_608 verify the Financial Institution field is displayed in list view under Financial Commitments
+And User_608 verify the Loan Amount field is displayed in list view under Financial Commitments
+And User_608 verify the Installment Amount field is displayed in list view under Financial Commitments
+And User_608 verify the Tenure field is displayed in list view under Financial Commitments
+And User_608 verify the Next Due Date field is displayed in list view under Financial Commitments
+And User_608 verify the Principal Balance field is displayed in list view under Financial Commitments
+And User_608 verify the Currency field is displayed in list view under Financial Commitments
+And User_608 verify the Status field is displayed in list view under Financial Commitments
+And User_608 verify list view values should be not editable under Financial Commitments
+And User_608 click Add button in Financial Commitments under Customer Financials tab
+And User_608 validate the Customer Debt screen is available in Financial Commitments
+Then logout from the ijaraApplication
+
+
+# CUD_04_04, CUD_04_05
+@AT_MCUD_08
+Scenario: To verify the functionality of Search box with matching and mismatch data
+
+Given navigate the IJARA URL
+And login with valid credentials-Murabaha App Data Entry
+And User_608 get the test data for test case AT_MCUD_08
+And User_608 click the module name dropdown in ULS application
+And User_608 select the module name as LOS in ULS application
+And User_608 click the Mail box in ULS application
+And User_608 click the Search button under inbox
+And User_608 search the Ref id under inbox in ULS Application
+And User_608 click the Entitle button under inbox
+And User_608 click the Customer Financials tab
+And User_608 click the pencil icon under Customer Financials tab
+And User_608 click Search button in Financial Commitments under Customer Financials tab
+And User_608 search matching value system should display all the possible matching records under Financial Commitments section
+And User_608 verify the all the possible matching records are displayed under Financial Commitments section
+And User_608 search mismatch value system should not display any records under Financial Commitments section
+And User_608 verify the system is should not displayed any records under Financial Commitments section
+Then logout from the ijaraApplication
+
+
+#CUD_04_08
+@AT_MCUD_11
+Scenario: To verify user is able to change the status of Debt record from Active to Inactive
+
+Given navigate the IJARA URL
+And login with valid credentials-Murabaha App Data Entry
+And User_608 get the test data for test case AT_MCUD_11
+And User_608 click the module name dropdown in ULS application
+And User_608 select the module name as LOS in ULS application
+And User_608 click the Mail box in ULS application
+And User_608 click the Search button under inbox
+And User_608 search the Ref id under inbox in ULS Application
+And User_608 click the Entitle button under inbox
+And User_608 click the Customer Financials tab
+And User_608 click the pencil icon under Customer Financials tab
+And User_608 click the first row pencil icon under Financial Commitments in Customer Financials tab
+And User_608 click the Status Radio button under Customer Debt screen
+When User_608 click the Update button in Customer Debt screen
+And User_608 verify the first row status as In-Active under Financial Commitments in Customer Financials tab
+Then logout from the ijaraApplication
+
+
+#CUD_04_09
+@AT_MCUD_12
+Scenario: To verify user is able to change the status of Debt record from Inctive to Active
+
+Given navigate the IJARA URL
+And login with valid credentials-Murabaha App Data Entry
+And User_608 get the test data for test case AT_MCUD_12
+And User_608 click the module name dropdown in ULS application
+And User_608 select the module name as LOS in ULS application
+And User_608 click the Mail box in ULS application
+And User_608 click the Search button under inbox
+And User_608 search the Ref id under inbox in ULS Application
+And User_608 click the Entitle button under inbox
+And User_608 click the Customer Financials tab
+And User_608 click the pencil icon under Customer Financials tab
+And User_608 click the first row pencil icon under Financial Commitments in Customer Financials tab
+And User_608 click the Status Radio button under Customer Debt screen
+When User_608 click the Update button in Customer Debt screen
+And User_608 verify the first row status as Active under Financial Commitments in Customer Financials tab
+Then logout from the ijaraApplication

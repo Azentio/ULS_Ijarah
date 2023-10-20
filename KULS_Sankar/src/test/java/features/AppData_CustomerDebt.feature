@@ -3,7 +3,7 @@ Feature: To check the Customer debt details feature
 # *************************** userType01 **************************
 
 @AT_CUD_001
-Scenario: To verify user is able to Add Customer Debt record in the system
+Scenario: Customer Debt screen should get open with all valid fields in proper format with below mention buttons and all valid fields
 
 Given navigate the IJARA URL
 And login with valid credentials-App Data Entry
@@ -53,7 +53,7 @@ Then logout from the ijaraApplication
 
 
 @AT_CUD_002
-Scenario: To verify user is able to Add Customer Debt record in the system
+Scenario: To verify user is able to add new Customer Dept record in the system by entering invalid data
 
 Given navigate the IJARA URL
 And login with valid credentials-App Data Entry
@@ -81,7 +81,7 @@ Then logout from the ijaraApplication
 
 
 @AT_CUD_003
-Scenario: To verify user is able to Add Customer Debt record in the system
+Scenario: To verify user is able to modify Customer Debt record in the system
 
 Given navigate the IJARA URL
 And login with valid credentials-App Data Entry
@@ -109,7 +109,7 @@ Then logout from the ijaraApplication
 
 # CUD_04_04, CUD_04_05, CUD_04_06, CUD_04_07
 @AT_CUD_004
-Scenario: To verify user is able to Add Customer Debt record in the system
+Scenario: To verify the Customer Debt List view
 
 Given navigate the IJARA URL
 And login with valid credentials-App Data Entry
@@ -131,21 +131,22 @@ And User_608 verify the Next Due Date field is displayed in list view under Fina
 And User_608 verify the Principal Balance field is displayed in list view under Financial Commitments
 And User_608 verify the Currency field is displayed in list view under Financial Commitments
 
-And User_608 verify list view values should be not editable under FInancial Commitments
+And User_608 verify list view values should be not editable under Financial Commitments
 
 And User_608 click Search button in Financial Commitments under Customer Financials tab
 And User_608 search the matched record in Financial Commitments under Customer Financials tab
+And User_608 verify the all the possible matching records are displayed under Financial Commitments section
 And User_608 search the mismatched record in Financial Commitments under Customer Financials tab
+And User_608 verify the system is should not displayed any records under Financial Commitments section
 And User_608 click the Export button in Financial Commitments under Customer Financials tab
 And User_608 click the PDF and verify under Export in Financial Commitments
 And User_608 click the Export button in Financial Commitments under Customer Financials tab
 And User_608 click the XLS and verify under Export in Financial Commitments
-
 Then logout from the ijaraApplication
 
 
 @AT_CUD_005
-Scenario: To verify user is able to Add Customer Debt record in the system
+Scenario: To verify while creating customer debt, system allow user to save the record with valid data
 
 Given navigate the IJARA URL
 And login with valid credentials-App Data Entry
@@ -174,7 +175,7 @@ Then logout from the ijaraApplication
 # CUD_04_08
 @AT_CUD_006
 @AT_CUD_006_01
-Scenario: To verify user is able to Add Customer Debt record in the system
+Scenario: To verify user is able to change the status of Debt record from Active to Inactive
 
 Given navigate the IJARA URL
 And login with valid credentials-App Data Entry
@@ -188,7 +189,7 @@ And User_608 click the Entitle button under inbox
 And User_608 click the Customer Financials tab
 And User_608 click the pencil icon under Customer Financials tab
 And User_608 click the first row pencil icon under Financial Commitments in Customer Financials tab
-And User_608 click the Stats Radio button under Customer Debt screen
+And User_608 click the Status Radio button under Customer Debt screen
 When User_608 click the Update button in Customer Debt screen
 And User_608 verify the first row status as In-Active under Financial Commitments in Customer Financials tab
 Then logout from the ijaraApplication
@@ -198,7 +199,7 @@ Then logout from the ijaraApplication
 # CUD_04_09
 @AT_CUD_006
 @AT_CUD_006_02
-Scenario: To verify user is able to Add Customer Debt record in the system
+Scenario: To verify user is able to change the status of Debt record from Inactive to Active
 Given navigate the IJARA URL
 And login with valid credentials-App Data Entry
 And User_608 get the test data for test case AT_CUD_005
@@ -211,12 +212,10 @@ And User_608 click the Entitle button under inbox
 And User_608 click the Customer Financials tab
 And User_608 click the pencil icon under Customer Financials tab
 And User_608 click the first row pencil icon under Financial Commitments in Customer Financials tab
-And User_608 click the Stats Radio button under Customer Debt screen
+And User_608 click the Status Radio button under Customer Debt screen
 When User_608 click the Update button in Customer Debt screen
 And User_608 verify the first row status as Active under Financial Commitments in Customer Financials tab
 Then logout from the ijaraApplication
-
-
 
 
 

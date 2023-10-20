@@ -29,6 +29,8 @@ And User_608 validate Spoke Location value displayed correctly under Application
 And User_608 validate the Closing Staff or Servicing Staff value displayed correctly under Application details screen
 Then logout from the ijaraApplication
 
+
+
 @AT_CSAD_02
 Scenario: To verify post clicking on Application Detail tab system opens Application Details section.
 
