@@ -155,13 +155,12 @@ Then User_6047 select the input for Facility type field under the Facility info
 Then User_6047 select the input for Pricing Indicator field under the Facility info
 Then User_6047 give the input for Declared Property Value field under the Facility info
 Then User_6047 give the input for Declared Down Payment Amount field under the Facility info
-#And User_6047 enter the characters to the declared downpayment amount
-#And User_6047 check the invalid data in the declared downpayment amount
+And User_6047 enter the characters to the declared downpayment amount
+And User_6047 check the invalid data in the declared downpayment amount
 And User_6047 enter the special characters to the declared downpayment amount
 And User_6047 check the invalid data in the declared downpayment amount
 And User_6047 enter the negative number to the declared downpayment amount
 And User_6047 check the negative data in the declared downpayment amount
-#Then User_6047 give the input for Declared Down Payment Amount field under the Facility info
 #Then User_6047 give the input for Request Amount field under the Facility info
 Then User_6047 select the input for Currency field under the Facility info
 Then User_6047 give the input for Loan Tenure field under the Facility info 
@@ -184,10 +183,14 @@ And User_6047 Click the Search button under inbox
 Then User_6047 search the facility list under facility info
 And User_6047 click the Entitle button under facility list
 Then User_6047 clear the Loan Tenure field under facility
-Then User_6047 click the save button under the facility info
 Then User_6047 modify the Loan Tenure field under facility info
+#And User_6047 to check same record saved inLoan Tenure field under facility info
 Then User_6047 click the save button under the facility info
 Then User_6047 verify the successfully saved message under the facility info
+And User_6047 Click the Search button under inbox
+Then User_6047 search the facility list under facility info
+And User_6047 click the Entitle button under facility list
+And User_6047 to check same record saved inLoan Tenure field under facility info
 
 @AT_FI_009
 Scenario: To verify the invalid data,success message and back button
@@ -209,4 +212,66 @@ And User_6047 check the invalid data in the declared downpayment amount
 And User_6047 modify the correct data for declared downpayment amount
 Then User_6047 click the save button under the facility info
 Then User_6047 verify the successfully saved message under the facility info
+And User_6047 Click the back button in facility list
+And User_6047 verify the the back button function using inbox label in facility list
+
+@AT_FI_010
+Scenario: To verify the functionality of activate,deactivate and back button under facility info-modify
+
+Given Navigate the IJARA URL
+And User_6047 Login with valid credentials
+And User_6047 Get the test data for test case ID AT_FI_005
+And User_6047 Click the Mail box in ULS application
+And User_6047 Click the Search button under inbox
+And User_6047 Search the Ref Id under inbox 
+And User_6047 click the Entitle button under inbox 
+And User_6047 Click the Facility info tab
+And User_6047 Click the Search button under inbox
+Then User_6047 search the facility list under facility info
+And User_6047 click the Entitle button under facility list
+And User_6047 click the status toggle button for deactivate
+And User_6047 to check the status is deactive
+And User_6047 click the status toggle button for activate
+And User_6047 to check the status is active
+And User_6047 click the back Button
+And User_6047 to verify the functionality of back button with add button display
+
+@AT_FI_012
+Scenario: To verify the functionality of add button and display any matching , non matching record in facilist list 
+
+Given Navigate the IJARA URL
+And User_6047 Login with valid credentials
+And User_6047 Get the test data for test case ID AT_FI_012
+And User_6047 Click the Mail box in ULS application
+And User_6047 Click the Search button under inbox
+And User_6047 Search the Ref Id under inbox 
+And User_6047 click the Entitle button under inbox 
+And User_6047 Click the Facility info tab
+And User_6047 Click Add button under the Facility info
+And User_6047 give the input for Loan Tenure field under the Facility info
+And User_6047 to check same record saved inLoan Tenure field under facility info
+And User_6047 click the back Button
+#And User_6047 Click the Search button under inbox
+#Then User_6047 search the facility list under facility info
+And User_6047 click the Search button under facility info tab and search the matching data in listview
+And User_6047 check the result data in facility list view
+And User_6047 clear the search box
+And User_6047 click the Search button under facility info tab and search the mismatching data in listview
+And User_6047 check the result in facility list view
+
+@AT_FI_013
+Scenario: To verify the functionality of Export to PDF button,Excel button and back button
+
+Given Navigate the IJARA URL
+Then User_6047 Login with valid credentials
+And User_6047 Get the test data for test case ID AT_FI_013
+Then User_6047 Click the Mail box in ULS application
+Then User_6047 Click the Search button under inbox
+And User_6047 Search the Ref Id under inbox 
+Then User_6047 click the Entitle button under inbox 
+Then User_6047 Click the Facility info tab
+And User_6047 Click the Export button under Facility info tab
+And User_6047 Click the Excel button under Export
+And User_6047 Click the PDF button under Export
+
 

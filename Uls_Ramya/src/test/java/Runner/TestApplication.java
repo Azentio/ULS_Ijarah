@@ -9,7 +9,8 @@ import utilities.ExtentManager;
 import utilities.ExtentTestManager;
 
 @CucumberOptions(features = { // "src/test/java/features/CSM_TransactionsFEATURE.feature",
-		"src/test/java/features/ApplicationDataEntry.feature" }, glue = "stepdefinitions",
+		"src/test/java/features/murabha_Repayment_Mode.feature" }, glue = "stepdefinitions",
+		//	"src/test/java/features/EmploymentDetails.feature" }, glue = "stepdefinitions",
 		// monochrome=false, //to make steps in color
 		plugin = { "pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 				"rerun:ReRunScenarios/FailedReRun.txt" }
@@ -17,7 +18,8 @@ import utilities.ExtentTestManager;
 // ,dryRun = false //to check compilation errors
 // , tags = "@CW_032"
 // , tags="@AT_EDC_09"
-, tags = "@AT_FI_006"
+//  , tags = "@AT_MU_IRM_005"
+
 
 
 )

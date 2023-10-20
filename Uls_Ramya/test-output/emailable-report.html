@@ -9,51 +9,44 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">37,809</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">7</td><td class="num">109,044</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">Runner.TestApplication</td><td><a href="#m0">runScenario</a></td><td rowspan="1">1697182463295</td><td rowspan="1">25756</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="7">Runner.TestApplication</td><td><a href="#m0">runScenario</a></td><td rowspan="7">1697792213837</td><td rowspan="7">7972</td></tr><tr class="failedeven"><td><a href="#m1">runScenario</a></td></tr><tr class="failedeven"><td><a href="#m2">runScenario</a></td></tr><tr class="failedeven"><td><a href="#m3">runScenario</a></td></tr><tr class="failedeven"><td><a href="#m4">runScenario</a></td></tr><tr class="failedeven"><td><a href="#m5">runScenario</a></td></tr><tr class="failedeven"><td><a href="#m6">runScenario</a></td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">Runner.TestApplication#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;To check the blank field,invalid data in facility info tab&quot;</td><td>&quot;Optional[To test the ApplicationDataEntry module in URL]&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">io.cucumber.core.exception.CucumberException: Step [User_6047 enter the special characters to the declared downpayment amount] is defined with 1 parameters at &apos;stepdefinitions.ApplicationDataEntry_Steps.user_enter_the_special_characters_to_the_declared_downpayment_amount(java.lang.Integer)&apos;.
-However, the gherkin step has 0 arguments.
-Step text: User_6047 enter the special characters to the declared downpayment amount
-	at io.cucumber.core.runner.PickleStepDefinitionMatch.arityMismatch(PickleStepDefinitionMatch.java:83)
-	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:42)
-	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
-	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:92)
-	at io.cucumber.core.runner.TestStep.run(TestStep.java:64)
-	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
-	at io.cucumber.core.runner.TestCase.run(TestCase.java:104)
-	at io.cucumber.core.runner.Runner.runPickle(Runner.java:71)
-	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$0(TestNGCucumberRunner.java:116)
-	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:117)
-	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:113)
-	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:31)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+<h2>Default test</h2><h3 id="m0">Runner.TestApplication#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;To verify the fields are mandatory, editable,lookup and numeric in repayment mode&quot;</td><td>&quot;Optional[To verify the functionality of repayment mode]&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.click()&quot; because the return value of &quot;helper.JavascriptHelper.executeScriptWithWebElement(String)&quot; is null
+	at stepdefinitions.IjaraLogin.loginWithIjaraApplication(IjaraLogin.java:31)
+	at stepdefinitions.ApplicationDataEntry_Steps.Login_with_valid_credentials(ApplicationDataEntry_Steps.java:50)
+	at ✽.User_6047 Login with valid credentials(file:///C:/Users/ININDC00071/git/ULs_Ramya1/Uls_Ramya/src/test/java/features/murabha_Repayment_Mode.feature:31)
+</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">Runner.TestApplication#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;To verify while modification, when user keep any mandatory field blank and click on save button&quot;</td><td>&quot;Optional[To verify the functionality of repayment mode]&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.AssertionError: Cannot invoke &quot;org.openqa.selenium.WebElement.click()&quot; because the return value of &quot;helper.JavascriptHelper.executeScriptWithWebElement(String)&quot; is null
+	at org.junit.Assert.fail(Assert.java:88)
+	at stepdefinitions.Murabha_RepaymentMode_Steps.user_click_repayment_mode_section(Murabha_RepaymentMode_Steps.java:130)
+	at ✽.User_6047 click repayment mode section(file:///C:/Users/ININDC00071/git/ULs_Ramya1/Uls_Ramya/src/test/java/features/murabha_Repayment_Mode.feature:143)
+</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">Runner.TestApplication#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;To verify the functionality of Help button in repayment mode&quot;</td><td>&quot;Optional[To verify the functionality of repayment mode]&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.click()&quot; because the return value of &quot;helper.JavascriptHelper.executeScriptWithWebElement(String)&quot; is null
+	at stepdefinitions.IjaraLogin.loginWithIjaraApplication(IjaraLogin.java:31)
+	at stepdefinitions.ApplicationDataEntry_Steps.Login_with_valid_credentials(ApplicationDataEntry_Steps.java:50)
+	at ✽.User_6047 Login with valid credentials(file:///C:/Users/ININDC00071/git/ULs_Ramya1/Uls_Ramya/src/test/java/features/murabha_Repayment_Mode.feature:58)
+</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">Runner.TestApplication#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;To verify the buttons available on screen and allow user to modify the Repayment Mode-modify&quot;</td><td>&quot;Optional[To verify the functionality of repayment mode]&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.click()&quot; because the return value of &quot;helper.JavascriptHelper.executeScriptWithWebElement(String)&quot; is null
+	at stepdefinitions.IjaraLogin.loginWithIjaraApplication(IjaraLogin.java:31)
+	at stepdefinitions.ApplicationDataEntry_Steps.Login_with_valid_credentials(ApplicationDataEntry_Steps.java:50)
+	at ✽.User_6047 Login with valid credentials(file:///C:/Users/ININDC00071/git/ULs_Ramya1/Uls_Ramya/src/test/java/features/murabha_Repayment_Mode.feature:106)
+</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">Runner.TestApplication#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;To verify post clicking on Add asset button, the Repayment Mode screen should be open with all valid fields&quot;</td><td>&quot;Optional[To verify the functionality of repayment mode]&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.AssertionError: Cannot invoke &quot;org.openqa.selenium.WebElement.click()&quot; because the return value of &quot;helper.JavascriptHelper.executeScriptWithWebElement(String)&quot; is null
+	at org.junit.Assert.fail(Assert.java:88)
+	at stepdefinitions.Murabha_RepaymentMode_Steps.user_click_repayment_mode_section(Murabha_RepaymentMode_Steps.java:130)
+	at ✽.User_6047 click repayment mode section(file:///C:/Users/ININDC00071/git/ULs_Ramya1/Uls_Ramya/src/test/java/features/murabha_Repayment_Mode.feature:14)
+</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">Runner.TestApplication#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;To verify the functionality of save and submit button&quot;</td><td>&quot;Optional[To verify the functionality of repayment mode]&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.click()&quot; because the return value of &quot;helper.JavascriptHelper.executeScriptWithWebElement(String)&quot; is null
+	at stepdefinitions.IjaraLogin.loginWithIjaraApplication(IjaraLogin.java:31)
+	at stepdefinitions.ApplicationDataEntry_Steps.Login_with_valid_credentials(ApplicationDataEntry_Steps.java:50)
+	at ✽.User_6047 Login with valid credentials(file:///C:/Users/ININDC00071/git/ULs_Ramya1/Uls_Ramya/src/test/java/features/murabha_Repayment_Mode.feature:155)
+</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">Runner.TestApplication#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Creation of Repayment Mode record with invalid data&quot;</td><td>&quot;Optional[To verify the functionality of repayment mode]&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.click()&quot; because the return value of &quot;helper.JavascriptHelper.executeScriptWithWebElement(String)&quot; is null
+	at stepdefinitions.IjaraLogin.loginWithIjaraApplication(IjaraLogin.java:31)
+	at stepdefinitions.ApplicationDataEntry_Steps.Login_with_valid_credentials(ApplicationDataEntry_Steps.java:50)
+	at ✽.User_6047 Login with valid credentials(file:///C:/Users/ININDC00071/git/ULs_Ramya1/Uls_Ramya/src/test/java/features/murabha_Repayment_Mode.feature:76)
 </div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
