@@ -48,7 +48,7 @@ Feature: new Application Customer Reference
     And User_610 click Addition Customer Info Under New Application
     And User_610 click edit button Info Under New Application
     And User_610 click Add button Info in Reference List View Under New Application
-    #And User_610 verify the any mandatory field blank and save system should not allow user to save the record
+    And User_610 verify the any mandatory field blank and save system should not allow user to save the record
     #And User_610 verify enter numeric value in character field system should not allow user to save the record
     #And User_610 verfiy enter character value in numeric field system should not allow user to save the record
     And User_610 verify enters only special characters value in any field system should not allow user to save the record

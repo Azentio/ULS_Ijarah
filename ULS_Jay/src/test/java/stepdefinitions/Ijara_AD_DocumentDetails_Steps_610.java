@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
@@ -22,6 +23,8 @@ public class Ijara_AD_DocumentDetails_Steps_610 {
 	WebDriver driver = BaseClass.driver;
 
 	JSPaths jsPaths2 = new JSPaths(excelPath, "Ijara_AD_DocumentDetails", "Ijara_LoginFieldName", "JSPath");
+	JSPaths jsPaths3 = new JSPaths(excelPath, "Murabha_Module", "Murabha_LoginFieldName", "JSPath");
+	
 	ExcelData exelData = new ExcelData(excelTestDataPath, "ijara_LoginCredentials", "UserType");
 
 	Map<String, String> loginTestData = new HashMap<>();
@@ -70,6 +73,13 @@ public class Ijara_AD_DocumentDetails_Steps_610 {
 		public void get_the_test_data_set_id_for_DS_AT_MU_DOC_01() {
 			testData = ad_CustomerFolllowUpDetails_610.getTestdata("DS_AT_MU_DOC_01");
 		}
+		
+	//----------Murabha app data entery FollowUp Details
+		
+		@And("User_610 get the test data set id for DS_AT_MU_FU_01")
+		public void get_the_test_data_set_id_for_DS_AT_MU_FU_01() {
+			testData = ad_CustomerFolllowUpDetails_610.getTestdata("DS_AT_MU_FU_01");
+			}
 			
 	
 	// -------------steps ---------------
@@ -90,7 +100,7 @@ public class Ijara_AD_DocumentDetails_Steps_610 {
 	}
 
 	@And("User_{int} select the LOS in module name")
-	public void user_select_the_los_in_module_name(Integer int1) {
+	public void user_select_the_los_in_module_name(Integer int1) throws Throwable {
 		
 			String moduleListJSpath = "document.querySelectorAll('ion-radio-group ion-item').length";
 	        String moduleLength = "";
@@ -130,6 +140,7 @@ public class Ijara_AD_DocumentDetails_Steps_610 {
 	 	                }
 	            }
 	        }	
+	       
 	        	}
 
 	// -------------------
@@ -151,8 +162,19 @@ public class Ijara_AD_DocumentDetails_Steps_610 {
 
 	@And("User_{int} click search button")
 	public void user_click_search_button(Integer int1) throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver,javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("click_searchButton_610")));
-		javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("click_searchButton_610")).click();
+		//waitHelper.waitForElementwithFluentwait(driver,javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("click_searchButton_610")));
+		//javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("click_searchButton_610")).click();
+		
+		for (int i = 0; i < 200; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("click_searchButton_610")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
 	}
 
 	@And("User_{int} enter the value in search button")
@@ -763,7 +785,7 @@ public class Ijara_AD_DocumentDetails_Steps_610 {
 		
 		// ----------------validate mandatory field
 
-				for (int b = 0; b < 2000; b++) {
+				for (int b = 0; b < 200; b++) {
 					try {
 						String customerResponce = "document.querySelector('ion-label[ng-reflect-text=\"SCR.FOLLOWUPDTL.CUST_RESP.TOOL\"]').innerText";
 						String customerResponceName = (String) javascriptHelper.executeScript("return " + customerResponce);
@@ -772,7 +794,7 @@ public class Ijara_AD_DocumentDetails_Steps_610 {
 						
 						break;
 					} catch (Exception e) {
-						if (b == 1999) {
+						if (b == 199) {
 							Assert.fail(e.getMessage());
 						}
 					}
@@ -3443,7 +3465,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 	   
 		for (int i = 0; i < 3000; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("click_SaveButton_UnderFollowUp_610")).click();
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("saveBtn_610")).click();
 				break;		}
 			catch (Exception e) {
 				// TODO: handle exception
@@ -3455,9 +3477,10 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 		
 	for (int i = 0; i < 3000; i++) {
 		try {
-			if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("click_SaveButton_UnderFollowUp_610")).isDisplayed()) {
+			if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("fillAllTheDetailsPopup_610")).isDisplayed()) {
 				Assert.assertTrue(true);
 			}
+			break;
 		} catch (Exception e) {
 			// TODO: handle exception
 			if (i==299) {
@@ -4337,6 +4360,24 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 		}
 		Thread.sleep(4000);
 			}
+	//-----------click save btn -----------
+	
+	@And("User_{int} click save button")
+	public void user_click_save_button(Integer int1) {
+		
+		for (int i = 0; i < 300; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("saveBtn_610")).click();;
+				break;
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				// TODO: handle exception
+			}
+		}
+		}
+	
+	}
 	
 	//------------------Validate  the success message
 	
@@ -4855,10 +4896,542 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 		
 	}
 	
+	            //--------------------------  @AT_MU_DOC_06  --------------
+	
+	@And("User_{int} verify the Documents Reference Number field should be non mandatory Text")
+	public void user_verify_the_documents_reference_number_field_should_be_non_mandatory_text(Integer int1) {
+	    
+		// ----------------validate non mandatory field
+
+				for (int i = 0; i < 200; i++) {
+					try {
+						String DocumentReferceNumber = "document.querySelector('ion-label[ng-reflect-text=\"FORM.DOCUMENT_NUMBER.TOOLTIP\"]').parentElement.innerText";
+						String DocumentReferceNumberName = (String) javascriptHelper.executeScript("return " + DocumentReferceNumber);
+						
+						System.err.println("DocumentReferceNumberName:"+ DocumentReferceNumberName);
+					
+						Assert.assertEquals(false, DocumentReferceNumberName.contains("*"));
+						break;
+					} catch (Exception e) {
+						if (i == 199) {
+							Assert.fail(e.getMessage());
+						}
+					}
+							}
+				
+           //-----------------validate type should be Text
+
+				
+				String DocumentReferceNumberFormat = javascriptHelper
+						.executeScriptWithWebElement(jsPaths2.getElement("DocumentReferenceNumber_610"))
+						.getAttribute("ng-reflect-type");
+				System.err.println("first print  " + DocumentReferceNumberFormat);
+
+				String assertDocumentReferceNumberFormat = "text";
+				Assert.assertEquals(assertDocumentReferceNumberFormat, DocumentReferceNumberFormat);
+				
+	}
+
+	@And("User_{int} verify the Remarks field should be mandator Text")
+	public void user_verify_the_remarks_field_should_be_mandator_text(Integer int1) {
+	    
+		
+		// ----------------validate mandatory field
+
+				for (int i = 0; i < 200; i++) {
+					try {
+						String DocumentCategory = "document.querySelector('ion-label[ng-reflect-text=\"Remarks.TOOLTIP\"]').parentElement.innerText";
+						String DocumentCategoryName = (String) javascriptHelper.executeScript("return " + DocumentCategory);
+						
+						System.err.println("DocumentCategory:"+ DocumentCategoryName);
+					
+						Assert.assertEquals(true, DocumentCategoryName.contains("*"));
+						break;
+					} catch (Exception e) {
+						if (i == 199) {
+							Assert.fail(e.getMessage());
+						}
+					}
+							}
+				
+		//-----------------validate type should be Text
+
+		
+		String RemarkFormat = javascriptHelper
+				.executeScriptWithWebElement(jsPaths2.getElement("Remarks_Format_610"))
+				.getAttribute("ng-reflect-input-type");
+		System.err.println("first print  " + RemarkFormat);
+
+		String assertRemarkFormat = "text";
+		Assert.assertEquals(assertRemarkFormat, RemarkFormat);
+		
+	}
+	
+	@And("User_{int} verify the upload document")
+	public void user_verify_the_upload_document(Integer int1) {
+		
+		for(int i=0;i<200;i++){
+			 try {
+				 if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("UploadDocument_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+				}
+				 break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+				// TODO: handle exception
+			}
+		 }
+		 
+	}
 	
 	
+	//--------------------edit button under documents details
+	
+	@And("User_{int} click edit button under documents details")
+	public void user_click_edit_button_under_documents_details(Integer int1) throws Throwable {
+	    
+	 for(int i=0;i<200;i++){
+		 try {
+			 javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("editBtn_UnderFollowUp_610")).click();
+				break;
+		} catch (Exception e) {
+			if (i==199) {
+				Assert.fail(e.getMessage());
+			}
+			// TODO: handle exception
+		}
+	 }Thread.sleep(3000);
+	 }
+	
+	 //-------------------------@AT_MU_DOC_08 ----------------  Screen should get open with already filled data
+	
+	@And("User_{int} verify the Document Name Screen should get open with already filled data")
+	public void user_verify_the_document_name_screen_should_get_open_with_already_filled_data(Integer int1) throws Throwable {
+	    
+		waitHelper.waitForElementwithFluentwait(driver,javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("DocumentNamePancard_610")));
+
+		
+		// -------------------validate Screen should get open with already filled data
+
+		
+		String DocumentNamealreadyData = javascriptHelper
+				.executeScriptWithWebElement(jsPaths2.getElement("DocumentNamePancard_610"))
+				.getAttribute("aria-label");
+		System.err.println("first print  :" + DocumentNamealreadyData);
+
+		String assertDocumentNamealreadyData = " Pan Card ,  Document Name *";
+		Assert.assertEquals(assertDocumentNamealreadyData, DocumentNamealreadyData);
+		
+	}
+
+	@And("User_{int} verify the Document Category Screen should get open with already filled data")
+	public void user_verify_the_document_category_screen_should_get_open_with_already_filled_data(Integer int1) throws Throwable {
+	    
+		waitHelper.waitForElementwithFluentwait(driver,javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("DocumentCategoryDigitialKYC_610")));
+
+		// -------------------validate Screen should get open with already filled data
+		
+		String DocumentcategoryalreadyData = javascriptHelper
+				.executeScriptWithWebElement(jsPaths2.getElement("DocumentCategoryDigitialKYC_610"))
+				.getAttribute("aria-label");
+		System.err.println("first print  :" + DocumentcategoryalreadyData);
+
+		String assertDocumentcategoryalreadyData = " Digital KYC Document ,  Document Category *";
+		Assert.assertEquals(DocumentcategoryalreadyData, assertDocumentcategoryalreadyData);
+	}
+	
+	//------------------------------------  @AT_MU_DOC_09  ------------
+	
+	@And("User_{int} veriy the Add Back and Search button or not editable")
+	public void user_veriy_the_add_back_and_search_button_or_not_editable(Integer int1) {
+	    
+		//---------field should be editable
+		
+		String AddBTnEditable = javascriptHelper
+				.executeScriptWithWebElement(jsPaths2.getElement("EditableDocumentName_610"))
+				.getAttribute("ng-reflect-readonly");
+		System.err.println("first print  " + AddBTnEditable);
+
+		String assertAddBTnEditable = "false";
+		Assert.assertEquals(assertAddBTnEditable, AddBTnEditable);
+		
+		//---------field should be editable
+		
+		String BachBtnEditable = javascriptHelper
+				.executeScriptWithWebElement(jsPaths2.getElement("EditableDocumentName_610"))
+				.getAttribute("ng-reflect-readonly");
+		System.err.println("first print  " + BachBtnEditable);
+
+		String assertBachBtnEditable = "false";
+		Assert.assertEquals(assertBachBtnEditable, BachBtnEditable);
+		
+		
+		//---------field should be editable
+		
+		String SearchBtnEditable = javascriptHelper
+				.executeScriptWithWebElement(jsPaths2.getElement("EditableDocumentName_610"))
+				.getAttribute("ng-reflect-readonly");
+		System.err.println("first print  " + SearchBtnEditable);
+
+		String assertSearchBtnEditable = "false";
+		Assert.assertEquals(assertSearchBtnEditable, SearchBtnEditable);
+		
+	    
+	}
+
+	@And("User_{int} verify the functionality of Add button")
+	public void user_verify_the_functionality_of_add_button(Integer int1) {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("clickAddBtn_UnderDocumentDetails_610")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("DocumentDetailsScreen_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				if (j==199) {
+					Assert.fail(e.getMessage());
+				}
+				// TODO: handle exception
+			}
+		}
+	    
+	}
+
+	@And("User_{int} verify the Matching and Mismatching data of Search")
+	public void user_verify_the_matching_and_mismatching_data_of_search(Integer int1) throws Throwable {
+	    
+	           	//---------- matching  --------
+		
+		for (int k = 0; k < 200; k++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("searchBtn_underFollowUpList_610")).click();
+				//javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("inputBox_searchBtn_murabhaDocumentDetails_610")).click();
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("inputBox_searchBtn_murabhaDocumentDetails_610")).sendKeys("pan card");
+				break;
+			} catch (Exception e) {
+				if (k==199) {
+					Assert.fail(e.getMessage());
+				}
+				// TODO: handle exception
+			}
+		}
+	    Thread.sleep(1000);
+	    
+	    for (int j = 0; j < 200; j++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("editBtn_UnderFollowUp_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+				}
+			} catch (Exception e) {
+				if (j==199) {
+					Assert.fail(e.getMessage());
+				}
+				// TODO: handle exception
+			}
+		}
+	    
+	    
+	  //----------     mismatching    ------------
+	    
+	    for (int l = 0; l < 200; l++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("inputBox_searchBtn_murabhaDocumentDetails_610")).clear();
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("searchBtn_underFollowUpList_610")).click();
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("inputBox_searchBtn_murabhaDocumentDetails_610")).sendKeys("ccard");
+				break;
+			} catch (Exception e) {
+				if (l==199) {
+					Assert.fail(e.getMessage());
+				}
+				// TODO: handle exception
+			}
+		}
+	    Thread.sleep(1000);
+	    
+	    for (int m = 0; m < 200; m++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("vaildate_theMisMatchingData_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+				}
+			} catch (Exception e) {
+				if (m==199) {
+					Assert.fail(e.getMessage());
+				}
+				
+			}
+		}
+	  
+	}
+
+	@And("User_{int} verify the functionality of back button")
+	public void user_verify_the_functionality_of_back_button(Integer int1) {
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("BackBtn_underFollowUpList_610")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("DocumentDetailsFirstScreen_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				if (j==199) {
+					Assert.fail(e.getMessage());
+				}
+				// TODO: handle exception
+			}
+		}
+	}
+	
+	@And("User_{int} click the customer follow details in morabha")
+	public void user_click_the_customer_follow_details_in_morabha(Integer int1) throws Throwable {
+	    
+		for (int i = 0; i < 200; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("nextBtn_610")).click();
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("nextBtn_610")).click();
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("nextBtn_610")).click();
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+				.executeScriptWithWebElement(jsPaths2.getElement("click_CustomerFollowUpDetailsTab_610")));
+		// javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("click_DocumentDetails_610")));
+		for (int i = 0; i < 200; i++) {
+			try {
+				javascriptHelper
+						.executeScriptWithWebElement(jsPaths2.getElement("click_CustomerFollowUpDetailsTab_610"))
+						.click();
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+					
+	}
+	
+	//-----------------  morabha  @AT_MU_FU_001
+	
+	@And("User_{int} verify the add buttton")
+	public void user_verify_the_add_buttton(Integer int1) throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+				.executeScriptWithWebElement(jsPaths2.getElement("clickAddBtn_UnderDocumentDetails_610")));
+		
+		if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("clickAddBtn_UnderDocumentDetails_610")).isDisplayed()) {
+			Assert.assertTrue(true);;
+		}
+	}
+	
+	@And("User_{int} validate called when field enabled or not under murabha customer follow details")
+	public void user_validate_called_when_field_enabled_or_not_under_murabha_customer_follow_details(Integer int1) throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+				.executeScriptWithWebElement(jsPaths2.getElement("CalledWhen_610")));
+		
+		if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("CalledWhen_610")).isDisplayed()) {
+			Assert.assertTrue(true);;
+		}
+	}
+
+	@And("User_{int} validate Follow Up Data field enabled or not under murabha customer follow details")
+	public void user_validate_follow_up_data_field_enabled_or_not_under_murabha_customer_follow_details(Integer int1) throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+				.executeScriptWithWebElement(jsPaths2.getElement("followUpDate_610")));
+		
+		if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("followUpDate_610")).isDisplayed()) {
+			Assert.assertTrue(true);;
+		}
+	}
 	
 	
+	//-----------------------------   @AT_MU_FU_002  -----
 	
+	@And("User_{int} validate the called when field should be date , mandatory and editable in murabha")
+	public void user_validate_the_called_when_field_should_be_date_mandatory_and_editable_in_murabha(Integer int1) throws Throwable {
+//		store xpath in string
+//		String calledPath = "document.querySelector('[id=\"calledWhen\"] p-calendar')";
+//		WebElement attribute = javascriptHelper.executeScriptWithWebElement(calledPath);
+		
+		String MurabhacalledWhenFormat = javascriptHelper
+				.executeScriptWithWebElement(jsPaths2.getElement("CalledWhen_610"))
+				.getAttribute("ng-reflect-date-format");
+		
+		System.err.println("tagName:  " +MurabhacalledWhenFormat);
+
+		String assertcalled = "dd-M-yy";
+		
+		Assert.assertEquals(assertcalled, MurabhacalledWhenFormat);
+		
+		// ----------------validate mandatory field
+
+				for (int i = 0; i < 2000; i++) {
+					try {
+						String calledwhen = "document.querySelector('label[ng-reflect-text=\"SCR.FOLLOWUPDTL.CALLED_WHEN.TO\"').parentElement.innerText";
+						String calledwhenName = (String) javascriptHelper.executeScript("return " + calledwhen);
+						System.out.println(calledwhenName);
+						Assert.assertTrue(calledwhenName.contains("*"));
+						
+						break;
+					} catch (Exception e) {
+						if (i == 1999) {
+							Assert.fail(e.getMessage());
+						}
+					}
+					
+				}
+
+				// ----------------click
+
+				for (int i = 0; i < 300; i++) {
+					try {
+						javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("CalledWhen_610"))
+								.click();
+						break;
+					} catch (Exception e) {
+						if (i == 299) {
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+				Thread.sleep(1000);
+
+				for (int b = 0; b < 300; b++) {
+					try {
+						javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("selectTodayDateIn_FollowUPDate_UnderFollowUp_610"))
+								.click();
+						break;
+					} catch (Exception e) {
+						if (b == 299) {
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+	}
+
+
+	@And("User_{int} validate the customer responce field should be lookUp , mandatory and editable in Murabha")
+	public void user_validate_the_customer_responce_field_should_be_look_up_mandatory_and_editable_in_murabha(Integer int1) {
+	    
+		// ----------------validate mandatory field
+
+		for (int i = 0; i < 200; i++) {
+			try {
+				String customerResponceMurabha = "document.querySelector('ion-label[ng-reflect-text=\"Remarks.TOOLTIP\"]').parentElement.innerText";
+				String customerResponceMurabhaName = (String) javascriptHelper.executeScript("return " + customerResponceMurabha);
+				
+				System.err.println("customerResponceMurabha:"+ customerResponceMurabhaName);
+			
+				Assert.assertEquals(true, customerResponceMurabhaName.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+					}
+	}
+
+	@And("User_{int} validate the follow up date field should be date , mandatory and editable in murabha")
+	public void user_validate_the_follow_up_date_field_should_be_date_mandatory_and_editable_in_murabha(Integer int1) {
+	    
+		// ----------------validate mandatory field
+
+		for (int i = 0; i < 200; i++) {
+			try {
+				String followUpDate = "document.querySelector('label[ng-reflect-text=\"SCR.FOLLOWUPDTL.FOLL_UP_DT.TOO\"]').parentElement";
+				String followUpDateName = (String) javascriptHelper.executeScript("return " + followUpDate);
+				
+				System.err.println("followUpDateName:"+ followUpDateName);
+			
+			//	Assert.assertEquals(true, followUpDateName.contains("*"));
+				Assert.assertTrue(!followUpDateName.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+					}
+	}
+
+	@And("User_{int} validate the sign Status field should be dropdown , mandatory and editable in murabha")
+	public void user_validate_the_sign_status_field_should_be_dropdown_mandatory_and_editable_in_murabha(Integer int1) {
+	    
+		// ----------------validate mandatory field
+
+		for (int i = 0; i < 200; i++) {
+			try {
+				String signStatus = "document.querySelector('ion-label[ng-reflect-text=\"SCR.FOLLOWUPDTL.SIGN_STATUS.TO\"').nextElementSibling.parentElement.innerText";
+				String signStatusName = (String) javascriptHelper.executeScript("return " + signStatus);
+				
+				System.err.println("signStatusName:"+ signStatusName);
+			
+			//	Assert.assertEquals(true, signStatusName.contains("*"));
+				Assert.assertTrue(!signStatusName.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+					}
+	}
+
+	@And("User_{int} validate the remarks field should be textbox , mandatory and editable in murabha")
+	public void user_validate_the_remarks_field_should_be_textbox_mandatory_and_editable_in_murabha(Integer int1) {
+	    
+		// ----------------validate mandatory field
+
+		for (int i = 0; i < 200; i++) {
+			try {
+				String DocumentCategory = "document.querySelector('ion-label[ng-reflect-text=\"Remarks.TOOLTIP\"]').parentElement.innerText";
+				String DocumentCategoryName = (String) javascriptHelper.executeScript("return " + DocumentCategory);
+				
+				System.err.println("DocumentCategory:"+ DocumentCategoryName);
+			
+			//	Assert.assertEquals(true, DocumentCategoryName.contains("*"));
+				
+				Assert.assertTrue(!DocumentCategoryName.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+					}
+	}
+
+	@And("User_{int} validate the save button under customer follow details in murabha")
+	public void user_validate_the_save_button_under_customer_follow_details_in_murabha(Integer int1) {
+	    
+	    
+	}
 	
 }

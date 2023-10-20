@@ -90,6 +90,20 @@ public class IjaraTest extends BaseClass{
             }
         }
 	}
+	
+	@And("login with valid credentials06")
+	public void login_with_valid_credentials06()throws Throwable {
+		for (int i = 0; i < 200; i++) {
+            try {
+                ijaraLogin.loginWithIjaraApplication06();
+                break;
+            } catch (Exception e) {
+                if (i==199) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+        }
+	}
 
 	@Then("logout from the ijaraApplication")
 	public void logout_from_the_ijara_application()throws Throwable {

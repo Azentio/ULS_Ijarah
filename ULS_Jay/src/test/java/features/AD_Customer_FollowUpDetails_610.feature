@@ -35,7 +35,7 @@ Feature: App Data Customer FollowUp Details
     And User_610 click edit button under inbox screen
     And User_610 click the customer follow details
     And User_610 click add button under customer follow details
-        
+     #   
     And User_610 validate the called when field should be date , mandatory and editable
     And User_610 validate the customer responce field should be lookUp , mandatory and editable
     And User_610 validate the follow up date field should be date , mandatory and editable
