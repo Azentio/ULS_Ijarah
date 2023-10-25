@@ -44,6 +44,7 @@ public class Tawarraq_IdentificationDetails_Step {
 	ExcelData identificationdetailsExcelData = new ExcelData(excelTestDataPath, "IdentificationDetails", "DataSetID");
 	Map<String, String> testExecutionData;
 	Map<String, String> testData;
+	int indexOfListView;
 
 	@And("^User get the test data for test case AT_IDA_04$")
 	public void get_the_test_data_for_test_case_AT_IDA_04() throws Throwable {
@@ -71,8 +72,11 @@ public class Tawarraq_IdentificationDetails_Step {
 		// javascriptHelper.executeScriptWithWebElement(identificationdetailsJsPaths.getElement("additionalCustomerInfoTab")));
 		for (int i = 0; i <= 1000; i++) {
 			try {
-				javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement(
-						identificationdetailsJsPaths.getElement("additionalCustomerInfoTab")));
+				// javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement(
+				// identificationdetailsJsPaths.getElement("additionalCustomerInfoTab")));
+				// javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement(identificationdetailsJsPaths.getElement("additionalCustomerInfoTab")));
+				javascriptHelper.executeScriptWithWebElement(
+						identificationdetailsJsPaths.getElement("additionalCustomerInfoTab")).click();
 				break;
 			} catch (Exception e) {
 				if (i == 1000) {
@@ -462,7 +466,7 @@ public class Tawarraq_IdentificationDetails_Step {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.JSEClick(javascriptHelper
-						.executeScriptWithWebElement(identificationdetailsJsPaths.getElement("SaveIcon")));
+						.executeScriptWithWebElement(identificationdetailsJsPaths.getElement("ViewSummaryIcon")));
 				// javascriptHelper.executeScriptWithWebElement(identificationdetailsJsPaths.getElement("SaveIcon")).click();
 				break;
 			} catch (Exception e) {
@@ -497,6 +501,8 @@ public class Tawarraq_IdentificationDetails_Step {
 	public void validate_id_type_field_is_displayed_in_identification_view_list() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
+				javascriptHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(identificationdetailsJsPaths.getElement("ViewList_IdType")));
 				waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
 						.executeScriptWithWebElement(identificationdetailsJsPaths.getElement("ViewList_IdType")));
 				Assert.assertTrue(javascriptHelper
@@ -608,17 +614,177 @@ public class Tawarraq_IdentificationDetails_Step {
 	}
 
 	@And("Search the record with valid data in Identification details")
-	public void search_the_record_with_valid_data_in_identification_details() {
+	public void search_the_record_with_valid_data_in_identification_details() throws InterruptedException {
+		String listViewQuery = "document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]').length";
+		// document.querySelectorAll('ion-col[class="m-0 p-0 ng-star-inserted md
+		// hydrated"]')[1].querySelector('button[icon="pi pi-pencil"')
+		String listViewName = "";
+		String noOfListView = "";
+		boolean isIndexFound = false;
+		for (int i = 0; i <= 300; i++) {
+			try {
+				noOfListView = javascriptHelper.executeScript("return " + listViewQuery).toString();
+				if (noOfListView.equals("0") && !(noOfListView.isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		System.out.println("No Of List view " + noOfListView);
+		int premitivListViews = Integer.parseInt(noOfListView);
+		for (int i = 0; i < premitivListViews; i++) {
+			for (int j = 0; j <= 300; j++) {
+				try {
+					listViewName = javascriptHelper.executeScript("return "
+							+ "document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]')["
+							+ i + "].innerText").toString();
+					if (listViewName.contains("Customer Identification")) {
 
+						indexOfListView = i;
+						System.out.println("List view index " + indexOfListView);
+
+						isIndexFound = true;
+						break;
+					} else {
+
+						isIndexFound = false;
+						break;
+					}
+				} catch (Exception e) {
+					if (j == 300) {
+						Assert.fail(e.getMessage());
+					}
+
+				}
+			}
+			if (isIndexFound == true) {
+				break;
+			}
+
+		}
+
+		String searchButton = "document.querySelectorAll(' ion-row button[ng-reflect-icon=\"pi pi-search\"]')["
+				+ indexOfListView + "]";
+
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(searchButton).click();
+
+				if (i > 250) {
+					javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(searchButton));
+					javascriptHelper.executeScriptWithWebElement(searchButton).click();
+					break;
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		for (int i = 0; i <= 300; i++) {
+			try {
+				System.out.println(testData.get("valid_search_input"));
+				javascriptHelper
+						.executeScriptWithWebElement(identificationdetailsJsPaths.getElement("list_view_search_input"))
+						.click();
+				javascriptHelper
+						.executeScriptWithWebElement(identificationdetailsJsPaths.getElement("list_view_search_input"))
+						.sendKeys(testData.get("valid_search_input"));
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+
+			}
+
+		}
+
+		String searchResult = "";
+		System.out.println("Index is " + indexOfListView);
+		Thread.sleep(500);
+		for (int i = 0; i <= 60000; i++) {
+			try {
+				if (i > 50000) {
+					searchResult = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]')["
+									+ indexOfListView
+									+ "].querySelector('span[class=\"p-paginator-current ng-star-inserted\"]').innerText")
+							.toString();
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 60000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+
+		}
+
+		System.out.println(searchResult);
+
+		softAssert.assertEquals(searchResult, "Showing 0 to 0 of 0 entries");
 	}
 
 	@And("Search the record with invalid data in Identification details")
-	public void search_the_record_with_invalid_data_in_identification_details() {
-
+	public void search_the_record_with_invalid_data_in_identification_details() throws InterruptedException {
+		for (int i = 0; i <= 10; i++) {
+			try {
+				javascriptHelper
+						.executeScriptWithWebElement(identificationdetailsJsPaths.getElement("list_view_search_input"))
+						.click();
+				javascriptHelper
+						.executeScriptWithWebElement(identificationdetailsJsPaths.getElement("list_view_search_input"))
+						.sendKeys(Keys.chord(Keys.CONTROL, "A", Keys.BACK_SPACE));
+			} catch (Exception e) {
+			}
+		}
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper
+						.executeScriptWithWebElement(identificationdetailsJsPaths.getElement("list_view_search_input"))
+						.click();
+				javascriptHelper
+						.executeScriptWithWebElement(identificationdetailsJsPaths.getElement("list_view_search_input"))
+						.sendKeys(testData.get("invalid_search_input"));
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String searchResult = "";
+		System.out.println("Index is " + indexOfListView);
+		Thread.sleep(500);
+		for (int i = 0; i <= 60000; i++) {
+			try {
+				if (i > 50000) {
+					searchResult = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]')["
+									+ indexOfListView
+									+ "].querySelector('span[class=\"p-paginator-current ng-star-inserted\"]').innerText")
+							.toString();
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 60000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		System.out.println(searchResult);
+		softAssert.assertEquals(searchResult, "Showing 0 to 0 of 0 entries");
 	}
 
 	@And("User search the Ref id under inbox for identification details")
-	public void user_search_the_ref_id_under_inbox_for_identification_details() throws IOException {
+	public void user_search_the_ref_id_under_inbox_for_identification_details()
+			throws IOException, InterruptedException {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
 				.executeScriptWithWebElement(identificationdetailsJsPaths.getElement("inboxSearchInput")));
 		for (int i = 0; i <= 500; i++) {
@@ -634,6 +800,6 @@ public class Tawarraq_IdentificationDetails_Step {
 				}
 			}
 		}
-
+		Thread.sleep(1000);
 	}
 }

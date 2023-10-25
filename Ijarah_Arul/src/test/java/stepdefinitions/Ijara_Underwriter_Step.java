@@ -421,5 +421,17 @@ public class Ijara_Underwriter_Step {
 			}
 		} 
 	}
+	@Given("Validate Save successful popup is displayed in the condition")
+	public void validate_save_successful_popup_is_displayed_in_the_condition() {
+		for (int i = 0; i <= 4; i++) {
+			try {
+				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("SuccessPopup")));
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("SuccessPopup")).isDisplayed());
+				break;
+			} catch (Exception e) {
+				
+			}
+		}
+	}
 
 }

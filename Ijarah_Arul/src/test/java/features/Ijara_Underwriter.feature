@@ -20,6 +20,7 @@ Then select the value in fulfilled Dropdown Below the Conditions
 #Then Turn on the Approval Status Below the Conditions
 Then Fill The Remarks Field Below the Conditions
 Then Click on the Save button To Save The Conditions Record
+And Validate Save successful popup is displayed in the condition
 
 
 

@@ -105,7 +105,7 @@ public class IJARAH_Steps {
 	
 	@And("User click the module name dropdown in ULS application")
 	public void user_click_the_module_name_dropdown_in_uls_application() throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("moduleNameDropdown")));
+		
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("moduleNameDropdown")).click();
@@ -178,7 +178,7 @@ public class IJARAH_Steps {
 
 	@And("User click the Search button under inbox")
 	public void user_click_the_search_button_under_inbox() throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("mailInboxSearchBtn")));
+	
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("mailInboxSearchBtn")).click();
@@ -188,7 +188,8 @@ public class IJARAH_Steps {
 					Assert.fail(e.getMessage());
 				}
 			}
-		}	    
+		}
+		Thread.sleep(500);
 	}
 
 	@And("User search the Ref id under inbox")

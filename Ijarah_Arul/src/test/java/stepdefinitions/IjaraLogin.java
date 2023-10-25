@@ -20,8 +20,8 @@ public class IjaraLogin extends BaseClass {
 	Map<String, String> loginTestData = new HashMap<>();
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
 
-	public void loginWithIjaraApplication() {
-		loginTestData = exelData.getTestdata("userType02");
+	public void loginWithIjaraApplication(String userType) {
+		loginTestData = exelData.getTestdata(userType);
 		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName")).click();
 		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName"))
 				.sendKeys(loginTestData.get("UserName"));
