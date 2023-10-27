@@ -274,6 +274,38 @@ public class IjaraLogin extends BaseClass {
 	
 	
 	
+//	Tawaruh Application -- App Data Entry Stage
+	public void loginWithTawarruqApplicationAppDataEntry() {
+		loginTestData = exelData.getTestdata("userType08");
+		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName")).click();
+		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName"))
+				.sendKeys(loginTestData.get("UserName"));
+		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("continueButton")).click();
+		for (int i = 0; i <= 300; i++) {
+			try {
+
+				String otp = javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString();
+				System.out.println("OTP is " + otp);
+				if (!(javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString()
+						.isBlank())) {
+
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
+		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
+				.sendKeys(loginTestData.get("Password"));
+		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
+
+		Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).isDisplayed());
+	}
+	
+	
 	
 	
 	

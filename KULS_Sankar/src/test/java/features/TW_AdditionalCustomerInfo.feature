@@ -15,7 +15,6 @@ And User_608 click the Entitle button under inbox
 And User_608 click the Additional Customer Info tab
 And User_608 click the Pencil Icon button in Customer Personal Info section under Additional Customer Info tab
 And User_608 click the Add button in Customer Identification under Additional Customer Info tab
-
 And User_608 select the ID Type in Customer Identification screen
 And User_608 enter the invalid ID number in Customer Identification screen
 And User_608 verify the invalid data validation in Customer Identification screen
@@ -24,5 +23,10 @@ And User_608 verify the Special character validation in Customer Identification 
 And User_608 select the Issuing Authority in Customer Identification screen
 And User_608 click the save button with mandatory field blank in Customer Identification screen
 And User_608 verify the Validation error msg in Customer Identification screen
-
 Then logout from the ijaraApplication
+
+
+
+
+
+

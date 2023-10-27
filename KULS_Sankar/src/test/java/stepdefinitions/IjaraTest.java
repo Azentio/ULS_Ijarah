@@ -66,6 +66,16 @@ public class IjaraTest extends BaseClass{
 		ijaraLogin.loginWithMurabahaApplicationDataCheck();
 	}
 	
+//	************************** Tawarruq Product ***********************************
+//	Tawarruq Product -- App Data Entry Stage ---> UserType08
+	@And("login with valid credentials-Tawarruq App Data Entry")
+	public void login_with_valid_credentials_tawarruq_app_data_entry()throws Throwable {
+		ijaraLogin.loginWithTawarruqApplicationAppDataEntry();
+	}
+	
+	
+	
+	
 	
 	@Then("logout from the ijaraApplication")
 	public void logout_from_the_ijara_application()throws Throwable {		

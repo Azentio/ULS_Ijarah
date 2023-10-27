@@ -2873,7 +2873,7 @@ public class Murabaha_Steps {
 
 	@And("User_608 verify Reference Type field as Non_mandatory, Non-editable and Dropdown under Referral\\Sourcing Details section")
 	public void user_verify_reference_type_field_as_non_mandatory_non_editable_and_dropdown_under_referral_sourcing_details_section() {
-//		Validate Mandatory
+//		Validate Non-Mandatory
 		String referenceType = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("referenceTypeLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
