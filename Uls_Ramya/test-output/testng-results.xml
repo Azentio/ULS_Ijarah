@@ -1,216 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="7" passed="0" failed="7" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-10-20T14:26:22 IST" name="Default suite" finished-at="2023-10-20T14:28:11 IST" duration-ms="109044">
+  <suite started-at="2023-10-27T13:00:44 IST" name="Default suite" finished-at="2023-10-27T13:01:33 IST" duration-ms="48196">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-10-20T14:26:22 IST" name="Default test" finished-at="2023-10-20T14:28:11 IST" duration-ms="109044">
+    <test started-at="2023-10-27T13:00:44 IST" name="Default test" finished-at="2023-10-27T13:01:33 IST" duration-ms="48196">
       <class name="Runner.TestApplication">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-10-20T14:26:22 IST" name="setUpClass" finished-at="2023-10-20T14:26:23 IST" duration-ms="1031" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-10-27T13:00:44 IST" name="setUpClass" finished-at="2023-10-27T13:00:45 IST" duration-ms="884" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-10-20T14:26:23 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-10-20T14:26:53 IST" duration-ms="30248" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-10-27T13:00:45 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-10-27T13:01:14 IST" duration-ms="28472" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["To verify post clicking on Add asset button, the Repayment Mode screen should be open with all valid fields"]]>
+                <![CDATA["To verify the buttons available on screen while modify the Customer Information"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[To verify the functionality of repayment mode]"]]>
+                <![CDATA["Optional[To verify the functionality of Customer Details]"]]>
               </value>
             </param>
           </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.WebElement.click()" because the return value of "helper.JavascriptHelper.executeScriptWithWebElement(String)" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Cannot invoke "org.openqa.selenium.WebElement.click()" because the return value of "helper.JavascriptHelper.executeScriptWithWebElement(String)" is null
-at org.junit.Assert.fail(Assert.java:88)
-at stepdefinitions.Murabha_RepaymentMode_Steps.user_click_repayment_mode_section(Murabha_RepaymentMode_Steps.java:130)
-at ✽.User_6047 click repayment mode section(file:///C:/Users/ININDC00071/git/ULs_Ramya1/Uls_Ramya/src/test/java/features/murabha_Repayment_Mode.feature:14)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-10-20T14:26:53 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-10-20T14:27:01 IST" duration-ms="7972" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["To verify the fields are mandatory, editable,lookup and numeric in repayment mode"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[To verify the functionality of repayment mode]"]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.WebElement.click()" because the return value of "helper.JavascriptHelper.executeScriptWithWebElement(String)" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.click()" because the return value of "helper.JavascriptHelper.executeScriptWithWebElement(String)" is null
-at stepdefinitions.IjaraLogin.loginWithIjaraApplication(IjaraLogin.java:31)
-at stepdefinitions.ApplicationDataEntry_Steps.Login_with_valid_credentials(ApplicationDataEntry_Steps.java:50)
-at ✽.User_6047 Login with valid credentials(file:///C:/Users/ININDC00071/git/ULs_Ramya1/Uls_Ramya/src/test/java/features/murabha_Repayment_Mode.feature:31)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-10-20T14:27:01 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-10-20T14:27:09 IST" duration-ms="7279" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["To verify the functionality of Help button in repayment mode"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[To verify the functionality of repayment mode]"]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.WebElement.click()" because the return value of "helper.JavascriptHelper.executeScriptWithWebElement(String)" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.click()" because the return value of "helper.JavascriptHelper.executeScriptWithWebElement(String)" is null
-at stepdefinitions.IjaraLogin.loginWithIjaraApplication(IjaraLogin.java:31)
-at stepdefinitions.ApplicationDataEntry_Steps.Login_with_valid_credentials(ApplicationDataEntry_Steps.java:50)
-at ✽.User_6047 Login with valid credentials(file:///C:/Users/ININDC00071/git/ULs_Ramya1/Uls_Ramya/src/test/java/features/murabha_Repayment_Mode.feature:58)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-10-20T14:27:09 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-10-20T14:27:17 IST" duration-ms="7966" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Creation of Repayment Mode record with invalid data"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[To verify the functionality of repayment mode]"]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.WebElement.click()" because the return value of "helper.JavascriptHelper.executeScriptWithWebElement(String)" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.click()" because the return value of "helper.JavascriptHelper.executeScriptWithWebElement(String)" is null
-at stepdefinitions.IjaraLogin.loginWithIjaraApplication(IjaraLogin.java:31)
-at stepdefinitions.ApplicationDataEntry_Steps.Login_with_valid_credentials(ApplicationDataEntry_Steps.java:50)
-at ✽.User_6047 Login with valid credentials(file:///C:/Users/ININDC00071/git/ULs_Ramya1/Uls_Ramya/src/test/java/features/murabha_Repayment_Mode.feature:76)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-10-20T14:27:17 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-10-20T14:27:24 IST" duration-ms="7785" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["To verify the buttons available on screen and allow user to modify the Repayment Mode-modify"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[To verify the functionality of repayment mode]"]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.WebElement.click()" because the return value of "helper.JavascriptHelper.executeScriptWithWebElement(String)" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.click()" because the return value of "helper.JavascriptHelper.executeScriptWithWebElement(String)" is null
-at stepdefinitions.IjaraLogin.loginWithIjaraApplication(IjaraLogin.java:31)
-at stepdefinitions.ApplicationDataEntry_Steps.Login_with_valid_credentials(ApplicationDataEntry_Steps.java:50)
-at ✽.User_6047 Login with valid credentials(file:///C:/Users/ININDC00071/git/ULs_Ramya1/Uls_Ramya/src/test/java/features/murabha_Repayment_Mode.feature:106)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-10-20T14:27:24 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-10-20T14:27:47 IST" duration-ms="22964" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["To verify while modification, when user keep any mandatory field blank and click on save button"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[To verify the functionality of repayment mode]"]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.WebElement.click()" because the return value of "helper.JavascriptHelper.executeScriptWithWebElement(String)" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Cannot invoke "org.openqa.selenium.WebElement.click()" because the return value of "helper.JavascriptHelper.executeScriptWithWebElement(String)" is null
-at org.junit.Assert.fail(Assert.java:88)
-at stepdefinitions.Murabha_RepaymentMode_Steps.user_click_repayment_mode_section(Murabha_RepaymentMode_Steps.java:130)
-at ✽.User_6047 click repayment mode section(file:///C:/Users/ININDC00071/git/ULs_Ramya1/Uls_Ramya/src/test/java/features/murabha_Repayment_Mode.feature:143)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-10-20T14:27:47 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-10-20T14:27:55 IST" duration-ms="7549" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["To verify the functionality of save and submit button"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[To verify the functionality of repayment mode]"]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.WebElement.click()" because the return value of "helper.JavascriptHelper.executeScriptWithWebElement(String)" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.click()" because the return value of "helper.JavascriptHelper.executeScriptWithWebElement(String)" is null
-at stepdefinitions.IjaraLogin.loginWithIjaraApplication(IjaraLogin.java:31)
-at stepdefinitions.ApplicationDataEntry_Steps.Login_with_valid_credentials(ApplicationDataEntry_Steps.java:50)
-at ✽.User_6047 Login with valid credentials(file:///C:/Users/ININDC00071/git/ULs_Ramya1/Uls_Ramya/src/test/java/features/murabha_Repayment_Mode.feature:155)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-10-20T14:27:55 IST" name="tearDownClass" finished-at="2023-10-20T14:28:11 IST" duration-ms="16165" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-10-27T13:01:14 IST" name="tearDownClass" finished-at="2023-10-27T13:01:33 IST" duration-ms="18789" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

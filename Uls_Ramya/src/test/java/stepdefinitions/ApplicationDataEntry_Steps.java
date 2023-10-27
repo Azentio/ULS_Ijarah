@@ -887,7 +887,7 @@ public void user_search_the_ref_id_under_inbox() {
 		}		
 	}
 } 
-@Given("User_6047 click the Entitle button under facility list")
+@Then("User_6047 click the Entitle button under facility list")
 public void user_click_the_entitle_button_under_facility_list() {
 	for (int i = 0; i <= 1000; i++) {
 		try {
