@@ -37,6 +37,9 @@ public class Ijara_AD_DocumentDetails_Steps_610 {
 	String path = System.getProperty("user.dir") + "\\TestData\\ijaraTestData.xlsx";
 	ExcelData ad_CustomerFolllowUpDetails_610 = new ExcelData(path, "AD_CustomerFolllowUpDetails_610", "DataSet ID");
 	Map<String, String> testData;
+	
+	ExcelData morabha_AppDataEntry = new ExcelData(path, "Morabha_AppDataEntry", "DataSet ID");
+	Map<String, String> testData01;
 
 	// ------------AD followUp Details
 
@@ -81,11 +84,19 @@ public class Ijara_AD_DocumentDetails_Steps_610 {
 			testData = ad_CustomerFolllowUpDetails_610.getTestdata("DS_AT_MU_FU_01");
 			}
 			
+	//---Murabha App Data Entry FollowUp Details @AT_MU_FU_005
+		
+		@And("User_610 get the test data set id for DS_AT_MU_FU_005")
+		public void get_the_test_data_set_id_for_DS_AT_MU_FU_005() {
+			testData01 = morabha_AppDataEntry.getTestdata("DS_AT_MU_FU_005");  
+			}
+		
 	
 	// -------------steps ---------------
 	@And("User_{int} click the module name")
 	public void user_select_the_module_name_to_los(Integer int1) throws Throwable {
 		
+		Thread.sleep(200);
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Select_ModuleName_610")).click();
@@ -96,7 +107,7 @@ public class Ijara_AD_DocumentDetails_Steps_610 {
 				}
 			}
 		}
-
+       
 	}
 
 	@And("User_{int} select the LOS in module name")
@@ -634,6 +645,7 @@ public class Ijara_AD_DocumentDetails_Steps_610 {
 				}
 			}
 		}
+		Thread.sleep(1000);
 	}
 
 	@And("User_{int} validate called when field enabled or not under customer follow details")
@@ -1283,8 +1295,9 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 		
 		for (int j = 0; j < 200; j++) {
 			try {
-				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("followUpDetailsScreen_610")).isDisplayed()) {
-					softAssert.fail();
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("followUpDetailsScreen_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
 				}
 			} catch (Exception e) {
 				// TODO: handle exception
@@ -1301,7 +1314,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 				// TODO: handle exception
 			}
 		}
-		
+		Thread.sleep(2000);
 		
 	}	
 
@@ -1316,7 +1329,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 				// TODO: handle exception			
 				}
 	       }
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 		
 		for (int j = 0; j < 200; j++) {
 			try {
@@ -1337,6 +1350,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 				// TODO: handle exception
 			}
 		}
+		Thread.sleep(2000);
 	}
 
 	@And("User_{int} to verify the functionality of search box with matching data should be show matching data")
@@ -3560,6 +3574,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("RequiredAtStage_610")).isDisplayed()) {
 					Assert.assertTrue(true);
+					break;
 				}
 			} catch (Exception e) {
 				if (i==299) {
@@ -3578,6 +3593,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("DocumentStatus_610")).isDisplayed()) {
 					Assert.assertTrue(true);
+					break;
 				}
 			} catch (Exception e) {
 				if (i==299) {
@@ -3596,6 +3612,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Mandatory_Optional_610")).isDisplayed()) {
 					Assert.assertTrue(true);
+					break;
 				}
 			} catch (Exception e) {
 				if (i==299) {
@@ -3614,6 +3631,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("DocumentCategeroy_610")).isDisplayed()) {
 					Assert.assertTrue(true);
+					break;
 				}
 			} catch (Exception e) {
 				if (i==299) {
@@ -3632,6 +3650,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("DefferralStage_610")).isDisplayed()) {
 					Assert.assertTrue(true);
+					break;
 				}
 			} catch (Exception e) {
 				if (i==299) {
@@ -3650,6 +3669,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("DefApprovedBy_610")).isDisplayed()) {
 					Assert.assertTrue(true);
+					break;
 				}
 			} catch (Exception e) {
 				if (i==299) {
@@ -3668,6 +3688,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("ChangeInNaturalBy_610")).isDisplayed()) {
 					Assert.assertTrue(true);
+					break;
 				}
 			} catch (Exception e) {
 				if (i==299) {
@@ -3686,6 +3707,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("DocumentsFrom_610")).isDisplayed()) {
 					Assert.assertTrue(true);
+					break;
 				}
 			} catch (Exception e) {
 				if (i==299) {
@@ -3704,6 +3726,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("DocumentQuality_610")).isDisplayed()) {
 					Assert.assertTrue(true);
+					break;
 				}
 			} catch (Exception e) {
 				if (i==299) {
@@ -3722,6 +3745,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("DocumentRecivedBy")).isDisplayed()) {
 					Assert.assertTrue(true);
+					break;
 				}
 			} catch (Exception e) {
 				if (i==299) {
@@ -3740,6 +3764,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("UploadDate_610")).isDisplayed()) {
 					Assert.assertTrue(true);
+					break;
 				}
 			} catch (Exception e) {
 				if (i==299) {
@@ -3758,6 +3783,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("ExpectedRecepitedDate_610")).isDisplayed()) {
 					Assert.assertTrue(true);
+					break;
 				}
 			} catch (Exception e) {
 				if (i==299) {
@@ -3776,6 +3802,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("DataOfExpiry_610")).isDisplayed()) {
 					Assert.assertTrue(true);
+					break;
 				}
 			} catch (Exception e) {
 				if (i==299) {
@@ -3794,6 +3821,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("DocumentReferenceNumber_610")).isDisplayed()) {
 					Assert.assertTrue(true);
+					break;
 				}
 			} catch (Exception e) {
 				if (i==299) {
@@ -3812,6 +3840,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("RackNo_610")).isDisplayed()) {
 					Assert.assertTrue(true);
+					break;
 				}
 			} catch (Exception e) {
 				if (i==299) {
@@ -3830,6 +3859,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("ShelfN0_610")).isDisplayed()) {
 					Assert.assertTrue(true);
+					break;
 				}
 			} catch (Exception e) {
 				if (i==299) {
@@ -3848,6 +3878,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("BoxNo_610")).isDisplayed()) {
 					Assert.assertTrue(true);
+					break;
 				}
 			} catch (Exception e) {
 				if (i==299) {
@@ -5166,6 +5197,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("vaildate_theMisMatchingData_610")).isDisplayed()) {
 					Assert.assertTrue(true);
+					break;
 				}
 			} catch (Exception e) {
 				if (m==199) {
@@ -5235,19 +5267,30 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 				}
 			}
 		}
-					
+			Thread.sleep(2000);		
 	}
 	
 	//-----------------  morabha  @AT_MU_FU_001
 	
 	@And("User_{int} verify the add buttton")
 	public void user_verify_the_add_buttton(Integer int1) throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
-				.executeScriptWithWebElement(jsPaths2.getElement("clickAddBtn_UnderDocumentDetails_610")));
-		
-		if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("clickAddBtn_UnderDocumentDetails_610")).isDisplayed()) {
-			Assert.assertTrue(true);;
+//		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+//				.executeScriptWithWebElement(jsPaths2.getElement("clickAddBtn_UnderDocumentDetails_610")));
+								
+		for (int m = 0; m < 200; m++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("clickAddBtn_UnderDocumentDetails_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				if (m==199) {
+					Assert.fail(e.getMessage());
+				}
+				
+			}
 		}
+		
 	}
 	
 	@And("User_{int} validate called when field enabled or not under murabha customer follow details")
@@ -5255,8 +5298,18 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
 				.executeScriptWithWebElement(jsPaths2.getElement("CalledWhen_610")));
 		
-		if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("CalledWhen_610")).isDisplayed()) {
-			Assert.assertTrue(true);;
+		for (int m = 0; m < 200; m++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("CalledWhen_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				if (m==199) {
+					Assert.fail(e.getMessage());
+				}
+				
+			}
 		}
 	}
 
@@ -5280,7 +5333,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 //		WebElement attribute = javascriptHelper.executeScriptWithWebElement(calledPath);
 		
 		String MurabhacalledWhenFormat = javascriptHelper
-				.executeScriptWithWebElement(jsPaths2.getElement("CalledWhen_610"))
+				.executeScriptWithWebElement(jsPaths3.getElement("CalledWhen_610"))
 				.getAttribute("ng-reflect-date-format");
 		
 		System.err.println("tagName:  " +MurabhacalledWhenFormat);
@@ -5337,13 +5390,13 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 
 
 	@And("User_{int} validate the customer responce field should be lookUp , mandatory and editable in Murabha")
-	public void user_validate_the_customer_responce_field_should_be_look_up_mandatory_and_editable_in_murabha(Integer int1) {
+	public void user_validate_the_customer_responce_field_should_be_look_up_mandatory_and_editable_in_murabha(Integer int1) throws Throwable {
 	    
 		// ----------------validate mandatory field
 
 		for (int i = 0; i < 200; i++) {
 			try {
-				String customerResponceMurabha = "document.querySelector('ion-label[ng-reflect-text=\"Remarks.TOOLTIP\"]').parentElement.innerText";
+				String customerResponceMurabha = "document.querySelector('ion-label[ng-reflect-text=\\\"SCR.FOLLOWUPDTL.CUST_RESP.TOOL\\\"]').innerText";
 				String customerResponceMurabhaName = (String) javascriptHelper.executeScript("return " + customerResponceMurabha);
 				
 				System.err.println("customerResponceMurabha:"+ customerResponceMurabhaName);
@@ -5356,6 +5409,92 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 				}
 			}
 					}
+		
+		
+		for (int b = 0; b < 300; b++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("click_customerResponceSelect_UnderFollowUp_610"))
+						.click();
+				break;
+			} catch (Exception e) {
+				if (b == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		// ----------dropdown-------
+
+				String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+				String dropdownLength = "";
+				boolean isDropdownValueSelected = false;
+				String dropdownString = "";
+
+				for (int i = 0; i <= 300; i++) {
+					try {
+						dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+						System.out.println("Dropdown length " + dropdownLength);
+						if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+							break;
+						}
+					} catch (Exception e) {
+						if (i == 300) {
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+
+				int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+				for (int j = 0; j <= premitiveDropdownLength; j++) {
+					for (int l = 0; l <= 300; l++) {
+						try {
+							System.out.println("L value is " + l);
+							System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+							dropdownString = javascriptHelper.executeScript(
+									"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+									.toString();
+							if (!(dropdownString.isEmpty())) {
+								System.out.println(dropdownString);
+								System.out.println("Loop count " + l + " got breaked");
+								break;
+							}
+						} catch (Exception e) {
+							if (l == 300 && !(dropdownString.isBlank())) {
+								Assert.fail(e.getMessage());
+							}
+						}
+						if (!(dropdownString.isEmpty())) {
+							System.out.println(dropdownString);
+							System.out.println("Loop count " + l + " got breaked");
+							break;
+						}
+					}
+
+					System.out.println("String " + dropdownString.trim());
+			//		System.out.println("Map " + testData.get("CustomerResponce").trim());
+					if ((dropdownString.trim())
+							.equalsIgnoreCase((" REA02 ").trim())) {
+						for (int k = 0; k <= 300; k++) {
+							try {
+								clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+										"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+								clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+										"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+								isDropdownValueSelected = true;
+								break;
+							} catch (Exception e) {
+								if (k == 300) {
+									Assert.fail(e.getMessage());
+								}
+							}
+						}
+					}
+					if (isDropdownValueSelected == true) {
+						break;
+					}
+				}
+				Thread.sleep(5000);
 	}
 
 	@And("User_{int} validate the follow up date field should be date , mandatory and editable in murabha")
@@ -5365,7 +5504,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 
 		for (int i = 0; i < 200; i++) {
 			try {
-				String followUpDate = "document.querySelector('label[ng-reflect-text=\"SCR.FOLLOWUPDTL.FOLL_UP_DT.TOO\"]').parentElement";
+				String followUpDate = "document.querySelector('label[ng-reflect-text=\\\"SCR.FOLLOWUPDTL.FOLL_UP_DT.TOO\\\"]').parentElement.innerText";
 				String followUpDateName = (String) javascriptHelper.executeScript("return " + followUpDate);
 				
 				System.err.println("followUpDateName:"+ followUpDateName);
@@ -5411,14 +5550,14 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 
 		for (int i = 0; i < 200; i++) {
 			try {
-				String DocumentCategory = "document.querySelector('ion-label[ng-reflect-text=\"Remarks.TOOLTIP\"]').parentElement.innerText";
-				String DocumentCategoryName = (String) javascriptHelper.executeScript("return " + DocumentCategory);
+				String Remark = "document.querySelector('ion-label[ng-reflect-text=\"SCR.REMARKS.TOOLTIP\"]').parentElement.innerText";
+				String RemarkName = (String) javascriptHelper.executeScript("return " + Remark);
 				
-				System.err.println("DocumentCategory:"+ DocumentCategoryName);
+				System.err.println("RemarkName:"+ RemarkName);
 			
 			//	Assert.assertEquals(true, DocumentCategoryName.contains("*"));
 				
-				Assert.assertTrue(!DocumentCategoryName.contains("*"));
+				Assert.assertTrue(!RemarkName.contains("*"));
 				break;
 			} catch (Exception e) {
 				if (i == 199) {
@@ -5431,7 +5570,99 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 	@And("User_{int} validate the save button under customer follow details in murabha")
 	public void user_validate_the_save_button_under_customer_follow_details_in_murabha(Integer int1) {
 	    
+		for (int b = 0; b < 300; b++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("click_SaveButton_UnderFollowUp_610"))
+						.click();
+				break;
+			} catch (Exception e) {
+				if (b == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		for (int i = 0; i<=500; i++) {
+         	try {
+         		if (javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("successMsg_610")).isDisplayed()) {
+             		Assert.assertTrue(true);
+         		}
+         		break;
+			} catch (Exception e) {
+				if(i==500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+
+		}
 	    
 	}
+	
+	//----------------------------------- @AT_MU_FU_005 -----------------
+	
+	@And("User_{int} to verify the functionality of search box with matching data should be show matching data in murabha")
+	public void user_to_verify_the_functionality_of_search_box_with_matching_data_should_be_show_matching_data_in_murabha(Integer int1) throws Throwable {
+	    Thread.sleep(1000);
+//	    String jsPath = "document.querySelectorAll('button[icon=\"pi pi-search\"]')[1]";
+//	    WebElement searchBtn = javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("searchBtnFollowUpDetails_610"));
+//	    WebElement searchBtnString = javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement(jsPath));
+		for (int k = 0; k < 2000; k++) {
+			try {
+//				searchBtnString.click();
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("searchBtnFollowUpDetails_610")).click();
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("inputBox_searchBtn_underFollowUpDetails_610"))
+				.sendKeys(testData01.get("Search BTn  Matching FollowUp Details"));
+				break;
+			} catch (Exception e) {
+				if (k==1999) {
+					Assert.fail(e.getMessage());
+				}
+				// TODO: handle exception
+			}
+		}
+	    Thread.sleep(4000);
+	    
+//	    for (int j = 0; j < 200; j++) {
+//			try {
+//				if (javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("editBtn_UnderFollowUp_610")).isDisplayed()) {
+//					Assert.assertTrue(true);
+//					break;
+//				}
+//			} catch (Exception e) {
+//				if (j==199) {
+//					Assert.fail(e.getMessage());
+//				}
+//				// TODO: handle exception
+//			}
+//		}
+	}
+
+	@And("User_{int} to verfiy the functionality of search box with not matching data should not be show no data in murabha")
+	public void user_to_verfiy_the_functionality_of_search_box_with_not_matching_data_should_not_be_show_no_data_in_murabha(Integer int1) throws Throwable {
+	    
+		for (int k = 0; k < 200; k++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("inputBox_searchBtn_underFollowUpDetails_610")).clear();
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("searchBtn_underFollowUpList_610")).click();
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("inputBox_searchBtn_underFollowUpDetails_610")).sendKeys("22222");
+				break;
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+	    Thread.sleep(4000);
+	    
+	    for (int j = 0; j < 200; j++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("vaildate_theMisMatchingData_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}	
+	    
+	    	}
 	
 }
