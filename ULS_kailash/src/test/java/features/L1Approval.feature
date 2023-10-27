@@ -11,8 +11,8 @@ And Select record after search
 And Click On the edit button Below Faclity Info
 And Click On the Recommendation in Offer Decision
 And Click On the Add button in List of Condition
-#And select not recommended in Note Code Dropdown Below the Conditions
-#Then Enter Number in Sequence Number Field Below the Conditions
+And select not recommended in Note Code Dropdown Below the Conditions
+Then Enter Number in Sequence Number Field Below the Conditions
 Then select not recommended in Note Sub Code Dropdown Below the Conditions
 Then Enter Data in Condition Field Below the Conditions
 Then Select the Date Below the Conditions

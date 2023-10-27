@@ -49,7 +49,7 @@ public class IjaraTest extends BaseClass {
 	JSPaths Ijarah_CustomerDebt = new JSPaths(excelPath, "CustomerDebt", "Ijarah_CustomerDebt", "JSPath");
 	JSPaths iJarah_CommonElements = new JSPaths(excelPath, "iJarah_CommonElements", "Ijarah_CommonFieldName", "JSPath");
 	Map<String, String> AssetDetailsTestData = new HashMap<>();
-	ExcelData excelDataForAssetDetailsTestData = new ExcelData(excelTestDataPath, "AssetDetailsTestData",
+	ExcelData excelDataForAssetDetailsTestData = new ExcelData(excelTestDataPath, "AssetDetai lsTestData",
 			"Dataset ID");
 	JSPaths AssetDetailElements = new JSPaths(excelPath, "AssetDetailElements",
 			"Ijarah_AssetDetailsFieldName", "JSPath");

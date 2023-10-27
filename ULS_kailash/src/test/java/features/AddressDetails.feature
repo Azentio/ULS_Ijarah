@@ -70,8 +70,8 @@ Then verify Residential or occupancy status should be dropdown
 Then verify Communication address should be a toggle button 
 Then verify Communication address should be display only 
 
-@AT_NADC_04
-Scenario: To verify the field Location Category,Address line1,Address line2,Country
+#@AT_NADC_04
+#Scenario: To verify the field Location Category,Address line1,Address line2,Country
 #ADC_01_09 To verify the field Location Category
 Then verify Location Category should be display only 
 Then verify Location Category should be dropdown
@@ -87,8 +87,8 @@ Then verify Address line2 should be text box
 Then verify Country should be mandatory
 Then verify Country should be display only 
 Then verify Country should be text box
-@AT_NADC_05
-Scenario: To verify the field Province Id,Neighbourhood,City,Zip code
+#@AT_NADC_05
+#Scenario: To verify the field Province Id,Neighbourhood,City,Zip code
 #ADC_01_13 To verify the field Province Id
 Then verify Province Id should be mandatory
 Then verify Province Id should be display only 
@@ -105,9 +105,7 @@ Then verify City should be text box
 Then verify Zip code should be mandatory
 Then verify Zip code should be display only 
 Then verify Zip code should be text box
-@AT_NADC_06
-Scenario: To verify the field PO Box Number,Mobile number, Duration Of Stay, Latitude Details Of The Address, Longitude Details Of The Address
-#ADC_01_17 To verify the field PO Box Number
+#
 Then verify PO Box Number should be display only 
 Then verify PO Box Number should be text box
 #ADC_01_18 To verify the field Mobile number(Primary)
@@ -122,8 +120,8 @@ Then verify Latitude Details Of The Address should be text box
 #ADC_01_21	To verify the field Longitude Details Of The Address
 Then verify Longitude Details Of The Address should be display only 
 Then verify Longitude Details Of The Address should be text box
-@AT_NADC_07
-Scenario: To verify the field Land Mark,Occupancy Date,Landlord Name,Landlord Mobile Number
+#@AT_NADC_07
+#Scenario: To verify the field Land Mark,Occupancy Date,Landlord Name,Landlord Mobile Number
 #ADC_01_22 To verify the field 'Land Mark'
 Then verify Land Mark should be display only 
 Then verify Land Mark should be text box
@@ -137,16 +135,16 @@ Then verify Landlord Name should be text box
 #ADC_01_25	To verify the field 'Landlord Mobile Number'
 Then verify Landlord Mobile Number should be display only 
 Then verify Landlord Mobile Number should be text box
-@AT_NADC_08
-Scenario: To verify field Rent Amount,Frequency Of Rent
+#@AT_NADC_08
+#Scenario: To verify field Rent Amount,Frequency Of Rent
 #ADC_01_26 To verify field Rent Amount
 Then verify Rent Amount should be display only 
 Then verify Rent Amount should be text box
 #ADC_01_27 To verify field Frequency Of Rent
 Then verify Frequency Of Rent should be display only 
 Then verify Frequency Of Rent should be text box
-@AT_NADC_09
-Scenario: To verify field Status, Functionality back button
+#@AT_NADC_09
+#Scenario: To verify field Status, Functionality back button
 #ADC_01_28 To verify the field Status
 Then verify field Status should be display only
 Then verify field Status should be toggle status  
