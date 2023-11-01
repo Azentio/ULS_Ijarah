@@ -1,0 +1,136 @@
+<html>
+<head>
+<title>TestNG:  Default test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Default test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>3/2/0</td>
+</tr><tr>
+<td>Started on:</td><td>Wed Nov 01 11:33:53 IST 2023</td>
+</tr>
+<tr><td>Total time:</td><td>396 seconds (396277 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "to create the customer details screen with vaid input data", "Optional[to test the customerdetails screen at new app stage]"</td>
+<td><div><pre>java.lang.AssertionError: The following asserts failed:
+	no of dependents field is not a text field hence failed expected [true] but found [false],
+	remarks field is not a mandatory field hence failed expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at stepdefinitions.Ijarah_NewAPP_customerDetailsSteps.user_076_invoke_soft_assert_for_customer_details_screen(Ijarah_NewAPP_customerDetailsSteps.java:1437)
+	at ✽.user_076 invoke soft assert for customer details screen(file:///C:/Users/ININDC00076/eclipse-workspace/AzentioAutomationFramework_ULSMainRepository/src/test/java/features/IjarahFeatures/Ijarah_newApp_customerDetailsFEATURE.feature:40)
+</pre></div><a href='#' onClick='toggleBox("stack-trace355030274", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace355030274'><pre>java.lang.AssertionError: The following asserts failed:
+	no of dependents field is not a text field hence failed expected [true] but found [false],
+	remarks field is not a mandatory field hence failed expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at stepdefinitions.Ijarah_NewAPP_customerDetailsSteps.user_076_invoke_soft_assert_for_customer_details_screen(Ijarah_NewAPP_customerDetailsSteps.java:1437)
+	at ✽.user_076 invoke soft assert for customer details screen(file:///C:/Users/ININDC00076/eclipse-workspace/AzentioAutomationFramework_ULSMainRepository/src/test/java/features/IjarahFeatures/Ijarah_newApp_customerDetailsFEATURE.feature:40)
+</pre></div></td>
+<td>84</td>
+<td>Runner.TestApplication@7bba5817</td></tr>
+<tr>
+<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "to create the customer details screen with vaid input data", "Optional[to test the customerdetails screen at new app stage]"</td>
+<td><div><pre>java.lang.AssertionError: Cannot invoke &quot;org.openqa.selenium.WebElement.click()&quot; because the return value of &quot;helper.JavascriptHelper.executeScriptWithWebElement(String)&quot; is null
+	at org.junit.Assert.fail(Assert.java:88)
+	at stepdefinitions.Ijarah_NewAPP_customerDetailsSteps.user_076_click_on_export_button_in_customer_details_list_view(Ijarah_NewAPP_customerDetailsSteps.java:1849)
+	at ✽.user_076 click on export button in customer details list view(file:///C:/Users/ININDC00076/eclipse-workspace/AzentioAutomationFramework_ULSMainRepository/src/test/java/features/IjarahFeatures/Ijarah_newApp_customerDetailsFEATURE.feature:134)
+</pre></div><a href='#' onClick='toggleBox("stack-trace501286669", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace501286669'><pre>java.lang.AssertionError: Cannot invoke &quot;org.openqa.selenium.WebElement.click()&quot; because the return value of &quot;helper.JavascriptHelper.executeScriptWithWebElement(String)&quot; is null
+	at org.junit.Assert.fail(Assert.java:88)
+	at stepdefinitions.Ijarah_NewAPP_customerDetailsSteps.user_076_click_on_export_button_in_customer_details_list_view(Ijarah_NewAPP_customerDetailsSteps.java:1849)
+	at ✽.user_076 click on export button in customer details list view(file:///C:/Users/ININDC00076/eclipse-workspace/AzentioAutomationFramework_ULSMainRepository/src/test/java/features/IjarahFeatures/Ijarah_newApp_customerDetailsFEATURE.feature:134)
+</pre></div></td>
+<td>125</td>
+<td>Runner.TestApplication@7bba5817</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "to create the customer details screen with vaid input data", "Optional[to test the customerdetails screen at new app stage]"</td>
+<td></td>
+<td>41</td>
+<td>Runner.TestApplication@7bba5817</td></tr>
+<tr>
+<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "to create the customer details screen with vaid input data", "Optional[to test the customerdetails screen at new app stage]"</td>
+<td></td>
+<td>43</td>
+<td>Runner.TestApplication@7bba5817</td></tr>
+<tr>
+<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "to create the customer details screen with vaid input data", "Optional[to test the customerdetails screen at new app stage]"</td>
+<td></td>
+<td>40</td>
+<td>Runner.TestApplication@7bba5817</td></tr>
+</table><p>
+</body>
+</html>
