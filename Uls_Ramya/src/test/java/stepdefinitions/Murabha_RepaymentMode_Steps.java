@@ -35,7 +35,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	JSPaths Murabha_Repayment_js = new JSPaths(excelPath, "Murabha_Repayment_js", "RepaymentElement", "JSPath");
 	ExcelData Murabha_Repayment_TestData  = new ExcelData(excelTestDataPath,"Murabha_Repayment_TestData","Dataset ID");
 	JSPaths appDataEntry_js = new JSPaths(excelPath, "appDataEntry_js", "AppDataEntryElements", "JSPath");
-	
+	ExcelData Murabha_identificationDetail_TestData  = new ExcelData(excelTestDataPath,"mura_identificationDetail","Dataset ID");
 	
 	@And("User_6047 Get the test data for test case ID AT_MU_IRM_001")
 	public void user_get_the_test_data_for_test_case_id_at_fi() {
@@ -106,6 +106,8 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	@And("User_6047 Search the Ref Id Under inbox")
 	public void user_search_the_ref_id_under_inbox_6047() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text")));
+		javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text"))
+		.sendKeys(testData.get("Ref No"));
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text"))
@@ -116,8 +118,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 					Assert.fail(e.getMessage());
 				}
 			}
-		}
-	}
+		}	}
 	
 	@And("User_6047 click repayment mode section")
 	public void user_click_repayment_mode_section() {
@@ -1667,6 +1668,12 @@ for (int i = 0; i < 200; i++) {
 			}
 		}
 	}
+	
+	
+	
+	
+	
+	
 	
 	
 	

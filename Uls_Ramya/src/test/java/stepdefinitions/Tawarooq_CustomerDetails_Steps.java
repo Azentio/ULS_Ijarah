@@ -1005,7 +1005,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 				}
 			}
 		}
-		softAssert.assertTrue(inboxTitle.contains("Inbox"), "back button validation");
+		softAssert.assertTrue(inboxTitle.contains("Inbox"), "back button not work");
 		System.out.println(inboxTitle);
 	}
 

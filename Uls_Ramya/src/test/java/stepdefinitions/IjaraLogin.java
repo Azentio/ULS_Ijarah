@@ -23,7 +23,7 @@ public class IjaraLogin extends BaseClass {
 	public void loginWithIjaraApplication() {
 		//loginTestData = exelData.getTestdata("userType02");
 		//loginTestData = exelData.getTestdata("userType03");
-		loginTestData = exelData.getTestdata("userType05");
+		loginTestData = exelData.getTestdata("userType06");
 		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName")).click();
 		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName"))
 				.sendKeys(loginTestData.get("UserName"));

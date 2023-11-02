@@ -1,36 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-10-27T13:00:44 IST" name="Default suite" finished-at="2023-10-27T13:01:33 IST" duration-ms="48196">
+  <suite started-at="2023-11-02T17:53:16 IST" name="Default suite" finished-at="2023-11-02T17:53:59 IST" duration-ms="43719">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-10-27T13:00:44 IST" name="Default test" finished-at="2023-10-27T13:01:33 IST" duration-ms="48196">
+    <test started-at="2023-11-02T17:53:16 IST" name="Default test" finished-at="2023-11-02T17:53:59 IST" duration-ms="43719">
       <class name="Runner.TestApplication">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-10-27T13:00:44 IST" name="setUpClass" finished-at="2023-10-27T13:00:45 IST" duration-ms="884" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-11-02T17:53:16 IST" name="setUpClass" finished-at="2023-11-02T17:53:17 IST" duration-ms="864" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-10-27T13:00:45 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-10-27T13:01:14 IST" duration-ms="28472" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-11-02T17:53:17 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-02T17:53:51 IST" duration-ms="34286" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["To verify the buttons available on screen while modify the Customer Information"]]>
+                <![CDATA["to verify the Identification Details field"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[To verify the functionality of Customer Details]"]]>
+                <![CDATA["Optional[Customer Additional info -Data Check-Identifications Details under Data Check Stage]"]]>
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[javascript error: Cannot read properties of null (reading 'getAttribute')
+  (Session info: chrome=118.0.5993.118)
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8f7e822f2582a3b0832b39a660a406a9, executeScript {script=return document.querySelector('digital-select-layout[ng-reflect-form-control-name-label="idType"]>ion-item>ion-select').getAttribute("aria-label"), args=[]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 118.0.5993.118, chrome: {chromedriverVersion: 118.0.5993.70 (e52f33f30b91..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54612}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54612/devtoo..., se:cdpVersion: 118.0.5993.118, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8f7e822f2582a3b0832b39a660a406a9]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: javascript error: Cannot read properties of null (reading 'getAttribute')
+  (Session info: chrome=118.0.5993.118)
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8f7e822f2582a3b0832b39a660a406a9, executeScript {script=return document.querySelector('digital-select-layout[ng-reflect-form-control-name-label="idType"]>ion-item>ion-select').getAttribute("aria-label"), args=[]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 118.0.5993.118, chrome: {chromedriverVersion: 118.0.5993.70 (e52f33f30b91..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54612}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54612/devtoo..., se:cdpVersion: 118.0.5993.118, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8f7e822f2582a3b0832b39a660a406a9
+at org.testng.Assert.fail(Assert.java:99)
+at stepdefinitions.Murabha_DataCheck_identificationDetails.user_verify_id_type_field_should_be_mandatory_display_only_and_text_box(Murabha_DataCheck_identificationDetails.java:428)
+at ✽.User_6047 verify ID Type field should be mandatory display only and text box(file:///C:/Users/ININDC00071/git/ULs_Ramya1/Uls_Ramya/src/test/java/features/Murabha_Datacheck_identificationdetails.feature:72)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-10-27T13:01:14 IST" name="tearDownClass" finished-at="2023-10-27T13:01:33 IST" duration-ms="18789" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-11-02T17:53:51 IST" name="tearDownClass" finished-at="2023-11-02T17:53:59 IST" duration-ms="8526" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

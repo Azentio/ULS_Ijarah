@@ -9,7 +9,7 @@ And User_6047 click the module name dropdown in ULS application
 And User_6047 select the module name as LOS in ULS application
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
-And User_6047 Search the Ref Id Under inbox 
+And User_6047 Search the Ref Id  Under inbox 
 And User_6047 Click the Entitle button under inbox 
 And User_6047 click repayment mode section
 And User_6047 click Add icon
@@ -165,3 +165,18 @@ And User_6047 click the ok button in action conform field
 #And User_6047 click the submit in action conform field
 And User_6047 verify the submit successfully popup
 #v0169
+
+ @AT_DC_MU_ID_001
+ Scenario: To verify the availability of Customer Information tab is getting open with all valid button under Data check stage
+ 
+Given Navigate the IJARA URL
+And User_6047 Login with valid credentials
+And User_6047 Get the test data for test case ID AT_DC_MU_ID_001 
+And User_6047 Click the Mail box in ULS application
+And User_6047 Click the Search button under inbox
+Then User_6047 Search the Ref Id Under inbox 
+And User_6047 Click the Entitle button under inbox
+And User_6047 Click view button under customer personal information
+And User_6047 Click view button under customer identification
+Then User_6047 verify the Help button
+Then User_6047 verify the Back button
