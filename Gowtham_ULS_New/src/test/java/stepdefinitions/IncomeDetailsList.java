@@ -24,7 +24,7 @@ public class IncomeDetailsList {
 	WebDriver driver = BaseClass.driver;
 	JSPaths IncomeDetailsListPaths = new JSPaths(excelPath, "IncomeDetailsList", "Ijara_FieldName", "JSPath");
 	
-	ExcelData IncomeDetailsListexelData = new ExcelData(excelTestDataPath, "IncomeDetailsList", "Data Set ID");
+	ExcelData IncomeDetailsListexelData = new ExcelData(excelTestDataPath, "Living_Expense", "Data Set ID");
 	Map<String, String> testData;
 	
 //	Map<String, String> TestData = new HashMap<>();
@@ -73,7 +73,6 @@ public class IncomeDetailsList {
 				break;
 			} catch (Exception e) {
 			}
-
 		}
 	}
 	
@@ -103,8 +102,23 @@ public class IncomeDetailsList {
 				}
 			}
 		}
-	    
 	}
+	
+	@Given("User_607 Search in the search Field")
+	public void user_search_in_the_search_Field() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(IncomeDetailsListPaths.getElement("searchInInbox")).sendKeys("3393",Keys.ENTER);
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	
 
 	@Given("User_607 Select record after search")
 	public void user_select_record_after_search() {

@@ -245,3 +245,10 @@ Feature: Customer Search
 		And User_607 Enter characters in Reference Code
     And User_607 Save the record
  		And User_607 Check Please Fill Details Popup showing or not
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		

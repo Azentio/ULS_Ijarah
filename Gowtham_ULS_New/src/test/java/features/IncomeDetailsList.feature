@@ -23,6 +23,7 @@ Feature: Income Details List
   And User_607 Check Defined field
   And User_607 Check Adjusted field
   And User_607 Check Amount Considered field
+  And logout from the ULSApplication
   
   
   @AT_INC_02
@@ -52,6 +53,7 @@ Feature: Income Details List
   And User_607 Check Total Deduction field
   And User_607 Check Total Deduction Considered field
   And User_607 Check Currency field
+  And logout from the ULSApplication
   
   
    @AT_INC_03
@@ -73,6 +75,7 @@ Feature: Income Details List
   And User_607 Click back button 
   And User_607 Check go to previous page
   And User_607 check value auto populated
+  And logout from the ULSApplication
   
   @AT_INC_04
   Scenario: Income Summary Details
@@ -88,5 +91,6 @@ Feature: Income Details List
   And User_607 Click Add button in income
   And User_607 Click back button 
   And User_607 Check clicking on back button system should navigate to the previous screen
+  And logout from the ULSApplication
   
   

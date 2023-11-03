@@ -3,4 +3,4 @@ Feature: Title of your feature
 
   @tag1
   Scenario: Title of your scenario
-  And User_607 Check Sourcing Office should be mandatory in application Details
+  And User_607 Check back button navigate to the previous screen

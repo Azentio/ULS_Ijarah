@@ -2805,6 +2805,17 @@ public class New_Application {
 
 	@Given("User_607 Check Reference Type should be non mandatory")
 	public void user_check_reference_type_should_be_non_mandatory() {
+		for (int i = 0; i < 100; i++) {
+			try {
+				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("ReferenceCode")));
+				break;
+			} catch (Exception e) {
+				if (i==99) {
+                    Assert.fail(e.getMessage());
+			}
+		}
+		}
+		
 		for (int i = 0; i <2000; i++) {
             try {
             	String repayment = New_ApplicationPaths.getElement("ReferenceTypeCheckNonMan");
@@ -3167,9 +3178,6 @@ public class New_Application {
 			}
 	}
 	
-
-	
-
 
 	@Given("User_607 Select ID type")
 	public void user_select_id_type() {
