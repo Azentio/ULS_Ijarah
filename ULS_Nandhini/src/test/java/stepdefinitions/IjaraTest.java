@@ -3366,7 +3366,7 @@ public class IjaraTest extends BaseClass {
 			for (int i = 0; i <= 500; i++) {
 				try {
 					javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text"))
-					.sendKeys(testData.get("Ref No"));;
+					.sendKeys(testData.get("record_reference_number"));;
 					break;
 				} catch (Exception e) {
 					if (i == 500) {
