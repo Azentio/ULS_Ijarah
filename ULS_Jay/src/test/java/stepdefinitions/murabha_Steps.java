@@ -41,6 +41,22 @@ public class murabha_Steps {
 	ExcelData morabha_AppDataEntry = new ExcelData(path, "Morabha_AppDataEntry", "DataSet ID");
 	Map<String, String> testData01;
 	
+	ExcelData mura_ADEntery_CustomerEMPdet = new ExcelData(path, "Mura_ADEntery_CustomerEMPdet", "DataSet ID");
+	Map<String, String> testData02;
+	
+	//----------Murabha app data entery Customer Employement Det
+	
+			@And("User_610 get the test data set id for DS_AT_MU_EMPD_07")
+			public void get_the_test_data_set_id_for_DS_AT_MU_EMPD_07() {
+				testData02 = mura_ADEntery_CustomerEMPdet.getTestdata("DS_AT_MU_EMPD_07");
+			}
+			
+	//----------Murabha app data entery Customer Employement Det
+			
+			@And("User_610 get the test data set id for DS_AT_MU_EMPD_08")
+			public void get_the_test_data_set_id_for_DS_AT_MU_EMPD_08() {
+				testData02 = mura_ADEntery_CustomerEMPdet.getTestdata("DS_AT_MU_EMPD_08");
+			}
 	
 	//-------------------***************************************************-------------------------------------
 	
@@ -121,6 +137,520 @@ public class murabha_Steps {
 		
 	}
 	
+	//----------------------  @AT_MU_EMPD_07 murabha App Data Entery Employement Details   
 	
 	
+	@And("User_{int} click the Customer Financials Screen")
+	public void user_click_the_customer_financials_screen(Integer int1) {
+		for (int i = 0; i < 200; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("customerFinancials_Screen_610")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	    
+	}
+
+	@And("User_{int} click Edit button")
+	public void user_click_edit_button(Integer int1) {
+		for (int i = 0; i < 200; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("editBtn_610")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	 	    
+	}
+
+	@And("User_{int} click the add button under Customer Employment Details")
+	public void user_click_the_add_button_under_customer_employment_details(Integer int1) {
+		for (int i = 0; i < 200; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("addBtn_Under_customerEmployementDetails")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	    
+	}
+
+	@And("User_{int} select nature of employment")
+	public void user_select_nature_of_employment(Integer int1) throws Throwable {
+		for (int i = 0; i < 200; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("natureOfEmployement_610")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+				// ----------dropdown-------
+
+				String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+				String dropdownLength = "";
+				boolean isDropdownValueSelected = false;
+				String dropdownString = "";
+
+				for (int i = 0; i <= 300; i++) {
+					try {
+						dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+						System.out.println("Dropdown length " + dropdownLength);
+						if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+							break;
+						}
+					} catch (Exception e) {
+						if (i == 300) {
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+
+				int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+				for (int j = 0; j <= premitiveDropdownLength; j++) {
+					for (int l = 0; l <= 300; l++) {
+						try {
+							System.out.println("L value is " + l);
+							System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+							dropdownString = javascriptHelper.executeScript(
+									"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+									.toString();
+							if (!(dropdownString.isEmpty())) {
+								System.out.println(dropdownString);
+								System.out.println("Loop count " + l + " got breaked");
+								break;
+							}
+						} catch (Exception e) {
+							if (l == 300 && !(dropdownString.isBlank())) {
+								Assert.fail(e.getMessage());
+							}
+						}
+						if (!(dropdownString.isEmpty())) {
+							System.out.println(dropdownString);
+							System.out.println("Loop count " + l + " got breaked");
+							break;
+						}
+					}
+
+					System.out.println("String " + dropdownString.trim());
+					
+					System.out.println("Map " + testData02.get("NatureOfEmployement").trim());
+					
+					if ((dropdownString.trim())
+							.equalsIgnoreCase((testData02.get("NatureOfEmployement")).trim())) {
+						for (int k = 0; k <= 300; k++) {
+							try {
+								clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+										"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+								clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+										"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+								isDropdownValueSelected = true;
+								break;
+							} catch (Exception e) {
+								if (k == 300) {
+									Assert.fail(e.getMessage());
+								}
+							}
+						}
+					}
+					if (isDropdownValueSelected == true) {
+						break;
+					}
+				}
+	    
+	}
+
+	@And("User_{int} select nature of period")
+	public void user_select_nature_of_period(Integer int1) throws Throwable {
+		for (int i = 0; i < 200; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("employmentPeriod_610")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+				
+		// ----------dropdown-------
+
+				String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+				String dropdownLength = "";
+				boolean isDropdownValueSelected = false;
+				String dropdownString = "";
+
+				for (int i = 0; i <= 300; i++) {
+					try {
+						dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+						System.out.println("Dropdown length " + dropdownLength);
+						if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+							break;
+						}
+					} catch (Exception e) {
+						if (i == 300) {
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+
+				int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+				for (int j = 0; j <= premitiveDropdownLength; j++) {
+					for (int l = 0; l <= 300; l++) {
+						try {
+							System.out.println("L value is " + l);
+							System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+							dropdownString = javascriptHelper.executeScript(
+									"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+									.toString();
+							if (!(dropdownString.isEmpty())) {
+								System.out.println(dropdownString);
+								System.out.println("Loop count " + l + " got breaked");
+								break;
+							}
+						} catch (Exception e) {
+							if (l == 300 && !(dropdownString.isBlank())) {
+								Assert.fail(e.getMessage());
+							}
+						}
+						if (!(dropdownString.isEmpty())) {
+							System.out.println(dropdownString);
+							System.out.println("Loop count " + l + " got breaked");
+							break;
+						}
+					}
+
+					System.out.println("String " + dropdownString.trim());
+					
+					System.out.println("Map " + testData02.get("EmployementPeriod").trim());
+					
+					if ((dropdownString.trim())
+							.equalsIgnoreCase((testData02.get("EmployementPeriod")).trim())) {
+						for (int k = 0; k <= 300; k++) {
+							try {
+								clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+										"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+								clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+										"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+								isDropdownValueSelected = true;
+								break;
+							} catch (Exception e) {
+								if (k == 300) {
+									Assert.fail(e.getMessage());
+								}
+							}
+						}
+					}
+					if (isDropdownValueSelected == true) {
+						break;
+					}
+				}
+	    
+	}
+
+	@And("User_{int} enter employer name")
+	public void user_enter_employer_name(Integer int1) throws Throwable {
+		Thread.sleep(500);
+		for (int i = 0; i < 200; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("employerName_610")).
+				sendKeys(testData02.get("EmployerName"));;
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+			    
+	}
+
+	@And("User_{int} enter employee ID")
+	public void user_enter_employee_id(Integer int1) throws Throwable {
+		for (int i = 0; i < 200; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("employeID_610"))
+				.sendKeys(testData02.get("EmployeeID"));;
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		    
+	}
+
+	@And("User_{int} select the Data Of Joining")
+	public void user_select_the_data_of_joining(Integer int1) throws Throwable {
+		for (int i = 0; i < 200; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("dateOfJoining_610")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		Thread.sleep(1000);
+		
+		for (int i = 0; i < 200; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("selectTodayDateIn_610")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	    
+	}
+
+	@And("User_{int} select Employment type")
+	public void user_select_employment_type(Integer int1) throws Throwable {
+		
+		//javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("employementType_61")));
+		for (int i = 0; i < 200; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("employementType_61")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+				// ----------dropdown-------
+
+				String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+				String dropdownLength = "";
+				boolean isDropdownValueSelected = false;
+				String dropdownString = "";
+
+				for (int i = 0; i <= 300; i++) {
+					try {
+						dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+						System.out.println("Dropdown length " + dropdownLength);
+						if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+							break;
+						}
+					} catch (Exception e) {
+						if (i == 300) {
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+
+				int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+				for (int j = 0; j <= premitiveDropdownLength; j++) {
+					for (int l = 0; l <= 300; l++) {
+						try {
+							System.out.println("L value is " + l);
+							System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+							dropdownString = javascriptHelper.executeScript(
+									"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+									.toString();
+							if (!(dropdownString.isEmpty())) {
+								System.out.println(dropdownString);
+								System.out.println("Loop count " + l + " got breaked");
+								break;
+							}
+						} catch (Exception e) {
+							if (l == 300 && !(dropdownString.isBlank())) {
+								Assert.fail(e.getMessage());
+							}
+						}
+						if (!(dropdownString.isEmpty())) {
+							System.out.println(dropdownString);
+							System.out.println("Loop count " + l + " got breaked");
+							break;
+						}
+					}
+
+					System.out.println("String " + dropdownString.trim());
+					
+					System.out.println("Map " + testData02.get("EmploymentType").trim());
+					
+					if ((dropdownString.trim())
+							.equalsIgnoreCase((testData02.get("EmploymentType")).trim())) {
+						for (int k = 0; k <= 300; k++) {
+							try {
+								clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+										"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+								clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+										"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+								isDropdownValueSelected = true;
+								break;
+							} catch (Exception e) {
+								if (k == 300) {
+									Assert.fail(e.getMessage());
+								}
+							}
+						}
+					}
+					if (isDropdownValueSelected == true) {
+						break;
+					}
+				}
+	    
+	}
+
+	@And("User_{int} select Share Holder Percentage")
+	public void user_select_share_holder_percentage(Integer int1) {
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("shareHolderPercentage_610")));
+		
+		for (int i = 0; i < 200; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("shareHolderPercentage_610"))
+				.sendKeys(testData02.get("ShareHolderPercentage"));
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	    
+	}
+
+	@And("User_{int} enter the Total Experience")
+	public void user_enter_the_total_experience(Integer int1) {
+		//javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("totalExperience_610"))); 
+		
+		for (int i = 0; i < 200; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("totalExperience_610"))
+				.sendKeys(testData02.get("TotalExperience"));
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	    
+	}
+
+	@And("User_{int} scroll up and view customer employment")
+	public void user_scroll_up_and_view_customer_employment(Integer int1) throws Throwable {
+		javascriptHelper.scrollIntoView(javascriptHelper
+				.executeScriptWithWebElement(jsPaths3.getElement("backBtn_Index_UnderCustomerDetails_610")));
+				Thread.sleep(3000);
+	    	}
+
+	@And("User_{int} verify the confirmation message")
+	public void user_verify_the_confirmation_message(Integer int1) {
+		
+		for (int i = 0; i < 200; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("saveBtn_610")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		for (int j = 0; j < 200; j++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("successMsg_610")).isDisplayed();
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (j == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	    
+	}
+	
+	//-----------  @AT_MU_EMPD_08
+	
+	@And("User_{int} blank validation message")
+	public void user_blank_validation_message(Integer int1) {
+		for (int i = 0; i < 200; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("saveBtn_610")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	
+		for (int j = 0; j < 200; j++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("fillAllTheDetailsPopup_610")).isDisplayed();
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (j == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+}
+
+	@And("User_{int} verify the enter special characters value proper validation message")
+	public void user_verify_the_enter_special_characters_value_proper_validation_message(Integer int1) throws Throwable {
+	    Thread.sleep(2000);
+		for (int i = 0; i < 200; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("employerName_610")).
+				sendKeys(testData02.get("EmployerNameSpecialChar"));;
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		for (int j = 0; j < 200; j++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("onlyAlphaNumericCharterPopup_610")).isDisplayed();
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (j == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+	}
+	
+	
+	//------------------ @AT_MU_EMPD_09
+	
+	@And("User_{int} verify the list view under Customer Employment Details")
+	public void user_verify_the_list_view_under_customer_employment_details(Integer int1) {
+	    
+	}
+
 }

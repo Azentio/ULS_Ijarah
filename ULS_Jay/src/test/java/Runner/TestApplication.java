@@ -9,20 +9,22 @@ import utilities.ExtentManager;
 import utilities.ExtentTestManager;
 
 @CucumberOptions(features = { // "src/test/java/features/CSM_TransactionsFEATURE.feature",
-		"src/test/java/features/murabha_AppDataEntery_LivingExpenses.feature"}, glue = "stepdefinitions",
+		"src/test/java/features/murabhe_AppDataEntery_EmployementDetails.feature"}, glue = "stepdefinitions",
 		// monochrome=false, //to make steps in color
 		plugin = { "pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 				"rerun:ReRunScenarios/FailedReRun.txt" }
-// ,dryRun = false //to check compilation errors
- , tags = "@AT_LEA_007"
+// ,dryRun = false //to check compilation errors/ , tags = "@AT_LEA_007"
  //		+ ""
-// , tags="@CW_032_03"
+ , tags="@AT_MU_EMPD_08"
 // , tags = "@TSA_044_04"
  
 )
 public class TestApplication extends AbstractTestNGCucumberTests {
 	/*
 	 * @Override 
+	 *d
+	 *
+	 *
 	 *
 	 *
 	 * @DataProvider(parallel = true) public Object[][] scenarios() { return

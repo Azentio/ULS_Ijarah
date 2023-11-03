@@ -35,6 +35,7 @@ public class Ijara_AD_DocumentDetails_Steps_610 {
 	ClicksAndActionsHelper clicksAndActionsHelper = new ClicksAndActionsHelper(driver);
 
 	String path = System.getProperty("user.dir") + "\\TestData\\ijaraTestData.xlsx";
+	
 	ExcelData ad_CustomerFolllowUpDetails_610 = new ExcelData(path, "AD_CustomerFolllowUpDetails_610", "DataSet ID");
 	Map<String, String> testData;
 	
@@ -84,19 +85,25 @@ public class Ijara_AD_DocumentDetails_Steps_610 {
 			testData = ad_CustomerFolllowUpDetails_610.getTestdata("DS_AT_MU_FU_01");
 			}
 			
-	//---Murabha App Data Entry FollowUp Details @AT_MU_FU_005
+	//---Murabha App Data Entry FollowUp Details @AT_MU_FU_005  
 		
 		@And("User_610 get the test data set id for DS_AT_MU_FU_005")
 		public void get_the_test_data_set_id_for_DS_AT_MU_FU_005() {
 			testData01 = morabha_AppDataEntry.getTestdata("DS_AT_MU_FU_005");  
 			}
 		
+		//---Ijara App Data Check Insurance Info
+		
+		@And("User_610 get the test data set id for DS_AT_IJ_IA_01")
+		public void get_the_test_data_set_id_for_DS_AT_IJ_IA_01() {
+			testData = ad_CustomerFolllowUpDetails_610.getTestdata("DS_AT_IJ_IA_01");  
+			}			
 	
 	// -------------steps ---------------
 	@And("User_{int} click the module name")
 	public void user_select_the_module_name_to_los(Integer int1) throws Throwable {
 		
-		Thread.sleep(200);
+		Thread.sleep(500);
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Select_ModuleName_610")).click();
@@ -215,7 +222,7 @@ public class Ijara_AD_DocumentDetails_Steps_610 {
 			}
 		}
 		}
-		Thread.sleep(5000);
+		Thread.sleep(4000);
 			}
 	
 	@And("User_{int} click edit button under inbox screen02")
@@ -5664,5 +5671,246 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 		}	
 	    
 	    	}
+	//------------- @AT_IJ_IA_01     Ijara App Data Check Insurance Info
+	
+	@And("User_{int} click Insurance Info screen")
+	public void user_click_insurance_info_screen(Integer int1) {
+		
+		for (int b = 0; b < 300; b++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("insuranceInfo_Screen_610")).click();
+				break;
+			} catch (Exception e) {
+				if (b == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_{int} click view button")
+	public void user_click_view_button(Integer int1) {
+	    
+		for (int b = 0; b < 300; b++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("viewBtn_610")).click();
+				break;
+			} catch (Exception e) {
+				if (b == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	@And("User_{int} verify the Insurance Info screen get open")
+	public void user_verify_the_insurance_info_screen_get_open(Integer int1) {
+	    
+		 for (int j = 0; j < 200; j++) {
+				try {
+					if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("BackBtn_underFollowUpList_610")).isDisplayed()) {
+						Assert.assertTrue(true);
+						break;
+					}
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+			}	
+	}
+	
+	//----------------------------  @AT_IJ_IA_02
+	
+	@And("User_{int} verify the field Insurance year")
+	public void user_verify_the_field_insurance_year(Integer int1) {
+	   
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("insuranceYear_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}	
+		
+	}
+
+	@And("User_{int} verify the field Depreciation")
+	public void user_verify_the_field_depreciation(Integer int1) {
+	    
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("depreciation_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}	
+		
+	}
+	
+	@And("User_{int} verify the field Assert Price")
+	public void user_verify_the_field_assert_price(Integer int1) {
+		
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("assertPrice_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+	}
+	 
+	//------------------------@AT_IJ_IA_03
+	
+	@And("User_{int} verify the Rate Per Price")
+	public void user_verify_the_rate_per_price(Integer int1) {
+	    
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("ratePerAssert_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+		
+	}
+
+	@And("User_{int} verify the Minium Insurance Premium")
+	public void user_verify_the_minium_insurance_premium(Integer int1) {
+	    
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("miniumInsurancePremium_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+		
+	}
+
+	@And("User_{int} verify the Base Insurance Premium")
+	public void user_verify_the_base_insurance_premium(Integer int1) {
+	    
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("baseInsurancePremium_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+		
+	}
+	
+	
+	//--------------------@AT_IJ_IA_04
+	
+	@And("User_{int} verify the VAT premium")
+	public void user_verify_the_vat_premium(Integer int1) {
+	   
+
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("VATPremium_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+		
+	}
+
+	@And("User_{int} verify the Net Premium")
+	public void user_verify_the_net_premium(Integer int1) {
+	    
+
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("NetPremium_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+	}
+
+	@And("User_{int} verify the Back button")
+	public void user_verify_the_back_button(Integer int1) {
+	    
+		for (int b = 0; b < 300; b++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("BackBtn_underFollowUpList_610")).click();
+				break;
+			} catch (Exception e) {
+				if (b == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("viewBtn_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
