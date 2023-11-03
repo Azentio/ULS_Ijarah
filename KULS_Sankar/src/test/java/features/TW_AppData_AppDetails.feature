@@ -10,7 +10,6 @@ And User_608 click the Mail box in ULS application
 And User_608 click the Search button under inbox
 And User_608 search the Reference id under inbox in ULS Application
 And User_608 click the Entitle button under inbox
-
 And User_608 click the Update button under Application Details screen
 And User_608 verify Action field available in list view under Application Details screen
 And User_608 verify Client Name field available in list view under Application Details screen
@@ -22,23 +21,17 @@ And User_608 verify Location field available in list view under Application Deta
 And User_608 verify Allocated To field available in list view under Application Details screen
 And User_608 verify Service field available in list view under Application Details screen
 And User_608 verify Status field available in list view under Application Details screen
-
 And User_608 click the Search button under Application Details screen
 And User_608 search mismatch value system should not display any records under Application Details screen
 And User_608 verify the system is should not displayed any records under Application Details screen
 And User_608 search matching value system should display all the possible matching records under Application Details screen
 And User_608 verify the all the possible matching records are displayed under Application Details screen
-
 And User_608 click the Export button under Application Details screen
 And User_608 click the PDF and verify under Application Details screen
 And User_608 click the Export button under Application Details screen
 And User_608 click the XLS and verify under Application Details screen
-
 And User_608 click the Add button under Application Details screen
 And User_608 verfiy the new record creation page under Application Details screen
-
-
-
 Then logout from the ijaraApplication
 
 

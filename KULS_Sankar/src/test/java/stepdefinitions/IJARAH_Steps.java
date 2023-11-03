@@ -387,7 +387,7 @@ public class IJARAH_Steps {
 	
 	@And("User_608 click the pencil icon under Customer Financials tab")
 	public void user_click_the_pencil_icon_under_customer_financials_tab() throws Throwable {
-		Thread.sleep(1000);
+		Thread.sleep(100);
 		WebElement customerFinancialsPencilEditBtn = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerFinancialsPencilEditBtn"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
@@ -400,6 +400,7 @@ public class IJARAH_Steps {
 				}
 			}
 		}
+		Thread.sleep(100);
 	}	
 	
 	@And("User_608 click Add button in Financial Commitments under Customer Financials tab")
@@ -3540,7 +3541,6 @@ public class IJARAH_Steps {
 						Assert.fail(e.getMessage());
 					}
 				}
-
 			}
 			if (isAddButtonClicked == true) {
 				break;
@@ -3621,6 +3621,9 @@ public class IJARAH_Steps {
 						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Financial Commitments").trim())) {
 							System.out.println("Inside nested loop");
 //							System.out.println("document.querySelectorAll('button[icon=\"pi pi-search\"]')[" + j + "]");
+							javascriptHelper.scrollIntoView(
+									javascriptHelper
+										.executeScriptWithWebElement("document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')[" + j + "]"));
 							javascriptHelper
 									.executeScriptWithWebElement(
 											"document.querySelectorAll('p-dropdown[ng-reflect-placeholder=\"Export\"]')[" + j + "]")
@@ -3640,8 +3643,6 @@ public class IJARAH_Steps {
 				break;
 			}
 		}
-		
-		
 	}
 	
 	
@@ -4501,14 +4502,15 @@ public class IJARAH_Steps {
 	
 	@And("User_608 validate Save button available under Income details screen")
 	public void user_validate_save_button_available_under_income_details_screen() throws Throwable {
+		Thread.sleep(100);
 		WebElement incomeSaveBtn = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("incomeSaveBtn"));
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 20000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(incomeSaveBtn);
 				Assert.assertTrue(incomeSaveBtn.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 20000) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5295,15 +5297,16 @@ public class IJARAH_Steps {
 
 	@And("User_608 click the Back button under Income details screen")
 	public void user_click_the_back_button_under_income_details_screen() throws Throwable {
+		Thread.sleep(200);
 		WebElement incomeBackBtn = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("incomeBackBtn"));
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.JSEClick(incomeBackBtn);
 				break;
 			} catch (Exception e) {
-//				if (i == 1000) {
-//					Assert.fail(e.getMessage());
-//				}
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
 			}
 		}
 	}

@@ -1,6 +1,7 @@
 Feature: To check the Tawaruh --> App Data Entry stage --> Customer details screen
 
-@AT_TW_CD_01
+
+@AT_TW_CD_01_01
 Scenario: Personal Details screen should get open with Customer Information screen and below mentioned Fields
 
 Given navigate the IJARA URL
@@ -39,7 +40,6 @@ And User_608 verify Blocklisted field available under Customer Information scree
 And User_608 verify Credit Bureau field available under Customer Information screen
 And User_608 verify Remarks field available under Customer Information screen
 Then logout from the ijaraApplication
-
 
 
 @AT_TW_CD_01

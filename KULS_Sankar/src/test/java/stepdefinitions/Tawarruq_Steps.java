@@ -126,7 +126,7 @@ public class Tawarruq_Steps {
 	
 	@And("User_608 click the Pencil icon button under Customer Details tab")
 	public void user_click_the_pencil_icon_under_customer_details_tab() throws Throwable {
-		Thread.sleep(100);
+		Thread.sleep(1000);
 		WebElement customerDetailsPencilBtn = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("customerDetailsPencilBtn"));		
 		for (int i = 0; i <= 500; i++) {
 			try {
@@ -853,7 +853,7 @@ public class Tawarruq_Steps {
 //	TW_CD_01_01
 	@And("User_608 verify Applicant Type field as Mandatory, Editable and Dropdown under Customer Information screen")
 	public void user_verify_applicant_type_field_as_mandatory_editable_and_dropdown_under_customer_information_screen() throws Throwable {
-		Thread.sleep(200);
+		Thread.sleep(5000);
 //		Validate Mandatory
 		String applicantTypeLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("applicantTypeLabel")).getText();
 		for (int i = 0; i <2000; i++) {
