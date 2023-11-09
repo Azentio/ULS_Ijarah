@@ -89,6 +89,6 @@ Feature: Murabha app data check Quatation info
     And User_610 click search button and enter matching data
     And User_610 click search button and enter mismatching data
     Then logout from the ijaraApplication
-    #And User_610 verify the PDF button
+     #And User_610 verify the PDF button
     
     
