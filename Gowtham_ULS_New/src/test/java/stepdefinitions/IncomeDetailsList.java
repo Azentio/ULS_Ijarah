@@ -23,6 +23,8 @@ public class IncomeDetailsList {
 	String excelTestDataPath = System.getProperty("user.dir") + "\\TestData\\ijaraTestData.xlsx";
 	WebDriver driver = BaseClass.driver;
 	JSPaths IncomeDetailsListPaths = new JSPaths(excelPath, "IncomeDetailsList", "Ijara_FieldName", "JSPath");
+	ExcelData IjaraAppDataCheckQuationInfoexelData = new ExcelData(excelTestDataPath, "IjaraAppDataCheckQuationInfo", "Data Set ID");
+	ExcelData MurabhAppdataEntryInsuranceInfo = new ExcelData(excelTestDataPath, "MurabhAppdataEntryInsuranceInfo", "Data Set ID");
 	
 	ExcelData IncomeDetailsListexelData = new ExcelData(excelTestDataPath, "Living_Expense", "Data Set ID");
 	Map<String, String> testData;
@@ -39,6 +41,31 @@ public class IncomeDetailsList {
 	@Given("User_607 Update testdata from AT_INC_01")
 	public void user_update_testdata_from_at_inc() {
 		testData = IncomeDetailsListexelData.getTestdata("DS_AT_INC_01");
+	}
+	
+	@Given("User_607 Update testdata from AT_IJ_QA_01")
+	public void user_update_testdata_from_AT_IJ_QA_01() {
+		testData = IjaraAppDataCheckQuationInfoexelData.getTestdata("DS_AT_IJ_QA_01");
+	}
+	
+	@Given("User_607 Update testdata from AT_IJ_QA_02")
+	public void user_update_testdata_from_AT_IJ_QA_02() {
+		testData = IjaraAppDataCheckQuationInfoexelData.getTestdata("DS_AT_IJ_QA_02");
+	}
+	
+	@Given("User_607 Update testdata from AT_IJ_QA_03")
+	public void user_update_testdata_from_AT_IJ_QA_03() {
+		testData = IjaraAppDataCheckQuationInfoexelData.getTestdata("DS_AT_IJ_QA_03");
+	}
+	
+	@Given("User_607 Update testdata from AT_IJ_QA_04")
+	public void user_update_testdata_from_AT_IJ_QA_04() {
+		testData = IjaraAppDataCheckQuationInfoexelData.getTestdata("DS_AT_IJ_QA_04");
+	}
+	
+	@Given("User_607 Update testdata from AT_INS_01")
+	public void user_update_testdata_from_AT_INS_01() {
+		testData = MurabhAppdataEntryInsuranceInfo.getTestdata("DS_AT_INS_01");
 	}
 
 	@Given("User_607 Click module name in home screen")
@@ -108,7 +135,7 @@ public class IncomeDetailsList {
 	public void user_search_in_the_search_Field() {
 		for (int i = 0; i < 700; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(IncomeDetailsListPaths.getElement("searchInInbox")).sendKeys("3393",Keys.ENTER);
+				javascriptHelper.executeScriptWithWebElement(IncomeDetailsListPaths.getElement("searchInInbox")).sendKeys(testData.get("Search Record"),Keys.ENTER);
 				break;
 			} catch (Exception e) {
 				if (i==699) {

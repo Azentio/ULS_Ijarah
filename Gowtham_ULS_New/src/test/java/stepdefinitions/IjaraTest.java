@@ -26,5 +26,10 @@ public class IjaraTest extends BaseClass{
 	public void logout_from_the_uls_application()throws Throwable {
 		ijaraLogin.logoutFromIjara();
 	}
-
+	
+	@And("login with valid credentials2")
+	public void login_with_valid_credentials2()throws Throwable {
+		ijaraLogin.loginWithIjaraApplication2();
+	}
+	
 }

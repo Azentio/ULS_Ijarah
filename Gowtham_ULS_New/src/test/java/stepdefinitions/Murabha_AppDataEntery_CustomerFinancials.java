@@ -60,7 +60,21 @@ public class Murabha_AppDataEntery_CustomerFinancials {
 					Assert.fail(e.getMessage());
 				}
 				}
+		}
 			}
+		
+		@Given("User_607 Click edit button in QuationInnfo tab")
+		public void user_click_edit_button_in_QuationInnfo_tab() {
+			for (int i = 0; i < 700; i++) {
+				try {
+					javascriptHelper.executeScriptWithWebElement(MubAppDaEnCustomerFinancials.getElement("EditButton")).click();
+					break;
+				} catch (Exception e) {
+					if (i==699) {
+						Assert.fail(e.getMessage());
+					}
+					}
+				}
 	}
 
 	@Given("User_607 Click add button in Customer Financials tab")

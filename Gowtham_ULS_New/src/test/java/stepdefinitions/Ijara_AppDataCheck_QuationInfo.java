@@ -33,25 +33,7 @@ public class Ijara_AppDataCheck_QuationInfo {
 	SoftAssert SoftAssert = new SoftAssert();
 	
 	
-	@Given("User_607 Update testdata from AT_IJ_QA_01")
-	public void user_update_testdata_from_AT_IJ_QA_01() {
-		testData = IjaraAppDataCheckQuationInfoexelData.getTestdata("DS_AT_IJ_QA_01");
-	}
 	
-	@Given("User_607 Update testdata from AT_IJ_QA_02")
-	public void user_update_testdata_from_AT_IJ_QA_02() {
-		testData = IjaraAppDataCheckQuationInfoexelData.getTestdata("DS_AT_IJ_QA_02");
-	}
-	
-	@Given("User_607 Update testdata from AT_IJ_QA_03")
-	public void user_update_testdata_from_AT_IJ_QA_03() {
-		testData = IjaraAppDataCheckQuationInfoexelData.getTestdata("DS_AT_IJ_QA_03");
-	}
-	
-	@Given("User_607 Update testdata from AT_IJ_QA_04")
-	public void user_update_testdata_from_AT_IJ_QA_04() {
-		testData = IjaraAppDataCheckQuationInfoexelData.getTestdata("DS_AT_IJ_QA_04");
-	}
 	
 	
 	@Given("User_607 Click Quotation Info Page")
