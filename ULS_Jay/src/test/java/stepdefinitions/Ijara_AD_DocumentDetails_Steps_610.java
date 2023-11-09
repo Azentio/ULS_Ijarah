@@ -97,7 +97,14 @@ public class Ijara_AD_DocumentDetails_Steps_610 {
 		@And("User_610 get the test data set id for DS_AT_IJ_IA_01")
 		public void get_the_test_data_set_id_for_DS_AT_IJ_IA_01() {
 			testData = ad_CustomerFolllowUpDetails_610.getTestdata("DS_AT_IJ_IA_01");  
-			}			
+			}		
+		
+		//----------Murabha app data Check Insurance nd Quatation Info
+		
+		 @And("User_610 get the test data set id for DS_AT_MU_IA_01")
+	       	public void get_the_test_data_set_id_for_DS_AT_MU_IA_01() {
+			 testData = ad_CustomerFolllowUpDetails_610.getTestdata("DS_AT_MU_IA_01");
+		}
 	
 	// -------------steps ---------------
 	@And("User_{int} click the module name")

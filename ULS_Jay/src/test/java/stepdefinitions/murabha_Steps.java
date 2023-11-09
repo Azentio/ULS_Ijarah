@@ -24,7 +24,7 @@ public class murabha_Steps {
 
 	JSPaths jsPaths2 = new JSPaths(excelPath, "Ijara_AD_DocumentDetails", "Ijara_LoginFieldName", "JSPath");
 	JSPaths jsPaths3 = new JSPaths(excelPath, "Murabha_Module", "Murabha_LoginFieldName", "JSPath");
-	
+														
 	ExcelData exelData = new ExcelData(excelTestDataPath, "ijara_LoginCredentials", "UserType");
 
 	Map<String, String> loginTestData = new HashMap<>();
@@ -57,6 +57,8 @@ public class murabha_Steps {
 			public void get_the_test_data_set_id_for_DS_AT_MU_EMPD_08() {
 				testData02 = mura_ADEntery_CustomerEMPdet.getTestdata("DS_AT_MU_EMPD_08");
 			}
+			
+    
 	
 	//-------------------***************************************************-------------------------------------
 	
@@ -652,5 +654,306 @@ public class murabha_Steps {
 	public void user_verify_the_list_view_under_customer_employment_details(Integer int1) {
 	    
 	}
+	
+	//------------  -@AT_MU_QA_01
+	
+	@And("User_{int} click Quatation Info screen")
+	public void user_click_quatation_info_screen(Integer int1) {
+		for (int b = 0; b < 300; b++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("Quotation Info")).click();
+				break;
+			} catch (Exception e) {
+				if (b == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
 
+	@And("User_{int} verify the field Insurance Company, Base Premium ,Vat on Base Premium")
+	public void user_verify_the_field_insurance_company_base_premium_vat_on_base_premium(Integer int1) {
+		for (int j = 0; j < 200; j++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("InsuranceCompanyBpId")).isDisplayed();
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (j == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		for (int j = 0; j < 200; j++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("BasePremiumAmount")).isDisplayed();
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (j == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		for (int j = 0; j < 200; j++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("VatOnBasePremiumAmount")).isDisplayed();
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (j == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_{int} verify the field Net Base Premium , Total Discount , Expiry Date , Quatatio Reference Number")
+	public void user_verify_the_field_net_base_premium_total_discount_expiry_date_quatatio_reference_number(Integer int1) {
+	    
+		for (int j = 0; j < 200; j++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("NetBasePremiumAmount")).isDisplayed();
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (j == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		for (int j = 0; j < 200; j++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("totalDiscountAmount")).isDisplayed();
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (j == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		for (int j = 0; j < 200; j++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("ExpiryDate")).isDisplayed();
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (j == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		for (int j = 0; j < 200; j++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("QuoteReferenceNo")).isDisplayed();
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (j == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	
+	//---------------------- @AT_MU_QA_02
+	
+	@And("User_{int} verify the field Insurance Company")
+	public void user_verify_the_field_insurance_company(Integer int1) {
+		for (int j = 0; j < 200; j++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("InsuranceCompanyBpId")).isDisplayed();
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (j == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	    
+	}
+
+	@And("User_{int} verify the field Base Premium")
+	public void user_verify_the_field_base_premium(Integer int1) {
+		for (int j = 0; j < 200; j++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("BasePremiumAmount")).isDisplayed();
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (j == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	    
+	}
+
+	@And("User_{int} verify the field Vat On Base Premium")
+	public void user_verify_the_field_vat_on_base_premium(Integer int1) {
+		for (int j = 0; j < 200; j++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("VatOnBasePremiumAmount")).isDisplayed();
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (j == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	    
+	}
+
+	
+	//-----------------@AT_MU_QA_03
+	
+	@And("User_{int} verify the field Net Base Premium")
+	public void user_verify_the_field_net_base_premium(Integer int1) {
+		for (int j = 0; j < 200; j++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("NetBasePremiumAmount")).isDisplayed();
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (j == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_{int} verify the field Total Discount")
+	public void user_verify_the_field_total_discount(Integer int1) {
+		for (int j = 0; j < 200; j++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("totalDiscountAmount")).isDisplayed();
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (j == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_{int} verify the field Expiry Date")
+	public void user_verify_the_field_expiry_date(Integer int1) {
+		for (int j = 0; j < 200; j++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("ExpiryDate")).isDisplayed();
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (j == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	//-------------------@AT_MU_QA_04
+	
+	@And("User_{int} verify the field Quatation Reference Number")
+	public void user_verify_the_field_quatation_reference_number(Integer int1) {
+		for (int j = 0; j < 200; j++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("QuoteReferenceNo")).isDisplayed();
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (j == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	    
+	}
+	
+	@And("User_{int} click search button and enter matching data")
+	public void user_click_search_button_and_enter_matching_data(Integer int1) throws Throwable {		
+		//---webelement
+//		Thread.sleep(2000);		
+//		String jsPath = "document.querySelectorAll('button[icon=\"pi pi-search\"]')[0]";
+		
+		for (int i = 0; i < 600; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("searchBTn_610_Mu")).click();
+//				javascriptHelper.executeScriptWithWebElement(jsPath).click();
+				break;
+			} catch (Exception e) {
+				if (i == 599) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		for (int j = 0; j < 200; j++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("enter_searchBtn_610_Mu")).sendKeys("1200");
+				break;
+			} catch (Exception e) {
+				if (j == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		for (int k = 0; k < 200; k++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("View Button")).isDisplayed();
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (k == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		}
+
+	@And("User_{int} click search button and enter mismatching data")
+	public void user_click_search_button_and_enter_mismatching_data(Integer int1) {
+		for (int i = 0; i < 600; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("enter_searchBtn_610_Mu")).clear();
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("searchBTn_610_Mu")).click();
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("enter_searchBtn_610_Mu")).sendKeys("00");
+				break;
+			} catch (Exception e) {
+				if (i == 599) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		for (int k = 0; k < 200; k++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("misMatching_Data_610_Mu")).isDisplayed();
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (k == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+	}
+
+	@And("User_{int} verify the PDF button")
+	public void user_verify_the_pdf_button(Integer int1) {
+	    
+	}
+	
 }
