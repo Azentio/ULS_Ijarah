@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import java.io.IOException;
 import java.util.Map;
 
 import org.junit.Assert;
@@ -17,7 +18,7 @@ import io.cucumber.java.en.Then;
 import pageobjects.JSPaths;
 import resources.BaseClass;
 
-public class Murabha_RepaymentMode_Steps extends BaseClass {
+public class Tawarooq_RepaymentMode extends BaseClass{
 	WebDriver driver = BaseClass.driver;
 	ConfigFileReader configFileReader = new ConfigFileReader();
 	IjaraLogin ijaraLogin = new IjaraLogin();
@@ -30,80 +31,31 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	Map<String, String> testData;
 	WaitHelper waitHelper = new WaitHelper(driver);
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
-	JSPaths Ijarah_CustomerDebt = new JSPaths(excelPath, "CustomerDebt", "Ijarah_CustomerDebt", "JSPath");
-	JSPaths iJarah_CommonElements = new JSPaths(excelPath, "iJarah_CommonElements", "Ijarah_CommonFieldName", "JSPath");
-	JSPaths Murabha_Repayment_js = new JSPaths(excelPath, "Murabha_Repayment_js", "RepaymentElement", "JSPath");
-	ExcelData Murabha_Repayment_TestData  = new ExcelData(excelTestDataPath,"Murabha_Repayment_TestData","Dataset ID");
 	JSPaths appDataEntry_js = new JSPaths(excelPath, "appDataEntry_js", "AppDataEntryElements", "JSPath");
-	ExcelData Murabha_identificationDetail_TestData  = new ExcelData(excelTestDataPath,"mura_identificationDetail","Dataset ID");
+	JSPaths iJarah_CommonElements = new JSPaths(excelPath, "iJarah_CommonElements", "Ijarah_CommonFieldName", "JSPath");
+	JSPaths Tawarooq_Repayment_js = new JSPaths(excelPath, "Tawarooq_Repayment", "RepaymentElement", "JSPath");
+	ExcelData Tawarooq_Repayment_TestData  = new ExcelData(excelTestDataPath,"Tawarooq_Repayment","Dataset ID");
 	
-	@And("User_6047 Get the test data for test case ID AT_MU_IRM_001")
-	public void user_get_the_test_data_for_test_case_id_at_fi() {
-		testData =  Murabha_Repayment_TestData.getTestdata("DS01_AT_MU_IRM_001");
-	}
-	@And("User_6047 Get the test data for test case ID AT_MU_IRM_007")
-	public void user_get_the_test_data_for_test_case_id_at_fi_() {
-		testData =  Murabha_Repayment_TestData.getTestdata("DS01_AT_MU_IRM_007");
+	@And("User_6047 Get the test data for test case ID AT_TW_AD_IRM_01")
+	public void user_get_the_test_data_for_test_case_id_at_tw_ad_irm() {
+		testData =  Tawarooq_Repayment_TestData.getTestdata("DS01_AT_TW_AD_IRM_01");
 	}
 
-
-	@And("User_6047 click the module name dropdown in ULS application")
-	public void user_click_the_module_name_dropdown_in_uls_application() throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(Ijarah_CustomerDebt.getElement("moduleNameDropdown")));
-		for (int i = 0; i <= 500; i++) {
-			try {
-				javascriptHelper.executeScriptWithWebElement(Ijarah_CustomerDebt.getElement("moduleNameDropdown")).click();
-				break;
-			} catch (Exception e) {
-				if (i == 500) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
+	@And("User_6047 Get the test data for test case ID AT_TW_AD_IRM_04")
+	public void user_get_the_test_data_for_test_case_id_at_tw_ad_irm_04() {
+		testData =  Tawarooq_Repayment_TestData.getTestdata("DS01_AT_TW_AD_IRM_04");
 	}
-	@And("User_6047 select the module name as LOS in ULS application")
-	public void user_select_the_module_name_as_los_in_uls_application() throws Throwable {
-		String moduleListJSpath = "document.querySelectorAll('ion-radio-group ion-item').length";
-        String moduleLength = "";
-        for (int i = 0; i <= 300; i++) {
-            try {
-                moduleLength = javascriptHelper.executeScript("return " + moduleListJSpath).toString();
-                System.out.println("Module Length " + moduleLength);
-                if (!(moduleLength.isBlank())) {
-                    break;
-                }
-            } catch (Exception e) {
-                if (i == 300) {
-                    Assert.fail(e.getMessage());
-                }
-            }
-        }
-        int premitiveIntegerLength = Integer.parseInt(moduleLength);
-        
-//		document.querySelectorAll('ion-radio-group ion-item')[0].textContent
-        for (int i = 0; i < premitiveIntegerLength; i++) {
-            for (int j = 0; j <= 300; j++) {
-                try {
-                    String moduleName = javascriptHelper.executeScript(
-                            "return  document.querySelectorAll('ion-radio-group ion-item')[" + i + "].textContent")
-                            .toString();
-                    System.out.println("Module name " + moduleName);
-//                    if (moduleName.equalsIgnoreCase("LOS")) {
-                    if (moduleName.equalsIgnoreCase(testData.get("Module Name"))) {
-                        System.out
-                                .println("document.querySelectorAll('ion-radio-group ion-item ion-radio')[" + i + "]");
-                        javascriptHelper
-                                .executeScriptWithWebElement(
-                                        "document.querySelectorAll('ion-radio-group ion-item ion-radio')[" + i + "]")
-                                .click();
-                    }
-                } catch (Exception e) { 
 
-                }
-            }
-        }	
+	@And("User_6047 Get the test data for test case ID AT_TW_AD_IRM_06")
+	public void user_get_the_test_data_for_test_case_id_at_tw_ad_irm_06() {
+		testData =  Tawarooq_Repayment_TestData.getTestdata("DS01_AT_TW_AD_IRM_06");
 	}
-	@And("User_6047 Search the Ref Id Under inbox")
+	@Then("logout from the ULS Application")
+	public void logout_from_the_ULS_application() throws Throwable {
+		ijaraLogin.logoutFromIjara();
+	}
+	
+	@And("User_6047 search the Ref Id Under inbox")
 	public void user_search_the_ref_id_under_inbox_6047() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text")));
 		//javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text"))
@@ -111,7 +63,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text"))
-				.sendKeys(testData.get("Ref No"));
+				.sendKeys(testData.get("Ref No")); 
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -119,12 +71,11 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 				}
 			}
 		}	}
-	
-	@And("User_6047 click repayment mode section")
+	@And("User_6047 Click repayment mode section")
 	public void user_click_repayment_mode_section() {
 		for (int i = 0; i < 200; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("repaymentModeSection")).click();
+				javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("repaymentModeSection")).click();
 				break;
 			} catch (Exception e) {
 				if (i==199) {
@@ -135,11 +86,12 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	    	
 		}
 	}
-	@And("User_6047 click Add icon")
-	public void user_click_edit_icon() {
+
+	@And("User_6047 Click Add icon")
+	public void user_click_add_icon() {
 		for (int i = 0; i < 200; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("AddButton")).click();
+				javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("AddButton")).click();
 				break;
 			} catch (Exception e) {
 				if (i==199) {
@@ -150,27 +102,12 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	    	
 		}
 	}
-	@Then("User_6047 verify the repayment mode field")
-	public void User_verify_the_repayment_mode_field() {
-		for (int i = 0; i <200; i++) {
-			try {
-				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("repaymentModeField")).isDisplayed());
-				break;
-			} catch (Exception e) {
-				if (i==199) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-		
-		
-	}
 
-	@Then("User_6047 verify the account holder name field")
-	public void User_verify_the_account_holder_name_field() {
+	@Then("User_6047 verify the repayment mode field in Repayment mode")
+	public void user_verify_the_repayment_mode_field_in_repayment_mode() {
 		for (int i = 0; i <200; i++) {
 			try {
-				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("accountHolderNameField")).isDisplayed());
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("repaymentModeField")).isDisplayed());
 				break;
 			} catch (Exception e) {
 				if (i==199) {
@@ -181,11 +118,11 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		
 	}
 
-	@Then("User_6047 verify the account type field")
-	public void User_verify_the_account_type_field() {
+	@Then("User_6047 verify the account holder name field Repayment mode")
+	public void user_verify_the_account_holder_name_field_repayment_mode() {
 		for (int i = 0; i <200; i++) {
 			try {
-				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("accountTypeField")).isDisplayed());
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("accountHolderNameField")).isDisplayed());
 				break;
 			} catch (Exception e) {
 				if (i==199) {
@@ -195,11 +132,11 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		}
 	}
 
-	@Then("User_6047 verify the account number field")
-	public void User_verify_the_account_number_field() {
+	@Then("User_6047 verify the account type field Repayment mode")
+	public void user_verify_the_account_type_field_repayment_mode() {
 		for (int i = 0; i <200; i++) {
 			try {
-				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("accountNumberField")).isDisplayed());
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("accountTypeField")).isDisplayed());
 				break;
 			} catch (Exception e) {
 				if (i==199) {
@@ -209,11 +146,11 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		}
 	}
 
-	@Then("User_6047 verify the bank name field")
-	public void User_verify_the_bank_name_field() {
+	@Then("User_6047 verify the account number field Repayment mode")
+	public void user_verify_the_account_number_field_repayment_mode() {
 		for (int i = 0; i <200; i++) {
 			try {
-				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("bankNameField")).isDisplayed());
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("accountNumberField")).isDisplayed());
 				break;
 			} catch (Exception e) {
 				if (i==199) {
@@ -223,11 +160,11 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		}
 	}
 
-	@Then("User_6047 verify the bank branch name field")
-	public void User_verify_the_bank_branch_name_field() {
+	@Then("User_6047 verify the bank name field Repayment mode")
+	public void user_verify_the_bank_name_field_repayment_mode() {
 		for (int i = 0; i <200; i++) {
 			try {
-				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("branchNameField")).isDisplayed());
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("bankNameField")).isDisplayed());
 				break;
 			} catch (Exception e) {
 				if (i==199) {
@@ -237,11 +174,11 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		}
 	}
 
-	@Then("User_6047 verify the ESC code field")
-	public void User_verify_the_ecs_code_field() {
+	@Then("User_6047 verify the bank branch name field Repayment mode")
+	public void user_verify_the_bank_branch_name_field_repayment_mode() {
 		for (int i = 0; i <200; i++) {
 			try {
-				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("escCode")).isDisplayed());
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("branchNameField")).isDisplayed());
 				break;
 			} catch (Exception e) {
 				if (i==199) {
@@ -251,11 +188,11 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		}
 	}
 
-	@Then("User_6047 verify save button")
-	public void User_verify_save_button() {
+	@Then("User_6047 verify the ESC code field Repayment mode")
+	public void user_verify_the_esc_code_field_repayment_mode() {
 		for (int i = 0; i <200; i++) {
 			try {
-				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("saveButton")).isDisplayed());
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("escCode")).isDisplayed());
 				break;
 			} catch (Exception e) {
 				if (i==199) {
@@ -265,11 +202,11 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		}
 	}
 
-	@Then("User_6047 verify help button")
-	public void User_verify_help_button() {
+	@Then("User_6047 verify save button Repayment mode")
+	public void user_verify_save_button_repayment_mode() {
 		for (int i = 0; i <200; i++) {
 			try {
-				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("helpButton")).isDisplayed());
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("saveButton")).isDisplayed());
 				break;
 			} catch (Exception e) {
 				if (i==199) {
@@ -278,10 +215,23 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 			}
 		}
 	}
-	
-	@Then("User_6047 verify the repayment mode field is mandatory,editable and lookup value")
+
+	@Then("User_6047 verify help button Repayment mode")
+	public void user_verify_help_button_repayment_mode() {
+		for (int i = 0; i <200; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("helpButton")).isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	@Then("User_6047 verify the Repayment mode field is mandatory,editable and lookup value")
 	public void user_verify_the_repayment_mode_field_is_mandatory_editable_and_lookup_value() {
-		String repaymentmodefield= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("repaymentMode_in")).getAttribute("aria-label");
+		String repaymentmodefield= javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("repaymentMode_in")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
 	            Assert.assertTrue(repaymentmodefield.contains("*"));
@@ -295,7 +245,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("repaymentMode_in")).click();
+				javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("repaymentMode_in")).click();
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -368,9 +318,9 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		}
 	}
 
-	@Then("User_6047 validate the account holder name field is mandatory,editable and lookup value")
+	@Then("User_6047 validate the Account holder name field is mandatory,editable and lookup value")
 	public void user_validate_the_account_holder_name_field_is_mandatory_editable_and_lookup_value() {
-		String repaymentmodefield= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("accountHolderName_in")).getAttribute("aria-label");
+		String repaymentmodefield= javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("accountHolderName_in")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
 	            Assert.assertTrue(repaymentmodefield.contains("*"));
@@ -384,7 +334,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("accountHolderName_in")).click();
+				javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("accountHolderName_in")).click();
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -457,9 +407,9 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		}
 	}
 
-	@Then("User_6047 verify the account type field is mandatory,editable and lookup value")
+	@Then("User_6047 verify the Account type field is mandatory,editable and lookup value")
 	public void user_verify_the_account_type_field_is_mandatory_editable_and_lookup_value() {
-		String repaymentmodefield= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("accountTypeField_in")).getAttribute("aria-label");
+		String repaymentmodefield= javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("accountTypeField_in")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
 	            Assert.assertTrue(repaymentmodefield.contains("*"));
@@ -473,7 +423,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("accountTypeField_in")).click();
+				javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("accountTypeField_in")).click();
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -546,7 +496,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		}
 	}
 
-	@Then("User_6047 verify the account number field is mandatory,editable and numeric")
+	@Then("User_6047 verify the Account number field is mandatory,editable and numeric")
 	public void user_verify_the_account_number_field_is_mandatory_editable_and_numeric() {
 		for (int i = 0; i <2000; i++) {
 			try {
@@ -577,11 +527,10 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 			
 		}
 	}
-		
-	
-	@Then("User_6047 click the account currency field is mandatory,editable and lookup value")
+
+	@Then("User_6047 click the Account currency field is mandatory,editable and lookup value")
 	public void user_click_the_account_currency_field_is_mandatory_editable_and_lookup_value() {
-		String repaymentmodefield= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("AccountCurrency_in")).getAttribute("aria-label");
+		String repaymentmodefield= javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("AccountCurrency_in")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
 	            Assert.assertTrue(repaymentmodefield.contains("*"));
@@ -595,7 +544,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("AccountCurrency_in")).click();
+				javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("AccountCurrency_in")).click();
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -668,9 +617,9 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		}
 	}
 
-	@Then("User_6047 verify the bank name field is mandatory,editable and lookup value")
+	@Then("User_6047 verify the Bank name field is mandatory,editable and lookup value")
 	public void user_verify_the_bank_name_field_is_mandatory_editable_and_lookup_value() {
-		String repaymentmodefield= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("bankNameField_in")).getAttribute("aria-label");
+		String repaymentmodefield= javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("bankNameField_in")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
 	            Assert.assertTrue(repaymentmodefield.contains("*"));
@@ -684,7 +633,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("bankNameField_in")).click();
+				javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("bankNameField_in")).click();
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -757,9 +706,9 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		}
 	}
 
-	@Then("User_6047 verify the branch name field is mandatory,editable and lookup value")
+	@Then("User_6047 verify the Branch name field is mandatory,editable and lookup value")
 	public void user_verify_the_branch_name_field_is_mandatory_editable_and_lookup_value() {
-		String repaymentmodefield= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("branchNameField_in")).getAttribute("aria-label");
+		String repaymentmodefield= javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("branchNameField_in")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
 	            Assert.assertTrue(repaymentmodefield.contains("*"));
@@ -773,7 +722,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("branchNameField_in")).click();
+				javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("branchNameField_in")).click();
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -846,7 +795,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		}
 	}
 
-	@Then("User_6047 verify the code field is mandatory,editable and numeric")
+	@Then("User_6047 verify the Code field is mandatory,editable and numeric")
 	public void user_verify_the_code_field_is_mandatory_editable_and_numeric() {
 		for (int i = 0; i <2000; i++) {
 			try {
@@ -865,14 +814,12 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-5-lbl\"]')").sendKeys("3214");
 				
 	}
-	
-	
-	@Then("User_6047 click the save button under repayment mode screen")
-	public void user_click_the_save_button_under_the_repayment_mode_screen() {
+
+	@Then("User_6047 click the Save button under repayment mode screen")
+	public void user_click_the_save_button_under_repayment_mode_screen() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("SaveButton")).click();
-				Thread.sleep(3000);
+				javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("SaveButton")).click();
 				break;
 			} catch (Exception e) { 
 				if (i == 1000) {
@@ -881,12 +828,12 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 			}
 		}
 	}
-	
-	@Then("User_6047 verify the successfully saved message popup")
-	public void user_verify_the_successfully_saved_message_popup() {
+
+	@Then("User_6047 verify the successfully saved message popup in Repayment Mode")
+	public void user_verify_the_successfully_saved_message_popup_in_repayment_mode() {
 		for (int i = 0; i <2000; i++) {
 	        try {
-	        	String text = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("SucessPopUP")).getText();
+	        	String text = javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("SucessPopUP")).getText();
 	        	System.out.println(text);
 	            Assert.assertTrue(text.contains("Success!"));
 	            break;
@@ -897,12 +844,27 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	        }
 		}
 	}
-	@Then("User_6047 to verify the same record should get saved in Repayment mode")
-	public void user_to_verify_the_same_record_should_get_saved_Repayment_mode() {
-		String repaymentMode= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("repaymentMode_in")).getAttribute("aria-label");
+
+	@Then("User_6047 click edit icon in Repayment Mode")
+	public void user_click_edit_icon_in_repayment_mode() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("editIcon")).click();
+				break;
+			} catch (Exception e) { 
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Then("User_6047 To verify the same record should get saved in Repayment Mode")
+	public void user_to_verify_the_same_record_should_get_saved_in_repayment_mode() {
+		String repaymentMode= javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("repaymentMode_in")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
-	            Assert.assertTrue(repaymentMode.contains("Credit Card"));
+	            Assert.assertTrue(repaymentMode.contains("Debit Card"));
 	            break;
 	        } catch (Exception e) {
 	            if (i==1999) {
@@ -911,10 +873,10 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	        }
 	    }
 		
-		String accountHolderName= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("accountHolderName_in")).getAttribute("aria-label");
+		String accountHolderName= javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("accountHolderName_in")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
-	            Assert.assertTrue(accountHolderName.contains("TEST KI"));
+	            Assert.assertTrue(accountHolderName.contains("test"));
 	            break;
 	        } catch (Exception e) {
 	            if (i==1999) {
@@ -923,10 +885,10 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	        }
 	    }
 		
-		String accountType= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("accountTypeField_in")).getAttribute("aria-label");
+		String accountType= javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("accountTypeField_in")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
-	            Assert.assertTrue(accountType.contains("FIXED DEPOSIT"));
+	            Assert.assertTrue(accountType.contains("Savings Account"));
 	            break;
 	        } catch (Exception e) {
 	            if (i==1999) {
@@ -934,10 +896,10 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	          }
 	        }
 	    }
-		String accountNumber= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("accountNumberField_in")).getAttribute("ng-reflect-model");
+		String accountNumber= javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("accountNumberField_in")).getAttribute("ng-reflect-model");
 		for (int i = 0; i <2000; i++) {
 	        try {
-	            Assert.assertTrue(accountNumber.contains("123"));
+	            Assert.assertTrue(accountNumber.contains("123456"));
 	            break;
 	        } catch (Exception e) {
 	            if (i==1999) {
@@ -946,7 +908,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	        }
 	    }
 		
-		String  accountCurrency= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("AccountCurrency_in")).getAttribute("aria-label");
+		String  accountCurrency= javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("AccountCurrency_in")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
 	            Assert.assertTrue(accountCurrency.contains("CAD"));
@@ -958,7 +920,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	        }
 	    }
 		
-		String  bankName= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("bankNameField_in")).getAttribute("aria-label");
+		String  bankName= javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("bankNameField_in")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
 	            Assert.assertTrue(bankName.contains("BankofBaroda "));
@@ -969,7 +931,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	          }
 	        }
 	    }
-		String  branchName= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("branchNameField_in")).getAttribute("aria-label");
+		String  branchName= javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("branchNameField_in")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
 	            Assert.assertTrue(branchName.contains("BOAVA Branch"));
@@ -980,7 +942,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	          }
 	        }
 	    }
-		String  code= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("escCode_in")).getAttribute("ng-reflect-model");
+		String  code= javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("escCode_in")).getAttribute("ng-reflect-model");
 		for (int i = 0; i <2000; i++) {
 	        try {
 	            Assert.assertTrue(code.contains("89630"));
@@ -992,12 +954,12 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	        }
 	    }
 	}
-	
-	@And("User_6047 click edit icon")
-	public void user_click_edit_icon_() {
+
+	@And("User_6047 click help icon in Repayment Mode")
+	public void user_click_help_icon_in_repayment_mode() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("editIcon")).click();
+				javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("helpButton")).click();
 				break;
 			} catch (Exception e) { 
 				if (i == 1000) {
@@ -1006,21 +968,9 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 			}
 		}
 	}
-	@And("User_6047 click help icon")
-	public void user_click_help_icon() {
-		for (int i = 0; i <= 1000; i++) {
-			try {
-				javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("helpButton")).click();
-				break;
-			} catch (Exception e) { 
-				if (i == 1000) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-	}
-	@Then("User_6047 verify description of all the fields details")
-	public void user_verify_description_of_all_the_fields_details() {
+
+	@Then("User_6047 verify description of all the fields details in Repayment Mode")
+	public void user_verify_description_of_all_the_fields_details_in_repayment_mode() {
 		for (int i = 0; i <2000; i++) {
 			try {
 				String repayment ="document.querySelector('pre[class=\"ng-star-inserted\"]').innerText";
@@ -1034,14 +984,61 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 				}
 			}
 		}
-	    
 	}
-	
-	@Then("User_6047 give the input for repayment mode field")
-	public void user_give_the_input_for_repayment_mode_field() {
+	@And("User_6047 Click the Search button")
+	public void user_click_the_search_button() throws Throwable {
+		//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_button")));
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_button")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Then("User_6047 search the Repayment list under Repayment mode")
+	public void user_search_the_repayment_list_under_repayment_mode() {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				//javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("search_button_for_employment_det")).click();
+				javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("search_box_search_text")).
+				sendKeys(testData.get("Record"));
+				break;
+			}
+			
+			catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}		
+		}
+	}
+
+	@Then("User_6047 click the Entitle button under Repayment mode")
+	public void user_click_the_entitle_button_under_repayment_mode() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("Edit_button")).click();
+				Thread.sleep(4000);
+				break;
+			} catch (Exception e) { 
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+
+	@Then("User_6047 Give the input for repayment mode field in Repayment Mode")
+	public void user_give_the_input_for_repayment_mode_field_in_repayment_mode() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("repaymentMode_in")).click();
+				javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("repaymentMode_in")).click();
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1114,11 +1111,11 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		}
 	}
 
-	@Then("User_6047 give the input for account holder name field")
-	public void user_give_the_input_for_account_holder_name_field() {
+	@Then("User_6047 Give the input for account holder name field in Repayment Mode")
+	public void user_give_the_input_for_account_holder_name_field_in_repayment_mode() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("accountHolderName_in")).click();
+				javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("accountHolderName_in")).click();
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1191,11 +1188,11 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		}
 	}
 
-	@Then("User_6047 give the input for account type field")
-	public void user_give_the_input_for_account_type_field() {
+	@Then("User_6047 Give the input for account type field in Repayment Mode")
+	public void user_give_the_input_for_account_type_field_in_repayment_mode() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("accountTypeField_in")).click();
+				javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("accountTypeField_in")).click();
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1267,13 +1264,12 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 			}
 		}
 	}
- 
 
-	@Then("User_6047 give the input for account currency field")
-	public void user_give_the_input_for_account_currency_field() {
+	@Then("User_6047 Give the input for account currency field in Repayment Mode")
+	public void user_give_the_input_for_account_currency_field_in_repayment_mode() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("AccountCurrency_in")).click();
+				javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("AccountCurrency_in")).click();
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1346,11 +1342,11 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		}
 	}
 
-	@Then("User_6047 give the input for bank name field")
-	public void user_give_the_input_for_bank_name_field() {
+	@Then("User_6047 Give the input for bank name field in Repayment Mode")
+	public void user_give_the_input_for_bank_name_field_in_repayment_mode() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("bankNameField_in")).click();
+				javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("bankNameField_in")).click();
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1423,11 +1419,11 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		}
 	}
 
-	@Then("User_6047 give the input for branch name field")
-	public void user_give_the_input_for_branch_name_field() {
+	@Then("User_6047 Give the input for branch name field in Repayment Mode")
+	public void user_give_the_input_for_branch_name_field_in_repayment_mode() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("branchNameField_in")).click();
+				javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("branchNameField_in")).click();
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1500,9 +1496,8 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		}
 	}
 
-	@Then("User_6047 give the input for code field")
-	public void user_give_the_input_for_code_field() {
-
+	@Then("User_6047 Give the input for code field in Repayment Mode")
+	public void user_give_the_input_for_code_field_in_repayment_mode() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement("document.querySelector('ion-label[ng-reflect-text=\"ECS CODE.TOOLTIP\"]+ion-input')").click();
@@ -1516,8 +1511,42 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		}
 	}
 
-	@And("User_6047 give the character input for account number field")
-	public void user_give_the_input_for_account_number_field() {
+
+	@Then("User_6047 Verify the popup of fill all field in Repayment Mode")
+	public void user_verify_the_popup_of_fill_all_field_in_repayment_mode() throws Throwable {
+		//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("PleaseFillDetails_Popup")));
+		Thread.sleep(2000);
+		for (int i = 0; i <2000; i++) {
+	        try {
+	        	String text = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("PleaseFillDetails_Popup")).getText();
+	        	System.out.println(text);
+	            Assert.assertTrue(text.contains("Please fill all the details"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+		}
+	}
+	@Then("User_6047 Give the negative number input for account number field in Repayment Mode")
+	public void user_give_the_negative_number_input_for_account_number_field_in_repayment_mode() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").click();
+				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").sendKeys("-123");
+				Thread.sleep(3000);
+				break;
+			} catch (Exception e) { 
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Then("User_6047 Give the character input for account number field in Repayment Mode")
+	public void user_give_the_character_input_for_account_number_field_in_repayment_mode() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").click();
@@ -1530,31 +1559,15 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 				}
 			}
 		}
-	    
 	}
-		
-	@And("User_6047 enter the special character for account number field")
-	public void user_enter_the_special_character_for_account_number_field() {
+
+	@Then("User_6047 Enter the special character for account number field in Repayment Mode")
+	public void user_enter_the_special_character_for_account_number_field_in_repayment_mode() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").click();
-				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").sendKeys("***");
+				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").sendKeys("**$");
 				Thread.sleep(3000);
-				break;
-			} catch (Exception e) { 
-				if (i == 1000) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-	}
-	@Then("User_6047 modify the ESC code field")
-	public void user_modify_the_ESC_code_field() {
-		for (int i = 0; i <= 1000; i++) {
-			try {
-				javascriptHelper.executeScriptWithWebElement("document.querySelector('ion-label[ng-reflect-text=\"ECS CODE.TOOLTIP\"]+ion-input')").click();
-				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-5-lbl\"]')").clear();
-				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-5-lbl\"]')").sendKeys("89630");
 				break;
 			} catch (Exception e) { 
 				if (i == 1000) {
@@ -1564,15 +1577,20 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		}
 	}
 	
-	@Then("User_6047 delete the account number")
-	public void user_delete_the_account_number() {
-		for (int i = 0; i < 200; i++) {
+	@Then("User_6047 Delete the account number Repayment mode screen")
+	public void user_delete_the_account_number_repayment_mode_screen() {
+for (int i = 0; i < 200; i++) {
 			
 			try {
 				javascriptHelper.executeScriptWithWebElement("document.querySelector('ion-label[ng-reflect-text=\"Account Number.TOOLTIP\"]+ion-input')").click();
-				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").clear();
+				javascriptHelper
+				.executeScriptWithWebElement(
+						("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')"))
+				.sendKeys(Keys.chord(Keys.CONTROL, "A", Keys.BACK_SPACE));
+				
+				//javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").clear();
 				//javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("accountNumberField_in")).sendKeys(testData.get("AccountNumber"));
-				Thread.sleep(3000);
+			
 				break;
 			} catch (Exception e) {
 				if (i==199) {
@@ -1583,8 +1601,8 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		}
 	}
 
-	@Then("User_6047 give the input for account number field")
-	public void user_give_the_input_for_account_number_field_() {
+	@Then("User_6047 give the input for account number field in Repayment mode screen")
+	public void user_give_the_input_for_account_number_field_in_repayment_mode_screen() {
 for (int i = 0; i < 200; i++) {
 			
 			try {
@@ -1601,42 +1619,24 @@ for (int i = 0; i < 200; i++) {
 			
 		}
 	}
-	
-	@Then("User_6047 click the submit button")
-	public void user_click_the_submit_button() {
-		
-			for (int i = 0; i <= 1000; i++) {
-				try {
-					javascriptHelper.executeScriptWithWebElement("document.querySelector('button[label=\"Submit\"]')").click();
-					Thread.sleep(3000);
-					break;
-				} catch (Exception e) { 
-					if (i == 1000) {
-						Assert.fail(e.getMessage());
-					}
+
+	@Then("User_6047 click the submit button in Repayment mode")
+	public void user_click_the_submit_button_in_repayment_mode() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement("document.querySelector('button[label=\"Submit\"]')").click();
+				Thread.sleep(3000);
+				break;
+			} catch (Exception e) { 
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
 				}
 			}
-	}
-
-	@And("User_6047 verify the submit successfully popup")
-	public void user_verify_the_submit_successfully_popup() {
-		for (int i = 0; i <2000; i++) {
-	        try {
-	        	String text = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("SucessPopUP")).getText();
-	        	System.out.println(text);
-	            Assert.assertTrue(text.contains("Submit"));
-	            break;
-	        } catch (Exception e) {
-	            if (i==1999) {
-	                Assert.fail(e.getMessage());
-	            }
-	        }
 		}
 	}
-	
-	
-	@And("User_6047 click the ok button in action conform field")
-	public void user_click_the_ok_button_in_active_conform_field() {
+
+	@Then("User_6047 click the ok button in action conform field in Repayment mode")
+	public void user_click_the_ok_button_in_action_conform_field_in_repayment_mode() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.JSEClick(
@@ -1652,8 +1652,8 @@ for (int i = 0; i < 200; i++) {
 		}
 	}
 
-	@And("User_6047 click the submit in action conform field")
-	public void user_click_the_submit_in_active_conform_field() {
+	@Then("User_6047 click the submit in action conform field in  Repayment mode")
+	public void user_click_the_submit_in_action_conform_field_in_repayment_mode() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.JSEClick(
@@ -1668,21 +1668,126 @@ for (int i = 0; i < 200; i++) {
 			}
 		}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+	@Then("User_6047 verify the submit successfully popup in  Repayment mode")
+	public void user_verify_the_submit_successfully_popup_in_repayment_mode() {
+		for (int i = 0; i <2000; i++) {
+	        try {
+	        	String text = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("SucessPopUP")).getText();
+	        	System.out.println(text);
+	            Assert.assertTrue(text.contains("Submit"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+		}
 	}
-	
-	
-	
-	
+
+	@Then("User_6047 verify the successfully saved message popup and get the reference number")
+	public void user_verify_the_successfully_saved_message_popup_and_get_the_reference_number() {
+		String SavetoastMessage = "";
+		String toastMessageForReferenceNumber = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+				SavetoastMessage = javascriptHelper
+						.executeScript("return " + commonJSPaths.getElement("toast_container_message")).toString();
+				if (!(SavetoastMessage.isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		softAssert.assertTrue(SavetoastMessage.contains("Success! Record created with ID"),
+				"Record is not saved hence failed");
+		toastMessageForReferenceNumber = SavetoastMessage;
+		System.out.println(SavetoastMessage);
+		
+		
+		//String finalRecordReferenceNumber = toastMessageForReferenceNumber.substring(36).trim();
+		String finalsavedata = toastMessageForReferenceNumber.substring(toastMessageForReferenceNumber.lastIndexOf(" ")+1).trim();
+		System.out.println("Final reference number " + finalsavedata);
+		Tawarooq_Repayment_TestData.updateTestData("DS01_AT_TW_AD_IRM_06", "save_record_reference_number", finalsavedata);
+
+	}
+
+	@Then("User_6047 Click the submit button")
+	public void user_click_the_submit_button() {
+		
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement("document.querySelector('button[ng-reflect-label=\"Submit\"]')").click();
+				Thread.sleep(3000);
+				break;
+			} catch (Exception e) { 
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Then("User_6047 Click the ok button in action conform field")
+	public void user_click_the_ok_button_in_action_conform_field() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				javascriptHelper.JSEClick(
+						javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("ok_ActCon")));
+				//javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("ok_ActCon")).click();
+				Thread.sleep(6000);
+				break;
+			} catch (Exception e) { 
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Then("User_6047 Click the submit in action conform field")
+	public void user_click_the_submit_in_action_conform_field() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				javascriptHelper.JSEClick(
+						javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("submit_ActCon")));
+				//javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("submit_ActCon")).click();
+			
+				break;
+			} catch (Exception e) { 
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Then("User_6047 verify the submit successfully popup and get reference number")
+	public void user_verify_the_submit_successfully_popup_and_get_reference_number() {
+		String submitRecord ="";
+		for (int i = 0; i <2000; i++) {
+	        try {
+	         submitRecord = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("SucessPopUP")).getText();
+	        	System.out.println(submitRecord);
+	            Assert.assertTrue(submitRecord.contains("APPROVED Successfully"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	            }
+	        }
+		}
+		String finalRecordReferenceNumber = submitRecord.substring(87,92).trim();
+		System.out.println("split"+finalRecordReferenceNumber);
+		//String finalRecordReferenceNumber = submitRecord.substring(submitRecord.lastIndexOf(" ")+1).trim();
+		System.out.println("Final reference number " + finalRecordReferenceNumber);
+		Tawarooq_Repayment_TestData.updateTestData("DS01_AT_TW_AD_IRM_06", "record_reference_number", finalRecordReferenceNumber);
+
+		
+	}
 
 
-
-
+}

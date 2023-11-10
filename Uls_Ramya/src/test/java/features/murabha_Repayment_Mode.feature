@@ -2,6 +2,7 @@ Feature: To verify the functionality of repayment mode
 @AT_MU_IRM_001
 
 Scenario: To verify post clicking on Add asset button, the Repayment Mode screen should be open with all valid fields
+
 Given Navigate the IJARA URL
 And User_6047 Login with valid credentials
 And User_6047 Get the test data for test case ID AT_MU_IRM_001 
@@ -9,7 +10,7 @@ And User_6047 click the module name dropdown in ULS application
 And User_6047 select the module name as LOS in ULS application
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
-And User_6047 Search the Ref Id  Under inbox 
+And User_6047 Search the Ref Id Under inbox 
 And User_6047 Click the Entitle button under inbox 
 And User_6047 click repayment mode section
 And User_6047 click Add icon
@@ -149,7 +150,7 @@ And User_6047 click the save button under repayment mode screen
 
 #IRM_03_07,#IRM_03_08
 
-#@AT_MU_IRM_007
+@AT_MU_IRM_007
 Scenario: To verify the functionality of save and submit button
 Given Navigate the IJARA URL
 Then User_6047 Login with valid credentials

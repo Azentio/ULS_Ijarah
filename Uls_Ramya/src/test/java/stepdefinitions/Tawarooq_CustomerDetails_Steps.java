@@ -53,6 +53,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 	public void user_get_the_test_data_for_test_case_id() {
 		testData = Tawarruq_CustomerDetails_TestData.getTestdata("DS01_AT_TW_CD_05");
 
+	
 	}
 
 	@And("User_6047 Get the test data for test case ID AT_TW_CD_06")

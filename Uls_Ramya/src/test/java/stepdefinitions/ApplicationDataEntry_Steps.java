@@ -94,6 +94,22 @@ public class ApplicationDataEntry_Steps extends BaseClass {
 			}
 		}
 	}
+	@And("User_6047 search the Ref Id Under inbox for submit")
+	public void user_search_the_ref_id_under_inbox_for_submit() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text")));
+		//javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text"))
+		//.sendKeys(testData.get("Ref No"));
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text"))
+				.sendKeys(testData.get("Ref No")); 
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	}
 	@And("User_6047 Click the Entitle button under inbox")
 	public void user_click_the_entitle_button_under_inbox() throws Throwable {
 		for (int i = 0; i <= 1000; i++) {
