@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-11-10T15:50:21 IST" name="Default suite" finished-at="2023-11-10T15:51:24 IST" duration-ms="62661">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7e057f43]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2023-11-10T15:50:21 IST" name="Default test" finished-at="2023-11-10T15:51:24 IST" duration-ms="62661">
+      <class name="Runner.TestApplication">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@7e057f43]" started-at="2023-11-10T15:50:21 IST" name="setUpClass" finished-at="2023-11-10T15:50:23 IST" duration-ms="1389" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7e057f43]" started-at="2023-11-10T15:50:23 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-10T15:51:10 IST" duration-ms="47043" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Creation of Insurance Info record with valid data"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Verify the functionalities for AppDataEntry(Insurance Info)]"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[class java.lang.String cannot be cast to class org.openqa.selenium.WebElement (java.lang.String is in module java.base of loader 'bootstrap'; org.openqa.selenium.WebElement is in unnamed module of loader 'app')]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: class java.lang.String cannot be cast to class org.openqa.selenium.WebElement (java.lang.String is in module java.base of loader 'bootstrap'; org.openqa.selenium.WebElement is in unnamed module of loader 'app')
+at org.testng.Assert.fail(Assert.java:99)
+at stepdefinitions.Tawarruq_APPDATA_ApplicationDetails.user_0482_click_save_button_and_verify_the_confirmation_message(Tawarruq_APPDATA_ApplicationDetails.java:240)
+at ✽.user_0482 Click save button and verify the confirmation message(file:///C:/Users/ININDC00482/eclipse-workspace/ULS_Tawarruq_Ajith/src/test/java/features/Tawarruq/Tawarruq_AppDataEntry_InsuranceInfo.feature:26)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@7e057f43]" started-at="2023-11-10T15:51:10 IST" name="tearDownClass" finished-at="2023-11-10T15:51:24 IST" duration-ms="14170" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- Runner.TestApplication -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
