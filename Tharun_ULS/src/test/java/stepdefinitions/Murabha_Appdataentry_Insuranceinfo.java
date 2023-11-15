@@ -53,7 +53,7 @@ public class Murabha_Appdataentry_Insuranceinfo {
 	public void user_enter_the_clientname_under_search_button_for_Appdata_entry_QuationInfoInfo() throws Throwable {
 		for (int i = 0; i <= 700; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(MurabhAppdataEntryInsuranceInfo.getElement("searchinput")).sendKeys("3026");
+				javascriptHelper.executeScriptWithWebElement(MurabhAppdataEntryInsuranceInfo.getElement("searchinput")).sendKeys("3357");
 				break;
 			} catch (Exception e) {
 				if (i==699) {

@@ -3,4 +3,4 @@ Feature: Title of your feature
 
   @tag1
   Scenario: Title of your scenario
-  And User_607 Check back button navigate to the previous screen
+  And user Enter the clientname under search button in Tawarah App Data Entry Living Expenses

@@ -470,7 +470,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 		String vatNumericField = javascriptHelper
 				.executeScriptWithWebElement(
 						MurabhAppdataEntryQuotationInfo.getElement("vatOnBasePremiumNumericValidation"))
-				.getAttribute("ng-reflect-type");
+				.getAttribute("type");
 		System.err.println("first print  " + vatNumericField);
 		String assertvatNumericField = "number";
 		Assert.assertEquals(assertvatNumericField, vatNumericField);

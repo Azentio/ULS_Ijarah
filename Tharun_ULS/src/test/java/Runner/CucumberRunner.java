@@ -29,7 +29,7 @@ public class CucumberRunner {
 		testRunner(args, Thread.currentThread().getContextClassLoader());
 		}
 
-	public static void run(String[] arg, ClassLoader classLoader,int sizeOfList,int tagIndex) {
+	public static void run(String[] arg, final ClassLoader classLoader,int sizeOfList,int tagIndex) {
 		CommandlineOptionsParser commandlineOptionsParser = null;
 		CucumberRunTime runtime = null; 
 		

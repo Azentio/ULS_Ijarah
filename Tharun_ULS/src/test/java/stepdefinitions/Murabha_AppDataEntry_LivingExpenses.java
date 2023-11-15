@@ -6,7 +6,6 @@ import java.util.Map;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.asserts.SoftAssert;
 
 import dataProvider.ConfigFileReader;
 import dataProvider.ExcelData;
@@ -16,6 +15,7 @@ import helper.JavascriptHelper;
 import helper.Selenium_Actions;
 import helper.WaitHelper;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import pageobjects.JSPaths;
 import resources.BaseClass;
 
@@ -94,19 +94,24 @@ public class Murabha_AppDataEntry_LivingExpenses {
 		waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("searchinput")));
 		//javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("searchinput")).click();
 		javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("searchinput")).sendKeys("Gowtham");
-		   
-	    
+	}
+	
+	@Given("user Enter the clientname under search button in Tawarah App Data Entry Living Expenses")
+	public void user_enter_the_clientname_under_search_button_in_tawarah_app_data_entry_living_expenses() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("searchinput")));
+		javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("searchinput")).sendKeys("3357");
 	}
 
 	@And("user click the ExpenseType on Action")
 	public void user_click_the_expense_type_on_action() throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("Entitle")));
-		for (int i = 0; i < 200; i++) {
+	//	waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("Entitle")));
+		Thread.sleep(1000);
+		for (int i = 0; i < 500; i++) {
 			try {
 				javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("Entitle")).click();
 				break;
 			} catch (Exception e) {
-				if (i==199) {
+				if (i==499) {
 					Assert.fail(e.getMessage());
 				}
 				
@@ -638,8 +643,9 @@ public void user_verify_the_accredited_cost_field() throws IOException {
 
 
 @And("user verify the Please fill Mandatory field")
-public void user_verify_the_please_fill_mandatory_field() throws IOException {
+public void user_verify_the_please_fill_mandatory_field() throws IOException, Throwable {
 	//waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("PleaseFillMandatoryField")));
+	Thread.sleep(1000);
 	for (int i = 0; i < 300; i++) {
 		try {
 			Assert.assertTrue(javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("PleaseFillMandatoryField")).isDisplayed());
@@ -655,12 +661,12 @@ public void user_verify_the_please_fill_mandatory_field() throws IOException {
 @And("user verify the Please fill Required field")
 public void user_verify_the_please_fill_Required_field() throws IOException {
 	//waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("PleaseFillMandatoryField")));
-	for (int i = 0; i < 200; i++) {
+	for (int i = 0; i < 500; i++) {
 		try {
 			Assert.assertTrue(javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("RequiredField")).isDisplayed());
 			break;
 		} catch (Exception e) {
-		if (i==199) {
+		if (i==499) {
 			Assert.fail(e.getMessage());
 		}
 		}
@@ -699,9 +705,290 @@ public void user_modify_the_amount_field() throws Throwable {
 	waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("AmountInput")));
 	for (int i = 0; i < 15; i++) {
 		javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("AmountInput")).sendKeys(Keys.BACK_SPACE);
+	}
 		
 	}
 	
-}
+	@And ("User_610 click the module name")
+	public void user_select_the_module_name_to_los() throws Throwable {
+		
+		Thread.sleep(500);
+		for (int i = 0; i < 200; i++) {
+			try {
+				javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("Select_ModuleName_610")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	
+	
+		@And("User_610 select the LOS in module name")
+		public void user_select_the_los_in_module_name() throws Throwable {
+			
+				String moduleListJSpath = "document.querySelectorAll('ion-radio-group ion-item').length";
+		        String moduleLength = "";
+		        for (int i = 0; i <= 300; i++) {
+		            try {
+		                moduleLength = javaScriptHelper.executeScript("return " + moduleListJSpath).toString();
+		                System.out.println("Module Length " + moduleLength);
+		                if (!(moduleLength.isBlank())) {
+		                    break;
+		                }
+		            } catch (Exception e) {
+		                if (i == 300) {
+		                    Assert.fail(e.getMessage());
+		                }
+		            }
+		        }
+		        int premitiveIntegerLength = Integer.parseInt(moduleLength);
+
+//				document.querySelectorAll('ion-radio-group ion-item')[0].textContent
+		        for (int i = 0; i < premitiveIntegerLength; i++) {
+		            for (int j = 0; j <= 300; j++) {
+		                try {
+		                    String moduleName = javaScriptHelper.executeScript(
+		                            "return  document.querySelectorAll('ion-radio-group ion-item')[" + i + "].textContent")
+		                            .toString();
+		                    System.out.println("Module name " + moduleName);
+		                    if (moduleName.equalsIgnoreCase("LOS")) {
+		                    //if (moduleName.equalsIgnoreCase(testData.get("Module Name"))) {
+		                        System.out
+		                                .println("document.querySelectorAll('ion-radio-group ion-item ion-radio')[" + i + "]");
+		                        javaScriptHelper
+		                                .executeScriptWithWebElement(
+		                                        "document.querySelectorAll('ion-radio-group ion-item ion-radio')[" + i + "]")
+		                                .click();
+		                    }
+		                } catch (Exception e) {
+		 	                }
+		            }
+		        }	
+		}
+	
+		        	
+
+		
+		@And("User_610 click Inbox")
+		public void user_click_inbox() throws Throwable {
+			
+			for (int i = 0; i < 200; i++) {
+				try {
+					 javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("Select_inbox_610")).click();
+					break;
+				} catch (Exception e) {
+					if (i == 199) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+		}
+		
+		@And("User_610 click search button")
+		public void user_click_search_button() throws Throwable {
+			//waitHelper.waitForElementwithFluentwait(driver,javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("click_searchButton_610")));
+			//javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("click_searchButton_610")).click();
+			
+			for (int i = 0; i < 200; i++) {
+				try {
+					javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("click_searchButton_610")).click();
+					break;
+				} catch (Exception e) {
+					if (i == 199) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+		}
+
+		
+		@And("User_610 enter the value in search button")
+		public void user_enter_the_value_in_search_button() throws Throwable {
+			waitHelper.waitForElementwithFluentwait(driver,javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("enter_theName_InSearchBtn_610")));
+			javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("enter_theName_InSearchBtn_610")).sendKeys(testData.get("Search Button Value"));
+			
+			
+			System.out.println(jsPaths.getElement("clickEditBtnIn_FirstRow_UnderInbox_610"));
+			Thread.sleep(3000);
+			//document.querySelectorAll('ion-label')[2]
+			
+		}	
+		
+		
+		@And("User_610 click edit button under inbox screen")
+		public void user_click_edit_button_under_inbox_screen() throws Throwable {
+		
+			
+			for (int i = 0; i < 300; i++) {
+				try {
+					javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("clickEditBtnIn_FirstRow_UnderInbox_610")).click();
+					break;
+				} catch (Exception e) {
+					if (i == 299) {
+						Assert.fail(e.getMessage());
+					// TODO: handle exception
+				}
+			}
+			}
+			Thread.sleep(4000);
+				}
+		
+		
+		@And("User_610 click edit button under inbox screen1")
+		public void user_click_edit_button_under_inbox_screen1() throws Throwable {
+		
+			
+			for (int i = 0; i < 300; i++) {
+				try {
+					javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("clickEditBtnIn_FirstRow_UnderInbox_610")).click();
+					break;
+				} catch (Exception e) {
+					if (i == 299) {
+						Assert.fail(e.getMessage());
+					// TODO: handle exception
+				}
+			}
+			}
+			Thread.sleep(4000);
+				}
+				
+		
+		@And("User_610 click Living Expenses Screen in App Data Entery")
+		public void user_click_living_expenses_screen_in_app_data_entery() throws Throwable {
+			
+			for (int i = 0; i < 200; i++) {
+				try {
+					javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("livingExpenses_610")).click();
+					break;
+				} catch (Exception e) {
+					if (i == 199) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+	       //Thread.sleep(4000);
+		}
+			
+		
+		@And("User_610 click edit button under documents details")
+		public void user_click_edit_button_under_documents_details() throws Throwable {
+		    
+		 for(int i=0;i<200;i++){
+			 try {
+				 javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("editBtn_UnderFollowUp_610")).click();
+					break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+				// TODO: handle exception
+			}
+		 }Thread.sleep(3000);
+		 }		
+		
+		
+		
+		@And("User_610 verify the system not allow user to do a modification with invalid data Spouse Salary")
+		public void user_verify_the_system_not_allow_user_to_do_a_modification_with_invalid_data_spouse_salary() throws Throwable {
+
+			for (int i = 0; i < 200; i++) {
+				try {
+					javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("spouseSalary")).click();
+					javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("spouseSalary")).clear();
+					javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("spouseSalary")).sendKeys("55");
+					break;
+				} catch (Exception e) {
+					if (i == 199) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			Thread.sleep(4000);	
+			//validate 
+			
+			String SpouseSalary = javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("spouseSalary")).getAttribute("aria-valuenow");
+			
+			System.err.println("first print  " + SpouseSalary);
+			System.err.println("first print  " + SpouseSalary);
+			String assertSpouseSalary = "55";
+			Assert.assertEquals(assertSpouseSalary, SpouseSalary);
+			
+			
+		 
+		}
+	
+		
+		@And("User_610 save button and verify the success message in murabha")
+		public void user_save_button_and_verify_the_success_message_in_murabha() {
+		    
+			
+			for (int i = 0; i < 200; i++) {
+				try {
+					javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("murabha_SaveBtn")).click();
+					break;
+				} catch (Exception e) {
+					if (i == 199) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			
+			for (int i = 0; i < 300; i++) {
+				try {
+					if (javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("successMsg_610")).isDisplayed()) {
+						Assert.assertTrue(true);
+					}
+					break;
+				} catch (Exception e) {
+					if (i == 299) {
+						Assert.fail(e.getMessage());
+					// TODO: handle exception
+				}
+			}
+				
+			}
+			
+		}
+		@And("User_7181 enter the special character for account number field")
+		public void user_enter_the_special_character_for_account_number_field() {
+			for (int i = 0; i <= 1000; i++) {
+				try {
+					javaScriptHelper.executeScriptWithWebElement("document.querySelectorAll('input[id=\"integeronly\"]')[1]").click();
+					javaScriptHelper.executeScriptWithWebElement("document.querySelectorAll('input[id=\"integeronly\"]')[1]").sendKeys("***");
+					Thread.sleep(3000);
+					break;
+				} catch (Exception e) { 
+					if (i == 1000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+		}			
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
 
 }
+
+
+
+	
+
+
+

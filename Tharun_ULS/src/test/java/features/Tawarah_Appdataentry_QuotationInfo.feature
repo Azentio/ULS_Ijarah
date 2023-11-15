@@ -1,6 +1,6 @@
 Feature: Murabha_Appdataentry_QuotationInfo
 
-  @AT_MU_QIA_001
+  @AT_TW_QIA_001
   Scenario: To verify user is able to add new Quotation Info  record in the system by entering valid data
      Given navigate the IJARA URL
     And login with valid credentials2
@@ -23,7 +23,7 @@ Feature: Murabha_Appdataentry_QuotationInfo
     #Then user_615 validate the success message popup with close button
     Then user_615 click back button
 
-  @AT_MU_QIA_002
+  @AT_TW_QIA_002
   Scenario: To verify all the fields are mandatory and editable in quotation info tab
    Given navigate the IJARA URL
     And login with valid credentials2
@@ -59,7 +59,7 @@ Feature: Murabha_Appdataentry_QuotationInfo
     Then user_615 click back button
     And user click the Add button under Quotation Info screen
 
-  @AT_MU_QIA_003
+  @AT_TW_QIA_003
   Scenario: To verify user is able to add new Quotation Info record in the system by entering invalid data
    Given navigate the IJARA URL
     And login with valid credentials2
@@ -88,7 +88,7 @@ Feature: Murabha_Appdataentry_QuotationInfo
     And user click the saveButton under insurance info screen
 
   
-  @AT_MU_QIA_004
+  @AT_TW_QIA_004
   Scenario: To verify user is able to modify Quotation Info record in the system
     Given navigate the IJARA URL
     And login with valid credentials2
