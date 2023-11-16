@@ -1,4 +1,4 @@
-Feature: To verify the Customer Financials --> Income details screen
+Feature: To verify the Murabaha Application --> App Data Entry stage --> Customer Financials --> Income details screen
 
 # INC_01_01, INC_01_03
 @AT_MU_INC_01

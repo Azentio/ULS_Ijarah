@@ -1,4 +1,4 @@
-Feature: To check the Tawaruh --> App Data Entry stage --> Customer details screen
+Feature: To check the Tawarruq --> App Data Entry stage --> Customer details screen
 
 
 @AT_TW_CD_01_01

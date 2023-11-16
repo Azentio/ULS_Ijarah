@@ -72,6 +72,20 @@ public class Tawarruq_Steps {
     }
 	
 	
+//	Tawarruq -- App Data Entry Stage  -- Document Details screen
+	@And("^User_608 get the test data for test case AT_TW_AD_DOC_05$")
+    public void get_the_test_data_for_test_case_AT_TW_AD_DOC_05() throws Throwable {
+		testData = AppDataEntryCustomerDetails.getTestdata("DS_AT_TW_AD_DOC_05");
+    }
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	@And("User_608 search the Reference id under inbox in ULS Application")
 	public void user_search_the_reference_id_under_inbox_in_uls_application() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("inboxSearchInput")));
