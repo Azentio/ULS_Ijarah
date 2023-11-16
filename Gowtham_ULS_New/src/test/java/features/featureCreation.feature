@@ -4,6 +4,4 @@ Feature: Title of your feature
 
   @tag1
   Scenario: Title of your scenario
-  And User_607 Check the Status should be active in list view
-  And User_607 Deactive the status
-  And User_607 Check the Status should be Deactive in list view
+ And User_607 Search in the search Field Tawarah App Data Entry Income Details List
