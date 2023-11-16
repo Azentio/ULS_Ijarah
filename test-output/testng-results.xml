@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-10-26T17:03:44 IST" name="Default suite" finished-at="2023-10-26T17:04:32 IST" duration-ms="47749">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@402c4085]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2023-10-26T17:03:44 IST" name="Default test" finished-at="2023-10-26T17:04:32 IST" duration-ms="47749">
+      <class name="Runner.TestApplication">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@402c4085]" started-at="2023-10-26T17:03:44 IST" name="setUpClass" finished-at="2023-10-26T17:03:45 IST" duration-ms="1208" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@402c4085]" started-at="2023-10-26T17:03:45 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-10-26T17:04:26 IST" duration-ms="40785" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To verify all fields in view list of  Identification details"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To check the Identification details feature]"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Cannot invoke "org.openqa.selenium.WebElement.click()" because the return value of "helper.JavascriptHelper.executeScriptWithWebElement(String)" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Cannot invoke "org.openqa.selenium.WebElement.click()" because the return value of "helper.JavascriptHelper.executeScriptWithWebElement(String)" is null
+at org.junit.Assert.fail(Assert.java:88)
+at stepdefinitions.IJARAH_Steps.user_click_the_search_button_under_inbox(IJARAH_Steps.java:188)
+at ✽.User click the Search button under inbox(file:///C:/Users/ININDC00614/eclipse-workspace_Azentio/Ijarah_Vimal/src/test/java/features/Tawarraq_IdentificationDetails_614.feature:51)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@402c4085]" started-at="2023-10-26T17:04:26 IST" name="tearDownClass" finished-at="2023-10-26T17:04:32 IST" duration-ms="5705" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- Runner.TestApplication -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
