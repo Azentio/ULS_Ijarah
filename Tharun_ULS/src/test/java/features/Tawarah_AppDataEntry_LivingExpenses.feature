@@ -1,75 +1,6 @@
 Feature: Murabha_AppDataEntry_LivingExpenses
 
-@AT_LEA_001
-Scenario: Creation of Living Expense with valid data.
-Given navigate the IJARA URL
-And user update test data set id for AT_LEA_001
-And login with valid credentials
-#And user click the module in select field
-#And user click the LOS in select field
-And user click the messagebox under LOS field
-And user click the search button under messagebox
-And user Enter the clientname under searchButton
-And user click the ExpenseType on Action
-And user click the field livingExpense
-And user click the field AddButton
-And user click the field AddbuttonunderExpenseInfo
-And user verify the field saveButton
-And user verify the field BackButton
-And user verify the field ExpenseType
-And user verify the ExpectedCostOfLiving field
-And user Verify the MinimumCostOfLiving Field
-And user verify the field Amount
 
-@AT_LEA_002
-Scenario: Creation of Living Expense with valid data.
-Given navigate the IJARA URL
-And user update test data set id for AT_LEA_001
-And login with valid credentials
-#And user click the module in select field
-#And user click the LOS in select field                                                          																																											.
-And user click the messagebox under LOS field
-And user click the search button under messagebox
-And user Enter the clientname under searchButton
-And user click the ExpenseType on Action
-And user click the field livingExpense 
-And user click the field AddButton
-And user verify the field ExpenseType
-And user verify the field Amount
-And user click the CustomerName in input field
-And user select the CustomerName in under customerInput
-And user click the field AddbuttonunderExpenseInfo
-And user verify the field BackButton
-And user select the type in expeseType select box
-And user click the select check box
-And user Enter the Amount in Amount field
-And user Enter the Value ExpectedCostOfLiving field
-And user Enter the Value MinimumCostOfLiving Field
-
-
-@AT_LEA_003
-Scenario: Creation of Living Expense with valid data.
-Given navigate the IJARA URL
-And user update test data set id for AT_LEA_001
-And login with valid credentials
-#And user click the module in select field
-#And user click the LOS in select field
-And user click the messagebox under LOS field
-And user click the search button under messagebox
-And user Enter the clientname under searchButton
-And user click the ExpenseType on Action
-And user click the field livingExpense 
-And user click the field AddButton
-And user click the CustomerName in input field
-And user select the CustomerName in under customerInput
-And user click the field AddbuttonunderExpenseInfo
-And user select the type in expeseType select box
-And user click the select check box
-And user Enter the Amount in Amount field
-And user verify the Total living expense field
-And user verify the Accredited Cost field
-And user verify the ExpectedCostOfLiving field
-And user Verify the MinimumCostOfLiving Field
 
 @AT_TW_AD_LEA_004
 Scenario: Creation of Living Expense with valid data.
@@ -174,6 +105,49 @@ And user click the field saveButton
   And User_610 click edit button under documents details
   And User_610 verify the system not allow user to do a modification with invalid data Spouse Salary
   And User_610 save button and verify the success message in murabha
+
+
+@AT_TW_AD_LEA_010
+Scenario: Validation of Living expense view list
+  Given navigate the IJARA URL
+   And login with valid credentials2
+    And user update test data set id for AT_LEA_001
+ # And User_610 click the module name
+  # And User_610 select the LOS in module name
+  And User_607 Click inbox in the home page
+  And User_607 Click Search in inbox
+  And User_607 Enter the clientname under searchButton for Appdata entry QuationInfo
+  And user click the ExpenseType on Action
+  And User_610 click Living Expenses Screen in App Data Entery
+And User_610 click edit button under documents details
+And Update the status to Inactive in living expense
+And Click on Save icon in Living expense tab
+
+
+@AT_TW_AD_LEA_003
+
+Scenario: Creation of Living Expense with valid data.
+ Given navigate the IJARA URL
+   And login with valid credentials2
+    And user update test data set id for AT_LEA_001
+ # And User_610 click the module name
+  # And User_610 select the LOS in module name
+  And User_607 Click inbox in the home page
+  And User_607 Click Search in inbox
+  And User_607 Enter the clientname under searchButton for Appdata entry QuationInfo
+  And user click the ExpenseType on Action
+ And User_610 click Living Expenses Screen in App Data Entery
+And user click the field AddButton
+And user click the CustomerName in input field
+And user select the CustomerName in under customerInput
+And user click the field AddbuttonunderExpenseInfo
+And user select the type in expeseType select box
+And user click the select check box
+And user Enter the Amount in Amount field
+And user verify the Total living expense field
+And user verify the Accredited Cost field
+And user verify the ExpectedCostOfLiving field
+And user Verify the MinimumCostOfLiving Field
 
 
 

@@ -971,13 +971,53 @@ public void user_modify_the_amount_field() throws Throwable {
 		
 		
 		
+		@And("Click on Edit icon of existing living expense record")
+		public void click_on_edit_icon_of_existing_living_expense_record() {
+			for (int i = 0; i <= 1000; i++) {
+				try {
+					javaScriptHelper.JSEClick(javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("PencilIcon")));
+					break;
+				} catch (Exception e) { 
+					if (i == 1000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+		    
+		}	
 		
 		
+		@And("Update the status to Inactive in living expense")
+		public void update_the_status_to_inactive_in_living_expense() {
+			for (int i = 0; i <= 1000; i++) {
+				try {
+					javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("StatusToggle")).click();
+					//javaScriptHelper.executeScriptWithWebElement(javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("StatusToggle").click();
+					break;
+				} catch (Exception e) { 
+					if (i == 1000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+		    
+		}	
 		
 		
-		
-		
-		
+		@And("Click on Save icon in Living expense tab")
+		public void click_on_save_icon_in_living_expense_tab() {
+			for (int i = 0; i <= 1000; i++) {
+				try {
+					javaScriptHelper.JSEClick(javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("SaveIcon")));
+					break;
+				} catch (Exception e) { 
+					if (i == 1000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+		    
+		}
 		
 		
 		
