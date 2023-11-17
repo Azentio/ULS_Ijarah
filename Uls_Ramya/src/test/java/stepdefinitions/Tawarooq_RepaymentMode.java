@@ -35,6 +35,8 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	JSPaths iJarah_CommonElements = new JSPaths(excelPath, "iJarah_CommonElements", "Ijarah_CommonFieldName", "JSPath");
 	JSPaths Tawarooq_Repayment_js = new JSPaths(excelPath, "Tawarooq_Repayment", "RepaymentElement", "JSPath");
 	ExcelData Tawarooq_Repayment_TestData  = new ExcelData(excelTestDataPath,"Tawarooq_Repayment","Dataset ID");
+
+	
 	
 	@And("User_6047 Get the test data for test case ID AT_TW_AD_IRM_01")
 	public void user_get_the_test_data_for_test_case_id_at_tw_ad_irm() {
@@ -1787,6 +1789,38 @@ for (int i = 0; i < 200; i++) {
 		Tawarooq_Repayment_TestData.updateTestData("DS01_AT_TW_AD_IRM_06", "record_reference_number", finalRecordReferenceNumber);
 
 		
+	}
+	@Then("User_6047 to verify system should show the list view")
+	public void user_to_verify_system_should_show_the_list_view() {
+		String NumberOFlistViewRecord = "";
+		
+		for (int i = 0; i <= 300; i++) {
+
+			try {
+
+				if (i > 200) {
+
+					NumberOFlistViewRecord = javascriptHelper.executeScript(
+
+							"return document.querySelector('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]').querySelector('span[class=\"p-paginator-current ng-star-inserted\"]').innerText")
+
+							.toString();
+
+					break;
+
+				}
+ } 
+			catch (Exception e) {
+				if (i == 300) {
+                 	Assert.fail(e.getMessage());
+
+				}
+
+			}
+
+		}
+
+		System.out.println(NumberOFlistViewRecord);
 	}
 
 

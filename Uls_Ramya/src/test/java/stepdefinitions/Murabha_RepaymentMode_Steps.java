@@ -88,7 +88,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
                             "return  document.querySelectorAll('ion-radio-group ion-item')[" + i + "].textContent")
                             .toString();
                     System.out.println("Module name " + moduleName);
-//                    if (moduleName.equalsIgnoreCase("LOS")) {
+                 // if (moduleName.equalsIgnoreCase("LOS")) {
                     if (moduleName.equalsIgnoreCase(testData.get("Module Name"))) {
                         System.out
                                 .println("document.querySelectorAll('ion-radio-group ion-item ion-radio')[" + i + "]");

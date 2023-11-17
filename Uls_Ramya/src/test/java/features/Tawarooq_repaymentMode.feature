@@ -5,8 +5,8 @@ Scenario: To verify post clicking on Add asset button, the Repayment Mode screen
 Given Navigate the IJARA URL
 And User_6047 Login with valid credentials
 And User_6047 Get the test data for test case ID AT_TW_AD_IRM_01 
-#And User_6047 click the module name dropdown in ULS application
-#And User_6047 select the module name as LOS in ULS application
+#And User_6047 Click the module name dropdown in ULS application
+#And User_6047 Select the module name as LOS in ULS application
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
 And User_6047 search the Ref Id Under inbox 
@@ -170,7 +170,27 @@ Then User_6047 Click the submit button
 And User_6047 Click the ok button in action conform field
 #And User_6047 Click the submit in action conform field
 #And User_6047 verify the submit successfully popup and get reference number
-#Then User_6047 Login with valid credentials
+
+@AT_TW_AD_IRM_07
+
+ Scenario: To verify the list view
+ Given Navigate the IJARA URL
+Then User_6047 Login with valid credentials
+#And User_6047 click the module name dropdown in ULS application
+#And User_6047 select the module name as LOS in ULS application
+And User_6047 Get the test data for test case ID AT_TW_AD_IRM_06
+And User_6047 Click the Mail box in ULS application
+And User_6047 Click the Search button under inbox
+And User_6047 search the Ref Id Under inbox 
+And User_6047 Click the Entitle button under inbox 
+And User_6047 Click repayment mode section
+Then User_6047 to verify system should show the list view
+
+
+
+#
+#0305 -- user ID
+#3208 -- Ref id
 
 #0323-->user
 #3208--ref id
