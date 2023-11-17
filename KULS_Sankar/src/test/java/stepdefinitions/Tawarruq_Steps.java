@@ -29,7 +29,8 @@ public class Tawarruq_Steps {
 	JSPaths jsPaths = new JSPaths(excelPath, "Ijara_loginElements", "Ijara_LoginFieldName", "JSPath");
 	JSPaths customerDebtJsPaths = new JSPaths(excelPath, "CF_Debt_Elements", "CF_Debt FieldName", "JSPath");
 	JSPaths appDataCustomerDetailsJsPaths = new JSPaths(excelPath, "AppData_CustomerDetail_Elements", "AppData_CustomerDetails_FieldName", "JSPath");
-	JSPaths appDataAppDetailsJsPaths = new JSPaths(excelPath, "TW_AppData_AppDetails_Elements", "ApplicationDetails_FieldName", "JSPath");
+	JSPaths appDataAppDetailsJsPaths = new JSPaths(excelPath, "TW_AppData_AppDetails_Elements", "ApplicationDetails_FieldName", "JSPath");	
+	JSPaths appDataDocumentDetailsJsPaths = new JSPaths(excelPath, "TW_AppData_DocumentDetails", "DocumentDetails_FieldName", "JSPath");
 	
 	ExcelData exelData = new ExcelData(excelTestDataPath, "ijara_LoginCredentials", "UserType");
 	Map<String, String> loginTestData = new HashMap<>();
@@ -42,7 +43,7 @@ public class Tawarruq_Steps {
 	Actions actions = new Actions(driver);
 	SoftAssert softAssert = new SoftAssert();
 	
-	ExcelData AppDataEntryCustomerDetails  = new ExcelData(excelTestDataPath,"Tawarruq_AppData_CustomerDetail","DataSet ID");
+	ExcelData AppDataEntryCustomerDetails  = new ExcelData(excelTestDataPath,"TW_AppData_CustomerDetails","DataSet ID");
 	
 	Map<String, String> testExecutionData;
 	Map<String, String> testData;
@@ -2908,6 +2909,237 @@ public class Tawarruq_Steps {
 			}
 		}
 	}
+	
+	
+//	@AT_TW_AD_DOC_05
+	@And("User_608 click the Document Details tab")
+	public void user_click_the_document_details_tab() throws Throwable {
+		for (int i = 0; i <= 10; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(appDataDocumentDetailsJsPaths.getElement("nextBtn")).click();
+			} catch (Exception e) {
+				if (i == 10) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		WebElement documentDetailsTab = javascriptHelper.executeScriptWithWebElement(appDataDocumentDetailsJsPaths.getElement("documentDetailsTab"));
+//		String string = "document.getElementById(\"seg13\")";
+		for (int i = 0; i <= 10000; i++) {
+			try {
+				documentDetailsTab.click();
+				break;
+			} catch (Exception e) {
+				if (i == 10000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 click the Add button under Document Details tab")
+	public void user_click_the_add_button_under_document_details_tab() throws Throwable {
+		WebElement addBtn = javascriptHelper.executeScriptWithWebElement(appDataDocumentDetailsJsPaths.getElement("documentsDetailsAddBtn"));
+		for (int i = 0; i <= 100000; i++) {
+			try {
+				addBtn.click();
+				break;
+			} catch (Exception e) {
+				if (i == 100000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@And("User_608 verify Document Category field should be Mandatory and LOV Under Document Details tab")
+	public void user_verify_document_category_field_should_be_mandatory_and_lov_under_document_details_tab() throws Throwable {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(appDataDocumentDetailsJsPaths.getElement("documentStatus")));
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+//		Verify field as Mandatory
+		String text = javascriptHelper.executeScriptWithWebElement(appDataDocumentDetailsJsPaths.getElement("documentCategoryLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+        	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(appDataDocumentDetailsJsPaths.getElement("documentCategoryLabel")));
+        	  softAssert.assertTrue(text.contains("*"), "Document Category field should be Mandatory");
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              	}
+          	}
+		}
+		
+//		Verify field as Dropdown/LOV
+		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(appDataDocumentDetailsJsPaths.getElement("documentCategoryLOV"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("ng-reflect-placeholder").contains("Select"), "Document Category field should be Dropdown");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_608 verify Expected Receipt Date field should be Non-mandatory and Date Under Document Details tab")
+	public void user_verify_expected_receipt_date_field_should_be_non_mandatory_and_date_under_document_details_tab() throws Throwable {
+//		Verify field as Non-Mandatory
+		String text = javascriptHelper.executeScriptWithWebElement(appDataDocumentDetailsJsPaths.getElement("expectReceiptDateLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+        	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(appDataDocumentDetailsJsPaths.getElement("expectReceiptDateLabel")));
+        	  softAssert.assertTrue(!(text.contains("*")), "Expected Receipt Date field should be Non-Mandatory");
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              	}
+          	}
+		}
+		
+//		Verify field as Date
+		WebElement calender = javascriptHelper.executeScriptWithWebElement(appDataDocumentDetailsJsPaths.getElement("expectReceiptDateCalender"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundBorder(calender);
+				softAssert.assertTrue(calender.getTagName().contains("calendar"), "Expected Receipt Date field should be Date");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	    
+	}
+
+	@And("User_608 verify Def Approved By field should be Non-mandatory and LOV Under Document Details tab")
+	public void user_verify_def_approved_by_field_should_be_non_mandatory_and_lov_under_document_details_tab() throws Throwable {
+//		Verify field as Non-Mandatory
+		String text = javascriptHelper.executeScriptWithWebElement(appDataDocumentDetailsJsPaths.getElement("defApprovedByLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+        	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(appDataDocumentDetailsJsPaths.getElement("defApprovedByLabel")));
+        	  softAssert.assertTrue((!text.contains("*")), "Def Approved By field should be Non-Mandatory");
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              	}
+          	}
+		}
+		
+//		Verify field as Dropdown/LOV
+		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(appDataDocumentDetailsJsPaths.getElement("defApprovedByLOV"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("ng-reflect-placeholder").contains("Select"), "Def Approved By field should be Dropdown");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Change In Nature Approved By field should be Non-mandatory and LOV Under Document Details tab")
+	public void user_verify_change_in_nature_approved_by_field_should_be_non_mandatory_and_lov_under_document_details_tab() throws Throwable {
+//		Verify field as Non-Mandatory
+		String text = javascriptHelper.executeScriptWithWebElement(appDataDocumentDetailsJsPaths.getElement("changeNatureApprovedByLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+        	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(appDataDocumentDetailsJsPaths.getElement("changeNatureApprovedByLabel")));
+        	  softAssert.assertTrue((!text.contains("*")), "Change In Nature Approved By field should be Non-Mandatory");
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              	}
+          	}
+		}
+		
+//		Verify field as Dropdown/LOV
+		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(appDataDocumentDetailsJsPaths.getElement("changeNatureApprovedByLOV"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("ng-reflect-placeholder").contains("Select"), "Change In Nature Approved By field should be Dropdown");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Document Form field should be Non-mandatory, Editable and LOV Under Document Details tab")
+	public void user_verify_document_form_field_should_be_non_mandatory_editable_and_lov_under_document_details_tab() throws Throwable {
+//		Verify field as Non-Mandatory
+		String text = javascriptHelper.executeScriptWithWebElement(appDataDocumentDetailsJsPaths.getElement("documentFormLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+        	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(appDataDocumentDetailsJsPaths.getElement("documentFormLabel")));
+        	  softAssert.assertTrue((!text.contains("*")), "Document Form field should be Non-Mandatory");
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              	}
+          	}
+		}
+		
+//		Verify field as Dropdown/LOV
+		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(appDataDocumentDetailsJsPaths.getElement("documentFormLOV"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("ng-reflect-placeholder").contains("Select"), "Document Form field should be Dropdown");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	
+		
+//		Verify field as Editable only
+		WebElement field = javascriptHelper.executeScriptWithWebElement(appDataDocumentDetailsJsPaths.getElement("documentForm"));
+		String read = field.getAttribute("ng-reflect-readonly");
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				softAssert.assertTrue(read.contains("false"), "Document Form field should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
