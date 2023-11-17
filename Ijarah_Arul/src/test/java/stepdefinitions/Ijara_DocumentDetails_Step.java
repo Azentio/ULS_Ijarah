@@ -53,7 +53,8 @@ public class Ijara_DocumentDetails_Step {
 	@And("^User get the test data for test case AT_DOC_001$")
     public void get_the_test_data_for_test_case_AT_DOC_001() throws Throwable {
 		testData = documentdetailsExcelData.getTestdata("AT_DOC_001_D1");
-    }	
+    }
+	
 	@And("^User get the test data for test case AT_DOC_002$")
     public void get_the_test_data_for_test_case_AT_DOC_002() throws Throwable {
 		testData = documentdetailsExcelData.getTestdata("AT_DOC_002_D1");

@@ -45,6 +45,7 @@ public class Murabha_DocumentDetails_Step {
 	// ExcelData underWriterExcelData = new
 	// ExcelData(excelTestDataPath,"UnderWriter_TestData","DataSet ID");
 	ExcelData documentdetailsExcelData = new ExcelData(excelTestDataPath, "Document_Details", "DataSetID");
+	ExcelData documentdetailsMurabahaOfferingExcelData = new ExcelData(excelTestDataPath, "Murabha_Offering_DocDetails", "DataSetID");
 
 	Map<String, String> testExecutionData;
 	Map<String, String> testData;
@@ -52,6 +53,14 @@ public class Murabha_DocumentDetails_Step {
 	@And("^User get the test data for test case AT_M_DOC_01$")
 	public void get_the_test_data_for_test_case_AT_M_DOC_01() throws Throwable {
 		testData = documentdetailsExcelData.getTestdata("AT_M_DOC_01_D1");
+	}
+	@And("User get the test data for test case AT_M_OFO_DOC_01")
+	public void user_get_the_test_data_for_test_case_AT_M_OFO_DOC_01()throws Throwable {
+		testData = documentdetailsMurabahaOfferingExcelData.getTestdata("AT_M_OFO_DOC_01_D1");
+	}
+	@And("User get the test data for test case AT_M_OFO_DOC_03")
+	public void user_get_the_test_data_for_test_case_AT_M_OFO_DOC_03()throws Throwable {
+		testData = documentdetailsMurabahaOfferingExcelData.getTestdata("AT_M_OFO_DOC_03_D1");
 	}
 
 	@And("^User get the test data for test case AT_M_DOC_02$")

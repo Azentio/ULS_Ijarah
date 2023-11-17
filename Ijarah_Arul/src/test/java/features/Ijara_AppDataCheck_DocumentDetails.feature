@@ -1,10 +1,10 @@
 Feature: To check the Document details feature
 
 @AT_DOC_001
-Scenario: To verify that all fields are present in Document Details
+Scenario: To verify that user can able to create in Document Details
 #This test case also cover the functionality of AT_DOC_003
 Given navigate the IJARA URL
-And login with valid credentials
+And login with valid credentials for Ijara_Appdatacheck_Document details
 And User get the test data for test case AT_DOC_001
 #And User click the module name dropdown in ULS application
 #And User select the module name as LOS in ULS application
@@ -41,7 +41,7 @@ And Click on Save icon to save document details record
 @AT_DOC_002
 Scenario: To verify that existing document details records are present in view list
 Given navigate the IJARA URL
-And login with valid credentials
+And login with valid credentials for Ijara_Appdatacheck_Document details
 And User get the test data for test case AT_DOC_002
 #And User click the module name dropdown in ULS application
 #And User select the module name as LOS in ULS application
@@ -56,7 +56,7 @@ And Validate that existing records are present in document details view list
 Scenario: Validation of document details back, Help, Upload option
 #This test case also cover the functionality of AT_DOC_005
 Given navigate the IJARA URL
-And login with valid credentials
+And login with valid credentials for Ijara_Appdatacheck_Document details
 And User get the test data for test case AT_DOC_004
 #And User click the module name dropdown in ULS application
 #And User select the module name as LOS in ULS application
@@ -77,7 +77,7 @@ And Validate that View document button is present in document details
 Scenario: Validation of document details View list fields and export functionality
 #This test case also cover the functionality of AT_DOC_007, AT_DOC_008, AT_DOC_009
 Given navigate the IJARA URL
-And login with valid credentials
+And login with valid credentials for Ijara_Appdatacheck_Document details
 And User get the test data for test case AT_DOC_006
 #And User click the module name dropdown in ULS application
 #And User select the module name as LOS in ULS application

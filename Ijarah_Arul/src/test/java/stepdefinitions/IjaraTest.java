@@ -33,6 +33,30 @@ public class IjaraTest extends BaseClass{
 	public void login_with_valid_credentials_for_test_the_ijarah_new_app_stage() {
 		ijaraLogin.loginWithIjaraApplication("userType08");
 	}
+	@And("login with valid credentials for test the Murabha Facility details")
+	public void login_with_valid_credentials_for_test_the_murabha_facility_details() {
+		ijaraLogin.loginWithIjaraApplication("userType07");
+	}
+	@Given("login with valid credentials for Ijara_Appdatacheck_Document details")
+	public void login_with_valid_credentials_for_ijara_appdatacheck_document_details() {
+		ijaraLogin.loginWithIjaraApplication("userType01");
+	}
+	@Given("login with valid credentials for Murabha offering document details")
+	public void login_with_valid_credentials_for_murabha_offering_document_details() {
+		ijaraLogin.loginWithIjaraApplication("userType10");
+	}
+	@Given("login with valid credentials for Murabha_Offering_OfferDetails")
+	public void login_with_valid_credentials_for_murabha_offering_offer_details() {
+		ijaraLogin.loginWithIjaraApplication("userType10");
+	}
+	@And("login with valid credentials for Murabha_App data entry_Employment details")
+	public void login_with_valid_credentials_for_murabha_app_data_entry_employment_details() {
+		ijaraLogin.loginWithIjaraApplication("userType11");
+	}
+	@And("login with valid credentials for Tawarraq_App data entry_Employment details")
+	public void login_with_valid_credentials_for_tawarraq_app_data_entry_employment_details() {
+		ijaraLogin.loginWithIjaraApplication("userType12");
+	}
 
 	
 	

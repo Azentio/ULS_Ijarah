@@ -21,14 +21,29 @@ public class IjaraLogin extends BaseClass {
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
 
 	public void loginWithIjaraApplication(String userType) {
+		boolean passwordStatus = false;
 		loginTestData = exelData.getTestdata(userType);
 		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName")).click();
 		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName"))
 				.sendKeys(loginTestData.get("UserName"));
 		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("continueButton")).click();
-		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
-		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
-				.sendKeys(loginTestData.get("Password"));
+
+		for (int i = 0; i <= 100; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
+				javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
+						.sendKeys(loginTestData.get("Password"));
+				break;
+			} catch (Exception e) {
+				if (i == 100) {
+					Assert.fail(e.getMessage());
+				}
+				if (i > 50) {
+					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("continueButton")).click();
+				}
+			}
+		}
+
 		for (int i = 0; i <= 300; i++) {
 			try {
 
@@ -46,8 +61,19 @@ public class IjaraLogin extends BaseClass {
 				}
 			}
 		}
-
-		Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).isDisplayed());
+		for (int i = 0; i <= 300; i++) {
+			try {
+				passwordStatus = javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
+						.isDisplayed();
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					e.printStackTrace();
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		Assert.assertTrue(passwordStatus);
 
 	}
 
@@ -64,11 +90,7 @@ public class IjaraLogin extends BaseClass {
 			}
 		}
 	}
-	
-	
-	
-	
-	
+
 	// This login used to another link don't use , I used only take JS path purpose
 	public void loginWithIjaraApplication1() {
 		loginTestData = exelData.getTestdata("userType04");
@@ -100,12 +122,5 @@ public class IjaraLogin extends BaseClass {
 		Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).isDisplayed());
 
 	}
-	
-	
-	
-	
-	
-	
-	
 
 }
