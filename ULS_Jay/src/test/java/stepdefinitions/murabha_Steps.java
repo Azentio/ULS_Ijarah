@@ -3,6 +3,7 @@ package stepdefinitions;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.poi.hssf.record.PageBreakRecord.Break;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -173,7 +174,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_{int} click the add button under Customer Employment Details")
-	public void user_click_the_add_button_under_customer_employment_details(Integer int1) {
+	public void user_click_the_add_button_under_customer_employment_details(Integer int1) throws Throwable {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("addBtn_Under_customerEmployementDetails")).click();
@@ -184,7 +185,7 @@ public class murabha_Steps {
 				}
 			}
 		}
-	    
+	    Thread.sleep(5020);
 	}
 
 	@And("User_{int} select nature of employment")
@@ -440,7 +441,7 @@ public class murabha_Steps {
 				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
-			}
+			}Thread.sleep(2000);
 		}
 		
 				// ----------dropdown-------
@@ -539,27 +540,47 @@ public class murabha_Steps {
 
 	@And("User_{int} enter the Total Experience")
 	public void user_enter_the_total_experience(Integer int1) {
-		//javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("totalExperience_610"))); 
+	//	WebElement totalExp1 = javascriptHelper.executeScriptWithWebElement("document.querySelector('[id=\"totalExperience\"] ion-label')");
+//		WebElement totalEx = javascriptHelper.executeScriptWithWebElement("document.querySelector('[id=\"totalExperience\"]')");
 		
-		for (int i = 0; i < 200; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("totalExperience_610"))
-				.sendKeys(testData02.get("TotalExperience"));
+				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement("document.querySelector('[id=\"managerName\"]').firstChild.firstChild"));
 				break;
 			} catch (Exception e) {
-				if (i == 199) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-	    
+		
+		for (int i = 0; i < 500; i++) {
+			try {
+			//	javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("totalExperience_610")).click();
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("totalExperience_610")).sendKeys(testData02.get("TotalExperience"));
+				break;
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
 	}
 
 	@And("User_{int} scroll up and view customer employment")
 	public void user_scroll_up_and_view_customer_employment(Integer int1) throws Throwable {
-		javascriptHelper.scrollIntoView(javascriptHelper
-				.executeScriptWithWebElement(jsPaths3.getElement("backBtn_Index_UnderCustomerDetails_610")));
-				Thread.sleep(3000);
+		
+				
+		 for (int i = 0; i < 500; i++) {
+			try {
+				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("backBtn_Index_UnderCustomerDetails_610")));
+				break;
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
 	    	}
 
 	@And("User_{int} verify the confirmation message")
@@ -621,25 +642,36 @@ public class murabha_Steps {
 	@And("User_{int} verify the enter special characters value proper validation message")
 	public void user_verify_the_enter_special_characters_value_proper_validation_message(Integer int1) throws Throwable {
 	    Thread.sleep(2000);
-		for (int i = 0; i < 200; i++) {
+	    
+	    for (int i = 0; i < 400; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("employerName_610")).
-				sendKeys(testData02.get("EmployerNameSpecialChar"));;
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("click_EmployerName_610")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 199) {
+				if (i == 399) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		} 
+	    
+		for (int i = 0; i < 400; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("employerName_610")).sendKeys(testData02.get("EmployerNameSpecialChar"));
+				break;
+			} catch (Exception e) {
+				if (i == 399) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 		
-		for (int j = 0; j < 200; j++) {
+		for (int j = 0; j < 500; j++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("onlyAlphaNumericCharterPopup_610")).isDisplayed();
 				Assert.assertTrue(true);
 				break;
 			} catch (Exception e) {
-				if (j == 199) {
+				if (j == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}

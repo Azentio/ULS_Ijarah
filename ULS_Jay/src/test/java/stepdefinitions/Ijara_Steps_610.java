@@ -17,7 +17,7 @@ import io.cucumber.java.en.And;
 import pageobjects.JSPaths;
 import resources.BaseClass;
 
-public class Ijara_AD_DocumentDetails_Steps_610 {
+public class Ijara_Steps_610 {
 	String excelPath = System.getProperty("user.dir") + "\\TestData\\IjaraJSPaths.xlsx";
 	String excelTestDataPath = System.getProperty("user.dir") + "\\TestData\\ijaraTestData.xlsx";
 	WebDriver driver = BaseClass.driver;
@@ -105,6 +105,14 @@ public class Ijara_AD_DocumentDetails_Steps_610 {
 	       	public void get_the_test_data_set_id_for_DS_AT_MU_IA_01() {
 			 testData = ad_CustomerFolllowUpDetails_610.getTestdata("DS_AT_MU_IA_01");
 		}
+		 
+		//----------Tawarru app data entery Employment Details
+			
+			@And("User_610 get the test data set id for DS_AT_TW_AD_EMPD_07")
+			public void get_the_test_data_set_id_for_DS_AT_TW_AD_EMPD_07() {
+				testData = ad_CustomerFolllowUpDetails_610.getTestdata("DS_AT_TW_AD_EMPD_07");
+				}
+			
 	
 	// -------------steps ---------------
 	@And("User_{int} click the module name")

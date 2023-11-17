@@ -46,6 +46,7 @@ Feature: murabha App Data Entery Employement Details
     #And User_610 verify the enter numeric value in character field proper validation message   NA
     #And User_610 verify the enter character value in numeric field proper validation message   NA
     And User_610 verify the enter special characters value proper validation message 
+    Then logout from the ijaraApplication
     
     @AT_MU_EMPD_09
   Scenario: Validation list view
