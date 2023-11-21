@@ -4,7 +4,11 @@ Feature: Title of your feature
 
   @tag1
   Scenario: Title of your scenario
- 		And User_607 Enter characters in Total Finance Amount Requested
-		And User_607 Enter characters in Declared Net Monthly Income
-		And User_607 Enter characters in characters in Declared Current Obligations
-		And User_607 Enter characters in Reference Code
+ 		And user click on the Additional Customer info
+  And user click on Add Button below the Additional Customer info
+  Then User to verify the Values in list view should be in read only mode in customer details
+  And user to verify the Id type should be in display only        
+  And user to verify the Id number should be in display only  
+  And user to verify the Id issue date should be in display only  
+  And user to verify the Id expiry date should be in display only  
+  And user to verify the Id status should be in display only  

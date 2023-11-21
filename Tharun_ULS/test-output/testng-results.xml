@@ -1,36 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-16T11:17:33 IST" name="Default suite" finished-at="2023-11-16T11:18:05 IST" duration-ms="32076">
+  <suite started-at="2023-11-21T09:41:57 IST" name="Default suite" finished-at="2023-11-21T09:43:00 IST" duration-ms="63152">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@1224144a]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@29f7cefd]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-11-16T11:17:33 IST" name="Default test" finished-at="2023-11-16T11:18:05 IST" duration-ms="32076">
+    <test started-at="2023-11-21T09:41:57 IST" name="Default test" finished-at="2023-11-21T09:43:00 IST" duration-ms="63152">
       <class name="Runner.TestApplication">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@1224144a]" started-at="2023-11-16T11:17:33 IST" name="setUpClass" finished-at="2023-11-16T11:17:34 IST" duration-ms="971" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@29f7cefd]" started-at="2023-11-21T09:41:57 IST" name="setUpClass" finished-at="2023-11-21T09:41:59 IST" duration-ms="2017" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@1224144a]" started-at="2023-11-16T11:17:34 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-16T11:17:57 IST" duration-ms="23264" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@29f7cefd]" started-at="2023-11-21T09:41:59 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-21T09:42:54 IST" duration-ms="55115" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Validation of Living expense view list"]]>
+                <![CDATA["To verify the Identification Details List view"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[Murabha_AppDataEntry_LivingExpenses]"]]>
+                <![CDATA["Optional[Tawarah_AppDataEntry_IdentificationDetailsListView]"]]>
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Cannot invoke "org.openqa.selenium.WebElement.click()" because the return value of "helper.JavascriptHelper.executeScriptWithWebElement(String)" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Cannot invoke "org.openqa.selenium.WebElement.click()" because the return value of "helper.JavascriptHelper.executeScriptWithWebElement(String)" is null
+at org.junit.Assert.fail(Assert.java:88)
+at stepdefinitions.Tawarah_AppDataEntry_IdentificationDetailsListView.user_click_on_the_additional_customer_info(Tawarah_AppDataEntry_IdentificationDetailsListView.java:30)
+at ✽.user click on the Additional Customer info(file:///C:/Users/inindc00626/git/Tharun_ULS/Tharun_ULS/src/test/java/features/Tawarah_AppDataEntry_IdentificationDetailsListView.feature:15)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@1224144a]" started-at="2023-11-16T11:17:57 IST" name="tearDownClass" finished-at="2023-11-16T11:18:05 IST" duration-ms="7783" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@29f7cefd]" started-at="2023-11-21T09:42:54 IST" name="tearDownClass" finished-at="2023-11-21T09:43:00 IST" duration-ms="5951" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

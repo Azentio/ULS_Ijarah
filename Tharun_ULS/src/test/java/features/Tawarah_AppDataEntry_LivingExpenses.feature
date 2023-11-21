@@ -1,4 +1,4 @@
-Feature: Murabha_AppDataEntry_LivingExpenses
+Feature: Tawarah_AppDataEntry_LivingExpenses
 
 
 
@@ -16,15 +16,15 @@ Given navigate the IJARA URL
   And User_610 click Living Expenses Screen in App Data Entery 
 And user click the field AddButton
 And user click the CustomerName in input field
-And user select the CustomerName in under customerInput
-And user click the field AddbuttonunderExpenseInfo
-And user verify the field BackButton
+And user select the CustomerName in under customerInput     
+And user click the field AddbuttonunderExpenseInfo            
+And user verify the field BackButton                          
 And user verify the field DeleteButton
-And user select the type in expeseType select box
+And user select the type in expeseType select box          
 And user click the select check box
 And user Enter the Amount in Amount field
 And user Enter the Value ExpectedCostOfLiving field
-And user Enter the Value MinimumCostOfLiving Field
+And user Enter the Value MinimumCostOfLiving Field 
 
 
 @AT_TW_AD_LEA_005
