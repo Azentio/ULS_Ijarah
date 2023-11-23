@@ -946,6 +946,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 				break;
 			} catch (Exception e) {
 				if (i > 550 && i < 600) {
+					clicksAndActionsHelper.returnKey().sendKeys(Keys.PAGE_UP).build().perform();
 					clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
 							"document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]')["
 									+ indexOfListView + "].querySelector('button[icon=\"pi pi-pencil\"')"));
