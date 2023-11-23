@@ -1,36 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-17T17:50:08 IST" name="Default suite" finished-at="2023-11-17T17:51:54 IST" duration-ms="105700">
+  <suite started-at="2023-11-23T17:15:47 IST" name="Default suite" finished-at="2023-11-23T17:20:38 IST" duration-ms="291282">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@1caa0244]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-11-17T17:50:08 IST" name="Default test" finished-at="2023-11-17T17:51:54 IST" duration-ms="105700">
+    <test started-at="2023-11-23T17:15:47 IST" name="Default test" finished-at="2023-11-23T17:20:38 IST" duration-ms="291282">
       <class name="Runner.TestApplication">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@1caa0244]" started-at="2023-11-17T17:50:08 IST" name="setUpClass" finished-at="2023-11-17T17:50:09 IST" duration-ms="1055" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@1caa0244]" started-at="2023-11-23T17:15:47 IST" name="setUpClass" finished-at="2023-11-23T17:15:47 IST" duration-ms="864" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@1caa0244]" started-at="2023-11-17T17:50:09 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-17T17:51:21 IST" duration-ms="71878" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@1caa0244]" started-at="2023-11-23T17:15:47 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-23T17:16:16 IST" duration-ms="28478" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Employment Details screen should be available under Data Check stage should get open with below fields and button,"]]>
+                <![CDATA["To verify the Underwriter screen"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[To verify the Murabaha Application --> Data check stage --> Customer Financials --> Employment details screen]"]]>
+                <![CDATA["Optional[To check the IJARAH -- Underwriter stage features]"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@1caa0244]" started-at="2023-11-17T17:51:21 IST" name="tearDownClass" finished-at="2023-11-17T17:51:54 IST" duration-ms="32722" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@1caa0244]" started-at="2023-11-23T17:16:16 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-23T17:18:02 IST" duration-ms="106511" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To verify the Tab - Offer decision in Underwriter Stage"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To check the IJARAH -- Underwriter stage features]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@1caa0244]" started-at="2023-11-23T17:18:02 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-23T17:19:23 IST" duration-ms="80512" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To verify the Facility Details, Finance configuration, Pricing Details,Installment Details section fields and buttons under Offer decision screen."]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To check the IJARAH -- Underwriter stage features]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@1caa0244]" started-at="2023-11-23T17:19:23 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-23T17:19:52 IST" duration-ms="29275" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To verify the Save button and Offer button functionality under offer decision scrren."]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To check the IJARAH -- Underwriter stage features]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@1caa0244]" started-at="2023-11-23T17:19:52 IST" name="tearDownClass" finished-at="2023-11-23T17:20:38 IST" duration-ms="45588" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

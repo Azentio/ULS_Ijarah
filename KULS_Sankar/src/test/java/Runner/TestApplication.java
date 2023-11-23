@@ -8,16 +8,17 @@ import io.cucumber.testng.CucumberOptions;
 import utilities.ExtentManager;
 import utilities.ExtentTestManager;
 
-@CucumberOptions(features = {"src/test/java/features/MU_DataCheck_EmpDetails.feature"}
+@CucumberOptions(features = {"src/test/java/features/Ijarah_Underwriter.feature"}
 //		"src/test/java/features/CustomerDebt.feature" }
 		, glue = "stepdefinitions",
 		// monochrome=false, //to make steps in color
 		plugin = { "pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 				"rerun:ReRunScenarios/FailedReRun.txt" }
 //		,dryRun = false //to check compilation errors
-		, tags = "@AT_MU_EDC_01"
+//		, tags = "@AT_TW_NEWAPP_IDA_06"
 
 )
+
 public class TestApplication extends AbstractTestNGCucumberTests {
 	/*
 	 * @Override

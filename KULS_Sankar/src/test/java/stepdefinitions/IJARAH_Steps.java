@@ -32,8 +32,7 @@ public class IJARAH_Steps {
 	WebDriver driver = BaseClass.driver;
 	JSPaths jsPaths = new JSPaths(excelPath, "Ijara_loginElements", "Ijara_LoginFieldName", "JSPath");
 	JSPaths customerDebtJsPaths = new JSPaths(excelPath, "CF_Debt_Elements", "CF_Debt FieldName", "JSPath");
-	JSPaths underWriterJsPaths = new JSPaths(excelPath, "Underwriter_Elements", "Underwriter_FieldName", "JSPath");
-	JSPaths additionalCustInfoJsPaths = new JSPaths(excelPath, "AdditionalCustInfo_Elements", "AdditionalCustInfo_FieldName", "JSPath");
+	JSPaths underWriterJsPaths = new JSPaths(excelPath, "Underwriter_Elements", "Underwriter_FieldName", "JSPath");	
 	JSPaths dataCheck_IncomeJsPaths = new JSPaths(excelPath, "DataCheckIncome_Elements", "DataCheckIncome_FieldName", "JSPath");
 	JSPaths dataCheck_ApplicationDetailsJsPaths = new JSPaths(excelPath, "DataCheckAppDetails_Elements", "DataCheckAppDetails_FieldName", "JSPath");
 	JSPaths offering_OfferDetailsJsPaths = new JSPaths(excelPath, "OfferingOfferDetails_Elements", "Offering_OfferDetails_FieldName", "JSPath");
@@ -49,11 +48,9 @@ public class IJARAH_Steps {
 	WaitHelper waitHelper = new WaitHelper(driver);
 	Actions actions = new Actions(driver);
 	SoftAssert softAssert = new SoftAssert();
-
 	
 	ExcelData customerDebtExcelData  = new ExcelData(excelTestDataPath,"CF_DebtTestData","DataSet ID");
 	ExcelData underWriterExcelData  = new ExcelData(excelTestDataPath,"UnderWriter_TestData","DataSet ID");
-	ExcelData additinalCustomerInfoExcelData  = new ExcelData(excelTestDataPath,"AdditionalCustomerInfo","DataSet ID");
 	ExcelData dataCheck_IncomeExcelData  = new ExcelData(excelTestDataPath,"DataCheck_Income","DataSet ID");
 	ExcelData dataCheck_ApplicationDetailsExcelData  = new ExcelData(excelTestDataPath,"DataCheck_AppDetails","DataSet ID");
 	ExcelData offering_OfferDetailsExcelData  = new ExcelData(excelTestDataPath,"Offering_OfferDetails","DataSet ID");
@@ -117,14 +114,6 @@ public class IJARAH_Steps {
     public void get_the_test_data_for_test_case_AT_UNW_002() throws Throwable {
 		testData = underWriterExcelData.getTestdata("DS_AT_UNW_002");
     }
-	
-	
-//	Additional Customer Info	
-	@And("^User_608 get the test data for test case AT_IDA_03$")
-    public void get_the_test_data_for_test_case_AT_IDA_03() throws Throwable {
-		testData = additinalCustomerInfoExcelData.getTestdata("DS_AT_IDA_03");
-    }
-	
 	
 //	App Data Check -- Income
 	@And("^User_608 get the test data for test case AT_INCD_01$")
@@ -371,14 +360,14 @@ public class IJARAH_Steps {
 	public void user_click_the_customer_financials_tab() throws Throwable {
 		Thread.sleep(1000);
 		WebElement customerFinancialsTab = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerFinancialsTab"));
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 200000; i++) {
 			try {
 				javascriptHelper.backgroundColor(customerFinancialsTab);
 				javascriptHelper.JSEClick(customerFinancialsTab);
 //				customerFinancialsTab.click();
 				break;
 			} catch (Exception e) { 
-				if (i == 2000) {
+				if (i == 200000) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4126,334 +4115,6 @@ public class IJARAH_Steps {
 			}
 		}
 	}
-	
-	
-// ************** Tawarruq -- App Data Entry stage -- Additional customer info tab *********************
-//	Additional Customer Info Tab
-	@And("User_608 click the Additional Customer Info tab")
-	public void user_click_the_additional_customer_info_tab() throws Throwable {
-		for (int i = 0; i <= 1000; i++) {
-			try {
-				javascriptHelper.executeScriptWithWebElement(additionalCustInfoJsPaths.getElement("additionalCustomerInfoTab")).click();
-				break;
-			} catch (Exception e) { 
-				if (i == 1000) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}	    
-	}
-
-	@And("User_608 click the Pencil Icon button in Customer Personal Info section under Additional Customer Info tab")
-	public void user_click_the_pencil_icon_button_in_customer_personal_info_section_under_additional_customer_info_tab() throws Throwable {
-		for (int i = 0; i <= 1000; i++) {
-			try {
-				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(additionalCustInfoJsPaths.getElement("additionalCustInfoTabPencilIconBtn")));
-				javascriptHelper.executeScriptWithWebElement(additionalCustInfoJsPaths.getElement("additionalCustInfoTabPencilIconBtn")).click();
-				break;
-			} catch (Exception e) { 
-				if (i == 1000) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-	}
-
-	@And("User_608 click the Add button in Customer Identification under Additional Customer Info tab")
-	public void user_click_the_add_button_in_customer_identification_under_additional_customer_info_tab() throws Throwable {
-		for (int i = 0; i <= 1000; i++) {
-			try {
-				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(additionalCustInfoJsPaths.getElement("customerIdentificationBackBtn")));
-				break;
-			} catch (Exception e) { 
-				if (i == 1000) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-		for (int i = 0; i <= 1000; i++) {
-			try {
-				javascriptHelper.executeScriptWithWebElement(additionalCustInfoJsPaths.getElement("customerIdentificationAddBtn")).click();
-				break;
-			} catch (Exception e) { 
-				if (i == 1000) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-	}
-
-	@And("User_608 select the ID Type in Customer Identification screen")
-	public void user_select_the_id_type_in_customer_identification_screen() throws Throwable {
-		for (int i = 0; i <= 2000; i++) {
-			try {
-				javascriptHelper.executeScriptWithWebElement(additionalCustInfoJsPaths.getElement("cust_Identification_IDType")).click();
-				break;
-			} catch (Exception e) {
-				if (i == 2000) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
-		String dropdownLength = "";
-		boolean isDropdownValueSelected = false;
-		String dropdownString = "";
-		for (int i = 0; i <= 300; i++) {
-			try {
-				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
-				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
-					break;
-				}
-			} catch (Exception e) {
-				if (i == 300) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
-		for (int j = 0; j <= premitiveDropdownLength; j++) {
-			for (int l = 0; l <= 300; l++) {
-				try {
-					System.out.println("L value is " + l);
-					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
-					dropdownString = javascriptHelper.executeScript(
-							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText").toString();
-					if (!(dropdownString.isEmpty())) {
-						System.out.println(dropdownString);
-						System.out.println("Loop count " + l + " got breaked");
-						break;
-					}
-				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
-						Assert.fail(e.getMessage());
-					}
-				}
-				if (!(dropdownString.isEmpty())) {
-					System.out.println(dropdownString);
-					System.out.println("Loop count " + l + " got breaked");
-					break;
-				}
-			}
-			System.out.println("String " + dropdownString.trim());
-			System.out.println("Map " + testData.get("ID Type").trim());
-			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("ID Type")).trim())) {
-				for (int k = 0; k <= 300; k++) {
-					try {
-						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
-								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
-								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-						isDropdownValueSelected = true;
-						break;
-					} catch (Exception e) {
-						if (k == 300) {
-							Assert.fail(e.getMessage());
-						}
-					}
-				}
-			}
-			if (isDropdownValueSelected == true) {
-				break;
-			}
-		}
-	    
-	}
-
-	@And("User_608 enter the invalid ID number in Customer Identification screen")
-	public void user_enter_the_invalid_id_number_in_customer_identification_screen() throws Throwable {
-		javascriptHelper.executeScriptWithWebElement(additionalCustInfoJsPaths.getElement("cust_Identification_IDNumber")).click();
-		for (int i = 0; i <= 500; i++) {
-			try {
-				javascriptHelper.executeScriptWithWebElement(additionalCustInfoJsPaths.getElement("cust_Identification_IDNumber"))
-				.sendKeys(testData.get("ID Number"));
-				break;
-			} catch (Exception e) {
-				if (i == 500) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-	}
-
-	@And("User_608 select the Issuing Authority in Customer Identification screen")
-	public void user_select_the_issuing_authority_in_customer_identification_screen() throws Throwable {
-		for (int i = 0; i <= 2000; i++) {
-			try {
-				javascriptHelper.executeScriptWithWebElement(additionalCustInfoJsPaths.getElement("cust_Identification_IssueAuthority")).click();
-				break;
-			} catch (Exception e) {
-				if (i == 2000) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
-		String dropdownLength = "";
-		boolean isDropdownValueSelected = false;
-		String dropdownString = "";
-		for (int i = 0; i <= 300; i++) {
-			try {
-				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
-				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
-					break;
-				}
-			} catch (Exception e) {
-				if (i == 300) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
-		for (int j = 0; j <= premitiveDropdownLength; j++) {
-			for (int l = 0; l <= 300; l++) {
-				try {
-					System.out.println("L value is " + l);
-					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
-					dropdownString = javascriptHelper.executeScript(
-							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText").toString();
-					if (!(dropdownString.isEmpty())) {
-						System.out.println(dropdownString);
-						System.out.println("Loop count " + l + " got breaked");
-						break;
-					}
-				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
-						Assert.fail(e.getMessage());
-					}
-				}
-				if (!(dropdownString.isEmpty())) {
-					System.out.println(dropdownString);
-					System.out.println("Loop count " + l + " got breaked");
-					break;
-				}
-			}
-			System.out.println("String " + dropdownString.trim());
-			System.out.println("Map " + testData.get("Issuing Authority").trim());
-			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("Issuing Authority")).trim())) {
-				for (int k = 0; k <= 300; k++) {
-					try {
-						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
-								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
-								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-						isDropdownValueSelected = true;
-						break;
-					} catch (Exception e) {
-						if (k == 300) {
-							Assert.fail(e.getMessage());
-						}
-					}
-				}
-			}
-			if (isDropdownValueSelected == true) {
-				break;
-			}
-		}
-	    
-	}
-
-	
-	@And("User_608 verify the invalid data validation in Customer Identification screen")
-	public void user_verify_the_invalid_data_validation_in_customer_identification_screen() throws Throwable {
-		WebElement invalidData = javascriptHelper.executeScriptWithWebElement(additionalCustInfoJsPaths.getElement("invalidDataError"));
-		System.err.println("Invalid Data Error : "+invalidData.getText());
-		for (int i = 0; i<2000; i++) {
-          try {
-              Assert.assertTrue(invalidData.isDisplayed());
-              break;
-          } catch (Exception e) {
-              if (i==1999) {
-                  Assert.fail(e.getMessage());
-              }
-          	}
-		}	    
-	}
-	
-	@And("User_608 enter the special characters in ID number under Customer Identification screen")
-	public void user_enter_the_special_characters_in_id_number_under_customer_identification_screen() throws Throwable {
-		javascriptHelper.executeScriptWithWebElement(additionalCustInfoJsPaths.getElement("cust_Identification_IDNumber")).click();
-		for (int i = 0; i <= 500; i++) {
-			try {
-				javascriptHelper.executeScriptWithWebElement(additionalCustInfoJsPaths.getElement("cust_Identification_IDNumber"))
-				.sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
-				javascriptHelper.executeScriptWithWebElement(additionalCustInfoJsPaths.getElement("cust_Identification_IDNumber"))
-				.sendKeys(testData.get("ID Number_SpecialChar"));
-				break;
-			} catch (Exception e) {
-				if (i == 500) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-	}
-	
-	@And("User_608 verify the Special character validation in Customer Identification screen")
-	public void user_verify_the_special_character_validation_in_customer_identification_screen() throws Throwable {
-		WebElement specialCharError = javascriptHelper.executeScriptWithWebElement(additionalCustInfoJsPaths.getElement("specialCharError"));
-		String specialChar = specialCharError.getText().trim();
-		System.err.println("Speacial Char: "+specialChar);
-		for (int i = 0; i<2000; i++) {
-          try {
-//        	  Thread.sleep(1000);
-//            Assert.assertTrue(specialChar.equalsIgnoreCase("Only Alphanumeric characters allowed"));
-        	  javascriptHelper.backgroundColor(specialCharError);
-        	  Assert.assertTrue(specialCharError.isDisplayed());
-              break;
-          } catch (Exception e) {
-              if (i==1999) {
-                  Assert.fail(e.getMessage());
-              }
-          }
-		}  
-	}
-
-	@And("User_608 click the save button with mandatory field blank in Customer Identification screen")
-	public void user_click_the_save_button_with_mandatory_field_blank_in_customer_identification_screen() throws Throwable {
-		for (int i = 0; i <= 1000; i++) {
-			try {
-				javascriptHelper.executeScriptWithWebElement(additionalCustInfoJsPaths.getElement("customerIdentificationSaveBtn")).click();
-				break;
-			} catch (Exception e) {
-				if (i == 1000) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}	    
-	}
-
-	@And("User_608 verify the Validation error msg in Customer Identification screen")
-	public void user_verify_the_validation_error_msg_in_customer_identification_screen() throws Throwable {
-		String madatoryErrorMsg = javascriptHelper.executeScriptWithWebElement(additionalCustInfoJsPaths.getElement("mandatoryFillToastMsg")).getText();
-		System.err.println("Mandatory Error : "+madatoryErrorMsg);
-		for (int i = 0; i<2000; i++) {
-          try {
-              Assert.assertTrue(madatoryErrorMsg.contains("Please fill all the details"));
-              break;
-          } catch (Exception e) {
-              if (i==1999) {
-                  Assert.fail(e.getMessage());
-              }
-          	}
-		}
-		
-//		WebElement reqFieldError = javascriptHelper.executeScriptWithWebElement(additionalCustInfoJsPaths.getElement("requiredFieldError"));
-////		System.err.println("Mandatory Error : "+reqFieldError.getText());
-//		for (int i = 0; i<2000; i++) {
-//          try {
-//              Assert.assertTrue(reqFieldError.isDisplayed());
-//              break;
-//          } catch (Exception e) {
-//              if (i==1999) {
-//                  Assert.fail(e.getMessage());
-//              }
-//          	}
-//		}		
-	}
-	
-	
 	
 //	App Data Check -- Income
 	@And("User_608 click the Eye button under Customer Financials tab")

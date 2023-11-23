@@ -366,6 +366,7 @@ Then logout from the ijaraApplication
 And User_608 invoke soft assert in Employment details screen under Customer Financials tab at Data Check stage
 
 
+# EDC_02_04, EDC_02_05, EDC_02_08
 @AT_MU_EDC_09
 Scenario: System should display the below mention fields on List view of Employment Details
 
@@ -380,15 +381,10 @@ And User_608 search the Ref id under inbox in ULS Application
 And User_608 click the Entitle button under inbox
 And User_608 click the Customer Financials tab
 And User_608 click the Eye button under Customer Financials tab
-
 And User_608 click the Search button under Customer Employment section in Customer Financials tab
 And User_608 verify the functionality of Search box with matching data under Customer Employment section
 And User_608 verify system should display all the possible matching records under Customer Employment section
-
 And User_608 verify the functionality of Search box with mismatch data under Customer Employment section
 And User_608 verify system should not display any records or system should display the message as No data found under Customer Employment section
-
-
-
 Then logout from the ijaraApplication
 And User_608 invoke soft assert in Employment details screen under Customer Financials tab at Data Check stage

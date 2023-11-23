@@ -31,6 +31,7 @@ public class Tawarruq_Steps {
 	JSPaths appDataCustomerDetailsJsPaths = new JSPaths(excelPath, "AppData_CustomerDetail_Elements", "AppData_CustomerDetails_FieldName", "JSPath");
 	JSPaths appDataAppDetailsJsPaths = new JSPaths(excelPath, "TW_AppData_AppDetails_Elements", "ApplicationDetails_FieldName", "JSPath");	
 	JSPaths appDataDocumentDetailsJsPaths = new JSPaths(excelPath, "TW_AppData_DocumentDetails", "DocumentDetails_FieldName", "JSPath");
+	JSPaths identificatioDetailsJsPaths = new JSPaths(excelPath, "IdentificationDetails_Elements", "IdentificationDetails_FieldName", "JSPath");
 	
 	ExcelData exelData = new ExcelData(excelTestDataPath, "ijara_LoginCredentials", "UserType");
 	Map<String, String> loginTestData = new HashMap<>();
@@ -44,6 +45,7 @@ public class Tawarruq_Steps {
 	SoftAssert softAssert = new SoftAssert();
 	
 	ExcelData AppDataEntryCustomerDetails  = new ExcelData(excelTestDataPath,"TW_AppData_CustomerDetails","DataSet ID");
+	ExcelData identificatioDetailsExcelData  = new ExcelData(excelTestDataPath,"TW_NewApp_IdentificationDetails","DataSet ID");
 	
 	Map<String, String> testExecutionData;
 	Map<String, String> testData;
@@ -80,10 +82,43 @@ public class Tawarruq_Steps {
     }
 	
 	
+//	Tawarruq -- App Data Entry Stage  -- Idetification Details screen	
+	@And("^User_608 get the test data for test case AT_IDA_03$")
+    public void get_the_test_data_for_test_case_AT_IDA_03() throws Throwable {
+		testData = identificatioDetailsExcelData.getTestdata("DS_AT_IDA_03");
+    }
 	
 	
+//	Tawarruq -- New Application Stage  -- Idetification Details screen
+	@And("^User_608 get the test data for test case AT_TW_NEWAPP_IDA_01$")
+    public void get_the_test_data_for_test_case_AT_TW_NEWAPP_IDA_01() throws Throwable {
+		testData = identificatioDetailsExcelData.getTestdata("DS_AT_TW_NEWAPP_IDA_01");
+    }
 	
+	@And("^User_608 get the test data for test case AT_TW_NEWAPP_IDA_02$")
+    public void get_the_test_data_for_test_case_AT_TW_NEWAPP_IDA_02() throws Throwable {
+		testData = identificatioDetailsExcelData.getTestdata("DS_AT_TW_NEWAPP_IDA_02");
+    }
 	
+	@And("^User_608 get the test data for test case AT_TW_NEWAPP_IDA_03$")
+    public void get_the_test_data_for_test_case_AT_TW_NEWAPP_IDA_03() throws Throwable {
+		testData = identificatioDetailsExcelData.getTestdata("DS_AT_TW_NEWAPP_IDA_03");
+    }
+	
+	@And("^User_608 get the test data for test case AT_TW_NEWAPP_IDA_04$")
+    public void get_the_test_data_for_test_case_AT_TW_NEWAPP_IDA_04() throws Throwable {
+		testData = identificatioDetailsExcelData.getTestdata("DS_AT_TW_NEWAPP_IDA_04");
+    }
+	
+	@And("^User_608 get the test data for test case AT_TW_NEWAPP_IDA_05$")
+    public void get_the_test_data_for_test_case_AT_TW_NEWAPP_IDA_05() throws Throwable {
+		testData = identificatioDetailsExcelData.getTestdata("DS_AT_TW_NEWAPP_IDA_05");
+    }	
+	
+	@And("^User_608 get the test data for test case AT_TW_NEWAPP_IDA_06$")
+    public void get_the_test_data_for_test_case_AT_TW_NEWAPP_IDA_06() throws Throwable {
+		testData = identificatioDetailsExcelData.getTestdata("DS_AT_TW_NEWAPP_IDA_06");
+    }
 	
 	
 	
@@ -3135,12 +3170,1639 @@ public class Tawarruq_Steps {
 	}
 	
 	
+	@And("User_608 invoke soft assert in Document details screen under Document Details tab at Tawarruq App Data Entry stage")
+	public void user_invoke_soft_assert_in_document_details_screen_under_document_details_tab_at_tawarruq_app_data_entry_stage() throws Throwable {
+	    softAssert.assertAll();
+	}
 	
 	
+	// ************** Tawarruq -- App Data Entry stage -- Additional customer info tab *********************
+//		Additional Customer Info Tab
+		@And("User_608 click the Additional Customer Info tab")
+		public void user_click_the_additional_customer_info_tab() throws Throwable {
+			for (int i = 0; i <= 10000; i++) {
+				try {
+//					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("additionalCustomerInfoTab")).click();
+					javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("additionalCustomerInfoTab")));
+					break;
+				} catch (Exception e) { 
+					if (i == 10000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}	    
+		}
+
+		@And("User_608 click the Pencil Icon button in Customer Personal Info section under Additional Customer Info tab")
+		public void user_click_the_pencil_icon_button_in_customer_personal_info_section_under_additional_customer_info_tab() throws Throwable {
+			for (int i = 0; i <= 1000; i++) {
+				try {
+					javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("additionalCustInfoTabPencilIconBtn")));
+					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("additionalCustInfoTabPencilIconBtn")).click();
+					break;
+				} catch (Exception e) { 
+					if (i == 1000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+		}
+
+		@And("User_608 click the Add button in Customer Identification under Additional Customer Info tab")
+		public void user_click_the_add_button_in_customer_identification_under_additional_customer_info_tab() throws Throwable {
+			for (int i = 0; i <= 1000; i++) {
+				try {
+					javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("customerIdentificationBackBtn")));
+					break;
+				} catch (Exception e) { 
+					if (i == 1000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			for (int i = 0; i <= 1000; i++) {
+				try {
+					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("customerIdentificationAddBtn")).click();
+					break;
+				} catch (Exception e) { 
+					if (i == 1000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+		}
+
+		@And("User_608 select the ID Type in Customer Identification screen")
+		public void user_select_the_id_type_in_customer_identification_screen() throws Throwable {
+			for (int i = 0; i <= 2000; i++) {
+				try {
+					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDType_Dropdown")).click();
+					break;
+				} catch (Exception e) {
+					if (i == 2000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+			String dropdownLength = "";
+			boolean isDropdownValueSelected = false;
+			String dropdownString = "";
+			for (int i = 0; i <= 300; i++) {
+				try {
+					dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+					System.out.println("Dropdown length " + dropdownLength);
+					if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+						break;
+					}
+				} catch (Exception e) {
+					if (i == 300) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+			for (int j = 0; j <= premitiveDropdownLength; j++) {
+				for (int l = 0; l <= 300; l++) {
+					try {
+						System.out.println("L value is " + l);
+						System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+						dropdownString = javascriptHelper.executeScript(
+								"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText").toString();
+						if (!(dropdownString.isEmpty())) {
+							System.out.println(dropdownString);
+							System.out.println("Loop count " + l + " got breaked");
+							break;
+						}
+					} catch (Exception e) {
+						if (l == 300 && !(dropdownString.isBlank())) {
+							Assert.fail(e.getMessage());
+						}
+					}
+					if (!(dropdownString.isEmpty())) {
+						System.out.println(dropdownString);
+						System.out.println("Loop count " + l + " got breaked");
+						break;
+					}
+				}
+				System.out.println("String " + dropdownString.trim());
+				System.out.println("Map " + testData.get("ID_Type").trim());
+				if ((dropdownString.trim()).equalsIgnoreCase((testData.get("ID_Type")).trim())) {
+					for (int k = 0; k <= 300; k++) {
+						try {
+							clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+							clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+							isDropdownValueSelected = true;
+							break;
+						} catch (Exception e) {
+							if (k == 300) {
+								Assert.fail(e.getMessage());
+							}
+						}
+					}
+				}
+				if (isDropdownValueSelected == true) {
+					break;
+				}
+			}		    
+		}
+
+		@And("User_608 enter the invalid ID number in Customer Identification screen")
+		public void user_enter_the_invalid_id_number_in_customer_identification_screen() throws Throwable {
+			javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDNumber_Input")).click();
+			for (int i = 0; i <= 500; i++) {
+				try {
+					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDNumber_Input"))
+					.sendKeys(testData.get("ID_Number"));
+					break;
+				} catch (Exception e) {
+					if (i == 500) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+		}
+
+		@And("User_608 select the Issuing Authority in Customer Identification screen")
+		public void user_select_the_issuing_authority_in_customer_identification_screen() throws Throwable {
+			for (int i = 0; i <= 2000; i++) {
+				try {
+					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("issuingAuthorityDropdown")).click();
+					break;
+				} catch (Exception e) {
+					if (i == 2000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+			String dropdownLength = "";
+			boolean isDropdownValueSelected = false;
+			String dropdownString = "";
+			for (int i = 0; i <= 300; i++) {
+				try {
+					dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+					System.out.println("Dropdown length " + dropdownLength);
+					if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+						break;
+					}
+				} catch (Exception e) {
+					if (i == 300) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+			for (int j = 0; j <= premitiveDropdownLength; j++) {
+				for (int l = 0; l <= 300; l++) {
+					try {
+						System.out.println("L value is " + l);
+						System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+						dropdownString = javascriptHelper.executeScript(
+								"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText").toString();
+						if (!(dropdownString.isEmpty())) {
+							System.out.println(dropdownString);
+							System.out.println("Loop count " + l + " got breaked");
+							break;
+						}
+					} catch (Exception e) {
+						if (l == 300 && !(dropdownString.isBlank())) {
+							Assert.fail(e.getMessage());
+						}
+					}
+					if (!(dropdownString.isEmpty())) {
+						System.out.println(dropdownString);
+						System.out.println("Loop count " + l + " got breaked");
+						break;
+					}
+				}
+				System.out.println("String " + dropdownString.trim());
+				System.out.println("Map " + testData.get("Issuing_Authority").trim());
+				if ((dropdownString.trim()).equalsIgnoreCase((testData.get("Issuing_Authority")).trim())) {
+					for (int k = 0; k <= 300; k++) {
+						try {
+							clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+							clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+							isDropdownValueSelected = true;
+							break;
+						} catch (Exception e) {
+							if (k == 300) {
+								Assert.fail(e.getMessage());
+							}
+						}
+					}
+				}
+				if (isDropdownValueSelected == true) {
+					break;
+				}
+			}
+		    
+		}
+
+		
+		@And("User_608 verify the invalid data validation in Customer Identification screen")
+		public void user_verify_the_invalid_data_validation_in_customer_identification_screen() throws Throwable {
+			WebElement invalidData = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("invalidDataError"));
+			System.err.println("Invalid Data Error : "+invalidData.getText());
+			for (int i = 0; i<2000; i++) {
+	          try {
+	              Assert.assertTrue(invalidData.isDisplayed());
+	              break;
+	          } catch (Exception e) {
+	              if (i==1999) {
+	                  Assert.fail(e.getMessage());
+	              }
+	          	}
+			}	    
+		}
+		
+		@And("User_608 enter the special characters in ID number under Customer Identification screen")
+		public void user_enter_the_special_characters_in_id_number_under_customer_identification_screen() throws Throwable {
+			javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDNumber_Input")).click();
+			for (int i = 0; i <= 500; i++) {
+				try {
+					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDNumber_Input"))
+					.sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
+					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDNumber_Input"))
+					.sendKeys(testData.get("ID_Number_SpecialChar"));
+					break;
+				} catch (Exception e) {
+					if (i == 500) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+		}
+		
+		@And("User_608 verify the Special character validation in Customer Identification screen")
+		public void user_verify_the_special_character_validation_in_customer_identification_screen() throws Throwable {
+			WebElement specialCharError = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("specialCharError"));
+			String specialChar = specialCharError.getText().trim();
+			System.err.println("Speacial Char: "+specialChar);
+			for (int i = 0; i<20000; i++) {
+	          try {
+//	        	  Thread.sleep(1000);
+//	           Assert.assertTrue(specialChar.equalsIgnoreCase("Only Alphanumeric characters allowed"));
+	        	  javascriptHelper.backgroundColor(specialCharError);
+	        	  softAssert.assertTrue(specialCharError.isDisplayed(), "System should display - Only Alphanumeric characters allowed");
+	        	  softAssert.assertTrue(specialChar.equalsIgnoreCase("Only Alphanumeric characters are allowed"), "System should display error msg");
+	              break;
+	          } catch (Exception e) {
+	              if (i==19999) {
+	                  Assert.fail(e.getMessage());
+	              	}
+	          	}
+			}  
+		}
+
+		@And("User_608 click the save button with mandatory field blank in Customer Identification screen")
+		public void user_click_the_save_button_with_mandatory_field_blank_in_customer_identification_screen() throws Throwable {
+			for (int i = 0; i <= 1000; i++) {
+				try {
+					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("identificationDetailsSaveBtn")).click();
+					break;
+				} catch (Exception e) {
+					if (i == 1000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}	    
+		}
+
+		@And("User_608 verify the Validation error msg in Customer Identification screen")
+		public void user_verify_the_validation_error_msg_in_customer_identification_screen() throws Throwable {
+			String madatoryErrorMsg = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("mandatoryFillToastMsg")).getText();
+			System.err.println("Mandatory Error : "+madatoryErrorMsg);
+			for (int i = 0; i<2000; i++) {
+	          try {
+	              Assert.assertTrue(madatoryErrorMsg.contains("Please fill all the details"));
+	              break;
+	          } catch (Exception e) {
+	              if (i==1999) {
+	                  Assert.fail(e.getMessage());
+	              }
+	          	}
+			}
+			
+//			WebElement reqFieldError = javascriptHelper.executeScriptWithWebElement(additionalCustInfoJsPaths.getElement("requiredFieldError"));
+////			System.err.println("Mandatory Error : "+reqFieldError.getText());
+//			for (int i = 0; i<2000; i++) {
+//	          try {
+//	              Assert.assertTrue(reqFieldError.isDisplayed());
+//	              break;
+//	          } catch (Exception e) {
+//	              if (i==1999) {
+//	                  Assert.fail(e.getMessage());
+//	              }
+//	          	}
+//			}		
+		}
 	
+		
+//		@AT_TW_NEWAPP_IDA_01
+		@And("User_608 verify Back button available under Identification Details screen in Additional Customer Info tab")
+		public void user_verify_back_button_available_under_identification_details_screen_in_additional_customer_info_tab() throws Throwable {
+			WebElement backBtn = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("identificationDetailsBackBtn"));
+			for (int i = 0; i <= 150000; i++) {
+				try {
+					javascriptHelper.backgroundBorder(backBtn);
+					backBtn.isDisplayed();
+					break;
+				} catch (Exception e) {
+					if (i == 150000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}		    
+		}
+
+		@And("User_608 verify Save button available under Identification Details screen in Additional Customer Info tab")
+		public void user_verify_save_button_available_under_identification_details_screen_in_additional_customer_info_tab() throws Throwable {
+			WebElement saveBtn = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("identificationDetailsSaveBtn"));
+			for (int i = 0; i <= 1500; i++) {
+				try {
+					javascriptHelper.backgroundBorder(saveBtn);
+					saveBtn.isDisplayed();
+					break;
+				} catch (Exception e) {
+					if (i == 1500) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}		    
+		}
+
+		@And("User_608 verify Help button available under Identification Details screen in Additional Customer Info tab")
+		public void user_verify_help_button_available_under_identification_details_screen_in_additional_customer_info_tab() throws Throwable {
+			WebElement helpBtn = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("identificationDetailsHelpBtn"));
+			for (int i = 0; i <= 1500; i++) {
+				try {
+					javascriptHelper.backgroundBorder(helpBtn);
+					helpBtn.isDisplayed();
+					break;
+				} catch (Exception e) {
+					if (i == 1500) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}		    
+		}
+
+		@And("User_608 enter the ID number in Customer Identification screen")
+		public void user_enter_the_id_number_in_customer_identification_screen() {
+//			javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDNumber_Input")).click();
+			for (int i = 0; i <= 500; i++) {
+				try {
+					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDNumber_Input"))
+					.sendKeys(testData.get("ID_Number"));
+					break;
+				} catch (Exception e) {
+					if (i == 500) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}		    
+		}
+
+		@And("User_608 enter the Issue Date in Customer Identification screen")
+		public void user_enter_the_issue_date_in_customer_identification_screen() {
+//			javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("issueDate_Input")).click();
+			for (int i = 0; i <= 500; i++) {
+				try {
+					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("issueDate_Input"))
+					.sendKeys(testData.get("IssueDate"));
+					break;
+				} catch (Exception e) {
+					if (i == 500) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}		    
+		}
+
+		@And("User_608 enter the Expiry Date in Customer Identification screen")
+		public void user_enter_the_expiry_date_in_customer_identification_screen() {
+//			javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("expiryDate_Input")).click();
+			for (int i = 0; i <= 500; i++) {
+				try {
+					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("expiryDate_Input"))
+					.sendKeys(testData.get("ExpiryDate"));
+					break;
+				} catch (Exception e) {
+					if (i == 500) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}		    
+		}
+
+		@And("User_608 select the Country of Issue in Customer Identification screen")
+		public void user_select_the_country_of_issue_in_customer_identification_screen() {
+			for (int i = 0; i <= 2000; i++) {
+				try {
+					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("countryOfIssueDropdown")).click();
+					break;
+				} catch (Exception e) {
+					if (i == 2000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+			String dropdownLength = "";
+			boolean isDropdownValueSelected = false;
+			String dropdownString = "";
+			for (int i = 0; i <= 300; i++) {
+				try {
+					dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+					System.out.println("Dropdown length " + dropdownLength);
+					if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+						break;
+					}
+				} catch (Exception e) {
+					if (i == 300) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+			for (int j = 0; j <= premitiveDropdownLength; j++) {
+				for (int l = 0; l <= 300; l++) {
+					try {
+						System.out.println("L value is " + l);
+						System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+						dropdownString = javascriptHelper.executeScript(
+								"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText").toString();
+						if (!(dropdownString.isEmpty())) {
+							System.out.println(dropdownString);
+							System.out.println("Loop count " + l + " got breaked");
+							break;
+						}
+					} catch (Exception e) {
+						if (l == 300 && !(dropdownString.isBlank())) {
+							Assert.fail(e.getMessage());
+						}
+					}
+					if (!(dropdownString.isEmpty())) {
+						System.out.println(dropdownString);
+						System.out.println("Loop count " + l + " got breaked");
+						break;
+					}
+				}
+				System.out.println("String " + dropdownString.trim());
+				System.out.println("Map " + testData.get("Country_of_Issue").trim());
+				if ((dropdownString.trim()).equalsIgnoreCase((testData.get("Country_of_Issue")).trim())) {
+					for (int k = 0; k <= 300; k++) {
+						try {
+							clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+							clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+							isDropdownValueSelected = true;
+							break;
+						} catch (Exception e) {
+							if (k == 300) {
+								Assert.fail(e.getMessage());
+							}
+						}
+					}
+				}
+				if (isDropdownValueSelected == true) {
+					break;
+				}
+			}		    
+		}
 	
+		@And("User_608 click the Save button under Customer Identification screen")
+		public void user_click_the_save_button_under_customer_identification_screen() {
+			for (int i = 0; i <= 10000; i++) {
+				try {
+					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("identificationDetailsSaveBtn")).click();
+					break;
+				} catch (Exception e) {
+					if (i == 10000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}		    
+		}
+
+		@And("User_608 to verify system display the confirmation message post clicking on save button")
+		public void user_to_verify_system_display_the_confirmation_message_post_clicking_on_save_button() {
+			WebElement alertMsg = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("alert_SuccessMsg"));
+			for (int i = 0; i < 20000; i++) {
+				try {
+		        	 String text = alertMsg.getText();
+		        	 System.out.println("Alert Message: "+text);
+		        	 softAssert.assertTrue((text.contains("Success")), "System display the confirmation message");
+		             break;
+		        } catch (Exception e) {
+		            
+		        }
+			}
+			
+			for (int i = 0; i < 2000; i++) {
+				try {
+					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("alert_closeBtn")).click();
+		             break;
+		        } catch (Exception e) {
+		            if (i==1999) {
+		                 Assert.fail(e.getMessage());
+		            }
+		        }
+			}
+		}
 	
-	
-	
-	
+		@And("User_608 invoke soft assert in Identification details screen under Additional Customer Info tab at Tawarruq New Application stage")
+		public void user_invoke_soft_assert_in_identification_details_screen_under_additional_customer_tab_at_tawarruq_new_app_stage() throws Throwable {
+		    softAssert.assertAll();
+		}
+		
+		
+		
+//		@AT_TW_NEWAPP_IDA_02
+		@And("User_608 verify ID Type field is available under Customer Identification screen")
+		public void user_verify_id_type_field_is_available_under_customer_identification_screen() throws Throwable {
+			WebElement label = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDType_Label"));
+			for (int i = 0; i <= 1500; i++) {
+				try {
+					javascriptHelper.backgroundColor(label);
+					label.isDisplayed();
+					break;
+				} catch (Exception e) {
+					if (i == 1500) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			WebElement field = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDType_Dropdown"));
+			for (int i = 0; i <= 1500; i++) {
+				try {
+					javascriptHelper.backgroundBorder(field);
+					field.isDisplayed();
+					break;
+				} catch (Exception e) {
+					if (i == 1500) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}		    
+		}
+
+		@And("User_608 verify ID number field is available under Customer Identification screen")
+		public void user_verify_id_number_field_is_available_under_customer_identification_screen() throws Throwable {
+			WebElement label = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDNumber_Label"));
+			for (int i = 0; i <= 1500; i++) {
+				try {
+					javascriptHelper.backgroundColor(label);
+					label.isDisplayed();
+					break;
+				} catch (Exception e) {
+					if (i == 1500) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			WebElement field = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDNumber_Input"));
+			for (int i = 0; i <= 1500; i++) {
+				try {
+					javascriptHelper.backgroundBorder(field);
+					field.isDisplayed();
+					break;
+				} catch (Exception e) {
+					if (i == 1500) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}		    
+		}
+
+		@And("User_608 verify Issue Date field is available under Customer Identification screen")
+		public void user_verify_issue_date_field_is_available_under_customer_identification_srcreen() throws Throwable {
+			WebElement label = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("issueDate_Label"));
+			for (int i = 0; i <= 1500; i++) {
+				try {
+					javascriptHelper.backgroundColor(label);
+					label.isDisplayed();
+					break;
+				} catch (Exception e) {
+					if (i == 1500) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			WebElement field = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("issueDate_Input"));
+			for (int i = 0; i <= 1500; i++) {
+				try {
+					javascriptHelper.backgroundBorder(field);
+					field.isDisplayed();
+					break;
+				} catch (Exception e) {
+					if (i == 1500) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}		    
+		}
+
+		@And("User_608 verify Expiry Date field is available under Customer Identification screen")
+		public void user_verify_expiry_date_field_is_available_under_customer_identification_screen() throws Throwable {
+			WebElement label = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("expiryDate_Label"));
+			for (int i = 0; i <= 1500; i++) {
+				try {
+					javascriptHelper.backgroundColor(label);
+					label.isDisplayed();
+					break;
+				} catch (Exception e) {
+					if (i == 1500) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			WebElement field = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("expiryDate_Input"));
+			for (int i = 0; i <= 1500; i++) {
+				try {
+					javascriptHelper.backgroundBorder(field);
+					field.isDisplayed();
+					break;
+				} catch (Exception e) {
+					if (i == 1500) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}		    
+		}
+
+		@And("User_608 verify Issuing Authority field is available under Customer Identification screen")
+		public void user_verify_issuing_authority_field_is_available_under_customer_identification_screen() throws Throwable {
+			WebElement label = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("issuingAuthorityLabel"));
+			for (int i = 0; i <= 1500; i++) {
+				try {
+					javascriptHelper.backgroundColor(label);
+					label.isDisplayed();
+					break;
+				} catch (Exception e) {
+					if (i == 1500) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			WebElement field = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("issuingAuthorityDropdown"));
+			for (int i = 0; i <= 1500; i++) {
+				try {
+					javascriptHelper.backgroundBorder(field);
+					field.isDisplayed();
+					break;
+				} catch (Exception e) {
+					if (i == 1500) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}		    
+		}
+
+		@And("User_608 verify Country of Issue field is available under Customer Identification screen")
+		public void user_verify_country_of_issue_field_is_available_under_customer_identification_screen() throws Throwable {
+			WebElement label = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("countryOfIssueLabel"));
+			for (int i = 0; i <= 1500; i++) {
+				try {
+					javascriptHelper.backgroundColor(label);
+					label.isDisplayed();
+					break;
+				} catch (Exception e) {
+					if (i == 1500) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			WebElement field = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("countryOfIssueDropdown"));
+			for (int i = 0; i <= 1500; i++) {
+				try {
+					javascriptHelper.backgroundBorder(field);
+					field.isDisplayed();
+					break;
+				} catch (Exception e) {
+					if (i == 1500) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}		    
+		}
+		
+		
+		@And("User_608 verify ID Type field should be Mandatory, Editable and Lookup under Customer Identification screen")
+		public void user_verify_id_type_field_should_be_mandatory_editable_and_lookup_under_customer_identification_screen() throws Throwable {
+//			Validate Mandatory
+			String label = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDType_Label")).getText();
+			for (int i = 0; i <2000; i++) {
+	          try {
+	        	  softAssert.assertTrue(label.contains("*"), "ID Type field should be mandatory");
+	              break;
+	          } catch (Exception e) {
+	              if (i==1999) {
+	                  Assert.fail(e.getMessage());
+	              }
+	          	}
+			}
+			
+//			Verify field as Editable
+			WebElement field = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDType"));
+			for (int i = 0; i <= 2000; i++) {
+				try {
+					softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("false"), "ID Type field should be editable");
+					break;
+				} catch (Exception e) {
+					if (i == 2000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			
+//			Validate the field should be lookup value[Dropdown]
+			WebElement dropdown = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDType_Dropdown"));
+			for (int i = 0; i <= 2000; i++) {
+				try {
+					softAssert.assertTrue(dropdown.getAttribute("ng-reflect-placeholder").contains("Select"), "ID type field should be Dropdown/Lookup");
+					break;
+				} catch (Exception e) {
+					if (i == 2000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}		    
+		}
+
+		@And("User_608 verify ID number field should be Mandatory, Editable and Textbox under Customer Identification screen")
+		public void user_verify_id_number_field_should_be_mandatory_editable_and_textbox_under_customer_identification_screen() throws Throwable {
+//			Validate Mandatory
+			String label = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDNumber_Label")).getText();
+			for (int i = 0; i <2000; i++) {
+	          try {
+	        	  softAssert.assertTrue(label.contains("*"), "ID Number field should be Mandatory");
+	              break;
+	          } catch (Exception e) {
+	              if (i==1999) {
+	                  Assert.fail(e.getMessage());
+	              }
+	          	}
+			}
+			
+//			Verify field as Editable
+			WebElement field = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDNumber"));
+			for (int i = 0; i <= 2000; i++) {
+				try {
+					softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("false"), "ID Number field should be editable");
+					break;
+				} catch (Exception e) {
+					if (i == 2000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			
+//			Validate the field should be Textbox
+			WebElement textbox = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDNumber_Input"));
+			for (int i = 0; i <= 2000; i++) {
+				try {
+					softAssert.assertTrue(textbox.getAttribute("type").contains("text"), "ID Number field should be Textbox");
+					break;
+				} catch (Exception e) {
+					if (i == 2000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}		    
+		}
+
+		@And("User_608 verify Issue Date field should be Non-mandatory, Editable and Calendar under Customer Identification screen")
+		public void user_verify_issue_date_field_should_be_non_mandatory_editable_and_calendar_under_customer_identification_screen() throws Throwable {
+//			Validate Non-mandatory
+			String label = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("issueDate_Label")).getText();
+			for (int i = 0; i <2000; i++) {
+	          try {
+	        	  softAssert.assertTrue(!(label.contains("*")), "Issue Date field should be Non-mandatory");
+	              break;
+	          } catch (Exception e) {
+	              if (i==1999) {
+	                  Assert.fail(e.getMessage());
+	              }
+	          	}
+			}
+			
+//			Verify field as Editable
+			WebElement field = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("issueDate"));
+			for (int i = 0; i <= 2000; i++) {
+				try {
+					softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("false"), "Issue Date field should be editable");
+					break;
+				} catch (Exception e) {
+					if (i == 2000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			
+//			Validate the field should be Calendar
+			WebElement calendar = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("issueDate_Calendar"));
+			for (int i = 0; i <= 2000; i++) {
+				try {
+					softAssert.assertTrue(calendar.getTagName().contains("calendar"), "Issue Date field should be Calendar");
+					break;
+				} catch (Exception e) {
+					if (i == 2000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}		    
+		}
+
+		@And("User_608 verify Expiry Date field should be Non-mandatory, Editable and Calendar under Customer Identification screen")
+		public void user_verify_expiry_date_field_should_be_non_mandatory_editable_and_calendar_under_customer_identification_screen() throws Throwable {
+//			Validate Non-mandatory
+			String label = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("expiryDate_Label")).getText();
+			for (int i = 0; i <2000; i++) {
+	          try {
+	        	  softAssert.assertTrue(!(label.contains("*")), "Expiry Date field should be Non-mandatory");
+	              break;
+	          } catch (Exception e) {
+	              if (i==1999) {
+	                  Assert.fail(e.getMessage());
+	              }
+	          	}
+			}
+			
+//			Verify field as Editable
+			WebElement field = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("expiryDate"));
+			for (int i = 0; i <= 2000; i++) {
+				try {
+					softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("false"), "Expiry Date field should be editable");
+					break;
+				} catch (Exception e) {
+					if (i == 2000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			
+//			Validate the field should be Calendar
+			WebElement calendar = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("expiryDate_Calendar"));
+			for (int i = 0; i <= 2000; i++) {
+				try {
+					softAssert.assertTrue(calendar.getTagName().contains("calendar"), "Expiry Date field should be Calendar");
+					break;
+				} catch (Exception e) {
+					if (i == 2000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}		    
+		}
+
+		@And("User_608 verify Issuing Authority field should be Mandatory, Editable and Lookup under Customer Identification screen")
+		public void user_verify_issuing_authority_field_should_be_mandatory_editable_and_lookup_under_customer_identification_screen() throws Throwable {
+//			Validate Mandatory
+			String label = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("issuingAuthorityLabel")).getText();
+			for (int i = 0; i <2000; i++) {
+	          try {
+	        	  softAssert.assertTrue(label.contains("*"), "Issuing Authority field should be mandatory");
+	              break;
+	          } catch (Exception e) {
+	              if (i==1999) {
+	                  Assert.fail(e.getMessage());
+	              }
+	          	}
+			}
+			
+//			Verify field as Editable
+			WebElement field = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("issuingAuthority"));
+			for (int i = 0; i <= 2000; i++) {
+				try {
+					softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("false"), "Issuing Authority field should be editable");
+					break;
+				} catch (Exception e) {
+					if (i == 2000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			
+//			Validate the field should be lookup value[Dropdown]
+			WebElement dropdown = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("issuingAuthorityDropdown"));
+			for (int i = 0; i <= 2000; i++) {
+				try {
+					softAssert.assertTrue(dropdown.getAttribute("ng-reflect-placeholder").contains("Select"), "Issuing Authority field should be Dropdown/Lookup");
+					break;
+				} catch (Exception e) {
+					if (i == 2000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}		    
+		}
+
+		@And("User_608 verify Country of Issue field should be Mandatory, Editable and Lookup under Customer Identification screen")
+		public void user_verify_country_of_issue_field_should_be_mandatory_editable_and_lookup_under_customer_identification_screen() throws Throwable {
+//			Validate Mandatory
+			String label = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("countryOfIssueLabel")).getText();
+			for (int i = 0; i <2000; i++) {
+	          try {
+	        	  softAssert.assertTrue(label.contains("*"), "Country Of Issue field should be mandatory");
+	              break;
+	          } catch (Exception e) {
+	              if (i==1999) {
+	                  Assert.fail(e.getMessage());
+	              }
+	          	}
+			}
+			
+//			Verify field as Editable
+			WebElement field = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("countryOfIssue"));
+			for (int i = 0; i <= 2000; i++) {
+				try {
+					softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("false"), "Country Of Issue field should be editable");
+					break;
+				} catch (Exception e) {
+					if (i == 2000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			
+//			Validate the field should be lookup value[Dropdown]
+			WebElement dropdown = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("countryOfIssueDropdown"));
+			for (int i = 0; i <= 2000; i++) {
+				try {
+					softAssert.assertTrue(dropdown.getAttribute("ng-reflect-placeholder").contains("Select"), "Country Of Issue field should be Dropdown/Lookup");
+					break;
+				} catch (Exception e) {
+					if (i == 2000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}		    
+		}
+		
+		@And("User_608 to verify the functionality of Help button under Customer Identification screen")
+		public void user_to_verify_the_functionality_of_help_button_under_customer_identification_screen() throws Throwable {
+			WebElement backBtn = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("identificationDetailsHelpBtn"));
+			for (int i = 0; i <= 150000; i++) {
+				try {
+					javascriptHelper.backgroundBorder(backBtn);
+					backBtn.click();
+					break;
+				} catch (Exception e) {
+					if (i == 150000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			} 
+		}
+
+		@And("User_608 post clicking on Help button, system should display the description of all the fields in details")
+		public void user_post_clicking_on_help_button_system_should_display_the_description_of_all_the_fields_in_details() throws Throwable {
+			WebElement helpBtn = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("help_fieldDescription"));
+			for (int i = 0; i <= 1000; i++) {
+				try {
+					javascriptHelper.scrollIntoView(helpBtn);
+					javascriptHelper.backgroundBorder(helpBtn);
+					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("help_fieldDescription")).isDisplayed();
+					break;
+				} catch (Exception e) { 
+					if (i == 1000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			} 
+		}		
+				
+		@And("User_608 to verify the functionality of Back button under Customer Identification screen")
+		public void user_to_verify_the_functionality_of_back_button_under_customer_identification_screen() throws Throwable {
+			String submitBtn = "document.querySelector('button[ng-reflect-label=\"Submit\"]')";
+			WebElement backBtn = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("identificationDetailsBackBtn"));
+			for (int i = 0; i <= 150000; i++) {
+				try {
+					javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(submitBtn));
+					javascriptHelper.backgroundBorder(backBtn);
+					backBtn.click();
+					break;
+				} catch (Exception e) {
+					if (i == 150000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}		    
+		}
+
+		@And("User_608 post clicking on Back button, system should navigate to the previous screen in Additional Customer Info")
+		public void user_post_clicking_on_back_button_system_should_navigate_to_the_previous_screen_in_additional_customer_info() throws Throwable {
+			for (int i = 0; i <= 1000; i++) {
+				try {
+					javascriptHelper.backgroundBorder(javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("customerIdentificationAddBtn")));
+					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("customerIdentificationAddBtn")).isDisplayed();
+					break;
+				} catch (Exception e) { 
+					if (i == 1000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}		    
+		}
+		
+		
+//		@AT_TW_NEWAPP_IDA_04
+		@And("User_608 click the any record under Customer Identification section in Additional Customer Info tab")
+		public void user_click_the_any_record_under_customer_identification_section_in_additional_customer_info_tab() throws Throwable {
+//			document.querySelector('button[icon="pi pi-arrow-left"]').parentElement.parentElement.parentElement.querySelectorAll('td')[2].parentElement.querySelector('button')
+			for (int i = 0; i <= 300; i++) {
+				try {
+					javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("customerIdentificationBackBtn")));
+					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("customerIdentificationEditBtn")).click();
+					break;
+				} catch (Exception e) {
+					if (i == 300) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+					
+		}
+		
+		@And("User_608 verify Update button available under Identification Details screen in Additional Customer Info tab")
+		public void user_verify_update_button_available_under_identification_details_screen_in_additional_customer_info_tab() throws Throwable {
+			WebElement saveBtn = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("identificationDetailsSaveBtn"));
+			for (int i = 0; i <= 1500; i++) {
+				try {
+					javascriptHelper.backgroundBorder(saveBtn);
+					saveBtn.isDisplayed();
+					break;
+				} catch (Exception e) {
+					if (i == 1500) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}		    
+		}
+		
+		@And("User_608 to verify while modification, when user keep any mandatory field blank and click on save button under Identification Details screen")
+		public void user_to_verify_while_modification_when_user_keep_any_mandatory_field_blank_and_click_on_save_button_under_identification_details_screen() throws Throwable {
+			WebElement saveBtn = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("identificationDetailsSaveBtn"));
+			javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDNumber_Input")).click();
+			for (int i = 0; i <= 500; i++) {
+				try {
+					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDNumber_Input"))
+					.sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
+					saveBtn.click();
+					break;
+				} catch (Exception e) {
+					if (i == 500) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}		    
+		}
+
+		@And("User_608 to verify System should show the proper validation message for blank field which is mandatory under Identification Details screen")
+		public void user_to_verify_system_should_show_the_proper_validation_message_for_blank_field_which_is_mandatory_under_identification_details_screen() throws Throwable {
+			String madatoryErrorMsg = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("mandatoryFillToastMsg")).getText();
+			System.err.println("Mandatory Error : "+madatoryErrorMsg);
+			for (int i = 0; i<2000; i++) {
+	          try {
+	        	  softAssert.assertTrue(madatoryErrorMsg.contains("Please fill all the details"),
+	        			  "System should show the proper validation message for blank fiel");
+	              break;
+	          } catch (Exception e) {
+	              if (i==1999) {
+	                  Assert.fail(e.getMessage());
+	              	}
+	          	}		    
+			}
+		}		
+		
+		@And("User_608 to verify while modification system enters the invalid data under Customer Identification screen")
+		public void user_to_verify_while_modification_system_enters_the_invalid_data_under_customer_identification_screen() throws Throwable {
+			javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDNumber_Input")).click();
+			for (int i = 0; i <= 500; i++) {
+				try {
+					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDNumber_Input"))
+					.sendKeys(testData.get("ID_Number_SpecialChar"));
+					break;
+				} catch (Exception e) {
+					if (i == 500) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+		    
+		}
+
+		@And("User_608 to verify system should not allow user to do a modification with invalid data in Customer Identification screen")
+		public void user_to_verify_system_should_not_allow_user_to_do_a_modification_with_invalid_data_in_customer_identification_screen() throws Throwable {
+			WebElement specialCharError = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("specialCharError"));
+			String specialChar = specialCharError.getText().trim();
+			System.err.println("Speacial Char: "+specialChar);
+			for (int i = 0; i<20000; i++) {
+	          try {
+	        	  javascriptHelper.backgroundColor(specialCharError);
+	        	  softAssert.assertTrue(specialCharError.isDisplayed(), "System should display - Only Alphanumeric characters allowed");
+	        	  softAssert.assertTrue(specialChar.equalsIgnoreCase("Only Alphanumeric characters are allowed"), "System should display error msg");
+	              break;
+	          } catch (Exception e) {
+	              if (i==19999) {
+	                  Assert.fail(e.getMessage());
+	              	}
+	          	}
+			}
+		    
+		}
+		
+		@And("User_608 to verify system allow user to modify the Identification details under Customer Identification screen")
+		public void user_to_verify_system_allow_user_to_modify_the_identification_details_under_customer_identification_screen() throws Throwable {
+			for (int i = 0; i <= 2000; i++) {
+				try {
+					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDType_Dropdown")).click();
+					break;
+				} catch (Exception e) {
+					if (i == 2000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+			String dropdownLength = "";
+			boolean isDropdownValueSelected = false;
+			String dropdownString = "";
+			for (int i = 0; i <= 300; i++) {
+				try {
+					dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+					System.out.println("Dropdown length " + dropdownLength);
+					if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+						break;
+					}
+				} catch (Exception e) {
+					if (i == 300) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+			for (int j = 0; j <= premitiveDropdownLength; j++) {
+				for (int l = 0; l <= 300; l++) {
+					try {
+						System.out.println("L value is " + l);
+						System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+						dropdownString = javascriptHelper.executeScript(
+								"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText").toString();
+						if (!(dropdownString.isEmpty())) {
+							System.out.println(dropdownString);
+							System.out.println("Loop count " + l + " got breaked");
+							break;
+						}
+					} catch (Exception e) {
+						if (l == 300 && !(dropdownString.isBlank())) {
+							Assert.fail(e.getMessage());
+						}
+					}
+					if (!(dropdownString.isEmpty())) {
+						System.out.println(dropdownString);
+						System.out.println("Loop count " + l + " got breaked");
+						break;
+					}
+				}
+				System.out.println("String " + dropdownString.trim());
+				System.out.println("Map " + testData.get("ID_Type").trim());
+				if ((dropdownString.trim()).equalsIgnoreCase((testData.get("ID_Type")).trim())) {
+					for (int k = 0; k <= 300; k++) {
+						try {
+							clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+							clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+							isDropdownValueSelected = true;
+							break;
+						} catch (Exception e) {
+							if (k == 300) {
+								Assert.fail(e.getMessage());
+							}
+						}
+					}
+				}
+				if (isDropdownValueSelected == true) {
+					break;
+				}
+			}		    
+		}
+
+		@And("User_608 to verify while modification system allow user to save the record with valid data under Customer Identification screen")
+		public void user_to_verify_while_modification_system_allow_user_to_save_the_record_with_valid_data_under_customer_identification_screen() throws Throwable {
+			javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDNumber_Input")).click();
+			for (int i = 0; i <= 500; i++) {
+				try {
+					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDNumber_Input"))
+					.sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
+					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDNumber_Input"))
+					.sendKeys(testData.get("ID_Number"));
+					break;
+				} catch (Exception e) {
+					if (i == 500) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+		    
+		}
+		
+		@And("User_608 click the Update button under Customer Identification screen")
+		public void user_click_the_update_button_under_customer_identification_screen() throws Throwable {
+			for (int i = 0; i <= 10000; i++) {
+				try {
+					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("identificationDetailsSaveBtn")).click();
+					break;
+				} catch (Exception e) {
+					if (i == 10000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}		    
+		}
+		
+				
+//		@AT_TW_NEWAPP_IDA_05
+		@And("User_608 click the lable on button if the status of record is Active under Customer Identification section")
+		public void user_click_the_lable_on_button_if_the_status_of_record_is_active_under_customer_identification_section() throws Throwable {
+			for (int i = 0; i <= 300; i++) {
+				try {
+					javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("customerIdentificationBackBtn")));
+					break;
+				} catch (Exception e) {
+					if (i == 300) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			String listOfRecords = "document.querySelector('button[icon=\"pi pi-arrow-left\"]').parentElement.parentElement.parentElement.querySelectorAll('td').length";
+			String listOfEyeBtn = "";
+			String recordName = "";
+			boolean isEyeBtnClicked = false;
+			for (int i = 0; i <= 300; i++) {
+				try {
+					listOfEyeBtn = javascriptHelper.executeScript("return " + listOfRecords).toString();
+					System.out.println("List of add button " + listOfEyeBtn);
+					if (!(listOfEyeBtn.isBlank())) {
+						break;
+					}
+				} catch (Exception e) {
+					if (i == 300) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			
+			int premitiveListOfEyeButton = Integer.parseInt(listOfEyeBtn);
+			for (int j = 0; j < premitiveListOfEyeButton; j++) {
+				for (int k = 0; k <= 300; k++) {
+					try {
+						recordName = javascriptHelper.executeScript(
+								"return document.querySelector('button[icon=\"pi pi-arrow-left\"]').parentElement.parentElement.parentElement.querySelectorAll('td')["
+										+ j + "].textContent")
+								.toString();
+						System.out.println("Screen Name " + recordName);
+						if (!(recordName.isBlank())) {
+							System.out.println("Screen Name" + recordName + " is Not null");
+							if ((recordName.trim()).equalsIgnoreCase(("Active").trim())) {
+								System.out.println("Inside nested loop");
+								javascriptHelper.backgroundColor(
+										javascriptHelper
+										.executeScriptWithWebElement(
+												"document.querySelector('button[icon=\"pi pi-arrow-left\"]').parentElement.parentElement.parentElement.querySelectorAll('td')[" + j + "].parentElement.querySelector('button')"));
+								javascriptHelper
+										.executeScriptWithWebElement(
+												"document.querySelector('button[icon=\"pi pi-arrow-left\"]').parentElement.parentElement.parentElement.querySelectorAll('td')[" + j + "].parentElement.querySelector('button')")
+										.click();
+								isEyeBtnClicked = true;
+								break;
+							}
+						}
+					} catch (Exception e) {
+						if (k == 300) {
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+				if (isEyeBtnClicked == true) {
+					break;
+				}
+			}		    
+		}
+		
+		@And("User_608 to verify the functionality of Activate\\Deactivate button under Customer Identification screen")
+		public void user_to_verify_the_functionality_of_activate_deactivate_button_under_customer_identification_screen() throws Throwable {
+			Thread.sleep(1000);
+			for (int i = 0; i <= 100000; i++) {
+				try {
+					javascriptHelper.backgroundBorder(javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("statusToggleBtn")));
+					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("statusToggleBtn")).click();
+					break;
+				} catch (Exception e) { 
+					if (i == 100000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}		    
+		}
+		
+		@And("User_608 get the updated record ID under Customer Identification section")
+		public void user_get_the_updated_record_id_under_customer_identification_section() throws Throwable {
+			Thread.sleep(1000);
+			WebElement successMsg = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("alert_SuccessMsg"));
+			for (int i = 0; i <= 10000; i++) {
+				try {
+					String text = successMsg.getText();
+					System.out.println("Number: "+ text.substring(32, 36));
+					identificatioDetailsExcelData.updateTestData(testData.get("DataSet ID"),"Record_ID", text.substring(32, 36));
+					break;
+				} catch (Exception e) { 
+					e.printStackTrace();
+					if (i == 10000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			for (int i = 0; i < 500; i++) {
+				try {
+					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("alert_closeBtn")).click();
+		            break;
+		        } catch (Exception e) {
+		            if (i==499) {
+		                 Assert.fail(e.getMessage());
+		            }
+		        }
+			}
+		}
+
+		@And("User_608 to verify if Status is Active then click the button system should show Deactivate under Customer Identification section")
+		public void user_to_verify_if_status_is_active_then_click_the_button_system_should_show_deactivate_under_customer_identification_section() throws Throwable {
+//		document.querySelector('button[icon="pi pi-arrow-left"]').parentElement.parentElement.parentElement.querySelectorAll('td')[1].parentElement.lastElementChild
+			for (int i = 0; i <= 100; i++) {
+				try {
+					javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("customerIdentificationBackBtn")));
+					break;
+				} catch (Exception e) {
+					if (i == 100) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			String listOfRecords = "document.querySelector('button[icon=\"pi pi-arrow-left\"]').parentElement.parentElement.parentElement.querySelectorAll('td').length";
+			String listOfEyeBtn = "";
+			String recordName = "";
+			for (int i = 0; i <= 100; i++) {
+				try {
+					listOfEyeBtn = javascriptHelper.executeScript("return " + listOfRecords).toString();
+					System.out.println("List of add button " + listOfEyeBtn);
+					if (!(listOfEyeBtn.isBlank())) {
+						break;
+					}
+				} catch (Exception e) {
+					if (i == 100) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			
+			int premitiveListOfEyeButton = Integer.parseInt(listOfEyeBtn);
+			for (int j = 0; j < premitiveListOfEyeButton; j++) {
+				for (int k = 0; k <= 300; k++) {
+					try {
+						recordName = javascriptHelper.executeScript(
+								"return document.querySelector('button[icon=\"pi pi-arrow-left\"]').parentElement.parentElement.parentElement.querySelectorAll('td')["
+										+ j + "].textContent")
+								.toString();
+						System.out.println("Screen Name " + recordName);
+						if (!(recordName.isBlank())) {
+							System.out.println("Screen Name" + recordName + " is Not null");
+							if ((recordName.trim()).equalsIgnoreCase((testData.get("Record_ID")).trim())) {
+								System.out.println("Inside nested loop");
+								javascriptHelper.backgroundBorder(
+										javascriptHelper
+										.executeScriptWithWebElement(
+												"document.querySelector('button[icon=\"pi pi-arrow-left\"]').parentElement.parentElement.parentElement.querySelectorAll('td')[" + j + "].parentElement.lastElementChild"));
+								WebElement status = javascriptHelper
+										.executeScriptWithWebElement(
+												"document.querySelector('button[icon=\"pi pi-arrow-left\"]').parentElement.parentElement.parentElement.querySelectorAll('td')[" + j + "]..parentElement.lastElementChild");
+								System.out.println("Status: "+ status.getText());
+								softAssert.assertTrue(status.getText().equalsIgnoreCase("In-active"));
+								break;
+							}
+						}
+					} catch (Exception e) {
+						if (k == 300) {
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+		}
+
+		@And("User_608 click the lable on button if the status of record is Deactive under Customer Identification section")
+		public void user_click_the_lable_on_button_if_the_status_of_record_is_deactive_under_customer_identification_section() throws Throwable {
+			for (int i = 0; i <= 300; i++) {
+				try {
+					javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("customerIdentificationBackBtn")));
+					break;
+				} catch (Exception e) {
+					if (i == 300) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			String listOfRecords = "document.querySelector('button[icon=\"pi pi-arrow-left\"]').parentElement.parentElement.parentElement.querySelectorAll('td').length";
+			String listOfEyeBtn = "";
+			String recordName = "";
+			boolean isEyeBtnClicked = false;
+			for (int i = 0; i <= 300; i++) {
+				try {
+					listOfEyeBtn = javascriptHelper.executeScript("return " + listOfRecords).toString();
+					System.out.println("List of add button " + listOfEyeBtn);
+					if (!(listOfEyeBtn.isBlank())) {
+						break;
+					}
+				} catch (Exception e) {
+					if (i == 300) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			
+			int premitiveListOfEyeButton = Integer.parseInt(listOfEyeBtn);
+			for (int j = 0; j < premitiveListOfEyeButton; j++) {
+				for (int k = 0; k <= 300; k++) {
+					try {
+						recordName = javascriptHelper.executeScript(
+								"return document.querySelector('button[icon=\"pi pi-arrow-left\"]').parentElement.parentElement.parentElement.querySelectorAll('td')["
+										+ j + "].textContent")
+								.toString();
+						System.out.println("Screen Name " + recordName);
+						if (!(recordName.isBlank())) {
+							System.out.println("Screen Name" + recordName + " is Not null");
+							if ((recordName.trim()).equalsIgnoreCase(("In-active").trim())) {
+								System.out.println("Inside nested loop");
+								javascriptHelper.backgroundColor(
+										javascriptHelper
+										.executeScriptWithWebElement(
+												"document.querySelector('button[icon=\"pi pi-arrow-left\"]').parentElement.parentElement.parentElement.querySelectorAll('td')[" + j + "].parentElement.querySelector('button')"));
+								javascriptHelper
+										.executeScriptWithWebElement(
+												"document.querySelector('button[icon=\"pi pi-arrow-left\"]').parentElement.parentElement.parentElement.querySelectorAll('td')[" + j + "].parentElement.querySelector('button')")
+										.click();
+								isEyeBtnClicked = true;
+								break;
+							}
+						}
+					} catch (Exception e) {
+						if (k == 300) {
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+				if (isEyeBtnClicked == true) {
+					break;
+				}
+			}
+		    
+		}
+
+		@And("User_608 change the status Deactive to Active under Customer Identification section")
+		public void user_change_the_status_deactive_to_active_under_customer_identification_section() throws Throwable {
+			Thread.sleep(1000);
+			for (int i = 0; i <= 100000; i++) {
+				try {
+					javascriptHelper.backgroundBorder(javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("statusToggleBtn")));
+					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("statusToggleBtn")).click();
+					break;
+				} catch (Exception e) { 
+					if (i == 100000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}		    
+		}
+
+		@And("User_608 to verify if Status is Deactive then click the button system should show Active under Customer Identification section")
+		public void user_to_verify_if_status_is_deactive_then_click_the_button_system_should_show_active_under_customer_identification_section() throws Throwable {
+			for (int i = 0; i <= 100; i++) {
+				try {
+					javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("customerIdentificationBackBtn")));
+					break;
+				} catch (Exception e) {
+					if (i == 100) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			String listOfRecords = "document.querySelector('button[icon=\"pi pi-arrow-left\"]').parentElement.parentElement.parentElement.querySelectorAll('td').length";
+			String listOfEyeBtn = "";
+			String recordName = "";
+			for (int i = 0; i <= 100; i++) {
+				try {
+					listOfEyeBtn = javascriptHelper.executeScript("return " + listOfRecords).toString();
+					System.out.println("List of add button " + listOfEyeBtn);
+					if (!(listOfEyeBtn.isBlank())) {
+						break;
+					}
+				} catch (Exception e) {
+					if (i == 100) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			
+			int premitiveListOfEyeButton = Integer.parseInt(listOfEyeBtn);
+			for (int j = 0; j < premitiveListOfEyeButton; j++) {
+				for (int k = 0; k <= 300; k++) {
+					try {
+						recordName = javascriptHelper.executeScript(
+								"return document.querySelector('button[icon=\"pi pi-arrow-left\"]').parentElement.parentElement.parentElement.querySelectorAll('td')["
+										+ j + "].textContent")
+								.toString();
+						System.out.println("Screen Name " + recordName);
+						if (!(recordName.isBlank())) {
+							System.out.println("Screen Name" + recordName + " is Not null");
+							if ((recordName.trim()).equalsIgnoreCase((testData.get("Record_ID")).trim())) {
+								System.out.println("Inside nested loop");
+								javascriptHelper.backgroundBorder(
+										javascriptHelper
+										.executeScriptWithWebElement(
+												"document.querySelector('button[icon=\"pi pi-arrow-left\"]').parentElement.parentElement.parentElement.querySelectorAll('td')[" + j + "].parentElement.lastElementChild"));
+								WebElement status = javascriptHelper
+										.executeScriptWithWebElement(
+												"document.querySelector('button[icon=\"pi pi-arrow-left\"]').parentElement.parentElement.parentElement.querySelectorAll('td')[" + j + "]..parentElement.lastElementChild");
+								System.out.println("Status: "+ status.getText());
+								softAssert.assertTrue(status.getText().equalsIgnoreCase("Active"));
+								break;
+							}
+						}
+					} catch (Exception e) {
+						if (k == 300) {
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}		    
+		}
+		
+		
+//		AT_TW_NEWAPP_IDA_06
+		@And("User_608 click the View Summary button in Tawarruq application")
+		public void user_click_the_view_summary_button_in_tawarruq_application() throws Throwable {
+			WebElement btn = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("viewSummaryBtn"));
+			for (int i = 0; i <= 150000; i++) {
+				try {
+					javascriptHelper.backgroundBorder(btn);
+					btn.click();
+					break;
+				} catch (Exception e) {
+					if (i == 150000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+		}
+
+		@And("User_608 post clicking on View Summary button system should display the workflow of the record")
+		public void user_post_clicking_on_view_summary_button_system_should_display_the_workflow_of_the_record() throws Throwable {
+			WebElement popup = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("viewSummaryBtn"));
+			for (int i = 0; i <= 150000; i++) {
+				try {
+					javascriptHelper.backgroundBorder(popup);
+					softAssert.assertTrue(popup.isDisplayed(), "Display the summary of workflow");
+					break;
+				} catch (Exception e) {
+					if (i == 150000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			for (int i = 0; i <= 1000; i++) {
+				try {
+					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("popupCloseBtn")).click();
+					break;
+				} catch (Exception e) {
+					if (i == 1000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+		}
+		
+		
+		
+		
+		
+		
+		
+		
 }

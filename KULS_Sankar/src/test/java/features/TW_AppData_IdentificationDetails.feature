@@ -10,7 +10,7 @@ And login with valid credentials
 And User_608 get the test data for test case AT_IDA_03
 And User_608 click the Mail box in ULS application
 And User_608 click the Search button under inbox
-And User_608 search the Ref id under inbox
+And User_608 search the Reference id under inbox in ULS Application
 And User_608 click the Entitle button under inbox
 And User_608 click the Additional Customer Info tab
 And User_608 click the Pencil Icon button in Customer Personal Info section under Additional Customer Info tab

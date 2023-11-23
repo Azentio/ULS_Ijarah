@@ -1,6 +1,6 @@
 Feature: To check the Tawarruq --> App Data Entry stage --> Document details screen
 
-
+# DOC_01_19 --> DOC_01_23
 @AT_TW_AD_DOC_05
 Scenario: To verify the below fields are Dropdown, Textbox, Mandatory/Non-Mandatory and Editable
 
@@ -18,5 +18,5 @@ And User_608 verify Expected Receipt Date field should be Non-mandatory and Date
 And User_608 verify Def Approved By field should be Non-mandatory and LOV Under Document Details tab
 And User_608 verify Change In Nature Approved By field should be Non-mandatory and LOV Under Document Details tab
 And User_608 verify Document Form field should be Non-mandatory, Editable and LOV Under Document Details tab
-
 Then logout from the ijaraApplication
+And User_608 invoke soft assert in Document details screen under Document Details tab at Tawarruq App Data Entry stage
