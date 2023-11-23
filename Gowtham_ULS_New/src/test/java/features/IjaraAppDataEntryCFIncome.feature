@@ -1,7 +1,7 @@
-Feature: Income Details List
+Feature: Ijara AppData Entry CF Income
 
   # INC_01_01, INC_01_03
-  @AT_TW_AD_INC_01
+  @AT_INC_01_001
   Scenario: System should display the below mention fields and button under Income details sections
     Given navigate the IJARA URL
     And login with valid credentials4
@@ -9,7 +9,7 @@ Feature: Income Details List
    And User_607 Select LOS in module name
     And User_607 Click inbox in the home page
 	  And User_607 Click Search in inbox
-	  And User_607 Search in the search Field Tawarah App Data Entry Income Details List
+	  And User_607 Search in the search Field Ijara App Data Entry Income Details List
 	  And User_607 Select record after search
     And User_607 click the Customer Financials tab
     And User_607 click the pencil icon under Customer Financials tab
@@ -47,7 +47,7 @@ Feature: Income Details List
     Then logout from the ULSApplication
 
   # INC_01_04
-  @AT_TW_AD_INC_02
+  @AT_INC_01_002
   Scenario: To verify the functionality of Save button
     Given navigate the IJARA URL
     And login with valid credentials4
@@ -55,7 +55,7 @@ Feature: Income Details List
   	And User_607 Select LOS in module name
     And User_607 Click inbox in the home page
 	  And User_607 Click Search in inbox
-	  And User_607 Search in the search Field Tawarah App Data Entry Income Details List
+	  And User_607 Search in the search Field Ijara App Data Entry Income Details List
 	  And User_607 Select record after search
     And User_607 click the Customer Financials tab
     And User_607 click the pencil icon under Customer Financials tab
@@ -79,7 +79,7 @@ Feature: Income Details List
     Then logout from the ULSApplication
 
   # INC_01_04 -->  INC_01_27
-  @AT_TW_AD_INC_03
+  @AT_INC_01_003
   Scenario: To verify the below fields under income details section. 
     Given navigate the IJARA URL
     And login with valid credentials4
@@ -87,7 +87,7 @@ Feature: Income Details List
     And User_607 Select LOS in module name
     And User_607 Click inbox in the home page
 	  And User_607 Click Search in inbox
-	  And User_607 Search in the search Field Tawarah App Data Entry Income Details List
+	  And User_607 Search in the search Field Ijara App Data Entry Income Details List
 	  And User_607 Select record after search
     And User_607 click the Customer Financials tab
     And User_607 click the pencil icon under Customer Financials tab
@@ -115,9 +115,9 @@ Feature: Income Details List
     And User_607 click Add Row button system should add a row under Income screen
     And User_607 click Delete Row button system should delete a row under Income screen
     Then logout from the ULSApplication
-
+    
   # INC_02_01,  INC_02_02, INC_02_03
-  @AT_TW_AD_INC_04
+  @AT_INC_01_004
   Scenario: To verify the functionality of Save button with mandatory field as blank
     Given navigate the IJARA URL
     And login with valid credentials4
@@ -125,7 +125,7 @@ Feature: Income Details List
    And User_607 Select LOS in module name
     And User_607 Click inbox in the home page
 	  And User_607 Click Search in inbox
-	  And User_607 Search in the search Field Tawarah App Data Entry Income Details List
+	  And User_607 Search in the search Field Ijara App Data Entry Income Details List
 	  And User_607 Select record after search
     And User_607 click the Customer Financials tab
     And User_607 click the pencil icon under Customer Financials tab
@@ -138,15 +138,15 @@ Feature: Income Details List
     And User_607 verify validation message for mandatory field as blank under Income details screen
     Then logout from the ULSApplication
 
-  @AT_TW_AD_INC_05
-  Scenario: Modification of Income details record
+  @AT_INC_01_005
+    Scenario: Modification of Income details record
     Given navigate the IJARA URL
     And login with valid credentials4
     And User_607 get the test data for test case AT_TW_AD_INC_05
    And User_607 Select LOS in module name
     And User_607 Click inbox in the home page
 	  And User_607 Click Search in inbox
-	  And User_607 Search in the search Field Tawarah App Data Entry Income Details List
+	  And User_607 Search in the search Field Ijara App Data Entry Income Details List
 	  And User_607 Select record after search
     And User_607 click the Customer Financials tab
     And User_607 click the pencil icon under Customer Financials tab
@@ -170,69 +170,4 @@ Feature: Income Details List
     And User_607 again click the pencil button under Income section in Customer Financials tab
     And User_607 Post clicking on back button system should navigate to the previous screen
     And User_607 verify system should navigate to the previous screen in Customer Financials tab
-    Then logout from the ULSApplication
-
-  @AT_TW_AD_INC_06
-  Scenario: System should display the list of below mention fields for Income List
-    Given navigate the IJARA URL
-    And login with valid credentials4
-    And User_607 get the test data for test case AT_TW_AD_INC_06
-    And User_607 Select LOS in module name
-    And User_607 Click inbox in the home page
-	  And User_607 Click Search in inbox
-	  And User_607 Search in the search Field Tawarah App Data Entry Income Details List
-	  And User_607 Select record after search
-    And User_607 click the Customer Financials tab
-    And User_607 click the pencil icon under Customer Financials tab
-    And User_607 verify the Back button available in Income list view under Customer Financials tab
-    And User_607 verify Add button available under Income section list view in Customer Financials tab
-    And User_607 verify Nature of Employement field available under Income section list view in Customer Financials tab
-    And User_607 verify Net Income field available under Income section list view in Customer Financials tab
-    And User_607 verify Net Deduction field available under Income section list view in Customer Financials tab
-    And User_607 verify Considered Income field available under Income section list view in Customer Financials tab
-    And User_607 verify Currency field available under Income section list view in Customer Financials tab
-    And User_607 verify Status field available under Income section list view in Customer Financials tab
-    And User_607 verify on clicks of list view record, details should be populated in the fields under Income screen
-    And User_607 click the Back button under Income details screen
-    And User_607 verify the functionality of Add button under Income section in Customer Financials tab
-    And User_607 post clicking on Add button system should navigate to new Income details screen
-    Then logout from the ULSApplication
-
-  @AT_TW_AD_INC_07
-  Scenario: System should display the list of below mention fields for Income List
-    Given navigate the IJARA URL
-    And login with valid credentials4
-    And User_607 get the test data for test case AT_TW_AD_INC_07
-    And User_607 Select LOS in module name
-    And User_607 Click inbox in the home page
-	  And User_607 Click Search in inbox
-	  And User_607 Search in the search Field Tawarah App Data Entry Income Details List
-	  And User_607 Select record after search
-    And User_607 click the Customer Financials tab
-    And User_607 click the pencil icon under Customer Financials tab
-    And User_607 click Search button in Income section under Customer Financials tab
-    And User_607 verify the functionality of Search box with matching data in Income section
-    And User_607 verify entering any matching value system should display all the possible matching records under Income section
-    And User_607 verify the functionality of Search box with mismatch data in Income section
-    And User_607 verify system should not display any records or system should display the message as No data found under Income section
-    Then logout from the ULSApplication
-
-  @AT_TW_AD_INC_08
-  Scenario: System should display the list of below mention fields for Income List
-    Given navigate the IJARA URL
-    And login with valid credentials4
-    And User_607 get the test data for test case AT_TW_AD_INC_08
-   And User_607 Select LOS in module name
-    And User_607 Click inbox in the home page
-	  And User_607 Click Search in inbox
-	  And User_607 Search in the search Field Tawarah App Data Entry Income Details List
-	  And User_607 Select record after search
-    And User_607 click the Customer Financials tab
-    And User_607 click the pencil icon under Customer Financials tab
-    And User_607 verify the functionality of Export to PDF button
-    And User_607 post clicking on Export to PDF button system should download the PDF file of that records
-    And User_607 verify the functionality of Export to Excel button
-    And User_607 post clicking on Export to Excel button system should download the Excel file of that records
-    And User_607 to verify the functionality of Back button under Customer Financials tab
-    And User_607 post clicking on Back button under Customer Finanacials tab, system should navigate to the previous screen
     Then logout from the ULSApplication

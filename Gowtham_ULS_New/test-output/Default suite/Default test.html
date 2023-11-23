@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Nov 23 12:00:58 IST 2023</td>
+<td>Started on:</td><td>Thu Nov 23 14:52:32 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>42 seconds (42420 ms)</td>
+<tr><td>Total time:</td><td>52 seconds (52847 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,17 +67,24 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Creation of Insurance Info record with valid data", "Optional[Murabha_Appdataentry_Insuranceinfo]"</td>
-<td></td>
-<td>29</td>
+<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "System should display the below mention fields and button under Income details sections", "Optional[Ijara AppData Entry CF Income]"</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;String.trim()&quot; because the return value of &quot;java.util.Map.get(Object)&quot; is null
+	at stepdefinitions.IjaraAppDataEntryCFIncome.user_select_the_salary_credited_to_bank_value_under_income_details_screen(IjaraAppDataEntryCFIncome.java:2869)
+	at ✽.User_608 select the Salary credited to Bank value under Income details screen(file:///C:/Users/inindc00607/git/ULS_Ijarah_1/Gowtham_ULS_New/src/test/java/features/IjaraAppDataEntryCFIncome.feature:32)
+</pre></div><a href='#' onClick='toggleBox("stack-trace129730220", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace129730220'><pre>java.lang.NullPointerException: Cannot invoke &quot;String.trim()&quot; because the return value of &quot;java.util.Map.get(Object)&quot; is null
+	at stepdefinitions.IjaraAppDataEntryCFIncome.user_select_the_salary_credited_to_bank_value_under_income_details_screen(IjaraAppDataEntryCFIncome.java:2869)
+	at ✽.User_608 select the Salary credited to Bank value under Income details screen(file:///C:/Users/inindc00607/git/ULS_Ijarah_1/Gowtham_ULS_New/src/test/java/features/IjaraAppDataEntryCFIncome.feature:32)
+</pre></div></td>
+<td>36</td>
 <td>Runner.TestApplication@72cc7e6f</td></tr>
 </table><p>
 </body>

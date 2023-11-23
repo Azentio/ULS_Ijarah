@@ -949,6 +949,22 @@ public class TawarahAppDataEntryIncomeDetailsList {
 		
 	}
 	
+	@Given("User_607 Search in the search Field Ijara App Data Entry Income Details List")
+	public void user_search_in_the_search_field_Ijara_app_data_entry_income_details_list() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(TawaAppDataEntryIncomeDetails.getElement("searchInInbox")).sendKeys("2193",Keys.ENTER);
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+	}
+
+	
 	@And("User_607 Search the Ref Id under inbox Tawarruq AppData Entry Facility Details")
 	public void user_search_in_the_search_field_tawarah_app_data_entry_Facility_details() {
 		for (int i = 0; i < 700; i++) {
