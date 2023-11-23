@@ -26,7 +26,7 @@ public class Murabha_AppDataEntry_LivingExpenses {
 	WebDriver driver = BaseClass.driver;
 	WaitHelper waitHelper = new WaitHelper(driver);
 	JSPaths jsPaths = new JSPaths(excelPath, "MurabAppDataEntryLivingExpenses", "FieldName", "JSPath");
-	ExcelData exelData = new ExcelData(excelTestDataPath, "ijara_LoginCredentials", "UserType");
+	ExcelData exelData = new ExcelData(excelTestDataPath, "ijara_LoginCredentials", "User_607Type");
 	ClicksAndActionsHelper clicksAndActionsHelper = new ClicksAndActionsHelper(driver);
 	ConfigFileReader ConfigFileReaderobj = new ConfigFileReader();
 	DropDownHelper dropDownHelper = new DropDownHelper(driver);
@@ -36,21 +36,21 @@ public class Murabha_AppDataEntry_LivingExpenses {
 	
 	
 	
-	@And("user click the module in select field")
-	public void user_click_the_module_in_select_field() throws Throwable {
+	@And("User_607 click the module in select field")
+	public void User_607_click_the_module_in_select_field() throws Throwable {
 		
 		waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("ModuleName")));
 		javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("ModuleName")).click();
 		
 		Thread.sleep(2000);
 	}
-		@And("^user update test data set id for AT_LEA_001$")
-		public void user_update_test_data_set_id_for_at_lea_001() throws Throwable {
+		@And("^User_607 update test data set id for AT_LEA_001$")
+		public void User_607_update_test_data_set_id_for_at_lea_001() throws Throwable {
 			testData = excelDataForLivingExpense.getTestdata("AT_LEA_001_D1");
 		}
 
-	@And("user click the LOS in select field")
-	public void user_click_the_los_in_select_field() throws Throwable {
+	@And("User_607 click the LOS in select field")
+	public void User_607_click_the_los_in_select_field() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("LOS")));
 		for (int i = 0; i <200; i++) {
 			try {
@@ -65,8 +65,8 @@ public class Murabha_AppDataEntry_LivingExpenses {
 	
 	   Thread.sleep(3000);
 	}
-	@And("user click the messagebox under LOS field")
-	public void user_click_the_messagebox_under_los_field() throws Throwable {
+	@And("User_607 click the messagebox under LOS field")
+	public void User_607_click_the_messagebox_under_los_field() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("MessageBox")));
 		for (int i = 0; i < 200; i++) {
 			try {
@@ -82,15 +82,15 @@ public class Murabha_AppDataEntry_LivingExpenses {
 	    
 	}
 
-	@And("user click the search button under messagebox")
-	public void user_click_the_search_button_under_messagebox() throws Throwable {
+	@And("User_607 click the search button under messagebox")
+	public void User_607_click_the_search_button_under_messagebox() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("searchbox")));
 		javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("searchbox")).click();
 	    
 	}
 
-	@And("user Enter the clientname under searchButton")
-	public void user_enter_the_clientname_under_search_button() throws Throwable {
+	@And("User_607 Enter the clientname under searchButton")
+	public void User_607_enter_the_clientname_under_search_button() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("searchinput")));
 		//javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("searchinput")).click();
 		javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("searchinput")).sendKeys("Gowtham");
@@ -98,8 +98,8 @@ public class Murabha_AppDataEntry_LivingExpenses {
 	    
 	}
 
-	@And("user click the ExpenseType on Action")
-	public void user_click_the_expense_type_on_action() throws Throwable {
+	@And("User_607 click the ExpenseType on Action")
+	public void User_607_click_the_expense_type_on_action() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("Entitle")));
 		for (int i = 0; i < 200; i++) {
 			try {
@@ -117,8 +117,8 @@ public class Murabha_AppDataEntry_LivingExpenses {
 	}
 
 
-	@And("user click the field livingExpense")
-	public void user_click_the_field_living_expense() throws Throwable {
+	@And("User_607 click the field livingExpense")
+	public void User_607_click_the_field_living_expense() throws Throwable {
 		//waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("livingExpense")));
 		for (int i = 0; i < 500; i++) {
 			try {
@@ -134,8 +134,8 @@ public class Murabha_AppDataEntry_LivingExpenses {
 	   
 	}
 
-	@And("user click the field AddButton")
-	public void user_click_the_field_add_button() throws Throwable {
+	@And("User_607 click the field AddButton")
+	public void User_607_click_the_field_add_button() throws Throwable {
 		//waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("AddButton")));
 	    for (int i = 0; i < 200; i++) {
 			try {
@@ -150,8 +150,8 @@ public class Murabha_AppDataEntry_LivingExpenses {
 		
 	}
 
-	@And("user verify the field saveButton")
-	public void user_verify_the_field_save_button() throws Throwable {
+	@And("User_607 verify the field saveButton")
+	public void User_607_verify_the_field_save_button() throws Throwable {
 		//waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("saveButton")));
 		for (int i = 0; i < 200; i++) {
 			try {
@@ -167,8 +167,8 @@ public class Murabha_AppDataEntry_LivingExpenses {
 		
 	   
 	}
-	@And("user click the field saveButton")
-	public void user_click_the_field_save_button() throws Throwable {
+	@And("User_607 click the field saveButton")
+	public void User_607_click_the_field_save_button() throws Throwable {
 		//waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("saveButton")));
 		for (int i = 0; i < 200; i++) {
 			try {
@@ -183,15 +183,15 @@ public class Murabha_AppDataEntry_LivingExpenses {
 	   
 	}
 
-	@And("user verify the field BackButton")
-	public void user_verify_the_field_back_button() throws Throwable {
+	@And("User_607 verify the field BackButton")
+	public void User_607_verify_the_field_back_button() throws Throwable {
 		//waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("BackButton")));
 		Assert.assertTrue(javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("BackButton")).isDisplayed());
 	   
 	}
 
-	@And("user click the field AddbuttonunderExpenseInfo")
-	public void user_click_the_field_addbuttonunder_expense_info() throws Throwable {
+	@And("User_607 click the field AddbuttonunderExpenseInfo")
+	public void User_607_click_the_field_addbuttonunder_expense_info() throws Throwable {
 		//waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("AddbuttonunderExpenseInfo")));
 		for (int i = 0; i < 200; i++) {
 			try {
@@ -207,28 +207,28 @@ public class Murabha_AppDataEntry_LivingExpenses {
 	   
 	}
 
-	@And("user verify the field DeleteButton")
-	public void user_verify_the_field_delete_button() throws Throwable {
+	@And("User_607 verify the field DeleteButton")
+	public void User_607_verify_the_field_delete_button() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("DeleteButton")));
 		Assert.assertTrue(javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("DeleteButton")).isDisplayed());
 	   
 	}
 
-	@And("user verify the field ExpenseType")
-	public void user_verify_the_field_expense_type() throws IOException {
+	@And("User_607 verify the field ExpenseType")
+	public void User_607_verify_the_field_expense_type() throws IOException {
 		waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("ExpenseType")));
 		Assert.assertTrue(javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("ExpenseType")).isDisplayed());
 		
 	}
 
-	@And("user verify the field Amount")
-	public void user_verify_the_field_amount() throws IOException {
+	@And("User_607 verify the field Amount")
+	public void User_607_verify_the_field_amount() throws IOException {
 		waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("Amount")));
 		Assert.assertTrue(javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("Amount")).isDisplayed());
 	   
 	}
-	@And("user click the CustomerName in input field")
-	public void user_click_the_customer_name_in_input_field() throws IOException {
+	@And("User_607 click the CustomerName in input field")
+	public void User_607_click_the_customer_name_in_input_field() throws IOException {
 		waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("CustomerName")));
 		
 		for (int i = 0; i <= 300; i++) {
@@ -245,8 +245,8 @@ public class Murabha_AppDataEntry_LivingExpenses {
 			}	
 	}
 
-	@And("user select the CustomerName in under customerInput")
-	public void user_select_the_customer_name_in_under_customer_input() throws IOException {
+	@And("User_607 select the CustomerName in under customerInput")
+	public void User_607_select_the_customer_name_in_under_customer_input() throws IOException {
 				 
 			String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
 			String dropdownLength = "";
@@ -316,20 +316,20 @@ public class Murabha_AppDataEntry_LivingExpenses {
 			javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("ExpenseType")).click();
 	}
 
-	@And("user click the select check box")
-	public void user_click_the_select_check_box() throws IOException {
+	@And("User_607 click the select check box")
+	public void User_607_click_the_select_check_box() throws IOException {
 		waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("Select")));
 		javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("Select")).click();
 	}
 
-	@And("user click the expenseType select box")
-	public void user_click_the_expense_type_select_box() throws Throwable {
+	@And("User_607 click the expenseType select box")
+	public void User_607_click_the_expense_type_select_box() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("ExpenseTypeInput")));
 		javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("ExpenseTypeInput")).click();
 	}
 
-	@And("user select the type in expeseType select box")
-	public void user_select_the_type_in_expese_type_select_box() throws IOException {
+	@And("User_607 select the type in expeseType select box")
+	public void User_607_select_the_type_in_expese_type_select_box() throws IOException {
 		
 		for (int i = 0; i <= 300; i++) {
 
@@ -410,8 +410,8 @@ public class Murabha_AppDataEntry_LivingExpenses {
 			    
 	}
 
-	@And("user Enter the Amount in Amount field")
-	public void user_enter_the_amount_in_amount_field() throws IOException {
+	@And("User_607 Enter the Amount in Amount field")
+	public void User_607_enter_the_amount_in_amount_field() throws IOException {
 		waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("AmountInput")));
 		for (int i = 0; i < 200; i++) {
 			try {
@@ -428,8 +428,8 @@ public class Murabha_AppDataEntry_LivingExpenses {
 		
 	    
 	}
-	@And("user Enter the Value ExpectedCostOfLiving field")
-	public void user_enter_the_value_expected_cost_of_living_field() {
+	@And("User_607 Enter the Value ExpectedCostOfLiving field")
+	public void User_607_enter_the_value_expected_cost_of_living_field() {
 //		for (int i = 0; i < 200; i++) {
 //			try {
 //				
@@ -520,8 +520,8 @@ public class Murabha_AppDataEntry_LivingExpenses {
 		}
 	}
 
-	@And("user Enter the Value MinimumCostOfLiving Field")
-	public void user_enter_the_value_minimum_cost_of_living_field() {
+	@And("User_607 Enter the Value MinimumCostOfLiving Field")
+	public void User_607_enter_the_value_minimum_cost_of_living_field() {
 //		for (int i = 0; i < 200; i++) {
 //			try {
 //				
@@ -612,33 +612,33 @@ public class Murabha_AppDataEntry_LivingExpenses {
 			}
 	}
 
-	@And("user verify the ExpectedCostOfLiving field")
-	public void user_verify_the_expected_cost_of_living_field() {
+	@And("User_607 verify the ExpectedCostOfLiving field")
+	public void User_607_verify_the_expected_cost_of_living_field() {
 		Assert.assertTrue(javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("ExpectedCostOfLiving")).isDisplayed());
 	}
 
-	@And("user Verify the MinimumCostOfLiving Field")
-	public void user_verify_the_minimum_cost_of_living_field() {
+	@And("User_607 Verify the MinimumCostOfLiving Field")
+	public void User_607_verify_the_minimum_cost_of_living_field() {
 		Assert.assertTrue(javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("ExpectedCostOfLiving")).isDisplayed());
 	}
 
 
-@And("user verify the Total living expense field")
-public void user_verify_the_total_living_expense_field() throws IOException {
+@And("User_607 verify the Total living expense field")
+public void User_607_verify_the_total_living_expense_field() throws IOException {
 	waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("TotalLivingExpense")));
 	Assert.assertTrue(javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("TotalLivingExpense")).isDisplayed());
 }
 
-@And("user verify the Accredited Cost field")
-public void user_verify_the_accredited_cost_field() throws IOException {
+@And("User_607 verify the Accredited Cost field")
+public void User_607_verify_the_accredited_cost_field() throws IOException {
 	waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("AccereditedCost")));
 	Assert.assertTrue(javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("AccereditedCost")).isDisplayed());
 }
 
 
 
-@And("user verify the Please fill Mandatory field")
-public void user_verify_the_please_fill_mandatory_field() throws IOException {
+@And("User_607 verify the Please fill Mandatory field")
+public void User_607_verify_the_please_fill_mandatory_field() throws IOException {
 	//waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("PleaseFillMandatoryField")));
 	for (int i = 0; i < 300; i++) {
 		try {
@@ -652,8 +652,8 @@ public void user_verify_the_please_fill_mandatory_field() throws IOException {
 	}
 	
 }
-@And("user verify the Please fill Required field")
-public void user_verify_the_please_fill_Required_field() throws IOException {
+@And("User_607 verify the Please fill Required field")
+public void User_607_verify_the_please_fill_Required_field() throws IOException {
 	//waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("PleaseFillMandatoryField")));
 	for (int i = 0; i < 200; i++) {
 		try {
@@ -669,33 +669,33 @@ public void user_verify_the_please_fill_Required_field() throws IOException {
 }
 
 
-@And("user Enter the Negative Amount in Amount field")
-public void user_enter_the_negative_amount_in_amount_field() throws IOException {
+@And("User_607 Enter the Negative Amount in Amount field")
+public void User_607_enter_the_negative_amount_in_amount_field() throws IOException {
 	//waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("NeagtiveAmount")));
 	javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("AmountInput")).sendKeys(testData.get("NeagtiveAmount"));
 	
 }
 
-@And("user Enter the Special Char in Amount field")
-public void user_enter_the_special_char_in_amount_field() throws IOException {
+@And("User_607 Enter the Special Char in Amount field")
+public void User_607_enter_the_special_char_in_amount_field() throws IOException {
 	//waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("specialCharAmount")));
 	javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("AmountInput")).sendKeys(testData.get("specialCharAmount"));
 }
 
-@And("user Enter the String value in Amount field")
-public void user_enter_the_string_value_in_amount_field() throws IOException {
+@And("User_607 Enter the String value in Amount field")
+public void User_607_enter_the_string_value_in_amount_field() throws IOException {
 	//waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("AmountInput")));
 	javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("AmountInput")).sendKeys(testData.get("stringAmount"));
 }
 
-@And("user click the Edit button under Action")
-public void user_click_the_edit_button_under_action() throws IOException {
+@And("User_607 click the Edit button under Action")
+public void User_607_click_the_edit_button_under_action() throws IOException {
 	waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("EditIcon")));
 	javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("EditIcon")).click();
 }
 
-@And("user modify the Amount field")
-public void user_modify_the_amount_field() throws Throwable {
+@And("User_607 modify the Amount field")
+public void User_607_modify_the_amount_field() throws Throwable {
 	waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("AmountInput")));
 	for (int i = 0; i < 15; i++) {
 		javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("AmountInput")).sendKeys(Keys.BACK_SPACE);

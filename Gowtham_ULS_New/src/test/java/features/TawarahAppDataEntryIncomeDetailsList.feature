@@ -52,7 +52,7 @@ Feature: Income Details List
     Given navigate the IJARA URL
     And login with valid credentials3
     And User_607 get the test data for test case AT_TW_AD_INC_02
-   And User_607 Select LOS in module name
+  	And User_607 Select LOS in module name
     And User_607 Click inbox in the home page
 	  And User_607 Click Search in inbox
 	  And User_607 Search in the search Field Tawarah App Data Entry Income Details List

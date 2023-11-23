@@ -103,13 +103,13 @@ public class TawarahAppDataEntryIncomeDetailsList {
 	public void user_validate_save_button_available_under_income_details_screen() throws Throwable {
 		Thread.sleep(100);
 		WebElement incomeSaveBtn = javascriptHelper.executeScriptWithWebElement(TawaAppDataEntryIncomeDetails.getElement("incomeSaveBtn"));
-		for (int i = 0; i <= 20000; i++) {
+		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(incomeSaveBtn);
 				Assert.assertTrue(incomeSaveBtn.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 20000) {
+				if (i == 2000) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -949,6 +949,38 @@ public class TawarahAppDataEntryIncomeDetailsList {
 		
 	}
 	
+	@And("User_607 Search the Ref Id under inbox Tawarruq AppData Entry Facility Details")
+	public void user_search_in_the_search_field_tawarah_app_data_entry_Facility_details() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(TawaAppDataEntryIncomeDetails.getElement("searchInInbox")).sendKeys("3357",Keys.ENTER);
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+	}
+	
+	@And("User_607 Search the Ref Id under inbox Tawarruq AppData Entry FollowUp Details")
+	public void user_search_in_the_search_field_tawarah_app_data_entry_FollowUp_Details() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(TawaAppDataEntryIncomeDetails.getElement("searchInInbox")).sendKeys("3357",Keys.ENTER);
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+	}
+	
+	
+	
 	@Given("User_607 Search in the search Field")
 	public void user_search_in_the_search_Field() {
 		for (int i = 0; i < 700; i++) {
@@ -1376,7 +1408,6 @@ public class TawarahAppDataEntryIncomeDetailsList {
 				}
 				}
 			}
-	    
 	}
 
 	@Given("User_607 Check record save successfully")
@@ -2359,6 +2390,22 @@ public class TawarahAppDataEntryIncomeDetailsList {
 	
 	@And("User_607 validate the confirmation message as success under Income details screen")
 	public void user_validate_the_confirmation_message_as_success_under_income_details_screen() throws Throwable {
+		Thread.sleep(1000);
+		WebElement successToastMsg = javascriptHelper.executeScriptWithWebElement(TawaAppDataEntryIncomeDetails.getElement("successToastMsg"));
+		for (int i = 0; i <= 50000; i++) {
+			try {
+				Assert.assertTrue(successToastMsg.getText().contains("Saved successfully"));				
+				break;
+			} catch (Exception e) {
+				if (i == 50000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@And("User_607 validate the confirmation message as success")
+	public void user_validate_the_confirmation_message_as_success() throws Throwable {
 		Thread.sleep(1000);
 		WebElement successToastMsg = javascriptHelper.executeScriptWithWebElement(TawaAppDataEntryIncomeDetails.getElement("successToastMsg"));
 		for (int i = 0; i <= 50000; i++) {

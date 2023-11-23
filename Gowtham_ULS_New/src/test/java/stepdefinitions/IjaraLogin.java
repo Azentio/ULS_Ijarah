@@ -192,8 +192,19 @@ for (int i = 0; i <=100; i++) {
 
 	}
 
-	public void logoutFromIjara() {
-		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userProfile")).click();
+	public void logoutFromIjara() throws Throwable {
+		Thread.sleep(1000);
+		for (int i = 0; i <= 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userProfile")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 700) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
 		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("logoutButton")).click();

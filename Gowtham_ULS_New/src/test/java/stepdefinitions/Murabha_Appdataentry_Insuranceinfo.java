@@ -35,8 +35,8 @@ public class Murabha_Appdataentry_Insuranceinfo {
 	SoftAssert SoftAssert = new SoftAssert();
 	
 	
-	@And("user Enter the clientname under searchButton for insuranceInfo")
-	public void user_enter_the_clientname_under_search_button_for_insuranceInfo() throws Throwable {
+	@And("User_607 Enter the clientname under searchButton for insuranceInfo")
+	public void User_607_enter_the_clientname_under_search_button_for_insuranceInfo() throws Throwable {
 		for (int i = 0; i <= 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(MurabhAppdataEntryInsuranceInfo.getElement("searchinput")).sendKeys(testData.get("ClientName"));
@@ -50,7 +50,7 @@ public class Murabha_Appdataentry_Insuranceinfo {
 			}
 	
 	@And("User_607 Enter the clientname under searchButton for Appdata entry QuationInfo")
-	public void user_enter_the_clientname_under_search_button_for_Appdata_entry_QuationInfoInfo() throws Throwable {
+	public void User_607_enter_the_clientname_under_search_button_for_Appdata_entry_QuationInfoInfo() throws Throwable {
 		for (int i = 0; i <= 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(MurabhAppdataEntryInsuranceInfo.getElement("searchinput")).sendKeys("3026");
@@ -64,18 +64,18 @@ public class Murabha_Appdataentry_Insuranceinfo {
 			}
 	
 	@And("^User_607 Update testdata from AT_MU_INS_01$")
-	public void user_update_test_data_set_id_for_AT_MU_INS_01() throws Throwable {
+	public void User_607_update_test_data_set_id_for_AT_MU_INS_01() throws Throwable {
 		testData = MurabhAppdataEntryInsuranceInfoexelData.getTestdata("DS_AT_MU_INS_01");
 	}
 	
 	@And("^User_607 Update testdata from AT_MU_INS_02$")
-	public void user_update_test_data_set_id_for_AT_MU_INS_02() throws Throwable {
+	public void User_607_update_test_data_set_id_for_AT_MU_INS_02() throws Throwable {
 		testData = MurabhAppdataEntryInsuranceInfoexelData.getTestdata("DS_AT_MU_INS_02");
 	}
 	
 	
-	@And("user click the insurance Info Screen")
-	public void user_click_the_insurance_info_screen() throws Throwable {
+	@And("User_607 click the insurance Info Screen")
+	public void User_607_click_the_insurance_info_screen() throws Throwable {
 		//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(MurabhAppdataEntryInsuranceInfo.getElement("insuranceInfo")));
 //		String jsPath ="return document.querySelectorAll('ion-label').length";
 //        int length=0;
@@ -129,8 +129,8 @@ public class Murabha_Appdataentry_Insuranceinfo {
 		    
 	
 
-	@And("user click the Add button under insurance Info screen")
-	public void user_click_the_add_button_under_insurance_info_screen() throws Throwable {
+	@And("User_607 click the Add button under insurance Info screen")
+	public void User_607_click_the_add_button_under_insurance_info_screen() throws Throwable {
 		//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(MurabhAppdataEntryInsuranceInfo.getElement("Addbutton")));
 		//Thread.sleep(5000);
 		for (int i = 0; i <= 500; i++) {
@@ -146,8 +146,8 @@ public class Murabha_Appdataentry_Insuranceinfo {
 	    
 	}
 	
-	@And("user click the Add button under Quotation Info screen")
-	public void user_click_the_add_button_under_Quotation_info_screen() throws Throwable {
+	@And("User_607 click the Add button under Quotation Info screen")
+	public void User_607_click_the_add_button_under_Quotation_info_screen() throws Throwable {
 		//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(MurabhAppdataEntryInsuranceInfo.getElement("Addbutton")));
 		//Thread.sleep(5000);
 		for (int i = 0; i <= 500; i++) {
@@ -163,8 +163,8 @@ public class Murabha_Appdataentry_Insuranceinfo {
 	    
 	}
 
-	@And("user Enter the value in insuranceQuotationId field")
-	public void user_enter_the_value_in_insurance_quotation_id_field() throws Throwable {
+	@And("User_607 Enter the value in insuranceQuotationId field")
+	public void User_607_enter_the_value_in_insurance_quotation_id_field() throws Throwable {
 		//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(MurabhAppdataEntryInsuranceInfo.getElement("insuranceQuotationId")));
 	
 				for (int i = 0; i < 500; i++) {
@@ -245,8 +245,8 @@ public class Murabha_Appdataentry_Insuranceinfo {
 				}	
 	}
 
-	@And("user Enter the value in insuranceYear field")
-	public void user_enter_the_value_in_insurance_year_field() throws Throwable {
+	@And("User_607 Enter the value in insuranceYear field")
+	public void User_607_enter_the_value_in_insurance_year_field() throws Throwable {
 		//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(MurabhAppdataEntryInsuranceInfo.getElement("insuranceYear")));
 		for (int i = 0; i < 200; i++) {
 			try {
@@ -330,8 +330,8 @@ public class Murabha_Appdataentry_Insuranceinfo {
  
 	
 
-	@And("user Enter the value in depriciation field")
-	public void user_enter_the_value_in_depriciation_field() throws Throwable {
+	@And("User_607 Enter the value in depriciation field")
+	public void User_607_enter_the_value_in_depriciation_field() throws Throwable {
 		//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(MurabhAppdataEntryInsuranceInfo.getElement("depriciation")));
 		for (int i = 0; i < 500; i++) {
 			try {
@@ -346,45 +346,45 @@ public class Murabha_Appdataentry_Insuranceinfo {
 		
 	}
 
-	@And("user Enter the value in AssetPrice field")
-	public void user_enter_the_value_in_asset_price_field() throws Throwable {
+	@And("User_607 Enter the value in AssetPrice field")
+	public void User_607_enter_the_value_in_asset_price_field() throws Throwable {
 		//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(MurabhAppdataEntryInsuranceInfo.getElement("AssetPrice")));
 		javascriptHelper.executeScriptWithWebElement(MurabhAppdataEntryInsuranceInfo.getElement("AssetPrice")).sendKeys(testData.get("AssetPrice"));
 	}
 
-	@And("user Enter the value in RatePerAsset field")
-	public void user_enter_the_value_in_rate_per_asset_field() throws Throwable {
+	@And("User_607 Enter the value in RatePerAsset field")
+	public void User_607_enter_the_value_in_rate_per_asset_field() throws Throwable {
 		//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(MurabhAppdataEntryInsuranceInfo.getElement("RatePerAsset")));
 		javascriptHelper.executeScriptWithWebElement(MurabhAppdataEntryInsuranceInfo.getElement("RatePerAsset")).sendKeys(testData.get("RatePerAsset"));
 		 
 	}
 
-	@And("user Enter the value in minimumInsurancePremium field")
-	public void user_enter_the_value_in_minimum_insurance_premium_field() throws Throwable {
+	@And("User_607 Enter the value in minimumInsurancePremium field")
+	public void User_607_enter_the_value_in_minimum_insurance_premium_field() throws Throwable {
 		//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(MurabhAppdataEntryInsuranceInfo.getElement("minimumInsurancePremium")));
 		javascriptHelper.executeScriptWithWebElement(MurabhAppdataEntryInsuranceInfo.getElement("minimumInsurancePremium")).sendKeys(testData.get("minimumInsurancePremium"));
 		
 	    
 	}
 
-	@And("user Enter the value in BaseInsurancePremium field")
-	public void user_enter_the_value_in_base_insurance_premium_field() throws Throwable {
+	@And("User_607 Enter the value in BaseInsurancePremium field")
+	public void User_607_enter_the_value_in_base_insurance_premium_field() throws Throwable {
 		//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(MurabhAppdataEntryInsuranceInfo.getElement("BaseInsurancePremium")));
 		javascriptHelper.executeScriptWithWebElement(MurabhAppdataEntryInsuranceInfo.getElement("BaseInsurancePremium")).sendKeys(testData.get("BaseInsurancePremium"));
 		
 	    
 	}
 
-	@And("user Enter the value in VATPremium field")
-	public void user_enter_the_value_in_vat_premium_field() throws Throwable {
+	@And("User_607 Enter the value in VATPremium field")
+	public void User_607_enter_the_value_in_vat_premium_field() throws Throwable {
 		//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(MurabhAppdataEntryInsuranceInfo.getElement("VATPremium")));
 		javascriptHelper.executeScriptWithWebElement(MurabhAppdataEntryInsuranceInfo.getElement("VATPremium")).sendKeys(testData.get("VATPremium"));
 		
 	    
 	}
 
-	@And("user Enter the value in NetPremium field")
-	public void user_enter_the_value_in_net_premium_field() throws Throwable {
+	@And("User_607 Enter the value in NetPremium field")
+	public void User_607_enter_the_value_in_net_premium_field() throws Throwable {
 		//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(MurabhAppdataEntryInsuranceInfo.getElement("NetPremium")));
 		
 		javascriptHelper.executeScriptWithWebElement(MurabhAppdataEntryInsuranceInfo.getElement("NetPremium")).sendKeys(testData.get("NetPremium"));
@@ -392,16 +392,16 @@ public class Murabha_Appdataentry_Insuranceinfo {
 	    
 	}
 
-	@And("user click the saveButton under insurance info screen")
-	public void user_click_the_save_button_under_insurance_info_screen() throws Throwable {
+	@And("User_607 click the saveButton under insurance info screen")
+	public void User_607_click_the_save_button_under_insurance_info_screen() throws Throwable {
 		//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(MurabhAppdataEntryInsuranceInfo.getElement("saveButton")));
 		
 		javascriptHelper.executeScriptWithWebElement(MurabhAppdataEntryInsuranceInfo.getElement("saveButton")).click();
 		Thread.sleep(3000);
 	    
 	}
-	@And("user verify the success pop up")
-	public void user_verify_the_success_pop_up() {
+	@And("User_607 verify the success pop up")
+	public void User_607_verify_the_success_pop_up() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				 javascriptHelper.executeScriptWithWebElement(MurabhAppdataEntryInsuranceInfo.getElement("saveSuccessAlert"));
@@ -414,8 +414,8 @@ public class Murabha_Appdataentry_Insuranceinfo {
 		}
 	}
 
-	@And("user check the insurancequotation field is mandatory or not")
-	public void user_check_the_insurancequotation_field_is_mandatory_or_not() {
+	@And("User_607 check the insurancequotation field is mandatory or not")
+	public void User_607_check_the_insurancequotation_field_is_mandatory_or_not() {
 		for (int i = 0; i <2000; i++) {
 	        try {
 	            String insuranceQuotationIdMandatory = MurabhAppdataEntryInsuranceInfo.getElement("insuranceQuotationIdMandatory") ;
@@ -431,8 +431,8 @@ public class Murabha_Appdataentry_Insuranceinfo {
 	    }
 	    
 	}
-@And("user check the insuranceYear field is mandatory or not")
-public void user_check_the_insurance_year_field_is_mandatory_or_not() {
+@And("User_607 check the insuranceYear field is mandatory or not")
+public void User_607_check_the_insurance_year_field_is_mandatory_or_not() {
 	for (int i = 0; i <2000; i++) {
         try {
             String insuranceYearMandatory = MurabhAppdataEntryInsuranceInfo.getElement("insuranceYearMandatory") ;
@@ -449,8 +449,8 @@ public void user_check_the_insurance_year_field_is_mandatory_or_not() {
     
 }
 
-@And("user check the depriciation field is mandatory or not")
-public void user_check_the_depriciation_field_is_mandatory_or_not() {
+@And("User_607 check the depriciation field is mandatory or not")
+public void User_607_check_the_depriciation_field_is_mandatory_or_not() {
 	 for (int i = 0; i <2000; i++) {
          try {
              String depriciationMandatory = MurabhAppdataEntryInsuranceInfo.getElement("depriciationMandatory") ;
@@ -467,8 +467,8 @@ public void user_check_the_depriciation_field_is_mandatory_or_not() {
     
 }
 
-@And("user check the AssetPrice field is mandatory or not")
-public void user_check_the_asset_price_field_is_mandatory_or_not() {
+@And("User_607 check the AssetPrice field is mandatory or not")
+public void User_607_check_the_asset_price_field_is_mandatory_or_not() {
 	for (int i = 0; i <2000; i++) {
         try {
             String AssetPriceMandatory = MurabhAppdataEntryInsuranceInfo.getElement("AssetPriceMandatory") ;
@@ -485,8 +485,8 @@ public void user_check_the_asset_price_field_is_mandatory_or_not() {
     
 }
 
-@And("user check the RatePerAsset field is mandatory or not")
-public void user_check_the_rate_per_asset_field_is_mandatory_or_not() {
+@And("User_607 check the RatePerAsset field is mandatory or not")
+public void User_607_check_the_rate_per_asset_field_is_mandatory_or_not() {
 	for (int i = 0; i <2000; i++) {
         try {
             String RatePerAssetMandatory = MurabhAppdataEntryInsuranceInfo.getElement("RatePerAssetMandatory") ;
@@ -504,8 +504,8 @@ public void user_check_the_rate_per_asset_field_is_mandatory_or_not() {
     
 }
 
-@And("user check the minimumInsurancePremium field is mandatory or not")
-public void user_check_the_minimum_insurance_premium_field_is_mandatory_or_not() {
+@And("User_607 check the minimumInsurancePremium field is mandatory or not")
+public void User_607_check_the_minimum_insurance_premium_field_is_mandatory_or_not() {
     
 	for (int i = 0; i <2000; i++) {
         try {
@@ -522,8 +522,8 @@ public void user_check_the_minimum_insurance_premium_field_is_mandatory_or_not()
     } 
 }
 
-@And("user check the BaseInsurancePremium field is mandatory or not")
-public void user_check_the_base_insurance_premium_field_is_mandatory_or_not() {
+@And("User_607 check the BaseInsurancePremium field is mandatory or not")
+public void User_607_check_the_base_insurance_premium_field_is_mandatory_or_not() {
     
 	for (int i = 0; i <2000; i++) {
         try {
@@ -540,8 +540,8 @@ public void user_check_the_base_insurance_premium_field_is_mandatory_or_not() {
     }
 }
 
-@And("user check the VATPremium field is mandatory or not")
-public void user_check_the_vat_premium_field_is_mandatory_or_not() {
+@And("User_607 check the VATPremium field is mandatory or not")
+public void User_607_check_the_vat_premium_field_is_mandatory_or_not() {
 	for (int i = 0; i <2000; i++) {
         try {
             String VATPremiumMandatory = MurabhAppdataEntryInsuranceInfo.getElement("VATPremiumMandatory") ;
@@ -558,8 +558,8 @@ public void user_check_the_vat_premium_field_is_mandatory_or_not() {
     
 }
 
-@And("user check the NetPremium field is mandatory or not")
-public void user_check_the_net_premium_field_is_mandatory_or_not() {
+@And("User_607 check the NetPremium field is mandatory or not")
+public void User_607_check_the_net_premium_field_is_mandatory_or_not() {
 	for (int i = 0; i <2000; i++) {
         try {
             String NetPremiumMandatory = MurabhAppdataEntryInsuranceInfo.getElement("NetPremiumMandatory") ;

@@ -3,156 +3,156 @@ Feature: Murabha_AppDataEntry_LivingExpenses
   @AT_LEA_001
   Scenario: Creation of Living Expense with valid data.
     Given navigate the IJARA URL
-    And user update test data set id for AT_LEA_001
+    And User_607 update test data set id for AT_LEA_001
     And login with valid credentials
-    #And user click the module in select field
-    #And user click the LOS in select field
-    And user click the messagebox under LOS field
-    And user click the search button under messagebox
-    And user Enter the clientname under searchButton
-    And user click the ExpenseType on Action
-    And user click the field livingExpense
-    And user click the field AddButton
-    And user click the field AddbuttonunderExpenseInfo
-    And user verify the field saveButton
-    And user verify the field BackButton
-    And user verify the field ExpenseType
-    And user verify the ExpectedCostOfLiving field
-    And user Verify the MinimumCostOfLiving Field
-    And user verify the field Amount
+    #And User_607 click the module in select field
+    #And User_607 click the LOS in select field
+    And User_607 click the messagebox under LOS field
+    And User_607 click the search button under messagebox
+    And User_607 Enter the clientname under searchButton
+    And User_607 Select record after search
+    And User_607 click the field livingExpense
+    And User_607 click the field AddButton
+    And User_607 click the field AddbuttonunderExpenseInfo
+    And User_607 verify the field saveButton
+    And User_607 verify the field BackButton
+    And User_607 verify the field ExpenseType
+    And User_607 verify the ExpectedCostOfLiving field
+    And User_607 Verify the MinimumCostOfLiving Field
+    And User_607 verify the field Amount
 
   @AT_LEA_002
   Scenario: Creation of Living Expense with valid data.
     Given navigate the IJARA URL
-    And user update test data set id for AT_LEA_001
+    And User_607 update test data set id for AT_LEA_001
     And login with valid credentials
-    #And user click the module in select field
-    #And user click the LOS in select field                                                          																																											.
-    And user click the messagebox under LOS field
-    And user click the search button under messagebox
-    And user Enter the clientname under searchButton
-    And user click the ExpenseType on Action
-    And user click the field livingExpense
-    And user click the field AddButton
-    And user verify the field ExpenseType
-    And user verify the field Amount
-    And user click the CustomerName in input field
-    And user select the CustomerName in under customerInput
-    And user click the field AddbuttonunderExpenseInfo
-    And user verify the field BackButton
-    And user select the type in expeseType select box
-    And user click the select check box
-    And user Enter the Amount in Amount field
-    And user Enter the Value ExpectedCostOfLiving field
-    And user Enter the Value MinimumCostOfLiving Field
+    #And User_607 click the module in select field
+    #And User_607 click the LOS in select field                                                          																																											.
+    And User_607 click the messagebox under LOS field
+    And User_607 click the search button under messagebox
+    And User_607 Enter the clientname under searchButton
+    And User_607 Select record after search
+    And User_607 click the field livingExpense
+    And User_607 click the field AddButton
+    And User_607 verify the field ExpenseType
+    And User_607 verify the field Amount
+    And User_607 click the CustomerName in input field
+    And User_607 select the CustomerName in under customerInput
+    And User_607 click the field AddbuttonunderExpenseInfo
+    And User_607 verify the field BackButton
+    And User_607 select the type in expeseType select box
+    And User_607 click the select check box
+    And User_607 Enter the Amount in Amount field
+    And User_607 Enter the Value ExpectedCostOfLiving field
+    And User_607 Enter the Value MinimumCostOfLiving Field
 
   @AT_LEA_003
   Scenario: Creation of Living Expense with valid data.
     Given navigate the IJARA URL
-    And user update test data set id for AT_LEA_001
+    And User_607 update test data set id for AT_LEA_001
     And login with valid credentials
-    #And user click the module in select field
-    #And user click the LOS in select field
-    And user click the messagebox under LOS field
-    And user click the search button under messagebox
-    And user Enter the clientname under searchButton
-    And user click the ExpenseType on Action
-    And user click the field livingExpense
-    And user click the field AddButton
-    And user click the CustomerName in input field
-    And user select the CustomerName in under customerInput
-    And user click the field AddbuttonunderExpenseInfo
-    And user select the type in expeseType select box
-    And user click the select check box
-    And user Enter the Amount in Amount field
-    And user verify the Total living expense field
-    And user verify the Accredited Cost field
-    And user verify the ExpectedCostOfLiving field
-    And user Verify the MinimumCostOfLiving Field
+    #And User_607 click the module in select field
+    #And User_607 click the LOS in select field
+    And User_607 click the messagebox under LOS field
+    And User_607 click the search button under messagebox
+    And User_607 Enter the clientname under searchButton
+    And User_607 Select record after search
+    And User_607 click the field livingExpense
+    And User_607 click the field AddButton
+    And User_607 click the CustomerName in input field
+    And User_607 select the CustomerName in under customerInput
+    And User_607 click the field AddbuttonunderExpenseInfo
+    And User_607 select the type in expeseType select box
+    And User_607 click the select check box
+    And User_607 Enter the Amount in Amount field
+    And User_607 verify the Total living expense field
+    And User_607 verify the Accredited Cost field
+    And User_607 verify the ExpectedCostOfLiving field
+    And User_607 Verify the MinimumCostOfLiving Field
 
   @AT_LEA_004
   Scenario: Creation of Living Expense with valid data.
     Given navigate the IJARA URL
-    And user update test data set id for AT_LEA_001
+    And User_607 update test data set id for AT_LEA_001
     And login with valid credentials
-    #And user click the module in select field
-    #And user click the LOS in select field
-    And user click the messagebox under LOS field
-    And user click the search button under messagebox
-    And user Enter the clientname under searchButton
-    And user click the ExpenseType on Action
-    And user click the field livingExpense
-    And user click the field AddButton
-    And user click the CustomerName in input field
-    And user select the CustomerName in under customerInput
-    And user click the field AddbuttonunderExpenseInfo
-    And user verify the field BackButton
-    And user verify the field DeleteButton
-    And user select the type in expeseType select box
-    And user click the select check box
-    And user Enter the Amount in Amount field
-    And user Enter the Value ExpectedCostOfLiving field
-    And user Enter the Value MinimumCostOfLiving Field
+    #And User_607 click the module in select field
+    #And User_607 click the LOS in select field
+    And User_607 click the messagebox under LOS field
+    And User_607 click the search button under messagebox
+    And User_607 Enter the clientname under searchButton
+    And User_607 Select record after search
+    And User_607 click the field livingExpense
+    And User_607 click the field AddButton
+    And User_607 click the CustomerName in input field
+    And User_607 select the CustomerName in under customerInput
+    And User_607 click the field AddbuttonunderExpenseInfo
+    And User_607 verify the field BackButton
+    And User_607 verify the field DeleteButton
+    And User_607 select the type in expeseType select box
+    And User_607 click the select check box
+    And User_607 Enter the Amount in Amount field
+    And User_607 Enter the Value ExpectedCostOfLiving field
+    And User_607 Enter the Value MinimumCostOfLiving Field
 
   @AT_LEA_005
   Scenario: Creation of Living Expense with valid data.
     Given navigate the IJARA URL
-    And user update test data set id for AT_LEA_001
+    And User_607 update test data set id for AT_LEA_001
     And login with valid credentials
-    #And user click the module in select field
-    #And user click the LOS in select field
-    And user click the messagebox under LOS field
-    And user click the search button under messagebox
-    And user Enter the clientname under searchButton
-    And user click the ExpenseType on Action
-    And user click the field livingExpense
-    And user click the field AddButton
-    And user click the field AddbuttonunderExpenseInfo
-    And user select the type in expeseType select box
-    And user click the select check box
-    #And user Enter the Negative Amount in Amount field
-    And user Enter the Special Char in Amount field
-    And user Enter the String value in Amount field
-    And user Enter the Amount in Amount field
-    And user Enter the Value ExpectedCostOfLiving field
-    And user Enter the Value MinimumCostOfLiving Field
-    And user click the field saveButton
-    And user verify the Please fill Required field
+    #And User_607 click the module in select field
+    #And User_607 click the LOS in select field
+    And User_607 click the messagebox under LOS field
+    And User_607 click the search button under messagebox
+    And User_607 Enter the clientname under searchButton
+    And User_607 Select record after search
+    And User_607 click the field livingExpense
+    And User_607 click the field AddButton
+    And User_607 click the field AddbuttonunderExpenseInfo
+    And User_607 select the type in expeseType select box
+    And User_607 click the select check box
+    #And User_607 Enter the Negative Amount in Amount field
+    And User_607 Enter the Special Char in Amount field
+    And User_607 Enter the String value in Amount field
+    And User_607 Enter the Amount in Amount field
+    And User_607 Enter the Value ExpectedCostOfLiving field
+    And User_607 Enter the Value MinimumCostOfLiving Field
+    And User_607 click the field saveButton
+    And User_607 verify the Please fill Required field
 
   @AT_LEA_006
   Scenario: Creation of Living Expense with valid data.
     Given navigate the IJARA URL
-    And user update test data set id for AT_LEA_001
+    And User_607 update test data set id for AT_LEA_001
     And login with valid credentials
-    #And user click the module in select field
-    #And user click the LOS in select field
-    And user click the messagebox under LOS field
-    And user click the search button under messagebox
-    And user Enter the clientname under searchButton
-    And user click the ExpenseType on Action
-    And user click the field livingExpense
-    And user click the field AddButton
-    And user click the CustomerName in input field
-    And user select the CustomerName in under customerInput
-    And user click the field AddbuttonunderExpenseInfo
-    And user verify the field BackButton
-    And user verify the field DeleteButton
-    And user select the type in expeseType select box
-    And user click the select check box
-    And user Enter the Amount in Amount field
-    And user verify the Total living expense field
-    And user verify the Accredited Cost field
-    And user click the field saveButton
-    And user click the Edit button under Action
-    And user verify the field saveButton
-    And user verify the field BackButton
-    And user verify the field DeleteButton
-    And user verify the field ExpenseType
-    And user verify the field Amount
-    And user modify the Amount field
-    And user click the field saveButton
-    #And user verify the Please fill Mandatory field
-    And user Enter the Amount in Amount field
-    And user Enter the Value ExpectedCostOfLiving field
-    And user Enter the Value MinimumCostOfLiving Field
-    And user click the field saveButton
+    #And User_607 click the module in select field
+    #And User_607 click the LOS in select field
+    And User_607 click the messagebox under LOS field
+    And User_607 click the search button under messagebox
+    And User_607 Enter the clientname under searchButton
+    And User_607 Select record after search
+    And User_607 click the field livingExpense
+    And User_607 click the field AddButton
+    And User_607 click the CustomerName in input field
+    And User_607 select the CustomerName in under customerInput
+    And User_607 click the field AddbuttonunderExpenseInfo
+    And User_607 verify the field BackButton
+    And User_607 verify the field DeleteButton
+    And User_607 select the type in expeseType select box
+    And User_607 click the select check box
+    And User_607 Enter the Amount in Amount field
+    And User_607 verify the Total living expense field
+    And User_607 verify the Accredited Cost field
+    And User_607 click the field saveButton
+    And User_607 click the Edit button under Action
+    And User_607 verify the field saveButton
+    And User_607 verify the field BackButton
+    And User_607 verify the field DeleteButton
+    And User_607 verify the field ExpenseType
+    And User_607 verify the field Amount
+    And User_607 modify the Amount field
+    And User_607 click the field saveButton
+    #And User_607 verify the Please fill Mandatory field
+    And User_607 Enter the Amount in Amount field
+    And User_607 Enter the Value ExpectedCostOfLiving field
+    And User_607 Enter the Value MinimumCostOfLiving Field
+    And User_607 click the field saveButton

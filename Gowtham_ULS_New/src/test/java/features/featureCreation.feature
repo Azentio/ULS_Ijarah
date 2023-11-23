@@ -4,4 +4,4 @@ Feature: Title of your feature
 
   @tag1
   Scenario: Title of your scenario
- And User_607 Search in the search Field Tawarah App Data Entry Income Details List
+ 		And User_607 Click save button Follow-Up Details Screen

@@ -17,7 +17,7 @@ public class ClicksAndActionsHelper {
 		
 	}
 	
-	///Webdriver click
+	//Webdriver click
 	public void clickOnElement(WebElement element) {
 		element.click();
 		//ExtentTestManager.getTest().info("Clicked on the element" +element);
@@ -32,7 +32,6 @@ public class ClicksAndActionsHelper {
 	//Moving to element
 public void moveToElement(WebElement element) {
 	Actions action = new Actions(driver);
-
 	action.moveToElement(element).perform();
 	//ExtentTestManager.getTest().info("Moved to the element" +element);
 }
