@@ -1,25 +1,165 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="7" passed="5" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-23T16:19:30 IST" name="Default suite" finished-at="2023-11-23T16:56:31 IST" duration-ms="2221034">
+  <suite started-at="2023-11-23T18:25:41 IST" name="Default suite" finished-at="2023-11-23T18:33:59 IST" duration-ms="497897">
     <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-11-23T16:19:30 IST" name="Default test" finished-at="2023-11-23T16:56:31 IST" duration-ms="2221034">
-      <class name="Runner.NewExcelTestRunner">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:Runner.NewExcelTestRunner@75d0911a]" started-at="2023-11-23T16:19:30 IST" name="beforeTest" finished-at="2023-11-23T16:19:30 IST" duration-ms="9" status="PASS">
+    <test started-at="2023-11-23T18:25:41 IST" name="Default test" finished-at="2023-11-23T18:33:59 IST" duration-ms="497897">
+      <class name="Runner.TestApplication">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-11-23T18:25:41 IST" name="setUpClass" finished-at="2023-11-23T18:25:42 IST" duration-ms="951" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method signature="test()[pri:0, instance:Runner.NewExcelTestRunner@75d0911a]" started-at="2023-11-23T16:19:30 IST" name="test" finished-at="2023-11-23T16:56:31 IST" duration-ms="2220770" status="PASS">
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-11-23T18:25:42 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-23T18:27:11 IST" duration-ms="89481" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To test user can able to create the application details record with valid valid"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To test the murabha application details screen with murabha product]"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+back button is not visisble hence failed expected [true] but found [false],
+sourcing staff field is a mandatory field hence failed expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+back button is not visisble hence failed expected [true] but found [false],
+sourcing staff field is a mandatory field hence failed expected [true] but found [false]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at stepdefinitions.ULS_ApplicationDetails_NewApp_Steps.user_076_invoke_soft_assert_for_new_application_screen(ULS_ApplicationDetails_NewApp_Steps.java:2451)
+at ✽.user_076 invoke soft assert for new application screen(file:///C:/Users/ININDC00076/git/ULS_IjarahMainRepository/AzentioAutomationFramework_ULSMainRepository/src/test/java/features/MurabhaFeatures/Murabaha_NewApp_ApplicationDetailsFEATURE.feature:49)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:Runner.NewExcelTestRunner@75d0911a]" started-at="2023-11-23T16:56:31 IST" name="afterTest" finished-at="2023-11-23T16:56:31 IST" duration-ms="205" status="PASS">
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-11-23T18:27:11 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-23T18:28:10 IST" duration-ms="58120" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To test user can able to create the application details record with in valid data"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To test the murabha application details screen with murabha product]"]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterTest -->
-      </class> <!-- Runner.NewExcelTestRunner -->
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-11-23T18:28:10 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-23T18:28:45 IST" duration-ms="35799" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To test user can able to update the list application details list view record at new app stage"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To test the murabha application details screen with murabha product]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-11-23T18:28:45 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-23T18:30:05 IST" duration-ms="79492" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To test user can able to update the list view record of application details at new app stage"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To test the murabha application details screen with murabha product]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-11-23T18:30:05 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-23T18:31:30 IST" duration-ms="85245" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To test the submit functionality of application details in new app stage"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To test the murabha application details screen with murabha product]"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Cannot invoke "org.openqa.selenium.WebElement.click()" because the return value of "helper.JavascriptHelper.executeScriptWithWebElement(String)" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Cannot invoke "org.openqa.selenium.WebElement.click()" because the return value of "helper.JavascriptHelper.executeScriptWithWebElement(String)" is null
+at org.junit.Assert.fail(Assert.java:88)
+at stepdefinitions.ULS_ApplicationDetails_NewApp_Steps.user_076_click_on_submit_button_in_application_details_record_at_new_app_stage(ULS_ApplicationDetails_NewApp_Steps.java:3459)
+at ✽.user_076 click on submit button in application details record at new app stage(file:///C:/Users/ININDC00076/git/ULS_IjarahMainRepository/AzentioAutomationFramework_ULSMainRepository/src/test/java/features/MurabhaFeatures/Murabaha_NewApp_ApplicationDetailsFEATURE.feature:180)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-11-23T18:31:30 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-23T18:31:56 IST" duration-ms="25597" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To verify user can able to export the list view contentof application details in pdf and excel format"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To test the murabha application details screen with murabha product]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-11-23T18:31:56 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-23T18:32:31 IST" duration-ms="35421" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To verify user can able to test the search functionality in application details (New app stage)"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To test the murabha application details screen with murabha product]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-11-23T18:32:31 IST" name="tearDownClass" finished-at="2023-11-23T18:33:59 IST" duration-ms="87727" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- Runner.TestApplication -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

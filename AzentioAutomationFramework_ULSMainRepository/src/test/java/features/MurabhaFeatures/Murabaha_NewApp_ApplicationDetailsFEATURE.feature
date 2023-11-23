@@ -54,10 +54,8 @@ Given navigate the IJARA URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
-And click on mail box
-And click on search box upon click on the mail box
-And click on search text box upon click the search button
 And user_076 get the test data for test case id AT_MAppDetails_NewApp_02
+And user_076 click on menu bar in uls transaction screen
 And user_076 click on transactions module
 And user_076 click on applicationn manager feature
 And user_076 click on application details screen temp view
@@ -177,8 +175,8 @@ And user_076 get the test data for test case id AT_MAppDetails_NewApp_05
 And click on mail box
 And click on search box upon click on the mail box
 And click on search text box upon click the search button
-And user_076 search the new application stage record reference number
-And user_076 select the new application stage record from mail box
+And user_076 search the new application stage record reference number for application details record
+And user_076 select the new application stage record from mail box for application details record
 And user_076 click on submit button in application details record at new app stage
 And user_076 enter the alert remark for application details record in new app stage
 And user_076 click on alert submit button in application details at new app stage
@@ -191,12 +189,11 @@ And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
 And click on mail box
-And click on search box upon click on the mail box
-And click on search text box upon click the search button
+And user_076 click on menu bar in uls transaction screen
+And user_076 click on transactions module
+And user_076 click on applicationn manager feature
+And user_076 click on application details screen temp view
 And user_076 get the test data for test case id AT_MAppDetails_NewApp_06
-And user_076 search the new application stage record reference number for application details record
-And user_076 select the new application stage record from mail box for application details record
-And user_076 click on save button while open the application details record
 And user_076 click on export button in application details list view
 And user_076 click on pdf option in application details list view
 Then user_076 verify application details pdf file should be downloaded in system
@@ -212,13 +209,11 @@ Given navigate the IJARA URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
-And click on mail box
-And user_076 search the new application stage record reference number for application details record
-And user_076 select the new application stage record from mail box for application details record
+And user_076 click on menu bar in uls transaction screen
+And user_076 click on transactions module
+And user_076 click on applicationn manager feature
+And user_076 click on application details screen temp view
 And user_076 get the test data for test case id AT_MAppDetails_NewApp_07
-And user_076 search the new application stage record reference number
-And user_076 select the new application stage record from mail box
-And user_076 click on save button while open the application details record
 And user_076 verify application details list view record should be read only not editable at new app stage
 And user_076 click on search button in application details list view at new app stage
 And user_076 search with valid search text in application details list view at new app stage

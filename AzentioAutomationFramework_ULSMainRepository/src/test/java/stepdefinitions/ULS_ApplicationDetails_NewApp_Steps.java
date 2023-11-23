@@ -3452,6 +3452,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_076_click_on_submit_button_in_application_details_record_at_new_app_stage() throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				System.out.println("");
 				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("submit_button")).click();
 				break;
 			} catch (Exception e) {
