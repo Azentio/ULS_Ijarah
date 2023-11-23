@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.asserts.SoftAssert;
 
+import dataProvider.ConfigFileReader;
 import dataProvider.ExcelData;
 import helper.ClicksAndActionsHelper;
 import helper.JavascriptHelper;
@@ -20,11 +21,13 @@ import resources.BaseClass;
 public class IjarahAssetDetails_Spets extends BaseClass {
 	WebDriver driver = BaseClass.driver;
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
-	String excelPath = System.getProperty("user.dir") + "\\TestData\\IjaraJSPaths.xlsx";
+	ConfigFileReader configFileReader = new ConfigFileReader();
+	String excelPath = configFileReader.getTestDataFilePath();
+	String excelTestDataPath = configFileReader.getTestDataFilePath();
 	JSPaths commonJSPaths = new JSPaths(excelPath, "iJarah_CommonElements", "Ijarah_CommonFieldName", "JSPath");
 	JSPaths assetDetailsJSPaths = new JSPaths(excelPath, "assetDetails_WebElements", "Ijarah_AssetDetailsFieldName",
 			"JSPath");
-	String excelTestDataPath = System.getProperty("user.dir") + "\\TestData\\ijaraTestData.xlsx";
+
 	ExcelData excelDataForAssetDetailsTestData = new ExcelData(excelTestDataPath, "Ijarah_AssetDetailsTestData",
 			"Dataset ID");
 	ExcelData excelDataForAssetDetailsExecution = new ExcelData(excelTestDataPath, "Ijarah_AssetdetailsExecution",
@@ -37,16 +40,18 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 
 	@And("get the test data for test case ID AT_IAD_002")
 	public void get_the_test_data_for_test_case_id_AT_IAD_002() throws Throwable {
-		assetDetailsExecutionData=excelDataForAssetDetailsExecution.getTestdata("AT_IAD_002");
-		assetDetailsTestData = excelDataForAssetDetailsTestData.getTestdata(assetDetailsExecutionData.get("dataSet_ID"));
+		assetDetailsExecutionData = excelDataForAssetDetailsExecution.getTestdata("AT_IAD_002");
+		assetDetailsTestData = excelDataForAssetDetailsTestData
+				.getTestdata(assetDetailsExecutionData.get("dataSet_ID"));
 
 	}
 
 	@And("get the test data for test case ID AT_IAD_001")
 	public void get_the_test_data_for_test_case_id_AT_IAD_001() throws Throwable {
 
-		assetDetailsExecutionData=excelDataForAssetDetailsExecution.getTestdata("AT_IAD_001");
-		assetDetailsTestData = excelDataForAssetDetailsTestData.getTestdata(assetDetailsExecutionData.get("dataSet_ID"));
+		assetDetailsExecutionData = excelDataForAssetDetailsExecution.getTestdata("AT_IAD_001");
+		assetDetailsTestData = excelDataForAssetDetailsTestData
+				.getTestdata(assetDetailsExecutionData.get("dataSet_ID"));
 
 	}
 

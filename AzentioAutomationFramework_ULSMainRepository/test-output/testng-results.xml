@@ -1,133 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="3" failed="2" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-01T11:33:53 IST" name="Default suite" finished-at="2023-11-01T11:40:29 IST" duration-ms="396277">
+  <suite started-at="2023-11-23T16:19:30 IST" name="Default suite" finished-at="2023-11-23T16:56:31 IST" duration-ms="2221034">
     <groups>
-      <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
-      </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-11-01T11:33:53 IST" name="Default test" finished-at="2023-11-01T11:40:29 IST" duration-ms="396277">
-      <class name="Runner.TestApplication">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-11-01T11:33:53 IST" name="setUpClass" finished-at="2023-11-01T11:33:54 IST" duration-ms="1156" status="PASS">
+    <test started-at="2023-11-23T16:19:30 IST" name="Default test" finished-at="2023-11-23T16:56:31 IST" duration-ms="2221034">
+      <class name="Runner.NewExcelTestRunner">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:Runner.NewExcelTestRunner@75d0911a]" started-at="2023-11-23T16:19:30 IST" name="beforeTest" finished-at="2023-11-23T16:19:30 IST" duration-ms="9" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-11-01T11:33:54 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-01T11:35:19 IST" duration-ms="84431" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["to create the customer details screen with vaid input data"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[to test the customerdetails screen at new app stage]"]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[The following asserts failed:
-no of dependents field is not a text field hence failed expected [true] but found [false],
-remarks field is not a mandatory field hence failed expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The following asserts failed:
-no of dependents field is not a text field hence failed expected [true] but found [false],
-remarks field is not a mandatory field hence failed expected [true] but found [false]
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-at stepdefinitions.Ijarah_NewAPP_customerDetailsSteps.user_076_invoke_soft_assert_for_customer_details_screen(Ijarah_NewAPP_customerDetailsSteps.java:1437)
-at ✽.user_076 invoke soft assert for customer details screen(file:///C:/Users/ININDC00076/eclipse-workspace/AzentioAutomationFramework_ULSMainRepository/src/test/java/features/IjarahFeatures/Ijarah_newApp_customerDetailsFEATURE.feature:40)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        </test-method> <!-- beforeTest -->
+        <test-method signature="test()[pri:0, instance:Runner.NewExcelTestRunner@75d0911a]" started-at="2023-11-23T16:19:30 IST" name="test" finished-at="2023-11-23T16:56:31 IST" duration-ms="2220770" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-11-01T11:35:19 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-01T11:36:00 IST" duration-ms="41224" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["to create the customer details screen with vaid input data"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[to test the customerdetails screen at new app stage]"]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- test -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:Runner.NewExcelTestRunner@75d0911a]" started-at="2023-11-23T16:56:31 IST" name="afterTest" finished-at="2023-11-23T16:56:31 IST" duration-ms="205" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-11-01T11:36:00 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-01T11:36:43 IST" duration-ms="43225" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["to create the customer details screen with vaid input data"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[to test the customerdetails screen at new app stage]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-11-01T11:36:43 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-01T11:37:24 IST" duration-ms="40543" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["to create the customer details screen with vaid input data"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[to test the customerdetails screen at new app stage]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-11-01T11:37:24 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-01T11:39:29 IST" duration-ms="125730" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["to create the customer details screen with vaid input data"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[to test the customerdetails screen at new app stage]"]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.WebElement.click()" because the return value of "helper.JavascriptHelper.executeScriptWithWebElement(String)" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Cannot invoke "org.openqa.selenium.WebElement.click()" because the return value of "helper.JavascriptHelper.executeScriptWithWebElement(String)" is null
-at org.junit.Assert.fail(Assert.java:88)
-at stepdefinitions.Ijarah_NewAPP_customerDetailsSteps.user_076_click_on_export_button_in_customer_details_list_view(Ijarah_NewAPP_customerDetailsSteps.java:1849)
-at ✽.user_076 click on export button in customer details list view(file:///C:/Users/ININDC00076/eclipse-workspace/AzentioAutomationFramework_ULSMainRepository/src/test/java/features/IjarahFeatures/Ijarah_newApp_customerDetailsFEATURE.feature:134)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-11-01T11:39:29 IST" name="tearDownClass" finished-at="2023-11-01T11:40:29 IST" duration-ms="59896" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownClass -->
-      </class> <!-- Runner.TestApplication -->
+        </test-method> <!-- afterTest -->
+      </class> <!-- Runner.NewExcelTestRunner -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -1,23 +1,22 @@
 Feature: To Test the application details record at the new app stage
-@AT_APP_01
+@AT_IJ_APP_01
 Scenario: To test user can able to create the application details record with valid valid
 Given navigate the IJARA URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
-And click on mail box
-And click on search box upon click on the mail box
-And click on search text box upon click the search button
-And user_076 get the test data for test case id AT_APP_01
-And user_076 search the new application stage record reference number for application details record
-And user_076 select the new application stage record from mail box for application details record
-And user_076 click on save button while open the application details record
+And user_076 get the test data for test case id AT_IJ_APP_01
+And user_076 click on menu bar in uls transaction screen
+And user_076 click on transactions module
+And user_076 click on applicationn manager feature
+And user_076 click on application details screen temp view
 And user_076 click on add button of application details record
 And user_076 in customer search screen select the customer type
 And user_076 in customer search screen enter customer name
 And user_076 in custommer search screen select ID type
 And user_076 in customer search screen enter id number
 And user_076 in customer search screen enter date of birth of the customer
+And user_076 in customer search screen enter customer mobile number
 And user_076 click on the search button in customer search screen
 And user_076 click on create new request buttton
 Then user_076 verify save button and back buttons are visible in new application screen
@@ -43,9 +42,10 @@ Then user_076 verify reference entity field should be non mandatory editable loo
 Then user_076 verify reference code field should be non mandatory editable textbox
 And user_076 click on save button in application details new app record
 Then user_076 verify system should save the record of application details new app
+And user_076 store the record reference number in Ijarah new app screens
 Then logout from the ULS Application
 And user_076 invoke soft assert for new application screen
-@AT_APP_02
+@AT_IJ_APP_02
 Scenario: To test user can able to create the application details record with in valid data
 Given navigate the IJARA URL
 And login with valid credentials for new application stage
@@ -54,16 +54,18 @@ And click on LOS option in module dropdown
 And click on mail box
 And click on search box upon click on the mail box
 And click on search text box upon click the search button
-And user_076 get the test data for test case id AT_APP_02
-And user_076 search the new application stage record reference number for application details record
-And user_076 select the new application stage record from mail box for application details record
-And user_076 click on save button while open the application details record
+And user_076 get the test data for test case id AT_IJ_APP_02
+And user_076 click on menu bar in uls transaction screen
+And user_076 click on transactions module
+And user_076 click on applicationn manager feature
+And user_076 click on application details screen temp view
 And user_076 click on add button of application details record
 And user_076 in customer search screen select the customer type
 And user_076 in customer search screen enter customer name
 And user_076 in custommer search screen select ID type
 And user_076 in customer search screen enter id number
 And user_076 in customer search screen enter date of birth of the customer
+And user_076 in customer search screen enter customer mobile number
 And user_076 click on the search button in customer search screen
 And user_076 click on create new request buttton
 And user_076 click on save button without enter the mandatory field in application details screen
@@ -77,19 +79,17 @@ Then user_076 verify system wont allow user to enter the character input in appl
 Then logout from the ULS Application
 And user_076 invoke soft assert for new application screen
 
-@AT_APP_03
-Scenario: To test user can able to create the application details record with in valid data
+@AT_IJ_APP_03
+Scenario: To test the list view record of appication details (Ijarah)
 Given navigate the IJARA URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
-And click on mail box
-And click on search box upon click on the mail box
-And click on search text box upon click the search button
-And user_076 get the test data for test case id AT_APP_03
-And user_076 search the new application stage record reference number for application details record
-And user_076 select the new application stage record from mail box for application details record
-And user_076 click on save button while open the application details record
+And user_076 click on menu bar in uls transaction screen
+And user_076 click on transactions module
+And user_076 click on applicationn manager feature
+And user_076 click on application details screen temp view
+And user_076 get the test data for test case id AT_IJ_APP_03
 And user_076 click on edit button of new application list view record
 And user_076 update the list view record of application details record
 Then user_076 verify user can able to update the application details record

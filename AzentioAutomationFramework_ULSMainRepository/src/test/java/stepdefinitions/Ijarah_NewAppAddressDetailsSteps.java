@@ -10,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.asserts.SoftAssert;
 
+import dataProvider.ConfigFileReader;
 import dataProvider.ExcelData;
 import helper.ClicksAndActionsHelper;
 import helper.JavascriptHelper;
@@ -20,12 +21,15 @@ import resources.BaseClass;
 
 public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 	WebDriver driver = BaseClass.driver;
-	String excelTestDataPath = System.getProperty("user.dir") + "\\TestData\\ijaraTestData.xlsx";
-	String jsExcelPath = System.getProperty("user.dir") + "\\TestData\\IjaraJSPaths.xlsx";
+	ConfigFileReader configFileReader = new ConfigFileReader();
+	String excelTestDataPath = configFileReader.getTestDataFilePath();
+	String jsExcelPath = configFileReader.getJSFilePath();
 	ExcelData excelTestDataForAddressDetails = new ExcelData(excelTestDataPath, "NewApp_AddressDetailsTestData",
 			"Dataset ID");
-	ExcelData excelTestDataForAddressDetailsExecution = new ExcelData(excelTestDataPath,
-			"newApp_addressDetailsExeTracker", "TestCase ID");
+	ExcelData murabahExecutionSheet = new ExcelData(excelTestDataPath,
+			"Murabaha_ExecutionTracker", "TestCase ID");
+	ExcelData ijarahExecutionSheet = new ExcelData(excelTestDataPath,
+			"Ijarah_ExecutionTracker", "TestCase ID");
 	JSPaths commonJSElements = new JSPaths(jsExcelPath, "iJarah_CommonElements", "Ijarah_CommonFieldName", "JSPath");
 	JSPaths newAppAddressDetailsJSElements = new JSPaths(jsExcelPath, "NewApp_AddressDetailsJS",
 			"addressDetails_JSElements", "JSPaths");
@@ -33,6 +37,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 	// Murabaha
 	ExcelData excelTestDataForMurabahaAddressDetails = new ExcelData(excelTestDataPath,
 			"M_NewApp_AddressDetailsTestData", "Dataset ID");
+	
 	ExcelData excelTestDataForMurabahaAddressDetailsExecution = new ExcelData(excelTestDataPath,
 			"M_NewApp_AddDetails_ExeTrack", "TestCase ID");
 
@@ -47,91 +52,91 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 
 	@And("get the test data for test case id AT_IJ_NewApp_AD_01")
 	public void get_the_test_data_for_test_case_id_at_ij_new_app_ad_01() throws Throwable {
-		addressDetailsExecutionData = excelTestDataForAddressDetailsExecution.getTestdata("AT_IJ_NewApp_AD_01");
+		addressDetailsExecutionData = ijarahExecutionSheet.getTestdata("AT_IJ_NewApp_AD_01");
 		addressDetailsTestData = excelTestDataForAddressDetails
 				.getTestdata(addressDetailsExecutionData.get("dataSet_ID"));
 	}
 
 	@And("get the test data for test case id AT_NewApp_M_AD_02")
 	public void get_the_test_data_for_test_case_id_AT_NewApp_M_AD_02() throws Throwable {
-		addressDetailsExecutionData = excelTestDataForAddressDetailsExecution.getTestdata("AT_IJ_NewApp_AD_02");
+		addressDetailsExecutionData = murabahExecutionSheet.getTestdata("AT_NewApp_M_AD_02");
 		addressDetailsTestData = excelTestDataForAddressDetails
 				.getTestdata(addressDetailsExecutionData.get("dataSet_ID"));
 	}
 
 	@And("get the test data for test case id AT_NewApp_M_AD_03")
 	public void get_the_test_data_for_test_case_id_AT_NewApp_M_AD_03() throws Throwable {
-		addressDetailsExecutionData = excelTestDataForAddressDetailsExecution.getTestdata("AT_IJ_NewApp_AD_03");
+		addressDetailsExecutionData = murabahExecutionSheet.getTestdata("AT_NewApp_M_AD_03");
 		addressDetailsTestData = excelTestDataForAddressDetails
 				.getTestdata(addressDetailsExecutionData.get("dataSet_ID"));
 	}
 
 	@And("get the test data for test case id AT_NewApp_M_AD_04")
 	public void get_the_test_data_for_test_case_id_AT_NewApp_M_AD_04() throws Throwable {
-		addressDetailsExecutionData = excelTestDataForAddressDetailsExecution.getTestdata("AT_IJ_NewApp_AD_04");
+		addressDetailsExecutionData = murabahExecutionSheet.getTestdata("AT_NewApp_M_AD_04");
 		addressDetailsTestData = excelTestDataForAddressDetails
 				.getTestdata(addressDetailsExecutionData.get("dataSet_ID"));
 	}
 
 	@And("get the test data for test case id AT_NewApp_M_AD_05")
 	public void get_the_test_data_for_test_case_id_AT_NewApp_M_AD_05() throws Throwable {
-		addressDetailsExecutionData = excelTestDataForAddressDetailsExecution.getTestdata("AT_IJ_NewApp_AD_05");
+		addressDetailsExecutionData = murabahExecutionSheet.getTestdata("AT_NewApp_M_AD_05");
 		addressDetailsTestData = excelTestDataForAddressDetails
 				.getTestdata(addressDetailsExecutionData.get("dataSet_ID"));
 	}
 
 	@And("get the test data for test case id AT_NewApp_M_AD_06")
 	public void get_the_test_data_for_test_case_id_AT_NewApp_M_AD_06() throws Throwable {
-		addressDetailsExecutionData = excelTestDataForAddressDetailsExecution.getTestdata("AT_IJ_NewApp_AD_06");
+		addressDetailsExecutionData = murabahExecutionSheet.getTestdata("AT_IJ_NewApp_AD_06");
 		addressDetailsTestData = excelTestDataForAddressDetails
 				.getTestdata(addressDetailsExecutionData.get("dataSet_ID"));
 	}
 
 	@And("get the test data for test case id AT_NewApp_M_AD_07")
 	public void get_the_test_data_for_test_case_id_AT_NewApp_M_AD_07() throws Throwable {
-		addressDetailsExecutionData = excelTestDataForAddressDetailsExecution.getTestdata("AT_IJ_NewApp_AD_07");
+		addressDetailsExecutionData = murabahExecutionSheet.getTestdata("AT_IJ_NewApp_AD_07");
 		addressDetailsTestData = excelTestDataForAddressDetails
 				.getTestdata(addressDetailsExecutionData.get("dataSet_ID"));
 	}
 
 	@And("get the test data for test case id AT_NewApp_M_AD_01")
 	public void get_the_test_data_for_test_case_id_AT_NewApp_M_AD_01() throws Throwable {
-		addressDetailsExecutionData = excelTestDataForAddressDetailsExecution.getTestdata("AT_IJ_NewApp_AD_01");
+		addressDetailsExecutionData = murabahExecutionSheet.getTestdata("AT_NewApp_M_AD_01");
 		addressDetailsTestData = excelTestDataForAddressDetails
 				.getTestdata(addressDetailsExecutionData.get("dataSet_ID"));
 	}
 
 	@And("get the test data for test case id AT_IJ_NewApp_AD_02")
 	public void get_the_test_data_for_test_case_id_at_ij_new_app_ad_02() throws Throwable {
-		addressDetailsExecutionData = excelTestDataForAddressDetailsExecution.getTestdata("AT_IJ_NewApp_AD_02");
+		addressDetailsExecutionData = ijarahExecutionSheet.getTestdata("AT_IJ_NewApp_AD_02");
 		addressDetailsTestData = excelTestDataForAddressDetails
 				.getTestdata(addressDetailsExecutionData.get("dataSet_ID"));
 	}
 
 	@And("get the test data for test case id AT_IJ_NewApp_AD_03")
 	public void get_the_test_data_for_test_case_id_at_ij_new_app_ad_03() throws Throwable {
-		addressDetailsExecutionData = excelTestDataForAddressDetailsExecution.getTestdata("AT_IJ_NewApp_AD_03");
+		addressDetailsExecutionData = murabahExecutionSheet.getTestdata("AT_IJ_NewApp_AD_03");
 		addressDetailsTestData = excelTestDataForAddressDetails
 				.getTestdata(addressDetailsExecutionData.get("dataSet_ID"));
 	}
 
 	@And("get the test data for test case id AT_IJ_NewApp_AD_04")
 	public void get_the_test_data_for_test_case_id_at_ij_new_app_ad_04() throws Throwable {
-		addressDetailsExecutionData = excelTestDataForAddressDetailsExecution.getTestdata("AT_IJ_NewApp_AD_04");
+		addressDetailsExecutionData = ijarahExecutionSheet.getTestdata("AT_IJ_NewApp_AD_04");
 		addressDetailsTestData = excelTestDataForAddressDetails
 				.getTestdata(addressDetailsExecutionData.get("dataSet_ID"));
 	}
 
 	@And("get the test data for test case id AT_IJ_NewApp_AD_05")
 	public void get_the_test_data_for_test_case_id_at_ij_new_app_ad_05() throws Throwable {
-		addressDetailsExecutionData = excelTestDataForAddressDetailsExecution.getTestdata("AT_IJ_NewApp_AD_05");
+		addressDetailsExecutionData = ijarahExecutionSheet.getTestdata("AT_IJ_NewApp_AD_05");
 		addressDetailsTestData = excelTestDataForAddressDetails
 				.getTestdata(addressDetailsExecutionData.get("dataSet_ID"));
 	}
 
 	@And("get the test data for test case id AT_IJ_NewApp_AD_06")
 	public void get_the_test_data_for_test_case_id_at_ij_new_app_ad_06() throws Throwable {
-		addressDetailsExecutionData = excelTestDataForAddressDetailsExecution.getTestdata("AT_IJ_NewApp_AD_06");
+		addressDetailsExecutionData = ijarahExecutionSheet.getTestdata("AT_IJ_NewApp_AD_06");
 		addressDetailsTestData = excelTestDataForAddressDetails
 				.getTestdata(addressDetailsExecutionData.get("dataSet_ID"));
 	}
@@ -145,7 +150,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 			try {
 				searchTextBox = javascriptHelper
 						.executeScriptWithWebElement(commonJSElements.getElement("mail_box_search_text"));
-				searchTextBox.sendKeys(addressDetailsTestData.get("record_reference_number"));
+				searchTextBox.sendKeys(configFileReader.getIjarahRecordReferenceNumber());
 				break;
 			} catch (Exception e) {
 				if (i == 80) {
@@ -165,7 +170,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 			try {
 				searchTextBox = javascriptHelper
 						.executeScriptWithWebElement(commonJSElements.getElement("mail_box_search_text"));
-				searchTextBox.sendKeys(addressDetailsTestData.get("record_reference_number"));
+				searchTextBox.sendKeys(configFileReader.getIjarahRecordReferenceNumber());
 				break;
 			} catch (Exception e) {
 				if (i == 80) {
@@ -204,7 +209,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 									+ j + "].textContent")
 							.toString();
 					System.out.println("Number of record in mail box " + recordRefNumber);
-					if (recordRefNumber.equals(addressDetailsTestData.get("record_reference_number"))) {
+					if (recordRefNumber.equals(configFileReader.getIjarahRecordReferenceNumber())) {
 						System.out.println("document.querySelectorAll('button[icon=\"pi pi-user-edit\"]')[" + j + "]");
 						// document.querySelectorAll('button[icon="pi pi-user-edit"]')[0]
 						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
@@ -246,7 +251,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 									+ j + "].textContent")
 							.toString();
 					System.out.println("Number of record in mail box " + recordRefNumber);
-					if (recordRefNumber.equals(addressDetailsTestData.get("record_reference_number"))) {
+					if (recordRefNumber.equals(configFileReader.getIjarahRecordReferenceNumber())) {
 						System.out.println("document.querySelectorAll('button[icon=\"pi pi-user-edit\"]')[" + j + "]");
 						// document.querySelectorAll('button[icon="pi pi-user-edit"]')[0]
 						javascriptHelper
@@ -279,7 +284,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 			}
 		}
 		int premitiveNumberOfRecordInMailBox = Integer.parseInt(numberOfRecordInMailBox);
-		System.out.println("Mail box Record "+premitiveNumberOfRecordInMailBox);
+		System.out.println("Mail box Record " + premitiveNumberOfRecordInMailBox);
 		// document.querySelectorAll('td[class="ng-star-inserted"]>span')[0].textContent
 		for (int j = 0; j < premitiveNumberOfRecordInMailBox; j++) {
 			for (int k = 0; k <= 80; k++) {
@@ -288,10 +293,10 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 							.executeScript("return document.querySelectorAll('td[class=\"ng-star-inserted\"]>span')["
 									+ j + "].textContent")
 							.toString();
-					if (recordRefNumber.equals(addressDetailsTestData.get("record_reference_number"))) {
+					if (recordRefNumber.equals(configFileReader.getIjarahRecordReferenceNumber())) {
 						System.out.println("document.querySelectorAll('button[icon=\"pi pi-user-edit\"]')[" + j + "]");
 						// document.querySelectorAll('button[icon="pi pi-user-edit"]')[0]
-						
+
 						javascriptHelper
 								.executeScriptWithWebElement(
 										"document.querySelectorAll('button[icon=\"pi pi-user-edit\"]')[" + j + "]")
@@ -333,7 +338,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 		System.out.println("Length of the label " + premitiveLabelLength);
 
 		for (int i = 0; i < premitiveLabelLength; i++) {
-			for (int j = 0; j <= 300; j++) {
+			for (int j = 0; j <= 600; j++) {
 				try {
 					labelName = javascriptHelper.executeScript(
 							"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
@@ -344,8 +349,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 
 						System.out.println("Label Name " + labelName);
 						if (i > 250) {
-							javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
-									"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + i + "]"));
+							clicksAndActionsHelper.returnKey().sendKeys(Keys.PAGE_DOWN).build().perform();
 						}
 
 						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
@@ -360,7 +364,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 						break;
 					}
 				} catch (Exception e) {
-					if (j == 300) {
+					if (j == 600) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -1723,9 +1727,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 				break;
 			} catch (Exception e) {
 				if (i > 550 && i < 600) {
-					javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
-							"document.querySelectorAll('ion-col[class=\"p-2 md hydrated\"]')[" + indexOfListView
-									+ "].querySelector('button[icon=\"pi pi-pencil\"')"));
+					clicksAndActionsHelper.returnKey().sendKeys(Keys.PAGE_DOWN).build().perform();
 				}
 				if (i == 600) {
 					Assert.fail(e.getMessage());

@@ -11,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.asserts.SoftAssert;
 
+import dataProvider.ConfigFileReader;
 import dataProvider.ExcelData;
 import helper.BrowserHelper;
 import helper.ClicksAndActionsHelper;
@@ -22,18 +23,19 @@ import resources.BaseClass;
 
 public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass {
 	WebDriver driver = BaseClass.driver;
-	String excelJSPath = System.getProperty("user.dir") + "\\TestData\\IjaraJSPaths.xlsx";
-	String excelCustomerIdentificationTestDataPath = System.getProperty("user.dir") + "\\TestData\\ijaraTestData.xlsx";
+	ConfigFileReader configFileReader = new ConfigFileReader();
+
+	String excelJSPath = configFileReader.getJSFilePath();
+	String excelTestDataPath = configFileReader.getTestDataFilePath();
 	JSPaths commonJSElements = new JSPaths(excelJSPath, "iJarah_CommonElements", "Ijarah_CommonFieldName", "JSPath");
 	JSPaths customerIdentificationDetailsElements = new JSPaths(excelJSPath, "NewApp_IdentificationDetailsJS",
 			"New_App_CustomerIdentificationDetailsElements", "JSPath");
-	ExcelData excelCustomerIdentificationTestData = new ExcelData(excelCustomerIdentificationTestDataPath,
-			"customer_I_Details_NewApp", "Dataset ID");
-	ExcelData excelCustomerIdentificationMurabhaTestData = new ExcelData(excelCustomerIdentificationTestDataPath,
+	ExcelData excelCustomerIdentificationTestData = new ExcelData(excelTestDataPath, "customer_I_Details_NewApp",
+			"Dataset ID");
+	ExcelData excelCustomerIdentificationMurabhaTestData = new ExcelData(excelTestDataPath,
 			"M_NewAppIDEDetails_TestData", "Dataset ID");
-	ExcelData excelCustomerIdentificationExecutionData = new ExcelData(excelCustomerIdentificationTestDataPath,
-			"newApp_identificationExetracker", "TestCase ID");
-	ExcelData excelCustomerIdentificationMurabhaExecutionData = new ExcelData(excelCustomerIdentificationTestDataPath,
+	ExcelData ijarahExecution = new ExcelData(excelTestDataPath, "Ijarah_ExecutionTracker", "TestCase ID");
+	ExcelData excelCustomerIdentificationMurabhaExecutionData = new ExcelData(excelTestDataPath,
 			"M_NewAppIDEDetails_ExeTrack", "TestCase ID");
 	Map<String, String> customerIdentificationDetailsTestData = new HashMap<>();
 	Map<String, String> customerIdentificationDetailsExecutionData = new HashMap<>();
@@ -48,8 +50,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 
 	@And("user_076 get the test data for test case id AT_IJ_NewApp_IDA_01")
 	public void user_076_get_the_test_data_for_test_case_id_at_ij_new_app_ida_01() throws Throwable {
-		customerIdentificationDetailsExecutionData = excelCustomerIdentificationExecutionData
-				.getTestdata("AT_IJ_NewApp_IDA_01");
+		customerIdentificationDetailsExecutionData = ijarahExecution.getTestdata("AT_IJ_NewApp_IDA_01");
 		customerIdentificationDetailsTestData = excelCustomerIdentificationTestData
 				.getTestdata(customerIdentificationDetailsExecutionData.get("dataSet_ID"));
 
@@ -120,8 +121,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 
 	@And("user_076 get the test data for test case id AT_IJ_NewApp_IDA_02")
 	public void user_076_get_the_test_data_for_test_case_id_at_ij_new_app_ida_02() throws Throwable {
-		customerIdentificationDetailsExecutionData = excelCustomerIdentificationExecutionData
-				.getTestdata("AT_IJ_NewApp_IDA_02");
+		customerIdentificationDetailsExecutionData = ijarahExecution.getTestdata("AT_IJ_NewApp_IDA_02");
 		customerIdentificationDetailsTestData = excelCustomerIdentificationTestData
 				.getTestdata(customerIdentificationDetailsExecutionData.get("dataSet_ID"));
 
@@ -129,8 +129,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 
 	@And("user_076 get the test data for test case id AT_IJ_NewApp_IDA_03")
 	public void user_076_get_the_test_data_for_test_case_id_at_ij_new_app_ida_03() throws Throwable {
-		customerIdentificationDetailsExecutionData = excelCustomerIdentificationExecutionData
-				.getTestdata("AT_IJ_NewApp_IDA_03");
+		customerIdentificationDetailsExecutionData = ijarahExecution.getTestdata("AT_IJ_NewApp_IDA_03");
 		customerIdentificationDetailsTestData = excelCustomerIdentificationTestData
 				.getTestdata(customerIdentificationDetailsExecutionData.get("dataSet_ID"));
 
@@ -138,8 +137,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 
 	@And("user_076 get the test data for test case id AT_IJ_NewApp_IDA_04")
 	public void user_076_get_the_test_data_for_test_case_id_at_ij_new_app_ida_04() throws Throwable {
-		customerIdentificationDetailsExecutionData = excelCustomerIdentificationExecutionData
-				.getTestdata("AT_IJ_NewApp_IDA_04");
+		customerIdentificationDetailsExecutionData = ijarahExecution.getTestdata("AT_IJ_NewApp_IDA_04");
 		customerIdentificationDetailsTestData = excelCustomerIdentificationTestData
 				.getTestdata(customerIdentificationDetailsExecutionData.get("dataSet_ID"));
 
@@ -147,8 +145,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 
 	@And("user_076 get the test data for test case id AT_IJ_NewApp_IDA_05")
 	public void user_076_get_the_test_data_for_test_case_id_at_ij_new_app_ida_05() throws Throwable {
-		customerIdentificationDetailsExecutionData = excelCustomerIdentificationExecutionData
-				.getTestdata("AT_IJ_NewApp_IDA_05");
+		customerIdentificationDetailsExecutionData = ijarahExecution.getTestdata("AT_IJ_NewApp_IDA_05");
 		customerIdentificationDetailsTestData = excelCustomerIdentificationTestData
 				.getTestdata(customerIdentificationDetailsExecutionData.get("dataSet_ID"));
 
@@ -156,8 +153,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 
 	@And("user_076 get the test data for test case id AT_IJ_NewApp_IDA_06")
 	public void user_076_get_the_test_data_for_test_case_id_at_ij_new_app_ida_06() throws Throwable {
-		customerIdentificationDetailsExecutionData = excelCustomerIdentificationExecutionData
-				.getTestdata("AT_IJ_NewApp_IDA_06");
+		customerIdentificationDetailsExecutionData = ijarahExecution.getTestdata("AT_IJ_NewApp_IDA_06");
 		customerIdentificationDetailsTestData = excelCustomerIdentificationTestData
 				.getTestdata(customerIdentificationDetailsExecutionData.get("dataSet_ID"));
 
@@ -171,7 +167,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 			try {
 				searchTextBox = javascriptHelper
 						.executeScriptWithWebElement(commonJSElements.getElement("mail_box_search_text"));
-				searchTextBox.sendKeys(customerIdentificationDetailsTestData.get("record_reference_number"));
+				searchTextBox.sendKeys(configFileReader.getIjarahRecordReferenceNumber());
 				break;
 			} catch (Exception e) {
 				if (i == 300) {
@@ -209,7 +205,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 									+ j + "].textContent")
 							.toString();
 					System.out.println("Number of record in mail box " + recordRefNumber);
-					if (recordRefNumber.equals(customerIdentificationDetailsTestData.get("record_reference_number"))) {
+					if (recordRefNumber.equals(configFileReader.getIjarahRecordReferenceNumber())) {
 						System.out.println("document.querySelectorAll('button[icon=\"pi pi-user-edit\"]')[" + j + "]");
 						// document.querySelectorAll('button[icon="pi pi-user-edit"]')[0]
 						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
@@ -364,9 +360,8 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 							&& (labelName.trim()).equalsIgnoreCase(("Customer Identification").trim())) {
 						if (j > 250) {
 							System.out.println("Inside final if condition");
-							javascriptHelper.scrollDownVertically();
-							javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
-									"document.querySelector('button[ng-reflect-icon=\"pi pi-plus\"]')"));
+							clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+									"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + i + "]"));
 						}
 						System.out.println("Inside final if condition");
 						System.out.println("Label Name " + labelName);
@@ -951,9 +946,10 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 				break;
 			} catch (Exception e) {
 				if (i > 550 && i < 600) {
-					javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+					clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
 							"document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]')["
 									+ indexOfListView + "].querySelector('button[icon=\"pi pi-pencil\"')"));
+					clicksAndActionsHelper.returnKey().sendKeys(Keys.PAGE_DOWN).build().perform();
 				}
 				if (i == 600) {
 					Assert.fail(e.getMessage());
@@ -1679,10 +1675,11 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 						.click();
 				if (i > 250) {
 					javascriptHelper.scrollDownVertically();
-					
-							javascriptHelper
-									.executeScriptWithWebElement(
-											customerIdentificationDetailsElements.getElement("additional_customer_info_tab")).sendKeys(Keys.PAGE_DOWN);
+
+					javascriptHelper
+							.executeScriptWithWebElement(
+									customerIdentificationDetailsElements.getElement("additional_customer_info_tab"))
+							.sendKeys(Keys.PAGE_DOWN);
 					javascriptHelper.executeScriptWithWebElement(
 							"document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]')["
 									+ indexOfListView + "].querySelector('div[aria-label=\"dropdown trigger\"]')")

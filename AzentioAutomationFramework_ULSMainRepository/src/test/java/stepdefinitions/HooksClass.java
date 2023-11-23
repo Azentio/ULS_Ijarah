@@ -14,6 +14,7 @@ import org.openqa.selenium.WebDriver;
 import com.aventstack.extentreports.Status;
 
 import Runner.NewExcelTestRunner;
+import dataProvider.ConfigFileReader;
 import dataProvider.ExcelData;
 import helper.ScreenshotHelper;
 import io.cucumber.java.After;
@@ -27,10 +28,11 @@ import utilities.ExtentTestManager;
 public class HooksClass extends BaseClass {
 	WebDriver driver;
 	String flag = "No";
-	String path = System.getProperty("user.dir") + "\\TestData\\ijaraTestData.xlsx";
-	ExcelData testExecution = new ExcelData(path, "newApp_identificationExetracker", "TestCase ID");
+	ConfigFileReader configFileReader= new ConfigFileReader();
+	String path = configFileReader.getTestDataFilePath();
+	ExcelData testExecution = new ExcelData(path, "Murabaha_ExecutionTracker", "TestCase ID");
 	Map<String, String> testExecutionData;
-	ExcelTest excelTest = new ExcelTest(path, "newApp_identificationExetracker", "TestCase ID");
+	ExcelTest excelTest = new ExcelTest(path, "Murabaha_ExecutionTracker", "TestCase ID");
 	List<String> testCaseTagsFromExcel = excelTest.getTestCaseTagsfromExcel();
 boolean excelRunnerStatus=false;
 	ScreenshotHelper screenshotHelper = new ScreenshotHelper(driver);

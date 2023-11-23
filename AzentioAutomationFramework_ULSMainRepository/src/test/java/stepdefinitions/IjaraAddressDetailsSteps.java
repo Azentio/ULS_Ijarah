@@ -29,8 +29,8 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 	WebDriver driver = BaseClass.driver;
 	ConfigFileReader configFileReader = new ConfigFileReader();
 	IjaraLogin ijaraLogin = new IjaraLogin();
-	String excelPath = System.getProperty("user.dir") + "\\TestData\\IjaraJSPaths.xlsx";
-	String excelTestDataPath = System.getProperty("user.dir") + "\\TestData\\ijaraTestData.xlsx";
+	String excelPath = configFileReader.getJSFilePath();
+	String excelTestDataPath = configFileReader.getTestDataFilePath();
 	// Ijarah_CommonFieldName
 	SoftAssert softAssert = new SoftAssert();
 	JSPaths commonJSPaths = new JSPaths(excelPath, "iJarah_CommonElements", "Ijarah_CommonFieldName", "JSPath");
@@ -1533,8 +1533,6 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 
 	@And("click on save button in address details screen")
 	public void click_on_save_button_in_address_details_screen() throws Throwable {
-
-		
 
 		for (int i = 0; i <= 100; i++) {
 			try {

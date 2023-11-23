@@ -9,8 +9,8 @@ And click on mail box
 And click on search box upon click on the mail box
 And click on search text box upon click the search button
 And get the test data for test case id AT_IJ_NewApp_AD_01
-And user_076 search the new application reference number in mail box for address details
-And user_076 select the new application stage record from mail box for address details
+And user_076 search the Ijarah new app record reference number
+And user_076 select the Ijarah new app record at mail box
 And user_076 click on additional customer info tab in new application stage
 And user_076 click on edit button customer personal information screen at new app stage
 And user_076 click on add button in address details at new app stage
@@ -53,8 +53,8 @@ And click on mail box
 And click on search box upon click on the mail box
 And click on search text box upon click the search button
 And get the test data for test case id AT_IJ_NewApp_AD_02
-And user_076 search the new application reference number in mail box for address details
-And user_076 select the new application stage record from mail box for address details
+And user_076 search the Ijarah new app record reference number
+And user_076 select the Ijarah new app record at mail box
 And user_076 click on additional customer info tab in new application stage
 And user_076 click on edit button customer personal information screen at new app stage
 And user_076 click on add button in address details at new app stage
@@ -79,8 +79,8 @@ And click on mail box
 And click on search box upon click on the mail box
 And click on search text box upon click the search button
 And get the test data for test case id AT_IJ_NewApp_AD_03
-And user_076 search the new application reference number in mail box for address details
-And user_076 select the new application stage record from mail box for address details
+And user_076 search the Ijarah new app record reference number
+And user_076 select the Ijarah new app record at mail box
 And user_076 click on additional customer info tab in new application stage
 And user_076 click on edit button customer personal information screen at new app stage
 And user_076 click on edit button of customer address details list view record in new app stage
@@ -99,8 +99,8 @@ And click on mail box
 And click on search box upon click on the mail box
 And click on search text box upon click the search button
 And get the test data for test case id AT_IJ_NewApp_AD_04
-And user_076 search the new application reference number in mail box for address details
-And user_076 select the new application stage record from mail box for address details
+And user_076 search the Ijarah new app record reference number
+And user_076 select the Ijarah new app record at mail box
 And user_076 click on additional customer info tab in new application stage
 And user_076 click on edit button customer personal information screen at new app stage
 And user_076 click on edit button of customer address details list view record in new app stage
@@ -126,8 +126,8 @@ And click on mail box
 And click on search box upon click on the mail box
 And click on search text box upon click the search button
 And get the test data for test case id AT_IJ_NewApp_AD_05
-And user_076 search the new application reference number in mail box for address details
-And user_076 select the new application stage record from mail box for address details
+And user_076 search the Ijarah new app record reference number
+And user_076 select the Ijarah new app record at mail box
 And user_076 click on additional customer info tab in new application stage
 And user_076 click on edit button customer personal information screen at new app stage
 And user_076 click on edit button of customer address details list view record in new app stage
@@ -151,8 +151,8 @@ And click on mail box
 And click on search box upon click on the mail box
 And click on search text box upon click the search button
 And get the test data for test case id AT_IJ_NewApp_AD_06
-And user_076 search the new application reference number in mail box for address details
-And user_076 select the new application stage record from mail box for address details
+And user_076 search the Ijarah new app record reference number
+And user_076 select the Ijarah new app record at mail box
 And user_076 click on additional customer info tab in new application stage
 And user_076 click on edit button customer personal information screen at new app stage
 And user_76 verify address details list view record should be readonly ot editable at new app stage

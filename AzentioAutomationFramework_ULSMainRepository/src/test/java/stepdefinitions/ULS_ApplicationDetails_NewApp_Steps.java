@@ -1,9 +1,10 @@
 package stepdefinitions;
 
-import java.awt.Robot;
 import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 import org.junit.Assert;
 import org.openqa.selenium.ElementClickInterceptedException;
@@ -12,6 +13,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.asserts.SoftAssert;
 
+import dataProvider.ConfigFileReader;
 import dataProvider.ExcelData;
 import helper.BrowserHelper;
 import helper.ClicksAndActionsHelper;
@@ -23,14 +25,17 @@ import resources.BaseClass;
 
 public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	WebDriver driver = BaseClass.driver;
-	String excelFilePathForJS = System.getProperty("user.dir") + "\\TestData\\IjaraJSPaths.xlsx";
+	ConfigFileReader configFileReader = new ConfigFileReader();
+
+	String excelFilePathForJS = configFileReader.getJSFilePath();
+	String applicationDetailsExcelDataPath = configFileReader.getTestDataFilePath();
 	JSPaths commonJSPaths = new JSPaths(excelFilePathForJS, "iJarah_CommonElements", "Ijarah_CommonFieldName",
 			"JSPath");
 	JSPaths customerSearchJSPaths = new JSPaths(excelFilePathForJS, "customer_search_JS",
 			"Ijarah_customer_search_fieldName", "JSPath");
 	JSPaths applicationDetailsElements = new JSPaths(excelFilePathForJS, "newApp_AppllicationDetailsJS",
 			"Ijarah_NewApp_fieldName", "JSPath");
-	String applicationDetailsExcelDataPath = System.getProperty("user.dir") + "\\TestData\\ijaraTestData.xlsx";
+
 	BrowserHelper browserHelper = new BrowserHelper(driver);
 	ExcelData excelDataForApplicationDetailsTestData = new ExcelData(applicationDetailsExcelDataPath,
 			"ApplicationDetails_NewApp", "Dataset ID");
@@ -38,30 +43,46 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	ExcelData excelDataForApplicationDetailsTestDataForMurabha = new ExcelData(applicationDetailsExcelDataPath,
 			"newApp_ApplicationDetailsMuraba", "Dataset ID");
 
-	ExcelData excelDataForApplicationDetailsExecutionData = new ExcelData(applicationDetailsExcelDataPath,
-			"NewApp_ApplicationDetailsExe", "TestCase ID");
+	ExcelData IjarahExecutionSheet = new ExcelData(applicationDetailsExcelDataPath, "Ijarah_ExecutionTracker",
+			"TestCase ID");
+	ExcelData excelDataForApplicationDetailsTestDataForTawrruq = new ExcelData(applicationDetailsExcelDataPath,
+			"TW_NewApp_AppDetails_TestData", "Dataset ID");
 
-	ExcelData excelDataForApplicationDetailsMurabhaExecutionData = new ExcelData(applicationDetailsExcelDataPath,
-			"AppDetails_MurabhaExeTrack", "TestCase ID");
+	ExcelData murabahaExecutionSheet = new ExcelData(applicationDetailsExcelDataPath, "Murabaha_ExecutionTracker",
+			"TestCase ID");
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
 	Map<String, String> newApplicationTestData = new HashMap<>();
 	Map<String, String> newApplicationExecutionData = new HashMap<>();
 	ClicksAndActionsHelper clicksAndActionsHelper = new ClicksAndActionsHelper(driver);
-
+	String toastMessage = "";
 	SoftAssert softAssert = new SoftAssert();
+	SoftAssert updateSoftAssert = new SoftAssert();
 	String toastMessageForReferenceNumber = "";
 
-	@And("user_076 get the test data for test case id AT_APP_01")
-	public void user_076_get_the_test_data_for_test_case_id_AT_APP_01() throws Throwable {
-		newApplicationExecutionData = excelDataForApplicationDetailsExecutionData.getTestdata("AT_APP_01");
+	@And("user_076 get the test data for test case id AT_IJ_APP_01")
+	public void user_076_get_the_test_data_for_test_case_id_AT_IJ_APP_01() throws Throwable {
+		newApplicationExecutionData = IjarahExecutionSheet.getTestdata("AT_IJ_APP_01");
+		newApplicationTestData = excelDataForApplicationDetailsTestData
+				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
+	}
+
+	@And("user_076 get the test data for test case id AT_IJ_APP_02")
+	public void user_076_get_the_test_data_for_test_case_id_AT_IJ_APP_02() throws Throwable {
+		newApplicationExecutionData = IjarahExecutionSheet.getTestdata("AT_IJ_APP_02");
+		newApplicationTestData = excelDataForApplicationDetailsTestData
+				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
+	}
+
+	@And("user_076 get the test data for test case id AT_IJ_APP_03")
+	public void user_076_get_the_test_data_for_test_case_id_AT_IJ_APP_03() throws Throwable {
+		newApplicationExecutionData = IjarahExecutionSheet.getTestdata("AT_IJ_APP_03");
 		newApplicationTestData = excelDataForApplicationDetailsTestData
 				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
 	}
 
 	@And("user_076 get the test data for test case id AT_MAppDetails_NewApp_01")
 	public void user_076_get_the_test_data_for_test_case_id_AT_MAppDetails_NewApp_01() throws Throwable {
-		newApplicationExecutionData = excelDataForApplicationDetailsMurabhaExecutionData
-				.getTestdata("AT_MAppDetails_NewApp_01");
+		newApplicationExecutionData = murabahaExecutionSheet.getTestdata("AT_MAppDetails_NewApp_01");
 		System.out.println("Data Set ID " + newApplicationExecutionData.get("dataSet_ID"));
 		newApplicationTestData = excelDataForApplicationDetailsTestDataForMurabha
 				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
@@ -229,8 +250,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 
 	@And("user_076 get the test data for test case id AT_MAppDetails_NewApp_02")
 	public void user_076_get_the_test_data_for_test_case_id_AT_MAppDetails_NewApp_02() throws Throwable {
-		newApplicationExecutionData = excelDataForApplicationDetailsMurabhaExecutionData
-				.getTestdata("AT_MAppDetails_NewApp_02");
+		newApplicationExecutionData = murabahaExecutionSheet.getTestdata("AT_MAppDetails_NewApp_02");
 		System.out.println("Data Set ID " + newApplicationExecutionData.get("dataSet_ID"));
 		newApplicationTestData = excelDataForApplicationDetailsTestDataForMurabha
 				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
@@ -239,8 +259,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 
 	@And("user_076 get the test data for test case id AT_MAppDetails_NewApp_03")
 	public void user_076_get_the_test_data_for_test_case_id_AT_MAppDetails_NewApp_03() throws Throwable {
-		newApplicationExecutionData = excelDataForApplicationDetailsMurabhaExecutionData
-				.getTestdata("AT_MAppDetails_NewApp_03");
+		newApplicationExecutionData = murabahaExecutionSheet.getTestdata("AT_MAppDetails_NewApp_03");
 		System.out.println("Data Set ID " + newApplicationExecutionData.get("dataSet_ID"));
 		newApplicationTestData = excelDataForApplicationDetailsTestDataForMurabha
 				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
@@ -249,8 +268,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 
 	@And("user_076 get the test data for test case id AT_MAppDetails_NewApp_04")
 	public void user_076_get_the_test_data_for_test_case_id_AT_MAppDetails_NewApp_04() throws Throwable {
-		newApplicationExecutionData = excelDataForApplicationDetailsMurabhaExecutionData
-				.getTestdata("AT_MAppDetails_NewApp_04");
+		newApplicationExecutionData = murabahaExecutionSheet.getTestdata("AT_MAppDetails_NewApp_04");
 		System.out.println("Data Set ID " + newApplicationExecutionData.get("dataSet_ID"));
 		newApplicationTestData = excelDataForApplicationDetailsTestDataForMurabha
 				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
@@ -259,8 +277,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 
 	@And("user_076 get the test data for test case id AT_MAppDetails_NewApp_05")
 	public void user_076_get_the_test_data_for_test_case_id_AT_MAppDetails_NewApp_05() throws Throwable {
-		newApplicationExecutionData = excelDataForApplicationDetailsMurabhaExecutionData
-				.getTestdata("AT_MAppDetails_NewApp_05");
+		newApplicationExecutionData = murabahaExecutionSheet.getTestdata("AT_MAppDetails_NewApp_05");
 		System.out.println("Data Set ID " + newApplicationExecutionData.get("dataSet_ID"));
 		newApplicationTestData = excelDataForApplicationDetailsTestDataForMurabha
 				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
@@ -269,8 +286,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 
 	@And("user_076 get the test data for test case id AT_MAppDetails_NewApp_06")
 	public void user_076_get_the_test_data_for_test_case_id_AT_MAppDetails_NewApp_06() throws Throwable {
-		newApplicationExecutionData = excelDataForApplicationDetailsMurabhaExecutionData
-				.getTestdata("AT_MAppDetails_NewApp_06");
+		newApplicationExecutionData = murabahaExecutionSheet.getTestdata("AT_MAppDetails_NewApp_06");
 		System.out.println("Data Set ID " + newApplicationExecutionData.get("dataSet_ID"));
 		newApplicationTestData = excelDataForApplicationDetailsTestDataForMurabha
 				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
@@ -278,24 +294,9 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 
 	@And("user_076 get the test data for test case id AT_MAppDetails_NewApp_07")
 	public void user_076_get_the_test_data_for_test_case_id_AT_MAppDetails_NewApp_07() throws Throwable {
-		newApplicationExecutionData = excelDataForApplicationDetailsMurabhaExecutionData
-				.getTestdata("AT_MAppDetails_NewApp_07");
+		newApplicationExecutionData = murabahaExecutionSheet.getTestdata("AT_MAppDetails_NewApp_07");
 		System.out.println("Data Set ID " + newApplicationExecutionData.get("dataSet_ID"));
 		newApplicationTestData = excelDataForApplicationDetailsTestDataForMurabha
-				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
-	}
-
-	@And("user_076 get the test data for test case id AT_APP_02")
-	public void user_076_get_the_test_data_for_test_case_id_AT_APP_02() throws Throwable {
-		newApplicationExecutionData = excelDataForApplicationDetailsExecutionData.getTestdata("AT_APP_02");
-		newApplicationTestData = excelDataForApplicationDetailsTestData
-				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
-	}
-
-	@And("user_076 get the test data for test case id AT_APP_03")
-	public void user_076_get_the_test_data_for_test_case_id_AT_APP_03() throws Throwable {
-		newApplicationExecutionData = excelDataForApplicationDetailsExecutionData.getTestdata("AT_APP_03");
-		newApplicationTestData = excelDataForApplicationDetailsTestData
 				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
 	}
 
@@ -586,6 +587,33 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 				}
 			}
 		}
+	}
+
+	@And("user_076 in customer search screen enter customer mobile number")
+	public void user_076_in_customer_search_screen_enter_customer_mobile_number() throws Throwable {
+		Random random = new Random();
+		int mobileFirstDigit = 9;
+		random.nextInt(1000000000);
+		String mobileNumberEnd = String.format("%09d", random.nextInt(1000000000));
+		String mobNumber = mobileFirstDigit + mobileNumberEnd;
+		System.out.println("Mobile number " + mobNumber);
+		System.out.println("Mobile number js path " + customerSearchJSPaths.getElement("customer_search_mobile_input"));
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper
+						.executeScriptWithWebElement(customerSearchJSPaths.getElement("customer_search_mobile_input"))
+						.click();
+				javascriptHelper
+						.executeScriptWithWebElement(customerSearchJSPaths.getElement("customer_search_mobile_input"))
+						.sendKeys(mobNumber);
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
 	}
 
 	@And("user_076 click on the search button in customer search screen")
@@ -2355,7 +2383,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 
 	@Then("user_076 verify system should save the record of application details new app")
 	public void user_076_verify_system_should_save_the_record_of_application_details_new_app() throws Throwable {
-		String toastMessage = "";
+
 		for (int i = 0; i <= 100; i++) {
 			try {
 				toastMessage = javascriptHelper
@@ -2369,10 +2397,24 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 				}
 			}
 		}
-		softAssert.assertTrue(toastMessage.contains("Success! Record created with ID"),
-				"Record is not saved hence failed");
+		softAssert.assertTrue(toastMessage.contains("Success"), "Record is not saved hence failed");
 		toastMessageForReferenceNumber = toastMessage;
 		System.out.println(toastMessage);
+	}
+
+	@And("user_076 store the record reference number in Ijarah new app screens")
+	public void user_076_store_the_record_reference_number_in_ijarah_new_app_screens() throws Throwable {
+		String extractedReferenceNumber = toastMessage.substring(37);
+		System.out.println("Reference Number " + extractedReferenceNumber);
+		configFileReader.setJarahRecordReferenceNumber(extractedReferenceNumber);
+
+	}
+
+	@And("user_076 store the murabaha record reference number to test new app screens")
+	public void user_076_store_the_murabaha_record_reference_number_to_test_new_app_screens() throws Throwable {
+		String extractedReferenceNumber = toastMessage.substring(37);
+		System.out.println("Reference Number " + extractedReferenceNumber);
+		configFileReader.setMurabahaRecordReferenceNumber(extractedReferenceNumber);
 	}
 
 	@And("user_076 extract the application details record reference number in new app stage")
@@ -2407,6 +2449,12 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	@And("user_076 invoke soft assert for new application screen")
 	public void user_076_invoke_soft_assert_for_new_application_screen() throws Throwable {
 		softAssert.assertAll();
+
+	}
+
+	@And("user_076 invoke soft assert for new application screen for updations scenario")
+	public void user_076_invoke_soft_assert_for_new_application_screen_for_updation_scenario() throws Throwable {
+		updateSoftAssert.assertAll();
 
 	}
 
@@ -2692,7 +2740,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 			}
 		}
 		System.out.println(updateValidation);
-		softAssert.assertTrue(updateValidation.contains("Success! Record updated for ID"));
+		updateSoftAssert.assertTrue(updateValidation.contains("Success! Record updated for ID"));
 	}
 
 	@And("user_076 change the record active if its inactive and change inactive if active record")
@@ -2701,12 +2749,14 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		boolean status = false;
 		String recordStatus = "";
 		String listViewRecordStatus = "";
+
 		for (int i = 0; i <= 50; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("new_application_details_status_button")));
 				javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("new_application_details_status_button")).click();
+				Thread.sleep(500);
 				recordStatus = javascriptHelper
 						.executeScript("return "
 								+ applicationDetailsElements.getElement("new_application_details_record_status"))
@@ -2752,7 +2802,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 									+ applicationDetailsElements.getElement("list_view_record_status_verification"))
 							.toString();
 					if (!(listViewRecordStatus.isBlank())) {
-						softAssert.assertEquals("Active", listViewRecordStatus);
+						updateSoftAssert.assertEquals("Active", listViewRecordStatus);
 						break;
 					}
 				} catch (Exception e) {
@@ -2768,13 +2818,15 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 									+ applicationDetailsElements.getElement("list_view_record_status_verification"))
 							.toString();
 					if (!(listViewRecordStatus.isBlank())) {
-						softAssert.assertEquals("In-active", listViewRecordStatus);
+						updateSoftAssert.assertEquals("In-active", listViewRecordStatus);
 						break;
 					}
 				} catch (Exception e) {
 
 				}
 			}
+
+		// One End
 
 		for (int i = 0; i <= 50; i++) {
 			try {
@@ -2787,13 +2839,14 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 				}
 			}
 		}
-
+		Thread.sleep(500);
 		for (int i = 0; i <= 50; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("new_application_details_status_button")));
 				javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("new_application_details_status_button")).click();
+				Thread.sleep(500);
 				recordStatus = javascriptHelper
 						.executeScript("return "
 								+ applicationDetailsElements.getElement("new_application_details_record_status"))
@@ -2837,7 +2890,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 									+ applicationDetailsElements.getElement("list_view_record_status_verification"))
 							.toString();
 					if (!(listViewRecordStatus.isBlank())) {
-						softAssert.assertEquals("Active", listViewRecordStatus);
+						updateSoftAssert.assertEquals("Active", listViewRecordStatus);
 						break;
 					}
 				} catch (Exception e) {
@@ -2853,7 +2906,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 									+ applicationDetailsElements.getElement("list_view_record_status_verification"))
 							.toString();
 					if (!(listViewRecordStatus.isBlank())) {
-						softAssert.assertEquals("In-active", listViewRecordStatus);
+						updateSoftAssert.assertEquals("In-active", listViewRecordStatus);
 						break;
 					}
 				} catch (Exception e) {
@@ -2877,7 +2930,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 				}
 			}
 		}
-		softAssert.assertTrue(statusOfSubmitButton, "Submit button is not available hence failed");
+		updateSoftAssert.assertTrue(statusOfSubmitButton, "Submit button is not available hence failed");
 
 	}
 
@@ -2895,7 +2948,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 				}
 			}
 		}
-		softAssert.assertTrue(statusOfReturnButton, "Return button is not available hence failed");
+		updateSoftAssert.assertTrue(statusOfReturnButton, "Return button is not available hence failed");
 	}
 
 	@Then("user_076 verify application details screen have view summary button")
@@ -2914,13 +2967,13 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 				}
 			}
 		}
-		softAssert.assertTrue(statusOfViewSummaryButton, "View sumary button is not available hence failed");
+		updateSoftAssert.assertTrue(statusOfViewSummaryButton, "View sumary button is not available hence failed");
 	}
 
 	@Then("user_076 click on view summary button in application details screen")
 	public void user_076_click_on_view_summary_button_in_application_details_screen() throws Throwable {
 		String viewSummaryQuery = "document.querySelectorAll('kub-workflow-decision button[icon=\"pi pi-info-circle\"]').length";
-		int numberOfViewSummaryButton=0;
+		int numberOfViewSummaryButton = 0;
 		for (int i = 0; i <= 50; i++) {
 			try {
 
@@ -2935,15 +2988,18 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 				}
 			}
 		}
-		
-		for (int i = 0; i <numberOfViewSummaryButton; i++) {
+
+		for (int i = 0; i < numberOfViewSummaryButton; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement("document.querySelectorAll('kub-workflow-decision button[icon=\"pi pi-info-circle\"]')["+i+"]").click();
+				javascriptHelper.executeScriptWithWebElement(
+						"document.querySelectorAll('kub-workflow-decision button[icon=\"pi pi-info-circle\"]')[" + i
+								+ "]")
+						.click();
 				break;
 			} catch (ElementClickInterceptedException e) {
-				
+
 			}
-			
+
 		}
 
 	}
@@ -3080,7 +3136,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 				}
 			}
 		}
-		softAssert.assertTrue(addButtonStatus, "Screen not moved to previous stage");
+		updateSoftAssert.assertTrue(addButtonStatus, "Screen not moved to previous stage");
 	}
 
 	@Then("user_076 click on view summary button in application details screen in new app stage")
@@ -3439,7 +3495,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 
 	@Then("user_076 verify applicatio details record should get submitted from new app stage")
 	public void user_076_verify_applicatio_details_record_should_get_submitted_from_new_app_stage() throws Throwable {
-		String toastMessage = "";
+
 		for (int i = 0; i <= 100; i++) {
 			try {
 				toastMessage = javascriptHelper

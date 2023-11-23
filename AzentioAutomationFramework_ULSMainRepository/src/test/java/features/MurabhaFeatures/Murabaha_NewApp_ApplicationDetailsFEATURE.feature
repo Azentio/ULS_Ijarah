@@ -5,19 +5,18 @@ Given navigate the IJARA URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
-And click on mail box
-And click on search box upon click on the mail box
-And click on search text box upon click the search button
+And user_076 click on menu bar in uls transaction screen
 And user_076 get the test data for test case id AT_MAppDetails_NewApp_01
-And user_076 search the new application stage record reference number for application details record
-And user_076 select the new application stage record from mail box for application details record
-And user_076 click on save button while open the application details record
+And user_076 click on transactions module
+And user_076 click on applicationn manager feature
+And user_076 click on application details screen temp view
 And user_076 click on add button of application details record
 And user_076 in customer search screen select the customer type
 And user_076 in customer search screen enter customer name
 And user_076 in custommer search screen select ID type
 And user_076 in customer search screen enter id number
 And user_076 in customer search screen enter date of birth of the customer
+And user_076 in customer search screen enter customer mobile number
 And user_076 click on the search button in customer search screen
 And user_076 click on create new request buttton
 Then user_076 verify save button and back buttons are visible in new application screen
@@ -45,6 +44,7 @@ Then user_076 verify reference entity field should be non mandatory editable loo
 Then user_076 verify reference code field should be non mandatory editable textbox
 And user_076 click on save button in application details new app record
 Then user_076 verify system should save the record of application details new app
+And user_076 store the murabaha record reference number to test new app screens
 Then logout from the ULS Application
 And user_076 invoke soft assert for new application screen
 
@@ -58,15 +58,16 @@ And click on mail box
 And click on search box upon click on the mail box
 And click on search text box upon click the search button
 And user_076 get the test data for test case id AT_MAppDetails_NewApp_02
-And user_076 search the new application stage record reference number for application details record
-And user_076 select the new application stage record from mail box for application details record
-And user_076 click on save button while open the application details record
+And user_076 click on transactions module
+And user_076 click on applicationn manager feature
+And user_076 click on application details screen temp view
 And user_076 click on add button of application details record
 And user_076 in customer search screen select the customer type
 And user_076 in customer search screen enter customer name
 And user_076 in custommer search screen select ID type
 And user_076 in customer search screen enter id number
 And user_076 in customer search screen enter date of birth of the customer
+And user_076 in customer search screen enter customer mobile number
 And user_076 click on the search button in customer search screen
 And user_076 click on create new request buttton
 And user_076 click on save button without enter the mandatory field in application details screen
@@ -86,13 +87,11 @@ Given navigate the IJARA URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
-And click on mail box
-And user_076 search the new application stage record reference number for application details record
-And user_076 select the new application stage record from mail box for application details record
 And user_076 get the test data for test case id AT_MAppDetails_NewApp_03
-And user_076 search the new application stage record reference number
-And user_076 select the new application stage record from mail box
-And user_076 click on save button while open the application details record
+And user_076 click on menu bar in uls transaction screen
+And user_076 click on transactions module
+And user_076 click on applicationn manager feature
+And user_076 click on application details screen temp view
 And user_076 click on list view edit button in application details record at new app stage
 And user_076 update the application details record with valid input at new app stage
 And user_076 click on save button in application details new app record
@@ -107,13 +106,11 @@ Given navigate the IJARA URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
-And click on mail box
-And click on search box upon click on the mail box
-And click on search text box upon click the search button
+And user_076 click on menu bar in uls transaction screen
+And user_076 click on transactions module
+And user_076 click on applicationn manager feature
+And user_076 click on application details screen temp view
 And user_076 get the test data for test case id AT_MAppDetails_NewApp_04
-And user_076 search the new application stage record reference number for application details record
-And user_076 select the new application stage record from mail box for application details record
-And user_076 click on save button while open the application details record
 And user_076 click on list view edit button in application details record at new app stage
 And user_076 make any mandatory field blank in application details record in new app stage
 And user_076 click on save button without enter the mandatory field in application details screen
@@ -148,6 +145,7 @@ And user_076 in customer search screen enter customer name
 And user_076 in custommer search screen select ID type
 And user_076 in customer search screen enter id number
 And user_076 in customer search screen enter date of birth of the customer
+And user_076 in customer search screen enter customer mobile number
 And user_076 click on the search button in customer search screen
 And user_076 click on create new request buttton
 Then user_076 verify product field should be mandatory editable dropdown

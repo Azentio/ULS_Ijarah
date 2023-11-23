@@ -49,6 +49,13 @@ public class ClicksAndActionsHelper {
 		// "and clicked" +clickingelement);
 	}
 
+	public Actions returnKey() {
+		Actions actions = new Actions(driver);
+
+		return actions;
+
+	}
+
 	public void rightClick(WebElement element) {
 
 		Actions action = new Actions(driver);
@@ -70,21 +77,53 @@ public class ClicksAndActionsHelper {
 		actions.dragAndDrop(DragElement, DropElement);
 		// ExtentTestManager.getTest().info("Dragged and droped");
 	}
-	
-	
-	
+
+	// scrollIntoView
+	public void scrollIntoView(WebElement element) {
+		Actions actions = new Actions(driver);
+		actions.scrollToElement(element).build().perform();
+		;
+	}
+
+	public void scrollByIndex() {
+		Actions actions = new Actions(driver);
+		actions.scrollByAmount(100, 0).build().perform();
+	}
 
 	public void jsSelectUsingText(String dropdownValue) {
+		javascriptHelper = new JavascriptHelper(driver);
 		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
 		String dropdownLength = "";
 		boolean isDropdownValueSelected = false;
+		String dropdownOpenedQuery = "document.querySelector('ion-select-popover ion-list')";
+		String dropdownOpenQueryTwo = "document.querySelector('ion-select-popover ion-list').innerText";
+		boolean isDropdownOpened = false;
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				System.out.println("I value " + i);
+				isDropdownOpened = javascriptHelper.executeScriptWithWebElement(dropdownOpenedQuery).isDisplayed();
+				System.out
+						.println("Dropdown Value " + javascriptHelper.executeScript("return " + dropdownOpenQueryTwo));
+				if (isDropdownOpened == true) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 1000) {
+					System.err.println("Dropdown is not getting opened");
+					e.printStackTrace();
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
 		String dropdownString = "";
-		javascriptHelper = new JavascriptHelper(driver);
+
 		for (int i = 0; i <= 300; i++) {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
-				
+
 				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+					System.out.println("Dropdown Length " + dropdownLength);
 					break;
 				}
 			} catch (Exception e) {
@@ -98,7 +137,7 @@ public class ClicksAndActionsHelper {
 
 			for (int l = 0; l <= 300; l++) {
 				try {
-				
+
 					dropdownString = javascriptHelper.executeScript(
 							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
 							.toString();
@@ -118,7 +157,7 @@ public class ClicksAndActionsHelper {
 					break;
 				}
 			}
-			
+
 			if ((dropdownString.trim()).equalsIgnoreCase((dropdownValue).trim())) {
 
 				for (int k = 0; k <= 300; k++) {

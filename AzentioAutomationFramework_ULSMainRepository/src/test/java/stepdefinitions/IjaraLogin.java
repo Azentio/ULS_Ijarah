@@ -7,14 +7,16 @@ import java.util.Map;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
+import dataProvider.ConfigFileReader;
 import dataProvider.ExcelData;
 import helper.JavascriptHelper;
 import pageobjects.JSPaths;
 import resources.BaseClass;
 
 public class IjaraLogin extends BaseClass {
-	String excelPath = System.getProperty("user.dir") + "\\TestData\\IjaraJSPaths.xlsx";
-	String excelTestDataPath = System.getProperty("user.dir") + "\\TestData\\ijaraTestData.xlsx";
+	ConfigFileReader configFileReader = new ConfigFileReader();
+	String excelPath = configFileReader.getJSFilePath();
+	String excelTestDataPath = configFileReader.getTestDataFilePath();
 	WebDriver driver = BaseClass.driver;
 	JSPaths jsPaths = new JSPaths(excelPath, "Ijara_loginElements", "Ijara_LoginFieldName", "JSPath");
 	ExcelData exelData = new ExcelData(excelTestDataPath, "ijara_LoginCredentials", "UserType");
