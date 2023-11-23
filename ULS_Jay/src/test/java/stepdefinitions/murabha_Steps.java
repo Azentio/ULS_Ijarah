@@ -63,7 +63,7 @@ public class murabha_Steps {
 	
 	//-------------------***************************************************-------------------------------------
 	
-	@And("User_{int} click Living Expenses Screen in App Data Entery")
+	@And("User_610 click Living Expenses Screen in App Data Entery")
 	public void user_click_living_expenses_screen_in_app_data_entery(Integer int1) throws Throwable {
 		
 		for (int i = 0; i < 200; i++) {
@@ -79,7 +79,7 @@ public class murabha_Steps {
        //Thread.sleep(4000);
 	}
 	
-	@And("User_{int} verify the system not allow user to do a modification with invalid data Spouse Salary")
+	@And("User_610 verify the system not allow user to do a modification with invalid data Spouse Salary")
 	public void user_verify_the_system_not_allow_user_to_do_a_modification_with_invalid_data_spouse_salary(Integer int1) throws Throwable {
 
 		for (int i = 0; i < 200; i++) {
@@ -108,7 +108,7 @@ public class murabha_Steps {
 	 
 	}
 	
-	@And("User_{int} save button and verify the success message in murabha")
+	@And("User_610 save button and verify the success message in murabha")
 	public void user_save_button_and_verify_the_success_message_in_murabha(Integer int1) {
 	    
 		
@@ -143,7 +143,7 @@ public class murabha_Steps {
 	//----------------------  @AT_MU_EMPD_07 murabha App Data Entery Employement Details   
 	
 	
-	@And("User_{int} click the Customer Financials Screen")
+	@And("User_610 click the Customer Financials Screen")
 	public void user_click_the_customer_financials_screen(Integer int1) {
 		for (int i = 0; i < 200; i++) {
 			try {
@@ -158,7 +158,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} click Edit button")
+	@And("User_610 click Edit button")
 	public void user_click_edit_button(Integer int1) {
 		for (int i = 0; i < 200; i++) {
 			try {
@@ -173,7 +173,7 @@ public class murabha_Steps {
 	 	    
 	}
 
-	@And("User_{int} click the add button under Customer Employment Details")
+	@And("User_610 click the add button under Customer Employment Details")
 	public void user_click_the_add_button_under_customer_employment_details(Integer int1) throws Throwable {
 		for (int i = 0; i < 200; i++) {
 			try {
@@ -188,7 +188,7 @@ public class murabha_Steps {
 	    Thread.sleep(5020);
 	}
 
-	@And("User_{int} select nature of employment")
+	@And("User_610 select nature of employment")
 	public void user_select_nature_of_employment(Integer int1) throws Throwable {
 		for (int i = 0; i < 200; i++) {
 			try {
@@ -277,7 +277,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} select nature of period")
+	@And("User_610 select nature of period")
 	public void user_select_nature_of_period(Integer int1) throws Throwable {
 		for (int i = 0; i < 200; i++) {
 			try {
@@ -366,7 +366,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} enter employer name")
+	@And("User_610 enter employer name")
 	public void user_enter_employer_name(Integer int1) throws Throwable {
 		Thread.sleep(500);
 		for (int i = 0; i < 200; i++) {
@@ -384,7 +384,7 @@ public class murabha_Steps {
 			    
 	}
 
-	@And("User_{int} enter employee ID")
+	@And("User_610 enter employee ID")
 	public void user_enter_employee_id(Integer int1) throws Throwable {
 		for (int i = 0; i < 200; i++) {
 			try {
@@ -401,7 +401,7 @@ public class murabha_Steps {
 		    
 	}
 
-	@And("User_{int} select the Data Of Joining")
+	@And("User_610 select the Data Of Joining")
 	public void user_select_the_data_of_joining(Integer int1) throws Throwable {
 		for (int i = 0; i < 200; i++) {
 			try {
@@ -429,7 +429,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} select Employment type")
+	@And("User_610 select Employment type")
 	public void user_select_employment_type(Integer int1) throws Throwable {
 		
 		//javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("employementType_61")));
@@ -520,7 +520,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} select Share Holder Percentage")
+	@And("User_610 select Share Holder Percentage")
 	public void user_select_share_holder_percentage(Integer int1) {
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("shareHolderPercentage_610")));
 		
@@ -538,7 +538,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} enter the Total Experience")
+	@And("User_610 enter the Total Experience")
 	public void user_enter_the_total_experience(Integer int1) {
 	//	WebElement totalExp1 = javascriptHelper.executeScriptWithWebElement("document.querySelector('[id=\"totalExperience\"] ion-label')");
 //		WebElement totalEx = javascriptHelper.executeScriptWithWebElement("document.querySelector('[id=\"totalExperience\"]')");
@@ -567,7 +567,7 @@ public class murabha_Steps {
 		}
 	}
 
-	@And("User_{int} scroll up and view customer employment")
+	@And("User_610 scroll up and view customer employment")
 	public void user_scroll_up_and_view_customer_employment(Integer int1) throws Throwable {
 		
 				
@@ -583,7 +583,7 @@ public class murabha_Steps {
 		}
 	    	}
 
-	@And("User_{int} verify the confirmation message")
+	@And("User_610 verify the confirmation message")
 	public void user_verify_the_confirmation_message(Integer int1) {
 		
 		for (int i = 0; i < 200; i++) {
@@ -613,7 +613,7 @@ public class murabha_Steps {
 	
 	//-----------  @AT_MU_EMPD_08
 	
-	@And("User_{int} blank validation message")
+	@And("User_610 blank validation message")
 	public void user_blank_validation_message(Integer int1) {
 		for (int i = 0; i < 200; i++) {
 			try {
@@ -639,7 +639,7 @@ public class murabha_Steps {
 		}
 }
 
-	@And("User_{int} verify the enter special characters value proper validation message")
+	@And("User_610 verify the enter special characters value proper validation message")
 	public void user_verify_the_enter_special_characters_value_proper_validation_message(Integer int1) throws Throwable {
 	    Thread.sleep(2000);
 	    
@@ -682,14 +682,14 @@ public class murabha_Steps {
 	
 	//------------------ @AT_MU_EMPD_09
 	
-	@And("User_{int} verify the list view under Customer Employment Details")
+	@And("User_610 verify the list view under Customer Employment Details")
 	public void user_verify_the_list_view_under_customer_employment_details(Integer int1) {
 	    
 	}
 	
 	//------------  -@AT_MU_QA_01
 	
-	@And("User_{int} click Quatation Info screen")
+	@And("User_610 click Quatation Info screen")
 	public void user_click_quatation_info_screen(Integer int1) {
 		for (int b = 0; b < 300; b++) {
 			try {
@@ -703,7 +703,7 @@ public class murabha_Steps {
 		}
 	}
 
-	@And("User_{int} verify the field Insurance Company, Base Premium ,Vat on Base Premium")
+	@And("User_610 verify the field Insurance Company, Base Premium ,Vat on Base Premium")
 	public void user_verify_the_field_insurance_company_base_premium_vat_on_base_premium(Integer int1) {
 		for (int j = 0; j < 200; j++) {
 			try {
@@ -742,7 +742,7 @@ public class murabha_Steps {
 		}
 	}
 
-	@And("User_{int} verify the field Net Base Premium , Total Discount , Expiry Date , Quatatio Reference Number")
+	@And("User_610 verify the field Net Base Premium , Total Discount , Expiry Date , Quatatio Reference Number")
 	public void user_verify_the_field_net_base_premium_total_discount_expiry_date_quatatio_reference_number(Integer int1) {
 	    
 		for (int j = 0; j < 200; j++) {
@@ -797,7 +797,7 @@ public class murabha_Steps {
 	
 	//---------------------- @AT_MU_QA_02
 	
-	@And("User_{int} verify the field Insurance Company")
+	@And("User_610 verify the field Insurance Company")
 	public void user_verify_the_field_insurance_company(Integer int1) {
 		for (int j = 0; j < 200; j++) {
 			try {
@@ -813,7 +813,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the field Base Premium")
+	@And("User_610 verify the field Base Premium")
 	public void user_verify_the_field_base_premium(Integer int1) {
 		for (int j = 0; j < 200; j++) {
 			try {
@@ -829,7 +829,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the field Vat On Base Premium")
+	@And("User_610 verify the field Vat On Base Premium")
 	public void user_verify_the_field_vat_on_base_premium(Integer int1) {
 		for (int j = 0; j < 200; j++) {
 			try {
@@ -848,7 +848,7 @@ public class murabha_Steps {
 	
 	//-----------------@AT_MU_QA_03
 	
-	@And("User_{int} verify the field Net Base Premium")
+	@And("User_610 verify the field Net Base Premium")
 	public void user_verify_the_field_net_base_premium(Integer int1) {
 		for (int j = 0; j < 200; j++) {
 			try {
@@ -863,7 +863,7 @@ public class murabha_Steps {
 		}
 	}
 
-	@And("User_{int} verify the field Total Discount")
+	@And("User_610 verify the field Total Discount")
 	public void user_verify_the_field_total_discount(Integer int1) {
 		for (int j = 0; j < 200; j++) {
 			try {
@@ -878,7 +878,7 @@ public class murabha_Steps {
 		}
 	}
 
-	@And("User_{int} verify the field Expiry Date")
+	@And("User_610 verify the field Expiry Date")
 	public void user_verify_the_field_expiry_date(Integer int1) {
 		for (int j = 0; j < 200; j++) {
 			try {
@@ -895,7 +895,7 @@ public class murabha_Steps {
 	
 	//-------------------@AT_MU_QA_04
 	
-	@And("User_{int} verify the field Quatation Reference Number")
+	@And("User_610 verify the field Quatation Reference Number")
 	public void user_verify_the_field_quatation_reference_number(Integer int1) {
 		for (int j = 0; j < 200; j++) {
 			try {
@@ -911,7 +911,7 @@ public class murabha_Steps {
 	    
 	}
 	
-	@And("User_{int} click search button and enter matching data")
+	@And("User_610 click search button and enter matching data")
 	public void user_click_search_button_and_enter_matching_data(Integer int1) throws Throwable {		
 		//---webelement
 //		Thread.sleep(2000);		
@@ -954,7 +954,7 @@ public class murabha_Steps {
 		
 		}
 
-	@And("User_{int} click search button and enter mismatching data")
+	@And("User_610 click search button and enter mismatching data")
 	public void user_click_search_button_and_enter_mismatching_data(Integer int1) {
 		for (int i = 0; i < 600; i++) {
 			try {
@@ -983,7 +983,7 @@ public class murabha_Steps {
 		
 	}
 
-	@And("User_{int} verify the PDF button")
+	@And("User_610 verify the PDF button")
 	public void user_verify_the_pdf_button(Integer int1) {
 	    
 	}
