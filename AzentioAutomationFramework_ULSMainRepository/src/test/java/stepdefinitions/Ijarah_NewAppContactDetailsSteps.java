@@ -38,7 +38,10 @@ public class Ijarah_NewAppContactDetailsSteps extends BaseClass {
 			"Dataset ID");
 	ExcelData ijarahExecutionSheet = new ExcelData(excelTestDataPath, "Ijarah_ExecutionTracker", "TestCase ID");
 	ExcelData murabahaExecutionSheet = new ExcelData(excelTestDataPath, "Murabaha_ExecutionTracker", "TestCase ID");
+	ExcelData tawruqqExecutionSheet = new ExcelData(excelTestDataPath, "Tawruqq_ExecutionTracker", "TestCase ID");
 	ExcelData excelDataForMurabahaContactDetails = new ExcelData(excelTestDataPath, "M_NewApp_CD_TestData",
+			"Dataset ID");
+	ExcelData excelDataForTawruqqContactDetails = new ExcelData(excelTestDataPath, "TW_ContDetails_TestData",
 			"Dataset ID");
 	Map<String, String> contactDetailsTestData = new HashMap<>();
 	Map<String, String> contactDetailsExecutionData = new HashMap<>();
@@ -93,6 +96,63 @@ public class Ijarah_NewAppContactDetailsSteps extends BaseClass {
 		contactDetailsExecutionData = murabahaExecutionSheet.getTestdata("AT_NewApp_M_CD_01");
 		System.out.println(contactDetailsExecutionData.get("dataSet_ID"));
 		contactDetailsTestData = excelDataForMurabahaContactDetails
+				.getTestdata(contactDetailsExecutionData.get("dataSet_ID"));
+	}
+
+	// AT_TW_NewApp_CD_01
+	@And("user_076 get the test data for the test case ID AT_TW_NewApp_CD_01")
+	public void user_076_get_the_test_data_for_the_test_case_id_AT_TW_NewApp_CD_01() throws Throwable {
+		contactDetailsExecutionData = tawruqqExecutionSheet.getTestdata("AT_TW_NewApp_CD_01");
+		System.out.println(contactDetailsExecutionData.get("dataSet_ID"));
+		contactDetailsTestData = excelDataForTawruqqContactDetails
+				.getTestdata(contactDetailsExecutionData.get("dataSet_ID"));
+	}
+
+	@And("user_076 get the test data for the test case ID AT_TW_NewApp_CD_02")
+	public void user_076_get_the_test_data_for_the_test_case_id_AT_TW_NewApp_CD_02() throws Throwable {
+		contactDetailsExecutionData = tawruqqExecutionSheet.getTestdata("AT_TW_NewApp_CD_02");
+		System.out.println(contactDetailsExecutionData.get("dataSet_ID"));
+		contactDetailsTestData = excelDataForTawruqqContactDetails
+				.getTestdata(contactDetailsExecutionData.get("dataSet_ID"));
+	}
+
+	@And("user_076 get the test data for the test case ID AT_TW_NewApp_CD_03")
+	public void user_076_get_the_test_data_for_the_test_case_id_AT_TW_NewApp_CD_03() throws Throwable {
+		contactDetailsExecutionData = tawruqqExecutionSheet.getTestdata("AT_TW_NewApp_CD_03");
+		System.out.println(contactDetailsExecutionData.get("dataSet_ID"));
+		contactDetailsTestData = excelDataForTawruqqContactDetails
+				.getTestdata(contactDetailsExecutionData.get("dataSet_ID"));
+	}
+
+	@And("user_076 get the test data for the test case ID AT_TW_NewApp_CD_04")
+	public void user_076_get_the_test_data_for_the_test_case_id_AT_TW_NewApp_CD_04() throws Throwable {
+		contactDetailsExecutionData = tawruqqExecutionSheet.getTestdata("AT_TW_NewApp_CD_04");
+		System.out.println(contactDetailsExecutionData.get("dataSet_ID"));
+		contactDetailsTestData = excelDataForTawruqqContactDetails
+				.getTestdata(contactDetailsExecutionData.get("dataSet_ID"));
+	}
+
+	@And("user_076 get the test data for the test case ID AT_TW_NewApp_CD_05")
+	public void user_076_get_the_test_data_for_the_test_case_id_AT_TW_NewApp_CD_05() throws Throwable {
+		contactDetailsExecutionData = tawruqqExecutionSheet.getTestdata("AT_TW_NewApp_CD_05");
+		System.out.println(contactDetailsExecutionData.get("dataSet_ID"));
+		contactDetailsTestData = excelDataForTawruqqContactDetails
+				.getTestdata(contactDetailsExecutionData.get("dataSet_ID"));
+	}
+
+	@And("user_076 get the test data for the test case ID AT_TW_NewApp_CD_06")
+	public void user_076_get_the_test_data_for_the_test_case_id_AT_TW_NewApp_CD_06() throws Throwable {
+		contactDetailsExecutionData = tawruqqExecutionSheet.getTestdata("AT_TW_NewApp_CD_06");
+		System.out.println(contactDetailsExecutionData.get("dataSet_ID"));
+		contactDetailsTestData = excelDataForTawruqqContactDetails
+				.getTestdata(contactDetailsExecutionData.get("dataSet_ID"));
+	}
+
+	@And("user_076 get the test data for the test case ID AT_TW_NewApp_CD_07")
+	public void user_076_get_the_test_data_for_the_test_case_id_AT_TW_NewApp_CD_07() throws Throwable {
+		contactDetailsExecutionData = tawruqqExecutionSheet.getTestdata("AT_TW_NewApp_CD_07");
+		System.out.println(contactDetailsExecutionData.get("dataSet_ID"));
+		contactDetailsTestData = excelDataForTawruqqContactDetails
 				.getTestdata(contactDetailsExecutionData.get("dataSet_ID"));
 	}
 
@@ -332,17 +392,25 @@ public class Ijarah_NewAppContactDetailsSteps extends BaseClass {
 		}
 		for (int i = 0; i <= 600; i++) {
 			try {
+				if (i < 500) {
+					javascriptHelper.executeScriptWithWebElement(
+							"document.querySelectorAll('ion-col[class=\"p-2 md hydrated\"]')[" + indexOfListView
+									+ "].querySelector('button[icon=\"pi pi-pencil\"')")
+							.click();
+				}
+				if (i > 550 && i < 600) {
+					clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+							"document.querySelectorAll('ion-col[class=\"p-2 md hydrated\"]')[" + indexOfListView
+									+ "].querySelector('button[icon=\"pi pi-pencil\"')"));
+					javascriptHelper.executeScriptWithWebElement(
+							"document.querySelectorAll('ion-col[class=\"p-2 md hydrated\"]')[" + indexOfListView
+									+ "].querySelector('button[icon=\"pi pi-pencil\"')")
+							.click();
 
-				javascriptHelper
-						.executeScriptWithWebElement("document.querySelectorAll('ion-col[class=\"p-2 md hydrated\"]')["
-								+ indexOfListView + "].querySelector('button[icon=\"pi pi-pencil\"')")
-						.click();
-
+				}
 				break;
 			} catch (Exception e) {
-				if (i > 550 && i < 600) {
-					clicksAndActionsHelper.returnKey().sendKeys(Keys.PAGE_DOWN).build().perform();
-				}
+
 				if (i == 600) {
 					Assert.fail(e.getMessage());
 				}

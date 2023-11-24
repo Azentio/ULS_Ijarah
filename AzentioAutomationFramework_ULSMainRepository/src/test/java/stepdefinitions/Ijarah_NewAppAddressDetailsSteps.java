@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -7,11 +8,11 @@ import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.asserts.SoftAssert;
 
 import dataProvider.ConfigFileReader;
 import dataProvider.ExcelData;
+import helper.BrowserHelper;
 import helper.ClicksAndActionsHelper;
 import helper.JavascriptHelper;
 import io.cucumber.java.en.And;
@@ -26,20 +27,27 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 	String jsExcelPath = configFileReader.getJSFilePath();
 	ExcelData excelTestDataForAddressDetails = new ExcelData(excelTestDataPath, "NewApp_AddressDetailsTestData",
 			"Dataset ID");
-	ExcelData murabahExecutionSheet = new ExcelData(excelTestDataPath,
-			"Murabaha_ExecutionTracker", "TestCase ID");
-	ExcelData ijarahExecutionSheet = new ExcelData(excelTestDataPath,
-			"Ijarah_ExecutionTracker", "TestCase ID");
+	BrowserHelper browserHelper = new BrowserHelper(driver);
+
+	ExcelData murabahExecutionSheet = new ExcelData(excelTestDataPath, "Murabaha_ExecutionTracker", "TestCase ID");
+
+	ExcelData ijarahExecutionSheet = new ExcelData(excelTestDataPath, "Ijarah_ExecutionTracker", "TestCase ID");
 	JSPaths commonJSElements = new JSPaths(jsExcelPath, "iJarah_CommonElements", "Ijarah_CommonFieldName", "JSPath");
 	JSPaths newAppAddressDetailsJSElements = new JSPaths(jsExcelPath, "NewApp_AddressDetailsJS",
 			"addressDetails_JSElements", "JSPaths");
-
+	JSPaths customerIdentificationDetailsElements = new JSPaths(jsExcelPath, "NewApp_IdentificationDetailsJS",
+			"New_App_CustomerIdentificationDetailsElements", "JSPath");
 	// Murabaha
+
 	ExcelData excelTestDataForMurabahaAddressDetails = new ExcelData(excelTestDataPath,
 			"M_NewApp_AddressDetailsTestData", "Dataset ID");
-	
 	ExcelData excelTestDataForMurabahaAddressDetailsExecution = new ExcelData(excelTestDataPath,
 			"M_NewApp_AddDetails_ExeTrack", "TestCase ID");
+
+	// Tawruqq
+	ExcelData excelTestDataForTawruqqAddressDetails = new ExcelData(excelTestDataPath, "TW_NewApp_AddDetails_TestData",
+			"Dataset ID");
+	ExcelData tawruqqExecutionSheet = new ExcelData(excelTestDataPath, "Tawruqq_ExecutionTracker", "TestCase ID");
 
 	Map<String, String> addressDetailsTestData = new HashMap<>();
 	Map<String, String> addressDetailsExecutionData = new HashMap<>();
@@ -103,6 +111,56 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 	public void get_the_test_data_for_test_case_id_AT_NewApp_M_AD_01() throws Throwable {
 		addressDetailsExecutionData = murabahExecutionSheet.getTestdata("AT_NewApp_M_AD_01");
 		addressDetailsTestData = excelTestDataForAddressDetails
+				.getTestdata(addressDetailsExecutionData.get("dataSet_ID"));
+	}
+
+	// AT_TW_NewApp_AD_01
+	@And("get the test data for test case id AT_TW_NewApp_AddDetails_01")
+	public void get_the_test_data_for_test_case_id_AT_TW_NewApp_AddDetails_01() throws Throwable {
+		addressDetailsExecutionData = tawruqqExecutionSheet.getTestdata("AT_TW_NewApp_AddDetails_01");
+		addressDetailsTestData = excelTestDataForTawruqqAddressDetails
+				.getTestdata(addressDetailsExecutionData.get("dataSet_ID"));
+	}
+
+	@And("get the test data for test case id AT_TW_NewApp_AddDetails_02")
+	public void get_the_test_data_for_test_case_id_AT_TW_NewApp_AddDetails_02() throws Throwable {
+		addressDetailsExecutionData = tawruqqExecutionSheet.getTestdata("AT_TW_NewApp_AddDetails_02");
+		addressDetailsTestData = excelTestDataForTawruqqAddressDetails
+				.getTestdata(addressDetailsExecutionData.get("dataSet_ID"));
+	}
+
+	@And("get the test data for test case id AT_TW_NewApp_AddDetails_03")
+	public void get_the_test_data_for_test_case_id_AT_TW_NewApp_AddDetails_03() throws Throwable {
+		addressDetailsExecutionData = tawruqqExecutionSheet.getTestdata("AT_TW_NewApp_AddDetails_03");
+		addressDetailsTestData = excelTestDataForTawruqqAddressDetails
+				.getTestdata(addressDetailsExecutionData.get("dataSet_ID"));
+	}
+
+	@And("get the test data for test case id AT_TW_NewApp_AddDetails_04")
+	public void get_the_test_data_for_test_case_id_AT_TW_NewApp_AddDetails_04() throws Throwable {
+		addressDetailsExecutionData = tawruqqExecutionSheet.getTestdata("AT_TW_NewApp_AddDetails_04");
+		addressDetailsTestData = excelTestDataForTawruqqAddressDetails
+				.getTestdata(addressDetailsExecutionData.get("dataSet_ID"));
+	}
+
+	@And("get the test data for test case id AT_TW_NewApp_AddDetails_05")
+	public void get_the_test_data_for_test_case_id_AT_TW_NewApp_AddDetails_05() throws Throwable {
+		addressDetailsExecutionData = tawruqqExecutionSheet.getTestdata("AT_TW_NewApp_AddDetails_05");
+		addressDetailsTestData = excelTestDataForTawruqqAddressDetails
+				.getTestdata(addressDetailsExecutionData.get("dataSet_ID"));
+	}
+
+	@And("get the test data for test case id AT_TW_NewApp_AddDetails_06")
+	public void get_the_test_data_for_test_case_id_AT_TW_NewApp_AddDetails_06() throws Throwable {
+		addressDetailsExecutionData = tawruqqExecutionSheet.getTestdata("AT_TW_NewApp_AddDetails_06");
+		addressDetailsTestData = excelTestDataForTawruqqAddressDetails
+				.getTestdata(addressDetailsExecutionData.get("dataSet_ID"));
+	}
+
+	@And("get the test data for test case id AT_TW_NewApp_AddDetails_07")
+	public void get_the_test_data_for_test_case_id_AT_TW_NewApp_AddDetails_07() throws Throwable {
+		addressDetailsExecutionData = tawruqqExecutionSheet.getTestdata("AT_TW_NewApp_AddDetails_07");
+		addressDetailsTestData = excelTestDataForTawruqqAddressDetails
 				.getTestdata(addressDetailsExecutionData.get("dataSet_ID"));
 	}
 
@@ -1352,7 +1410,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 			throws Throwable {
 		for (int i = 0; i <= 80; i++) {
 			try {
-				javascriptHelper.scrollIntoView(javascriptHelper
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
 						.executeScriptWithWebElement(newAppAddressDetailsJSElements.getElement("frequency_of_rent")));
 				javascriptHelper
 						.executeScriptWithWebElement(newAppAddressDetailsJSElements.getElement("frequency_of_rent"))
@@ -1717,8 +1775,11 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 		}
 		for (int i = 0; i <= 600; i++) {
 			try {
-				System.out.println("document.querySelectorAll('ion-col[class=\"p-2 md hydrated\"]')[" + indexOfListView
-						+ "].querySelector('button[icon=\"pi pi-pencil\"')");
+				if (i > 200) {
+					clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+							"document.querySelectorAll('ion-col[class=\"p-2 md hydrated\"]')[" + indexOfListView
+									+ "].querySelector('button[icon=\"pi pi-pencil\"')"));
+				}
 				javascriptHelper
 						.executeScriptWithWebElement("document.querySelectorAll('ion-col[class=\"p-2 md hydrated\"]')["
 								+ indexOfListView + "].querySelector('button[icon=\"pi pi-pencil\"')")
@@ -1726,10 +1787,9 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 
 				break;
 			} catch (Exception e) {
-				if (i > 550 && i < 600) {
-					clicksAndActionsHelper.returnKey().sendKeys(Keys.PAGE_DOWN).build().perform();
-				}
+
 				if (i == 600) {
+					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2057,6 +2117,200 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 		System.out.println(searchResult);
 
 		softAssert.assertEquals(searchResult, "Showing 0 to 0 of 0 entries");
+	}
+
+	@And("user_076 get the location for address details screen in new app stage")
+	public void user_076_get_the_location_for_address_details_screen_in_new_app_stage() throws Throwable {
+
+		boolean statusOfListViewRecord = false;
+		String listViewQuery = "document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]').length";
+		String listViewName = "";
+		String noOfListView = "";
+		boolean isIndexFound = false;
+		for (int i = 0; i <= 300; i++) {
+			try {
+				noOfListView = javascriptHelper.executeScript("return " + listViewQuery).toString();
+				if (noOfListView.equals("0") && !(noOfListView.isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		System.out.println("No Of List view " + noOfListView);
+		int premitivListViews = Integer.parseInt(noOfListView);
+		for (int i = 0; i < premitivListViews; i++) {
+			for (int j = 0; j <= 300; j++) {
+				try {
+					listViewName = javascriptHelper.executeScript("return "
+							+ "document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]')["
+							+ i + "].innerText").toString();
+					if (listViewName.contains("Address Details")) {
+
+						indexOfListView = i;
+
+						isIndexFound = true;
+						break;
+					} else {
+
+						isIndexFound = false;
+						break;
+					}
+				} catch (Exception e) {
+					if (j == 300) {
+						Assert.fail(e.getMessage());
+					}
+
+				}
+			}
+			if (isIndexFound == true) {
+				break;
+			}
+
+		}
+	}
+
+	@And("user_076 click on pdf export option in address details new app stage record")
+	public void user_076_click_on_pdf_export_option_in_address_details_new_app_stage_record() throws Throwable {
+		String homePath = System.getProperty("user.home");
+		String filePath = homePath + "/Downloads";
+		File file = new File(filePath);
+		File[] listFiles = file.listFiles();
+
+		for (File beforeDownloadsFile : listFiles) {
+			System.out.println(beforeDownloadsFile.getName());
+			if (beforeDownloadsFile.getName().contains("CustomerAddressDataFile")) {
+				System.out.println("If condition " + beforeDownloadsFile.getName());
+				softAssert.assertTrue(beforeDownloadsFile.getName().contains("CustomerAddressDataFile"),
+						"File is not downloaded hence failed");
+				beforeDownloadsFile.delete();
+			}
+
+		}
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(commonJSElements.getElement("pdf_download")).click();
+				break;
+
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+
+		}
+
+	}
+
+	@Then("user_076 verify address details pdf file is downloaded in the system at new app stage")
+	public void user_076_verify_address_details_pdf_file_is_downloaded_in_the_system_at_new_app_stage()
+			throws Throwable {
+
+		browserHelper.SwitchToWindow(1);
+		browserHelper.switchToParentWithChildClose();
+
+		String homePath = System.getProperty("user.home");
+		String filePath = homePath + "/Downloads";
+		File file = new File(filePath);
+		File[] listFiles = file.listFiles();
+		file.delete();
+		for (File afterDownloadsFile : listFiles) {
+			System.out.println(afterDownloadsFile.getName());
+			if (afterDownloadsFile.getName().contains("CustomerAddressDataFile")) {
+				System.out.println("If condition " + afterDownloadsFile.getName());
+				softAssert.assertTrue(afterDownloadsFile.getName().contains("CustomerAddressDataFile"),
+						"File is not downloaded hence failed");
+
+			}
+
+		}
+	}
+
+	@And("user_076 click on export button address details at new app stage")
+	public void user_076_click_on_export_button_address_details_at_new_app_stage() throws Throwable {
+		System.out.println("List view Index " + indexOfListView);
+		for (int i = 0; i <= 300; i++) {
+			try {
+
+				javascriptHelper
+						.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]')["
+										+ indexOfListView + "].querySelector('div[aria-label=\"dropdown trigger\"]')")
+						.click();
+				if (i > 250) {
+					javascriptHelper.scrollDownVertically();
+
+					javascriptHelper
+							.executeScriptWithWebElement(
+									customerIdentificationDetailsElements.getElement("additional_customer_info_tab"))
+							.sendKeys(Keys.PAGE_DOWN);
+					javascriptHelper.executeScriptWithWebElement(
+							"document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]')["
+									+ indexOfListView + "].querySelector('div[aria-label=\"dropdown trigger\"]')")
+							.click();
+					break;
+				}
+				break;
+
+			} catch (Exception e) {
+
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+
+			}
+		}
+
+	}
+
+	@And("user_076 click on excel export option in address details new app stage record")
+	public void user_076_click_on_excel_export_option_in_address_details_new_app_stage_record() throws Throwable {
+		String homePath = System.getProperty("user.home");
+		String filePath = homePath + "/Downloads";
+
+		File file = new File(filePath);
+		File[] listFiles = file.listFiles();
+		for (File beforeDownloadFile : listFiles) {
+			System.out.println(beforeDownloadFile.getName());
+			if (beforeDownloadFile.getName().contains("CustomerAddressDataFile_export_")) {
+				System.out.println("If condition " + beforeDownloadFile.getName());
+				beforeDownloadFile.delete();
+				break;
+			}
+		}
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(commonJSElements.getElement("xls_download")).click();
+				break;
+
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+
+		}
+
+	}
+
+	@Then("user_076 verify address details excel file is downloaded in the system at new app stage")
+	public void user_076_verify_address_details_excel_file_is_downloaded_in_the_system_at_new_app_stage()
+			throws Throwable {
+		String homePath = System.getProperty("user.home");
+		String filePath = homePath + "/Downloads";
+
+		File file = new File(filePath);
+		File[] listFiles = file.listFiles();
+		for (File afterDownloadsFile : listFiles) {
+			if (afterDownloadsFile.getName().contains("CustomerAddressDataFile_export_")) {
+				System.out.println("If condition " + afterDownloadsFile.getName());
+				softAssert.assertTrue(afterDownloadsFile.getName().contains("CustomerAddressDataFile_export_"),
+						"File is not downloaded hence failed");
+			}
+		}
+
 	}
 
 	@And("user_076 invoke soft assert in address details screen at new appp stage")

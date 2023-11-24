@@ -98,7 +98,7 @@ public class ClicksAndActionsHelper {
 		String dropdownOpenedQuery = "document.querySelector('ion-select-popover ion-list')";
 		String dropdownOpenQueryTwo = "document.querySelector('ion-select-popover ion-list').innerText";
 		boolean isDropdownOpened = false;
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <= 1500; i++) {
 			try {
 				System.out.println("I value " + i);
 				isDropdownOpened = javascriptHelper.executeScriptWithWebElement(dropdownOpenedQuery).isDisplayed();
@@ -108,7 +108,7 @@ public class ClicksAndActionsHelper {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i == 1500) {
 					System.err.println("Dropdown is not getting opened");
 					e.printStackTrace();
 					Assert.fail(e.getMessage());

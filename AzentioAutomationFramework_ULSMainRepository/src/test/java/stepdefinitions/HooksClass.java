@@ -30,11 +30,11 @@ public class HooksClass extends BaseClass {
 	String flag = "No";
 	ConfigFileReader configFileReader= new ConfigFileReader();
 	String path = configFileReader.getTestDataFilePath();
-	ExcelData testExecution = new ExcelData(path, "Murabaha_ExecutionTracker", "TestCase ID");
+	ExcelData testExecution = new ExcelData(path, "Tawruqq_ExecutionTracker", "TestCase ID");
 	Map<String, String> testExecutionData;
-	ExcelTest excelTest = new ExcelTest(path, "Murabaha_ExecutionTracker", "TestCase ID");
+	ExcelTest excelTest = new ExcelTest(path, "Tawruqq_ExecutionTracker", "TestCase ID");
 	List<String> testCaseTagsFromExcel = excelTest.getTestCaseTagsfromExcel();
-boolean excelRunnerStatus=false;
+boolean excelRunnerStatus=true;
 	ScreenshotHelper screenshotHelper = new ScreenshotHelper(driver);
 
 	@Before

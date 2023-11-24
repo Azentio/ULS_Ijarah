@@ -35,12 +35,16 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 	ExcelData excelDataForcustomerDetails = new ExcelData(excelTestData, "customerdetails_NewApp", "Dataset ID");
 	ExcelData IjarahExecutionSheet = new ExcelData(excelTestData, "Ijarah_ExecutionTracker", "TestCase ID");
 	ExcelData murabahaExecutionSheet = new ExcelData(excelTestData, "Murabaha_ExecutionTracker", "TestCase ID");
+	ExcelData tawruqqExecutionSheet = new ExcelData(excelTestData, "Tawruqq_ExecutionTracker", "TestCase ID");
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
 	ExcelData excelDataForMurabhaCustomerDetailsTestData = new ExcelData(excelTestData, "newApp_M_CustDetailsTestData",
 			"Dataset ID");
+	ExcelData excelDataForTawruqqCustomerDetailsTestData = new ExcelData(excelTestData,
+			"TW_NewApp_CustDetails_TestData", "Dataset ID");
 	Map<String, String> customerDetailsTestData = new HashMap<>();
 	Map<String, String> customerDetailsExecutionData = new HashMap<>();
 	Map<String, String> customerDetailsMurabhaExecutionData = new HashMap<>();
+	Map<String, String> tawruqqExecutionData = new HashMap<>();
 	ClicksAndActionsHelper clicksAndActionsHelper = new ClicksAndActionsHelper(driver);
 	String recordStatus = "";
 	String listViewRecordStatus = "";
@@ -61,6 +65,50 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 		customerDetailsTestData = excelDataForMurabhaCustomerDetailsTestData
 				.getTestdata(customerDetailsMurabhaExecutionData.get("dataSet_ID"));
 	}
+	@And("user_076 get the test data for the test case id AT_TW_NewApp_CustDetails_01")
+	public void user_076_user_get_the_test_data_for_the_test_case_id_AT_TW_NewApp_CustDetails_01() throws Throwable {
+		tawruqqExecutionData = tawruqqExecutionSheet.getTestdata("AT_TW_NewApp_CustDetails_01");
+		System.out.println(tawruqqExecutionData.get("dataSet_ID"));
+		customerDetailsTestData = excelDataForTawruqqCustomerDetailsTestData
+				.getTestdata(tawruqqExecutionData.get("dataSet_ID"));
+	}
+	@And("user_076 get the test data for the test case id AT_TW_NewApp_CustDetails_02")
+	public void user_076_user_get_the_test_data_for_the_test_case_id_AT_TW_NewApp_CustDetails_02() throws Throwable {
+		tawruqqExecutionData = tawruqqExecutionSheet.getTestdata("AT_TW_NewApp_CustDetails_02");
+		System.out.println(tawruqqExecutionData.get("dataSet_ID"));
+		customerDetailsTestData = excelDataForTawruqqCustomerDetailsTestData
+				.getTestdata(tawruqqExecutionData.get("dataSet_ID"));
+	}
+	@And("user_076 get the test data for the test case id AT_TW_NewApp_CustDetails_03")
+	public void user_076_user_get_the_test_data_for_the_test_case_id_AT_TW_NewApp_CustDetails_03() throws Throwable {
+		tawruqqExecutionData = tawruqqExecutionSheet.getTestdata("AT_TW_NewApp_CustDetails_03");
+		System.out.println(tawruqqExecutionData.get("dataSet_ID"));
+		customerDetailsTestData = excelDataForTawruqqCustomerDetailsTestData
+				.getTestdata(tawruqqExecutionData.get("dataSet_ID"));
+	}
+	@And("user_076 get the test data for the test case id AT_TW_NewApp_CustDetails_04")
+	public void user_076_user_get_the_test_data_for_the_test_case_id_AT_TW_NewApp_CustDetails_04() throws Throwable {
+		tawruqqExecutionData = tawruqqExecutionSheet.getTestdata("AT_TW_NewApp_CustDetails_04");
+		System.out.println(tawruqqExecutionData.get("dataSet_ID"));
+		customerDetailsTestData = excelDataForTawruqqCustomerDetailsTestData
+				.getTestdata(tawruqqExecutionData.get("dataSet_ID"));
+	}
+	@And("user_076 get the test data for the test case id AT_TW_NewApp_CustDetails_05")
+	public void user_076_user_get_the_test_data_for_the_test_case_id_AT_TW_NewApp_CustDetails_05() throws Throwable {
+		tawruqqExecutionData = tawruqqExecutionSheet.getTestdata("AT_TW_NewApp_CustDetails_05");
+		System.out.println(tawruqqExecutionData.get("dataSet_ID"));
+		customerDetailsTestData = excelDataForTawruqqCustomerDetailsTestData
+				.getTestdata(tawruqqExecutionData.get("dataSet_ID"));
+	}
+	@And("user_076 get the test data for the test case id AT_TW_NewApp_CustDetails_06")
+	public void user_076_user_get_the_test_data_for_the_test_case_id_AT_TW_NewApp_CustDetails_06() throws Throwable {
+		tawruqqExecutionData = tawruqqExecutionSheet.getTestdata("AT_TW_NewApp_CustDetails_06");
+		System.out.println(tawruqqExecutionData.get("dataSet_ID"));
+		customerDetailsTestData = excelDataForTawruqqCustomerDetailsTestData
+				.getTestdata(tawruqqExecutionData.get("dataSet_ID"));
+	}
+	
+	
 
 	@And("user_076 get the test data for the test case id NewApp_M_CustDetails_02")
 	public void user_076_user_get_the_test_data_for_the_test_case_id_NewApp_M_CustDetails_02() throws Throwable {
@@ -224,6 +272,22 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 			}
 		}
 	}
+	@And("user_076 search for tawruqq record reference number in new app stage")
+	public void user_076_search_for_tawruqq_record_reference_number_in_new_app_stage() throws Throwable {
+		WebElement searchTextBox;
+		for (int i = 0; i <= 150; i++) {
+			try {
+				searchTextBox = javascriptHelper
+						.executeScriptWithWebElement(CommonJsElements.getElement("mail_box_search_text"));
+				searchTextBox.sendKeys(configFileReader.getTawruqqRecordRefereneNumber());
+				break;
+			} catch (Exception e) {
+				if (i == 150) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
 
 	@And("user_076 select the murabaha record in new app stage")
 	public void user_076_select_the_murabaha_record_in_new_app_stage() throws Throwable {
@@ -253,6 +317,46 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 							.toString();
 					System.out.println("Number of record in mail box " + recordRefNumber);
 					if (recordRefNumber.equals(configFileReader.getMurabahaRecordRefereneNumber())) {
+						System.out.println("document.querySelectorAll('button[icon=\"pi pi-user-edit\"]')[" + j + "]");
+						// document.querySelectorAll('button[icon="pi pi-user-edit"]')[0]
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('button[icon=\"pi pi-user-edit\"]')[" + j + "]"));
+						break;
+					}
+				} catch (Exception e) {
+
+				}
+			}
+		}
+	}
+	@And("user_076 select the tawruqq record in new app stage")
+	public void user_076_select_the_tawruqq_record_in_new_app_stage() throws Throwable {
+		String mailBoxRecordList = "document.querySelectorAll('td[class=\"ng-star-inserted\"]>span').length";
+		String numberOfRecordInMailBox = "";
+		for (int i = 0; i <= 150; i++) {
+			try {
+				numberOfRecordInMailBox = javascriptHelper.executeScript("return " + mailBoxRecordList).toString();
+				System.out.println("Number of record in mail box " + numberOfRecordInMailBox);
+				if (!(numberOfRecordInMailBox.isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 150) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		int premitiveNumberOfRecordInMailBox = Integer.parseInt(numberOfRecordInMailBox);
+		// document.querySelectorAll('td[class="ng-star-inserted"]>span')[0].textContent
+		for (int j = 0; j < premitiveNumberOfRecordInMailBox; j++) {
+			for (int k = 0; k <= 150; k++) {
+				try {
+					String recordRefNumber = javascriptHelper
+							.executeScript("return document.querySelectorAll('td[class=\"ng-star-inserted\"]>span')["
+									+ j + "].textContent")
+							.toString();
+					System.out.println("Number of record in mail box " + recordRefNumber);
+					if (recordRefNumber.equals(configFileReader.getTawruqqRecordRefereneNumber())) {
 						System.out.println("document.querySelectorAll('button[icon=\"pi pi-user-edit\"]')[" + j + "]");
 						// document.querySelectorAll('button[icon="pi pi-user-edit"]')[0]
 						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(

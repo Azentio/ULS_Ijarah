@@ -1,5 +1,5 @@
 Feature: To test the address details screen in new app stage (Murabha)
-@AT_NewApp_M_AD_01
+@AT_TW_NewApp_AddDetails_01
 Scenario: To test the address details screen at new app stage with valid input (Murabaha)
 Given navigate the IJARA URL
 And login with valid credentials for new application stage
@@ -8,9 +8,9 @@ And click on LOS option in module dropdown
 And click on mail box
 And click on search box upon click on the mail box
 And click on search text box upon click the search button
-And get the test data for test case id AT_NewApp_M_AD_01
-And user_076 search for murabaha record reference number in new app stage
-And user_076 select the murabaha record in new app stage
+And get the test data for test case id AT_TW_NewApp_AddDetails_01
+And user_076 search for tawruqq record reference number in new app stage
+And user_076 select the tawruqq record in new app stage
 And user_076 click on additional customer info tab in new application stage
 And user_076 click on edit button customer personal information screen at new app stage
 And user_076 click on add button in address details at new app stage
@@ -43,7 +43,7 @@ Then user_076 verify address details record got saved in new app stage
 Then logout from the ULS Application
 And user_076 invoke soft assert in address details screen at new appp stage
 
-@AT_NewApp_M_AD_02
+@AT_TW_NewApp_AddDetails_02
 Scenario: To test the address details screen at new app stage with in valid input (Murabha)
 Given navigate the IJARA URL
 And login with valid credentials for new application stage
@@ -52,9 +52,9 @@ And click on LOS option in module dropdown
 And click on mail box
 And click on search box upon click on the mail box
 And click on search text box upon click the search button
-And get the test data for test case id AT_NewApp_M_AD_02
-And user_076 search for murabaha record reference number in new app stage
-And user_076 select the murabaha record in new app stage
+And get the test data for test case id AT_TW_NewApp_AddDetails_02
+And user_076 search for tawruqq record reference number in new app stage
+And user_076 select the tawruqq record in new app stage
 And user_076 click on additional customer info tab in new application stage
 And user_076 click on edit button customer personal information screen at new app stage
 And user_076 click on add button in address details at new app stage
@@ -69,7 +69,7 @@ Then user_076 verify address details screen got move to the previous screen in a
 Then logout from the ULS Application
 And user_076 invoke soft assert in address details screen at new appp stage
 
-@AT_NewApp_M_AD_03
+@AT_TW_NewApp_AddDetails_03
 Scenario: to verify user can able to update the list view record of address details in new app stage (Murabha)
 Given navigate the IJARA URL
 And login with valid credentials for new application stage
@@ -78,9 +78,9 @@ And click on LOS option in module dropdown
 And click on mail box
 And click on search box upon click on the mail box
 And click on search text box upon click the search button
-And get the test data for test case id AT_NewApp_M_AD_03
-And user_076 search for murabaha record reference number in new app stage
-And user_076 select the murabaha record in new app stage
+And get the test data for test case id AT_TW_NewApp_AddDetails_03
+And user_076 search for tawruqq record reference number in new app stage
+And user_076 select the tawruqq record in new app stage
 And user_076 click on additional customer info tab in new application stage
 And user_076 click on edit button customer personal information screen at new app stage
 And user_076 click on edit button of customer address details list view record in new app stage
@@ -89,7 +89,7 @@ And user_076 click on save button in address screen ta new app stage
 Then user_076 verify address details record got updated in new app stage
 Then logout from the ULS Application
 And user_076 invoke soft assert in address details screen at new appp stage
-@AT_NewApp_M_AD_04
+@AT_TW_NewApp_AddDetails_04
 Scenario: to verify user can able to update the list view record of address details in new app stage (Murabha)
 Given navigate the IJARA URL
 And login with valid credentials for new application stage
@@ -98,9 +98,9 @@ And click on LOS option in module dropdown
 And click on mail box
 And click on search box upon click on the mail box
 And click on search text box upon click the search button
-And get the test data for test case id AT_NewApp_M_AD_04
-And user_076 search for murabaha record reference number in new app stage
-And user_076 select the murabaha record in new app stage
+And get the test data for test case id AT_TW_NewApp_AddDetails_04
+And user_076 search for tawruqq record reference number in new app stage
+And user_076 select the tawruqq record in new app stage
 And user_076 click on additional customer info tab in new application stage
 And user_076 click on edit button customer personal information screen at new app stage
 And user_076 click on edit button of customer address details list view record in new app stage
@@ -116,7 +116,7 @@ And user_076 click on back button in address details in new app stage
 Then user_076 verify address details screen got move to the previous screen in address details at new app stage
 Then logout from the ULS Application
 And user_076 invoke soft assert in address details screen at new appp stage
-@AT_NewApp_M_AD_05
+@AT_TW_NewApp_AddDetails_05
 Scenario: to verify user can able to update the list view record status of address details in new app stage (Murabha)
 Given navigate the IJARA URL
 And login with valid credentials for new application stage
@@ -125,9 +125,9 @@ And click on LOS option in module dropdown
 And click on mail box
 And click on search box upon click on the mail box
 And click on search text box upon click the search button
-And get the test data for test case id AT_NewApp_M_AD_05
-And user_076 search for murabaha record reference number in new app stage
-And user_076 select the murabaha record in new app stage
+And get the test data for test case id AT_TW_NewApp_AddDetails_05
+And user_076 search for tawruqq record reference number in new app stage
+And user_076 select the tawruqq record in new app stage
 And user_076 click on additional customer info tab in new application stage
 And user_076 click on edit button customer personal information screen at new app stage
 And user_076 click on edit button of customer address details list view record in new app stage
@@ -141,7 +141,7 @@ Then user_076 verify record status of address details got changed as per the tog
 Then logout from the ULS Application
 And user_076 invoke soft assert in address details screen at new appp stage
 
-@AT_NewApp_M_AD_06
+@AT_TW_NewApp_AddDetails_06
 Scenario: to verify user can able to update the list view record of address details in new app stage (Murabha)
 Given navigate the IJARA URL
 And login with valid credentials for new application stage
@@ -150,9 +150,9 @@ And click on LOS option in module dropdown
 And click on mail box
 And click on search box upon click on the mail box
 And click on search text box upon click the search button
-And get the test data for test case id AT_NewApp_M_AD_06
-And user_076 search for murabaha record reference number in new app stage
-And user_076 select the murabaha record in new app stage
+And get the test data for test case id AT_TW_NewApp_AddDetails_06
+And user_076 search for tawruqq record reference number in new app stage
+And user_076 select the tawruqq record in new app stage
 And user_076 click on additional customer info tab in new application stage
 And user_076 click on edit button customer personal information screen at new app stage
 And user_76 verify address details list view record should be readonly ot editable at new app stage
@@ -161,7 +161,7 @@ And user_076 search the matched text in address details list view in new app sta
 Then user_076 verify system should show the valid matches in address details list view in new app stage
 And user_076 search the unmatched text in address details list view in new app stage
 Then user_076 verify system should not show matches in address details list view in new app stage
-@AT_NewApp_M_AD_07
+@AT_TW_NewApp_AddDetails_07
 Scenario: To test the export functionality in address details screen at new app stage (Murabaha)
 Given navigate the IJARA URL
 And login with valid credentials for new application stage
@@ -170,9 +170,9 @@ And click on LOS option in module dropdown
 And click on mail box
 And click on search box upon click on the mail box
 And click on search text box upon click the search button
-And get the test data for test case id AT_NewApp_M_AD_07
-And user_076 search the new application reference number in mail box for address details
-And user_076 select the new application stage record from mail box for address details
+And get the test data for test case id AT_TW_NewApp_AddDetails_07
+And user_076 search for tawruqq record reference number in new app stage
+And user_076 select the tawruqq record in new app stage
 And user_076 click on additional customer info tab in new application stage
 And user_076 click on edit button customer personal information screen at new app stage
 And user_076 get the location for address details screen in new app stage

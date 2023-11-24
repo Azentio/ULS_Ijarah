@@ -50,6 +50,9 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 
 	ExcelData murabahaExecutionSheet = new ExcelData(applicationDetailsExcelDataPath, "Murabaha_ExecutionTracker",
 			"TestCase ID");
+
+	ExcelData tawruqqExecutionSheet = new ExcelData(applicationDetailsExcelDataPath, "Tawruqq_ExecutionTracker",
+			"TestCase ID");
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
 	Map<String, String> newApplicationTestData = new HashMap<>();
 	Map<String, String> newApplicationExecutionData = new HashMap<>();
@@ -85,6 +88,70 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		newApplicationExecutionData = murabahaExecutionSheet.getTestdata("AT_MAppDetails_NewApp_01");
 		System.out.println("Data Set ID " + newApplicationExecutionData.get("dataSet_ID"));
 		newApplicationTestData = excelDataForApplicationDetailsTestDataForMurabha
+				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
+
+	}
+
+	// Tawruqq
+	@And("user_076 get the test data for test case id AT_TW_NewApp_AD_02")
+	public void user_076_get_the_test_data_for_test_case_id_AT_TW_NewApp_AD_02() throws Throwable {
+		newApplicationExecutionData = tawruqqExecutionSheet.getTestdata("AT_TW_NewApp_AD_02");
+		System.out.println("Data Set ID " + newApplicationExecutionData.get("dataSet_ID"));
+		newApplicationTestData = excelDataForApplicationDetailsTestDataForTawrruq
+				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
+
+	}
+
+	@And("user_076 get the test data for test case id AT_TW_NewApp_AD_03")
+	public void user_076_get_the_test_data_for_test_case_id_AT_TW_NewApp_AD_03() throws Throwable {
+		newApplicationExecutionData = tawruqqExecutionSheet.getTestdata("AT_TW_NewApp_AD_03");
+		System.out.println("Data Set ID " + newApplicationExecutionData.get("dataSet_ID"));
+		newApplicationTestData = excelDataForApplicationDetailsTestDataForTawrruq
+				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
+
+	}
+
+	@And("user_076 get the test data for test case id AT_TW_NewApp_AD_04")
+	public void user_076_get_the_test_data_for_test_case_id_AT_TW_NewApp_AD_04() throws Throwable {
+		newApplicationExecutionData = tawruqqExecutionSheet.getTestdata("AT_TW_NewApp_AD_04");
+		System.out.println("Data Set ID " + newApplicationExecutionData.get("dataSet_ID"));
+		newApplicationTestData = excelDataForApplicationDetailsTestDataForTawrruq
+				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
+
+	}
+
+	@And("user_076 get the test data for test case id AT_TW_NewApp_AD_05")
+	public void user_076_get_the_test_data_for_test_case_id_AT_TW_NewApp_AD_05() throws Throwable {
+		newApplicationExecutionData = tawruqqExecutionSheet.getTestdata("AT_TW_NewApp_AD_05");
+		System.out.println("Data Set ID " + newApplicationExecutionData.get("dataSet_ID"));
+		newApplicationTestData = excelDataForApplicationDetailsTestDataForTawrruq
+				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
+
+	}
+
+	@And("user_076 get the test data for test case id AT_TW_NewApp_AD_06")
+	public void user_076_get_the_test_data_for_test_case_id_AT_TW_NewApp_AD_06() throws Throwable {
+		newApplicationExecutionData = tawruqqExecutionSheet.getTestdata("AT_TW_NewApp_AD_06");
+		System.out.println("Data Set ID " + newApplicationExecutionData.get("dataSet_ID"));
+		newApplicationTestData = excelDataForApplicationDetailsTestDataForTawrruq
+				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
+
+	}
+
+	@And("user_076 get the test data for test case id AT_TW_NewApp_AD_07")
+	public void user_076_get_the_test_data_for_test_case_id_AT_TW_NewApp_AD_07() throws Throwable {
+		newApplicationExecutionData = tawruqqExecutionSheet.getTestdata("AT_TW_NewApp_AD_07");
+		System.out.println("Data Set ID " + newApplicationExecutionData.get("dataSet_ID"));
+		newApplicationTestData = excelDataForApplicationDetailsTestDataForTawrruq
+				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
+
+	}
+
+	@And("user_076 get the test data for test case id AT_TW_NewApp_AD_01")
+	public void user_076_get_the_test_data_for_test_case_id_AT_TW_NewApp_AD_01() throws Throwable {
+		newApplicationExecutionData = tawruqqExecutionSheet.getTestdata("AT_TW_NewApp_AD_01");
+		System.out.println("Data Set ID " + newApplicationExecutionData.get("dataSet_ID"));
+		newApplicationTestData = excelDataForApplicationDetailsTestDataForTawrruq
 				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
 
 	}
@@ -141,6 +208,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 			try {
 				searchTextBox = javascriptHelper
 						.executeScriptWithWebElement(commonJSPaths.getElement("mail_box_search_text"));
+				System.out.println("Record reference number "+newApplicationTestData.get("record_reference_number"));
 				searchTextBox.sendKeys(newApplicationTestData.get("record_reference_number"));
 				break;
 			} catch (Exception e) {
@@ -365,8 +433,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 				}
 			}
 		}
-
-		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_type"));
+	/*	String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
 		String dropdownLength = "";
 		boolean isDropdownValueSelected = false;
 		String dropdownString = "";
@@ -434,7 +502,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 				break;
 			}
 
-		}
+		}*/
 
 	}
 
@@ -468,7 +536,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 				}
 			}
 		}
-
+		clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("id_type"));
+		/*
 		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
 		String dropdownLength = "";
 		boolean isDropdownValueSelected = false;
@@ -537,7 +606,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 				break;
 			}
 
-		}
+		}*/
 	}
 
 	@And("user_076 in customer search screen enter id number")
@@ -2416,12 +2485,25 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		System.out.println("Reference Number " + extractedReferenceNumber);
 		configFileReader.setMurabahaRecordReferenceNumber(extractedReferenceNumber);
 	}
+	@And("user_076 store the tawruqq record reference number to test new app screens")
+	public void user_076_store_the_tawruqq_record_reference_number_to_test_new_app_screens() throws Throwable {
+		String extractedReferenceNumber = toastMessage.substring(37);
+		System.out.println("Reference Number " + extractedReferenceNumber);
+		configFileReader.setTawruqqRecordReferenceNumber(extractedReferenceNumber);
+	}
 
 	@And("user_076 extract the application details record reference number in new app stage")
 	public void user_076_extract_the_application_details_record_reference_number_in_new_app_stage() throws Throwable {
 		String finalRecordReferenceNumber = toastMessageForReferenceNumber.substring(36).trim();
 		System.out.println("Final reference number " + finalRecordReferenceNumber);
 		excelDataForApplicationDetailsTestDataForMurabha.updateTestData(newApplicationTestData.get("Dataset ID"),
+				"record_reference_number", finalRecordReferenceNumber);
+	}
+	@And("user_076 extract the application details record reference number in new app stage for tawruqq")
+	public void user_076_extract_the_application_details_record_reference_number_in_new_app_stage_for_tawruqq() throws Throwable {
+		String finalRecordReferenceNumber = toastMessageForReferenceNumber.substring(36).trim();
+		System.out.println("Final reference number " + finalRecordReferenceNumber);
+		excelDataForApplicationDetailsTestDataForTawrruq.updateTestData(newApplicationTestData.get("Dataset ID"),
 				"record_reference_number", finalRecordReferenceNumber);
 	}
 
@@ -3402,7 +3484,6 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		String filePath = homePath + "/Downloads";
 		File file = new File(filePath);
 		File[] listFiles = file.listFiles();
-		file.delete();
 		for (File downloadsFile : listFiles) {
 			System.out.println(downloadsFile.getName());
 			if (downloadsFile.getName().contains("CollateralDataFile")) {
@@ -3435,7 +3516,6 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		String filePath = homePath + "/Downloads";
 		File file = new File(filePath);
 		File[] listFiles = file.listFiles();
-		file.delete();
 		for (File downloadsFile : listFiles) {
 			System.out.println(downloadsFile.getName());
 			if (downloadsFile.getName().contains("CollateralDataFile_export_")) {
@@ -3450,13 +3530,12 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 
 	@And("user_076 click on submit button in application details record at new app stage")
 	public void user_076_click_on_submit_button_in_application_details_record_at_new_app_stage() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 500; i++) {
 			try {
-				System.out.println("");
 				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("submit_button")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 500) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3492,6 +3571,104 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 				}
 			}
 		}
+	}
+
+	@And("user_076 update the product while open the new app record")
+	public void user_update_the_product_while_open_the_new_app_record() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper
+						.executeScriptWithWebElement(applicationDetailsElements.getElement("product_product_dropdown"))
+						.click();
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					e.printStackTrace();
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		System.out.println("Dropdown clicked");
+		clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("sub_product_dropdown"));
+	}
+
+	@And("user_076 update the clossing staff or servicing staff RM while open the new app record")
+	public void user_update_the_clossing_staff_or_servicing_staff_rm_while_open_the_new_app_record() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("closing_staff_of_servicing_staff_RM_dropdown")));
+				javascriptHelper
+						.executeScriptWithWebElement(
+								applicationDetailsElements.getElement("closing_staff_of_servicing_staff_RM_dropdown"))
+						.click();
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("closing_staff_servicing_staff_RM"));
+	}
+
+	@And("user_076 update the sourcing office while open the new app record")
+	public void user_update_the_sourcing_office_while_open_the_new_app_record() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("sourcing_office_dropdown")));
+				javascriptHelper
+						.executeScriptWithWebElement(applicationDetailsElements.getElement("sourcing_office_dropdown"))
+						.click();
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("sourcing_office"));
+	}
+
+	@And("user_076 update the sourcing entity while open the new app record")
+	public void user_update_the_sourcing_entity_while_open_the_new_app_record() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("sourcing_entity_dropdown")));
+				javascriptHelper
+						.executeScriptWithWebElement(applicationDetailsElements.getElement("sourcing_entity_dropdown"))
+						.click();
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("sourcing_office"));
+
+	}
+
+	@And("user_076 update the sourcing staff while open the new app record")
+	public void user_update_the_sourcing_staff_while_open_the_new_app_record() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(applicationDetailsElements.getElement("sourcing_staff_dropdown")));
+				javascriptHelper
+						.executeScriptWithWebElement(applicationDetailsElements.getElement("sourcing_staff_dropdown"))
+						.click();
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("sourcing_staff"));
 	}
 
 	@Then("user_076 verify applicatio details record should get submitted from new app stage")
