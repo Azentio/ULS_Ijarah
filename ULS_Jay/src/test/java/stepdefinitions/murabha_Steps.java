@@ -64,7 +64,7 @@ public class murabha_Steps {
 	//-------------------***************************************************-------------------------------------
 	
 	@And("User_610 click Living Expenses Screen in App Data Entery")
-	public void user_click_living_expenses_screen_in_app_data_entery(Integer int1) throws Throwable {
+	public void user_click_living_expenses_screen_in_app_data_entery() throws Throwable {
 		
 		for (int i = 0; i < 200; i++) {
 			try {
@@ -80,7 +80,7 @@ public class murabha_Steps {
 	}
 	
 	@And("User_610 verify the system not allow user to do a modification with invalid data Spouse Salary")
-	public void user_verify_the_system_not_allow_user_to_do_a_modification_with_invalid_data_spouse_salary(Integer int1) throws Throwable {
+	public void user_verify_the_system_not_allow_user_to_do_a_modification_with_invalid_data_spouse_salary() throws Throwable {
 
 		for (int i = 0; i < 200; i++) {
 			try {
@@ -109,7 +109,7 @@ public class murabha_Steps {
 	}
 	
 	@And("User_610 save button and verify the success message in murabha")
-	public void user_save_button_and_verify_the_success_message_in_murabha(Integer int1) {
+	public void user_save_button_and_verify_the_success_message_in_murabha() {
 	    
 		
 		for (int i = 0; i < 200; i++) {
@@ -144,7 +144,7 @@ public class murabha_Steps {
 	
 	
 	@And("User_610 click the Customer Financials Screen")
-	public void user_click_the_customer_financials_screen(Integer int1) {
+	public void user_click_the_customer_financials_screen() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("customerFinancials_Screen_610")).click();
@@ -159,7 +159,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 click Edit button")
-	public void user_click_edit_button(Integer int1) {
+	public void user_click_edit_button() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("editBtn_610")).click();
@@ -174,7 +174,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 click the add button under Customer Employment Details")
-	public void user_click_the_add_button_under_customer_employment_details(Integer int1) throws Throwable {
+	public void user_click_the_add_button_under_customer_employment_details() throws Throwable {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("addBtn_Under_customerEmployementDetails")).click();
@@ -189,7 +189,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 select nature of employment")
-	public void user_select_nature_of_employment(Integer int1) throws Throwable {
+	public void user_select_nature_of_employment() throws Throwable {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("natureOfEmployement_610")).click();
@@ -278,7 +278,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 select nature of period")
-	public void user_select_nature_of_period(Integer int1) throws Throwable {
+	public void user_select_nature_of_period() throws Throwable {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("employmentPeriod_610")).click();
@@ -367,7 +367,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 enter employer name")
-	public void user_enter_employer_name(Integer int1) throws Throwable {
+	public void user_enter_employer_name() throws Throwable {
 		Thread.sleep(500);
 		for (int i = 0; i < 200; i++) {
 			try {
@@ -385,7 +385,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 enter employee ID")
-	public void user_enter_employee_id(Integer int1) throws Throwable {
+	public void user_enter_employee_id() throws Throwable {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("employeID_610"))
@@ -402,7 +402,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 select the Data Of Joining")
-	public void user_select_the_data_of_joining(Integer int1) throws Throwable {
+	public void user_select_the_data_of_joining() throws Throwable {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("dateOfJoining_610")).click();
@@ -430,7 +430,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 select Employment type")
-	public void user_select_employment_type(Integer int1) throws Throwable {
+	public void user_select_employment_type() throws Throwable {
 		
 		//javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("employementType_61")));
 		for (int i = 0; i < 200; i++) {
@@ -521,7 +521,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 select Share Holder Percentage")
-	public void user_select_share_holder_percentage(Integer int1) {
+	public void user_select_share_holder_percentage() {
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("shareHolderPercentage_610")));
 		
 		for (int i = 0; i < 200; i++) {
@@ -539,7 +539,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 enter the Total Experience")
-	public void user_enter_the_total_experience(Integer int1) {
+	public void user_enter_the_total_experience() {
 	//	WebElement totalExp1 = javascriptHelper.executeScriptWithWebElement("document.querySelector('[id=\"totalExperience\"] ion-label')");
 //		WebElement totalEx = javascriptHelper.executeScriptWithWebElement("document.querySelector('[id=\"totalExperience\"]')");
 		
@@ -568,7 +568,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 scroll up and view customer employment")
-	public void user_scroll_up_and_view_customer_employment(Integer int1) throws Throwable {
+	public void user_scroll_up_and_view_customer_employment() throws Throwable {
 		
 				
 		 for (int i = 0; i < 500; i++) {
@@ -584,7 +584,7 @@ public class murabha_Steps {
 	    	}
 
 	@And("User_610 verify the confirmation message")
-	public void user_verify_the_confirmation_message(Integer int1) {
+	public void user_verify_the_confirmation_message() {
 		
 		for (int i = 0; i < 200; i++) {
 			try {
@@ -614,7 +614,7 @@ public class murabha_Steps {
 	//-----------  @AT_MU_EMPD_08
 	
 	@And("User_610 blank validation message")
-	public void user_blank_validation_message(Integer int1) {
+	public void user_blank_validation_message() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("saveBtn_610")).click();
@@ -640,7 +640,7 @@ public class murabha_Steps {
 }
 
 	@And("User_610 verify the enter special characters value proper validation message")
-	public void user_verify_the_enter_special_characters_value_proper_validation_message(Integer int1) throws Throwable {
+	public void user_verify_the_enter_special_characters_value_proper_validation_message() throws Throwable {
 	    Thread.sleep(2000);
 	    
 	    for (int i = 0; i < 400; i++) {
@@ -683,14 +683,14 @@ public class murabha_Steps {
 	//------------------ @AT_MU_EMPD_09
 	
 	@And("User_610 verify the list view under Customer Employment Details")
-	public void user_verify_the_list_view_under_customer_employment_details(Integer int1) {
+	public void user_verify_the_list_view_under_customer_employment_details() {
 	    
 	}
 	
 	//------------  -@AT_MU_QA_01
 	
 	@And("User_610 click Quatation Info screen")
-	public void user_click_quatation_info_screen(Integer int1) {
+	public void user_click_quatation_info_screen() {
 		for (int b = 0; b < 300; b++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("Quotation Info")).click();
@@ -704,7 +704,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the field Insurance Company, Base Premium ,Vat on Base Premium")
-	public void user_verify_the_field_insurance_company_base_premium_vat_on_base_premium(Integer int1) {
+	public void user_verify_the_field_insurance_company_base_premium_vat_on_base_premium() {
 		for (int j = 0; j < 200; j++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("InsuranceCompanyBpId")).isDisplayed();
@@ -743,7 +743,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the field Net Base Premium , Total Discount , Expiry Date , Quatatio Reference Number")
-	public void user_verify_the_field_net_base_premium_total_discount_expiry_date_quatatio_reference_number(Integer int1) {
+	public void user_verify_the_field_net_base_premium_total_discount_expiry_date_quatatio_reference_number() {
 	    
 		for (int j = 0; j < 200; j++) {
 			try {
@@ -798,7 +798,7 @@ public class murabha_Steps {
 	//---------------------- @AT_MU_QA_02
 	
 	@And("User_610 verify the field Insurance Company")
-	public void user_verify_the_field_insurance_company(Integer int1) {
+	public void user_verify_the_field_insurance_company() {
 		for (int j = 0; j < 200; j++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("InsuranceCompanyBpId")).isDisplayed();
@@ -814,7 +814,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the field Base Premium")
-	public void user_verify_the_field_base_premium(Integer int1) {
+	public void user_verify_the_field_base_premium() {
 		for (int j = 0; j < 200; j++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("BasePremiumAmount")).isDisplayed();
@@ -830,7 +830,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the field Vat On Base Premium")
-	public void user_verify_the_field_vat_on_base_premium(Integer int1) {
+	public void user_verify_the_field_vat_on_base_premium() {
 		for (int j = 0; j < 200; j++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("VatOnBasePremiumAmount")).isDisplayed();
@@ -849,7 +849,7 @@ public class murabha_Steps {
 	//-----------------@AT_MU_QA_03
 	
 	@And("User_610 verify the field Net Base Premium")
-	public void user_verify_the_field_net_base_premium(Integer int1) {
+	public void user_verify_the_field_net_base_premium() {
 		for (int j = 0; j < 200; j++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("NetBasePremiumAmount")).isDisplayed();
@@ -864,7 +864,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the field Total Discount")
-	public void user_verify_the_field_total_discount(Integer int1) {
+	public void user_verify_the_field_total_discount() {
 		for (int j = 0; j < 200; j++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("totalDiscountAmount")).isDisplayed();
@@ -879,7 +879,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the field Expiry Date")
-	public void user_verify_the_field_expiry_date(Integer int1) {
+	public void user_verify_the_field_expiry_date() {
 		for (int j = 0; j < 200; j++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("ExpiryDate")).isDisplayed();
@@ -896,7 +896,7 @@ public class murabha_Steps {
 	//-------------------@AT_MU_QA_04
 	
 	@And("User_610 verify the field Quatation Reference Number")
-	public void user_verify_the_field_quatation_reference_number(Integer int1) {
+	public void user_verify_the_field_quatation_reference_number() {
 		for (int j = 0; j < 200; j++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("QuoteReferenceNo")).isDisplayed();
@@ -912,7 +912,7 @@ public class murabha_Steps {
 	}
 	
 	@And("User_610 click search button and enter matching data")
-	public void user_click_search_button_and_enter_matching_data(Integer int1) throws Throwable {		
+	public void user_click_search_button_and_enter_matching_data() throws Throwable {		
 		//---webelement
 //		Thread.sleep(2000);		
 //		String jsPath = "document.querySelectorAll('button[icon=\"pi pi-search\"]')[0]";
@@ -955,7 +955,7 @@ public class murabha_Steps {
 		}
 
 	@And("User_610 click search button and enter mismatching data")
-	public void user_click_search_button_and_enter_mismatching_data(Integer int1) {
+	public void user_click_search_button_and_enter_mismatching_data() {
 		for (int i = 0; i < 600; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("enter_searchBtn_610_Mu")).clear();
@@ -984,7 +984,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the PDF button")
-	public void user_verify_the_pdf_button(Integer int1) {
+	public void user_verify_the_pdf_button() {
 	    
 	}
 	

@@ -24,6 +24,7 @@ Feature: Verify the functionalities for AppDataEntry(LivingExpenses)
     And User_610 verify the ExpectedCostOfLiving field
     And User_610 Verify the MinimumCostOfLiving Field
     And User_610 verify the field Amount
+    Then logout from the ijaraApplication
 
   @AT_TW_AD_LEA_002
   Scenario: Creation of Living Expense with valid data.
@@ -43,11 +44,13 @@ Feature: Verify the functionalities for AppDataEntry(LivingExpenses)
     And User_610 click the field AddButton
     And User_610 verify the field ExpenseType
     And User_610 verify the field Amount
-    And user click the CustomerName in input field
-    And user select the CustomerName in under customerInput
+    And User_610 click the CustomerName in input field
+    And User_610 select the CustomerName in under customerInput
     And User_610 click the field AddbuttonunderExpenseInfo
     And User_610 verify the field BackButton
     And User_610 verify the field DeleteButton
-    And user select the type in expeseType select box
-    And user Enter the Amount in Amount field
+    And User_610 select the type in expeseType select box
+    And User_610 Enter the Amount in Amount field
+    And User_610 save button and validate the success meassage
+    Then logout from the ijaraApplication
 

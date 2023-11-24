@@ -16,6 +16,7 @@ Scenario: verify fields should be non mandatory TextBox
     And User_610 verify the Documents Reference Number field should be non mandatory Text
 		And User_610 verify the Remarks field should be mandator Text 
 		And User_610 verify the upload document
+		Then logout from the ijaraApplication
    
     
    @AT_TW_AD_DOC_07
@@ -33,6 +34,7 @@ Scenario: verify Any mandatory field blank and save
     And User_610 verify the any mandatory field blank and save system should not allow user to save the record
     #And User_610 verify the enter numeric value in character field 
     #And User_610 verify the enter character value in numeric field
+    Then logout from the ijaraApplication
    
    @AT_TW_AD_DOC_08
 Scenario: verify Any mandatory field blank and save
@@ -52,6 +54,7 @@ Scenario: verify Any mandatory field blank and save
     #edit value nd save
     And User_610 select the Not Received in Documents Status
     And User_610 click save button
+    Then logout from the ijaraApplication
    
    
    @AT_TW_AD_DOC_09
@@ -70,3 +73,4 @@ Scenario: verify Any mandatory field blank and save
     And User_610 verify the Matching and Mismatching data of Search 
     And User_610 verify the functionality of Add button
     And User_610 verify the functionality of back button
+    Then logout from the ijaraApplication

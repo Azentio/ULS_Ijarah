@@ -15,3 +15,4 @@ Feature: Murabha App Data Entery Living Expenses
   	And User_610 click edit button under documents details
   	And User_610 verify the system not allow user to do a modification with invalid data Spouse Salary
   	And User_610 save button and verify the success message in murabha
+  	Then logout from the ijaraApplication

@@ -3165,15 +3165,16 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 	
 	//-------------verify fields in reference customer
 	
-	@And("User_610 verify the Add And Save button field in Reference List View Under New Application")
+	@And("User_610 verify the Add and Save button field in Reference List View Under New Application")
 	public void user_verify_the_add_and_save_button_field_in_reference_list_view_under_new_application() {
 	   
 		for (int i = 0; i < 300; i++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("click_SaveButton_UnderFollowUp_610")).isDisplayed()){
 					Assert.assertTrue(true);
+					break;
 				} 
-				break;
+				
 			} catch (Exception e) {
 				// TODO: handle exception
 				if (i == 299) {
@@ -3186,8 +3187,9 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("backBtn02_610")).isDisplayed()){
 					Assert.assertTrue(true);
+					break;
 				} 
-				break;
+				
 			} catch (Exception e) {
 				// TODO: handle exception
 				if (i == 299) {
@@ -3205,8 +3207,9 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("relationshipType_610")).isDisplayed()){
 					Assert.assertTrue(true);
+					break;
 				} 
-				break;
+				
 			} catch (Exception e) {
 				// TODO: handle exception
 				if (i == 299) {
@@ -3224,8 +3227,9 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("salutation_610")).isDisplayed()){
 					Assert.assertTrue(true);
+					break;
 				} 
-				break;
+				
 			} catch (Exception e) {
 				// TODO: handle exception
 				if (i == 299) {
@@ -3242,8 +3246,9 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("firstName_610")).isDisplayed()){
 					Assert.assertTrue(true);
+					break;
 				} 
-				break;
+				
 			} catch (Exception e) {
 				// TODO: handle exception
 				if (i == 299) {
@@ -3260,8 +3265,9 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("middleName_610")).isDisplayed()){
 					Assert.assertTrue(true);
+					break;
 				} 
-				break;
+				
 			} catch (Exception e) {
 				// TODO: handle exception
 				if (i == 299) {
@@ -3278,8 +3284,9 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("lastName_610")).isDisplayed()){
 					Assert.assertTrue(true);
+					break;
 				} 
-				break;
+				
 			} catch (Exception e) {
 				// TODO: handle exception
 				if (i == 299) {
@@ -3296,8 +3303,9 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("customerFullName_610")).isDisplayed()){
 					Assert.assertTrue(true);
+					break;
 				} 
-				break;
+				
 			} catch (Exception e) {
 				// TODO: handle exception
 				if (i == 299) {
@@ -3314,8 +3322,9 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("identificationType_610")).isDisplayed()){
 					Assert.assertTrue(true);
+					break;
 				} 
-				break;
+				
 			} catch (Exception e) {
 				// TODO: handle exception
 				if (i == 299) {
@@ -3332,8 +3341,9 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("IidentificationNumber_610")).isDisplayed()){
 					Assert.assertTrue(true);
+					break;
 				} 
-				break;
+				
 			} catch (Exception e) {
 				// TODO: handle exception
 				if (i == 299) {
@@ -3350,8 +3360,9 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("residenceAddress_610")).isDisplayed()){
 					Assert.assertTrue(true);
+					break;
 				} 
-				break;
+				
 			} catch (Exception e) {
 				// TODO: handle exception
 				if (i == 299) {
@@ -3368,8 +3379,9 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("officeAddress_610")).isDisplayed()){
 					Assert.assertTrue(true);
+					break;
 				} 
-				break;
+				
 			} catch (Exception e) {
 				// TODO: handle exception
 				if (i == 299) {
@@ -3386,8 +3398,9 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("contactNumber_610")).isDisplayed()){
 					Assert.assertTrue(true);
+					break;
 				} 
-				break;
+				
 			} catch (Exception e) {
 				// TODO: handle exception
 				if (i == 299) {
@@ -3404,8 +3417,9 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("officePhoneNumber_610")).isDisplayed()){
 					Assert.assertTrue(true);
+					break;
 				} 
-				break;
+				
 			} catch (Exception e) {
 				// TODO: handle exception
 				if (i == 299) {
@@ -3422,8 +3436,9 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("primaryMobileNumber_610")).isDisplayed()){
 					Assert.assertTrue(true);
+					break;
 				} 
-				break;
+				
 			} catch (Exception e) {
 				// TODO: handle exception
 				if (i == 299) {
@@ -3440,8 +3455,9 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("alternativeMobileNumber_610")).isDisplayed()){
 					Assert.assertTrue(true);
+					break;
 				} 
-				break;
+				
 			} catch (Exception e) {
 				// TODO: handle exception
 				if (i == 299) {
@@ -3458,8 +3474,9 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("emailID_610")).isDisplayed()){
 					Assert.assertTrue(true);
+					break;
 				} 
-				break;
+				
 			} catch (Exception e) {
 				// TODO: handle exception
 				if (i == 299) {
@@ -3476,8 +3493,9 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("NoOfYearKnow_610")).isDisplayed()){
 					Assert.assertTrue(true);
+					break;
 				} 
-				break;
+				
 			} catch (Exception e) {
 				// TODO: handle exception
 				if (i == 299) {
@@ -3494,8 +3512,9 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("CIFnumber_610")).isDisplayed()){
 					Assert.assertTrue(true);
+					break;
 				} 
-				break;
+				
 			} catch (Exception e) {
 				// TODO: handle exception
 				if (i == 299) {
@@ -3516,7 +3535,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 				break;		}
 			catch (Exception e) {
 				// TODO: handle exception
-				if (i==299) {
+				if (i==2999) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3526,16 +3545,17 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 		try {
 			if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("fillAllTheDetailsPopup_610")).isDisplayed()) {
 				Assert.assertTrue(true);
+				break;
 			}
-			break;
+			
 		} catch (Exception e) {
 			// TODO: handle exception
-			if (i==299) {
+			if (i==2999) {
 				Assert.fail(e.getMessage());
 			}
 		}
 	}
-	    Thread.sleep(3000);
+	    Thread.sleep(2000);
 	}
 
 	@And("User_610 verify enter numeric value in character field system should not allow user to save the record")
@@ -3551,7 +3571,20 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 	@And("User_610 verify enters only special characters value in any field system should not allow user to save the record")
 	public void user_verify_enters_only_special_characters_value_in_any_field_system_should_not_allow_user_to_save_the_record() {
 		
-		javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("firstName_610")).click();
+		
+		for (int i = 0; i < 3000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("firstName_610")).click();
+				break;
+				}
+			 catch (Exception e) {
+				// TODO: handle exception
+				if (i==299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
 		for (int i = 0; i < 3000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("firstName_610")).sendKeys("@#$@");
@@ -3569,6 +3602,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("onlyAlphaNumericCharterPopup_610")).isDisplayed()) {
 					Assert.assertTrue(true);
+					break;
 				}
 			} catch (Exception e) {
 				// TODO: handle exception

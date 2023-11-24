@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\inindc00610\AppData\Local\Temp\testng-eclipse--1376803061\testng-customsuite.xml</span>
+                    <span>C:\Users\inindc00610\AppData\Local\Temp\testng-eclipse-1368285964\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,   3 passed</span>
+                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="Runner.TestApplication" class="method navigator-link" hash-for-method="runScenario(&quot;Creation of Living Expense with valid data.&quot;, &quot;Optional[Verify the functionalities for AppDataEntry...)">runScenario("Creation of Living Expense with valid data.", "Optional[Verify the functionalities for AppDataEntry...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,17 +118,7 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="Runner.TestApplication" class="method navigator-link" hash-for-method="runScenario(&quot;System should display the list of below mention fields for Income List&quot;, &quot;Optional[To verify the Ta...)">runScenario("System should display the list of below mention fields for Income List", "Optional[To verify the Ta...)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="Runner.TestApplication" class="method navigator-link" hash-for-method="runScenario(&quot;System should display the list of below mention fields for Income List&quot;, &quot;Optional[To verify the Ta...)">runScenario("System should display the list of below mention fields for Income List", "Optional[To verify the Ta...)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="Runner.TestApplication" class="method navigator-link" hash-for-method="runScenario(&quot;System should display the list of below mention fields for Income List&quot;, &quot;Optional[To verify the Ta...)">runScenario("System should display the list of below mention fields for Income List", "Optional[To verify the Ta...)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="Runner.TestApplication" class="method navigator-link" hash-for-method="runScenario(&quot;Creation of Living Expense with valid data.&quot;, &quot;Optional[Verify the functionalities for AppDataEntry...)">runScenario("Creation of Living Expense with valid data.", "Optional[Verify the functionalities for AppDataEntry...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -129,6 +133,52 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
+          <div class="suite-Default_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">Runner.TestApplication</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Creation of Living Expense with valid data.&quot;, &quot;Optional[Verify the functionalities for AppDataEntry...)">
+                  </a> <!-- runScenario("Creation of Living Expense with valid data.", "Optional[Verify the functionalities for AppDataEntry...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Creation of Living Expense with valid data.", "Optional[Verify the functionalities for AppDataEntry(LivingExpenses)]")</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;ion-item _ngcontent-pnx-c224=&quot;&quot; lines=&quot;none&quot; tooltipposition=&quot;bottom&quot; class=&quot;p-element UserAccSec headerSecdiv item md item-lines-none item-fill-none in-list hydrated&quot; ng-reflect-lines=&quot;none&quot; ng-reflect-tooltip-position=&quot;bottom&quot; ng-reflect-text=&quot;Profile&quot; role=&quot;listitem&quot;&gt;...&lt;/ion-item&gt; is not clickable at point (1877, 26). Other element would receive the click: &lt;div class=&quot;ng-tns-c144-6 ng-star-inserted ng-trigger ng-trigger-flyInOut ngx-toastr toast-success&quot; toast-component=&quot;&quot; style=&quot;opacity: 1;&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=119.0.6045.160)
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [fce9f8be71d5c00eeee067c353bf566c, clickElement {id=425349FC794A246285694159EF0E3FA5_element_144}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55211}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55211/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [org.openqa.selenium.remote.RemoteWebElement@59e29f98 -&gt; unknown locator]
+Session ID: fce9f8be71d5c00eeee067c353bf566c
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at stepdefinitions.IjaraLogin.logoutFromIjara(IjaraLogin.java:363)
+	at stepdefinitions.IjaraTest.logout_from_the_ijara_application(IjaraTest.java:166)
+	at ✽.logout from the ijaraApplication(file:///C:/Users/inindc00610/git/ULS_Jay1/ULS_Jay/src/test/java/features/Tawarruq_AppDataEntry_LivingExpenses.feature:55)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -137,30 +187,10 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="runScenario(&quot;System should display the list of below mention fields for Income List&quot;, &quot;Optional[To verify the Ta...)">
-                  </a> <!-- runScenario("System should display the list of below mention fields for Income List", "Optional[To verify the Ta...) -->
+                  <a name="runScenario(&quot;Creation of Living Expense with valid data.&quot;, &quot;Optional[Verify the functionalities for AppDataEntry...)">
+                  </a> <!-- runScenario("Creation of Living Expense with valid data.", "Optional[Verify the functionalities for AppDataEntry...) -->
                   <span class="method-name">runScenario</span>
-                  <span class="parameters">("System should display the list of below mention fields for Income List", "Optional[To verify the Tawarruq Application --> App Data Entry stage --> Customer Financials --> Income details screen]")</span>
-                  <em>
-(Runs Cucumber Scenarios)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="runScenario(&quot;System should display the list of below mention fields for Income List&quot;, &quot;Optional[To verify the Ta...)">
-                  </a> <!-- runScenario("System should display the list of below mention fields for Income List", "Optional[To verify the Ta...) -->
-                  <span class="method-name">runScenario</span>
-                  <span class="parameters">("System should display the list of below mention fields for Income List", "Optional[To verify the Tawarruq Application --> App Data Entry stage --> Customer Financials --> Income details screen]")</span>
-                  <em>
-(Runs Cucumber Scenarios)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="runScenario(&quot;System should display the list of below mention fields for Income List&quot;, &quot;Optional[To verify the Ta...)">
-                  </a> <!-- runScenario("System should display the list of below mention fields for Income List", "Optional[To verify the Ta...) -->
-                  <span class="method-name">runScenario</span>
-                  <span class="parameters">("System should display the list of below mention fields for Income List", "Optional[To verify the Tawarruq Application --> App Data Entry stage --> Customer Financials --> Income details screen]")</span>
+                  <span class="parameters">("Creation of Living Expense with valid data.", "Optional[Verify the functionalities for AppDataEntry(LivingExpenses)]")</span>
                   <em>
 (Runs Cucumber Scenarios)                  </em>
                 </div> <!-- method-content -->
@@ -170,7 +200,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\inindc00610\AppData\Local\Temp\testng-eclipse--1376803061\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\inindc00610\AppData\Local\Temp\testng-eclipse-1368285964\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -227,24 +257,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
 data.setCell(0, 2, 'Runner.TestApplication')
-data.setCell(0, 3, 59638);
+data.setCell(0, 3, 32366);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'runScenario')
 data.setCell(1, 2, 'Runner.TestApplication')
-data.setCell(1, 3, 50860);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'runScenario')
-data.setCell(2, 2, 'Runner.TestApplication')
-data.setCell(2, 3, 39812);
+data.setCell(1, 3, 31395);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 minutes</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -276,20 +302,18 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">runScenario("System should display the list of below mention fields for Income List", "Optional[To verify the Ta...)</span>
-                <span class="method-start">969 ms</span>
+                <span class="method-name">runScenario("Creation of Living Expense with valid data.", "Optional[Verify the functionalities for AppDataEntry...)</span>
+                <span class="method-start">992 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">runScenario("System should display the list of below mention fields for Income List", "Optional[To verify the Ta...)</span>
-                <span class="method-start">60612 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">runScenario("System should display the list of below mention fields for Income List", "Optional[To verify the Ta...)</span>
-                <span class="method-start">100427 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Creation of Living Expense with valid data.", "Optional[Verify the functionalities for AppDataEntry...)</span>
+                <span class="method-start">33360 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">151290 ms</span>
+                <span class="method-start">64758 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

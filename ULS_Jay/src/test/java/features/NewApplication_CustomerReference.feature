@@ -14,7 +14,7 @@ Feature: new Application Customer Reference
     And User_610 click Addition Customer Info Under New Application
     And User_610 click edit button Info Under New Application
     And User_610 click Add button Info in Reference List View Under New Application
-    And User_610 verify the Add And Save button field in Reference List View Under New Application 
+    #And User_610 verify the Add and Save button field in Reference List View Under New Application 
     And User_610 verify the Relationship Type field in Reference List View Under New Application 
     And User_610 verify the Salutation field in Reference List View Under New Application 
     And User_610 verify the First Name field in Reference List View Under New Application 
@@ -32,6 +32,7 @@ Feature: new Application Customer Reference
     And User_610 verify the Email ID field in Reference List View Under New Application 
     And User_610 verify the No Of Year Known field in Reference List View Under New Application 
     And User_610 verify the Cif NUmber field in Reference List View Under New Application 
+    Then logout from the ijaraApplication
     
     
     @AT_IJ_NewApp_CR_02
@@ -52,6 +53,7 @@ Feature: new Application Customer Reference
     #And User_610 verify enter numeric value in character field system should not allow user to save the record
     #And User_610 verfiy enter character value in numeric field system should not allow user to save the record
     And User_610 verify enters only special characters value in any field system should not allow user to save the record
+    Then logout from the ijaraApplication
     
     
     

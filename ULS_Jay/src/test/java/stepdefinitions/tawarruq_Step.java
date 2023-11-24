@@ -36,6 +36,8 @@ public class tawarruq_Step {
 	
 	SoftAssert softAssert = new SoftAssert();
 	
+	JSPaths jsPaths2 = new JSPaths(excelPath, "Ijara_AD_DocumentDetails", "Ijara_LoginFieldName", "JSPath");
+	JSPaths jsPaths3 = new JSPaths(excelPath, "Murabha_Module", "Murabha_LoginFieldName", "JSPath");
 	JSPaths jsPaths4 = new JSPaths(excelPath, "Tawarruq_Module", "Murabha_LoginFieldName", "JSPath");
 	JSPaths tawarruq_ADEntry_Income = new JSPaths(excelPath, "Tawarruq_ADEntry_Income", "DataCheckIncome_FieldName", "JSPath");
 	JSPaths tawarruq_ADEntry_LivingExpense = new JSPaths(excelPath, "Tawarruq_ADEntry_LivingExpense", "Tawarruq_AppDataEntrylivingExpensefield", "JSPath");
@@ -954,7 +956,7 @@ public class tawarruq_Step {
 	//-------------------------------------------------- @AT_TW_AD_LEA_002
 	
 	
-	@And("user click the CustomerName in input field")
+	@And("User_610 click the CustomerName in input field")
 	public void user_click_the_customer_name_in_input_field() throws IOException {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(tawarruq_ADEntry_LivingExpense.getElement("CustomerName")));
 		
@@ -972,7 +974,7 @@ public class tawarruq_Step {
 			}	
 	}
 	
-	@And("user select the CustomerName in under customerInput")
+	@And("User_610 select the CustomerName in under customerInput")
 	public void user_select_the_customer_name_in_under_customer_input() throws IOException {
 				 
 			String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
@@ -1043,7 +1045,7 @@ public class tawarruq_Step {
 			javascriptHelper.executeScriptWithWebElement(tawarruq_ADEntry_LivingExpense.getElement("ExpenseType")).click();
 	}
 	
-	@And("user select the type in expeseType select box")
+	@And("User_610 select the type in expeseType select box")
 	public void user_select_the_type_in_expese_type_select_box() throws IOException {
 		//waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("ExpenseTypeInput")));
 		for (int i = 0; i <= 300; i++) {
@@ -1128,7 +1130,7 @@ public class tawarruq_Step {
 	    				    
 	}
 	
-	@And("user Enter the Amount in Amount field")
+	@And("User_610 Enter the Amount in Amount field")
 	public void user_enter_the_amount_in_amount_field() throws IOException {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(tawarruq_ADEntry_LivingExpense.getElement("AmountInput")));
 		for (int i = 0; i < 200; i++) {
@@ -1144,6 +1146,36 @@ public class tawarruq_Step {
 			}
 		}
 		
+	    	}
+	
+	@And("User_610 save button and validate the success meassage")
+	public void user_save_button_and_validate_the_success_meassage() {
 	    
-	}
+		for (int i = 0; i < 400; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("saveBtn_610")).click();
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+			
+	
+	for (int i = 0; i < 400; i++) {
+		try {
+			Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("successMsg_610")).isDisplayed());
+			break;
+		} catch (Exception e) {
+			if (i==399) {
+				Assert.fail(e.getMessage());
+			}
+	                           	}
+	                     }
+	
+            }
+
+	
 }
