@@ -122,3 +122,100 @@ And User_608 select the Decision dropdown as Select under Decision section in Of
 And User_608 click the Offer button without selecting the Decision under Offer Decision tab
 And User_608 verify the validation messgage without selecting decision under Offer Decision tab
 Then logout from the ijaraApplication
+
+
+@AT_UNW_003
+Scenario: Validate that user can able to save the condition in offering page
+
+Given navigate the IJARA URL
+And login with valid credentials-Underwriter
+And User_608 get the test data for test case AT_UNW_003
+And User_608 click the Mail box in ULS application
+And User_608 click the Search button under inbox
+And User_608 search the Ref id under inbox
+And User_608 click the Entitle button under inbox
+And User_608 click the Pencil icon under Offer Decision tab
+And Click On the Recommendation in Offer Decision
+And Click On the Add button in List of Condition
+And select the value in Note Code Dropdown Below the Conditions
+Then Enter Number in Sequence Number Field Below the Conditions
+Then select not recommended in Note Sub Code Dropdown Below the Conditions
+Then Enter Data in Condition Field Below the Conditions
+Then Select the value in Date field Below the Conditions
+Then select the value in fulfilled Dropdown Below the Conditions
+Then Turn on the Approval Status Below the Conditions
+Then Fill The Remarks Field Below the Conditions
+Then Click on the Save button To Save The Conditions Record
+And Validate Save successful popup is displayed in the condition
+Then logout from the ijaraApplication
+
+
+@AT_UNW_006
+Scenario: Underwriter - Main screen and Added Screen
+
+Given navigate the IJARA URL
+And login with valid credentials-Underwriter
+And User_608 get the test data for test case AT_UNW_006
+And User_608 click the Mail box in ULS application
+And User_608 click the Search button under inbox
+And User_608 search the Ref id under inbox
+And User_608 click the Entitle button under inbox
+And User_608 verify the Application Details tab in Underwriter stage
+#And User_608 verify the Approve button under Application Details
+#And User_608 verify the Reject button under Application Details
+#And User_608 verify the Return button under Application Details
+#And User_608 verify the View summary button under Application Details
+#And User_608 verify the Customer details tab in Underwriter stage
+#And User_608 verify the Additional Customer info tab in Underwriter stage
+#And User_608 verify the Customer Financials tab in Underwriter stage
+#And User_608 verify the Living Expenses tab in Underwriter stage
+#And User_608 verify the Facility Info tab in Underwriter stage
+#And User_608 verify the Asset Details tab in Underwriter stage
+#And User_608 verify the Quotation Info tab in Underwriter stage
+#And User_608 verify the Insurance Info tab in Underwriter stage
+#And User_608 verify the Policy Check tab in Underwriter stage
+#And User_608 verify the Document Details tab in Underwriter stage
+Then logout from the ijaraApplication
+
+
+
+
+
+
+
+
+#And user click and verify the Application Details 
+#And user verify the Approve button under Application Details
+#And user verify the Reject button under Application Details
+#And user verify the Return button under Application Details
+#And user verify the View summary button under Application Details
+#And user verify and click the Customer Details tab
+#And user scroll down to view the tabs
+#And user verify and click the Additional customer Info tab
+#And user scroll down to view the tabs
+#And user verify and click the Customer Financial tab
+#And user scroll down to view the tabs
+#And user verify and click the Living Expense tab
+#And user scroll down to view the tabs
+#And user verify and click the Facility Details tab
+#And user scroll down to view the tabs
+#And user verify and click the Asset Details tab
+#And user scroll down to view the tabs
+#And user verify and click the Quatation Info tab
+#And user scroll down to view the tabs
+#And user verify and click the Insurance Info tab
+#And user scroll down to view the tabs
+#And user verify and click the Policy Check tab
+#And user scroll down to view the tabs
+#And user verify and click the Documents tab
+#And user scroll down to view the tabs
+#Then logout from the ijaraApplication
+
+
+
+
+
+
+
+
+

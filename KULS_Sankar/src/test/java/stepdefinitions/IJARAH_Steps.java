@@ -1,6 +1,7 @@
 package stepdefinitions;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,6 +20,7 @@ import helper.JavascriptHelper;
 import helper.Selenium_Actions;
 import helper.WaitHelper;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageobjects.JSPaths;
@@ -114,6 +116,23 @@ public class IJARAH_Steps {
     public void get_the_test_data_for_test_case_AT_UNW_002() throws Throwable {
 		testData = underWriterExcelData.getTestdata("DS_AT_UNW_002");
     }
+	
+//	@AT_UNW_003 --> Underwriter -Arul
+	@And("^User_608 get the test data for test case AT_UNW_003$")
+    public void get_the_test_data_for_test_case_AT_UNW_003() throws Throwable {
+		testData = underWriterExcelData.getTestdata("DS_AT_UNW_003");
+    }
+	
+//	@AT_UNW_006 --> Underwriter - Karthi
+	@And("^User_608 get the test data for test case AT_UNW_006$")
+	public void get_the_test_data_for_test_case_AT_UNW_006() throws Throwable {
+		testData = underWriterExcelData.getTestdata("DS_AT_UNW_006");
+	}
+	
+	
+	
+	
+	
 	
 //	App Data Check -- Income
 	@And("^User_608 get the test data for test case AT_INCD_01$")
@@ -1900,7 +1919,7 @@ public class IJARAH_Steps {
 		WebElement offerDecisionTab = javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("offerDecisionTab"));
 		for (int i = 0; i <= 5000; i++) {
 			try {
-				javascriptHelper.backgroundColor(offerDecisionTab);
+//				javascriptHelper.backgroundColor(offerDecisionTab);
 				actions.moveToElement(offerDecisionTab);
 				Assert.assertTrue(offerDecisionTab.isDisplayed());
 				break;
@@ -3479,6 +3498,490 @@ public class IJARAH_Steps {
 	    
 	}
 	
+//	AT_UNW_003 --> Underwriter - Arul's Code
+	@Given("Click On the Recommendation in Offer Decision")
+	public void click_on_the_recommendation_in_offer_decision() {
+		javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("JSERecommendations")));
+	}
+
+	@Given("Click On the Add button in List of Condition")
+	public void click_on_the_add_button_in_list_of_condition() throws InterruptedException {
+//		Thread.sleep(5000);
+//		javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("AddButton")).click();
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("AddButton")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Given("select the value in Note Code Dropdown Below the Conditions")
+	public void select_the_value_in_note_code_dropdown_below_the_conditions() throws IOException {
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("NoteCode")));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("NoteCode")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+				System.out.println("Dropdown length " + dropdownLength);
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+			for (int l = 0; l <= 300; l++) {
+				try {
+					System.out.println("L value is " + l);
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+					dropdownString = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText").toString();
+					if (!(dropdownString.isEmpty())) {
+						System.out.println(dropdownString);
+						System.out.println("Loop count " + l + " got breaked");
+						break;
+					}
+				} catch (Exception e) {
+					if (l == 300 && !(dropdownString.isBlank())) {
+						Assert.fail(e.getMessage());
+					}
+				}
+				if (!(dropdownString.isEmpty())) {
+					System.out.println(dropdownString);
+					System.out.println("Loop count " + l + " got breaked");
+					break;
+				}
+			}
+//			System.out.println("String " + dropdownString.trim());
+//			System.out.println("Map " + testData.get("CustomerName").trim());
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("NoteCode")).trim())) {
+				for (int k = 0; k <= 300; k++) {
+					try {
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						isDropdownValueSelected = true;
+						break;
+					} catch (Exception e) {
+						if (k == 300) {
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+				break;
+			}
+		}
+	}
+
+	@Then("Enter Number in Sequence Number Field Below the Conditions")
+	public void enter_number_in_sequence_number_field_below_the_conditions() {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("SequenceNumber")).click();
+				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("SequenceNumber"))
+				.sendKeys(testData.get("SequenceNumber"),Keys.TAB);
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Then("select not recommended in Note Sub Code Dropdown Below the Conditions")
+	public void select_not_recommended_in_note_sub_code_dropdown_below_the_conditions() {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("NoteSubcode")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+				System.out.println("Dropdown length " + dropdownLength);
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+			for (int l = 0; l <= 300; l++) {
+				try {
+					System.out.println("L value is " + l);
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+					dropdownString = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText").toString();
+					if (!(dropdownString.isEmpty())) {
+						System.out.println(dropdownString);
+						System.out.println("Loop count " + l + " got breaked");
+						break;
+					}
+				} catch (Exception e) {
+					if (l == 300 && !(dropdownString.isBlank())) {
+						Assert.fail(e.getMessage());
+					}
+				}
+				if (!(dropdownString.isEmpty())) {
+					System.out.println(dropdownString);
+					System.out.println("Loop count " + l + " got breaked");
+					break;
+				}
+			}
+//			System.out.println("String " + dropdownString.trim());
+//			System.out.println("Map " + testData.get("CustomerName").trim());
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("NoteSubCode")).trim())) {
+				for (int k = 0; k <= 300; k++) {
+					try {
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						isDropdownValueSelected = true;
+						break;
+					} catch (Exception e) {
+						if (k == 300) {
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+				break;
+			}
+		}
+	}
+
+
+	@Then("Enter Data in Condition Field Below the Conditions")
+	public void enter_data_in_condition_field_below_the_conditions() {
+		javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("Condition")).click();
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("Condition"))
+				.sendKeys(testData.get("Condition"),Keys.TAB);
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Then("Select the value in Date field Below the Conditions")
+	public void select_the_value_in_date_field_below_the_conditions() {
+		javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("Date")).click();
+		javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("Date_today")).click();
+	}
+
+	@Then("select the value in fulfilled Dropdown Below the Conditions")
+	public void select_the_value_in_fulfilled_dropdown_below_the_conditions() {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("fulfilled")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+				System.out.println("Dropdown length " + dropdownLength);
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+			for (int l = 0; l <= 300; l++) {
+				try {
+					System.out.println("L value is " + l);
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+					dropdownString = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText").toString();
+					if (!(dropdownString.isEmpty())) {
+						System.out.println(dropdownString);
+						System.out.println("Loop count " + l + " got breaked");
+						break;
+					}
+				} catch (Exception e) {
+					if (l == 300 && !(dropdownString.isBlank())) {
+						Assert.fail(e.getMessage());
+					}
+				}
+				if (!(dropdownString.isEmpty())) {
+					System.out.println(dropdownString);
+					System.out.println("Loop count " + l + " got breaked");
+					break;
+				}
+			}
+			System.out.println("String " + dropdownString.trim());
+			//System.out.println("Map " + testData.get("CustomerName").trim());
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("fullfill")).trim())) {
+				for (int k = 0; k <= 300; k++) {
+					try {
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						isDropdownValueSelected = true;
+						break;
+					} catch (Exception e) {
+						if (k == 300) {
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+				break;
+			}
+		}
+	}
+
+	@Then("Turn on the Approval Status Below the Conditions")
+	public void turn_on_the_approval_status_below_the_conditions() {
+		javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("ApprovalStatus")).click();
+	}
+
+	@Then("Fill The Remarks Field Below the Conditions")
+	public void fill_the_remarks_field_below_the_conditions() {
+		javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("Remarks")).click();
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("Remarks"))
+				.sendKeys(testData.get("Remarks"),Keys.TAB);
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	@Then("Click on the Save button To Save The Conditions Record")
+	public void click_on_the_save_button_to_save_the_conditions_record() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("SaveIcon")));
+				//javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("SaveIcon")).click();
+				break;
+			} catch (Exception e) { 
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@Given("Validate Save successful popup is displayed in the condition")
+	public void validate_save_successful_popup_is_displayed_in_the_condition() {
+		for (int i = 0; i <= 4; i++) {
+			try {
+				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("SuccessPopup")));
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("SuccessPopup")).isDisplayed());
+				break;
+			} catch (Exception e) {
+				
+			}
+		}
+	}
+	
+	
+//	@AT_UNW_006
+	@Given("User_608 verify the Application Details tab in Underwriter stage")
+	public void user_verify_the_application_details_tab_in_underwriter_stage() throws Throwable {		
+		for (int i = 0; i <= 250; i++) {
+			try {
+				WebElement tab = javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("applicationDetailsTab"));
+				tab.click();
+				break;
+			} catch (Exception e) {
+				if (i == 250) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@And("User_608 verify the Approve button under Application Details")
+	public void user_verify_the_approve_button_under_application_details() throws Throwable {
+		for (int i = 0; i < 200; i++) {
+			try {
+				javascriptHelper.backgroundBorder(javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("appDetailsApproveBtn")));
+				Assert.assertTrue(
+						javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("appDetailsApproveBtn")).isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+
+			}
+		}
+	}
+	
+	@And("User_608 verify the Reject button under Application Details")
+	public void user_verify_the_reject_button_under_application_details() throws Throwable {
+		for (int i = 0; i < 200; i++) {
+			try {
+				javascriptHelper.backgroundBorder(javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("appDetailsRejectBtn")));
+				Assert.assertTrue(
+						javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("appDetailsRejectBtn")).isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+
+			}
+		}
+	}
+	
+	@And("User_608 verify the Return button under Application Details")
+	public void user_verify_the_return_button_under_application_details() throws Throwable {
+		for (int i = 0; i < 200; i++) {
+			try {
+				javascriptHelper.backgroundBorder(javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("appDetailsReturnBtn")));
+				Assert.assertTrue(
+						javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("appDetailsReturnBtn")).isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+
+			}
+		}
+	}
+
+	@And("User_608 verify the View summary button under Application Details")
+	public void user_verify_the_view_summary_button_under_application_details() throws Throwable {
+		for (int i = 0; i < 200; i++) {
+			try {
+				javascriptHelper.backgroundBorder(javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("appDetailsViewSummaryBtn")));
+				Assert.assertTrue(
+						javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("appDetailsViewSummaryBtn")).isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@Given("User_608 verify the Customer details tab in Underwriter stage")
+	public void user_verify_the_customer_details_tab_in_underwriter_stage() throws Throwable {
+	    
+	    
+	}
+
+	@Given("User_608 verify the Additional Customer info tab in Underwriter stage")
+	public void user_verify_the_additional_customer_info_tab_in_underwriter_stage() throws Throwable {
+	    
+	    
+	}
+
+	@Given("User_608 verify the Customer Financials tab in Underwriter stage")
+	public void user_verify_the_customer_financials_tab_in_underwriter_stage() throws Throwable {
+	    
+	    
+	}
+
+	@Given("User_608 verify the Living Expenses tab in Underwriter stage")
+	public void user_verify_the_living_expenses_tab_in_underwriter_stage() throws Throwable {
+	    
+	    
+	}
+
+	@Given("User_608 verify the Facility Info tab in Underwriter stage")
+	public void user_verify_the_facility_info_tab_in_underwriter_stage() throws Throwable {
+	    
+	    
+	}
+
+	@Given("User_608 verify the Asset Details tab in Underwriter stage")
+	public void user_verify_the_asset_details_tab_in_underwriter_stage() throws Throwable {
+	    
+	    
+	}
+
+	@Given("User_608 verify the Quotation Info tab in Underwriter stage")
+	public void user_verify_the_quotation_info_tab_in_underwriter_stage() throws Throwable {
+	    
+	    
+	}
+
+	@Given("User_608 verify the Insurance Info tab in Underwriter stage")
+	public void user_verify_the_insurance_info_tab_in_underwriter_stage() throws Throwable {
+	    
+	    
+	}
+
+	@Given("User_608 verify the Policy Check tab in Underwriter stage")
+	public void user_verify_the_policy_check_tab_in_underwriter_stage() throws Throwable {
+	    
+	    
+	}
+
+	@Given("User_608 verify the Document Details tab in Underwriter stage")
+	public void user_verify_the_document_details_tab_in_underwriter_stage() throws Throwable {
+	    
+	    
+	}
 	
 //	AT_CUD_004
 	@And("User_608 click Search button in Financial Commitments under Customer Financials tab")
@@ -6206,12 +6709,12 @@ public class IJARAH_Steps {
 	public void user_verify_the_credit_risk_factor_section_available_under_offer_details_tab() throws Throwable {
 		WebElement creditRiskFactor = javascriptHelper.executeScriptWithWebElement("document.querySelectorAll('ion-row[class=\"md hydrated\"]')[2]");
 		WebElement creditRiskFactorSection = javascriptHelper.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("creditRiskFactorSection"));		
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 20000; i++) {
 			try {
 				javascriptHelper.scrollIntoView(creditRiskFactor);
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 20000) {
 					Assert.fail(e.getMessage());
 				}
 			}
