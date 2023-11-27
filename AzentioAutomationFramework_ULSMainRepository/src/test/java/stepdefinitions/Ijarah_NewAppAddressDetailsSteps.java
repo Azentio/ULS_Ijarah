@@ -41,8 +41,6 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 
 	ExcelData excelTestDataForMurabahaAddressDetails = new ExcelData(excelTestDataPath,
 			"M_NewApp_AddressDetailsTestData", "Dataset ID");
-	ExcelData excelTestDataForMurabahaAddressDetailsExecution = new ExcelData(excelTestDataPath,
-			"M_NewApp_AddDetails_ExeTrack", "TestCase ID");
 
 	// Tawruqq
 	ExcelData excelTestDataForTawruqqAddressDetails = new ExcelData(excelTestDataPath, "TW_NewApp_AddDetails_TestData",
@@ -68,49 +66,49 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 	@And("get the test data for test case id AT_NewApp_M_AD_02")
 	public void get_the_test_data_for_test_case_id_AT_NewApp_M_AD_02() throws Throwable {
 		addressDetailsExecutionData = murabahExecutionSheet.getTestdata("AT_NewApp_M_AD_02");
-		addressDetailsTestData = excelTestDataForAddressDetails
+		addressDetailsTestData = excelTestDataForMurabahaAddressDetails
 				.getTestdata(addressDetailsExecutionData.get("dataSet_ID"));
 	}
 
 	@And("get the test data for test case id AT_NewApp_M_AD_03")
 	public void get_the_test_data_for_test_case_id_AT_NewApp_M_AD_03() throws Throwable {
 		addressDetailsExecutionData = murabahExecutionSheet.getTestdata("AT_NewApp_M_AD_03");
-		addressDetailsTestData = excelTestDataForAddressDetails
+		addressDetailsTestData = excelTestDataForMurabahaAddressDetails
 				.getTestdata(addressDetailsExecutionData.get("dataSet_ID"));
 	}
 
 	@And("get the test data for test case id AT_NewApp_M_AD_04")
 	public void get_the_test_data_for_test_case_id_AT_NewApp_M_AD_04() throws Throwable {
 		addressDetailsExecutionData = murabahExecutionSheet.getTestdata("AT_NewApp_M_AD_04");
-		addressDetailsTestData = excelTestDataForAddressDetails
+		addressDetailsTestData = excelTestDataForMurabahaAddressDetails
 				.getTestdata(addressDetailsExecutionData.get("dataSet_ID"));
 	}
 
 	@And("get the test data for test case id AT_NewApp_M_AD_05")
 	public void get_the_test_data_for_test_case_id_AT_NewApp_M_AD_05() throws Throwable {
 		addressDetailsExecutionData = murabahExecutionSheet.getTestdata("AT_NewApp_M_AD_05");
-		addressDetailsTestData = excelTestDataForAddressDetails
+		addressDetailsTestData = excelTestDataForMurabahaAddressDetails
 				.getTestdata(addressDetailsExecutionData.get("dataSet_ID"));
 	}
 
 	@And("get the test data for test case id AT_NewApp_M_AD_06")
 	public void get_the_test_data_for_test_case_id_AT_NewApp_M_AD_06() throws Throwable {
 		addressDetailsExecutionData = murabahExecutionSheet.getTestdata("AT_IJ_NewApp_AD_06");
-		addressDetailsTestData = excelTestDataForAddressDetails
+		addressDetailsTestData = excelTestDataForMurabahaAddressDetails
 				.getTestdata(addressDetailsExecutionData.get("dataSet_ID"));
 	}
 
 	@And("get the test data for test case id AT_NewApp_M_AD_07")
 	public void get_the_test_data_for_test_case_id_AT_NewApp_M_AD_07() throws Throwable {
 		addressDetailsExecutionData = murabahExecutionSheet.getTestdata("AT_IJ_NewApp_AD_07");
-		addressDetailsTestData = excelTestDataForAddressDetails
+		addressDetailsTestData = excelTestDataForMurabahaAddressDetails
 				.getTestdata(addressDetailsExecutionData.get("dataSet_ID"));
 	}
 
 	@And("get the test data for test case id AT_NewApp_M_AD_01")
 	public void get_the_test_data_for_test_case_id_AT_NewApp_M_AD_01() throws Throwable {
 		addressDetailsExecutionData = murabahExecutionSheet.getTestdata("AT_NewApp_M_AD_01");
-		addressDetailsTestData = excelTestDataForAddressDetails
+		addressDetailsTestData = excelTestDataForMurabahaAddressDetails
 				.getTestdata(addressDetailsExecutionData.get("dataSet_ID"));
 	}
 
@@ -495,6 +493,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 				javascriptHelper.executeScriptWithWebElement(newAppAddressDetailsJSElements.getElement("address_type"))
 						.getAttribute("aria-label").contains("Select"),
 				"Address type is not a dropdown hence failed");
+		System.out.println("Address type " + addressDetailsTestData.get("address_type"));
 		clicksAndActionsHelper.jsSelectUsingText(addressDetailsTestData.get("address_type"));
 	}
 

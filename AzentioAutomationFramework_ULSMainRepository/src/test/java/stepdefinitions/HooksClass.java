@@ -28,28 +28,28 @@ import utilities.ExtentTestManager;
 public class HooksClass extends BaseClass {
 	WebDriver driver;
 	String flag = "No";
-	ConfigFileReader configFileReader= new ConfigFileReader();
+	ConfigFileReader configFileReader = new ConfigFileReader();
 	String path = configFileReader.getTestDataFilePath();
-	ExcelData testExecution = new ExcelData(path, "Tawruqq_ExecutionTracker", "TestCase ID");
+	ExcelData testExecution = new ExcelData(path, "Ijarah_ExecutionTracker", "TestCase ID");
 	Map<String, String> testExecutionData;
-	ExcelTest excelTest = new ExcelTest(path, "Tawruqq_ExecutionTracker", "TestCase ID");
+	ExcelTest excelTest = new ExcelTest(path, "Ijarah_ExecutionTracker", "TestCase ID");
 	List<String> testCaseTagsFromExcel = excelTest.getTestCaseTagsfromExcel();
-boolean excelRunnerStatus=true;
+	boolean excelRunnerStatus = true;
 	ScreenshotHelper screenshotHelper = new ScreenshotHelper(driver);
 
 	@Before
 	public void browserSetup(Scenario scenario) throws IOException {
 		// get flag status from excel and skip the test cases
-		if(excelRunnerStatus==true)
-		{
-		if (flag.equalsIgnoreCase("yes")) {
-			if (testExecution.getTestdata(NewExcelTestRunner.getCurrentExecutionTag()).get("ExecuteYes/No")
-					.equalsIgnoreCase("No")) {
-				
-				System.out.println("Status of the flag"+testExecution.getTestdata(NewExcelTestRunner.getCurrentExecutionTag()).get("ExecuteYes/No"));
-				Assume.assumeTrue(false);
+		if (excelRunnerStatus == true) {
+			if (flag.equalsIgnoreCase("yes")) {
+				if (testExecution.getTestdata(NewExcelTestRunner.getCurrentExecutionTag()).get("ExecuteYes/No")
+						.equalsIgnoreCase("No")) {
+
+					System.out.println("Status of the flag" + testExecution
+							.getTestdata(NewExcelTestRunner.getCurrentExecutionTag()).get("ExecuteYes/No"));
+					Assume.assumeTrue(false);
+				}
 			}
-		}
 		}
 
 		driver = initializeDriver();
@@ -84,26 +84,25 @@ boolean excelRunnerStatus=true;
 		String currentExecutionStatus = status.toString();
 
 		ExtentTestManager.getTest().log(Status.FAIL, "Test Failed");
-		if(excelRunnerStatus==true)
-		{
-		if (flag.equals("yes")) {
-			if (currentExecutionStatus.equalsIgnoreCase("FAILED")) {
+		if (excelRunnerStatus == true) {
+			if (flag.equals("yes")) {
+				if (currentExecutionStatus.equalsIgnoreCase("FAILED")) {
 
-				// change flag to "No" for dependent scenarios in excel when main Scenario got
-				// failed
-				for (int i = 1; i < testCaseTagsFromExcel.size(); i++) {
-					testExecutionData = testExecution.getTestdata(NewExcelTestRunner.getCurrentExecutionTag());
-					Collection<String> values = testExecutionData.values();
-					values.remove(NewExcelTestRunner.getCurrentExecutionTag());
-					if (values.contains(testCaseTagsFromExcel.get(i))) {
-						testExecution.updateTestData(testCaseTagsFromExcel.get(i), "ExecuteYes/No", "No");
+					// change flag to "No" for dependent scenarios in excel when main Scenario got
+					// failed
+					for (int i = 1; i < testCaseTagsFromExcel.size(); i++) {
+						testExecutionData = testExecution.getTestdata(NewExcelTestRunner.getCurrentExecutionTag());
+						Collection<String> values = testExecutionData.values();
+						values.remove(NewExcelTestRunner.getCurrentExecutionTag());
+						if (values.contains(testCaseTagsFromExcel.get(i))) {
+							testExecution.updateTestData(testCaseTagsFromExcel.get(i), "ExecuteYes/No", "No");
+						}
+
 					}
 
 				}
-
 			}
 		}
-	}
 	}
 
 }
