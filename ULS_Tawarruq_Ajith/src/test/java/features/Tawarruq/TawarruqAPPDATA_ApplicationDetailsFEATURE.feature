@@ -4,10 +4,10 @@ Scenario: To test user can able to create the application details record with va
 Given navigate the Tawarruq URL
 And login with valid credentials for app data entry stage
 And click on module dropdown in Tawarruq
-And click on LOS option in module dropdown
-And click on mail box
-And click on search box upon click on the mail box
-And click on search text box upon click the search button
+And user_0482 click on LOS option in module dropdown
+And user_0482 click on mail box
+And user_0482 click on search box upon click on the mail box
+And user_0482 click on search text box upon click the search button
 And user_0482 get the test data for test case id AT_TW_AD_01
 And user_0482 search the new app data entry stage record reference number
 And user_0482 select the new app data entry stage record from mail box

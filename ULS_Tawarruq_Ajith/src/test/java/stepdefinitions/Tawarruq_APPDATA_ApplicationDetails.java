@@ -3,15 +3,18 @@ package stepdefinitions;
 import java.awt.Robot;
 import java.util.HashMap;
 import java.util.Map;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
+
 import dataProvider.ConfigFileReader;
 import dataProvider.ExcelData;
 import helper.BrowserHelper;
 import helper.ClicksAndActionsHelper;
 import helper.JavascriptHelper;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import pageobjects.JSPaths;
@@ -231,19 +234,21 @@ public class Tawarruq_APPDATA_ApplicationDetails {
 			}
 		}
 		
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 200; i++) {
 			try {
-				String toastMeaasge = javascriptHelper.executeScript(commonJSPaths.getElement("toast_container_message")).toString();
-				Assert.assertTrue(toastMeaasge.contains("Success"));
+				
+				String toastMessage = javascriptHelper.executeScript(commonJSPaths.getElement("toast_container_message")).toString();
+				System.out.println(toastMessage);
+				Assert.assertTrue(toastMessage.contains("Success"));
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i ==200) {
 					Assert.fail(e.getMessage());
 				}
 				
 			}
 			catch (AssertionError e2) {
-				if (i==100) {
+				if (i==200) {
 					Assert.fail(e2.getMessage());
 				}
 				
@@ -252,7 +257,7 @@ public class Tawarruq_APPDATA_ApplicationDetails {
 		
 	}
 
-	@Given("user_0482 select the new app data entry stage record from mail box")
+	@And("user_0482 select the new app data entry stage record from mail box")
 	public void user_0482_select_the_new_app_data_entry_stage_record_from_mail_box() {
 		String mailBoxRecordList = "document.querySelectorAll('td[class=\"ng-star-inserted\"]>span').length";
 		String numberOfRecordInMailBox = "";

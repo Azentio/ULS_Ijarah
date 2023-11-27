@@ -58,6 +58,7 @@ public class Tawarruq_APPDATA_InsuranceInfo {
 		}
 	    
 	}
+	
 	@Given("user_0482 get the test data for test case id AT_TW_INS_001")
 	public void user_0482_get_the_test_data_for_test_case_id_at_tw_ins_001() {
 		appdataEntrtyExecutionData = excelDataForApplicationDetailsTawarruqExecutionData.getTestdata("AT_TW_INS_001");

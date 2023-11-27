@@ -51,6 +51,14 @@ public class ConfigFileReader {
 			throw new RuntimeException("url not specified in the Configuration.properties file.");
 	}
 	
+	public String getMurabhaApplicationURL() {
+		String url = properties.getProperty("MurabhaApplicationURL");
+		if (url != null)
+			return url;
+		else
+			throw new RuntimeException("url not specified in the Configuration.properties file.");
+	}
+	
 	
 	public String getBrowser() {
 		String browser = properties.getProperty("browser");

@@ -96,4 +96,5 @@ public JavascriptHelper(WebDriver driver)
 		executeScript("document.body.style.zoom='100%'");
 		//ExtentTestManager.getTest().info("ZoomBy100percentage");
 	}
+	
 }

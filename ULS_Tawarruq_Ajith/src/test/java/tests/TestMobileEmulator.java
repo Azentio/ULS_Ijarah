@@ -1,17 +1,26 @@
 package tests;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import java.util.Map;
 
+import dataProvider.ExcelData;
 import pageobjects.JSPaths;
 
 public class TestMobileEmulator {
 	public static void main(String args[]) {
-		//WebDriver driver = new ChromeDriver();
-		String excelPath = System.getProperty("user.dir") + "\\TestData\\TawarruqJSPaths.xlsx";
-		//driver.get("https://engineeringinterviewquestions.com/selenium-multiple-choice-questions/");
-		JSPaths jsPaths = new JSPaths(excelPath, "Tawarruq_loginElements", "Tawarruq_CommonFieldName", "JSPath");
-		System.out.println(jsPaths.getElement("userName"));
+		String excelFilePathForJS = System.getProperty("user.dir") + "\\TestData\\TawarruqJSPaths.xlsx";
+		JSPaths commonJSPaths = new JSPaths(excelFilePathForJS, "Tawarruq_CommonElements", "Tawarruq_CommonFieldName",
+				"JSPath");
+		JSPaths customerEmploymentDetailsElements = new JSPaths(excelFilePathForJS, "AppData_EmploymentDetails",
+				"Tawarruq_Appdata_fieldName", "JSPath");
+		String employmentDeatilsExcelDataPath = System.getProperty("user.dir") + "\\TestData\\TawarruqTestData.xlsx";
+		ExcelData excelDataForemploymetDetailsTestData = new ExcelData(employmentDeatilsExcelDataPath,
+				"EmploymentDetailsTestData", "Dataset ID");
+		ExcelData excelDataForDetailsTawarruqExecutionData = new ExcelData(employmentDeatilsExcelDataPath,
+				"Appdata_ApplicationDetailsExe", "TestCase ID");
+		 Map<String, String> testdata = excelDataForDetailsTawarruqExecutionData.getTestdata("AT_TW_AD_EMPD_01");
+		 Map<String, String> testdata2 = excelDataForemploymetDetailsTestData
+				.getTestdata(testdata.get("dataSet_ID"));
+		 System.out.println(customerEmploymentDetailsElements.getElement("Customer Financial Tab"));
         
 }
 }

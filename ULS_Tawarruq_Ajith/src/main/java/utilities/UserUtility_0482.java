@@ -2,11 +2,11 @@ package utilities;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.asserts.SoftAssert;
 
 import helper.JavascriptHelper;
 
-public class UserUtility_0482 {
+public class UserUtility_0482  {
+	
 	
 	public void verifyGivenFieldIsMandatory(WebDriver driver,String jspath) {
 		JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
@@ -113,6 +113,7 @@ public class UserUtility_0482 {
 		}
 
 	}
+	
 
 
 }

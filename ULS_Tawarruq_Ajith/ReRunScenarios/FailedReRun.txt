@@ -1,1 +1,0 @@
-file:src/test/java/features/Tawarruq/Tawarruq_AppDataEntry_InsuranceInfo.feature:4
