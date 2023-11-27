@@ -102,6 +102,8 @@ public class Ijarah_CustomerReference_Step {
 	public void update_status_to_inactive_in_customer_reference_page() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
+				javascriptHelper.scrollIntoView(
+						javascriptHelper.executeScriptWithWebElement(customerreferenceJsPaths.getElement("ActiveInactie")));
 				javascriptHelper.executeScriptWithWebElement(customerreferenceJsPaths.getElement("ActiveInactie"))
 						.click();
 				break;
@@ -133,6 +135,8 @@ public class Ijarah_CustomerReference_Step {
 	public void update_status_to_active_in_customer_reference_page() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
+				javascriptHelper.scrollIntoView(
+						javascriptHelper.executeScriptWithWebElement(customerreferenceJsPaths.getElement("ActiveInactie")));
 				javascriptHelper.executeScriptWithWebElement(customerreferenceJsPaths.getElement("ActiveInactie"))
 						.click();
 				break;
@@ -167,7 +171,7 @@ public class Ijarah_CustomerReference_Step {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerreferenceJsPaths.getElement("FirstName")).click();
-				javascriptHelper.executeScriptWithWebElement(customerreferenceJsPaths.getElement("FirstName")).clear();
+				javascriptHelper.executeScriptWithWebElement(customerreferenceJsPaths.getElement("FirstName")).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
 				break;
 			} catch (Exception e) {
 				if (i == 1000) {
@@ -273,8 +277,8 @@ public class Ijarah_CustomerReference_Step {
 	public void validate_salutation_field_is_present_in_reference_list_view_page() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
-				waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
-						.executeScriptWithWebElement(customerreferenceJsPaths.getElement("ViewList_SalutationField")));
+				javascriptHelper.scrollIntoView(
+						javascriptHelper.executeScriptWithWebElement(customerreferenceJsPaths.getElement("ViewList_SalutationField")));
 				Assert.assertTrue(javascriptHelper
 						.executeScriptWithWebElement(customerreferenceJsPaths.getElement("ViewList_SalutationField"))
 						.isDisplayed());

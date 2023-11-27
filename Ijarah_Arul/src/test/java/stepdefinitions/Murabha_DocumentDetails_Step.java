@@ -293,7 +293,9 @@ public class Murabha_DocumentDetails_Step {
 	public void validate_the_document_quality_field_is_displayed_in_document_details() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
-				waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+				//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+				//		.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DocumentQuality")));
+				javascriptHelper.scrollIntoView(javascriptHelper
 						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DocumentQuality")));
 				Assert.assertTrue(javascriptHelper
 						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DocumentQuality"))

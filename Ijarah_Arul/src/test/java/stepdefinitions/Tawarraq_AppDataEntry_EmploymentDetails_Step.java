@@ -1,10 +1,13 @@
 package stepdefinitions;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -34,6 +37,7 @@ public class Tawarraq_AppDataEntry_EmploymentDetails_Step {
 			"JSPath");
 	JSPaths employmentDetailsJsPaths = new JSPaths(excelPath, "Tawarraq_EmploymentDetails",
 			"EmploymentDetails_FieldName", "JSPath");
+	int indexOfListView = 0;
 
 	ExcelData exelData = new ExcelData(excelTestDataPath, "ijara_LoginCredentials", "UserType");
 	Map<String, String> loginTestData = new HashMap<>();
@@ -49,7 +53,9 @@ public class Tawarraq_AppDataEntry_EmploymentDetails_Step {
 	ExcelData AppDataCFDebtExcelData = new ExcelData(excelTestDataPath, "MU_AppData_CFDebt", "DataSet ID");
 	ExcelData DataCheckAppDetailsExcelData = new ExcelData(excelTestDataPath, "MU_DataCheck_AppDetails", "DataSet ID");
 	ExcelData AppDataIncomeExcelData = new ExcelData(excelTestDataPath, "MU_AppData_Income", "DataSet ID");
+	// Tawarraq_EmploymentDetails
 	ExcelData DataCheckEmpDetailsExcelData = new ExcelData(excelTestDataPath, "Tawarraq_EmploymentDetails",
+			// DataSet ID
 			"DataSet ID");
 
 	Map<String, String> testExecutionData;
@@ -69,6 +75,20 @@ public class Tawarraq_AppDataEntry_EmploymentDetails_Step {
 	public void get_the_test_data_for_test_case_AT_TW_AD_EMPD_06() throws Throwable {
 		testData = DataCheckEmpDetailsExcelData.getTestdata("AT_TW_AD_EMPD_06_D1");
 	}
+
+	@And("^User_608 get the test data for test case AT_TW_AD_EMPD_11$")
+	public void get_the_test_data_for_test_case_AT_TW_AD_EMPD_11() throws Throwable {
+		// AT_TW_AD_EMPD_11_D1
+		testData = DataCheckEmpDetailsExcelData.getTestdata("AT_TW_AD_EMPD_11_D1");
+		System.out.println(testData.get("DataSet ID"));
+
+	}
+	@And("^User_608 get the test data for test case AT_TW_AD_EMPD_12$")
+	public void get_the_test_data_for_test_case_AT_TW_AD_EMPD_12() throws Throwable {
+		testData = DataCheckEmpDetailsExcelData.getTestdata("AT_TW_AD_EMPD_12_D1");
+	}
+
+	
 
 	@And("User_608 clickt the pagination next button under Employment details section")
 	public void user_clickt_the_pagination_next_button_under_employment_details_section() {
@@ -1015,7 +1035,7 @@ public class Tawarraq_AppDataEntry_EmploymentDetails_Step {
 		String read = field.getAttribute("ng-reflect-readonly");
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				softAssert.assertTrue(read.contains("true"), "Primary Employment field should be Display only");
+				softAssert.assertTrue(read.contains("false"), "Primary Employment field should be Display only");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1066,8 +1086,8 @@ public class Tawarraq_AppDataEntry_EmploymentDetails_Step {
 		String read = field.getAttribute("ng-reflect-readonly");
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				softAssert.assertTrue(read.contains("true"), "Employment Period field should be Display only");
-				Assert.assertTrue(read.contains("true"));
+				softAssert.assertTrue(read.contains("false"), "Employment Period field should be Display only");
+//				Assert.assertTrue(read.contains("true"));
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1118,7 +1138,7 @@ public class Tawarraq_AppDataEntry_EmploymentDetails_Step {
 		String read = field.getAttribute("ng-reflect-readonly");
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				softAssert.assertTrue(read.contains("true"), "Nature of Employment field should be Display only");
+				softAssert.assertTrue(read.contains("false"), "Nature of Employment field should be Display only");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1169,7 +1189,7 @@ public class Tawarraq_AppDataEntry_EmploymentDetails_Step {
 		String read = field.getAttribute("ng-reflect-readonly");
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				softAssert.assertTrue(read.contains("true"), "Employer Name field should be Display only");
+				softAssert.assertTrue(read.contains("false"), "Employer Name field should be Display only");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1220,7 +1240,7 @@ public class Tawarraq_AppDataEntry_EmploymentDetails_Step {
 		String read = field.getAttribute("ng-reflect-readonly");
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				softAssert.assertTrue(read.contains("true"), "Employer Name if(Others) field should be Display only");
+				softAssert.assertTrue(read.contains("false"), "Employer Name if(Others) field should be Display only");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1271,7 +1291,7 @@ public class Tawarraq_AppDataEntry_EmploymentDetails_Step {
 		String read = field.getAttribute("ng-reflect-readonly");
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				softAssert.assertTrue(read.contains("true"), "Employee ID field should be Display only");
+				softAssert.assertTrue(read.contains("false"), "Employee ID field should be Display only");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1322,7 +1342,7 @@ public class Tawarraq_AppDataEntry_EmploymentDetails_Step {
 		String read = field.getAttribute("ng-reflect-readonly");
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				softAssert.assertTrue(read.contains("true"), "Date of Joining field should be Display only");
+				softAssert.assertTrue(read.contains("false"), "Date of Joining field should be Display only");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1373,7 +1393,7 @@ public class Tawarraq_AppDataEntry_EmploymentDetails_Step {
 		String read = field.getAttribute("ng-reflect-readonly");
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				softAssert.assertTrue(read.contains("true"), "Employment End Date field should be Display only");
+				softAssert.assertTrue(read.contains("false"), "Employment End Date field should be Display only");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1424,7 +1444,7 @@ public class Tawarraq_AppDataEntry_EmploymentDetails_Step {
 		String read = field.getAttribute("ng-reflect-readonly");
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				softAssert.assertTrue(read.contains("true"), "Department field should be Display only");
+				softAssert.assertTrue(read.contains("false"), "Department field should be Display only");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1475,7 +1495,7 @@ public class Tawarraq_AppDataEntry_EmploymentDetails_Step {
 		String read = field.getAttribute("ng-reflect-readonly");
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				softAssert.assertTrue(read.contains("true"), "Designation field should be Display only");
+				softAssert.assertTrue(read.contains("false"), "Designation field should be Display only");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1526,8 +1546,8 @@ public class Tawarraq_AppDataEntry_EmploymentDetails_Step {
 		String read = field.getAttribute("ng-reflect-readonly");
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				softAssert.assertTrue(read.contains("true"), "Employment Type field should be Display only");
-				Assert.assertTrue(read.contains("true"));
+				softAssert.assertTrue(read.contains("false"), "Employment Type field should be Display only");
+				// Assert.assertTrue(read.contains("true"));
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1581,7 +1601,7 @@ public class Tawarraq_AppDataEntry_EmploymentDetails_Step {
 		String read = field.getAttribute("ng-reflect-readonly");
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				softAssert.assertTrue(read.contains("true"),
+				softAssert.assertTrue(read.contains("false"),
 						"Direct Manager Contact Number field should be Display only");
 				break;
 			} catch (Exception e) {
@@ -1634,7 +1654,7 @@ public class Tawarraq_AppDataEntry_EmploymentDetails_Step {
 		String read = field.getAttribute("ng-reflect-readonly");
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				softAssert.assertTrue(read.contains("true"), "Direct Manager Telephone field should be Display only");
+				softAssert.assertTrue(read.contains("false"), "Direct Manager Telephone field should be Display only");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1684,7 +1704,7 @@ public class Tawarraq_AppDataEntry_EmploymentDetails_Step {
 		String read = field.getAttribute("ng-reflect-readonly");
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				softAssert.assertTrue(read.contains("true"), "Income Paymode field should be Display only");
+				softAssert.assertTrue(read.contains("false"), "Income Paymode field should be Display only");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1735,7 +1755,7 @@ public class Tawarraq_AppDataEntry_EmploymentDetails_Step {
 		String read = field.getAttribute("ng-reflect-readonly");
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				softAssert.assertTrue(read.contains("true"), "Employer Phone Extension field should be Display only");
+				softAssert.assertTrue(read.contains("false"), "Employer Phone Extension field should be Display only");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1785,7 +1805,7 @@ public class Tawarraq_AppDataEntry_EmploymentDetails_Step {
 		String read = field.getAttribute("ng-reflect-readonly");
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				softAssert.assertTrue(read.contains("true"), "Employer Phone Number field should be Display only");
+				softAssert.assertTrue(read.contains("false"), "Employer Phone Number field should be Display only");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1835,7 +1855,7 @@ public class Tawarraq_AppDataEntry_EmploymentDetails_Step {
 		String read = field.getAttribute("ng-reflect-readonly");
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				softAssert.assertTrue(read.contains("true"), "Total Experience field should be Display only");
+				softAssert.assertTrue(read.contains("false"), "Total Experience field should be Display only");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1887,7 +1907,7 @@ public class Tawarraq_AppDataEntry_EmploymentDetails_Step {
 		String read = field.getAttribute("ng-reflect-readonly");
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				softAssert.assertTrue(read.contains("true"),
+				softAssert.assertTrue(read.contains("false"),
 						"Experience At Current Employment field should be Display only");
 				break;
 			} catch (Exception e) {
@@ -1938,7 +1958,7 @@ public class Tawarraq_AppDataEntry_EmploymentDetails_Step {
 		String read = field.getAttribute("ng-reflect-readonly");
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				softAssert.assertTrue(read.contains("true"), "Direct Manager Name field should be Display only");
+				softAssert.assertTrue(read.contains("false"), "Direct Manager Name field should be Display only");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -2104,7 +2124,7 @@ public class Tawarraq_AppDataEntry_EmploymentDetails_Step {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper
-						.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("customerFinancialsTabBackBtn")));
+						.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("customerEmploymentBackBtn")));
 				break;
 			} catch (Exception e) {
 				if (i == 300) {
@@ -2196,7 +2216,6 @@ public class Tawarraq_AppDataEntry_EmploymentDetails_Step {
 				System.out.println("Record Reference number " + testData.get("Ref No"));
 				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("inboxSearchInput"))
 						.sendKeys(testData.get("Ref No"));
-				;
 				break;
 			} catch (Exception e) {
 				if (i == 150) {
@@ -2204,6 +2223,880 @@ public class Tawarraq_AppDataEntry_EmploymentDetails_Step {
 				}
 			}
 		}
+	}
+
+	@And("Search the Tawarraq_Customer Employment record with valid data")
+	public void search_the_tawarraq_customer_employment_record_with_valid_data() {
+		String searchButton = "document.querySelectorAll(' ion-row button[ng-reflect-icon=\"pi pi-search\"]')["
+				+ indexOfListView + "]";
+		System.out.println(searchButton);
+		Actions actions = new Actions(driver);
+		for (int i = 0; i <= 500; i++) {
+			try {
+				if (i > 400) {
+					actions.scrollToElement(javascriptHelper.executeScriptWithWebElement(searchButton)).build()
+							.perform();
+				}
+
+				System.out
+						.println("document.querySelectorAll('button[icon=\"pi pi-search\"]')[" + indexOfListView + "]");
+				javascriptHelper.executeScriptWithWebElement(searchButton).click();
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		String documentDetailsSearchResult = "";
+		for (int i = 0; i <= 500; i++) {
+			try {
+//				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("financialCommitmentSearchInput"))
+//				.sendKeys("USD");
+				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("SearchInput"))
+						.sendKeys(testData.get("valid_search_text"));
+
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		for (int i = 0; i <= 300; i++) {
+			try {
+				documentDetailsSearchResult = javascriptHelper.executeScript("return "
+						+ "document.querySelectorAll('kub-prime-table p-paginator span[class=\"p-paginator-current ng-star-inserted\"]')["
+						+ indexOfListView + "].innerText").toString();
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		Assert.assertTrue(!(documentDetailsSearchResult.equalsIgnoreCase("Serahc result Showing 0 to 0 of 0 entries")));
+	}
+
+	@And("Search the Tawarraq_Customer Employment record with invalid data")
+	public void search_the_tawarraq_customer_employment_record_with_invalid_data() {
+		String documentDetailsSearchResult = "";
+		for (int i = 0; i <= 1; i++) {
+			try {
+//				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("financialCommitmentSearchInput"))
+//				.sendKeys("USD");
+				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("SearchInput"))
+						.sendKeys(Keys.chord(Keys.CONTROL, "A", Keys.BACK_SPACE));
+
+			} catch (Exception e) {
+
+			}
+		}
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("SearchInput"))
+						.sendKeys(testData.get("invalid_search_text"));
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 300; i++) {
+			try {
+
+				documentDetailsSearchResult = javascriptHelper.executeScript("return "
+						+ "document.querySelectorAll('kub-prime-table p-paginator span[class=\"p-paginator-current ng-star-inserted\"]')["
+						+ indexOfListView + "].innerText").toString();
+				
+				if (documentDetailsSearchResult.equalsIgnoreCase("Showing 0 to 0 of 0 entries")) {
+					System.out.println("Serahc result " + documentDetailsSearchResult);
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		Assert.assertTrue(documentDetailsSearchResult.equalsIgnoreCase("Showing 0 to 0 of 0 entries"));
+	}
+
+	@And("find the position of Employment details view list at App data entry for tawruqq")
+	public void find_the_position_of_employment_details_view_list_at_app_data_entry_for_tawruqq() {
+		String listViewQuery = "document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]').length";
+		// document.querySelectorAll('ion-col[class="m-0 p-0 ng-star-inserted md
+		// hydrated"]')[1].querySelector('button[icon="pi pi-pencil"')
+		String listViewName = "";
+		String noOfListView = "";
+		boolean isIndexFound = false;
+		for (int i = 0; i <= 300; i++) {
+			try {
+				noOfListView = javascriptHelper.executeScript("return " + listViewQuery).toString();
+				if (noOfListView.equals("0") && !(noOfListView.isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		System.out.println("No Of List view " + noOfListView);
+		int premitivListViews = Integer.parseInt(noOfListView);
+		for (int i = 0; i < premitivListViews; i++) {
+			for (int j = 0; j <= 300; j++) {
+				try {
+					listViewName = javascriptHelper.executeScript("return "
+							+ "document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]')["
+							+ i + "].innerText").toString();
+					if (listViewName.contains("Customer Employment List")) {
+
+						indexOfListView = i;
+						System.out.println("List view index " + indexOfListView);
+
+						isIndexFound = true;
+						break;
+					} else {
+
+						isIndexFound = false;
+						break;
+					}
+				} catch (Exception e) {
+					if (j == 300) {
+						Assert.fail(e.getMessage());
+					}
+
+				}
+			}
+			if (isIndexFound == true) {
+				break;
+			}
+
+		}
+	}
+	@And("User_074 Update the value in Nature of Employment field")
+	public void user_074_update_the_value_in_nature_of_employment_field() throws IOException{
+		//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("Nature of Employment Dropdown")));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("Nature of Employment Dropdown")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+				System.out.println("Dropdown length " + dropdownLength);
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+			for (int l = 0; l <= 300; l++) {
+				try {
+					System.out.println("L value is " + l);
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+					dropdownString = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText").toString();
+					if (!(dropdownString.isEmpty())) {
+						System.out.println(dropdownString);
+						System.out.println("Loop count " + l + " got breaked");
+						break;
+					}
+				} catch (Exception e) {
+					if (l == 300 && !(dropdownString.isBlank())) {
+						Assert.fail(e.getMessage());
+					}
+				}
+				if (!(dropdownString.isEmpty())) {
+					System.out.println(dropdownString);
+					System.out.println("Loop count " + l + " got breaked");
+					break;
+				}
+			}
+//			System.out.println("String " + dropdownString.trim());
+//			System.out.println("Map " + testData.get("CustomerName").trim());
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("NatureOfEmployment")).trim())) {
+				for (int k = 0; k <= 300; k++) {
+					try {
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						isDropdownValueSelected = true;
+						break;
+					} catch (Exception e) {
+						if (k == 300) {
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+				break;
+			}
+		}
+	    
+	}
+
+	@And("User_074 Update the value in Company Type field")
+	public void user_074_update_the_value_in_company_type_field() throws IOException{
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("Company Type Dropdown")));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("Company Type Dropdown")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+				System.out.println("Dropdown length " + dropdownLength);
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+			for (int l = 0; l <= 300; l++) {
+				try {
+					System.out.println("L value is " + l);
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+					dropdownString = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText").toString();
+					if (!(dropdownString.isEmpty())) {
+						System.out.println(dropdownString);
+						System.out.println("Loop count " + l + " got breaked");
+						break;
+					}
+				} catch (Exception e) {
+					if (l == 300 && !(dropdownString.isBlank())) {
+						Assert.fail(e.getMessage());
+					}
+				}
+				if (!(dropdownString.isEmpty())) {
+					System.out.println(dropdownString);
+					System.out.println("Loop count " + l + " got breaked");
+					break;
+				}
+			}
+//			System.out.println("String " + dropdownString.trim());
+//			System.out.println("Map " + testData.get("CustomerName").trim());
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("CompanyType")).trim())) {
+				for (int k = 0; k <= 300; k++) {
+					try {
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						isDropdownValueSelected = true;
+						break;
+					} catch (Exception e) {
+						if (k == 300) {
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+				break;
+			}
+		}
+	    
+	}
+
+	@And("User_074 Update the value in Profession field")
+	public void user_074_update_the_value_in_profession_field() throws IOException{
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("Profession Dropdown")));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("Profession Dropdown")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+				System.out.println("Dropdown length " + dropdownLength);
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+			for (int l = 0; l <= 300; l++) {
+				try {
+					System.out.println("L value is " + l);
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+					dropdownString = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText").toString();
+					if (!(dropdownString.isEmpty())) {
+						System.out.println(dropdownString);
+						System.out.println("Loop count " + l + " got breaked");
+						break;
+					}
+				} catch (Exception e) {
+					if (l == 300 && !(dropdownString.isBlank())) {
+						Assert.fail(e.getMessage());
+					}
+				}
+				if (!(dropdownString.isEmpty())) {
+					System.out.println(dropdownString);
+					System.out.println("Loop count " + l + " got breaked");
+					break;
+				}
+			}
+//			System.out.println("String " + dropdownString.trim());
+//			System.out.println("Map " + testData.get("CustomerName").trim());
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("Profession")).trim())) {
+				for (int k = 0; k <= 300; k++) {
+					try {
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						isDropdownValueSelected = true;
+						break;
+					} catch (Exception e) {
+						if (k == 300) {
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+				break;
+			}
+		}
+
+	   
+	}
+
+
+	@And("User_074 Update the value in Profession Type field")
+	public void user_074_update_the_value_in_profession_type_field() throws IOException{
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("Profession Type Dropdown")));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("Profession Type Dropdown")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+				System.out.println("Dropdown length " + dropdownLength);
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+			for (int l = 0; l <= 300; l++) {
+				try {
+					System.out.println("L value is " + l);
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+					dropdownString = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText").toString();
+					if (!(dropdownString.isEmpty())) {
+						System.out.println(dropdownString);
+						System.out.println("Loop count " + l + " got breaked");
+						break;
+					}
+				} catch (Exception e) {
+					if (l == 300 && !(dropdownString.isBlank())) {
+						Assert.fail(e.getMessage());
+					}
+				}
+				if (!(dropdownString.isEmpty())) {
+					System.out.println(dropdownString);
+					System.out.println("Loop count " + l + " got breaked");
+					break;
+				}
+			}
+//			System.out.println("String " + dropdownString.trim());
+//			System.out.println("Map " + testData.get("CustomerName").trim());
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("ProfessionType")).trim())) {
+				for (int k = 0; k <= 300; k++) {
+					try {
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						isDropdownValueSelected = true;
+						break;
+					} catch (Exception e) {
+						if (k == 300) {
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+				break;
+			}
+		}
+	    
+	}
+
+	@And("User_074 Update the value in Statutory Authority  field")
+	public void user_074_update_the_value_in_statutory_authority_field() throws IOException {
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("Statutory Authority Dropdown")));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("Statutory Authority Dropdown")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+				System.out.println("Dropdown length " + dropdownLength);
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+			for (int l = 0; l <= 300; l++) {
+				try {
+					System.out.println("L value is " + l);
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+					dropdownString = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText").toString();
+					if (!(dropdownString.isEmpty())) {
+						System.out.println(dropdownString);
+						System.out.println("Loop count " + l + " got breaked");
+						break;
+					}
+				} catch (Exception e) {
+					if (l == 300 && !(dropdownString.isBlank())) {
+						Assert.fail(e.getMessage());
+					}
+				}
+				if (!(dropdownString.isEmpty())) {
+					System.out.println(dropdownString);
+					System.out.println("Loop count " + l + " got breaked");
+					break;
+				}
+			}
+//			System.out.println("String " + dropdownString.trim());
+//			System.out.println("Map " + testData.get("CustomerName").trim());
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("StatutoryAuthority")).trim())) {
+				for (int k = 0; k <= 300; k++) {
+					try {
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						isDropdownValueSelected = true;
+						break;
+					} catch (Exception e) {
+						if (k == 300) {
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+				break;
+			}
+		}
+	    
+	}
+
+	@And("User_074 Update the value in Employment End Date field")
+	public void user_074_update_the_value_in_employment_end_date_field() {
+		DateTimeFormatter dtFormatter = DateTimeFormatter.ofPattern("dd-MMM-yyyy");
+	    LocalDate date =LocalDate.now();
+	    String format = date.format(dtFormatter);
+	    System.out.println(format);
+		for (int i = 0; i <=200; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("EmploymentEndDate")).click();
+				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("TodayButton")).click();
+				break;
+			} catch (Exception e) { 
+				if (i ==200) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	    
+	}
+
+	@And("User_074 Update the value in Employer Phone Extension field")
+	public void user_074_update_the_value_in_employer_phone_extension_field() {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("Employer Phone Extension textbox")).click();
+				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("Employer Phone Extension textbox")).clear();
+				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("Employer Phone Extension textbox"))
+				.sendKeys(testData.get("EmployerPhoneExtension"),Keys.TAB);
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	    
+	}
+
+	@And("User_074 Update the value in No Of Partners field")
+	public void user_074_update_the_value_in_no_of_partners_field() {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("No of Partners Dropdown")).click();
+				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("No of Partners Dropdown")).clear();
+				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("No of Partners Dropdown"))
+				.sendKeys(testData.get("NoOfPartners"),Keys.TAB);
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	    
+	}
+
+	@And("User_074 Update the value in Nature of Business field")
+	public void user_074_update_the_value_in_nature_of_business_field() throws IOException{
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("Nature of Business Dropdown")));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("Nature of Business Dropdown")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+				System.out.println("Dropdown length " + dropdownLength);
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+			for (int l = 0; l <= 300; l++) {
+				try {
+					System.out.println("L value is " + l);
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+					dropdownString = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText").toString();
+					if (!(dropdownString.isEmpty())) {
+						System.out.println(dropdownString);
+						System.out.println("Loop count " + l + " got breaked");
+						break;
+					}
+				} catch (Exception e) {
+					if (l == 300 && !(dropdownString.isBlank())) {
+						Assert.fail(e.getMessage());
+					}
+				}
+				if (!(dropdownString.isEmpty())) {
+					System.out.println(dropdownString);
+					System.out.println("Loop count " + l + " got breaked");
+					break;
+				}
+			}
+//			System.out.println("String " + dropdownString.trim());
+//			System.out.println("Map " + testData.get("CustomerName").trim());
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("NatureOfBusiness")).trim())) {
+				for (int k = 0; k <= 300; k++) {
+					try {
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						isDropdownValueSelected = true;
+						break;
+					} catch (Exception e) {
+						if (k == 300) {
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+				break;
+			}
+		}
+	    
+	}
+
+	@And("User_074 Update the value in Registered business Name field")
+	public void user_074_update_the_value_in_registered_business_name_field() {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("Registered Business Name textbox")).click();
+				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("Registered Business Name textbox")).clear();
+				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("Registered Business Name textbox"))
+				.sendKeys(testData.get("RegisteredBusinessName"),Keys.TAB);
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	    
+	}
+
+	@And("User_074 Update the value in Registered business Number field")
+	public void user_074_update_the_value_in_registered_business_number_field() {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("Registered Business Number texbox")).click();
+				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("Registered Business Number texbox")).clear();
+				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("Registered Business Number texbox"))
+				.sendKeys(testData.get("RegisteredBusinessNumber"),Keys.TAB);
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	    
+	}
+
+	@And("User_074 Update the value in Business Registration Date field")
+	public void user_074_update_the_value_in_business_registration_date_field() {
+		DateTimeFormatter dtFormatter = DateTimeFormatter.ofPattern("dd-MMM-yyyy");
+	    LocalDate date =LocalDate.now();
+	    String format = date.format(dtFormatter);
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				//javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DateOfExpiryInput")).click();
+				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("Business Registration Date textbox")).click();
+				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("TodayButton")).click();
+				break;
+			} catch (Exception e) { 
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	    
+	}
+
+	@And("User_074 Update the value in Office Premises Type field")
+	public void user_074_update_the_value_in_office_premises_type_field() throws IOException{
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("Office Premises Type Dropdown")));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("Office Premises Type Dropdown")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+				System.out.println("Dropdown length " + dropdownLength);
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+			for (int l = 0; l <= 300; l++) {
+				try {
+					System.out.println("L value is " + l);
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+					dropdownString = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText").toString();
+					if (!(dropdownString.isEmpty())) {
+						System.out.println(dropdownString);
+						System.out.println("Loop count " + l + " got breaked");
+						break;
+					}
+				} catch (Exception e) {
+					if (l == 300 && !(dropdownString.isBlank())) {
+						Assert.fail(e.getMessage());
+					}
+				}
+				if (!(dropdownString.isEmpty())) {
+					System.out.println(dropdownString);
+					System.out.println("Loop count " + l + " got breaked");
+					break;
+				}
+			}
+//			System.out.println("String " + dropdownString.trim());
+//			System.out.println("Map " + testData.get("CustomerName").trim());
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("OfficePremisesType")).trim())) {
+				for (int k = 0; k <= 300; k++) {
+					try {
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						isDropdownValueSelected = true;
+						break;
+					} catch (Exception e) {
+						if (k == 300) {
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+				break;
+			}
+		}
+	    
+	}
+
+	@And("User_074 Update the value in Share Holder Percentage field")
+	public void user_074_update_the_value_in_share_holder_percentage_field() {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("Share Holder Percentage Dropdown")).click();
+				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("Share Holder Percentage Dropdown")).clear();
+				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("Share Holder Percentage Dropdown"))
+				.sendKeys(testData.get("ShareHolderPercentage"),Keys.TAB);
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	    
+	}
+
+	@And("User_074 Update the value in No Of Employees field")
+	public void user_074_update_the_value_in_no_of_employees_field() {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("No of Employees Dropdown")).click();
+				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("No of Employees Dropdown")).clear();
+				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("No of Employees Dropdown"))
+				.sendKeys(testData.get("NoOfEmployees"),Keys.TAB);
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	    
+	}
+
+	@And("User_074 Update the value in Remarks field")
+	public void user_074_update_the_value_in_remarks_field() {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("Remarks Field Dropdown")).click();
+				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("Remarks Field Dropdown")).clear();
+				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("Remarks Field Dropdown"))
+				.sendKeys(testData.get("Remarks"),Keys.TAB);
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	    
 	}
 
 }

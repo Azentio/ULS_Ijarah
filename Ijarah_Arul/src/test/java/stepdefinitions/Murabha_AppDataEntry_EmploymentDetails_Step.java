@@ -8,6 +8,7 @@ import java.util.Map;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
@@ -29,8 +30,8 @@ public class Murabha_AppDataEntry_EmploymentDetails_Step {
 	String excelTestDataPath = System.getProperty("user.dir") + "\\TestData\\ijaraTestData.xlsx";
 	WebDriver driver = BaseClass.driver;
 	JSPaths jsPaths = new JSPaths(excelPath, "Ijara_loginElements", "Ijara_LoginFieldName", "JSPath");
-	JSPaths employmentdetailsJsPaths = new JSPaths(excelPath, "DocumentDetails_Elements", "DocumentDetails_FieldName", "JSPath");
-	JSPaths employmentDetailsMurabaha = new JSPaths(excelPath, "Murabha_EmploymentDetails", "Murabha_EmploymentDetails_FieldName", "JSPath");
+	//JSPaths employmentdetailsJsPaths = new JSPaths(excelPath, "DocumentDetails_Elements", "DocumentDetails_FieldName", "JSPath");
+	JSPaths employmentdetailsJsPaths = new JSPaths(excelPath, "Murabha_EmploymentDetails", "Murabha_EmploymentDetails_FieldName", "JSPath");
 	ExcelData exelData = new ExcelData(excelTestDataPath, "ijara_LoginCredentials", "UserType");
 	Map<String, String> loginTestData = new HashMap<>();
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
@@ -42,9 +43,10 @@ public class Murabha_AppDataEntry_EmploymentDetails_Step {
 	BrowserHelper browserHelper = new BrowserHelper(driver);
 	//ExcelData employmentdetailsExcelData  = new ExcelData(excelTestDataPath,"CF_DebtTestData","DataSet ID");
 	//ExcelData underWriterExcelData  = new ExcelData(excelTestDataPath,"UnderWriter_TestData","DataSet ID");
-	ExcelData employmentdetailsExcelData  = new ExcelData(excelTestDataPath,"Employment_Details","DataSetID");
+	ExcelData employmentdetailsExcelData  = new ExcelData(excelTestDataPath,"Murabha_EmploymentDetails","DataSet ID");
 	Map<String, String> testExecutionData;
 	Map<String, String> testData;
+	int indexOfListView = 0;
 	
 	@And("^User get the test data for test case AT_MU_EMPD_10$")
     public void get_the_test_data_for_test_case_AT_MU_EMPD_10() throws Throwable {
@@ -59,16 +61,9 @@ public class Murabha_AppDataEntry_EmploymentDetails_Step {
 	@And("^User get the test data for test case AT_MU_EMPD_12$")
     public void get_the_test_data_for_test_case_AT_MU_EMPD_12() throws Throwable {
 		testData = employmentdetailsExcelData.getTestdata("AT_MU_EMPD_12_D1");
-    }
-	     //User_608 get the test data for test case AT_TW_AD_EMPD_11
-	@And("^User_608 get the test data for test case AT_TW_AD_EMPD_11$")
-    public void get_the_test_data_for_test_case_AT_TW_AD_EMPD_11() throws Throwable {
-		testData = employmentdetailsExcelData.getTestdata("AT_TW_AD_EMPD_11_D1");
-    }
-	@And("^User_608 get the test data for test case AT_TW_AD_EMPD_12$")
-    public void get_the_test_data_for_test_case_AT_TW_AD_EMPD_12() throws Throwable {
-		testData = employmentdetailsExcelData.getTestdata("AT_TW_AD_EMPD_12_D1");
-    }
+	}
+	
+	
 	
 
 	@And("User search the Ref id under inbox for Murabha_App data entry_Employment details")
@@ -92,7 +87,7 @@ public class Murabha_AppDataEntry_EmploymentDetails_Step {
 	public void user_navigate_to_customer_financials_section() {
 		for (int i = 0; i <= 150; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(employmentDetailsMurabaha.getElement("Customer Financial Tab"))
+				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Customer Financial Tab"))
 						.click();
 				break;
 			} catch (Exception e) {
@@ -108,7 +103,7 @@ public class Murabha_AppDataEntry_EmploymentDetails_Step {
 	public void click_on_edit_icon_in_customer_personal_information_page() {
 		for (int i = 0; i <= 300; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(employmentDetailsMurabaha.getElement("Edit_icon")).click();
+				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Edit_icon")).click();
 				break;
 			} catch (Exception e) {
 				if (i == 300) {
@@ -148,10 +143,20 @@ public class Murabha_AppDataEntry_EmploymentDetails_Step {
 	}
 	@And("Search the Customer Employment record with valid data")
 	public void search_the_customer_employment_record_with_valid_data() {
+		String searchButton = "document.querySelectorAll(' ion-row button[ng-reflect-icon=\"pi pi-search\"]')["
+				+ indexOfListView + "]";
+		System.out.println(searchButton);
+		Actions actions = new Actions(driver);
 		for (int i = 0; i <= 500; i++) {
 			try {
+				if (i > 400) {
+					actions.scrollToElement(javascriptHelper.executeScriptWithWebElement(searchButton)).build()
+							.perform();
+				}
 
-				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("SearchButton")).click();
+				System.out
+						.println("document.querySelectorAll('button[icon=\"pi pi-search\"]')[" + indexOfListView + "]");
+				javascriptHelper.executeScriptWithWebElement(searchButton).click();
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -178,9 +183,9 @@ public class Murabha_AppDataEntry_EmploymentDetails_Step {
 
 		for (int i = 0; i <= 300; i++) {
 			try {
-				documentDetailsSearchResult = javascriptHelper
-						.executeScript("return " + employmentdetailsJsPaths.getElement("listViewSearchResultValidation"))
-						.toString();
+				documentDetailsSearchResult = javascriptHelper.executeScript("return "
+						+ "document.querySelectorAll('kub-prime-table p-paginator span[class=\"p-paginator-current ng-star-inserted\"]')["
+						+ indexOfListView + "].innerText").toString();
 				break;
 			} catch (Exception e) {
 				if (i == 300) {
@@ -188,8 +193,7 @@ public class Murabha_AppDataEntry_EmploymentDetails_Step {
 				}
 			}
 		}
-		
-	   
+		Assert.assertTrue(!(documentDetailsSearchResult.equalsIgnoreCase("Serahc result Showing 0 to 0 of 0 entries")));
 	}
 
 	@And("Search the Customer Employment record with invalid data")
@@ -220,10 +224,12 @@ public class Murabha_AppDataEntry_EmploymentDetails_Step {
 		for (int i = 0; i <= 300; i++) {
 			try {
 
-				documentDetailsSearchResult = javascriptHelper
-						.executeScript("return " + employmentdetailsJsPaths.getElement("listViewSearchResultValidation"))
-						.toString();
+				documentDetailsSearchResult = javascriptHelper.executeScript("return "
+						+ "document.querySelectorAll('kub-prime-table p-paginator span[class=\"p-paginator-current ng-star-inserted\"]')["
+						+ indexOfListView + "].innerText").toString();
+				
 				if (documentDetailsSearchResult.equalsIgnoreCase("Showing 0 to 0 of 0 entries")) {
+					System.out.println("Serahc result " + documentDetailsSearchResult);
 					break;
 				}
 			} catch (Exception e) {
@@ -254,7 +260,7 @@ public class Murabha_AppDataEntry_EmploymentDetails_Step {
 
 	@And("Update the value in Nature of Employment field")
 	public void update_the_value_in_nature_of_employment_field() throws IOException {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Nature of Employment Dropdown")));
+		//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Nature of Employment Dropdown")));
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Nature of Employment Dropdown")).click();
@@ -493,10 +499,10 @@ public class Murabha_AppDataEntry_EmploymentDetails_Step {
 
 	@And("Update the value in Profession Type field")
 	public void update_the_value_in_profession_type_field() throws IOException {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Profession Dropdown")));
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Profession Type Dropdown")));
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Profession Dropdown")).click();
+				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Profession Type Dropdown")).click();
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -658,8 +664,8 @@ public class Murabha_AppDataEntry_EmploymentDetails_Step {
 	    String format = date.format(dtFormatter);
 		for (int i = 0; i <= 1000; i++) {
 			try {
-				//javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DateOfExpiryInput")).click();
-				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("EmploymentEndDate")).sendKeys(format,Keys.ENTER);
+				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("EmploymentEndDate")).click();
+				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("TodayButton")).click();
 				break;
 			} catch (Exception e) { 
 				if (i == 1000) {
@@ -829,8 +835,8 @@ public class Murabha_AppDataEntry_EmploymentDetails_Step {
 	    String format = date.format(dtFormatter);
 		for (int i = 0; i <= 1000; i++) {
 			try {
-				//javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DateOfExpiryInput")).click();
-				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Business Registration Date textbox")).sendKeys(format,Keys.ENTER);
+				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Business Registration Date textbox")).click();
+				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("TodayButton")).click();
 				break;
 			} catch (Exception e) { 
 				if (i == 1000) {
@@ -989,6 +995,59 @@ public class Murabha_AppDataEntry_EmploymentDetails_Step {
 			}
 		}
 	   
+	}
+	@And("Find the position of Employment details view list at Murabha_App data entry")
+	public void find_the_position_of_employment_details_view_list_at_murabha_app_data_entry() {
+		String listViewQuery = "document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]').length";
+		// document.querySelectorAll('ion-col[class="m-0 p-0 ng-star-inserted md
+		// hydrated"]')[1].querySelector('button[icon="pi pi-pencil"')
+		String listViewName = "";
+		String noOfListView = "";
+		boolean isIndexFound = false;
+		for (int i = 0; i <= 300; i++) {
+			try {
+				noOfListView = javascriptHelper.executeScript("return " + listViewQuery).toString();
+				if (noOfListView.equals("0") && !(noOfListView.isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		System.out.println("No Of List view " + noOfListView);
+		int premitivListViews = Integer.parseInt(noOfListView);
+		for (int i = 0; i < premitivListViews; i++) {
+			for (int j = 0; j <= 300; j++) {
+				try {
+					listViewName = javascriptHelper.executeScript("return "
+							+ "document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]')["
+							+ i + "].innerText").toString();
+					if (listViewName.contains("Customer Employment List")) {
+
+						indexOfListView = i;
+						System.out.println("List view index " + indexOfListView);
+
+						isIndexFound = true;
+						break;
+					} else {
+
+						isIndexFound = false;
+						break;
+					}
+				} catch (Exception e) {
+					if (j == 300) {
+						Assert.fail(e.getMessage());
+					}
+
+				}
+			}
+			if (isIndexFound == true) {
+				break;
+			}
+
+		}
 	}
 	
 

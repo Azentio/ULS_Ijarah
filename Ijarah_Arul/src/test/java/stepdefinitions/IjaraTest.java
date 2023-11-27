@@ -43,7 +43,7 @@ public class IjaraTest extends BaseClass{
 	}
 	@Given("login with valid credentials for Murabha offering document details")
 	public void login_with_valid_credentials_for_murabha_offering_document_details() {
-		ijaraLogin.loginWithIjaraApplication("userType10");
+		ijaraLogin.loginWithIjaraApplication("userType14");
 	}
 	@Given("login with valid credentials for Murabha_Offering_OfferDetails")
 	public void login_with_valid_credentials_for_murabha_offering_offer_details() {
@@ -56,6 +56,14 @@ public class IjaraTest extends BaseClass{
 	@And("login with valid credentials for Tawarraq_App data entry_Employment details")
 	public void login_with_valid_credentials_for_tawarraq_app_data_entry_employment_details() {
 		ijaraLogin.loginWithIjaraApplication("userType12");
+	}
+	@And("login with valid credentials for Tawarraq_CustomerReference")
+	public void login_with_valid_credentials_for_tawarraq_customer_reference() {
+		ijaraLogin.loginWithIjaraApplication("userType08");
+	}
+	@And("login with valid credentials for Murabha_customer personal details")
+	public void login_with_valid_credentials_for_murabha_customer_personal_details() {
+		ijaraLogin.loginWithIjaraApplication("userType13");
 	}
 
 	

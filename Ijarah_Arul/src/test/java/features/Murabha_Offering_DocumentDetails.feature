@@ -42,7 +42,7 @@ And Validate Back button functionality in document details
 Scenario: To verify that all fields are present in Document Details view list
 #This test case also cover the functionality of AT_M_OFO_DOC_04, AT_M_OFO_DOC_05, AT_M_OFO_DOC_06
 Given navigate the IJARA URL
-And login with valid credentials
+And login with valid credentials for Murabha offering document details
 And User get the test data for test case AT_M_OFO_DOC_03
 #And User click the module name dropdown in ULS application
 #And User select the module name as LOS in ULS application

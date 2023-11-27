@@ -25,7 +25,7 @@ public class Murabha_AppDataCheck_CustomerPersonalDetails_Step {
 	String excelTestDataPath = System.getProperty("user.dir") + "\\TestData\\ijaraTestData.xlsx";
 	WebDriver driver = BaseClass.driver;
 	JSPaths jsPaths = new JSPaths(excelPath, "Ijara_loginElements", "Ijara_LoginFieldName", "JSPath");
-	JSPaths customerpersonaldetailsJsPaths = new JSPaths(excelPath, "DocumentDetails_Elements", "DocumentDetails_FieldName", "JSPath");
+	JSPaths customerpersonaldetailsJsPaths = new JSPaths(excelPath, "Murabha_CustomerPersonalDetails", "Murabha_AppDataCheck_CustomerPersonalDetails", "JSPath");
 	JSPaths underWriterJsPaths = new JSPaths(excelPath, "Underwriter_Elements", "Underwriter_FieldName", "JSPath");
 	
 	ExcelData exelData = new ExcelData(excelTestDataPath, "ijara_LoginCredentials", "UserType");
@@ -40,7 +40,7 @@ public class Murabha_AppDataCheck_CustomerPersonalDetails_Step {
 	
 	//ExcelData documentdetailsExcelData  = new ExcelData(excelTestDataPath,"CF_DebtTestData","DataSet ID");
 	//ExcelData underWriterExcelData  = new ExcelData(excelTestDataPath,"UnderWriter_TestData","DataSet ID");
-	ExcelData documentdetailsExcelData  = new ExcelData(excelTestDataPath,"Document_Details","DataSetID");
+	ExcelData customerpersonaldetailsExcelData  = new ExcelData(excelTestDataPath,"CustomerPersonalDetails","DataSet ID");
 	
 	Map<String, String> testExecutionData;
 	Map<String, String> testData;
@@ -49,7 +49,7 @@ public class Murabha_AppDataCheck_CustomerPersonalDetails_Step {
 	public void navigate_to_customer_details_section() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
-				javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement(customerpersonaldetailsJsPaths.getElement("DocumentDetails_Button")));
+				javascriptHelper.executeScriptWithWebElement(customerpersonaldetailsJsPaths.getElement("customer_details_tab")).click();
 				break;
 			} catch (Exception e) { 
 				if (i == 1000) {
@@ -61,25 +61,37 @@ public class Murabha_AppDataCheck_CustomerPersonalDetails_Step {
 	}
 	@And("^User get the test data for test case AT_M_CDC_01$")
     public void get_the_test_data_for_test_case_AT_M_CDC_01() throws Throwable {
-		testData = documentdetailsExcelData.getTestdata("AT_M_CDC_01_D1");
+		testData = customerpersonaldetailsExcelData.getTestdata("AT_M_CDC_01_D1");
     }
 	@And("^User get the test data for test case AT_M_CDC_02$")
     public void get_the_test_data_for_test_case_AT_M_CDC_02() throws Throwable {
-		testData = documentdetailsExcelData.getTestdata("AT_M_CDC_02_D1");
+		testData = customerpersonaldetailsExcelData.getTestdata("AT_M_CDC_02_D1");
     }
 	@And("^User get the test data for test case AT_M_CDC_03$")
     public void get_the_test_data_for_test_case_AT_M_CDC_03() throws Throwable {
-		testData = documentdetailsExcelData.getTestdata("AT_M_CDC_03_D1");
+		testData = customerpersonaldetailsExcelData.getTestdata("AT_M_CDC_03_D1");
     }
 	@And("^User get the test data for test case AT_M_CDC_04$")
     public void get_the_test_data_for_test_case_AT_M_CDC_04() throws Throwable {
-		testData = documentdetailsExcelData.getTestdata("AT_M_CDC_04_D1");
+		testData = customerpersonaldetailsExcelData.getTestdata("AT_M_CDC_04_D1");
     }
 
 	@And("Validate Application type field is displayed in customer personal details page")
 	public void validate_application_type_field_is_displayed_in_customer_personal_details_page() throws IOException {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(customerpersonaldetailsJsPaths.getElement("application_type_dropdown")));
-		Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(customerpersonaldetailsJsPaths.getElement("application_type_dropdown")).isDisplayed());
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(customerpersonaldetailsJsPaths.getElement("application_type_dropdown")));
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(customerpersonaldetailsJsPaths.getElement("application_type_dropdown")).isDisplayed());
+				break;
+			} catch (Exception e) { 
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		
+		
 	    
 	}
 
@@ -155,7 +167,8 @@ public class Murabha_AppDataCheck_CustomerPersonalDetails_Step {
 
 	@And("Validate gender field is displayed in customer personal details page")
 	public void validate_gender_field_is_displayed_in_customer_personal_details_page() throws IOException {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(customerpersonaldetailsJsPaths.getElement("gender_dropdown")));
+		
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(customerpersonaldetailsJsPaths.getElement("gender_dropdown")));
 		Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(customerpersonaldetailsJsPaths.getElement("gender_dropdown")).isDisplayed());
 	    
 	}
@@ -224,15 +237,34 @@ public class Murabha_AppDataCheck_CustomerPersonalDetails_Step {
 	}
 	@And("Validate that existing records are present in customer personal details page")
 	public void validate_that_existing_records_are_present_in_customer_personal_details_page() throws IOException {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(customerpersonaldetailsJsPaths.getElement("EyeIconInViewlist")));
-		Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(customerpersonaldetailsJsPaths.getElement("EyeIconInViewlist")).isDisplayed());
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(customerpersonaldetailsJsPaths.getElement("EyeIconInViewlist")).isDisplayed());
+				break;
+			} catch (Exception e) { 
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
 	    
 	}
 
 	@And("Validate First name field is displayed in customer personal details view list")
 	public void validate_first_name_field_is_displayed_in_customer_personal_details_view_list() throws IOException {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(customerpersonaldetailsJsPaths.getElement("FirstName_ViewList")));
-		Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(customerpersonaldetailsJsPaths.getElement("FirstName_ViewList")).isDisplayed());
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(customerpersonaldetailsJsPaths.getElement("FirstName_ViewList")).isDisplayed());
+				break;
+			} catch (Exception e) { 
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		
 	    
 	}
 
@@ -366,6 +398,34 @@ public class Murabha_AppDataCheck_CustomerPersonalDetails_Step {
 		}
 		Assert.assertTrue(documentDetailsSearchResult.equalsIgnoreCase("Showing 0 to 0 of 0 entries"));
 	    
+	}
+	@And("User search the Ref id under inbox for Customer personal details")
+	public void user_search_the_ref_id_under_inbox_for_customer_personal_details() throws IOException {
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(customerpersonaldetailsJsPaths.getElement("inboxSearchInput")));
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerpersonaldetailsJsPaths.getElement("inboxSearchInput"))
+				.sendKeys(testData.get("Ref No"));;
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		} 
+	}
+	@And("Click on eye icon of Existing record in customer personal details")
+	public void click_on_eye_icon_of_existing_record_in_customer_personal_details() {
+			for (int i = 0; i <= 1000; i++) {
+				try {
+					javascriptHelper.executeScriptWithWebElement(customerpersonaldetailsJsPaths.getElement("EyeIconInViewlist")).click();
+					break;
+				} catch (Exception e) { 
+					if (i == 1000) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
 	}
 
 }

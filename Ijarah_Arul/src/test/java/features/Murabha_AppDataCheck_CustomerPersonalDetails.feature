@@ -3,14 +3,16 @@ Feature: To check the customer personal details feature
 @AT_M_CDC_01
 Scenario: To verify that all fields are present in customer personal details page
 Given navigate the IJARA URL
-And login with valid credentials
+And login with valid credentials for Murabha_customer personal details
 #And User get the test data for test case AT_DOC_001
 And User get the test data for test case AT_M_CDC_01
 And User click the Mail box in ULS application
 And User click the Search button under inbox
-And User search the Ref id under inbox for document details
+#And User search the Ref id under inbox for document details
+And User search the Ref id under inbox for Customer personal details
 And User click the Entitle button under inbox
 And Navigate to Customer details section
+And Click on eye icon of Existing record in customer personal details
 And Validate Application type field is displayed in customer personal details page
 And Validate customer type field is displayed in customer personal details page
 And Validate title field is displayed in customer personal details page
@@ -36,11 +38,11 @@ And Validate remarks field is displayed in customer personal details page
 @AT_M_CDC_02
 Scenario: To verify that existing records present in customer personal details page
 Given navigate the IJARA URL
-And login with valid credentials
+And login with valid credentials for Murabha_customer personal details
 And User get the test data for test case AT_M_CDC_02
 And User click the Mail box in ULS application
 And User click the Search button under inbox
-And User search the Ref id under inbox for document details
+And User search the Ref id under inbox for Customer personal details
 And User click the Entitle button under inbox
 And Navigate to Customer details section
 And Validate that existing records are present in customer personal details page
@@ -49,11 +51,11 @@ And Validate that existing records are present in customer personal details page
 @AT_M_CDC_03
 Scenario: To verify that fields present in customer personal details page view list
 Given navigate the IJARA URL
-And login with valid credentials
+And login with valid credentials for Murabha_customer personal details
 And User get the test data for test case AT_M_CDC_03
 And User click the Mail box in ULS application
 And User click the Search button under inbox
-And User search the Ref id under inbox for document details
+And User search the Ref id under inbox for Customer personal details
 And User click the Entitle button under inbox
 And Navigate to Customer details section
 And Validate First name field is displayed in customer personal details view list
@@ -68,11 +70,11 @@ And Validate Status field is displayed in customer personal details view list
 @AT_M_CDC_04
 Scenario: To verify that fields present in customer personal details page view list
 Given navigate the IJARA URL
-And login with valid credentials
+And login with valid credentials for Murabha_customer personal details
 And User get the test data for test case AT_M_CDC_04
 And User click the Mail box in ULS application
 And User click the Search button under inbox
-And User search the Ref id under inbox for document details
+And User search the Ref id under inbox for Customer personal details
 And User click the Entitle button under inbox
 And Navigate to Customer details section
 And Search the customer personal details record with valid details
