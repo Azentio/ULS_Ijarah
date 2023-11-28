@@ -25,4 +25,4 @@ Then Check the clear field final is available or not
 And Check Customer field type is mandatory or not
 And Check Customer field type is List of View
 Then Check CIF ID field is editable
-#Then logout from the ijaraApplication
+Then logout from the ijaraApplication

@@ -5,4 +5,4 @@ Feature: Title of your feature
 
   @tag1
   Scenario: Title of your scenario
- Then Check CIF ID field is editable
+And User_608 Click Application Details tab
