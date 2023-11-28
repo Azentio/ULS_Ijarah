@@ -46,6 +46,7 @@ public class Tawarruq_Steps {
 	
 	ExcelData AppDataEntryCustomerDetails  = new ExcelData(excelTestDataPath,"TW_AppData_CustomerDetails","DataSet ID");
 	ExcelData identificatioDetailsExcelData  = new ExcelData(excelTestDataPath,"TW_NewApp_IdentificationDetails","DataSet ID");
+	ExcelData offerDetailsExcelData  = new ExcelData(excelTestDataPath,"TW_Offering_OfferDetails","DataSet ID");
 	
 	Map<String, String> testExecutionData;
 	Map<String, String> testData;
@@ -118,6 +119,13 @@ public class Tawarruq_Steps {
 	@And("^User_608 get the test data for test case AT_TW_NEWAPP_IDA_06$")
     public void get_the_test_data_for_test_case_AT_TW_NEWAPP_IDA_06() throws Throwable {
 		testData = identificatioDetailsExcelData.getTestdata("DS_AT_TW_NEWAPP_IDA_06");
+    }
+	
+	
+//	Offering -- Offer Details
+	@And("^User_608 get the test data for test case AT_TW_OFO_12$")
+    public void get_the_test_data_for_test_case_AT_TW_OFO_12() throws Throwable {
+		testData = offerDetailsExcelData.getTestdata("DS_AT_TW_OFO_12");
     }
 	
 	

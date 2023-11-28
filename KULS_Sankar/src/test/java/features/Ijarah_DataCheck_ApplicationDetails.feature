@@ -29,6 +29,7 @@ And User_608 validate the Region value displayed correctly under Application det
 And User_608 validate the Servicing Branch value displayed correctly under Application details screen
 And User_608 validate the Closing Staff or Servicing Staff value displayed correctly under Application details screen
 Then logout from the ijaraApplication
+And User_608 invoke soft assert in Application details screen under at Ijarah Data check stage
 
 
 # ADC_01_03

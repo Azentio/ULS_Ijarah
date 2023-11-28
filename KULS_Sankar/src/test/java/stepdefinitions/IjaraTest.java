@@ -79,7 +79,11 @@ public class IjaraTest extends BaseClass{
 		ijaraLogin.loginWithIjaraApplicationAppData();
 	}
 	
-	
+//	Tawarruq Product -- Offering Stage ---> userType09
+	@And("login with valid credentials-Tawarruq Offering stage")
+	public void login_with_valid_credentials_tawarruq_offering_stage()throws Throwable {
+		ijaraLogin.loginWithTawarruqApplicationOffering();
+	}
 	
 	
 	

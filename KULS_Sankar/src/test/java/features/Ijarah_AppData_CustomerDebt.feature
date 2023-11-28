@@ -20,7 +20,6 @@ And User_608 click Add button in Financial Commitments under Customer Financials
 And User_608 validate the Customer Debt screen is available in Financial Commitments
 And User_608 validate the Save button available in Customer Debt screen
 And User_608 validate the Back button available in Customer Debt screen
-
 And User_608 validate the Finance type field available in Customer Debt screen
 And User_608 validate the Financial Institution field is available in Customer Debt screen
 And User_608 validate the Account Number field is available in Customer Debt screen

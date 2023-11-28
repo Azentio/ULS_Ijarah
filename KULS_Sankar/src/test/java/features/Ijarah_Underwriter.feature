@@ -150,6 +150,30 @@ And Validate Save successful popup is displayed in the condition
 Then logout from the ijaraApplication
 
 
+@AT_UNW_004
+Scenario: To check whether underwriter is allowed to deviate on Offered Amount or not
+
+Given navigate the IJARA URL
+And login with valid credentials-Underwriter
+And User_608 get the test data for test case AT_UNW_004
+And User_608 click the Mail box in ULS application
+And User_608 click the Search button under inbox
+And User_608 search the Ref id under inbox
+And User_608 click the Entitle button under inbox
+And User_608 click the Pencil icon under Offer Decision tab
+And User_608 enter the Deviation Amount under Finance configuration section in Offer Decision tab
+And User_608 enter the Deviation Tenure under Finance configuration section in Offer Decision tab
+And User_608 click the Deviate button under Offer Decision screen
+And User_608 post clicking on deviate button system should able to deviate offered amount
+And User_608 click the Accept Deviation button in Deviation Comparison screen
+And User_608 click the Offer Decision tab in Underwriter stage
+And User_608 click the Pencil icon under Offer Decision tab
+And User_608 click the Deviate button under Offer Decision screen
+And User_608 to check whether underwriter is able to view the previous offers generated of the application if deviation is accepted
+Then logout from the ijaraApplication
+And User_608 invoke soft assert in under Offer Decision tab at Ijarah Underwriter stage
+
+
 @AT_UNW_006
 Scenario: Underwriter - Main screen and Added Screen
 
@@ -161,61 +185,21 @@ And User_608 click the Search button under inbox
 And User_608 search the Ref id under inbox
 And User_608 click the Entitle button under inbox
 And User_608 verify the Application Details tab in Underwriter stage
-#And User_608 verify the Approve button under Application Details
-#And User_608 verify the Reject button under Application Details
-#And User_608 verify the Return button under Application Details
-#And User_608 verify the View summary button under Application Details
-#And User_608 verify the Customer details tab in Underwriter stage
-#And User_608 verify the Additional Customer info tab in Underwriter stage
-#And User_608 verify the Customer Financials tab in Underwriter stage
-#And User_608 verify the Living Expenses tab in Underwriter stage
-#And User_608 verify the Facility Info tab in Underwriter stage
-#And User_608 verify the Asset Details tab in Underwriter stage
-#And User_608 verify the Quotation Info tab in Underwriter stage
-#And User_608 verify the Insurance Info tab in Underwriter stage
-#And User_608 verify the Policy Check tab in Underwriter stage
-#And User_608 verify the Document Details tab in Underwriter stage
+And User_608 verify the Approve button under Application Details
+And User_608 verify the Reject button under Application Details
+And User_608 verify the Return button under Application Details
+And User_608 verify the View summary button under Application Details
+And User_608 verify the Customer details tab in Underwriter stage
+And User_608 to verify system should populate all the data under Customer details tab at this stage
+And User_608 verify the Additional Customer info tab in Underwriter stage
+And User_608 to verify system should populate all the data under Additional Customer info tab at this stage
+And User_608 verify the Customer Financials tab in Underwriter stage
+And User_608 to verify system should populate all the data under Customer Financials tab at this stage
+And User_608 verify the Living Expenses tab in Underwriter stage
+And User_608 verify the Facility Info tab in Underwriter stage
+And User_608 verify the Asset Details tab in Underwriter stage
+And User_608 verify the Quotation Info tab in Underwriter stage
+And User_608 verify the Insurance Info tab in Underwriter stage
+And User_608 verify the Policy Check tab in Underwriter stage
+And User_608 verify the Document Details tab in Underwriter stage
 Then logout from the ijaraApplication
-
-
-
-
-
-
-
-
-#And user click and verify the Application Details 
-#And user verify the Approve button under Application Details
-#And user verify the Reject button under Application Details
-#And user verify the Return button under Application Details
-#And user verify the View summary button under Application Details
-#And user verify and click the Customer Details tab
-#And user scroll down to view the tabs
-#And user verify and click the Additional customer Info tab
-#And user scroll down to view the tabs
-#And user verify and click the Customer Financial tab
-#And user scroll down to view the tabs
-#And user verify and click the Living Expense tab
-#And user scroll down to view the tabs
-#And user verify and click the Facility Details tab
-#And user scroll down to view the tabs
-#And user verify and click the Asset Details tab
-#And user scroll down to view the tabs
-#And user verify and click the Quatation Info tab
-#And user scroll down to view the tabs
-#And user verify and click the Insurance Info tab
-#And user scroll down to view the tabs
-#And user verify and click the Policy Check tab
-#And user scroll down to view the tabs
-#And user verify and click the Documents tab
-#And user scroll down to view the tabs
-#Then logout from the ijaraApplication
-
-
-
-
-
-
-
-
-

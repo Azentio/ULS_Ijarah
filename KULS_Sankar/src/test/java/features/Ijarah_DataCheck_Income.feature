@@ -60,6 +60,8 @@ And User_608 click the Eye button under Customer Financials tab
 And User_608 click the Eye button under Income section in Customer Financials Tab
 And User_608 click the Save button under Income details screen
 And User_608 validate the confirmation message under Income details screen
+And User_608 click the Customer Financials tab
+And User_608 click the Eye button under Customer Financials tab
 And User_608 click the Eye button under Income section in Customer Financials Tab
 And User_608 click the Back button under Income details screen
 Then logout from the ijaraApplication
@@ -141,6 +143,8 @@ And User_608 click the Eye button under Customer Financials tab
 And User_608 verify Self Employed customer available under Income section in Customer Financials Tab
 And User_608 verify Self Employed income field is available under Income section in Customer Financials Tab
 Then logout from the ijaraApplication
+And User_608 invoke soft assert in Income details screen under Customer Financials tab at Ijarah Data Check stage
+
 
 # IDC_01_30
 @AT_INCD_06
@@ -157,5 +161,5 @@ And User_608 click the Customer Financials tab
 And User_608 click the Eye button under Customer Financials tab
 And User_608 verify the Salaried customer available under Income section in Customer Financials Tab
 Then logout from the ijaraApplication
-
+And User_608 invoke soft assert in Income details screen under Customer Financials tab at Ijarah Data Check stage
 

@@ -6927,8 +6927,8 @@ public class Murabaha_Steps {
 	public void user_click_the_pensioner_record_eye_button_under_employment_list_section_in_customer_financials_tab() {
 		for (int i = 0; i <= 300; i++) {
 			try {
-				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("customerFinancialsTabBackBtn")));
-//				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("pensionerEmpDetails_eyeBtn")).click();
+				WebElement element = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("customerFinancialsTabBackBtn"));
+				actions.scrollToElement(element).build().perform();
 				break;
 			} catch (Exception e) {
 				if (i == 300) {
