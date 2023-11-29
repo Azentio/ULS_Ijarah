@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="5" passed="4" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-11-28T17:45:09 IST" name="Default suite" finished-at="2023-11-28T17:48:27 IST" duration-ms="198810">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@1caa0244]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2023-11-28T17:45:09 IST" name="Default test" finished-at="2023-11-28T17:48:27 IST" duration-ms="198810">
+      <class name="Runner.TestApplication">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@1caa0244]" started-at="2023-11-28T17:45:09 IST" name="setUpClass" finished-at="2023-11-28T17:45:10 IST" duration-ms="894" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@1caa0244]" started-at="2023-11-28T17:45:10 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-28T17:45:41 IST" duration-ms="31130" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To verify the availability of Application Details tab & verify already added details at App data entry stage is visible at data check stage"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To check the App Data Check - Application Details feature]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@1caa0244]" started-at="2023-11-28T17:45:41 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-28T17:46:06 IST" duration-ms="24927" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To verify post clicking on Application Detail tab system opens Application Details section."]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To check the App Data Check - Application Details feature]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@1caa0244]" started-at="2023-11-28T17:46:06 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-28T17:46:26 IST" duration-ms="20115" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To verify post clicking on Application Detail tab system opens Referral/Sourcing Details section."]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To check the App Data Check - Application Details feature]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@1caa0244]" started-at="2023-11-28T17:46:26 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-28T17:47:00 IST" duration-ms="34185" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To verify the field."]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To check the App Data Check - Application Details feature]"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[javascript error: Cannot read properties of null (reading 'style')
+  (Session info: chrome=119.0.6045.160)
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [73705664fa3d3dfd4a8c62eab8ca0f38, executeScript {script=arguments[0].style.border='2px solid black', args=[null]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54204}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54204/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 73705664fa3d3dfd4a8c62eab8ca0f38]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: javascript error: Cannot read properties of null (reading 'style')
+  (Session info: chrome=119.0.6045.160)
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [73705664fa3d3dfd4a8c62eab8ca0f38, executeScript {script=arguments[0].style.border='2px solid black', args=[null]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54204}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54204/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 73705664fa3d3dfd4a8c62eab8ca0f38
+at org.junit.Assert.fail(Assert.java:88)
+at stepdefinitions.IJARAH_Steps.user_verify_the_classification_dropdown_field_available_under_application_details_screen(IJARAH_Steps.java:7337)
+at ✽.User_608 verify the Classification Dropdown field available under Application details screen(file:///C:/Users/inindc00608/git/KULS_Sankar/KULS_Sankar/src/test/java/features/Ijarah_DataCheck_ApplicationDetails.feature:94)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@1caa0244]" started-at="2023-11-28T17:47:00 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-28T17:47:47 IST" duration-ms="47371" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To verify the field."]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To check the App Data Check - Application Details feature]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@1caa0244]" started-at="2023-11-28T17:47:47 IST" name="tearDownClass" finished-at="2023-11-28T17:48:27 IST" duration-ms="40123" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- Runner.TestApplication -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
