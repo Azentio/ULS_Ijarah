@@ -188,15 +188,10 @@ Then User_6047 to verify system should show the list view
 
 
 
-#
-#0305 -- user ID
-#3208 -- Ref id
+
+
 
 #0323-->user
 #3208--ref id
 #0181-------
 
-#2068
-#629
-#0181-------
-#3722

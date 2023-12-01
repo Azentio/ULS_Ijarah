@@ -1,4 +1,4 @@
-Feature: To verify the To verify the Document Details screen in Tawarooq
+Feature: To verify the Document Details screen in Tawarooq
 @AT_TW_AD_DOC_01
 
 Scenario: To verify post clicking on Add asset button, the Repayment Mode screen should be open with all valid fields
@@ -59,13 +59,13 @@ Then User_6047 Give the input for Mandatory/optional
 Then User_6047 Give the input for Document Category
 Then User_6047 Give the input for Document Quality field
 Then User_6047 Give the input for Remarks
-#And User_6047 click the Save Button
-#Then User_6047 verify the successfully saved message popup
-#And User_6047 click edit icon
-#Then User_6047 to verify the same record should get saved in Document details
-#And User_6047 to click the back button
-#And User_6047 verify the functionality of back button
-#Then logout from the ULS Application
+And User_6047 click the Save Button
+Then User_6047 verify the successfully saved message popup
+And User_6047 click edit icon
+Then User_6047 to verify the same record should get saved in Document details
+And User_6047 to click the back button
+And User_6047 verify the functionality of back button
+Then logout from the ULS Application
 
 @AT_TW_AD_DOC_03
 Scenario: To verifythe Document Details fields
@@ -111,3 +111,8 @@ And User_6047 to verify the Shelf Number field should be nonmandatory,Text box
 And User_6047 to verify the Box Number field should be nonmandatory,Text box
 And User_6047 to verify the Document with field should be nonmandatory,dropdown
 Then logout from the ULS Application
+
+#2068-user
+#629
+#0181
+#3722--ref id

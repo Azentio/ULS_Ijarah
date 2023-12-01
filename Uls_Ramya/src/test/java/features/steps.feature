@@ -4,16 +4,26 @@ Feature: Title of your feature
   I want to use this template for my feature file
 
 Scenario: To verify the invalid data,success message and back button
-
-
-And User_6047 to verify the Document Name field should be mandatory,Text box
-And User_6047 to verify the Completion Stage field should be mandatory
-And User_6047 to verify the Status field should be mandatory,Editable,dropdown
-And User_6047 to verify the Quality field should be mandatory,Editable,dropdown
-And User_6047 to verify the Date field should be mandatory,Date
-And User_6047 to verify the Deferred stage field should be mandatory,Text box
-And User_6047 to verify the Location field should be mandatory,Text box
-And User_6047 to verify the Rack Number field should be mandatory,Text box
-And User_6047 to verify the Shelf Number field should be mandatory,Text box
-And User_6047 to verify the Box Number field should be mandatory,Text box
-And User_6047 to verify the Document with field should be mandatory,Text box
+And User_6047 click Document Details tab
+Then User_6047 To verify the Customer Name field in Insurance Info screen
+Then User_6047 To verify the Document Name field in Insurance Info screen
+Then User_6047 To verify the Required At Stage field in Insurance Info screen
+Then User_6047 To verify the Document Status field in Insurance Info screen
+Then User_6047 To verify the Mandatory/optional field in Insurance Info screen
+Then User_6047 To verify the document Category field in Insurance Info screen
+Then User_6047 To verify the Upload Date field in Insurance Info screen
+Then User_6047 To verify the Expected Receipt Date field in Insurance Info screen
+Then User_6047 To verify the Defferal Stage field in Insurance Info screen
+Then User_6047 To verify the Def Approved By field in Insurance Info screen
+Then User_6047 To verify the Change in Nature Approved By field in Insurance Info screen
+Then User_6047 To verify the Document Form field in Insurance Info screen
+Then User_6047 To verify the Document Quality field in Insurance Info screen
+Then User_6047 To verify the Document Ref Num field in Insurance Info screen
+Then User_6047 To verify the Document Received By field in Insurance Info screen
+Then User_6047 To verify the Location Where Received field in Insurance Info screen
+Then User_6047 To verify the Rack No field in Insurance Info screen
+Then User_6047 To verify the Shelf No field in Insurance Info screen
+Then User_6047 To verify the Box No field in Insurance Info screen 
+Then User_6047 To verify the DateOfExpiry field in Insurance Info screen 
+Then User_6047 To verify the Lodgement Amount field in Insurance Info screen 
+Then User_6047 To verify the Remarks field in Insurance Info screen 

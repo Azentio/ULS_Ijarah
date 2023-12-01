@@ -1,4 +1,5 @@
 Feature: To test the employmentDetail module in URL
+#v0169
 @AT_EDC_01
 Scenario: To veryfy the employmentDetail record is available in system
 Given navigate the IJARA URL
@@ -68,6 +69,7 @@ And user validate the Total Experience Validation below the Employment Details
 And user validate the Retirement Age Validation below the Employment Details
 And user verify the back button below the Employment Details
 And user verify the primary Employment Default Vale As Yes below the Employment Details
+Then logout from the ULS Application
 
 @AT_EDC_04
 Scenario: To verify fields when nature of employment is Company/Firm
@@ -81,6 +83,7 @@ And User_6047 click the Mail box in ULS application
 And User_6047 click the Search button under inbox
 And User_6047 search the Ref id under inbox
 And User_6047 click the Entitle button under inbox
+And User_6047 click the Customer Financials tab
 And User_6047 click the Customer Financials tab
 And User_6047 click On the Action button below Customer Employment List
 And user click the Action button for the Company/Firm
@@ -100,6 +103,7 @@ And user verify the Office Premises Type below the Employment Details in CF
 And user verify the Share Holder Percentage below the Employment Details in CF
 And user verify the No Of Employees below the Employment Details in CF
 And user verify the Remarks below the Employment Details in CF
+Then logout from the ULS Application
 
 @AT_EDC_05
 Scenario: To verify fields when nature of employment is Pensioner
@@ -139,6 +143,7 @@ And user verify the Direct Manager in Pensioner below the Emp Details
 And user verify the Employer City Code in Pensioner below the Emp Details
 And user verify the Retirement Age in Pensioner below the Emp Details
 And user verify the Remarks in Pensioner below the Emp Details
+Then logout from the ULS Application
 
 @AT_EDC_09
 Scenario: To verify fields when nature of employment is Self-employed
@@ -172,7 +177,7 @@ Then user verify the Office Premises Type in Self-employed below the Employment 
 Then user verify the Share Holder Percentage in Self-employed below the Employment Details
 Then user verify the No Of Employees in Self-employed below the Employment Details
 Then user verify the Remarks in Self-employed below the Emp Details
-
+Then logout from the ULS Application
 
 @AT_EDC_07
 Scenario: To verify fields when nature of employment is Salaried
@@ -211,6 +216,7 @@ Then User_6047 verify the Direct Manager in Salaried below the Employment Detail
 Then User_6047 verify the Employer City Code in Salaried below the Employment Details
 Then User_6047 verify the Retirement Age in Salaried below the Employment Details
 Then User_6047 verify the Remarks in Salaried below the Employment Details
+Then logout from the ULS Application
 
 @AT_EDC_08
 Scenario: To verify the field present in Salaried under the Customer Financials tab
@@ -285,7 +291,7 @@ Then User_6047 To check the Income Paymode field should be Field should be dropd
 Then User_6047 To check the Income Paymode field should be Non-Mandatory
 Then User_6047 To check the Income Paymode field should be display only
 Then User_6047 To check the Remarks field should be Field should be Text box,Non-Mandatory and display only
-
+Then logout from the ULS Application
 
 @AT_EDC_10
 Scenario: to verify the field present under the employment detail (Self-employed)
@@ -320,7 +326,7 @@ Then User_6047 To check the Office premises type field should be TextBox,Non-Man
 Then User_6047 To check the Shareholder percentage field should be TextBox,Mandatory,display only
 Then User_6047 To check the No of Employes field should be TextBox,Non-Mandatory,display only
 Then User_6047 To check the Remarks field should be TextBox,Non-Mandatory,display only
-
+Then logout from the ULS Application
 
 
 @AT_EDC_13
@@ -343,3 +349,4 @@ Then User_6047 click the back button
 Then User_6047 click On the Action button below Customer Employment List
 Then User_6047 click the Search button under customer employment and check the mismatch data in listview
 Then User_6047 check the result 
+Then logout from the ULS Application

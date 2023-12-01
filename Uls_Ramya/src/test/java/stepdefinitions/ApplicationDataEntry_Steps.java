@@ -71,6 +71,7 @@ public class ApplicationDataEntry_Steps extends BaseClass {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_button")).click();
+			
 				break;
 			} catch (Exception e) {
 				if (i == 500) {

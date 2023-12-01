@@ -1,6 +1,7 @@
 package stepdefinitions;
 
 import java.awt.Robot;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -64,6 +65,10 @@ public class IjaraTest extends BaseClass {
 		ijaraLogin.loginWithIjaraApplication();
 	}
 
+	@And("login with valid credentials")
+	public void login_with_valid_credentials1() throws Throwable {
+		ijaraLogin.loginWithIjaraApplication();
+	}
 	@Then("logout from the ijaraApplication")
 	public void logout_from_the_ijara_application() throws Throwable {
 		ijaraLogin.logoutFromIjara();
@@ -4013,6 +4018,7 @@ public class IjaraTest extends BaseClass {
 
 		@And("user verify Employer Phone Extension below the Employment Details")
 		public void user_verify_employer_phone_extension_below_the_employment_details() {
+			javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("EmployerPhoneExtension")));
 			WebElement EmployerPhoneExtension = javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("EmployerPhoneExtension"));
 			for (int i = 0; i <= 2000; i++) {
 				try {
@@ -4028,6 +4034,7 @@ public class IjaraTest extends BaseClass {
 
 		@And("user verify the Employer Phone Number below the Employment Details")
 		public void user_verify_the_employer_phone_number_below_the_employment_details() {
+			javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("EmployerPhoneNumber")));
 			WebElement EmployerPhoneNumber = javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("EmployerPhoneNumber"));
 			for (int i = 0; i <= 2000; i++) {
 				try {
@@ -4540,7 +4547,7 @@ public class IjaraTest extends BaseClass {
 		public void user_click_the_action_button_for_the_company_firm() {
 			for (int i = 0; i <= 1000; i++) {
 				try {
-					javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("ActionBtNCusFin_for_Company/firm")).click();
+					javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("ActionBtn_for_Company/firm")).click();
 				
 					break;
 					
@@ -4549,7 +4556,7 @@ public class IjaraTest extends BaseClass {
 						Assert.fail(e.getMessage());
 					}
 				}
-			}
+			} 
 		}
 
 		@And("User_6047 get the test data for test case ID AT_EDC_04")
@@ -4560,7 +4567,7 @@ public class IjaraTest extends BaseClass {
 		
 		@And("user verify the Nature of Employment below the Employment Details in CF")
 		public void user_verify_the_nature_of_employment_below_the_employment_details_in_cf() {
-	       if (!javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("NatureOfEmployment")).isDisplayed()) {
+	       if (javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("NatureOfEmployment")).isDisplayed()) {
 					SoftAssert.fail("Check Nature of Employment Field");
 				}
 			  
@@ -4568,7 +4575,7 @@ public class IjaraTest extends BaseClass {
 
 		@And("user verify the Company Type below the Employment Details in CF")
 		public void user_verify_the_company_type_below_the_employment_details_in_cf() {
-			if (!javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("CompanyType")).isDisplayed()) {
+			if (javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("CompanyType")).isDisplayed()) {
 				SoftAssert.fail("Check Company Type Field");
 			}
 		  
@@ -4576,7 +4583,7 @@ public class IjaraTest extends BaseClass {
 
 		@And("user verify the Profession below the Employment Details in CF")
 		public void user_verify_the_profession_below_the_employment_details_in_cf() {
-			if (!javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("Profession")).isDisplayed()) {
+			if (javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("Profession")).isDisplayed()) {
 				SoftAssert.fail("Check the Profession Field");
 			}
 		  
@@ -4584,14 +4591,14 @@ public class IjaraTest extends BaseClass {
 
 		@And("user verify the Profession Type below the Employment Details in CF")
 		public void user_verify_the_profession_type_below_the_employment_details_in_cf() {
-			if (!javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("ProfessionType")).isDisplayed()) {
+			if (javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("ProfessionType")).isDisplayed()) {
 				SoftAssert.fail("Check the Profession Type Field");
 			}
 		}
 
 		@And("user verify the Statutory Authority below the Employment Details in CF")
 		public void user_verify_the_statutory_authority_below_the_employment_details_in_cf() {
-			if (!javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("StatutoryAuthority")).isDisplayed()) {
+			if (javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("StatutoryAuthority")).isDisplayed()) {
 				SoftAssert.fail("Check the Statutory Authority Field");
 			}
 		}
@@ -4605,7 +4612,7 @@ public class IjaraTest extends BaseClass {
 
 		@And("user verify Employer Phone Extension below the Employment Details in CF")
 		public void user_verify_employer_phone_extension_below_the_employment_details_in_cf() {
-			if (!javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("EmployerPhoneExtension")).isDisplayed()) {
+			if (javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("EmployerPhoneExtension")).isDisplayed()) {
 				SoftAssert.fail("Check the Employer Phone Extension Field");
 			}
 		}
@@ -4619,14 +4626,14 @@ public class IjaraTest extends BaseClass {
 
 		@And("user verify the Nature OF Business below the Employment Details in CF")
 		public void user_verify_the_nature_of_business_below_the_employment_details_in_cf() {
-			if (!javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("NatureOfBusiness")).isDisplayed()) {
+			if (javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("NatureOfBusiness")).isDisplayed()) {
 				SoftAssert.fail("Check the Nature OF Business Field");
 			}
 		}
 
 		@And("user verify the Registered Business Name below the Employment Details in CF")
 		public void user_verify_the_registered_business_name_below_the_employment_details_in_cf() {
-			if (!javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("RegisteredBusinessName")).isDisplayed()) {
+			if (javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("RegisteredBusinessName")).isDisplayed()) {
 				SoftAssert.fail("Check the Registered Business Name Field");
 			}
 		}
@@ -4640,7 +4647,7 @@ public class IjaraTest extends BaseClass {
 
 		@And("user verify the Business Registration Date below the Employment Details in CF")
 		public void user_verify_the_business_registration_date_below_the_employment_details_in_cf() {
-			if (!javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("BusinessRegisterationDate")).isDisplayed()) {
+			if (javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("BusinessRegisterationDate")).isDisplayed()) {
 				SoftAssert.fail("Check the Business Registration Date Field");
 			}
 		}
@@ -4654,7 +4661,7 @@ public class IjaraTest extends BaseClass {
 
 		@And("user verify the Share Holder Percentage below the Employment Details in CF")
 		public void user_verify_the_share_holder_percentage_below_the_employment_details_in_cf() {
-			if (!javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("ShareHolderPercentage")).isDisplayed()) {
+			if (javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("ShareHolderPercentage")).isDisplayed()) {
 				SoftAssert.fail("Check the Share Holder Percentage Field");
 			}
 		}
@@ -4668,7 +4675,7 @@ public class IjaraTest extends BaseClass {
 
 		@And("user verify the Remarks below the Employment Details in CF")
 		public void user_verify_the_remarks_below_the_employment_details_in_cf() {
-			if (!javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("Remarks")).isDisplayed()) {
+			if (javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("Remarks")).isDisplayed()) {
 				SoftAssert.fail("Check the Remarks Field");
 			}
 		}
@@ -4696,7 +4703,8 @@ public class IjaraTest extends BaseClass {
 			} 
 		}
 		@And("user verify the Employment Period in Pensioner below the Employment Details")
-		public void user_verify_the_employment_period_in_pensioner_below_the_employment_details() {
+		public void user_verify_the_employment_period_in_pensioner_below_the_employment_details() throws IOException {
+			waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("EmploymentPeriod")));
 			if (javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("EmploymentPeriod")).isDisplayed()) {
 				SoftAssert.fail("Check the Employment Period Field");
 			}
@@ -4882,8 +4890,8 @@ public class IjaraTest extends BaseClass {
 		}
 
 		@Then("user verify the Nature of Employment in Self-employed below the Employment Details")
-		public void user_verify_the_nature_of_employment_in_self_employed_below_the_employment_details() {
-			 
+		public void user_verify_the_nature_of_employment_in_self_employed_below_the_employment_details() throws IOException {
+			waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("NatureOfEmployment")));
 			 if (javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("NatureOfEmployment")).isDisplayed()) {
 					SoftAssert.fail("Check Nature of Employment Field");
 				}
@@ -6145,7 +6153,8 @@ public void user_to_check_the_remarks_field_should_be_field_should_be_text_box_n
 		
 
 @Then("User_6047 To check the Primary Employment field should be Toggle,Non-Mandatory,display only")
-public void user_to_check_the_primary_employment_field_should_be_toggle_non_mandatory_display_only() {
+public void user_to_check_the_primary_employment_field_should_be_toggle_non_mandatory_display_only() throws Throwable {
+	waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("PrimaryEmployment_Toggle")));
 	String PrimaryEmployment = javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("PrimaryEmployment_Toggle")).getAttribute("role");
 
 	for (int i = 0; i <2000; i++) {
