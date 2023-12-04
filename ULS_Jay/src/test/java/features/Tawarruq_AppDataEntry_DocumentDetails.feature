@@ -67,7 +67,7 @@ Scenario: verify Any mandatory field blank and save
     And User_610 enter the value in search button
     And User_610 click edit button under inbox screen
     And User_610 click document details in murabha
-   #And User_610 click edit button under documents details 
+    #And User_610 click edit button under documents details 
     #
     #And User_610 veriy the Add Back and Search button or not editable
     And User_610 verify the Matching and Mismatching data of Search 

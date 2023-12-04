@@ -41,6 +41,10 @@ public class tawarruq_Step {
 	JSPaths jsPaths4 = new JSPaths(excelPath, "Tawarruq_Module", "Murabha_LoginFieldName", "JSPath");
 	JSPaths tawarruq_ADEntry_Income = new JSPaths(excelPath, "Tawarruq_ADEntry_Income", "DataCheckIncome_FieldName", "JSPath");
 	JSPaths tawarruq_ADEntry_LivingExpense = new JSPaths(excelPath, "Tawarruq_ADEntry_LivingExpense", "Tawarruq_AppDataEntrylivingExpensefield", "JSPath");
+	JSPaths tA_CommodityMaker_AdhocPayment = new JSPaths(excelPath, "TA_CommodityMaker_AdhocPayment", "Tawarruq_CommodityMaker_AdhocPayment", "JSPath");
+	JSPaths tA_CommondityMaker_Configuration = new JSPaths(excelPath, "TA_CommondityMaker_Configuratio", "Tawarruq_CommodityMaker_Configuration", "JSPath");
+	JSPaths ta_Offering_InterstRateStructure = new JSPaths(excelPath, "TA_Offering_InterstRateStructur", "Tawarruq_Offering_InterestRateStructure", "JSPath");
+	
 	
 	
 	
@@ -69,8 +73,8 @@ public class tawarruq_Step {
 		testData = Tawarruq_ADEntry_livingExpenses.getTestdata("DS_AT_TW_AD_LEA_002");
 		}
 		
-	@And("User_{int} verify the Employer name should be seen")
-	public void user_verify_the_employer_name_should_be_seen(Integer int1) throws Throwable {
+	@And("User_610 verify the Employer name should be seen")
+	public void user_verify_the_employer_name_should_be_seen() throws Throwable {
 		Thread.sleep(3000);
 		for (int i = 0; i < 200; i++) {
 			try {
@@ -87,8 +91,8 @@ public class tawarruq_Step {
 		}
 	}
 
-	@And("User_{int} verify the Status should be seen active")
-	public void user_verify_the_status_should_be_seen_active(Integer int1) {
+	@And("User_610 verify the Status should be seen active")
+	public void user_verify_the_status_should_be_seen_active() {
 	    
 		for (int i = 0; i < 200; i++) {
 			try {
@@ -1178,4 +1182,640 @@ public class tawarruq_Step {
             }
 
 	
+	//-------------- Tawarruq Commodity Maker Adhoc Payment --   @AT_TW_CSM_09
+
+	  
+	
+	
+	@And("User_610 click the Adhoc Payment Screen")
+	public void user_click_the_adhoc_payment_screen() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(tA_CommodityMaker_AdhocPayment.getElement("AdhocPayment_610")).click();
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_610 verify the Transaction Type field")
+	public void user_verify_the_transaction_type_field() throws Throwable {
+		WebElement TA_transactionType = javascriptHelper.executeScriptWithWebElement(tA_CommodityMaker_AdhocPayment.getElement("TransactionType_610"));
+		for (int i = 0; i < 400; i++) {
+			try {
+				javascriptHelper.backgroundColor(TA_transactionType);
+				javascriptHelper.executeScriptWithWebElement(tA_CommodityMaker_AdhocPayment.getElement("TransactionType_610")).isDisplayed();
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}
+		                           	}
+	//		  Thread.sleep(3000);
+		                     }
+	}
+
+	@And("User_610 verify the Transaction Againts field")
+	public void user_verify_the_transaction_againts_field() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(tA_CommodityMaker_AdhocPayment.getElement("TransactionAgainst_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}
+		                           	}
+		                     }
+	}
+
+	@And("User_610 verify the Reference Number field")
+	public void user_verify_the_reference_number_field() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(tA_CommodityMaker_AdhocPayment.getElement("ReferenceNumber_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}
+		                           	}
+		                     }
+	}
+
+	@And("User_610 verify the Paid Amount field")
+	public void user_verify_the_paid_amount_field() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(tA_CommodityMaker_AdhocPayment.getElement("PaidAmount_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}
+		                           	}
+		                     }
+	}
+	
+	//------------------------------------  Tawarruq Commodity Configuration  @AT_TW_CSM_06   finance details 
+	
+	@And("User_610 click the Configuration Screen")
+	public void user_click_the_configuration_screen() throws Throwable {
+		Thread.sleep(2000);
+		for (int i = 0; i < 400; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(tA_CommondityMaker_Configuration.getElement("Configuration_610")).click();
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@And("User_610 verify the Loan Tenure field in Financial Details")
+	public void user_verify_the_loan_tenure_field_in_financial_details() throws Throwable {
+		Thread.sleep(2000);
+		//javascriptHelper.scrollIntoView(javascriptHelper
+				//.executeScriptWithWebElement(tA_CommondityMaker_Configuration.getElement("FinanceDetailsScreenScroll_610")));
+	
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(tA_CommondityMaker_Configuration.getElement("loanTenure_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}  }  }
+		                           	
+	}
+
+	@And("User_610 verify the Number Of Instalment field in Financial Details")
+	public void user_verify_the_number_of_instalment_field_in_financial_details() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(tA_CommondityMaker_Configuration.getElement("NumberOfInstalments_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}  }  }
+	}
+
+	@And("User_610 verify the Repay Frequency field in Financial Details")
+	public void user_verify_the_repay_frequency_field_in_financial_details() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(tA_CommondityMaker_Configuration.getElement("RepayFrequency_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}  }  }
+	}
+
+	@And("User_610 verify the Instalment Rate Of Return field in Financial Details")
+	public void user_verify_the_instalment_rate_of_return_field_in_financial_details() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(tA_CommondityMaker_Configuration.getElement("InternalRateOfReturn_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}  }  }
+	}
+
+	@And("User_610 verify the Total Loan Amount Financed field in Financial Details")
+	public void user_verify_the_total_loan_amount_financed_field_in_financial_details() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(tA_CommondityMaker_Configuration.getElement("TotalLoanAmountFinanced_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}  }  }
+	}
+
+	@And("User_610 verify the Average Account balance field in Financial Details")
+	public void user_verify_the_average_account_balance_field_in_financial_details() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(tA_CommondityMaker_Configuration.getElement("AverageAccountBalance_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}  }  }
+	}
+	
+	//----------------   @AT_TW_CSM_06   facility details   
+	
+	
+	@And("User_610 verify the Classification field in Facility Details")
+	public void user_verify_the_classification_field_in_facility_details() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(tA_CommondityMaker_Configuration.getElement("Classification_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}  }  }
+	}
+
+	@And("User_610 verify the Product field in Facility Details")
+	public void user_verify_the_product_field_in_facility_details() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(tA_CommondityMaker_Configuration.getElement("product_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}  }  }
+	}
+
+	@And("User_610 verify the Scheme field in Facility Details")
+	public void user_verify_the_scheme_field_in_facility_details() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(tA_CommondityMaker_Configuration.getElement("Scheme_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}  }  }
+	}
+	
+	@And("User_610 verify the Total Loan Amount Financed field in Facility Details")
+	public void user_verify_the_Total_Loan_Amount_Financed_field_in_facility_details() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(tA_CommondityMaker_Configuration.getElement("TotalLoanAmountFinanced_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}  }  }
+	}
+	
+	
+
+	@And("User_610 verify the Loan Tenure field Total loan amount in Facility Details")
+	public void user_verify_the_loan_tenure_field_total_loan_amount_in_facility_details() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(tA_CommondityMaker_Configuration.getElement("FD_LoanTenure_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}  }  }
+	}
+
+	@And("User_610 verify the Currency ID field in Facility Details")
+	public void user_verify_the_currency_id_field_in_facility_details() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(tA_CommondityMaker_Configuration.getElement("CurrencyId_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}  }  }
+	}
+
+	@And("User_610 verify the Eligible Income field in Facility Details")
+	public void user_verify_the_eligible_income_field_in_facility_details() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(tA_CommondityMaker_Configuration.getElement("EligibleIncome_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}  }  }
+	}
+
+	@And("User_610 verify the Insurance Amount field in Facility Details")
+	public void user_verify_the_insurance_amount_field_in_facility_details() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(tA_CommondityMaker_Configuration.getElement("InsuranceAmount_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}  }  }
+	}
+
+	@And("User_610 verify the Pre Retirement Emi field in Facility Details")
+	public void user_verify_the_pre_retirement_emi_field_in_facility_details() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(tA_CommondityMaker_Configuration.getElement("PreRetirementEMI_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}  }  }
+	}
+
+	@And("User_610 verify the Post Retirement Emi field in Facility Details")
+	public void user_verify_the_post_retirement_emi_field_in_facility_details() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(tA_CommondityMaker_Configuration.getElement("PostRetirementEMI_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}  }  }
+	}
+
+	@And("User_610 verify the Previous Emi field in Facility Details")
+	public void user_verify_the_previous_emi_field_in_facility_details() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(tA_CommondityMaker_Configuration.getElement("PreviousEMI_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}  }  }
+	}
+
+	@And("User_610 verify the Previous Outstanding field in Facility Details")
+	public void user_verify_the_previous_outstanding_field_in_facility_details() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(tA_CommondityMaker_Configuration.getElement("PreviousOutstanding_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}  }  }
+	}
+
+	@And("User_610 verify the Previous Net Realizable field in Facility Details")
+	public void user_verify_the_previous_net_realizable_field_in_facility_details() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(tA_CommondityMaker_Configuration.getElement("PreviousNetRealizable_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}  }  }
+	}
+
+	@And("User_610 verify the Pre Retirement Tenure field in Facility Details")
+	public void user_verify_the_pre_retirement_tenure_field_in_facility_details() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(tA_CommondityMaker_Configuration.getElement("PreRetirementTenure_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}  }  }
+	}
+
+	@And("User_610 verify the Total Offer Amount field in Facility Details")
+	public void user_verify_the_total_offer_amount_field_in_facility_details() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(tA_CommondityMaker_Configuration.getElement("TotalOfferAmount_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}  }  }
+	}
+
+	@And("User_610 verify the Average Account Balance field in Facility Details")
+	public void user_verify_the_average_account_balance_field_in_facility_details() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(tA_CommondityMaker_Configuration.getElement("AverageAccountBalance_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}  }  }
+	}
+
+	@And("User_610 verify the Application Ltv1 field in Facility Details")
+	public void user_verify_the_application_ltv1_field_in_facility_details() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(tA_CommondityMaker_Configuration.getElement("ApplicableLTV1_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}  }  }
+	}
+	
+	@And("User_610 verify the Application Ltv2 field in Facility Details")
+	public void user_verify_the_application_ltv2_field_in_facility_details() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(tA_CommondityMaker_Configuration.getElement("ApplicableLTV2_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}  }  }
+	}
+	
+	//---------------------------- tawarruq Offering - offering Stage - Interest Rate Structure  @AT_TW_OFO_13
+
+	  
+	@And("User_610 click Offering Screen")
+	public void user_click_offering_screen() throws Throwable {
+		Thread.sleep(2000);
+		for (int i = 0; i < 400; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(ta_Offering_InterstRateStructure.getElement("OfferDetailsScreen_610")).click();
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@And("User_610 click edit button in Interest Rate Structure")
+	public void user_click_edit_button_in_interest_rate_structure() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(ta_Offering_InterstRateStructure.getElement("EditBtn_610")).click();
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@And("User_610 verify the Product field in Interest Rate Structure")
+	public void user_verify_the_product_field_in_interest_rate_structure() throws Throwable {
+		Thread.sleep(2000);
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(ta_Offering_InterstRateStructure.getElement("Product_610")));
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(ta_Offering_InterstRateStructure.getElement("Product_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}  }  }
+	    
+	}
+
+	@And("User_610 verify the Rate Definition field in Interest Rate Structure")
+	public void user_verify_the_rate_definition_field_in_interest_rate_structure() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(ta_Offering_InterstRateStructure.getElement("RateDefinition_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}  }  }
+	    
+	}
+
+	@And("User_610 verify the Interest Rate field in Interest Rate Structure")
+	public void user_verify_the_interest_rate_field_in_interest_rate_structure() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(ta_Offering_InterstRateStructure.getElement("InterestRate_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}  }  }
+	    
+	}
+
+	@And("User_610 verify the Effective Rate field in Interest Rate Structure")
+	public void user_verify_the_effective_rate_field_in_interest_rate_structure() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(ta_Offering_InterstRateStructure.getElement("EffectiveRate_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}  }  }
+	    
+	}
+
+	@And("User_610 verify the Base Rate field in Interest Rate Structure")
+	public void user_verify_the_base_rate_field_in_interest_rate_structure() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(ta_Offering_InterstRateStructure.getElement("BaseRate_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}  }  }
+	    
+	}
+
+	@And("User_610 verify the Spread Rate field in Interest Rate Structure")
+	public void user_verify_the_spread_rate_field_in_interest_rate_structure() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(ta_Offering_InterstRateStructure.getElement("SpreadRate_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}  }  }
+	    
+	}
+
+	@And("User_610 verify the Cap Rate field in Interest Rate Structure")
+	public void user_verify_the_cap_rate_field_in_interest_rate_structure() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(ta_Offering_InterstRateStructure.getElement("CapRate_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}  }  }
+	    
+	}
+
+	@And("User_610 verify the Floor Rate field in Interest Rate Structure")
+	public void user_verify_the_floor_rate_field_in_interest_rate_structure() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(ta_Offering_InterstRateStructure.getElement("FloorRate_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}  }  }
+	    
+	}
+
+	@And("User_610 verify the RBP Adjuster field in Interest Rate Structure")
+	public void user_verify_the_rbp_adjuster_field_in_interest_rate_structure() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(ta_Offering_InterstRateStructure.getElement("RBPAdjuster_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}  }  }
+	    
+	}
+
+	@And("User_610 verify the Penalty Rate field in Interest Rate Structure")
+	public void user_verify_the_penalty_rate_field_in_interest_rate_structure() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(ta_Offering_InterstRateStructure.getElement("PenaltyRate_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}  }  }
+	    
+	}
+
+	@And("User_610 verify the Penalty Fee field in Interest Rate Structure")
+	public void user_verify_the_penalty_fee_field_in_interest_rate_structure() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(ta_Offering_InterstRateStructure.getElement("PenaltyFee_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}  }  }
+	    
+	}
+	
+	@And("User_610 verify the installment Period field in installments")
+	public void user_verify_the_installment_period_field_in_installments() throws Throwable {
+		Thread.sleep(2000);
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(ta_Offering_InterstRateStructure.getElement("InstallmentPeriod_610")));
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(ta_Offering_InterstRateStructure.getElement("InstallmentPeriod_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}  }  }
+	}
+
+	@And("User_610 verify Installment Amount the field in installments")
+	public void user_verify_installment_amount_the_field_in_installments() {
+		for (int i = 0; i < 400; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(ta_Offering_InterstRateStructure.getElement("InstallmentAmount_610")).isDisplayed());
+				Assert.assertTrue(true);
+				break;
+			} catch (Exception e) {
+				if (i==399) {
+					Assert.fail(e.getMessage());
+				}  }  }
+	}
 }

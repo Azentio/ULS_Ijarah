@@ -35,6 +35,11 @@ public JavascriptHelper(WebDriver driver)
 	}
 	
 	
+//	Element background color
+	public void backgroundColor(WebElement element) {
+		executeScript("arguments[0].style.background='yellow'", element);
+//		executeScript("arguments[0].setAttribute('style', 'border:2px solid black; background:yellow')", element);
+	}
 	
 	//click to the element
 	public void JSEClick(WebElement Element) {

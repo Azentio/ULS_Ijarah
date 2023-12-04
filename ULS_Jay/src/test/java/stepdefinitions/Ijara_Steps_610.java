@@ -122,6 +122,20 @@ public class Ijara_Steps_610 {
 				testData = ad_CustomerFolllowUpDetails_610.getTestdata("DS_AT_TW_AD_LEA_001");
 				}
 			
+       //----------Tawarrqu Commondity Maker --- Adhoc Payment
+			
+			@And("User_610 get the test data set id for DS_AT_TW_CSM_06")
+			public void get_the_test_data_set_id_for_DS_AT_TW_CSM_06() {
+				testData = ad_CustomerFolllowUpDetails_610.getTestdata("DS_AT_TW_CSM_06");
+				}
+			
+      //----------Tawarrqu Offering - Offering Stage
+			
+			@And("User_610 get the test data set id for DS_AT_TW_OFO_13")
+			public void get_the_test_data_set_id_for_DS_AT_TW_OFO_13() {
+				testData = ad_CustomerFolllowUpDetails_610.getTestdata("DS_AT_TW_OFO_13");
+				}
+			
 			
 			
 	
@@ -227,8 +241,8 @@ public class Ijara_Steps_610 {
 		javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("enter_theName_InSearchBtn_610")).sendKeys(testData.get("Search Button Value"));
 		
 		
-		System.out.println(jsPaths2.getElement("clickEditBtnIn_FirstRow_UnderInbox_610"));
-		Thread.sleep(3000);
+		//System.out.println(jsPaths2.getElement("clickEditBtnIn_FirstRow_UnderInbox_610"));
+		Thread.sleep(1000);
 		//document.querySelectorAll('ion-label')[2]
 		
 	}
@@ -1013,7 +1027,7 @@ public class Ijara_Steps_610 {
 //					Assert.fail(e.getMessage());
 //				}
 //			}
-//			Thread.sleep(3000);
+//			Th.sleep(3000);
 			
 // ----------------click
 
@@ -1121,7 +1135,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 //					Assert.fail(e.getMessage());
 //				}
 //			}
-//			Thread.sleep(3000);
+//			Th.sleep(3000);
 //				}	
 		
 		
@@ -1487,8 +1501,10 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("additionalCustomerInfo_610")).click();
 				break;
 			} catch (Exception e) {
-				// TODO: handle exception
-			}
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+							}
 		}
 	}
 
@@ -1499,6 +1515,9 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("editBtn_UnderFollowUp_610")).click();
 				break;
 			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
 				// TODO: handle exception
 			}
 		}
@@ -1512,10 +1531,13 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("identificationAddBtn")).click();
 				break;
 			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
 				// TODO: handle exception
 			}
 		}
-			Thread.sleep(4000);
+			Thread.sleep(1000);
 	}
 	
 	@And("User_610 click view button in customer identification")
@@ -1526,10 +1548,13 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("viewIcon_610")).click();
 				break;
 			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
 				// TODO: handle exception
 			}
 		}
-			Thread.sleep(4000);
+			Thread.sleep(3000);
 	}
 	
 	@And("User_610 click eye button in customer identification")
@@ -1540,12 +1565,15 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("identificationEyeBtn_610")).click();
 				break;
 			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
 				// TODO: handle exception
 			}
 		}
 		
 			
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 	}
 	
 	@And("User_610 verify the field ID Type under identification details")
@@ -1554,8 +1582,12 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Id_Type_UnderCustomerIdentificationDetails_610")).isDisplayed()) {
 					softAssert.fail();
+					break;
 				}
 			} catch (Exception e) {
+				if (j == 199) {
+					Assert.fail(e.getMessage());
+				}
 				// TODO: handle exception
 			}
 		}
@@ -1568,8 +1600,12 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Id_Number_UnderCustomerIdentificationDetails_610")).isDisplayed()) {
 					softAssert.fail();
+					break;
 				}
 			} catch (Exception e) {
+				if (j == 199) {
+					Assert.fail(e.getMessage());
+				}
 				// TODO: handle exception
 			}
 		}
@@ -1582,8 +1618,12 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Issue_Date_UnderCustomerIdentificationDetails_610")).isDisplayed()) {
 					softAssert.fail();
+					break;
 				}
 			} catch (Exception e) {
+				if (j == 199) {
+					Assert.fail(e.getMessage());
+				}
 				// TODO: handle exception
 			}
 		}
@@ -1596,8 +1636,12 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Expiry_Date_UnderCustomerIdentificationDetails_610")).isDisplayed()) {
 					softAssert.fail();
+					break;
 				}
 			} catch (Exception e) {
+				if (j == 199) {
+					Assert.fail(e.getMessage());
+				}
 				// TODO: handle exception
 			}
 		}
@@ -1610,8 +1654,12 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("IssuingAuthority_UnderCustomerIdentificationDetails_610")).isDisplayed()) {
 					softAssert.fail();
+					break;
 				}
 			} catch (Exception e) {
+				if (j == 199) {
+					Assert.fail(e.getMessage());
+				}
 				// TODO: handle exception
 			}
 		}
@@ -1624,8 +1672,12 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("CountryOfIssue_UnderCustomerIdentificationDetails_610")).isDisplayed()) {
 					softAssert.fail();
+					break;
 				}
 			} catch (Exception e) {
+				if (j == 199) {
+					Assert.fail(e.getMessage());
+				}
 				// TODO: handle exception
 			}
 		}
@@ -1653,8 +1705,8 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 		String IDNumber = javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Id_Number_UnderCustomerIdentificationDetails_610"))
 				.getAttribute("ng-reflect-model");
 	//	String IDNumber1 =IDVerify.substring(1,7);
-		
-		String IDNumber1 = "586489705642";
+		//----numeric
+		String IDNumber1 = "XXXXXXXX5642";
 		
 		System.err.println("IDNumber :" + IDNumber);
 		
@@ -1784,6 +1836,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Id_Number_UnderCustomerIdentificationDetails_610")).isDisplayed()) {
 					softAssert.fail();
+					break;
 				}
 			} catch (Exception e) {
 				// TODO: handle exception
@@ -1800,7 +1853,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 
 		for (int i = 0; i < 2000; i++) {
 			try {
-				String IssueDate = "document.querySelector('ion-label[ng-reflect-text=\"Issue Date\"').innerText";
+				String IssueDate = "document.querySelector('label[ng-reflect-text=\"Issue Date\"]').innerText";
 				String IssueDateName = (String) javascriptHelper.executeScript("return " + IssueDate);
 				
 				System.err.println("IssueDate:"+IssueDateName);
@@ -1820,23 +1873,27 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Issue_Date_UnderCustomerIdentificationDetails_610")).isDisplayed()) {
 					softAssert.fail();
+					break;
 				}
 			} catch (Exception e) {
+				if (j == 199) {
+					Assert.fail(e.getMessage());
+				}
 				// TODO: handle exception
 			}
 		}
 		
 		// -------------------validate type  date
 
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 		
 		String IssueDateFormat = javascriptHelper
 				.executeScriptWithWebElement(jsPaths2.getElement("getAtribute_InIssueDate_610"))
-				.getAttribute("ng-reflect-icon");
+				.getTagName();
 		
 		System.err.println("IdType:  " + IssueDateFormat);
 
-		String assertIssueDateFormat = "pi pi-calendar";
+		String assertIssueDateFormat = "p-calendar";
 		
 		Assert.assertEquals(assertIssueDateFormat, IssueDateFormat);
 		
@@ -1853,7 +1910,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 
 				for (int i = 0; i < 2000; i++) {
 					try {
-						String ExpiryDate = "document.querySelector('ion-label[ng-reflect-text=\"Country of Issue\"').innerText";
+						String ExpiryDate = "document.querySelector('label[ng-reflect-text=\"Expiry Date\"').innerText";
 						String ExpiryDateName = (String) javascriptHelper.executeScript("return " + ExpiryDate);
 						
 						System.err.println("ExpiryDate:"+ExpiryDateName);
@@ -1873,23 +1930,27 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 					try {
 						if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Expiry_Date_UnderCustomerIdentificationDetails_610")).isDisplayed()) {
 							softAssert.fail();
+							break;
 						}
 					} catch (Exception e) {
+						if (j == 199) {
+							Assert.fail(e.getMessage());
+						}
 						// TODO: handle exception
 					}
 				}
 				
 				// -------------------validate type  date
 
-				Thread.sleep(3000);
+				Thread.sleep(1000);
 				
 				String ExpiryDateFormat = javascriptHelper
 						.executeScriptWithWebElement(jsPaths2.getElement("getAtribute_InExpiryeDate_610"))
-						.getAttribute("ng-reflect-icon");
+						.getTagName();
 				
 				System.err.println("ExpiryDate:  " + ExpiryDateFormat);
 
-				String assertExpiryDateFormat = "pi pi-calendar";
+				String assertExpiryDateFormat = "p-calendar";
 				
 				Assert.assertEquals(assertExpiryDateFormat, ExpiryDateFormat);
 	    
@@ -1922,8 +1983,12 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("IssuingAuthority_UnderCustomerIdentificationDetails_610")).isDisplayed()) {
 					softAssert.fail();
+					break;
 				}
 			} catch (Exception e) {
+				if (j == 199) {
+					Assert.fail(e.getMessage());
+				}
 				// TODO: handle exception
 			}
 		}
@@ -1957,8 +2022,12 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("CountryOfIssue_UnderCustomerIdentificationDetails_610")).isDisplayed()) {
 					softAssert.fail();
+					break;
 				}
 			} catch (Exception e) {
+				if (j == 199) {
+					Assert.fail(e.getMessage());
+				}
 				// TODO: handle exception
 			}
 		}
@@ -1974,6 +2043,9 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FacilityInfo_610")).click();
 				break;
 			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
 				// TODO: handle exception
 			}
 		}
@@ -1989,8 +2061,12 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 					try {
 						if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Scheme_610")).isDisplayed()) {
 							softAssert.fail();
+							break;
 						}
 					} catch (Exception e) {
+						if (j == 199) {
+							Assert.fail(e.getMessage());
+						}
 						// TODO: handle exception
 					}
 				}
@@ -2005,8 +2081,12 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Product_610")).isDisplayed()) {
 					softAssert.fail();
+					break;
 				}
 			} catch (Exception e) {
+				if (j == 199) {
+					Assert.fail(e.getMessage());
+				}
 				// TODO: handle exception
 			}
 		}
@@ -2022,8 +2102,12 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 					try {
 						if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("RequestAmount_610")).isDisplayed()) {
 							softAssert.fail();
+							break;
 						}
 					} catch (Exception e) {
+						if (j == 199) {
+							Assert.fail(e.getMessage());
+						}
 						// TODO: handle exception
 					}
 				}
@@ -2039,8 +2123,12 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("LoanTenure_610")).isDisplayed()) {
 					softAssert.fail();
+					break;
 				}
 			} catch (Exception e) {
+				if (j == 199) {
+					Assert.fail(e.getMessage());
+				}
 				// TODO: handle exception
 			}
 		}
@@ -2119,8 +2207,12 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 					try {
 						if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Product_610")).isDisplayed()) {
 							softAssert.fail();
+							break;
 						}
 					} catch (Exception e) {
+						if (j == 199) {
+							Assert.fail(e.getMessage());
+						}
 						// TODO: handle exception
 					}
 				}
@@ -2164,8 +2256,12 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("facilityType_610")).isDisplayed()) {
 					softAssert.fail();
+					break;
 				}
 			} catch (Exception e) {
+				if (j == 199) {
+					Assert.fail(e.getMessage());
+				}
 				// TODO: handle exception
 			}
 		}
@@ -2196,8 +2292,12 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Scheme_610")).isDisplayed()) {
 					softAssert.fail();
+					break;
 				}
 			} catch (Exception e) {
+				if (j == 199) {
+					Assert.fail(e.getMessage());
+				}
 				// TODO: handle exception
 			}
 		}
@@ -2242,8 +2342,12 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("RequestAmount_610")).isDisplayed()) {
 					softAssert.fail();
+					break;
 				}
 			} catch (Exception e) {
+				if (j == 199) {
+					Assert.fail(e.getMessage());
+				}
 				// TODO: handle exception
 			}
 		}
@@ -2292,8 +2396,12 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 					try {
 						if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("LoanTenure_610")).isDisplayed()) {
 							softAssert.fail();
+							break;
 						}
 					} catch (Exception e) {
+						if (j == 199) {
+							Assert.fail(e.getMessage());
+						}
 						// TODO: handle exception
 					}
 				}
@@ -2341,8 +2449,12 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("getAttribute_InTenure_610")).isDisplayed()) {
 					Assert.assertTrue(true);
+					break;
 				}
 			} catch (Exception e) {
+				if (j == 199) {
+					Assert.fail(e.getMessage());
+				}
 				// TODO: handle exception
 			}
 		}
@@ -2358,8 +2470,12 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 					try {
 						if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("getAttribute_InTenure_610")).isDisplayed()) {
 							Assert.assertTrue(true);
+							break;
 						}
 					} catch (Exception e) {
+						if (j == 199) {
+							Assert.fail(e.getMessage());
+						}
 						// TODO: handle exception
 					}
 				}
@@ -2374,8 +2490,12 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 					try {
 						if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("backBtn_UnderCustomerDetails_610")).isDisplayed()) {
 							Assert.assertTrue(true);
+							break;
 						}
 					} catch (Exception e) {
+						if (j == 199) {
+							Assert.fail(e.getMessage());
+						}
 						// TODO: handle exception
 					}
 				}
@@ -2390,8 +2510,12 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 					try {
 						if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("AcceptOffer_610")).isDisplayed()) {
 							Assert.assertTrue(true);
+							break;
 						}
 					} catch (Exception e) {
+						if (j == 199) {
+							Assert.fail(e.getMessage());
+						}
 						// TODO: handle exception
 					}
 				}
@@ -2406,8 +2530,12 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 					try {
 						if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("OfferDetailsSection_610")).isDisplayed()) {
 							Assert.assertTrue(true);
+							break;
 						}
 					} catch (Exception e) {
+						if (j == 199) {
+							Assert.fail(e.getMessage());
+						}
 						// TODO: handle exception
 					}
 				}
@@ -2422,8 +2550,12 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 					try {
 						if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("FinanceDetailsSection_610")).isDisplayed()) {
 							Assert.assertTrue(true);
+							break;
 						}
 					} catch (Exception e) {
+						if (j == 199) {
+							Assert.fail(e.getMessage());
+						}
 						// TODO: handle exception
 					}
 				}
@@ -2439,8 +2571,12 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 					try {
 						if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("CreditRiskFactor_610")).isDisplayed()) {
 							Assert.assertTrue(true);
+							break;
 						}
 					} catch (Exception e) {
+						if (j == 199) {
+							Assert.fail(e.getMessage());
+						}
 						// TODO: handle exception
 					}
 				}
@@ -2455,8 +2591,12 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 					try {
 						if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("CreditScoreDetails_610")).isDisplayed()) {
 							Assert.assertTrue(true);
+							break;
 						}
 					} catch (Exception e) {
+						if (j == 199) {
+							Assert.fail(e.getMessage());
+						}
 						// TODO: handle exception
 					}
 				}
@@ -2471,8 +2611,12 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 					try {
 						if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("EligibilityDetails_610")).isDisplayed()) {
 							Assert.assertTrue(true);
+							break;
 						}
 					} catch (Exception e) {
+						if (j == 199) {
+							Assert.fail(e.getMessage());
+						}
 						// TODO: handle exception
 					}
 				}
@@ -2488,8 +2632,12 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 					try {
 						if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("InterestRateStructure_610")).isDisplayed()) {
 							Assert.assertTrue(true);
+							break;
 						}
 					} catch (Exception e) {
+						if (j == 199) {
+							Assert.fail(e.getMessage());
+						}
 						// TODO: handle exception
 					}
 				}
@@ -2505,8 +2653,12 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 					try {
 						if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("InstallmentsSection_610")).isDisplayed()) {
 							Assert.assertTrue(true);
+							break;
 						}
 					} catch (Exception e) {
+						if (j == 199) {
+							Assert.fail(e.getMessage());
+						}
 						// TODO: handle exception
 					}
 				}
@@ -2521,8 +2673,12 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 					try {
 						if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("AppealRequestsection_610")).isDisplayed()) {
 							Assert.assertTrue(true);
+							break;
 						}
 					} catch (Exception e) {
+						if (j == 199) {
+							Assert.fail(e.getMessage());
+						}
 						// TODO: handle exception
 					}
 				}
