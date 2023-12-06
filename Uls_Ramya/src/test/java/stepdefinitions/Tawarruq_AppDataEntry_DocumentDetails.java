@@ -37,7 +37,10 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	ExcelData DocumentDetails_TestData  = new ExcelData(excelTestDataPath,"Tawarruq_DocumentDetails","Dataset ID");
 
 
-
+	@And("User_6047 Login with valid credentials - AppDataEntry-DocumentDetails")
+	public void user_login_with_valid_credentials_AppDataEntry_DocumentDetails() {
+		ijaraLogin.loginWithIjaraApplication_Tawarruq_AppDataEntry_DocumentDetails();
+	}
 
 
 	@And("User_6047 Get the test data for test case ID AT_TW_AD_DOC_01")

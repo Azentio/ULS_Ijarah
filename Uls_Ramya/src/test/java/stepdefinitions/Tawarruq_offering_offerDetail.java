@@ -33,17 +33,15 @@ public class Tawarruq_offering_offerDetail {
 	JSPaths Tawarruq_offering = new JSPaths(excelPath, "tawa_offering_js", "OfferDetailsElement", "JSPath");
 	ExcelData Tawar_offering_TestData  = new ExcelData(excelTestDataPath,"Tawar_offering","Dataset ID");
 	
-
+	@And("User_6047 Login With valid credentials-Tawarruq-offering-offerDetails")
+	public void Login_with_valid_credentials_Tawarruq_offering_offerDetails() throws Throwable {
+		ijaraLogin.loginWithIjaraApplication_offoring();	
+	}
+	
 	@And("User_6047 Get the test data for test case ID AT_TW_OFO_02")
 	public void user_get_the_test_data_for_test_case_id_at_tw_ofo_02() {	
 		testData =  Tawar_offering_TestData.getTestdata("DS01_AT_TW_OFO_02");
 	}
-
-	@And("User_6047 Login With valid credentials-offering-offerDetails")
-	public void Login_with_valid_credentials_offering_offerDetails() throws Throwable {
-		ijaraLogin.loginWithIjaraApplication_offoring();	
-	}
-	
 	@And("User_6047 search  the Ref Id Under inbox")
 	public void user_search_the_ref_id_under_inbox_6047() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text")));

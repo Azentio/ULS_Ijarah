@@ -347,7 +347,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 				}
 			} catch (Exception e) {
 
-			}
+			}}
 		
 		softAssert.assertTrue(BaseInsurancePremium, "Base Insurance Premium is not visisble hence failed");
 		
@@ -366,7 +366,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	          }
 	      }
 
-		}}
+		}
 	}
 
 	@Then("User_6047 To verify the VAT Premium field in Insurance Info screen")
@@ -383,7 +383,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 			} catch (Exception e) {
 
 			}
-		
+		}
 		softAssert.assertTrue(VATPremium, "VAT Premium is not visisble hence failed");
 		
 		//data must be display only
@@ -401,7 +401,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	          }
 	      }
 
-		}}
+		}
 	}
 
 	@Then("User_6047 To verify the NET Premium field in Insurance Info screen")
@@ -418,7 +418,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 			} catch (Exception e) {
 
 			}
-		
+		}
 		softAssert.assertTrue(NETPremium, "NET Premium is not visisble hence failed");
 		
 		//data must be display only
@@ -436,7 +436,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	          }
 	      }
 
-		}}
+		}
 	}
 
 	@Then("User_6047 click Document Details tab")
@@ -469,7 +469,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 				}
 			} catch (Exception e) {
 
-			}
+			}}
 		
 		softAssert.assertTrue(CustomerName, "CustomerName is not visisble hence failed");
 		
@@ -488,7 +488,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	          }
 	      }
 
-		}}
+		}
 	}
 
 	@Then("User_6047 To verify the Document Name field in Insurance Info screen")
@@ -504,7 +504,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 				}
 			} catch (Exception e) {
 
-			}
+			}}
 		
 		softAssert.assertTrue(DocumentName, "Document Name is not visisble hence failed");
 		
@@ -523,7 +523,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	          }
 	      }
 
-		}}
+		}
 	}
 
 	@Then("User_6047 To verify the Required At Stage field in Insurance Info screen")
@@ -540,7 +540,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 				}
 			} catch (Exception e) {
 
-			}
+			}}
 		
 		softAssert.assertTrue(RequiredAtStage, "Required At Stage is not visisble hence failed");
 		
@@ -559,7 +559,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	          }
 	      }
 
-		}}
+		}
 	}
 
 	@Then("User_6047 To verify the Document Status field in Insurance Info screen")
@@ -576,7 +576,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 			} catch (Exception e) {
 
 			}
-		
+		}
 		softAssert.assertTrue(DocumentStatus, "Document Status is not visisble hence failed");
 		
 		//data must be display only
@@ -594,7 +594,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	          }
 	      }
 
-		}}
+		}
 	}
 
 	@Then("User_6047 To verify the Mandatory\\/optional field in Insurance Info screen")
@@ -611,7 +611,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 			} catch (Exception e) {
 
 			}
-		
+		}
 		softAssert.assertTrue(Mandatory_optional, "Mandatory_optional is not visisble hence failed");
 		
 		//data must be display only
@@ -629,7 +629,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	          }
 	      }
 
-		}}
+		}
 	}
 
 	@Then("User_6047 To verify the document Category field in Insurance Info screen")
@@ -646,7 +646,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 			} catch (Exception e) {
 
 			}
-		
+		}
 		softAssert.assertTrue(documentCategory, "document Category is not visisble hence failed");
 		
 		//data must be display only
@@ -664,7 +664,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	          }
 	      }
 
-		}}
+		}
 	}
 
 	@Then("User_6047 To verify the Upload Date field in Insurance Info screen")
@@ -681,7 +681,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 			} catch (Exception e) {
 
 			}
-		
+		}
 		softAssert.assertTrue(UploadDate, "Upload Date is not visisble hence failed");
 		
 		//data must be display only
@@ -699,7 +699,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	          }
 	      }
 
-		}}
+		}
 	}
 
 	@Then("User_6047 To verify the Expected Receipt Date field in Insurance Info screen")
@@ -716,7 +716,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 			} catch (Exception e) {
 
 			}
-		
+		}
 		softAssert.assertTrue(ExpectedReceiptDate, "Expected Receipt Date is not visisble hence failed");
 		
 		//data must be display only
@@ -734,7 +734,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	          }
 	      }
 
-		}}
+		}
 	}
 
 	@Then("User_6047 To verify the Defferal Stage field in Insurance Info screen")
@@ -750,7 +750,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 				}
 			} catch (Exception e) {
 
-			}
+			}}
 		
 		softAssert.assertTrue(DefferalStage, "Defferal Stage is not visisble hence failed");
 		
@@ -769,7 +769,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	          }
 	      }
 
-		}}
+		}
 	}
 
 	@Then("User_6047 To verify the Def Approved By field in Insurance Info screen")
@@ -785,7 +785,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 				}
 			} catch (Exception e) {
 
-			}
+			}}
 		
 		softAssert.assertTrue(DefApprovedBy, "Def Approved By is not visisble hence failed");
 		
@@ -804,7 +804,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	          }
 	      }
 
-		}}
+		}
 	}
 
 	@Then("User_6047 To verify the Change in Nature Approved By field in Insurance Info screen")
@@ -821,7 +821,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 			} catch (Exception e) {
 
 			}
-		
+		}
 		softAssert.assertTrue(ChangeinNatureApprovedBy, "Change in Nature Approved By is not visisble hence failed");
 		
 		//data must be display only
@@ -839,7 +839,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	          }
 	      }
 
-		}}
+		}
 	}
 
 	@Then("User_6047 To verify the Document Form field in Insurance Info screen")
@@ -856,6 +856,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 			} catch (Exception e) {
 
 			}
+		}
 		
 		softAssert.assertTrue(DocumentForm, "Document Form is not visisble hence failed");
 		
@@ -874,7 +875,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	          }
 	      }
 
-		}}
+		}
 	}
 
 	@Then("User_6047 To verify the Document Quality field in Insurance Info screen")
@@ -891,7 +892,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 			} catch (Exception e) {
 
 			}
-		
+		}
 		softAssert.assertTrue(DocumentQuality, "Document Quality is not visisble hence failed");
 		
 		//data must be display only
@@ -909,7 +910,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	          }
 	      }
 
-		}}
+		}
 	}
 
 	@Then("User_6047 To verify the Document Ref Num field in Insurance Info screen")
@@ -926,7 +927,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 			} catch (Exception e) {
 
 			}
-		
+		}
 		softAssert.assertTrue(DocumentRefNum, "Document Ref Num is not visisble hence failed");
 		
 		//data must be display only
@@ -944,7 +945,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	          }
 	      }
 
-		}}
+		}
 	}
 
 	@Then("User_6047 To verify the Document Received By field in Insurance Info screen")
@@ -961,6 +962,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 			} catch (Exception e) {
 
 			}
+		}
 		
 		softAssert.assertTrue(DocumentReceivedBy, "Document Received By is not visisble hence failed");
 		
@@ -979,7 +981,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	          }
 	      }
 
-		}}
+		}
 	}
 
 	@Then("User_6047 To verify the Location Where Received field in Insurance Info screen")
@@ -996,6 +998,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 			} catch (Exception e) {
 
 			}
+		}
 		
 		softAssert.assertTrue(LocationWhereReceived, "Location Where Received is not visisble hence failed");
 		
@@ -1014,7 +1017,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	          }
 	      }
 
-		}}
+		}
 	}
 
 	@Then("User_6047 To verify the Rack No field in Insurance Info screen")
@@ -1031,7 +1034,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 			} catch (Exception e) {
 
 			}
-		
+		}
 		softAssert.assertTrue(RackNo, "Rack No is not visisble hence failed");
 		
 		//data must be display only
@@ -1049,7 +1052,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	          }
 	      }
 
-		}}
+		}
 	}
 
 	@Then("User_6047 To verify the Shelf No field in Insurance Info screen")
@@ -1066,7 +1069,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 			} catch (Exception e) {
 
 			}
-		
+		}
 		softAssert.assertTrue(ShelfNo, "Shelf No is not visisble hence failed");
 		
 		//data must be display only
@@ -1084,7 +1087,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	          }
 	      }
 
-		}}
+		}
 	}
 
 	@Then("User_6047 To verify the Box No field in Insurance Info screen")
@@ -1104,7 +1107,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 			} catch (Exception e) {
 
 			}
-		
+		}
 		softAssert.assertTrue(BoxNo, "NET Premium is not visisble hence failed");
 		
 		//data must be display only
@@ -1122,7 +1125,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	          }
 	      }
 
-		}}
+		}
 	}
 
 	@Then("User_6047 To verify the DateOfExpiry field in Insurance Info screen")
@@ -1139,7 +1142,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 			} catch (Exception e) {
 
 			}
-		
+		}
 		softAssert.assertTrue(DateOfExpiry, "Date Of Expiry is not visisble hence failed");
 		
 		//data must be display only
@@ -1157,7 +1160,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	          }
 	      }
 
-		}}
+		}
 	}
 
 	@Then("User_6047 To verify the Lodgement Amount field in Insurance Info screen")
@@ -1174,7 +1177,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 			} catch (Exception e) {
 
 			}
-		
+		}
 		softAssert.assertTrue(LodgementAmount, "Lodgement Amount is not visisble hence failed");
 		
 		//data must be display only
@@ -1192,7 +1195,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	          }
 	      }
 
-		}}
+		}
 	}
 
 	@Then("User_6047 To verify the Remarks field in Insurance Info screen")
@@ -1209,7 +1212,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 			} catch (Exception e) {
 
 			}
-		
+		}
 		softAssert.assertTrue(Remarks, "Remarks is not visisble hence failed");
 		
 		//data must be display only
@@ -1227,7 +1230,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	          }
 	      }
 
-		}}
+		}
 	}
 
 }

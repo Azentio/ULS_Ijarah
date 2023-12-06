@@ -36,6 +36,11 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	JSPaths Tawarooq_Repayment_js = new JSPaths(excelPath, "Tawarooq_Repayment", "RepaymentElement", "JSPath");
 	ExcelData Tawarooq_Repayment_TestData  = new ExcelData(excelTestDataPath,"Tawarooq_Repayment","Dataset ID");
 
+	@And("User_6047 Login with valid credentials - Tawarruq-AppDataEntry-Repayment")
+	public void user_login_with_valid_credentials_tawarruq_app_data_entry_repayment() {
+		ijaraLogin.loginWithIjaraApplication_Tawarruq_AppDataEntry_Repayment();	
+	}
+
 	
 	
 	@And("User_6047 Get the test data for test case ID AT_TW_AD_IRM_01")

@@ -37,6 +37,13 @@ public class Tawarruq_NewApp_CustomerDetails {
 	JSPaths Tawarruq_NewApp_CustomerDetailsElements = new JSPaths(excelPath, "NewApp_CustomerDetailsElements",
 			"New_App_CustomerDetailsElements", "JSPath");
 	String recordStatus = "";
+	
+	@And("User_6047 Login with valid credentials- NewApp-CustometDetails")
+	public void Login_with_valid_credentials_NewApp_CustometDetails() throws Throwable {
+		ijaraLogin.loginWithIjaraApplication_Tawarruq_NewApp_CustomerDetails();	
+	}
+	
+	
 	@And("User_6047 Get the test data for test case ID AT_TW_NewApp_CD_01")
 	public void user_get_the_test_data_for_test_case_id_at_tw_newapp_cd01() {
 		testData =  NewApp_CustomerDetails_TestData.getTestdata("DS01_AT_TW_NewApp_CD_01");

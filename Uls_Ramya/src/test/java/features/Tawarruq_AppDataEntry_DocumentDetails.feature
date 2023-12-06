@@ -3,7 +3,7 @@ Feature: To verify the Document Details screen in Tawarooq
 
 Scenario: To verify post clicking on Add asset button, the Repayment Mode screen should be open with all valid fields
 Given Navigate the IJARA URL
-And User_6047 Login with valid credentials
+And User_6047 Login with valid credentials - AppDataEntry-DocumentDetails
 And User_6047 Get the test data for test case ID AT_TW_AD_DOC_01 
 And User_6047 Click the module name dropdown in ULS application
 And User_6047 Select the module name as LOS in ULS application
@@ -42,7 +42,7 @@ Then logout from the ULS Application
 Scenario: To verify post clicking on Add asset button, the Repayment Mode screen should be open with all valid fields
 
 Given Navigate the IJARA URL
-And User_6047 Login with valid credentials
+And User_6047 Login with valid credentials - AppDataEntry-DocumentDetails
 And User_6047 Get the test data for test case ID AT_TW_AD_DOC_02 
 And User_6047 Click the module name dropdown in ULS application
 And User_6047 Select the module name as LOS in ULS application
@@ -71,7 +71,7 @@ Then logout from the ULS Application
 Scenario: To verifythe Document Details fields
 
 Given Navigate the IJARA URL
-And User_6047 Login with valid credentials
+And User_6047 Login with valid credentials - AppDataEntry-DocumentDetails
 And User_6047 Get the test data for test case ID AT_TW_AD_DOC_02 
 And User_6047 Click the module name dropdown in ULS application
 And User_6047 Select the module name as LOS in ULS application
@@ -94,7 +94,7 @@ Then logout from the ULS Application
 Scenario: To verifythe Document Details fields
 
 Given Navigate the IJARA URL
-And User_6047 Login with valid credentials
+And User_6047 Login with valid credentials - AppDataEntry-DocumentDetails
 And User_6047 Get the test data for test case ID AT_TW_AD_DOC_02 
 And User_6047 Click the module name dropdown in ULS application
 And User_6047 Select the module name as LOS in ULS application

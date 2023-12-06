@@ -3,7 +3,7 @@ Feature: To verify the offerDetails screen in Tawarruq
 Scenario: To verify if Finance Details section is available with correct fields and button under offering
 
 Given Navigate the IJARA URL
-And User_6047 Login With valid credentials-offering-offerDetails
+And User_6047 Login With valid credentials-Tawarruq-offering-offerDetails
 And User_6047 Get the test data for test case ID AT_TW_OFO_02 
 And User_6047 Click the module name dropdown in ULS application
 And User_6047 Select the module name as LOS in ULS application
@@ -37,7 +37,7 @@ Then logout from the ULS Application
 Scenario: To verify if Eligibility Details section is available with correct fields and button under offering
 
 Given Navigate the IJARA URL
-And User_6047 Login With valid credentials-offering-offerDetails
+And User_6047 Login With valid credentials-Tawarruq-offering-offerDetails
 And User_6047 Get the test data for test case ID AT_TW_OFO_02 
 And User_6047 Click the module name dropdown in ULS application
 And User_6047 Select the module name as LOS in ULS application
@@ -59,7 +59,7 @@ Then logout from the ULS Application
 Scenario: To verify the Offer details screen
 
 Given Navigate the IJARA URL
-And User_6047 Login With valid credentials-offering-offerDetails
+And User_6047 Login With valid credentials-Tawarruq-offering-offerDetails
 And User_6047 Get the test data for test case ID AT_TW_OFO_02 
 And User_6047 Click the module name dropdown in ULS application
 And User_6047 Select the module name as LOS in ULS application
@@ -88,7 +88,7 @@ Then logout from the ULS Application
 Scenario: To verify if all the fields in Eligibility Details are non-editable 
 
 Given Navigate the IJARA URL
-And User_6047 Login With valid credentials-offering-offerDetails
+And User_6047 Login With valid credentials-Tawarruq-offering-offerDetails
 And User_6047 Get the test data for test case ID AT_TW_OFO_02 
 And User_6047 Click the module name dropdown in ULS application
 And User_6047 Select the module name as LOS in ULS application

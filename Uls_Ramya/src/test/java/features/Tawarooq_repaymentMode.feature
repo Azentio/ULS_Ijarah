@@ -3,7 +3,7 @@ Feature: To verify the functionality of repayment mode in Tawarooq
 
 Scenario: To verify post clicking on Add asset button, the Repayment Mode screen should be open with all valid fields
 Given Navigate the IJARA URL
-And User_6047 Login with valid credentials
+And User_6047 Login with valid credentials - Tawarruq-AppDataEntry-Repayment 
 And User_6047 Get the test data for test case ID AT_TW_AD_IRM_01 
 #And User_6047 Click the module name dropdown in ULS application
 #And User_6047 Select the module name as LOS in ULS application
@@ -28,7 +28,7 @@ Then User_6047 verify help button Repayment mode
 Scenario: To verify the fields are mandatory, editable,lookup and numeric in repayment mode 
 
 Given Navigate the IJARA URL
-Then User_6047 Login with valid credentials
+And User_6047 Login with valid credentials - Tawarruq-AppDataEntry-Repayment
 And User_6047 Get the test data for test case ID AT_TW_AD_IRM_01 
 #And User_6047 click the module name dropdown in ULS application
 #And User_6047 select the module name as LOS in ULS application
@@ -52,7 +52,7 @@ And User_6047 verify the Code field is mandatory,editable and numeric
 Scenario: To verify the functionality of save,delete and help button
 
 Given Navigate the IJARA URL
-Then User_6047 Login with valid credentials
+And User_6047 Login with valid credentials - Tawarruq-AppDataEntry-Repayment
 And User_6047 Get the test data for test case ID AT_TW_AD_IRM_01 
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
@@ -80,7 +80,7 @@ Then User_6047 verify description of all the fields details in Repayment Mode
 Scenario: To verify the impact when user keep any mandatory field blank ,negative numeric,characters,special characters and click on save button
 
 Given Navigate the IJARA URL
-Then User_6047 Login with valid credentials
+And User_6047 Login with valid credentials - Tawarruq-AppDataEntry-Repayment
 And User_6047 Get the test data for test case ID AT_TW_AD_IRM_04
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
@@ -112,7 +112,7 @@ Then User_6047 Verify the popup of fill all field in Repayment Mode
 Scenario: To verify Modification of Repayment Mode record
 
 Given Navigate the IJARA URL
-Then User_6047 Login with valid credentials
+And User_6047 Login with valid credentials - Tawarruq-AppDataEntry-Repayment
 And User_6047 Get the test data for test case ID AT_TW_AD_IRM_04
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
@@ -144,7 +144,7 @@ Then User_6047 to verify the same record should get saved in Repayment mode
 Scenario: To verify Modification of Repayment Mode record
 
 Given Navigate the IJARA URL
-Then User_6047 Login with valid credentials
+And User_6047 Login with valid credentials - Tawarruq-AppDataEntry-Repayment
 And User_6047 Get the test data for test case ID AT_TW_AD_IRM_06
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
@@ -175,7 +175,7 @@ And User_6047 Click the ok button in action conform field
 
  Scenario: To verify the list view
  Given Navigate the IJARA URL
-Then User_6047 Login with valid credentials
+And User_6047 Login with valid credentials - Tawarruq-AppDataEntry-Repayment
 #And User_6047 click the module name dropdown in ULS application
 #And User_6047 select the module name as LOS in ULS application
 And User_6047 Get the test data for test case ID AT_TW_AD_IRM_06

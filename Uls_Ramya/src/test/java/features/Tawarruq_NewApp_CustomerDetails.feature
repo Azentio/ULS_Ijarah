@@ -4,7 +4,7 @@ Feature: To verify the Customer Details screen in Tawarooq
 Scenario: To verify the availability of Customer Information tab  under New App Stage
 
 Given Navigate the IJARA URL
-And User_6047 Login with valid credentials
+And User_6047 Login with valid credentials- NewApp-CustometDetails
 And User_6047 Get the test data for test case ID AT_TW_NewApp_CD_01 
 And User_6047 Click the module name dropdown in ULS application
 And User_6047 Select the module name as LOS in ULS application
@@ -73,7 +73,7 @@ Then logout from the ULS Application
 Scenario: To verify the availability of Customer Information tab  under New App Stage
 
 Given Navigate the IJARA URL
-And User_6047 Login with valid credentials
+And User_6047 Login with valid credentials- NewApp-CustometDetails
 And User_6047 Get the test data for test case ID AT_TW_NewApp_CD_01 
 And User_6047 Click the module name dropdown in ULS application
 And User_6047 Select the module name as LOS in ULS application
@@ -118,7 +118,7 @@ Then logout from the ULS Application
 Scenario: To verify the availability of Customer Information tab  under New App Stage
 
 Given Navigate the IJARA URL
-And User_6047 Login with valid credentials
+And User_6047 Login with valid credentials- NewApp-CustometDetails
 And User_6047 Get the test data for test case ID AT_TW_NewApp_CD_01 
 And User_6047 Click the module name dropdown in ULS application
 And User_6047 Select the module name as LOS in ULS application
@@ -166,7 +166,7 @@ Then logout from the ULS Application
 Scenario: To verify the availability of Customer Information tab  under New App Stage
 
 Given Navigate the IJARA URL
-And User_6047 Login with valid credentials
+And User_6047 Login with valid credentials- NewApp-CustometDetails
 And User_6047 Get the test data for test case ID AT_TW_NewApp_CD_01 
 And User_6047 Click the module name dropdown in ULS application
 And User_6047 Select the module name as LOS in ULS application
@@ -194,7 +194,7 @@ Then logout from the ULS Application
 Scenario: To verify the availability of Customer Information tab  under New App Stage
 
 Given Navigate the IJARA URL
-And User_6047 Login with valid credentials
+And User_6047 Login with valid credentials- NewApp-CustometDetails
 And User_6047 Get the test data for test case ID AT_TW_NewApp_CD_06 
 And User_6047 Click the module name dropdown in ULS application
 And User_6047 Select the module name as LOS in ULS application
@@ -220,7 +220,7 @@ Then User_6047 verify system should show the record status as active or inactive
 Scenario: To verify the availability of Customer Information tab  under New App Stage
 
 Given Navigate the IJARA URL
-And User_6047 Login with valid credentials
+And User_6047 Login with valid credentials- NewApp-CustometDetails
 And User_6047 Get the test data for test case ID AT_TW_NewApp_CD_06 
 And User_6047 Click the module name dropdown in ULS application
 And User_6047 Select the module name as LOS in ULS application
@@ -248,7 +248,7 @@ Then logout from the ULS Application
 Scenario: To verify the availability of Customer Information tab  under New App Stage
 
 Given Navigate the IJARA URL
-And User_6047 Login with valid credentials
+And User_6047 Login with valid credentials- NewApp-CustometDetails
 And User_6047 Get the test data for test case ID AT_TW_NewApp_CD_06 
 And User_6047 Click the module name dropdown in ULS application
 And User_6047 Select the module name as LOS in ULS application
@@ -260,6 +260,7 @@ And User_6047 Click the Entitle button under inbox
 And User_6047 Click the Customer Details tab
 And User_6047 click the back button in customer details 
 And User_6047 verify the back button functionality 
+
 
 
 #4105
