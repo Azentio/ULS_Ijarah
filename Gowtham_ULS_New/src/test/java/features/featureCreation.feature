@@ -4,4 +4,4 @@ Feature: Title of your feature
 
   @tag1
   Scenario: Title of your scenario
- 		And User_607 Click save button Follow-Up Details Screen
+ 		And User_607 Search the Ref Id under inbox Murabha Offering Offer Details

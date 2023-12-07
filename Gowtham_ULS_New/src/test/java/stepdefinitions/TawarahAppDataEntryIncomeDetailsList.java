@@ -992,9 +992,36 @@ public class TawarahAppDataEntryIncomeDetailsList {
 				}
 			}
 		}
-		
 	}
 	
+	@And("User_607 Search the Ref Id under inbox Tawaraq Offering Document Details")
+	public void user_search_in_the_search_field_Tawaraq_Offering_Document_Details() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(TawaAppDataEntryIncomeDetails.getElement("searchInInbox")).sendKeys("3841",Keys.ENTER);
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@Given("User_607 Search the Ref Id under inbox Murabha Offering Offer Details")
+	public void user_search_the_ref_id_under_inbox_murabha_offering_offer_details() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(TawaAppDataEntryIncomeDetails.getElement("searchInInbox")).sendKeys("4049",Keys.ENTER);
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
 	
 	
 	@Given("User_607 Search in the search Field")
