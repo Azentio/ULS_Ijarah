@@ -26,7 +26,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 	ConfigFileReader configFileReader = new ConfigFileReader();
 
 	String excelJSPath = configFileReader.getJSFilePath();
-	String excelTestDataPath = configFileReader.getTestDataFilePath();
+	String excelTestDataPath = configFileReader.getIjarahTestDataFilePath();
 	JSPaths commonJSElements = new JSPaths(excelJSPath, "iJarah_CommonElements", "Ijarah_CommonFieldName", "JSPath");
 	JSPaths customerIdentificationDetailsElements = new JSPaths(excelJSPath, "NewApp_IdentificationDetailsJS",
 			"New_App_CustomerIdentificationDetailsElements", "JSPath");

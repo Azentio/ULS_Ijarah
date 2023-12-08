@@ -25,7 +25,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 	WebDriver driver = BaseClass.driver;
 	ConfigFileReader configFileReader = new ConfigFileReader();
 	String eexcelJSpath = configFileReader.getJSFilePath();
-	String excelTestDataPath = configFileReader.getTestDataFilePath();
+	String excelTestDataPath = configFileReader.getIjarahTestDataFilePath();
 	JSPaths customerReferenceJsPaths = new JSPaths(eexcelJSpath, "NewApp_ReferenceListViewJS",
 			"ReferenceListViewElementsName", "JSPaths");
 	ExcelData excelTestDataForCustomerReference = new ExcelData(excelTestDataPath, "M_NewApp_CustRef_TestData",

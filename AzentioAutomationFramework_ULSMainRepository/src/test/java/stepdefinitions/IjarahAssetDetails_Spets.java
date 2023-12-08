@@ -22,8 +22,8 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 	WebDriver driver = BaseClass.driver;
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
 	ConfigFileReader configFileReader = new ConfigFileReader();
-	String excelPath = configFileReader.getTestDataFilePath();
-	String excelTestDataPath = configFileReader.getTestDataFilePath();
+	String excelPath = configFileReader.getIjarahTestDataFilePath();
+	String excelTestDataPath = configFileReader.getIjarahTestDataFilePath();
 	JSPaths commonJSPaths = new JSPaths(excelPath, "iJarah_CommonElements", "Ijarah_CommonFieldName", "JSPath");
 	JSPaths assetDetailsJSPaths = new JSPaths(excelPath, "assetDetails_WebElements", "Ijarah_AssetDetailsFieldName",
 			"JSPath");

@@ -25,7 +25,7 @@ public class Ijarah_NewAppContactDetailsSteps extends BaseClass {
 	WebDriver driver = BaseClass.driver;
 	ConfigFileReader configFileReader = new ConfigFileReader();
 	String jsExcelPath = configFileReader.getJSFilePath();
-	String excelTestDataPath = configFileReader.getTestDataFilePath();
+	String excelTestDataPath = configFileReader.getIjarahTestDataFilePath();
 	JSPaths contactDetailsJSElements = new JSPaths(jsExcelPath, "NewApp_contactDetailsJS", "ContactDetails_JSElements",
 			"JSPaths");
 	JSPaths customerIdentificationDetailsElements = new JSPaths(jsExcelPath, "NewApp_IdentificationDetailsJS",

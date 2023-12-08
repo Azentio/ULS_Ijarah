@@ -23,7 +23,7 @@ import resources.BaseClass;
 public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 	WebDriver driver = BaseClass.driver;
 	ConfigFileReader configFileReader = new ConfigFileReader();
-	String excelTestDataPath = configFileReader.getTestDataFilePath();
+	String excelTestDataPath = configFileReader.getIjarahTestDataFilePath();
 	String jsExcelPath = configFileReader.getJSFilePath();
 	ExcelData excelTestDataForAddressDetails = new ExcelData(excelTestDataPath, "NewApp_AddressDetailsTestData",
 			"Dataset ID");

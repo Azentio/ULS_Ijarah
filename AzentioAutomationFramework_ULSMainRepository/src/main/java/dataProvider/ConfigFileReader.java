@@ -80,10 +80,10 @@ public class ConfigFileReader {
 			throw new RuntimeException("pollingTime not specified in the Configuration.properties file.");
 	}
 
-	public String getTestDataFilePath() {
+	public String getIjarahTestDataFilePath() {
 
 		String filePath;
-		filePath = System.getProperty("user.dir") + "\\TestData\\ulsTestData.xlsx";
+		filePath = System.getProperty("user.dir") + "\\TestData\\IjarahTestData.xlsx";
 
 		return filePath;
 	}

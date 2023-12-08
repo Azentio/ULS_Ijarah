@@ -4,7 +4,6 @@ import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 import org.junit.Assert;
@@ -30,7 +29,7 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 	ConfigFileReader configFileReader = new ConfigFileReader();
 	IjaraLogin ijaraLogin = new IjaraLogin();
 	String excelPath = configFileReader.getJSFilePath();
-	String excelTestDataPath = configFileReader.getTestDataFilePath();
+	String excelTestDataPath = configFileReader.getIjarahTestDataFilePath();
 	// Ijarah_CommonFieldName
 	SoftAssert softAssert = new SoftAssert();
 	JSPaths commonJSPaths = new JSPaths(excelPath, "iJarah_CommonElements", "Ijarah_CommonFieldName", "JSPath");
@@ -63,7 +62,15 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 
 	@And("login with valid credentials")
 	public void login_with_valid_credentials() throws Throwable {
-		ijaraLogin.loginWithIjaraApplication("userType01");
+		ijaraLogin.loginWithIjaraApplication("userType04");
+	}
+	@And("login with valid credentials for insurance info ijarah")
+	public void login_with_valid_credentials_for_insurance_info_ijarah() {
+		ijaraLogin.loginWithIjaraApplication("userType05");
+	}
+	@And("login with valid credentials for living expense ijarah")
+	public void login_with_valid_credentials_for_living_expense_ijarah() {
+		ijaraLogin.loginWithIjaraApplication("userType05");
 	}
 
 	@Then("logout from the ULS Application")

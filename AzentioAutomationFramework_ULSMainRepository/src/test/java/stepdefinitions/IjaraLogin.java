@@ -16,7 +16,7 @@ import resources.BaseClass;
 public class IjaraLogin extends BaseClass {
 	ConfigFileReader configFileReader = new ConfigFileReader();
 	String excelPath = configFileReader.getJSFilePath();
-	String excelTestDataPath = configFileReader.getTestDataFilePath();
+	String excelTestDataPath = configFileReader.getIjarahTestDataFilePath();
 	WebDriver driver = BaseClass.driver;
 	JSPaths jsPaths = new JSPaths(excelPath, "Ijara_loginElements", "Ijara_LoginFieldName", "JSPath");
 	ExcelData exelData = new ExcelData(excelTestDataPath, "ijara_LoginCredentials", "UserType");

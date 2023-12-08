@@ -28,7 +28,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	ConfigFileReader configFileReader = new ConfigFileReader();
 
 	String excelFilePathForJS = configFileReader.getJSFilePath();
-	String applicationDetailsExcelDataPath = configFileReader.getTestDataFilePath();
+	String applicationDetailsExcelDataPath = configFileReader.getIjarahTestDataFilePath();
 	JSPaths commonJSPaths = new JSPaths(excelFilePathForJS, "iJarah_CommonElements", "Ijarah_CommonFieldName",
 			"JSPath");
 	JSPaths customerSearchJSPaths = new JSPaths(excelFilePathForJS, "customer_search_JS",

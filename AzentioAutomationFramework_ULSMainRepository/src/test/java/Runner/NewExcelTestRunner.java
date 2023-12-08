@@ -15,7 +15,7 @@ import utilities.ExtentTestManager;
 
 public class NewExcelTestRunner {
 	ConfigFileReader configFileReader= new ConfigFileReader();
-	String path = configFileReader.getTestDataFilePath();
+	String path = configFileReader.getIjarahTestDataFilePath();
 	ExcelData testExecution = new ExcelData(path,
 			"Ijarah_ExecutionTracker", "TestCase ID");
 	Map<String, String> testExecutionData;
