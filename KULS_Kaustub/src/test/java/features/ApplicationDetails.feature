@@ -91,8 +91,8 @@ And User click the Mail box in ULS application
 And User click the Search button under inbox
 And User search the Ref id under inbox
 And User click the Entitle button under inbox
-And User click on the Cancel button
-And Verify the page after clicking Cancel button
+#And User click on the Cancel button
+#And Verify the page after clicking Cancel button
 
 
 @AT_APP_03

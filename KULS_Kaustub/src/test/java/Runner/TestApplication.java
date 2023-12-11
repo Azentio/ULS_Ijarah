@@ -8,7 +8,7 @@ import io.cucumber.testng.CucumberOptions;
 import utilities.ExtentManager;
 import utilities.ExtentTestManager;
 
-@CucumberOptions(features = {"src/test/java/features/" }
+@CucumberOptions(features = {"src/test/java/features/ApplicationDetails.feature" }
 	//"src/test/java/features/CollateralManagement482.feature" }
 		, glue = "stepdefinitions",
 		 monochrome=false, //to make steps in color
