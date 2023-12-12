@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Dec 05 10:11:28 IST 2023</td>
+<td>Started on:</td><td>Tue Dec 12 12:22:33 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>38 seconds (38267 ms)</td>
+<tr><td>Total time:</td><td>83 seconds (83217 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,17 +67,32 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "To verify that all links are present in Appeal request section", "Optional[Murabha Offering Offer Details]"</td>
-<td></td>
-<td>29</td>
+<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "To verify user can able to activate and de activate the contact details list view record", "Optional[Auto Loan Appdata Entry Contact Details]"</td>
+<td><div><pre>java.lang.AssertionError: The following asserts failed:
+	expected [In-active] but found [Active],
+	expected [Active] but found [In-active]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at stepdefinitions.AutoLoanAppdataEntryContactDetails.user_076_invoke_soft_assert_in_contac_details_new_new_app_stage(AutoLoanAppdataEntryContactDetails.java:1588)
+	at ✽.user_076 invoke softAssert in contac details new new app stage(file:///C:/Users/inindc00607/git/ULS_Ijarah_1/Gowtham_ULS_New/src/test/java/features/AutoLoanAppdataEntryContactDetails.feature:94)
+</pre></div><a href='#' onClick='toggleBox("stack-trace291802476", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace291802476'><pre>java.lang.AssertionError: The following asserts failed:
+	expected [In-active] but found [Active],
+	expected [Active] but found [In-active]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at stepdefinitions.AutoLoanAppdataEntryContactDetails.user_076_invoke_soft_assert_in_contac_details_new_new_app_stage(AutoLoanAppdataEntryContactDetails.java:1588)
+	at ✽.user_076 invoke softAssert in contac details new new app stage(file:///C:/Users/inindc00607/git/ULS_Ijarah_1/Gowtham_ULS_New/src/test/java/features/AutoLoanAppdataEntryContactDetails.feature:94)
+</pre></div></td>
+<td>68</td>
 <td>Runner.TestApplication@72cc7e6f</td></tr>
 </table><p>
 </body>
