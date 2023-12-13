@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-12-11T18:41:09 IST" name="Default suite" finished-at="2023-12-11T20:49:48 IST" duration-ms="7719185">
+    <groups>
+    </groups>
+    <test started-at="2023-12-11T18:41:09 IST" name="Default test" finished-at="2023-12-11T20:49:48 IST" duration-ms="7719185">
+      <class name="Runner.NewExcelTestRunner">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:Runner.NewExcelTestRunner@37b70343]" started-at="2023-12-11T18:41:09 IST" name="beforeTest" finished-at="2023-12-11T18:41:09 IST" duration-ms="10" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="test()[pri:0, instance:Runner.NewExcelTestRunner@37b70343]" started-at="2023-12-11T18:41:09 IST" name="test" finished-at="2023-12-11T20:49:47 IST" duration-ms="7718790" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:Runner.NewExcelTestRunner@37b70343]" started-at="2023-12-11T20:49:47 IST" name="afterTest" finished-at="2023-12-11T20:49:48 IST" duration-ms="318" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- Runner.NewExcelTestRunner -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
