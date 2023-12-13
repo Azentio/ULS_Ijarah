@@ -88,4 +88,24 @@ Feature: To test the Application details under Contarct signing
     And User_611 Validate the Reference entity is non mandatory
     And User_611 Validate the Reference code is non mandatory
     
+    
+    
+    
+    
+    
+ 
+    
+    
+    
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    
+    
  
