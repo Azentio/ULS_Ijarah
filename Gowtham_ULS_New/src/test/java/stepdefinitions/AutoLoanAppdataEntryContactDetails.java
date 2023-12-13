@@ -776,9 +776,7 @@ public class AutoLoanAppdataEntryContactDetails {
 						.click();
 				javascriptHelper.executeScriptWithWebElement(ALoanAppdataEntryContactDetails.getElement("phone_number_input"))
 						.sendKeys(Keys.chord(Keys.CONTROL, "A", Keys.DELETE));
-
 			} catch (Exception e) {
-
 			}
 		}
 

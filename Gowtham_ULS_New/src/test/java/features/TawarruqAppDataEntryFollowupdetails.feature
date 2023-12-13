@@ -10,7 +10,6 @@ Feature: Tawarruq AppData Entry Followup details
     And User_607 Search the Ref Id under inbox Tawarruq AppData Entry FollowUp Details
     And User_607 Select record after search
     And User_607 click the customer follow details in morabha
-    #
     #And User_607 verify the add buttton
     And User_607 click add button under customer follow details
     And User_607 validate called when field enabled or not under murabha customer follow details

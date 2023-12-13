@@ -16,7 +16,6 @@ public class ClicksAndActionsHelper {
 	// Click helper constrcutor
 	public ClicksAndActionsHelper(WebDriver driver) {
 		this.driver = driver;
-		
 	}
 	
 	//Webdriver click
