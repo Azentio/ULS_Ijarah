@@ -85,6 +85,15 @@ public class IjaraTest extends BaseClass{
 		ijaraLogin.loginWithTawarruqApplicationOffering();
 	}
 	
+//	Auto Loan Product -- App Data Entry Stage ---> userType10
+	@And("login with valid credentials - Auto Loan - App Data Entry")
+	public void login_with_valid_credentials_auto_loan_app_data_entry()throws Throwable {
+		ijaraLogin.loginWithAutoLoanAppDataEntry();
+	}
+	
+	
+	
+	
 	
 	
 	@Then("logout from the ijaraApplication")

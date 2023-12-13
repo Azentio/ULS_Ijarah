@@ -35,10 +35,8 @@ public class IJARAH_Steps {
 	JSPaths underWriterJsPaths = new JSPaths(excelPath, "Underwriter_Elements", "Underwriter_FieldName", "JSPath");
 	JSPaths dataCheck_IncomeJsPaths = new JSPaths(excelPath, "DataCheckIncome_Elements", "DataCheckIncome_FieldName",
 			"JSPath");
-	JSPaths dataCheck_ApplicationDetailsJsPaths = new JSPaths(excelPath, "DataCheckAppDetails_Elements",
-			"DataCheckAppDetails_FieldName", "JSPath");
-	JSPaths offering_OfferDetailsJsPaths = new JSPaths(excelPath, "OfferingOfferDetails_Elements",
-			"Offering_OfferDetails_FieldName", "JSPath");
+	JSPaths dataCheck_ApplicationDetailsJsPaths = new JSPaths(excelPath, "ApplicationDetails_Elements", "ApplicationDetails_FieldName", "JSPath");
+	JSPaths offering_OfferDetailsJsPaths = new JSPaths(excelPath, "OfferingOfferDetails_Elements", "Offering_OfferDetails_FieldName", "JSPath");
 
 	ExcelData exelData = new ExcelData(excelTestDataPath, "ijara_LoginCredentials", "UserType");
 	Map<String, String> loginTestData = new HashMap<>();
@@ -248,7 +246,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 click the module name dropdown in ULS application")
-	public void user_click_the_module_name_dropdown_in_uls_application() throws Throwable {
+	public void user_608_click_the_module_name_dropdown_in_uls_application() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver,
 				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("moduleNameDropdown")));
 		for (int i = 0; i <= 500; i++) {
@@ -265,7 +263,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 select the module name as LOS in ULS application")
-	public void user_select_the_module_name_as_los_in_uls_application() throws Throwable {
+	public void user_608_select_the_module_name_as_los_in_uls_application() throws Throwable {
 		Thread.sleep(100);
 		String moduleListJSpath = "document.querySelectorAll('ion-radio-group ion-item').length";
 		String moduleLength = "";
@@ -309,7 +307,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 click the Mail box in ULS application")
-	public void user_click_the_mail_box_in_uls_application() throws Throwable {
+	public void user_608_click_the_mail_box_in_uls_application() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver,
 				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("mailBox")));
 		for (int i = 0; i <= 500; i++) {
@@ -325,7 +323,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 click the Search button under inbox")
-	public void user_click_the_search_button_under_inbox() throws Throwable {
+	public void user_608_click_the_search_button_under_inbox() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver,
 				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("mailInboxSearchBtn")));
 		for (int i = 0; i <= 500; i++) {
@@ -342,13 +340,13 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 search the Ref id under inbox")
-	public void user_search_the_ref_id_under_inbox() throws Throwable {
+	public void user_608_search_the_ref_id_under_inbox() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver,
 				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("inboxSearchInput")));
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("inboxSearchInput"))
-						.sendKeys(testData.get("Ref No"));
+						.sendKeys(testData.get("Ref No"),Keys.ENTER);
 				;
 				break;
 			} catch (Exception e) {
@@ -360,33 +358,91 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 click the Entitle button under inbox")
-	public void user_click_the_entitle_button_under_inbox() throws Throwable {
+	public void user_608_click_the_entitle_button_under_inbox() throws Throwable {
 		Thread.sleep(1000);
-		for (int i = 0; i <= 1000; i++) {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("inboxEntitleBtn")).click();
-				break;
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-card button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i == 4999) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-card button')[" + j + "].getAttribute('ng-reflect-text')";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().contains("Entitle")) {
+						System.out.println("condition true");
+						String jspath = "document.querySelectorAll('ion-card button')[" + j + "]";
+						WebElement editBtn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.JSEClick(editBtn);
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+//		Thread.sleep(1000);
+//		for (int i = 0; i <= 1000; i++) {
+//			try {
+//				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("inboxEntitleBtn")).click();
+//				break;
+//			} catch (Exception e) {
+//				if (i == 1000) {
+//					Assert.fail(e.getMessage());
+//				}
+//			}
+//		}
 	}
 
 	@And("User_608 click the Customer Financials tab")
-	public void user_click_the_customer_financials_tab() throws Throwable {
-		Thread.sleep(1000);
-		WebElement customerFinancialsTab = javascriptHelper
-				.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerFinancialsTab"));
-		for (int i = 0; i <= 200000; i++) {
+	public void user_608_click_the_customer_financials_tab() throws Throwable {
+		String length = null;
+		for (int i = 0; i < 500; i++) {
 			try {
-				javascriptHelper.backgroundColor(customerFinancialsTab);
-				javascriptHelper.JSEClick(customerFinancialsTab);
-//				customerFinancialsTab.click();
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 500; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-segment-button')[" + j + "].innerText";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().contains("Customer Financials")) {
+						System.out.println("condition true");
+						String jspath = "document.querySelectorAll('ion-segment-button')[" + j + "]";
+						WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.JSEClick(addButton);
+						break;
+					}
+				}
 				break;
 			} catch (Exception e) {
-				if (i == 200000) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -394,28 +450,48 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 click the pencil icon under Customer Financials tab")
-	public void user_click_the_pencil_icon_under_customer_financials_tab() throws Throwable {
-		Thread.sleep(100);
-		WebElement customerFinancialsPencilEditBtn = javascriptHelper
-				.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerFinancialsPencilEditBtn"));
-		for (int i = 0; i <= 2000; i++) {
+	public void user_608_click_the_pencil_icon_under_customer_financials_tab() throws Throwable {
+		Thread.sleep(1000);
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
 			try {
-				javascriptHelper.backgroundColor(customerFinancialsPencilEditBtn);
-				javascriptHelper
-						.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerFinancialsPencilEditBtn"))
-						.click();
-				break;
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-cards button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 4999) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		Thread.sleep(100);
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-cards button')[" + j + "].getAttribute('ng-reflect-text')";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().contains("Edit")) {
+						System.out.println("condition true");
+						String jspath = "document.querySelectorAll('ion-cards button')[" + j + "]";
+						WebElement editBtn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.JSEClick(editBtn);
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
 	}
 
 	@And("User_608 click Add button in Financial Commitments under Customer Financials tab")
-	public void user_click_add_button_in_financial_commitments_under_customer_financials_tab() throws Throwable {
+	public void user_608_click_add_button_in_financial_commitments_under_customer_financials_tab() throws Throwable {
 		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
 		String listOfAddButton = "";
 		String addButtonScreenName = "";
@@ -448,9 +524,12 @@ public class IJARAH_Steps {
 						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Financial Commitments").trim())) {
 							System.out.println("Inside nested loop");
 							System.out.println("document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]");
-							javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+							actions.moveToElement(javascriptHelper.executeScriptWithWebElement(
 									"document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
-											+ j + "]"));
+											+ j + "]")).build().perform();
+//							javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+//									"document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
+//											+ j + "]"));
 							javascriptHelper
 									.executeScriptWithWebElement(
 											"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]")
@@ -472,7 +551,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Customer Debt screen is available in Financial Commitments")
-	public void user_validate_the_customer_debt_screen_is_available_in_financial_commitments() throws Throwable {
+	public void user_608_validate_the_customer_debt_screen_is_available_in_financial_commitments() throws Throwable {
 		Thread.sleep(1000);
 		WebElement customerDebtDetailsScreen = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerDebtDetailsScreen"));
@@ -490,7 +569,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Save button available in Customer Debt screen")
-	public void user_validate_the_save_button_available_in_customer_debt_screen() throws Throwable {
+	public void user_608_validate_the_save_button_available_in_customer_debt_screen() throws Throwable {
 		WebElement customerDebtSaveBtn = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerDebtSaveBtn"));
 		for (int i = 0; i <= 2000; i++) {
@@ -507,7 +586,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Update button available in Customer Debt screen")
-	public void user_validate_the_update_button_available_in_customer_debt_screen() throws Throwable {
+	public void user_608_validate_the_update_button_available_in_customer_debt_screen() throws Throwable {
 		WebElement updateBtn = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerDebtUpdateBtn"));
 		for (int i = 0; i <= 2000; i++) {
@@ -524,7 +603,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Back button available in Customer Debt screen")
-	public void user_validate_the_back_button_available_in_customer_debt_screen() throws Throwable {
+	public void user_608_validate_the_back_button_available_in_customer_debt_screen() throws Throwable {
 		WebElement customerDebtBackBtn = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerDebtBackBtn"));
 		waitHelper.waitForElementwithFluentwait(driver, customerDebtBackBtn);
@@ -542,7 +621,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 click the Back button in Customer Debt screen navigate to the previous screen")
-	public void user_click_the_back_button_in_customer_debt_screen_navigate_to_the_previous_screen() throws Throwable {
+	public void user_608_click_the_back_button_in_customer_debt_screen_navigate_to_the_previous_screen() throws Throwable {
 		WebElement pageTop = javascriptHelper
 				.executeScriptWithWebElement("document.querySelector('[ng-reflect-layout=\"COMPACT\"]')");
 		for (int i = 0; i <= 1000; i++) {
@@ -570,7 +649,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Finance type field available in Customer Debt screen")
-	public void user_validate_the_finance_type_field_available_in_customer_debt_screen() throws Throwable {
+	public void user_608_validate_the_finance_type_field_available_in_customer_debt_screen() throws Throwable {
 		WebElement financeTypeField = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("financeTypeField"));
 		waitHelper.waitForElementwithFluentwait(driver, financeTypeField);
@@ -602,7 +681,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Financial Institution field is available in Customer Debt screen")
-	public void user_validate_the_financial_institution_field_is_available_in_customer_debt_screen() throws Throwable {
+	public void user_608_validate_the_financial_institution_field_is_available_in_customer_debt_screen() throws Throwable {
 		WebElement financialInstitutionlabel = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialInstitutionlabel"));
 		for (int i = 0; i <= 2000; i++) {
@@ -632,7 +711,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Account Number field is available in Customer Debt screen")
-	public void user_validate_the_account_number_field_is_available_in_customer_debt_screen() throws Throwable {
+	public void user_608_validate_the_account_number_field_is_available_in_customer_debt_screen() throws Throwable {
 		WebElement accountNumberLabel = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("accountNumberLabel"));
 		for (int i = 0; i <= 2000; i++) {
@@ -663,7 +742,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Sanction Date field is available in Customer Debt screen")
-	public void user_validate_the_sanction_date_field_is_available_in_customer_debt_screen() throws Throwable {
+	public void user_608_validate_the_sanction_date_field_is_available_in_customer_debt_screen() throws Throwable {
 		WebElement sanctionDataLabel = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionDataLabel"));
 		for (int i = 0; i <= 500; i++) {
@@ -693,7 +772,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Sanction Amount field is available in Customer Debt screen")
-	public void user_validate_the_sanction_amount_field_is_available_in_customer_debt_screen() throws Throwable {
+	public void user_608_validate_the_sanction_amount_field_is_available_in_customer_debt_screen() throws Throwable {
 		WebElement sanctionAmtLabel = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionAmtLabel"));
 		for (int i = 0; i <= 500; i++) {
@@ -723,7 +802,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Interest Rate % field is available in Customer Debt screen")
-	public void user_validate_the_interest_rate_field_is_available_in_customer_debt_screen() throws Throwable {
+	public void user_608_validate_the_interest_rate_field_is_available_in_customer_debt_screen() throws Throwable {
 		WebElement interestRateLabel = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("interestRateLabel"));
 		for (int i = 0; i <= 500; i++) {
@@ -753,7 +832,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Current Principal balance field is available in Customer Debt screen")
-	public void user_validate_the_current_principal_balance_field_is_available_in_customer_debt_screen()
+	public void user_608_validate_the_current_principal_balance_field_is_available_in_customer_debt_screen()
 			throws Throwable {
 		WebElement currentPrincipalBalanceLabel = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("currentPrincipalBalanceLabel"));
@@ -784,7 +863,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Tenure field is available in Customer Debt screen")
-	public void user_validate_the_tenure_field_is_available_in_customer_debt_screen() throws Throwable {
+	public void user_608_validate_the_tenure_field_is_available_in_customer_debt_screen() throws Throwable {
 		WebElement tenureMonthLabel = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("tenureMonthLabel"));
 		for (int i = 0; i <= 500; i++) {
@@ -814,7 +893,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Maturity Date field is available in Customer Debt screen")
-	public void user_validate_the_maturity_date_field_is_available_in_customer_debt_screen() throws Throwable {
+	public void user_608_validate_the_maturity_date_field_is_available_in_customer_debt_screen() throws Throwable {
 		WebElement maturityDateLabel = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("maturityDateLabel"));
 		for (int i = 0; i <= 500; i++) {
@@ -844,7 +923,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Installment Amount field is available in Customer Debt screen")
-	public void user_validate_the_installment_amount_field_is_available_in_customer_debt_screen() throws Throwable {
+	public void user_608_validate_the_installment_amount_field_is_available_in_customer_debt_screen() throws Throwable {
 		WebElement installmentAmtLabel = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtLabel"));
 		for (int i = 0; i <= 11000; i++) {
@@ -874,7 +953,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Amount considered field is available in Customer Debt screen")
-	public void user_validate_the_amount_considered_field_is_available_in_customer_debt_screen() throws Throwable {
+	public void user_608_validate_the_amount_considered_field_is_available_in_customer_debt_screen() throws Throwable {
 		WebElement amountConsideredLabel = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("amountConsideredLabel"));
 		for (int i = 0; i <= 500; i++) {
@@ -904,7 +983,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Currency field is available in Customer Debt screen")
-	public void user_validate_the_currency_field_is_available_in_customer_debt_screen() throws Throwable {
+	public void user_608_validate_the_currency_field_is_available_in_customer_debt_screen() throws Throwable {
 		WebElement currencyLabel = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("currencyLabel"));
 		for (int i = 0; i <= 1000; i++) {
@@ -944,7 +1023,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Remarks field is available in Customer Debt screen")
-	public void user_validate_the_remarks_field_is_available_in_customer_debt_screen() throws Throwable {
+	public void user_608_validate_the_remarks_field_is_available_in_customer_debt_screen() throws Throwable {
 		WebElement remarksLabel = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("remarksLabel"));
 		for (int i = 0; i <= 1000; i++) {
@@ -974,7 +1053,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Next Due Date field is available in Customer Debt screen")
-	public void user_validate_the_next_due_date_field_is_available_in_customer_debt_screen() throws Throwable {
+	public void user_608_validate_the_next_due_date_field_is_available_in_customer_debt_screen() throws Throwable {
 		WebElement nextDueDateLabel = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("nextDueDateLabel"));
 		for (int i = 0; i <= 500; i++) {
@@ -1004,7 +1083,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Collateral Type is available in Customer Debt screen")
-	public void user_validate_the_collateral_type_is_available_in_customer_debt_screen() throws Throwable {
+	public void user_608_validate_the_collateral_type_is_available_in_customer_debt_screen() throws Throwable {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper
@@ -1045,7 +1124,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Close Date field is available in Customer Debt screen")
-	public void user_validate_the_close_date_field_is_available_in_customer_debt_screen() throws Throwable {
+	public void user_608_validate_the_close_date_field_is_available_in_customer_debt_screen() throws Throwable {
 		WebElement closeDateLabel = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("closeDateLabel"));
 		for (int i = 0; i <= 500; i++) {
@@ -1075,7 +1154,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Frequency field is available in Customer Debt screen")
-	public void user_validate_the_frequency_field_is_available_in_customer_debt_screen() throws Throwable {
+	public void user_608_validate_the_frequency_field_is_available_in_customer_debt_screen() throws Throwable {
 		WebElement frequencyLabel = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("frequencyLabel"));
 		for (int i = 0; i <= 500; i++) {
@@ -1105,7 +1184,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Last payment amount field is available in Customer Debt screen")
-	public void user_validate_the_last_payment_amount_field_is_available_in_customer_debt_screen() throws Throwable {
+	public void user_608_validate_the_last_payment_amount_field_is_available_in_customer_debt_screen() throws Throwable {
 		WebElement lastPaymentAmtLabel = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("lastPaymentAmtLabel"));
 		for (int i = 0; i <= 500; i++) {
@@ -1135,7 +1214,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Last payment date field is available in Customer Debt screen")
-	public void user_validate_the_last_payment_date_field_is_available_in_customer_debt_screen() throws Throwable {
+	public void user_608_validate_the_last_payment_date_field_is_available_in_customer_debt_screen() throws Throwable {
 		WebElement lastPaymentDateLabel = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("lastPaymentDateLabel"));
 		for (int i = 0; i <= 500; i++) {
@@ -1165,7 +1244,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Product Name field is available in Customer Debt screen")
-	public void user_validate_the_product_name_field_is_available_in_customer_debt_screen() throws Throwable {
+	public void user_608_validate_the_product_name_field_is_available_in_customer_debt_screen() throws Throwable {
 		WebElement productNameLabel = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("productNameLabel"));
 		for (int i = 0; i <= 500; i++) {
@@ -1195,7 +1274,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Last24 cycle field is available in Customer Debt screen")
-	public void user_validate_the_last24_cycle_field_is_available_in_customer_debt_screen() throws Throwable {
+	public void user_608_validate_the_last24_cycle_field_is_available_in_customer_debt_screen() throws Throwable {
 		WebElement last24CycleLabel = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("last24CycleLabel"));
 		for (int i = 0; i <= 500; i++) {
@@ -1225,7 +1304,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Balance Transfer flag field is available in Customer Debt screen")
-	public void user_validate_the_balance_transfer_flag_field_is_available_in_customer_debt_screen() throws Throwable {
+	public void user_608_validate_the_balance_transfer_flag_field_is_available_in_customer_debt_screen() throws Throwable {
 		WebElement balanceTransferFlagLabel = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("balanceTransferFlagLabel"));
 		for (int i = 0; i <= 2000; i++) {
@@ -1255,7 +1334,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Facility Status field is available in Customer Debt screen")
-	public void user_validate_the_facility_status_field_is_available_in_customer_debt_screen() throws Throwable {
+	public void user_608_validate_the_facility_status_field_is_available_in_customer_debt_screen() throws Throwable {
 		WebElement facilityStatusLabel = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("facilityStatusLabel"));
 		for (int i = 0; i <= 500; i++) {
@@ -1285,7 +1364,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Remaining Tenure field is available in Customer Debt screen")
-	public void user_validate_the_remaining_tenure_field_is_available_in_customer_debt_screen() throws Throwable {
+	public void user_608_validate_the_remaining_tenure_field_is_available_in_customer_debt_screen() throws Throwable {
 		WebElement remainingTenureLabel = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("remainingTenureLabel"));
 		for (int i = 0; i <= 500; i++) {
@@ -1315,7 +1394,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Disbursement Date field is available in Customer Debt screen")
-	public void user_validate_the_disbursement_date_field_is_available_in_customer_debt_screen() throws Throwable {
+	public void user_608_validate_the_disbursement_date_field_is_available_in_customer_debt_screen() throws Throwable {
 		WebElement disbursementDateLabel = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("disbursementDateLabel"));
 		for (int i = 0; i <= 500; i++) {
@@ -1345,7 +1424,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Request for Balance Takeover field is available in Customer Debt screen")
-	public void user_validate_the_request_for_balance_takeover_field_is_available_in_customer_debt_screen()
+	public void user_608_validate_the_request_for_balance_takeover_field_is_available_in_customer_debt_screen()
 			throws Throwable {
 		WebElement reqForBalanceTakeoverLabel = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("reqForBalanceTakeoverLabel"));
@@ -1376,7 +1455,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the NPA Classification field is available in Customer Debt screen")
-	public void user_validate_the_npa_classification_field_is_available_in_customer_debt_screen() throws Throwable {
+	public void user_608_validate_the_npa_classification_field_is_available_in_customer_debt_screen() throws Throwable {
 		WebElement NPAClassificationLabel = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("NPAClassificationLabel"));
 		for (int i = 0; i <= 500; i++) {
@@ -1407,7 +1486,7 @@ public class IJARAH_Steps {
 
 //	AT_CUD_002
 	@And("User_608 select the Finanacy type in Customer Debt screen")
-	public void user_select_the_finanacy_type_in_customer_debt_screen() throws Throwable {
+	public void user_608_select_the_finanacy_type_in_customer_debt_screen() throws Throwable {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financeTypeDropdown"))
@@ -1486,7 +1565,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 enter the Sanction Amount in Customer Debt screen")
-	public void user_enter_the_sanction_amount_in_customer_debt_screen() throws Throwable {
+	public void user_608_enter_the_sanction_amount_in_customer_debt_screen() throws Throwable {
 		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionAmtInput")).click();
 		for (int i = 0; i <= 500; i++) {
 			try {
@@ -1502,7 +1581,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 enter the Tenure in Customer Debt screen")
-	public void user_enter_the_tenure_in_customer_debt_screen() throws Throwable {
+	public void user_608_enter_the_tenure_in_customer_debt_screen() throws Throwable {
 		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("tenureMonthInput")).click();
 		for (int i = 0; i <= 500; i++) {
 			try {
@@ -1519,7 +1598,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 enter the Installment Amount in Customer Debt screen")
-	public void user_enter_the_installment_amount_in_customer_debt_screen() throws Throwable {
+	public void user_608_enter_the_installment_amount_in_customer_debt_screen() throws Throwable {
 		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtInput")).click();
 		for (int i = 0; i <= 500; i++) {
 			try {
@@ -1546,7 +1625,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 enter the Remaining Tenure in Customer Debt screen")
-	public void user_enter_the_remaining_tenure_in_customer_debt_screen() throws Throwable {
+	public void user_608_enter_the_remaining_tenure_in_customer_debt_screen() throws Throwable {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper
@@ -1585,7 +1664,7 @@ public class IJARAH_Steps {
 	}
 
 	@When("User_608 click the Save button in Customer Debt screen")
-	public void user_click_the_save_button_in_customer_debt_screen() throws Throwable {
+	public void user_608_click_the_save_button_in_customer_debt_screen() throws Throwable {
 		WebElement pageTop = javascriptHelper
 				.executeScriptWithWebElement("document.querySelector('[ng-reflect-layout=\"COMPACT\"]')");
 		for (int i = 0; i <= 1000; i++) {
@@ -1612,7 +1691,7 @@ public class IJARAH_Steps {
 	}
 
 	@Then("User_608 validate the confirm message in Customer Debt screen")
-	public void user_validate_the_confirm_message_in_customer_debt_screen() throws Throwable {
+	public void user_608_validate_the_confirm_message_in_customer_debt_screen() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver,
 				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("successMsg")));
 		String financeTypeText = javascriptHelper
@@ -1642,7 +1721,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the mandatory field blank message in Customer Debt screen")
-	public void user_validate_the_mandatory_field_blank_message_in_customer_debt_screen() throws Throwable {
+	public void user_608_validate_the_mandatory_field_blank_message_in_customer_debt_screen() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver,
 				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("mandatoryFillToastMsg")));
 		String madatoryErrorMsg = javascriptHelper
@@ -1661,7 +1740,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 enter the Text value in numeric field and validate the error message in Customer Debt screen")
-	public void user_enter_the_text_value_in_numeric_field_and_validate_the_error_message_in_customer_debt_screen()
+	public void user_608_enter_the_text_value_in_numeric_field_and_validate_the_error_message_in_customer_debt_screen()
 			throws Throwable {
 		for (int i = 0; i <= 1000; i++) {
 			try {
@@ -1719,7 +1798,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the message for invalid data in Customer Debt screen")
-	public void user_validate_the_message_for_invalid_data_in_customer_debt_screen() throws Throwable {
+	public void user_608_validate_the_message_for_invalid_data_in_customer_debt_screen() throws Throwable {
 		String madatoryErrorMsg = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("mandatoryFillToastMsg")).getText();
 		System.err.println("Mandatory Error : " + madatoryErrorMsg);
@@ -1746,7 +1825,7 @@ public class IJARAH_Steps {
 
 //	AT_CUD_003
 	@And("User_608 click the pencil button under Financial Commitments in Customer Financials tab")
-	public void user_click_the_pencil_button_under_financial_commitments_in_customer_financials_tab() throws Throwable {
+	public void user_608_click_the_pencil_button_under_financial_commitments_in_customer_financials_tab() throws Throwable {
 		Thread.sleep(1000);
 		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
 		String listOfAddButton = "";
@@ -1804,7 +1883,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 again click the first row pencil button under Financial Commitments in Customer Financials tab")
-	public void user_again_click_the_first_row_pencil_button_under_financial_commitments_in_customer_financials_tab()
+	public void user_608_again_click_the_first_row_pencil_button_under_financial_commitments_in_customer_financials_tab()
 			throws Throwable {
 		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
 		String listOfAddButton = "";
@@ -1861,7 +1940,7 @@ public class IJARAH_Steps {
 
 //	AT_CUD_003
 	@And("User_608 modify the Sanction amount in Customer Debt screen")
-	public void user_modify_the_sanction_amount_in_customer_debt_screen() throws Throwable {
+	public void user_608_modify_the_sanction_amount_in_customer_debt_screen() throws Throwable {
 		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionAmtInput")).click();
 		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionAmtInput"))
 				.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
@@ -1880,7 +1959,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 enter the invalid data and verify in Installment field under Customer Debt screen")
-	public void user_enter_the_invalid_data_and_verify_in_installment_field_under_customer_debt_screen()
+	public void user_608_enter_the_invalid_data_and_verify_in_installment_field_under_customer_debt_screen()
 			throws Throwable {
 		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtInput")).click();
 		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtInput"))
@@ -1926,14 +2005,14 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 clear the mandatory field value in Customer Debt screen")
-	public void user_clear_the_mandatory_field_value_in_customer_debt_screen() throws Throwable {
+	public void user_608_clear_the_mandatory_field_value_in_customer_debt_screen() throws Throwable {
 		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtInput")).click();
 		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtInput"))
 				.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 	}
 
 	@And("User_608 Update the record with mandatory field blank in Customer Debt screen")
-	public void user_update_the_record_with_mandatory_field_blank_in_customer_debt_screen() throws Throwable {
+	public void user_608_update_the_record_with_mandatory_field_blank_in_customer_debt_screen() throws Throwable {
 		WebElement pageTop = javascriptHelper
 				.executeScriptWithWebElement("document.querySelector('[ng-reflect-layout=\"COMPACT\"]')");
 		for (int i = 0; i <= 1000; i++) {
@@ -1960,7 +2039,7 @@ public class IJARAH_Steps {
 	}
 
 	@When("User_608 click the Update button in Customer Debt screen")
-	public void user_click_the_update_button_in_customer_debt_screen() throws Throwable {
+	public void user_608_click_the_update_button_in_customer_debt_screen() throws Throwable {
 		WebElement pageTop = javascriptHelper
 				.executeScriptWithWebElement("document.querySelector('[ng-reflect-layout=\"COMPACT\"]')");
 		for (int i = 0; i <= 5000; i++) {
@@ -2001,7 +2080,7 @@ public class IJARAH_Steps {
 
 //	**************************************** Underwriter Feature ******************************************
 	@And("User_608 verify the Offer Decision tab is displayed in Underwriter")
-	public void user_verify_the_offer_decision_tab_is_displayed_in_underwriter() throws Throwable {
+	public void user_608_verify_the_offer_decision_tab_is_displayed_in_underwriter() throws Throwable {
 		WebElement offerDecisionTab = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("offerDecisionTab"));
 		for (int i = 0; i <= 5000; i++) {
@@ -2019,7 +2098,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Application Details tab is displayed in Underwriter")
-	public void user_verify_the_application_details_tab_is_displayed_in_underwriter() throws Throwable {
+	public void user_608_verify_the_application_details_tab_is_displayed_in_underwriter() throws Throwable {
 		WebElement applicationDetailsTab = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("applicationDetailsTab"));
 		for (int i = 0; i <= 1000; i++) {
@@ -2037,7 +2116,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Customer details tab is displayed in Underwriter")
-	public void user_verify_the_customer_details_tab_is_displayed_in_underwriter() throws Throwable {
+	public void user_608_verify_the_customer_details_tab_is_displayed_in_underwriter() throws Throwable {
 		WebElement customerDetailsTab = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("customerDetailsTab"));
 		for (int i = 0; i <= 1000; i++) {
@@ -2055,7 +2134,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Additional Customer info tab is displayed in Underwriter")
-	public void user_verify_the_additional_customer_info_tab_is_displayed_in_underwriter() throws Throwable {
+	public void user_608_verify_the_additional_customer_info_tab_is_displayed_in_underwriter() throws Throwable {
 		WebElement additionalCustomerInfoTab = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("additionalCustomerInfoTab"));
 		for (int i = 0; i <= 1000; i++) {
@@ -2072,7 +2151,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Customer Financials tab is displayed in Underwriter")
-	public void user_verify_the_customer_financials_tab_is_displayed_in_underwriter() throws Throwable {
+	public void user_608_verify_the_customer_financials_tab_is_displayed_in_underwriter() throws Throwable {
 		WebElement customerFinancialsTab = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("customerFinancialsTab"));
 		for (int i = 0; i <= 1000; i++) {
@@ -2089,7 +2168,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Living Expenses tab is displayed in Underwriter")
-	public void user_verify_the_living_expenses_tab_is_displayed_in_underwriter() throws Throwable {
+	public void user_608_verify_the_living_expenses_tab_is_displayed_in_underwriter() throws Throwable {
 		WebElement livingExpensesTab = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("livingExpensesTab"));
 		for (int i = 0; i <= 1000; i++) {
@@ -2106,7 +2185,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Facility Info tab is displayed in Underwriter")
-	public void user_verify_the_facility_info_tab_is_displayed_in_underwriter() throws Throwable {
+	public void user_608_verify_the_facility_info_tab_is_displayed_in_underwriter() throws Throwable {
 		WebElement facilityInfoTab = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("facilityInfoTab"));
 		for (int i = 0; i <= 1000; i++) {
@@ -2123,7 +2202,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Asset Details tab is displayed in Underwriter")
-	public void user_verify_the_asset_details_tab_is_displayed_in_underwriter() throws Throwable {
+	public void user_608_verify_the_asset_details_tab_is_displayed_in_underwriter() throws Throwable {
 		WebElement assetDetailsTab = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("assetDetailsTab"));
 		for (int i = 0; i <= 1000; i++) {
@@ -2140,7 +2219,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Quotation Info tab is displayed in Underwriter")
-	public void user_verify_the_quotation_info_tab_is_displayed_in_underwriter() throws Throwable {
+	public void user_608_verify_the_quotation_info_tab_is_displayed_in_underwriter() throws Throwable {
 		WebElement quotationInfoTab = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("quotationInfoTab"));
 		for (int i = 0; i <= 1000; i++) {
@@ -2157,7 +2236,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Insurance Info tab is displayed in Underwriter")
-	public void user_verify_the_insurance_info_tab_is_displayed_in_underwriter() throws Throwable {
+	public void user_608_verify_the_insurance_info_tab_is_displayed_in_underwriter() throws Throwable {
 		for (int i = 0; i <= 4; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("nextBtn")).click();
@@ -2184,7 +2263,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Policy Check tab is displayed in Underwriter")
-	public void user_verify_the_policy_check_tab_is_displayed_in_underwriter() throws Throwable {
+	public void user_608_verify_the_policy_check_tab_is_displayed_in_underwriter() throws Throwable {
 		for (int i = 0; i <= 4; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("nextBtn")).click();
@@ -2211,7 +2290,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Document Details tab is displayed in Underwriter")
-	public void user_verify_the_document_details_tab_is_displayed_in_underwriter() throws Throwable {
+	public void user_608_verify_the_document_details_tab_is_displayed_in_underwriter() throws Throwable {
 		for (int i = 0; i <= 4; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("nextBtn")).click();
@@ -2238,7 +2317,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 click the Pencil icon under Offer Decision tab")
-	public void user_click_the_pencil_icon_under_offer_decision_tab() throws Throwable {
+	public void user_608_click_the_pencil_icon_under_offer_decision_tab() throws Throwable {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.backgroundColor(javascriptHelper
@@ -2256,10 +2335,10 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Decision section is displayed under Offer Decision tab")
-	public void user_verify_decision_section_is_displayed_under_offer_decision_tab() throws Throwable {
+	public void user_608_verify_decision_section_is_displayed_under_offer_decision_tab() throws Throwable {
 		WebElement offer_Decision = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("offer_Decision"));
-		System.out.println("Field Name: " + offer_Decision.getText());
+//		System.out.println("Field Name: " + offer_Decision.getText());
 		waitHelper.waitForElementwithFluentwait(driver, offer_Decision);
 		for (int i = 0; i <= 1000; i++) {
 			try {
@@ -2275,7 +2354,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Facility Details section is displayed under Offer Decision tab")
-	public void user_verify_facility_details_section_is_displayed_under_offer_decision_tab() throws Throwable {
+	public void user_608_verify_facility_details_section_is_displayed_under_offer_decision_tab() throws Throwable {
 		WebElement offer_FacilityDetails = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("offer_FacilityDetails"));
 		System.out.println("Field Name: " + offer_FacilityDetails.getText());
@@ -2293,7 +2372,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Eligibility Details section is displayed under Offer Decision tab")
-	public void user_verify_eligibility_details_section_is_displayed_under_offer_decision_tab() throws Throwable {
+	public void user_608_verify_eligibility_details_section_is_displayed_under_offer_decision_tab() throws Throwable {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper
@@ -2321,7 +2400,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Finance Configuration section is displayed under Offer Decision tab")
-	public void user_verify_finance_configuration_section_is_displayed_under_offer_decision_tab() throws Throwable {
+	public void user_608_verify_finance_configuration_section_is_displayed_under_offer_decision_tab() throws Throwable {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper
@@ -2349,7 +2428,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Pricing Details section is displayed under Offer Decision tab")
-	public void user_verify_pricing_details_section_is_displayed_under_offer_decision_tab() throws Throwable {
+	public void user_608_verify_pricing_details_section_is_displayed_under_offer_decision_tab() throws Throwable {
 		WebElement offer_PricingDetails = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("offer_PricingDetails"));
 		System.out.println("Field Name: " + offer_PricingDetails.getText());
@@ -2367,7 +2446,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Instlment Details section is displayed under Offer Decision tab")
-	public void user_verify_instlment_details_section_is_displayed_under_offer_decision_tab() throws Throwable {
+	public void user_608_verify_instlment_details_section_is_displayed_under_offer_decision_tab() throws Throwable {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper
@@ -2395,7 +2474,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Approval Details Hyperlinks section is displayed under Offer Decision tab")
-	public void user_verify_approval_details_hyperlinks_section_is_displayed_under_offer_decision_tab()
+	public void user_608_verify_approval_details_hyperlinks_section_is_displayed_under_offer_decision_tab()
 			throws Throwable {
 		WebElement offer_ApprovalDetailsHyperlinks = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("offer_ApprovalDetailsHyperlinks"));
@@ -2415,7 +2494,7 @@ public class IJARAH_Steps {
 
 //	Unw_03
 	@And("User_608 verify Approval level field under Decision section in Offer Decision tab")
-	public void user_verify_approval_level_field_under_decision_section_in_offer_decision_tab() throws Throwable {
+	public void user_608_verify_approval_level_field_under_decision_section_in_offer_decision_tab() throws Throwable {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.scrollIntoView(
@@ -2444,7 +2523,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Underwriter field under Decision section in Offer Decision tab")
-	public void user_verify_underwriter_field_under_decision_section_in_offer_decision_tab() throws Throwable {
+	public void user_608_verify_underwriter_field_under_decision_section_in_offer_decision_tab() throws Throwable {
 		WebElement decision_Underwriter = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("decision_Underwriter"));
 		System.out.println("Field Name: " + decision_Underwriter.getText());
@@ -2462,7 +2541,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Reviewer field under Decision section in Offer Decision tab")
-	public void user_verify_reviewer_field_under_decision_section_in_offer_decision_tab() throws Throwable {
+	public void user_608_verify_reviewer_field_under_decision_section_in_offer_decision_tab() throws Throwable {
 		WebElement decision_Reviewer = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("decision_Reviewer"));
 		System.out.println("Field Name: " + decision_Reviewer.getText());
@@ -2480,7 +2559,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Decision Date field under Decision section in Offer Decision tab")
-	public void user_verify_decision_date_field_under_decision_section_in_offer_decision_tab() throws Throwable {
+	public void user_608_verify_decision_date_field_under_decision_section_in_offer_decision_tab() throws Throwable {
 		WebElement decision_DecisionDate = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("decision_DecisionDate"));
 		System.out.println("Field Name: " + decision_DecisionDate.getText());
@@ -2498,7 +2577,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Decison field under Decision section in Offer Decision tab")
-	public void user_verify_decison_field_under_decision_section_in_offer_decision_tab() throws Throwable {
+	public void user_608_verify_decison_field_under_decision_section_in_offer_decision_tab() throws Throwable {
 		WebElement decision_DecisionDropdown = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("decision_DecisionField"));
 		System.out.println("Field Name: " + decision_DecisionDropdown.getText());
@@ -2517,7 +2596,7 @@ public class IJARAH_Steps {
 
 //	Unw_04
 	@And("User_608 verify the Offer amount under Finance Configuration section in Offer Decision tab")
-	public void user_verify_the_offer_amount_under_finance_configuration_section_in_offer_decision_tab()
+	public void user_608_verify_the_offer_amount_under_finance_configuration_section_in_offer_decision_tab()
 			throws Throwable {
 		String approveValue = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("decision_ApprovalLevelValue")).getText();
@@ -2550,7 +2629,7 @@ public class IJARAH_Steps {
 
 //	Unw_06
 	@And("User_608 select the Decision dropdown as Accept\\Reject under Decision section in Offer Decision tab")
-	public void user_select_the_decision_dropdown_as_accept_reject_under_decision_section_in_offer_decision_tab()
+	public void user_608_select_the_decision_dropdown_as_accept_reject_under_decision_section_in_offer_decision_tab()
 			throws Throwable {
 		for (int i = 0; i <= 1000; i++) {
 			try {
@@ -2632,7 +2711,7 @@ public class IJARAH_Steps {
 
 //	UNW_07
 	@And("User_608 verify the Product field is displayed under Facility Details section")
-	public void user_verify_the_product_field_is_displayed_under_facility_details_section() throws Throwable {
+	public void user_608_verify_the_product_field_is_displayed_under_facility_details_section() throws Throwable {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper
@@ -2674,7 +2753,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Sub-Product field is displayed under Facility Details section")
-	public void user_verify_the_sub_product_field_is_displayed_under_facility_details_section() throws Throwable {
+	public void user_608_verify_the_sub_product_field_is_displayed_under_facility_details_section() throws Throwable {
 		WebElement facility_SubProductLabel = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("facility_SubProductLabel"));
 		System.out.println("Field Name: " + facility_SubProductLabel.getText());
@@ -2706,7 +2785,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Scheme field is displayed under Facility Details section")
-	public void user_verify_the_scheme_field_is_displayed_under_facility_details_section() throws Throwable {
+	public void user_608_verify_the_scheme_field_is_displayed_under_facility_details_section() throws Throwable {
 		WebElement facility_SchemeLabel = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("facility_SchemeLabel"));
 		System.out.println("Field Name: " + facility_SchemeLabel.getText());
@@ -2738,7 +2817,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Pricing Indicator field is displayed under Facility Details section")
-	public void user_verify_the_pricing_indicator_field_is_displayed_under_facility_details_section() throws Throwable {
+	public void user_608_verify_the_pricing_indicator_field_is_displayed_under_facility_details_section() throws Throwable {
 		WebElement facility_PricingIndicatorLabel = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("facility_PricingIndicatorLabel"));
 		System.out.println("Field Name: " + facility_PricingIndicatorLabel.getText());
@@ -2771,7 +2850,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Repayment Type field is displayed under Facility Details section")
-	public void user_verify_the_repayment_type_field_is_displayed_under_facility_details_section() throws Throwable {
+	public void user_608_verify_the_repayment_type_field_is_displayed_under_facility_details_section() throws Throwable {
 		WebElement facility_RepaymentTypeLabel = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("facility_RepaymentTypeLabel"));
 		System.out.println("Field Name: " + facility_RepaymentTypeLabel.getText());
@@ -2803,7 +2882,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Compute Instalment On field is displayed under Facility Details section")
-	public void user_verify_the_compute_instalment_on_field_is_displayed_under_facility_details_section()
+	public void user_608_verify_the_compute_instalment_on_field_is_displayed_under_facility_details_section()
 			throws Throwable {
 		WebElement facility_ComputeInstalmentLabel = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("facility_ComputeInstalmentLabel"));
@@ -2836,7 +2915,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Principal Frequency field is displayed under Facility Details section")
-	public void user_verify_the_principal_frequency_field_is_displayed_under_facility_details_section()
+	public void user_608_verify_the_principal_frequency_field_is_displayed_under_facility_details_section()
 			throws Throwable {
 		WebElement facility_PrincipalFrequencyLabel = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("facility_PrincipalFrequencyLabel"));
@@ -2869,7 +2948,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Interest Frequency field is displayed under Facility Details section")
-	public void user_verify_the_interest_frequency_field_is_displayed_under_facility_details_section()
+	public void user_608_verify_the_interest_frequency_field_is_displayed_under_facility_details_section()
 			throws Throwable {
 		WebElement facility_InterestFrequencyLabel = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("facility_InterestFrequencyLabel"));
@@ -2902,7 +2981,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Eligible Income field is displayed under Facility Details section")
-	public void user_verify_the_eligible_income_field_is_displayed_under_facility_details_section() throws Throwable {
+	public void user_608_verify_the_eligible_income_field_is_displayed_under_facility_details_section() throws Throwable {
 		WebElement facility_EligibleIncomeLabel = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("facility_EligibleIncomeLabel"));
 		System.out.println("Field Name: " + facility_EligibleIncomeLabel.getText());
@@ -2934,7 +3013,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Average Account Balance field is displayed under Facility Details section")
-	public void user_verify_the_average_account_balance_field_is_displayed_under_facility_details_section()
+	public void user_608_verify_the_average_account_balance_field_is_displayed_under_facility_details_section()
 			throws Throwable {
 		WebElement facility_AverageAccBalanceLabel = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("facility_AverageAccBalanceLabel"));
@@ -2967,7 +3046,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Applicable LTV1 field is displayed under Facility Details section")
-	public void user_verify_the_applicable_ltv1_field_is_displayed_under_facility_details_section() throws Throwable {
+	public void user_608_verify_the_applicable_ltv1_field_is_displayed_under_facility_details_section() throws Throwable {
 		WebElement facility_ApplicableLTV1Label = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("facility_ApplicableLTV1Label"));
 		System.out.println("Field Name: " + facility_ApplicableLTV1Label.getText());
@@ -2999,7 +3078,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Applicable LTV2 field is displayed under Facility Details section")
-	public void user_verify_the_applicable_ltv2_field_is_displayed_under_facility_details_section() throws Throwable {
+	public void user_608_verify_the_applicable_ltv2_field_is_displayed_under_facility_details_section() throws Throwable {
 		WebElement facility_ApplicableLTV2Label = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("facility_ApplicableLTV2Label"));
 		System.out.println("Field Name: " + facility_ApplicableLTV2Label.getText());
@@ -3032,7 +3111,7 @@ public class IJARAH_Steps {
 
 //	UNW_08
 	@And("User_608 verify Requested Amount field is displayed under Finance configuration section")
-	public void user_verify_requested_amount_field_is_displayed_under_finance_configuration_section() throws Throwable {
+	public void user_608_verify_requested_amount_field_is_displayed_under_finance_configuration_section() throws Throwable {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper
@@ -3074,7 +3153,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Requested Tenure field is displayed under Finance configuration section")
-	public void user_verify_requested_tenure_field_is_displayed_under_finance_configuration_section() throws Throwable {
+	public void user_608_verify_requested_tenure_field_is_displayed_under_finance_configuration_section() throws Throwable {
 		WebElement Finance_RequestTenureLabel = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("Finance_RequestTenureLabel"));
 		System.out.println("Field Name: " + Finance_RequestTenureLabel.getText());
@@ -3106,7 +3185,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Offered Amount field is displayed under Finance configuration section")
-	public void user_verify_offered_amount_field_is_displayed_under_finance_configuration_section() throws Throwable {
+	public void user_608_verify_offered_amount_field_is_displayed_under_finance_configuration_section() throws Throwable {
 		WebElement Finance_OfferedAmountLabel = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("Finance_OfferedAmountLabel"));
 		System.out.println("Field Name: " + Finance_OfferedAmountLabel.getText());
@@ -3138,7 +3217,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Offered Tenure field is displayed under Finance configuration section")
-	public void user_verify_offered_tenure_field_is_displayed_under_finance_configuration_section() throws Throwable {
+	public void user_608_verify_offered_tenure_field_is_displayed_under_finance_configuration_section() throws Throwable {
 		WebElement Finance_OfferedTenureLabel = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("Finance_OfferedTenureLabel"));
 		System.out.println("Field Name: " + Finance_OfferedTenureLabel.getText());
@@ -3170,7 +3249,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Deviation Amount field is displayed under Finance configuration section")
-	public void user_verify_deviation_amount_field_is_displayed_under_finance_configuration_section() throws Throwable {
+	public void user_608_verify_deviation_amount_field_is_displayed_under_finance_configuration_section() throws Throwable {
 		WebElement Finance_DeviationAmountLabel = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("Finance_DeviationAmountLabel"));
 		System.out.println("Field Name: " + Finance_DeviationAmountLabel.getText());
@@ -3202,7 +3281,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Deviation Tenure field is displayed under Finance configuration section")
-	public void user_verify_deviation_tenure_field_is_displayed_under_finance_configuration_section() throws Throwable {
+	public void user_608_verify_deviation_tenure_field_is_displayed_under_finance_configuration_section() throws Throwable {
 		WebElement Finance_DeviationTenureLabel = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("Finance_DeviationTenureLabel"));
 		System.out.println("Field Name: " + Finance_DeviationTenureLabel.getText());
@@ -3235,7 +3314,7 @@ public class IJARAH_Steps {
 
 //	UNW_09
 	@And("User_608 verify Period field is displayed under Pricing Details section")
-	public void user_verify_period_field_is_displayed_under_pricing_details_section() throws Throwable {
+	public void user_608_verify_period_field_is_displayed_under_pricing_details_section() throws Throwable {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper
@@ -3263,7 +3342,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Interest Def field is displayed under Pricing Details section")
-	public void user_verify_interest_def_field_is_displayed_under_pricing_details_section() throws Throwable {
+	public void user_608_verify_interest_def_field_is_displayed_under_pricing_details_section() throws Throwable {
 		WebElement Pricing_InterestDef = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("Pricing_InterestDef"));
 		System.out.println("Field Name: " + Pricing_InterestDef.getText());
@@ -3281,7 +3360,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Rate Type field is displayed under Pricing Details section")
-	public void user_verify_rate_type_field_is_displayed_under_pricing_details_section() throws Throwable {
+	public void user_608_verify_rate_type_field_is_displayed_under_pricing_details_section() throws Throwable {
 		WebElement Pricing_RateType = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("Pricing_RateType"));
 		System.out.println("Field Name: " + Pricing_RateType.getText());
@@ -3299,7 +3378,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Index Rate field is displayed under Pricing Details section")
-	public void user_verify_index_rate_field_is_displayed_under_pricing_details_section() throws Throwable {
+	public void user_608_verify_index_rate_field_is_displayed_under_pricing_details_section() throws Throwable {
 		WebElement Pricing_IndexRate = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("Pricing_IndexRate"));
 		System.out.println("Field Name: " + Pricing_IndexRate.getText());
@@ -3317,7 +3396,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Offer Rate field is displayed under Pricing Details section")
-	public void user_verify_offer_rate_field_is_displayed_under_pricing_details_section() throws Throwable {
+	public void user_608_verify_offer_rate_field_is_displayed_under_pricing_details_section() throws Throwable {
 		WebElement Pricing_OfferRate = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("Pricing_OfferRate"));
 		System.out.println("Field Name: " + Pricing_OfferRate.getText());
@@ -3335,7 +3414,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Effective Rate field is displayed under Pricing Details section")
-	public void user_verify_effective_rate_field_is_displayed_under_pricing_details_section() throws Throwable {
+	public void user_608_verify_effective_rate_field_is_displayed_under_pricing_details_section() throws Throwable {
 		WebElement Pricing_EffectiveRate = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("Pricing_EffectiveRate"));
 		System.out.println("Field Name: " + Pricing_EffectiveRate.getText());
@@ -3354,7 +3433,7 @@ public class IJARAH_Steps {
 
 //	UNW_10
 	@And("User_608 verify the Instalment Period field is displayed under Installment Details section")
-	public void user_verify_the_instalment_period_field_is_displayed_under_installment_details_section()
+	public void user_608_verify_the_instalment_period_field_is_displayed_under_installment_details_section()
 			throws Throwable {
 		for (int i = 0; i <= 300; i++) {
 			try {
@@ -3383,7 +3462,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Instalment Amount field is displayed under Installment Details section")
-	public void user_verify_the_instalment_amount_field_is_displayed_under_installment_details_section()
+	public void user_608_verify_the_instalment_amount_field_is_displayed_under_installment_details_section()
 			throws Throwable {
 		WebElement Instalment_InstalAmount = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("Instalment_InstalAmount"));
@@ -3403,7 +3482,7 @@ public class IJARAH_Steps {
 
 //	UNW_14
 	@And("User_608 verify the Deviate button under Offer Decision screen")
-	public void user_verify_the_deviate_button_under_offer_decision_screen() throws Throwable {
+	public void user_608_verify_the_deviate_button_under_offer_decision_screen() throws Throwable {
 		WebElement offer_DeviateBtn = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("offer_DeviateBtn"));
 		for (int i = 0; i <= 500; i++) {
@@ -3420,7 +3499,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Recompute button under Offer Decision screen")
-	public void user_verify_the_recompute_button_under_offer_decision_screen() throws Throwable {
+	public void user_608_verify_the_recompute_button_under_offer_decision_screen() throws Throwable {
 		WebElement offer_RecomputeBtn = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("offer_RecomputeBtn"));
 		for (int i = 0; i <= 500; i++) {
@@ -3437,7 +3516,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Save button under Offer Decision screen")
-	public void user_verify_the_save_button_under_offer_decision_screen() throws Throwable {
+	public void user_608_verify_the_save_button_under_offer_decision_screen() throws Throwable {
 		WebElement offer_SaveBtn = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("offer_SaveBtn"));
 		for (int i = 0; i <= 500; i++) {
@@ -3454,7 +3533,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Offer button under Offer Decision screen")
-	public void user_verify_the_offer_button_under_offer_decision_screen() throws Throwable {
+	public void user_608_verify_the_offer_button_under_offer_decision_screen() throws Throwable {
 		WebElement offer_OfferBtn = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("offer_OfferBtn"));
 		for (int i = 0; i <= 500; i++) {
@@ -3472,7 +3551,7 @@ public class IJARAH_Steps {
 
 //	Unw_15
 	@And("User_608 clicks on the Save button under the Offer Decision tab")
-	public void user_clicks_on_the_save_button_under_the_offer_decision_tab() throws Throwable {
+	public void user_608_clicks_on_the_save_button_under_the_offer_decision_tab() throws Throwable {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("offer_SaveBtn")).click();
@@ -3513,7 +3592,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 click the Offer button after selecting the Decision under Offer Decision tab")
-	public void user_click_the_offer_button_after_selecting_the_decision_under_offer_decision_tab() throws Throwable {
+	public void user_608_click_the_offer_button_after_selecting_the_decision_under_offer_decision_tab() throws Throwable {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("offer_OfferBtn")).click();
@@ -3527,7 +3606,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the validation messgage after clicking Offer button under Offer Decision tab")
-	public void user_verify_the_validation_messgage_after_clicking_offer_button_under_offer_decision_tab()
+	public void user_608_verify_the_validation_messgage_after_clicking_offer_button_under_offer_decision_tab()
 			throws Throwable {
 		WebElement alertPopup = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("offerBtnApprovedPopup"));
@@ -3558,7 +3637,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 select the Decision dropdown as Select under Decision section in Offer Decision tab")
-	public void user_select_the_decision_dropdown_as_select_under_decision_section_in_offer_decision_tab()
+	public void user_608_select_the_decision_dropdown_as_select_under_decision_section_in_offer_decision_tab()
 			throws Throwable {
 		for (int i = 0; i <= 1000; i++) {
 			try {
@@ -3639,7 +3718,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 click the Offer button without selecting the Decision under Offer Decision tab")
-	public void user_click_the_offer_button_without_selecting_the_decision_under_offer_decision_tab() throws Throwable {
+	public void user_608_click_the_offer_button_without_selecting_the_decision_under_offer_decision_tab() throws Throwable {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("offer_OfferBtn")).click();
@@ -3654,7 +3733,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the validation messgage without selecting decision under Offer Decision tab")
-	public void user_verify_the_validation_messgage_without_selecting_decision_under_offer_decision_tab()
+	public void user_608_verify_the_validation_messgage_without_selecting_decision_under_offer_decision_tab()
 			throws Throwable {
 		Thread.sleep(1000);
 		WebElement alertPopup = javascriptHelper
@@ -4036,7 +4115,7 @@ public class IJARAH_Steps {
 
 //	@AT_UNW_006
 	@And("User_608 verify the Application Details tab in Underwriter stage")
-	public void user_verify_the_application_details_tab_in_underwriter_stage() throws Throwable {
+	public void user_608_verify_the_application_details_tab_in_underwriter_stage() throws Throwable {
 		String length = null;
 		for (int i = 0; i < 500; i++) {
 			try {
@@ -4076,7 +4155,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Approve button under Application Details")
-	public void user_verify_the_approve_button_under_application_details() throws Throwable {
+	public void user_608_verify_the_approve_button_under_application_details() throws Throwable {
 		for (int i = 0; i < 2000; i++) {
 			try {
 				actions.scrollToElement(javascriptHelper
@@ -4098,7 +4177,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Reject button under Application Details")
-	public void user_verify_the_reject_button_under_application_details() throws Throwable {
+	public void user_608_verify_the_reject_button_under_application_details() throws Throwable {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.backgroundBorder(javascriptHelper
@@ -4117,7 +4196,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Return button under Application Details")
-	public void user_verify_the_return_button_under_application_details() throws Throwable {
+	public void user_608_verify_the_return_button_under_application_details() throws Throwable {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.backgroundBorder(javascriptHelper
@@ -4136,7 +4215,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the View summary button under Application Details")
-	public void user_verify_the_view_summary_button_under_application_details() throws Throwable {
+	public void user_608_verify_the_view_summary_button_under_application_details() throws Throwable {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.backgroundBorder(javascriptHelper
@@ -4154,7 +4233,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Customer details tab in Underwriter stage")
-	public void user_verify_the_customer_details_tab_in_underwriter_stage() throws Throwable {
+	public void user_608_verify_the_customer_details_tab_in_underwriter_stage() throws Throwable {
 		String length = null;
 		for (int i = 0; i < 500; i++) {
 			try {
@@ -4194,7 +4273,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 to verify system should populate all the data under Customer details tab at this stage")
-	public void user_to_verify_system_should_populate_all_the_data_under_customer_details_tab_at_this_stage()
+	public void user_608_to_verify_system_should_populate_all_the_data_under_customer_details_tab_at_this_stage()
 			throws Throwable {
 		String eyeBtn = "document.querySelector('button[icon=\"pi pi-eye\"]')";
 		for (int i = 0; i < 200; i++) {
@@ -4211,7 +4290,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Additional Customer info tab in Underwriter stage")
-	public void user_verify_the_additional_customer_info_tab_in_underwriter_stage() throws Throwable {
+	public void user_608_verify_the_additional_customer_info_tab_in_underwriter_stage() throws Throwable {
 		String length = null;
 		for (int i = 0; i < 100; i++) {
 			try {
@@ -4252,7 +4331,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 to verify system should populate all the data under Additional Customer info tab at this stage")
-	public void user_to_verify_system_should_populate_all_the_data_under_additional_customer_info_details_tab_at_this_stage()
+	public void user_608_to_verify_system_should_populate_all_the_data_under_additional_customer_info_details_tab_at_this_stage()
 			throws Throwable {
 		String eyeBtn = "document.querySelector('button[icon=\"pi pi-eye\"]')";
 		for (int i = 0; i < 200; i++) {
@@ -4269,7 +4348,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Customer Financials tab in Underwriter stage")
-	public void user_verify_the_customer_financials_tab_in_underwriter_stage() throws Throwable {
+	public void user_608_verify_the_customer_financials_tab_in_underwriter_stage() throws Throwable {
 		String length = null;
 		for (int i = 0; i < 500; i++) {
 			try {
@@ -4309,7 +4388,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 to verify system should populate all the data under Customer Financials tab at this stage")
-	public void user_to_verify_system_should_populate_all_the_data_under_customer_financials_details_tab_at_this_stage()
+	public void user_608_to_verify_system_should_populate_all_the_data_under_customer_financials_details_tab_at_this_stage()
 			throws Throwable {
 		String eyeBtn = "document.querySelector('button[icon=\"pi pi-eye\"]')";
 		for (int i = 0; i < 200; i++) {
@@ -4326,7 +4405,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Living Expenses tab in Underwriter stage")
-	public void user_verify_the_living_expenses_tab_in_underwriter_stage() throws Throwable {
+	public void user_608_verify_the_living_expenses_tab_in_underwriter_stage() throws Throwable {
 		String length = null;
 		for (int i = 0; i < 500; i++) {
 			try {
@@ -4366,7 +4445,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Facility Info tab in Underwriter stage")
-	public void user_verify_the_facility_info_tab_in_underwriter_stage() throws Throwable {
+	public void user_608_verify_the_facility_info_tab_in_underwriter_stage() throws Throwable {
 		String length = null;
 		for (int i = 0; i < 500; i++) {
 			try {
@@ -4406,7 +4485,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Asset Details tab in Underwriter stage")
-	public void user_verify_the_asset_details_tab_in_underwriter_stage() throws Throwable {
+	public void user_608_verify_the_asset_details_tab_in_underwriter_stage() throws Throwable {
 		String length = null;
 		for (int i = 0; i < 500; i++) {
 			try {
@@ -4446,7 +4525,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Quotation Info tab in Underwriter stage")
-	public void user_verify_the_quotation_info_tab_in_underwriter_stage() throws Throwable {
+	public void user_608_verify_the_quotation_info_tab_in_underwriter_stage() throws Throwable {
 		String length = null;
 		for (int i = 0; i < 500; i++) {
 			try {
@@ -4487,7 +4566,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Insurance Info tab in Underwriter stage")
-	public void user_verify_the_insurance_info_tab_in_underwriter_stage() throws Throwable {
+	public void user_608_verify_the_insurance_info_tab_in_underwriter_stage() throws Throwable {
 		String length = null;
 		for (int i = 0; i < 500; i++) {
 			try {
@@ -4528,7 +4607,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Policy Check tab in Underwriter stage")
-	public void user_verify_the_policy_check_tab_in_underwriter_stage() throws Throwable {
+	public void user_608_verify_the_policy_check_tab_in_underwriter_stage() throws Throwable {
 		String length = null;
 		for (int i = 0; i < 500; i++) {
 			try {
@@ -4568,7 +4647,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Document Details tab in Underwriter stage")
-	public void user_verify_the_document_details_tab_in_underwriter_stage() throws Throwable {
+	public void user_608_verify_the_document_details_tab_in_underwriter_stage() throws Throwable {
 		String length = null;
 		for (int i = 0; i < 500; i++) {
 			try {
@@ -4610,7 +4689,7 @@ public class IJARAH_Steps {
 
 //	AT_CUD_004
 	@And("User_608 click Search button in Financial Commitments under Customer Financials tab")
-	public void user_click_search_button_in_financial_commitments_under_customer_financials_tab() throws Throwable {
+	public void user_608_click_search_button_in_financial_commitments_under_customer_financials_tab() throws Throwable {
 		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
 		String listOfAddButton = "";
 		String addButtonScreenName = "";
@@ -4666,7 +4745,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 search the matched record in Financial Commitments under Customer Financials tab")
-	public void user_search_the_matched_record_in_financial_commitments_under_customer_financials_tab()
+	public void user_608_search_the_matched_record_in_financial_commitments_under_customer_financials_tab()
 			throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentSearchInput")));
@@ -4687,7 +4766,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 search the mismatched record in Financial Commitments under Customer Financials tab")
-	public void user_search_the_mismatched_record_in_financial_commitments_under_customer_financials_tab()
+	public void user_608_search_the_mismatched_record_in_financial_commitments_under_customer_financials_tab()
 			throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentSearchInput")));
@@ -4711,7 +4790,7 @@ public class IJARAH_Steps {
 
 	// CUD_04_06 & CUD_04_06
 	@And("User_608 click the Export button in Financial Commitments under Customer Financials tab")
-	public void user_click_the_export_button_in_financial_commitments_under_customer_financials_tab() throws Throwable {
+	public void user_608_click_the_export_button_in_financial_commitments_under_customer_financials_tab() throws Throwable {
 		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
 		String listOfAddButton = "";
 		String addButtonScreenName = "";
@@ -4768,7 +4847,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 click the PDF and verify under Export in Financial Commitments")
-	public void user_click_the_pdf_and_verify_under_export_in_financial_commitments() throws Throwable {
+	public void user_608_click_the_pdf_and_verify_under_export_in_financial_commitments() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentExportPDF")));
 		for (int i = 0; i <= 300; i++) {
@@ -4803,7 +4882,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 click the XLS and verify under Export in Financial Commitments")
-	public void user_click_the_xls_and_verify_under_export_in_financial_commitments() throws Throwable {
+	public void user_608_click_the_xls_and_verify_under_export_in_financial_commitments() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentExportXLS")));
 		for (int i = 0; i <= 300; i++) {
@@ -4836,7 +4915,7 @@ public class IJARAH_Steps {
 
 //	AT_CUD_006
 	@And("User_608 click the first row pencil icon under Financial Commitments in Customer Financials tab")
-	public void user_click_the_first_row_pencil_icon_under_financial_commitments_in_customer_financials_tab()
+	public void user_608_click_the_first_row_pencil_icon_under_financial_commitments_in_customer_financials_tab()
 			throws Throwable {
 		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
 		String listOfAddButton = "";
@@ -4894,7 +4973,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 click the Status Radio button under Customer Debt screen")
-	public void user_click_the_status_radio_button_under_customer_debt_screen() throws Throwable {
+	public void user_608_click_the_status_radio_button_under_customer_debt_screen() throws Throwable {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper
@@ -4924,7 +5003,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the first row status as In-Active under Financial Commitments in Customer Financials tab")
-	public void user_verify_the_first_row_status_under_financial_commitments_in_customer_financials_tab()
+	public void user_608_verify_the_first_row_status_under_financial_commitments_in_customer_financials_tab()
 			throws Throwable {
 		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
 		String listOfAddButton = "";
@@ -4976,7 +5055,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the first row status as Active under Financial Commitments in Customer Financials tab")
-	public void user_verify_the_first_row_status_as_active_under_financial_commitments_in_customer_financials_tab()
+	public void user_608_verify_the_first_row_status_as_active_under_financial_commitments_in_customer_financials_tab()
 			throws Throwable {
 		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
 		String listOfAddButton = "";
@@ -5029,7 +5108,7 @@ public class IJARAH_Steps {
 
 	// CUD_04_01
 	@And("User_608 scroll into view the financial commitments section under Customer Financials tab")
-	public void user_scroll_into_view_the_financial_commitments_section_under_customer_financials_tab()
+	public void user_608_scroll_into_view_the_financial_commitments_section_under_customer_financials_tab()
 			throws Throwable {
 		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
 		String listOfAddButton = "";
@@ -5079,7 +5158,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Financial Institution field is displayed in list view under Financial Commitments")
-	public void user_verify_the_financial_institution_field_is_displayed_in_list_view_under_financial_commitments()
+	public void user_608_verify_the_financial_institution_field_is_displayed_in_list_view_under_financial_commitments()
 			throws Throwable {
 		WebElement financialInstitution = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommit_FinancialInstitution"));
@@ -5097,7 +5176,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Loan Amount field is displayed in list view under Financial Commitments")
-	public void user_verify_the_loan_amount_field_is_displayed_in_list_view_under_financial_commitments()
+	public void user_608_verify_the_loan_amount_field_is_displayed_in_list_view_under_financial_commitments()
 			throws Throwable {
 		WebElement loanAmount = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommit_LoanAmount"));
@@ -5115,7 +5194,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Installment Amount field is displayed in list view under Financial Commitments")
-	public void user_verify_the_installment_amount_field_is_displayed_in_list_view_under_financial_commitments()
+	public void user_608_verify_the_installment_amount_field_is_displayed_in_list_view_under_financial_commitments()
 			throws Throwable {
 		WebElement installmentAmount = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommit_InstallmentAmount"));
@@ -5133,7 +5212,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Tenure field is displayed in list view under Financial Commitments")
-	public void user_verify_the_tenure_field_is_displayed_in_list_view_under_financial_commitments() throws Throwable {
+	public void user_608_verify_the_tenure_field_is_displayed_in_list_view_under_financial_commitments() throws Throwable {
 		WebElement tenure = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommit_Tenure"));
 		for (int i = 0; i <= 500; i++) {
@@ -5150,7 +5229,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Next Due Date field is displayed in list view under Financial Commitments")
-	public void user_verify_the_next_due_date_field_is_displayed_in_list_view_under_financial_commitments()
+	public void user_608_verify_the_next_due_date_field_is_displayed_in_list_view_under_financial_commitments()
 			throws Throwable {
 		WebElement nextDueDate = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommit_NextDueDate"));
@@ -5168,7 +5247,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Principal Balance field is displayed in list view under Financial Commitments")
-	public void user_verify_the_principal_balance_field_is_displayed_in_list_view_under_financial_commitments()
+	public void user_608_verify_the_principal_balance_field_is_displayed_in_list_view_under_financial_commitments()
 			throws Throwable {
 		WebElement principalAmount = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommit_PrincipalAmount"));
@@ -5186,7 +5265,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Currency field is displayed in list view under Financial Commitments")
-	public void user_verify_the_currency_field_is_displayed_in_list_view_under_financial_commitments()
+	public void user_608_verify_the_currency_field_is_displayed_in_list_view_under_financial_commitments()
 			throws Throwable {
 		WebElement currency = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommit_Currency"));
@@ -5204,7 +5283,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Status field is displayed in list view under Financial Commitments")
-	public void user_verify_the_status_field_is_displayed_in_list_view_under_financial_commitments() throws Throwable {
+	public void user_608_verify_the_status_field_is_displayed_in_list_view_under_financial_commitments() throws Throwable {
 		WebElement status = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommit_Status"));
 		for (int i = 0; i <= 500; i++) {
@@ -5222,7 +5301,7 @@ public class IJARAH_Steps {
 
 //	CUD_04_02
 	@And("User_608 verify list view values should be not editable under Financial Commitments")
-	public void user_verify_list_view_values_should_be_not_editable_under_financial_commitments() throws Throwable {
+	public void user_608_verify_list_view_values_should_be_not_editable_under_financial_commitments() throws Throwable {
 		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
 		String listOfAddButton = "";
 		String addButtonScreenName = "";
@@ -5275,7 +5354,7 @@ public class IJARAH_Steps {
 
 //	App Data Check -- Income
 	@And("User_608 click the Eye button under Customer Financials tab")
-	public void user_click_the_eye_button_under_customer_financials_tab() throws Throwable {
+	public void user_608_click_the_eye_button_under_customer_financials_tab() throws Throwable {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement(
@@ -5290,7 +5369,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 click the Eye button under Income section in Customer Financials Tab")
-	public void user_click_the_eye_button_under_income_section_in_customer_financials_tab() throws Throwable {
+	public void user_608_click_the_eye_button_under_income_section_in_customer_financials_tab() throws Throwable {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				WebElement element = javascriptHelper.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("incomeSectionTitle"));
@@ -5358,7 +5437,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate Save button available under Income details screen")
-	public void user_validate_save_button_available_under_income_details_screen() throws Throwable {
+	public void user_608_validate_save_button_available_under_income_details_screen() throws Throwable {
 		Thread.sleep(100);
 		WebElement incomeSaveBtn = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("incomeSaveBtn"));
@@ -5376,7 +5455,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate Back button available under Income details screen")
-	public void user_validate_back_button_available_under_income_details_screen() throws Throwable {
+	public void user_608_validate_back_button_available_under_income_details_screen() throws Throwable {
 		WebElement incomeBackBtn = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("incomeBackBtn"));
 		for (int i = 0; i <= 2000; i++) {
@@ -5393,7 +5472,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate Employment Type field available under Income details screen")
-	public void user_validate_employment_type_field_available_under_income_details_screen() throws Throwable {
+	public void user_608_validate_employment_type_field_available_under_income_details_screen() throws Throwable {
 		WebElement employementTypeLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("employementTypeLabel"));
 		System.out.println("Field Name: " + employementTypeLabel.getText());
@@ -5425,7 +5504,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate Lumpsum Amount field available under Income details screen")
-	public void user_validate_lumpsum_amount_field_available_under_income_details_screen() throws Throwable {
+	public void user_608_validate_lumpsum_amount_field_available_under_income_details_screen() throws Throwable {
 		WebElement lumpsumAmtLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("lumpsumAmtLabel"));
 		System.out.println("Field Name: " + lumpsumAmtLabel.getText());
@@ -5457,7 +5536,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate Financial Year field available under Income details screen")
-	public void user_validate_financial_year_field_available_under_income_details_screen() throws Throwable {
+	public void user_608_validate_financial_year_field_available_under_income_details_screen() throws Throwable {
 		WebElement financialYearLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("financialYearLabel"));
 //		System.out.println("Field Name: "+financialYearLabel.getText());
@@ -5489,7 +5568,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate Filing Date field available under Income details screen")
-	public void user_validate_filing_date_field_available_under_income_details_screen() throws Throwable {
+	public void user_608_validate_filing_date_field_available_under_income_details_screen() throws Throwable {
 		WebElement filingDateLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("filingDateLabel"));
 		System.out.println("Field Name: " + filingDateLabel.getText());
@@ -5521,7 +5600,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate Income field available under Income details screen")
-	public void user_validate_income_field_available_under_income_details_screen() throws Throwable {
+	public void user_608_validate_income_field_available_under_income_details_screen() throws Throwable {
 		WebElement incomeLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("incomeLabel"));
 		System.out.println("Field Name: " + incomeLabel.getText());
@@ -5553,7 +5632,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate Frequency field available under Income details screen")
-	public void user_validate_frequency_field_available_under_income_details_screen() throws Throwable {
+	public void user_608_validate_frequency_field_available_under_income_details_screen() throws Throwable {
 		WebElement frequencyLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("frequencyLabel"));
 		System.out.println("Field Name: " + frequencyLabel.getText());
@@ -5585,7 +5664,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate Amount field available under Income details screen")
-	public void user_validate_amount_field_available_under_income_details_screen() throws Throwable {
+	public void user_608_validate_amount_field_available_under_income_details_screen() throws Throwable {
 		WebElement amountLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("amountLabel"));
 		System.out.println("Field Name: " + amountLabel.getText());
@@ -5617,7 +5696,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate Defined % field available under Income details screen")
-	public void user_validate_defined_field_available_under_income_details_screen() throws Throwable {
+	public void user_608_validate_defined_field_available_under_income_details_screen() throws Throwable {
 		WebElement defined_Label = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("defined%_Label"));
 		System.out.println("Field Name: " + defined_Label.getText());
@@ -5649,7 +5728,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate Adjusted % field available under Income details screen")
-	public void user_validate_adjusted_field_available_under_income_details_screen() throws Throwable {
+	public void user_608_validate_adjusted_field_available_under_income_details_screen() throws Throwable {
 		WebElement adjusted_Label = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("adjusted%_Label"));
 		System.out.println("Field Name: " + adjusted_Label.getText());
@@ -5681,7 +5760,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate Amount Considered field available under Income details screen")
-	public void user_validate_amount_considered_field_available_under_income_details_screen() throws Throwable {
+	public void user_608_validate_amount_considered_field_available_under_income_details_screen() throws Throwable {
 		WebElement amountConsideredLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("amountConsideredLabel"));
 		System.out.println("Field Name: " + amountConsideredLabel.getText());
@@ -5713,7 +5792,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate Action button available under Income details screen")
-	public void user_validate_action_button_available_under_income_details_screen() throws Throwable {
+	public void user_608_validate_action_button_available_under_income_details_screen() throws Throwable {
 		WebElement actionLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("actionLabel"));
 		System.out.println("Field Name: " + actionLabel.getText());
@@ -5745,7 +5824,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate Total Income field available under Income details screen")
-	public void user_validate_total_income_field_available_under_income_details_screen() throws Throwable {
+	public void user_608_validate_total_income_field_available_under_income_details_screen() throws Throwable {
 		WebElement totalIncomeLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("totalIncomeLabel"));
 		System.out.println("Field Name: " + totalIncomeLabel.getText());
@@ -5777,7 +5856,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate Total Income considered field available under Income details screen")
-	public void user_validate_total_income_considered_field_available_under_income_details_screen() throws Throwable {
+	public void user_608_validate_total_income_considered_field_available_under_income_details_screen() throws Throwable {
 		WebElement totalIncomeConsideredLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("totalIncomeConsideredLabel"));
 		System.out.println("Field Name: " + totalIncomeConsideredLabel.getText());
@@ -5809,7 +5888,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate Salary credited to Bank field available under Income details screen")
-	public void user_validate_salary_credited_to_bank_field_available_under_income_details_screen() throws Throwable {
+	public void user_608_validate_salary_credited_to_bank_field_available_under_income_details_screen() throws Throwable {
 		WebElement salaryCreditedToBankLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("salaryCreditedToBankLabel"));
 		System.out.println("Field Name: " + salaryCreditedToBankLabel.getText());
@@ -5841,7 +5920,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate Deduction field available under Income details screen")
-	public void user_validate_deduction_field_available_under_income_details_screen() throws Throwable {
+	public void user_608_validate_deduction_field_available_under_income_details_screen() throws Throwable {
 		WebElement deductionLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("deductionLabel"));
 		System.out.println("Field Name: " + deductionLabel.getText());
@@ -5873,7 +5952,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate Deduction Frequency field available under Income details screen")
-	public void user_validate_deduction_frequency_field_available_under_income_details_screen() throws Throwable {
+	public void user_608_validate_deduction_frequency_field_available_under_income_details_screen() throws Throwable {
 		WebElement deductionFrequencyLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("deductionFrequencyLabel"));
 		System.out.println("Field Name: " + deductionFrequencyLabel.getText());
@@ -5905,7 +5984,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate Deduction Amount field available under Income details screen")
-	public void user_validate_deduction_amount_field_available_under_income_details_screen() throws Throwable {
+	public void user_608_validate_deduction_amount_field_available_under_income_details_screen() throws Throwable {
 		WebElement deductionAmtLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("deductionAmtLabel"));
 		System.out.println("Field Name: " + deductionAmtLabel.getText());
@@ -5937,7 +6016,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate Deduction Def % field available under Income details screen")
-	public void user_validate_deduction_def_field_available_under_income_details_screen() throws Throwable {
+	public void user_608_validate_deduction_def_field_available_under_income_details_screen() throws Throwable {
 		WebElement deductionDef_Label = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("deductionDef%_Label"));
 		System.out.println("Field Name: " + deductionDef_Label.getText());
@@ -5969,7 +6048,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate Deduction Adj % field available under Income details screen")
-	public void user_validate_deduction_adj_field_available_under_income_details_screen() throws Throwable {
+	public void user_608_validate_deduction_adj_field_available_under_income_details_screen() throws Throwable {
 		WebElement deductionAdj_Label = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("deductionAdj%_Label"));
 		System.out.println("Field Name: " + deductionAdj_Label.getText());
@@ -6001,7 +6080,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate Deduction Considered field available under Income details screen")
-	public void user_validate_deduction_considered_field_available_under_income_details_screen() throws Throwable {
+	public void user_608_validate_deduction_considered_field_available_under_income_details_screen() throws Throwable {
 		WebElement deductionConsideredLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("deductionConsideredLabel"));
 		System.out.println("Field Name: " + deductionConsideredLabel.getText());
@@ -6033,7 +6112,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate Deduction Action button field available under Income details screen")
-	public void user_validate_deduction_action_button_field_available_under_income_details_screen() throws Throwable {
+	public void user_608_validate_deduction_action_button_field_available_under_income_details_screen() throws Throwable {
 		WebElement deductionActionLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("deductionActionLabel"));
 		System.out.println("Field Name: " + deductionActionLabel.getText());
@@ -6065,7 +6144,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate Total Deduction field available under Income details screen")
-	public void user_validate_total_deduction_field_available_under_income_details_screen() throws Throwable {
+	public void user_608_validate_total_deduction_field_available_under_income_details_screen() throws Throwable {
 		WebElement totalDeductionLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("totalDeductionLabel"));
 		System.out.println("Field Name: " + totalDeductionLabel.getText());
@@ -6097,7 +6176,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate Total Deduction Considered field available under Income details screen")
-	public void user_validate_total_deduction_considered_field_available_under_income_details_screen()
+	public void user_608_validate_total_deduction_considered_field_available_under_income_details_screen()
 			throws Throwable {
 		WebElement totalDeductionConsideredLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("totalDeductionConsideredLabel"));
@@ -6130,7 +6209,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate Currency field available under Income details screen")
-	public void user_validate_currency_field_available_under_income_details_screen() throws Throwable {
+	public void user_608_validate_currency_field_available_under_income_details_screen() throws Throwable {
 		WebElement currencyLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("currencyLabel"));
 		System.out.println("Field Name: " + currencyLabel.getText());
@@ -6162,7 +6241,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 click the Save button under Income details screen")
-	public void user_click_the_save_button_under_income_details_screen() throws Throwable {
+	public void user_608_click_the_save_button_under_income_details_screen() throws Throwable {
 		WebElement incomeSaveBtn = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("incomeSaveBtn"));
 		for (int i = 0; i <= 50000; i++) {
@@ -6178,7 +6257,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the confirmation message under Income details screen")
-	public void user_validate_the_confirmation_message_under_income_details_screen() throws Throwable {
+	public void user_608_validate_the_confirmation_message_under_income_details_screen() throws Throwable {
 		WebElement successToastMsg = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("successToastMsg"));
 		for (int i = 0; i <= 5000; i++) {
@@ -6207,7 +6286,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 click the Back button under Income details screen")
-	public void user_click_the_back_button_under_income_details_screen() throws Throwable {
+	public void user_608_click_the_back_button_under_income_details_screen() throws Throwable {
 		Thread.sleep(200);
 		WebElement incomeBackBtn = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("incomeBackBtn"));
@@ -6225,7 +6304,7 @@ public class IJARAH_Steps {
 
 //	AT_INCD_04
 	@And("User_608 verify Employment details section available under Customer Financials tab")
-	public void user_verify_employment_details_section_available_under_customer_financials_tab() throws Throwable {
+	public void user_608_verify_employment_details_section_available_under_customer_financials_tab() throws Throwable {
 		WebElement empDetailsSection = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("customerEmployementListSection"));
 		System.out.println("Section Name: " + empDetailsSection.getText());
@@ -6242,7 +6321,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 click the eye button under Employment details section available in Customer Financials tab")
-	public void user_click_the_eye_button_under_employment_details_section_available_in_customer_financials_tab()
+	public void user_608_click_the_eye_button_under_employment_details_section_available_in_customer_financials_tab()
 			throws Throwable {
 		WebElement customerEmployementEyeBtn = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("customerEmployementEyeBtn"));
@@ -6260,7 +6339,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Customer Employement page is available under Customer Financials tab")
-	public void user_verify_the_customer_employement_page_is_available_under_customer_financials_tab()
+	public void user_608_verify_the_customer_employement_page_is_available_under_customer_financials_tab()
 			throws Throwable {
 		Thread.sleep(1000);
 		WebElement customerEmployementScreenTitle = javascriptHelper
@@ -6279,7 +6358,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 click the Back button in Customer Employement screen under Customer Financials tab")
-	public void user_click_the_back_button_in_customer_employement_screen_under_customer_financials_tab()
+	public void user_608_click_the_back_button_in_customer_employement_screen_under_customer_financials_tab()
 			throws Throwable {
 		WebElement customerEmployementScreenBackBtn = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_IncomeJsPaths.getElement("customerEmployementScreenBackBtn"));
@@ -6297,7 +6376,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verfiy Income section available under Customer Financials tab")
-	public void user_verfiy_income_section_available_under_customer_financials_tab() throws Throwable {
+	public void user_608_verfiy_income_section_available_under_customer_financials_tab() throws Throwable {
 		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[mode=\"md\"]').length";
 		String listOfAddButton = "";
 		String addButtonScreenName = "";
@@ -6343,7 +6422,7 @@ public class IJARAH_Steps {
 
 //	AT_INCD_05
 	@And("User_608 verify Self Employed customer available under Income section in Customer Financials Tab")
-	public void user_verify_self_employed_customer_available_under_income_section_in_customer_financials_tab() throws Throwable {
+	public void user_608_verify_self_employed_customer_available_under_income_section_in_customer_financials_tab() throws Throwable {
 		for (int i = 0; i <= 3000; i++) {
 			try {
 				actions.scrollToElement(javascriptHelper
@@ -6412,7 +6491,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Self Employed income field is available under Income section in Customer Financials Tab")
-	public void user_verify_self_employed_income_field_is_available_under_income_section_in_customer_financials_tab()
+	public void user_608_verify_self_employed_income_field_is_available_under_income_section_in_customer_financials_tab()
 			throws Throwable {
 //		document.querySelectorAll('button[icon=\"pi pi-eye\"]')[" + j + "].parentElement.parentElement.parentElement.querySelectorAll('td')[3]
 		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
@@ -6482,7 +6561,7 @@ public class IJARAH_Steps {
 
 //	AT_INCD_06
 	@And("User_608 verify the Salaried customer available under Income section in Customer Financials Tab")
-	public void user_verify_the_salaried_customer_available_under_income_section_in_customer_financials_tab()
+	public void user_608_verify_the_salaried_customer_available_under_income_section_in_customer_financials_tab()
 			throws Throwable {
 		for (int i = 0; i <= 300; i++) {
 			try {
@@ -6549,25 +6628,15 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 invoke soft assert in Income details screen under Customer Financials tab at Ijarah Data Check stage")
-	public void user_invoke_soft_assert_in_income_details_screen_under_customer_financials_tab_at_ijarah_data_check_stage() {
+	public void user_608_invoke_soft_assert_in_income_details_screen_under_customer_financials_tab_at_ijarah_data_check_stage() {
 		softAssert.assertAll();
 	}
 
 //	**************************** Data Check --> Application Details Screen *********************************
 //	AT_ADC_01
 	@And("User_608 verify the Back button available under Application details screen")
-	public void user_verify_the_back_button_available_under_application_details_screen() throws Throwable {
+	public void user_608_verify_the_back_button_available_under_application_details_screen() throws Throwable {
 		Thread.sleep(1000);
-//		for (int i = 0; i <= 500; i++) {
-//			try {
-//				waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("AppDetailsSectionLabel")));
-//				break;
-//			} catch (Exception e) {
-//				if (i == 500) {
-//					Assert.fail(e.getMessage());
-//				}
-//			}
-//		}
 		WebElement AppDetailsBackBtn = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("AppDetailsBackBtn"));
 		for (int i = 0; i <= 20000; i++) {
@@ -6585,7 +6654,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Submit button available under Application details screen")
-	public void user_verify_the_submit_button_available_under_application_details_screen() throws Throwable {
+	public void user_608_verify_the_submit_button_available_under_application_details_screen() throws Throwable {
 		WebElement AppDetailsSubmitBtn = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("AppDetailsSubmitBtn"));
 		for (int i = 0; i <= 20000; i++) {
@@ -6603,7 +6672,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Return button available under Application details screen")
-	public void user_verify_the_return_button_available_under_application_details_screen() throws Throwable {
+	public void user_608_verify_the_return_button_available_under_application_details_screen() throws Throwable {
 		WebElement AppDetailsReturnBtn = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("AppDetailsReturnBtn"));
 		for (int i = 0; i <= 2000; i++) {
@@ -6621,7 +6690,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the View Summary button available under Application details screen")
-	public void user_verify_the_view_summary_button_available_under_application_details_screen() throws Throwable {
+	public void user_608_verify_the_view_summary_button_available_under_application_details_screen() throws Throwable {
 		WebElement AppDetailsViewSummaryBtn = javascriptHelper.executeScriptWithWebElement(
 				dataCheck_ApplicationDetailsJsPaths.getElement("AppDetailsViewSummaryBtn"));
 		for (int i = 0; i <= 2000; i++) {
@@ -6638,7 +6707,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Classification value displayed correctly under Application details screen")
-	public void user_validate_the_classification_value_displayed_correctly_under_application_details_screen()
+	public void user_608_validate_the_classification_value_displayed_correctly_under_application_details_screen()
 			throws Throwable {
 		WebElement classificationDropdown = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("classificationDropdown"));
@@ -6658,7 +6727,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Product value displayed correctly under Application details screen")
-	public void user_validate_the_product_value_displayed_correctly_under_application_details_screen()
+	public void user_608_validate_the_product_value_displayed_correctly_under_application_details_screen()
 			throws Throwable {
 		WebElement productDropdown = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("productDropdown"));
@@ -6678,7 +6747,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Total Finance Amount Requested value displayed correctly under Application details screen")
-	public void user_validate_the_total_finance_amount_requested_value_displayed_correctly_under_application_details_screen()
+	public void user_608_validate_the_total_finance_amount_requested_value_displayed_correctly_under_application_details_screen()
 			throws Throwable {
 		WebElement totalFinanceAmtInput = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("totalFinanceAmtInput"));
@@ -6698,7 +6767,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Declared Net Monthly Income value displayed correctly under Application details screen")
-	public void user_validate_the_declared_net_monthly_income_value_displayed_correctly_under_application_details_screen()
+	public void user_608_validate_the_declared_net_monthly_income_value_displayed_correctly_under_application_details_screen()
 			throws Throwable {
 		WebElement declaredMonthlyIncomeInput = javascriptHelper.executeScriptWithWebElement(
 				dataCheck_ApplicationDetailsJsPaths.getElement("declaredMonthlyIncomeInput"));
@@ -6718,7 +6787,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Sourcing Channel value displayed correctly under Application details screen")
-	public void user_validate_the_sourcing_channel_value_displayed_correctly_under_application_details_screen()
+	public void user_608_validate_the_sourcing_channel_value_displayed_correctly_under_application_details_screen()
 			throws Throwable {
 		WebElement sourcingChannelDropdown = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingChannelDropdown"));
@@ -6738,7 +6807,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Business Center Code value displayed correctly under Application details screen")
-	public void user_validate_the_business_center_code_value_displayed_correctly_under_application_details_screen()
+	public void user_608_validate_the_business_center_code_value_displayed_correctly_under_application_details_screen()
 			throws Throwable {
 		WebElement businessCenterCodeDropdown = javascriptHelper.executeScriptWithWebElement(
 				dataCheck_ApplicationDetailsJsPaths.getElement("businessCenterCodeDropdown"));
@@ -6758,7 +6827,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Servicing Type value displayed correctly under Application details screen")
-	public void user_validate_the_servicing_type_value_displayed_correctly_under_application_details_screen()
+	public void user_608_validate_the_servicing_type_value_displayed_correctly_under_application_details_screen()
 			throws Throwable {
 		WebElement servicingTypeDropdown = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("servicingTypeDropdown"));
@@ -6778,7 +6847,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Region value displayed correctly under Application details screen")
-	public void user_validate_the_region_value_displayed_correctly_under_application_details_screen() throws Throwable {
+	public void user_608_validate_the_region_value_displayed_correctly_under_application_details_screen() throws Throwable {
 		WebElement regionDropdown = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("regionDropdown"));
 		String regionDropdownValue = regionDropdown.getAttribute("aria-label");
@@ -6797,10 +6866,10 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Servicing Branch value displayed correctly under Application details screen")
-	public void user_validate_the_servicing_branch_value_displayed_correctly_under_application_details_screen()
+	public void user_608_validate_the_servicing_branch_value_displayed_correctly_under_application_details_screen()
 			throws Throwable {
 		WebElement servicingBrachDropdown = javascriptHelper
-				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("servicingBrachDropdown"));
+				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("servicingBranchDropdown"));
 		String servicingBrachValue = servicingBrachDropdown.getAttribute("aria-label");
 		System.out.println("Servicing Branch Value: " + servicingBrachValue);
 		for (int i = 0; i <= 2000; i++) {
@@ -6817,7 +6886,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Closing Staff or Servicing Staff value displayed correctly under Application details screen")
-	public void user_validate_the_closing_staff_or_servicing_staff_value_displayed_correctly_under_application_details_screen()
+	public void user_608_validate_the_closing_staff_or_servicing_staff_value_displayed_correctly_under_application_details_screen()
 			throws Throwable {
 		WebElement closingStaffDropdown = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("closingStaffDropdown"));
@@ -6837,14 +6906,14 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 invoke soft assert in Application details screen under at Ijarah Data check stage")
-	public void user_invoke_soft_assert_in_application_details_screen_under_at_ijarah_data_check_stage()
+	public void user_608_invoke_soft_assert_in_application_details_screen_under_at_ijarah_data_check_stage()
 			throws Throwable {
 		softAssert.assertAll();
 	}
 
 //	AT_ADC_02
 	@And("User_608 verify the Classification field available under Application details screen")
-	public void user_verify_the_classification_field_available_under_application_details_screen() throws Throwable {
+	public void user_608_verify_the_classification_field_available_under_application_details_screen() throws Throwable {
 		Thread.sleep(1000);
 		WebElement classificationLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("classificationLabel"));
@@ -6867,7 +6936,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Product field available under Application details screen")
-	public void user_verify_the_product_field_available_under_application_details_screen() throws Throwable {
+	public void user_608_verify_the_product_field_available_under_application_details_screen() throws Throwable {
 		WebElement productLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("productLabel"));
 		WebElement productDropdown = javascriptHelper
@@ -6889,7 +6958,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Total Finance Amount Requested field available under Application details screen")
-	public void user_verify_the_total_finance_amount_requested_field_available_under_application_details_screen()
+	public void user_608_verify_the_total_finance_amount_requested_field_available_under_application_details_screen()
 			throws Throwable {
 		WebElement totalFinanceAmtLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("totalFinanceAmtLabel"));
@@ -6912,7 +6981,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Declared Net Monthly Income field available under Application details screen")
-	public void user_verify_the_declared_net_monthly_income_field_available_under_application_details_screen()
+	public void user_608_verify_the_declared_net_monthly_income_field_available_under_application_details_screen()
 			throws Throwable {
 		WebElement declaredMonthlyIncomeLabel = javascriptHelper.executeScriptWithWebElement(
 				dataCheck_ApplicationDetailsJsPaths.getElement("declaredMonthlyIncomeLabel"));
@@ -6935,7 +7004,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Declared Current Obligations field available under Application details screen")
-	public void user_verify_the_declared_current_obligations_field_available_under_application_details_screen()
+	public void user_608_verify_the_declared_current_obligations_field_available_under_application_details_screen()
 			throws Throwable {
 		WebElement declaredCurrentObligationsLabel = javascriptHelper.executeScriptWithWebElement(
 				dataCheck_ApplicationDetailsJsPaths.getElement("declaredCurrentObligationsLabel"));
@@ -6958,7 +7027,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Special Promotion field available under Application details screen")
-	public void user_verify_the_special_promotion_field_available_under_application_details_screen() throws Throwable {
+	public void user_608_verify_the_special_promotion_field_available_under_application_details_screen() throws Throwable {
 		WebElement specialPromotionLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("specialPromotionLabel"));
 		WebElement specialPromotionDropdown = javascriptHelper.executeScriptWithWebElement(
@@ -6980,7 +7049,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Sourcing Channel field available under Application details screen")
-	public void user_verify_the_sourcing_channel_field_available_under_application_details_screen() throws Throwable {
+	public void user_608_verify_the_sourcing_channel_field_available_under_application_details_screen() throws Throwable {
 		WebElement sourcingChannelLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingChannelLabel"));
 		WebElement sourcingChannelDropdown = javascriptHelper
@@ -7002,7 +7071,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Business Center Code field available under Application details screen")
-	public void user_verify_the_business_center_code_field_available_under_application_details_screen()
+	public void user_608_verify_the_business_center_code_field_available_under_application_details_screen()
 			throws Throwable {
 		WebElement businessCenterCodeLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("businessCenterCodeLabel"));
@@ -7025,7 +7094,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Servicing Type field available under Application details screen")
-	public void user_verify_the_servicing_type_field_available_under_application_details_screen() throws Throwable {
+	public void user_608_verify_the_servicing_type_field_available_under_application_details_screen() throws Throwable {
 		WebElement servicingTypeLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("servicingTypeLabel"));
 		WebElement servicingTypeDropdown = javascriptHelper
@@ -7047,7 +7116,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Region field available under Application details screen")
-	public void user_verify_the_region_field_available_under_application_details_screen() throws Throwable {
+	public void user_608_verify_the_region_field_available_under_application_details_screen() throws Throwable {
 		WebElement regionLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("regionLabel"));
 		WebElement regionDropdown = javascriptHelper
@@ -7069,11 +7138,11 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Servicing Branch field available under Application details screen")
-	public void user_verify_the_servicing_branch_field_available_under_application_details_screen() throws Throwable {
+	public void user_608_verify_the_servicing_branch_field_available_under_application_details_screen() throws Throwable {
 		WebElement servicingBrachLabel = javascriptHelper
-				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("servicingBrachLabel"));
+				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("servicingBranchLabel"));
 		WebElement servicingBrachDropdown = javascriptHelper
-				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("servicingBrachDropdown"));
+				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("servicingBranchDropdown"));
 		System.out.println("Field Name: " + servicingBrachLabel.getText());
 		for (int i = 0; i <= 2000; i++) {
 			try {
@@ -7091,7 +7160,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Spoke Location field available under Application details screen")
-	public void user_verify_the_spoke_location_field_available_under_application_details_screen() throws Throwable {
+	public void user_608_verify_the_spoke_location_field_available_under_application_details_screen() throws Throwable {
 		WebElement spokeLocationLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("spokeLocationLabel"));
 		System.out.println("Field Name: " + spokeLocationLabel.getText());
@@ -7109,7 +7178,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Closing Staff or Servicing Staff or RM field available under Application details screen")
-	public void user_verify_the_closing_staff_or_servicing_staff_or_rm_field_available_under_application_details_screen()
+	public void user_608_verify_the_closing_staff_or_servicing_staff_or_rm_field_available_under_application_details_screen()
 			throws Throwable {
 		WebElement closingStaffLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("closingStaffLabel"));
@@ -7119,7 +7188,7 @@ public class IJARAH_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
-						dataCheck_ApplicationDetailsJsPaths.getElement("topupAppNoInput")));
+						dataCheck_ApplicationDetailsJsPaths.getElement("spokeLocationLabel")));
 				javascriptHelper.backgroundColor(closingStaffLabel);
 				Assert.assertTrue(closingStaffLabel.isDisplayed());
 				javascriptHelper.backgroundBorder(closingStaffDropdown);
@@ -7134,7 +7203,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Topup Type field available under Application details screen")
-	public void user_verify_the_topup_type_field_available_under_application_details_screen() throws Throwable {
+	public void user_608_verify_the_topup_type_field_available_under_application_details_screen() throws Throwable {
 		WebElement topupTypeLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("topupTypeLabel"));
 		WebElement topupType = javascriptHelper
@@ -7156,7 +7225,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Topup Application No field available under Application details screen")
-	public void user_verify_the_topup_application_no_field_available_under_application_details_screen()
+	public void user_608_verify_the_topup_application_no_field_available_under_application_details_screen()
 			throws Throwable {
 		WebElement topupAppNoLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("topupAppNoLabel"));
@@ -7180,15 +7249,15 @@ public class IJARAH_Steps {
 
 //	AT_ADC_03
 	@And("User_608 verify the Sourcing Type field available in Referral\\Sourcing Details section under Application Details tab")
-	public void user_verify_the_sourcing_type_field_available_in_referral_sourcing_details_section_under_application_details_tab()
+	public void user_608_verify_the_sourcing_type_field_available_in_referral_sourcing_details_section_under_application_details_tab()
 			throws Throwable {
-		Thread.sleep(1000);
+//		Thread.sleep(1000);
 		WebElement sourcingTypeLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingTypeLabel"));
 		WebElement sourcingTypeDropdown = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingTypeDropdown"));
 //		System.out.println("Field Name: " + sourcingTypeLabel.getText());
-		for (int i = 0; i <= 20000; i++) {
+		for (int i = 0; i <= 200000; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
 						dataCheck_ApplicationDetailsJsPaths.getElement("sourcingTypeLabel")));
@@ -7198,7 +7267,7 @@ public class IJARAH_Steps {
 				Assert.assertTrue(sourcingTypeDropdown.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 20000) {
+				if (i == 200000) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -7206,7 +7275,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Sourcing Office field available in Referral\\Sourcing Details section under Application Details tab")
-	public void user_verify_the_sourcing_office_field_available_in_referral_sourcing_details_section_under_application_details_tab()
+	public void user_608_verify_the_sourcing_office_field_available_in_referral_sourcing_details_section_under_application_details_tab()
 			throws Throwable {
 		WebElement sourcingOfficeLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingOfficeLabel"));
@@ -7229,7 +7298,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Sourcing Entity field available in Referral\\Sourcing Details section under Application Details tab")
-	public void user_verify_the_sourcing_entity_field_available_in_referral_sourcing_details_section_under_application_details_tab()
+	public void user_608_verify_the_sourcing_entity_field_available_in_referral_sourcing_details_section_under_application_details_tab()
 			throws Throwable {
 		WebElement sourcingEntityLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingEntityLabel"));
@@ -7252,7 +7321,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Sourcing Staff field available in Referral\\Sourcing Details section under Application Details tab")
-	public void user_verify_the_sourcing_staff_field_available_in_referral_sourcing_details_section_under_application_details_tab()
+	public void user_608_verify_the_sourcing_staff_field_available_in_referral_sourcing_details_section_under_application_details_tab()
 			throws Throwable {
 		WebElement sourcingStaffLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingStaffLabel"));
@@ -7275,7 +7344,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Reference Type field available in Referral\\Sourcing Details section under Application Details tab")
-	public void user_verify_the_reference_type_field_available_in_referral_sourcing_details_section_under_application_details_tab()
+	public void user_608_verify_the_reference_type_field_available_in_referral_sourcing_details_section_under_application_details_tab()
 			throws Throwable {
 		WebElement referenceTypeLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("referenceTypeLabel"));
@@ -7298,7 +7367,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Reference Code field available in Referral\\Sourcing Details section under Application Details tab")
-	public void user_verify_the_reference_code_field_available_in_referral_sourcing_details_section_under_application_details_tab()
+	public void user_608_verify_the_reference_code_field_available_in_referral_sourcing_details_section_under_application_details_tab()
 			throws Throwable {
 		WebElement referenceCodeLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("referenceCodeLabel"));
@@ -7322,7 +7391,7 @@ public class IJARAH_Steps {
 
 //	AT_ADC_05
 	@And("User_608 verify the Classification Dropdown field available under Application details screen")
-	public void user_verify_the_classification_dropdown_field_available_under_application_details_screen()
+	public void user_608_verify_the_classification_dropdown_field_available_under_application_details_screen()
 			throws Throwable {
 		Thread.sleep(1000);
 		WebElement classificationDropdown = javascriptHelper
@@ -7341,7 +7410,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Product Dropdown field available under Application details screen")
-	public void user_verify_the_product_dropdown_field_available_under_application_details_screen() throws Throwable {
+	public void user_608_verify_the_product_dropdown_field_available_under_application_details_screen() throws Throwable {
 		WebElement productDropdown = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("productDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -7358,7 +7427,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Total Finance Amount Requested input field available under Application details screen")
-	public void user_verify_the_total_finance_amount_requested_input_field_available_under_application_details_screen()
+	public void user_608_verify_the_total_finance_amount_requested_input_field_available_under_application_details_screen()
 			throws Throwable {
 		WebElement totalFinanceAmtInput = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("totalFinanceAmtInput"));
@@ -7376,7 +7445,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Declared Net Monthly Income input field available under Application details screen")
-	public void user_verify_the_declared_net_monthly_income_input_field_available_under_application_details_screen()
+	public void user_608_verify_the_declared_net_monthly_income_input_field_available_under_application_details_screen()
 			throws Throwable {
 		WebElement declaredMonthlyIncomeInput = javascriptHelper.executeScriptWithWebElement(
 				dataCheck_ApplicationDetailsJsPaths.getElement("declaredMonthlyIncomeInput"));
@@ -7394,7 +7463,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Declared Current Obligations input field available under Application details screen")
-	public void user_verify_the_declared_current_obligations_input_field_available_under_application_details_screen()
+	public void user_608_verify_the_declared_current_obligations_input_field_available_under_application_details_screen()
 			throws Throwable {
 		WebElement declaredCurrentObligationsInput = javascriptHelper.executeScriptWithWebElement(
 				dataCheck_ApplicationDetailsJsPaths.getElement("declaredCurrentObligationsInput"));
@@ -7413,7 +7482,7 @@ public class IJARAH_Steps {
 
 //	AT_ADC_06
 	@And("User_608 verify the Special Promotion Dropdown field available under Application details screen")
-	public void user_verify_the_special_promotion_dropdown_field_available_under_application_details_screen()
+	public void user_608_verify_the_special_promotion_dropdown_field_available_under_application_details_screen()
 			throws Throwable {
 		for (int i = 0; i <= 500; i++) {
 			try {
@@ -7442,7 +7511,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Sourcing Channel Dropdown field available under Application details screen")
-	public void user_verify_the_sourcing_channel_dropdown_field_available_under_application_details_screen()
+	public void user_608_verify_the_sourcing_channel_dropdown_field_available_under_application_details_screen()
 			throws Throwable {
 		WebElement sourcingChannelDropdown = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingChannelDropdown"));
@@ -7460,7 +7529,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Business Center Code Dropdown field available under Application details screen")
-	public void user_verify_the_business_center_code_dropdown_field_available_under_application_details_screen()
+	public void user_608_verify_the_business_center_code_dropdown_field_available_under_application_details_screen()
 			throws Throwable {
 		WebElement businessCenterCodeDropdown = javascriptHelper.executeScriptWithWebElement(
 				dataCheck_ApplicationDetailsJsPaths.getElement("businessCenterCodeDropdown"));
@@ -7478,7 +7547,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Servicing Type Dropdown field available under Application details screen")
-	public void user_verify_the_servicing_type_dropdown_field_available_under_application_details_screen()
+	public void user_608_verify_the_servicing_type_dropdown_field_available_under_application_details_screen()
 			throws Throwable {
 		WebElement servicingTypeDropdown = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("servicingTypeDropdown"));
@@ -7496,7 +7565,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Region Dropdown field available under Application details screen")
-	public void user_verify_the_region_dropdown_field_available_under_application_details_screen() throws Throwable {
+	public void user_608_verify_the_region_dropdown_field_available_under_application_details_screen() throws Throwable {
 		WebElement regionDropdown = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("regionDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -7513,10 +7582,10 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Servicing Branch Dropdown field available under Application details screen")
-	public void user_verify_the_servicing_branch_dropdown_field_available_under_application_details_screen()
+	public void user_608_verify_the_servicing_branch_dropdown_field_available_under_application_details_screen()
 			throws Throwable {
 		WebElement servicingBrachDropdown = javascriptHelper
-				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("servicingBrachDropdown"));
+				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("servicingBranchDropdown"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(servicingBrachDropdown);
@@ -7533,7 +7602,7 @@ public class IJARAH_Steps {
 //	************************* Offering Stage -- Offer Details Tab *************************************
 //	AT_OFO_01
 	@And("User_608 click the pencil icon button under Offer Details tab")
-	public void user_click_the_pencil_icon_button_under_offer_details_tab() throws Throwable {
+	public void user_608_click_the_pencil_icon_button_under_offer_details_tab() throws Throwable {
 		Thread.sleep(2000);
 		WebElement offerDetailsTabPencilIcon = javascriptHelper
 				.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("offerDetailsTabPencilIcon"));
@@ -7551,7 +7620,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Offer Details section available under Offer Details tab")
-	public void user_verify_the_offer_details_section_available_under_offer_details_tab() throws Throwable {
+	public void user_608_verify_the_offer_details_section_available_under_offer_details_tab() throws Throwable {
 		WebElement offerDetailsSection = javascriptHelper
 				.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("offerDetailsSection"));
 		waitHelper.waitForElementwithFluentwait(driver, offerDetailsSection);
@@ -7570,7 +7639,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Finance Details section available under Offer Details tab")
-	public void user_verify_the_finance_details_section_available_under_offer_details_tab() throws Throwable {
+	public void user_608_verify_the_finance_details_section_available_under_offer_details_tab() throws Throwable {
 		WebElement financeDetailsSection = javascriptHelper
 				.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetailsSection"));
 		System.out.println("Section Name: " + financeDetailsSection.getText());
@@ -7588,7 +7657,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Credit Risk Factor section available under Offer Details tab")
-	public void user_verify_the_credit_risk_factor_section_available_under_offer_details_tab() throws Throwable {
+	public void user_608_verify_the_credit_risk_factor_section_available_under_offer_details_tab() throws Throwable {
 		WebElement creditRiskFactor = javascriptHelper
 				.executeScriptWithWebElement("document.querySelectorAll('ion-row[class=\"md hydrated\"]')[2]");
 		WebElement creditRiskFactorSection = javascriptHelper
@@ -7618,7 +7687,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Credit Score Details section available under Offer Details tab")
-	public void user_verify_the_credit_score_details_section_available_under_offer_details_tab() throws Throwable {
+	public void user_608_verify_the_credit_score_details_section_available_under_offer_details_tab() throws Throwable {
 		WebElement creditScoreDetailsSection = javascriptHelper
 				.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("creditScoreDetailsSection"));
 		System.out.println("Section Name: " + creditScoreDetailsSection.getText());
@@ -7636,7 +7705,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Eligibility Details section available under Offer Details tab")
-	public void user_verify_the_eligibility_details_section_available_under_offer_details_tab() throws Throwable {
+	public void user_608_verify_the_eligibility_details_section_available_under_offer_details_tab() throws Throwable {
 		Thread.sleep(1000);
 		WebElement section = javascriptHelper
 				.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("creditScoreDetailsSection"));
@@ -7667,7 +7736,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Interest Rate Structure section available under Offer Details tab")
-	public void user_verify_the_interest_rate_structure_section_available_under_offer_details_tab() throws Throwable {
+	public void user_608_verify_the_interest_rate_structure_section_available_under_offer_details_tab() throws Throwable {
 		WebElement interestRateStructureSection = javascriptHelper
 				.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("interestRateStructureSection"));
 		for (int i = 0; i <= 1000; i++) {
@@ -7695,7 +7764,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Installments section available under Offer Details tab")
-	public void user_verify_the_installments_section_available_under_offer_details_tab() throws Throwable {
+	public void user_608_verify_the_installments_section_available_under_offer_details_tab() throws Throwable {
 		WebElement installmentsSection = javascriptHelper
 				.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("installmentsSection"));
 		for (int i = 0; i <= 1000; i++) {
@@ -7723,7 +7792,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Appeal Request section available under Offer Details tab")
-	public void user_verify_the_appeal_request_section_available_under_offer_details_tab() throws Throwable {
+	public void user_608_verify_the_appeal_request_section_available_under_offer_details_tab() throws Throwable {
 		WebElement appealRequestSection = javascriptHelper
 				.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("appealRequestSection"));
 		for (int i = 0; i <= 1000; i++) {
@@ -7752,7 +7821,7 @@ public class IJARAH_Steps {
 
 //	AT_OFO_02
 	@And("User_608 verify Product field available under Offer Details section")
-	public void user_verify_product_field_available_under_offer_details_section() throws Throwable {
+	public void user_608_verify_product_field_available_under_offer_details_section() throws Throwable {
 		WebElement offerDetailsSection = javascriptHelper
 				.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("offerDetailsSection"));
 		waitHelper.waitForElementwithFluentwait(driver, offerDetailsSection);
@@ -7785,7 +7854,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Sub-Product field available under Offer Details section")
-	public void user_verify_sub_product_field_available_under_offer_details_section() throws Throwable {
+	public void user_608_verify_sub_product_field_available_under_offer_details_section() throws Throwable {
 		WebElement offerDetails_subProductLabel = javascriptHelper
 				.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("offerDetails_subProductLabel"));
 		for (int i = 0; i <= 2000; i++) {
@@ -7815,7 +7884,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Scheme field available under Offer Details section")
-	public void user_verify_scheme_field_available_under_offer_details_section() throws Throwable {
+	public void user_608_verify_scheme_field_available_under_offer_details_section() throws Throwable {
 		WebElement offerDetails_schemeLabel = javascriptHelper
 				.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("offerDetails_schemeLabel"));
 		for (int i = 0; i <= 2000; i++) {
@@ -7845,7 +7914,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Pricing Indicator field available under Offer Details section")
-	public void user_verify_pricing_indicator_field_available_under_offer_details_section() throws Throwable {
+	public void user_608_verify_pricing_indicator_field_available_under_offer_details_section() throws Throwable {
 		WebElement offerDetails_pricingIndicatorLabel = javascriptHelper.executeScriptWithWebElement(
 				offering_OfferDetailsJsPaths.getElement("offerDetails_pricingIndicatorLabel"));
 		for (int i = 0; i <= 2000; i++) {
@@ -7875,7 +7944,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Offered Amount field available under Offer Details section")
-	public void user_verify_offered_amount_field_available_under_offer_details_section() throws Throwable {
+	public void user_608_verify_offered_amount_field_available_under_offer_details_section() throws Throwable {
 		WebElement offerDetails_offeredAmountLabel = javascriptHelper.executeScriptWithWebElement(
 				offering_OfferDetailsJsPaths.getElement("offerDetails_offeredAmountLabel"));
 		for (int i = 0; i <= 2000; i++) {
@@ -7905,7 +7974,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Tenure field available under Offer Details section")
-	public void user_verify_tenure_field_available_under_offer_details_section() throws Throwable {
+	public void user_608_verify_tenure_field_available_under_offer_details_section() throws Throwable {
 		WebElement offerDetails_tenureLabel = javascriptHelper
 				.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("offerDetails_tenureLabel"));
 		for (int i = 0; i <= 2000; i++) {
@@ -7935,7 +8004,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Nature of Finance field available under Offer Details section")
-	public void user_verify_nature_of_finance_field_available_under_offer_details_section() throws Throwable {
+	public void user_608_verify_nature_of_finance_field_available_under_offer_details_section() throws Throwable {
 		WebElement offerDetails_natureOfFinanceLabel = javascriptHelper.executeScriptWithWebElement(
 				offering_OfferDetailsJsPaths.getElement("offerDetails_natureOfFinanceLabel"));
 		for (int i = 0; i <= 2000; i++) {
@@ -7965,7 +8034,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Currency field available under Offer Details section")
-	public void user_verify_currency_field_available_under_offer_details_section() throws Throwable {
+	public void user_608_verify_currency_field_available_under_offer_details_section() throws Throwable {
 		WebElement offerDetails_currencyLabel = javascriptHelper
 				.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("offerDetails_currencyLabel"));
 		for (int i = 0; i <= 2000; i++) {
@@ -7995,7 +8064,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Eligible Income field available under Offer Details section")
-	public void user_verify_eligible_income_field_available_under_offer_details_section() throws Throwable {
+	public void user_608_verify_eligible_income_field_available_under_offer_details_section() throws Throwable {
 		WebElement offerDetails_eligibleIncomeLabel = javascriptHelper.executeScriptWithWebElement(
 				offering_OfferDetailsJsPaths.getElement("offerDetails_eligibleIncomeLabel"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8026,7 +8095,7 @@ public class IJARAH_Steps {
 
 //	AT_OFO_03
 	@And("User_608 verify Total Obligations field available under Finance Details section")
-	public void user_verify_total_obligations_field_available_under_finance_details_section() throws Throwable {
+	public void user_608_verify_total_obligations_field_available_under_finance_details_section() throws Throwable {
 		WebElement financeDetailsSection = javascriptHelper
 				.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("offerDetailsSection"));
 		waitHelper.waitForElementwithFluentwait(driver, financeDetailsSection);
@@ -8069,7 +8138,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Total Net Income field available under Finance Details section")
-	public void user_verify_total_net_income_field_available_under_finance_details_section() throws Throwable {
+	public void user_608_verify_total_net_income_field_available_under_finance_details_section() throws Throwable {
 		WebElement financeDetails_totalnetIncomeLabel = javascriptHelper.executeScriptWithWebElement(
 				offering_OfferDetailsJsPaths.getElement("financeDetails_totalnetIncomeLabel"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8099,7 +8168,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Total Income field available under Finance Details section")
-	public void user_verify_total_income_field_available_under_finance_details_section() throws Throwable {
+	public void user_608_verify_total_income_field_available_under_finance_details_section() throws Throwable {
 		WebElement financeDetails_totalIncomeLabel = javascriptHelper.executeScriptWithWebElement(
 				offering_OfferDetailsJsPaths.getElement("financeDetails_totalIncomeLabel"));
 		for (int i = 0; i <= 1000; i++) {
@@ -8139,7 +8208,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Total Fees field available under Finance Details section")
-	public void user_verify_total_fees_field_available_under_finance_details_section() throws Throwable {
+	public void user_608_verify_total_fees_field_available_under_finance_details_section() throws Throwable {
 		WebElement financeDetails_totalFeesLabel = javascriptHelper
 				.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_totalFeesLabel"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8169,7 +8238,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Total Down Payment Amount field available under Finance Details section")
-	public void user_verify_total_down_payment_amount_field_available_under_finance_details_section() throws Throwable {
+	public void user_608_verify_total_down_payment_amount_field_available_under_finance_details_section() throws Throwable {
 		WebElement financeDetails_totalDownPaymentAmtLabel = javascriptHelper.executeScriptWithWebElement(
 				offering_OfferDetailsJsPaths.getElement("financeDetails_totalDownPaymentAmtLabel"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8199,7 +8268,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Total Contract Value field available under Finance Details section")
-	public void user_verify_total_contract_value_field_available_under_finance_details_section() throws Throwable {
+	public void user_608_verify_total_contract_value_field_available_under_finance_details_section() throws Throwable {
 		WebElement financeDetails_totalContractValueLabel = javascriptHelper.executeScriptWithWebElement(
 				offering_OfferDetailsJsPaths.getElement("financeDetails_totalContractValueLabel"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8229,7 +8298,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Number of Installments field available under Finance Details section")
-	public void user_verify_number_of_installments_field_available_under_finance_details_section() throws Throwable {
+	public void user_608_verify_number_of_installments_field_available_under_finance_details_section() throws Throwable {
 		WebElement financeDetails_noOfInstallmentsLabel = javascriptHelper.executeScriptWithWebElement(
 				offering_OfferDetailsJsPaths.getElement("financeDetails_noOfInstallmentsLabel"));
 		for (int i = 0; i <= 1000; i++) {
@@ -8269,7 +8338,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Last Installment Amount field available under Finance Details section")
-	public void user_verify_last_installment_amount_field_available_under_finance_details_section() throws Throwable {
+	public void user_608_verify_last_installment_amount_field_available_under_finance_details_section() throws Throwable {
 		WebElement financeDetails_lastInstallmentLabel = javascriptHelper.executeScriptWithWebElement(
 				offering_OfferDetailsJsPaths.getElement("financeDetails_lastInstallmentLabel"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8299,7 +8368,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify IRR field available under Finance Details section")
-	public void user_verify_irr_field_available_under_finance_details_section() throws Throwable {
+	public void user_608_verify_irr_field_available_under_finance_details_section() throws Throwable {
 		WebElement financeDetails_IRRLabel = javascriptHelper
 				.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_IRRLabel"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8329,7 +8398,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Installment Frequency field available under Finance Details section")
-	public void user_verify_installment_frequency_field_available_under_finance_details_section() throws Throwable {
+	public void user_608_verify_installment_frequency_field_available_under_finance_details_section() throws Throwable {
 		WebElement financeDetails_InstallmentFrequencyLabel = javascriptHelper.executeScriptWithWebElement(
 				offering_OfferDetailsJsPaths.getElement("financeDetails_InstallmentFrequencyLabel"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8359,7 +8428,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify APR field available under Finance Details section")
-	public void user_verify_apr_field_available_under_finance_details_section() throws Throwable {
+	public void user_608_verify_apr_field_available_under_finance_details_section() throws Throwable {
 		WebElement financeDetails_APRLabel = javascriptHelper
 				.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_APRLabel"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8389,7 +8458,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Amount Requested field available under Finance Details section")
-	public void user_verify_amount_requested_field_available_under_finance_details_section() throws Throwable {
+	public void user_608_verify_amount_requested_field_available_under_finance_details_section() throws Throwable {
 		WebElement financeDetails_AmountRequestedLabel = javascriptHelper.executeScriptWithWebElement(
 				offering_OfferDetailsJsPaths.getElement("financeDetails_AmountRequestedLabel"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8419,7 +8488,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Additional Down Payment field available under Finance Details section")
-	public void user_verify_additional_down_payment_field_available_under_finance_details_section() throws Throwable {
+	public void user_608_verify_additional_down_payment_field_available_under_finance_details_section() throws Throwable {
 		WebElement financeDetails_AdditionalDownPaymentLabel = javascriptHelper.executeScriptWithWebElement(
 				offering_OfferDetailsJsPaths.getElement("financeDetails_AdditionalDownPaymentLabel"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8449,7 +8518,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Down Payment Percentage field available under Finance Details section")
-	public void user_verify_down_payment_percentage_field_available_under_finance_details_section() throws Throwable {
+	public void user_608_verify_down_payment_percentage_field_available_under_finance_details_section() throws Throwable {
 		WebElement financeDetails_downPaymentPercentLabel = javascriptHelper.executeScriptWithWebElement(
 				offering_OfferDetailsJsPaths.getElement("financeDetails_downPaymentPercentLabel"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8479,7 +8548,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Tenure field available under Finance Details section")
-	public void user_verify_tenure_field_available_under_finance_details_section() throws Throwable {
+	public void user_608_verify_tenure_field_available_under_finance_details_section() throws Throwable {
 		WebElement financeDetails_tenureLabel = javascriptHelper
 				.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_tenureLabel"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8509,7 +8578,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Profit Amount field available under Finance Details section")
-	public void user_verify_profit_amount_field_available_under_finance_details_section() throws Throwable {
+	public void user_608_verify_profit_amount_field_available_under_finance_details_section() throws Throwable {
 		WebElement financeDetails_profitAmtLabel = javascriptHelper
 				.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_profitAmtLabel"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8539,7 +8608,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Down Payment Amount field available under Finance Details section")
-	public void user_verify_down_payment_amount_field_available_under_finance_details_section() throws Throwable {
+	public void user_608_verify_down_payment_amount_field_available_under_finance_details_section() throws Throwable {
 		WebElement financeDetails_downPaymentAmtLabel = javascriptHelper.executeScriptWithWebElement(
 				offering_OfferDetailsJsPaths.getElement("financeDetails_downPaymentAmtLabel"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8570,7 +8639,7 @@ public class IJARAH_Steps {
 
 //	AT_OFO_04
 	@And("User_608 verify the Total Score field available under Credit Risk Factor section")
-	public void user_verify_the_total_score_field_available_under_credit_risk_factor_section() throws Throwable {
+	public void user_608_verify_the_total_score_field_available_under_credit_risk_factor_section() throws Throwable {
 		WebElement creditRisk_TotalScoreField = javascriptHelper
 				.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("creditRisk_TotalScoreField"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8587,7 +8656,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Risk Level field availble under Credit Risk Factor section")
-	public void user_verify_the_risk_level_field_availble_under_credit_risk_factor_section() throws Throwable {
+	public void user_608_verify_the_risk_level_field_availble_under_credit_risk_factor_section() throws Throwable {
 		WebElement creditRisk_RiskLevelField = javascriptHelper
 				.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("creditRisk_RiskLevelField"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8604,7 +8673,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Serial No field available under Credit Score details section")
-	public void user_verify_the_serial_no_field_available_under_credit_score_details_section() throws Throwable {
+	public void user_608_verify_the_serial_no_field_available_under_credit_score_details_section() throws Throwable {
 		WebElement creditScore_SerialNoField = javascriptHelper
 				.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("creditScore_SerialNoField"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8621,7 +8690,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Customer Name field available under Credit Score details section")
-	public void user_verify_the_customer_name_field_available_under_credit_score_details_section() throws Throwable {
+	public void user_608_verify_the_customer_name_field_available_under_credit_score_details_section() throws Throwable {
 		WebElement creditScore_CustomerNameField = javascriptHelper
 				.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("creditScore_CustomerNameField"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8638,7 +8707,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Credit Bureau Score field available under Credit Score details section")
-	public void user_verify_the_credit_bureau_score_field_available_under_credit_score_details_section()
+	public void user_608_verify_the_credit_bureau_score_field_available_under_credit_score_details_section()
 			throws Throwable {
 		WebElement creditScore_CreditBureauScoreField = javascriptHelper.executeScriptWithWebElement(
 				offering_OfferDetailsJsPaths.getElement("creditScore_CreditBureauScoreField"));
@@ -8657,7 +8726,7 @@ public class IJARAH_Steps {
 
 //	AT_OFO_05
 	@And("User_608 verify the Eligibility Type field available under Eligibility Details section")
-	public void user_verify_the_eligibility_type_field_available_under_eligibility_details_section() throws Throwable {
+	public void user_608_verify_the_eligibility_type_field_available_under_eligibility_details_section() throws Throwable {
 		WebElement eligibilityDetails_EligibilityTypeField = javascriptHelper.executeScriptWithWebElement(
 				offering_OfferDetailsJsPaths.getElement("eligibilityDetails_EligibilityTypeField"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8674,7 +8743,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Eligibility Amount field available under Eligibility Details section")
-	public void user_verify_the_eligibility_amount_field_available_under_eligibility_details_section()
+	public void user_608_verify_the_eligibility_amount_field_available_under_eligibility_details_section()
 			throws Throwable {
 		WebElement eligibilityDetails_EligibilityAmtField = javascriptHelper.executeScriptWithWebElement(
 				offering_OfferDetailsJsPaths.getElement("eligibilityDetails_EligibilityAmtField"));
@@ -8692,7 +8761,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Eligibility Percentage field available under Eligibility Details section")
-	public void user_verify_the_eligibility_percentage_field_available_under_eligibility_details_section()
+	public void user_608_verify_the_eligibility_percentage_field_available_under_eligibility_details_section()
 			throws Throwable {
 		WebElement eligibilityDetails_EligibilityPercentField = javascriptHelper.executeScriptWithWebElement(
 				offering_OfferDetailsJsPaths.getElement("eligibilityDetails_EligibilityPercentField"));
@@ -8710,7 +8779,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Currency field available under Eligibility Details section")
-	public void user_verify_the_currency_field_available_under_eligibility_details_section() throws Throwable {
+	public void user_608_verify_the_currency_field_available_under_eligibility_details_section() throws Throwable {
 		WebElement eligibilityDetails_CurrencyField = javascriptHelper.executeScriptWithWebElement(
 				offering_OfferDetailsJsPaths.getElement("eligibilityDetails_CurrencyField"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8727,7 +8796,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Actual Percentage field available under Eligibility Details section")
-	public void user_verify_the_actual_percentage_field_available_under_eligibility_details_section() throws Throwable {
+	public void user_608_verify_the_actual_percentage_field_available_under_eligibility_details_section() throws Throwable {
 		WebElement eligibilityDetails_ActualPercentField = javascriptHelper.executeScriptWithWebElement(
 				offering_OfferDetailsJsPaths.getElement("eligibilityDetails_ActualPercentField"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8744,7 +8813,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify the Deviation level field available under Eligibility Details section")
-	public void user_verify_the_deviation_level_field_available_under_eligibility_details_section() throws Throwable {
+	public void user_608_verify_the_deviation_level_field_available_under_eligibility_details_section() throws Throwable {
 		WebElement eligibilityDetails_DeviationLevelField = javascriptHelper.executeScriptWithWebElement(
 				offering_OfferDetailsJsPaths.getElement("eligibilityDetails_DeviationLevelField"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8762,7 +8831,7 @@ public class IJARAH_Steps {
 
 //	AT_OFO_06
 	@And("User_608 verify Product field is non-editable under Offer Details section")
-	public void user_verify_product_field_is_non_editable_under_offer_details_section() throws Throwable {
+	public void user_608_verify_product_field_is_non_editable_under_offer_details_section() throws Throwable {
 		WebElement offerDetails_productInput = javascriptHelper
 				.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("offerDetails_productInput"));
 		String attribute = offerDetails_productInput.getAttribute("readonly");
@@ -8781,7 +8850,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Sub-Product field is non-editable under Offer Details section")
-	public void user_verify_sub_product_field_is_non_editable_under_offer_details_section() throws Throwable {
+	public void user_608_verify_sub_product_field_is_non_editable_under_offer_details_section() throws Throwable {
 		WebElement offerDetails_subProductInput = javascriptHelper
 				.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("offerDetails_subProductInput"));
 		String attribute = offerDetails_subProductInput.getAttribute("readonly");
@@ -8799,7 +8868,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Scheme field is non-editable under Offer Details section")
-	public void user_verify_scheme_field_is_non_editable_under_offer_details_section() throws Throwable {
+	public void user_608_verify_scheme_field_is_non_editable_under_offer_details_section() throws Throwable {
 		WebElement offerDetails_schemeInput = javascriptHelper
 				.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("offerDetails_schemeInput"));
 		String attribute = offerDetails_schemeInput.getAttribute("readonly");
@@ -8817,7 +8886,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Pricing Indicator field is non-editable under Offer Details section")
-	public void user_verify_pricing_indicator_field_is_non_editable_under_offer_details_section() throws Throwable {
+	public void user_608_verify_pricing_indicator_field_is_non_editable_under_offer_details_section() throws Throwable {
 		WebElement offerDetails_pricingIndicatorInput = javascriptHelper.executeScriptWithWebElement(
 				offering_OfferDetailsJsPaths.getElement("offerDetails_pricingIndicatorInput"));
 		String attribute = offerDetails_pricingIndicatorInput.getAttribute("readonly");
@@ -8835,7 +8904,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Offered Amount field is non-editable under Offer Details section")
-	public void user_verify_offered_amount_field_is_non_editable_under_offer_details_section() throws Throwable {
+	public void user_608_verify_offered_amount_field_is_non_editable_under_offer_details_section() throws Throwable {
 		WebElement offerDetails_offeredAmountInput = javascriptHelper.executeScriptWithWebElement(
 				offering_OfferDetailsJsPaths.getElement("offerDetails_offeredAmountInput"));
 		String attribute = offerDetails_offeredAmountInput.getAttribute("readonly");
@@ -8853,7 +8922,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verfiy Tenure field is non-editable under Offer Details section")
-	public void user_verfiy_tenure_field_is_non_editable_under_offer_details_section() throws Throwable {
+	public void user_608_verfiy_tenure_field_is_non_editable_under_offer_details_section() throws Throwable {
 		WebElement offerDetails_tenureInput = javascriptHelper
 				.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("offerDetails_tenureInput"));
 		String attribute = offerDetails_tenureInput.getAttribute("readonly");
@@ -8871,7 +8940,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Nature of Finance field is non-editable under Offer Details section")
-	public void user_verify_nature_of_finance_field_is_non_editable_under_offer_details_section() throws Throwable {
+	public void user_608_verify_nature_of_finance_field_is_non_editable_under_offer_details_section() throws Throwable {
 		WebElement offerDetails_natureOfFinanceInput = javascriptHelper.executeScriptWithWebElement(
 				offering_OfferDetailsJsPaths.getElement("offerDetails_natureOfFinanceInput"));
 		String attribute = offerDetails_natureOfFinanceInput.getAttribute("readonly");
@@ -8889,7 +8958,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Currency field is non-editable under Offer Details section")
-	public void user_verify_currency_field_is_non_editable_under_offer_details_section() throws Throwable {
+	public void user_608_verify_currency_field_is_non_editable_under_offer_details_section() throws Throwable {
 		WebElement offerDetails_currencyInput = javascriptHelper
 				.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("offerDetails_currencyInput"));
 		String attribute = offerDetails_currencyInput.getAttribute("readonly");
@@ -8907,7 +8976,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Eligible Income field is non-editable under Offer Details section")
-	public void user_verify_eligible_income_field_is_non_editable_under_offer_details_section() throws Throwable {
+	public void user_608_verify_eligible_income_field_is_non_editable_under_offer_details_section() throws Throwable {
 		WebElement offerDetails_eligibleIncomeInput = javascriptHelper.executeScriptWithWebElement(
 				offering_OfferDetailsJsPaths.getElement("offerDetails_eligibleIncomeInput"));
 		String attribute = offerDetails_eligibleIncomeInput.getAttribute("readonly");
@@ -8925,7 +8994,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Total Obligations field is non-editable under Finance Details section")
-	public void user_verify_total_obligations_field_is_non_editable_under_finance_details_section() throws Throwable {
+	public void user_608_verify_total_obligations_field_is_non_editable_under_finance_details_section() throws Throwable {
 		WebElement financeDetailsSection = javascriptHelper
 				.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetailsSection"));
 		for (int i = 0; i <= 1000; i++) {
@@ -8955,7 +9024,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Total Net Income field is non-editable under Finance Details section")
-	public void user_verify_total_net_income_field_is_non_editable_under_finance_details_section() throws Throwable {
+	public void user_608_verify_total_net_income_field_is_non_editable_under_finance_details_section() throws Throwable {
 		WebElement financeDetails_totalnetIncomeInput = javascriptHelper.executeScriptWithWebElement(
 				offering_OfferDetailsJsPaths.getElement("financeDetails_totalnetIncomeInput"));
 		String attribute = financeDetails_totalnetIncomeInput.getAttribute("readonly");
@@ -8973,7 +9042,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Total Income field is non-editable under Finance Details section")
-	public void user_verify_total_income_field_is_non_editable_under_finance_details_section() throws Throwable {
+	public void user_608_verify_total_income_field_is_non_editable_under_finance_details_section() throws Throwable {
 		WebElement financeDetails_totalIncomeInput = javascriptHelper.executeScriptWithWebElement(
 				offering_OfferDetailsJsPaths.getElement("financeDetails_totalIncomeInput"));
 		String attribute = financeDetails_totalIncomeInput.getAttribute("readonly");
@@ -8991,7 +9060,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Total Fees field is non-editable under Finance Details section")
-	public void user_verify_total_fees_field_is_non_editable_under_finance_details_section() throws Throwable {
+	public void user_608_verify_total_fees_field_is_non_editable_under_finance_details_section() throws Throwable {
 		WebElement financeDetails_totalFeesInput = javascriptHelper
 				.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_totalFeesInput"));
 		String attribute = financeDetails_totalFeesInput.getAttribute("readonly");
@@ -9009,7 +9078,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Total Down Payment Amount field is non-editable under Finance Details section")
-	public void user_verify_total_down_payment_amount_field_is_non_editable_under_finance_details_section()
+	public void user_608_verify_total_down_payment_amount_field_is_non_editable_under_finance_details_section()
 			throws Throwable {
 		WebElement financeDetails_totalDownPaymentAmtInput = javascriptHelper.executeScriptWithWebElement(
 				offering_OfferDetailsJsPaths.getElement("financeDetails_totalDownPaymentAmtInput"));
@@ -9028,7 +9097,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Total Contract Value field is non-editable under Finance Details section")
-	public void user_verify_total_contract_value_field_is_non_editable_under_finance_details_section()
+	public void user_608_verify_total_contract_value_field_is_non_editable_under_finance_details_section()
 			throws Throwable {
 		WebElement financeDetails_totalContractValueInput = javascriptHelper.executeScriptWithWebElement(
 				offering_OfferDetailsJsPaths.getElement("financeDetails_totalContractValueInput"));
@@ -9047,7 +9116,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify No of Installments field is non-editable under Finance Details section")
-	public void user_verify_no_of_installments_field_is_non_editable_under_finance_details_section() throws Throwable {
+	public void user_608_verify_no_of_installments_field_is_non_editable_under_finance_details_section() throws Throwable {
 		WebElement financeDetails_noOfInstallmentsInput = javascriptHelper.executeScriptWithWebElement(
 				offering_OfferDetailsJsPaths.getElement("financeDetails_noOfInstallmentsInput"));
 		String attribute = financeDetails_noOfInstallmentsInput.getAttribute("readonly");
@@ -9065,7 +9134,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Last Installment Amount field is non-editable under Finance Details section")
-	public void user_verify_last_installment_amount_field_is_non_editable_under_finance_details_section()
+	public void user_608_verify_last_installment_amount_field_is_non_editable_under_finance_details_section()
 			throws Throwable {
 		WebElement financeDetails_lastInstallmentInput = javascriptHelper.executeScriptWithWebElement(
 				offering_OfferDetailsJsPaths.getElement("financeDetails_lastInstallmentInput"));
@@ -9084,7 +9153,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify IRR field is non-editable under Finance Details section")
-	public void user_verify_irr_field_is_non_editable_under_finance_details_section() throws Throwable {
+	public void user_608_verify_irr_field_is_non_editable_under_finance_details_section() throws Throwable {
 		WebElement financeDetails_IRRInput = javascriptHelper
 				.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_IRRInput"));
 		String attribute = financeDetails_IRRInput.getAttribute("readonly");
@@ -9102,7 +9171,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Installment Frequency field is non-editable under Finance Details section")
-	public void user_verify_installment_frequency_field_is_non_editable_under_finance_details_section()
+	public void user_608_verify_installment_frequency_field_is_non_editable_under_finance_details_section()
 			throws Throwable {
 		WebElement financeDetails_InstallmentFrequencyInput = javascriptHelper.executeScriptWithWebElement(
 				offering_OfferDetailsJsPaths.getElement("financeDetails_InstallmentFrequencyInput"));
@@ -9121,7 +9190,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify APR field is non-editable under Finance Details section")
-	public void user_verify_apr_field_is_non_editable_under_finance_details_section() throws Throwable {
+	public void user_608_verify_apr_field_is_non_editable_under_finance_details_section() throws Throwable {
 		WebElement financeDetails_APRInput = javascriptHelper
 				.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_APRInput"));
 		String attribute = financeDetails_APRInput.getAttribute("readonly");
@@ -9139,7 +9208,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Amount Requested field is non-editable under Finance Details section")
-	public void user_verify_amount_requested_field_is_non_editable_under_finance_details_section() throws Throwable {
+	public void user_608_verify_amount_requested_field_is_non_editable_under_finance_details_section() throws Throwable {
 		WebElement financeDetails_AmountRequestedInput = javascriptHelper.executeScriptWithWebElement(
 				offering_OfferDetailsJsPaths.getElement("financeDetails_AmountRequestedInput"));
 		String attribute = financeDetails_AmountRequestedInput.getAttribute("readonly");
@@ -9157,7 +9226,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Additional Down Payment field is non-editable under Finance Details section")
-	public void user_verify_additional_down_payment_field_is_non_editable_under_finance_details_section()
+	public void user_608_verify_additional_down_payment_field_is_non_editable_under_finance_details_section()
 			throws Throwable {
 		WebElement financeDetails_AdditionalDownPaymentInput = javascriptHelper.executeScriptWithWebElement(
 				offering_OfferDetailsJsPaths.getElement("financeDetails_AdditionalDownPaymentInput"));
@@ -9176,7 +9245,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Down Payment Percentage field is non-editable under Finance Details section")
-	public void user_verify_down_payment_percentage_field_is_non_editable_under_finance_details_section()
+	public void user_608_verify_down_payment_percentage_field_is_non_editable_under_finance_details_section()
 			throws Throwable {
 		WebElement financeDetails_downPaymentPercentInput = javascriptHelper.executeScriptWithWebElement(
 				offering_OfferDetailsJsPaths.getElement("financeDetails_downPaymentPercentInput"));
@@ -9195,7 +9264,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Tenure field is non-editable under Finance Details section")
-	public void user_verify_tenure_field_is_non_editable_under_finance_details_section() throws Throwable {
+	public void user_608_verify_tenure_field_is_non_editable_under_finance_details_section() throws Throwable {
 		WebElement financeDetails_tenureInput = javascriptHelper
 				.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_tenureInput"));
 		String attribute = financeDetails_tenureInput.getAttribute("readonly");
@@ -9213,7 +9282,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Profit Amount field is non-editable under Finance Details section")
-	public void user_verify_profit_amount_field_is_non_editable_under_finance_details_section() throws Throwable {
+	public void user_608_verify_profit_amount_field_is_non_editable_under_finance_details_section() throws Throwable {
 		WebElement financeDetails_profitAmtInput = javascriptHelper
 				.executeScriptWithWebElement(offering_OfferDetailsJsPaths.getElement("financeDetails_profitAmtInput"));
 		String attribute = financeDetails_profitAmtInput.getAttribute("readonly");
@@ -9231,7 +9300,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 verify Down Payment Amount field is non-editable under Finance Details section")
-	public void user_verify_down_payment_amount_field_is_non_editable_under_finance_details_section() throws Throwable {
+	public void user_608_verify_down_payment_amount_field_is_non_editable_under_finance_details_section() throws Throwable {
 		WebElement financeDetails_downPaymentAmtInput = javascriptHelper.executeScriptWithWebElement(
 				offering_OfferDetailsJsPaths.getElement("financeDetails_downPaymentAmtInput"));
 		String attribute = financeDetails_downPaymentAmtInput.getAttribute("readonly");
@@ -9250,7 +9319,7 @@ public class IJARAH_Steps {
 
 //	AT_CSAD_01
 	@And("User_608 validate Declared Monthly Obligations value displayed correctly under Application details screen")
-	public void user_validate_declared_monthly_obligations_value_displayed_correctly_under_application_details_screen()
+	public void user_608_validate_declared_monthly_obligations_value_displayed_correctly_under_application_details_screen()
 			throws Throwable {
 		WebElement declaredCurrentObligationsInput = javascriptHelper.executeScriptWithWebElement(
 				dataCheck_ApplicationDetailsJsPaths.getElement("declaredCurrentObligationsInput"));
@@ -9270,7 +9339,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate Special Promotion value displayed correctly under Application details screen")
-	public void user_validate_special_promotion_value_displayed_correctly_under_application_details_screen()
+	public void user_608_validate_special_promotion_value_displayed_correctly_under_application_details_screen()
 			throws Throwable {
 		WebElement specialPromotionDropdown = javascriptHelper.executeScriptWithWebElement(
 				dataCheck_ApplicationDetailsJsPaths.getElement("specialPromotionDropdown"));
@@ -9290,7 +9359,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate Spoke Location value displayed correctly under Application details screen")
-	public void user_validate_spoke_location_value_displayed_correctly_under_application_details_screen()
+	public void user_608_validate_spoke_location_value_displayed_correctly_under_application_details_screen()
 			throws Throwable {
 		WebElement spokeLocationDropdown = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("spokeLocationDropdown"));
@@ -9311,7 +9380,7 @@ public class IJARAH_Steps {
 
 //	AT_CSAD_04
 	@And("User_608 validate the Classification Dropdown field under Application details screen")
-	public void user_validate_the_classification_dropdown_field_under_application_details_screen() throws Throwable {
+	public void user_608_validate_the_classification_dropdown_field_under_application_details_screen() throws Throwable {
 		Thread.sleep(1000);
 		WebElement classificationDropdown = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("classificationDropdown"));
@@ -9344,7 +9413,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Product Dropdown field under Application details screen")
-	public void user_validate_the_product_dropdown_field_under_application_details_screen() throws Throwable {
+	public void user_608_validate_the_product_dropdown_field_under_application_details_screen() throws Throwable {
 		WebElement productDropdown = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("productDropdown"));
 		String productDropdownValue = productDropdown.getAttribute("aria-label");
@@ -9376,7 +9445,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Total Finance Amount Requested input field under Application details screen")
-	public void user_validate_the_total_finance_amount_requested_input_field_under_application_details_screen()
+	public void user_608_validate_the_total_finance_amount_requested_input_field_under_application_details_screen()
 			throws Throwable {
 		WebElement totalFinanceAmtInput = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("totalFinanceAmtInput"));
@@ -9407,7 +9476,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Declared Net Monthly Income input field under Application details screen")
-	public void user_validate_the_declared_net_monthly_income_input_field_under_application_details_screen()
+	public void user_608_validate_the_declared_net_monthly_income_input_field_under_application_details_screen()
 			throws Throwable {
 		WebElement declaredMonthlyIncomeInput = javascriptHelper.executeScriptWithWebElement(
 				dataCheck_ApplicationDetailsJsPaths.getElement("declaredMonthlyIncomeInput"));
@@ -9439,7 +9508,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Declared Current Obligations input field under Application details screen")
-	public void user_validate_the_declared_current_obligations_input_field_under_application_details_screen()
+	public void user_608_validate_the_declared_current_obligations_input_field_under_application_details_screen()
 			throws Throwable {
 		WebElement declaredCurrentObligationsInput = javascriptHelper.executeScriptWithWebElement(
 				dataCheck_ApplicationDetailsJsPaths.getElement("declaredCurrentObligationsInput"));
@@ -9471,7 +9540,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Special Promotion Dropdown field under Application details screen")
-	public void user_validate_the_special_promotion_dropdown_field_under_application_details_screen() throws Throwable {
+	public void user_608_validate_the_special_promotion_dropdown_field_under_application_details_screen() throws Throwable {
 		WebElement specialPromotionDropdown = javascriptHelper.executeScriptWithWebElement(
 				dataCheck_ApplicationDetailsJsPaths.getElement("specialPromotionDropdown"));
 		String promotionDropdownValue = specialPromotionDropdown.getAttribute("aria-label");
@@ -9503,7 +9572,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Sourcing Channel Dropdown field under Application details screen")
-	public void user_validate_the_sourcing_channel_dropdown_field_under_application_details_screen() throws Throwable {
+	public void user_608_validate_the_sourcing_channel_dropdown_field_under_application_details_screen() throws Throwable {
 		WebElement sourcingChannelDropdown = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingChannelDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -9535,7 +9604,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Business Center Code Dropdown field under Application details screen")
-	public void user_validate_the_business_center_code_dropdown_field_under_application_details_screen()
+	public void user_608_validate_the_business_center_code_dropdown_field_under_application_details_screen()
 			throws Throwable {
 		WebElement businessCenterCodeDropdown = javascriptHelper.executeScriptWithWebElement(
 				dataCheck_ApplicationDetailsJsPaths.getElement("businessCenterCodeDropdown"));
@@ -9568,7 +9637,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Servicing Type Dropdown field under Application details screen")
-	public void user_validate_the_servicing_type_dropdown_field_under_application_details_screen() throws Throwable {
+	public void user_608_validate_the_servicing_type_dropdown_field_under_application_details_screen() throws Throwable {
 		WebElement servicingTypeDropdown = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("servicingTypeDropdown"));
 		String servicingTypeDropdownValue = servicingTypeDropdown.getAttribute("aria-label");
@@ -9600,7 +9669,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Region Dropdown field under Application details screen")
-	public void user_validate_the_region_dropdown_field_under_application_details_screen() throws Throwable {
+	public void user_608_validate_the_region_dropdown_field_under_application_details_screen() throws Throwable {
 		WebElement regionDropdown = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("regionDropdown"));
 		String regionDropdownValue = regionDropdown.getAttribute("aria-label");
@@ -9632,9 +9701,9 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Servicing Branch Dropdown field under Application details screen")
-	public void user_validate_the_servicing_branch_dropdown_field_under_application_details_screen() throws Throwable {
+	public void user_608_validate_the_servicing_branch_dropdown_field_under_application_details_screen() throws Throwable {
 		WebElement servicingBrachDropdown = javascriptHelper
-				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("servicingBrachDropdown"));
+				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("servicingBranchDropdown"));
 		String servicingBrachValue = servicingBrachDropdown.getAttribute("aria-label");
 		System.out.println("Servicing Branch Value: " + servicingBrachValue);
 		for (int i = 0; i <= 2000; i++) {
@@ -9664,7 +9733,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Spoke Location Dropdown field under Application details screen")
-	public void user_validate_the_spoke_location_dropdown_field_under_application_details_screen() throws Throwable {
+	public void user_608_validate_the_spoke_location_dropdown_field_under_application_details_screen() throws Throwable {
 		WebElement spokeLocationDropdown = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("spokeLocationDropdown"));
 		String spokeLocDropdownValue = spokeLocationDropdown.getAttribute("aria-label");
@@ -9696,7 +9765,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Closing Staff Dropdown field under Application details screen")
-	public void user_validate_the_closing_staff_dropdown_field_under_application_details_screen() throws Throwable {
+	public void user_608_validate_the_closing_staff_dropdown_field_under_application_details_screen() throws Throwable {
 		WebElement closingStaffDropdown = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("closingStaffDropdown"));
 		String closingStaffDropdownValue = closingStaffDropdown.getAttribute("aria-label");
@@ -9728,7 +9797,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Topup Type Dropdown field under Application details screen")
-	public void user_validate_the_topup_type_dropdown_field_under_application_details_screen() throws Throwable {
+	public void user_608_validate_the_topup_type_dropdown_field_under_application_details_screen() throws Throwable {
 		WebElement topupType = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("topupType"));
 		String read = topupType.getAttribute("ng-reflect-readonly");
@@ -9747,7 +9816,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Topup Application field under Application details screen")
-	public void user_validate_the_topup_application_field_under_application_details_screen() throws Throwable {
+	public void user_608_validate_the_topup_application_field_under_application_details_screen() throws Throwable {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
@@ -9778,7 +9847,7 @@ public class IJARAH_Steps {
 
 //	AT_CSAD_05
 	@And("User_608 validate the Sourcing Type field under Referral\\Sourcing Details section")
-	public void user_validate_the_sourcing_type_field_under_referral_sourcing_details_section() {
+	public void user_608_validate_the_sourcing_type_field_under_referral_sourcing_details_section() {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
@@ -9852,7 +9921,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Sourcing Office field under Referral\\Sourcing Details section")
-	public void user_validate_the_sourcing_office_field_under_referral_sourcing_details_section() {
+	public void user_608_validate_the_sourcing_office_field_under_referral_sourcing_details_section() {
 //		Validate Mandatory
 		String sourcingOffice = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingOfficeLabel"))
@@ -9915,7 +9984,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Sourcing Entity field under Referral\\Sourcing Details section")
-	public void user_validate_the_sourcing_entity_field_under_referral_sourcing_details_section() {
+	public void user_608_validate_the_sourcing_entity_field_under_referral_sourcing_details_section() {
 //		Validate Mandatory
 		String sourcingEntity = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingEntityLabel"))
@@ -9978,7 +10047,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Sourcing Staff field under Referral\\Sourcing Details section")
-	public void user_validate_the_sourcing_staff_field_under_referral_sourcing_details_section() {
+	public void user_608_validate_the_sourcing_staff_field_under_referral_sourcing_details_section() {
 //		Validate Mandatory
 		String sourcingStaff = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingStaffLabel"))
@@ -10041,7 +10110,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Reference Type field under Referral\\Sourcing Details section")
-	public void user_validate_the_reference_type_field_under_referral_sourcing_details_section() {
+	public void user_608_validate_the_reference_type_field_under_referral_sourcing_details_section() {
 //		Validate Mandatory
 		String referenceType = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("referenceTypeLabel"))
@@ -10104,7 +10173,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Reference Code field under Referral\\Sourcing Details section")
-	public void user_validate_the_reference_code_field_under_referral_sourcing_details_section() {
+	public void user_608_validate_the_reference_code_field_under_referral_sourcing_details_section() {
 //		Validate Non-Mandatory
 		String referenceCode = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("referenceCodeLabel"))
@@ -10169,7 +10238,7 @@ public class IJARAH_Steps {
 
 //	AT_UNW_004
 	@And("User_608 enter the Deviation Amount under Finance configuration section in Offer Decision tab")
-	public void user_enter_the_deviation_amount_under_finance_configuration_section_in_offer_decision_tab()
+	public void user_608_enter_the_deviation_amount_under_finance_configuration_section_in_offer_decision_tab()
 			throws Throwable {
 		Thread.sleep(1000);
 		WebElement Finance_DeviationAmountInput = javascriptHelper
@@ -10189,7 +10258,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 enter the Deviation Tenure under Finance configuration section in Offer Decision tab")
-	public void user_enter_the_deviation_tenure_under_finance_configuration_section_in_offer_decision_tab()
+	public void user_608_enter_the_deviation_tenure_under_finance_configuration_section_in_offer_decision_tab()
 			throws Throwable {
 		WebElement finance_DeviationTenureInput = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("Finance_DeviationTenureInput"));
@@ -10207,7 +10276,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 click the Deviate button under Offer Decision screen")
-	public void user_click_the_deviate_button_under_offer_decision_screen() throws Throwable {
+	public void user_608_click_the_deviate_button_under_offer_decision_screen() throws Throwable {
 		WebElement offer_DeviateBtn = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("offer_DeviateBtn"));
 		for (int i = 0; i <= 500; i++) {
@@ -10225,7 +10294,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 post clicking on deviate button system should able to deviate offered amount")
-	public void user_post_clicking_on_deviate_button_system_should_able_to_deviate_offered_amount() throws Throwable {
+	public void user_608_post_clicking_on_deviate_button_system_should_able_to_deviate_offered_amount() throws Throwable {
 		Thread.sleep(5000);
 		String string = "document.querySelector('button[icon=\"pi pi-arrow-left\"]').parentElement";
 		for (int i = 0; i <= 50000; i++) {
@@ -10242,12 +10311,12 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 invoke soft assert in under Offer Decision tab at Ijarah Underwriter stage")
-	public void user_invoke_soft_assert_in_under_offer_decision_tab_at_ijarah_underwriter_stage() throws Throwable {
+	public void user_608_invoke_soft_assert_in_under_offer_decision_tab_at_ijarah_underwriter_stage() throws Throwable {
 		softAssert.assertAll();
 	}
 
 	@And("User_608 click the Accept Deviation button in Deviation Comparison screen")
-	public void user_click_the_accept_deviation_button_in_deviation_comparison_screen() throws Throwable {
+	public void user_608_click_the_accept_deviation_button_in_deviation_comparison_screen() throws Throwable {
 		WebElement acceptDeviationBtn = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("acceptDeviationBtn"));
 		for (int i = 0; i <= 5000; i++) {
@@ -10263,7 +10332,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 click the Offer Decision tab in Underwriter stage")
-	public void user_click_the_offer_decision_tab_in_underwriter_stage() throws Throwable {
+	public void user_608_click_the_offer_decision_tab_in_underwriter_stage() throws Throwable {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("offerDecisionTab")).click();
@@ -10277,7 +10346,7 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 to check whether underwriter is able to view the previous offers generated of the application if deviation is accepted")
-	public void user_to_check_whether_underwriter_is_able_to_view_the_previous_offers_generated_of_the_application_if_deviation_is_accepted()
+	public void user_608_to_check_whether_underwriter_is_able_to_view_the_previous_offers_generated_of_the_application_if_deviation_is_accepted()
 			throws Throwable {
 		Thread.sleep(5000);
 		WebElement offerDetailstable = javascriptHelper

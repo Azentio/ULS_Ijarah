@@ -21,7 +21,7 @@ And User_608 verify Location field available in list view under Application Deta
 And User_608 verify Allocated To field available in list view under Application Details screen
 And User_608 verify Service field available in list view under Application Details screen
 And User_608 verify Status field available in list view under Application Details screen
-And User_608 click the Search button under Application Details screen
+And User_608 click the Search Icon under Application Details screen
 And User_608 search mismatch value system should not display any records under Application Details screen
 And User_608 verify the system is should not displayed any records under Application Details screen
 And User_608 search matching value system should display all the possible matching records under Application Details screen

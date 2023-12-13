@@ -28,7 +28,7 @@ public class Murabaha_Steps {
 	WebDriver driver = BaseClass.driver;
 	JSPaths jsPaths = new JSPaths(excelPath, "Ijara_loginElements", "Ijara_LoginFieldName", "JSPath");
 	JSPaths customerDebtJsPaths = new JSPaths(excelPath, "CF_Debt_Elements", "CF_Debt FieldName", "JSPath");
-	JSPaths dataCheck_ApplicationDetailsJsPaths = new JSPaths(excelPath, "DataCheckAppDetails_Elements", "DataCheckAppDetails_FieldName", "JSPath");
+	JSPaths dataCheck_ApplicationDetailsJsPaths = new JSPaths(excelPath, "ApplicationDetails_Elements", "ApplicationDetails_FieldName", "JSPath");
 	JSPaths appData_IncomeJsPaths = new JSPaths(excelPath, "DataCheckIncome_Elements", "DataCheckIncome_FieldName", "JSPath");
 	JSPaths employmentDetailsJsPaths = new JSPaths(excelPath, "EmploymentDetails_Elements", "EmploymentDetails_FieldName", "JSPath");
 	
@@ -2156,11 +2156,11 @@ public class Murabaha_Steps {
 	@And("User_608 verify Product field as Mandatory, Non-editable and Dropdown under Application details screen")
 	public void user_verify_product_field_as_mandatory_non_editable_and_dropdown_under_application_details_screen() throws Throwable {
 //		Verify field as Mandatory
-		String sourcingType = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("productLabel")).getText();
+		String field = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("productLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("productLabel")));
-              Assert.assertTrue(sourcingType.contains("*"));
+              Assert.assertTrue(field.contains("*"));
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -2201,11 +2201,11 @@ public class Murabaha_Steps {
 	@And("User_608 verify Total Finance Amount Requested field as Mandatory, Non-editable and Numeric under Application details screen")
 	public void user_verify_total_finance_amount_requested_field_as_mandatory_non_editable_and_numeric_under_application_details_screen() throws Throwable {
 //		Verify field as Mandatory
-		String sourcingType = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("totalFinanceAmtLabel")).getText();
+		String field = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("totalFinanceAmtLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("totalFinanceAmtLabel")));
-              Assert.assertTrue(sourcingType.contains("*"));
+              Assert.assertTrue(field.contains("*"));
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -2219,7 +2219,7 @@ public class Murabaha_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(totalFinanceAmtInput);
-				Assert.assertTrue(totalFinanceAmtInput.getAttribute("mode").contains("decimal"));
+				Assert.assertTrue(totalFinanceAmtInput.getAttribute("inputmode").contains("decimal"));
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -2229,7 +2229,8 @@ public class Murabaha_Steps {
 		}
 		
 //		Verify field as Non-editable
-		String read = totalFinanceAmtInput.getAttribute("ng-reflect-readonly");
+		WebElement totalFinanceAmt = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("totalFinanceAmt"));
+		String read = totalFinanceAmt.getAttribute("ng-reflect-readonly");
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				Assert.assertTrue(read.contains("true"));
@@ -2262,7 +2263,7 @@ public class Murabaha_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(declaredMonthlyIncomeInput);
-				Assert.assertTrue(declaredMonthlyIncomeInput.getAttribute("mode").contains("decimal"));
+				Assert.assertTrue(declaredMonthlyIncomeInput.getAttribute("inputmode").contains("decimal"));
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -2272,7 +2273,9 @@ public class Murabaha_Steps {
 		}
 		
 //		Verify field as Non-editable
-		String read = declaredMonthlyIncomeInput.getAttribute("ng-reflect-readonly");
+		WebElement declaredMonthlyIncome = javascriptHelper.executeScriptWithWebElement(
+				dataCheck_ApplicationDetailsJsPaths.getElement("declaredMonthlyIncome"));
+		String read = declaredMonthlyIncome.getAttribute("ng-reflect-readonly");
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				Assert.assertTrue(read.contains("true"));
@@ -2288,11 +2291,11 @@ public class Murabaha_Steps {
 	@And("User_608 verify Declared Current Obligations field as Non-mandatory, Non-editable and Numeric under Application details screen")
 	public void user_verify_declared_current_obligations_field_as_non_mandatory_non_editable_and_numeric_under_application_details_screen() throws Throwable {
 //		Verify field as Mandatory
-		String sourcingType = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("declaredCurrentObligationsLabel")).getText();
+		String field = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("declaredCurrentObligationsLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("declaredCurrentObligationsLabel")));
-              Assert.assertTrue(!(sourcingType.contains("*")));
+              Assert.assertTrue(!(field.contains("*")));
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -2332,11 +2335,11 @@ public class Murabaha_Steps {
 	@And("User_608 verify Special Promotion field as Non-mandatory, Non-editable and Dropdown under Application details screen")
 	public void user_verify_special_promotion_field_as_non_mandatory_non_editable_and_dropdown_under_application_details_screen() throws Throwable {
 //		Verify field as Mandatory
-		String sourcingType = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("specialPromotionLabel")).getText();
+		String label = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("specialPromotionLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("specialPromotionLabel")));
-              Assert.assertTrue(!(sourcingType.contains("*")));
+              Assert.assertTrue(!(label.contains("*")));
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -2385,7 +2388,8 @@ public class Murabaha_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("AppDetailsSectionLabel")));
-        	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingChannelLabel")));
+        	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+        			  dataCheck_ApplicationDetailsJsPaths.getElement("sourcingChannelLabel")));
               Assert.assertTrue(sourcingChannelLabel.contains("*"));
               break;
           } catch (Exception e) {
@@ -2396,7 +2400,8 @@ public class Murabaha_Steps {
 		}	
 		
 //		Verify field as Dropdown
-		WebElement sourcingChannelDropdown = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingChannelDropdown"));
+		WebElement sourcingChannelDropdown = javascriptHelper.executeScriptWithWebElement(
+				dataCheck_ApplicationDetailsJsPaths.getElement("sourcingChannelDropdown"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(sourcingChannelDropdown);
@@ -2410,7 +2415,8 @@ public class Murabaha_Steps {
 		}
 		
 //		Verify field as Non-editable
-		WebElement sourcingChannel = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingChannel"));
+		WebElement sourcingChannel = javascriptHelper.executeScriptWithWebElement(
+				dataCheck_ApplicationDetailsJsPaths.getElement("sourcingChannel"));
 		String read = sourcingChannel.getAttribute("ng-reflect-readonly");
 		for (int i = 0; i <= 2000; i++) {
 			try {
@@ -2427,10 +2433,12 @@ public class Murabaha_Steps {
 	@And("User_608 verify Business Center Code field as Mandatory, Non-editable and Dropdown under Application details screen")
 	public void user_verify_business_center_code_field_as_mandatory_non_editable_and_dropdown_under_application_details_screen() throws Throwable {
 //		Verify field as Mandatory
-		String businessCenterCode = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("businessCenterCodeLabel")).getText();
+		String businessCenterCode = javascriptHelper.executeScriptWithWebElement(
+				dataCheck_ApplicationDetailsJsPaths.getElement("businessCenterCodeLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
-        	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("businessCenterCodeLabel")));
+        	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+        			  dataCheck_ApplicationDetailsJsPaths.getElement("businessCenterCodeLabel")));
               Assert.assertTrue(businessCenterCode.contains("*"));
               break;
           } catch (Exception e) {
@@ -2441,7 +2449,8 @@ public class Murabaha_Steps {
 		}	
 		
 //		Verify field as Dropdown
-		WebElement businessCenterCodeDropdown = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("businessCenterCodeDropdown"));
+		WebElement businessCenterCodeDropdown = javascriptHelper.executeScriptWithWebElement(
+				dataCheck_ApplicationDetailsJsPaths.getElement("businessCenterCodeDropdown"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(businessCenterCodeDropdown);
@@ -2455,7 +2464,8 @@ public class Murabaha_Steps {
 		}
 	    
 //		Verify field as Non-editable
-		WebElement businessCenterCodes = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("businessCenterCode"));
+		WebElement businessCenterCodes = javascriptHelper.executeScriptWithWebElement(
+				dataCheck_ApplicationDetailsJsPaths.getElement("businessCenterCode"));
 		String read = businessCenterCodes.getAttribute("ng-reflect-readonly");
 		for (int i = 0; i <= 2000; i++) {
 			try {
@@ -2472,7 +2482,8 @@ public class Murabaha_Steps {
 	@And("User_608 verify Servicing Type field as Mandatory, Non-editable and Dropdown under Application details screen")
 	public void user_verify_servicing_type_field_as_mandatory_non_editable_and_dropdown_under_application_details_screen() throws Throwable {
 //		Verify field as Mandatory
-		String servicingTypeLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("servicingTypeLabel")).getText();
+		String servicingTypeLabel = javascriptHelper.executeScriptWithWebElement(
+				dataCheck_ApplicationDetailsJsPaths.getElement("servicingTypeLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("servicingTypeLabel")));
@@ -2486,7 +2497,8 @@ public class Murabaha_Steps {
 		}	
 		
 //		Verify field as Dropdown
-		WebElement servicingTypeDropdown = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("servicingTypeDropdown"));
+		WebElement servicingTypeDropdown = javascriptHelper.executeScriptWithWebElement(
+				dataCheck_ApplicationDetailsJsPaths.getElement("servicingTypeDropdown"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(servicingTypeDropdown);
@@ -2500,7 +2512,8 @@ public class Murabaha_Steps {
 		}
 	    
 //		Verify field as Non-editable
-		WebElement servicingType = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("servicingType"));
+		WebElement servicingType = javascriptHelper.executeScriptWithWebElement(
+				dataCheck_ApplicationDetailsJsPaths.getElement("servicingType"));
 		String read = servicingType.getAttribute("ng-reflect-readonly");
 		for (int i = 0; i <= 2000; i++) {
 			try {
@@ -2562,10 +2575,11 @@ public class Murabaha_Steps {
 	@And("User_608 verify Servicing Branch field as Mandatory, Non-editable and Dropdown under Application details screen")
 	public void user_verify_servicing_branch_field_as_mandatory_non_editable_and_dropdown_under_application_details_screen() throws Throwable {
 //		Verify field as Mandatory
-		String servicingBrachLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("servicingBrachLabel")).getText();
+		String servicingBrachLabel = javascriptHelper.executeScriptWithWebElement(
+				dataCheck_ApplicationDetailsJsPaths.getElement("servicingBranchLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
-        	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("servicingBrachLabel")));
+        	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("servicingBranchLabel")));
               Assert.assertTrue(servicingBrachLabel.contains("*"));
               break;
           } catch (Exception e) {
@@ -2576,7 +2590,8 @@ public class Murabaha_Steps {
 		}	
 		
 //		Verify field as Dropdown
-		WebElement servicingBrachDropdown = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("servicingBrachDropdown"));
+		WebElement servicingBrachDropdown = javascriptHelper.executeScriptWithWebElement(
+				dataCheck_ApplicationDetailsJsPaths.getElement("servicingBranchDropdown"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(servicingBrachDropdown);
@@ -2590,7 +2605,8 @@ public class Murabaha_Steps {
 		}
 	    
 //		Verify field as Non-editable
-		WebElement servicingBranch = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("servicingBranch"));
+		WebElement servicingBranch = javascriptHelper.executeScriptWithWebElement(
+				dataCheck_ApplicationDetailsJsPaths.getElement("servicingBranch"));
 		String read = servicingBranch.getAttribute("ng-reflect-readonly");
 		for (int i = 0; i <= 2000; i++) {
 			try {
@@ -2607,7 +2623,8 @@ public class Murabaha_Steps {
 	@And("User_608 verify Spoke Location field as Non-mandatory, Non-editable and Dropdown under Application details screen")
 	public void user_verify_spoke_location_field_as_non_mandatory_non_editable_and_dropdown_under_application_details_screen() throws Throwable {
 //		Verify field as Mandatory
-		String spokeLocationLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("spokeLocationLabel")).getText();
+		String spokeLocationLabel = javascriptHelper.executeScriptWithWebElement(
+				dataCheck_ApplicationDetailsJsPaths.getElement("spokeLocationLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("spokeLocationLabel")));
@@ -2621,7 +2638,8 @@ public class Murabaha_Steps {
 		}	
 		
 //		Verify field as Dropdown
-		WebElement spokeLocationDropdown = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("spokeLocationDropdown"));
+		WebElement spokeLocationDropdown = javascriptHelper.executeScriptWithWebElement(
+				dataCheck_ApplicationDetailsJsPaths.getElement("spokeLocationDropdown"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(spokeLocationDropdown);
@@ -2635,7 +2653,8 @@ public class Murabaha_Steps {
 		}
 	    
 //		Verify field as Non-editable
-		WebElement spokeLocation = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("spokeLocation"));
+		WebElement spokeLocation = javascriptHelper.executeScriptWithWebElement(
+				dataCheck_ApplicationDetailsJsPaths.getElement("spokeLocation"));
 		String read = spokeLocation.getAttribute("ng-reflect-readonly");
 		for (int i = 0; i <= 2000; i++) {
 			try {
@@ -2652,7 +2671,8 @@ public class Murabaha_Steps {
 	@And("User_608 verify Closing Staff or Servicing Staff or RM field as Mandatory, Non-editable and Dropdown under Application details screen")
 	public void user_verify_closing_staff_or_servicing_staff_or_rm_field_as_mandatory_non_editable_and_dropdown_under_application_details_screen() throws Throwable {
 //		Verify field as Mandatory
-		String closingStaffLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("closingStaffLabel")).getText();
+		String closingStaffLabel = javascriptHelper.executeScriptWithWebElement(
+				dataCheck_ApplicationDetailsJsPaths.getElement("closingStaffLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("closingStaffLabel")));
@@ -2666,7 +2686,8 @@ public class Murabaha_Steps {
 		}	
 		
 //		Verify field as Dropdown
-		WebElement closingStaffDropdown = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("closingStaffDropdown"));
+		WebElement closingStaffDropdown = javascriptHelper.executeScriptWithWebElement(
+				dataCheck_ApplicationDetailsJsPaths.getElement("closingStaffDropdown"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(closingStaffDropdown);
@@ -2680,7 +2701,8 @@ public class Murabaha_Steps {
 		}
 		
 //		Verify field as Non-editable
-		WebElement closingStaff = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("closingStaff"));
+		WebElement closingStaff = javascriptHelper.executeScriptWithWebElement(
+				dataCheck_ApplicationDetailsJsPaths.getElement("closingStaff"));
 		String read = closingStaff.getAttribute("ng-reflect-readonly");
 		for (int i = 0; i <= 2000; i++) {
 			try {

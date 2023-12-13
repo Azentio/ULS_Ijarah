@@ -29,7 +29,7 @@ public class Tawarruq_Steps {
 	JSPaths jsPaths = new JSPaths(excelPath, "Ijara_loginElements", "Ijara_LoginFieldName", "JSPath");
 	JSPaths customerDebtJsPaths = new JSPaths(excelPath, "CF_Debt_Elements", "CF_Debt FieldName", "JSPath");
 	JSPaths appDataCustomerDetailsJsPaths = new JSPaths(excelPath, "AppData_CustomerDetail_Elements", "AppData_CustomerDetails_FieldName", "JSPath");
-	JSPaths appDataAppDetailsJsPaths = new JSPaths(excelPath, "TW_AppData_AppDetails_Elements", "ApplicationDetails_FieldName", "JSPath");	
+	JSPaths appDataAppDetailsJsPaths = new JSPaths(excelPath, "ApplicationDetails_Elements", "ApplicationDetails_FieldName", "JSPath");	
 	JSPaths appDataDocumentDetailsJsPaths = new JSPaths(excelPath, "TW_AppData_DocumentDetails", "DocumentDetails_FieldName", "JSPath");
 	JSPaths identificatioDetailsJsPaths = new JSPaths(excelPath, "IdentificationDetails_Elements", "IdentificationDetails_FieldName", "JSPath");
 	
@@ -131,7 +131,7 @@ public class Tawarruq_Steps {
 	
 	
 	@And("User_608 search the Reference id under inbox in ULS Application")
-	public void user_search_the_reference_id_under_inbox_in_uls_application() throws Throwable {
+	public void user_608_search_the_reference_id_under_inbox_in_uls_application() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("inboxSearchInput")));
 		for (int i = 0; i <= 500; i++) {
 			try {
@@ -149,7 +149,7 @@ public class Tawarruq_Steps {
 	
 //	AT_TW_CD_01
 	@And("User_608 click the Customer Details tab")
-	public void user_click_the_customer_details_tab() throws Throwable {
+	public void user_608_click_the_customer_details_tab() throws Throwable {
 		Thread.sleep(100);
 		WebElement customerDetailsTab = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("customerDetailsTab"));
 		for (int i = 0; i <= 2500; i++) {
@@ -166,7 +166,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 click the Add button under Customer Details tab")
-	public void user_click_the_add_button_under_customer_details_tab() throws Throwable {
+	public void user_608_click_the_add_button_under_customer_details_tab() throws Throwable {
 		Thread.sleep(100);
 		WebElement customerDetailsAddBtn = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("customerDetailsAddBtn"));		
 		for (int i = 0; i <= 500; i++) {
@@ -183,7 +183,7 @@ public class Tawarruq_Steps {
 	}
 	
 	@And("User_608 click the Pencil icon button under Customer Details tab")
-	public void user_click_the_pencil_icon_under_customer_details_tab() throws Throwable {
+	public void user_608_click_the_pencil_icon_under_customer_details_tab() throws Throwable {
 		Thread.sleep(1000);
 		WebElement customerDetailsPencilBtn = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("customerDetailsPencilBtn"));		
 		for (int i = 0; i <= 500; i++) {
@@ -200,7 +200,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Back button is available under Customer Information screen")
-	public void user_verify_back_button_is_available_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_back_button_is_available_under_customer_information_screen() throws Throwable {
 		Thread.sleep(100);
 		WebElement customerDetailsBackBtn = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("customerDetailsBackBtn"));
 		for (int i = 0; i <= 1500; i++) {
@@ -217,7 +217,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Save button is available under Customer Information screen")
-	public void user_verify_save_button_is_available_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_save_button_is_available_under_customer_information_screen() throws Throwable {
 		WebElement customerDetailsSaveBtn = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("customerDetailsSaveBtn"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
@@ -234,7 +234,7 @@ public class Tawarruq_Steps {
 	
 	
 	@And("User_608 verify Applicant Type field available under Customer Information screen")
-	public void user_verify_applicant_type_field_available_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_applicant_type_field_available_under_customer_information_screen() throws Throwable {
 		WebElement applicantTypeLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("applicantTypeLabel"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
@@ -262,7 +262,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Customer Type field available under Customer Information screen")
-	public void user_verify_customer_type_field_available_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_customer_type_field_available_under_customer_information_screen() throws Throwable {
 		WebElement customerTypeLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("customerTypeLabel"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
@@ -290,7 +290,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Title field available under Customer Information screen")
-	public void user_verify_title_field_available_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_title_field_available_under_customer_information_screen() throws Throwable {
 		WebElement titleLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("titleLabel"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
@@ -318,7 +318,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify First Name field available under Customer Information screen")
-	public void user_verify_first_name_field_available_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_first_name_field_available_under_customer_information_screen() throws Throwable {
 		WebElement firstNameLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("firstNameLabel"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
@@ -346,7 +346,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Middle Name field available under Customer Information screen")
-	public void user_verify_middle_name_field_available_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_middle_name_field_available_under_customer_information_screen() throws Throwable {
 		WebElement middleNameLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("middleNameLabel"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
@@ -374,7 +374,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Last Name field available under Customer Information screen")
-	public void user_verify_last_name_field_available_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_last_name_field_available_under_customer_information_screen() throws Throwable {
 		WebElement lastNameLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("lastNameLabel"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
@@ -402,7 +402,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Family Name	field available under Customer Information screen")
-	public void user_verify_family_name_field_available_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_family_name_field_available_under_customer_information_screen() throws Throwable {
 		WebElement familyNameLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("familyNameLabel"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
@@ -430,7 +430,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify First Name\\(Arabic) field available under Customer Information screen")
-	public void user_verify_first_name_arabic_field_available_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_first_name_arabic_field_available_under_customer_information_screen() throws Throwable {
 		WebElement firstNameArabicLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("firstNameArabicLabel"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
@@ -458,7 +458,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Middle Name\\(Arabic) field available under Customer Information screen")
-	public void user_verify_middle_name_arabic_field_available_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_middle_name_arabic_field_available_under_customer_information_screen() throws Throwable {
 		WebElement middleNameArabicLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("middleNameArabicLabel"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
@@ -486,7 +486,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Last Name\\(Arabic) field available under Customer Information screen")
-	public void user_verify_last_name_arabic_field_available_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_last_name_arabic_field_available_under_customer_information_screen() throws Throwable {
 		WebElement lastNameArabicLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("lastNameArabicLabel"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
@@ -514,7 +514,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Family Name\\(Arabic)	field available under Customer Information screen")
-	public void user_verify_family_name_arabic_field_available_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_family_name_arabic_field_available_under_customer_information_screen() throws Throwable {
 		WebElement familyNameArabicLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("familyNameArabicLabel"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
@@ -542,7 +542,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Date of Birth field available under Customer Information screen")
-	public void user_verify_date_of_birth_field_available_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_date_of_birth_field_available_under_customer_information_screen() throws Throwable {
 		WebElement dobLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("dobLabel"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
@@ -570,7 +570,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Age field available under Customer Information screen")
-	public void user_verify_age_field_available_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_age_field_available_under_customer_information_screen() throws Throwable {
 		WebElement ageLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("ageLabel"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
@@ -598,7 +598,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Gender field available under Customer Information screen")
-	public void user_verify_gender_field_available_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_gender_field_available_under_customer_information_screen() throws Throwable {
 		WebElement dobLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("dobLabel"));
 		WebElement genderLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("genderLabel"));
 		for (int i = 0; i <= 1500; i++) {
@@ -628,7 +628,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Marital Status field available under Customer Information screen")
-	public void user_verify_marital_status_field_available_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_marital_status_field_available_under_customer_information_screen() throws Throwable {
 		WebElement maritalStatusLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("maritalStatusLabel"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
@@ -656,7 +656,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Education Level field available under Customer Information screen")
-	public void user_verify_education_level_field_available_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_education_level_field_available_under_customer_information_screen() throws Throwable {
 		WebElement educationLevelLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("educationLevelLabel"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
@@ -684,7 +684,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Nationality field available under Customer Information screen")
-	public void user_verify_nationality_field_available_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_nationality_field_available_under_customer_information_screen() throws Throwable {
 		WebElement nationalityLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("nationalityLabel"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
@@ -712,7 +712,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Residential Status field available under Customer Information screen")
-	public void user_verify_residential_status_field_available_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_residential_status_field_available_under_customer_information_screen() throws Throwable {
 		WebElement residentialStatusLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("residentialStatusLabel"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
@@ -740,7 +740,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Language field available under Customer Information screen")
-	public void user_verify_language_field_available_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_language_field_available_under_customer_information_screen() throws Throwable {
 		WebElement languageLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("languageLabel"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
@@ -768,7 +768,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify No of Dependents field available under Customer Information screen")
-	public void user_verify_no_of_dependents_field_available_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_no_of_dependents_field_available_under_customer_information_screen() throws Throwable {
 		WebElement noOfDependsLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("noOfDependsLabel"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
@@ -796,7 +796,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Client Category field available under Customer Information screen")
-	public void user_verify_client_category_field_available_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_client_category_field_available_under_customer_information_screen() throws Throwable {
 		WebElement clientCategoryLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("clientCategoryLabel"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
@@ -824,7 +824,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Blocklisted field available under Customer Information screen")
-	public void user_verify_blocklisted_field_available_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_blocklisted_field_available_under_customer_information_screen() throws Throwable {
 		WebElement blocklistLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("blocklistLabel"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
@@ -852,7 +852,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Credit Bureau field available under Customer Information screen")
-	public void user_verify_credit_bureau_field_available_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_credit_bureau_field_available_under_customer_information_screen() throws Throwable {
 		WebElement creditBureauLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("creditBureauLabel"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
@@ -880,7 +880,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Remarks field available under Customer Information screen")
-	public void user_verify_remarks_field_available_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_remarks_field_available_under_customer_information_screen() throws Throwable {
 		WebElement remarksLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("remarksLabel"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
@@ -910,7 +910,7 @@ public class Tawarruq_Steps {
 	
 //	TW_CD_01_01
 	@And("User_608 verify Applicant Type field as Mandatory, Editable and Dropdown under Customer Information screen")
-	public void user_verify_applicant_type_field_as_mandatory_editable_and_dropdown_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_applicant_type_field_as_mandatory_editable_and_dropdown_under_customer_information_screen() throws Throwable {
 		Thread.sleep(5000);
 //		Validate Mandatory
 		String applicantTypeLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("applicantTypeLabel")).getText();
@@ -955,7 +955,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Customer Type field as Mandatory, Editable and Dropdown under Customer Information screen")
-	public void user_verify_customer_type_field_as_mandatory_editable_and_dropdown_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_customer_type_field_as_mandatory_editable_and_dropdown_under_customer_information_screen() throws Throwable {
 //		Validate Mandatory
 		String customerTypeLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("customerTypeLabel")).getText();
 		for (int i = 0; i <2000; i++) {
@@ -999,7 +999,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Title field as Mandatory, Editable and Dropdown under Customer Information screen")
-	public void user_verify_title_field_as_mandatory_editable_and_dropdown_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_title_field_as_mandatory_editable_and_dropdown_under_customer_information_screen() throws Throwable {
 //		Validate Mandatory
 		String titleLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("titleLabel")).getText();
 		for (int i = 0; i <2000; i++) {
@@ -1043,7 +1043,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify First Name field as Mandatory, Editable and Textbox under Customer Information screen")
-	public void user_verify_first_name_field_as_mandatory_editable_and_textbox_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_first_name_field_as_mandatory_editable_and_textbox_under_customer_information_screen() throws Throwable {
 //		Validate Mandatory
 		String firstNameLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("firstNameLabel")).getText();
 		for (int i = 0; i <2000; i++) {
@@ -1087,7 +1087,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Middle Name field as Non-Mandatory, Editable and Textbox under Customer Information screen")
-	public void user_verify_middle_name_field_as_non_mandatory_editable_and_textbox_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_middle_name_field_as_non_mandatory_editable_and_textbox_under_customer_information_screen() throws Throwable {
 //		Validate Non-Mandatory
 		String middleNameLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("middleNameLabel")).getText();
 		for (int i = 0; i <2000; i++) {
@@ -1131,7 +1131,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Last Name field as Mandatory, Editable and Textbox under Customer Information screen")
-	public void user_verify_last_name_field_as_mandatory_editable_and_textbox_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_last_name_field_as_mandatory_editable_and_textbox_under_customer_information_screen() throws Throwable {
 //		Validate Mandatory
 		String lastNameLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("lastNameLabel")).getText();
 		for (int i = 0; i <2000; i++) {
@@ -1176,7 +1176,7 @@ public class Tawarruq_Steps {
 	
 	
 	@And("User_608 verify Family Name field as Non-Mandatory, Editable and Textbox under Customer Information screen")
-	public void user_verify_family_name_field_as_non_mandatory_editable_and_textbox_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_family_name_field_as_non_mandatory_editable_and_textbox_under_customer_information_screen() throws Throwable {
 //		Validate Non-Mandatory
 		String familyNameLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("familyNameLabel")).getText();
 		for (int i = 0; i <2000; i++) {
@@ -1220,7 +1220,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify First Name\\(Arabic) field as Mandatory, Editable and Textbox under Customer Information screen")
-	public void user_verify_first_name_arabic_field_as_mandatory_editable_and_textbox_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_first_name_arabic_field_as_mandatory_editable_and_textbox_under_customer_information_screen() throws Throwable {
 //		Validate Mandatory
 		String firstNameArabicLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("firstNameArabicLabel")).getText();
 		for (int i = 0; i <2000; i++) {
@@ -1264,7 +1264,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Middle Name\\(Arabic) field as Non-Mandatory, Editable and Textbox under Customer Information screen")
-	public void user_verify_middle_name_arabic_field_as_non_mandatory_editable_and_textbox_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_middle_name_arabic_field_as_non_mandatory_editable_and_textbox_under_customer_information_screen() throws Throwable {
 //		Validate Non-Mandatory
 		String middleNameArabicLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("middleNameArabicLabel")).getText();
 		for (int i = 0; i <2000; i++) {
@@ -1308,7 +1308,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Last Name\\(Arabic) field as Mandatory, Editable and Textbox under Customer Information screen")
-	public void user_verify_last_name_arabic_field_as_mandatory_editable_and_textbox_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_last_name_arabic_field_as_mandatory_editable_and_textbox_under_customer_information_screen() throws Throwable {
 //		Validate Mandatory
 		String lastNameArabicLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("lastNameArabicLabel")).getText();
 		for (int i = 0; i <2000; i++) {
@@ -1352,7 +1352,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Family Name\\(Arabic) field as Non-Mandatory, Editable and Textbox under Customer Information screen")
-	public void user_verify_family_name_arabic_field_as_non_mandatory_editable_and_textbox_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_family_name_arabic_field_as_non_mandatory_editable_and_textbox_under_customer_information_screen() throws Throwable {
 //		Validate Non-Mandatory
 		String familyNameArabicLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("familyNameArabicLabel")).getText();
 		for (int i = 0; i <2000; i++) {
@@ -1397,7 +1397,7 @@ public class Tawarruq_Steps {
 
 	
 	@And("User_608 verify Date of Birth field as Mandatory, Editable and Calender under Customer Information screen")
-	public void user_verify_date_of_birth_field_as_mandatory_editable_and_calender_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_date_of_birth_field_as_mandatory_editable_and_calender_under_customer_information_screen() throws Throwable {
 //		Validate Mandatory
 		String dobLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("dobLabel")).getText();
 		for (int i = 0; i <2000; i++) {
@@ -1442,7 +1442,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify age field as Non-Mandatory, Non-Editable and Texbox under Customer Information screen")
-	public void user_verify_age_field_as_non_mandatory_non_editable_and_texbox_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_age_field_as_non_mandatory_non_editable_and_texbox_under_customer_information_screen() throws Throwable {
 //		Validate Non-Mandatory
 		String ageLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("ageLabel")).getText();
 		for (int i = 0; i <2000; i++) {
@@ -1486,7 +1486,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Gender field as Mandatory, Editable and Dropdown under Customer Information screen")
-	public void user_verify_gender_field_as_mandatory_editable_and_dropdown_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_gender_field_as_mandatory_editable_and_dropdown_under_customer_information_screen() throws Throwable {
 		WebElement dobLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("dobLabel"));
 		for (int i = 0; i < 2000; i++) {
 			try {
@@ -1542,7 +1542,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Marital Status field as Mandatory, Editable and Dropdown under Customer Information screen")
-	public void user_verify_marital_status_field_as_mandatory_editable_and_dropdown_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_marital_status_field_as_mandatory_editable_and_dropdown_under_customer_information_screen() throws Throwable {
 //		Validate Mandatory
 		String maritalStatusLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("maritalStatusLabel")).getText();
 		for (int i = 0; i <2000; i++) {
@@ -1586,7 +1586,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Education Level field as Mandatory, Editable and Dropdown under Customer Information screen")
-	public void user_verify_education_level_field_as_mandatory_editable_and_dropdown_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_education_level_field_as_mandatory_editable_and_dropdown_under_customer_information_screen() throws Throwable {
 //		Validate Mandatory
 		String educationLevelLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("educationLevelLabel")).getText();
 		for (int i = 0; i <2000; i++) {
@@ -1630,7 +1630,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Nationality field as Mandatory, Editable and Dropdown under Customer Information screen")
-	public void user_verify_nationality_field_as_mandatory_editable_and_dropdown_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_nationality_field_as_mandatory_editable_and_dropdown_under_customer_information_screen() throws Throwable {
 //		Validate Mandatory
 		String nationalityLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("nationalityLabel")).getText();
 		for (int i = 0; i <2000; i++) {
@@ -1674,7 +1674,7 @@ public class Tawarruq_Steps {
 	}	
 	
 	@And("User_608 verify Residential Status field as Mandatory, Editable and Dropdown under Customer Information screen")
-	public void user_verify_residential_status_field_as_mandatory_editable_and_dropdown_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_residential_status_field_as_mandatory_editable_and_dropdown_under_customer_information_screen() throws Throwable {
 //		Validate Mandatory
 		String residentialStatusLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("residentialStatusLabel")).getText();
 		for (int i = 0; i <2000; i++) {
@@ -1718,7 +1718,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Language field as Mandatory, Editable and Dropdown under Customer Information screen")
-	public void user_verify_language_field_as_mandatory_editable_and_dropdown_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_language_field_as_mandatory_editable_and_dropdown_under_customer_information_screen() throws Throwable {
 //		Validate Mandatory
 		String languageLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("languageLabel")).getText();
 		for (int i = 0; i <2000; i++) {
@@ -1762,7 +1762,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify No of Dependents field as Mandatory, Editable and Dropdown under Customer Information screen")
-	public void user_verify_no_of_dependents_field_as_mandatory_editable_and_dropdown_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_no_of_dependents_field_as_mandatory_editable_and_dropdown_under_customer_information_screen() throws Throwable {
 //		Validate Mandatory
 		String noOfDependsLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("noOfDependsLabel")).getText();
 		for (int i = 0; i <2000; i++) {
@@ -1806,7 +1806,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Client Category field as Mandatory, Editable and Dropdown under Customer Information screen")
-	public void user_verify_client_category_field_as_mandatory_editable_and_dropdown_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_client_category_field_as_mandatory_editable_and_dropdown_under_customer_information_screen() throws Throwable {
 //		Validate Mandatory
 		String clientCategoryLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("clientCategoryLabel")).getText();
 		for (int i = 0; i <2000; i++) {
@@ -1850,7 +1850,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Blocklisted field as Non-Mandatory, Editable and Toggle button under Customer Information screen")
-	public void user_verify_blocklisted_field_as_non_mandatory_editable_and_toggle_button_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_blocklisted_field_as_non_mandatory_editable_and_toggle_button_under_customer_information_screen() throws Throwable {
 //		Validate Non-Mandatory
 		String blocklistLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("blocklistLabel")).getText();
 		for (int i = 0; i <2000; i++) {
@@ -1894,7 +1894,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Remarks field as Non-Mandatory, Editable and Texbox under Customer Information screen")
-	public void user_verify_remarks_field_as_non_mandatory_editable_and_texbox_under_customer_information_screen() throws Throwable {
+	public void user_608_verify_remarks_field_as_non_mandatory_editable_and_texbox_under_customer_information_screen() throws Throwable {
 //		Validate Non-Mandatory
 		String remarksLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("remarksLabel")).getText();
 		for (int i = 0; i <2000; i++) {
@@ -1938,7 +1938,7 @@ public class Tawarruq_Steps {
 	}
 	
 	@And("User_608 click the Back button under Customer Information screen")
-	public void user_click_the_back_button_under_customer_information_screen() throws Throwable {
+	public void user_608_click_the_back_button_under_customer_information_screen() throws Throwable {
 		WebElement customerDetailsTab = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("customerDetailsTab"));
 		WebElement customerDetailsBackBtn = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("customerDetailsBackBtn"));
 		for (int i = 0; i <= 2000; i++) {
@@ -1956,7 +1956,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify post clicking on Back button system should navigate to the previous screen under Customer Details tab")
-	public void user_verify_post_clicking_on_back_button_system_should_navigate_to_the_previous_screen_under_customer_details_tab() throws Throwable {
+	public void user_608_verify_post_clicking_on_back_button_system_should_navigate_to_the_previous_screen_under_customer_details_tab() throws Throwable {
 		WebElement customerPersonalInfoScreen = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("customerPersonalInfoScreen"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
@@ -1974,7 +1974,7 @@ public class Tawarruq_Steps {
 	
 //	@AT_TW_CD_01_02
 	@And("User_608 click the Add button under Contact details section in Additional Customer info tab")
-	public void user_click_the_add_button_under_contact_details_section_in_additional_customer_info_tab() throws Throwable {
+	public void user_608_click_the_add_button_under_contact_details_section_in_additional_customer_info_tab() throws Throwable {
 		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
 		String listOfAddButton = "";
 		String addButtonScreenName = "";
@@ -2031,7 +2031,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verfiy Back button is available under Contact details screen")
-	public void user_verfiy_back_button_is_available_under_contact_details_screen() throws Throwable {
+	public void user_608_verfiy_back_button_is_available_under_contact_details_screen() throws Throwable {
 		Thread.sleep(100);
 		WebElement contactDetailsBackBtn = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("contactDetailsBackBtn"));
 		for (int i = 0; i <= 1500; i++) {
@@ -2048,7 +2048,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verfiy Save button is available under Contact details screen")
-	public void user_verfiy_save_button_is_available_under_contact_details_screen() throws Throwable {
+	public void user_608_verfiy_save_button_is_available_under_contact_details_screen() throws Throwable {
 		WebElement contactDetailsSaveBtn = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("contactDetailsSaveBtn"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
@@ -2064,7 +2064,7 @@ public class Tawarruq_Steps {
 	}
 	
 	@And("User_608 verify Phone Type is available and field should be LOV, editable under Contact details screen")
-	public void user_verify_phone_type_is_available_and_field_should_be_lov_editable_under_contact_details_screen() throws Throwable {
+	public void user_608_verify_phone_type_is_available_and_field_should_be_lov_editable_under_contact_details_screen() throws Throwable {
 		WebElement phoneTypeLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("phoneTypeLabel"));
 		WebElement phoneTypeDropdown = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("phoneTypeDropdown"));
 		for (int i = 0; i <= 1500; i++) {
@@ -2108,7 +2108,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Phone Number is available and field should be number, editable under Contact details screen")
-	public void user_verify_phone_number_is_available_and_field_should_be_number_editable_under_contact_details_screen() throws Throwable {
+	public void user_608_verify_phone_number_is_available_and_field_should_be_number_editable_under_contact_details_screen() throws Throwable {
 		WebElement phoneNumberLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("phoneNumberLabel"));
 		WebElement phoneNumberInput = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("phoneNumberInput"));
 		for (int i = 0; i <= 1500; i++) {
@@ -2152,7 +2152,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Consent For Phone Contact is available and field should be LOV, editable under Contact details screen")
-	public void user_verify_consent_for_phone_contact_is_available_and_field_should_be_lov_editable_under_contact_details_screen() throws Throwable {
+	public void user_608_verify_consent_for_phone_contact_is_available_and_field_should_be_lov_editable_under_contact_details_screen() throws Throwable {
 		WebElement consentPhoneLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("consentPhoneLabel"));
 		WebElement consentPhoneDropdown = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("consentPhoneDropdown"));
 		for (int i = 0; i <= 1500; i++) {
@@ -2196,7 +2196,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Prefered Phone Contact Type is available and field should be LOV, editable under Contact details screen")
-	public void user_verify_prefered_phone_contact_type_is_available_and_field_should_be_lov_editable_under_contact_details_screen() throws Throwable {
+	public void user_608_verify_prefered_phone_contact_type_is_available_and_field_should_be_lov_editable_under_contact_details_screen() throws Throwable {
 		WebElement contactTypeLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("contactTypeLabel"));
 		WebElement contactTypeDropdown = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("contactTypeDropdown"));
 		for (int i = 0; i <= 1500; i++) {
@@ -2240,7 +2240,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Prefered Time For Contact is available and field should be HH:MM format, editable under Contact details screen")
-	public void user_verify_prefered_time_for_contact_is_available_and_field_should_be_hh_mm_format_editable_under_contact_details_screen() throws Throwable {
+	public void user_608_verify_prefered_time_for_contact_is_available_and_field_should_be_hh_mm_format_editable_under_contact_details_screen() throws Throwable {
 		WebElement preferdTimeContactLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("preferdTimeContactLabel"));
 		WebElement preferdTimeContactInput = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("preferdTimeContactInput"));
 		for (int i = 0; i <= 1500; i++) {
@@ -2285,7 +2285,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Email Type is available and field should be LOV, editable under Contact details screen")
-	public void user_verify_email_type_is_available_and_field_should_be_lov_editable_under_contact_details_screen() throws Throwable {
+	public void user_608_verify_email_type_is_available_and_field_should_be_lov_editable_under_contact_details_screen() throws Throwable {
 		WebElement emailTypeLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("emailTypeLabel"));
 		WebElement emailTypeDropdown = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("emailTypeDropdown"));
 		for (int i = 0; i <= 1500; i++) {
@@ -2330,7 +2330,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Email ID is available and field should be Email format, editable under Contact details screen")
-	public void user_verify_email_id_is_available_and_field_should_be_email_format_editable_under_contact_details_screen() throws Throwable {
+	public void user_608_verify_email_id_is_available_and_field_should_be_email_format_editable_under_contact_details_screen() throws Throwable {
 		WebElement emailIDLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("emailIDLabel"));
 		WebElement emailIDInput = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("emailIDInput"));
 		for (int i = 0; i <= 1500; i++) {
@@ -2376,7 +2376,7 @@ public class Tawarruq_Steps {
 	
 //	@AT_TW_CD_02
 	@And("User_608 select the Salutation Title in Customer Information screen")
-	public void user_select_the_salutation_title_in_customer_information_screen() throws Throwable {
+	public void user_608_select_the_salutation_title_in_customer_information_screen() throws Throwable {
 		Thread.sleep(100);for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("titleDropdown")).click();
@@ -2452,7 +2452,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 enter the First Name in Customer Information screen")
-	public void user_enter_the_first_name_in_customer_information_screen() throws Throwable {
+	public void user_608_enter_the_first_name_in_customer_information_screen() throws Throwable {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("firstNameInput"))
@@ -2467,7 +2467,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 enter the Last Name in Customer Information screen")
-	public void user_enter_the_last_name_in_customer_information_screen() throws Throwable {
+	public void user_608_enter_the_last_name_in_customer_information_screen() throws Throwable {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("lastNameInput"))
@@ -2482,7 +2482,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 click the Save button with mandatory field is blank in Customer Information screen")
-	public void user_click_the_save_button_with_mandatory_field_is_blank_in_customer_information_screen() throws Throwable {	    
+	public void user_608_click_the_save_button_with_mandatory_field_is_blank_in_customer_information_screen() throws Throwable {	    
 		WebElement customerDetailsSaveBtn = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("customerDetailsSaveBtn"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
@@ -2498,7 +2498,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Mandatory blank field validation message in Customer Information screen")
-	public void user_verify_mandatory_blank_field_validation_message_in_customer_information_screen() throws Throwable {
+	public void user_608_verify_mandatory_blank_field_validation_message_in_customer_information_screen() throws Throwable {
 		WebElement blankFieldError = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("blankFieldError"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
@@ -2515,7 +2515,7 @@ public class Tawarruq_Steps {
 	
 	
 	@And("User_608 enter the Special charater in any field and verify the validation message in Customer Information screen")
-	public void user_enter_the_special_charater_in_any_field_and_verify_the_validation_message_in_customer_information_screen() throws Throwable {
+	public void user_608_enter_the_special_charater_in_any_field_and_verify_the_validation_message_in_customer_information_screen() throws Throwable {
 //		Keys.chord(Keys.CONTROL,"a", Keys.DELETE)
 		for (int i = 0; i <= 500; i++) {
 			try {
@@ -2547,7 +2547,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 enter the Negative number in numberic field and verify the validation message in Customer Information screen")
-	public void user_enter_the_negative_number_in_numberic_field_and_verify_the_validation_message_in_customer_information_screen() throws Throwable {
+	public void user_608_enter_the_negative_number_in_numberic_field_and_verify_the_validation_message_in_customer_information_screen() throws Throwable {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("noOfDependents")));
@@ -2580,16 +2580,62 @@ public class Tawarruq_Steps {
 	
 //	AT_TW_AD_06
 	@And("User_608 click the Update button under Application Details screen")
-	public void user_click_the_update_button_under_application_details_screen() throws Throwable {
-		Thread.sleep(500);
-		WebElement updateBtn = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("updateBtn"));
-		for (int i = 0; i <= 5000; i++) {
+	public void user_608_click_the_update_button_under_application_details_screen() throws Throwable {
+		String length = null;
+		for (int i = 0; i < 500; i++) {
 			try {
-				javascriptHelper.backgroundBorder(updateBtn);
-				updateBtn.click();
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-cards button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 500; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-cards button')[" + j + "].getAttribute('ng-reflect-text')";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().contains("Update")) {
+						System.out.println("condition true");
+						String jspath = "document.querySelectorAll('ion-cards button')[" + j + "]";
+						WebElement searchBtn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.JSEClick(searchBtn);
+						break;
+					}
+				}
 				break;
 			} catch (Exception e) {
-				if (i == 5000) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+//		Thread.sleep(500);
+//		WebElement updateBtn = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("updateBtn"));
+//		for (int i = 0; i <= 5000; i++) {
+//			try {
+//				javascriptHelper.backgroundBorder(updateBtn);
+//				updateBtn.click();
+//				break;
+//			} catch (Exception e) {
+//				if (i == 5000) {
+//					Assert.fail(e.getMessage());
+//				}
+//			}
+//		}
+		for (int i = 0; i <= 500000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("popupCloseBtn")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 500000) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2597,7 +2643,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Action field available in list view under Application Details screen")
-	public void user_verify_action_field_available_in_list_view_under_application_details_screen() throws Throwable {
+	public void user_608_verify_action_field_available_in_list_view_under_application_details_screen() throws Throwable {
 		Thread.sleep(500);
 		WebElement listview_Action = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("listview_Action"));
 		for (int i = 0; i <= 1500; i++) {
@@ -2614,7 +2660,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Client Name field available in list view under Application Details screen")
-	public void user_verify_client_name_field_available_in_list_view_under_application_details_screen() throws Throwable {
+	public void user_608_verify_client_name_field_available_in_list_view_under_application_details_screen() throws Throwable {
 		WebElement listview_ClientName = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("listview_ClientName"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
@@ -2630,7 +2676,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Client Name\\(Alternate Lanuguage) field available in list view under Application Details screen")
-	public void user_verify_client_name_alternate_lanuguage_field_available_in_list_view_under_application_details_screen() throws Throwable {
+	public void user_608_verify_client_name_alternate_lanuguage_field_available_in_list_view_under_application_details_screen() throws Throwable {
 		WebElement listview_ClientNameOtherLang = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("listview_ClientNameOtherLang"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
@@ -2646,7 +2692,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Product field available in list view under Application Details screen")
-	public void user_verify_product_field_available_in_list_view_under_application_details_screen() throws Throwable {
+	public void user_608_verify_product_field_available_in_list_view_under_application_details_screen() throws Throwable {
 		WebElement listview_Product = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("listview_Product"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
@@ -2662,7 +2708,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Sub Product field available in list view under Application Details screen")
-	public void user_verify_sub_product_field_available_in_list_view_under_application_details_screen() throws Throwable {
+	public void user_608_verify_sub_product_field_available_in_list_view_under_application_details_screen() throws Throwable {
 		WebElement listview_SubProduct = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("listview_SubProduct"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
@@ -2678,7 +2724,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Current Stage field available in list view under Application Details screen")
-	public void user_verify_current_stage_field_available_in_list_view_under_application_details_screen() throws Throwable {
+	public void user_608_verify_current_stage_field_available_in_list_view_under_application_details_screen() throws Throwable {
 		WebElement listview_CurrentStage = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("listview_CurrentStage"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
@@ -2694,7 +2740,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Location field available in list view under Application Details screen")
-	public void user_verify_location_field_available_in_list_view_under_application_details_screen() throws Throwable {
+	public void user_608_verify_location_field_available_in_list_view_under_application_details_screen() throws Throwable {
 		WebElement listview_Location = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("listview_Location"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
@@ -2710,7 +2756,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Allocated To field available in list view under Application Details screen")
-	public void user_verify_allocated_to_field_available_in_list_view_under_application_details_screen() throws Throwable {
+	public void user_608_verify_allocated_to_field_available_in_list_view_under_application_details_screen() throws Throwable {
 		WebElement listview_AllocatedTo = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("listview_AllocatedTo"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
@@ -2726,7 +2772,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Service field available in list view under Application Details screen")
-	public void user_verify_service_field_available_in_list_view_under_application_details_screen() {
+	public void user_608_verify_service_field_available_in_list_view_under_application_details_screen() {
 		WebElement listview_Service = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("listview_Service"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
@@ -2742,7 +2788,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Status field available in list view under Application Details screen")
-	public void user_verify_status_field_available_in_list_view_under_application_details_screen() throws Throwable {
+	public void user_608_verify_status_field_available_in_list_view_under_application_details_screen() throws Throwable {
 		WebElement listview_Status = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("listview_Status"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
@@ -2758,8 +2804,8 @@ public class Tawarruq_Steps {
 	}
 	
 	
-	@And("User_608 click the Search button under Application Details screen")
-	public void user_click_the_search_button_under_application_details_screen() throws Throwable {
+	@And("User_608 click the Search Icon under Application Details screen")
+	public void user_608_click_the_search_icon_under_application_details_screen() throws Throwable {
 		WebElement searchBtn = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("searchBtn"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
@@ -2775,7 +2821,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 search matching value system should display all the possible matching records under Application Details screen")
-	public void user_search_matching_value_system_should_display_all_the_possible_matching_records_under_application_details_screen() throws Throwable {
+	public void user_608_search_matching_value_system_should_display_all_the_possible_matching_records_under_application_details_screen() throws Throwable {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("searchBox"))
@@ -2792,7 +2838,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify the all the possible matching records are displayed under Application Details screen")
-	public void user_verify_the_all_the_possible_matching_records_are_displayed_under_application_details_screen() throws Throwable {
+	public void user_608_verify_the_all_the_possible_matching_records_are_displayed_under_application_details_screen() throws Throwable {
 		Thread.sleep(1000);
 		WebElement searchResult = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("searchResult"));
 		for (int i = 0; i <= 500; i++) {
@@ -2811,7 +2857,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 search mismatch value system should not display any records under Application Details screen")
-	public void user_search_mismatch_value_system_should_not_display_any_records_under_application_details_screen() throws Throwable {
+	public void user_608_search_mismatch_value_system_should_not_display_any_records_under_application_details_screen() throws Throwable {
 		for (int i = 0; i <= 500; i++) {
 			try {				
 				javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("searchBox"))
@@ -2826,7 +2872,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify the system is should not displayed any records under Application Details screen")
-	public void user_verify_the_system_is_should_not_displayed_any_records_under_application_details_screen() throws Throwable {
+	public void user_608_verify_the_system_is_should_not_displayed_any_records_under_application_details_screen() throws Throwable {
 		Thread.sleep(500);
 		WebElement searchResult = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("searchResult"));
 		for (int i = 0; i <= 500; i++) {
@@ -2845,7 +2891,7 @@ public class Tawarruq_Steps {
 	}
 	
 	@And("User_608 click the Export button under Application Details screen")
-	public void user_click_the_export_button_under_application_details_screen() throws Throwable {
+	public void user_608_click_the_export_button_under_application_details_screen() throws Throwable {
 		WebElement exportBtn = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("exportBtn"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
@@ -2861,7 +2907,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 click the PDF and verify under Application Details screen")
-	public void user_click_the_pdf_and_verify_under_application_details_screen() throws Throwable {
+	public void user_608_click_the_pdf_and_verify_under_application_details_screen() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("exportPDF")));
 		for (int i = 0; i <= 300; i++) {
 			try {
@@ -2893,7 +2939,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 click the XLS and verify under Application Details screen")
-	public void user_click_the_xls_and_verify_under_application_details_screen() throws Throwable {
+	public void user_608_click_the_xls_and_verify_under_application_details_screen() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("exportXLS")));
 		for (int i = 0; i <= 300; i++) {
 			try {
@@ -2923,15 +2969,15 @@ public class Tawarruq_Steps {
 	
 	
 	@And("User_608 click the Add button under Application Details screen")
-	public void user_click_the_add_button_under_application_details_screen() throws Throwable {
+	public void user_608_click_the_add_button_under_application_details_screen() throws Throwable {
 		WebElement addBtn = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("addBtn"));
-		for (int i = 0; i <= 1500; i++) {
+		for (int i = 0; i <= 150000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(addBtn);
 				addBtn.click();
 				break;
 			} catch (Exception e) {
-				if (i == 1500) {
+				if (i == 150000) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2939,7 +2985,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verfiy the new record creation page under Application Details screen")
-	public void user_verfiy_the_new_record_creation_page_under_application_details_screen() throws Throwable {
+	public void user_608_verfiy_the_new_record_creation_page_under_application_details_screen() throws Throwable {
 		WebElement customerSearchPage = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("customerSearchPage"));
 		for (int i = 0; i <= 15000; i++) {
 			try {
@@ -2956,7 +3002,7 @@ public class Tawarruq_Steps {
 	
 //	@AT_TW_AD_DOC_05
 	@And("User_608 click the Document Details tab")
-	public void user_click_the_document_details_tab() throws Throwable {
+	public void user_608_click_the_document_details_tab() throws Throwable {
 		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appDataDocumentDetailsJsPaths.getElement("nextBtn")).click();
@@ -2982,7 +3028,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 click the Add button under Document Details tab")
-	public void user_click_the_add_button_under_document_details_tab() throws Throwable {
+	public void user_608_click_the_add_button_under_document_details_tab() throws Throwable {
 		WebElement addBtn = javascriptHelper.executeScriptWithWebElement(appDataDocumentDetailsJsPaths.getElement("documentsDetailsAddBtn"));
 		for (int i = 0; i <= 100000; i++) {
 			try {
@@ -2997,7 +3043,7 @@ public class Tawarruq_Steps {
 	}
 	
 	@And("User_608 verify Document Category field should be Mandatory and LOV Under Document Details tab")
-	public void user_verify_document_category_field_should_be_mandatory_and_lov_under_document_details_tab() throws Throwable {
+	public void user_608_verify_document_category_field_should_be_mandatory_and_lov_under_document_details_tab() throws Throwable {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(appDataDocumentDetailsJsPaths.getElement("documentStatus")));
@@ -3039,7 +3085,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Expected Receipt Date field should be Non-mandatory and Date Under Document Details tab")
-	public void user_verify_expected_receipt_date_field_should_be_non_mandatory_and_date_under_document_details_tab() throws Throwable {
+	public void user_608_verify_expected_receipt_date_field_should_be_non_mandatory_and_date_under_document_details_tab() throws Throwable {
 //		Verify field as Non-Mandatory
 		String text = javascriptHelper.executeScriptWithWebElement(appDataDocumentDetailsJsPaths.getElement("expectReceiptDateLabel")).getText();
 		for (int i = 0; i <2000; i++) {
@@ -3071,7 +3117,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Def Approved By field should be Non-mandatory and LOV Under Document Details tab")
-	public void user_verify_def_approved_by_field_should_be_non_mandatory_and_lov_under_document_details_tab() throws Throwable {
+	public void user_608_verify_def_approved_by_field_should_be_non_mandatory_and_lov_under_document_details_tab() throws Throwable {
 //		Verify field as Non-Mandatory
 		String text = javascriptHelper.executeScriptWithWebElement(appDataDocumentDetailsJsPaths.getElement("defApprovedByLabel")).getText();
 		for (int i = 0; i <2000; i++) {
@@ -3102,7 +3148,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Change In Nature Approved By field should be Non-mandatory and LOV Under Document Details tab")
-	public void user_verify_change_in_nature_approved_by_field_should_be_non_mandatory_and_lov_under_document_details_tab() throws Throwable {
+	public void user_608_verify_change_in_nature_approved_by_field_should_be_non_mandatory_and_lov_under_document_details_tab() throws Throwable {
 //		Verify field as Non-Mandatory
 		String text = javascriptHelper.executeScriptWithWebElement(appDataDocumentDetailsJsPaths.getElement("changeNatureApprovedByLabel")).getText();
 		for (int i = 0; i <2000; i++) {
@@ -3133,7 +3179,7 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify Document Form field should be Non-mandatory, Editable and LOV Under Document Details tab")
-	public void user_verify_document_form_field_should_be_non_mandatory_editable_and_lov_under_document_details_tab() throws Throwable {
+	public void user_608_verify_document_form_field_should_be_non_mandatory_editable_and_lov_under_document_details_tab() throws Throwable {
 //		Verify field as Non-Mandatory
 		String text = javascriptHelper.executeScriptWithWebElement(appDataDocumentDetailsJsPaths.getElement("documentFormLabel")).getText();
 		for (int i = 0; i <2000; i++) {
@@ -3179,7 +3225,7 @@ public class Tawarruq_Steps {
 	
 	
 	@And("User_608 invoke soft assert in Document details screen under Document Details tab at Tawarruq App Data Entry stage")
-	public void user_invoke_soft_assert_in_document_details_screen_under_document_details_tab_at_tawarruq_app_data_entry_stage() throws Throwable {
+	public void user_608_invoke_soft_assert_in_document_details_screen_under_document_details_tab_at_tawarruq_app_data_entry_stage() throws Throwable {
 	    softAssert.assertAll();
 	}
 	
@@ -3187,7 +3233,7 @@ public class Tawarruq_Steps {
 	// ************** Tawarruq -- App Data Entry stage -- Additional customer info tab *********************
 //		Additional Customer Info Tab
 		@And("User_608 click the Additional Customer Info tab")
-		public void user_click_the_additional_customer_info_tab() throws Throwable {
+		public void user_608_click_the_additional_customer_info_tab() throws Throwable {
 			for (int i = 0; i <= 10000; i++) {
 				try {
 //					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("additionalCustomerInfoTab")).click();
@@ -3202,7 +3248,7 @@ public class Tawarruq_Steps {
 		}
 
 		@And("User_608 click the Pencil Icon button in Customer Personal Info section under Additional Customer Info tab")
-		public void user_click_the_pencil_icon_button_in_customer_personal_info_section_under_additional_customer_info_tab() throws Throwable {
+		public void user_608_click_the_pencil_icon_button_in_customer_personal_info_section_under_additional_customer_info_tab() throws Throwable {
 			for (int i = 0; i <= 1000; i++) {
 				try {
 					javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("additionalCustInfoTabPencilIconBtn")));
@@ -3217,7 +3263,7 @@ public class Tawarruq_Steps {
 		}
 
 		@And("User_608 click the Add button in Customer Identification under Additional Customer Info tab")
-		public void user_click_the_add_button_in_customer_identification_under_additional_customer_info_tab() throws Throwable {
+		public void user_608_click_the_add_button_in_customer_identification_under_additional_customer_info_tab() throws Throwable {
 			for (int i = 0; i <= 1000; i++) {
 				try {
 					javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("customerIdentificationBackBtn")));
@@ -3241,7 +3287,7 @@ public class Tawarruq_Steps {
 		}
 
 		@And("User_608 select the ID Type in Customer Identification screen")
-		public void user_select_the_id_type_in_customer_identification_screen() throws Throwable {
+		public void user_608_select_the_id_type_in_customer_identification_screen() throws Throwable {
 			for (int i = 0; i <= 2000; i++) {
 				try {
 					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDType_Dropdown")).click();
@@ -3318,7 +3364,7 @@ public class Tawarruq_Steps {
 		}
 
 		@And("User_608 enter the invalid ID number in Customer Identification screen")
-		public void user_enter_the_invalid_id_number_in_customer_identification_screen() throws Throwable {
+		public void user_608_enter_the_invalid_id_number_in_customer_identification_screen() throws Throwable {
 			javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDNumber_Input")).click();
 			for (int i = 0; i <= 500; i++) {
 				try {
@@ -3334,7 +3380,7 @@ public class Tawarruq_Steps {
 		}
 
 		@And("User_608 select the Issuing Authority in Customer Identification screen")
-		public void user_select_the_issuing_authority_in_customer_identification_screen() throws Throwable {
+		public void user_608_select_the_issuing_authority_in_customer_identification_screen() throws Throwable {
 			for (int i = 0; i <= 2000; i++) {
 				try {
 					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("issuingAuthorityDropdown")).click();
@@ -3413,7 +3459,7 @@ public class Tawarruq_Steps {
 
 		
 		@And("User_608 verify the invalid data validation in Customer Identification screen")
-		public void user_verify_the_invalid_data_validation_in_customer_identification_screen() throws Throwable {
+		public void user_608_verify_the_invalid_data_validation_in_customer_identification_screen() throws Throwable {
 			WebElement invalidData = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("invalidDataError"));
 			System.err.println("Invalid Data Error : "+invalidData.getText());
 			for (int i = 0; i<2000; i++) {
@@ -3429,7 +3475,7 @@ public class Tawarruq_Steps {
 		}
 		
 		@And("User_608 enter the special characters in ID number under Customer Identification screen")
-		public void user_enter_the_special_characters_in_id_number_under_customer_identification_screen() throws Throwable {
+		public void user_608_enter_the_special_characters_in_id_number_under_customer_identification_screen() throws Throwable {
 			javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDNumber_Input")).click();
 			for (int i = 0; i <= 500; i++) {
 				try {
@@ -3447,7 +3493,7 @@ public class Tawarruq_Steps {
 		}
 		
 		@And("User_608 verify the Special character validation in Customer Identification screen")
-		public void user_verify_the_special_character_validation_in_customer_identification_screen() throws Throwable {
+		public void user_608_verify_the_special_character_validation_in_customer_identification_screen() throws Throwable {
 			WebElement specialCharError = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("specialCharError"));
 			String specialChar = specialCharError.getText().trim();
 			System.err.println("Speacial Char: "+specialChar);
@@ -3468,7 +3514,7 @@ public class Tawarruq_Steps {
 		}
 
 		@And("User_608 click the save button with mandatory field blank in Customer Identification screen")
-		public void user_click_the_save_button_with_mandatory_field_blank_in_customer_identification_screen() throws Throwable {
+		public void user_608_click_the_save_button_with_mandatory_field_blank_in_customer_identification_screen() throws Throwable {
 			for (int i = 0; i <= 1000; i++) {
 				try {
 					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("identificationDetailsSaveBtn")).click();
@@ -3482,7 +3528,7 @@ public class Tawarruq_Steps {
 		}
 
 		@And("User_608 verify the Validation error msg in Customer Identification screen")
-		public void user_verify_the_validation_error_msg_in_customer_identification_screen() throws Throwable {
+		public void user_608_verify_the_validation_error_msg_in_customer_identification_screen() throws Throwable {
 			String madatoryErrorMsg = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("mandatoryFillToastMsg")).getText();
 			System.err.println("Mandatory Error : "+madatoryErrorMsg);
 			for (int i = 0; i<2000; i++) {
@@ -3513,7 +3559,7 @@ public class Tawarruq_Steps {
 		
 //		@AT_TW_NEWAPP_IDA_01
 		@And("User_608 verify Back button available under Identification Details screen in Additional Customer Info tab")
-		public void user_verify_back_button_available_under_identification_details_screen_in_additional_customer_info_tab() throws Throwable {
+		public void user_608_verify_back_button_available_under_identification_details_screen_in_additional_customer_info_tab() throws Throwable {
 			WebElement backBtn = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("identificationDetailsBackBtn"));
 			for (int i = 0; i <= 150000; i++) {
 				try {
@@ -3529,7 +3575,7 @@ public class Tawarruq_Steps {
 		}
 
 		@And("User_608 verify Save button available under Identification Details screen in Additional Customer Info tab")
-		public void user_verify_save_button_available_under_identification_details_screen_in_additional_customer_info_tab() throws Throwable {
+		public void user_608_verify_save_button_available_under_identification_details_screen_in_additional_customer_info_tab() throws Throwable {
 			WebElement saveBtn = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("identificationDetailsSaveBtn"));
 			for (int i = 0; i <= 1500; i++) {
 				try {
@@ -3545,7 +3591,7 @@ public class Tawarruq_Steps {
 		}
 
 		@And("User_608 verify Help button available under Identification Details screen in Additional Customer Info tab")
-		public void user_verify_help_button_available_under_identification_details_screen_in_additional_customer_info_tab() throws Throwable {
+		public void user_608_verify_help_button_available_under_identification_details_screen_in_additional_customer_info_tab() throws Throwable {
 			WebElement helpBtn = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("identificationDetailsHelpBtn"));
 			for (int i = 0; i <= 1500; i++) {
 				try {
@@ -3561,7 +3607,7 @@ public class Tawarruq_Steps {
 		}
 
 		@And("User_608 enter the ID number in Customer Identification screen")
-		public void user_enter_the_id_number_in_customer_identification_screen() {
+		public void user_608_enter_the_id_number_in_customer_identification_screen() {
 //			javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDNumber_Input")).click();
 			for (int i = 0; i <= 500; i++) {
 				try {
@@ -3577,7 +3623,7 @@ public class Tawarruq_Steps {
 		}
 
 		@And("User_608 enter the Issue Date in Customer Identification screen")
-		public void user_enter_the_issue_date_in_customer_identification_screen() {
+		public void user_608_enter_the_issue_date_in_customer_identification_screen() {
 //			javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("issueDate_Input")).click();
 			for (int i = 0; i <= 500; i++) {
 				try {
@@ -3593,7 +3639,7 @@ public class Tawarruq_Steps {
 		}
 
 		@And("User_608 enter the Expiry Date in Customer Identification screen")
-		public void user_enter_the_expiry_date_in_customer_identification_screen() {
+		public void user_608_enter_the_expiry_date_in_customer_identification_screen() {
 //			javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("expiryDate_Input")).click();
 			for (int i = 0; i <= 500; i++) {
 				try {
@@ -3609,7 +3655,7 @@ public class Tawarruq_Steps {
 		}
 
 		@And("User_608 select the Country of Issue in Customer Identification screen")
-		public void user_select_the_country_of_issue_in_customer_identification_screen() {
+		public void user_608_select_the_country_of_issue_in_customer_identification_screen() {
 			for (int i = 0; i <= 2000; i++) {
 				try {
 					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("countryOfIssueDropdown")).click();
@@ -3686,7 +3732,7 @@ public class Tawarruq_Steps {
 		}
 	
 		@And("User_608 click the Save button under Customer Identification screen")
-		public void user_click_the_save_button_under_customer_identification_screen() {
+		public void user_608_click_the_save_button_under_customer_identification_screen() {
 			for (int i = 0; i <= 10000; i++) {
 				try {
 					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("identificationDetailsSaveBtn")).click();
@@ -3700,7 +3746,7 @@ public class Tawarruq_Steps {
 		}
 
 		@And("User_608 to verify system display the confirmation message post clicking on save button")
-		public void user_to_verify_system_display_the_confirmation_message_post_clicking_on_save_button() {
+		public void user_608_to_verify_system_display_the_confirmation_message_post_clicking_on_save_button() {
 			WebElement alertMsg = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("alert_SuccessMsg"));
 			for (int i = 0; i < 20000; i++) {
 				try {
@@ -3726,7 +3772,7 @@ public class Tawarruq_Steps {
 		}
 	
 		@And("User_608 invoke soft assert in Identification details screen under Additional Customer Info tab at Tawarruq New Application stage")
-		public void user_invoke_soft_assert_in_identification_details_screen_under_additional_customer_tab_at_tawarruq_new_app_stage() throws Throwable {
+		public void user_608_invoke_soft_assert_in_identification_details_screen_under_additional_customer_tab_at_tawarruq_new_app_stage() throws Throwable {
 		    softAssert.assertAll();
 		}
 		
@@ -3734,7 +3780,7 @@ public class Tawarruq_Steps {
 		
 //		@AT_TW_NEWAPP_IDA_02
 		@And("User_608 verify ID Type field is available under Customer Identification screen")
-		public void user_verify_id_type_field_is_available_under_customer_identification_screen() throws Throwable {
+		public void user_608_verify_id_type_field_is_available_under_customer_identification_screen() throws Throwable {
 			WebElement label = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDType_Label"));
 			for (int i = 0; i <= 1500; i++) {
 				try {
@@ -3762,7 +3808,7 @@ public class Tawarruq_Steps {
 		}
 
 		@And("User_608 verify ID number field is available under Customer Identification screen")
-		public void user_verify_id_number_field_is_available_under_customer_identification_screen() throws Throwable {
+		public void user_608_verify_id_number_field_is_available_under_customer_identification_screen() throws Throwable {
 			WebElement label = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDNumber_Label"));
 			for (int i = 0; i <= 1500; i++) {
 				try {
@@ -3790,7 +3836,7 @@ public class Tawarruq_Steps {
 		}
 
 		@And("User_608 verify Issue Date field is available under Customer Identification screen")
-		public void user_verify_issue_date_field_is_available_under_customer_identification_srcreen() throws Throwable {
+		public void user_608_verify_issue_date_field_is_available_under_customer_identification_srcreen() throws Throwable {
 			WebElement label = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("issueDate_Label"));
 			for (int i = 0; i <= 1500; i++) {
 				try {
@@ -3818,7 +3864,7 @@ public class Tawarruq_Steps {
 		}
 
 		@And("User_608 verify Expiry Date field is available under Customer Identification screen")
-		public void user_verify_expiry_date_field_is_available_under_customer_identification_screen() throws Throwable {
+		public void user_608_verify_expiry_date_field_is_available_under_customer_identification_screen() throws Throwable {
 			WebElement label = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("expiryDate_Label"));
 			for (int i = 0; i <= 1500; i++) {
 				try {
@@ -3846,7 +3892,7 @@ public class Tawarruq_Steps {
 		}
 
 		@And("User_608 verify Issuing Authority field is available under Customer Identification screen")
-		public void user_verify_issuing_authority_field_is_available_under_customer_identification_screen() throws Throwable {
+		public void user_608_verify_issuing_authority_field_is_available_under_customer_identification_screen() throws Throwable {
 			WebElement label = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("issuingAuthorityLabel"));
 			for (int i = 0; i <= 1500; i++) {
 				try {
@@ -3874,7 +3920,7 @@ public class Tawarruq_Steps {
 		}
 
 		@And("User_608 verify Country of Issue field is available under Customer Identification screen")
-		public void user_verify_country_of_issue_field_is_available_under_customer_identification_screen() throws Throwable {
+		public void user_608_verify_country_of_issue_field_is_available_under_customer_identification_screen() throws Throwable {
 			WebElement label = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("countryOfIssueLabel"));
 			for (int i = 0; i <= 1500; i++) {
 				try {
@@ -3903,7 +3949,7 @@ public class Tawarruq_Steps {
 		
 		
 		@And("User_608 verify ID Type field should be Mandatory, Editable and Lookup under Customer Identification screen")
-		public void user_verify_id_type_field_should_be_mandatory_editable_and_lookup_under_customer_identification_screen() throws Throwable {
+		public void user_608_verify_id_type_field_should_be_mandatory_editable_and_lookup_under_customer_identification_screen() throws Throwable {
 //			Validate Mandatory
 			String label = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDType_Label")).getText();
 			for (int i = 0; i <2000; i++) {
@@ -3945,7 +3991,7 @@ public class Tawarruq_Steps {
 		}
 
 		@And("User_608 verify ID number field should be Mandatory, Editable and Textbox under Customer Identification screen")
-		public void user_verify_id_number_field_should_be_mandatory_editable_and_textbox_under_customer_identification_screen() throws Throwable {
+		public void user_608_verify_id_number_field_should_be_mandatory_editable_and_textbox_under_customer_identification_screen() throws Throwable {
 //			Validate Mandatory
 			String label = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDNumber_Label")).getText();
 			for (int i = 0; i <2000; i++) {
@@ -3987,7 +4033,7 @@ public class Tawarruq_Steps {
 		}
 
 		@And("User_608 verify Issue Date field should be Non-mandatory, Editable and Calendar under Customer Identification screen")
-		public void user_verify_issue_date_field_should_be_non_mandatory_editable_and_calendar_under_customer_identification_screen() throws Throwable {
+		public void user_608_verify_issue_date_field_should_be_non_mandatory_editable_and_calendar_under_customer_identification_screen() throws Throwable {
 //			Validate Non-mandatory
 			String label = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("issueDate_Label")).getText();
 			for (int i = 0; i <2000; i++) {
@@ -4029,7 +4075,7 @@ public class Tawarruq_Steps {
 		}
 
 		@And("User_608 verify Expiry Date field should be Non-mandatory, Editable and Calendar under Customer Identification screen")
-		public void user_verify_expiry_date_field_should_be_non_mandatory_editable_and_calendar_under_customer_identification_screen() throws Throwable {
+		public void user_608_verify_expiry_date_field_should_be_non_mandatory_editable_and_calendar_under_customer_identification_screen() throws Throwable {
 //			Validate Non-mandatory
 			String label = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("expiryDate_Label")).getText();
 			for (int i = 0; i <2000; i++) {
@@ -4071,7 +4117,7 @@ public class Tawarruq_Steps {
 		}
 
 		@And("User_608 verify Issuing Authority field should be Mandatory, Editable and Lookup under Customer Identification screen")
-		public void user_verify_issuing_authority_field_should_be_mandatory_editable_and_lookup_under_customer_identification_screen() throws Throwable {
+		public void user_608_verify_issuing_authority_field_should_be_mandatory_editable_and_lookup_under_customer_identification_screen() throws Throwable {
 //			Validate Mandatory
 			String label = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("issuingAuthorityLabel")).getText();
 			for (int i = 0; i <2000; i++) {
@@ -4113,7 +4159,7 @@ public class Tawarruq_Steps {
 		}
 
 		@And("User_608 verify Country of Issue field should be Mandatory, Editable and Lookup under Customer Identification screen")
-		public void user_verify_country_of_issue_field_should_be_mandatory_editable_and_lookup_under_customer_identification_screen() throws Throwable {
+		public void user_608_verify_country_of_issue_field_should_be_mandatory_editable_and_lookup_under_customer_identification_screen() throws Throwable {
 //			Validate Mandatory
 			String label = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("countryOfIssueLabel")).getText();
 			for (int i = 0; i <2000; i++) {
@@ -4155,7 +4201,7 @@ public class Tawarruq_Steps {
 		}
 		
 		@And("User_608 to verify the functionality of Help button under Customer Identification screen")
-		public void user_to_verify_the_functionality_of_help_button_under_customer_identification_screen() throws Throwable {
+		public void user_608_to_verify_the_functionality_of_help_button_under_customer_identification_screen() throws Throwable {
 			WebElement backBtn = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("identificationDetailsHelpBtn"));
 			for (int i = 0; i <= 150000; i++) {
 				try {
@@ -4171,7 +4217,7 @@ public class Tawarruq_Steps {
 		}
 
 		@And("User_608 post clicking on Help button, system should display the description of all the fields in details")
-		public void user_post_clicking_on_help_button_system_should_display_the_description_of_all_the_fields_in_details() throws Throwable {
+		public void user_608_post_clicking_on_help_button_system_should_display_the_description_of_all_the_fields_in_details() throws Throwable {
 			WebElement helpBtn = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("help_fieldDescription"));
 			for (int i = 0; i <= 1000; i++) {
 				try {
@@ -4188,7 +4234,7 @@ public class Tawarruq_Steps {
 		}		
 				
 		@And("User_608 to verify the functionality of Back button under Customer Identification screen")
-		public void user_to_verify_the_functionality_of_back_button_under_customer_identification_screen() throws Throwable {
+		public void user_608_to_verify_the_functionality_of_back_button_under_customer_identification_screen() throws Throwable {
 			String submitBtn = "document.querySelector('button[ng-reflect-label=\"Submit\"]')";
 			WebElement backBtn = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("identificationDetailsBackBtn"));
 			for (int i = 0; i <= 150000; i++) {
@@ -4206,7 +4252,7 @@ public class Tawarruq_Steps {
 		}
 
 		@And("User_608 post clicking on Back button, system should navigate to the previous screen in Additional Customer Info")
-		public void user_post_clicking_on_back_button_system_should_navigate_to_the_previous_screen_in_additional_customer_info() throws Throwable {
+		public void user_608_post_clicking_on_back_button_system_should_navigate_to_the_previous_screen_in_additional_customer_info() throws Throwable {
 			for (int i = 0; i <= 1000; i++) {
 				try {
 					javascriptHelper.backgroundBorder(javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("customerIdentificationAddBtn")));
@@ -4223,7 +4269,7 @@ public class Tawarruq_Steps {
 		
 //		@AT_TW_NEWAPP_IDA_04
 		@And("User_608 click the any record under Customer Identification section in Additional Customer Info tab")
-		public void user_click_the_any_record_under_customer_identification_section_in_additional_customer_info_tab() throws Throwable {
+		public void user_608_click_the_any_record_under_customer_identification_section_in_additional_customer_info_tab() throws Throwable {
 //			document.querySelector('button[icon="pi pi-arrow-left"]').parentElement.parentElement.parentElement.querySelectorAll('td')[2].parentElement.querySelector('button')
 			for (int i = 0; i <= 300; i++) {
 				try {
@@ -4240,7 +4286,7 @@ public class Tawarruq_Steps {
 		}
 		
 		@And("User_608 verify Update button available under Identification Details screen in Additional Customer Info tab")
-		public void user_verify_update_button_available_under_identification_details_screen_in_additional_customer_info_tab() throws Throwable {
+		public void user_608_verify_update_button_available_under_identification_details_screen_in_additional_customer_info_tab() throws Throwable {
 			WebElement saveBtn = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("identificationDetailsSaveBtn"));
 			for (int i = 0; i <= 1500; i++) {
 				try {
@@ -4256,7 +4302,7 @@ public class Tawarruq_Steps {
 		}
 		
 		@And("User_608 to verify while modification, when user keep any mandatory field blank and click on save button under Identification Details screen")
-		public void user_to_verify_while_modification_when_user_keep_any_mandatory_field_blank_and_click_on_save_button_under_identification_details_screen() throws Throwable {
+		public void user_608_to_verify_while_modification_when_user_keep_any_mandatory_field_blank_and_click_on_save_button_under_identification_details_screen() throws Throwable {
 			WebElement saveBtn = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("identificationDetailsSaveBtn"));
 			javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDNumber_Input")).click();
 			for (int i = 0; i <= 500; i++) {
@@ -4274,7 +4320,7 @@ public class Tawarruq_Steps {
 		}
 
 		@And("User_608 to verify System should show the proper validation message for blank field which is mandatory under Identification Details screen")
-		public void user_to_verify_system_should_show_the_proper_validation_message_for_blank_field_which_is_mandatory_under_identification_details_screen() throws Throwable {
+		public void user_608_to_verify_system_should_show_the_proper_validation_message_for_blank_field_which_is_mandatory_under_identification_details_screen() throws Throwable {
 			String madatoryErrorMsg = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("mandatoryFillToastMsg")).getText();
 			System.err.println("Mandatory Error : "+madatoryErrorMsg);
 			for (int i = 0; i<2000; i++) {
@@ -4291,7 +4337,7 @@ public class Tawarruq_Steps {
 		}		
 		
 		@And("User_608 to verify while modification system enters the invalid data under Customer Identification screen")
-		public void user_to_verify_while_modification_system_enters_the_invalid_data_under_customer_identification_screen() throws Throwable {
+		public void user_608_to_verify_while_modification_system_enters_the_invalid_data_under_customer_identification_screen() throws Throwable {
 			javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDNumber_Input")).click();
 			for (int i = 0; i <= 500; i++) {
 				try {
@@ -4308,7 +4354,7 @@ public class Tawarruq_Steps {
 		}
 
 		@And("User_608 to verify system should not allow user to do a modification with invalid data in Customer Identification screen")
-		public void user_to_verify_system_should_not_allow_user_to_do_a_modification_with_invalid_data_in_customer_identification_screen() throws Throwable {
+		public void user_608_to_verify_system_should_not_allow_user_to_do_a_modification_with_invalid_data_in_customer_identification_screen() throws Throwable {
 			WebElement specialCharError = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("specialCharError"));
 			String specialChar = specialCharError.getText().trim();
 			System.err.println("Speacial Char: "+specialChar);
@@ -4328,7 +4374,7 @@ public class Tawarruq_Steps {
 		}
 		
 		@And("User_608 to verify system allow user to modify the Identification details under Customer Identification screen")
-		public void user_to_verify_system_allow_user_to_modify_the_identification_details_under_customer_identification_screen() throws Throwable {
+		public void user_608_to_verify_system_allow_user_to_modify_the_identification_details_under_customer_identification_screen() throws Throwable {
 			for (int i = 0; i <= 2000; i++) {
 				try {
 					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDType_Dropdown")).click();
@@ -4405,7 +4451,7 @@ public class Tawarruq_Steps {
 		}
 
 		@And("User_608 to verify while modification system allow user to save the record with valid data under Customer Identification screen")
-		public void user_to_verify_while_modification_system_allow_user_to_save_the_record_with_valid_data_under_customer_identification_screen() throws Throwable {
+		public void user_608_to_verify_while_modification_system_allow_user_to_save_the_record_with_valid_data_under_customer_identification_screen() throws Throwable {
 			javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDNumber_Input")).click();
 			for (int i = 0; i <= 500; i++) {
 				try {
@@ -4424,7 +4470,7 @@ public class Tawarruq_Steps {
 		}
 		
 		@And("User_608 click the Update button under Customer Identification screen")
-		public void user_click_the_update_button_under_customer_identification_screen() throws Throwable {
+		public void user_608_click_the_update_button_under_customer_identification_screen() throws Throwable {
 			for (int i = 0; i <= 10000; i++) {
 				try {
 					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("identificationDetailsSaveBtn")).click();
@@ -4440,7 +4486,7 @@ public class Tawarruq_Steps {
 				
 //		@AT_TW_NEWAPP_IDA_05
 		@And("User_608 click the lable on button if the status of record is Active under Customer Identification section")
-		public void user_click_the_lable_on_button_if_the_status_of_record_is_active_under_customer_identification_section() throws Throwable {
+		public void user_608_click_the_lable_on_button_if_the_status_of_record_is_active_under_customer_identification_section() throws Throwable {
 			for (int i = 0; i <= 300; i++) {
 				try {
 					javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("customerIdentificationBackBtn")));
@@ -4507,7 +4553,7 @@ public class Tawarruq_Steps {
 		}
 		
 		@And("User_608 to verify the functionality of Activate\\Deactivate button under Customer Identification screen")
-		public void user_to_verify_the_functionality_of_activate_deactivate_button_under_customer_identification_screen() throws Throwable {
+		public void user_608_to_verify_the_functionality_of_activate_deactivate_button_under_customer_identification_screen() throws Throwable {
 			Thread.sleep(1000);
 			for (int i = 0; i <= 100000; i++) {
 				try {
@@ -4523,7 +4569,7 @@ public class Tawarruq_Steps {
 		}
 		
 		@And("User_608 get the updated record ID under Customer Identification section")
-		public void user_get_the_updated_record_id_under_customer_identification_section() throws Throwable {
+		public void user_608_get_the_updated_record_id_under_customer_identification_section() throws Throwable {
 			Thread.sleep(1000);
 			WebElement successMsg = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("alert_SuccessMsg"));
 			for (int i = 0; i <= 10000; i++) {
@@ -4552,7 +4598,7 @@ public class Tawarruq_Steps {
 		}
 
 		@And("User_608 to verify if Status is Active then click the button system should show Deactivate under Customer Identification section")
-		public void user_to_verify_if_status_is_active_then_click_the_button_system_should_show_deactivate_under_customer_identification_section() throws Throwable {
+		public void user_608_to_verify_if_status_is_active_then_click_the_button_system_should_show_deactivate_under_customer_identification_section() throws Throwable {
 //		document.querySelector('button[icon="pi pi-arrow-left"]').parentElement.parentElement.parentElement.querySelectorAll('td')[1].parentElement.lastElementChild
 			for (int i = 0; i <= 100; i++) {
 				try {
@@ -4616,7 +4662,7 @@ public class Tawarruq_Steps {
 		}
 
 		@And("User_608 click the lable on button if the status of record is Deactive under Customer Identification section")
-		public void user_click_the_lable_on_button_if_the_status_of_record_is_deactive_under_customer_identification_section() throws Throwable {
+		public void user_608_click_the_lable_on_button_if_the_status_of_record_is_deactive_under_customer_identification_section() throws Throwable {
 			for (int i = 0; i <= 300; i++) {
 				try {
 					javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("customerIdentificationBackBtn")));
@@ -4684,7 +4730,7 @@ public class Tawarruq_Steps {
 		}
 
 		@And("User_608 change the status Deactive to Active under Customer Identification section")
-		public void user_change_the_status_deactive_to_active_under_customer_identification_section() throws Throwable {
+		public void user_608_change_the_status_deactive_to_active_under_customer_identification_section() throws Throwable {
 			Thread.sleep(1000);
 			for (int i = 0; i <= 100000; i++) {
 				try {
@@ -4700,7 +4746,7 @@ public class Tawarruq_Steps {
 		}
 
 		@And("User_608 to verify if Status is Deactive then click the button system should show Active under Customer Identification section")
-		public void user_to_verify_if_status_is_deactive_then_click_the_button_system_should_show_active_under_customer_identification_section() throws Throwable {
+		public void user_608_to_verify_if_status_is_deactive_then_click_the_button_system_should_show_active_under_customer_identification_section() throws Throwable {
 			for (int i = 0; i <= 100; i++) {
 				try {
 					javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("customerIdentificationBackBtn")));
@@ -4765,7 +4811,7 @@ public class Tawarruq_Steps {
 		
 //		AT_TW_NEWAPP_IDA_06
 		@And("User_608 click the View Summary button in Tawarruq application")
-		public void user_click_the_view_summary_button_in_tawarruq_application() throws Throwable {
+		public void user_608_click_the_view_summary_button_in_tawarruq_application() throws Throwable {
 			WebElement btn = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("viewSummaryBtn"));
 			for (int i = 0; i <= 150000; i++) {
 				try {
@@ -4781,7 +4827,7 @@ public class Tawarruq_Steps {
 		}
 
 		@And("User_608 post clicking on View Summary button system should display the workflow of the record")
-		public void user_post_clicking_on_view_summary_button_system_should_display_the_workflow_of_the_record() throws Throwable {
+		public void user_608_post_clicking_on_view_summary_button_system_should_display_the_workflow_of_the_record() throws Throwable {
 			WebElement popup = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("viewSummaryBtn"));
 			for (int i = 0; i <= 150000; i++) {
 				try {

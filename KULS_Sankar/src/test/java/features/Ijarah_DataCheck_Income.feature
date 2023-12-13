@@ -129,7 +129,7 @@ Then logout from the ijaraApplication
 
 # IDC_01_28, IDC_01_29
 @AT_INCD_05
-Scenario: Income Summary Detail records for display only at Data Check stage.
+Scenario: To verify the eligible income of self employed customer.
 
 Given navigate the IJARA URL
 And login with valid credentials-Data Check
@@ -148,7 +148,7 @@ And User_608 invoke soft assert in Income details screen under Customer Financia
 
 # IDC_01_30
 @AT_INCD_06
-Scenario: Income Summary Detail records for display only at Data Check stage.
+Scenario: To verify the eligible income of salaried customer.
 
 Given navigate the IJARA URL
 And login with valid credentials-Data Check
