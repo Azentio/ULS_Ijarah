@@ -2,7 +2,8 @@ Feature: To test the address details screen in app data entry stage
 @AT_AD_001
 Scenario: to test the IJARA URL
 Given navigate the IJARA URL
-And login with valid credentials
+#And login with valid credentials
+And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
 And get the test data for test case ID AT_AD_001
@@ -44,7 +45,8 @@ And user_076 invoke soft assert in address details in app data entry stage
 @AT_AD_002
 Scenario: to test the address details with invalid input
 Given navigate the IJARA URL
-And login with valid credentials
+#And login with valid credentials
+And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
 And get the test data for test case ID AT_AD_002
@@ -68,7 +70,8 @@ Then logout from the ULS Application
 @AT_AD_003
 Scenario: update scenario of address details with valid input
 Given navigate the IJARA URL
-And login with valid credentials
+#And login with valid credentials
+And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
 And get the test data for test case ID AT_AD_003
@@ -98,7 +101,8 @@ Then logout from the ULS Application
 @AT_AD_005
 Scenario: update scenario of address details with valid input
 Given navigate the IJARA URL
-And login with valid credentials
+#And login with valid credentials
+And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
 And get the test data for test case ID AT_AD_005
@@ -119,7 +123,8 @@ Then logout from the ULS Application
 @AT_AD_006
 Scenario: update scenario of address details with valid input
 Given navigate the IJARA URL
-And login with valid credentials
+#And login with valid credentials
+And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
 And get the test data for test case ID AT_AD_006

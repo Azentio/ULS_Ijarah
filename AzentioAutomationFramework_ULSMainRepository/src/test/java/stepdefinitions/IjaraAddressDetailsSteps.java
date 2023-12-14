@@ -59,10 +59,25 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 	public void login_with_valid_credentials_for_new_application_stage() throws Throwable {
 		ijaraLogin.loginWithIjaraApplication("userType01");
 	}
-
+	@Given("login with valid credentials-Data Check")
+	public void login_with_valid_credentials_data_check() {
+		ijaraLogin.loginWithIjaraApplication("userType06");
+	}
+	@And("user_626 login with valid credentials")
+	public void user_626_login_with_valid_credentials() throws Throwable {
+		ijaraLogin.loginWithIjaraApplication("userType09");
+	}
+	@Given("login with valid credentials02")
+	public void login_with_valid_credentials02() {
+		ijaraLogin.loginWithIjaraApplication("userType06");
+	}
+	@And("login with valid credentials07") // Ijara AppDataCheck InsuranceInfo
+	public void login_with_valid_credentials07() throws Throwable {
+		ijaraLogin.loginWithIjaraApplication("userType07");
+	}
 	@And("login with valid credentials")
 	public void login_with_valid_credentials() throws Throwable {
-		ijaraLogin.loginWithIjaraApplication("userType04");
+		ijaraLogin.loginWithIjaraApplication("userType09");
 	}
 	@And("login with valid credentials for insurance info ijarah")
 	public void login_with_valid_credentials_for_insurance_info_ijarah() {
@@ -72,7 +87,17 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 	public void login_with_valid_credentials_for_living_expense_ijarah() {
 		ijaraLogin.loginWithIjaraApplication("userType05");
 	}
+	@And("User_6047 login with valid credentials")
+	public void User_6047_login_with_valid_credentials() throws Throwable {
+		ijaraLogin.loginWithIjaraApplication("userType10");
+	}
 
+	@And("login with valid credential1s")
+	public void login_with_valid_credentials1() throws Throwable {
+		ijaraLogin.loginWithIjaraApplication("userType10");
+	}
+	
+	
 	@Then("logout from the ULS Application")
 	public void logout_from_the_ULS_application() throws Throwable {
 		ijaraLogin.logoutFromIjara();
@@ -1540,6 +1565,22 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 
 	@And("click on save button in address details screen")
 	public void click_on_save_button_in_address_details_screen() throws Throwable {
+
+		for (int i = 0; i <= 100; i++) {
+			try {
+
+				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("save_button")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 100) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+	@And("click on save button in application details screen")
+	public void click_on_save_button_in_application_details_screen() throws Throwable {
 
 		for (int i = 0; i <= 100; i++) {
 			try {

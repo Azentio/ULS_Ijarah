@@ -17,14 +17,14 @@ import pageobjects.JSPaths;
 import resources.BaseClass;
 
 public class Ijara_Steps_610 {
-	String excelPath = System.getProperty("user.dir") + "\\TestData\\IjaraJSPaths.xlsx";
-	String excelTestDataPath = System.getProperty("user.dir") + "\\TestData\\ijaraTestData.xlsx";
-	WebDriver driver = BaseClass.driver;
 	ConfigFileReader configFileReader = new ConfigFileReader();
-	JSPaths jsPaths2 = new JSPaths(configFileReader.getJSFilePath(), "Ijara_AD_DocumentDetails", "Ijara_LoginFieldName", "JSPath");
-	JSPaths jsPaths3 = new JSPaths(configFileReader.getJSFilePath(), "Murabha_Module", "Murabha_LoginFieldName", "JSPath");
+	String excelPath = configFileReader.getJSFilePath();
+	String excelTestDataPath =configFileReader.getIjarahTestDataFilePath();
+	WebDriver driver = BaseClass.driver;
+	JSPaths jsPaths2 = new JSPaths(excelPath, "Ijara_AD_DocumentDetails", "Ijara_LoginFieldName", "JSPath");
+	JSPaths jsPaths3 = new JSPaths(excelPath, "Murabha_Module", "Murabha_LoginFieldName", "JSPath");
 	
-	ExcelData exelData = new ExcelData(configFileReader.getIjarahTestDataFilePath(), "ijara_LoginCredentials", "UserType");
+	ExcelData exelData = new ExcelData(excelTestDataPath, "ijara_LoginCredentials", "UserType");
 
 	Map<String, String> loginTestData = new HashMap<>();
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
@@ -35,12 +35,11 @@ public class Ijara_Steps_610 {
 
 	String path = System.getProperty("user.dir") + "\\TestData\\ijaraTestData.xlsx";
 	
-	ExcelData ad_CustomerFolllowUpDetails_610 = new ExcelData(configFileReader.getIjarahTestDataFilePath(), "AD_CustomerFolllowUpDetails_610", "DataSet ID");
-	
+	ExcelData ad_CustomerFolllowUpDetails_610 = new ExcelData(excelTestDataPath, "AD_CustomerFolllowUpDetails_610", "DataSet ID");
 	
 	Map<String, String> testData;
 	
-	ExcelData morabha_AppDataEntry = new ExcelData(configFileReader.getIjarahTestDataFilePath(), "Morabha_AppDataEntry", "DataSet ID");
+	ExcelData morabha_AppDataEntry = new ExcelData(excelTestDataPath, "Morabha_AppDataEntry", "DataSet ID");
 	Map<String, String> testData01;
 
 	// ------------AD followUp Details

@@ -31,28 +31,28 @@ import resources.BaseClass;
 
 public class IJARAH_Steps_615 {
 	ConfigFileReader configFileReader = new ConfigFileReader();
-	String excelPath = System.getProperty("user.dir") + "\\TestData\\IjaraJSPaths.xlsx";
-	String excelTestDataPath = System.getProperty("user.dir") + "\\TestData\\ijaraTestData.xlsx";
+	String excelPath = configFileReader.getJSFilePath();
+	String excelTestDataPath = configFileReader.getIjarahTestDataFilePath();
 	WebDriver driver = BaseClass.driver;
 	JSPaths jsPaths = new JSPaths(excelPath, "Ijara_loginElements", "Ijara_LoginFieldName", "JSPath");
-	JSPaths applicationDetailsJsPaths = new JSPaths(configFileReader.getJSFilePath(), "Ijara_AddCustInfoElements",
+	JSPaths applicationDetailsJsPaths = new JSPaths(excelPath, "Ijara_AddCustInfoElements",
 			"AdditionalCustomerInfo_FieldName", "JSPath");
-	JSPaths searchCustomerJsPaths = new JSPaths(configFileReader.getJSFilePath(), "SearchCustomer_Elements",
+	JSPaths searchCustomerJsPaths = new JSPaths(excelPath, "SearchCustomer_Elements",
 			"Search_Customer_FieldName", "JSPath");
-	JSPaths applicationDetailsListJsPaths = new JSPaths(configFileReader.getJSFilePath(), "Application_Details_List_Page",
+	JSPaths applicationDetailsListJsPaths = new JSPaths(excelPath, "Application_Details_List_Page",
 			"Application_Details_List_FieldName", "JSPath");	
-	ExcelData customerDetailsExcelData  = new ExcelData(configFileReader.getIjarahTestDataFilePath(),"CustomerDetail_TestData","DataSet ID");
+	ExcelData customerDetailsExcelData  = new ExcelData(excelTestDataPath,"CustomerDetail_TestData","DataSet ID");
 	ApplicationDetailsPageObj appObj = new ApplicationDetailsPageObj(driver);
-	ExcelData exelData = new ExcelData(configFileReader.getIjarahTestDataFilePath(), "ijara_LoginCredentials", "UserType");
+	ExcelData exelData = new ExcelData(excelTestDataPath, "ijara_LoginCredentials", "UserType");
 	Map<String, String> loginTestData = new HashMap<>();
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
 	ClicksAndActionsHelper clicksAndActionsHelper = new ClicksAndActionsHelper(driver);
 	DropDownHelper dropDownHelper = new DropDownHelper(driver);
 	Selenium_Actions selenium_Actions = new Selenium_Actions(driver);
 	WaitHelper waitHelper = new WaitHelper(driver);
-	JSPaths customerDetailsJsPaths = new JSPaths(configFileReader.getJSFilePath(), "CustomerDetail_JSPath", "CustomerDetails_FieldName", "JSPath");
-	ExcelData applicationDetailsExcelData = new ExcelData(configFileReader.getIjarahTestDataFilePath(), "ApplicationDetails_TestData","DataSet ID");
-	ExcelData searchCustomerExcelData=new ExcelData(configFileReader.getIjarahTestDataFilePath(), "Search_Customer_TestData", "DataSet ID");
+	JSPaths customerDetailsJsPaths = new JSPaths(excelPath, "CustomerDetail_JSPath", "CustomerDetails_FieldName", "JSPath");
+	ExcelData applicationDetailsExcelData = new ExcelData(excelTestDataPath, "ApplicationDetails_TestData","DataSet ID");
+	ExcelData searchCustomerExcelData=new ExcelData(excelTestDataPath, "Search_Customer_TestData", "DataSet ID");
 	Map<String, String> testExecutionData;
 	Map<String, String> testData;
 	

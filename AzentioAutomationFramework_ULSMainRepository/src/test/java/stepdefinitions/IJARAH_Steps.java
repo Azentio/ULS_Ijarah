@@ -28,20 +28,20 @@ import resources.BaseClass;
 
 public class IJARAH_Steps {
 	ConfigFileReader configFileReader = new ConfigFileReader();
-	String excelPath = System.getProperty("user.dir") + "\\TestData\\IjaraJSPaths.xlsx";
-	String excelTestDataPath = System.getProperty("user.dir") + "\\TestData\\ijaraTestData.xlsx";
+	String excelPath = configFileReader.getJSFilePath();
+	String excelTestDataPath = configFileReader.getIjarahTestDataFilePath();
 	WebDriver driver = BaseClass.driver;
-	JSPaths jsPaths = new JSPaths(configFileReader.getJSFilePath(), "Ijara_loginElements", "Ijara_LoginFieldName", "JSPath");
-	JSPaths customerDebtJsPaths = new JSPaths(configFileReader.getJSFilePath(), "CF_Debt_Elements", "CF_Debt FieldName", "JSPath");
-	JSPaths underWriterJsPaths = new JSPaths(configFileReader.getJSFilePath(), "Underwriter_Elements", "Underwriter_FieldName", "JSPath");
-	JSPaths dataCheck_IncomeJsPaths = new JSPaths(configFileReader.getJSFilePath(), "DataCheckIncome_Elements", "DataCheckIncome_FieldName",
+	JSPaths jsPaths = new JSPaths(excelPath, "Ijara_loginElements", "Ijara_LoginFieldName", "JSPath");
+	JSPaths customerDebtJsPaths = new JSPaths(excelPath, "CF_Debt_Elements", "CF_Debt FieldName", "JSPath");
+	JSPaths underWriterJsPaths = new JSPaths(excelPath, "Underwriter_Elements", "Underwriter_FieldName", "JSPath");
+	JSPaths dataCheck_IncomeJsPaths = new JSPaths(excelPath, "DataCheckIncome_Elements", "DataCheckIncome_FieldName",
 			"JSPath");
-	JSPaths dataCheck_ApplicationDetailsJsPaths = new JSPaths(configFileReader.getJSFilePath(), "DataCheckAppDetails_Elements",
+	JSPaths dataCheck_ApplicationDetailsJsPaths = new JSPaths(excelPath, "DataCheckAppDetails_Elements",
 			"DataCheckAppDetails_FieldName", "JSPath");
-	JSPaths offering_OfferDetailsJsPaths = new JSPaths(configFileReader.getJSFilePath(), "OfferingOfferDetails_Elements",
+	JSPaths offering_OfferDetailsJsPaths = new JSPaths(excelPath, "OfferingOfferDetails_Elements",
 			"Offering_OfferDetails_FieldName", "JSPath");
 
-	ExcelData exelData = new ExcelData(configFileReader.getIjarahTestDataFilePath(), "ijara_LoginCredentials", "UserType");
+	ExcelData exelData = new ExcelData(excelTestDataPath, "ijara_LoginCredentials", "UserType");
 	Map<String, String> loginTestData = new HashMap<>();
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
 	ClicksAndActionsHelper clicksAndActionsHelper = new ClicksAndActionsHelper(driver);
@@ -52,13 +52,13 @@ public class IJARAH_Steps {
 	Actions actions = new Actions(driver);
 	SoftAssert softAssert = new SoftAssert();
 
-	ExcelData customerDebtExcelData = new ExcelData(configFileReader.getIjarahTestDataFilePath(), "CF_DebtTestData", "DataSet ID");
-	ExcelData underWriterExcelData = new ExcelData(configFileReader.getIjarahTestDataFilePath(), "UnderWriter_TestData", "DataSet ID");
+	ExcelData customerDebtExcelData = new ExcelData(excelTestDataPath, "CF_DebtTestData", "DataSet ID");
+	ExcelData underWriterExcelData = new ExcelData(excelTestDataPath, "UnderWriter_TestData", "DataSet ID");
 	ExcelData dataCheck_IncomeExcelData = new ExcelData(excelTestDataPath, "DataCheck_Income", "DataSet ID");
-	ExcelData dataCheck_ApplicationDetailsExcelData = new ExcelData(configFileReader.getIjarahTestDataFilePath(), "DataCheck_AppDetails",
+	ExcelData dataCheck_ApplicationDetailsExcelData = new ExcelData(excelTestDataPath, "DataCheck_AppDetails",
 			"DataSet ID");
-	ExcelData offering_OfferDetailsExcelData = new ExcelData(configFileReader.getIjarahTestDataFilePath(), "Offering_OfferDetails", "DataSet ID");
-	ExcelData contractSign_ApplicationDetailsExcelData = new ExcelData(configFileReader.getIjarahTestDataFilePath(), "ContractSign_AppDetails",
+	ExcelData offering_OfferDetailsExcelData = new ExcelData(excelTestDataPath, "Offering_OfferDetails", "DataSet ID");
+	ExcelData contractSign_ApplicationDetailsExcelData = new ExcelData(excelTestDataPath, "ContractSign_AppDetails",
 			"DataSet ID");
 
 	Map<String, String> testExecutionData;
@@ -344,6 +344,7 @@ public class IJARAH_Steps {
 
 	@And("User_608 search the Ref id under inbox")
 	public void user_search_the_ref_id_under_inbox() throws Throwable {
+		System.out.println(testData.get("Ref No"));
 		waitHelper.waitForElementwithFluentwait(driver,
 				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("inboxSearchInput")));
 		for (int i = 0; i <= 500; i++) {
@@ -6569,6 +6570,7 @@ public class IJARAH_Steps {
 //				}
 //			}
 //		}
+		System.out.println(dataCheck_ApplicationDetailsJsPaths.getElement("AppDetailsBackBtn"));
 		WebElement AppDetailsBackBtn = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("AppDetailsBackBtn"));
 		for (int i = 0; i <= 20000; i++) {
@@ -6645,6 +6647,7 @@ public class IJARAH_Steps {
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("classificationDropdown"));
 		String classificationValue = classificationDropdown.getAttribute("aria-label");
 		System.out.println("Classification Value: " + classificationValue);
+		System.err.println(testData.get("Classification"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundColor(classificationDropdown);

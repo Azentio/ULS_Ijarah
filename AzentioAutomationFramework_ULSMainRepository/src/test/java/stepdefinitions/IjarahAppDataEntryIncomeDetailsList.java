@@ -24,15 +24,16 @@ import resources.BaseClass;
 
 public class IjarahAppDataEntryIncomeDetailsList {
 	ConfigFileReader configFileReader = new ConfigFileReader();
-//	String excelPath = System.getProperty("user.dir") + "\\TestData\\IjaraJSPaths.xlsx";
-//	String excelTestDataPath = System.getProperty("user.dir") + "\\TestData\\ijaraTestData.xlsx";
+	String excelPath = configFileReader.getJSFilePath();
+	String excelTestDataPath = configFileReader.getIjarahTestDataFilePath();
 	WebDriver driver = BaseClass.driver;
-	JSPaths IjarahAppDataEntryIncomeDetails = new JSPaths(configFileReader.getJSFilePath(), "IjarahAppDataEntryIncomeDetails", "FieldName", "JSPath");
+	JSPaths IjarahAppDataEntryIncomeDetails = new JSPaths(excelPath, "IjarahAppDataEntryIncomeDetails", "FieldName", "JSPath");
+	ExcelData IjaraAppDataCheckQuationInfoexelData = new ExcelData(excelTestDataPath, "IjaraAppDataCheckQuationInfo", "Data Set ID");
 //	ExcelData IjaraAppDataCheckQuationInfoexelData = new ExcelData(excelTestDataPath, "IjaraAppDataCheckQuationInfo", "Data Set ID");
 //	ExcelData MurabhAppdataEntryInsuranceInfo = new ExcelData(excelTestDataPath, "MurabhAppdataEntryInsuranceInfo", "Data Set ID");
 //	ExcelData IncomeDetailsListexelData = new ExcelData(excelTestDataPath, "Living_Expense", "Data Set ID");
 	
-	ExcelData IjarahAppDataEntryIncomeDetailsexelData = new ExcelData(configFileReader.getIjarahTestDataFilePath(), "IjaraAppDataEntryCFIncome", "Data Set ID");
+	ExcelData IjarahAppDataEntryIncomeDetailsexelData = new ExcelData(excelTestDataPath, "IjaraAppDataEntryCFIncome", "Data Set ID");
 	Map<String, String> testData;
 	IjaraLogin ijaraLogin= new IjaraLogin();
 //	Map<String, String> TestData = new HashMap<>();
@@ -64,6 +65,25 @@ public class IjarahAppDataEntryIncomeDetailsList {
 	public void user_update_testdata_from_AT_TW_AD_INC_01() {
 		testData = IjarahAppDataEntryIncomeDetailsexelData.getTestdata("DS_AT_TW_AD_INC_01");
 	}
+	@Given("User_607 Update testdata from AT_IJ_QA_01")
+	public void user_607_update_testdata_from_AT_IJ_QA_01() {
+		testData = IjaraAppDataCheckQuationInfoexelData.getTestdata("DS_AT_IJ_QA_01");
+	}
+	@Given("User_607 Update testdata from AT_IJ_QA_02")
+	public void user_607_update_testdata_from_AT_IJ_QA_02() {
+		testData = IjaraAppDataCheckQuationInfoexelData.getTestdata("DS_AT_IJ_QA_02");
+	}
+	
+	@Given("User_607 Update testdata from AT_IJ_QA_03")
+	public void user_607_update_testdata_from_AT_IJ_QA_03() {
+		testData = IjaraAppDataCheckQuationInfoexelData.getTestdata("DS_AT_IJ_QA_03");
+	}
+	
+	@Given("User_607 Update testdata from AT_IJ_QA_04")
+	public void user_607_update_testdata_from_AT_IJ_QA_04() {
+		testData = IjaraAppDataCheckQuationInfoexelData.getTestdata("DS_AT_IJ_QA_04");
+	}
+	
 	
 //	@Given("User_607 Update testdata from AT_IJ_QA_02")
 //	public void user_update_testdata_from_AT_IJ_QA_02() {

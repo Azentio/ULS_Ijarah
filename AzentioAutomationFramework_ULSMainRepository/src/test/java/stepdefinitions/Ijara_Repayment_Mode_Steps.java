@@ -18,15 +18,15 @@ import utilities.UserUtility_615;
 
 public class Ijara_Repayment_Mode_Steps {
 	ConfigFileReader configFileReader = new ConfigFileReader();
-	String excelPath = System.getProperty("user.dir") + "\\TestData\\IjaraJSPaths.xlsx";
-	String excelTestDataPath = System.getProperty("user.dir") + "\\TestData\\ijaraTestData.xlsx";
+	String excelPath = configFileReader.getJSFilePath();
+	String excelTestDataPath =configFileReader.getIjarahTestDataFilePath();
 	WebDriver driver = BaseClass.driver;
-	JSPaths jsPaths = new JSPaths(configFileReader.getJSFilePath(), "Ijara_loginElements", "Ijara_LoginFieldName", "JSPath");
-	JSPaths repaymentModeJpaths = new JSPaths(configFileReader.getJSFilePath(), "Ijara_Repayment_Mode", "Ijara_LoginFieldName", "JSPath");
-	JSPaths quotationTabJPaths = new JSPaths(configFileReader.getJSFilePath(), "Quotation_Info", "Ijara_LoginFieldName", "JSPath");
-	ExcelData exelData = new ExcelData(configFileReader.getIjarahTestDataFilePath(), "ijara_LoginCredentials", "UserType");
-	ExcelData excelData = new ExcelData(configFileReader.getIjarahTestDataFilePath(), "Ijara_Repayment_Mode", "Data Set ID");
-	ExcelData excel = new ExcelData(configFileReader.getIjarahTestDataFilePath(), "Ijara_Quotation_Info", "Data Set ID");
+	JSPaths jsPaths = new JSPaths(excelPath, "Ijara_loginElements", "Ijara_LoginFieldName", "JSPath");
+	JSPaths repaymentModeJpaths = new JSPaths(excelPath, "Ijara_Repayment_Mode", "Ijara_LoginFieldName", "JSPath");
+	JSPaths quotationTabJPaths = new JSPaths(excelPath, "Quotation_Info", "Ijara_LoginFieldName", "JSPath");
+	ExcelData exelData = new ExcelData(excelTestDataPath, "ijara_LoginCredentials", "UserType");
+	ExcelData excelData = new ExcelData(excelTestDataPath, "Ijara_Repayment_Mode", "Data Set ID");
+	ExcelData excel = new ExcelData(excelTestDataPath, "Ijara_Quotation_Info", "Data Set ID");
 	Map<String, String> loginTestData = new HashMap<>();
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
 	Selenium_Actions seleniumActions = new Selenium_Actions(driver);
@@ -36,8 +36,15 @@ public class Ijara_Repayment_Mode_Steps {
 	@And("user_615 select the module name")
 	public void user_615_select_the_module_name() {
 		for (int i = 0; i < 200; i++) {
-			javascriptHelper.executeScriptWithWebElement(repaymentModeJpaths.getElement("moduleName")).click();
-			break;
+			try {
+				javascriptHelper.executeScriptWithWebElement(repaymentModeJpaths.getElement("moduleName")).click();
+		    	break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+			
 		}
 		
 	}

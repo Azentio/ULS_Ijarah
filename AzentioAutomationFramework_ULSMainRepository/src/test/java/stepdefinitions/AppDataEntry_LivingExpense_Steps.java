@@ -20,16 +20,14 @@ import resources.BaseClass;
 
 public class AppDataEntry_LivingExpense_Steps {
 	ConfigFileReader configFileReader = new ConfigFileReader();
-//	String excelPath = System.getProperty("user.dir") + "\\TestData\\IjaraJSPaths.xlsx";
-//	String excelTestDataPath = System.getProperty("user.dir") + "\\TestData\\ijaraTestData.xlsx";
-	
-	ExcelData excelDataForLivingExpense = new ExcelData(configFileReader.getIjarahTestDataFilePath(), "Living_Expense", "DataSetID");
+	String excelPath = configFileReader.getJSFilePath();
+	String excelTestDataPath = configFileReader.getIjarahTestDataFilePath();
+	ExcelData excelDataForLivingExpense = new ExcelData(excelTestDataPath, "Living_Expense", "DataSetID");
 	WebDriver driver = BaseClass.driver;
 	WaitHelper waitHelper = new WaitHelper(driver);
-	JSPaths jsPaths = new JSPaths(configFileReader.getJSFilePath(), "Living_Expense", "Ijara_AppDataEntrylivingExpensefield", "JSPath");
-	ExcelData exelData = new ExcelData(configFileReader.getIjarahTestDataFilePath(), "ijara_LoginCredentials", "UserType");
+	JSPaths jsPaths = new JSPaths(excelPath, "Living_Expense", "Ijara_AppDataEntrylivingExpensefield", "JSPath");
+	ExcelData exelData = new ExcelData(excelTestDataPath, "ijara_LoginCredentials", "UserType");
 	ClicksAndActionsHelper clicksAndActionsHelper = new ClicksAndActionsHelper(driver);
-
 	ConfigFileReader ConfigFileReaderobj = new ConfigFileReader();
 	DropDownHelper dropDownHelper = new DropDownHelper(driver);
 	Selenium_Actions seleniumActions = new Selenium_Actions(driver);

@@ -18,16 +18,15 @@ import pageobjects.JSPaths;
 import resources.BaseClass;
 
 public class AppDataEntry_InsuranceInfo_Steps {
-//	String excelPath = System.getProperty("user.dir") + "\\TestData\\IjaraJSPaths.xlsx";
-//	String excelTestDataPath = System.getProperty("user.dir") + "\\TestData\\ijaraTestData.xlsx";
 	ConfigFileReader configFileReader = new ConfigFileReader();
-	ExcelData excelDataForInsuranceInfo = new ExcelData(configFileReader.getIjarahTestDataFilePath(), "InsuranceInfo", "DataSetID");
+	String excelPath =configFileReader.getJSFilePath();
+	String excelTestDataPath = configFileReader.getIjarahTestDataFilePath();
+	ExcelData excelDataForInsuranceInfo = new ExcelData(excelTestDataPath, "InsuranceInfo", "DataSetID");
 	WebDriver driver = BaseClass.driver;
 	WaitHelper waitHelper = new WaitHelper(driver);
-	JSPaths jsPaths = new JSPaths(configFileReader.getJSFilePath(), "InsuranceInfo", "Ijara_AppDataEntryInsuranceInfo", "JSPath");
-	ExcelData exelData = new ExcelData(configFileReader.getIjarahTestDataFilePath(), "ijara_LoginCredentials", "UserType");
+	JSPaths jsPaths = new JSPaths(excelPath, "InsuranceInfo", "Ijara_AppDataEntryInsuranceInfo", "JSPath");
+	ExcelData exelData = new ExcelData(excelTestDataPath, "ijara_LoginCredentials", "UserType");
 	ClicksAndActionsHelper clicksAndActionsHelper = new ClicksAndActionsHelper(driver);
-
 	ConfigFileReader ConfigFileReaderobj = new ConfigFileReader();
 	DropDownHelper dropDownHelper = new DropDownHelper(driver);
 	Selenium_Actions seleniumActions = new Selenium_Actions(driver);
