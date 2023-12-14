@@ -119,7 +119,7 @@ public class IjaraTest extends BaseClass{
         }
 	}
 	
-	@And("login with valid credentials08")                                     //Ijara AppDataCheck InsuranceInfo
+	@And("login with valid credentials08")                                     
 	public void login_with_valid_credentials08()throws Throwable {
 		for (int i = 0; i < 200; i++) {
             try {
@@ -133,7 +133,7 @@ public class IjaraTest extends BaseClass{
         }
 	}
 	
-	@And("login with valid credentials09")                                     //Ijara AppDataCheck InsuranceInfo
+	@And("login with valid credentials09")                                     
 	public void login_with_valid_credentials09()throws Throwable {
 		for (int i = 0; i < 200; i++) {
             try {
@@ -147,7 +147,7 @@ public class IjaraTest extends BaseClass{
         }
 	}
 	
-	@And("login with valid credentials10")                                     //Ijara AppDataCheck InsuranceInfo
+	@And("login with valid credentials10")                                     
 	public void login_with_valid_credentials10()throws Throwable {
 		for (int i = 0; i < 200; i++) {
             try {
@@ -161,7 +161,7 @@ public class IjaraTest extends BaseClass{
         }
 	}
 	
-	@And("login with valid credentials11")                                     //Ijara AppDataCheck InsuranceInfo
+	@And("login with valid credentials11")                                     
 	public void login_with_valid_credentials11()throws Throwable {
 		for (int i = 0; i < 200; i++) {
             try {
@@ -174,6 +174,63 @@ public class IjaraTest extends BaseClass{
             }
         }
 	}
+	
+	@And("login with valid credentials12")                                     
+	public void login_with_valid_credentials12()throws Throwable {
+		for (int i = 0; i < 200; i++) {
+            try {
+                ijaraLogin.loginWithIjaraApplication12();
+                break;
+            } catch (Exception e) {
+                if (i==199) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+        }
+	}
+	
+	@And("login with valid credentials13")                                     
+	public void login_with_valid_credentials13()throws Throwable {
+		for (int i = 0; i < 200; i++) {
+            try {
+                ijaraLogin.loginWithIjaraApplication13();
+                break;
+            } catch (Exception e) {
+                if (i==199) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+        }
+	}
+	
+	@And("login with valid credentials14")                                     
+	public void login_with_valid_credentials14()throws Throwable {
+		for (int i = 0; i < 200; i++) {
+            try {
+                ijaraLogin.loginWithIjaraApplication14();
+                break;
+            } catch (Exception e) {
+                if (i==199) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+        }
+	}
+	
+	@And("login with valid credentials15")                                     
+	public void login_with_valid_credentials15()throws Throwable {
+		for (int i = 0; i < 200; i++) {
+            try {
+                ijaraLogin.loginWithIjaraApplication15();
+                break;
+            } catch (Exception e) {
+                if (i==199) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+        }
+	}
+
 
 	@Then("logout from the ijaraApplication")
 	public void logout_from_the_ijara_application()throws Throwable {
