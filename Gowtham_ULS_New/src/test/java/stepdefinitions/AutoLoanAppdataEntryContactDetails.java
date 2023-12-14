@@ -45,35 +45,35 @@ public class AutoLoanAppdataEntryContactDetails {
 	Robot robot;
 	int indexOfListView;
 
-	@And("user_076 get the test data for the test case ID AT_AL_APD_CD_01")
-	public void user_076_get_the_test_data_for_the_test_case_id_AT_AL_APD_CD_01() throws Throwable {
+	@And("user_607 get the test data for the test case ID AT_AL_APD_CD_01")
+	public void user_607_get_the_test_data_for_the_test_case_id_AT_AL_APD_CD_01() throws Throwable {
 		testData = ALoanAppdataEntryContactDetailsexelData.getTestdata("DS_AT_AL_APD_CD_01");
 	}
 	
-	@And("user_076 get the test data for the test case ID AT_AL_APD_CD_02")
-	public void user_076_get_the_test_data_for_the_test_case_id_AT_AL_APD_CD_02() throws Throwable {
+	@And("user_607 get the test data for the test case ID AT_AL_APD_CD_02")
+	public void user_607_get_the_test_data_for_the_test_case_id_AT_AL_APD_CD_02() throws Throwable {
 		testData = ALoanAppdataEntryContactDetailsexelData.getTestdata("DS_AT_AL_APD_CD_02");
 	}
 	
-	@And("user_076 get the test data for the test case ID AT_AL_APD_CD_03")
-	public void user_076_get_the_test_data_for_the_test_case_id_AT_AL_APD_CD_03() throws Throwable {
+	@And("user_607 get the test data for the test case ID AT_AL_APD_CD_03")
+	public void user_607_get_the_test_data_for_the_test_case_id_AT_AL_APD_CD_03() throws Throwable {
 		testData = ALoanAppdataEntryContactDetailsexelData.getTestdata("DS_AT_AL_APD_CD_03");
 	}
 	
-	@And("user_076 get the test data for the test case ID AT_AL_APD_CD_04")
-	public void user_076_get_the_test_data_for_the_test_case_id_AT_AL_APD_CD_04() throws Throwable {
+	@And("user_607 get the test data for the test case ID AT_AL_APD_CD_04")
+	public void user_607_get_the_test_data_for_the_test_case_id_AT_AL_APD_CD_04() throws Throwable {
 		testData = ALoanAppdataEntryContactDetailsexelData.getTestdata("DS_AT_AL_APD_CD_04");
 	}
 	
-	@And("user_076 get the test data for the test case ID AT_AL_APD_CD_05")
-	public void user_076_get_the_test_data_for_the_test_case_id_AT_AL_APD_CD_05() throws Throwable {
+	@And("user_607 get the test data for the test case ID AT_AL_APD_CD_05")
+	public void user_607_get_the_test_data_for_the_test_case_id_AT_AL_APD_CD_05() throws Throwable {
 		testData = ALoanAppdataEntryContactDetailsexelData.getTestdata("DS_AT_AL_APD_CD_05");
 	}
 
 
 
-	@And("user_076 click on additional customer info tab in new application stage")
-	public void user_076_click_on_additional_customer_info_tab_in_new_application_stage() throws Throwable {
+	@And("user_607 click on additional customer info tab in new application stage")
+	public void user_607_click_on_additional_customer_info_tab_in_new_application_stage() throws Throwable {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(ALoanAppdataEntryContactDetails.getElement("additional_customer_info_tab")).click();
@@ -86,8 +86,8 @@ public class AutoLoanAppdataEntryContactDetails {
 		}
 	}
 
-	@And("user_076 click on edit button customer personal information screen at new app stage")
-	public void user_076_click_on_edit_button_customer_personal_information_screen_at_new_app_stage() throws Throwable {
+	@And("user_607 click on edit button customer personal information screen at new app stage")
+	public void user_607_click_on_edit_button_customer_personal_information_screen_at_new_app_stage() throws Throwable {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -102,8 +102,8 @@ public class AutoLoanAppdataEntryContactDetails {
 		}
 	}
 
-	@And("user_076 select the new application stage record for contact details screen")
-	public void user_076_select_the_new_application_stage_record_for_contact_details_screen() throws Throwable {
+	@And("user_607 select the new application stage record for contact details screen")
+	public void user_607_select_the_new_application_stage_record_for_contact_details_screen() throws Throwable {
 
 		String mailBoxRecordList = "document.querySelectorAll('td[class=\"ng-star-inserted\"]>span').length";
 		String numberOfRecordInMailBox = "";
@@ -144,8 +144,8 @@ public class AutoLoanAppdataEntryContactDetails {
 		}
 	}
 
-	@And("user_076 verify contact details list view record should be read only not editable at new app stage")
-	public void user_076_verify_contact_details_list_view_record_should_be_read_only_not_editable_at_new_app_stage()
+	@And("user_607 verify contact details list view record should be read only not editable at new app stage")
+	public void user_607_verify_contact_details_list_view_record_should_be_read_only_not_editable_at_new_app_stage()
 			throws Throwable {
 
 		boolean statusOfListViewRecord = false;
@@ -220,8 +220,8 @@ public class AutoLoanAppdataEntryContactDetails {
 		Assert.assertTrue(statusOfListViewRecord);
 	}
 
-	@And("user_076 click on edit button in list view record of contact details in new app stage")
-	public void user_076_click_on_edit_button_in_list_view_record_of_contact_details_in_new_app_stage()
+	@And("user_607 click on edit button in list view record of contact details in new app stage")
+	public void user_607_click_on_edit_button_in_list_view_record_of_contact_details_in_new_app_stage()
 			throws Throwable {
 		String listViewQuery = "document.querySelectorAll('ion-col[class=\"p-2 md hydrated\"]').length";
 		String listViewName = "";
@@ -291,7 +291,7 @@ public class AutoLoanAppdataEntryContactDetails {
 		}
 	}
 
-	@And("user_076 update the phone number in contact details list view record in new app stage")
+	@And("user_607 update the phone number in contact details list view record in new app stage")
 	public void user_update_the_phone_number_in_contact_details_list_view_record_in_new_app_stage() throws Throwable {
 		for (int i = 0; i < 10; i++) {
 			try {
@@ -320,7 +320,7 @@ public class AutoLoanAppdataEntryContactDetails {
 
 	}
 
-	@And("user_076 click on save button after update the contact details in new app stage")
+	@And("user_607 click on save button after update the contact details in new app stage")
 	public void user_click_on_save_button_after_update_the_contact_details_in_new_app_stage() throws Throwable {
 
 		for (int i = 0; i <= 300; i++) {
@@ -335,7 +335,7 @@ public class AutoLoanAppdataEntryContactDetails {
 		}
 	}
 
-	@Then("user_076 verify system should show the update successful popup while update the contact details record in new app stage")
+	@Then("user_607 verify system should show the update successful popup while update the contact details record in new app stage")
 	public void user_verify_system_should_show_the_update_successful_popup_while_update_the_contact_details_record_in_new_app_stage()
 			throws Throwable {
 		String savePopup = "";
@@ -370,8 +370,8 @@ public class AutoLoanAppdataEntryContactDetails {
 
 	}
 
-	@And("user_076 make phone number field as blank in contact details at new app stage")
-	public void user_076_make_phone_number_field_as_blank_in_contact_details_at_new_app_stage() throws Throwable {
+	@And("user_607 make phone number field as blank in contact details at new app stage")
+	public void user_607_make_phone_number_field_as_blank_in_contact_details_at_new_app_stage() throws Throwable {
 		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(ALoanAppdataEntryContactDetails.getElement("phone_number_input"))
@@ -384,8 +384,8 @@ public class AutoLoanAppdataEntryContactDetails {
 		}
 	}
 
-	@And("user_076 click on add butto in contact details screen in new app stage")
-	public void user_076_click_on_add_butto_in_contact_details_screen_in_new_app_stage() throws Throwable {
+	@And("user_607 click on add butto in contact details screen in new app stage")
+	public void user_607_click_on_add_butto_in_contact_details_screen_in_new_app_stage() throws Throwable {
 		String labelLength = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
 		String lengthOfTheLabel = "";
 		boolean isAddButttonClicked = false;
@@ -449,8 +449,8 @@ public class AutoLoanAppdataEntryContactDetails {
 
 	}
 
-	@And("user_076 phone type field should be editable dropdown in contact details screen at new app stage")
-	public void user_076_phone_type_field_should_be_editable_dropdown_in_contact_details_screen_at_new_app_stage()
+	@And("user_607 phone type field should be editable dropdown in contact details screen at new app stage")
+	public void user_607_phone_type_field_should_be_editable_dropdown_in_contact_details_screen_at_new_app_stage()
 			throws Throwable {
 		String fieldLevelVerification = "";
 		System.out.println("Phone type dropdown " + ALoanAppdataEntryContactDetails.getElement("phone_type_dropdown"));
@@ -473,8 +473,8 @@ public class AutoLoanAppdataEntryContactDetails {
 
 	}
 
-	@And("user_076 phone number field should be editable number field in contact details screen at new app stage")
-	public void user_076_phone_number_field_should_be_editable_number_field_in_contact_details_screen_at_new_app_stage()
+	@And("user_607 phone number field should be editable number field in contact details screen at new app stage")
+	public void user_607_phone_number_field_should_be_editable_number_field_in_contact_details_screen_at_new_app_stage()
 			throws Throwable {
 
 		String fieldValidation = "";
@@ -536,8 +536,8 @@ public class AutoLoanAppdataEntryContactDetails {
 		}
 	}
 
-	@And("user_076 consent for phone contact should be editable dropdown in contact details screen at new app stage")
-	public void user_076_consent_for_phone_contact_should_be_editable_dropdown_in_contact_details_screen_at_new_app_stage()
+	@And("user_607 consent for phone contact should be editable dropdown in contact details screen at new app stage")
+	public void user_607_consent_for_phone_contact_should_be_editable_dropdown_in_contact_details_screen_at_new_app_stage()
 			throws Throwable {
 		String fieldLevelVerification = "";
 		for (int i = 0; i <= 300; i++) {
@@ -561,8 +561,8 @@ public class AutoLoanAppdataEntryContactDetails {
 
 	}
 
-	@And("user_076 prefered phone contact type field should be ditable dropdown in contact details screen at new app stage")
-	public void user_076_prefered_phone_contact_type_field_should_be_ditable_dropdown_in_contact_details_screen_at_new_app_stage()
+	@And("user_607 prefered phone contact type field should be ditable dropdown in contact details screen at new app stage")
+	public void user_607_prefered_phone_contact_type_field_should_be_ditable_dropdown_in_contact_details_screen_at_new_app_stage()
 			throws Throwable {
 		String fieldLevelVerification = "";
 		for (int i = 0; i <= 300; i++) {
@@ -586,8 +586,8 @@ public class AutoLoanAppdataEntryContactDetails {
 
 	}
 
-	@And("user_076 prefered time for contact field shoule be editable field type should be HH MM type in contact details screen at new app stage")
-	public void user_076_prefered_time_for_contact_field_shoule_be_editable_field_type_should_be_hh_mm_type_in_contact_details_screen_at_new_app_stage()
+	@And("user_607 prefered time for contact field shoule be editable field type should be HH MM type in contact details screen at new app stage")
+	public void user_607_prefered_time_for_contact_field_shoule_be_editable_field_type_should_be_hh_mm_type_in_contact_details_screen_at_new_app_stage()
 			throws Throwable {
 
 		String preferedTimeForContact = "";
@@ -624,8 +624,8 @@ public class AutoLoanAppdataEntryContactDetails {
 		softAssert.assertTrue(preferedTimeForContact.contains("text"));
 	}
 
-	@And("user_076 email type field should be editable dropdown in contact details screen at new app stage")
-	public void user_076_email_type_field_should_be_editable_dropdown_in_contact_details_screen_at_new_app_stage()
+	@And("user_607 email type field should be editable dropdown in contact details screen at new app stage")
+	public void user_607_email_type_field_should_be_editable_dropdown_in_contact_details_screen_at_new_app_stage()
 			throws Throwable {
 		String fieldLevelVerification = "";
 		for (int i = 0; i <= 300; i++) {
@@ -647,8 +647,8 @@ public class AutoLoanAppdataEntryContactDetails {
 
 	}
 
-	@And("user_076 email ID field should be editable emial iD field in contact details screen at new app stage")
-	public void user_076_email_id_field_should_be_editable_emial_i_d_field_in_contact_details_screen_at_new_app_stage()
+	@And("user_607 email ID field should be editable emial iD field in contact details screen at new app stage")
+	public void user_607_email_id_field_should_be_editable_emial_i_d_field_in_contact_details_screen_at_new_app_stage()
 			throws Throwable {
 		String preferedTimeForContact = "";
 		for (int i = 0; i <= 200; i++) {
@@ -682,8 +682,8 @@ public class AutoLoanAppdataEntryContactDetails {
 
 	}
 
-	@And("user_076 click on save button without enter the details in contact details screen in new app stage")
-	public void user_076_click_on_save_button_without_enter_the_details_in_contact_details_screen_in_new_app_stage()
+	@And("user_607 click on save button without enter the details in contact details screen in new app stage")
+	public void user_607_click_on_save_button_without_enter_the_details_in_contact_details_screen_in_new_app_stage()
 			throws Throwable {
 		robot = new Robot();
 		robot.mouseWheel(-500);
@@ -702,8 +702,8 @@ public class AutoLoanAppdataEntryContactDetails {
 
 	}
 
-	@Then("user_076 verify contact details should show the mandatory field validation in new app stage")
-	public void user_076_verify_contact_details_should_show_the_mandatory_field_validation_in_new_app_stage()
+	@Then("user_607 verify contact details should show the mandatory field validation in new app stage")
+	public void user_607_verify_contact_details_should_show_the_mandatory_field_validation_in_new_app_stage()
 			throws Throwable {
 
 		String mandatoryValidation = "";
@@ -725,8 +725,8 @@ public class AutoLoanAppdataEntryContactDetails {
 
 	}
 
-	@And("user_076 enter the character input in phone numver field in contact details screen in new app stage")
-	public void user_076_enter_the_character_input_in_phone_numver_field_in_contact_details_screen_in_new_app_stage()
+	@And("user_607 enter the character input in phone numver field in contact details screen in new app stage")
+	public void user_607_enter_the_character_input_in_phone_numver_field_in_contact_details_screen_in_new_app_stage()
 			throws Throwable {
 		for (int i = 0; i <= 300; i++) {
 			try {
@@ -744,8 +744,8 @@ public class AutoLoanAppdataEntryContactDetails {
 
 	}
 
-	@Then("user_076 verify phone number field should show the validation for character input in new app stage")
-	public void user_076_verify_phone_number_field_should_show_the_validation_for_character_input_in_new_app_stage()
+	@Then("user_607 verify phone number field should show the validation for character input in new app stage")
+	public void user_607_verify_phone_number_field_should_show_the_validation_for_character_input_in_new_app_stage()
 			throws Throwable {
 		String fieldValidation = "";
 
@@ -767,8 +767,8 @@ public class AutoLoanAppdataEntryContactDetails {
 		softAssert.assertEquals(fieldValidation, "Invalid Mobile Number");
 	}
 
-	@And("user_076 enter the negative input in phone number field in contact details screen in new app stage")
-	public void user_076_enter_the_negative_input_in_phone_number_field_in_contact_details_screen_in_new_app_stage()
+	@And("user_607 enter the negative input in phone number field in contact details screen in new app stage")
+	public void user_607_enter_the_negative_input_in_phone_number_field_in_contact_details_screen_in_new_app_stage()
 			throws Throwable {
 		for (int i = 0; i <= 10; i++) {
 			try {
@@ -794,8 +794,8 @@ public class AutoLoanAppdataEntryContactDetails {
 		}
 	}
 
-	@Then("user_076 verify phone number field should show the validation for negative input in new app stage")
-	public void user_076_verify_phone_number_field_should_show_the_validation_for_negative_input_in_new_app_stage()
+	@Then("user_607 verify phone number field should show the validation for negative input in new app stage")
+	public void user_607_verify_phone_number_field_should_show_the_validation_for_negative_input_in_new_app_stage()
 			throws Throwable {
 		String fieldValidation = "";
 		for (int i = 0; i <= 300; i++) {
@@ -815,8 +815,8 @@ public class AutoLoanAppdataEntryContactDetails {
 		softAssert.assertEquals(fieldValidation, "Only Alphanumeric characters are allowed");
 	}
 
-	@And("user_076 enter the special character input in phone numver field in contact details screen in new app stage")
-	public void user_076_enter_the_special_character_input_in_phone_numver_field_in_contact_details_screen_in_new_app_stage()
+	@And("user_607 enter the special character input in phone numver field in contact details screen in new app stage")
+	public void user_607_enter_the_special_character_input_in_phone_numver_field_in_contact_details_screen_in_new_app_stage()
 			throws Throwable {
 		for (int i = 0; i <= 10; i++) {
 			try {
@@ -845,8 +845,8 @@ public class AutoLoanAppdataEntryContactDetails {
 		}
 	}
 
-	@Then("user_076 verify phone number field should show the validation for special character input in new app stage")
-	public void user_076_verify_phone_number_field_should_show_the_validation_for_special_character_input_in_new_app_stage()
+	@Then("user_607 verify phone number field should show the validation for special character input in new app stage")
+	public void user_607_verify_phone_number_field_should_show_the_validation_for_special_character_input_in_new_app_stage()
 			throws Throwable {
 		String fieldValidation = "";
 		for (int i = 0; i <= 300; i++) {
@@ -868,7 +868,7 @@ public class AutoLoanAppdataEntryContactDetails {
 		softAssert.assertEquals(fieldValidation, "Only Alphanumeric characters are allowed");
 	}
 
-	@And("user_076 clear the email id field in contact details at new app stage")
+	@And("user_607 clear the email id field in contact details at new app stage")
 	public void user_clear_the_email_id_field_in_contact_details_at_new_app_stage() throws Throwable {
 		for (int i = 0; i <= 10; i++) {
 			try {
@@ -883,8 +883,8 @@ public class AutoLoanAppdataEntryContactDetails {
 		}
 	}
 
-	@And("user_076 enter the invaid mail id input inemail id field in contact details screen in new app stage")
-	public void user_076_enter_the_invaid_mail_id_input_inemail_id_field_in_contact_details_screen_in_new_app_stage()
+	@And("user_607 enter the invaid mail id input inemail id field in contact details screen in new app stage")
+	public void user_607_enter_the_invaid_mail_id_input_inemail_id_field_in_contact_details_screen_in_new_app_stage()
 			throws Throwable {
 
 		for (int i = 0; i <= 300; i++) {
@@ -902,8 +902,8 @@ public class AutoLoanAppdataEntryContactDetails {
 		}
 	}
 
-	@Then("user_076 verify email id field should show the validation for invalid mail id input in new app stage")
-	public void user_076_verify_email_id_field_should_show_the_validation_for_invalid_mail_id_input_in_new_app_stage()
+	@Then("user_607 verify email id field should show the validation for invalid mail id input in new app stage")
+	public void user_607_verify_email_id_field_should_show_the_validation_for_invalid_mail_id_input_in_new_app_stage()
 			throws Throwable {
 
 		String fieldValidation = "";
@@ -926,8 +926,8 @@ public class AutoLoanAppdataEntryContactDetails {
 		softAssert.assertEquals(fieldValidation, "Invalid Email");
 	}
 
-	@Then("user_076 verify contact details screen should get open with save buttton and back button")
-	public void user_076_verify_contact_details_screen_should_get_open_with_save_buttton_and_back_button()
+	@Then("user_607 verify contact details screen should get open with save buttton and back button")
+	public void user_607_verify_contact_details_screen_should_get_open_with_save_buttton_and_back_button()
 			throws Throwable {
 		boolean backButtonVerification = false;
 		boolean saveButtonVerification = false;
@@ -952,8 +952,8 @@ public class AutoLoanAppdataEntryContactDetails {
 
 	}
 
-	@Then("user_076 verify phone type field should be editable numeric field at new app stage")
-	public void user_076_verify_phone_type_field_should_be_editable_numeric_field_at_new_app_stage() throws Throwable {
+	@Then("user_607 verify phone type field should be editable numeric field at new app stage")
+	public void user_607_verify_phone_type_field_should_be_editable_numeric_field_at_new_app_stage() throws Throwable {
 		String fieldLevelVerification = "";
 		System.out.println("Phone type dropdown " + ALoanAppdataEntryContactDetails.getElement("phone_type_dropdown"));
 		for (int i = 0; i <= 300; i++) {
@@ -975,8 +975,8 @@ public class AutoLoanAppdataEntryContactDetails {
 		softAssert.fail("phone type is not a numeric field hence failed");
 	}
 
-	@Then("user_076 verify phone number field should be editable numeric field at new app stage")
-	public void user_076_verify_phone_number_field_should_be_editable_numeric_field_at_new_app_stage()
+	@Then("user_607 verify phone number field should be editable numeric field at new app stage")
+	public void user_607_verify_phone_number_field_should_be_editable_numeric_field_at_new_app_stage()
 			throws Throwable {
 		String fieldValidation = "";
 		for (int i = 0; i <= 1000; i++) {
@@ -1034,8 +1034,8 @@ public class AutoLoanAppdataEntryContactDetails {
 		}
 	}
 
-	@Then("user_076 verify Consent for Phone Contact should be editable numeric at new app stage")
-	public void user_076_verify_consent_for_phone_contact_should_be_editable_numeric_at_new_app_stage()
+	@Then("user_607 verify Consent for Phone Contact should be editable numeric at new app stage")
+	public void user_607_verify_consent_for_phone_contact_should_be_editable_numeric_at_new_app_stage()
 			throws Throwable {
 		String fieldLevelVerification = "";
 		for (int i = 0; i <= 300; i++) {
@@ -1058,8 +1058,8 @@ public class AutoLoanAppdataEntryContactDetails {
 		softAssert.fail("consent for phone contact field is not a numeric field hence failed");
 	}
 
-	@Then("user_076 verify prefered phone contact type field should be editable email format at new app stage")
-	public void user_076_verify_prefered_phone_contact_type_field_should_be_editable_email_format_at_new_app_stage()
+	@Then("user_607 verify prefered phone contact type field should be editable email format at new app stage")
+	public void user_607_verify_prefered_phone_contact_type_field_should_be_editable_email_format_at_new_app_stage()
 			throws Throwable {
 		String fieldLevelVerification = "";
 		for (int i = 0; i <= 300; i++) {
@@ -1082,8 +1082,8 @@ public class AutoLoanAppdataEntryContactDetails {
 		softAssert.fail("preferd phone contact type field is not a email type field hence failed");
 	}
 
-	@Then("user_076 verify prefered time for contact field should be editable number format at new app stage")
-	public void user_076_verify_prefered_time_for_contact_field_should_be_editable_number_format_at_new_app_stage()
+	@Then("user_607 verify prefered time for contact field should be editable number format at new app stage")
+	public void user_607_verify_prefered_time_for_contact_field_should_be_editable_number_format_at_new_app_stage()
 			throws Throwable {
 		String preferedTimeForContact = "";
 		for (int i = 0; i <= 200; i++) {
@@ -1120,8 +1120,8 @@ public class AutoLoanAppdataEntryContactDetails {
 
 	}
 
-	@Then("user_076 verify email type field should be editable dropdown at new app stage")
-	public void user_076_verify_email_type_field_should_be_editable_dropdown_at_new_app_stage() throws Throwable {
+	@Then("user_607 verify email type field should be editable dropdown at new app stage")
+	public void user_607_verify_email_type_field_should_be_editable_dropdown_at_new_app_stage() throws Throwable {
 		String fieldLevelVerification = "";
 		for (int i = 0; i <= 300; i++) {
 			try {
@@ -1142,8 +1142,8 @@ public class AutoLoanAppdataEntryContactDetails {
 
 	}
 
-	@Then("user_076 verify email ID field should be number editable at new app stage")
-	public void user_076_verify_email_id_field_should_be_number_editable_at_new_app_stage() throws Throwable {
+	@Then("user_607 verify email ID field should be number editable at new app stage")
+	public void user_607_verify_email_id_field_should_be_number_editable_at_new_app_stage() throws Throwable {
 		String preferedTimeForContact = "";
 		for (int i = 0; i <= 200; i++) {
 			try {
@@ -1175,7 +1175,7 @@ public class AutoLoanAppdataEntryContactDetails {
 		softAssert.assertTrue(preferedTimeForContact.contains("text"));
 	}
 
-	@And("user_076 click on save button in contact details screen at new app stage")
+	@And("user_607 click on save button in contact details screen at new app stage")
 	public void user_click_on_save_button_in_contact_details_screen_at_new_app_stage() throws Throwable {
 		for (int i = 0; i <= 300; i++) {
 			try {
@@ -1190,7 +1190,7 @@ public class AutoLoanAppdataEntryContactDetails {
 
 	}
 
-	@Then("user_076 show the save successful pop up for contact details screen at new app stage")
+	@Then("user_607 show the save successful pop up for contact details screen at new app stage")
 	public void user_show_the_save_successful_pop_up_for_contact_details_screen_at_new_app_stage() throws Throwable {
 		String savePopup = "";
 		for (int i = 0; i <= 300; i++) {
@@ -1224,7 +1224,7 @@ public class AutoLoanAppdataEntryContactDetails {
 
 	}
 
-	@And("user_076 click on toggle button and capture the status of cutact details record at new app stage")
+	@And("user_607 click on toggle button and capture the status of cutact details record at new app stage")
 	public void user_click_on_toggle_button_and_capture_the_status_of_cutact_details_record_at_new_app_stage()
 			throws Throwable {
 		String tempRecordStatus = "";
@@ -1275,7 +1275,7 @@ public class AutoLoanAppdataEntryContactDetails {
 
 	}
 
-	@Then("user_076 verify contact details record status in list view at new app stage")
+	@Then("user_607 verify contact details record status in list view at new app stage")
 	public void user_verify_contact_details_record_status_in_list_view_at_new_app_stage() throws Throwable {
 		System.out.println("Index value in list view record validation " + indexOfListView);
 		for (int i = 0; i <= 3000; i++) {
@@ -1308,7 +1308,7 @@ public class AutoLoanAppdataEntryContactDetails {
 		}
 	}
 
-	@And("user_076 click on edit button in contact details list view at new app stage")
+	@And("user_607 click on edit button in contact details list view at new app stage")
 	public void user_click_on_edit_button_in_contact_details_list_view_at_new_app_stage() throws Throwable {
 		for (int i = 0; i <= 600; i++) {
 			try {
@@ -1332,8 +1332,8 @@ public class AutoLoanAppdataEntryContactDetails {
 		}
 	}
 
-	@And("user_076 click on export button in contact details list view at new app stage")
-	public void user_076_click_on_export_button_in_contact_details_list_view_at_new_app_stage() throws Throwable {
+	@And("user_607 click on export button in contact details list view at new app stage")
+	public void user_607_click_on_export_button_in_contact_details_list_view_at_new_app_stage() throws Throwable {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				if (i < 250) {
@@ -1366,8 +1366,8 @@ public class AutoLoanAppdataEntryContactDetails {
 		}
 	}
 
-	@And("user_076 click on pdf options in contact details export option at new app stage")
-	public void user_076_click_on_pdf_options_in_contact_details_export_option_at_new_app_stage() throws Throwable {
+	@And("user_607 click on pdf options in contact details export option at new app stage")
+	public void user_607_click_on_pdf_options_in_contact_details_export_option_at_new_app_stage() throws Throwable {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(ALoanAppdataEntryContactDetails.getElement("pdf_download")).click();
@@ -1382,8 +1382,8 @@ public class AutoLoanAppdataEntryContactDetails {
 		}
 	}
 
-	@Then("user_076 verify contact details pdf file should download in new app stage")
-	public void user_076_verify_contact_details_pdf_file_should_download_in_new_app_stage() throws Throwable {
+	@Then("user_607 verify contact details pdf file should download in new app stage")
+	public void user_607_verify_contact_details_pdf_file_should_download_in_new_app_stage() throws Throwable {
 		browserHelper.SwitchToWindow(1);
 		browserHelper.switchToParentWithChildClose();
 
@@ -1404,8 +1404,8 @@ public class AutoLoanAppdataEntryContactDetails {
 		}
 	}
 
-	@And("user_076 click on xlsx options in contact details export option at new app stage")
-	public void user_076_click_on_xlsx_options_in_contact_details_export_option_at_new_app_stage() throws Throwable {
+	@And("user_607 click on xlsx options in contact details export option at new app stage")
+	public void user_607_click_on_xlsx_options_in_contact_details_export_option_at_new_app_stage() throws Throwable {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(ALoanAppdataEntryContactDetails.getElement("xls_download")).click();
@@ -1420,8 +1420,8 @@ public class AutoLoanAppdataEntryContactDetails {
 		}
 	}
 
-	@Then("user_076 verify contact details xlsx file should download in new app stage")
-	public void user_076_verify_contact_details_xlsx_file_should_download_in_new_app_stage() throws Throwable {
+	@Then("user_607 verify contact details xlsx file should download in new app stage")
+	public void user_607_verify_contact_details_xlsx_file_should_download_in_new_app_stage() throws Throwable {
 		String homePath = System.getProperty("user.home");
 		String filePath = homePath + "/Downloads";
 		File file = new File(filePath);
@@ -1438,8 +1438,8 @@ public class AutoLoanAppdataEntryContactDetails {
 		}
 	}
 
-	@And("user_076 click on contact details list view search button at new app stage")
-	public void user_076_click_on_contact_details_list_view_search_button_at_new_app_stage() throws Throwable {
+	@And("user_607 click on contact details list view search button at new app stage")
+	public void user_607_click_on_contact_details_list_view_search_button_at_new_app_stage() throws Throwable {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -1463,8 +1463,8 @@ public class AutoLoanAppdataEntryContactDetails {
 	}
 
 	
-	@Then("user_076 verify contact details list view should show the unmatched results at new app stage")
-	public void user_076_verify_contact_details_list_view_should_show_the_unmatched_results_at_new_app_stage()
+	@Then("user_607 verify contact details list view should show the unmatched results at new app stage")
+	public void user_607_verify_contact_details_list_view_should_show_the_unmatched_results_at_new_app_stage()
 			throws Throwable {
 		String searchResult = "";
 		System.out.println("Index is " + indexOfListView);
@@ -1495,8 +1495,8 @@ public class AutoLoanAppdataEntryContactDetails {
 
 	}
 
-	@And("user_076 click on back button in contact details screen at new app stage")
-	public void user_076_click_on_back_button_in_contact_details_screen_at_new_app_stage() throws Throwable {
+	@And("user_607 click on back button in contact details screen at new app stage")
+	public void user_607_click_on_back_button_in_contact_details_screen_at_new_app_stage() throws Throwable {
 
 		for (int i = 0; i <= 300; i++) {
 			try {
@@ -1510,8 +1510,8 @@ public class AutoLoanAppdataEntryContactDetails {
 		}
 	}
 
-	@Then("user_076 verify contact details screen should get moved to backward at new app stage")
-	public void user_076_verify_contact_details_screen_should_get_moved_to_backward_at_new_app_stage()
+	@Then("user_607 verify contact details screen should get moved to backward at new app stage")
+	public void user_607_verify_contact_details_screen_should_get_moved_to_backward_at_new_app_stage()
 			throws Throwable {
 		String labelLength = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
 		String lengthOfTheLabel = "";
@@ -1581,8 +1581,8 @@ public class AutoLoanAppdataEntryContactDetails {
 		softAssert.assertTrue(addButtonStatus,"Back Button is not working");
 	}
 
-	@And("user_076 invoke softAssert in contac details new new app stage")
-	public void user_076_invoke_soft_assert_in_contac_details_new_new_app_stage() throws Throwable {
+	@And("user_607 invoke softAssert in contac details new new app stage")
+	public void user_607_invoke_soft_assert_in_contac_details_new_new_app_stage() throws Throwable {
 		softAssert.assertAll();
 	}
 

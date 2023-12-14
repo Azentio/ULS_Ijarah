@@ -36,7 +36,7 @@ public class Murabha_AppDataEntery_CustomerFinancials {
 	
 	
 	@Given("User_607 Click Customer Financials tab")
-	public void user_click_customer_financials_tab() {
+	public void user_607_click_customer_financials_tab() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(MubAppDaEnCustomerFinancials.getElement("CustomerFinancials")).click();
@@ -50,7 +50,7 @@ public class Murabha_AppDataEntery_CustomerFinancials {
 	}
 
 	@Given("User_607 Click edit button in Customer Financials tab")
-	public void user_click_edit_button_in_customer_financials_tab() {
+	public void user_607_click_edit_button_in_customer_financials_tab() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(MubAppDaEnCustomerFinancials.getElement("EditButton")).click();
@@ -64,7 +64,7 @@ public class Murabha_AppDataEntery_CustomerFinancials {
 			}
 		
 		@Given("User_607 Click edit button in QuationInnfo tab")
-		public void user_click_edit_button_in_QuationInnfo_tab() {
+		public void user_607_click_edit_button_in_QuationInnfo_tab() {
 			for (int i = 0; i < 700; i++) {
 				try {
 					javascriptHelper.executeScriptWithWebElement(MubAppDaEnCustomerFinancials.getElement("EditButton")).click();
@@ -78,7 +78,7 @@ public class Murabha_AppDataEntery_CustomerFinancials {
 	}
 
 	@Given("User_607 Click add button in Customer Financials tab")
-	public void user_click_add_button_in_customer_financials_tab() {
+	public void user_607_click_add_button_in_customer_financials_tab() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(MubAppDaEnCustomerFinancials.getElement("AddButton")).click();
@@ -92,7 +92,7 @@ public class Murabha_AppDataEntery_CustomerFinancials {
 	}
 	
 	@Given("User_607 Check Primary Employment Field")
-	public void user_check_primary_employment_field() {
+	public void user_607_check_primary_employment_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(MubAppDaEnCustomerFinancials.getElement("Primary Employment")).isDisplayed()) {
 			Assert.fail();
 		}
@@ -100,14 +100,14 @@ public class Murabha_AppDataEntery_CustomerFinancials {
 	}
 
 	@Given("User_607 Check Company Type Field")
-	public void user_check_company_type_field() {
+	public void user_607_check_company_type_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(MubAppDaEnCustomerFinancials.getElement("Company Type")).isDisplayed()) {
 			Assert.fail();
 		}
 	}
 
 	@Given("User_607 Check ProffesionType Field")
-	public void user_check_proffesion_type_field() {
+	public void user_607_check_proffesion_type_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(MubAppDaEnCustomerFinancials.getElement("ProffesionType")).isDisplayed()) {
 			Assert.fail();
 		}
@@ -115,7 +115,7 @@ public class Murabha_AppDataEntery_CustomerFinancials {
 	}
 
 	@Given("User_607 Check Nature of employment Field")
-	public void user_check_nature_of_employment_field() {
+	public void user_607_check_nature_of_employment_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(MubAppDaEnCustomerFinancials.getElement("Nature of employment")).isDisplayed()) {
 			Assert.fail();
 		} 
@@ -123,7 +123,7 @@ public class Murabha_AppDataEntery_CustomerFinancials {
 	}
 
 	@Given("User_607 Check Proffesion Field")
-	public void user_check_proffesion_field() {
+	public void user_607_check_proffesion_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(MubAppDaEnCustomerFinancials.getElement("Proffesion")).isDisplayed()) {
 			Assert.fail();
 		} 
@@ -131,7 +131,7 @@ public class Murabha_AppDataEntery_CustomerFinancials {
 	}
 
 	@Given("User_607 Check Statutory authority Field")
-	public void user_check_statutory_authority_field() {
+	public void user_607_check_statutory_authority_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(MubAppDaEnCustomerFinancials.getElement("Statutory authority")).isDisplayed()) {
 			Assert.fail();
 		} 
@@ -139,7 +139,7 @@ public class Murabha_AppDataEntery_CustomerFinancials {
 	}
 
 	@Given("User_607 Check Employment End date Field")
-	public void user_check_employment_end_date_field() {
+	public void user_607_check_employment_end_date_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(MubAppDaEnCustomerFinancials.getElement("Employment End date")).isDisplayed()) {
 			Assert.fail();
 		} 
@@ -147,7 +147,7 @@ public class Murabha_AppDataEntery_CustomerFinancials {
 	}
 
 	@Given("User_607 Check Employer Phone Extension Field")
-	public void user_check_employer_phone_extension_field() {
+	public void user_607_check_employer_phone_extension_field() {
 		for (int i = 0; i < 500; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(MubAppDaEnCustomerFinancials.getElement("Remarks")));
@@ -163,7 +163,7 @@ public class Murabha_AppDataEntery_CustomerFinancials {
 	}
 
 	@Given("User_607 Check No.Of partners Field")
-	public void user_check_no_of_partners_field() {
+	public void user_607_check_no_of_partners_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(MubAppDaEnCustomerFinancials.getElement("No.Of partners")).isDisplayed()) {
 			Assert.fail();
 		} 
@@ -171,7 +171,7 @@ public class Murabha_AppDataEntery_CustomerFinancials {
 	}
 
 	@Given("User_607 Check Nature of buisness Field")
-	public void user_check_nature_of_buisness_field() {
+	public void user_607_check_nature_of_buisness_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(MubAppDaEnCustomerFinancials.getElement("Nature of buisness")).isDisplayed()) {
 			Assert.fail();
 		} 
@@ -179,7 +179,7 @@ public class Murabha_AppDataEntery_CustomerFinancials {
 	}
 
 	@Given("User_607 Check Registerd buisness name Field")
-	public void user_check_registerd_buisness_name_field() {
+	public void user_607_check_registerd_buisness_name_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(MubAppDaEnCustomerFinancials.getElement("Registerd buisness name")).isDisplayed()) {
 			Assert.fail();
 		} 
@@ -187,7 +187,7 @@ public class Murabha_AppDataEntery_CustomerFinancials {
 	}
 
 	@Given("User_607 Check Registerd buisness number Field")
-	public void user_check_registerd_buisness_number_field() {
+	public void user_607_check_registerd_buisness_number_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(MubAppDaEnCustomerFinancials.getElement("Registerd buisness number")).isDisplayed()) {
 			Assert.fail();
 		} 
@@ -195,7 +195,7 @@ public class Murabha_AppDataEntery_CustomerFinancials {
 	}
 
 	@Given("User_607 Check Buisness registration date Field")
-	public void user_check_buisness_registration_date_field() {
+	public void user_607_check_buisness_registration_date_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(MubAppDaEnCustomerFinancials.getElement("Buisness registration date")).isDisplayed()) {
 			Assert.fail();
 		} 
@@ -203,7 +203,7 @@ public class Murabha_AppDataEntery_CustomerFinancials {
 	}
 
 	@Given("User_607 Check Office premises type Field")
-	public void user_check_office_premises_type_field() {
+	public void user_607_check_office_premises_type_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(MubAppDaEnCustomerFinancials.getElement("Office premises type")).isDisplayed()) {
 			Assert.fail();
 		} 
@@ -211,7 +211,7 @@ public class Murabha_AppDataEntery_CustomerFinancials {
 	}
 
 	@Given("User_607 Check Shareholder percentage Field")
-	public void user_check_shareholder_percentage_field() {
+	public void user_607_check_shareholder_percentage_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(MubAppDaEnCustomerFinancials.getElement("Shareholder percentage")).isDisplayed()) {
 			Assert.fail();
 		} 
@@ -219,7 +219,7 @@ public class Murabha_AppDataEntery_CustomerFinancials {
 	}
 
 	@Given("User_607 Check No of employes Field")
-	public void user_check_no_of_employes_field() {
+	public void user_607_check_no_of_employes_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(MubAppDaEnCustomerFinancials.getElement("No of employes")).isDisplayed()) {
 			Assert.fail();
 		}
@@ -227,7 +227,7 @@ public class Murabha_AppDataEntery_CustomerFinancials {
 	}
 
 	@Given("User_607 Check Remarks Field")
-	public void user_check_remarks_field() {
+	public void user_607_check_remarks_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(MubAppDaEnCustomerFinancials.getElement("Remarks")).isDisplayed()) {
 			Assert.fail();
 		}

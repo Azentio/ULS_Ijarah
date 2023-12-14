@@ -40,31 +40,31 @@ public class New_Application {
 	SoftAssert SoftAssert = new SoftAssert();
 	
 	@Given("User_607 Update testdata from AT_NEWAPP_02")
-	public void user_update_testdata_from_at_newapp_02() {
+	public void user_607_update_testdata_from_at_newapp_02() {
 		testData = IncomeDetailsListexelData.getTestdata("DS_AT_NEWAPP_02");
 	}
 	
 	@Given("User_607 Update testdata from AT_NWP_03")
-	public void user_update_testdata_from_at_nwp_03() {
+	public void user_607_update_testdata_from_at_nwp_03() {
 		testData = IncomeDetailsListexelData.getTestdata("DS_AT_NWP_03");
 	}
 	
 	@Given("User_607 Update testdata from AT_NWP_04")
-	public void user_update_testdata_from_at_nwp_04() {
+	public void user_607_update_testdata_from_at_nwp_04() {
 		testData = IncomeDetailsListexelData.getTestdata("DS_AT_NWP_04");
 	}
 	
 	
 	
 	@Given("User_607 Check GoBack Field")
-	public void user_check_go_back_field() {
+	public void user_607_check_go_back_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("GoBack")).isDisplayed()) {
 			SoftAssert.fail();
 		}
 	}
 
 	@Given("User_607 Check Save button Field")
-	public void user_check_save_button_field() {
+	public void user_607_check_save_button_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("Savebutton")).isDisplayed()) {
 			SoftAssert.fail();
 		}
@@ -72,21 +72,21 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Submit button Field")
-	public void user_check_submit_button_field() {
+	public void user_607_check_submit_button_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("Submitbutton")).isDisplayed()) {
 			SoftAssert.fail();
 		}
 	}
 
 	@Given("User_607 Check Return button Field")
-	public void user_check_return_button_field() {
+	public void user_607_check_return_button_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("Returnbutton")).isDisplayed()) {
 			SoftAssert.fail();
 		}
 	}
 
 	@Given("User_607 Check Views summary Field")
-	public void user_check_views_summary_field() {
+	public void user_607_check_views_summary_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("Viewsummary")).isDisplayed()) {
 			SoftAssert.fail();
 		}
@@ -94,7 +94,7 @@ public class New_Application {
 	}
 	
 	@Given("User_607 Check Product Field")
-	public void user_check_product_field() {
+	public void user_607_check_product_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("Product")).isDisplayed()) {
 			SoftAssert.fail();
 		}
@@ -102,7 +102,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Subproduct Field")
-	public void user_check_subproduct_field() {
+	public void user_607_check_subproduct_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("Subproduct")).isDisplayed()) {
 			SoftAssert.fail();
 		}
@@ -110,7 +110,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Total Finance Amount Requested Field")
-	public void user_check_total_finance_amount_requested_field() {
+	public void user_607_check_total_finance_amount_requested_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("TotalFinanceAmountRequested")).isDisplayed()) {
 			SoftAssert.fail();
 		}
@@ -118,7 +118,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Declared Net Monthly Income Field")
-	public void user_check_declared_net_monthly_income_field() {
+	public void user_607_check_declared_net_monthly_income_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("DeclaredNetMonthlyIncome")).isDisplayed()) {
 			SoftAssert.fail();
 		}
@@ -126,7 +126,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Declared Current Obligations Field")
-	public void user_check_declared_current_obligations_field() {
+	public void user_607_check_declared_current_obligations_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("DeclaredCurrentObligations")).isDisplayed()) {
 			SoftAssert.fail();
 		}
@@ -134,7 +134,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Special Promotion\\/Campaign Field")
-	public void user_check_special_promotion_campaign_field() {
+	public void user_607_check_special_promotion_campaign_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("Special Promotion/Campaign")).isDisplayed()) {
 			SoftAssert.fail();
 		}
@@ -142,7 +142,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Sourcing Channel Field")
-	public void user_check_sourcing_channel_field() {
+	public void user_607_check_sourcing_channel_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("SourcingChannel")).isDisplayed()) {
 			SoftAssert.fail();
 		}
@@ -150,7 +150,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Business Center Code Field")
-	public void user_check_business_center_code_field() {
+	public void user_607_check_business_center_code_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("BusinessCenterCode")).isDisplayed()) {
 			SoftAssert.fail();
 		}
@@ -158,7 +158,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Servicing Type Field")
-	public void user_check_servicing_type_field() {
+	public void user_607_check_servicing_type_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("ServicingType")).isDisplayed()) {
 			SoftAssert.fail();
 		}
@@ -166,7 +166,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Region Field")
-	public void user_check_region_field() {
+	public void user_607_check_region_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("Region")).isDisplayed()) {
 			SoftAssert.fail();
 		}
@@ -174,7 +174,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Servicing Branch Field")
-	public void user_check_servicing_branch_field() {
+	public void user_607_check_servicing_branch_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("ServicingBranch")).isDisplayed()) {
 			SoftAssert.fail();
 		}
@@ -182,7 +182,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Spoke Location Field")
-	public void user_check_spoke_location_field() {
+	public void user_607_check_spoke_location_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("SpokeLocation")).isDisplayed()) {
 			SoftAssert.fail();
 		}
@@ -190,7 +190,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Closing Staff Or Servicing Staff Or RM Field")
-	public void user_check_closing_staff_or_servicing_staff_or_rm_field() {
+	public void user_607_check_closing_staff_or_servicing_staff_or_rm_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("ClosingStaffOrServicingStaffOrRM")).isDisplayed()) {
 			SoftAssert.fail();
 		}
@@ -198,7 +198,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Topup Type Field")
-	public void user_check_topup_type_field() {
+	public void user_607_check_topup_type_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("TopupType")).isDisplayed()) {
 			SoftAssert.fail();
 		}
@@ -206,7 +206,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Topup Application No Field")
-	public void user_check_topup_application_no_field() {
+	public void user_607_check_topup_application_no_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("TopupApplicationNo")).isDisplayed()) {
 			SoftAssert.fail();
 		}
@@ -215,7 +215,7 @@ public class New_Application {
 	}
 	
 	@Given("User_607 Check SourcingType Field")
-	public void user_check_sourcing_type_field() {
+	public void user_607_check_sourcing_type_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("SourcingType")).isDisplayed()) {
 			SoftAssert.fail();
 		}
@@ -223,7 +223,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check SourcingOffice Field")
-	public void user_check_sourcing_office_field() {
+	public void user_607_check_sourcing_office_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("SourcingOffice")).isDisplayed()) {
 			SoftAssert.fail();
 		}
@@ -231,7 +231,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check SourcingEntity Field")
-	public void user_check_sourcing_entity_field() {
+	public void user_607_check_sourcing_entity_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("SourcingEntity")).isDisplayed()) {
 			SoftAssert.fail();
 		}
@@ -239,7 +239,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check SourcingStaff Field")
-	public void user_check_sourcing_staff_field() {
+	public void user_607_check_sourcing_staff_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("SourcingStaff")).isDisplayed()) {
 			SoftAssert.fail();
 		}
@@ -247,7 +247,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check ReferenceType Field")
-	public void user_check_reference_type_field() {
+	public void user_607_check_reference_type_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("ReferenceType")).isDisplayed()) {
 			SoftAssert.fail();
 		}
@@ -255,7 +255,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check ReferenceEntity Field")
-	public void user_check_reference_entity_field() {
+	public void user_607_check_reference_entity_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("ReferenceEntity")).isDisplayed()) {
 			SoftAssert.fail();
 		}
@@ -263,7 +263,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check ReferenceCode Field")
-	public void user_check_reference_code_field() {
+	public void user_607_check_reference_code_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("ReferenceCode")).isDisplayed()) {
 			SoftAssert.fail();
 		}
@@ -272,7 +272,7 @@ public class New_Application {
 	}
 	
 	@Given("User_607 Save the record")
-	public void user_save_the_record() throws Throwable {
+	public void user_607_save_the_record() throws Throwable {
 //		for (int i = 0; i < 500; i++) {
 //		try {
 //			javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("ScrollToInbox")));
@@ -298,7 +298,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check popup after save the record")
-	public void user_check_popup_after_save_the_record() throws Throwable {
+	public void user_607_check_popup_after_save_the_record() throws Throwable {
 		Thread.sleep(2000);
 		if (!javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("SuccessSavePopup")).isDisplayed()) {
 			SoftAssert.fail();
@@ -307,7 +307,7 @@ public class New_Application {
 	}
 	
 	@Given("User_607 Click back button to move main page")
-	public void user_click_back_button_to_move_main_page() {
+	public void user_607_click_back_button_to_move_main_page() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("backButton")).click();
@@ -322,7 +322,7 @@ public class New_Application {
 	}
 	
 	@Given("User_607 Check Product field should be mandatory")
-	public void user_check_product_field_should_be_mandatory() {
+	public void user_607_check_product_field_should_be_mandatory() {
             for (int i = 0; i <2000; i++) {
                 try {
                 	String repayment = New_ApplicationPaths.getElement("Product*");
@@ -339,7 +339,7 @@ public class New_Application {
 	
 
 	@Given("User_607 Check Product Field should be editable")
-	public void user_check_product_field_should_be_editable() {
+	public void user_607_check_product_field_should_be_editable() {
 	   
 		for (int i = 0; i < 700; i++) {
 			try {
@@ -479,7 +479,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Sub Product field should be mandatory")
-	public void user_check_sub_product_field_should_be_mandatory() {
+	public void user_607_check_sub_product_field_should_be_mandatory() {
 		  for (int i = 0; i <2000; i++) {
               try {
               	String repayment = New_ApplicationPaths.getElement("Subproduct*");
@@ -497,7 +497,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Sub Product Field should be editable")
-	public void user_check_sub_product_field_should_be_editable() {
+	public void user_607_check_sub_product_field_should_be_editable() {
 	  
 		for (int i = 0; i < 700; i++) {
 			try {
@@ -637,7 +637,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Total Finance Amount Requested should be mandatory")
-	public void user_check_total_finance_amount_requested_should_be_mandatory() throws Throwable {
+	public void user_607_check_total_finance_amount_requested_should_be_mandatory() throws Throwable {
 		Thread.sleep(3000);
 		 for (int i = 0; i <2000; i++) {
              try {
@@ -656,7 +656,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Total Finance Amount Requested should be editable")
-	public void user_check_total_finance_amount_requested_should_be_editable() {
+	public void user_607_check_total_finance_amount_requested_should_be_editable() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				//javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("TotalFinanceAmountRequested")).click();
@@ -676,7 +676,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Declared Net Monthly Income should be mandatory")
-	public void user_check_declared_net_monthly_income_should_be_mandatory() {
+	public void user_607_check_declared_net_monthly_income_should_be_mandatory() {
 		 for (int i = 0; i <2000; i++) {
              try {
              	String repayment = New_ApplicationPaths.getElement("DeclaredNetMonthlyIncome*");
@@ -695,7 +695,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Declared Net Monthly Income should be editable")
-	public void user_check_declared_net_monthly_income_should_be_editable() {
+	public void user_607_check_declared_net_monthly_income_should_be_editable() {
 	    
 		for (int i = 0; i < 700; i++) {
 			try {
@@ -713,7 +713,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Declared Current Obligations should be non mandatory")
-	public void user_check_declared_current_obligations_should_be_non_mandatory() {
+	public void user_607_check_declared_current_obligations_should_be_non_mandatory() {
 		for (int i = 0; i <2000; i++) {
             try {
             	String repayment = New_ApplicationPaths.getElement("CheckNonManDeclaredCurrentObligations");
@@ -731,7 +731,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Declared Current Obligations should be editable")
-	public void user_check_declared_current_obligations_should_be_editable() {
+	public void user_607_check_declared_current_obligations_should_be_editable() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("DeclaredCurrentObligations")).sendKeys(testData.get("DeclaredCurrentObligations"));
@@ -745,7 +745,7 @@ public class New_Application {
 			}
 
 	@Given("User_607 Check Special Promotion Campaign should be non mandatory")
-	public void user_check_special_promotion_campaign_should_be_non_mandatory() {
+	public void user_607_check_special_promotion_campaign_should_be_non_mandatory() {
 		for (int i = 0; i <2000; i++) {
             try {
             	String repayment = New_ApplicationPaths.getElement("SpecialPromotion/CampaignCheckNonMan");
@@ -763,7 +763,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Special Promotion Campaign should be editable")
-	public void user_check_special_promotion_campaign_should_be_editable() {
+	public void user_607_check_special_promotion_campaign_should_be_editable() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("Special Promotion/Campaign")).click();
@@ -903,7 +903,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Sourcing Channel should be mandatory")
-	public void user_check_sourcing_channel_should_be_mandatory() {
+	public void user_607_check_sourcing_channel_should_be_mandatory() {
 		for (int i = 0; i <2000; i++) {
             try {
             	String repayment = New_ApplicationPaths.getElement("SourcingChannel*");
@@ -921,7 +921,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Sourcing Channel should be editable")
-	public void user_check_sourcing_channel_should_be_editable() {
+	public void user_607_check_sourcing_channel_should_be_editable() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("SourcingChannel")).click();
@@ -1062,7 +1062,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Business Center Code should be mandatory")
-	public void user_check_business_center_code_should_be_mandatory() {
+	public void user_607_check_business_center_code_should_be_mandatory() {
 		for (int i = 0; i <2000; i++) {
             try {
             	String repayment = New_ApplicationPaths.getElement("BusinessCenterCode*");
@@ -1081,7 +1081,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Business Center Code should be editable")
-	public void user_check_business_center_code_should_be_editable() {
+	public void user_607_check_business_center_code_should_be_editable() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("BusinessCenterCode")).click();
@@ -1221,7 +1221,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Servicing Type should be mandatory")
-	public void user_check_servicing_type_should_be_mandatory() {
+	public void user_607_check_servicing_type_should_be_mandatory() {
 		for (int i = 0; i <2000; i++) {
             try {
             	String repayment = New_ApplicationPaths.getElement("ServicingType*");
@@ -1240,7 +1240,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Servicing Type should be editable")
-	public void user_check_servicing_type_should_be_editable() {
+	public void user_607_check_servicing_type_should_be_editable() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("ServicingType")).click();
@@ -1380,7 +1380,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Region should be mandatory")
-	public void user_check_region_should_be_mandatory() {
+	public void user_607_check_region_should_be_mandatory() {
 		for (int i = 0; i <2000; i++) {
             try {
             	String repayment = New_ApplicationPaths.getElement("Region*");
@@ -1399,7 +1399,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Region should be editable")
-	public void user_check_region_should_be_editable() {
+	public void user_607_check_region_should_be_editable() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("Region")).click();
@@ -1540,7 +1540,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Servicing Branch should be mandatory")
-	public void user_check_servicing_branch_should_be_mandatory() throws Throwable {
+	public void user_607_check_servicing_branch_should_be_mandatory() throws Throwable {
 		Thread.sleep(3000);
 		for (int i = 0; i <2000; i++) {
             try {
@@ -1560,7 +1560,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Servicing Branch should be editable")
-	public void user_check_servicing_branch_should_be_editable() {
+	public void user_607_check_servicing_branch_should_be_editable() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("ServicingBranch")).click();
@@ -1701,7 +1701,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Spoke Location should be Non mandatory")
-	public void user_check_spoke_location_should_be_non_mandatory() {
+	public void user_607_check_spoke_location_should_be_non_mandatory() {
 		for (int i = 0; i <2000; i++) {
             try {
             	String repayment = New_ApplicationPaths.getElement("SpokeLocationCheckNonMan");
@@ -1720,7 +1720,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Spoke Location should be editable")
-	public void user_check_spoke_location_should_be_editable() {
+	public void user_607_check_spoke_location_should_be_editable() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("SpokeLocation")).click();
@@ -1859,7 +1859,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Closing Staff Or Servicing Staff Or RM should be mandatory")
-	public void user_check_closing_staff_or_servicing_staff_or_rm_should_be_mandatory() {
+	public void user_607_check_closing_staff_or_servicing_staff_or_rm_should_be_mandatory() {
 		for (int i = 0; i <2000; i++) {
             try {
             	String repayment = New_ApplicationPaths.getElement("ClosingStaffOrServicingStaffOrRM*");
@@ -1878,7 +1878,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Closing Staff Or Servicing Staff Or RM should be editable")
-	public void user_check_closing_staff_or_servicing_staff_or_rm_should_be_editable() {
+	public void user_607_check_closing_staff_or_servicing_staff_or_rm_should_be_editable() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("ClosingStaffOrServicingStaffOrRM")).click();
@@ -2018,7 +2018,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Topup Type should be Non mandatory")
-	public void user_check_topup_type_should_be_non_mandatory() {
+	public void user_607_check_topup_type_should_be_non_mandatory() {
 		for (int i = 0; i <2000; i++) {
             try {
             	String repayment = New_ApplicationPaths.getElement("TopupTypeCheckNonMan");
@@ -2037,7 +2037,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Topup Type should be editable")
-	public void user_check_topup_type_should_be_editable() {
+	public void user_607_check_topup_type_should_be_editable() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("TopupType")).click();
@@ -2178,7 +2178,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Topup Application No should be Non mandatory")
-	public void user_check_topup_application_no_should_be_non_mandatory() {
+	public void user_607_check_topup_application_no_should_be_non_mandatory() {
 		for (int i = 0; i <2000; i++) {
             try {
             	String repayment = New_ApplicationPaths.getElement("TopupApplicationNoCheckNonMan");
@@ -2196,7 +2196,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Topup Application No should be editable")
-	public void user_check_topup_application_no_should_be_editable() {
+	public void user_607_check_topup_application_no_should_be_editable() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("TopupApplicationNo")).click();
@@ -2211,7 +2211,7 @@ public class New_Application {
 	}
 	
 	@Given("User_607 Check Sourcing Type should be mandatory")
-	public void user_check_sourcing_type_should_be_mandatory() {
+	public void user_607_check_sourcing_type_should_be_mandatory() {
 		for (int i = 0; i <2000; i++) {
             try {
             	String repayment = New_ApplicationPaths.getElement("SourcingType*");
@@ -2229,7 +2229,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Sourcing Type should be editable")
-	public void user_check_sourcing_type_should_be_editable() {
+	public void user_607_check_sourcing_type_should_be_editable() {
 		
 		for (int i = 0; i < 700; i++) {
 			try {
@@ -2356,7 +2356,7 @@ public class New_Application {
 	
 	
 	@Given("User_607 Check Sourcing Office should be mandatory")
-	public void user_check_sourcing_office_should_be_mandatory() throws Throwable {
+	public void user_607_check_sourcing_office_should_be_mandatory() throws Throwable {
 		for (int i = 0; i <2000; i++) {
             try {
             	javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("Status")));
@@ -2387,7 +2387,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Sourcing Office should be editable")
-	public void user_check_sourcing_office_should_be_editable() {
+	public void user_607_check_sourcing_office_should_be_editable() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("SourcingOffice")).click();
@@ -2513,7 +2513,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Sourcing Entity should be mandatory")
-	public void user_check_sourcing_entity_should_be_mandatory() {
+	public void user_607_check_sourcing_entity_should_be_mandatory() {
 		for (int i = 0; i <2000; i++) {
             try {
             	String repayment = New_ApplicationPaths.getElement("SourcingEntity*");
@@ -2532,7 +2532,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Sourcing Entity should be editable")
-	public void user_check_sourcing_entity_should_be_editable() {
+	public void user_607_check_sourcing_entity_should_be_editable() {
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("ReferenceCode")));
 		
 		for (int i = 0; i < 700; i++) {
@@ -2660,7 +2660,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Sourcing Staff should be mandatory")
-	public void user_check_sourcing_staff_should_be_mandatory() {
+	public void user_607_check_sourcing_staff_should_be_mandatory() {
 		for (int i = 0; i <2000; i++) {
             try {
             	String repayment = New_ApplicationPaths.getElement("SourcingStaff*");
@@ -2678,7 +2678,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Sourcing Staff should be editable")
-	public void user_check_sourcing_staff_should_be_editable() {
+	public void user_607_check_sourcing_staff_should_be_editable() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("SourcingStaff")).click();
@@ -2804,7 +2804,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Reference Type should be non mandatory")
-	public void user_check_reference_type_should_be_non_mandatory() {
+	public void user_607_check_reference_type_should_be_non_mandatory() {
 		for (int i = 0; i < 100; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("ReferenceCode")));
@@ -2834,7 +2834,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Reference Type should be editable")
-	public void user_check_reference_type_should_be_editable() {
+	public void user_607_check_reference_type_should_be_editable() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("ReferenceType")).click();
@@ -2960,7 +2960,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Reference Entity should be non mandatory")
-	public void user_check_reference_entity_should_be_non_mandatory() {
+	public void user_607_check_reference_entity_should_be_non_mandatory() {
 		for (int i = 0; i <2000; i++) {
             try {
             	String repayment = New_ApplicationPaths.getElement("ReferenceEntityCheckNonMan");
@@ -2979,7 +2979,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Reference Entity should be editable")
-	public void user_check_reference_entity_should_be_editable() {
+	public void user_607_check_reference_entity_should_be_editable() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("ReferenceEntity")).click();
@@ -3106,7 +3106,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Reference Code should be non mandatory")
-	public void user_check_reference_code_should_be_non_mandatory() {
+	public void user_607_check_reference_code_should_be_non_mandatory() {
 		for (int i = 0; i <2000; i++) {
             try {
             	String repayment = New_ApplicationPaths.getElement("ReferenceCodeCheckNonMan");
@@ -3126,7 +3126,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Reference Code should be editable")
-	public void user_check_reference_code_should_be_editable() {
+	public void user_607_check_reference_code_should_be_editable() {
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("ReferenceCode")));
 		for (int i = 0; i < 700; i++) {
 			try {
@@ -3142,7 +3142,7 @@ public class New_Application {
 
 
 	@Given("User_607 Click Back button")
-	public void user_click_back_button() {
+	public void user_607_click_back_button() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("GoBack")));
@@ -3156,7 +3156,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check system should navigate to the previous screen")
-	public void user_check_system_should_navigate_to_the_previous_screen() {
+	public void user_607_check_system_should_navigate_to_the_previous_screen() {
 		if (!javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("selectRecord")).isDisplayed()) {
 			Assert.fail();
 		}
@@ -3164,7 +3164,7 @@ public class New_Application {
 	}
 	
 	@Given("User_607 Click Add button in application details")
-	public void user_click_add_button_in_application_details() throws Throwable {
+	public void user_607_click_add_button_in_application_details() throws Throwable {
 		Thread.sleep(3000);
 		for (int i = 0; i < 700; i++) {
 			try {
@@ -3180,7 +3180,7 @@ public class New_Application {
 	
 
 	@Given("User_607 Select ID type")
-	public void user_select_id_type() {
+	public void user_607_select_id_type() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("IdType")).click();
@@ -3297,7 +3297,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Enter Customer ID number")
-	public void user_enter_customer_id_number() {
+	public void user_607_enter_customer_id_number() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("IdNumber")).sendKeys(testData.get("Customer ID"));
@@ -3313,7 +3313,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Enter date of birth")
-	public void user_enter_date_of_birth() throws Throwable {
+	public void user_607_enter_date_of_birth() throws Throwable {
 		javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("DateOfBirth")).click();
 		javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("DateOfBirth"))
 				.sendKeys(testData.get("Date Of Birth"));
@@ -3324,7 +3324,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Click Search button after filled the fields")
-	public void user_click_search_button_after_filled_the_fields() throws Throwable {
+	public void user_607_click_search_button_after_filled_the_fields() throws Throwable {
 		for (int i = 0; i < 700; i++) {
 			try {
 				//javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("SearchButton")).click();
@@ -3341,7 +3341,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Click Create New button")
-	public void user_click_create_new_button() {
+	public void user_607_click_create_new_button() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("CreateNewbutton")).click();
@@ -3356,7 +3356,7 @@ public class New_Application {
 	}
 	
 	@Given("User_607 Click save button in creating new reord screen")
-	public void user_click_save_button_in_creating_new_reord_screen() {
+	public void user_607_click_save_button_in_creating_new_reord_screen() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("Savebutton")).click();
@@ -3370,7 +3370,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Please Fill Details Popup showing or not")
-	public void user_check_please_fill_details_popup_showing_or_not() throws Throwable {
+	public void user_607_check_please_fill_details_popup_showing_or_not() throws Throwable {
 		Thread.sleep(1000);
 		for (int i = 0; i <2000; i++) {
             try {
@@ -3386,7 +3386,7 @@ public class New_Application {
 	}
 	
 	@Given("User_607 User Check negative value accepct or not in the numaric field")
-	public void user_user_check_negative_value_accepct_or_not_in_the_numaric_field() {
+	public void user_607_user_check_negative_value_accepct_or_not_in_the_numaric_field() {
 		javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("TotalFinanceAmountRequested")).sendKeys("-10");
 		for (int i = 0; i <2000; i++) {
             try {
@@ -3404,7 +3404,7 @@ public class New_Application {
 	}
 	
 	@Given("User_607 Check Negative Total Finance Amount Requested should be editable")
-	public void user_check_negative_total_finance_amount_requested_should_be_editable() {
+	public void user_607_check_negative_total_finance_amount_requested_should_be_editable() {
 	  
 		for (int i = 0; i < 700; i++) {
 			try {
@@ -3421,27 +3421,27 @@ public class New_Application {
 	}
 
 	@Given("User_607 Update testdata from AT_IJCS_01")
-	public void user_update_testdata_from_AT_IJCS_01() {
+	public void user_607_update_testdata_from_AT_IJCS_01() {
 		testData = Customer_Search.getTestdata("DS_AT_IJCS_01");
 	}
 	
 	@Given("User_607 Update testdata from AT_IJCS_02")
-	public void user_update_testdata_from_AT_IJCS_02() {
+	public void user_607_update_testdata_from_AT_IJCS_02() {
 		testData = Customer_Search.getTestdata("DS_AT_IJCS_02");
 	}
 	
 	@Given("User_607 Update testdata from AT_IJCS_03")
-	public void user_update_testdata_from_AT_IJCS_03() {
+	public void user_607_update_testdata_from_AT_IJCS_03() {
 		testData = Customer_Search.getTestdata("DS_AT_IJCS_03");
 	}
 	
 	@Given("User_607 Update testdata from AT_IJCS_04")
-	public void user_update_testdata_from_AT_IJCS_04() {
+	public void user_607_update_testdata_from_AT_IJCS_04() {
 		testData = Customer_Search.getTestdata("DS_AT_IJCS_04");
 	}
 
 	@Given("User_607 click the menu icon in after login screen")
-	public void user_click_the_menu_icon_in_after_login_screen() {
+	public void user_607_click_the_menu_icon_in_after_login_screen() {
 		for (int i = 0; i < 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("MenuButton")).click();
@@ -3457,7 +3457,7 @@ public class New_Application {
 
 
 	@And("User_607 navigate to the Transactions flag")
-	public void user_navigate_to_the_transactions_flag() {
+	public void user_607_navigate_to_the_transactions_flag() {
 		for (int i = 0; i < 500; i++) {
 			try {
 				System.out.println(New_ApplicationPaths.getElement("MenuButton"));
@@ -3472,7 +3472,7 @@ public class New_Application {
 	}
 
 	@And("User_607 navigate to the Application manager flag")
-	public void user_navigate_to_the_application_manager_flag() {
+	public void user_607_navigate_to_the_application_manager_flag() {
 		for (int i = 0; i < 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("ApplicationManager"))
@@ -3487,7 +3487,7 @@ public class New_Application {
 	}
 
 	@And("User_607 click the Application details flag")
-	public void user_click_the_application_details_flag()throws Throwable {
+	public void user_607_click_the_application_details_flag()throws Throwable {
 //		for (int i = 0; i < 500; i++) {
 //			try {
 //				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("ApplicationDetails"))
@@ -3554,7 +3554,7 @@ public class New_Application {
 	}
 
 	@And("User_607 click the add icon to add the customer details")
-	public void user_click_the_add_icon_to_add_the_customer_details() {
+	public void user_607_click_the_add_icon_to_add_the_customer_details() {
 		for (int i = 0; i < 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("AddIcon")).click();
@@ -3568,7 +3568,7 @@ public class New_Application {
 	}
 	
 	@Given("User_607 Check Customer Type should be mandatory")
-	public void user_check_customer_type_should_be_mandatory() {
+	public void user_607_check_customer_type_should_be_mandatory() {
 		for (int i = 0; i <2000; i++) {
             try {
             	String repayment = New_ApplicationPaths.getElement("CustomerType*");
@@ -3586,7 +3586,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Select Customer type")
-	public void user_select_customer_type() {
+	public void user_607_select_customer_type() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("CustomerType")).click();
@@ -3712,7 +3712,7 @@ public class New_Application {
 	}
 	
 	@Given("User_607 Check Customer Type Field should be Selectable")
-	public void user_check_customer_type_field_should_be_selectable() {
+	public void user_607_check_customer_type_field_should_be_selectable() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("CustomerType")).click();
@@ -3838,13 +3838,13 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check CIF ID Field should be Editable")
-	public void user_check_cif_id_field_should_be_editable() {
+	public void user_607_check_cif_id_field_should_be_editable() {
 		javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("CustomerType")).sendKeys(testData.get("CIF ID"));
 	    
 	}
 
 	@Given("User_607 Check CIF ID Field should be numeric")
-	public void user_check_cif_id_field_should_be_numeric() {
+	public void user_607_check_cif_id_field_should_be_numeric() {
 		javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("CustomerType")).sendKeys(testData.get("Check CIF ID"));
 		String attribute = javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("CIFIDGetValue")).getAttribute("ng-reflect-model");
 	    if (!(attribute==null)) {
@@ -3855,7 +3855,7 @@ public class New_Application {
 	
 
 	@Given("User_607 Check ID Type Field should be Selectable")
-	public void user_check_id_type_field_should_be_selectable() {
+	public void user_607_check_id_type_field_should_be_selectable() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("IDType")).click();
@@ -3979,7 +3979,7 @@ public class New_Application {
 	}
 	
 	@Given("User_607 Enter Customer Name")
-	public void user_enter_customer_name() {
+	public void user_607_enter_customer_name() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("CustomerName")).sendKeys(testData.get("Customer Name"));
@@ -3992,7 +3992,7 @@ public class New_Application {
 			}
 
 	@Given("User_607 Check ID Number Field should be Alphanumeric")
-	public void user_check_id_number_field_should_be_alphanumeric() {
+	public void user_607_check_id_number_field_should_be_alphanumeric() {
 		javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("IDNumber")).sendKeys(testData.get("Check ID Number"));
 		String attribute = javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("IDNumbergetValue")).getAttribute("ng-reflect-model");
 	    System.out.println(attribute);
@@ -4002,7 +4002,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Customer Name Field should be Editable")
-	public void user_check_customer_name_field_should_be_editable() {
+	public void user_607_check_customer_name_field_should_be_editable() {
 		for (int i = 0; i < 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("CustomerName")).sendKeys(testData.get("Customer Name"));
@@ -4013,7 +4013,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Mobile Number Field should be non mandatory")
-	public void user_check_mobile_number_field_should_be_non_mandatory() {
+	public void user_607_check_mobile_number_field_should_be_non_mandatory() {
 		for (int i = 0; i <2000; i++) {
             try {
             	String repayment = New_ApplicationPaths.getElement("MobileNumberNon*");
@@ -4032,7 +4032,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Mobile Number Field should accept only numeric values")
-	public void user_check_mobile_number_field_should_accept_only_numeric_values() {
+	public void user_607_check_mobile_number_field_should_accept_only_numeric_values() {
 		javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("MobileNumber")).sendKeys(testData.get("Check Mobile Number numeric"));
 		String attribute = javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("MobileNumberGetValue")).getAttribute("ng-reflect-model");
 	    if (!(attribute==null)) {
@@ -4041,13 +4041,13 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Mobile Number Field should be editable")
-	public void user_check_mobile_number_field_should_be_editable() {
+	public void user_607_check_mobile_number_field_should_be_editable() {
 		javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("MobileNumber")).sendKeys("9123121233");
 	    
 	}
 
 	@Given("User_607 Check Date of birth Field should be mandatory")
-	public void user_check_date_of_birth_field_should_be_mandatory() {
+	public void user_607_check_date_of_birth_field_should_be_mandatory() {
 		for (int i = 0; i <2000; i++) {
             try {
             	String repayment = New_ApplicationPaths.getElement("DateofBirth*");
@@ -4066,7 +4066,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Email ID Field should be non-mandatory")
-	public void user_check_email_id_field_should_be_non_mandatory() {
+	public void user_607_check_email_id_field_should_be_non_mandatory() {
 		for (int i = 0; i <2000; i++) {
             try {
             	String repayment = New_ApplicationPaths.getElement("EmailIDNon*");
@@ -4085,13 +4085,13 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Email ID Field should be alphanumeric")
-	public void user_check_email_id_field_should_be_alphanumeric() {
+	public void user_607_check_email_id_field_should_be_alphanumeric() {
 		javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("EmailID")).sendKeys(testData.get("Check Email ID alphanumeric"));
 
 	}
 	
 	@Given("User_607 Check System must redirect the Application Details page")
-	public void user_check_system_must_redirect_the_application_details_page() throws Throwable {
+	public void user_607_check_system_must_redirect_the_application_details_page() throws Throwable {
 		Thread.sleep(3000);
 		if (!javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("ApplicationDetails")).isDisplayed()) {
 			Assert.fail();
@@ -4099,7 +4099,7 @@ public class New_Application {
 	}
 	
 	@Given("User_607 Check able to enter characters value in numeric field")
-	public void user_check_able_to_enter_characters_value_in_numeric_field() throws Throwable {
+	public void user_607_check_able_to_enter_characters_value_in_numeric_field() throws Throwable {
 		Thread.sleep(1000);
 		javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("DeclaredNetMonthlyIncome")).sendKeys("enter");
 		String attribute = javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("DeclaredNetMonthlyIncome")).getAttribute("aria-valuenow");
@@ -4109,7 +4109,7 @@ public class New_Application {
 	}
 	
 	@Given("User_607 Check able to enter special characters in any field")
-	public void user_check_able_to_enter_special_characters_in_any_field() {
+	public void user_607_check_able_to_enter_special_characters_in_any_field() {
 		javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("TotalFinanceAmountRequested")).sendKeys(testData.get("special characters"));
 		String attribute = javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("TotalFinanceAmountRequested")).getAttribute("aria-valuenow");
 	    if (!(attribute==null)) {
@@ -4118,7 +4118,7 @@ public class New_Application {
 	}
 	
 	@Given("User_607 Select LOS in module name")
-	public void user_select_los_in_module_name() {
+	public void user_607_select_los_in_module_name() {
 	   
 		for (int i = 0; i < 700; i++) {
 			try {
@@ -4242,7 +4242,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Sourcing Office should be mandatory in application Details")
-	public void user_check_sourcing_office_should_be_mandatory_in_application_details() {
+	public void user_607_check_sourcing_office_should_be_mandatory_in_application_details() {
 		for (int i = 0; i <2000; i++) {
             try {
             	String repayment = New_ApplicationPaths.getElement("SourcingOffice*");
@@ -4261,7 +4261,7 @@ public class New_Application {
 	
 	
 	@Given("User_607 Enter characters in Total Finance Amount Requested")
-	public void user_enter_characters_in_total_finance_amount_requested() {
+	public void user_607_enter_characters_in_total_finance_amount_requested() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				//javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("TotalFinanceAmountRequested")).click();
@@ -4278,7 +4278,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Enter characters in Declared Net Monthly Income")
-	public void user_enter_characters_in_declared_net_monthly_income() {
+	public void user_607_enter_characters_in_declared_net_monthly_income() {
 		for (int i = 0; i < 700; i++) {
 			try {
 			//	javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("DeclaredNetMonthlyIncome")).click();
@@ -4295,7 +4295,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Enter characters in characters in Declared Current Obligations")
-	public void user_enter_characters_in_characters_in_declared_current_obligations() {
+	public void user_607_enter_characters_in_characters_in_declared_current_obligations() {
 		for (int i = 0; i < 700; i++) {
 			try {
 			//	javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("DeclaredNetMonthlyIncome")).click();
@@ -4312,7 +4312,7 @@ public class New_Application {
 	}
 
 	@Given("User_607 Enter characters in Reference Code")
-	public void user_enter_characters_in_reference_code() {
+	public void user_607_enter_characters_in_reference_code() {
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("ReferenceCode")));
 		for (int i = 0; i < 700; i++) {
 			try {

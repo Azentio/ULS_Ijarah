@@ -42,17 +42,17 @@ public class Murabha_Appdataentry_QuotationInfo {
 	SoftAssert SoftAssert = new SoftAssert();
 
 	@And("User_607 Update testdata from AT_MU_QIA_001")
-	public void user_update_test_data_set_id_for_AT_MU_QIA_001() {
+	public void user_607_update_test_data_set_id_for_AT_MU_QIA_001() {
 		testData = MurabhAppdataEntryQuotationInfoexelData.getTestdata("DS_AT_MU_QIA_001");
 	}
 
 	@And("^User_607 Update testdata from AT_MU_QIA_002$")
-	public void user_update_test_data_set_id_for_AT_MU_QIA_002() throws Throwable {
+	public void user_607_update_test_data_set_id_for_AT_MU_QIA_002() throws Throwable {
 		testData = MurabhAppdataEntryQuotationInfoexelData.getTestdata("DS_AT_MU_QIA_002");
 	}
 
 	@Then("User_607 click quotation info tab")
-	public void user_click_quotation_info_tab() {
+	public void user_607_click_quotation_info_tab() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper
@@ -66,7 +66,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Then("User_607 verify the insurance company field")
-	public void user_verify_the_insurance_company_field() {
+	public void user_607_verify_the_insurance_company_field() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper
@@ -82,7 +82,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Then("User_607 verify the base premium field")
-	public void user_verify_the_base_premium_field() {
+	public void user_607_verify_the_base_premium_field() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper
@@ -98,7 +98,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Then("User_607 verify the VAT on Base Premium field")
-	public void user_verify_the_vat_on_base_premium_field() {
+	public void user_607_verify_the_vat_on_base_premium_field() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper
@@ -114,7 +114,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Then("User_607 verify the Net Base Premium field")
-	public void user_verify_the_net_base_premium_field() {
+	public void user_607_verify_the_net_base_premium_field() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper
@@ -130,7 +130,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Then("User_607 verify the Total Discount field")
-	public void user_verify_the_total_discount_field() {
+	public void user_607_verify_the_total_discount_field() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper
@@ -146,7 +146,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Then("User_607 verify the Expiry Date field")
-	public void user_verify_the_expiry_date_field() {
+	public void user_607_verify_the_expiry_date_field() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper
@@ -162,7 +162,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Then("User_607 verify the Quotation Reference Number field")
-	public void user_verify_the_quotation_reference_number_field() throws InterruptedException {
+	public void user_607_verify_the_quotation_reference_number_field() throws InterruptedException {
 		for (int i = 0; i < 200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper
@@ -179,7 +179,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Then("User_607 click back button")
-	public void user_click_back_button() {
+	public void user_607_click_back_button() {
 		for (int i = 0; i < 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(MurabhAppdataEntryQuotationInfo.getElement("backButton"))
@@ -195,27 +195,27 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Then("User_607 update test data set id for AT_QIA_002")
-	public void User_607_update_test_data_set_id_for_at_qia002() {
+	public void user_607_607_update_test_data_set_id_for_at_qia002() {
 		testData = MurabhAppdataEntryQuotationInfoexelData.getTestdata("AT_QIA_002_D2");
 	}
 
 	@Then("User_607 update test data set id for AT_QIA_003")
-	public void User_607_update_test_data_set_id_for_at_qia003() {
+	public void user_607_607_update_test_data_set_id_for_at_qia003() {
 		testData = MurabhAppdataEntryQuotationInfoexelData.getTestdata("AT_QIA_003_D3");
 	}
 
 	@Then("User_607 update test data set id for AT_QIA_004")
-	public void User_607_update_test_data_set_id_for_at_qia004() {
+	public void user_607_607_update_test_data_set_id_for_at_qia004() {
 		testData = MurabhAppdataEntryQuotationInfoexelData.getTestdata("AT_QIA_004_D4");
 	}
 
 	@Then("User_607 update test data set id for AT_QIA_005")
-	public void User_607_update_test_data_set_id_for_at_qia005() {
+	public void user_607_607_update_test_data_set_id_for_at_qia005() {
 		testData = MurabhAppdataEntryQuotationInfoexelData.getTestdata("AT_QIA_005_D5");
 	}
 
 	@Then("User_607 verify insurance company field is mandatory")
-	public void User_607_verify_insurance_company_field_is_mandatory() {
+	public void user_607_607_verify_insurance_company_field_is_mandatory() {
 
 		for (int i = 0; i < 2000; i++) {
 			try {
@@ -232,7 +232,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Then("User_607 verify insurance company field is editable")
-	public void User_607_verify_insurance_company_field_is_editable() {
+	public void user_607_607_verify_insurance_company_field_is_editable() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -372,7 +372,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Then("User_607 verify the base premium field is mandatory")
-	public void User_607_verify_the_base_premium_field_is_mandatory() {
+	public void user_607_607_verify_the_base_premium_field_is_mandatory() {
 		// userUtility.verifyGivenFieldIsMandatory(driver,
 		// MurabhAppdataEntryQuotationInfo.getElement("mandatorybasePremium"));
 		for (int i = 0; i < 2000; i++) {
@@ -391,7 +391,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Then("User_607 verify the base premium field is editable")
-	public void User_607_verify_the_base_premium_field_is_editable() {
+	public void user_607_607_verify_the_base_premium_field_is_editable() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -414,7 +414,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Then("User_607 verify the base premium field only accept the numeric values")
-	public void User_607_verify_the_base_premium_field_only_accept_the_numeric_values() {
+	public void user_607_607_verify_the_base_premium_field_only_accept_the_numeric_values() {
 		String basePremiumNumericField = javascriptHelper
 				.executeScriptWithWebElement(MurabhAppdataEntryQuotationInfo.getElement("numericFieldValidation"))
 				.getAttribute("ng-reflect-type");
@@ -424,7 +424,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Then("User_607 verify the VAT on Base Premium field is mandatory")
-	public void User_607_verify_the_vat_on_base_premium_field_is_mandatory() {
+	public void user_607_607_verify_the_vat_on_base_premium_field_is_mandatory() {
 		// userUtility.verifyGivenFieldIsMandatory(driver,
 		// MurabhAppdataEntryQuotationInfo.getElement("mandatoryvatOnBasePremium"));
 
@@ -443,7 +443,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Then("User_607 verify the VAT on Base Premium is editable")
-	public void User_607_verify_the_vat_on_base_premium_is_editable() {
+	public void user_607_607_verify_the_vat_on_base_premium_is_editable() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -466,7 +466,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Then("User_607 verify the VAT on Base Premium field only accept the numeric values")
-	public void User_607_verify_the_vat_on_base_premium_field_only_accept_the_numeric_values() {
+	public void user_607_607_verify_the_vat_on_base_premium_field_only_accept_the_numeric_values() {
 		String vatNumericField = javascriptHelper
 				.executeScriptWithWebElement(
 						MurabhAppdataEntryQuotationInfo.getElement("vatOnBasePremiumNumericValidation"))
@@ -477,7 +477,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Then("User_607 verify the Net Base Premium field is mandatory")
-	public void User_607_verify_the_net_base_premium_field_is_mandatory() {
+	public void user_607_607_verify_the_net_base_premium_field_is_mandatory() {
 		// userUtility.verifyGivenFieldIsMandatory(driver,
 		// MurabhAppdataEntryQuotationInfo.getElement("mandatorynetBasePremium"));
 
@@ -496,7 +496,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Then("User_607 verify the Net Base Premium field is editable")
-	public void User_607_verify_the_net_base_premium_field_is_editable() {
+	public void user_607_607_verify_the_net_base_premium_field_is_editable() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -519,7 +519,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Then("User_607 verify the Net Base Premium field only accept the numeric values")
-	public void User_607_verify_the_net_base_premium_field_only_accept_the_numeric_values() {
+	public void user_607_607_verify_the_net_base_premium_field_only_accept_the_numeric_values() {
 		String netBasePremiumNumericField = javascriptHelper
 				.executeScriptWithWebElement(
 						MurabhAppdataEntryQuotationInfo.getElement("netBasePremiumNumericValidation"))
@@ -530,7 +530,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Then("User_607 verify the Total Discount field is mandatory")
-	public void User_607_verify_the_total_discount_field_is_mandatory() {
+	public void user_607_607_verify_the_total_discount_field_is_mandatory() {
 		// userUtility.verifyGivenFieldIsMandatory(driver,
 		// MurabhAppdataEntryQuotationInfo.getElement("mandatorytotalDiscountAmount"));
 
@@ -549,7 +549,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Then("User_607 verify the Total Discount field is editable")
-	public void User_607_verify_the_total_discount_field_is_editable() {
+	public void user_607_607_verify_the_total_discount_field_is_editable() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -572,7 +572,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Then("User_607 verify Total Discount field is only accept the numeric values")
-	public void User_607_verify_total_discount_field_is_only_accept_the_numeric_values() {
+	public void user_607_607_verify_total_discount_field_is_only_accept_the_numeric_values() {
 		String totalDiscountNumericField = javascriptHelper
 				.executeScriptWithWebElement(
 						MurabhAppdataEntryQuotationInfo.getElement("totalDiscountNumericValidation"))
@@ -583,7 +583,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Then("User_607 verify the Expiry Date field is mandatory")
-	public void User_607_verify_the_expiry_date_field_is_mandatory() {
+	public void user_607_607_verify_the_expiry_date_field_is_mandatory() {
 		// userUtility.verifyGivenFieldIsMandatory(driver,
 		// .getElement("mandatoryexpiryDate"));
 
@@ -602,7 +602,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Then("User_607 verify the Expiry Date field is editable")
-	public void User_607_verify_the_expiry_date_field_is_editable() {
+	public void user_607_607_verify_the_expiry_date_field_is_editable() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper
@@ -633,7 +633,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Then("User_607 verify the Expiry Date field should be in date format")
-	public void User_607_verify_the_expiry_date_field_should_be_in_date_format() {
+	public void user_607_607_verify_the_expiry_date_field_should_be_in_date_format() {
 		String expiryDateFormat = javascriptHelper
 				.executeScriptWithWebElement(MurabhAppdataEntryQuotationInfo.getElement("expiryDateValidation"))
 				.getAttribute("ng-reflect-icon");
@@ -643,7 +643,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Then("User_607 verify the Quotation Reference Number field is mandatory")
-	public void User_607_verify_the_quotation_reference_number_field_is_mandatory() {
+	public void user_607_607_verify_the_quotation_reference_number_field_is_mandatory() {
 		for (int i = 0; i < 2000; i++) {
 			try {
 				String repayment = MurabhAppdataEntryQuotationInfo.getElement("mandatoryquotationRefNo");
@@ -659,7 +659,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Then("User_607 verify the Quotation Reference Number field is editable")
-	public void User_607_verify_the_quotation_reference_number_field_is_editable() {
+	public void user_607_607_verify_the_quotation_reference_number_field_is_editable() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -682,7 +682,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Then("User_607 verify Quotation Reference Number field is only accept the numeric values")
-	public void User_607_verify_quotation_reference_number_field_is_only_accept_the_numeric_values() {
+	public void user_607_607_verify_quotation_reference_number_field_is_only_accept_the_numeric_values() {
 		String quotationRefNo = javascriptHelper
 				.executeScriptWithWebElement(
 						MurabhAppdataEntryQuotationInfo.getElement("quotationRefNoNumericValidation"))
@@ -693,7 +693,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Then("User_607 verify Quotation Reference Number field should be in textbox")
-	public void User_607_verify_quotation_reference_number_field_should_be_in_textbox() {
+	public void user_607_607_verify_quotation_reference_number_field_should_be_in_textbox() {
 		String quotationRefNoTextbox = javascriptHelper
 				.executeScriptWithWebElement(
 						MurabhAppdataEntryQuotationInfo.getElement("quotationRefNoNumericValidation"))
@@ -704,7 +704,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Then("User_607 click base premium amount field")
-	public void User_607_click_base_premium_amount_field() {
+	public void user_607_607_click_base_premium_amount_field() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -728,7 +728,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Then("User_607 verify the please fill the details popup")
-	public void User_607_verify_the_please_fill_the_details_popup() throws IOException {
+	public void user_607_607_verify_the_please_fill_the_details_popup() throws IOException {
 //    seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(MurabhAppdataEntryQuotationInfo.getElement("invalidDataPopup")));
 		for (int i = 0; i < 2000; i++) {
 			try {
@@ -746,7 +746,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Then("User_607 click VAt on base premium amount field")
-	public void User_607_click_v_at_on_base_premium_amount_field() {
+	public void user_607_607_click_v_at_on_base_premium_amount_field() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -760,7 +760,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Then("User_607 enter the negative value in VAt on base premium amount field")
-	public void User_607_enter_the_negative_value_in_v_at_on_base_premium_amount_field() {
+	public void user_607_607_enter_the_negative_value_in_v_at_on_base_premium_amount_field() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -778,12 +778,12 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Then("User_607 verify the invalid data entry popup")
-	public void User_607_verify_the_invalid_data_entry_popup() throws IOException {
+	public void user_607_607_verify_the_invalid_data_entry_popup() throws IOException {
 
 	}
 
 	@Then("User_607 click quotation reference no field")
-	public void User_607_click_quotation_reference_no_field() {
+	public void user_607_607_click_quotation_reference_no_field() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -797,7 +797,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Then("User_607 enter the character values in quotation reference field")
-	public void User_607_enter_the_character_values_in_quotation_reference_field() {
+	public void user_607_607_enter_the_character_values_in_quotation_reference_field() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -815,12 +815,12 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Then("User_607 validate the invalid data entry popup")
-	public void User_607_validate_the_invalid_data_entry_popup() {
+	public void user_607_607_validate_the_invalid_data_entry_popup() {
 
 	}
 
 	@Then("User_607 enter the special character value in quotation reference field")
-	public void User_607_enter_the_special_character_value_in_quotation_reference_field() {
+	public void user_607_607_enter_the_special_character_value_in_quotation_reference_field() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -838,12 +838,12 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Then("User_607 validate the popup for invalid data")
-	public void User_607_validate_the_popup_for_invalid_data() {
+	public void user_607_607_validate_the_popup_for_invalid_data() {
 
 	}
 
 	@Then("User_607 verify the save button under quotation info tab")
-	public void User_607_verify_the_save_button_under_quotation_info_tab() {
+	public void user_607_607_verify_the_save_button_under_quotation_info_tab() {
 		for (int i = 0; i < 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(MurabhAppdataEntryQuotationInfo.getElement("saveButton"))
@@ -859,7 +859,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Then("User_607 verify the back button under quotation info tab")
-	public void User_607_verify_the_back_button_under_quotation_info_tab() {
+	public void user_607_607_verify_the_back_button_under_quotation_info_tab() {
 		for (int i = 0; i < 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(MurabhAppdataEntryQuotationInfo.getElement("backButton"))
@@ -875,7 +875,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@And("User_607 enter the value in quotation reference no field")
-	public void user_enter_the_value_in_quotation_reference_no_field() {
+	public void user_607_enter_the_value_in_quotation_reference_no_field() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper
@@ -895,7 +895,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Given("User_607 Check back button and save button present in the screen")
-	public void user_check_back_button_and_save_button_present_in_the_screen() {
+	public void user_607_check_back_button_and_save_button_present_in_the_screen() {
 		for (int i = 0; i < 500; i++) {
 			try {
 				if (!javascriptHelper
@@ -929,7 +929,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Given("User_607 to modify the Quotation Info")
-	public void user_to_modify_the_quotation_info() {
+	public void user_607_to_modify_the_quotation_info() {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper
@@ -951,7 +951,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Given("User_607 Clear Vat On Base Premium Amount value")
-	public void user_clear_vat_on_base_premium_amount_value() throws Throwable {
+	public void user_607_clear_vat_on_base_premium_amount_value() throws Throwable {
 		Thread.sleep(1000);
 		for (int i = 0; i < 500; i++) {
 			try {
@@ -970,7 +970,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Given("User_607 Enter invalid data in Vat On Base Premium Amount value")
-	public void user_enter_invalid_data_in_vat_on_base_premium_amount_value() {
+	public void user_607_enter_invalid_data_in_vat_on_base_premium_amount_value() {
 		for (int i = 0; i < 500; i++) {
 			try {
 				javascriptHelper
@@ -992,7 +992,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Given("User_607 Check show Please enter a value that is no less then zero popup")
-	public void user_check_show_please_enter_a_value_that_is_no_less_then_zero_popup() {
+	public void user_607_check_show_please_enter_a_value_that_is_no_less_then_zero_popup() {
 		for (int i = 0; i < 500; i++) {
 			try {
 				if (!javascriptHelper.executeScriptWithWebElement(
@@ -1010,7 +1010,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Given("User_607 Check Base premium Amount field in list view")
-	public void user_check_base_premium_amount_field() {
+	public void user_607_check_base_premium_amount_field() {
 		for (int i = 0; i < 500; i++) {
 			try {
 				if (!javascriptHelper
@@ -1030,7 +1030,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Given("User_607 Check VAT on Base Premium field in list view")
-	public void user_check_vat_on_base_premium_field() {
+	public void user_607_check_vat_on_base_premium_field() {
 		for (int i = 0; i < 500; i++) {
 			try {
 				if (!javascriptHelper
@@ -1050,7 +1050,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Given("User_607 Check Net Base Premium field in list view")
-	public void user_check_net_base_premium_field() {
+	public void user_607_check_net_base_premium_field() {
 		for (int i = 0; i < 500; i++) {
 			try {
 				if (!javascriptHelper
@@ -1070,7 +1070,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Given("User_607 Check Quotation Reference Number field in list view")
-	public void user_check_quotation_reference_number_field() {
+	public void user_607_check_quotation_reference_number_field() {
 		for (int i = 0; i < 500; i++) {
 			try {
 				if (!javascriptHelper
@@ -1090,7 +1090,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Given("User_607 Check Status field in list view")
-	public void user_check_status_field() {
+	public void user_607_check_status_field() {
 		for (int i = 0; i < 500; i++) {
 			try {
 				if (!javascriptHelper
@@ -1109,7 +1109,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Given("User_607 verify the values in List view")
-	public void user_verify_the_values_in_list_view() {
+	public void user_607_verify_the_values_in_list_view() {
 		for (int i = 0; i < 500; i++) {
 			try {
 				String text = javascriptHelper
@@ -1128,7 +1128,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Given("User_607 To verify the functionality of Export to PDF dropdown")
-	public void user_to_verify_the_functionality_of_export_to_pdf_dropdown() {
+	public void user_607_to_verify_the_functionality_of_export_to_pdf_dropdown() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper
@@ -1266,7 +1266,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Given("User_607 To verify the functionality of Export to Excel dropdown")
-	public void user_to_verify_the_functionality_of_export_to_excel_dropdown() {
+	public void user_607_to_verify_the_functionality_of_export_to_excel_dropdown() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper
@@ -1404,7 +1404,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Given("User_607 Check the Status should be active in list view")
-	public void user_check_the_status_should_be_active_in_list_view() throws Throwable {
+	public void user_607_check_the_status_should_be_active_in_list_view() throws Throwable {
 		Thread.sleep(2000);
 		for (int i = 0; i < 700; i++) {
 			try {	
@@ -1420,7 +1420,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Given("User_607 Deactive the status")
-	public void user_deactive_the_status() {
+	public void user_607_deactive_the_status() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(MurabhAppdataEntryQuotationInfo.getElement("Status"))
@@ -1436,7 +1436,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 	
 	@Given("User_607 active the status")
-	public void user_active_the_status() {
+	public void user_607_active_the_status() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(MurabhAppdataEntryQuotationInfo.getElement("Status"))
@@ -1451,7 +1451,7 @@ public class Murabha_Appdataentry_QuotationInfo {
 	}
 
 	@Given("User_607 Check the Status should be Deactive in list view")
-	public void user_check_the_status_should_be_deactive_in_list_view() throws Throwable {
+	public void user_607_check_the_status_should_be_deactive_in_list_view() throws Throwable {
 		Thread.sleep(2000);
 		for (int i = 0; i < 700; i++) {
 			try {	

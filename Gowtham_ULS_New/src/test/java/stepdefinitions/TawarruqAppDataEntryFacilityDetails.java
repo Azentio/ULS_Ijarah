@@ -46,13 +46,13 @@ public class TawarruqAppDataEntryFacilityDetails {
 	BrowserHelper browserHelper = new BrowserHelper(driver);
 	
 	@And ("User_607 Get the test data for test case ID AT_FI_005")
-	public void user_get_the_test_data_for_test_case_id_at_fi_005() {
+	public void user_607_get_the_test_data_for_test_case_id_at_fi_005() {
 		testData =  TWAppDataEntryFacilityDetailsexelData.getTestdata("DS01_AT_FI_005");
 	}
 
 
 	@And("User_607 Click the Facility info tab")
-	public void user_click_the_facility_info_tab() {
+	public void user_607_click_the_facility_info_tab() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper
@@ -69,7 +69,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 
 	
 	@And("User_607 Click Add button under the Facility info")
-	public void user_click_add_button_under_the_facility_info() {
+	public void user_607_click_add_button_under_the_facility_info() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -84,7 +84,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@And("User_607 check the Save button under the Facility info")
-	public void user_check_the_save_button_under_the_facility_info() {
+	public void user_607_check_the_save_button_under_the_facility_info() {
 
 		WebElement SaveButton = javascriptHelper
 				.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("SaveButton"));
@@ -101,7 +101,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 check the Back button under the Facility info")
-	public void user_check_the_back_button_under_the_facility_info() {
+	public void user_607_check_the_back_button_under_the_facility_info() {
 		WebElement BackButton = javascriptHelper
 				.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("BackButton"));
 		for (int i = 0; i <= 2000; i++) {
@@ -117,7 +117,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 check the Classification field under the Facility info")
-	public void user_check_the_classification_field_under_the_facility_info() {
+	public void user_607_check_the_classification_field_under_the_facility_info() {
 		WebElement Classification = javascriptHelper.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("Classification"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
@@ -132,7 +132,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 check the Product field under the Facility info")
-	public void user_check_the_product_field_under_the_facility_info() {
+	public void user_607_check_the_product_field_under_the_facility_info() {
 		WebElement Product = javascriptHelper
 				.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("Product"));
 		for (int i = 0; i <= 2000; i++) {
@@ -148,7 +148,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 check the Scheme field under the Facility info")
-	public void user_check_the_scheme_field_under_the_facility_info() {
+	public void user_607_check_the_scheme_field_under_the_facility_info() {
 		WebElement Scheme = javascriptHelper
 				.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("Scheme"));
 		for (int i = 0; i <= 2000; i++) {
@@ -164,7 +164,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 check the Program Code field under the Facility info")
-	public void user_check_the_program_code_field_under_the_facility_info() {
+	public void user_607_check_the_program_code_field_under_the_facility_info() {
 		WebElement ProgramCode = javascriptHelper
 				.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("ProgrameCode"));
 		for (int i = 0; i <= 2000; i++) {
@@ -180,7 +180,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 check the Facility type field under the Facility info")
-	public void user_check_the_facility_type_field_under_the_facility_info() {
+	public void user_607_check_the_facility_type_field_under_the_facility_info() {
 		WebElement FacilityType = javascriptHelper
 				.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("FacilityType"));
 		for (int i = 0; i <= 2000; i++) {
@@ -196,7 +196,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 check the Pricing Indicator field under the Facility info")
-	public void user_check_the_pricing_indicator_field_under_the_facility_info() {
+	public void user_607_check_the_pricing_indicator_field_under_the_facility_info() {
 		WebElement PricingIndicator = javascriptHelper
 				.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("PricingIndicator"));
 		for (int i = 0; i <= 2000; i++) {
@@ -212,7 +212,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 check the Requested Amount field under the Facility info")
-	public void user_check_the_requested_amount_field_under_the_facility_info() {
+	public void user_607_check_the_requested_amount_field_under_the_facility_info() {
 		WebElement RequestedAmount = javascriptHelper
 				.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("RequestedAmount"));
 		for (int i = 0; i <= 2000; i++) {
@@ -228,7 +228,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 check the Declared Property Value field under the Facility info")
-	public void user_check_the_declared_property_value_field_under_the_facility_info() {
+	public void user_607_check_the_declared_property_value_field_under_the_facility_info() {
 		WebElement DeclaredDownPaymentValue = javascriptHelper
 				.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("DeclaredPropertyValue "));
 		for (int i = 0; i <= 2000; i++) {
@@ -244,7 +244,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 check the Declared Down Payment Amount field under the Facility info")
-	public void user_check_the_declared_down_payment_amount_field_under_the_facility_info() {
+	public void user_607_check_the_declared_down_payment_amount_field_under_the_facility_info() {
 		WebElement DeclaredDownPaymentAmount = javascriptHelper.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("DeclaredDownPaymentAmount"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
@@ -259,7 +259,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 check the Currency field under the Facility info")
-	public void user_check_the_currency_field_under_the_facility_info() {
+	public void user_607_check_the_currency_field_under_the_facility_info() {
 		WebElement Currency = javascriptHelper
 				.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("Currency"));
 		for (int i = 0; i <= 2000; i++) {
@@ -275,7 +275,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 check the Loan Tenure field under the Facility info")
-	public void user_check_the_loan_tenure_field_under_the_facility_info() {
+	public void user_607_check_the_loan_tenure_field_under_the_facility_info() {
 		WebElement LoanTenure = javascriptHelper
 				.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("LoanTenure"));
 		for (int i = 0; i <= 2000; i++) {
@@ -291,7 +291,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 check the Servicing Branch field under the Facility info")
-	public void user_check_the_servicing_branch_field_under_the_facility_info() {
+	public void user_607_check_the_servicing_branch_field_under_the_facility_info() {
 		WebElement ServicingBranch = javascriptHelper
 				.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("ServicingBranch"));
 		for (int i = 0; i <= 2000; i++) {
@@ -307,7 +307,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Given("User_607 Verify the Classification field should be mandatory,editable,text lookup")
-	public void user_verify_the_classification_field_should_be_mandatory_editable_text_lookup() {
+	public void user_607_verify_the_classification_field_should_be_mandatory_editable_text_lookup() {
 		String Classification_Mandy = javascriptHelper
 				.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("Classification"))
 				.getAttribute("aria-label");
@@ -353,7 +353,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Given("User_607 Verify the Product field should be mandatory,editable,text lookup")
-	public void user_verify_the_product_field_should_be_mandatory_editable_text_lookup() {
+	public void user_607_verify_the_product_field_should_be_mandatory_editable_text_lookup() {
 		String Product_Mandy = javascriptHelper
 				.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("Product"))
 				.getAttribute("aria-label");
@@ -399,7 +399,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Given("User_607 Verify the Scheme field should be mandatory,editable,text lookup")
-	public void user_verify_the_scheme_field_should_be_mandatory_editable_numeric_lookup() {
+	public void user_607_verify_the_scheme_field_should_be_mandatory_editable_numeric_lookup() {
 		String Scheme_mandy = javascriptHelper
 				.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("Scheme"))
 				.getAttribute("aria-label");
@@ -445,7 +445,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 Verify the Program code field should be mandatory,editable,text lookup")
-	public void user_verify_the_program_code_field_should_be_mandatory_editable_numeric_lookup() {
+	public void user_607_verify_the_program_code_field_should_be_mandatory_editable_numeric_lookup() {
 		String ProgramCode_mandy = javascriptHelper
 				.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("ProgrameCode"))
 				.getAttribute("aria-label");
@@ -491,7 +491,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 Verify the Servicing branch field should be mandatory,editable")
-	public void user_verify_the_servicing_branch_field_should_be_mandatory_editable() {
+	public void user_607_verify_the_servicing_branch_field_should_be_mandatory_editable() {
 		String ServicingBranch_mandy = javascriptHelper
 				.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("ServicingBranch"))
 				.getAttribute("aria-label");
@@ -525,7 +525,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 Verify the Pricing indicator field should be mandatory,editable,text lookup")
-	public void user_verify_the_pricing_indicator_field_should_be_mandatory_editable_text_lookup() {
+	public void user_607_verify_the_pricing_indicator_field_should_be_mandatory_editable_text_lookup() {
 		String PricingIndicator_mandy = javascriptHelper
 				.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("PricingIndicator"))
 				.getAttribute("aria-label");
@@ -571,7 +571,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 Verify the Requested amount field should be mandatory,editable,num")
-	public void user_verify_the_requested_amount_field_should_be_mandatory_editable_num() {
+	public void user_607_verify_the_requested_amount_field_should_be_mandatory_editable_num() {
 		String RequestedAmount_mandy = javascriptHelper
 				.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("RequestedAmount_mandy"))
 				.getText();
@@ -617,7 +617,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 Verify the Declared downpayment amount field should be mandatory,editable,num")
-	public void user_verify_the_declared_downpayment_amount_field_should_be_mandatory_editable_text() {
+	public void user_607_verify_the_declared_downpayment_amount_field_should_be_mandatory_editable_text() {
 		String DeclaredDownpaymentAmount_mandy = javascriptHelper.executeScriptWithWebElement(
 				TWAppDataEntryFacilityDetails.getElement("DeclaredDownPaymentAmount_mandy")).getText();
 		for (int i = 0; i < 2000; i++) {
@@ -662,7 +662,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 Verify the Currency field should be mandatory,editable,text lookup")
-	public void user_verify_the_currency_field_should_be_mandatory_editable_text_lookup() {
+	public void user_607_verify_the_currency_field_should_be_mandatory_editable_text_lookup() {
 		String Currency_mandy = javascriptHelper
 				.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("Currency"))
 				.getAttribute("aria-label");
@@ -708,7 +708,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 Verify the Loan tenure\\(months) field should be mandatory,editable,numeric lookup")
-	public void user_verify_the_loan_tenure_months_field_should_be_mandatory_editable_numeric_lookup() {
+	public void user_607_verify_the_loan_tenure_months_field_should_be_mandatory_editable_numeric_lookup() {
 		String LoanTenure_mandy = javascriptHelper
 				.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("LoanTenure"))
 				.getAttribute("ng-reflect-required");
@@ -754,7 +754,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 click the classification field and select the data for user to add new record")
-	public void user_click_the_classification_field_and_select_the_data_for_user_to_add_new_record() {
+	public void user_607_click_the_classification_field_and_select_the_data_for_user_to_add_new_record() {
 		// to check the classification field is present
 		WebElement Classification = javascriptHelper
 				.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("Classification"));
@@ -849,7 +849,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 click the Back button and verify the functionality of back button")
-	public void user_click_the_back_button_and_verify_the_functionality_of_back_button() {
+	public void user_607_click_the_back_button_and_verify_the_functionality_of_back_button() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("BackButton"))
@@ -879,7 +879,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 click the Entitle button under facility list")
-	public void user_click_the_entitle_button_under_facility_list() {
+	public void user_607_click_the_entitle_button_under_facility_list() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("Edit_button"))
@@ -895,7 +895,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 to verify the same record should get saved in the system")
-	public void user_to_verify_the_same_record_should_get_saved_in_the_system() {
+	public void user_607_to_verify_the_same_record_should_get_saved_in_the_system() {
 		String ClassificationField = javascriptHelper
 				.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("Classification"))
 				.getAttribute("aria-label");
@@ -994,7 +994,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 select the input for Classification field under the Facility info")
-	public void user_select_the_input_for_classification_field_under_the_facility_info() {
+	public void user_607_select_the_input_for_classification_field_under_the_facility_info() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("Classification"))
@@ -1074,7 +1074,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 select the input for Product field under the Facility info")
-	public void user_select_the_input_for_product_field_under_the_facility_info() {
+	public void user_607_select_the_input_for_product_field_under_the_facility_info() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("Product")).click();
@@ -1152,7 +1152,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 select the input for Scheme field under the Facility info")
-	public void user_select_the_input_for_scheme_field_under_the_facility_info() {
+	public void user_607_select_the_input_for_scheme_field_under_the_facility_info() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("Scheme")).click();
@@ -1230,7 +1230,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 select the input for Program Code field under the Facility info")
-	public void user_select_the_input_for_program_code_field_under_the_facility_info() {
+	public void user_607_select_the_input_for_program_code_field_under_the_facility_info() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("ProgrameCode")).click();
@@ -1308,7 +1308,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 select the input for Facility type field under the Facility info")
-	public void user_select_the_input_for_facility_type_field_under_the_facility_info() {
+	public void user_607_select_the_input_for_facility_type_field_under_the_facility_info() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("FacilityType")).click();
@@ -1386,7 +1386,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 select the input for Pricing Indicator field under the Facility info")
-	public void user_select_the_input_for_pricing_indicator_field_under_the_facility_info() {
+	public void user_607_select_the_input_for_pricing_indicator_field_under_the_facility_info() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("PricingIndicator")).click();
@@ -1464,7 +1464,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 give the input for Declared Property Value field under the Facility info")
-	public void user_give_the_input_for_declared_property_value_field_under_the_facility_info() {
+	public void user_607_give_the_input_for_declared_property_value_field_under_the_facility_info() {
 		javascriptHelper.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("DeclaredPropertyValue_Input")).click();
 //	for (int i = 0; i <= 500; i++) {
 //		try {
@@ -1487,7 +1487,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@And("User_607 enter the characters to the declared downpayment amount")
-	public void user_enter_the_characters_to_the_declared_downpayment_amount() throws Throwable {
+	public void user_607_enter_the_characters_to_the_declared_downpayment_amount() throws Throwable {
 		javascriptHelper
 				.executeScriptWithWebElement("document.querySelector('kub-prime-ccy[id=\"downPaymentAmount\"] input')")
 				.clear();
@@ -1498,7 +1498,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@And("User_607 enter the special characters to the declared downpayment amount")
-	public void user_enter_the_special_characters_to_the_declared_downpayment_amount() throws Throwable {
+	public void user_607_enter_the_special_characters_to_the_declared_downpayment_amount() throws Throwable {
 
 		javascriptHelper
 				.executeScriptWithWebElement("document.querySelector('kub-prime-ccy[id=\"downPaymentAmount\"] input')")
@@ -1507,7 +1507,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@And("User_607 enter the negative number to the declared downpayment amount")
-	public void user_enter_the_negative_number_to_the_declared_downpayment_amount() throws Throwable {
+	public void user_607_enter_the_negative_number_to_the_declared_downpayment_amount() throws Throwable {
 		javascriptHelper
 				.executeScriptWithWebElement("document.querySelector('kub-prime-ccy[id=\"downPaymentAmount\"] input')")
 				.sendKeys("-10000");
@@ -1515,7 +1515,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Given("User_607 check the negative data in the declared downpayment amount")
-	public void user_check_the_negative_data_in_the_declared_downpayment_amount() {
+	public void user_607_check_the_negative_data_in_the_declared_downpayment_amount() {
 		String value = javascriptHelper
 				.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("DeclaredDownPaymentAmount_num"))
 				.getAttribute("aria-valuenow");
@@ -1533,7 +1533,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 give the input for Declared Down Payment Amount field under the Facility info")
-	public void user_give_the_input_for_declared_down_payment_amount_field_under_the_facility_info() {
+	public void user_607_give_the_input_for_declared_down_payment_amount_field_under_the_facility_info() {
 		javascriptHelper.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("DeclaredPropertyValue_Input")).click();
 //	for (int i = 0; i <= 500; i++) {
 //		try {
@@ -1557,7 +1557,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 give the input for Request Amount field under the Facility info")
-	public void user_give_the_input_for_request_amount_field_under_the_facility_info() {
+	public void user_607_give_the_input_for_request_amount_field_under_the_facility_info() {
 		javascriptHelper.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("RequestedAmount")).click();
 //	for (int i = 0; i <= 500; i++) {
 //		try {
@@ -1580,7 +1580,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 select the input for Currency field under the Facility info")
-	public void user_select_the_input_for_currency_field_under_the_facility_info() {
+	public void user_607_select_the_input_for_currency_field_under_the_facility_info() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("Currency")).click();
@@ -1658,7 +1658,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 give the input for Loan Tenure field under the Facility info")
-	public void user_give_the_input_for_loan_tenure_field_under_the_facility_info() {
+	public void user_607_give_the_input_for_loan_tenure_field_under_the_facility_info() {
 		javascriptHelper.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("LoanTenure")).click();
 		javascriptHelper
 
@@ -1671,7 +1671,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 click the save button under the facility info")
-	public void user_click_the_save_button_under_the_facility_info() {
+	public void user_607_click_the_save_button_under_the_facility_info() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("SaveButton")).click();
@@ -1685,7 +1685,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 verify the popup of fill all field")
-	public void user_verify_the_popup_of_fill_all_field() throws Throwable {
+	public void user_607_verify_the_popup_of_fill_all_field() throws Throwable {
 
 		for (int i = 0; i < 2000; i++) {
 			try {
@@ -1703,7 +1703,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 modify the classification field data")
-	public void user_click_the_classification_field_and_modify_the_data() {
+	public void user_607_click_the_classification_field_and_modify_the_data() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("Classification")).click();
@@ -1783,7 +1783,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 clear the Loan Tenure field under facility")
-	public void user_clear_the_loan_tenure_field_under_facility() throws Throwable {
+	public void user_607_clear_the_loan_tenure_field_under_facility() throws Throwable {
 		javascriptHelper
 
 				.executeScriptWithWebElement(
@@ -1795,7 +1795,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 modify the Loan Tenure field under facility info")
-	public void user_modify_the_loan_tenure_field_under_facility_info() throws Throwable {
+	public void user_607_modify_the_loan_tenure_field_under_facility_info() throws Throwable {
 		// javascriptHelper.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("LoanTenure")).click();
 		javascriptHelper
 				.executeScriptWithWebElement("document.querySelector('digital-text-box[id=\"loanTenure\"] input')");
@@ -1817,7 +1817,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Given("User_607 to check same record saved inLoan Tenure field under facility info")
-	public void user_to_check_same_record_saved_in_loan_tenure_field_under_facility_info() {
+	public void user_607_to_check_same_record_saved_in_loan_tenure_field_under_facility_info() {
 		for (int i = 0; i < 2000; i++) {
 			try {
 				String text = javascriptHelper
@@ -1835,7 +1835,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@Then("User_607 verify the successfully saved message under the facility info")
-	public void user_verify_the_successfully_saved_message_under_the_facility_info() {
+	public void user_607_verify_the_successfully_saved_message_under_the_facility_info() {
 		for (int i = 0; i < 2000; i++) {
 			try {
 				String text = javascriptHelper.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("SucessPopUP"))
@@ -1852,14 +1852,14 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@And("User_607 modify the declared downpayment amount")
-	public void user_modify_the_declared_downpayment_amount() throws Throwable {
+	public void user_607_modify_the_declared_downpayment_amount() throws Throwable {
 		javascriptHelper.executeScriptWithWebElement("document.querySelector('kub-prime-ccy[id=\"downPaymentAmount\"] input')").clear();
 		javascriptHelper.executeScriptWithWebElement("document.querySelector('kub-prime-ccy[id=\"downPaymentAmount\"] input')").sendKeys("d");
 		Thread.sleep(6000);
 	}
 
 	@And("User_607 check the invalid data in the declared downpayment amount")
-	public void user_check_the_modified_data_in_the_declared_downpayment_amount() {
+	public void user_607_check_the_modified_data_in_the_declared_downpayment_amount() {
 
 		String value = javascriptHelper
 				.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("DeclaredDownPaymentAmount_num"))
@@ -1880,7 +1880,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@And("User_607 modify the correct data for declared downpayment amount")
-	public void user_modify_the_correct_data_for_declared_downpayment_amount() throws Throwable {
+	public void user_607_modify_the_correct_data_for_declared_downpayment_amount() throws Throwable {
 		javascriptHelper
 				.executeScriptWithWebElement("document.querySelector('kub-prime-ccy[id=\"downPaymentAmount\"] input')")
 				.clear();
@@ -1891,7 +1891,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@And("User_607 Click the back button in facility list")
-	public void user_click_the_back_button_in_facility_list() {
+	public void user_607_click_the_back_button_in_facility_list() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("BackButton_prev")).click();
@@ -1906,7 +1906,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@And("User_607 verify the the back button function using inbox label in facility list")
-	public void user_verify_the_the_back_button_function_using_inbox_label_in_facility_list() {
+	public void user_607_verify_the_the_back_button_function_using_inbox_label_in_facility_list() {
 		WebElement FacilityType = javascriptHelper
 				.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("Inbox_title"));
 		for (int i = 0; i <= 2000; i++) {
@@ -1922,7 +1922,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@And("User_607 click the status toggle button for deactivate")
-	public void user_click_the_status_toggle_button_for_deactivate() {
+	public void user_607_click_the_status_toggle_button_for_deactivate() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.JSEClick(javascriptHelper
@@ -1937,7 +1937,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@And("User_607 click the status toggle button for activate")
-	public void user_click_the_status_toggle_button_for_activate() {
+	public void user_607_click_the_status_toggle_button_for_activate() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.JSEClick(javascriptHelper
@@ -1952,7 +1952,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@And("User_607 to check the status is deactive")
-	public void user_to_check_the_status_is_deactive() {
+	public void user_607_to_check_the_status_is_deactive() {
 		String value = javascriptHelper.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("status_ToggleButton"))
 				.getAttribute("aria-checked");
 		for (int i = 0; i < 2000; i++) {
@@ -1968,7 +1968,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@And("User_607 to check the status is active")
-	public void user_to_check_the_status_is_active() {
+	public void user_607_to_check_the_status_is_active() {
 		String value = javascriptHelper.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("status_ToggleButton"))
 				.getAttribute("aria-checked");
 		for (int i = 0; i < 2000; i++) {
@@ -1984,7 +1984,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@And("User_607 click the back Button")
-	public void user_click_the_back_Button() {
+	public void user_607_click_the_back_Button() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("BackButton")).click();
@@ -1998,7 +1998,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	}
 
 	@And("User_607 to verify the functionality of back button with add button display")
-	public void user_to_verify_the_functionality_of_back_button_with_add_button_display() {
+	public void user_607_to_verify_the_functionality_of_back_button_with_add_button_display() {
 		WebElement Scheme = javascriptHelper
 				.executeScriptWithWebElement(TWAppDataEntryFacilityDetails.getElement("AddButton_under_FacilityInfo"));
 		for (int i = 0; i <= 2000; i++) {
@@ -2018,7 +2018,7 @@ public class TawarruqAppDataEntryFacilityDetails {
 	
 
 	@And("User_607 Click the Excel button under Export")
-	public void user_click_the_excel_button_under_export() throws Throwable {
+	public void user_607_click_the_excel_button_under_export() throws Throwable {
 
 		for (int i = 0; i <= 500; i++) {
 			try {

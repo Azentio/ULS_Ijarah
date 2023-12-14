@@ -42,7 +42,7 @@ public class MurabhaOfferingOfferDetails {
 	BrowserHelper browserHelper = new BrowserHelper(driver);
 	
 	@And("User_607 click edit button under inbox screen02")
-	public void user_click_edit_button_under_inbox_screen02() throws Throwable {
+	public void user_607_click_edit_button_under_inbox_screen02() throws Throwable {
 		for (int i = 0; i < 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("editBtnIndex2")).click();
@@ -58,7 +58,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 	
 	@And("User_607 verify the Back button field available on offer details screen")
-	public void user_verify_the_back_button_field_available_on_offer_details_screen() {
+	public void user_607_verify_the_back_button_field_available_on_offer_details_screen() {
 	    
 		//---------------------display
 		
@@ -74,7 +74,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 
 	@And("User_607 verify the Accept Offer field available on offer details screen")
-	public void user_verify_the_accept_offer_field_available_on_offer_details_screen() {
+	public void user_607_verify_the_accept_offer_field_available_on_offer_details_screen() {
 	    
 		//---------------------display
 		
@@ -90,7 +90,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 
 	@And("User_607 verify the Offer Details Section field available on offer details screen")
-	public void user_verify_the_offer_details_section_field_available_on_offer_details_screen() {
+	public void user_607_verify_the_offer_details_section_field_available_on_offer_details_screen() {
 	    
 		//---------------------display
 		
@@ -106,7 +106,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 
 	@And("User_607 verify the Finance Details Section field available on offer details screen")
-	public void user_verify_the_finance_details_section_field_available_on_offer_details_screen() {
+	public void user_607_verify_the_finance_details_section_field_available_on_offer_details_screen() {
 	    
 		//---------------------display
 		
@@ -122,7 +122,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 
 	@And("User_607 verify the Credit Risk Factor Sectioin field available on offer details screen")
-	public void user_verify_the_credit_risk_factor_sectioin_field_available_on_offer_details_screen() {
+	public void user_607_verify_the_credit_risk_factor_sectioin_field_available_on_offer_details_screen() {
 	    
 		//---------------------display
 		
@@ -139,7 +139,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 
 	@And("User_607 verify the Credit Score Details Section field available on offer details screen")
-	public void user_verify_the_credit_score_details_section_field_available_on_offer_details_screen() {
+	public void user_607_verify_the_credit_score_details_section_field_available_on_offer_details_screen() {
 	    
 		//---------------------display
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("CreditScoreDetails")));
@@ -155,7 +155,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 
 	@And("User_607 verify the Eligibility Details Screen field available on offer details screen")
-	public void user_verify_the_eligibility_details_screen_field_available_on_offer_details_screen() {
+	public void user_607_verify_the_eligibility_details_screen_field_available_on_offer_details_screen() {
 	    
 		//---------------------display
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("EligibilityDetails")));
@@ -171,7 +171,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 
 	@And("User_607 verify the Interest Rate Structure Section field available on offer details screen")
-	public void user_verify_the_interest_rate_structure_section_field_available_on_offer_details_screen() {
+	public void user_607_verify_the_interest_rate_structure_section_field_available_on_offer_details_screen() {
 	    
 		//---------------------display
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("InterestRateStructure")));
@@ -188,7 +188,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 
 	@And("User_607 verify the Installments Section field available on offer details screen")
-	public void user_verify_the_installments_section_field_available_on_offer_details_screen() {
+	public void user_607_verify_the_installments_section_field_available_on_offer_details_screen() {
 	    
 		//---------------------display
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("InstallmentsSection")));
@@ -205,7 +205,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 
 	@And("User_607 verify the Appeal Request Section field available on offer details screen")
-	public void user_verify_the_appeal_request_section_field_available_on_offer_details_screen() {
+	public void user_607_verify_the_appeal_request_section_field_available_on_offer_details_screen() {
 		//---------------------display
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("AppealRequestsection")));
 
@@ -224,7 +224,7 @@ public class MurabhaOfferingOfferDetails {
 	//-----------------data should read only-------------
 	
 	@And("User_607 verify Product data should be read only")
-	public void user_verify_product_data_should_be_read_only() {
+	public void user_607_verify_product_data_should_be_read_only() {
 	String offProduct=javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("getAttribute_product")).getAttribute("ng-reflect-readonly");
 	    System.err.println(offProduct);
 	    
@@ -233,21 +233,21 @@ public class MurabhaOfferingOfferDetails {
 	    	}
 
 	@And("User_607 verify Sub Product data should be read only")
-	public void user_verify_sub_product_data_should_be_read_only() {
+	public void user_607_verify_sub_product_data_should_be_read_only() {
 		String offSubProduct=javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("getAttribute_SubProduct")).getAttribute("ng-reflect-readonly");
 	    System.err.println(offSubProduct);
 	    Assert.assertEquals("true",offSubProduct);
 	}
 
 	@And("User_607 verify Scheme data should be read only")
-	public void user_verify_scheme_data_should_be_read_only() {
+	public void user_607_verify_scheme_data_should_be_read_only() {
 		String offScheme=javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("getAttribute_Scheme")).getAttribute("ng-reflect-readonly");
 	    System.err.println(offScheme);
 	    Assert.assertEquals("true",offScheme);
 	}
 
 	@And("User_607 verify Princing Indicator data should be read only")
-	public void user_verify_princing_indicator_data_should_be_read_only() {
+	public void user_607_verify_princing_indicator_data_should_be_read_only() {
 		String offPrincingIndicator=javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("getAttribute_PrincingIndicator")).getAttribute("ng-reflect-readonly");
 	    System.err.println(offPrincingIndicator);
 	    Assert.assertEquals("true",offPrincingIndicator);
@@ -256,7 +256,7 @@ public class MurabhaOfferingOfferDetails {
 	//------------------------@AT_OFL_02
 	
 	@And("User_607 verify the Back button field")
-	public void user_verify_the_back_button_field() throws Throwable {
+	public void user_607_verify_the_back_button_field() throws Throwable {
 		for (int j = 0; j <= 400; j++) {
 			try {
 			//	javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("BackBtn_NavigativeFacilityScreen")).click();
@@ -275,7 +275,7 @@ public class MurabhaOfferingOfferDetails {
 	//---------------------@AT_OFL_03   offer details screen
 	
 	@And("User_607 verify the Product field available in offer details")
-	public void user_verify_the_product_field_available_in_offer_details() throws Throwable {
+	public void user_607_verify_the_product_field_available_in_offer_details() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
 				.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("OflProduct")));
 		Assert.assertEquals(true,
@@ -294,7 +294,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 
 	@And("User_607 verify the Sub Product field available in offer details")
-	public void user_verify_the_sub_product_field_available_in_offer_details() throws Throwable {
+	public void user_607_verify_the_sub_product_field_available_in_offer_details() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
 				.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("OflSubProduct")));
 		Assert.assertEquals(true,
@@ -311,7 +311,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 
 	@And("User_607 verify the Scheme field available in offer details")
-	public void user_verify_the_scheme_field_available_in_offer_details() throws Throwable {
+	public void user_607_verify_the_scheme_field_available_in_offer_details() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
 				.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("OflScheme")));
 		Assert.assertEquals(true,
@@ -327,7 +327,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 
 	@And("User_607 verify the Pricing Indicator field available in offer details")
-	public void user_verify_the_pricing_indicator_field_available_in_offer_details() throws Throwable {
+	public void user_607_verify_the_pricing_indicator_field_available_in_offer_details() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
 				.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("OflPrincingIndicator")));
 		Assert.assertEquals(true,
@@ -344,7 +344,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 
 	@And("User_607 verify the Product Offer Amount available in offer details")
-	public void user_verify_the_product_offer_amount_available_in_offer_details() throws Throwable {
+	public void user_607_verify_the_product_offer_amount_available_in_offer_details() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
 				.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("OflOfferdAmount")));
 		Assert.assertEquals(true,
@@ -361,7 +361,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 
 	@And("User_607 verify the Tenure field available in offer details")
-	public void user_verify_the_tenure_field_available_in_offer_details() throws Throwable {
+	public void user_607_verify_the_tenure_field_available_in_offer_details() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
 				.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("OflTenure")));
 		Assert.assertEquals(true,
@@ -378,7 +378,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 
 	@And("User_607 verify the Nature Of Finance field available in offer details")
-	public void user_verify_the_nature_of_finance_field_available_in_offer_details() throws Throwable {
+	public void user_607_verify_the_nature_of_finance_field_available_in_offer_details() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
 				.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("OflNaturalOfFinance")));
 		Assert.assertEquals(true,
@@ -395,7 +395,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 	
 	@And("User_607 verify the Currency field available in offer details")
-	public void user_verify_the_currency_field_available_in_offer_details() throws Throwable {
+	public void user_607_verify_the_currency_field_available_in_offer_details() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("OflCurrency")));
 		Assert.assertEquals(true,javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("OflCurrency")).isDisplayed());
 		
@@ -410,7 +410,7 @@ public class MurabhaOfferingOfferDetails {
 	//---------------------------@AT_OFL_04--------------------
 	
 	@And("User_607 verify the Amount Request field available in Finance details screen")
-	public void user_verify_the_amount_request_field_available_in_finance_details_screen() throws Throwable {
+	public void user_607_verify_the_amount_request_field_available_in_finance_details_screen() throws Throwable {
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdAmountRequested")));
 //		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdAmountRequested")));
 //		Assert.assertEquals(true,javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdAmountRequested")).isDisplayed());
@@ -432,7 +432,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 
 	@And("User_607 verify the Down Payment Amount field available in Finance details screen")
-	public void user_verify_the_down_payment_amount_field_available_in_finance_details_screen() throws Throwable {
+	public void user_607_verify_the_down_payment_amount_field_available_in_finance_details_screen() throws Throwable {
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdDownPaymentAmount")));
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdDownPaymentAmount")));
 		Assert.assertEquals(true,javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdDownPaymentAmount")).isDisplayed());
@@ -440,7 +440,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 
 	@And("User_607 verify the Total Down Payment Amount field available in Finance details screen")
-	public void user_verify_the_total_down_payment_amount_field_available_in_finance_details_screen() throws Throwable {
+	public void user_607_verify_the_total_down_payment_amount_field_available_in_finance_details_screen() throws Throwable {
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdTotalDownPaymentAmount")));
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdTotalDownPaymentAmount")));
 		Assert.assertEquals(true,javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdTotalDownPaymentAmount")).isDisplayed());
@@ -448,7 +448,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 
 	@And("User_607 verify the Total Profit Amount field available in Finance details screen")
-	public void user_verify_the_total_profit_amount_field_available_in_finance_details_screen() throws Throwable {
+	public void user_607_verify_the_total_profit_amount_field_available_in_finance_details_screen() throws Throwable {
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdProfitAmount")));
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdProfitAmount")));
 		Assert.assertEquals(true,javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdProfitAmount")).isDisplayed());
@@ -456,7 +456,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 
 	@And("User_607 verify the Total Contract Value field available in Finance details screen")
-	public void user_verify_the_total_contract_value_field_available_in_finance_details_screen() throws Throwable {
+	public void user_607_verify_the_total_contract_value_field_available_in_finance_details_screen() throws Throwable {
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdTotalContractAmount")));
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdTotalContractAmount")));
 		Assert.assertEquals(true,javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdTotalContractAmount")).isDisplayed());
@@ -464,7 +464,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 
 	@And("User_607 verify the Total Income field available in Finance details screen")
-	public void user_verify_the_total_income_field_available_in_finance_details_screen() throws Throwable {
+	public void user_607_verify_the_total_income_field_available_in_finance_details_screen() throws Throwable {
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdTotalIncome")));
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdTotalIncome")));
 		Assert.assertEquals(true,javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdTotalIncome")).isDisplayed());
@@ -472,7 +472,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 
 	@And("User_607 verify the Total Net Income field available in Finance details screen")
-	public void user_verify_the_total_net_income_field_available_in_finance_details_screen() throws Throwable {
+	public void user_607_verify_the_total_net_income_field_available_in_finance_details_screen() throws Throwable {
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdTotalNetIncome")));
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdTotalNetIncome")));
 		Assert.assertEquals(true,javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdTotalNetIncome")).isDisplayed());
@@ -480,7 +480,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 
 	@And("User_607 verify the Installment Fraquency field available in Finance details screen")
-	public void user_verify_the_installment_fraquency_field_available_in_finance_details_screen() throws Throwable {
+	public void user_607_verify_the_installment_fraquency_field_available_in_finance_details_screen() throws Throwable {
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdInstallmentFrequence")));
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdInstallmentFrequence")));
 		Assert.assertEquals(true,javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdInstallmentFrequence")).isDisplayed());
@@ -488,7 +488,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 
 	@And("User_607 verify the IRR field available in Finance details screen")
-	public void user_verify_the_irr_field_available_in_finance_details_screen() throws Throwable {
+	public void user_607_verify_the_irr_field_available_in_finance_details_screen() throws Throwable {
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdIRR")));
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdIRR")));
 		Assert.assertEquals(true,javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdIRR")).isDisplayed());
@@ -496,7 +496,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 
 	@And("User_607 verify the Tenure field available in Finance details screen")
-	public void user_verify_the_tenure_field_available_in_finance_details_screen() throws Throwable {
+	public void user_607_verify_the_tenure_field_available_in_finance_details_screen() throws Throwable {
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdTenure")));
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdTenure")));
 		Assert.assertEquals(true,javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdTenure")).isDisplayed());
@@ -504,7 +504,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 
 	@And("User_607 verify the Additional Down Payment field available in Finance details screen")
-	public void user_verify_the_additional_down_payment_field_available_in_finance_details_screen() throws Throwable {
+	public void user_607_verify_the_additional_down_payment_field_available_in_finance_details_screen() throws Throwable {
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdAdditionalDownPayment")));
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdAdditionalDownPayment")));
 		Assert.assertEquals(true,javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdAdditionalDownPayment")).isDisplayed());
@@ -512,7 +512,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 
 	@And("User_607 verify the Down Payment Percentage field available in Finance details screen")
-	public void user_verify_the_down_payment_percentage_field_available_in_finance_details_screen() throws Throwable {
+	public void user_607_verify_the_down_payment_percentage_field_available_in_finance_details_screen() throws Throwable {
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdDownPaymentPercentage")));
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdDownPaymentPercentage")));
 		Assert.assertEquals(true,javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdDownPaymentPercentage")).isDisplayed());
@@ -520,7 +520,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 
 	@And("User_607 verify the Total Fees field available in Finance details screen")
-	public void user_verify_the_total_fees_field_available_in_finance_details_screen() throws Throwable {
+	public void user_607_verify_the_total_fees_field_available_in_finance_details_screen() throws Throwable {
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdTotalFees")));
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdTotalFees")));
 		Assert.assertEquals(true,javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdTotalFees")).isDisplayed());
@@ -528,7 +528,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 
 	@And("User_607 verify the Total Obligations field available in Finance details screen")
-	public void user_verify_the_total_obligations_field_available_in_finance_details_screen() throws Throwable {
+	public void user_607_verify_the_total_obligations_field_available_in_finance_details_screen() throws Throwable {
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdTotalObligation")));
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdTotalObligation")));
 		Assert.assertEquals(true,javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdTotalObligation")).isDisplayed());
@@ -536,7 +536,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 
 	@And("User_607 verify the No Of Installment field available in Finance details screen")
-	public void user_verify_the_no_of_installment_field_available_in_finance_details_screen() throws Throwable {
+	public void user_607_verify_the_no_of_installment_field_available_in_finance_details_screen() throws Throwable {
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdNoOfInstallment")));
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdNoOfInstallment")));
 		Assert.assertEquals(true,javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdNoOfInstallment")).isDisplayed());
@@ -544,7 +544,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 
 	@And("User_607 verify the Last Installment Amount field available in Finance details screen")
-	public void user_verify_the_last_installment_amount_field_available_in_finance_details_screen() throws Throwable {
+	public void user_607_verify_the_last_installment_amount_field_available_in_finance_details_screen() throws Throwable {
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdLastInstallmentAmount")));
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdLastInstallmentAmount")));
 		Assert.assertEquals(true,javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdLastInstallmentAmount")).isDisplayed());
@@ -552,7 +552,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 
 	@And("User_607 verify the APR field available in Finance details screen")
-	public void user_verify_the_apr_field_available_in_finance_details_screen() throws Throwable {
+	public void user_607_verify_the_apr_field_available_in_finance_details_screen() throws Throwable {
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdAPR")));
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdAPR")));
 		Assert.assertEquals(true,javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdAPR")).isDisplayed());
@@ -562,7 +562,7 @@ public class MurabhaOfferingOfferDetails {
 	//-----------------@AT_OFL_05---------------
 	
 	@And("User_607 verify the Offer Details Section Screen Under All field Should read only")
-	public void user_verify_the_offer_details_section_screen_under_all_field_should_read_only() {
+	public void user_607_verify_the_offer_details_section_screen_under_all_field_should_read_only() {
 		
 		//--read only  -- product
 		
@@ -616,7 +616,7 @@ public class MurabhaOfferingOfferDetails {
 	
 
 	@And("User_607 verify the Total Down Payment Amount field read only")
-	public void user_verify_the_total_down_payment_amount_field_read_only() {
+	public void user_607_verify_the_total_down_payment_amount_field_read_only() {
 		String OffTotalDownPaymentAmount=javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdTotalDownPaymentAmount")).getAttribute("ng-reflect-readonly");
 	    System.err.println(OffTotalDownPaymentAmount);
 	    Assert.assertEquals("true",OffTotalDownPaymentAmount);
@@ -624,7 +624,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 
 	@And("User_607 verify the Profit Amount field read only")
-	public void user_verify_the_profit_amount_field_read_only() {
+	public void user_607_verify_the_profit_amount_field_read_only() {
 		String OffProfitAmount=javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdProfitAmount")).getAttribute("ng-reflect-readonly");
 	    System.err.println(OffProfitAmount);
 	    Assert.assertEquals("true",OffProfitAmount);
@@ -632,7 +632,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 
 	@And("User_607 verify the Total Contract Value field read only")
-	public void user_verify_the_total_contract_value_field_read_only() {
+	public void user_607_verify_the_total_contract_value_field_read_only() {
 		String OffTotalContractValue=javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdTotalContractAmount")).getAttribute("ng-reflect-readonly");
 	    System.err.println(OffTotalContractValue);
 	    Assert.assertEquals("true",OffTotalContractValue);
@@ -640,7 +640,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 
 	@And("User_607 verify the Additional Down Payment field read only")
-	public void user_verify_the_additional_down_payment_field_read_only() {
+	public void user_607_verify_the_additional_down_payment_field_read_only() {
 		String OffAdditionalDownPayment=javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdAdditionalDownPayment")).getAttribute("ng-reflect-readonly");
 	    System.err.println(OffAdditionalDownPayment);
 	    Assert.assertEquals("true",OffAdditionalDownPayment);
@@ -648,7 +648,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 
 	@And("User_607 verify the Down Payment Percentage field read only")
-	public void user_verify_the_down_payment_percentage_field_read_only() {
+	public void user_607_verify_the_down_payment_percentage_field_read_only() {
 		String OffTotalDownPaymentPercentage=javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("FdDownPaymentPercentage")).getAttribute("ng-reflect-readonly");
 	    System.err.println(OffTotalDownPaymentPercentage);
 	    Assert.assertEquals("true",OffTotalDownPaymentPercentage);
@@ -658,7 +658,7 @@ public class MurabhaOfferingOfferDetails {
 	//---------------------@AT_OFL_06  credit rise factor --------
 	
 	@And("User_607 verify the Total Score field under credit rise factor")
-	public void user_verify_the_total_score_field_under_credit_rise_factor() {
+	public void user_607_verify_the_total_score_field_under_credit_rise_factor() {
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("CreditRiskFactor")));
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("TotalScore")));
 		for (int i = 0; i < 300; i++) {
@@ -677,7 +677,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 
 	@And("User_607 verify the Rise Level field under credit rise factor")
-	public void user_verify_the_rise_level_field_under_credit_rise_factor() {
+	public void user_607_verify_the_rise_level_field_under_credit_rise_factor() {
 	    
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("RiseLevel")));
 		for (int i = 0; i < 300; i++) {
@@ -699,7 +699,7 @@ public class MurabhaOfferingOfferDetails {
 	//-------------------------@AT_OFL_07 credit Score details
 	
 	@And("User_607 verify the SR NO field under credit Score details")
-	public void user_verify_the_sr_no_field_under_credit_score_details() {
+	public void user_607_verify_the_sr_no_field_under_credit_score_details() {
 		
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("CreditScoreDetails")));
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("CSD_SrNo")));
@@ -720,7 +720,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 
 	@And("User_607 verify the Customer Name field under credit Score details")
-	public void user_verify_the_customer_name_field_under_credit_score_details() {
+	public void user_607_verify_the_customer_name_field_under_credit_score_details() {
 		
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("CSD_CustomerName")));
 		for (int i = 0; i < 300; i++) {
@@ -740,7 +740,7 @@ public class MurabhaOfferingOfferDetails {
 	}
 
 	@And("User_607 verify the Credit Bureau Score field under credit Score details")
-	public void user_verify_the_credit_bureau_score_field_under_credit_score_details() {
+	public void user_607_verify_the_credit_bureau_score_field_under_credit_score_details() {
 		
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("CSD_CreditBureuaScore")));
 		for (int i = 0; i < 300; i++) {
@@ -1093,7 +1093,7 @@ public class MurabhaOfferingOfferDetails {
 	    
 	}
 	@And("User search the Ref id under inbox for offer details")
-	public void user_search_the_ref_id_under_inbox_for_offer_details() throws IOException {
+	public void user_607_search_the_ref_id_under_inbox_for_offer_details() throws IOException {
 		System.out.println(testData.get("Ref No"));
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(MurabhaOfferingOfferDetails.getElement("inboxSearchInput")));
 		for (int i = 0; i <= 500; i++) {

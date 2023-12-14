@@ -42,7 +42,7 @@ public class TawarruqAppDataEntryFollowupdetails {
 	
 	
 	@And("User_607 click the customer follow details in morabha")
-	public void user_click_the_customer_follow_details_in_morabha() throws Throwable {
+	public void user_607_click_the_customer_follow_details_in_morabha() throws Throwable {
 	    
 		for (int i = 0; i < 200; i++) {
 			try {
@@ -74,7 +74,7 @@ public class TawarruqAppDataEntryFollowupdetails {
 	}
 	
 	@And("User_607 click add button under customer follow details")
-	public void user_click_add_button_under_customer_follow_details() throws Throwable {
+	public void user_607_click_add_button_under_customer_follow_details() throws Throwable {
 		// waitHelper.waitForElementwithFluentwait(driver,javascriptHelper.executeScriptWithWebElement(TWAppDataEntryFollowUpDetails.getElement("click_AddButton_UnderFollowUpDetails_610")));
 		// javascriptHelper.executeScriptWithWebElement(TWAppDataEntryFollowUpDetails.getElement("click_AddButton_UnderFollowUpDetails_610")).click();
 		for (int i = 0; i < 300; i++) {
@@ -93,7 +93,7 @@ public class TawarruqAppDataEntryFollowupdetails {
 	}
 	
 	@And("User_607 validate Customer Responce field enabled or not under customer follow details")
-	public void user_validate_customer_resbonce_field_enabled_or_not_under_customer_follow_details()
+	public void user_607_validate_customer_resbonce_field_enabled_or_not_under_customer_follow_details()
 			throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
 				.executeScriptWithWebElement(TWAppDataEntryFollowUpDetails.getElement("click_customerResponce_UnderFollowUp_610")));
@@ -107,7 +107,7 @@ public class TawarruqAppDataEntryFollowupdetails {
 	//-----------------  morabha  @AT_MU_FU_001
 	
 	@And("User_607 verify the add buttton")
-	public void user_verify_the_add_buttton() throws Throwable {
+	public void user_607_verify_the_add_buttton() throws Throwable {
 //		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
 //				.executeScriptWithWebElement(TWAppDataEntryFollowUpDetails.getElement("clickAddBtn_UnderDocumentDetails_610")));
 								
@@ -128,7 +128,7 @@ public class TawarruqAppDataEntryFollowupdetails {
 	}
 	
 	@And("User_607 validate called when field enabled or not under murabha customer follow details")
-	public void user_validate_called_when_field_enabled_or_not_under_murabha_customer_follow_details() throws Throwable {
+	public void user_607_validate_called_when_field_enabled_or_not_under_murabha_customer_follow_details() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
 				.executeScriptWithWebElement(TWAppDataEntryFollowUpDetails.getElement("CalledWhen_610")));
 		
@@ -148,7 +148,7 @@ public class TawarruqAppDataEntryFollowupdetails {
 	}
 
 	@And("User_607 validate Follow Up Data field enabled or not under murabha customer follow details")
-	public void user_validate_follow_up_data_field_enabled_or_not_under_murabha_customer_follow_details() throws Throwable {
+	public void user_607_validate_follow_up_data_field_enabled_or_not_under_murabha_customer_follow_details() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
 				.executeScriptWithWebElement(TWAppDataEntryFollowUpDetails.getElement("followUpDate_610")));
 		
@@ -158,7 +158,7 @@ public class TawarruqAppDataEntryFollowupdetails {
 	}
 	
 	@And("User_607 validate Remark Category field enabled or not under customer follow details")
-	public void user_validate_remark_category_field_enabled_or_not_under_customer_follow_details()
+	public void user_607_validate_remark_category_field_enabled_or_not_under_customer_follow_details()
 			throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver,
 				javascriptHelper.executeScriptWithWebElement(TWAppDataEntryFollowUpDetails.getElement("click_remark_UnderFollowUp_610")));
@@ -169,7 +169,7 @@ public class TawarruqAppDataEntryFollowupdetails {
 	}
 
 	@And("User_607 validate Back button field enabled or not under customer follow details")
-	public void user_validate_back_button_field_enabled_or_not_under_customer_follow_details()
+	public void user_607_validate_back_button_field_enabled_or_not_under_customer_follow_details()
 			throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
 				.executeScriptWithWebElement(TWAppDataEntryFollowUpDetails.getElement("click_backButton_UnderFollowUp_610")));
@@ -180,7 +180,7 @@ public class TawarruqAppDataEntryFollowupdetails {
 	}
 
 	@And("User_607 validate Save button field enabled or not under customer follow details")
-	public void user_validate_save_button_field_enabled_or_not_under_customer_follow_details()
+	public void user_607_validate_save_button_field_enabled_or_not_under_customer_follow_details()
 			throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
 				.executeScriptWithWebElement(TWAppDataEntryFollowUpDetails.getElement("click_SaveButton_UnderFollowUp_610")));
@@ -190,7 +190,7 @@ public class TawarruqAppDataEntryFollowupdetails {
 	}
 	
 	@And("User_607 to verify the functionality of add button should allow create new record")
-	public void user_to_verify_the_functionality_of_add_button_should_allow_create_new_record() throws Throwable {
+	public void user_607_to_verify_the_functionality_of_add_button_should_allow_create_new_record() throws Throwable {
 		
 		for (int j = 0; j < 200; j++) {
 			try {
@@ -218,7 +218,7 @@ public class TawarruqAppDataEntryFollowupdetails {
 	}	
 
 	@And("User_607 to verify the functionality of edit button should redirct the edit page")
-	public void user_to_verify_the_functionality_of_edit_button_should_redirct_the_edit_page() throws Throwable {
+	public void user_607_to_verify_the_functionality_of_edit_button_should_redirct_the_edit_page() throws Throwable {
 	    
 		for (int i = 0; i < 200; i++) {
 			try {
@@ -253,7 +253,7 @@ public class TawarruqAppDataEntryFollowupdetails {
 	}
 	
 	@And("User_607 validate Sign Status field enabled or not under customer follow details")
-	public void user_validate_single_status_field_enabled_or_not_under_customer_follow_details()
+	public void user_607_validate_single_status_field_enabled_or_not_under_customer_follow_details()
 			throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
 				.executeScriptWithWebElement(TWAppDataEntryFollowUpDetails.getElement("click_signStatus_UnderFollowUp_610")));
@@ -267,7 +267,7 @@ public class TawarruqAppDataEntryFollowupdetails {
 	//-----------------------------   @AT_MU_FU_002  -----
 	
 	@And("User_607 validate the called when field should be date , mandatory and editable in murabha")
-	public void user_validate_the_called_when_field_should_be_date_mandatory_and_editable_in_murabha() throws Throwable {
+	public void user_607_validate_the_called_when_field_should_be_date_mandatory_and_editable_in_murabha() throws Throwable {
 //		store xpath in string
 //		String calledPath = "document.querySelector('[id=\"calledWhen\"] p-calendar')";
 //		WebElement attribute = javascriptHelper.executeScriptWithWebElement(calledPath);
@@ -330,7 +330,7 @@ public class TawarruqAppDataEntryFollowupdetails {
 
 
 	@And("User_607 validate the customer responce field should be lookUp , mandatory and editable in Murabha")
-	public void user_validate_the_customer_responce_field_should_be_look_up_mandatory_and_editable_in_murabha() throws Throwable {
+	public void user_607_validate_the_customer_responce_field_should_be_look_up_mandatory_and_editable_in_murabha() throws Throwable {
 	    
 		// ----------------validate mandatory field
 
@@ -438,7 +438,7 @@ public class TawarruqAppDataEntryFollowupdetails {
 	}
 	
 	@Given("User_607 Click Edit button in Follow-Up Details List Screen")
-	public void user_click_edit_button_in_follow_up_details_list_screen() {
+	public void user_607_click_edit_button_in_follow_up_details_list_screen() {
 	    
 		for (int b = 0; b < 300; b++) {
 			try {
@@ -455,7 +455,7 @@ public class TawarruqAppDataEntryFollowupdetails {
 	}
 	
 	@Given("User_607 Click save button Follow-Up Details Screen")
-	public void user_click_save_button_follow_up_details_screen() {
+	public void user_607_click_save_button_follow_up_details_screen() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(TWAppDataEntryFollowUpDetails.getElement("SaveButtonInFollowUpDetails")).click();
@@ -469,7 +469,7 @@ public class TawarruqAppDataEntryFollowupdetails {
 	}
 
 	@And("User_607 validate the follow up date field should be date , mandatory and editable in murabha")
-	public void user_validate_the_follow_up_date_field_should_be_date_mandatory_and_editable_in_murabha() {
+	public void user_607_validate_the_follow_up_date_field_should_be_date_mandatory_and_editable_in_murabha() {
 	    
 		// ----------------validate mandatory field
 
@@ -492,7 +492,7 @@ public class TawarruqAppDataEntryFollowupdetails {
 	}
 
 	@And("User_607 validate the sign Status field should be dropdown , mandatory and editable in murabha")
-	public void user_validate_the_sign_status_field_should_be_dropdown_mandatory_and_editable_in_murabha() {
+	public void user_607_validate_the_sign_status_field_should_be_dropdown_mandatory_and_editable_in_murabha() {
 	    
 		// ----------------validate mandatory field
 
@@ -515,7 +515,7 @@ public class TawarruqAppDataEntryFollowupdetails {
 	}
 
 	@And("User_607 validate the remarks field should be textbox , mandatory and editable in murabha")
-	public void user_validate_the_remarks_field_should_be_textbox_mandatory_and_editable_in_murabha() {
+	public void user_607_validate_the_remarks_field_should_be_textbox_mandatory_and_editable_in_murabha() {
 	    
 		// ----------------validate mandatory field
 
@@ -539,7 +539,7 @@ public class TawarruqAppDataEntryFollowupdetails {
 	}
 
 	@And("User_607 validate the save button under customer follow details in murabha")
-	public void user_validate_the_save_button_under_customer_follow_details_in_murabha() {
+	public void user_607_validate_the_save_button_under_customer_follow_details_in_murabha() {
 	    
 		for (int b = 0; b < 300; b++) {
 			try {
@@ -576,7 +576,7 @@ public class TawarruqAppDataEntryFollowupdetails {
 	//------------- @AT_IJ_IA_01     Ijara App Data Check Insurance Info
 	
 	@And("User_607 click Insurance Info screen")
-	public void user_click_insurance_info_screen() {
+	public void user_607_click_insurance_info_screen() {
 		
 		for (int b = 0; b < 300; b++) {
 			try {
@@ -591,7 +591,7 @@ public class TawarruqAppDataEntryFollowupdetails {
 	}
 
 	@And("User_607 click view button")
-	public void user_click_view_button() {
+	public void user_607_click_view_button() {
 	    
 		for (int b = 0; b < 300; b++) {
 			try {
@@ -605,7 +605,7 @@ public class TawarruqAppDataEntryFollowupdetails {
 		}
 	}
 	@And("User_607 verify the Insurance Info screen get open")
-	public void user_verify_the_insurance_info_screen_get_open() {
+	public void user_607_verify_the_insurance_info_screen_get_open() {
 	    
 		 for (int j = 0; j < 200; j++) {
 				try {
@@ -622,7 +622,7 @@ public class TawarruqAppDataEntryFollowupdetails {
 	//----------------------------  @AT_IJ_IA_02
 	
 	@And("User_607 verify the field Insurance year")
-	public void user_verify_the_field_insurance_year() {
+	public void user_607_verify_the_field_insurance_year() {
 	   
 		for (int j = 0; j < 200; j++) {
 			try {
@@ -638,7 +638,7 @@ public class TawarruqAppDataEntryFollowupdetails {
 	}
 
 	@And("User_607 verify the field Depreciation")
-	public void user_verify_the_field_depreciation() {
+	public void user_607_verify_the_field_depreciation() {
 	    
 		for (int j = 0; j < 200; j++) {
 			try {
@@ -654,7 +654,7 @@ public class TawarruqAppDataEntryFollowupdetails {
 	}
 	
 	@And("User_607 verify the field Assert Price")
-	public void user_verify_the_field_assert_price() {
+	public void user_607_verify_the_field_assert_price() {
 		
 		for (int j = 0; j < 200; j++) {
 			try {
@@ -671,7 +671,7 @@ public class TawarruqAppDataEntryFollowupdetails {
 	//------------------------@AT_IJ_IA_03
 	
 	@And("User_607 verify the Rate Per Price")
-	public void user_verify_the_rate_per_price() {
+	public void user_607_verify_the_rate_per_price() {
 	    
 		for (int j = 0; j < 200; j++) {
 			try {
@@ -687,7 +687,7 @@ public class TawarruqAppDataEntryFollowupdetails {
 	}
 
 	@And("User_607 verify the Minium Insurance Premium")
-	public void user_verify_the_minium_insurance_premium() {
+	public void user_607_verify_the_minium_insurance_premium() {
 	    
 		for (int j = 0; j < 200; j++) {
 			try {
@@ -703,7 +703,7 @@ public class TawarruqAppDataEntryFollowupdetails {
 	}
 
 	@And("User_607 verify the Base Insurance Premium")
-	public void user_verify_the_base_insurance_premium() {
+	public void user_607_verify_the_base_insurance_premium() {
 	    
 		for (int j = 0; j < 200; j++) {
 			try {
@@ -722,7 +722,7 @@ public class TawarruqAppDataEntryFollowupdetails {
 	//--------------------@AT_IJ_IA_04
 	
 	@And("User_607 verify the VAT premium")
-	public void user_verify_the_vat_premium() {
+	public void user_607_verify_the_vat_premium() {
 	   
 
 		for (int j = 0; j < 200; j++) {
@@ -739,7 +739,7 @@ public class TawarruqAppDataEntryFollowupdetails {
 	}
 
 	@And("User_607 verify the Net Premium")
-	public void user_verify_the_net_premium() {
+	public void user_607_verify_the_net_premium() {
 	    
 
 		for (int j = 0; j < 200; j++) {
@@ -755,7 +755,7 @@ public class TawarruqAppDataEntryFollowupdetails {
 	}
 
 	@And("User_607 verify the Back button")
-	public void user_verify_the_back_button() {
+	public void user_607_verify_the_back_button() {
 	    
 		for (int b = 0; b < 300; b++) {
 			try {
@@ -780,7 +780,7 @@ public class TawarruqAppDataEntryFollowupdetails {
 	}
 	
 	@Given("User_607 Check Save button and Back button in Follow Up Details screen")
-	public void user_check_save_button_and_back_button_in_follow_up_details_screen() {
+	public void user_607_check_save_button_and_back_button_in_follow_up_details_screen() {
 		for (int i = 0; i < 500; i++) {
 			try {
 				if (!(javascriptHelper.executeScriptWithWebElement(TWAppDataEntryFollowUpDetails.getElement("BackButtonInFollowUpDetails")).isDisplayed())) {
@@ -810,7 +810,7 @@ public class TawarruqAppDataEntryFollowupdetails {
 	}
 
 	@Given("User_607 Check Able to modify the record in Follow Up Details screen")
-	public void user_check_able_to_modify_the_record_in_follow_up_details_screen() {
+	public void user_607_check_able_to_modify_the_record_in_follow_up_details_screen() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(TWAppDataEntryFollowUpDetails.getElement("CustomerResponse")).click();
@@ -951,7 +951,7 @@ public class TawarruqAppDataEntryFollowupdetails {
 
 
 	@Given("User_607 Clear the value in Called when field")
-	public void user_clear_the_value_in_called_when_field() {
+	public void user_607_clear_the_value_in_called_when_field() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(TWAppDataEntryFollowUpDetails.getElement("CalledWhenInputField")).click();
@@ -976,7 +976,7 @@ public class TawarruqAppDataEntryFollowupdetails {
 	}
 
 	@Given("User_607 Enter invalid in Called when field")
-	public void user_enter_invalid_in_called_when_field() {
+	public void user_607_enter_invalid_in_called_when_field() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(TWAppDataEntryFollowUpDetails.getElement("CalledWhenInputField")).sendKeys("dhfgnjfgn",Keys.ENTER);
@@ -990,7 +990,7 @@ public class TawarruqAppDataEntryFollowupdetails {
 	}
 
 	@Given("User_607 Clicking on back button system should navigate to the previous screen")
-	public void user_clicking_on_back_button_system_should_navigate_to_the_previous_screen() {
+	public void user_607_clicking_on_back_button_system_should_navigate_to_the_previous_screen() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(TWAppDataEntryFollowUpDetails.getElement("BackButtonInFollowUpDetails")).click();
