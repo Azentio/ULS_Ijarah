@@ -38,4 +38,4 @@ Feature: Title of your feature
     And User_604 verify Blocklisted field available under Customer Information screen
     And User_604 verify Credit Bureau field available under Customer Information screen
     And User_604 verify Remarks field available under Customer Information screen
-    Then logout from the ijaraApplication
+    Then logout from the ULS Application

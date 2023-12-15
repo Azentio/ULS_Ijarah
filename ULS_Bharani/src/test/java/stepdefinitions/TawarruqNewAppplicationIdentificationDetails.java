@@ -216,6 +216,42 @@ public class TawarruqNewAppplicationIdentificationDetails {
 			}
 		}
 	}
+	
+	@And("User_604 Search the Ref Id under inbox Murabha Offering Offer Details")
+	public void User_607_Search_the_RefIdunder_inbox_Murabha_Offering_OfferDetails()
+			throws Throwable {
+		WebElement searchTextBox;
+		for (int i = 0; i <= 300; i++) {
+			try {
+				searchTextBox = javascriptHelper
+						.executeScriptWithWebElement(commonJSElements.getElement("mail_box_search_text"));
+				searchTextBox.sendKeys("4049");
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@And("User_604 Search the Ref Id under inbox Auto Loan Appdata Entry Contact Details")
+	public void User_607_Search_the_RefIdunder_inbox_Auto_Loan_Appdata_Entry_Contact_Details()
+			throws Throwable {
+		WebElement searchTextBox;
+		for (int i = 0; i <= 300; i++) {
+			try {
+				searchTextBox = javascriptHelper
+						.executeScriptWithWebElement(commonJSElements.getElement("mail_box_search_text"));
+				searchTextBox.sendKeys("4138");
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
 
 	@And("user_604 select the new application stage customer identification details record from mail box")
 	public void user_604_select_the_new_application_stage_customer_identification_details_record_from_mail_box()

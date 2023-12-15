@@ -1,45 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-28T17:24:29 IST" name="Default suite" finished-at="2023-11-28T17:25:18 IST" duration-ms="48830">
+  <suite started-at="2023-12-13T17:43:51 IST" name="Default suite" finished-at="2023-12-13T17:45:02 IST" duration-ms="70480">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@1caa0244]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-11-28T17:24:29 IST" name="Default test" finished-at="2023-11-28T17:25:18 IST" duration-ms="48830">
+    <test started-at="2023-12-13T17:43:51 IST" name="Default test" finished-at="2023-12-13T17:45:02 IST" duration-ms="70480">
       <class name="Runner.TestApplication">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@1caa0244]" started-at="2023-11-28T17:24:29 IST" name="setUpClass" finished-at="2023-11-28T17:24:30 IST" duration-ms="934" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@1caa0244]" started-at="2023-12-13T17:43:51 IST" name="setUpClass" finished-at="2023-12-13T17:43:52 IST" duration-ms="838" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@1caa0244]" started-at="2023-11-28T17:24:30 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-28T17:25:09 IST" duration-ms="38631" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@1caa0244]" started-at="2023-12-13T17:43:52 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-13T17:44:49 IST" duration-ms="56744" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["To verify the availability of Application Details tab & verify already added details"]]>
+                <![CDATA["To verify user can able to update the contact details record with invalid input"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[Tawaraq Commodity Purchase Maker Application Details]"]]>
+                <![CDATA["Optional[Auto Loan Appdata Entry Contact Details]"]]>
               </value>
             </param>
           </params>
-          <exception class="java.lang.AssertionError">
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError
-at org.junit.Assert.fail(Assert.java:86)
-at stepdefinitions.TawaraqCommodityPurchaseMakerApplicationDetails.user_validate_the_classification_value_displayed_correctly_under_application_details_screen(TawaraqCommodityPurchaseMakerApplicationDetails.java:164)
-at ✽.User_608 validate the Classification value displayed correctly under Application details screen(file:///C:/Users/inindc00604/git/ULS_Bharani/ULS_Bharani/src/test/java/features/TawaraqCommodityPurchaseMakerApplicationDetails.feature:14)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@1caa0244]" started-at="2023-11-28T17:25:09 IST" name="tearDownClass" finished-at="2023-11-28T17:25:18 IST" duration-ms="9210" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@1caa0244]" started-at="2023-12-13T17:44:49 IST" name="tearDownClass" finished-at="2023-12-13T17:45:02 IST" duration-ms="12862" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
