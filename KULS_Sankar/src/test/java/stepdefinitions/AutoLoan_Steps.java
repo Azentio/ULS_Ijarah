@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -61,12 +62,25 @@ public class AutoLoan_Steps {
 		testData = AppDataEntryApplicationDetails.getTestdata("DS_AT_AL_APP_03");
     }
 	
+	@And("^User_608 get the test data for test case AT_AL_APP_04$")
+    public void get_the_test_data_for_test_case_AT_AL_APP_04() throws Throwable {
+		testData = AppDataEntryApplicationDetails.getTestdata("DS_AT_AL_APP_04");
+    }
 	
+	@And("^User_608 get the test data for test case AT_AL_APP_05$")
+    public void get_the_test_data_for_test_case_AT_AL_APP_05() throws Throwable {
+		testData = AppDataEntryApplicationDetails.getTestdata("DS_AT_AL_APP_05");
+    }
 	
+	@And("^User_608 get the test data for test case AT_AL_APP_06$")
+    public void get_the_test_data_for_test_case_AT_AL_APP_06() throws Throwable {
+		testData = AppDataEntryApplicationDetails.getTestdata("DS_AT_AL_APP_06");
+    }
 	
-	
-	
-	
+	@And("^User_608 get the test data for test case AT_AL_APP_07$")
+    public void get_the_test_data_for_test_case_AT_AL_APP_07() throws Throwable {
+		testData = AppDataEntryApplicationDetails.getTestdata("DS_AT_AL_APP_07");
+    }
 	
 	
 	
@@ -2033,14 +2047,752 @@ public class AutoLoan_Steps {
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
+//	AT_AL_APP_04
+	@And("User_608 verify Sourcing Type field as Mandatory, Editable and Lookup in Referral\\Sourcing Details section")
+	public void user_608_verify_sourcing_type_field_as_mandatory_editable_and_lookup_in_referral_sourcing_details_section() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						appDataAppDetailsJsPaths.getElement("sourcingTypeLabel")));
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+//		Verify field as Mandatory
+		String label = javascriptHelper.executeScriptWithWebElement(
+				appDataAppDetailsJsPaths.getElement("sourcingTypeLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+        	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+        			  appDataAppDetailsJsPaths.getElement("sourcingTypeLabel")));
+              softAssert.assertTrue(label.contains("*"), "Sourcing Type field should Mandatory");
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              	}
+          	}
+		} 
+		
+//		Verify field as Editable
+		WebElement product = javascriptHelper.executeScriptWithWebElement(
+				appDataAppDetailsJsPaths.getElement("sourcingType"));
+		String read = product.getAttribute("ng-reflect-readonly");
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				softAssert.assertTrue(read.contains("false"),"Sourcing Type field should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+//		Verify field as Dropdown/Lookup value
+		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+				appDataAppDetailsJsPaths.getElement("sourcingTypeDropdown"));
+		for (int i = 0; i <= 2000; i++) {
+			try {	
+				actions.moveToElement(dropdown).build().perform();
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Sourcing Type field should be Dropdown");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
 
+	@And("User_608 verify Sourcing Office field as Mandatory, Editable and Lookup in Referral\\Sourcing Details section")
+	public void user_608_verify_sourcing_office_field_as_mandatory_editable_and_lookup_in_referral_sourcing_details_section() throws Throwable {
+//		Verify field as Mandatory
+		String label = javascriptHelper.executeScriptWithWebElement(
+				appDataAppDetailsJsPaths.getElement("sourcingOfficeLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+        	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+        			  appDataAppDetailsJsPaths.getElement("sourcingOfficeLabel")));
+              softAssert.assertTrue(label.contains("*"), "Sourcing Office field should Mandatory");
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              	}
+          	}
+		} 
+		
+//		Verify field as Editable
+		WebElement product = javascriptHelper.executeScriptWithWebElement(
+				appDataAppDetailsJsPaths.getElement("sourcingOffice"));
+		String read = product.getAttribute("ng-reflect-readonly");
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				softAssert.assertTrue(read.contains("false"),"Sourcing Office field should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+//		Verify field as Dropdown/Lookup value
+		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+				appDataAppDetailsJsPaths.getElement("sourcingOfficeDropdown"));
+		for (int i = 0; i <= 2000; i++) {
+			try {	
+				actions.moveToElement(dropdown).build().perform();
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Sourcing Office field should be Dropdown");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Sourcing Entity field as Mandatory, Editable and Lookup in Referral\\Sourcing Details section")
+	public void user_608_verify_sourcing_entity_field_as_mandatory_editable_and_lookup_in_referral_sourcing_details_section() throws Throwable {
+//		Verify field as Mandatory
+		String label = javascriptHelper.executeScriptWithWebElement(
+				appDataAppDetailsJsPaths.getElement("sourcingEntityLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+        	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+        			  appDataAppDetailsJsPaths.getElement("sourcingEntityLabel")));
+              softAssert.assertTrue(label.contains("*"), "Sourcing Entity field should Mandatory");
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              	}
+          	}
+		} 
+		
+//		Verify field as Editable
+		WebElement product = javascriptHelper.executeScriptWithWebElement(
+				appDataAppDetailsJsPaths.getElement("sourcingEntity"));
+		String read = product.getAttribute("ng-reflect-readonly");
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				softAssert.assertTrue(read.contains("false"),"Sourcing Entity field should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+//		Verify field as Dropdown/Lookup value
+		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+				appDataAppDetailsJsPaths.getElement("sourcingEntityDropdown"));
+		for (int i = 0; i <= 2000; i++) {
+			try {	
+				actions.moveToElement(dropdown).build().perform();
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Sourcing Entity field should be Dropdown");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Sourcing Staff field as Mandatory, Editable and Lookup in Referral\\Sourcing Details section")
+	public void user_608_verify_sourcing_staff_field_as_mandatory_editable_and_lookup_in_referral_sourcing_details_section() throws Throwable {
+//		Verify field as Mandatory
+		String label = javascriptHelper.executeScriptWithWebElement(
+				appDataAppDetailsJsPaths.getElement("sourcingStaffLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+        	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+        			  appDataAppDetailsJsPaths.getElement("sourcingStaffLabel")));
+              softAssert.assertTrue(label.contains("*"), "Sourcing Staff field should Mandatory");
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              	}
+          	}
+		} 
+		
+//		Verify field as Editable
+		WebElement product = javascriptHelper.executeScriptWithWebElement(
+				appDataAppDetailsJsPaths.getElement("sourcingStaff"));
+		String read = product.getAttribute("ng-reflect-readonly");
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				softAssert.assertTrue(read.contains("false"),"Sourcing Staff field should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+//		Verify field as Dropdown/Lookup value
+		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+				appDataAppDetailsJsPaths.getElement("sourcingStaffDropdown"));
+		for (int i = 0; i <= 2000; i++) {
+			try {	
+				actions.moveToElement(dropdown).build().perform();
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Sourcing Staff field should be Dropdown");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Reference Type field as Non_mandatory, Editable and Lookup in Referral\\Sourcing Details section")
+	public void user_608_verify_reference_type_field_as_non_mandatory_editable_and_lookup_in_referral_sourcing_details_section() throws Throwable {
+//		Verify field as Non-mandatory
+		String label = javascriptHelper.executeScriptWithWebElement(
+				appDataAppDetailsJsPaths.getElement("referenceTypeLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+        	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+        			  appDataAppDetailsJsPaths.getElement("referenceTypeLabel")));
+              softAssert.assertTrue(!(label.contains("*")), "Reference Type field should Mandatory");
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              	}
+          	}
+		} 
+		
+//		Verify field as Editable
+		WebElement product = javascriptHelper.executeScriptWithWebElement(
+				appDataAppDetailsJsPaths.getElement("referenceType"));
+		String read = product.getAttribute("ng-reflect-readonly");
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				softAssert.assertTrue(read.contains("false"),"Reference Type field should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+//		Verify field as Dropdown/Lookup value
+		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+				appDataAppDetailsJsPaths.getElement("referenceTypeDropdown"));
+		for (int i = 0; i <= 2000; i++) {
+			try {	
+				actions.moveToElement(dropdown).build().perform();
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Reference Type field should be Dropdown");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Reference Entity field as Non_mandatory, Editable and Lookup in Referral\\Sourcing Details section")
+	public void user_608_verify_reference_entity_field_as_non_mandatory_editable_and_lookup_in_referral_sourcing_details_section() throws Throwable {
+//		Verify field as Non-mandatory
+		String label = javascriptHelper.executeScriptWithWebElement(
+				appDataAppDetailsJsPaths.getElement("referenceEntityLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+        	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+        			  appDataAppDetailsJsPaths.getElement("referenceEntityLabel")));
+              softAssert.assertTrue(!(label.contains("*")), "Reference Entity field should Mandatory");
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              	}
+          	}
+		} 
+		
+//		Verify field as Editable
+		WebElement product = javascriptHelper.executeScriptWithWebElement(
+				appDataAppDetailsJsPaths.getElement("referenceEntity"));
+		String read = product.getAttribute("ng-reflect-readonly");
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				softAssert.assertTrue(read.contains("false"),"Reference Entity field should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+//		Verify field as Dropdown/Lookup value
+		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+				appDataAppDetailsJsPaths.getElement("referenceEntityDropdown"));
+		for (int i = 0; i <= 2000; i++) {
+			try {	
+				actions.moveToElement(dropdown).build().perform();
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Reference Entity field should be Dropdown");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Reference Code field as Non_mandatory, Editable and Textbox in Referral\\Sourcing Details section")
+	public void user_608_verify_reference_code_field_as_non_mandatory_editable_and_textbox_in_referral_sourcing_details_section() throws Throwable {
+//		Verify field as Non-mandatory
+		String label = javascriptHelper.executeScriptWithWebElement(
+				appDataAppDetailsJsPaths.getElement("referenceCodeLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+        	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+        			  appDataAppDetailsJsPaths.getElement("referenceCodeLabel")));
+              softAssert.assertTrue(!(label.contains("*")), "Reference Code field should Mandatory");
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              	}
+          	}
+		} 
+		
+//		Verify field as Editable
+		WebElement product = javascriptHelper.executeScriptWithWebElement(
+				appDataAppDetailsJsPaths.getElement("referenceCode"));
+		String read = product.getAttribute("ng-reflect-readonly");
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundBorder(product);
+				softAssert.assertTrue(read.contains("false"),"Reference Code field should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+//		Validate the field should be textbox
+		String refCodeInput = "document.querySelector('[id=\"referenceEmployeeId\"] input')";
+		String tagName = javascriptHelper.executeScriptWithWebElement(refCodeInput).getTagName();
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				System.out.println("Tag Name: "+tagName);
+				softAssert.assertTrue(tagName.contains("input"),"Reference Code field should be textbox");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+	
+	
+//	AT_AL_APP_05
+	@And("User_608 to verify the impact when user keep any mandatory field blank and click on save button")
+	public void user_608_to_verify_the_impact_when_user_keep_any_mandatory_field_blank_and_click_on_save_button() throws Throwable {
+		WebElement saveBtn = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("saveBtn"));
+		for (int i = 0; i <= 150000; i++) {
+			try {
+				actions.moveToElement(saveBtn).build().perform();
+				saveBtn.click();
+				break;
+			} catch (Exception e) {
+				if (i == 150000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@And("User_608 system should show the proper validation message for blank field in Application details screen")
+	public void user_608_system_should_show_the_proper_validation_message_for_blank_field_in_application_details_screen() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver,
+				javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("mandatoryFillToastMsg")));
+		String madatoryErrorMsg = javascriptHelper
+				.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("mandatoryFillToastMsg")).getText();
+		System.err.println("Mandatory Error : " + madatoryErrorMsg);
+		for (int i = 0; i < 2000; i++) {
+			try {
+				softAssert.assertTrue(madatoryErrorMsg.contains("Please fill all the details"),
+						" System should show the proper validation message for blank field");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	
+//	AT_AL_APP_06
+	@And("User_608 verify Update button available in Application details screen")
+	public void user_608_verify_update_button_available_in_application_details_screen() throws Throwable {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-cards button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-cards button')[" + j + "].getAttribute('ng-reflect-text')";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().contains("Update")) {
+						System.out.println("condition true");
+						String jspath = "document.querySelectorAll('ion-cards button')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.backgroundBorder(btn);
+						softAssert.assertTrue(btn.isDisplayed(),"Update button should be displayed Application details screen");
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Approve button available in Application details screen")
+	public void user_608_verify_approve_button_available_in_application_details_screen() throws Throwable {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('kub-workflow-decision button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('kub-workflow-decision button')[" + j + "].innerText";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().contains("Approve")) {
+						System.out.println("condition true");
+						String jspath = "document.querySelectorAll('kub-workflow-decision button')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.backgroundBorder(btn);
+						softAssert.assertTrue(btn.isDisplayed(),"Approve button should be displayed Application details screen");
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Eligiblity Check button available in Application details screen")
+	public void user_608_verify_eligiblity_check_button_available_in_application_details_screen() throws Throwable {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('kub-workflow-decision button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('kub-workflow-decision button')[" + j + "].innerText";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().contains("Eligibility Check")) {
+						System.out.println("condition true");
+						String jspath = "document.querySelectorAll('kub-workflow-decision button')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.backgroundBorder(btn);
+						softAssert.assertTrue(btn.isDisplayed(),"Eligibility Check button should be displayed Application details screen");
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify View summary button available in Application details screen")
+	public void user_608_verify_view_summary_button_available_in_application_details_screen() throws Throwable {
+		WebElement btn = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("AppDetailsViewSummaryBtn"));
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				javascriptHelper.backgroundBorder(btn);
+				softAssert.assertTrue(btn.isDisplayed(),"View Summary button should be displayed Application details screen");
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_608 verify Back button available in Application details screen")
+	public void user_608_verify_back_button_available_in_application_details_screen() throws Throwable {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-cards button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-cards button')[" + j + "].getAttribute('ng-reflect-text')";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().contains("Go Back")) {
+						System.out.println("condition true");
+						String jspath = "document.querySelectorAll('ion-cards button')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.backgroundBorder(btn);
+						softAssert.assertTrue(btn.isDisplayed(),"Update button should be displayed Application details screen");
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Status field available in Application details screen")
+	public void user_608_verify_status_field_available_in_application_details_screen() throws Throwable {
+		WebElement label = javascriptHelper
+				.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("statusLabel"));
+		WebElement field = javascriptHelper
+				.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("statusToggleBtn"));
+		for (int i = 0; i <= 20000; i++) {
+			try {
+				actions.moveToElement(field).build().perform();
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(), "Status field should be displayed in Application details screen");
+				javascriptHelper.backgroundBorder(field);
+				softAssert.assertTrue(field.isDisplayed(), "Status toggle button should be displayed in Application details screen");
+				break;
+			} catch (Exception e) {
+				if (i == 20000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	    
+	}
+	
+	
+//	AT_AL_APP_07
+	@And("User_608 to verify system allow user to modify the Application Detail record")
+	public void user_608_to_verify_system_allow_user_to_modify_the_application_detail_record() throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("totalFinanceAmtInput"))
+				.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+				javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("totalFinanceAmtInput"))
+						.sendKeys(testData.get("Finance_Amt"));
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 to verify while modification, when user keep any mandatory field blank and click on Update button in Application Detail screen")
+	public void user_608_to_verify_while_modification_when_user_keep_any_mandatory_field_blank_and_click_on_update_button_in_application_detail_screen() throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("declaredMonthlyIncomeInput"))
+						.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		WebElement updateBtn = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("updateBtn"));
+		for (int i = 0; i <= 150000; i++) {
+			try {
+				actions.moveToElement(updateBtn).build().perform();
+				updateBtn.click();
+				break;
+			} catch (Exception e) {
+				if (i == 150000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@And("User_608 to verify while modification system allow user to update the record with valid data in Application Detail screen")
+	public void user_608_to_verify_while_modification_system_allow_user_to_update_the_record_with_valid_data_in_application_detail_screen() throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("declaredMonthlyIncomeInput"))
+						.sendKeys(testData.get("Monthly_Income"));
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		} 
+		String length = null;
+		for (int i = 0; i < 500; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-cards button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 500; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-cards button')[" + j + "].getAttribute('ng-reflect-text')";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().contains("Update")) {
+						System.out.println("condition true");
+						String jspath = "document.querySelectorAll('ion-cards button')[" + j + "]";
+						WebElement searchBtn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.JSEClick(searchBtn);
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@And("User_608 to verify system display the confirmation message post clicking on Update button")
+	public void user_608_to_verify_system_display_the_confirmation_message_post_clicking_on_update_button() {
+		WebElement alertMsg = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("alert_SuccessMsg"));
+		for (int i = 0; i < 20000; i++) {
+			try {
+	        	 String text = alertMsg.getText();
+	        	 System.out.println("Alert Message: "+text);
+	        	 softAssert.assertTrue((text.contains("Success")), "System display the confirmation message");
+	             break;
+	        } catch (Exception e) {
+	            
+	        }
+		}
+		
+		for (int i = 0; i < 2000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("alert_closeBtn")).click();
+	             break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                 Assert.fail(e.getMessage());
+	            }
+	        }
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }

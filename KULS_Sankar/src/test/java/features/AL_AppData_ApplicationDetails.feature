@@ -1,7 +1,8 @@
 Feature: To check the Auto Loan -- App Data Entry stage -> Application Details screen
 
 @AT_AL_APP_01
-Scenario: To verify post clicking on Application Detail tab system opens Application Details section & Referral/Sourcing Details section
+Scenario: Creation of Application- Add --> To verify post clicking on Application Detail tab system opens 
+Application Details section & Referral/Sourcing Details section
 
 Given navigate the IJARA URL
 And login with valid credentials - Auto Loan - App Data Entry
@@ -48,7 +49,7 @@ Then logout from the ijaraApplication
 
 
 @AT_AL_APP_02
-Scenario: To verify the functionality of save button, post entering all valid details and clicking on save button
+Scenario: Creation of Application- Add --> To verify the functionality of save button, post entering all valid details and clicking on save button
 
 Given navigate the IJARA URL
 And login with valid credentials - Auto Loan - App Data Entry
@@ -88,7 +89,7 @@ And User_608 invoke soft assert in Application details screen at Auto Loan App D
 
 
 @AT_AL_APP_03
-Scenario: To verify the below fields Mandatory/Non-mandatory, Editable, Dropdown or Accept only numeric values
+Scenario: Creation of Application- Add --> To verify the below fields Mandatory/Non-mandatory, Editable, Dropdown or Accept only numeric values
 
 Given navigate the IJARA URL
 And login with valid credentials - Auto Loan - App Data Entry
@@ -124,9 +125,112 @@ Then logout from the ijaraApplication
 And User_608 invoke soft assert in Application details screen at Auto Loan App Data Entry stage
 
 
+@AT_AL_APP_04
+Scenario: Creation of Application- Add --> To verify the below fields Mandatory/Non-mandatory, Editable, Lookup values or textbox
+
+Given navigate the IJARA URL
+And login with valid credentials - Auto Loan - App Data Entry
+And User_608 get the test data for test case AT_AL_APP_04
+And User_608 click the Mail box in ULS application
+And User_608 click the Search button under inbox
+And User_608 search the Reference ID for Auto Loan
+And User_608 click the Entitle button under inbox
+And User_608 click the Update button under Application Details screen
+And User_608 click the Add button under Application Details screen
+And User_608 select the Customer Type under Application Details screen
+And User_608 Enter the Customer Name under Application Details screen
+And User_608 click the Search button under Application Details screen
+And User_608 select the ID Type under Application Details screen
+And User_608 Enter the ID Number under Application Details screen
+And User_608 Enter the Date of Birth under Application Details screen
+And User_608 click the Search button under Application Details screen
+And User_608 click the Create New Request button under Application Details screen
+And User_608 verify Sourcing Type field as Mandatory, Editable and Lookup in Referral\Sourcing Details section
+And User_608 verify Sourcing Office field as Mandatory, Editable and Lookup in Referral\Sourcing Details section
+And User_608 verify Sourcing Entity field as Mandatory, Editable and Lookup in Referral\Sourcing Details section
+And User_608 verify Sourcing Staff field as Mandatory, Editable and Lookup in Referral\Sourcing Details section
+And User_608 verify Reference Type field as Non_mandatory, Editable and Lookup in Referral\Sourcing Details section
+And User_608 verify Reference Entity field as Non_mandatory, Editable and Lookup in Referral\Sourcing Details section
+And User_608 verify Reference Code field as Non_mandatory, Editable and Textbox in Referral\Sourcing Details section
+Then logout from the ijaraApplication
+And User_608 invoke soft assert in Application details screen at Auto Loan App Data Entry stage
+
+
+@AT_AL_APP_05
+Scenario: Creation of Application- Add --> To verify the impact when user keep any mandatory field blank and click on save button
+
+Given navigate the IJARA URL
+And login with valid credentials - Auto Loan - App Data Entry
+And User_608 get the test data for test case AT_AL_APP_05
+And User_608 click the Mail box in ULS application
+And User_608 click the Search button under inbox
+And User_608 search the Reference ID for Auto Loan
+And User_608 click the Entitle button under inbox
+And User_608 click the Update button under Application Details screen
+And User_608 click the Add button under Application Details screen
+And User_608 select the Customer Type under Application Details screen
+And User_608 Enter the Customer Name under Application Details screen
+And User_608 click the Search button under Application Details screen
+And User_608 select the ID Type under Application Details screen
+And User_608 Enter the ID Number under Application Details screen
+And User_608 Enter the Date of Birth under Application Details screen
+And User_608 click the Search button under Application Details screen
+And User_608 click the Create New Request button under Application Details screen
+And User_608 select the Product in Application details screen
+And User_608 select the Sub-Product in Application details screen
+And User_608 enter the Total Finance Amount Requested in Application details screen
+And User_608 enter the Declared Net Monthly Income in Application details screen
+And User_608 select the Sourcing Channel in Application details screen
+And User_608 select the Business Center Code in Application details screen
+And User_608 select the Servicing Type in Application details screen
+And User_608 select the Region in Application details screen
+And User_608 select the Servicing Branch in Application details screen
+And User_608 to verify the impact when user keep any mandatory field blank and click on save button
+And User_608 system should show the proper validation message for blank field in Application details screen
+Then logout from the ijaraApplication
+And User_608 invoke soft assert in Application details screen at Auto Loan App Data Entry stage
+
+
+@AT_AL_APP_06
+Scenario: Modification of Application Detail record --> Application Detail screen should get open with all valid fields
+in proper format with below mention buttons
+
+Given navigate the IJARA URL
+And login with valid credentials - Auto Loan - App Data Entry
+And User_608 get the test data for test case AT_AL_APP_06
+And User_608 click the Mail box in ULS application
+And User_608 click the Search button under inbox
+And User_608 search the Reference ID for Auto Loan
+And User_608 click the Entitle button under inbox
+And User_608 verify Update button available in Application details screen
+And User_608 verify Approve button available in Application details screen
+And User_608 verify Eligiblity Check button available in Application details screen
+And User_608 verify Back button available in Application details screen
+And User_608 verify View summary button available in Application details screen
+And User_608 verify Status field available in Application details screen
+Then logout from the ijaraApplication
+And User_608 invoke soft assert in Application details screen at Auto Loan App Data Entry stage
 
 
 
+@AT_AL_APP_07
+Scenario: Modification of Application Details record -> To verify system allow user to modify the Application Detail
+
+Given navigate the IJARA URL
+And login with valid credentials - Auto Loan - App Data Entry
+And User_608 get the test data for test case AT_AL_APP_07
+And User_608 click the Mail box in ULS application
+And User_608 click the Search button under inbox
+And User_608 search the Reference ID for Auto Loan
+And User_608 click the Entitle button under inbox
+And User_608 to verify system allow user to modify the Application Detail record
+And User_608 to verify while modification, when user keep any mandatory field blank and click on Update button in Application Detail screen
+And User_608 system should show the proper validation message for blank field in Application details screen
+
+And User_608 to verify while modification system allow user to update the record with valid data in Application Detail screen
+And User_608 to verify system display the confirmation message post clicking on Update button
+Then logout from the ijaraApplication
+And User_608 invoke soft assert in Application details screen at Auto Loan App Data Entry stage
 
 
 

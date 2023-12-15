@@ -2864,10 +2864,12 @@ public class Murabaha_Steps {
 	@And("User_608 verify Sourcing Office field as Mandatory, Non-editable and Dropdown under Referral\\Sourcing Details section")
 	public void user_verify_sourcing_office_field_as_mandatory_non_editable_and_dropdown_under_referral_sourcing_details_section() throws Throwable {
 //		Validate Mandatory
-		String sourcingOffice = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingOfficeLabel")).getText();
+		String sourcingOffice = javascriptHelper.executeScriptWithWebElement(
+				dataCheck_ApplicationDetailsJsPaths.getElement("sourcingOfficeLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
-        	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingOfficeLabel")));
+        	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+        			  dataCheck_ApplicationDetailsJsPaths.getElement("sourcingOfficeLabel")));
               Assert.assertTrue(sourcingOffice.contains("*"));
               break;
           } catch (Exception e) {
@@ -2878,7 +2880,8 @@ public class Murabaha_Steps {
 		}
 				
 //		Verify field as non-editable
-		WebElement sourcingOfficeField = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingOffice"));
+		WebElement sourcingOfficeField = javascriptHelper.executeScriptWithWebElement(
+				dataCheck_ApplicationDetailsJsPaths.getElement("sourcingOffice"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				Assert.assertTrue(sourcingOfficeField.getAttribute("ng-reflect-readonly").contains("true"));
@@ -2891,7 +2894,8 @@ public class Murabaha_Steps {
 		}
 		
 //		Validate the field should be lookup value[Dropdown]
-		WebElement sourcingOfficeDropdown = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingOfficeDropdown"));
+		WebElement sourcingOfficeDropdown = javascriptHelper.executeScriptWithWebElement(
+				dataCheck_ApplicationDetailsJsPaths.getElement("sourcingOfficeDropdown"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(sourcingOfficeDropdown);
@@ -2908,10 +2912,12 @@ public class Murabaha_Steps {
 	@And("User_608 verify Sourcing Entity field as Mandatory, Non-editable and Dropdown under Referral\\Sourcing Details section")
 	public void user_verify_sourcing_entity_field_as_mandatory_non_editable_and_dropdown_under_referral_sourcing_details_section() throws Throwable {
 //		Validate Mandatory
-		String sourcingEntity = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingEntityLabel")).getText();
+		String sourcingEntity = javascriptHelper.executeScriptWithWebElement(
+				dataCheck_ApplicationDetailsJsPaths.getElement("sourcingEntityLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
-        	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingEntityLabel")));
+        	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+        			  dataCheck_ApplicationDetailsJsPaths.getElement("sourcingEntityLabel")));
               Assert.assertTrue(sourcingEntity.contains("*"));
               break;
           } catch (Exception e) {
@@ -2922,7 +2928,8 @@ public class Murabaha_Steps {
 		}
 		
 //		Verify field as non-editable
-		WebElement sourcingEntityField = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingEntity"));
+		WebElement sourcingEntityField = javascriptHelper.executeScriptWithWebElement(
+				dataCheck_ApplicationDetailsJsPaths.getElement("sourcingEntity"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				Assert.assertTrue(sourcingEntityField.getAttribute("ng-reflect-readonly").contains("true"));
@@ -2935,7 +2942,8 @@ public class Murabaha_Steps {
 		}
 		
 //		Validate the field should be lookup value[Dropdown]
-		WebElement sourcingEntityDropdown = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingEntityDropdown"));
+		WebElement sourcingEntityDropdown = javascriptHelper.executeScriptWithWebElement(
+				dataCheck_ApplicationDetailsJsPaths.getElement("sourcingEntityDropdown"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(sourcingEntityDropdown);
@@ -2952,10 +2960,12 @@ public class Murabaha_Steps {
 	@And("User_608 verify Sourcing Staff field as Mandatory, Non-editable and Dropdown under Referral\\Sourcing Details section")
 	public void user_verify_sourcing_staff_field_as_mandatory_non_editable_and_dropdown_under_referral_sourcing_details_section() throws Throwable {
 //		Validate Mandatory
-		String sourcingStaff = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingStaffLabel")).getText();
+		String sourcingStaff = javascriptHelper.executeScriptWithWebElement(
+				dataCheck_ApplicationDetailsJsPaths.getElement("sourcingStaffLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
-        	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingStaffLabel")));
+        	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+        			  dataCheck_ApplicationDetailsJsPaths.getElement("sourcingStaffLabel")));
               Assert.assertTrue(sourcingStaff.contains("*"));
               break;
           } catch (Exception e) {
@@ -2966,7 +2976,8 @@ public class Murabaha_Steps {
 		}	
 
 //		Verify field as non-editable
-		WebElement sourcingStaffField = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingStaff"));
+		WebElement sourcingStaffField = javascriptHelper.executeScriptWithWebElement(
+				dataCheck_ApplicationDetailsJsPaths.getElement("sourcingStaff"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				Assert.assertTrue(sourcingStaffField.getAttribute("ng-reflect-readonly").contains("true"));
@@ -2979,7 +2990,8 @@ public class Murabaha_Steps {
 		}
 		
 //		Validate the field should be lookup value[Dropdown]
-		WebElement sourcingStaffDropdown = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingStaffDropdown"));
+		WebElement sourcingStaffDropdown = javascriptHelper.executeScriptWithWebElement(
+				dataCheck_ApplicationDetailsJsPaths.getElement("sourcingStaffDropdown"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(sourcingStaffDropdown);
@@ -2997,10 +3009,12 @@ public class Murabaha_Steps {
 	@And("User_608 verify Reference Type field as Non_mandatory, Non-editable and Dropdown under Referral\\Sourcing Details section")
 	public void user_verify_reference_type_field_as_non_mandatory_non_editable_and_dropdown_under_referral_sourcing_details_section() throws Throwable {
 //		Validate Non-Mandatory
-		String referenceType = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("referenceTypeLabel")).getText();
+		String referenceType = javascriptHelper.executeScriptWithWebElement(
+				dataCheck_ApplicationDetailsJsPaths.getElement("referenceTypeLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
-        	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("referenceTypeLabel")));
+        	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+        			  dataCheck_ApplicationDetailsJsPaths.getElement("referenceTypeLabel")));
               Assert.assertTrue(!(referenceType.contains("*")));
               break;
           } catch (Exception e) {
@@ -3011,7 +3025,8 @@ public class Murabaha_Steps {
 		}
 
 //		Verify field as non-editable
-		WebElement referenceTypeField = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("referenceType"));
+		WebElement referenceTypeField = javascriptHelper.executeScriptWithWebElement(
+				dataCheck_ApplicationDetailsJsPaths.getElement("referenceType"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				Assert.assertTrue(referenceTypeField.getAttribute("ng-reflect-readonly").contains("true"));
@@ -3024,7 +3039,8 @@ public class Murabaha_Steps {
 		}
 		
 //		Validate the field should be lookup value[Dropdown]
-		WebElement referenceTypeDropdown = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("referenceTypeDropdown"));
+		WebElement referenceTypeDropdown = javascriptHelper.executeScriptWithWebElement(
+				dataCheck_ApplicationDetailsJsPaths.getElement("referenceTypeDropdown"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(referenceTypeDropdown);
@@ -3042,10 +3058,12 @@ public class Murabaha_Steps {
 	@And("User_608 verify Reference Code field as Non_mandatory, Non-editable and Textbox under Referral\\Sourcing Details section")
 	public void user_verify_reference_code_field_as_non_mandatory_non_editable_and_textbox_under_referral_sourcing_details_section() throws Throwable {
 //		Validate Non-Mandatory
-		String referenceCode = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("referenceCodeLabel")).getText();
+		String referenceCode = javascriptHelper.executeScriptWithWebElement(
+				dataCheck_ApplicationDetailsJsPaths.getElement("referenceCodeLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
-        	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("referenceCodeLabel")));
+        	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+        			  dataCheck_ApplicationDetailsJsPaths.getElement("referenceCodeLabel")));
               Assert.assertTrue(!(referenceCode.contains("*")));
               break;
           } catch (Exception e) {
@@ -3056,7 +3074,8 @@ public class Murabaha_Steps {
 		}
 		
 //		Verify field as non-editable
-		WebElement referenceCodeInput = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("referenceCodeInput"));
+		WebElement referenceCodeInput = javascriptHelper.executeScriptWithWebElement(
+				dataCheck_ApplicationDetailsJsPaths.getElement("referenceCodeInput"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(referenceCodeInput);

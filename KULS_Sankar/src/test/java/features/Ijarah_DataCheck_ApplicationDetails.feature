@@ -14,10 +14,10 @@ And User_608 click the Mail box in ULS application
 And User_608 click the Search button under inbox
 And User_608 search the Ref id under inbox
 And User_608 click the Entitle button under inbox
-And User_608 verify the Back button available under Application details screen
 And User_608 verify the Submit button available under Application details screen
 And User_608 verify the Return button available under Application details screen
 And User_608 verify the View Summary button available under Application details screen
+And User_608 verify the Back button available under Application details screen
 And User_608 validate the Classification value displayed correctly under Application details screen
 And User_608 validate the Product value displayed correctly under Application details screen
 And User_608 validate the Total Finance Amount Requested value displayed correctly under Application details screen

@@ -6636,7 +6636,6 @@ public class IJARAH_Steps {
 //	AT_ADC_01
 	@And("User_608 verify the Back button available under Application details screen")
 	public void user_608_verify_the_back_button_available_under_application_details_screen() throws Throwable {
-		Thread.sleep(1000);
 		WebElement AppDetailsBackBtn = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("AppDetailsBackBtn"));
 		for (int i = 0; i <= 20000; i++) {
@@ -6655,6 +6654,7 @@ public class IJARAH_Steps {
 
 	@And("User_608 verify the Submit button available under Application details screen")
 	public void user_608_verify_the_submit_button_available_under_application_details_screen() throws Throwable {
+		Thread.sleep(1000);
 		WebElement AppDetailsSubmitBtn = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("AppDetailsSubmitBtn"));
 		for (int i = 0; i <= 20000; i++) {
@@ -6713,6 +6713,7 @@ public class IJARAH_Steps {
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("classificationDropdown"));
 		String classificationValue = classificationDropdown.getAttribute("aria-label");
 		System.out.println("Classification Value: " + classificationValue);
+		System.err.println(testData.get("Classification"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundColor(classificationDropdown);
@@ -7372,7 +7373,7 @@ public class IJARAH_Steps {
 		WebElement referenceCodeLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("referenceCodeLabel"));
 		WebElement referenceCodeInput = javascriptHelper
-				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("referenceCodeInput"));
+				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("referenceCode"));
 		System.out.println("Field Name: " + referenceCodeLabel.getText());
 		for (int i = 0; i <= 2000; i++) {
 			try {
@@ -10193,7 +10194,7 @@ public class IJARAH_Steps {
 
 //		Validate Correct value is displayed
 		WebElement referenceCodeInput = javascriptHelper
-				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("referenceCodeInput"));
+				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("referenceCode"));
 		System.out.println("Reference Code Value: " + referenceCodeInput.getAttribute("ng-reflect-model"));
 		for (int i = 0; i <= 2000; i++) {
 			try {

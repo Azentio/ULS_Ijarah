@@ -2617,19 +2617,6 @@ public class Tawarruq_Steps {
 				}
 			}
 		}
-//		Thread.sleep(500);
-//		WebElement updateBtn = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("updateBtn"));
-//		for (int i = 0; i <= 5000; i++) {
-//			try {
-//				javascriptHelper.backgroundBorder(updateBtn);
-//				updateBtn.click();
-//				break;
-//			} catch (Exception e) {
-//				if (i == 5000) {
-//					Assert.fail(e.getMessage());
-//				}
-//			}
-//		}
 		for (int i = 0; i <= 500000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("popupCloseBtn")).click();
