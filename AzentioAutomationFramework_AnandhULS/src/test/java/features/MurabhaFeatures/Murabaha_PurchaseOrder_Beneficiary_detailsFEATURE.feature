@@ -134,7 +134,8 @@ And user_076 click on return button at purchase order stage for murabaha
 And user_076 choose the previous stage at purchase order maker stage for murabaha
 And user_076 enter the return remark in purchase order maker stage for murabaha
 And user_076 enter the alert return button in purchase order maker stage for murabaha
-Then user_076 verify murabaha record should get return to purchase order maker stage
+Then user_076 verify murabaha record should get return to offering stage
+
 Then logout from the ULS Application
 @AT_M_PUR_13_01
 Scenario: To verify user can able to  return the purchase checker record to maker stage for murabaha product

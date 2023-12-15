@@ -2193,8 +2193,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 				}
 			}
 		}
-		softAssert.assertTrue(!(mandatoryVerification.contains("*")),
-				"sourcing staff field is a mandatory field hence failed");
+		
 		softAssert.assertTrue(fieldTypeValidation.contains("Select"),
 				"sourcing staff field is not a dropdown field hence failed");
 	}

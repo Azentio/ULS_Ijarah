@@ -1588,6 +1588,8 @@ public class PurchaseOrderSteps extends BaseClass {
 
 		for (int i = 0; i <= 150; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(
+						javascriptHelper.executeScriptWithWebElement(CommonJsElements.getElement("submit_button")));
 				clicksAndActionsHelper.clickOnElement(
 						javascriptHelper.executeScriptWithWebElement(CommonJsElements.getElement("submit_button")));
 				break;
@@ -1605,6 +1607,7 @@ public class PurchaseOrderSteps extends BaseClass {
 
 		for (int i = 0; i <= 150; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(CommonJsElements.getElement("return_button")));
 				clicksAndActionsHelper.clickOnElement(
 						javascriptHelper.executeScriptWithWebElement(CommonJsElements.getElement("return_button")));
 				break;
@@ -1681,12 +1684,16 @@ public class PurchaseOrderSteps extends BaseClass {
 
 	@And("user_076 get the test data for test case ID AT_M_PUR_12_01")
 	public void user_076_get_the_test_data_for_test_case_id_AT_M_PUR_12_01() throws Throwable {
-		purchaseOrderTestData = purchaseOrderExcelApprovalTestData.getTestdata("DS01_AT_M_PUR_12");
+		purchaseOrderExecutionData = purchaseOrderExecutionSheet.getTestdata("AT_M_PUR_12");
+		purchaseOrderTestData = purchaseOrderExcelApprovalTestData
+				.getTestdata(purchaseOrderExecutionData.get("dataSet_ID"));
 	}
 
 	@And("user_076 get the test data for test case ID AT_M_PUR_13")
 	public void user_076_get_the_test_data_for_test_case_id_AT_M_PUR_13() throws Throwable {
-		purchaseOrderTestData = purchaseOrderExcelApprovalTestData.getTestdata("DS01_AT_M_PUR_13");
+		purchaseOrderExecutionData = purchaseOrderExecutionSheet.getTestdata("AT_M_PUR_13");
+		purchaseOrderTestData = purchaseOrderExcelApprovalTestData
+				.getTestdata(purchaseOrderExecutionData.get("dataSet_ID"));
 	}
 
 	@And("user_076 login with valid credentials at offering to submit the purchase maker stage for murabaha")
@@ -1805,13 +1812,14 @@ public class PurchaseOrderSteps extends BaseClass {
 	@And("user_076 choose the previous stage at purchase order checker stage for murabaha")
 	public void user_076_choose_the_previous_stage_at_purchase_order_checker_stage_for_murabaha() throws Throwable {
 		String lengthOfReturnStage = "";
-		String returnStage = "Purchase maker";
 		for (int i = 0; i <= 300; i++) {
 			try {
 				System.out.println("Dropdown Query " + "document.querySelector('ion-select[class^=\"wrkSelBox\"]')");
-				javascriptHelper
-						.executeScriptWithWebElement("document.querySelector('ion-select[class^=\"wrkSelBox\"]')")
-						.click();
+				clicksAndActionsHelper.clickUsingActionClass(
+						javascriptHelper.executeScriptWithWebElement(
+								"document.querySelector('ion-select[class^=\"wrkSelBox\"]')"),
+						javascriptHelper.executeScriptWithWebElement(
+								"document.querySelector('ion-select[class^=\"wrkSelBox\"]')"));
 				break;
 			} catch (Exception e) {
 				if (i == 300) {
@@ -1893,7 +1901,6 @@ public class PurchaseOrderSteps extends BaseClass {
 	@And("user_076 choose the previous stage at purchase order maker stage for murabaha")
 	public void user_076_choose_the_previous_stage_at_purchase_order_maker_stage_for_murabaha() throws Throwable {
 		String lengthOfReturnStage = "";
-		String returnStage = "Purchase maker";
 		for (int i = 0; i <= 300; i++) {
 			try {
 				System.out.println("Dropdown Query " + "document.querySelector('ion-select[class^=\"wrkSelBox\"]')");
@@ -1915,7 +1922,7 @@ public class PurchaseOrderSteps extends BaseClass {
 				lengthOfReturnStage = javascriptHelper
 						.executeScript("return " + CommonJsElements.getElement("return_dropdown_length")).toString();
 				System.out.println("Length of the dropdown " + lengthOfReturnStage);
-				if (lengthOfReturnStage.length() > 0 || !(lengthOfReturnStage.equals("0"))) {
+				if (lengthOfReturnStage.length() > 0 || !(lengthOfReturnStage.equalsIgnoreCase("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2076,7 +2083,7 @@ public class PurchaseOrderSteps extends BaseClass {
 
 		String finalUserID = approveText.substring(85).replace(".", "");
 		System.out.println("Approval User ID " + finalUserID);
-		Assert.assertTrue(approveText.contains("OFFERING"));
+		Assert.assertTrue(approveText.contains("PURMKR"));
 		purchaseOrderExcelApprovalTestData.updateTestData(purchaseOrderTestData.get("Dataset ID"), "user_Id",
 				finalUserID);
 
@@ -2102,10 +2109,38 @@ public class PurchaseOrderSteps extends BaseClass {
 		}
 		System.out.println("Approve Text " + approveText);
 
-		String finalUserID = approveText.substring(83).replace(".", "");
-
+		String finalUserID = approveText.substring(85).replace(".", "");
 		System.out.println("Approval User ID " + finalUserID);
+		Assert.assertTrue(approveText.contains("OFFERING"));
+		purchaseOrderExcelApprovalTestData.updateTestData(purchaseOrderTestData.get("Dataset ID"), "user_Id",
+				finalUserID);
+
 	}
+
+//	@Then("user_076 verify murabaha record should get return to offering stage")
+//	public void user_076_verify_murabaha_record_should_get_return_to_offering_stage() throws Throwable {
+//		String approveText = "";
+//		for (int i = 0; i <= 150; i++) {
+//			try {
+//				approveText = javascriptHelper
+//						.executeScript("return " + CommonJsElements.getElement("toast_container_message")).toString();
+//				if (approveText.length() > 0) {
+//					System.out.println("Approve Text Length " + approveText.length());
+//					break;
+//				}
+//			} catch (Exception e) {
+//				if (i == 150) {
+//					e.printStackTrace();
+//					Assert.fail(e.getMessage());
+//				}
+//			}
+//		}
+//		System.out.println("Approve Text " + approveText);
+//
+//		String finalUserID = approveText.substring(83).replace(".", "");
+//
+//		System.out.println("Approval User ID " + finalUserID);
+//	}
 
 	@And("user_076 click on application details in offering stage")
 	public void user_076_click_on_application_details_in_offering_stage() throws Throwable {
@@ -2161,6 +2196,7 @@ public class PurchaseOrderSteps extends BaseClass {
 	public void user_076_click_on_Approve_button_at_offering_stage_for_murabaha() throws Throwable {
 		for (int i = 0; i <= 150; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(CommonJsElements.getElement("approve_button")));
 				clicksAndActionsHelper.clickOnElement(
 						javascriptHelper.executeScriptWithWebElement(CommonJsElements.getElement("approve_button")));
 				break;
@@ -2194,7 +2230,8 @@ public class PurchaseOrderSteps extends BaseClass {
 		}
 		for (int i = 0; i <= 150; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(CommonJsElements.getElement("alert_approve_button")).click();
+				javascriptHelper.executeScriptWithWebElement(CommonJsElements.getElement("alert_approve_button"))
+						.click();
 				break;
 			} catch (Exception e) {
 				if (i == 150) {

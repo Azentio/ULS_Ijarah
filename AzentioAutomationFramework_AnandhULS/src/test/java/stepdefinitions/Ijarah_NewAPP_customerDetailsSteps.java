@@ -1571,17 +1571,10 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 	@And("user_076 click on save button in customer details screen")
 	public void user_076_click_on_save_button_in_customer_details_screen() throws Throwable {
 
-		for (int i = 0; i <= 10; i++) {
-			try {
-				javascriptHelper.executeScriptWithWebElement(customerDetailsJSPaths.getElement("remarks_input"))
-						.sendKeys(Keys.PAGE_UP);
-			} catch (Exception e) {
-
-			}
-		}
 		for (int i = 0; i <= 150; i++) {
 			try {
-
+				clicksAndActionsHelper.scrollIntoView(
+						javascriptHelper.executeScriptWithWebElement(CommonJsElements.getElement("save_button")));
 				javascriptHelper.executeScriptWithWebElement(CommonJsElements.getElement("save_button")).click();
 				break;
 			} catch (Exception e) {

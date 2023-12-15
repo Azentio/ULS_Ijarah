@@ -1,25 +1,152 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-12-11T18:41:09 IST" name="Default suite" finished-at="2023-12-11T20:49:48 IST" duration-ms="7719185">
+  <suite started-at="2023-12-15T17:55:40 IST" name="Default suite" finished-at="2023-12-15T18:05:20 IST" duration-ms="579911">
     <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-12-11T18:41:09 IST" name="Default test" finished-at="2023-12-11T20:49:48 IST" duration-ms="7719185">
-      <class name="Runner.NewExcelTestRunner">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:Runner.NewExcelTestRunner@37b70343]" started-at="2023-12-11T18:41:09 IST" name="beforeTest" finished-at="2023-12-11T18:41:09 IST" duration-ms="10" status="PASS">
+    <test started-at="2023-12-15T17:55:40 IST" name="Default test" finished-at="2023-12-15T18:05:20 IST" duration-ms="579911">
+      <class name="Runner.TestApplication">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-12-15T17:55:40 IST" name="setUpClass" finished-at="2023-12-15T17:55:41 IST" duration-ms="1032" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method signature="test()[pri:0, instance:Runner.NewExcelTestRunner@37b70343]" started-at="2023-12-11T18:41:09 IST" name="test" finished-at="2023-12-11T20:49:47 IST" duration-ms="7718790" status="PASS">
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-12-15T17:55:41 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-15T17:56:43 IST" duration-ms="61755" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To verify user can able to create beneficiary details record with valida input at offering stage"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To Test the beneficiary details screen at purchase order stage]"]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:Runner.NewExcelTestRunner@37b70343]" started-at="2023-12-11T20:49:47 IST" name="afterTest" finished-at="2023-12-11T20:49:48 IST" duration-ms="318" status="PASS">
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-12-15T17:56:43 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-15T17:57:17 IST" duration-ms="34168" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To test the search functionality of beneficiary detaisl in purchase order"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To Test the beneficiary details screen at purchase order stage]"]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterTest -->
-      </class> <!-- Runner.NewExcelTestRunner -->
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-12-15T17:57:17 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-15T18:00:32 IST" duration-ms="194828" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To verify purchase order stage tabs are readonly mode (Asset Details,Configuration,Predisbursment fee ( Fee details),Downpayment summary,Insurance Info,Document Details,Application Details)"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To Test the beneficiary details screen at purchase order stage]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-12-15T18:00:32 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-15T18:01:17 IST" duration-ms="44995" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To verify user can able to submit the purchase order stage record for murabaha product"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To Test the beneficiary details screen at purchase order stage]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-12-15T18:01:17 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-15T18:02:07 IST" duration-ms="50408" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To verify user can able to return the purchase maker record to offering for murabaha product"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To Test the beneficiary details screen at purchase order stage]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-12-15T18:02:07 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-15T18:02:53 IST" duration-ms="46242" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To verify user can able to  return the purchase checker record to maker stage for murabaha product"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To Test the beneficiary details screen at purchase order stage]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-12-15T18:02:53 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-15T18:03:33 IST" duration-ms="39354" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To verify user can able to  return the purchase checker record to maker stage for murabaha product"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To Test the beneficiary details screen at purchase order stage]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-12-15T18:03:33 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-15T18:04:10 IST" duration-ms="37217" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To verify the view summary button in purchase order stage"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To Test the beneficiary details screen at purchase order stage]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-12-15T18:04:10 IST" name="tearDownClass" finished-at="2023-12-15T18:05:20 IST" duration-ms="69833" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- Runner.TestApplication -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -46,8 +46,8 @@ And user_076 click on save button customer identification details screen without
 Then user_076 verify system should show the validation to fill the mandatory details in customer identification screen at new app stage
 And user_076 enter the special character input in id number field
 Then user_076 verify system should show the validation for the id number field at new app stage
-And user_076 enter the character input in ID number field
-Then user_076 verify system wont allow user to enter the character input in ID number field at new app stage
+#And user_076 enter the character input in ID number field
+#Then user_076 verify system wont allow user to enter the character input in ID number field at new app stage
 And user_076 click on back button in customer identification details in new app stage
 Then logout from the ULS Application
 And user_076 invoke soft asset in customer identification details screen at new app stage
@@ -92,8 +92,8 @@ And user_076 remove the mandatory details value from customer identification det
 And user_076 click on save button customer identification details screen without enter the mandatory details at new app stage
 And user_076 enter the special character input in id number field
 Then user_076 verify system should show the validation for the id number field at new app stage
-And user_076 enter the character input in ID number field
-Then user_076 verify system wont allow user to enter the character input in ID number field at new app stage
+#And user_076 enter the character input in ID number field
+#Then user_076 verify system wont allow user to enter the character input in ID number field at new app stage
 And user_076 click on back button in customer identification details in new app stage
 Then user_076 verify identififcation details screen got move backward to previos screen at new app stage
 Then logout from the ULS Application

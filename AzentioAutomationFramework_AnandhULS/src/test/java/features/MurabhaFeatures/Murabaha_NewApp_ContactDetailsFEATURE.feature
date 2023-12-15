@@ -11,6 +11,8 @@ And click on search text box upon click the search button
 And user_076 get the test data for the test case ID AT_NewApp_M_CD_01
 And user_076 search for murabaha record reference number in new app stage
 And user_076 select the murabaha record in new app stage
+
+
 And user_076 click on additional customer info tab in new application stage
 And user_076 click on edit button customer personal information screen at new app stage
 And user_076 click on add butto in contact details screen in new app stage

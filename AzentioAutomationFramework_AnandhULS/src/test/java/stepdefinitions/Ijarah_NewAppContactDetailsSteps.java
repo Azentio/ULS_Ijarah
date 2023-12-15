@@ -393,13 +393,17 @@ public class Ijarah_NewAppContactDetailsSteps extends BaseClass {
 		for (int i = 0; i <= 600; i++) {
 			try {
 				if (i < 500) {
-					javascriptHelper.executeScriptWithWebElement(
+					clicksAndActionsHelper.clickUsingActionClass(javascriptHelper.executeScriptWithWebElement(
 							"document.querySelectorAll('ion-col[class=\"p-2 md hydrated\"]')[" + indexOfListView
-									+ "].querySelector('button[icon=\"pi pi-pencil\"')")
-							.click();
+									+ "].querySelector('button[icon=\"pi pi-pencil\"')"), javascriptHelper.executeScriptWithWebElement(
+							"document.querySelectorAll('ion-col[class=\"p-2 md hydrated\"]')[" + indexOfListView
+									+ "].querySelector('button[icon=\"pi pi-pencil\"')"));
+					
 				}
 				if (i > 550 && i < 600) {
-					clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+					clicksAndActionsHelper.clickUsingActionClass(javascriptHelper.executeScriptWithWebElement(
+							"document.querySelectorAll('ion-col[class=\"p-2 md hydrated\"]')[" + indexOfListView
+									+ "].querySelector('button[icon=\"pi pi-pencil\"')"), javascriptHelper.executeScriptWithWebElement(
 							"document.querySelectorAll('ion-col[class=\"p-2 md hydrated\"]')[" + indexOfListView
 									+ "].querySelector('button[icon=\"pi pi-pencil\"')"));
 					javascriptHelper.executeScriptWithWebElement(

@@ -1456,7 +1456,9 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 									+ indexOfListView
 									+ "].querySelector('span[class=\"p-paginator-current ng-star-inserted\"]').innerText")
 							.toString();
-					break;
+					if (searchResult.equalsIgnoreCase("Showing 0 to 0 of 0 entries")) {
+						break;
+					}
 				}
 
 			} catch (Exception e) {
