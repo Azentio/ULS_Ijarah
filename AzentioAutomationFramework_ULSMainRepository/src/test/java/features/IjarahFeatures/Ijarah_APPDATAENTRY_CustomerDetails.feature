@@ -1,6 +1,4 @@
-
-@tag
-Feature: Title of your feature
+Feature: Testing the functionalities of Customer details App data entry ijarah
 @AT_CD_01
 Scenario: To verify user is able to view Customer Information tab at New App Stage
 Given navigate the IJARA URL

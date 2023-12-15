@@ -2523,7 +2523,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 	public void user_verify_the_offer_details_section_field_available_on_offer_details_screen() {
 	    
 		//---------------------display
-		
+			System.out.println(jsPaths2.getElement("OfferDetailsSection_610"));
 				for (int j = 0; j < 200; j++) {
 					try {
 						if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("OfferDetailsSection_610")).isDisplayed()) {
@@ -2534,7 +2534,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 						if (j == 199) {
 							Assert.fail(e.getMessage());
 						}
-						// TODO: handle exception
+						
 					}
 				}
 	}

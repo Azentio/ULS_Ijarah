@@ -79,6 +79,14 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 	public void login_with_valid_credentials() throws Throwable {
 		ijaraLogin.loginWithIjaraApplication("userType09");
 	}
+	@Given("login with valid credentials for ijara offer details")
+	public void login_with_valid_credentials_for_ijara_offer_details() {
+		ijaraLogin.loginWithIjaraApplication("userType13");
+	}
+	@And("login with valid credentials-Underwriter")
+	public void login_with_valid_credentials_underwriter()throws Throwable {
+		ijaraLogin.loginWithIjaraApplication("userType09");
+	}
 	@And("login with valid credentials for insurance info ijarah")
 	public void login_with_valid_credentials_for_insurance_info_ijarah() {
 		ijaraLogin.loginWithIjaraApplication("userType05");
@@ -96,7 +104,18 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 	public void login_with_valid_credentials1() throws Throwable {
 		ijaraLogin.loginWithIjaraApplication("userType10");
 	}
-	
+	@And("login with valid credentials-Offering")
+	public void login_with_valid_credentials_offering()throws Throwable {
+		ijaraLogin.loginWithIjaraApplication("userType09");
+	}
+	@And("login with valid credentials2")
+	public void login_with_valid_credentials2() {
+		ijaraLogin.loginWithIjaraApplication("userType14");
+	}
+	@And("login with valid credentials-Contract Signing")
+	public void login_with_valid_credentials_contract_signing()throws Throwable {
+		ijaraLogin.loginWithIjaraApplication("userType15");
+	}
 	
 	@Then("logout from the ULS Application")
 	public void logout_from_the_ULS_application() throws Throwable {

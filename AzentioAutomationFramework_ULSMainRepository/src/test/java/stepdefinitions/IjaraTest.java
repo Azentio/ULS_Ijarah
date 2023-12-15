@@ -31,9 +31,9 @@ public class IjaraTest extends BaseClass {
 	// Ijarah_CommonFieldName
 	SoftAssert softAssert = new SoftAssert();
 	JSPaths commonJSPaths = new JSPaths(excelPath, "iJarah_CommonElements", "Ijarah_CommonFieldName", "JSPath");
-	ExcelData excelDataForAddressDetailsTestData = new ExcelData(excelTestDataPath, "ijarah_DCAddressDetailsTestData",
+	ExcelData excelDataForAddressDetailsTestData = new ExcelData(excelTestDataPath, "ijarah_AddressDetailsTestData",
 			"Dataset ID");
-	ExcelData customerDebtExcelData  = new ExcelData(excelTestDataPath," customerDebtExcelData","DataSet ID");
+	ExcelData customerDebtExcelData  = new ExcelData(excelTestDataPath,"Test Case ID","DataSet ID");
 	Map<String, String> addressDetailsTestData = new HashMap<>();
 	JSPaths addressDetailsJSPaths = new JSPaths(excelPath, "addressdetails_WebElements",
 			"Ijarah_AddressDetailsFieldName", "JSPath");
@@ -48,7 +48,7 @@ public class IjaraTest extends BaseClass {
 	JSPaths Ijarah_CustomerDebt = new JSPaths(excelPath, "CustomerDebt", "Ijarah_CustomerDebt", "JSPath");
 	JSPaths iJarah_CommonElements = new JSPaths(excelPath, "iJarah_CommonElements", "Ijarah_CommonFieldName", "JSPath");
 	Map<String, String> AssetDetailsTestData = new HashMap<>();
-	ExcelData excelDataForAssetDetailsTestData = new ExcelData(excelTestDataPath, "AssetDetai lsTestData",
+	ExcelData excelDataForAssetDetailsTestData = new ExcelData(excelTestDataPath, "AssetDetailsTestData",
 			"Dataset ID");
 	JSPaths AssetDetailElements = new JSPaths(excelPath, "AssetDetailElements",
 			"Ijarah_AssetDetailsFieldName", "JSPath");
@@ -56,6 +56,7 @@ public class IjaraTest extends BaseClass {
 			"Ijarah_DocmentDetailsFieldName", "JSPath");
 	JSPaths L1Approval = new JSPaths(excelPath, "L1Approval",
 			"Ijarah_ApprovalFieldName", "JSPath");
+	
 	
 
 	@Then("User_626 logout from the ijaraApplication")
@@ -174,7 +175,7 @@ public class IjaraTest extends BaseClass {
 			try {
 				searchTextBox = javascriptHelper
 						.executeScriptWithWebElement(commonJSPaths.getElement("mail_box_search_text"));
-				searchTextBox.sendKeys(addressDetailsTestData.get("record_reference_number"));
+				searchTextBox.sendKeys(AssetDetailsTestData.get("Ref No"));
 				break;
 			} catch (Exception e) {
 				if (i == 300) {
@@ -2138,62 +2139,6 @@ public class IjaraTest extends BaseClass {
 			}
 		    
 		}
-		@And("user_626 click eye icon of customer personal information")
-		public void user_626_click_eye_icon_of_customer_personal_information() {
-			for (int i = 0; i <= 300; i++) {
-				try {
-					javascriptHelper
-							.executeScriptWithWebElement(CustomerAddressDetails.getElement("Customer Personal Information eye icon"))
-							.click();
-					break;
-				} catch (Exception e) {
-					if (i == 300) {
-						Assert.fail(e.getMessage());
-					}
-				}
-			}
-		}
-
-		@And("user_626 click eye icon of address details")
-		public void user_626_click_eye_icon_of_address_details() {
-			String length =null;
-			for (int i = 0; i <500; i++) {
-				try {
-				    length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title').length").toString();
-				    System.out.println(length);
-					if (!length.isBlank()) {
-						break;
-					}
-				} catch (Exception e) {
-					if (i==499) {
-						Assert.fail(e.getMessage());
-					}
-				}
-			}
-			for (int i = 0; i <500; i++) {
-			try {
-				for (int j = 0; j <Integer.parseInt(length); j++) {
-					String title ="return document.querySelectorAll('ion-title')["+j+"].innerText";
-					String titlename = javascriptHelper.executeScript(title).toString();
-					System.out.println(titlename);
-					if (titlename.trim().contains("Address Details")) {
-						System.out.println("condition true");
-						String jspath ="document.querySelectorAll('ion-title')["+j+"].parentElement.nextElementSibling.querySelector('button[icon=\"pi pi-eye\"]')";
-						WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
-						System.out.println(jspath);
-//						javascriptHelper.scrollIntoView(addButton);
-						addButton.click();
-						break;
-					}
-				}
-				break;
-			} catch (Exception e) {
-				if (i==499) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-		}
 
 		@Then("user_626 verify Address type should visible in address details screen")
 		public void user_626_verify_address_type_should_visible_in_address_details_screen() {
@@ -3450,7 +3395,7 @@ public class IjaraTest extends BaseClass {
 			}
 		}
 		@Given("user_626 click On the Action button below Customer Financials")
-		public void user_626_click_on_the_action_button_below_customer_financials() throws InterruptedException {
+		public void user_626_click_on_the_action_button_below_customer_financials() {
 			for (int i = 0; i <= 1000; i++) {
 				try {
 					javascriptHelper.executeScriptWithWebElement(Ijarah_CustomerDebt.getElement("Action_Button_CFT")).click();
@@ -3461,7 +3406,6 @@ public class IjaraTest extends BaseClass {
 					}
 				}
 			}
-			Thread.sleep(300000);
 		}
 		
 		@Given("user_626 click On the Action button below Financial Commitments")

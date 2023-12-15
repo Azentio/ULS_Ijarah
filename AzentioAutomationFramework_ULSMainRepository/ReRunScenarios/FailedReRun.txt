@@ -1,1 +1,1 @@
-file:src/test/java/features/IjarahFeatures/Ijarah_APPDATAENTRY_AssetDetailsFEATURE.feature:4
+file:src/test/java/features/IjarahFeatures/Ijarah_CONTRACTSIGN_ApplicationDetails1.feature:4
