@@ -1889,8 +1889,6 @@ public class New_Application {
 				}
 				}
 			}
-		
-		
 			String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
 
 			String dropdownLength = "";
@@ -2014,7 +2012,6 @@ public class New_Application {
 
 				}
 			} 
-	    
 	}
 
 	@Given("User_607 Check Topup Type should be Non mandatory")

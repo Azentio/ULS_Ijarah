@@ -1,126 +1,131 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="4" failed="1" skipped="0">
+<testng-results ignored="0" total="6" passed="5" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-12-14T09:40:33 IST" name="Default suite" finished-at="2023-12-14T09:46:14 IST" duration-ms="340364">
+  <suite started-at="2023-12-15T17:47:02 IST" name="Default suite" finished-at="2023-12-15T17:51:34 IST" duration-ms="271768">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@72cc7e6f]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-12-14T09:40:33 IST" name="Default test" finished-at="2023-12-14T09:46:14 IST" duration-ms="340364">
+    <test started-at="2023-12-15T17:47:02 IST" name="Default test" finished-at="2023-12-15T17:51:34 IST" duration-ms="271768">
       <class name="Runner.TestApplication">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2023-12-14T09:40:33 IST" name="setUpClass" finished-at="2023-12-14T09:40:35 IST" duration-ms="1229" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2023-12-15T17:47:02 IST" name="setUpClass" finished-at="2023-12-15T17:47:03 IST" duration-ms="1100" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2023-12-14T09:40:35 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-14T09:41:37 IST" duration-ms="62739" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2023-12-15T17:47:03 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-15T17:47:35 IST" duration-ms="31763" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["System should display the below mention fields and button under Income details sections"]]>
+                <![CDATA["Verify the Fields"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[Ijara AppData Entry CF Income]"]]>
+                <![CDATA["Optional[Tawarruq AppData Entry Followup details]"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2023-12-14T09:41:37 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-14T09:43:04 IST" duration-ms="86531" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2023-12-15T17:47:35 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-15T17:48:10 IST" duration-ms="35340" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["To verify the functionality of Save button"]]>
+                <![CDATA["Verify the Fields and Save"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[Ijara AppData Entry CF Income]"]]>
+                <![CDATA["Optional[Tawarruq AppData Entry Followup details]"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2023-12-14T09:43:04 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-14T09:43:35 IST" duration-ms="31121" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2023-12-15T17:48:10 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-15T17:48:44 IST" duration-ms="33483" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["To verify the below fields under income details section."]]>
+                <![CDATA["Verify the save button success message"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[Ijara AppData Entry CF Income]"]]>
+                <![CDATA["Optional[Tawarruq AppData Entry Followup details]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2023-12-15T17:48:44 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-15T17:49:08 IST" duration-ms="24242" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify the validation message for invalid data"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Tawarruq AppData Entry Followup details]"]]>
               </value>
             </param>
           </params>
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[javascript error: Cannot read properties of null (reading 'style')
-  (Session info: chrome=120.0.6099.71)
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f9cf1c75771a7145bf9d09aaf08d792a, executeScript {script=arguments[0].style.background='yellow', args=[null]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.71, chrome: {chromedriverVersion: 120.0.6099.71 (9729082fe617..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58924}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58924/devtoo..., se:cdpVersion: 120.0.6099.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f9cf1c75771a7145bf9d09aaf08d792a]]>
+              <![CDATA[expected [true] but found [false]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: javascript error: Cannot read properties of null (reading 'style')
-  (Session info: chrome=120.0.6099.71)
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f9cf1c75771a7145bf9d09aaf08d792a, executeScript {script=arguments[0].style.background='yellow', args=[null]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.71, chrome: {chromedriverVersion: 120.0.6099.71 (9729082fe617..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58924}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58924/devtoo..., se:cdpVersion: 120.0.6099.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f9cf1c75771a7145bf9d09aaf08d792a
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
 at org.testng.Assert.fail(Assert.java:99)
-at stepdefinitions.TawarahAppDataEntryIncomeDetailsList.user_click_the_pencil_icon_under_customer_financials_tab(TawarahAppDataEntryIncomeDetailsList.java:207)
-at ✽.User_607 click the pencil icon under Customer Financials tab(file:///C:/Users/inindc00607/git/ULS_Ijarah_1/Gowtham_ULS_New/src/test/java/features/IjaraAppDataEntryCFIncome.feature:93)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertTrue(Assert.java:45)
+at org.testng.Assert.assertTrue(Assert.java:55)
+at stepdefinitions.TawarahAppDataEntryIncomeDetailsList.user_607_verify_validation_message_for_mandatory_field_as_blank_under_income_details_screen(TawarahAppDataEntryIncomeDetailsList.java:3412)
+at ✽.User_607 verify validation message for mandatory field as blank under Income details screen(file:///C:/Users/inindc00607/git/ULS_Ijarah_1/Gowtham_ULS_New/src/test/java/features/TawarruqAppDataEntryFollowupdetails.feature:73)
 ]]>
             </full-stacktrace>
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2023-12-14T09:43:35 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-14T09:44:11 IST" duration-ms="36106" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2023-12-15T17:49:08 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-15T17:50:03 IST" duration-ms="54827" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["To verify the functionality of Save button with mandatory field as blank"]]>
+                <![CDATA["Verify the validation message for invalid data"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[Ijara AppData Entry CF Income]"]]>
+                <![CDATA["Optional[Tawarruq AppData Entry Followup details]"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2023-12-14T09:44:11 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-14T09:45:10 IST" duration-ms="58691" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2023-12-15T17:50:03 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-15T17:50:47 IST" duration-ms="44570" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Modification of Income details record"]]>
+                <![CDATA["Verify the Fields"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[Ijara AppData Entry CF Income]"]]>
+                <![CDATA["Optional[Tawarruq AppData Entry Followup details]"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2023-12-14T09:45:10 IST" name="tearDownClass" finished-at="2023-12-14T09:46:14 IST" duration-ms="63864" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2023-12-15T17:50:47 IST" name="tearDownClass" finished-at="2023-12-15T17:51:34 IST" duration-ms="46383" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

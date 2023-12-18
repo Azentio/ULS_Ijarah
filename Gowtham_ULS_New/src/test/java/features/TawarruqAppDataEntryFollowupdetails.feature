@@ -39,6 +39,7 @@ Feature: Tawarruq AppData Entry Followup details
     And User_607 validate the sign Status field should be dropdown , mandatory and editable in murabha
     And User_607 validate the remarks field should be textbox , mandatory and editable in murabha
     And User_607 validate the save button under customer follow details in murabha
+    Then logout from the ULSApplication
 
   @AT_TW_AD_FU_003
   Scenario: Verify the save button success message
@@ -55,6 +56,7 @@ Feature: Tawarruq AppData Entry Followup details
     And User_607 validate the called when field should be date , mandatory and editable in murabha
     And User_607 validate the customer responce field should be lookUp , mandatory and editable in Murabha
     And User_607 validate the save button under customer follow details in murabha
+    Then logout from the ULSApplication
 
   @AT_TW_AD_FU_004
   Scenario: Verify the validation message for invalid data
@@ -69,6 +71,7 @@ Feature: Tawarruq AppData Entry Followup details
     And User_607 click add button under customer follow details
     And User_607 click the Save button with mandatory field blank under Income details screen
     And User_607 verify validation message for mandatory field as blank under Income details screen
+    Then logout from the ULSApplication
 
   @AT_TW_AD_FU_005
   Scenario: Verify the validation message for invalid data
@@ -86,8 +89,6 @@ Feature: Tawarruq AppData Entry Followup details
     #And User_607 to verify the functionality of search box with matching data should be show matching data in murabha
     #And User_607 to verfiy the functionality of search box with not matching data should not be show no data in murabha
     Then logout from the ULSApplication
-    
-    
     
     @AT_TW_AD_FU_006
     Scenario: Verify the Fields

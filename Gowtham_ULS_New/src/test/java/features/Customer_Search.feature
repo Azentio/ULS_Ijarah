@@ -16,6 +16,7 @@ Feature: Customer Search
 		And User_607 Check CIF ID Field should be numeric
 		And User_607 Check ID Type Field should be Selectable
 		And User_607 Check ID Number Field should be Alphanumeric
+		Then logout from the ULSApplication
 
 		@AT_MU_IJCS_05
 		Scenario: to test the functionality of customer search with valid data
@@ -45,6 +46,7 @@ Feature: Customer Search
  		And User_607 Save the record
  		And User_607 Check Please Fill Details Popup showing or not
  		And User_607 User Check negative value accepct or not in the numaric field
+ 		Then logout from the ULSApplication
  		
  		@AT_MU_IJCS_06
 		Scenario: to test the functionality of customer search with valid data
@@ -91,6 +93,7 @@ Feature: Customer Search
 		And User_607 Check Reference Code should be editable
     And User_607 Save the record
  		And User_607 Click Add button in application details
+ 		Then logout from the ULSApplication
     
     @AT_MU_IJCS_07
     Scenario: To test the functionality of Application Details with valid data
@@ -144,6 +147,7 @@ Feature: Customer Search
  		And User_607 Check Topup Type should be editable
  		And User_607 Check Topup Application No should be Non mandatory
  		And User_607 Check Topup Application No should be editable
+ 		Then logout from the ULSApplication
  		
     @AT_MU_IJCS_08
     Scenario: To test the functionality of Application Details with valid data
@@ -172,6 +176,7 @@ Feature: Customer Search
  		And User_607 Check Sourcing Entity should be editable
  		And User_607 Check Sourcing Staff should be mandatory
  		And User_607 Check Sourcing Staff should be editable
+ 		Then logout from the ULSApplication
  		
     @AT_MU_IJCS_09
     Scenario: To test the functionality of Application Details with valid data
@@ -197,6 +202,7 @@ Feature: Customer Search
  		And User_607 Check Reference Entity should be editable
     And User_607 Check Reference Code should be non mandatory
     And User_607 Check Reference Code should be editable
+    Then logout from the ULSApplication
     
     @AT_MU_IJCS_10
     Scenario: To test the functionality of Application Details with valid data
@@ -245,6 +251,7 @@ Feature: Customer Search
 		And User_607 Enter characters in Reference Code
     And User_607 Save the record
  		And User_607 Check Please Fill Details Popup showing or not
+ 		Then logout from the ULSApplication
  		
  		
  		
