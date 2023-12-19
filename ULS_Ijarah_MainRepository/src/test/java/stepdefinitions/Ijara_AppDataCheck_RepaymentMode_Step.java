@@ -29,7 +29,7 @@ public class Ijara_AppDataCheck_RepaymentMode_Step {
 	JSPaths repaymentModeJsPaths = new JSPaths(excelPath, "RepaymentMode_Elements", "RepaymentMode_FieldName",
 			"JSPath");
 	JSPaths underWriterJsPaths = new JSPaths(excelPath, "Underwriter_Elements", "Underwriter_FieldName", "JSPath");
-
+	ExcelData IjarahExecutionSheet = new ExcelData(excelTestDataPath, "Ijarah_ExecutionTracker", "TestCase ID");
 	ExcelData exelData = new ExcelData(excelTestDataPath, "ijara_LoginCredentials", "UserType");
 	Map<String, String> loginTestData = new HashMap<>();
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
@@ -45,17 +45,20 @@ public class Ijara_AppDataCheck_RepaymentMode_Step {
 
 	@And("^User get the test data for test case AT_RDC_001$")
 	public void get_the_test_data_for_test_case_AT_RDC_001() throws Throwable {
-		testData = repaymentmodeExcelData.getTestdata("AT_RDC_001_D1");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_RDC_001");
+		testData = repaymentmodeExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 	@And("^User get the test data for test case AT_RDC_002$")
 	public void get_the_test_data_for_test_case_AT_RDC_002() throws Throwable {
-		testData = repaymentmodeExcelData.getTestdata("AT_RDC_002_D1");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_RDC_002");
+		testData = repaymentmodeExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 	@And("^User get the test data for test case AT_RDC_004$")
 	public void get_the_test_data_for_test_case_AT_RDC_004() throws Throwable {
-		testData = repaymentmodeExcelData.getTestdata("AT_RDC_004_D1");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_RDC_004");
+		testData = repaymentmodeExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 	@And("User navigate to Repayment mode module")

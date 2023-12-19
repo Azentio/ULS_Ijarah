@@ -1,6 +1,7 @@
 package stepdefinitions;
 
 import java.io.File;
+import java.util.HashMap;
 import java.util.Map;
 
 import org.openqa.selenium.Keys;
@@ -34,7 +35,9 @@ public class IjarahAppDataEntryIncomeDetailsList {
 //	ExcelData IncomeDetailsListexelData = new ExcelData(excelTestDataPath, "Living_Expense", "Data Set ID");
 	
 	ExcelData IjarahAppDataEntryIncomeDetailsexelData = new ExcelData(excelTestDataPath, "IjaraAppDataEntryCFIncome", "Data Set ID");
+	ExcelData ijarahExecutionSheet = new ExcelData(excelTestDataPath, "Ijarah_ExecutionTracker", "TestCase ID");
 	Map<String, String> testData;
+	Map<String, String> executionData;
 	IjaraLogin ijaraLogin= new IjaraLogin();
 //	Map<String, String> TestData = new HashMap<>();
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
@@ -67,21 +70,28 @@ public class IjarahAppDataEntryIncomeDetailsList {
 	}
 	@Given("User_607 Update testdata from AT_IJ_QA_01")
 	public void user_607_update_testdata_from_AT_IJ_QA_01() {
-		testData = IjaraAppDataCheckQuationInfoexelData.getTestdata("DS_AT_IJ_QA_01");
+		executionData=ijarahExecutionSheet.getTestdata("AT_IJ_QA_01");
+		testData = IjaraAppDataCheckQuationInfoexelData.getTestdata(executionData.get("dataSet_ID"));
 	}
 	@Given("User_607 Update testdata from AT_IJ_QA_02")
 	public void user_607_update_testdata_from_AT_IJ_QA_02() {
-		testData = IjaraAppDataCheckQuationInfoexelData.getTestdata("DS_AT_IJ_QA_02");
+		executionData=ijarahExecutionSheet.getTestdata("AT_IJ_QA_02");
+		testData = IjaraAppDataCheckQuationInfoexelData.getTestdata(executionData.get("dataSet_ID"));
+		
 	}
 	
 	@Given("User_607 Update testdata from AT_IJ_QA_03")
 	public void user_607_update_testdata_from_AT_IJ_QA_03() {
-		testData = IjaraAppDataCheckQuationInfoexelData.getTestdata("DS_AT_IJ_QA_03");
+		executionData=ijarahExecutionSheet.getTestdata("AT_IJ_QA_03");
+		testData = IjaraAppDataCheckQuationInfoexelData.getTestdata(executionData.get("dataSet_ID"));
+		
 	}
 	
 	@Given("User_607 Update testdata from AT_IJ_QA_04")
 	public void user_607_update_testdata_from_AT_IJ_QA_04() {
-		testData = IjaraAppDataCheckQuationInfoexelData.getTestdata("DS_AT_IJ_QA_04");
+		executionData=ijarahExecutionSheet.getTestdata("AT_IJ_QA_04");
+		testData = IjaraAppDataCheckQuationInfoexelData.getTestdata(executionData.get("dataSet_ID"));
+		
 	}
 	
 	
@@ -1502,32 +1512,38 @@ public class IjarahAppDataEntryIncomeDetailsList {
 //	Murabaha -- App Data Entry -- Income Details screen
 	@And("^User_607 get the test data for test case AT_TW_AD_INC_01$")
     public void get_the_test_data_for_test_case_AT_TW_AD_INC_01() throws Throwable {
-		testData = IjarahAppDataEntryIncomeDetailsexelData.getTestdata("DS_AT_INC_02_001");
+		executionData = ijarahExecutionSheet.getTestdata("AT_INC_02_001");
+		testData = IjarahAppDataEntryIncomeDetailsexelData.getTestdata(executionData.get("dataSet_ID"));
     }
 	
 	@And("^User_607 get the test data for test case AT_TW_AD_INC_02$")
     public void get_the_test_data_for_test_case_AT_TW_AD_INC_02() throws Throwable {
-		testData = IjarahAppDataEntryIncomeDetailsexelData.getTestdata("DS_AT_INC_02_002");
+		executionData = ijarahExecutionSheet.getTestdata("AT_INC_02_002");
+		testData = IjarahAppDataEntryIncomeDetailsexelData.getTestdata(executionData.get("dataSet_ID"));
     }
 	
 	@And("^User_607 get the test data for test case AT_TW_AD_INC_03$")
     public void get_the_test_data_for_test_case_AT_TW_AD_INC_03() throws Throwable {
-		testData = IjarahAppDataEntryIncomeDetailsexelData.getTestdata("DS_AT_INC_02_003");
+		executionData = ijarahExecutionSheet.getTestdata("AT_INC_02_003");
+		testData = IjarahAppDataEntryIncomeDetailsexelData.getTestdata(executionData.get("dataSet_ID"));
     }
 	
 	@And("^User_607 get the test data for test case AT_TW_AD_INC_04$")
     public void get_the_test_data_for_test_case_AT_TW_AD_INC_04() throws Throwable {
-		testData = IjarahAppDataEntryIncomeDetailsexelData.getTestdata("DS_AT_INC_02_004");
+		executionData = ijarahExecutionSheet.getTestdata("AT_INC_02_004");
+		testData = IjarahAppDataEntryIncomeDetailsexelData.getTestdata(executionData.get("dataSet_ID"));
     }
 	
 	@And("^User_607 get the test data for test case AT_TW_AD_INC_05$")
     public void get_the_test_data_for_test_case_AT_TW_AD_INC_05() throws Throwable {
-		testData = IjarahAppDataEntryIncomeDetailsexelData.getTestdata("DS_AT_INC_02_005");
+		executionData = ijarahExecutionSheet.getTestdata("AT_INC_02_005");
+		testData = IjarahAppDataEntryIncomeDetailsexelData.getTestdata(executionData.get("dataSet_ID"));
     }
 	
 	@And("^User_607 get the test data for test case AT_TW_AD_INC_06$")
     public void get_the_test_data_for_test_case_AT_TW_AD_INC_06() throws Throwable {
-		testData = IjarahAppDataEntryIncomeDetailsexelData.getTestdata("DS_AT_INC_02_006");
+		executionData = ijarahExecutionSheet.getTestdata("AT_INC_02_006");
+		testData = IjarahAppDataEntryIncomeDetailsexelData.getTestdata(executionData.get("dataSet_ID"));
     }
 	
 	@And("^User_607 get the test data for test case AT_TW_AD_INC_07$")

@@ -26,11 +26,13 @@ public class Ijara_Repayment_Mode_Steps {
 	JSPaths quotationTabJPaths = new JSPaths(excelPath, "Quotation_Info", "Ijara_LoginFieldName", "JSPath");
 	ExcelData exelData = new ExcelData(excelTestDataPath, "ijara_LoginCredentials", "UserType");
 	ExcelData excelData = new ExcelData(excelTestDataPath, "Ijara_Repayment_Mode", "Data Set ID");
+	ExcelData IjarahExecutionSheet = new ExcelData(excelTestDataPath, "Ijarah_ExecutionTracker", "TestCase ID");
 	ExcelData excel = new ExcelData(excelTestDataPath, "Ijara_Quotation_Info", "Data Set ID");
 	Map<String, String> loginTestData = new HashMap<>();
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
 	Selenium_Actions seleniumActions = new Selenium_Actions(driver);
 	Map<String, String> testData;
+	Map<String, String> executionData;
 	UserUtility_615 userUtility = new UserUtility_615();
 	
 	@And("user_615 select the module name")
@@ -109,12 +111,15 @@ public class Ijara_Repayment_Mode_Steps {
 	
 	@And("user_615 update test data set id for AT_IRM_001")
 	public void user_615_update_test_data_set_id_for_at_irm001() {
-	    testData = excelData.getTestdata("AT_IRM_001_D1");
+		executionData=IjarahExecutionSheet.getTestdata("AT_IRM_001");
+	    testData = excelData.getTestdata(executionData.get("dataSet_ID"));
 	}
 	
 	@And("user_615 update test data set id for AT_IRM_002")
 	public void user_615_update_test_data_set_id_for_at_irm002() {
-	    testData = excelData.getTestdata("AT_IRM_002_D2");
+		executionData=IjarahExecutionSheet.getTestdata("AT_IRM_002");
+	    testData = excelData.getTestdata(executionData.get("dataSet_ID"));
+	    
 	}
 
 

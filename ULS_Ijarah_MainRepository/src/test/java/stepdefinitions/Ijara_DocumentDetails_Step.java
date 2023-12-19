@@ -36,7 +36,7 @@ public class Ijara_DocumentDetails_Step {
 	JSPaths documentdetailsJsPaths = new JSPaths(excelPath, "DocumentDetails_Elements", "DocumentDetails_FieldName",
 			"JSPath");
 	JSPaths underWriterJsPaths = new JSPaths(excelPath, "Underwriter_Elements", "Underwriter_FieldName", "JSPath");
-
+	ExcelData IjarahExecutionSheet = new ExcelData(excelTestDataPath, "Ijarah_ExecutionTracker", "TestCase ID");
 	ExcelData exelData = new ExcelData(excelTestDataPath, "ijara_LoginCredentials", "UserType");
 	Map<String, String> loginTestData = new HashMap<>();
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
@@ -64,22 +64,26 @@ public class Ijara_DocumentDetails_Step {
 
 	@And("^User get the test data for test case AT_DOC_001$")
 	public void get_the_test_data_for_test_case_AT_DOC_001() throws Throwable {
-		testData = documentdetailsExcelData.getTestdata("AT_DOC_001_D1");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_DOC_001");
+		testData = documentdetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 	@And("^User get the test data for test case AT_DOC_002$")
 	public void get_the_test_data_for_test_case_AT_DOC_002() throws Throwable {
-		testData = documentdetailsExcelData.getTestdata("AT_DOC_002_D1");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_DOC_002");
+		testData = documentdetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 	@And("^User get the test data for test case AT_DOC_004$")
 	public void get_the_test_data_for_test_case_AT_DOC_004() throws Throwable {
-		testData = documentdetailsExcelData.getTestdata("AT_DOC_004_D1");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_DOC_004");
+		testData = documentdetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 	@And("^User get the test data for test case AT_DOC_006$")
 	public void get_the_test_data_for_test_case_AT_DOC_006() throws Throwable {
-		testData = documentdetailsExcelData.getTestdata("AT_DOC_006_D1");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_DOC_006");
+		testData = documentdetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 	@And("Navigate to Document details section")

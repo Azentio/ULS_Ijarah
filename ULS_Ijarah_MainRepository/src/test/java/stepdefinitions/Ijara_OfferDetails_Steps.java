@@ -31,9 +31,7 @@ public class Ijara_OfferDetails_Steps {
 	//JSPaths offerdetailsJsPaths = new JSPaths(excelPath, "DocumentDetails_Elements", "DocumentDetails_FieldName", "JSPath");
 	//JSPaths underWriterJsPaths = new JSPaths(excelPath, "Underwriter_Elements", "Underwriter_FieldName", "JSPath");
 	JSPaths offerdetailsJsPaths = new JSPaths(excelPath, "OfferDetails_Elements", "OfferDetails_FieldName", "JSPath");
-	
-	
-	
+	ExcelData IjarahExecutionSheet = new ExcelData(excelTestDataPath, "Ijarah_ExecutionTracker", "TestCase ID");
 	ExcelData exelData = new ExcelData(excelTestDataPath, "ijara_LoginCredentials", "UserType");
 	Map<String, String> loginTestData = new HashMap<>();
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
@@ -53,31 +51,38 @@ public class Ijara_OfferDetails_Steps {
 	
 	@And("^User get the test data for test case AT_OFL_08$")
     public void get_the_test_data_for_test_case_AT_OFL_08() throws Throwable {
-		testData = offerdetailsExcelData.getTestdata("AT_OFL_08_D1");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_OFL_08");
+		testData = offerdetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	@And("^User get the test data for test case AT_OFL_09$")
     public void get_the_test_data_for_test_case_AT_OFL_09() throws Throwable {
-		testData = offerdetailsExcelData.getTestdata("AT_OFL_09_D1");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_OFL_09");
+		testData = offerdetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	@And("^User get the test data for test case AT_OFL_10$")
     public void get_the_test_data_for_test_case_AT_OFL_10() throws Throwable {
-		testData = offerdetailsExcelData.getTestdata("AT_OFL_10_D1");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_OFL_10");
+		testData = offerdetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	@And("^User get the test data for test case AT_OFL_11$")
     public void get_the_test_data_for_test_case_AT_OFL_11() throws Throwable {
-		testData = offerdetailsExcelData.getTestdata("AT_OFL_11_D1");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_OFL_11");
+		testData = offerdetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	@And("^User get the test data for test case AT_OFL_12$")
     public void get_the_test_data_for_test_case_AT_OFL_12() throws Throwable {
-		testData = offerdetailsExcelData.getTestdata("AT_OFL_12_D1");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_OFL_12");
+		testData = offerdetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	@And("^User get the test data for test case AT_OFL_13$")
     public void get_the_test_data_for_test_case_AT_OFL_13() throws Throwable {
-		testData = offerdetailsExcelData.getTestdata("AT_OFL_13_D1");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_OFL_13");
+		testData = offerdetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	@And("^User get the test data for test case AT_OFL_15$")
     public void get_the_test_data_for_test_case_AT_OFL_15() throws Throwable {
-		testData = offerdetailsExcelData.getTestdata("AT_OFL_15_D1");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_OFL_15");
+		testData = offerdetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("Validate the Eligibility type field is displayed in Eligibility details section")

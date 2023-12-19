@@ -1,6 +1,7 @@
 package stepdefinitions;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 
 import org.openqa.selenium.Keys;
@@ -25,6 +26,7 @@ public class AppDataEntry_LivingExpense_Steps {
 	ExcelData excelDataForLivingExpense = new ExcelData(excelTestDataPath, "Living_Expense", "DataSetID");
 	WebDriver driver = BaseClass.driver;
 	WaitHelper waitHelper = new WaitHelper(driver);
+	ExcelData IjarahExecutionSheet = new ExcelData(excelTestDataPath, "Ijarah_ExecutionTracker", "TestCase ID");
 	JSPaths jsPaths = new JSPaths(excelPath, "Living_Expense", "Ijara_AppDataEntrylivingExpensefield", "JSPath");
 	ExcelData exelData = new ExcelData(excelTestDataPath, "ijara_LoginCredentials", "UserType");
 	ClicksAndActionsHelper clicksAndActionsHelper = new ClicksAndActionsHelper(driver);
@@ -33,8 +35,7 @@ public class AppDataEntry_LivingExpense_Steps {
 	Selenium_Actions seleniumActions = new Selenium_Actions(driver);
 	JavascriptHelper javaScriptHelper = new JavascriptHelper(driver);
 	Map<String, String> testData;
-	
-	
+	Map<String, String> testExecutionData;
 	
 	
 	
@@ -48,7 +49,8 @@ public class AppDataEntry_LivingExpense_Steps {
 	}
 		@And("^user update test data set id for AT_LEA_001$")
 		public void user_update_test_data_set_id_for_at_lea_001() throws Throwable {
-			testData = excelDataForLivingExpense.getTestdata("AT_LEA_001_D1");
+			testExecutionData=IjarahExecutionSheet.getTestdata("AT_LEA_001");
+			testData = excelDataForLivingExpense.getTestdata(testExecutionData.get("dataSet_ID"));
 		}
 
 	@And("user click the LOS in select field")

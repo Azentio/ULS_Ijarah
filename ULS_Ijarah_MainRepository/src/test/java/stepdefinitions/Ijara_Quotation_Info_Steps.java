@@ -28,6 +28,7 @@ public class Ijara_Quotation_Info_Steps {
 	JSPaths jsPaths = new JSPaths(excelPath, "Ijara_loginElements", "Ijara_LoginFieldName", "JSPath");
 	JSPaths repaymentModeJpaths = new JSPaths(excelPath, "Ijara_Repayment_Mode", "Ijara_LoginFieldName", "JSPath");
 	JSPaths quotationTabJPaths = new JSPaths(excelPath, "Quotation_Info", "Ijara_LoginFieldName", "JSPath");
+	ExcelData IjarahExecutionSheet = new ExcelData(excelTestDataPath, "Ijarah_ExecutionTracker", "TestCase ID");
 	ExcelData exelData = new ExcelData(excelTestDataPath, "ijara_LoginCredentials", "UserType");
 	ExcelData excelData = new ExcelData(excelTestDataPath, "Ijara_Repayment_Mode", "Data Set ID");
 	ExcelData excel = new ExcelData(excelTestDataPath, "Ijara_Quotation_Info", "Data Set ID");
@@ -35,12 +36,14 @@ public class Ijara_Quotation_Info_Steps {
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
 	Selenium_Actions seleniumActions = new Selenium_Actions(driver);
 	Map<String, String> testData;
+	Map<String, String> testExecutionData;
 	UserUtility_615 userUtility = new UserUtility_615();
 	SoftAssert softAsset = new SoftAssert();
 	@And("user_615 update test data set id for AT_QIA_001")
 	public void user_update_test_data_set_id_for_at_qia001() {
-		testData = excel.getTestdata("AT_QIA_001_D1");
-		System.out.println(testData.get("Reference Id"));
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_QIA_001");
+		testData = excel.getTestdata(testExecutionData.get("dataSet_ID"));
+		//System.out.println(testData.get("Reference Id"));
 	}
 	
 	@And("user_615 enter the existing app data entry record in quotation info")
@@ -185,22 +188,26 @@ public class Ijara_Quotation_Info_Steps {
 	}
 	@Then("user_615 update test data set id for AT_QIA_002")
     public void user_615_update_test_data_set_id_for_at_qia002() {
-		testData = excel.getTestdata("AT_QIA_002_D2");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_QIA_002");
+		testData = excel.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@Then("user_615 update test data set id for AT_QIA_003")
     public void user_615_update_test_data_set_id_for_at_qia003() {
-		testData = excel.getTestdata("AT_QIA_003_D3");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_QIA_003");
+		testData = excel.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@Then("user_615 update test data set id for AT_QIA_004")
     public void user_615_update_test_data_set_id_for_at_qia004() {
-		testData = excel.getTestdata("AT_QIA_003_D3");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_QIA_003");
+		testData = excel.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@Then("user_615 update test data set id for AT_QIA_005")
     public void user_615_update_test_data_set_id_for_at_qia005() {
-		testData = excel.getTestdata("AT_QIA_003_D3");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_QIA_003");
+		testData = excel.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 
     @Then("user_615 verify insurance company field is mandatory")

@@ -35,6 +35,7 @@ public class IJARAH_Steps_615 {
 	String excelTestDataPath = configFileReader.getIjarahTestDataFilePath();
 	WebDriver driver = BaseClass.driver;
 	JSPaths jsPaths = new JSPaths(excelPath, "Ijara_loginElements", "Ijara_LoginFieldName", "JSPath");
+	JSPaths commonJSElements = new JSPaths(excelPath, "iJarah_CommonElements", "Ijarah_CommonFieldName", "JSPath");
 	JSPaths applicationDetailsJsPaths = new JSPaths(excelPath, "Ijara_AddCustInfoElements",
 			"AdditionalCustomerInfo_FieldName", "JSPath");
 	JSPaths searchCustomerJsPaths = new JSPaths(excelPath, "SearchCustomer_Elements",
@@ -55,7 +56,9 @@ public class IJARAH_Steps_615 {
 	ExcelData searchCustomerExcelData=new ExcelData(excelTestDataPath, "Search_Customer_TestData", "DataSet ID");
 	Map<String, String> testExecutionData;
 	Map<String, String> testData;
-	
+	ExcelData IjarahExecution = new ExcelData(excelTestDataPath, "Ijarah_ExecutionTracker",
+			"TestCase ID");
+	Map<String, String> ExecutionData;
 	Map<String, String> searchCustomerTestExecutionData;
 	Map<String, String> searchCustomerTestData;
 	
@@ -72,7 +75,8 @@ public class IJARAH_Steps_615 {
 	}
 	@And("^User get the test data for test case AT_CD_05$")
     public void get_the_test_data_for_test_case_AT_CD_05() throws Throwable {
-		testData = customerDetailsExcelData.getTestdata("DS_AT_CD_05");
+		ExecutionData= IjarahExecution.getTestdata("AT_CD_05");
+		testData = customerDetailsExcelData.getTestdata(ExecutionData.get("dataSet_ID"));
     }
 	@And("^User get the search customer test data for test case AT_SC_002$")
 	public void get_the_test_data_for_test_case_search_customer_AT_SC_002() throws Throwable {
@@ -88,45 +92,54 @@ public class IJARAH_Steps_615 {
 //	@AT_APP_001
 	@And("^User get the test data for test case AT_APP_001$")
 	public void get_the_test_data_for_test_case_AT_APP_001() throws Throwable {
-		testData = applicationDetailsExcelData.getTestdata("DS_AT_APP_001");
+		ExecutionData = IjarahExecution.getTestdata("AT_APP_001");
+		testData = applicationDetailsExcelData.getTestdata(ExecutionData.get("dataSet_ID"));
 	}
 	
 	@And("^User get the test data for test case AT_APP_002$")
 	public void get_the_test_data_for_test_case_AT_APP_002() throws Throwable {
-		testData = applicationDetailsExcelData.getTestdata("DS_AT_APP_002");
+		ExecutionData = IjarahExecution.getTestdata("AT_APP_002");
+		testData = applicationDetailsExcelData.getTestdata(ExecutionData.get("dataSet_ID"));
 	}
 	
 	@And("^User get the test data for test case AT_APP_003_01$")
 	public void get_the_test_data_for_test_case_AT_APP_003_01() throws Throwable {
-		testData = applicationDetailsExcelData.getTestdata("DS_AT_APP_003_01");
+		ExecutionData = IjarahExecution.getTestdata("AT_APP_003_01");
+		testData = applicationDetailsExcelData.getTestdata(ExecutionData.get("dataSet_ID"));
 	}
 	
 	@And("^User get the test data for test case AT_APP_003_02$")
 	public void get_the_test_data_for_test_case_AT_APP_003_02() throws Throwable {
-		testData = applicationDetailsExcelData.getTestdata("DS_AT_APP_003_02");
+		ExecutionData = IjarahExecution.getTestdata("AT_APP_003_02");
+		testData = applicationDetailsExcelData.getTestdata(ExecutionData.get("dataSet_ID"));
 	}
 	
 	@And("^User get the test data for test case AT_APP_003_03$")
 	public void get_the_test_data_for_test_case_AT_APP_003_03() throws Throwable {
-		testData = applicationDetailsExcelData.getTestdata("DS_AT_APP_003_03");
+		ExecutionData = IjarahExecution.getTestdata("AT_APP_003_03");
+		testData = applicationDetailsExcelData.getTestdata(ExecutionData.get("dataSet_ID"));
 	}
 	
 	@And("^User get the test data for test case AT_APP_004$")
 	public void get_the_test_data_for_test_case_AT_APP_004() throws Throwable {
-		testData = applicationDetailsExcelData.getTestdata("DS_AT_APP_0044");
+		ExecutionData = IjarahExecution.getTestdata("AT_APP_004");
+		testData = applicationDetailsExcelData.getTestdata(ExecutionData.get("dataSet_ID"));
 	}
 	
 	@And("^User get the test data for test case AT_APP_010$")
 	public void get_the_test_data_for_test_case_AT_APP_010() throws Throwable {
-		testData = applicationDetailsExcelData.getTestdata("DS_AT_APP_010");
+		ExecutionData = IjarahExecution.getTestdata("AT_APP_010");
+		testData = applicationDetailsExcelData.getTestdata(ExecutionData.get("dataSet_ID"));
 	}
 	@And("^User get the test data for test case AT_CD_01$")
     public void get_the_test_data_for_test_case_AT_CD_01() throws Throwable {
-		testData = customerDetailsExcelData.getTestdata("DS_AT_CD_01");
+		ExecutionData= IjarahExecution.getTestdata("AT_CD_01");
+		testData = customerDetailsExcelData.getTestdata(ExecutionData.get("dataSet_ID"));
     }	
 	@And("^User get the test data for test case AT_CD_03$")
     public void get_the_test_data_for_test_case_AT_CD_03() throws Throwable {
-		testData = customerDetailsExcelData.getTestdata("DS_AT_CD_03");
+		ExecutionData= IjarahExecution.getTestdata("AT_CD_03");
+		testData = customerDetailsExcelData.getTestdata(ExecutionData.get("dataSet_ID"));
     }
 	@And("User click the module name dropdown in ULS application")
 	public void user_click_the_module_name_dropdown_in_uls_application() throws Throwable {
@@ -1122,6 +1135,19 @@ public class IJARAH_Steps_615 {
 		 * (recordStatus.equals("true")) { softAssert.assertEquals(listViewRecordStatus,
 		 * "In-active"); }
 		 */
+	}
+	@And("User click on the save button")
+	public void user_click_on_the_save_button() {
+		for (int i = 0; i <= 80; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(commonJSElements.getElement("save_button")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 80) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
 	}
 	
 	@And("User click on the Back button")

@@ -36,9 +36,9 @@ public class Ijara_Steps_610 {
 	String path = System.getProperty("user.dir") + "\\TestData\\ijaraTestData.xlsx";
 	
 	ExcelData ad_CustomerFolllowUpDetails_610 = new ExcelData(excelTestDataPath, "AD_CustomerFolllowUpDetails_610", "DataSet ID");
-	
+	ExcelData IjarahExecutionSheet = new ExcelData(excelTestDataPath, "Ijarah_ExecutionTracker", "TestCase ID");
 	Map<String, String> testData;
-	
+	Map<String, String> executionData;
 	ExcelData morabha_AppDataEntry = new ExcelData(excelTestDataPath, "Morabha_AppDataEntry", "DataSet ID");
 	Map<String, String> testData01;
 
@@ -53,14 +53,16 @@ public class Ijara_Steps_610 {
 
 	@And("User_610 get the test data set id for DS_AT_DC_ID_001")
 	public void get_the_test_data_set_id_for_DS_AT_DC_ID_001() {
-		testData = ad_CustomerFolllowUpDetails_610.getTestdata("DS_AT_DC_ID_001");
+		executionData=IjarahExecutionSheet.getTestdata("AT_DC_ID_001");
+		testData = ad_CustomerFolllowUpDetails_610.getTestdata(executionData.get("dataSet_ID"));
 	}
 	
 	//----------offering offer details 
 	
 	@And("User_610 get the test data set id for DS_AT_OF_OFD_001")
 	public void get_the_test_data_set_id_for_DS_AT_OF_OFD_001() {
-		testData = ad_CustomerFolllowUpDetails_610.getTestdata("DS_AT_OF_OFD_001");
+		executionData=IjarahExecutionSheet.getTestdata("AT_OFL_01");
+		testData = ad_CustomerFolllowUpDetails_610.getTestdata(executionData.get("dataSet_ID"));
 	}
 	
 	//----------New Application Customer Reference
@@ -96,7 +98,8 @@ public class Ijara_Steps_610 {
 		
 		@And("User_610 get the test data set id for DS_AT_IJ_IA_01")
 		public void get_the_test_data_set_id_for_DS_AT_IJ_IA_01() {
-			testData = ad_CustomerFolllowUpDetails_610.getTestdata("DS_AT_IJ_IA_01");  
+			executionData=IjarahExecutionSheet.getTestdata("AT_IJ_IA_01");
+			testData = ad_CustomerFolllowUpDetails_610.getTestdata(executionData.get("dataSet_ID"));  
 			}		
 		
 		//----------Murabha app data Check Insurance nd Quatation Info

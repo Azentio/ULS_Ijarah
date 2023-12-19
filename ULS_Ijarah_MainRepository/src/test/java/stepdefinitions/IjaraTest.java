@@ -33,6 +33,7 @@ public class IjaraTest extends BaseClass {
 	JSPaths commonJSPaths = new JSPaths(excelPath, "iJarah_CommonElements", "Ijarah_CommonFieldName", "JSPath");
 	ExcelData excelDataForAddressDetailsTestData = new ExcelData(excelTestDataPath, "ijarah_AddressDetailsTestDataDC",
 			"Dataset ID");
+	ExcelData IjarahExecutionSheet = new ExcelData(excelTestDataPath, "Ijarah_ExecutionTracker", "TestCase ID");
 	ExcelData customerDebtExcelData  = new ExcelData(excelTestDataPath,"Test Case ID","DataSet ID");
 	Map<String, String> addressDetailsTestData = new HashMap<>();
 	JSPaths addressDetailsJSPaths = new JSPaths(excelPath, "addressdetails_WebElements",
@@ -44,6 +45,7 @@ public class IjaraTest extends BaseClass {
 	ClicksAndActionsHelper clicksAndActionsHelper = new ClicksAndActionsHelper(driver);
 	SoftAssert SoftAssert = new SoftAssert();
 	Map<String, String> testData;
+	Map<String, String> testExecutionData;
 	WaitHelper waitHelper = new WaitHelper(driver);
 	JSPaths Ijarah_CustomerDebt = new JSPaths(excelPath, "CustomerDebt", "Ijarah_CustomerDebt", "JSPath");
 	JSPaths iJarah_CommonElements = new JSPaths(excelPath, "iJarah_CommonElements", "Ijarah_CommonFieldName", "JSPath");
@@ -2228,6 +2230,7 @@ public class IjaraTest extends BaseClass {
 	}
 	@And("user_626 get the test data for test case ID AT_NADC_01")
 	public void user_626_get_the_test_data_for_test_case_id_at_AT_NADC_01() throws Throwable {
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_NADC_01");
 		addressDetailsTestData = excelDataForAddressDetailsTestData.getTestdata("DS01_AT_NADC_001");
 }
 
@@ -3369,7 +3372,8 @@ public class IjaraTest extends BaseClass {
 			}
 		@And("^User_626 get the test data for test case AT_DC_CD_001")
 	    public void user_626_get_the_test_data_for_test_case_AT_DC_CD_001() throws Throwable {
-			testData =  customerDebtExcelData.getTestdata("AT_DC_CD_001");
+			testExecutionData=IjarahExecutionSheet.getTestdata("AT_DC_CD_001");
+			testData =  customerDebtExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	    }	
 		 
 		@And("User_626 click the module name dropdown in ULS application")

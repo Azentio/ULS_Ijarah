@@ -38,7 +38,6 @@ public class IJARAH_Steps {
 			"JSPath");
 	JSPaths dataCheck_ApplicationDetailsJsPaths = new JSPaths(excelPath, "ApplicationDetails_Elements", "ApplicationDetails_FieldName", "JSPath");
 	JSPaths offering_OfferDetailsJsPaths = new JSPaths(excelPath, "OfferingOfferDetails_Elements", "Offering_OfferDetails_FieldName", "JSPath");
-
 	ExcelData exelData = new ExcelData(excelTestDataPath, "ijara_LoginCredentials", "UserType");
 	Map<String, String> loginTestData = new HashMap<>();
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
@@ -49,7 +48,7 @@ public class IJARAH_Steps {
 	WaitHelper waitHelper = new WaitHelper(driver);
 	Actions actions = new Actions(driver);
 	SoftAssert softAssert = new SoftAssert();
-
+	ExcelData IjarahExecutionSheet = new ExcelData(excelTestDataPath, "Ijarah_ExecutionTracker", "TestCase ID");
 	ExcelData customerDebtExcelData = new ExcelData(excelTestDataPath, "CF_DebtTestData", "DataSet ID");
 	ExcelData underWriterExcelData = new ExcelData(excelTestDataPath, "UnderWriter_TestData", "DataSet ID");
 	ExcelData dataCheck_IncomeExcelData = new ExcelData(excelTestDataPath, "DataCheck_Income", "DataSet ID");
@@ -68,68 +67,79 @@ public class IJARAH_Steps {
 //	@AT_CUD_001
 	@And("^User_608 get the test data for test case AT_CUD_001$")
 	public void get_the_test_data_for_test_case_AT_CUD_001() throws Throwable {
-		testData = customerDebtExcelData.getTestdata("DS_AT_CUD_001");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_CUD_001");
+		testData = customerDebtExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 //	@AT_CUD_002
 	@And("^User_608 get the test data for test case AT_CUD_002$")
 	public void get_the_test_data_for_test_case_AT_CUD_002() throws Throwable {
-		testData = customerDebtExcelData.getTestdata("DS_AT_CUD_002");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_CUD_002");
+		testData = customerDebtExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 //	@AT_CUD_003
 	@And("^User_608 get the test data for test case AT_CUD_003$")
 	public void get_the_test_data_for_test_case_AT_CUD_003() throws Throwable {
-		testData = customerDebtExcelData.getTestdata("DS_AT_CUD_003");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_CUD_003");
+		testData = customerDebtExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 //	@AT_CUD_004
 	@And("^User_608 get the test data for test case AT_CUD_004$")
 	public void get_the_test_data_for_test_case_AT_CUD_004() throws Throwable {
-		testData = customerDebtExcelData.getTestdata("DS_AT_CUD_004");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_CUD_004");
+		testData = customerDebtExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 //	@AT_CUD_005
 	@And("^User_608 get the test data for test case AT_CUD_005$")
 	public void get_the_test_data_for_test_case_AT_CUD_005() throws Throwable {
-		testData = customerDebtExcelData.getTestdata("DS_AT_CUD_005");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_CUD_005");
+		testData = customerDebtExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 //	Underwriter feature
 //	@AT_UNW_001_01
 	@And("^User_608 get the test data for test case AT_UNW_001_01$")
 	public void get_the_test_data_for_test_case_AT_UNW_001_01() throws Throwable {
-		testData = underWriterExcelData.getTestdata("DS_AT_UNW_001_01");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_UNW_001_01");
+		testData = underWriterExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 //	@AT_UNW_001_02
 	@And("^User_608 get the test data for test case AT_UNW_001_02$")
 	public void get_the_test_data_for_test_case_AT_UNW_001_02() throws Throwable {
-		testData = underWriterExcelData.getTestdata("DS_AT_UNW_001_02");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_UNW_001_02");
+		testData = underWriterExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 //	@AT_UNW_002
 	@And("^User_608 get the test data for test case AT_UNW_002$")
 	public void get_the_test_data_for_test_case_AT_UNW_002() throws Throwable {
-		testData = underWriterExcelData.getTestdata("DS_AT_UNW_002");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_UNW_002");
+		testData = underWriterExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 //	@AT_UNW_004
 	@And("^User_608 get the test data for test case AT_UNW_004$")
 	public void get_the_test_data_for_test_case_AT_UNW_004() throws Throwable {
-		testData = underWriterExcelData.getTestdata("DS_AT_UNW_004");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_UNW_004");
+		testData = underWriterExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 //	@AT_UNW_003 --> Underwriter -Arul
 	@And("^User_608 get the test data for test case AT_UNW_003$")
 	public void get_the_test_data_for_test_case_AT_UNW_003() throws Throwable {
-		testData = underWriterExcelData.getTestdata("DS_AT_UNW_003");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_UNW_003");
+		testData = underWriterExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 //	@AT_UNW_006 --> Underwriter - Karthi
 	@And("^User_608 get the test data for test case AT_UNW_006$")
 	public void get_the_test_data_for_test_case_AT_UNW_006() throws Throwable {
-		testData = underWriterExcelData.getTestdata("DS_AT_UNW_006");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_UNW_006");
+		testData = underWriterExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 //	App Data Check -- Income
@@ -166,58 +176,69 @@ public class IJARAH_Steps {
 //	App Data Check -- Application Details
 	@And("^User_608 get the test data for test case AT_ADC_01$")
 	public void get_the_test_data_for_test_case_AT_ADC_01() throws Throwable {
-		testData = dataCheck_ApplicationDetailsExcelData.getTestdata("DS_AT_ADC_01");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_ADC_01");
+		testData = dataCheck_ApplicationDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 	@And("^User_608 get the test data for test case AT_ADC_02$")
 	public void get_the_test_data_for_test_case_AT_ADC_02() throws Throwable {
-		testData = dataCheck_ApplicationDetailsExcelData.getTestdata("DS_AT_ADC_02");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_ADC_02");
+		testData = dataCheck_ApplicationDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 	@And("^User_608 get the test data for test case AT_ADC_03$")
 	public void get_the_test_data_for_test_case_AT_ADC_03() throws Throwable {
-		testData = dataCheck_ApplicationDetailsExcelData.getTestdata("DS_AT_ADC_03");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_ADC_03");
+		testData = dataCheck_ApplicationDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 	@And("^User_608 get the test data for test case AT_ADC_05$")
 	public void get_the_test_data_for_test_case_AT_ADC_05() throws Throwable {
-		testData = dataCheck_ApplicationDetailsExcelData.getTestdata("DS_AT_ADC_05");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_ADC_05");
+		testData = dataCheck_ApplicationDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 	@And("^User_608 get the test data for test case AT_ADC_06$")
 	public void get_the_test_data_for_test_case_AT_ADC_06() throws Throwable {
-		testData = dataCheck_ApplicationDetailsExcelData.getTestdata("DS_AT_ADC_06");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_ADC_06");
+		testData = dataCheck_ApplicationDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 //	Offering Stage -- Offer Details tab
 	@And("^User_608 get the test data for test case AT_OFO_01$")
 	public void get_the_test_data_for_test_case_AT_OFO_01() throws Throwable {
-		testData = offering_OfferDetailsExcelData.getTestdata("DS_AT_OFO_01");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_OFO_01");
+		testData = offering_OfferDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 	@And("^User_608 get the test data for test case AT_OFO_02$")
 	public void get_the_test_data_for_test_case_AT_OFO_02() throws Throwable {
-		testData = offering_OfferDetailsExcelData.getTestdata("DS_AT_OFO_02");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_OFO_02");
+		testData = offering_OfferDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 	@And("^User_608 get the test data for test case AT_OFO_03$")
 	public void get_the_test_data_for_test_case_AT_OFO_03() throws Throwable {
-		testData = offering_OfferDetailsExcelData.getTestdata("DS_AT_OFO_03");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_OFO_03");
+		testData = offering_OfferDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 	@And("^User_608 get the test data for test case AT_OFO_04$")
 	public void get_the_test_data_for_test_case_AT_OFO_04() throws Throwable {
-		testData = offering_OfferDetailsExcelData.getTestdata("DS_AT_OFO_04");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_OFO_04");
+		testData = offering_OfferDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 	@And("^User_608 get the test data for test case AT_OFO_05$")
 	public void get_the_test_data_for_test_case_AT_OFO_05() throws Throwable {
-		testData = offering_OfferDetailsExcelData.getTestdata("DS_AT_OFO_05");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_OFO_05");
+		testData = offering_OfferDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 	@And("^User_608 get the test data for test case AT_OFO_06$")
 	public void get_the_test_data_for_test_case_AT_OFO_06() throws Throwable {
-		testData = offering_OfferDetailsExcelData.getTestdata("DS_AT_OFO_06");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_OFO_06");
+		testData = offering_OfferDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 //	Contract Signing -- Application Details Tab

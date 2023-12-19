@@ -1,11 +1,9 @@
 package stepdefinitions;
-
 import java.util.Map;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-
 import dataProvider.ConfigFileReader;
 import dataProvider.ExcelData;
 import helper.ClicksAndActionsHelper;
@@ -26,14 +24,14 @@ public class AppDataEntry_InsuranceInfo_Steps {
 	WaitHelper waitHelper = new WaitHelper(driver);
 	JSPaths jsPaths = new JSPaths(excelPath, "InsuranceInfo", "Ijara_AppDataEntryInsuranceInfo", "JSPath");
 	ExcelData exelData = new ExcelData(excelTestDataPath, "ijara_LoginCredentials", "UserType");
+	ExcelData IjarahExecutionSheet = new ExcelData(excelTestDataPath, "Ijarah_ExecutionTracker", "TestCase ID");
 	ClicksAndActionsHelper clicksAndActionsHelper = new ClicksAndActionsHelper(driver);
 	ConfigFileReader ConfigFileReaderobj = new ConfigFileReader();
 	DropDownHelper dropDownHelper = new DropDownHelper(driver);
 	Selenium_Actions seleniumActions = new Selenium_Actions(driver);
 	JavascriptHelper javaScriptHelper = new JavascriptHelper(driver);
 	Map<String, String> testData;
-	
-	
+	Map<String, String> testExecutionData;
 
 	@And("user Enter the clientname under searchButton for insuranceInfo")
 	public void user_enter_the_clientname_under_search_button_for_insuranceInfo() throws Throwable {
@@ -45,7 +43,8 @@ public class AppDataEntry_InsuranceInfo_Steps {
 	}
 	@And("^user update test data set id for AT_INS_001$")
 	public void user_update_test_data_set_id_for_at_ins_001() throws Throwable {
-		testData = excelDataForInsuranceInfo.getTestdata("AT_INS_001_D1");
+		testExecutionData=IjarahExecutionSheet.getTestdata("AT_INS_001");
+		testData = excelDataForInsuranceInfo.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 	
 	@And("user click the insurance Info Screen")
