@@ -1,8 +1,8 @@
 Feature: Customer Search
 
-@AT_MU_IJCS_01
-@AT_MU_IJCS_02
-@AT_MU_IJCS_03
+@AT_IJCS_01
+@AT_IJCS_01
+@AT_IJCS_01
 Scenario: to test the functionality of customer search with valid data
 Given navigate the IJARA URL
 And login with valid credentials
@@ -33,7 +33,7 @@ Then Check CIF ID field is editable
 
 
 
-  @AT_MU_IJCS_04
+  @AT_IJCS_04
   Scenario: to test the functionality of customer search with valid data
     Given navigate the IJARA URL
     And login with valid credentials
@@ -50,7 +50,7 @@ Then Check CIF ID field is editable
 		And User_607 Check ID Type Field should be Selectable
 		And User_607 Check ID Number Field should be Alphanumeric
 
-		@AT_MU_IJCS_05
+		@AT_IJCS_05
 		Scenario: to test the functionality of customer search with valid data
 		Given navigate the IJARA URL
     And login with valid credentials
@@ -79,7 +79,7 @@ Then Check CIF ID field is editable
  		And User_607 Check Please Fill Details Popup showing or not
  		And User_607 User Check negative value accepct or not in the numaric field
  		
- 		@AT_MU_IJCS_06
+ 		@AT_IJCS_06
 		Scenario: to test the functionality of customer search with valid data
 		Given navigate the IJARA URL
     And login with valid credentials
@@ -125,7 +125,7 @@ Then Check CIF ID field is editable
     And User_607 Save the record
  		And User_607 Click Add button in application details
     
-    @AT_MU_IJCS_07
+    @AT_IJCS_07
     Scenario: To test the functionality of Application Details with valid data
 		Given navigate the IJARA URL
     And login with valid credentials
@@ -178,7 +178,7 @@ Then Check CIF ID field is editable
  		And User_607 Check Topup Application No should be Non mandatory
  		And User_607 Check Topup Application No should be editable
  		
-    @AT_MU_IJCS_08
+    @AT_IJCS_08
     Scenario: To test the functionality of Application Details with valid data
 		Given navigate the IJARA URL
     And login with valid credentials
@@ -206,7 +206,7 @@ Then Check CIF ID field is editable
  		And User_607 Check Sourcing Staff should be mandatory
  		And User_607 Check Sourcing Staff should be editable
  		
-    @AT_MU_IJCS_09
+    @AT_IJCS_09
     Scenario: To test the functionality of Application Details with valid data
 		Given navigate the IJARA URL
     And login with valid credentials
@@ -231,7 +231,7 @@ Then Check CIF ID field is editable
     And User_607 Check Reference Code should be non mandatory
     And User_607 Check Reference Code should be editable
     
-    @AT_MU_IJCS_10
+    @AT_IJCS_10
     Scenario: To test the functionality of Application Details with valid data
 		Given navigate the IJARA URL
     And login with valid credentials

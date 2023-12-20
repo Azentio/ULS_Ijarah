@@ -26,7 +26,6 @@ public class NewExcelTestRunner {
 	public void excelTestArea(String tags, int listSize, int tagIndex) {
 		String[] parameter = {
 				"src/test/java/features/IjarahFeatures",
-				"src/test/java/features/MurabhaFeatures",
 				"--glue", "stepdefinitions", "--plugin", "pretty", "--plugin",
 				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:", "--plugin",
 				"rerun:ReRunScenarios/FailedReRun.txt", "--tags", "@" + tags };
