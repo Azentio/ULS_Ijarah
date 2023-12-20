@@ -29,7 +29,6 @@ public class WaitHelper {
 	// wait helper constrcutor
 	public WaitHelper(WebDriver driver) {
 		this.driver = driver;
-
 	}
 
 	// setImplicitWait
@@ -81,22 +80,17 @@ public class WaitHelper {
 		// ExtentTestManager.getTest().info("Setted wait untill the element is
 		// visible");
 	}
-
 	// wait for element to be clickable
 
 	public WebElement waitForElement(WebDriver driver, long time, WebElement element) {
-
 		// WebDriverWait wait = new WebDriverWait(driver, time);
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(time));
 		// ExtentTestManager.getTest().info("Setted wait untill the element is
 		// clickable");
 		return wait.until(ExpectedConditions.elementToBeClickable(element));
-
 	}
 
 	public WebElement waitForElementwithFluentwait(WebDriver driver, WebElement element) throws IOException {
-		
-		
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(configFileReader.getTimeOut()))
 				.pollingEvery(Duration.ofMillis(configFileReader.getPollingTime())).ignoring(Exception.class);
 //		WebElement element1 = wait.until(ExpectedConditions.elementToBeClickable(element));
@@ -110,7 +104,6 @@ public class WaitHelper {
 				.pollingEvery(Duration.ofMillis(configFileReader.getPollingTime())).ignoring(Exception.class);
 //		WebElement element1 = wait.until(ExpectedConditions.elementToBeClickable(element));
 		wait.until(ExpectedConditions.alertIsPresent());
-
 	}
 
 //	public  WebElement waitForElementToVisibleWithFluentWait(WebDriver driver, WebElement element,int timeOut,int pollingTime) 

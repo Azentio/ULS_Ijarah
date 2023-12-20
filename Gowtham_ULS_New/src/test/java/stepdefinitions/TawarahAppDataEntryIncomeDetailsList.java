@@ -195,7 +195,7 @@ public class TawarahAppDataEntryIncomeDetailsList {
 	
 	@And("User_607 click the pencil icon under Customer Financials tab")
 	public void user_607_click_the_pencil_icon_under_customer_financials_tab() throws Throwable {
-		Thread.sleep(100);
+		Thread.sleep(1000);
 		WebElement customerFinancialsPencilEditBtn = javascriptHelper.executeScriptWithWebElement(TawaAppDataEntryIncomeDetails.getElement("customerFinancialsPencilEditBtn"));
 		for (int i = 0; i <= 2000; i++) {
 			try {

@@ -4,4 +4,4 @@ Feature: Title of your feature
 
   @tag1
   Scenario: Title of your scenario
- 		And User_607 Search the Ref Id under inbox Auto Loan Appdata Entry Contact Details
+ 		And User_607 click the Customer Financials tab in Auto Loan App Data Entry Income Details List
