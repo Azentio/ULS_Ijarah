@@ -40,13 +40,14 @@ public class AutoLoan_Steps {
 	Actions actions = new Actions(driver);
 	SoftAssert softAssert = new SoftAssert();
 	
-	ExcelData AppDataEntryApplicationDetails = new ExcelData(excelTestDataPath,"AL_AppData_AppDetails","DataSet ID");	
+	ExcelData AppDataEntryApplicationDetails = new ExcelData(excelTestDataPath,"AL_AppData_AppDetails","DataSet ID");
+	ExcelData AppDataEntryCFDebtExcelData = new ExcelData(excelTestDataPath,"AL_AppData_CustomerDebt","DataSet ID");
 	
 	Map<String, String> testExecutionData;
 	Map<String, String> testData;
 
 	
-//	Auto Loan -- App Data Entry Stage  -- Customer Details screen 
+//	Auto Loan -- App Data Entry Stage  -- Application Details screen 
 	@And("^User_608 get the test data for test case AT_AL_APP_01$")
     public void get_the_test_data_for_test_case_AT_AL_APP_01() throws Throwable {
 		testData = AppDataEntryApplicationDetails.getTestdata("DS_AT_AL_APP_01");
@@ -82,6 +83,49 @@ public class AutoLoan_Steps {
 		testData = AppDataEntryApplicationDetails.getTestdata("DS_AT_AL_APP_07");
     }
 	
+	@And("^User_608 get the test data for test case AT_AL_APP_08$")
+    public void get_the_test_data_for_test_case_AT_AL_APP_08() throws Throwable {
+		testData = AppDataEntryApplicationDetails.getTestdata("DS_AT_AL_APP_08");
+    }
+	
+	@And("^User_608 get the test data for test case AT_AL_APP_09$")
+    public void get_the_test_data_for_test_case_AT_AL_APP_09() throws Throwable {
+		testData = AppDataEntryApplicationDetails.getTestdata("DS_AT_AL_APP_09");
+    }
+	
+	@And("^User_608 get the test data for test case AT_AL_APP_10$")
+    public void get_the_test_data_for_test_case_AT_AL_APP_10() throws Throwable {
+		testData = AppDataEntryApplicationDetails.getTestdata("DS_AT_AL_APP_10");
+    }
+	
+	@And("^User_608 get the test data for test case AT_AL_APP_11$")
+    public void get_the_test_data_for_test_case_AT_AL_APP_11() throws Throwable {
+		testData = AppDataEntryApplicationDetails.getTestdata("DS_AT_AL_APP_11");
+    }
+	
+	@And("^User_608 get the test data for test case AT_AL_APP_12$")
+    public void get_the_test_data_for_test_case_AT_AL_APP_12() throws Throwable {
+		testData = AppDataEntryApplicationDetails.getTestdata("DS_AT_AL_APP_12");
+    }
+	
+//	Auto Loan -- App Data Entry Stage  -- Customer Debt screen
+	@And("^User_608 get the test data for test case AT_AL_CUD_01$")
+    public void get_the_test_data_for_test_case_AT_AL_CUD_01() throws Throwable {
+		testData = AppDataEntryCFDebtExcelData.getTestdata("DS_AT_AL_CUD_01");
+    }
+	
+	@And("^User_608 get the test data for test case AT_AL_CUD_02$")
+    public void get_the_test_data_for_test_case_AT_AL_CUD_02() throws Throwable {
+		testData = AppDataEntryCFDebtExcelData.getTestdata("DS_AT_AL_CUD_02");
+    }
+	
+	@And("^User_608 get the test data for test case AT_AL_CUD_03$")
+    public void get_the_test_data_for_test_case_AT_AL_CUD_03() throws Throwable {
+		testData = AppDataEntryCFDebtExcelData.getTestdata("DS_AT_AL_CUD_03");
+    }
+	
+	
+	
 	
 	
 	
@@ -89,14 +133,14 @@ public class AutoLoan_Steps {
 	public void user_search_the_reference_id_for_auto_loan() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver,
 				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("inboxSearchInput")));
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <= 5000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("inboxSearchInput"))
 						.sendKeys(testData.get("Ref No"));
 				;
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i == 5000) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -104,6 +148,121 @@ public class AutoLoan_Steps {
 	}
 	
 //	AT_AL_APP_01
+	@And("User_608 click the Save button under Application Details screen")
+	public void user_608_click_the_save_button_under_application_details_screen() throws Throwable {
+		String length = null;
+		for (int i = 0; i < 500000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-cards button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 500000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-cards button')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().contains("Save")) {
+						System.out.println("condition true");
+						String jspath = "document.querySelectorAll('ion-cards button')[" + j + "]";
+						WebElement saveBtn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.JSEClick(saveBtn);
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}		
+	}	
+	
+	@And("User_608 verify post clicking on save button system should display the confirmation message with OK and CANCEL button")
+	public void user_608_verify_post_clicking_on_save_button_system_should_display_the_confirmation_message_with_ok_and_cancel_button() {
+		WebElement msg = javascriptHelper
+				.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("confirmPopupMsg"));
+		WebElement cancelBtn = javascriptHelper
+				.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("confirmPopupCancelBtn"));
+		WebElement saveBtn = javascriptHelper
+				.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("confirmPopupOkayBtn"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundColor(msg);
+				softAssert.assertTrue(msg.isDisplayed(), "Confirm message should displayed");
+				javascriptHelper.backgroundBorder(cancelBtn);
+				softAssert.assertTrue(cancelBtn.isDisplayed(), "Cancel button should displayed");
+				javascriptHelper.backgroundBorder(saveBtn);
+				softAssert.assertTrue(saveBtn.isDisplayed(), "Save button should displayed");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@And("User_608 click the Confimation popup Ok button in Application Details screen")
+	public void user_click_the_confimation_popup_ok_button_in_application_details_screen() throws Throwable {
+		String length = null;
+		for (int i = 0; i < 500; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('mat-dialog-container button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 500; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('mat-dialog-container button')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().contains("Okay")) {
+						System.out.println("condition true");
+						String jspath = "document.querySelectorAll('mat-dialog-container button')[" + j + "]";
+						WebElement okayBtn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.JSEClick(okayBtn);
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 500000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("popupCloseBtn")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 500000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
 	@And("User_608 select the Customer Type under Application Details screen")
 	public void user_608_select_the_customer_type_under_application_details_screen() throws Throwable {
 		for (int i = 0; i <= 2000; i++) {
@@ -387,17 +546,38 @@ public class AutoLoan_Steps {
 	
 	@And("User_608 verify the Save button available under Application details screen")
 	public void user_608_verify_the_save_button_available_under_application_details_screen() throws Throwable {
-		Thread.sleep(1000);
-		WebElement AppDetailsBackBtn = javascriptHelper
-				.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("updateBtn"));
-		for (int i = 0; i <= 20000; i++) {
+		String length = null;
+		for (int i = 0; i < 500; i++) {
 			try {
-				javascriptHelper.backgroundBorder(AppDetailsBackBtn);
-				actions.moveToElement(AppDetailsBackBtn).perform();
-				Assert.assertTrue(AppDetailsBackBtn.isDisplayed());
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-cards button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 500; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-cards button')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().contains("Save")) {
+						System.out.println("condition true");
+						String jspath = "document.querySelectorAll('ion-cards button')[" + j + "]";
+						WebElement saveBtn = javascriptHelper.executeScriptWithWebElement(jspath);
+						softAssert.assertTrue(saveBtn.isDisplayed(), "Save button should be displayed in Application details screen");
+						break;
+					}
+				}
 				break;
 			} catch (Exception e) {
-				if (i == 20000) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -523,7 +703,7 @@ public class AutoLoan_Steps {
 		String dropdownLength = "";
 		boolean isDropdownValueSelected = false;
 		String dropdownString = "";
-		for (int i = 0; i <= 300; i++) {
+		for (int i = 0; i <= 3000; i++) {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
@@ -531,7 +711,7 @@ public class AutoLoan_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 300) {
+				if (i == 3000) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -630,7 +810,7 @@ public class AutoLoan_Steps {
 		String dropdownLength = "";
 		boolean isDropdownValueSelected = false;
 		String dropdownString = "";
-		for (int i = 0; i <= 300; i++) {
+		for (int i = 0; i <= 3000; i++) {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
@@ -638,7 +818,7 @@ public class AutoLoan_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 300) {
+				if (i == 3000) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -707,7 +887,7 @@ public class AutoLoan_Steps {
 		String dropdownLength = "";
 		boolean isDropdownValueSelected = false;
 		String dropdownString = "";
-		for (int i = 0; i <= 300; i++) {
+		for (int i = 0; i <= 3000; i++) {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
@@ -715,7 +895,7 @@ public class AutoLoan_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 300) {
+				if (i == 3000) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -784,7 +964,7 @@ public class AutoLoan_Steps {
 		String dropdownLength = "";
 		boolean isDropdownValueSelected = false;
 		String dropdownString = "";
-		for (int i = 0; i <= 300; i++) {
+		for (int i = 0; i <= 3000; i++) {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
@@ -792,7 +972,7 @@ public class AutoLoan_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 300) {
+				if (i == 3000) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -861,7 +1041,7 @@ public class AutoLoan_Steps {
 		String dropdownLength = "";
 		boolean isDropdownValueSelected = false;
 		String dropdownString = "";
-		for (int i = 0; i <= 300; i++) {
+		for (int i = 0; i <= 3000; i++) {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
@@ -869,7 +1049,7 @@ public class AutoLoan_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 300) {
+				if (i == 3000) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -938,7 +1118,7 @@ public class AutoLoan_Steps {
 		String dropdownLength = "";
 		boolean isDropdownValueSelected = false;
 		String dropdownString = "";
-		for (int i = 0; i <= 300; i++) {
+		for (int i = 0; i <= 3000; i++) {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
@@ -946,7 +1126,7 @@ public class AutoLoan_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 300) {
+				if (i == 3000) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1017,7 +1197,7 @@ public class AutoLoan_Steps {
 		String dropdownLength = "";
 		boolean isDropdownValueSelected = false;
 		String dropdownString = "";
-		for (int i = 0; i <= 300; i++) {
+		for (int i = 0; i <= 3000; i++) {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
@@ -1025,7 +1205,7 @@ public class AutoLoan_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 300) {
+				if (i == 3000) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1094,7 +1274,7 @@ public class AutoLoan_Steps {
 		String dropdownLength = "";
 		boolean isDropdownValueSelected = false;
 		String dropdownString = "";
-		for (int i = 0; i <= 300; i++) {
+		for (int i = 0; i <= 3000; i++) {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
@@ -1102,7 +1282,7 @@ public class AutoLoan_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 300) {
+				if (i == 3000) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1171,7 +1351,7 @@ public class AutoLoan_Steps {
 		String dropdownLength = "";
 		boolean isDropdownValueSelected = false;
 		String dropdownString = "";
-		for (int i = 0; i <= 300; i++) {
+		for (int i = 0; i <= 3000; i++) {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
@@ -1179,7 +1359,7 @@ public class AutoLoan_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 300) {
+				if (i == 3000) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1248,7 +1428,7 @@ public class AutoLoan_Steps {
 		String dropdownLength = "";
 		boolean isDropdownValueSelected = false;
 		String dropdownString = "";
-		for (int i = 0; i <= 300; i++) {
+		for (int i = 0; i <= 3000; i++) {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
@@ -1256,7 +1436,7 @@ public class AutoLoan_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 300) {
+				if (i == 3000) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1325,7 +1505,7 @@ public class AutoLoan_Steps {
 		String dropdownLength = "";
 		boolean isDropdownValueSelected = false;
 		String dropdownString = "";
-		for (int i = 0; i <= 300; i++) {
+		for (int i = 0; i <= 3000; i++) {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
@@ -1333,7 +1513,7 @@ public class AutoLoan_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 300) {
+				if (i == 3000) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1387,14 +1567,39 @@ public class AutoLoan_Steps {
 	
 	@And("User_608 post entering all valid details, clicking on save button in Application Details screen")
 	public void user_608_post_entering_all_valid_details_clicking_on_save_button_in_application_details_screen() throws Throwable {
-		WebElement saveBtn = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("saveBtn"));
-		for (int i = 0; i <= 150000; i++) {
+		String length = null;
+		for (int i = 0; i < 500; i++) {
 			try {
-				actions.moveToElement(saveBtn).build().perform();
-				saveBtn.click();
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-cards button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 500; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-cards button')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().contains("Save")) {
+						System.out.println("condition true");
+						String jspath = "document.querySelectorAll('ion-cards button')[" + j + "]";
+						WebElement saveBtn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.moveToElement(saveBtn).build().perform();
+						javascriptHelper.JSEClick(saveBtn);
+						break;
+					}
+				}
 				break;
 			} catch (Exception e) {
-				if (i == 150000) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1991,8 +2196,7 @@ public class AutoLoan_Steps {
 					Assert.fail(e.getMessage());
 				}
 			}
-		}
-	    
+		}	    
 	}
 
 	@And("User_608 verify Closing Staff or Servicing Staff or RM field as Mandatory, Editable and Dropdown in Application details screen")
@@ -2044,6 +2248,110 @@ public class AutoLoan_Steps {
 				}
 			}
 		}	    
+	}
+	
+	@And("User_608 verify Topup Type field as Non-mandatory, Editable and Dropdown in Application details screen")
+	public void user_608_verify_topup_type_field_as_non_mandatory_editable_and_dropdown_in_application_details_screen() throws Throwable {
+//		Verify field as Non-mandatory
+		String label = javascriptHelper.executeScriptWithWebElement(
+				appDataAppDetailsJsPaths.getElement("topupTypeLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+        	  actions.moveToElement(javascriptHelper.executeScriptWithWebElement(
+        			  appDataAppDetailsJsPaths.getElement("topupTypeLabel"))).build().perform();
+        	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+        			  appDataAppDetailsJsPaths.getElement("topupTypeLabel")));
+              softAssert.assertTrue(!(label.contains("*")), "Topup Type field should Non-mandatory");
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              	}
+          	}
+		} 
+		
+//		Verify field as Editable
+		WebElement product = javascriptHelper.executeScriptWithWebElement(
+				appDataAppDetailsJsPaths.getElement("topupType"));
+		String read = product.getAttribute("ng-reflect-readonly");
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				softAssert.assertTrue(read.contains("false"),"Topup Type field should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+//		Verify field as Dropdown
+		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+				appDataAppDetailsJsPaths.getElement("topupTypeDropdown"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				actions.moveToElement(dropdown).build().perform();
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Topup Type field should be Dropdown");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		} 
+	}
+
+	@And("User_608 verify Topup Application No field as Non-mandatory, Editable and accept only numeric values in Application details screen")
+	public void user_608_verify_topup_application_no_field_as_non_mandatory_editable_and_accept_only_numeric_values_in_application_details_screen() throws Throwable {
+//		Verify field as Non-mandatory
+		String label = javascriptHelper.executeScriptWithWebElement(
+				appDataAppDetailsJsPaths.getElement("topupAppNoLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+        	  actions.moveToElement(javascriptHelper.executeScriptWithWebElement(
+        			  appDataAppDetailsJsPaths.getElement("topupAppNoLabel"))).build().perform();
+        	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+        			  appDataAppDetailsJsPaths.getElement("topupAppNoLabel")));
+        	  softAssert.assertTrue(!(label.contains("*")), "Topup Application No field should Non-mandatory");
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              	}
+          	}
+		}
+		
+//		Verify field as Editable
+		WebElement topupAppNoInput = javascriptHelper.executeScriptWithWebElement(
+				appDataAppDetailsJsPaths.getElement("topupAppNo"));
+		String read = topupAppNoInput.getAttribute("ng-reflect-readonly");
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				actions.moveToElement(topupAppNoInput).build().perform();
+				softAssert.assertTrue(read.contains("false"), "Topup Application No should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+//		Verify field as Numeric
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundBorder(topupAppNoInput);
+				softAssert.assertTrue(topupAppNoInput.getAttribute("type").contains("number"),
+						"Topup Application No field accept numeric values only");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}		
 	}
 	
 	
@@ -2420,14 +2728,39 @@ public class AutoLoan_Steps {
 //	AT_AL_APP_05
 	@And("User_608 to verify the impact when user keep any mandatory field blank and click on save button")
 	public void user_608_to_verify_the_impact_when_user_keep_any_mandatory_field_blank_and_click_on_save_button() throws Throwable {
-		WebElement saveBtn = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("saveBtn"));
-		for (int i = 0; i <= 150000; i++) {
+		String length = null;
+		for (int i = 0; i < 500; i++) {
 			try {
-				actions.moveToElement(saveBtn).build().perform();
-				saveBtn.click();
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-cards button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 500; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-cards button')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().contains("Save")) {
+						System.out.println("condition true");
+						String jspath = "document.querySelectorAll('ion-cards button')[" + j + "]";
+						WebElement saveBtn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.moveToElement(saveBtn).build().perform();
+						javascriptHelper.JSEClick(saveBtn);
+						break;
+					}
+				}
 				break;
 			} catch (Exception e) {
-				if (i == 150000) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2437,13 +2770,13 @@ public class AutoLoan_Steps {
 	@And("User_608 system should show the proper validation message for blank field in Application details screen")
 	public void user_608_system_should_show_the_proper_validation_message_for_blank_field_in_application_details_screen() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver,
-				javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("mandatoryFillToastMsg")));
+				javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("mandatoryReqPopup")));
 		String madatoryErrorMsg = javascriptHelper
-				.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("mandatoryFillToastMsg")).getText();
+				.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("mandatoryReqPopup")).getText();
 		System.err.println("Mandatory Error : " + madatoryErrorMsg);
 		for (int i = 0; i < 2000; i++) {
 			try {
-				softAssert.assertTrue(madatoryErrorMsg.contains("Please fill all the details"),
+				softAssert.assertTrue(madatoryErrorMsg.contains("Please fill required fields"),
 						" System should show the proper validation message for blank field");
 				break;
 			} catch (Exception e) {
@@ -2452,16 +2785,43 @@ public class AutoLoan_Steps {
 				}
 			}
 		}
+		for (int i = 0; i <= 500000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("popupCloseBtn")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 500000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
 	}
 
 	
 //	AT_AL_APP_06
+	@And("User_608 click any one record Edit button under Application Details screen")
+	public void user_608_click_any_one_record_edit_button_under_application_details_screen() throws Throwable {
+		for (int i = 0; i <= 500000; i++) {
+			try {
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						appDataAppDetailsJsPaths.getElement("pencilEditBtn")));
+				javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("pencilEditBtn")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 500000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+	}
+	
 	@And("User_608 verify Update button available in Application details screen")
 	public void user_608_verify_update_button_available_in_application_details_screen() throws Throwable {
 		String length = null;
 		for (int i = 0; i < 5000; i++) {
 			try {
-				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-cards button').length")
+				length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
 						.toString();
 				System.out.println(length);
 				if (!length.isBlank() && !length.equals("0")) {
@@ -2476,12 +2836,12 @@ public class AutoLoan_Steps {
 		for (int i = 0; i < 5000; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
-					String title = "return document.querySelectorAll('ion-cards button')[" + j + "].getAttribute('ng-reflect-text')";
+					String title = "return document.querySelectorAll('form button')[" + j + "].getAttribute('ng-reflect-text')";
 					String titlename = javascriptHelper.executeScript(title).toString();
 					System.out.println(titlename);
 					if (titlename.trim().contains("Update")) {
 						System.out.println("condition true");
-						String jspath = "document.querySelectorAll('ion-cards button')[" + j + "]";
+						String jspath = "document.querySelectorAll('form button')[" + j + "]";
 						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
 						javascriptHelper.backgroundBorder(btn);
 						softAssert.assertTrue(btn.isDisplayed(),"Update button should be displayed Application details screen");
@@ -2600,7 +2960,7 @@ public class AutoLoan_Steps {
 		String length = null;
 		for (int i = 0; i < 5000; i++) {
 			try {
-				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-cards button').length")
+				length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
 						.toString();
 				System.out.println(length);
 				if (!length.isBlank() && !length.equals("0")) {
@@ -2615,15 +2975,15 @@ public class AutoLoan_Steps {
 		for (int i = 0; i < 5000; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
-					String title = "return document.querySelectorAll('ion-cards button')[" + j + "].getAttribute('ng-reflect-text')";
+					String title = "return document.querySelectorAll('form button')[" + j + "].getAttribute('ng-reflect-text')";
 					String titlename = javascriptHelper.executeScript(title).toString();
 					System.out.println(titlename);
 					if (titlename.trim().contains("Go Back")) {
 						System.out.println("condition true");
-						String jspath = "document.querySelectorAll('ion-cards button')[" + j + "]";
+						String jspath = "document.querySelectorAll('form button')[" + j + "]";
 						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
 						javascriptHelper.backgroundBorder(btn);
-						softAssert.assertTrue(btn.isDisplayed(),"Update button should be displayed Application details screen");
+						softAssert.assertTrue(btn.isDisplayed(),"Back button should be displayed Application details screen");
 						break;
 					}
 				}
@@ -2678,8 +3038,8 @@ public class AutoLoan_Steps {
 		}	    
 	}
 
-	@And("User_608 to verify while modification, when user keep any mandatory field blank and click on Update button in Application Detail screen")
-	public void user_608_to_verify_while_modification_when_user_keep_any_mandatory_field_blank_and_click_on_update_button_in_application_detail_screen() throws Throwable {
+	@And("User_608 to verify while modification, when user keep any mandatory field blank and click on Save button in Application Detail screen")
+	public void user_608_to_verify_while_modification_when_user_keep_any_mandatory_field_blank_and_click_on_save_button_in_application_detail_screen() throws Throwable {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("declaredMonthlyIncomeInput"))
@@ -2692,22 +3052,58 @@ public class AutoLoan_Steps {
 			}
 		}
 		
-		WebElement updateBtn = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("updateBtn"));
-		for (int i = 0; i <= 150000; i++) {
+		String length = null;
+		for (int i = 0; i < 500; i++) {
 			try {
-				actions.moveToElement(updateBtn).build().perform();
-				updateBtn.click();
-				break;
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-cards button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
 			} catch (Exception e) {
-				if (i == 150000) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
+		for (int i = 0; i < 500; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-cards button')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().contains("Save")) {
+						System.out.println("condition true");
+						String jspath = "document.querySelectorAll('ion-cards button')[" + j + "]";
+						WebElement saveBtn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.JSEClick(saveBtn);
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}		
+//		WebElement updateBtn = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("updateBtn"));
+//		for (int i = 0; i <= 150000; i++) {
+//			try {
+//				actions.moveToElement(updateBtn).build().perform();
+//				updateBtn.click();
+//				break;
+//			} catch (Exception e) {
+//				if (i == 150000) {
+//					Assert.fail(e.getMessage());
+//				}
+//			}
+//		}
 	}
 	
-	@And("User_608 to verify while modification system allow user to update the record with valid data in Application Detail screen")
-	public void user_608_to_verify_while_modification_system_allow_user_to_update_the_record_with_valid_data_in_application_detail_screen() throws Throwable {
+	@And("User_608 to verify while modification system allow user to save the record with valid data in Application Detail screen")
+	public void user_608_to_verify_while_modification_system_allow_user_to_save_the_record_with_valid_data_in_application_detail_screen() throws Throwable {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("declaredMonthlyIncomeInput"))
@@ -2737,14 +3133,14 @@ public class AutoLoan_Steps {
 		for (int i = 0; i < 500; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
-					String title = "return document.querySelectorAll('ion-cards button')[" + j + "].getAttribute('ng-reflect-text')";
+					String title = "return document.querySelectorAll('ion-cards button')[" + j + "].textContent";
 					String titlename = javascriptHelper.executeScript(title).toString();
 					System.out.println(titlename);
-					if (titlename.trim().contains("Update")) {
+					if (titlename.trim().contains("Save")) {
 						System.out.println("condition true");
 						String jspath = "document.querySelectorAll('ion-cards button')[" + j + "]";
-						WebElement searchBtn = javascriptHelper.executeScriptWithWebElement(jspath);
-						javascriptHelper.JSEClick(searchBtn);
+						WebElement saveBtn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.JSEClick(saveBtn);
 						break;
 					}
 				}
@@ -2782,6 +3178,1325 @@ public class AutoLoan_Steps {
 	        }
 		}
 	}
+	
+	
+//	AT_AL_APP_08
+	@And("User_608 click the View Summary button in Application Details screen")
+	public void user_608_click_the_view_summary_button_in_application_details_screen() throws Throwable {		
+		for (int i = 0; i <= 150000; i++) {
+			try {
+				WebElement btn = javascriptHelper.executeScriptWithWebElement(
+						appDataAppDetailsJsPaths.getElement("AppDetailsViewSummaryBtn"));
+				actions.moveToElement(btn).build().perform();
+				javascriptHelper.backgroundBorder(btn);
+				javascriptHelper.JSEClick(btn);
+				break;
+			} catch (Exception e) {
+				if (i == 150000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@And("User_608 to verify the functionality of Back button under Application Details screen")
+	public void user_608_to_verify_the_functionality_of_back_button_under_application_details_screen() throws Throwable {
+		for (int i = 0; i <= 150000; i++) {
+			try {
+				WebElement btn = javascriptHelper.executeScriptWithWebElement(
+						appDataAppDetailsJsPaths.getElement("AppDetailsBackBtn"));
+				actions.moveToElement(btn).build().perform();
+				javascriptHelper.backgroundBorder(btn);
+				javascriptHelper.JSEClick(btn);
+				break;
+			} catch (Exception e) {
+				if (i == 150000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 post clicking on Back button, system should navigate to the previous screen")
+	public void user_608_post_clicking_on_back_button_system_should_navigate_to_the_previous_screen() throws Throwable {
+		for (int i = 0; i <= 150000; i++) {
+			try {
+				WebElement btn = javascriptHelper.executeScriptWithWebElement(
+						customerDebtJsPaths.getElement("inboxEntitleBtn"));
+				javascriptHelper.backgroundBorder(btn);
+				softAssert.assertTrue(btn.isDisplayed(), "Post clicking on the back button, system navigate to previous screen");
+				break;
+			} catch (Exception e) {
+				if (i == 150000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		} 
+	    
+	}
+	
+//	AT_AL_APP_09
+	@And("User_608 click the Edit button if the status of record is Active in Application Details screen")
+	public void user_click_the_edit_button_if_the_status_of_record_is_active_in_application_details_screen() throws Throwable {
+		String listOfRecords = "document.querySelector('button[icon=\"pi pi-plus\"]').parentElement.parentElement.parentElement.parentElement.querySelectorAll('td').length";
+		String listOfEyeBtn = "";
+		String recordName = "";
+		boolean isEyeBtnClicked = false;
+		for (int i = 0; i <= 300; i++) {
+			try {
+				listOfEyeBtn = javascriptHelper.executeScript("return " + listOfRecords).toString();
+				System.out.println("List of add button " + listOfEyeBtn);
+				if (!(listOfEyeBtn.isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		int premitiveListOfEyeButton = Integer.parseInt(listOfEyeBtn);
+		for (int j = 0; j < premitiveListOfEyeButton; j++) {
+			for (int k = 0; k <= 100; k++) {
+				try {
+					recordName = javascriptHelper.executeScript(
+							"return document.querySelector('button[icon=\"pi pi-plus\"]').parentElement.parentElement.parentElement.parentElement.querySelectorAll('td')["
+									+ j + "].textContent")
+							.toString();
+					System.out.println("Screen Name " + recordName);
+					if (!(recordName.isBlank())) {
+						System.out.println("Screen Name" + recordName + " is Not null");
+						if ((recordName.trim()).equalsIgnoreCase(("Active").trim())) {
+							System.out.println("Inside nested loop");
+							javascriptHelper.backgroundColor(
+									javascriptHelper
+									.executeScriptWithWebElement(
+											"document.querySelector('button[icon=\"pi pi-plus\"]').parentElement.parentElement.parentElement.parentElement.querySelectorAll('td')[" + j + "].parentElement.querySelector('button')"));
+							javascriptHelper
+									.executeScriptWithWebElement(
+											"document.querySelector('button[icon=\"pi pi-plus\"]').parentElement.parentElement.parentElement.parentElement.querySelectorAll('td')[" + j + "].parentElement.querySelector('button')")
+									.click();
+							isEyeBtnClicked = true;
+							break;
+						}
+					}
+				} catch (Exception e) {
+					if (k == 100) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			if (isEyeBtnClicked == true) {
+				break;
+			}
+		}	    
+	}
+
+	@And("User_608 to verify the functionality of Activate\\/Deactivate button in Application Details screen")
+	public void user_to_verify_the_functionality_of_activate_deactivate_button_in_application_details_screen() throws Throwable {
+		Thread.sleep(1000);
+		for (int i = 0; i <= 10000; i++) {
+			try {
+				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						appDataAppDetailsJsPaths.getElement("statusToggleBtn")));
+				javascriptHelper.backgroundBorder(javascriptHelper.executeScriptWithWebElement(
+						appDataAppDetailsJsPaths.getElement("statusToggleBtn")));
+				javascriptHelper.executeScriptWithWebElement(
+						appDataAppDetailsJsPaths.getElement("statusToggleBtn")).click();
+				break;
+			} catch (Exception e) { 
+				if (i == 10000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+	
+	@And("User_608 after change the status user click the Update button under Application Details screen")
+	public void user_608_after_change_the_status_user_click_the_update_button_under_application_details_screen() throws Throwable {
+		for (int i = 0; i <= 10000; i++) {
+			try {
+				actions.moveToElement(javascriptHelper.executeScriptWithWebElement(
+						appDataAppDetailsJsPaths.getElement("updateBtn"))).build().perform();
+				javascriptHelper.executeScriptWithWebElement(
+						appDataAppDetailsJsPaths.getElement("updateBtn")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 10000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@And("User_608 get the updated record ID under Application Details screen")
+	public void user_608_get_the_updated_record_id_under_application_details_screen() throws Throwable {
+		Thread.sleep(1000);
+		WebElement successMsg = javascriptHelper.executeScriptWithWebElement(
+				appDataAppDetailsJsPaths.getElement("alert_SuccessMsg"));
+		for (int i = 0; i <= 300; i++) {
+			try {
+				String text = successMsg.getText();
+				System.out.println("Message:"+text);
+				System.out.println("Number: "+ text.substring(32, 36));
+				AppDataEntryApplicationDetails.updateTestData(testData.get("DataSet ID"),"Record_ID", text.substring(32, 36));
+				break;
+			} catch (Exception e) { 
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("popupCloseBtn")).click();
+	            break;
+	        } catch (Exception e) {
+	            if (i==499) {
+	                 Assert.fail(e.getMessage());
+	            }
+	        }
+		}
+	}
+	
+	@And("User_608 search the record ID under Application Details screen")
+	public void user_608_search_the_record_id_under_application_details_screen() {
+		WebElement searchBtn = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("searchBtn"));
+		for (int i = 0; i <= 1500; i++) {
+			try {
+				javascriptHelper.backgroundBorder(searchBtn);
+				searchBtn.click();
+				break;
+			} catch (Exception e) {
+				if (i == 1500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		for (int i = 0; i <= 500; i++) {
+			try {				
+				javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("searchBox"))
+				.sendKeys(testData.get("Record_ID"));
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@And("User_608 to verify if Status is Active then click Status toggle button system should show Deactivate in Application Details screen")
+	public void user_608_to_verify_if_status_is_active_then_click_status_toggle_button_system_should_show_deactivate_in_application_details_screen() throws Throwable {
+		String len = null;
+		for (int i = 0; i < 100; i++) {
+			try {
+				len = javascriptHelper.executeScript(
+						"return document.querySelector('button[icon=\"pi pi-plus\"]').parentElement.parentElement.parentElement.parentElement.querySelectorAll('tr')[1].querySelectorAll('td').length")
+						.toString();
+				System.out.println(len);
+				if (!len.isBlank() && !len.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 99) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 100; i++) {
+			try {
+				int length2 = Integer.parseInt(len)-1;
+				System.err.println("Final Length: "+length2);
+				String title = "document.querySelector('button[icon=\"pi pi-plus\"]').parentElement.parentElement.parentElement.parentElement.querySelectorAll('tr')[1].querySelectorAll('td')["+length2+"]";
+				WebElement element = javascriptHelper.executeScriptWithWebElement(title);
+				javascriptHelper.backgroundBorder(element);
+//				System.out.println("Get Text: "+element.getText());
+//				softAssert.assertTrue(element.getText().contains("In-active"), "Status should be In-active");
+				break;
+			} catch (Exception e) {
+				
+				}			
+		}
+	}
+	
+	@And("User_608 click the Edit button if the status of record is in-Active under Application Details screen")
+	public void user_click_the_edit_button_if_the_status_of_record_is_in_active_under_application_details_screen() throws Throwable {
+		for (int i = 0; i <= 500000; i++) {
+			try {
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						appDataAppDetailsJsPaths.getElement("pencilEditBtn")));
+				javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("pencilEditBtn")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 500000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@And("User_608 to verify if Status is In-active then click Status toggle button system should show Active in Application Details screen")
+	public void user_608_to_verify_if_status_is_in_active_then_click_status_toggle_button_system_should_show_active_in_application_details_screen() throws Throwable {
+		String len = null;
+		for (int i = 0; i < 100; i++) {
+			try {
+				len = javascriptHelper.executeScript(
+						"return document.querySelector('button[icon=\"pi pi-plus\"]').parentElement.parentElement.parentElement.parentElement.querySelectorAll('tr')[1].querySelectorAll('td').length")
+						.toString();
+				System.out.println(len);
+				if (!len.isBlank() && !len.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 99) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 100; i++) {
+			try {
+				int length2 = Integer.parseInt(len)-1;
+				System.err.println("Final Length: "+length2);
+				String title =
+						"document.querySelector('button[icon=\"pi pi-plus\"]').parentElement.parentElement.parentElement.parentElement.querySelectorAll('tr')[1].querySelectorAll('td')["+length2+"]";
+				WebElement element = javascriptHelper.executeScriptWithWebElement(title);
+				javascriptHelper.backgroundBorder(element);
+//				System.out.println("Get Text: "+element.getText());
+//				softAssert.assertTrue(element.getText().equalsIgnoreCase("Active"), "Status should be Active");
+				break;
+			} catch (Exception e) {
+				
+			}
+			
+		}
+	}
+	
+	
+	@And("User_608 verify values in List view should be non-editable and must be populated correctly in Application Details screen")
+	public void user_608_verify_values_in_list_view_should_be_non_editable_and_must_be_populated_correctly_in_application_details_screen() throws Throwable {
+		String listOfRecords = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
+		String listOfValues = "";
+		String addButtonScreenName = "";
+		for (int i = 0; i <= 30; i++) {
+			try {
+				listOfValues = javascriptHelper.executeScript("return " + listOfRecords).toString();
+				System.out.println("List of add button " + listOfValues);
+				if (!(listOfValues.isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 30) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		int values = Integer.parseInt(listOfValues);
+		for (int j = 0; j < values; j++) {
+			for (int k = 0; k <= 100; k++) {
+				try {
+					addButtonScreenName = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
+									+ j + "].textContent")
+							.toString();
+					System.out.println("Screen Name " + addButtonScreenName);
+					if (!(addButtonScreenName.isBlank())) {
+						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
+						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Application Details").trim())) {
+							System.out.println("Inside nested loop");
+							System.out.println("document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]");
+							WebElement nonEdit = javascriptHelper.executeScriptWithWebElement(
+									"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j
+											+ "].parentElement.parentElement.parentElement.nextElementSibling.querySelectorAll('table tbody tr td p-celleditor')[4]");
+							javascriptHelper.backgroundBorder(nonEdit);
+							System.out.println("Is Non Editable: "
+									+ javascriptHelper.executeScript("return arguments[0].readOnly", nonEdit));
+							System.out.println("Field Name: " + nonEdit.getText());
+							break;
+						}
+					}
+				} catch (Exception e) {
+					if (k == 100) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+		}
+	}
+	
+//	AT_AL_APP_11
+	@And("User_608 to verify the functionality of Search box with matching data under Application Details screen")
+	public void user_608_to_verify_the_functionality_of_search_box_with_matching_data_under_application_details_screen() throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("searchBox"))
+				.sendKeys(testData.get("Matching_Value"));
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 to verify the functionality of Search box with mismatch data under Application Details screen")
+	public void user_608_to_verify_the_functionality_of_search_box_with_mismatch_data_under_application_details_screen() throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("searchBox"))
+				.sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
+				javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("searchBox"))
+				.sendKeys(testData.get("Mismatched_Value"));
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}    
+	}
+	
+//	AT_AL_CUD_02
+	@And("User_608 select the Finanace type value in Financial Commitments-Customer Debt screen")
+	public void user_608_select_the_finanace_type_value_in_financial_commitments_customer_debt_screen() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financeTypeDropdown")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+				System.out.println("Dropdown length " + dropdownLength);
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+			for (int l = 0; l <= 300; l++) {
+				try {
+					System.out.println("L value is " + l);
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+					dropdownString = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText").toString();
+					if (!(dropdownString.isEmpty())) {
+						System.out.println(dropdownString);
+						System.out.println("Loop count " + l + " got breaked");
+						break;
+					}
+				} catch (Exception e) {
+					if (l == 300 && !(dropdownString.isBlank())) {
+						Assert.fail(e.getMessage());
+					}
+				}
+				if (!(dropdownString.isEmpty())) {
+					System.out.println(dropdownString);
+					System.out.println("Loop count " + l + " got breaked");
+					break;
+				}
+			}
+			System.out.println("String " + dropdownString.trim());
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("Finance Type")).trim())) {
+				for (int k = 0; k <= 300; k++) {
+					try {
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						isDropdownValueSelected = true;
+						break;
+					} catch (Exception e) {
+						if (k == 300) {
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+				break;
+			}
+		}	    
+	}
+
+	@And("User_608 select the Financial Institution value in Financial Commitments-Customer Debt screen")
+	public void user_608_select_the_financial_institution_value_in_financial_commitments_customer_debt_screen() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialInstitutionDropdown")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+				System.out.println("Dropdown length " + dropdownLength);
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+			for (int l = 0; l <= 300; l++) {
+				try {
+					System.out.println("L value is " + l);
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+					dropdownString = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText").toString();
+					if (!(dropdownString.isEmpty())) {
+						System.out.println(dropdownString);
+						System.out.println("Loop count " + l + " got breaked");
+						break;
+					}
+				} catch (Exception e) {
+					if (l == 300 && !(dropdownString.isBlank())) {
+						Assert.fail(e.getMessage());
+					}
+				}
+				if (!(dropdownString.isEmpty())) {
+					System.out.println(dropdownString);
+					System.out.println("Loop count " + l + " got breaked");
+					break;
+				}
+			}
+			System.out.println("String " + dropdownString.trim());
+			System.out.println("Map " + testData.get("Financial Institution").trim());
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("Financial Institution")).trim())) {
+				for (int k = 0; k <= 300; k++) {
+					try {
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						isDropdownValueSelected = true;
+						break;
+					} catch (Exception e) {
+						if (k == 300) {
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+				break;
+			}
+		}	    
+	}
+
+	@And("User_608 enter the Account Number in Financial Commitments-Customer Debt screen")
+	public void user_608_enter_the_account_number_in_financial_commitments_customer_debt_screen() throws Throwable {
+		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionAmtInput")).click();
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("accountNbr"))
+				.sendKeys(testData.get("Account Nbr"));
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 enter the Sanction Amount in Financial Commitments-Customer Debt screen")
+	public void user_608_enter_the_sanction_amount_in_financial_commitments_customer_debt_screen() throws Throwable {
+		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionAmtInput")).click();
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionAmtInput"))
+				.sendKeys(testData.get("Sanction Amt"));
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 enter the Tenure in Financial Commitments-Customer Debt screen")
+	public void user_608_enter_the_tenure_in_financial_commitments_customer_debt_screen() throws Throwable {
+		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("tenureMonthInput")).click();
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("tenureMonthInput"))
+				.sendKeys(testData.get("Tenure(Months)"));;
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 enter the Installment Amount in Financial Commitments-Customer Debt screen")
+	public void user_608_enter_the_installment_amount_in_financial_commitments_customer_debt_screen() throws Throwable {
+		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtInput")).click();
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtInput"))
+				.sendKeys(testData.get("Installment Amt"),Keys.TAB);
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("toastMsgCloseBtn")).click();				
+				break;
+			} catch (Exception e) {
+//				if (i == 500) {
+//					Assert.fail(e.getMessage());
+//				}
+			}
+		}	    
+	}
+
+	@And("User_608 select the Currency value in Financial Commitments-Customer Debt screen")
+	public void user_608_select_the_currency_value_in_financial_commitments_customer_debt_screen() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("currencyLabel")));
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("currencyDropdown")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+				System.out.println("Dropdown length " + dropdownLength);
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+			for (int l = 0; l <= 300; l++) {
+				try {
+					System.out.println("L value is " + l);
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+					dropdownString = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText").toString();
+					if (!(dropdownString.isEmpty())) {
+						System.out.println(dropdownString);
+						System.out.println("Loop count " + l + " got breaked");
+						break;
+					}
+				} catch (Exception e) {
+					if (l == 300 && !(dropdownString.isBlank())) {
+						Assert.fail(e.getMessage());
+					}
+				}
+				if (!(dropdownString.isEmpty())) {
+					System.out.println(dropdownString);
+					System.out.println("Loop count " + l + " got breaked");
+					break;
+				}
+			}
+			System.out.println("String " + dropdownString.trim());
+			System.out.println("Map " + testData.get("Currency").trim());
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("Currency")).trim())) {
+				for (int k = 0; k <= 300; k++) {
+					try {
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						isDropdownValueSelected = true;
+						break;
+					} catch (Exception e) {
+						if (k == 300) {
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+				break;
+			}
+		}	    
+	}
+
+	@And("User_608 enter the Remaining Tenure in Financial Commitments-Customer Debt screen")
+	public void user_608_enter_the_remaining_tenure_in_financial_commitments_customer_debt_screen() throws Throwable {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("remainingTenureLabel")));
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("remainingTenureInput")).click();
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("remainingTenureInput"))
+				.sendKeys(testData.get("Remaining Tenure"),Keys.TAB);;
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}		
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("toastMsgCloseBtn")).click();				
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+	
+	
+	@And("User_608 invoke soft assert in Customer Debt screen at Auto Loan App Data Entry stage")
+	public void user_608_invoke_soft_assert_in_customer_debt_screen_at_auto_loan_app_data_entry_stage() throws Throwable {
+		softAssert.assertAll();
+	}
+	
+	
+//	AT_AL_CUD_03
+	@And("User_608 verify system should allow user to select any value from the LOV in Finance Type")
+	public void user_608_verify_system_should_allow_user_to_select_any_value_from_the_lov_in_finance_type() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financeTypeDropdown")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+				System.out.println("Dropdown length " + dropdownLength);
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+			for (int l = 0; l <= 300; l++) {
+				try {
+					System.out.println("L value is " + l);
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+					dropdownString = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText").toString();
+					if (!(dropdownString.isEmpty())) {
+						System.out.println(dropdownString);
+						System.out.println("Loop count " + l + " got breaked");
+						break;
+					}
+				} catch (Exception e) {
+					if (l == 300 && !(dropdownString.isBlank())) {
+						Assert.fail(e.getMessage());
+					}
+				}
+				if (!(dropdownString.isEmpty())) {
+					System.out.println(dropdownString);
+					System.out.println("Loop count " + l + " got breaked");
+					break;
+				}
+			}
+			System.out.println("String " + dropdownString.trim());
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("Finance Type")).trim())) {
+				for (int k = 0; k <= 300; k++) {
+					try {
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						isDropdownValueSelected = true;
+						break;
+					} catch (Exception e) {
+						if (k == 300) {
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+				break;
+			}
+		}	    
+	}
+
+	@And("User_608 verify system should allow user to select any value from the LOV in Financial Institution")
+	public void user_608_verify_system_should_allow_user_to_select_any_value_from_the_lov_in_financial_institution() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialInstitutionDropdown")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+				System.out.println("Dropdown length " + dropdownLength);
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+			for (int l = 0; l <= 300; l++) {
+				try {
+					System.out.println("L value is " + l);
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+					dropdownString = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText").toString();
+					if (!(dropdownString.isEmpty())) {
+						System.out.println(dropdownString);
+						System.out.println("Loop count " + l + " got breaked");
+						break;
+					}
+				} catch (Exception e) {
+					if (l == 300 && !(dropdownString.isBlank())) {
+						Assert.fail(e.getMessage());
+					}
+				}
+				if (!(dropdownString.isEmpty())) {
+					System.out.println(dropdownString);
+					System.out.println("Loop count " + l + " got breaked");
+					break;
+				}
+			}
+			System.out.println("String " + dropdownString.trim());
+			System.out.println("Map " + testData.get("Financial Institution").trim());
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("Financial Institution")).trim())) {
+				for (int k = 0; k <= 300; k++) {
+					try {
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						isDropdownValueSelected = true;
+						break;
+					} catch (Exception e) {
+						if (k == 300) {
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+				break;
+			}
+		}	    
+	}
+
+	@And("User_608 verify system should allow user to enter only positive numeric value in Account Number field")
+	public void user_608_verify_system_should_allow_user_to_enter_only_positive_numeric_value_in_account_number_field() throws Throwable {
+		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionAmtInput")).click();
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("accountNbr"))
+				.sendKeys(testData.get("Account Nbr"));
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify system should allow user to enter only positive numeric value in Sanction Amount field")
+	public void user_608_verify_system_should_allow_user_to_enter_only_positive_numeric_value_in_sanction_amount_field() throws Throwable {
+		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionAmtInput")).click();
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionAmtInput"))
+				.sendKeys(testData.get("Sanction Amt"));
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify system should allow user to enter only positive numeric value in Interest Rate % field")
+	public void user_608_verify_system_should_allow_user_to_enter_only_positive_numeric_value_in_interest_rate_field() throws Throwable {
+		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("interestRateInput")).click();
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("interestRateInput"))
+				.sendKeys(testData.get("Interest_Rate"),Keys.TAB);
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("toastMsgCloseBtn")).click();				
+				break;
+			} catch (Exception e) {
+				
+			}
+		}	    
+	}
+
+	@And("User_608 verify system should allow user to enter only positive numeric value in Current Principal balance field")
+	public void user_608_verify_system_should_allow_user_to_enter_only_positive_numeric_value_in_current_principal_balance_field() throws Throwable {
+		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("currentPrincipalBalanceInput")).click();
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("currentPrincipalBalanceInput"))
+				.sendKeys(testData.get("Current_Principal"),Keys.TAB);
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("toastMsgCloseBtn")).click();				
+				break;
+			} catch (Exception e) {
+				
+			}
+		}	    
+	}
+
+	@And("User_608 verify system should allow user to enter only positive numeric value in Tenure field")
+	public void user_608_verify_system_should_allow_user_to_enter_only_positive_numeric_value_in_tenure_field() throws Throwable {
+		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("tenureMonthInput")).click();
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("tenureMonthInput"))
+				.sendKeys(testData.get("Tenure(Months)"));;
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify system should allow user to enter only positive numeric value in Installment Amount field")
+	public void user_608_verify_system_should_allow_user_to_enter_only_positive_numeric_value_in_installment_amount_field() throws Throwable {
+		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtInput")).click();
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtInput"))
+				.sendKeys(testData.get("Installment Amt"),Keys.TAB);
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("toastMsgCloseBtn")).click();				
+				break;
+			} catch (Exception e) {
+//				if (i == 500) {
+//					Assert.fail(e.getMessage());
+//				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify system should allow user to enter only positive numeric value in Amount considered field")
+	public void user_608_verify_system_should_allow_user_to_enter_only_positive_numeric_value_in_amount_considered_field() throws Throwable {
+		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("amountConsideredInput")).click();
+		for (int i = 0; i <= 500; i++) {
+			try {
+				actions.moveToElement(javascriptHelper.executeScriptWithWebElement(
+						customerDebtJsPaths.getElement("amountConsideredInput"))).build().perform();
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("amountConsideredInput"))
+				.sendKeys(testData.get("Amt_Consider"),Keys.TAB);
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("toastMsgCloseBtn")).click();				
+				break;
+			} catch (Exception e) {
+				
+			}
+		}
+	    
+	}
+
+	@And("User_608 verify system should allow user to select any value from the LOV in Currency field")
+	public void user_608_verify_system_should_allow_user_to_select_any_value_from_the_lov_in_currency_field() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+//				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("currencyLabel")));
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("currencyDropdown")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+				System.out.println("Dropdown length " + dropdownLength);
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+			for (int l = 0; l <= 300; l++) {
+				try {
+					System.out.println("L value is " + l);
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+					dropdownString = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText").toString();
+					if (!(dropdownString.isEmpty())) {
+						System.out.println(dropdownString);
+						System.out.println("Loop count " + l + " got breaked");
+						break;
+					}
+				} catch (Exception e) {
+					if (l == 300 && !(dropdownString.isBlank())) {
+						Assert.fail(e.getMessage());
+					}
+				}
+				if (!(dropdownString.isEmpty())) {
+					System.out.println(dropdownString);
+					System.out.println("Loop count " + l + " got breaked");
+					break;
+				}
+			}
+			System.out.println("String " + dropdownString.trim());
+			System.out.println("Map " + testData.get("Currency").trim());
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("Currency")).trim())) {
+				for (int k = 0; k <= 300; k++) {
+					try {
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						isDropdownValueSelected = true;
+						break;
+					} catch (Exception e) {
+						if (k == 300) {
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+				break;
+			}
+		}	    
+	}
+
+	@And("User_608 verify system should allow user to select any value from the LOV in Collateral Type field")
+	public void user_608_verify_system_should_allow_user_to_select_any_value_from_the_lov_in_collateral_type_field() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("collateralTypedDropDown")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+				System.out.println("Dropdown length " + dropdownLength);
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+			for (int l = 0; l <= 300; l++) {
+				try {
+					System.out.println("L value is " + l);
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+					dropdownString = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText").toString();
+					if (!(dropdownString.isEmpty())) {
+						System.out.println(dropdownString);
+						System.out.println("Loop count " + l + " got breaked");
+						break;
+					}
+				} catch (Exception e) {
+					if (l == 300 && !(dropdownString.isBlank())) {
+						Assert.fail(e.getMessage());
+					}
+				}
+				if (!(dropdownString.isEmpty())) {
+					System.out.println(dropdownString);
+					System.out.println("Loop count " + l + " got breaked");
+					break;
+				}
+			}
+			System.out.println("String " + dropdownString.trim());
+			System.out.println("Map " + testData.get("Collateral_Type").trim());
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("Collateral_Type")).trim())) {
+				for (int k = 0; k <= 300; k++) {
+					try {
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						isDropdownValueSelected = true;
+						break;
+					} catch (Exception e) {
+						if (k == 300) {
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+				break;
+			}
+		}	    
+	}
+
+	@And("User_608 verify system should allow user to select any value from the LOV in Frequency field")
+	public void user_608_verify_system_should_allow_user_to_select_any_value_from_the_lov_in_frequency_field() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("frequencyDropdown")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+				System.out.println("Dropdown length " + dropdownLength);
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+			for (int l = 0; l <= 300; l++) {
+				try {
+					System.out.println("L value is " + l);
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+					dropdownString = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText").toString();
+					if (!(dropdownString.isEmpty())) {
+						System.out.println(dropdownString);
+						System.out.println("Loop count " + l + " got breaked");
+						break;
+					}
+				} catch (Exception e) {
+					if (l == 300 && !(dropdownString.isBlank())) {
+						Assert.fail(e.getMessage());
+					}
+				}
+				if (!(dropdownString.isEmpty())) {
+					System.out.println(dropdownString);
+					System.out.println("Loop count " + l + " got breaked");
+					break;
+				}
+			}
+			System.out.println("String " + dropdownString.trim());
+			System.out.println("Map " + testData.get("Frequency").trim());
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("Frequency")).trim())) {
+				for (int k = 0; k <= 300; k++) {
+					try {
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						isDropdownValueSelected = true;
+						break;
+					} catch (Exception e) {
+						if (k == 300) {
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+				break;
+			}
+		}	    
+	}
+
+	@And("User_608 verify system should allow user to enter only positive numeric value in Last Payment Amount field")
+	public void user_608_verify_system_should_allow_user_to_enter_only_positive_numeric_value_in_last_payment_amount_field() throws Throwable {
+		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("lastPaymentAmtInput")).click();
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("lastPaymentAmtInput"))
+				.sendKeys(testData.get("last_Payment_Amt"), Keys.TAB, Keys.TAB);
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}		
+		
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("toastMsgCloseBtn")).click();				
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify system should allow user to enter only positive numeric value in Remaining Tenure field")
+	public void user_608_verify_system_should_allow_user_to_enter_only_positive_numeric_value_in_remaining_tenure_field() throws Throwable {
+		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("remainingTenureInput")).click();
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("remainingTenureInput"))
+				.sendKeys(testData.get("Remaining Tenure"),Keys.TAB, Keys.TAB);
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}		
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("toastMsgCloseBtn")).click();				
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+	
+	
 	
 	
 	

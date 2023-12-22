@@ -67,7 +67,7 @@ And User_608 click the Customer Financials tab
 And User_608 click the pencil icon under Customer Financials tab
 And User_608 click Add button in Financial Commitments under Customer Financials tab
 And User_608 validate the Customer Debt screen is available in Financial Commitments
-And User_608 select the Finanacy type in Customer Debt screen
+And User_608 select the Finanace type in Customer Debt screen
 And User_608 enter the Sanction Amount in Customer Debt screen
 And User_608 enter the Tenure in Customer Debt screen
 And User_608 enter the Installment Amount in Customer Debt screen
@@ -160,7 +160,7 @@ And User_608 click the Customer Financials tab
 And User_608 click the pencil icon under Customer Financials tab
 And User_608 click Add button in Financial Commitments under Customer Financials tab
 And User_608 validate the Customer Debt screen is available in Financial Commitments
-And User_608 select the Finanacy type in Customer Debt screen
+And User_608 select the Finanace type in Customer Debt screen
 And User_608 enter the Sanction Amount in Customer Debt screen
 And User_608 enter the Tenure in Customer Debt screen
 And User_608 enter the Installment Amount in Customer Debt screen

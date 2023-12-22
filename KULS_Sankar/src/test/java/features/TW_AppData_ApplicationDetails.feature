@@ -33,6 +33,7 @@ And User_608 click the XLS and verify under Application Details screen
 And User_608 click the Add button under Application Details screen
 And User_608 verfiy the new record creation page under Application Details screen
 Then logout from the ijaraApplication
+And User_608 invoke soft assert in Application details screen at Tawarruq App Data Entry stage
 
 
 

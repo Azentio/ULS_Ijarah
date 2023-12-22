@@ -48,6 +48,7 @@ And User_608 verify Request for Balance Takeover field is available under Custom
 And User_608 verify NPA Classification field is available under Customer Debt screen in Customer Financials tab
 And User_608 click the Back button Under Customer Debt screen to navigate the previous screen
 Then logout from the ijaraApplication
+And User_608 invoke soft assert in Customer Debt screen at Murabaha App Data Entry stage
 
 
 #CUD_01_02, CUD_01_03
@@ -66,8 +67,8 @@ And User_608 click the Entitle button under inbox
 And User_608 click the Customer Financials tab
 And User_608 click the pencil icon under Customer Financials tab
 And User_608 click Add button in Financial Commitments under Customer Financials tab
-And User_608 validate the Customer Debt screen is available in Financial Commitments
-And User_608 select the Finanacy type under Customer Debt screen in Customer Financials tab
+#And User_608 validate the Customer Debt screen is available in Financial Commitments
+And User_608 select the Finanace type under Customer Debt screen in Customer Financials tab
 And User_608 select the Financial Institution value under Customer Debt screen in Customer Financials tab
 And User_608 enter the Account Number under Customer Debt screen in Customer Financials tab
 And User_608 enter the Sanction Amount under Customer Debt screen in Customer Financials tab
@@ -78,6 +79,7 @@ And User_608 enter the Remaining Tenure under Customer Debt screen in Customer F
 When User_608 click the Save button in Customer Debt screen
 Then User_608 validate the confirm message in Customer Debt screen
 Then logout from the ijaraApplication
+And User_608 invoke soft assert in Customer Debt screen at Murabaha App Data Entry stage
 
 
 #CUD_01_05 -->  CUD_01_30
@@ -96,7 +98,7 @@ And User_608 click the Entitle button under inbox
 And User_608 click the Customer Financials tab
 And User_608 click the pencil icon under Customer Financials tab
 And User_608 click Add button in Financial Commitments under Customer Financials tab
-And User_608 validate the Customer Debt screen is available in Financial Commitments
+#And User_608 validate the Customer Debt screen is available in Financial Commitments
 And User_608 verify Finance Type as Mandatory and LOV field under Customer Debt screen in Customer Financials tab
 And User_608 verify Financial Institution as Non-Mandatory and LOV field under Customer Debt screen in Customer Financials tab
 And User_608 verify Account Number as Non-Mandatory and Textbox field under Customer Debt screen in Customer Financials tab
@@ -125,6 +127,7 @@ And User_608 verify Disbursement Date as Non-Mandatory and Date field under Cust
 And User_608 verify Request for Balance Takeover as Non-Mandatory and LOV field under Customer Debt screen in Customer Financials tab
 And User_608 verify NPA Classification as Non-Mandatory and LOV field under Customer Debt screen in Customer Financials tab
 Then logout from the ijaraApplication
+And User_608 invoke soft assert in Customer Debt screen at Murabaha App Data Entry stage
 
 
 #CUD_02_01, CUD_02_02, CUD_02_03
@@ -143,8 +146,8 @@ And User_608 click the Entitle button under inbox
 And User_608 click the Customer Financials tab
 And User_608 click the pencil icon under Customer Financials tab
 And User_608 click Add button in Financial Commitments under Customer Financials tab
-And User_608 validate the Customer Debt screen is available in Financial Commitments
-And User_608 select the Finanacy type under Customer Debt screen in Customer Financials tab
+#And User_608 validate the Customer Debt screen is available in Financial Commitments
+And User_608 select the Finanace type under Customer Debt screen in Customer Financials tab
 And User_608 select the Financial Institution value under Customer Debt screen in Customer Financials tab
 And User_608 enter the Account Number under Customer Debt screen in Customer Financials tab
 And User_608 enter the Sanction Amount under Customer Debt screen in Customer Financials tab
@@ -156,6 +159,7 @@ And User_608 enter the Text value in Remaining Tenure field and validate the err
 When User_608 click the Save button in Customer Debt screen
 And User_608 validate the message for invalid data in Customer Debt screen
 Then logout from the ijaraApplication
+And User_608 invoke soft assert in Customer Debt screen at Murabaha App Data Entry stage
 
 
 #CUD_03_01 --> CUD_03_07
@@ -174,18 +178,18 @@ And User_608 click the Entitle button under inbox
 And User_608 click the Customer Financials tab
 And User_608 click the pencil icon under Customer Financials tab
 And User_608 click the pencil button under Financial Commitments in Customer Financials tab
-And User_608 validate the Customer Debt screen is available in Financial Commitments
+#And User_608 validate the Customer Debt screen is available in Financial Commitments
 And User_608 validate the Update button available in Customer Debt screen
 And User_608 validate the Back button available in Customer Debt screen
-And User_608 modify the Sanction Amount under Customer Debt screen in Customer Financials tab
-When User_608 click the Update button in Customer Debt screen
-And User_608 again click the first row pencil button under Financial Commitments in Customer Financials tab
 And User_608 clear the mandatory field value in Customer Debt screen
 And User_608 Update the record with mandatory field blank in Customer Debt screen
 And User_608 validate the mandatory field blank message in Customer Debt screen
 And User_608 enter the invalid data in any one field under Customer Debt screen in Customer Financials tab
 And User_608 Update the record with mandatory field blank in Customer Debt screen
 And User_608 validate the Error message in Customer Debt screen
+And User_608 enter the Installment Amount under Customer Debt screen in Customer Financials tab
+And User_608 modify the Sanction Amount under Customer Debt screen in Customer Financials tab
+When User_608 click the Update button in Customer Debt screen
 Then logout from the ijaraApplication
 
 

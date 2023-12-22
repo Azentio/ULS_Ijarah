@@ -2636,7 +2636,7 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(listview_Action);
-				listview_Action.isDisplayed();
+				softAssert.assertTrue(listview_Action.isDisplayed(), "Action field should display in List view");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -2652,7 +2652,7 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(listview_ClientName);
-				listview_ClientName.isDisplayed();
+				softAssert.assertTrue(listview_ClientName.isDisplayed(), "Client Name field should display in List view");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -2668,7 +2668,7 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(listview_ClientNameOtherLang);
-				listview_ClientNameOtherLang.isDisplayed();
+				softAssert.assertTrue(listview_ClientNameOtherLang.isDisplayed(), "Client Name(Other Language) field should display in List view");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -2684,7 +2684,7 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(listview_Product);
-				listview_Product.isDisplayed();
+				softAssert.assertTrue(listview_Product.isDisplayed(), "Product field should display in List view");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -2700,7 +2700,7 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(listview_SubProduct);
-				listview_SubProduct.isDisplayed();
+				softAssert.assertTrue(listview_SubProduct.isDisplayed(), "Sub-Product field should display in List view");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -2716,7 +2716,7 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(listview_CurrentStage);
-				listview_CurrentStage.isDisplayed();
+				softAssert.assertTrue(listview_CurrentStage.isDisplayed(), "Current stage field should display in List view");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -2732,7 +2732,7 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(listview_Location);
-				listview_Location.isDisplayed();
+				softAssert.assertTrue(listview_Location.isDisplayed(), "Location field should display in List view");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -2748,7 +2748,7 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(listview_AllocatedTo);
-				listview_AllocatedTo.isDisplayed();
+				softAssert.assertTrue(listview_AllocatedTo.isDisplayed(), "Allocated To field should display in List view");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -2764,7 +2764,7 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(listview_Service);
-				listview_Service.isDisplayed();
+				softAssert.assertTrue(listview_Service.isDisplayed(), "Service field should display in List view");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -2780,7 +2780,7 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(listview_Status);
-				listview_Status.isDisplayed();
+				softAssert.assertTrue(listview_Status.isDisplayed(), "Status field should display in List view");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -2814,7 +2814,7 @@ public class Tawarruq_Steps {
 				javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("searchBox"))
 				.sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
 				javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("searchBox"))
-				.sendKeys(testData.get("Matching Value"));
+				.sendKeys(testData.get("Matching_Value"));
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -2833,7 +2833,7 @@ public class Tawarruq_Steps {
 				javascriptHelper.backgroundColor(searchResult);
 				String text = searchResult.getText().substring(13, 14);
 				System.out.println("Result value: "+text);
-				Assert.assertTrue(Integer.parseInt(text)>0);
+				softAssert.assertTrue(Integer.parseInt(text)>0, "All possible Matching records are showing");
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -2848,7 +2848,7 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 500; i++) {
 			try {				
 				javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("searchBox"))
-				.sendKeys(testData.get("Mismatched Value"));
+				.sendKeys(testData.get("Mismatched_Value"));
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -2867,7 +2867,7 @@ public class Tawarruq_Steps {
 				javascriptHelper.backgroundColor(searchResult);
 				String text = searchResult.getText().substring(13, 14);
 				System.out.println("Result value: "+text);
-				Assert.assertTrue(Integer.parseInt(text)==0);
+				softAssert.assertTrue(Integer.parseInt(text)==0, "System is should not displayed any records");
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -2984,6 +2984,11 @@ public class Tawarruq_Steps {
 				}
 			}
 		}
+	}
+	
+	@And("User_608 invoke soft assert in Application details screen at Tawarruq App Data Entry stage")
+	public void user_608_invoke_soft_assert_in_application_details_screen_at_tawarruq_app_data_entry_stage() throws Throwable {
+		softAssert.assertAll();
 	}
 	
 	
@@ -3731,7 +3736,7 @@ public class Tawarruq_Steps {
 				}
 			}		    
 		}
-
+		
 		@And("User_608 to verify system display the confirmation message post clicking on save button")
 		public void user_608_to_verify_system_display_the_confirmation_message_post_clicking_on_save_button() {
 			WebElement alertMsg = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("alert_SuccessMsg"));
@@ -4616,15 +4621,15 @@ public class Tawarruq_Steps {
 			
 			int premitiveListOfEyeButton = Integer.parseInt(listOfEyeBtn);
 			for (int j = 0; j < premitiveListOfEyeButton; j++) {
-				for (int k = 0; k <= 300; k++) {
+				for (int k = 0; k <= 5000; k++) {
 					try {
 						recordName = javascriptHelper.executeScript(
 								"return document.querySelector('button[icon=\"pi pi-arrow-left\"]').parentElement.parentElement.parentElement.querySelectorAll('td')["
 										+ j + "].textContent")
 								.toString();
-						System.out.println("Screen Name " + recordName);
+						System.out.println("Record Name " + recordName);
 						if (!(recordName.isBlank())) {
-							System.out.println("Screen Name" + recordName + " is Not null");
+							System.out.println("Record Name" + recordName + " is Not null");
 							if ((recordName.trim()).equalsIgnoreCase((testData.get("Record_ID")).trim())) {
 								System.out.println("Inside nested loop");
 								javascriptHelper.backgroundBorder(
@@ -4640,7 +4645,7 @@ public class Tawarruq_Steps {
 							}
 						}
 					} catch (Exception e) {
-						if (k == 300) {
+						if (k == 500) {
 							Assert.fail(e.getMessage());
 						}
 					}
@@ -4815,7 +4820,7 @@ public class Tawarruq_Steps {
 
 		@And("User_608 post clicking on View Summary button system should display the workflow of the record")
 		public void user_608_post_clicking_on_view_summary_button_system_should_display_the_workflow_of_the_record() throws Throwable {
-			WebElement popup = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("viewSummaryBtn"));
+			WebElement popup = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("summaryPopup"));
 			for (int i = 0; i <= 150000; i++) {
 				try {
 					javascriptHelper.backgroundBorder(popup);

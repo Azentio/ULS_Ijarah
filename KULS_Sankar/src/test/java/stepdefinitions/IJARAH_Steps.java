@@ -308,14 +308,12 @@ public class IJARAH_Steps {
 
 	@And("User_608 click the Mail box in ULS application")
 	public void user_608_click_the_mail_box_in_uls_application() throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver,
-				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("mailBox")));
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <= 50000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("mailBox")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i == 50000) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -358,61 +356,24 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 click the Entitle button under inbox")
-	public void user_608_click_the_entitle_button_under_inbox() throws Throwable {
+	public void user_608_click_the_entitle_button_under_inbox() throws Throwable {		
 		Thread.sleep(1000);
-		String length = null;
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i <= 1000; i++) {
 			try {
-				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-card button').length")
-						.toString();
-				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0")) {
-					break;
-				}
-			} catch (Exception e) {
-				if (i == 4999) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-		for (int i = 0; i < 5000; i++) {
-			try {
-				for (int j = 0; j < Integer.parseInt(length); j++) {
-					String title = "return document.querySelectorAll('ion-card button')[" + j + "].getAttribute('ng-reflect-text')";
-					String titlename = javascriptHelper.executeScript(title).toString();
-					System.out.println(titlename);
-					if (titlename.trim().contains("Entitle")) {
-						System.out.println("condition true");
-						String jspath = "document.querySelectorAll('ion-card button')[" + j + "]";
-						WebElement editBtn = javascriptHelper.executeScriptWithWebElement(jspath);
-						javascriptHelper.JSEClick(editBtn);
-						break;
-					}
-				}
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("inboxEntitleBtn")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 1000) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-//		Thread.sleep(1000);
-//		for (int i = 0; i <= 1000; i++) {
-//			try {
-//				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("inboxEntitleBtn")).click();
-//				break;
-//			} catch (Exception e) {
-//				if (i == 1000) {
-//					Assert.fail(e.getMessage());
-//				}
-//			}
-//		}
 	}
 
 	@And("User_608 click the Customer Financials tab")
 	public void user_608_click_the_customer_financials_tab() throws Throwable {
 		String length = null;
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i < 5000; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
 						.toString();
@@ -421,7 +382,7 @@ public class IJARAH_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i == 4999) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -492,6 +453,7 @@ public class IJARAH_Steps {
 
 	@And("User_608 click Add button in Financial Commitments under Customer Financials tab")
 	public void user_608_click_add_button_in_financial_commitments_under_customer_financials_tab() throws Throwable {
+		Thread.sleep(500);
 		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
 		String listOfAddButton = "";
 		String addButtonScreenName = "";
@@ -525,11 +487,7 @@ public class IJARAH_Steps {
 							System.out.println("Inside nested loop");
 							System.out.println("document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]");
 							actions.moveToElement(javascriptHelper.executeScriptWithWebElement(
-									"document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
-											+ j + "]")).build().perform();
-//							javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
-//									"document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
-//											+ j + "]"));
+											"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]")).build().perform();
 							javascriptHelper
 									.executeScriptWithWebElement(
 											"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]")
@@ -552,16 +510,15 @@ public class IJARAH_Steps {
 
 	@And("User_608 validate the Customer Debt screen is available in Financial Commitments")
 	public void user_608_validate_the_customer_debt_screen_is_available_in_financial_commitments() throws Throwable {
-		Thread.sleep(1000);
 		WebElement customerDebtDetailsScreen = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerDebtDetailsScreen"));
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 200000; i++) {
 			try {
 				javascriptHelper.backgroundColor(customerDebtDetailsScreen);
 				Assert.assertTrue(customerDebtDetailsScreen.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 200000) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -570,15 +527,39 @@ public class IJARAH_Steps {
 
 	@And("User_608 validate the Save button available in Customer Debt screen")
 	public void user_608_validate_the_save_button_available_in_customer_debt_screen() throws Throwable {
-		WebElement customerDebtSaveBtn = javascriptHelper
-				.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerDebtSaveBtn"));
-		for (int i = 0; i <= 2000; i++) {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
 			try {
-				actions.moveToElement(customerDebtSaveBtn).perform();
-				Assert.assertTrue(customerDebtSaveBtn.isDisplayed());
+				length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('form button')[" + j + "].getAttribute('ng-reflect-text')";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().contains("Save")) {
+						System.out.println("condition true");
+						String jspath = "document.querySelectorAll('form button')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.backgroundBorder(btn);
+						softAssert.assertTrue(btn.isDisplayed(),"Save button should be displayed in Customer Debt screen");
+						break;
+					}
+				}
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 4999) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -587,15 +568,39 @@ public class IJARAH_Steps {
 
 	@And("User_608 validate the Update button available in Customer Debt screen")
 	public void user_608_validate_the_update_button_available_in_customer_debt_screen() throws Throwable {
-		WebElement updateBtn = javascriptHelper
-				.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerDebtUpdateBtn"));
-		for (int i = 0; i <= 2000; i++) {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
 			try {
-				actions.moveToElement(updateBtn).perform();
-				Assert.assertTrue(updateBtn.isDisplayed());
+				length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('form button')[" + j + "].getAttribute('ng-reflect-text')";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().contains("Update")) {
+						System.out.println("condition true");
+						String jspath = "document.querySelectorAll('form button')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.backgroundBorder(btn);
+						softAssert.assertTrue(btn.isDisplayed(),"Update button should be displayed in Customer Debt screen");
+						break;
+					}
+				}
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 4999) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -604,20 +609,57 @@ public class IJARAH_Steps {
 
 	@And("User_608 validate the Back button available in Customer Debt screen")
 	public void user_608_validate_the_back_button_available_in_customer_debt_screen() throws Throwable {
-		WebElement customerDebtBackBtn = javascriptHelper
-				.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerDebtBackBtn"));
-		waitHelper.waitForElementwithFluentwait(driver, customerDebtBackBtn);
-		for (int i = 0; i <= 1000; i++) {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
 			try {
-				actions.moveToElement(customerDebtBackBtn).perform();
-				Assert.assertTrue(customerDebtBackBtn.isDisplayed());
-				break;
+				length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i == 4999) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('form button')[" + j + "].getAttribute('ng-reflect-text')";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().contains("Go Back")) {
+						System.out.println("condition true");
+						String jspath = "document.querySelectorAll('form button')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.backgroundBorder(btn);
+						softAssert.assertTrue(btn.isDisplayed(),"Back button should be displayed in Customer Debt screen");
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+//		WebElement customerDebtBackBtn = javascriptHelper
+//				.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerDebtBackBtn"));
+//		waitHelper.waitForElementwithFluentwait(driver, customerDebtBackBtn);
+//		for (int i = 0; i <= 1000; i++) {
+//			try {
+//				actions.moveToElement(customerDebtBackBtn).perform();
+//				Assert.assertTrue(customerDebtBackBtn.isDisplayed());
+//				break;
+//			} catch (Exception e) {
+//				if (i == 1000) {
+//					Assert.fail(e.getMessage());
+//				}
+//			}
+//		}
 	}
 
 	@And("User_608 click the Back button in Customer Debt screen navigate to the previous screen")
@@ -743,12 +785,12 @@ public class IJARAH_Steps {
 
 	@And("User_608 validate the Sanction Date field is available in Customer Debt screen")
 	public void user_608_validate_the_sanction_date_field_is_available_in_customer_debt_screen() throws Throwable {
-		WebElement sanctionDataLabel = javascriptHelper
-				.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionDataLabel"));
+		WebElement sanctionDateLabel = javascriptHelper
+				.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionDateLabel"));
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.backgroundColor(sanctionDataLabel);
-				Assert.assertTrue(sanctionDataLabel.isDisplayed());
+				javascriptHelper.backgroundColor(sanctionDateLabel);
+				Assert.assertTrue(sanctionDateLabel.isDisplayed());
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -758,7 +800,7 @@ public class IJARAH_Steps {
 		}
 //		Validate Non_mandatory
 		String financeTypeText = javascriptHelper
-				.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionDataLabel")).getText();
+				.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionDateLabel")).getText();
 		for (int i = 0; i < 2000; i++) {
 			try {
 				Assert.assertTrue(!(financeTypeText.contains("*")));
@@ -1485,8 +1527,8 @@ public class IJARAH_Steps {
 	}
 
 //	AT_CUD_002
-	@And("User_608 select the Finanacy type in Customer Debt screen")
-	public void user_608_select_the_finanacy_type_in_customer_debt_screen() throws Throwable {
+	@And("User_608 select the Finanace type in Customer Debt screen")
+	public void user_608_select_the_finanace_type_in_customer_debt_screen() throws Throwable {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financeTypeDropdown"))
@@ -1698,7 +1740,8 @@ public class IJARAH_Steps {
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("successMsg")).getText();
 		for (int i = 0; i < 2000; i++) {
 			try {
-				Assert.assertTrue(financeTypeText.contains("Success!"));
+				softAssert.assertTrue(financeTypeText.contains("Success!"), 
+						"System should display the confirmation message as SUCCESS");
 				break;
 			} catch (Exception e) {
 				if (i == 1999) {
@@ -1729,7 +1772,8 @@ public class IJARAH_Steps {
 		System.err.println("Mandatory Error : " + madatoryErrorMsg);
 		for (int i = 0; i < 2000; i++) {
 			try {
-				Assert.assertTrue(madatoryErrorMsg.contains("Please fill all the details"));
+				softAssert.assertTrue(madatoryErrorMsg.contains("Please fill all the details"), 
+						"Mandatory field blank message in Customer Debt screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1999) {
@@ -1804,7 +1848,8 @@ public class IJARAH_Steps {
 		System.err.println("Mandatory Error : " + madatoryErrorMsg);
 		for (int i = 0; i < 5000; i++) {
 			try {
-				Assert.assertTrue(madatoryErrorMsg.contains("Please fill all the details"));
+				softAssert.assertTrue(madatoryErrorMsg.contains("Please fill all the details"),
+						"Validate the message for invalid data in Customer Debt screen");
 				break;
 			} catch (Exception e) {
 				if (i == 4999) {
@@ -1882,61 +1927,6 @@ public class IJARAH_Steps {
 		}
 	}
 
-	@And("User_608 again click the first row pencil button under Financial Commitments in Customer Financials tab")
-	public void user_608_again_click_the_first_row_pencil_button_under_financial_commitments_in_customer_financials_tab()
-			throws Throwable {
-		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
-		String listOfAddButton = "";
-		String addButtonScreenName = "";
-		boolean isAddButtonClicked = false;
-		for (int i = 0; i <= 300; i++) {
-			try {
-				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
-				System.out.println("List of add button " + listOfAddButton);
-				if (!(listOfAddButton.isBlank())) {
-					break;
-				}
-			} catch (Exception e) {
-				if (i == 300) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-		int premitiveListOfAddButton = Integer.parseInt(listOfAddButton);
-		for (int j = 0; j < premitiveListOfAddButton; j++) {
-			for (int k = 0; k <= 300; k++) {
-				try {
-					addButtonScreenName = javascriptHelper.executeScript(
-							"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
-									+ j + "].textContent")
-							.toString();
-					System.out.println("Screen Name " + addButtonScreenName);
-					if (!(addButtonScreenName.isBlank())) {
-						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
-						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Financial Commitments").trim())) {
-							System.out.println("Inside nested loop");
-							System.out.println("document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]");
-							javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
-									"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]"));
-							javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement(
-									"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j
-											+ "].parentElement.parentElement.parentElement.nextElementSibling.querySelectorAll(\"table tbody tr td button\")[2]"));
-							isAddButtonClicked = true;
-							break;
-						}
-					}
-				} catch (Exception e) {
-					if (k == 300) {
-						Assert.fail(e.getMessage());
-					}
-				}
-
-			}
-			if (isAddButtonClicked == true) {
-				break;
-			}
-		}
-	}
 
 //	AT_CUD_003
 	@And("User_608 modify the Sanction amount in Customer Debt screen")
@@ -4690,56 +4680,43 @@ public class IJARAH_Steps {
 //	AT_CUD_004
 	@And("User_608 click Search button in Financial Commitments under Customer Financials tab")
 	public void user_608_click_search_button_in_financial_commitments_under_customer_financials_tab() throws Throwable {
-		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
-		String listOfAddButton = "";
-		String addButtonScreenName = "";
-		boolean isAddButtonClicked = false;
-		for (int i = 0; i <= 300; i++) {
+		String length = null;
+		for (int i = 0; i < 50000; i++) {
 			try {
-				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
-				System.out.println("List of add button " + listOfAddButton);
-				if (!(listOfAddButton.isBlank())) {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 300) {
+				if (i == 49999) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		int premitiveListOfAddButton = Integer.parseInt(listOfAddButton);
-		for (int j = 0; j < premitiveListOfAddButton; j++) {
-			for (int k = 0; k <= 300; k++) {
-				try {
-					addButtonScreenName = javascriptHelper.executeScript(
-							"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
-									+ j + "].textContent")
-							.toString();
-					System.out.println("Screen Name " + addButtonScreenName);
-					if (!(addButtonScreenName.isBlank())) {
-						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
-						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Financial Commitments").trim())) {
-							System.out.println("Inside nested loop");
-							System.out.println("document.querySelectorAll('button[icon=\"pi pi-search\"]')[" + j + "]");
-							javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
-									"document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
-											+ j + "]"));
-							javascriptHelper
-									.executeScriptWithWebElement(
-											"document.querySelectorAll('button[icon=\"pi pi-search\"]')[" + j + "]")
-									.click();
-							isAddButtonClicked = true;
-							break;
-						}
-					}
-				} catch (Exception e) {
-					if (k == 300) {
-						Assert.fail(e.getMessage());
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().contains("Financial Commitments")) {
+						System.out.println("condition true");
+						String titlePath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]";
+						javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(titlePath));
+						String jspath = "document.querySelectorAll('button[icon=\"pi pi-search\"]')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.moveToElement(btn).build().perform();
+						javascriptHelper.JSEClick(btn);
+						break;
 					}
 				}
-			}
-			if (isAddButtonClicked == true) {
 				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
 			}
 		}
 	}
@@ -4915,61 +4892,99 @@ public class IJARAH_Steps {
 
 //	AT_CUD_006
 	@And("User_608 click the first row pencil icon under Financial Commitments in Customer Financials tab")
-	public void user_608_click_the_first_row_pencil_icon_under_financial_commitments_in_customer_financials_tab()
-			throws Throwable {
-		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
-		String listOfAddButton = "";
-		String addButtonScreenName = "";
-		boolean isAddButtonClicked = false;
-		for (int i = 0; i <= 300; i++) {
+	public void user_608_click_the_first_row_pencil_icon_under_financial_commitments_in_customer_financials_tab() throws Throwable {
+		String length = null;
+		for (int i = 0; i < 50000; i++) {
 			try {
-				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
-				System.out.println("List of add button " + listOfAddButton);
-				if (!(listOfAddButton.isBlank())) {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 300) {
+				if (i == 49999) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		int premitiveListOfAddButton = Integer.parseInt(listOfAddButton);
-		for (int j = 0; j < premitiveListOfAddButton; j++) {
-			for (int k = 0; k <= 300; k++) {
-				try {
-					addButtonScreenName = javascriptHelper.executeScript(
-							"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
-									+ j + "].textContent")
-							.toString();
-					System.out.println("Screen Name " + addButtonScreenName);
-					if (!(addButtonScreenName.isBlank())) {
-						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
-						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Financial Commitments").trim())) {
-							System.out.println("Inside nested loop");
-							System.out.println("document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]");
-							javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
-									"document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
-											+ j + "]"));
-							javascriptHelper.executeScriptWithWebElement(
-									"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j
-											+ "].parentElement.parentElement.parentElement.nextElementSibling.querySelectorAll('table tbody tr td span button[icon=\"pi pi-pencil\"]')[0]")
-									.click();
-							isAddButtonClicked = true;
-							break;
-						}
-					}
-				} catch (Exception e) {
-					if (k == 300) {
-						Assert.fail(e.getMessage());
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().contains("Financial Commitments")) {
+						System.out.println("condition true");
+						String titlePath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]";
+						javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(titlePath));
+						String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j 
+								+ "].parentElement.parentElement.querySelectorAll('button[icon=\"pi pi-pencil\"]')[0]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.JSEClick(btn);
+						break;
 					}
 				}
-
-			}
-			if (isAddButtonClicked == true) {
 				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
 			}
 		}
+//		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
+//		String listOfAddButton = "";
+//		String addButtonScreenName = "";
+//		boolean isAddButtonClicked = false;
+//		for (int i = 0; i <= 300; i++) {
+//			try {
+//				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
+//				System.out.println("List of add button " + listOfAddButton);
+//				if (!(listOfAddButton.isBlank())) {
+//					break;
+//				}
+//			} catch (Exception e) {
+//				if (i == 300) {
+//					Assert.fail(e.getMessage());
+//				}
+//			}
+//		}
+//		int premitiveListOfAddButton = Integer.parseInt(listOfAddButton);
+//		for (int j = 0; j < premitiveListOfAddButton; j++) {
+//			for (int k = 0; k <= 300; k++) {
+//				try {
+//					addButtonScreenName = javascriptHelper.executeScript(
+//							"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
+//									+ j + "].textContent")
+//							.toString();
+//					System.out.println("Screen Name " + addButtonScreenName);
+//					if (!(addButtonScreenName.isBlank())) {
+//						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
+//						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Financial Commitments").trim())) {
+//							System.out.println("Inside nested loop");
+//							System.out.println("document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]");
+//							javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+//									"document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
+//											+ j + "]"));
+//							javascriptHelper.executeScriptWithWebElement(
+//									"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j
+//											+ "].parentElement.parentElement.parentElement.nextElementSibling.querySelectorAll('table tbody tr td span button[icon=\"pi pi-pencil\"]')[0]")
+//									.click();
+//							isAddButtonClicked = true;
+//							break;
+//						}
+//					}
+//				} catch (Exception e) {
+//					if (k == 300) {
+//						Assert.fail(e.getMessage());
+//					}
+//				}
+//
+//			}
+//			if (isAddButtonClicked == true) {
+//				break;
+//			}
+//		}
 	}
 
 	@And("User_608 click the Status Radio button under Customer Debt screen")

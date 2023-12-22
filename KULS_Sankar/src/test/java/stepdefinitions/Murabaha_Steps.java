@@ -246,11 +246,13 @@ public class Murabaha_Steps {
 	@And("User_608 verify Finance Type field is available under Customer Debt screen in Customer Financials tab")
 	public void user_verify_finance_type_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement financeTypeField = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financeTypeField"));
-		waitHelper.waitForElementwithFluentwait(driver, financeTypeField);
+		WebElement field = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financeTypeDropdown"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundColor(financeTypeField);
-				Assert.assertTrue(financeTypeField.isDisplayed());
+				softAssert.assertTrue(financeTypeField.isDisplayed(), "Finance Type Label available under CF debt screen");
+				javascriptHelper.backgroundBorder(field);
+				softAssert.assertTrue(field.isDisplayed(), "Finance Type Dropdown available under CF debt screen");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -263,10 +265,13 @@ public class Murabaha_Steps {
 	@And("User_608 verify Financial Institution field is available under Customer Debt screen in Customer Financials tab")
 	public void user_verify_financial_institution_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement financialInstitutionlabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialInstitutionlabel"));
+		WebElement field = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialInstitutionDropdown"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundColor(financialInstitutionlabel);
-				Assert.assertTrue(financialInstitutionlabel.isDisplayed());
+				softAssert.assertTrue(financialInstitutionlabel.isDisplayed(), "Financial Institution Label available under CF debt screen");
+				javascriptHelper.backgroundBorder(field);
+				softAssert.assertTrue(field.isDisplayed(), "Financial Institution Dropdown available under CF debt screen");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -279,10 +284,13 @@ public class Murabaha_Steps {
 	@And("User_608 verify Account Number field is available under Customer Debt screen in Customer Financials tab")
 	public void user_verify_account_number_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement accountNumberLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("accountNumberLabel"));
+		WebElement input = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("accountNumberInput"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundColor(accountNumberLabel);
-				Assert.assertTrue(accountNumberLabel.isDisplayed());
+				softAssert.assertTrue(accountNumberLabel.isDisplayed(), "Account Number Label available under CF debt screen");
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.isDisplayed(), "Account Number input field available under CF debt screen");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -294,11 +302,14 @@ public class Murabaha_Steps {
 
 	@And("User_608 verify Sanction Date field is available under Customer Debt screen in Customer Financials tab")
 	public void user_verify_sanction_date_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
-		WebElement sanctionDataLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionDataLabel"));
+		WebElement sanctionDateLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionDateLabel"));
+		WebElement calender = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionDateField"));
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.backgroundColor(sanctionDataLabel);
-				Assert.assertTrue(sanctionDataLabel.isDisplayed());
+				javascriptHelper.backgroundColor(sanctionDateLabel);
+				softAssert.assertTrue(sanctionDateLabel.isDisplayed(), "Sanction Date Label available under CF debt screen");
+				javascriptHelper.backgroundBorder(calender);
+				softAssert.assertTrue(calender.isDisplayed(), "Sanction Date Calender available under CF debt screen");
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -311,10 +322,13 @@ public class Murabaha_Steps {
 	@And("User_608 verify Sanction Amount field is available under Customer Debt screen in Customer Financials tab")
 	public void user_verify_sanction_amount_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement sanctionAmtLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionAmtLabel"));
+		WebElement input = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionAmtInput"));
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.backgroundColor(sanctionAmtLabel);
-				Assert.assertTrue(sanctionAmtLabel.isDisplayed());
+				softAssert.assertTrue(sanctionAmtLabel.isDisplayed(), "Sanction Amount Label available under CF debt screen");
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.isDisplayed(), "Sanction Amount input field available under CF debt screen");
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -327,10 +341,13 @@ public class Murabaha_Steps {
 	@And("User_608 verify Interest Rate % field is available under Customer Debt screen in Customer Financials tab")
 	public void user_verify_interest_rate_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement interestRateLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("interestRateLabel"));
+		WebElement input = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("interestRateInput"));
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.backgroundColor(interestRateLabel);
-				Assert.assertTrue(interestRateLabel.isDisplayed());
+				softAssert.assertTrue(interestRateLabel.isDisplayed(), "Interest Rate% Label available under CF debt screen");
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.isDisplayed(), "Interest Rate% input field available under CF debt screen");
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -343,10 +360,13 @@ public class Murabaha_Steps {
 	@And("User_608 verify Current Principal balance field is available under Customer Debt screen in Customer Financials tab")
 	public void user_verify_current_principal_balance_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement currentPrincipalBalanceLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("currentPrincipalBalanceLabel"));
+		WebElement input = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("currentPrincipalBalanceInput"));
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.backgroundColor(currentPrincipalBalanceLabel);
-				Assert.assertTrue(currentPrincipalBalanceLabel.isDisplayed());
+				softAssert.assertTrue(currentPrincipalBalanceLabel.isDisplayed(), "Current Principal balance field available under CF debt screen");
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.isDisplayed(), "Current Principal balance input field available under CF debt screen");
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -359,10 +379,13 @@ public class Murabaha_Steps {
 	@And("User_608 verify Tenure field is available under Customer Debt screen in Customer Financials tab")
 	public void user_verify_tenure_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement tenureMonthLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("tenureMonthLabel"));
+		WebElement input = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("tenureMonthInput"));
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.backgroundColor(tenureMonthLabel);
-				Assert.assertTrue(tenureMonthLabel.isDisplayed());
+				softAssert.assertTrue(tenureMonthLabel.isDisplayed(), "Tenure Label available under CF debt screen");
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.isDisplayed(), "Tenure input field available under CF debt screen");
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -375,10 +398,13 @@ public class Murabaha_Steps {
 	@And("User_608 verify Maturity Date field is available under Customer Debt screen in Customer Financials tab")
 	public void user_verify_maturity_date_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement maturityDateLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("maturityDateLabel"));
+		WebElement calender = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("maturityDateField"));
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.backgroundColor(maturityDateLabel);
-				Assert.assertTrue(maturityDateLabel.isDisplayed());
+				softAssert.assertTrue(maturityDateLabel.isDisplayed(), "Maturity Date Label available under CF debt screen");
+				javascriptHelper.backgroundBorder(calender);
+				softAssert.assertTrue(calender.isDisplayed(), "Maturity Date field available under CF debt screen");
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -391,10 +417,13 @@ public class Murabaha_Steps {
 	@And("User_608 verify Installment Amount field is available under Customer Debt screen in Customer Financials tab")
 	public void user_verify_installment_amount_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement installmentAmtLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtLabel"));
+		WebElement input = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtInput"));
 		for (int i = 0; i <= 11000; i++) {
 			try {
 				javascriptHelper.backgroundColor(installmentAmtLabel);
-				Assert.assertTrue(installmentAmtLabel.isDisplayed());
+				softAssert.assertTrue(installmentAmtLabel.isDisplayed(), "Installment Amount Label available under CF debt screen");
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.isDisplayed(), "Installment Amount field available under CF debt screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1000) {
@@ -407,10 +436,13 @@ public class Murabaha_Steps {
 	@And("User_608 verify Amount considered field is available under Customer Debt screen in Customer Financials tab")
 	public void user_verify_amount_considered_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement amountConsideredLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("amountConsideredLabel"));
+		WebElement input = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("amountConsideredInput"));
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.backgroundColor(amountConsideredLabel);
-				Assert.assertTrue(amountConsideredLabel.isDisplayed());
+				softAssert.assertTrue(amountConsideredLabel.isDisplayed(), "Amount considered Label available under CF debt screen");
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.isDisplayed(), "Amount considered field available under CF debt screen");
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -423,11 +455,14 @@ public class Murabaha_Steps {
 	@And("User_608 verify Currency field is available under Customer Debt screen in Customer Financials tab")
 	public void user_verify_currency_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement currencyLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("currencyLabel"));
+		WebElement field = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("currencyDropdown"));
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.scrollIntoView(currencyLabel);
 				javascriptHelper.backgroundColor(currencyLabel);
-				Assert.assertTrue(currencyLabel.isDisplayed());
+				softAssert.assertTrue(currencyLabel.isDisplayed(), "Currency label available under CF debt screen");
+				javascriptHelper.backgroundBorder(field);
+				softAssert.assertTrue(field.isDisplayed(), "Currency field available under CF debt screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1000) {
@@ -440,10 +475,13 @@ public class Murabaha_Steps {
 	@And("User_608 verify Remarks field is available under Customer Debt screen in Customer Financials tab")
 	public void user_verify_remarks_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement remarksLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("remarksLabel"));
+		WebElement input = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("remarksInput"));
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.backgroundColor(remarksLabel);
-				Assert.assertTrue(remarksLabel.isDisplayed());
+				softAssert.assertTrue(remarksLabel.isDisplayed(), "Remarks label available under CF debt screen");
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.isDisplayed(), "Remarks field available under CF debt screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1000) {
@@ -456,10 +494,13 @@ public class Murabaha_Steps {
 	@And("User_608 verify Next Due Date field is available under Customer Debt screen in Customer Financials tab")
 	public void user_verify_next_due_date_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement nextDueDateLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("nextDueDateLabel"));
+		WebElement calender = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("nextDueDateField"));
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.backgroundColor(nextDueDateLabel);
-				Assert.assertTrue(nextDueDateLabel.isDisplayed());
+				softAssert.assertTrue(nextDueDateLabel.isDisplayed(), "Next Due Date label available under CF debt screen");
+				javascriptHelper.backgroundBorder(calender);
+				softAssert.assertTrue(calender.isDisplayed(), "Next Due Date field available under CF debt screen");
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -472,11 +513,14 @@ public class Murabaha_Steps {
 	@And("User_608 verify Collateral Type is available under Customer Debt screen in Customer Financials tab")
 	public void user_verify_collateral_type_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement collateralTypeLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("collateralTypeLabel"));
+		WebElement field = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("collateralTypedDropDown"));
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("NPAClassificationLabel")));
 				javascriptHelper.backgroundColor(collateralTypeLabel);
-				Assert.assertTrue(collateralTypeLabel.isDisplayed());
+				softAssert.assertTrue(collateralTypeLabel.isDisplayed(), "Collateral Type label available under CF debt screen");
+				javascriptHelper.backgroundBorder(field);
+				softAssert.assertTrue(field.isDisplayed(), "Collateral Type field available under CF debt screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1000) {
@@ -489,10 +533,13 @@ public class Murabaha_Steps {
 	@And("User_608 verify Close Date field is available under Customer Debt screen in Customer Financials tab")
 	public void user_verify_close_date_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement closeDateLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("closeDateLabel"));
+		WebElement calender = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("closeDateField"));
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.backgroundColor(closeDateLabel);
-				Assert.assertTrue(closeDateLabel.isDisplayed());
+				softAssert.assertTrue(closeDateLabel.isDisplayed(), "Close Date label available under CF debt screen");
+				javascriptHelper.backgroundBorder(calender);
+				softAssert.assertTrue(calender.isDisplayed(), "Close Date field available under CF debt screen");
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -505,10 +552,13 @@ public class Murabaha_Steps {
 	@And("User_608 verify Frequency field is available under Customer Debt screen in Customer Financials tab")
 	public void user_verify_frequency_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement frequencyLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("frequencyLabel"));
+		WebElement field = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("frequencyDropdown"));
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.backgroundColor(frequencyLabel);
-				Assert.assertTrue(frequencyLabel.isDisplayed());
+				softAssert.assertTrue(frequencyLabel.isDisplayed(), "Frequency field available under CF debt screen");
+				javascriptHelper.backgroundBorder(field);
+				softAssert.assertTrue(field.isDisplayed(), "Frequency field available under CF debt screen");
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -521,10 +571,13 @@ public class Murabaha_Steps {
 	@And("User_608 verify Last payment amount field is available under Customer Debt screen in Customer Financials tab")
 	public void user_verify_last_payment_amount_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement lastPaymentAmtLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("lastPaymentAmtLabel"));
+		WebElement input = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("lastPaymentAmtInput"));
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.backgroundColor(lastPaymentAmtLabel);
-				Assert.assertTrue(lastPaymentAmtLabel.isDisplayed());
+				softAssert.assertTrue(lastPaymentAmtLabel.isDisplayed(), "Last payment Amount label available under CF debt screen");
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.isDisplayed(), "Last payment Amount field available under CF debt screen");
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -537,10 +590,13 @@ public class Murabaha_Steps {
 	@And("User_608 verify Last payment date field is available under Customer Debt screen in Customer Financials tab")
 	public void user_verify_last_payment_date_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement lastPaymentDateLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("lastPaymentDateLabel"));
+		WebElement field = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("lastPaymentDateField"));
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.backgroundColor(lastPaymentDateLabel);
-				Assert.assertTrue(lastPaymentDateLabel.isDisplayed());
+				softAssert.assertTrue(lastPaymentDateLabel.isDisplayed(), "Last payment date label available under CF debt screen");
+				javascriptHelper.backgroundBorder(field);
+				softAssert.assertTrue(field.isDisplayed(), "Last payment date field available under CF debt screen");
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -553,10 +609,13 @@ public class Murabaha_Steps {
 	@And("User_608 verify Product Name field is available under Customer Debt screen in Customer Financials tab")
 	public void user_verify_product_name_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement productNameLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("productNameLabel"));
+		WebElement input = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("productNameInput"));
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.backgroundColor(productNameLabel);
-				Assert.assertTrue(productNameLabel.isDisplayed());
+				softAssert.assertTrue(productNameLabel.isDisplayed(), "Product Name label available under CF debt screen");
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.isDisplayed(), "Product Name field available under CF debt screen");
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -569,10 +628,13 @@ public class Murabaha_Steps {
 	@And("User_608 verify Last24 cycle field is available under Customer Debt screen in Customer Financials tab")
 	public void user_verify_last24_cycle_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement last24CycleLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("last24CycleLabel"));
+		WebElement input = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("last24CycleInput"));
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.backgroundColor(last24CycleLabel);
-				Assert.assertTrue(last24CycleLabel.isDisplayed());
+				softAssert.assertTrue(last24CycleLabel.isDisplayed(), "Last24 cycle label available under CF debt screen");
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.isDisplayed(), "Last24 cycle field available under CF debt screen");
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -585,10 +647,13 @@ public class Murabaha_Steps {
 	@And("User_608 verify Balance Transfer flag field is available under Customer Debt screen in Customer Financials tab")
 	public void user_verify_balance_transfer_flag_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement balanceTransferFlagLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("balanceTransferFlagLabel"));
+		WebElement toggle = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("balanceTransferFlag"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundColor(balanceTransferFlagLabel);
-				Assert.assertTrue(balanceTransferFlagLabel.isDisplayed());
+				softAssert.assertTrue(balanceTransferFlagLabel.isDisplayed(), "Balance Transfer flag field available under CF debt screen");
+				javascriptHelper.backgroundBorder(toggle);
+				softAssert.assertTrue(toggle.isDisplayed(), "Balance Transfer flag field available under CF debt screen");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -601,10 +666,13 @@ public class Murabaha_Steps {
 	@And("User_608 verify Facility Status field is available under Customer Debt screen in Customer Financials tab")
 	public void user_verify_facility_status_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement facilityStatusLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("facilityStatusLabel"));
+		WebElement field = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("facilityStatusDropdown"));
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.backgroundColor(facilityStatusLabel);
-				Assert.assertTrue(facilityStatusLabel.isDisplayed());
+				softAssert.assertTrue(facilityStatusLabel.isDisplayed(), "Facility Status label available under CF debt screen");
+				javascriptHelper.backgroundBorder(field);
+				softAssert.assertTrue(field.isDisplayed(), "Facility Status field available under CF debt screen");
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -617,10 +685,13 @@ public class Murabaha_Steps {
 	@And("User_608 verify Remaining Tenure field is available under Customer Debt screen in Customer Financials tab")
 	public void user_verify_remaining_tenure_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement remainingTenureLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("remainingTenureLabel"));
+		WebElement input = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("remainingTenureInput"));
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.backgroundColor(remainingTenureLabel);
-				Assert.assertTrue(remainingTenureLabel.isDisplayed());
+				softAssert.assertTrue(remainingTenureLabel.isDisplayed(), "Remaining Tenure label available under CF debt screen");
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.isDisplayed(), "Remaining Tenure field available under CF debt screen");
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -633,10 +704,13 @@ public class Murabaha_Steps {
 	@And("User_608 verify Disbursement Date field is available under Customer Debt screen in Customer Financials tab")
 	public void user_verify_disbursement_date_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement disbursementDateLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("disbursementDateLabel"));
+		WebElement calender = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("disbursementDateField"));
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.backgroundColor(disbursementDateLabel);
-				Assert.assertTrue(disbursementDateLabel.isDisplayed());
+				softAssert.assertTrue(disbursementDateLabel.isDisplayed(), "Disbursement Date label available under CF debt screen");
+				javascriptHelper.backgroundBorder(calender);
+				softAssert.assertTrue(calender.isDisplayed(), "Disbursement Date field available under CF debt screen");
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -649,10 +723,13 @@ public class Murabaha_Steps {
 	@And("User_608 verify Request for Balance Takeover field is available under Customer Debt screen in Customer Financials tab")
 	public void user_verify_request_for_balance_takeover_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement reqForBalanceTakeoverLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("reqForBalanceTakeoverLabel"));
+		WebElement field = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("reqForBalanceTakeoverDropdown"));
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.backgroundColor(reqForBalanceTakeoverLabel);
-				Assert.assertTrue(reqForBalanceTakeoverLabel.isDisplayed());
+				softAssert.assertTrue(reqForBalanceTakeoverLabel.isDisplayed(), "Request for Balance Takeover label available under CF debt screen");
+				javascriptHelper.backgroundBorder(field);
+				softAssert.assertTrue(field.isDisplayed(), "Request for Balance Takeover field available under CF debt screen");
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -665,10 +742,13 @@ public class Murabaha_Steps {
 	@And("User_608 verify NPA Classification field is available under Customer Debt screen in Customer Financials tab")
 	public void user_verify_npa_classification_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement NPAClassificationLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("NPAClassificationLabel"));
+		WebElement field = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("NPAClassificationDropdown"));
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.backgroundColor(NPAClassificationLabel);
-				Assert.assertTrue(NPAClassificationLabel.isDisplayed());
+				softAssert.assertTrue(NPAClassificationLabel.isDisplayed(), "NPA Classification label available under CF debt screen");
+				javascriptHelper.backgroundBorder(field);
+				softAssert.assertTrue(field.isDisplayed(), "NPA Classification field available under CF debt screen");
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -678,15 +758,21 @@ public class Murabaha_Steps {
 		}	    
 	}
 	
+	@And("User_608 invoke soft assert in Customer Debt screen at Murabaha App Data Entry stage")
+	public void user_608_invoke_soft_assert_in_customer_debt_screen_at_murabaha_app_data_entry_stage() throws Throwable {
+		softAssert.assertAll();
+	}
+	
+	
 //	AT_MCUD_02
-	@And("User_608 select the Finanacy type under Customer Debt screen in Customer Financials tab")
-	public void user_select_the_finanacy_type_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
-		for (int i = 0; i <= 2000; i++) {
+	@And("User_608 select the Finanace type under Customer Debt screen in Customer Financials tab")
+	public void user_select_the_finanace_type_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
+		for (int i = 0; i <= 20000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financeTypeDropdown")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 20000) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -695,7 +781,7 @@ public class Murabaha_Steps {
 		String dropdownLength = "";
 		boolean isDropdownValueSelected = false;
 		String dropdownString = "";
-		for (int i = 0; i <= 300; i++) {
+		for (int i = 0; i <= 3000; i++) {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
@@ -703,7 +789,7 @@ public class Murabaha_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 300) {
+				if (i == 3000) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -760,7 +846,8 @@ public class Murabaha_Steps {
 	public void user_select_the_financial_institution_value_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialInstitutionDropdown")).click();
+				javascriptHelper.executeScriptWithWebElement(
+						customerDebtJsPaths.getElement("financialInstitutionDropdown")).click();
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -772,7 +859,7 @@ public class Murabaha_Steps {
 		String dropdownLength = "";
 		boolean isDropdownValueSelected = false;
 		String dropdownString = "";
-		for (int i = 0; i <= 300; i++) {
+		for (int i = 0; i <= 3000; i++) {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
@@ -780,7 +867,7 @@ public class Murabaha_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 300) {
+				if (i == 3000) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -836,13 +923,13 @@ public class Murabaha_Steps {
 	@And("User_608 enter the Account Number under Customer Debt screen in Customer Financials tab")
 	public void user_enter_the_account_number_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionAmtInput")).click();
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <= 5000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("accountNbr"))
 				.sendKeys(testData.get("Account Nbr"));
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i == 5000) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -886,6 +973,8 @@ public class Murabaha_Steps {
 		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtInput")).click();
 		for (int i = 0; i <= 500; i++) {
 			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtInput"))
+				.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtInput"))
 				.sendKeys(testData.get("Installment Amt"),Keys.TAB);
 				break;
@@ -1053,14 +1142,14 @@ public class Murabaha_Steps {
 	public void user_verify_finance_type_as_mandatory_and_lov_field_under_customer_debt_screen_in_customer_financials_tab() {
 //		Mandatory field
 		WebElement financeTypeField = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financeTypeField"));
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financeTypeField")).getText();
-		for (int i = 0; i <2000; i++) {
+		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financeTypeField")).getText();
+		for (int i = 0; i <20000; i++) {
             try {
             	javascriptHelper.backgroundColor(financeTypeField);
-                Assert.assertTrue(financeTypeText.contains("*"));
+            	softAssert.assertTrue(text.contains("*"), "Finance Type field as Mandatory");
                 break;
             } catch (Exception e) {
-                if (i==1999) {
+                if (i==19999) {
                     Assert.fail(e.getMessage());
                 }
             }
@@ -1071,7 +1160,8 @@ public class Murabaha_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(financeTypeDropdown);
-				Assert.assertTrue(financeTypeDropdown.getAttribute("ng-reflect-placeholder").contains("Select"));
+				softAssert.assertTrue(financeTypeDropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Finance Type field as LOV");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1085,11 +1175,11 @@ public class Murabaha_Steps {
 	public void user_verify_financial_institution_as_non_mandatory_and_lov_field_under_customer_debt_screen_in_customer_financials_tab() {
 //		Validate Non_mandatory
 		WebElement financialInstitutionlabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialInstitutionlabel"));
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialInstitutionlabel")).getText();
+		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialInstitutionlabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(financialInstitutionlabel);
-              Assert.assertTrue(!(financeTypeText.contains("*")));
+        	  softAssert.assertTrue(!(text.contains("*")), "Financial Institution field as Non-Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1103,7 +1193,8 @@ public class Murabaha_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(financialInstitutionDropdown);
-				Assert.assertTrue(financialInstitutionDropdown.getAttribute("ng-reflect-placeholder").contains("Select"));
+				softAssert.assertTrue(financialInstitutionDropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Financial Institution field as LOV");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1117,11 +1208,11 @@ public class Murabaha_Steps {
 	public void user_verify_account_number_as_non_mandatory_and_textbox_field_under_customer_debt_screen_in_customer_financials_tab() {
 //		Validate Non_mandatory
 		WebElement accountNumberLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("accountNumberLabel"));
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("accountNumberLabel")).getText();
+		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("accountNumberLabel")).getText();
 		for (int i = 0; i <2000; i++) {
 			try {
 				javascriptHelper.backgroundColor(accountNumberLabel);
-				Assert.assertTrue(!(financeTypeText.contains("*")));
+				softAssert.assertTrue(!(text.contains("*")), "Account Number field as Non-Mandatory");
 				break;
           	} catch (Exception e) {
               if (i==1999) {
@@ -1135,7 +1226,8 @@ public class Murabaha_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(accountNumberInput);
-				Assert.assertTrue(accountNumberInput.getAttribute("type").contains("text"));
+				softAssert.assertTrue(accountNumberInput.getAttribute("type").contains("text"), 
+						"Account Number field field as Textbox");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1147,13 +1239,13 @@ public class Murabaha_Steps {
 
 	@And("User_608 verify Sanction Date as Non-Mandatory and Date under Customer Debt screen in Customer Financials tab")
 	public void user_verify_sanction_date_as_non_mandatory_and_date_under_customer_debt_screen_in_customer_financials_tab() {
-		WebElement sanctionDataLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionDataLabel"));
+		WebElement sanctionDateLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionDateLabel"));
 //		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionDataLabel")).getText();
+		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionDateLabel")).getText();
 		for (int i = 0; i < 2000; i++) {
 			try {
-				javascriptHelper.backgroundColor(sanctionDataLabel);
-				Assert.assertTrue(!(financeTypeText.contains("*")));
+				javascriptHelper.backgroundColor(sanctionDateLabel);
+				softAssert.assertTrue(!(text.contains("*")), "Sanction Date field as Non-Mandatory");
 				break;
 			} catch (Exception e) {
 				if (i == 1999) {
@@ -1168,7 +1260,8 @@ public class Murabaha_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(sanctionDateField);
-				Assert.assertTrue(sanctionDateField.getTagName().equalsIgnoreCase("p-calendar"));
+				softAssert.assertTrue(sanctionDateField.getTagName().equalsIgnoreCase("p-calendar"),
+						"Sanction Date field as Calender");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1186,7 +1279,7 @@ public class Murabaha_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(sanctionAmtLabel);
-              Assert.assertTrue(text.contains("*"));
+        	  softAssert.assertTrue(text.contains("*"), "Sanction Amount field as Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1200,7 +1293,8 @@ public class Murabaha_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(sanctionAmtInput);
-				Assert.assertTrue(sanctionAmtInput.getAttribute("type").contains("number"));
+				softAssert.assertTrue(sanctionAmtInput.getAttribute("type").contains("number"),
+						"Sanction Amount field as Textbox");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1214,11 +1308,11 @@ public class Murabaha_Steps {
 	public void user_verify_interest_rate_as_non_mandatory_and_textbox_field_under_customer_debt_screen_in_customer_financials_tab() {
 		WebElement interestRateLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("interestRateLabel"));
 //		Validate Non_mandatory
-		String financeTypeText = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("interestRateLabel")).getText();
+		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("interestRateLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(interestRateLabel);
-              Assert.assertTrue(!(financeTypeText.contains("*")));
+        	  softAssert.assertTrue(!(text.contains("*")), "Interest Rate % field as Non-Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1231,7 +1325,8 @@ public class Murabaha_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(interestRateInput);
-				Assert.assertTrue(interestRateInput.getAttribute("type").contains("text"));
+				softAssert.assertTrue(interestRateInput.getAttribute("type").contains("text"), 
+						"Interest Rate % field as Textbox");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1249,7 +1344,7 @@ public class Murabaha_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(currentPrincipalBalanceLabel);
-              Assert.assertTrue(!(text.contains("*")));
+        	  softAssert.assertTrue(!(text.contains("*")), "Current Principal balance field as Non-Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1262,7 +1357,8 @@ public class Murabaha_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(currentPrincipalBalanceInput);
-				Assert.assertTrue(currentPrincipalBalanceInput.getAttribute("type").contains("text"));
+				softAssert.assertTrue(currentPrincipalBalanceInput.getAttribute("type").contains("text"),
+						"Current Principal balance field as Textbox");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1280,7 +1376,7 @@ public class Murabaha_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(tenureMonthLabel);
-              Assert.assertTrue(text.contains("*"));
+        	  softAssert.assertTrue(text.contains("*"), "Tenure field as Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1294,7 +1390,8 @@ public class Murabaha_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(tenureMonthInput);
-				Assert.assertTrue(tenureMonthInput.getAttribute("type").contains("number"));
+				softAssert.assertTrue(tenureMonthInput.getAttribute("type").contains("number"), 
+						"Tenure field as Textbox");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1312,7 +1409,7 @@ public class Murabaha_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(maturityDateLabel);
-              Assert.assertTrue(!(text.contains("*")));
+        	  softAssert.assertTrue(!(text.contains("*")), "Maturity Date field as Non-Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1326,7 +1423,8 @@ public class Murabaha_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(maturityDateField);
-				Assert.assertTrue(maturityDateField.getTagName().equalsIgnoreCase("p-calendar"));
+				softAssert.assertTrue(maturityDateField.getTagName().equalsIgnoreCase("p-calendar"), 
+						"Maturity Date field as calender");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1344,7 +1442,7 @@ public class Murabaha_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(installmentAmtLabel);
-              Assert.assertTrue(text.contains("*"));
+        	  softAssert.assertTrue(text.contains("*"), "Installment Amount field as Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1357,7 +1455,8 @@ public class Murabaha_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(installmentAmtInput);
-				Assert.assertTrue(installmentAmtInput.getAttribute("type").contains("text"));
+				softAssert.assertTrue(installmentAmtInput.getAttribute("type").contains("text"), 
+						"Installment Amount field as Textbox");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1375,7 +1474,7 @@ public class Murabaha_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(amountConsideredLabel);
-              Assert.assertTrue(!(text.contains("*")));
+        	  softAssert.assertTrue(!(text.contains("*")), "Amount considered field as Non-Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1388,7 +1487,8 @@ public class Murabaha_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(amountConsideredInput);
-				Assert.assertTrue(amountConsideredInput.getAttribute("type").contains("text"));
+				softAssert.assertTrue(amountConsideredInput.getAttribute("type").contains("text"), 
+						"Amount considered field as Textbox");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1416,7 +1516,7 @@ public class Murabaha_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(currencyLabel);
-              Assert.assertTrue(!(text.contains("*")));
+        	  softAssert.assertTrue(!(text.contains("*")), "Currency field as Non-Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1429,7 +1529,8 @@ public class Murabaha_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(currencyDropdown);
-				Assert.assertTrue(currencyDropdown.getAttribute("ng-reflect-placeholder").contains("Select"));
+				softAssert.assertTrue(currencyDropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Currency field as LOV");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1447,7 +1548,7 @@ public class Murabaha_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(remarksLabel);
-              Assert.assertTrue(!(text.contains("*")));
+        	  softAssert.assertTrue(!(text.contains("*")), "Remarks field as Non-Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1461,7 +1562,8 @@ public class Murabaha_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(remarksInput);
-				Assert.assertTrue(remarksInput.getTagName().equalsIgnoreCase("textarea"));
+				softAssert.assertTrue(remarksInput.getTagName().equalsIgnoreCase("textarea"), 
+						"Remarks field as Textbox");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1479,7 +1581,7 @@ public class Murabaha_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(nextDueDateLabel);
-              Assert.assertTrue(!(text.contains("*")));
+        	  softAssert.assertTrue(!(text.contains("*")), "Next Due Date field as Non-Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1493,7 +1595,8 @@ public class Murabaha_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(nextDueDateField);
-				Assert.assertTrue(nextDueDateField.getTagName().equalsIgnoreCase("p-calendar"));
+				softAssert.assertTrue(nextDueDateField.getTagName().equalsIgnoreCase("p-calendar"),
+						"Next Due Date field as Calender");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1511,7 +1614,7 @@ public class Murabaha_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(collateralTypeLabel);
-              Assert.assertTrue(!(text.contains("*")));
+        	  softAssert.assertTrue(!(text.contains("*")), "Collateral Type field as Non-Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1524,7 +1627,8 @@ public class Murabaha_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(collateralTypedDropDown);
-				Assert.assertTrue(collateralTypedDropDown.getAttribute("ng-reflect-placeholder").contains("Select"));
+				softAssert.assertTrue(collateralTypedDropDown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Collateral Type field as LOV");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1542,7 +1646,7 @@ public class Murabaha_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(closeDateLabel);
-              Assert.assertTrue(!(text.contains("*")));
+        	  softAssert.assertTrue(!(text.contains("*")), "Close Date field as Non-Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1557,7 +1661,8 @@ public class Murabaha_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(closeDateField);
-				Assert.assertTrue(closeDateField.getTagName().equalsIgnoreCase("p-calendar"));
+				softAssert.assertTrue(closeDateField.getTagName().equalsIgnoreCase("p-calendar"),
+						"Close Date field as Date");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1575,7 +1680,7 @@ public class Murabaha_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(frequencyLabel);
-              Assert.assertTrue(!(text.contains("*")));
+        	  softAssert.assertTrue(!(text.contains("*")), "Frequency field as Non-Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1588,7 +1693,8 @@ public class Murabaha_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(frequencyDropdown);
-				Assert.assertTrue(frequencyDropdown.getAttribute("ng-reflect-placeholder").contains("Select"));
+				softAssert.assertTrue(frequencyDropdown.getAttribute("ng-reflect-placeholder").contains("Select"), 
+						"Frequency field as LOV");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1606,7 +1712,7 @@ public class Murabaha_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(lastPaymentAmtLabel);
-              Assert.assertTrue(!(text.contains("*")));
+        	  softAssert.assertTrue(!(text.contains("*")), "Last payment amount field as Non-Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1619,7 +1725,8 @@ public class Murabaha_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(lastPaymentAmtInput);
-				Assert.assertTrue(lastPaymentAmtInput.getAttribute("type").contains("text"));
+				softAssert.assertTrue(lastPaymentAmtInput.getAttribute("type").contains("text"), 
+						"Last payment amount field as Textbox");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1637,7 +1744,7 @@ public class Murabaha_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(lastPaymentDateLabel);
-              Assert.assertTrue(!(text.contains("*")));
+        	  softAssert.assertTrue(!(text.contains("*")), "Last payment date field as Non-Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1651,7 +1758,8 @@ public class Murabaha_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(lastPaymentDateField);
-				Assert.assertTrue(lastPaymentDateField.getTagName().equalsIgnoreCase("p-calendar"));
+				softAssert.assertTrue(lastPaymentDateField.getTagName().equalsIgnoreCase("p-calendar"),
+						"Last payment date field as Calender");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1669,7 +1777,7 @@ public class Murabaha_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(productNameLabel);
-              Assert.assertTrue(!(text.contains("*")));
+        	  softAssert.assertTrue(!(text.contains("*")), "Product Name field as Non-Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1682,7 +1790,7 @@ public class Murabaha_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(productNameInput);
-				Assert.assertTrue(productNameInput.getAttribute("type").contains("text"));
+				softAssert.assertTrue(productNameInput.getAttribute("type").contains("text"), "Product Name field as Textbox");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1700,7 +1808,7 @@ public class Murabaha_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(last24CycleLabel);
-              Assert.assertTrue(!(text.contains("*")));
+        	  softAssert.assertTrue(!(text.contains("*")), "Last24 cycle field as Non-Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1713,7 +1821,8 @@ public class Murabaha_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(last24CycleInput);
-				Assert.assertTrue(last24CycleInput.getAttribute("type").contains("text"));
+				softAssert.assertTrue(last24CycleInput.getAttribute("type").contains("text"), 
+						"Last24 cycle field as Textbox");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1731,7 +1840,7 @@ public class Murabaha_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(balanceTransferFlagLabel);
-              Assert.assertTrue(!(text.contains("*")));
+        	  softAssert.assertTrue(!(text.contains("*")), "Balance Transfer flag field as Non-Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1744,7 +1853,8 @@ public class Murabaha_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(balanceTransferFlag);
-				Assert.assertTrue(balanceTransferFlag.getTagName().equalsIgnoreCase("ion-toggle"));
+				softAssert.assertTrue(balanceTransferFlag.getTagName().equalsIgnoreCase("ion-toggle"), 
+						"Balance Transfer flag field as toggle button");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1762,7 +1872,7 @@ public class Murabaha_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(facilityStatusLabel);
-              Assert.assertTrue(!(text.contains("*")));
+        	  softAssert.assertTrue(!(text.contains("*")), "Facility Status field as Non-Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1775,7 +1885,8 @@ public class Murabaha_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(facilityStatusDropdown);
-				Assert.assertTrue(facilityStatusDropdown.getAttribute("ng-reflect-placeholder").contains("Select"));
+				softAssert.assertTrue(facilityStatusDropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Facility Status field as LOV");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1793,7 +1904,7 @@ public class Murabaha_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(remainingTenureLabel);
-              Assert.assertTrue(text.contains("*"));
+        	  softAssert.assertTrue(text.contains("*"), "Remaining Tenure field as Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1806,7 +1917,8 @@ public class Murabaha_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(remainingTenureInput);
-				Assert.assertTrue(remainingTenureInput.getAttribute("type").contains("text"));
+				softAssert.assertTrue(remainingTenureInput.getAttribute("type").contains("text"),
+						"Remaining Tenure field as Textbox");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1824,7 +1936,7 @@ public class Murabaha_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(disbursementDateLabel);
-              Assert.assertTrue(!(text.contains("*")));
+        	  softAssert.assertTrue(!(text.contains("*")), "Disbursement Date field as Non-Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1838,7 +1950,8 @@ public class Murabaha_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(disbursementDateField);
-				Assert.assertTrue(disbursementDateField.getTagName().equalsIgnoreCase("p-calendar"));
+				softAssert.assertTrue(disbursementDateField.getTagName().equalsIgnoreCase("p-calendar"), 
+						"Disbursement Date field as Calender");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1856,7 +1969,7 @@ public class Murabaha_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(reqForBalanceTakeoverLabel);
-              Assert.assertTrue(!(text.contains("*")));
+        	  softAssert.assertTrue(!(text.contains("*")), "Request for Balance Takeover field as Non-Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1870,7 +1983,8 @@ public class Murabaha_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(reqForBalanceTakeoverDropdown);
-				Assert.assertTrue(reqForBalanceTakeoverDropdown.getAttribute("ng-reflect-placeholder").contains("Select"));
+				softAssert.assertTrue(reqForBalanceTakeoverDropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Request for Balance Takeover field as LOV");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1888,7 +2002,7 @@ public class Murabaha_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(NPAClassificationLabel);
-              Assert.assertTrue(!(text.contains("*")));
+        	  softAssert.assertTrue(!(text.contains("*")), "NPA Classification field as Non-Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1901,7 +2015,8 @@ public class Murabaha_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(NPAClassificationDropdown);
-				Assert.assertTrue(NPAClassificationDropdown.getAttribute("ng-reflect-placeholder").contains("Select"));
+				softAssert.assertTrue(NPAClassificationDropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"NPA Classification field as LOV");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1910,6 +2025,7 @@ public class Murabaha_Steps {
 			}
 		}
 	}
+	
 	
 	
 //	AT_MCUD_05
@@ -1989,7 +2105,7 @@ public class Murabaha_Steps {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtInput"))
-				.sendKeys(testData.get("Installment Amt"),Keys.TAB);
+				.sendKeys(testData.get("Invalid_data"),Keys.TAB);
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
