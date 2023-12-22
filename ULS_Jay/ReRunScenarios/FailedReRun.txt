@@ -1,0 +1,2 @@
+file:src/test/java/features/Tawarruq_AppDataEntry_LivingExpenses.feature:4:30
+file:src/test/java/features/Tawarruq_CommodityMaker_AdhocPayment.feature:4

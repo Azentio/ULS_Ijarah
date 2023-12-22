@@ -231,13 +231,13 @@ public class Ijara_Steps_610 {
 
 	@And("User_610 click Inbox")
 	public void user_610_click_inbox() throws Throwable {
-		
-		for (int i = 0; i < 200; i++) {
+		Thread.sleep(500);
+		for (int i = 0; i < 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Select_inbox_610")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 199) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -249,12 +249,12 @@ public class Ijara_Steps_610 {
 		//waitHelper.waitForElementwithFluentwait(driver,javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("click_searchButton_610")));
 		//javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("click_searchButton_610")).click();
 		
-		for (int i = 0; i < 200; i++) {
+		for (int i = 0; i < 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("click_searchButton_610")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 199) {
+				if (i == 299) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -263,9 +263,20 @@ public class Ijara_Steps_610 {
 
 	@And("User_610 enter the value in search button")
 	public void user_610_enter_the_value_in_search_button() throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver,javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("enter_theName_InSearchBtn_610")));
-		javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("enter_theName_InSearchBtn_610")).sendKeys(testData.get("Search Button Value"));
+		//waitHelper.waitForElementwithFluentwait(driver,javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("enter_theName_InSearchBtn_610")));
+		//javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("enter_theName_InSearchBtn_610")).sendKeys(testData.get("Search Button Value"));
 		
+		for (int i = 0; i < 300; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("enter_theName_InSearchBtn_610"))
+				.sendKeys(testData.get("Search Button Value"));
+				break;
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
 		
 		//System.out.println(jsPaths2.getElement("clickEditBtnIn_FirstRow_UnderInbox_610"));
 		Thread.sleep(1000);
@@ -277,12 +288,12 @@ public class Ijara_Steps_610 {
 	public void user_610_click_edit_button_under_inbox_screen() throws Throwable {
 	
 		
-		for (int i = 0; i < 300; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("clickEditBtnIn_FirstRow_UnderInbox_610")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				// TODO: handle exception
 			}

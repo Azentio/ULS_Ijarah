@@ -26,11 +26,7 @@ public class IjaraLogin extends BaseClass {
 		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName"))
 				.sendKeys(loginTestData.get("UserName"));
 		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("continueButton")).click();
-		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
-		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
-				.sendKeys(loginTestData.get("Password"));
 		for (int i = 0; i <= 300; i++) {
-
 			try {
 
 				String otp = javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString();
@@ -38,7 +34,6 @@ public class IjaraLogin extends BaseClass {
 				if (!(javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString()
 						.isBlank())) {
 
-					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
 					break;
 				}
 			} catch (Exception e) {
@@ -47,6 +42,10 @@ public class IjaraLogin extends BaseClass {
 				}
 			}
 		}
+		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
+		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
+				.sendKeys(loginTestData.get("Password"));
+		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
 
 		Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).isDisplayed());
 
@@ -58,11 +57,7 @@ public class IjaraLogin extends BaseClass {
 		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName"))
 				.sendKeys(loginTestData.get("UserName"));
 		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("continueButton")).click();
-		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
-		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
-				.sendKeys(loginTestData.get("Password"));
 		for (int i = 0; i <= 300; i++) {
-
 			try {
 
 				String otp = javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString();
@@ -70,7 +65,6 @@ public class IjaraLogin extends BaseClass {
 				if (!(javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString()
 						.isBlank())) {
 
-					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
 					break;
 				}
 			} catch (Exception e) {
@@ -79,9 +73,12 @@ public class IjaraLogin extends BaseClass {
 				}
 			}
 		}
+		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
+		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
+				.sendKeys(loginTestData.get("Password"));
+		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
 
 		Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).isDisplayed());
-
 	}
 	
 	//---------user 03
@@ -92,11 +89,7 @@ public class IjaraLogin extends BaseClass {
 		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName"))
 				.sendKeys(loginTestData.get("UserName"));
 		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("continueButton")).click();
-		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
-		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
-				.sendKeys(loginTestData.get("Password"));
 		for (int i = 0; i <= 300; i++) {
-
 			try {
 
 				String otp = javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString();
@@ -104,7 +97,6 @@ public class IjaraLogin extends BaseClass {
 				if (!(javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString()
 						.isBlank())) {
 
-					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
 					break;
 				}
 			} catch (Exception e) {
@@ -113,9 +105,12 @@ public class IjaraLogin extends BaseClass {
 				}
 			}
 		}
+		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
+		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
+				.sendKeys(loginTestData.get("Password"));
+		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
 
 		Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).isDisplayed());
-
 	}
 	
 	//---------user 04
@@ -126,11 +121,7 @@ public class IjaraLogin extends BaseClass {
 			javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName"))
 					.sendKeys(loginTestData.get("UserName"));
 			javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("continueButton")).click();
-			javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
-			javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
-					.sendKeys(loginTestData.get("Password"));
 			for (int i = 0; i <= 300; i++) {
-
 				try {
 
 					String otp = javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString();
@@ -138,7 +129,6 @@ public class IjaraLogin extends BaseClass {
 					if (!(javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString()
 							.isBlank())) {
 
-						javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
 						break;
 					}
 				} catch (Exception e) {
@@ -147,9 +137,12 @@ public class IjaraLogin extends BaseClass {
 					}
 				}
 			}
+			javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
+			javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
+					.sendKeys(loginTestData.get("Password"));
+			javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
 
 			Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).isDisplayed());
-
 		}
 		
 		
@@ -161,11 +154,7 @@ public class IjaraLogin extends BaseClass {
 			javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName"))
 					.sendKeys(loginTestData.get("UserName"));
 			javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("continueButton")).click();
-			javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
-			javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
-					.sendKeys(loginTestData.get("Password"));
 			for (int i = 0; i <= 300; i++) {
-
 				try {
 
 					String otp = javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString();
@@ -173,7 +162,6 @@ public class IjaraLogin extends BaseClass {
 					if (!(javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString()
 							.isBlank())) {
 
-						javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
 						break;
 					}
 				} catch (Exception e) {
@@ -182,9 +170,12 @@ public class IjaraLogin extends BaseClass {
 					}
 				}
 			}
+			javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
+			javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
+					.sendKeys(loginTestData.get("Password"));
+			javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
 
 			Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).isDisplayed());
-
 		}
 		
 		//---------user 06
@@ -195,11 +186,7 @@ public class IjaraLogin extends BaseClass {
 					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName"))
 							.sendKeys(loginTestData.get("UserName"));
 					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("continueButton")).click();
-					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
-					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
-							.sendKeys(loginTestData.get("Password"));
 					for (int i = 0; i <= 300; i++) {
-
 						try {
 
 							String otp = javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString();
@@ -207,7 +194,6 @@ public class IjaraLogin extends BaseClass {
 							if (!(javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString()
 									.isBlank())) {
 
-								javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
 								break;
 							}
 						} catch (Exception e) {
@@ -216,6 +202,10 @@ public class IjaraLogin extends BaseClass {
 							}
 						}
 					}
+					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
+					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
+							.sendKeys(loginTestData.get("Password"));
+					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
 
 					Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).isDisplayed());
 
@@ -229,11 +219,7 @@ public class IjaraLogin extends BaseClass {
 					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName"))
 							.sendKeys(loginTestData.get("UserName"));
 					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("continueButton")).click();
-					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
-					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
-							.sendKeys(loginTestData.get("Password"));
 					for (int i = 0; i <= 300; i++) {
-
 						try {
 
 							String otp = javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString();
@@ -241,7 +227,6 @@ public class IjaraLogin extends BaseClass {
 							if (!(javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString()
 									.isBlank())) {
 
-								javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
 								break;
 							}
 						} catch (Exception e) {
@@ -250,6 +235,10 @@ public class IjaraLogin extends BaseClass {
 							}
 						}
 					}
+					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
+					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
+							.sendKeys(loginTestData.get("Password"));
+					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
 
 					Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).isDisplayed());
 
@@ -263,11 +252,7 @@ public class IjaraLogin extends BaseClass {
 					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName"))
 							.sendKeys(loginTestData.get("UserName"));
 					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("continueButton")).click();
-					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
-					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
-							.sendKeys(loginTestData.get("Password"));
 					for (int i = 0; i <= 300; i++) {
-
 						try {
 
 							String otp = javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString();
@@ -275,7 +260,6 @@ public class IjaraLogin extends BaseClass {
 							if (!(javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString()
 									.isBlank())) {
 
-								javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
 								break;
 							}
 						} catch (Exception e) {
@@ -284,6 +268,10 @@ public class IjaraLogin extends BaseClass {
 							}
 						}
 					}
+					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
+					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
+							.sendKeys(loginTestData.get("Password"));
+					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
 
 					Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).isDisplayed());
 
@@ -297,11 +285,7 @@ public class IjaraLogin extends BaseClass {
 					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName"))
 							.sendKeys(loginTestData.get("UserName"));
 					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("continueButton")).click();
-					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
-					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
-							.sendKeys(loginTestData.get("Password"));
 					for (int i = 0; i <= 300; i++) {
-
 						try {
 
 							String otp = javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString();
@@ -309,7 +293,6 @@ public class IjaraLogin extends BaseClass {
 							if (!(javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString()
 									.isBlank())) {
 
-								javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
 								break;
 							}
 						} catch (Exception e) {
@@ -318,6 +301,10 @@ public class IjaraLogin extends BaseClass {
 							}
 						}
 					}
+					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
+					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
+							.sendKeys(loginTestData.get("Password"));
+					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
 
 					Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).isDisplayed());
 
@@ -331,11 +318,7 @@ public class IjaraLogin extends BaseClass {
 					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName"))
 							.sendKeys(loginTestData.get("UserName"));
 					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("continueButton")).click();
-					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
-					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
-							.sendKeys(loginTestData.get("Password"));
 					for (int i = 0; i <= 300; i++) {
-
 						try {
 
 							String otp = javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString();
@@ -343,7 +326,6 @@ public class IjaraLogin extends BaseClass {
 							if (!(javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString()
 									.isBlank())) {
 
-								javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
 								break;
 							}
 						} catch (Exception e) {
@@ -352,6 +334,10 @@ public class IjaraLogin extends BaseClass {
 							}
 						}
 					}
+					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
+					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
+							.sendKeys(loginTestData.get("Password"));
+					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
 
 					Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).isDisplayed());
 
@@ -366,11 +352,7 @@ public class IjaraLogin extends BaseClass {
 					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName"))
 							.sendKeys(loginTestData.get("UserName"));
 					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("continueButton")).click();
-					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
-					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
-							.sendKeys(loginTestData.get("Password"));
 					for (int i = 0; i <= 300; i++) {
-
 						try {
 
 							String otp = javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString();
@@ -378,7 +360,6 @@ public class IjaraLogin extends BaseClass {
 							if (!(javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString()
 									.isBlank())) {
 
-								javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
 								break;
 							}
 						} catch (Exception e) {
@@ -387,6 +368,10 @@ public class IjaraLogin extends BaseClass {
 							}
 						}
 					}
+					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
+					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
+							.sendKeys(loginTestData.get("Password"));
+					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
 
 					Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).isDisplayed());
 
@@ -400,11 +385,7 @@ public class IjaraLogin extends BaseClass {
 					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName"))
 							.sendKeys(loginTestData.get("UserName"));
 					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("continueButton")).click();
-					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
-					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
-							.sendKeys(loginTestData.get("Password"));
 					for (int i = 0; i <= 300; i++) {
-
 						try {
 
 							String otp = javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString();
@@ -412,7 +393,6 @@ public class IjaraLogin extends BaseClass {
 							if (!(javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString()
 									.isBlank())) {
 
-								javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
 								break;
 							}
 						} catch (Exception e) {
@@ -421,6 +401,10 @@ public class IjaraLogin extends BaseClass {
 							}
 						}
 					}
+					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
+					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
+							.sendKeys(loginTestData.get("Password"));
+					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
 
 					Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).isDisplayed());
 
@@ -434,11 +418,7 @@ public class IjaraLogin extends BaseClass {
 					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName"))
 							.sendKeys(loginTestData.get("UserName"));
 					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("continueButton")).click();
-					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
-					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
-							.sendKeys(loginTestData.get("Password"));
 					for (int i = 0; i <= 300; i++) {
-
 						try {
 
 							String otp = javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString();
@@ -446,7 +426,6 @@ public class IjaraLogin extends BaseClass {
 							if (!(javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString()
 									.isBlank())) {
 
-								javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
 								break;
 							}
 						} catch (Exception e) {
@@ -455,6 +434,10 @@ public class IjaraLogin extends BaseClass {
 							}
 						}
 					}
+					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
+					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
+							.sendKeys(loginTestData.get("Password"));
+					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
 
 					Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).isDisplayed());
 
@@ -468,11 +451,7 @@ public class IjaraLogin extends BaseClass {
 					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName"))
 							.sendKeys(loginTestData.get("UserName"));
 					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("continueButton")).click();
-					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
-					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
-							.sendKeys(loginTestData.get("Password"));
 					for (int i = 0; i <= 300; i++) {
-
 						try {
 
 							String otp = javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString();
@@ -480,7 +459,6 @@ public class IjaraLogin extends BaseClass {
 							if (!(javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString()
 									.isBlank())) {
 
-								javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
 								break;
 							}
 						} catch (Exception e) {
@@ -489,6 +467,10 @@ public class IjaraLogin extends BaseClass {
 							}
 						}
 					}
+					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
+					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
+							.sendKeys(loginTestData.get("Password"));
+					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
 
 					Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).isDisplayed());
 
@@ -498,16 +480,13 @@ public class IjaraLogin extends BaseClass {
            //---------user 15   AutoLoan AppData Entry Customer Details 
 				
 				public void loginWithIjaraApplication15() {
+					
 					loginTestData = exelData.getTestdata("userType15");
 					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName")).click();
 					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName"))
 							.sendKeys(loginTestData.get("UserName"));
 					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("continueButton")).click();
-					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
-					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
-							.sendKeys(loginTestData.get("Password"));
 					for (int i = 0; i <= 300; i++) {
-
 						try {
 
 							String otp = javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString();
@@ -515,7 +494,6 @@ public class IjaraLogin extends BaseClass {
 							if (!(javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString()
 									.isBlank())) {
 
-								javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
 								break;
 							}
 						} catch (Exception e) {
@@ -524,9 +502,13 @@ public class IjaraLogin extends BaseClass {
 							}
 						}
 					}
+					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
+					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
+							.sendKeys(loginTestData.get("Password"));
+					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
 
 					Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).isDisplayed());
-
+										
 				}
 				
 				
