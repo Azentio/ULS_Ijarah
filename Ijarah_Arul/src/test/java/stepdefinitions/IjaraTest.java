@@ -65,6 +65,19 @@ public class IjaraTest extends BaseClass{
 	public void login_with_valid_credentials_for_murabha_customer_personal_details() {
 		ijaraLogin.loginWithIjaraApplication("userType13");
 	}
+	@And("login with valid credentials for Tawarraq_CommodityPurchaseMaker")
+	public void login_with_valid_credentials_for_tawarraq_commodity_purchase_maker() {
+		ijaraLogin.loginWithIjaraApplication("userType06");
+	}
+	@Given("login with valid credentials for Murabha_OperationCheck")
+	public void login_with_valid_credentials_for_murabha_operation_check() {
+		ijaraLogin.loginWithIjaraApplication("userType13");
+	}
+	@And("login with valid credentials for Autoloan_Identification")
+	public void login_with_valid_credentials_for_autoloan_identification() {
+		ijaraLogin.loginWithIjaraApplication("userType15");
+	    
+	}
 
 	
 	
