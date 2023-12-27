@@ -322,7 +322,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 				}
 			}
 		}
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		for (int i = 0; i <= 3000; i++) {
 			try {
 				if (i > 2500) {
@@ -339,11 +339,11 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 				}
 			}
 		}
-		robot = new Robot();
+		
 
 		for (int i = 0; i <= 300; i++) {
 			try {
-				robot.mouseWheel(-200);
+				
 				javascriptHelper.executeScriptWithWebElement(commonJSElements.getElement("save_button")).click();
 				break;
 			} catch (Exception e) {
@@ -352,7 +352,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 				}
 			}
 		}
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		for (int i = 0; i <= 3000; i++) {
 			try {
 				if (i > 2500) {

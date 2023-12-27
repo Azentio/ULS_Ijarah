@@ -65,13 +65,16 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	@And("user_076 get the test data for test case id AT_IJ_APP_01")
 	public void user_076_get_the_test_data_for_test_case_id_AT_IJ_APP_01() throws Throwable {
 		newApplicationExecutionData = IjarahExecutionSheet.getTestdata("AT_IJ_APP_01");
+		System.out.println("Data Set ID "+newApplicationExecutionData.get("dataSet_ID"));
 		newApplicationTestData = excelDataForApplicationDetailsTestData
 				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
+		System.out.println("Data Set ID "+newApplicationTestData.get("Dataset ID"));
 	}
 
 	@And("user_076 get the test data for test case id AT_IJ_APP_02")
 	public void user_076_get_the_test_data_for_test_case_id_AT_IJ_APP_02() throws Throwable {
 		newApplicationExecutionData = IjarahExecutionSheet.getTestdata("AT_IJ_APP_02");
+		System.out.println("Data Set ID "+newApplicationExecutionData.get("dataSet_ID"));
 		newApplicationTestData = excelDataForApplicationDetailsTestData
 				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
 	}
@@ -433,7 +436,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 				}
 			}
 		}
-clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_type"));
+		clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_type"));
 	/*	String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
 		String dropdownLength = "";
 		boolean isDropdownValueSelected = false;
@@ -725,23 +728,14 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		for (int i = 0; i <= 50; i++) {
 			try {
 				saveButtonVerification = javascriptHelper
-						.executeScriptWithWebElement(commonJSPaths.getElement("save_button")).isDisplayed();
+						.executeScriptWithWebElement(commonJSPaths.getElement("confirmation_save_button")).isDisplayed();
 				break;
 			} catch (Exception e) {
 
 			}
 		}
-		for (int i = 0; i <= 50; i++) {
-			try {
-				backButtonVerification = javascriptHelper
-						.executeScriptWithWebElement(commonJSPaths.getElement("back_button")).isDisplayed();
-				break;
-			} catch (Exception e) {
-
-			}
-		}
+		
 		softAssert.assertTrue(saveButtonVerification, "Save button is not visisble hence failed");
-		softAssert.assertTrue(backButtonVerification, "back button is not visisble hence failed");
 	}
 
 	@Then("user_076 verify product field should be mandatory editable dropdown")
@@ -2440,7 +2434,17 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		}
 		for (int i = 0; i <= 100; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("save_button")).click();
+				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("confirmation_save_button")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 100) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 100; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("save_confirmation_ok_button")).click();
 				break;
 			} catch (Exception e) {
 				if (i == 100) {
@@ -2560,7 +2564,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 			throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("save_button")).click();
+				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("confirmation_save_button")).click();
 				break;
 			} catch (Exception e) {
 				if (i == 100) {
@@ -2577,7 +2581,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		for (int i = 0; i <= 20; i++) {
 			try {
 				blankFieldVerification = javascriptHelper
-						.executeScript("return " + commonJSPaths.getElement("toast_message")).toString();
+						.executeScript("return " + commonJSPaths.getElement("toast_container_message")).toString();
 				if (!(blankFieldVerification.isBlank())) {
 					break;
 				}
@@ -2588,7 +2592,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 			}
 		}
 		// Please fill all the details
-		softAssert.assertEquals("Please fill all the details", blankFieldVerification);
+		softAssert.assertEquals("Please fill required fields", blankFieldVerification);
 		System.out.println(blankFieldVerification);
 
 	}

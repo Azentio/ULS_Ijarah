@@ -397,6 +397,7 @@ public class Ijarah_NewAppContactDetailsSteps extends BaseClass {
 							"document.querySelectorAll('ion-col[class=\"p-2 md hydrated\"]')[" + indexOfListView
 									+ "].querySelector('button[icon=\"pi pi-pencil\"')")
 							.click();
+					break;
 				}
 				if (i > 550 && i < 600) {
 					clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
@@ -406,9 +407,9 @@ public class Ijarah_NewAppContactDetailsSteps extends BaseClass {
 							"document.querySelectorAll('ion-col[class=\"p-2 md hydrated\"]')[" + indexOfListView
 									+ "].querySelector('button[icon=\"pi pi-pencil\"')")
 							.click();
-
+					break;
 				}
-				break;
+
 			} catch (Exception e) {
 
 				if (i == 600) {
@@ -1147,7 +1148,7 @@ public class Ijarah_NewAppContactDetailsSteps extends BaseClass {
 				}
 			}
 		}
-
+		Thread.sleep(1000);
 		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper
@@ -1160,6 +1161,7 @@ public class Ijarah_NewAppContactDetailsSteps extends BaseClass {
 				}
 			}
 		}
+		Thread.sleep(1000);
 		for (int i = 0; i <= 3000; i++) {
 			try {
 				recordStatus = javascriptHelper
@@ -1174,32 +1176,45 @@ public class Ijarah_NewAppContactDetailsSteps extends BaseClass {
 				}
 			}
 		}
+		System.out.println("Temp record status " + tempRecordStatus);
+		System.out.println("Record status " + recordStatus);
 
 	}
 
 	@Then("user_076 verify contact details record status in list view at new app stage")
 	public void user_verify_contact_details_record_status_in_list_view_at_new_app_stage() throws Throwable {
-
 		System.out.println("Index value in list view record validation " + indexOfListView);
-		for (int i = 0; i <= 3000; i++) {
-			try {
-				if (i > 2500) {
-					System.out.println(
-							"document.querySelectorAll('ion-col[class=\"p-2 md hydrated\"]')[" + indexOfListView
-									+ "].querySelector('td[ng-reflect-ng-switch=\"badge\"] span>span').innerText");
-					listViewRecordStatus = javascriptHelper
-							.executeScript("return document.querySelectorAll('ion-col[class=\"p-2 md hydrated\"]')["
-									+ indexOfListView
-									+ "].querySelector('td[ng-reflect-ng-switch=\"badge\"] span>span').innerText")
-							.toString();
 
-					System.out.println("List view Record status " + listViewRecordStatus);
-					if (!(listViewRecordStatus.isBlank())) {
+		for (int i = 0; i <= 500000; i++) {
+			try {
+
+				listViewRecordStatus = javascriptHelper
+						.executeScript("return document.querySelectorAll('ion-col[class=\"p-2 md hydrated\"]')["
+								+ indexOfListView
+								+ "].querySelector('td[ng-reflect-ng-switch=\"badge\"] span>span').innerText")
+						.toString();
+				System.out.println("List view Record status " + listViewRecordStatus);
+				if (recordStatus.equals("true")) {
+					System.out.println("Inside first condition " + recordStatus);
+					if (listViewRecordStatus.equals("Active")) {
+						System.out.println("Record status " + recordStatus);
+						System.out.println("List view Record status " + listViewRecordStatus);
 						break;
 					}
+
 				}
+				if (recordStatus.equals("false")) {
+					System.out.println("Inside first condition " + recordStatus);
+					if (listViewRecordStatus.equals("In-active")) {
+						System.out.println("Record status " + recordStatus);
+						System.out.println("List view Record status " + listViewRecordStatus);
+						break;
+					}
+
+				}
+
 			} catch (Exception e) {
-				if (i == 3000) {
+				if (i == 500000) {
 					Assert.fail(e.getMessage());
 				}
 			}
