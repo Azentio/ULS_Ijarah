@@ -1,7 +1,7 @@
 Feature: Test the IJARA URL
 @AT_NADC_01
 Scenario: Address details at Data Check stage
-Given navigate the IJARA URL
+Given Navigate the IJARA URL
 And login with valid credentials
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
@@ -42,7 +42,7 @@ Then logout from the ijaraApplication
 @AT_NADC_03
 Scenario: To verify the field Address Type,Address Status,Residential or occupancy status,Communication address
 #ADC_01_05
-Given navigate the IJARA URL
+Given Navigate the IJARA URL
 And login with valid credentials
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown

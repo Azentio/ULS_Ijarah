@@ -11,13 +11,14 @@ import utilities.ExtentTestManager;
 @CucumberOptions(features = { // "src/test/java/features/CSM_TransactionsFEATURE.feature",
 		//"src/test/java/features/Tawarruq_offering_offerDetails.feature" }, glue = "stepdefinitions",
 			
-			"src/test/java/features/Murabha_Datacheck_identificationdetails.feature" }, glue = "stepdefinitions",
+			"src/test/java/features/AutoLoan_AppDataEntry_AssetDetails.feature" }, glue = "stepdefinitions",
 		// monochrome=false, //to make steps in color
 		plugin = { "pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 				"rerun:ReRunScenarios/FailedReRun.txt" }
 
 // ,dryRun = false //to check compilation errors
-//, tags = "@AT_MU_OFO_01"
+//, tags = "@AT_AL_ASD_03"
+		
 // , tags=" @AT_MU_OFO_01"
 
 

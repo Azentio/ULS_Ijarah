@@ -37,6 +37,8 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	JSPaths appDataEntry_js = new JSPaths(excelPath, "appDataEntry_js", "AppDataEntryElements", "JSPath");
 	ExcelData Murabha_identificationDetail_TestData  = new ExcelData(excelTestDataPath,"mura_identificationDetail","Dataset ID");
 	
+	
+
 	@And("User_6047 Get the test data for test case ID AT_MU_IRM_001")
 	public void user_get_the_test_data_for_test_case_id_at_fi() {
 		testData =  Murabha_Repayment_TestData.getTestdata("DS01_AT_MU_IRM_001");

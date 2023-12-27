@@ -37,10 +37,6 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	ExcelData DocumentDetails_TestData  = new ExcelData(excelTestDataPath,"Tawarruq_DocumentDetails","Dataset ID");
 
 
-	@And("User_6047 Login with valid credentials - AppDataEntry-DocumentDetails")
-	public void user_login_with_valid_credentials_AppDataEntry_DocumentDetails() {
-		ijaraLogin.loginWithIjaraApplication_Tawarruq_AppDataEntry_DocumentDetails();
-	}
 
 
 	@And("User_6047 Get the test data for test case ID AT_TW_AD_DOC_01")
@@ -165,7 +161,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 				javascriptHelper.executeScriptWithWebElement("document.querySelector('button[class=\"btnNext ng-star-inserted\"]')").click();
 				javascriptHelper.JSEClick(
 						javascriptHelper.executeScriptWithWebElement(DocumentDetails_js.getElement("documentDetails_module")));
-
+      
 				break;
 			} catch (Exception e) {
 				if (i==199) {
@@ -179,12 +175,12 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 
 	@Then("User_6047 verify the Customer Name field")
 	public void user_verify_the_customer_name_field() {
-		for (int i = 0; i <200; i++) {
+		for (int i = 0; i <500; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(DocumentDetails_js.getElement("customerName")).isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i==199) {
+				if (i==499) {
 					Assert.fail(e.getMessage());
 				}
 			}

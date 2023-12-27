@@ -40,11 +40,7 @@ public class ApplicationDataEntry_Steps extends BaseClass {
 	JSPaths appDataEntry_js = new JSPaths(excelPath, "appDataEntry_js", "AppDataEntryElements", "JSPath");
 	ExcelData ApplicationDataEntry_testdata  = new ExcelData(excelTestDataPath,"ApplicationDataEntry_testdata","Dataset ID");
 	
-	@And("Navigate the IJARA URL")
-	public void Navigate_the_ijara_url() throws Throwable {
-		driver.get(configFileReader.getIjaraApplicationURL());
 
-	}
 	@And("User_6047 Login with valid credentials")
 	public void Login_with_valid_credentials() throws Throwable {
 		ijaraLogin.loginWithIjaraApplication();
@@ -112,9 +108,10 @@ public class ApplicationDataEntry_Steps extends BaseClass {
 			}
 		}	}
 	@And("User_6047 Click the Entitle button under inbox")
-	public void user_click_the_entitle_button_under_inbox() throws Throwable {
+	public void user_6047_click_the_entitle_button_under_inbox() throws Throwable {
 		for (int i = 0; i <= 1000; i++) {
 			try {
+				Thread.sleep(3000);
 				javascriptHelper.executeScriptWithWebElement(Ijarah_CustomerDebt.getElement("inboxEntitleBtn")).click();
 				break;
 			} catch (Exception e) {
@@ -125,7 +122,7 @@ public class ApplicationDataEntry_Steps extends BaseClass {
 		}	    
 	}
 	@And("User_6047 Click the Facility info tab")
-	public void user_click_the_facility_info_tab() {
+	public void user_6047_click_the_facility_info_tab() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("Facility_info_Tab")).click();
@@ -139,7 +136,7 @@ public class ApplicationDataEntry_Steps extends BaseClass {
 	}
 	
 	@And("User_6047 Get the test data for test case ID AT_FI_001")
-	public void user_get_the_test_data_for_test_case_id_at_fi() {
+	public void user_6047_get_the_test_data_for_test_case_id_at_fi() {
 		testData =  ApplicationDataEntry_testdata.getTestdata("DS01_AT_FI_001");
 	}
 
@@ -147,7 +144,7 @@ public class ApplicationDataEntry_Steps extends BaseClass {
 	
 
 	@And("User_6047 Click Add button under the Facility info")
-	public void user_click_add_button_under_the_facility_info() {
+	public void user_6047_click_add_button_under_the_facility_info() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("AddButton_under_FacilityInfo")).click();
@@ -1976,6 +1973,7 @@ public void user_to_check_the_status_is_active() {
 public void user_click_the_back_Button() {
 	for (int i = 0; i <= 1000; i++) {
 		try {
+			javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("BackButton")));
 			javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("BackButton")).click();
 			break;
 		} catch (Exception e) { 
@@ -2204,3 +2202,5 @@ public void user_click_the_excel_button_under_export() throws Throwable {
 
 
 }
+
+

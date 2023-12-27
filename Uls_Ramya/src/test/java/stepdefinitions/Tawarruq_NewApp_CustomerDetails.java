@@ -38,10 +38,7 @@ public class Tawarruq_NewApp_CustomerDetails {
 			"New_App_CustomerDetailsElements", "JSPath");
 	String recordStatus = "";
 	
-	@And("User_6047 Login with valid credentials- NewApp-CustometDetails")
-	public void Login_with_valid_credentials_NewApp_CustometDetails() throws Throwable {
-		ijaraLogin.loginWithIjaraApplication_Tawarruq_NewApp_CustomerDetails();	
-	}
+
 	
 	
 	@And("User_6047 Get the test data for test case ID AT_TW_NewApp_CD_01")

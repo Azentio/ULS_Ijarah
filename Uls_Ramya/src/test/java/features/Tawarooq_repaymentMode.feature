@@ -5,8 +5,8 @@ Scenario: To verify post clicking on Add asset button, the Repayment Mode screen
 Given Navigate the IJARA URL
 And User_6047 Login with valid credentials - Tawarruq-AppDataEntry-Repayment 
 And User_6047 Get the test data for test case ID AT_TW_AD_IRM_01 
-#And User_6047 Click the module name dropdown in ULS application
-#And User_6047 Select the module name as LOS in ULS application
+And User_6047 Click the module name dropdown in ULS application
+And User_6047 Select the module name as LOS in ULS application
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
 And User_6047 search the Ref Id Under inbox 
@@ -30,8 +30,8 @@ Scenario: To verify the fields are mandatory, editable,lookup and numeric in rep
 Given Navigate the IJARA URL
 And User_6047 Login with valid credentials - Tawarruq-AppDataEntry-Repayment
 And User_6047 Get the test data for test case ID AT_TW_AD_IRM_01 
-#And User_6047 click the module name dropdown in ULS application
-#And User_6047 select the module name as LOS in ULS application
+And User_6047 click the module name dropdown in ULS application
+And User_6047 select the module name as LOS in ULS application
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
 And User_6047 search the Ref Id Under inbox 
@@ -54,6 +54,8 @@ Scenario: To verify the functionality of save,delete and help button
 Given Navigate the IJARA URL
 And User_6047 Login with valid credentials - Tawarruq-AppDataEntry-Repayment
 And User_6047 Get the test data for test case ID AT_TW_AD_IRM_01 
+And User_6047 click the module name dropdown in ULS application
+And User_6047 select the module name as LOS in ULS application
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
 And User_6047 search the Ref Id Under inbox 
@@ -82,6 +84,8 @@ Scenario: To verify the impact when user keep any mandatory field blank ,negativ
 Given Navigate the IJARA URL
 And User_6047 Login with valid credentials - Tawarruq-AppDataEntry-Repayment
 And User_6047 Get the test data for test case ID AT_TW_AD_IRM_04
+And User_6047 click the module name dropdown in ULS application
+And User_6047 select the module name as LOS in ULS application
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
 And User_6047 search the Ref Id Under inbox 
@@ -114,6 +118,8 @@ Scenario: To verify Modification of Repayment Mode record
 Given Navigate the IJARA URL
 And User_6047 Login with valid credentials - Tawarruq-AppDataEntry-Repayment
 And User_6047 Get the test data for test case ID AT_TW_AD_IRM_04
+And User_6047 click the module name dropdown in ULS application
+And User_6047 select the module name as LOS in ULS application
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
 And User_6047 search the Ref Id Under inbox 
@@ -146,6 +152,8 @@ Scenario: To verify Modification of Repayment Mode record
 Given Navigate the IJARA URL
 And User_6047 Login with valid credentials - Tawarruq-AppDataEntry-Repayment
 And User_6047 Get the test data for test case ID AT_TW_AD_IRM_06
+And User_6047 click the module name dropdown in ULS application
+And User_6047 select the module name as LOS in ULS application
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
 And User_6047 search the Ref Id Under inbox 
@@ -176,8 +184,8 @@ And User_6047 Click the ok button in action conform field
  Scenario: To verify the list view
  Given Navigate the IJARA URL
 And User_6047 Login with valid credentials - Tawarruq-AppDataEntry-Repayment
-#And User_6047 click the module name dropdown in ULS application
-#And User_6047 select the module name as LOS in ULS application
+And User_6047 click the module name dropdown in ULS application
+And User_6047 select the module name as LOS in ULS application
 And User_6047 Get the test data for test case ID AT_TW_AD_IRM_06
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox

@@ -50,10 +50,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 		testData = Tawa_Commoditymaker_TestData.getTestdata("DS01_AT_TW_CSM_18");
 
 	}
-	@And("User_6047 Login With valid credentials - commodity-insuranceIfo,documentDetails")
-	public void Login_with_valid_credentials_commodity_insuranceIfo_documentDetails()throws Throwable {
-		ijaraLogin.loginWithIjaraApplication_commodity_insuranceIfo_documentDetails();	
-	}
+
 	
 	@And("User_6047 search the Ref id under Inbox")
 	public void user_search_the_ref_id_under_inbox_6047() throws Throwable {

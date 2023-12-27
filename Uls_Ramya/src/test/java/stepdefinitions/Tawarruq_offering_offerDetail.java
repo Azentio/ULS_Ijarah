@@ -33,10 +33,7 @@ public class Tawarruq_offering_offerDetail {
 	JSPaths Tawarruq_offering = new JSPaths(excelPath, "tawa_offering_js", "OfferDetailsElement", "JSPath");
 	ExcelData Tawar_offering_TestData  = new ExcelData(excelTestDataPath,"Tawar_offering","Dataset ID");
 	
-	@And("User_6047 Login With valid credentials-Tawarruq-offering-offerDetails")
-	public void Login_with_valid_credentials_Tawarruq_offering_offerDetails() throws Throwable {
-		ijaraLogin.loginWithIjaraApplication_offoring();	
-	}
+
 	
 	@And("User_6047 Get the test data for test case ID AT_TW_OFO_02")
 	public void user_get_the_test_data_for_test_case_id_at_tw_ofo_02() {	
@@ -448,12 +445,14 @@ public void user_to_verify_the_last_installment_amount_field_in_finance_details_
 }
 }
 
-@Then("User_6047 To verify the Eligibility Type field in Finance Details section")
+@Then("User_6047 To verify the Eligibility Type field in Eligibility Details")
 public void user_to_verify_the_eligibility_type_field_in_finance_details_section() {
 
 	boolean Eligibility_Type = false;
 	for (int i = 0; i <= 300; i++) {
 		try {
+			javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(Tawarruq_offering.getElement("Eligibility_Type")));
+			//javascriptHelper.scrollToElemet(javascriptHelper.executeScriptWithWebElement(Tawarruq_offering.getElement("Eligibility_Type")));
 			Eligibility_Type = javascriptHelper
 					.executeScriptWithWebElement(Tawarruq_offering.getElement("Eligibility_Type")).isDisplayed();
 			break;
@@ -466,7 +465,7 @@ public void user_to_verify_the_eligibility_type_field_in_finance_details_section
 }
 }
 
-@Then("User_6047 To verify the Eligibility Amount field in Finance Details section")
+@Then("User_6047 To verify the Eligibility Amount field in Eligibility Details")
 public void user_to_verify_the_eligibility_amount_field_in_finance_details_section() {
 
 	boolean EligibilityAmount = false;
@@ -474,7 +473,10 @@ public void user_to_verify_the_eligibility_amount_field_in_finance_details_secti
 		try {
 			EligibilityAmount = javascriptHelper
 					.executeScriptWithWebElement(Tawarruq_offering.getElement("EligibilityAmount")).isDisplayed();
+			if(EligibilityAmount==true){
+				System.out.println("EligibilityAmount is displayed");
 			break;
+			}
 		} catch (Exception e) {
 
 		}
@@ -484,7 +486,7 @@ public void user_to_verify_the_eligibility_amount_field_in_finance_details_secti
 }
 }
 
-@Then("User_6047 To verify the Eligibility Percentage field in Finance Details section")
+@Then("User_6047 To verify the Eligibility Percentage field in Eligibility Details")
 public void user_to_verify_the_eligibility_percentage_field_in_finance_details_section() {
 	
 	boolean EligibilityPercentage = false;
@@ -502,7 +504,7 @@ public void user_to_verify_the_eligibility_percentage_field_in_finance_details_s
 }
 }
 
-@Then("User_6047 To verify the Currency field in Finance Details section")
+@Then("User_6047 To verify the Currency field in Eligibility Details")
 public void user_to_verify_the_currency_field_in_finance_details_section() {
 	
 	boolean Currency = false;
@@ -520,7 +522,7 @@ public void user_to_verify_the_currency_field_in_finance_details_section() {
 }
 }
 
-@Then("User_6047 To verify the Actual Percentage field in Finance Details section")
+@Then("User_6047 To verify the Actual Percentage field in Eligibility Details")
 public void user_to_verify_the_actual_percentage_field_in_finance_details_section() {
 
 	boolean Actual_percentage = false;
@@ -538,7 +540,7 @@ public void user_to_verify_the_actual_percentage_field_in_finance_details_sectio
 }
 }
 
-@Then("User_6047 To verify the Deviation Level field in Finance Details section")
+@Then("User_6047 To verify the Deviation Level field in Eligibility Details")
 public void user_to_verify_the_deviation_level_field_in_finance_details_section() {
 
 	boolean deviationLevel = false;

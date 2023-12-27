@@ -38,10 +38,7 @@ public class Murabha_Offering_DocumentDetails {
 	ExcelData Murabha_DocumentDetails_TestData = new ExcelData(excelTestDataPath, "Mura_Offering_documentDetail",
 			"Dataset ID");
 
-	@And("User_6047 Login with valid credentials - murabha-DocumentDetails")
-	public void Login_with_valid_credentials_murabha_DocumentDetails()throws Throwable {
-		ijaraLogin.loginWithIjaraApplication_Murabha_offering_Document_Details();	
-	}
+
 
 
 	@And("User_6047 Get the test data for test case ID AT_DOC_01")

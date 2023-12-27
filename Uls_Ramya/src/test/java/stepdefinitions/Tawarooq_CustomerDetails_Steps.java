@@ -42,6 +42,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 	String listViewRecordStatus = "";
 
 	String recordStatus = "";
+	
 
 	@And("User_6047 Get the test data for test case ID AT_TW_CD_03")
 	public void user_get_the_test_data_for_test_case() {
@@ -700,7 +701,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 				javascriptHelper.scrollIntoView(javascriptHelper
 						.executeScriptWithWebElement(Tawarruq_NewApp_CustomerDetailsElements.getElement("Status")));
 				javascriptHelper
-						.executeScriptWithWebElement(Tawarruq_NewApp_CustomerDetailsElements.getElement("Status"))
+						.executeScriptWithWebElement(Tawarruq_NewApp_CustomerDetailsElements.getElement("Status_toggle"))
 						.click();
 				break;
 			} catch (Exception e) {

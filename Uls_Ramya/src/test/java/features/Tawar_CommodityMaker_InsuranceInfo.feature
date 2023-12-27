@@ -9,7 +9,6 @@ And User_6047 Get the test data for test case ID AT_TW_CSM_17
 And User_6047 Click the module name dropdown in ULS application
 And User_6047 Select the module name as LOS in ULS application
 And User_6047 Click the Mail box in ULS application
-And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
 Then User_6047 search the Ref id under Inbox
 And User_6047 Click the Entitle button under inbox 

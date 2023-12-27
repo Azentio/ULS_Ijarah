@@ -47,12 +47,12 @@ And User_6047 Click the Search button under inbox
 And User_6047 search  the Ref Id Under inbox
 And User_6047 Click the Entitle button under inbox 
 And User_6047 click edit icon
-Then User_6047 To verify the Eligibility Type field in Finance Details section
-Then User_6047 To verify the Eligibility Amount field in Finance Details section
-Then User_6047 To verify the Eligibility Percentage field in Finance Details section
-Then User_6047 To verify the Currency field in Finance Details section
-Then User_6047 To verify the Actual Percentage field in Finance Details section
-Then User_6047 To verify the Deviation Level field in Finance Details section
+Then User_6047 To verify the Eligibility Type field in Eligibility Details
+Then User_6047 To verify the Eligibility Amount field in Eligibility Details
+Then User_6047 To verify the Eligibility Percentage field in Eligibility Details
+Then User_6047 To verify the Currency field in Eligibility Details
+Then User_6047 To verify the Actual Percentage field in Eligibility Details
+Then User_6047 To verify the Deviation Level field in Eligibility Details
 Then logout from the ULS Application
 
 @AT_TW_OFO_05
@@ -68,10 +68,7 @@ And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
 And User_6047 search  the Ref Id Under inbox
 And User_6047 Click the Entitle button under inbox 
-And User_6047 click edit icon
-#And User_6047 Click the search button in facilityinfo
-#And User_6047 Select the record in facilityinfo
-#And User_6047 Click the Entitle button under inbox 
+And User_6047 click edit icon 
 Then User_6047 To verify the Back Button in Offer details screen
 Then User_6047 To verify the Accept Offer in Offer details screen
 Then User_6047 To verify the Offer Details section in Offer details screen
@@ -98,9 +95,6 @@ And User_6047 Click the Search button under inbox
 And User_6047 search  the Ref Id Under inbox
 And User_6047 Click the Entitle button under inbox 
 And User_6047 click edit icon
-#And User_6047 Click the search button in facilityinfo
-#And User_6047 Select the record in facilityinfo
-#And User_6047 Click the Entitle button under inbox 
 Then User_6047 To verify the Eligibility Type field is non-editable 
 Then User_6047 To verify the Eligibility Amount field is non-editable
 Then User_6047 To verify the Eligibility Percentage field is non-editable

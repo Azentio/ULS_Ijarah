@@ -4,7 +4,8 @@ Feature: To verify the functionality of repayment mode
 Scenario: To verify post clicking on Add asset button, the Repayment Mode screen should be open with all valid fields
 
 Given Navigate the IJARA URL
-And User_6047 Login with valid credentials
+#And User_6047 Login with valid credentials
+And User_6047 Login with valid credentials-Murabha-AppDataEntry-RepaymentMode
 And User_6047 Get the test data for test case ID AT_MU_IRM_001 
 And User_6047 click the module name dropdown in ULS application
 And User_6047 select the module name as LOS in ULS application
@@ -29,7 +30,7 @@ Then User_6047 verify help button
 Scenario: To verify the fields are mandatory, editable,lookup and numeric in repayment mode 
 
 Given Navigate the IJARA URL
-Then User_6047 Login with valid credentials
+And User_6047 Login with valid credentials-Murabha-AppDataEntry-RepaymentMode
 And User_6047 Get the test data for test case ID AT_MU_IRM_001
 And User_6047 click the module name dropdown in ULS application
 And User_6047 select the module name as LOS in ULS application
@@ -56,7 +57,7 @@ Then User_6047 to verify the same record should get saved in Repayment mode
 Scenario: To verify the functionality of Help button in repayment mode 
 
 Given Navigate the IJARA URL
-Then User_6047 Login with valid credentials
+And User_6047 Login with valid credentials-Murabha-AppDataEntry-RepaymentMode
 And User_6047 Get the test data for test case ID AT_MU_IRM_001
 And User_6047 click the module name dropdown in ULS application
 And User_6047 select the module name as LOS in ULS application
@@ -74,7 +75,7 @@ Then User_6047 verify description of all the fields details
 Scenario: Creation of Repayment Mode record with invalid data
 
 Given Navigate the IJARA URL
-Then User_6047 Login with valid credentials
+And User_6047 Login with valid credentials-Murabha-AppDataEntry-RepaymentMode
 And User_6047 Get the test data for test case ID AT_MU_IRM_001
 And User_6047 click the module name dropdown in ULS application
 And User_6047 select the module name as LOS in ULS application
@@ -104,7 +105,7 @@ Then User_6047 verify the popup of fill all field
 Scenario: To verify the buttons available on screen and allow user to modify the Repayment Mode-modify
 
 Given Navigate the IJARA URL
-Then User_6047 Login with valid credentials
+And User_6047 Login with valid credentials-Murabha-AppDataEntry-RepaymentMode
 And User_6047 Get the test data for test case ID AT_MU_IRM_001
 And User_6047 click the module name dropdown in ULS application
 And User_6047 select the module name as LOS in ULS application
@@ -133,7 +134,7 @@ Then User_6047 to verify the same record should get saved in Repayment mode
 Scenario: To verify while modification, when user keep any mandatory field blank and click on save button
 
 Given Navigate the IJARA URL
-Then User_6047 Login with valid credentials
+And User_6047 Login with valid credentials-Murabha-AppDataEntry-RepaymentMode
 And User_6047 Get the test data for test case ID AT_MU_IRM_001
 And User_6047 click the module name dropdown in ULS application
 And User_6047 select the module name as LOS in ULS application
@@ -153,7 +154,7 @@ And User_6047 click the save button under repayment mode screen
 @AT_MU_IRM_007
 Scenario: To verify the functionality of save and submit button
 Given Navigate the IJARA URL
-Then User_6047 Login with valid credentials
+And User_6047 Login with valid credentials-Murabha-AppDataEntry-RepaymentMode
 And User_6047 Get the test data for test case ID AT_MU_IRM_007
 #And User_6047 click the module name dropdown in ULS application
 #And User_6047 select the module name as LOS in ULS application

@@ -98,8 +98,5 @@ public JavascriptHelper(WebDriver driver)
 	}
 
 
-	public void JSEexecuteScript(WebElement executeScriptWithWebElement) {
-		// TODO Auto-generated method stub
-		
-	}
+
 }

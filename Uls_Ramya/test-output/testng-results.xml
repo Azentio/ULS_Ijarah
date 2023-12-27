@@ -1,20 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="0" passed="0" failed="0" skipped="0">
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-12-06T18:53:41 IST" name="Default suite" finished-at="2023-12-06T18:53:43 IST" duration-ms="1697">
+  <suite started-at="2023-12-27T17:55:45 IST" name="Default suite" finished-at="2023-12-27T17:59:20 IST" duration-ms="215229">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-12-06T18:53:41 IST" name="Default test" finished-at="2023-12-06T18:53:43 IST" duration-ms="1697">
+    <test started-at="2023-12-27T17:55:45 IST" name="Default test" finished-at="2023-12-27T17:59:20 IST" duration-ms="215229">
       <class name="Runner.TestApplication">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-12-06T18:53:41 IST" name="setUpClass" finished-at="2023-12-06T18:53:42 IST" duration-ms="937" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-12-27T17:55:45 IST" name="setUpClass" finished-at="2023-12-27T17:55:46 IST" duration-ms="971" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-12-06T18:53:42 IST" name="tearDownClass" finished-at="2023-12-06T18:53:43 IST" duration-ms="730" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-12-27T17:55:46 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-27T17:56:19 IST" duration-ms="32868" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Asset Detailtab should get open with the required field"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To test the AutoLoan-ApplicationDataEntry-AssetDetails module in URL]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-12-27T17:56:19 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-27T17:56:44 IST" duration-ms="25608" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To verify the field should be Mandatory,editable,lookup value,non mandatory and textbox"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To test the AutoLoan-ApplicationDataEntry-AssetDetails module in URL]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-12-27T17:56:44 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-27T17:57:23 IST" duration-ms="38194" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To verify the field should be Mandatory,editable,lookup value,non mandatory and textbox"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To test the AutoLoan-ApplicationDataEntry-AssetDetails module in URL]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-12-27T17:57:23 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-27T17:57:47 IST" duration-ms="23936" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To verify the field should be Mandatory,editable,lookup value,non mandatory and textbox"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To test the AutoLoan-ApplicationDataEntry-AssetDetails module in URL]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-12-27T17:57:47 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-27T17:58:10 IST" duration-ms="23744" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To verify Dealer Details and Registration Agent Detail section"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To test the AutoLoan-ApplicationDataEntry-AssetDetails module in URL]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-12-27T17:58:10 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-27T17:58:33 IST" duration-ms="22435" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To verify the field should be Mandatory,editable,lookup value,non mandatory and textbox"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To test the AutoLoan-ApplicationDataEntry-AssetDetails module in URL]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@7bba5817]" started-at="2023-12-27T17:58:33 IST" name="tearDownClass" finished-at="2023-12-27T17:59:20 IST" duration-ms="47408" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
