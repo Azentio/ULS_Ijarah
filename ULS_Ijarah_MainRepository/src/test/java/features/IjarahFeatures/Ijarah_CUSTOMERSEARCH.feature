@@ -1,11 +1,11 @@
 Feature: Customer Search
 
 @AT_IJCS_01
-@AT_IJCS_01
-@AT_IJCS_01
+@AT_IJCS_02
+@AT_IJCS_03
 Scenario: to test the functionality of customer search with valid data
 Given navigate the IJARA URL
-And login with valid credentials
+And login with valid credentials07
 Then user click the menu icon in after loginscreen
 And user navigate to the Transactions flag
 Then user navigate to the Application manager flag
