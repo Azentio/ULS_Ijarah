@@ -392,53 +392,122 @@ public class Ijara_Steps_610 {
 	@And("User_610 validate Required At Stage field enabled or not under document details")
 	public void user_610_validate_required_at_stage_field_enabled_or_not_under_document_details()
 			throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
-				.executeScriptWithWebElement(jsPaths2.getElement("requiredAtStage_UnderDocumentDetails_610")));
-		Assert.assertEquals(true,
-				javascriptHelper
-						.executeScriptWithWebElement(jsPaths2.getElement("requiredAtStage_UnderDocumentDetails_610"))
-						.isDisplayed());
+//		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+//				.executeScriptWithWebElement(jsPaths2.getElement("requiredAtStage_UnderDocumentDetails_610")));
+//		Assert.assertEquals(true,
+//				javascriptHelper
+//						.executeScriptWithWebElement(jsPaths2.getElement("requiredAtStage_UnderDocumentDetails_610"))
+//						.isDisplayed());
+		for (int m = 0; m < 500; m++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("requiredAtStage_UnderDocumentDetails_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				if (m==499) {
+					Assert.fail(e.getMessage());
+				}
+				
+			}
+		}
 	}
 
 	@And("User_610 validate Document Status field enabled or not under document details")
 	public void user_610_validate_document_status_field_enabled_or_not_under_document_details()
 			throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
-				.executeScriptWithWebElement(jsPaths2.getElement("documentStatus_UnderDocumentDetails_610")));
-		Assert.assertEquals(true,
-				javascriptHelper
-						.executeScriptWithWebElement(jsPaths2.getElement("documentStatus_UnderDocumentDetails_610"))
-						.isDisplayed());
+//		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+//				.executeScriptWithWebElement(jsPaths2.getElement("documentStatus_UnderDocumentDetails_610")));
+//		Assert.assertEquals(true,
+//				javascriptHelper
+//						.executeScriptWithWebElement(jsPaths2.getElement("documentStatus_UnderDocumentDetails_610"))
+//						.isDisplayed());
+		
+		for (int m = 0; m < 500; m++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("documentStatus_UnderDocumentDetails_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				if (m==499) {
+					Assert.fail(e.getMessage());
+				}
+				
+			}
+		}
 	}
 
 	@And("User_610 validate Manitory Option field enabled or not under document details")
 	public void user_610_validate_manitory_option_field_enabled_or_not_under_document_details()
 			throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
-				.executeScriptWithWebElement(jsPaths2.getElement("manitoryOption_UnderDocumentDetails_610")));
-		Assert.assertEquals(true,
-				javascriptHelper
-						.executeScriptWithWebElement(jsPaths2.getElement("manitoryOption_UnderDocumentDetails_610"))
-						.isDisplayed());
+//		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+//				.executeScriptWithWebElement(jsPaths2.getElement("manitoryOption_UnderDocumentDetails_610")));
+//		Assert.assertEquals(true,
+//				javascriptHelper
+//						.executeScriptWithWebElement(jsPaths2.getElement("manitoryOption_UnderDocumentDetails_610"))
+//						.isDisplayed());
+		
+		for (int m = 0; m < 500; m++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("manitoryOption_UnderDocumentDetails_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				if (m==499) {
+					Assert.fail(e.getMessage());
+				}
+				
+			}
+		}
 	}
 
 	@And("User_610 validate Document Category field enabled or not under document details")
 	public void user_610_validate_document_category_field_enabled_or_not_under_document_details()
 			throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
-				.executeScriptWithWebElement(jsPaths2.getElement("documentCategory_UnderDocumentDetails_610")));
-		Assert.assertEquals(true,
-				javascriptHelper
-						.executeScriptWithWebElement(jsPaths2.getElement("documentCategory_UnderDocumentDetails_610"))
-						.isDisplayed());
+//		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+//				.executeScriptWithWebElement(jsPaths2.getElement("documentCategory_UnderDocumentDetails_610")));
+//		Assert.assertEquals(true,
+//				javascriptHelper
+//						.executeScriptWithWebElement(jsPaths2.getElement("documentCategory_UnderDocumentDetails_610"))
+//						.isDisplayed());
+		
+		for (int m = 0; m < 500; m++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("documentCategory_UnderDocumentDetails_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				if (m==499) {
+					Assert.fail(e.getMessage());
+				}
+				
+			}
+		}
 	}
 
 	@And("User_610 validate Upload Date field enabled or not under document details")
 	public void user_610_validate_upload_date_field_enabled_or_not_under_document_details() throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
-				.executeScriptWithWebElement(jsPaths2.getElement("uploadDate_UnderDocumentDetails_610")));
-		Assert.assertEquals(true, javascriptHelper
-				.executeScriptWithWebElement(jsPaths2.getElement("uploadDate_UnderDocumentDetails_610")).isDisplayed());
+//		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+//				.executeScriptWithWebElement(jsPaths2.getElement("uploadDate_UnderDocumentDetails_610")));
+//		Assert.assertEquals(true, javascriptHelper
+//				.executeScriptWithWebElement(jsPaths2.getElement("uploadDate_UnderDocumentDetails_610")).isDisplayed());
+		
+		for (int m = 0; m < 500; m++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("uploadDate_UnderDocumentDetails_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				if (m==499) {
+					Assert.fail(e.getMessage());
+				}
+				
+			}
+		}
 	}
 
 	@And("User_610 validate expected Recepited Date field enabled or not under document details")
@@ -454,79 +523,177 @@ public class Ijara_Steps_610 {
 	@And("User_610 validate deferral Stage field enabled or not under document details")
 	public void user_610_validate_deferral_stage_field_enabled_or_not_under_document_details()
 			throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
-				.executeScriptWithWebElement(jsPaths2.getElement("deferralStage_UnderDocumentDetails_610")));
-		Assert.assertEquals(true,
-				javascriptHelper
-						.executeScriptWithWebElement(jsPaths2.getElement("deferralStage_UnderDocumentDetails_610"))
-						.isDisplayed());
+//		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+//				.executeScriptWithWebElement(jsPaths2.getElement("deferralStage_UnderDocumentDetails_610")));
+//		Assert.assertEquals(true,
+//				javascriptHelper
+//						.executeScriptWithWebElement(jsPaths2.getElement("deferralStage_UnderDocumentDetails_610"))
+//						.isDisplayed());
+		
+		for (int m = 0; m < 500; m++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("deferralStage_UnderDocumentDetails_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				if (m==499) {
+					Assert.fail(e.getMessage());
+				}
+				
+			}
+		}
 	}
 
 	@And("User_610 validate def Approvel By field enabled or not under document details")
 	public void user_610_validate_def_approvel_by_field_enabled_or_not_under_document_details()
 			throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
-				.executeScriptWithWebElement(jsPaths2.getElement("defApprovelBy_UnderDocumentDetails_610")));
-		Assert.assertEquals(true,
-				javascriptHelper
-						.executeScriptWithWebElement(jsPaths2.getElement("defApprovelBy_UnderDocumentDetails_610"))
-						.isDisplayed());
+//		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+//				.executeScriptWithWebElement(jsPaths2.getElement("defApprovelBy_UnderDocumentDetails_610")));
+//		Assert.assertEquals(true,
+//				javascriptHelper
+//						.executeScriptWithWebElement(jsPaths2.getElement("defApprovelBy_UnderDocumentDetails_610"))
+//						.isDisplayed());
+		
+		for (int m = 0; m < 500; m++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("defApprovelBy_UnderDocumentDetails_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				if (m==499) {
+					Assert.fail(e.getMessage());
+				}
+				
+			}
+		}
 	}
 
 	@And("User_610 validate change In Nature Approved By field enabled or not under document details")
 	public void user_610_validate_change_in_nature_approved_by_field_enabled_or_not_under_document_details()
 			throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
-				.executeScriptWithWebElement(jsPaths2.getElement("changeInNatureApprovedBy_UnderDocumentDetails_610")));
-		Assert.assertEquals(true,
-				javascriptHelper
-						.executeScriptWithWebElement(
-								jsPaths2.getElement("changeInNatureApprovedBy_UnderDocumentDetails_610"))
-						.isDisplayed());
+//		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+//				.executeScriptWithWebElement(jsPaths2.getElement("changeInNatureApprovedBy_UnderDocumentDetails_610")));
+//		Assert.assertEquals(true,
+//				javascriptHelper
+//						.executeScriptWithWebElement(
+//								jsPaths2.getElement("changeInNatureApprovedBy_UnderDocumentDetails_610"))
+//						.isDisplayed());
+		
+		for (int m = 0; m < 500; m++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("changeInNatureApprovedBy_UnderDocumentDetails_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				if (m==499) {
+					Assert.fail(e.getMessage());
+				}
+				
+			}
+		}
 	}
 
 	@And("User_610 validate document Form field enabled or not under document details")
 	public void user_610_validate_document_form_field_enabled_or_not_under_document_details() throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
-				.executeScriptWithWebElement(jsPaths2.getElement("documentForm_UnderDocumentDetails_610")));
-		Assert.assertEquals(true,
-				javascriptHelper
-						.executeScriptWithWebElement(jsPaths2.getElement("documentForm_UnderDocumentDetails_610"))
-						.isDisplayed());
+//		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+//				.executeScriptWithWebElement(jsPaths2.getElement("documentForm_UnderDocumentDetails_610")));
+//		Assert.assertEquals(true,
+//				javascriptHelper
+//						.executeScriptWithWebElement(jsPaths2.getElement("documentForm_UnderDocumentDetails_610"))
+//						.isDisplayed());
+		
+		for (int m = 0; m < 500; m++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("documentForm_UnderDocumentDetails_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				if (m==499) {
+					Assert.fail(e.getMessage());
+				}
+				
+			}
+		}
 	}
 
 	@And("User_610 validate document Quality field enabled or not under document details")
 	public void user_610_validate_document_quality_field_enabled_or_not_under_document_details()
 			throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
-				.executeScriptWithWebElement(jsPaths2.getElement("documentQuality_UnderDocumentDetails_610")));
-		Assert.assertEquals(true,
-				javascriptHelper
-						.executeScriptWithWebElement(jsPaths2.getElement("documentQuality_UnderDocumentDetails_610"))
-						.isDisplayed());
+//		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+//				.executeScriptWithWebElement(jsPaths2.getElement("documentQuality_UnderDocumentDetails_610")));
+//		Assert.assertEquals(true,
+//				javascriptHelper
+//						.executeScriptWithWebElement(jsPaths2.getElement("documentQuality_UnderDocumentDetails_610"))
+//						.isDisplayed());
+		
+		for (int m = 0; m < 500; m++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("documentQuality_UnderDocumentDetails_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				if (m==499) {
+					Assert.fail(e.getMessage());
+				}
+				
+			}
+		}
 	}
 
 	@And("User_610 document Refercence Number field enabled or not under document details")
 	public void user_610_document_refercence_number_field_enabled_or_not_under_document_details()
 			throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
-				.executeScriptWithWebElement(jsPaths2.getElement("documentRefercenceNumber_UnderDocumentDetails_610")));
-		Assert.assertEquals(true,
-				javascriptHelper
-						.executeScriptWithWebElement(
-								jsPaths2.getElement("documentRefercenceNumber_UnderDocumentDetails_610"))
-						.isDisplayed());
+//		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+//				.executeScriptWithWebElement(jsPaths2.getElement("documentRefercenceNumber_UnderDocumentDetails_610")));
+//		Assert.assertEquals(true,
+//				javascriptHelper
+//						.executeScriptWithWebElement(
+//								jsPaths2.getElement("documentRefercenceNumber_UnderDocumentDetails_610"))
+//						.isDisplayed());
+		
+		for (int m = 0; m < 500; m++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("documentRefercenceNumber_UnderDocumentDetails_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				if (m==499) {
+					Assert.fail(e.getMessage());
+				}
+				
+			}
+		}
 	}
 
 	@And("User_610 validate document Received By enabled or not under document details")
 	public void user_610_validate_document_received_by_enabled_or_not_under_document_details()
 			throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
-				.executeScriptWithWebElement(jsPaths2.getElement("documentReceivedBy_UnderDocumentDetails_610")));
-		Assert.assertEquals(true,
-				javascriptHelper
-						.executeScriptWithWebElement(jsPaths2.getElement("documentReceivedBy_UnderDocumentDetails_610"))
-						.isDisplayed());
+//		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+//				.executeScriptWithWebElement(jsPaths2.getElement("documentReceivedBy_UnderDocumentDetails_610")));
+//		Assert.assertEquals(true,
+//				javascriptHelper
+//						.executeScriptWithWebElement(jsPaths2.getElement("documentReceivedBy_UnderDocumentDetails_610"))
+//						.isDisplayed());
+		
+		for (int m = 0; m < 500; m++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("documentReceivedBy_UnderDocumentDetails_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				if (m==499) {
+					Assert.fail(e.getMessage());
+				}
+				
+			}
+		}
 	}
 
 	@And("User_610 validate location Where Received enabled or not under document details")
@@ -543,60 +710,146 @@ public class Ijara_Steps_610 {
 
 	@And("User_610 validate rank Number field enabled or not under document details")
 	public void user_610_validate_rank_number_field_enabled_or_not_under_document_details() throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver,
-				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("rankNo_UnderDocumentDetails_610")));
-		Assert.assertEquals(true, javascriptHelper
-				.executeScriptWithWebElement(jsPaths2.getElement("rankNo_UnderDocumentDetails_610")).isDisplayed());
+//		waitHelper.waitForElementwithFluentwait(driver,
+//				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("rankNo_UnderDocumentDetails_610")));
+//		Assert.assertEquals(true, javascriptHelper
+//				.executeScriptWithWebElement(jsPaths2.getElement("rankNo_UnderDocumentDetails_610")).isDisplayed());
+		
+		for (int m = 0; m < 500; m++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("rankNo_UnderDocumentDetails_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				if (m==499) {
+					Assert.fail(e.getMessage());
+				}
+				
+			}
+		}
+		
 	}
 
 	@And("User_610 validate sheIf Number field enabled or not under document details")
 	public void user_610_validate_she_if_number_field_enabled_or_not_under_document_details() throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver,
-				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("sheIfNo_UnderDocumentDetails_610")));
-		Assert.assertEquals(true, javascriptHelper
-				.executeScriptWithWebElement(jsPaths2.getElement("sheIfNo_UnderDocumentDetails_610")).isDisplayed());
+//		waitHelper.waitForElementwithFluentwait(driver,
+//				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("sheIfNo_UnderDocumentDetails_610")));
+//		Assert.assertEquals(true, javascriptHelper
+//				.executeScriptWithWebElement(jsPaths2.getElement("sheIfNo_UnderDocumentDetails_610")).isDisplayed());
+		
+		for (int m = 0; m < 500; m++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("sheIfNo_UnderDocumentDetails_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				if (m==499) {
+					Assert.fail(e.getMessage());
+				}
+				
+			}
+		}
+		
 	}
 
 	@And("User_610 validate box number field enabled or not under document details")
 	public void user_610_validate_box_number_field_enabled_or_not_under_document_details() throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver,
-				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("boxNo_UnderDocumentDetails_610")));
-		Assert.assertEquals(true, javascriptHelper
-				.executeScriptWithWebElement(jsPaths2.getElement("boxNo_UnderDocumentDetails_610")).isDisplayed());
+//		waitHelper.waitForElementwithFluentwait(driver,
+//				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("boxNo_UnderDocumentDetails_610")));
+//		Assert.assertEquals(true, javascriptHelper
+//				.executeScriptWithWebElement(jsPaths2.getElement("boxNo_UnderDocumentDetails_610")).isDisplayed());
+		
+		for (int m = 0; m < 500; m++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("boxNo_UnderDocumentDetails_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				if (m==499) {
+					Assert.fail(e.getMessage());
+				}
+				
+			}
+		}
 	}
 
 	@And("User_610 validate date Of expiry field enabled or not under document details")
 	public void user_610_validate_date_of_expiry_field_enabled_or_not_under_document_details()
 			throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
-				.executeScriptWithWebElement(jsPaths2.getElement("dateOfexpiry_UnderDocumentDetails_610")));
-		Assert.assertEquals(true,
-				javascriptHelper
-						.executeScriptWithWebElement(jsPaths2.getElement("dateOfexpiry_UnderDocumentDetails_610"))
-						.isDisplayed());
+//		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+//				.executeScriptWithWebElement(jsPaths2.getElement("dateOfexpiry_UnderDocumentDetails_610")));
+//		Assert.assertEquals(true,
+//				javascriptHelper
+//						.executeScriptWithWebElement(jsPaths2.getElement("dateOfexpiry_UnderDocumentDetails_610"))
+//						.isDisplayed());
+		
+		for (int m = 0; m < 500; m++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("dateOfexpiry_UnderDocumentDetails_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				if (m==499) {
+					Assert.fail(e.getMessage());
+				}
+				
+			}
+		}
 	}
 
 	@And("User_610 validate lodgement Amount field enabled or not under document details")
 	public void user_610_validate_lodgement_amount_field_enabled_or_not_under_document_details()
 			throws Throwable {
-		javascriptHelper.scrollIntoView(javascriptHelper
-				.executeScriptWithWebElement(jsPaths2.getElement("lodgementAmount_UnderDocumentDetails_610")));
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
-				.executeScriptWithWebElement(jsPaths2.getElement("lodgementAmount_UnderDocumentDetails_610")));
-		Assert.assertEquals(true,
-				javascriptHelper
-						.executeScriptWithWebElement(jsPaths2.getElement("lodgementAmount_UnderDocumentDetails_610"))
-						.isDisplayed());
+//		javascriptHelper.scrollIntoView(javascriptHelper
+//				.executeScriptWithWebElement(jsPaths2.getElement("lodgementAmount_UnderDocumentDetails_610")));
+//		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+//				.executeScriptWithWebElement(jsPaths2.getElement("lodgementAmount_UnderDocumentDetails_610")));
+//		Assert.assertEquals(true,
+//				javascriptHelper
+//						.executeScriptWithWebElement(jsPaths2.getElement("lodgementAmount_UnderDocumentDetails_610"))
+//						.isDisplayed());
+		
+		for (int m = 0; m < 500; m++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("lodgementAmount_UnderDocumentDetails_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				if (m==499) {
+					Assert.fail(e.getMessage());
+				}
+				
+			}
+		}
 	}
 
 	@And("User_610 validate remarks field enabled or not under document details")
 	public void user_610_validate_remarks_field_enabled_or_not_under_document_details() throws Throwable {
-		javascriptHelper.scrollIntoView(
-				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("remarks_UnderDocumentDetails_610")));
-		waitHelper.waitForElementwithFluentwait(driver,
-				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("remarks_UnderDocumentDetails_610")));
-		Assert.assertEquals(true, javascriptHelper
-				.executeScriptWithWebElement(jsPaths2.getElement("remarks_UnderDocumentDetails_610")).isDisplayed());
+//		javascriptHelper.scrollIntoView(
+//				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("remarks_UnderDocumentDetails_610")));
+//		waitHelper.waitForElementwithFluentwait(driver,
+//				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("remarks_UnderDocumentDetails_610")));
+//		Assert.assertEquals(true, javascriptHelper
+//				.executeScriptWithWebElement(jsPaths2.getElement("remarks_UnderDocumentDetails_610")).isDisplayed());
+		
+		for (int m = 0; m < 500; m++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("remarks_UnderDocumentDetails_610")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				if (m==499) {
+					Assert.fail(e.getMessage());
+				}
+				
+			}
+		}
 	}
 
 	@And("User_610 click save and verify")

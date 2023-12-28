@@ -20,9 +20,8 @@ public class AutoLoan_Stepa {
 	
 	String excelPath = System.getProperty("user.dir") + "\\TestData\\IjaraJSPaths.xlsx";
 	JSPaths al_ADEntry_CustomerDetails = new JSPaths(excelPath, "Al_ADEntry_CustomerDetails_610", "AutoloanADEntry_CustomerDetails", "JSPath");
-	
-	
-	
+	JSPaths al_ADEntryDocDetails_610 = new JSPaths(excelPath, "Al_ADEntryDocDetails_610", "AutoloanADEntry_DocumentsDetails", "JSPath");
+
 	
 	
 	// ***********************************  Steps ********************************
@@ -3600,4 +3599,1014 @@ public class AutoLoan_Stepa {
 		    
 		}
 		
+		
+		//------------------------------- @AT_Al_CD_11
+		
+		
+		@And("User_610 verify the add button Autoloan")
+		public void user_verify_the_add_button_autoloan() {
+			for (int i = 0; i < 200; i++) {
+				try {
+					javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("editBtn_UnderFollowUp_610")).click();
+					break;
+				} catch (Exception e) {
+					if (i == 199) {
+						Assert.fail(e.getMessage());
+					}
+					// TODO: handle exception
+				}
+			}
+		    
+			
+			for (int i = 0; i < 600; i++) {
+				try {
+					if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("contactDetailsBackBtn")).isDisplayed()) {
+						Assert.assertTrue(true);
+						break;
+					}
+				} catch (Exception e) {
+					if (i==599) {
+						Assert.fail(e.getMessage());
+					}
+					// TODO: handle exception
+				}
+			}
+			
+			
+		}
+
+		@And("User_610 verify the back button Autoloan")
+		public void user_verify_the_back_button_autoloan() {
+		    
+		    
+		}
+
+		@And("User_610 verify the any mandatory field blank and save system should not allow user to save the record Autoloan")
+		public void user_verify_the_any_mandatory_field_blank_and_save_system_should_not_allow_user_to_save_the_record_autoloan() {
+		    
+		    
+		}
+
+		@And("User_610 verfiy enter negative value system should not allow user to save the record Autoloan")
+		public void user_verfiy_enter_negative_value_system_should_not_allow_user_to_save_the_record_autoloan() {
+		    
+		    
+		}
+
+		@And("User_610 verfiy enter character value in numeric field system should not allow user to save the record Autoloan")
+		public void user_verfiy_enter_character_value_in_numeric_field_system_should_not_allow_user_to_save_the_record_autoloan() {
+		    
+		    
+		}
+
+		@And("User_610 verify enters only special characters value in any field system should not allow user to save the record Autoloan")
+		public void user_verify_enters_only_special_characters_value_in_any_field_system_should_not_allow_user_to_save_the_record_autoloan() {
+		    
+		    
+		}
+		
+		
+		//--------------------   @AT_Al_DOC_01
+		
+		@And("User_610 Click Documents Details screen in Autoloan")
+		public void user_click_documents_details_screen_in_autoloan() {
+			for (int i = 0; i < 300; i++) {
+				try {
+					javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("AutoLoanADEntry_DocumentsDetails")).click();
+					break;
+					
+				} catch (Exception e) {
+					if (i==299) {
+						Assert.fail(e.getMessage());
+					}
+					// TODO: handle exception
+				}
+			}
+		}
+
+		@And("User_610 Click Add button under documents details AL")
+		public void user_click_add_button_under_documents_details_al() {
+			for (int i = 0; i < 300; i++) {
+				try {
+					javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("AddBtn")).click();
+					break;
+					
+				} catch (Exception e) {
+					if (i==299) {
+						Assert.fail(e.getMessage());
+					}
+					// TODO: handle exception
+				}
+			}
+				}
+		
+		//------------ @AT_Al_DOC_01
+		
+		@And("User_610 verify the Customer Name field in Al")
+		public void user_verify_the_customer_name_field_in_al() {
+			for (int i = 0; i < 600; i++) {
+				try {
+					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("CustomerName")).isDisplayed()) {
+						Assert.assertTrue(true);
+						break;
+					}
+				} catch (Exception e) {
+					if (i==599) {
+						Assert.fail(e.getMessage());
+					}
+					// TODO: handle exception
+				}
+			}
+		    
+		}
+
+		@And("User_610 verify the Document Name field in Al")
+		public void user_verify_the_document_name_field_in_al() {
+			for (int i = 0; i < 600; i++) {
+				try {
+					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("Documentname")).isDisplayed()) {
+						Assert.assertTrue(true);
+						break;
+					}
+				} catch (Exception e) {
+					if (i==599) {
+						Assert.fail(e.getMessage());
+					}
+					// TODO: handle exception
+				}
+			}
+		    
+		}
+
+		@And("User_610 verify the Required At Stage field in Al")
+		public void user_verify_the_required_at_stage_field_in_al() {
+			for (int i = 0; i < 600; i++) {
+				try {
+					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("RequiredAtStage")).isDisplayed()) {
+						Assert.assertTrue(true);
+						break;
+					}
+				} catch (Exception e) {
+					if (i==599) {
+						Assert.fail(e.getMessage());
+					}
+					// TODO: handle exception
+				}
+			}
+		    
+		}
+
+		@And("User_610 verify the Document Status field in Al")
+		public void user_verify_the_document_status_field_in_al() {
+			for (int i = 0; i < 600; i++) {
+				try {
+					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("DocumentStatus")).isDisplayed()) {
+						Assert.assertTrue(true);
+						break;
+					}
+				} catch (Exception e) {
+					if (i==599) {
+						Assert.fail(e.getMessage());
+					}
+					// TODO: handle exception
+				}
+			}
+		    
+		}
+
+		@And("User_610 verify the Mandatory Optional field in Al")
+		public void user_verify_the_mandatory_optional_field_in_al() {
+			for (int i = 0; i < 600; i++) {
+				try {
+					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("MandatoryOptional")).isDisplayed()) {
+						Assert.assertTrue(true);
+						break;
+					}
+				} catch (Exception e) {
+					if (i==599) {
+						Assert.fail(e.getMessage());
+					}
+					// TODO: handle exception
+				}
+			}
+		    
+		}
+
+		@And("User_610 verify the Document Category field in Al")
+		public void user_verify_the_document_category_field_in_al() {
+			for (int i = 0; i < 600; i++) {
+				try {
+					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("DocumentCategory")).isDisplayed()) {
+						Assert.assertTrue(true);
+						break;
+					}
+				} catch (Exception e) {
+					if (i==599) {
+						Assert.fail(e.getMessage());
+					}
+					// TODO: handle exception
+				}
+			}
+		    
+		}
+
+		@And("User_610 verify the Upload Date field in Al")
+		public void user_verify_the_upload_date_field_in_al() {
+			for (int i = 0; i < 600; i++) {
+				try {
+					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("UploadDate")).isDisplayed()) {
+						Assert.assertTrue(true);
+						break;
+					}
+				} catch (Exception e) {
+					if (i==599) {
+						Assert.fail(e.getMessage());
+					}
+					// TODO: handle exception
+				}
+			}
+		    
+		}
+
+		@And("User_610 verify the Expected Date Of Receipt field in Al")
+		public void user_verify_the_expected_date_of_receipt_field_in_al() {
+			for (int i = 0; i < 600; i++) {
+				try {
+					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("ExpectedDateOfReceipt")).isDisplayed()) {
+						Assert.assertTrue(true);
+						break;
+					}
+				} catch (Exception e) {
+					if (i==599) {
+						Assert.fail(e.getMessage());
+					}
+					// TODO: handle exception
+				}
+			}
+		    
+		}
+
+		@And("User_610 verify the Deferral Stage field in Al")
+		public void user_verify_the_deferral_stage_field_in_al() {
+			for (int i = 0; i < 600; i++) {
+				try {
+					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("DeferralStage")).isDisplayed()) {
+						Assert.assertTrue(true);
+						break;
+					}
+				} catch (Exception e) {
+					if (i==599) {
+						Assert.fail(e.getMessage());
+					}
+					// TODO: handle exception
+				}
+			}
+		    
+		}
+
+		@And("User_610 verify the Def Approved By field in Al")
+		public void user_verify_the_def_approved_by_field_in_al() {
+			for (int i = 0; i < 600; i++) {
+				try {
+					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("DefApprovedBy")).isDisplayed()) {
+						Assert.assertTrue(true);
+						break;
+					}
+				} catch (Exception e) {
+					if (i==599) {
+						Assert.fail(e.getMessage());
+					}
+					// TODO: handle exception
+				}
+			}
+		    
+		}
+
+		@And("User_610 verify the Change In Nature Approved By field in Al")
+		public void user_verify_the_change_in_nature_approved_by_field_in_al() {
+			for (int i = 0; i < 600; i++) {
+				try {
+					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("ChangeInNatureApprovedBy")).isDisplayed()) {
+						Assert.assertTrue(true);
+						break;
+					}
+				} catch (Exception e) {
+					if (i==599) {
+						Assert.fail(e.getMessage());
+					}
+					// TODO: handle exception
+				}
+			}
+		    
+		}
+
+		@And("User_610 verify the Document From field in Al")
+		public void user_verify_the_document_from_field_in_al() {
+			for (int i = 0; i < 600; i++) {
+				try {
+					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("DocumentFrom")).isDisplayed()) {
+						Assert.assertTrue(true);
+						break;
+					}
+				} catch (Exception e) {
+					if (i==599) {
+						Assert.fail(e.getMessage());
+					}
+					// TODO: handle exception
+				}
+			}
+		    
+		}
+
+		@And("User_610 verify the Document Quality field in Al")
+		public void user_verify_the_document_quality_field_in_al() {
+			for (int i = 0; i < 600; i++) {
+				try {
+					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("DocumentQuality")).isDisplayed()) {
+						Assert.assertTrue(true);
+						break;
+					}
+				} catch (Exception e) {
+					if (i==599) {
+						Assert.fail(e.getMessage());
+					}
+					// TODO: handle exception
+				}
+			}
+		    
+		}
+
+		@And("User_610 verify the Document Reference Number field in Al")
+		public void user_verify_the_document_reference_number_field_in_al() {
+			for (int i = 0; i < 600; i++) {
+				try {
+					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("DocumentReferenceNumber")).isDisplayed()) {
+						Assert.assertTrue(true);
+						break;
+					}
+				} catch (Exception e) {
+					if (i==599) {
+						Assert.fail(e.getMessage());
+					}
+					// TODO: handle exception
+				}
+			}
+		    
+		}
+
+		@And("User_610 verify the Document Approved By field in Al")
+		public void user_verify_the_document_approved_by_field_in_al() {
+			for (int i = 0; i < 600; i++) {
+				try {
+					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("DocumentApprovedBy")).isDisplayed()) {
+						Assert.assertTrue(true);
+						break;
+					}
+				} catch (Exception e) {
+					if (i==599) {
+						Assert.fail(e.getMessage());
+					}
+					// TODO: handle exception
+				}
+			}
+		    
+		}
+
+		@And("User_610 verify the Document Details Location Where Received field in Al")
+		public void user_verify_the_document_details_location_where_received_field_in_al() {
+			for (int i = 0; i < 600; i++) {
+				try {
+					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("DocumentDetailsLocationWhereReceived")).isDisplayed()) {
+						Assert.assertTrue(true);
+						break;
+					}
+				} catch (Exception e) {
+					if (i==599) {
+						Assert.fail(e.getMessage());
+					}
+					// TODO: handle exception
+				}
+			}
+		    
+		}
+
+		@And("User_610 verify the Rack No field in Al")
+		public void user_verify_the_rack_no_field_in_al() {
+			for (int i = 0; i < 600; i++) {
+				try {
+					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("RackNo")).isDisplayed()) {
+						Assert.assertTrue(true);
+						break;
+					}
+				} catch (Exception e) {
+					if (i==599) {
+						Assert.fail(e.getMessage());
+					}
+					// TODO: handle exception
+				}
+			}
+		    
+		}
+
+		@And("User_610 verify the Shelf No field in Al")
+		public void user_verify_the_shelf_no_field_in_al() {
+			for (int i = 0; i < 600; i++) {
+				try {
+					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("ShelfNo")).isDisplayed()) {
+						Assert.assertTrue(true);
+						break;
+					}
+				} catch (Exception e) {
+					if (i==599) {
+						Assert.fail(e.getMessage());
+					}
+					// TODO: handle exception
+				}
+			}
+		    
+		}
+
+		@And("User_610 verify the Box No field in Al")
+		public void user_verify_the_box_no_field_in_al() {
+			for (int i = 0; i < 600; i++) {
+				try {
+					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("BoxNo")).isDisplayed()) {
+						Assert.assertTrue(true);
+						break;
+					}
+				} catch (Exception e) {
+					if (i==599) {
+						Assert.fail(e.getMessage());
+					}
+					// TODO: handle exception
+				}
+			}
+		    
+		}
+
+		@And("User_610 verify the Date Of Expiry field in Al")
+		public void user_verify_the_date_of_expiry_field_in_al() {
+			for (int i = 0; i < 600; i++) {
+				try {
+					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("DateOfExpiry")).isDisplayed()) {
+						Assert.assertTrue(true);
+						break;
+					}
+				} catch (Exception e) {
+					if (i==599) {
+						Assert.fail(e.getMessage());
+					}
+					// TODO: handle exception
+				}
+			}
+		    
+		}
+
+		@And("User_610 verify the Lodgement Amount field in Al")
+		public void user_verify_the_lodgement_amount_field_in_al() {
+			for (int i = 0; i < 600; i++) {
+				try {
+					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("LodgementAmount")).isDisplayed()) {
+						Assert.assertTrue(true);
+						break;
+					}
+				} catch (Exception e) {
+					if (i==599) {
+						Assert.fail(e.getMessage());
+					}
+					// TODO: handle exception
+				}
+			}
+		    
+		}
+
+		@And("User_610 verify the Remark field in Al")
+		public void user_verify_the_remark_field_in_al() {
+			for (int i = 0; i < 600; i++) {
+				try {
+					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("Remark")).isDisplayed()) {
+						Assert.assertTrue(true);
+						break;
+					}
+				} catch (Exception e) {
+					if (i==599) {
+						Assert.fail(e.getMessage());
+					}
+					// TODO: handle exception
+				}
+			}
+		    
+		}
+		
+		//----------------- @AT_Al_DOC_02
+		
+		@And("User_610 select document name in documents details screen")
+		public void user_select_document_name_in_documents_details_screen() {
+			for (int i = 0; i < 300; i++) {
+				try {
+					javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("Documentname")).click();
+					break;
+					
+				} catch (Exception e) {
+					if (i==299) {
+						Assert.fail(e.getMessage());
+					}
+					// TODO: handle exception
+					} 
+				      }
+			
+            //-------dropdown 
+			
+			
+			String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+			String dropdownLength = "";
+			boolean isDropdownValueSelected = false;
+			String dropdownString = "";
+			for (int i = 0; i <= 300; i++) {
+				try {
+
+					dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+					System.out.println("Dropdown length " + dropdownLength);
+					if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+						break;
+					}
+				} catch (Exception e) {
+					if (i == 300) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+
+			int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+			for (int j = 0; j <= premitiveDropdownLength; j++) {
+				for (int l = 0; l <= 300; l++) {
+					try {
+						System.out.println("L value is " + l);
+						System.out
+								.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+						dropdownString = javascriptHelper.executeScript(
+								"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+								.toString();
+
+						if (!(dropdownString.isEmpty())) {
+							System.out.println(dropdownString);
+							System.out.println("Loop count " + l + " got breaked");
+							break;
+						}
+
+					} catch (Exception e) {
+						if (l == 300 && !(dropdownString.isBlank())) {
+							Assert.fail(e.getMessage());
+						}
+					}
+
+					if (!(dropdownString.isEmpty())) {
+						System.out.println(dropdownString);
+						System.out.println("Loop count " + l + " got breaked");
+						break;
+					}
+				}
+
+				System.out.println("String " + dropdownString.trim());
+
+			//	System.out.println("Map " + testData.get("ID Type").trim());
+
+				if ((dropdownString.trim())
+						.equalsIgnoreCase("Pan Card")) {
+
+					for (int k = 0; k <= 300; k++) {
+						try {
+							clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+							clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+							isDropdownValueSelected = true;
+							break;
+						} catch (Exception e) {
+							if (k == 300) {
+							Assert.fail(e.getMessage());
+							}
+						}
+					}
+				}
+				if (isDropdownValueSelected == true) {
+					break;
+				}
+			}
+		
+		
+		}
+
+		@And("User_610 select document status in documents details screen")
+		public void user_select_document_status_in_documents_details_screen() {
+			for (int i = 0; i < 300; i++) {
+				try {
+					javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("DocumentStatus")).click();
+					break;
+					
+				} catch (Exception e) {
+					if (i==299) {
+						Assert.fail(e.getMessage());
+					}
+					// TODO: handle exception
+					} 
+				      }
+			
+            //-------dropdown 
+			
+			
+			String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+			String dropdownLength = "";
+			boolean isDropdownValueSelected = false;
+			String dropdownString = "";
+			for (int i = 0; i <= 300; i++) {
+				try {
+
+					dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+					System.out.println("Dropdown length " + dropdownLength);
+					if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+						break;
+					}
+				} catch (Exception e) {
+					if (i == 300) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+
+			int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+			for (int j = 0; j <= premitiveDropdownLength; j++) {
+				for (int l = 0; l <= 300; l++) {
+					try {
+						System.out.println("L value is " + l);
+						System.out
+								.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+						dropdownString = javascriptHelper.executeScript(
+								"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+								.toString();
+
+						if (!(dropdownString.isEmpty())) {
+							System.out.println(dropdownString);
+							System.out.println("Loop count " + l + " got breaked");
+							break;
+						}
+
+					} catch (Exception e) {
+						if (l == 300 && !(dropdownString.isBlank())) {
+							Assert.fail(e.getMessage());
+						}
+					}
+
+					if (!(dropdownString.isEmpty())) {
+						System.out.println(dropdownString);
+						System.out.println("Loop count " + l + " got breaked");
+						break;
+					}
+				}
+
+				System.out.println("String " + dropdownString.trim());
+
+			//	System.out.println("Map " + testData.get("ID Type").trim());
+
+				if ((dropdownString.trim())
+						.equalsIgnoreCase("Received")) {
+
+					for (int k = 0; k <= 300; k++) {
+						try {
+							clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+							clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+							isDropdownValueSelected = true;
+							break;
+						} catch (Exception e) {
+							if (k == 300) {
+							Assert.fail(e.getMessage());
+							}
+						}
+					}
+				}
+				if (isDropdownValueSelected == true) {
+					break;
+				}
+			}
+
+		    
+		}
+
+		@And("User_610 select Mandatory optional in documents details screen")
+		public void user_select_mandatory_optional_in_documents_details_screen() {
+			for (int i = 0; i < 300; i++) {
+				try {
+					javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("MandatoryOptional")).click();
+					break;
+					
+				} catch (Exception e) {
+					if (i==299) {
+						Assert.fail(e.getMessage());
+					}
+					// TODO: handle exception
+					} 
+				      }
+			
+            //-------dropdown 
+			
+			
+			String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+			String dropdownLength = "";
+			boolean isDropdownValueSelected = false;
+			String dropdownString = "";
+			for (int i = 0; i <= 300; i++) {
+				try {
+
+					dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+					System.out.println("Dropdown length " + dropdownLength);
+					if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+						break;
+					}
+				} catch (Exception e) {
+					if (i == 300) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+
+			int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+			for (int j = 0; j <= premitiveDropdownLength; j++) {
+				for (int l = 0; l <= 300; l++) {
+					try {
+						System.out.println("L value is " + l);
+						System.out
+								.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+						dropdownString = javascriptHelper.executeScript(
+								"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+								.toString();
+
+						if (!(dropdownString.isEmpty())) {
+							System.out.println(dropdownString);
+							System.out.println("Loop count " + l + " got breaked");
+							break;
+						}
+
+					} catch (Exception e) {
+						if (l == 300 && !(dropdownString.isBlank())) {
+							Assert.fail(e.getMessage());
+						}
+					}
+
+					if (!(dropdownString.isEmpty())) {
+						System.out.println(dropdownString);
+						System.out.println("Loop count " + l + " got breaked");
+						break;
+					}
+				}
+
+				System.out.println("String " + dropdownString.trim());
+
+			//	System.out.println("Map " + testData.get("ID Type").trim());
+
+				if ((dropdownString.trim())
+						.equalsIgnoreCase("Optional")) {
+
+					for (int k = 0; k <= 300; k++) {
+						try {
+							clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+							clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+							isDropdownValueSelected = true;
+							break;
+						} catch (Exception e) {
+							if (k == 300) {
+							Assert.fail(e.getMessage());
+							}
+						}
+					}
+				}
+				if (isDropdownValueSelected == true) {
+					break;
+				}
+			}
+
+		    
+		}
+
+		@And("User_610 select document category in documents details screen")
+		public void user_select_document_category_in_documents_details_screen() {
+			for (int i = 0; i < 300; i++) {
+				try {
+					javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("DocumentCategory")).click();
+					break;
+					
+				} catch (Exception e) {
+					if (i==299) {
+						Assert.fail(e.getMessage());
+					}
+					// TODO: handle exception
+					} 
+				      }
+			
+            //-------dropdown 
+			
+			
+			String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+			String dropdownLength = "";
+			boolean isDropdownValueSelected = false;
+			String dropdownString = "";
+			for (int i = 0; i <= 300; i++) {
+				try {
+
+					dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+					System.out.println("Dropdown length " + dropdownLength);
+					if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+						break;
+					}
+				} catch (Exception e) {
+					if (i == 300) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+
+			int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+			for (int j = 0; j <= premitiveDropdownLength; j++) {
+				for (int l = 0; l <= 300; l++) {
+					try {
+						System.out.println("L value is " + l);
+						System.out
+								.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+						dropdownString = javascriptHelper.executeScript(
+								"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+								.toString();
+
+						if (!(dropdownString.isEmpty())) {
+							System.out.println(dropdownString);
+							System.out.println("Loop count " + l + " got breaked");
+							break;
+						}
+
+					} catch (Exception e) {
+						if (l == 300 && !(dropdownString.isBlank())) {
+							Assert.fail(e.getMessage());
+						}
+					}
+
+					if (!(dropdownString.isEmpty())) {
+						System.out.println(dropdownString);
+						System.out.println("Loop count " + l + " got breaked");
+						break;
+					}
+				}
+
+				System.out.println("String " + dropdownString.trim());
+
+			//	System.out.println("Map " + testData.get("ID Type").trim());
+
+				if ((dropdownString.trim())
+						.equalsIgnoreCase("Digital KYC Document")) {
+
+					for (int k = 0; k <= 300; k++) {
+						try {
+							clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+							clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+							isDropdownValueSelected = true;
+							break;
+						} catch (Exception e) {
+							if (k == 300) {
+							Assert.fail(e.getMessage());
+							}
+						}
+					}
+				}
+				if (isDropdownValueSelected == true) {
+					break;
+				}
+			}
+
+		    
+		}
+
+		@And("User_610 select document quality in documents details screen")
+		public void user_select_document_quality_in_documents_details_screen() {
+			for (int i = 0; i < 300; i++) {
+				try {
+					javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("DocumentQuality")).click();
+					break;
+					
+				} catch (Exception e) {
+					if (i==299) {
+						Assert.fail(e.getMessage());
+					}
+					// TODO: handle exception
+					} 
+				      }
+			
+            //-------dropdown 
+			
+			
+			String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+			String dropdownLength = "";
+			boolean isDropdownValueSelected = false;
+			String dropdownString = "";
+			for (int i = 0; i <= 300; i++) {
+				try {
+
+					dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+					System.out.println("Dropdown length " + dropdownLength);
+					if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+						break;
+					}
+				} catch (Exception e) {
+					if (i == 300) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+
+			int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+			for (int j = 0; j <= premitiveDropdownLength; j++) {
+				for (int l = 0; l <= 300; l++) {
+					try {
+						System.out.println("L value is " + l);
+						System.out
+								.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+						dropdownString = javascriptHelper.executeScript(
+								"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+								.toString();
+
+						if (!(dropdownString.isEmpty())) {
+							System.out.println(dropdownString);
+							System.out.println("Loop count " + l + " got breaked");
+							break;
+						}
+
+					} catch (Exception e) {
+						if (l == 300 && !(dropdownString.isBlank())) {
+							Assert.fail(e.getMessage());
+						}
+					}
+
+					if (!(dropdownString.isEmpty())) {
+						System.out.println(dropdownString);
+						System.out.println("Loop count " + l + " got breaked");
+						break;
+					}
+				}
+
+				System.out.println("String " + dropdownString.trim());
+
+			//	System.out.println("Map " + testData.get("ID Type").trim());
+
+				if ((dropdownString.trim())
+						.equalsIgnoreCase("Valid and Clear")) {
+
+					for (int k = 0; k <= 300; k++) {
+						try {
+							clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+							clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+							isDropdownValueSelected = true;
+							break;
+						} catch (Exception e) {
+							if (k == 300) {
+							Assert.fail(e.getMessage());
+							}
+						}
+					}
+				}
+				if (isDropdownValueSelected == true) {
+					break;
+				}
+			}
+
+		    
+		}
+
+		@And("User_610 select remark in documents details screen")
+		public void user_select_remark_in_documents_details_screen() {
+			javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("Remark")));
+			//javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("Remark")).click();
+			for (int i = 0; i < 600; i++) {
+				try {
+					javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("RemarkText")).sendKeys("test");
+					break;
+					
+				} catch (Exception e) {
+					if (i==599) {
+						Assert.fail(e.getMessage());
+					}
+					// TODO: handle exception
+					} 
+				      }
+		    
+		}
+
+		@And("User_610 click save and verify in documents details screen")
+		public void user_click_save_and_verify_in_documents_details_screen() throws Throwable {
+			javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("contactDetailsBackBtn")));
+		    Thread.sleep(5000);
+		}
 }

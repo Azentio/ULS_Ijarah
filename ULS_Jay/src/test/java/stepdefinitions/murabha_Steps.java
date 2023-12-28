@@ -191,7 +191,7 @@ public class murabha_Steps {
 				}
 			}
 		}
-	    Thread.sleep(5020);
+	    Thread.sleep(3000);
 	}
 
 	@And("User_610 select nature of employment")

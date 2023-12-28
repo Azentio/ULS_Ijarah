@@ -223,7 +223,7 @@ Feature: AutoLoan AppData Entry Customer Details
     And User_610 verify the Remarks field non mandatory editable textbox
     Then logout from the ijaraApplication
     
-      #bug  format issue number text
+      #bug  format issue number to text
     @AT_Al_CD_10          
   Scenario: verify the fields number editable
     Given navigate the IJARA URL
@@ -260,11 +260,10 @@ Feature: AutoLoan AppData Entry Customer Details
     #
     And User_610 Click Customer Details screen in Autoloan
     And User_610 click edit button under additional customer info
-    And User_610 verify the add button 
-    And User_610 verify the back button
-    And User_610 verify the any mandatory field blank and save system should not allow user to save the record
-    And User_610 verify the 
-    And User_610 verify the
-    And User_610 verify the
-    And User_610 verify enters only special characters value in any field system should not allow user to save the record
+    And User_610 verify the add button Autoloan
+    And User_610 verify the back button Autoloan
+    And User_610 verify the any mandatory field blank and save system should not allow user to save the record Autoloan
+    And User_610 verfiy enter negative value system should not allow user to save the record Autoloan
+    And User_610 verfiy enter character value in numeric field system should not allow user to save the record Autoloan
+    And User_610 verify enters only special characters value in any field system should not allow user to save the record Autoloan
     

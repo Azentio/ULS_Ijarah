@@ -39,6 +39,7 @@ And User_610 validate document name field enabled or not under document details
  #And User_610 validate date Of expiry field enabled or not under document details 
  And User_610 validate lodgement Amount field enabled or not under document details 
  And User_610 validate remarks field enabled or not under document details 
+ Then logout from the ijaraApplication
  
  
  
@@ -64,6 +65,7 @@ And User_610 select Document Status field enabled or not under document details
 And User_610 select Document Category field enabled or not under document details 
 And User_610 select remarks field enabled or not under document details 
 And User_610 click save and verify
+Then logout from the ijaraApplication
  
  
  
