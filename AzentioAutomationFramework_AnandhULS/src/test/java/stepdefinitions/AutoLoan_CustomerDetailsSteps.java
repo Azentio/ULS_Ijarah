@@ -31,7 +31,7 @@ public class AutoLoan_CustomerDetailsSteps extends BaseClass {
 			"New_App_CustomerDetailsElements", "JSPath");
 	WebDriver driver = BaseClass.driver;
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
-	ExcelData newAppExecutionSheet = new ExcelData(configFileReader.getAutoLoanTestDataFilePath(), "NewAppExecution",
+	ExcelData newAppExecutionSheet = new ExcelData(configFileReader.getAutoLoanTestDataFilePath(), "AutoLoanExecution",
 			"TestCase ID");
 	ExcelData customerDetailsTestData = new ExcelData(configFileReader.getAutoLoanTestDataFilePath(),
 			"NewApp_CustomerDetailsTestData", "Dataset ID");

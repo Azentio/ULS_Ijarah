@@ -263,25 +263,25 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 			throws Throwable {
 		boolean statusOfSaveButton = false;
 		boolean statusOfBackButton = false;
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				statusOfSaveButton = javascriptHelper
 						.executeScriptWithWebElement(CommonJSElements.getElement("save_button")).isDisplayed();
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				statusOfBackButton = javascriptHelper
 						.executeScriptWithWebElement(CommonJSElements.getElement("back_button")).isDisplayed();
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -297,7 +297,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 			throws Throwable {
 		String mandatoryVerification = "";
 		String fieldValidation = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				mandatoryVerification = javascriptHelper
 						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("relationship_type_dropdown"))
@@ -309,7 +309,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -318,14 +318,14 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 		softAssert.assertTrue(!(mandatoryVerification.contains("*")),
 				"relationship field should be non mandatory but in application screen its mandatory");
 		softAssert.assertTrue(fieldValidation.contains("Select"), "relationship field is not a dropdown hence failed");
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("relationship_type_dropdown"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -340,7 +340,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 			throws Throwable {
 		String mandatoryVerification = "";
 		String fieldValidation = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				mandatoryVerification = javascriptHelper
 						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("salutation_dropdown"))
@@ -352,7 +352,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -360,13 +360,13 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 		softAssert.assertTrue(mandatoryVerification.contains("*"),
 				"salutation field should be mandatory but in application screen its non mandatory");
 		softAssert.assertTrue(fieldValidation.contains("Select"), "salutation field is not a dropdown hence failed");
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerReferenceJsPaths.getElement("salutation_dropdown"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -382,7 +382,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 		String mandatoryVerification = "";
 		String fieldValidation = "";
 
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				mandatoryVerification = javascriptHelper
 						.executeScript(
@@ -393,7 +393,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.getAttribute("type");
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -405,7 +405,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 		softAssert.assertTrue(fieldValidation.contains("text"),
 				"First name field tyep should v=be text box but in application its not a text box");
 
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerReferenceJsPaths.getElement("first_name_input"))
 						.click();
@@ -413,7 +413,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.sendKeys(customerReferenceTestData.get("first_name"));
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -427,7 +427,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 		String mandatoryVerification = "";
 		String fieldValidation = "";
 
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				mandatoryVerification = javascriptHelper
 						.executeScript(
@@ -438,7 +438,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.getAttribute("type");
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -448,7 +448,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 		softAssert.assertTrue(fieldValidation.contains("text"),
 				"middle name field tyep should v=be text box but in application its not a text box");
 
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerReferenceJsPaths.getElement("middle_name_input"))
 						.click();
@@ -456,7 +456,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.sendKeys(customerReferenceTestData.get("middle_name"));
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -468,7 +468,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 			throws Throwable {
 		String mandatoryVerification = "";
 		String fieldValidation = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				mandatoryVerification = javascriptHelper
 						.executeScript(
@@ -479,7 +479,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.getAttribute("type");
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -489,7 +489,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 		softAssert.assertTrue(fieldValidation.contains("text"),
 				"last name field tyep should v=be text box but in application its not a text box");
 
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerReferenceJsPaths.getElement("last_name_input"))
 						.click();
@@ -497,7 +497,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.sendKeys(customerReferenceTestData.get("last_name"));
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -510,7 +510,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 
 		String mandatoryVerification = "";
 		String fieldValidation = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				mandatoryVerification = javascriptHelper
 						.executeScript("return "
@@ -521,7 +521,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.getAttribute("type");
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -531,7 +531,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 		softAssert.assertTrue(fieldValidation.contains("text"),
 				"customer full name field type should be text box but in application its not a text box");
 
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("customer_full_name_input"))
@@ -541,7 +541,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.sendKeys(customerReferenceTestData.get("customer_full_name"));
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -553,7 +553,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 			throws Throwable {
 		String mandatoryVerification = "";
 		String fieldValidation = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				mandatoryVerification = javascriptHelper
 						.executeScriptWithWebElement(
@@ -567,7 +567,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -576,13 +576,13 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 				"identification type field should be non mandatory but in application screen its mandatory");
 		softAssert.assertTrue(fieldValidation.contains("Select"),
 				"identification type field is not a dropdown hence failed");
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
 						customerReferenceJsPaths.getElement("identification_type_dropdown")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -596,7 +596,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 			throws Throwable {
 		String mandatoryVerification = "";
 		String fieldValidation = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				mandatoryVerification = javascriptHelper
 						.executeScript("return "
@@ -607,7 +607,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.getAttribute("type");
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -617,7 +617,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 		softAssert.assertTrue(fieldValidation.contains("text"),
 				"identification number field type should be text box but in application its not a text box");
 
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("identification_number_input"))
@@ -627,7 +627,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.sendKeys(customerReferenceTestData.get("identifiaction_number"));
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -639,7 +639,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 			throws Throwable {
 		String mandatoryVerification = "";
 		String fieldValidation = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				mandatoryVerification = javascriptHelper
 						.executeScript("return "
@@ -650,7 +650,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.getAttribute("name");
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -660,7 +660,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 		softAssert.assertTrue(fieldValidation.contains("textarea"),
 				"residential address field type should be text box but in application its not a text box");
 
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("residential_address_input"))
@@ -670,7 +670,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.sendKeys(customerReferenceTestData.get("residence_address"));
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -683,7 +683,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 			throws Throwable {
 		String mandatoryVerification = "";
 		String fieldValidation = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				mandatoryVerification = javascriptHelper
 						.executeScript("return "
@@ -694,7 +694,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.getAttribute("name");
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -704,7 +704,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 		softAssert.assertTrue(fieldValidation.contains("textarea"),
 				"office address field type should be text box but in application its not a text box");
 
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("office_address_input"))
@@ -714,7 +714,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.sendKeys(customerReferenceTestData.get("office_address"));
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -727,7 +727,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 			throws Throwable {
 		String mandatoryVerification = "";
 		String fieldValidation = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				mandatoryVerification = javascriptHelper
 						.executeScript("return "
@@ -738,7 +738,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.getAttribute("type");
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -748,7 +748,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 		softAssert.assertTrue(fieldValidation.contains("text"),
 				"contact number field type should be text box but in application its not a text box");
 
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("contact_number_input"))
@@ -758,7 +758,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.sendKeys(customerReferenceTestData.get("contact_number"));
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -770,7 +770,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 			throws Throwable {
 		String mandatoryVerification = "";
 		String fieldValidation = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				mandatoryVerification = javascriptHelper
 						.executeScript("return "
@@ -781,7 +781,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.getAttribute("type");
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -791,7 +791,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 		softAssert.assertTrue(fieldValidation.contains("text"),
 				"office phones number field type should be text box but in application its not a text box");
 
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("office_phone_number_input"))
@@ -801,7 +801,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.sendKeys(customerReferenceTestData.get("office_phone_number"));
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -814,7 +814,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 			throws Throwable {
 		String mandatoryVerification = "";
 		String fieldValidation = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				mandatoryVerification = javascriptHelper
 						.executeScript("return "
@@ -825,7 +825,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.getAttribute("type");
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -835,7 +835,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 		softAssert.assertTrue(fieldValidation.contains("text"),
 				"primary phones number field type should be text box but in application its not a text box");
 
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("primary_mobile_number_input"))
@@ -845,7 +845,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.sendKeys(customerReferenceTestData.get("primary_mobile_number"));
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -858,7 +858,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 			throws Throwable {
 		String mandatoryVerification = "";
 		String fieldValidation = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				mandatoryVerification = javascriptHelper
 						.executeScript("return "
@@ -870,7 +870,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.getAttribute("type");
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -880,7 +880,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 		softAssert.assertTrue(fieldValidation.contains("text"),
 				"alternate phones number field type should be text box but in application its not a text box");
 
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
 						customerReferenceJsPaths.getElement("altername_mobile_number_input")).click();
@@ -890,7 +890,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.sendKeys(customerReferenceTestData.get("alternate_mobile_number"));
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -902,7 +902,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 			throws Throwable {
 		String mandatoryVerification = "";
 		String fieldValidation = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				mandatoryVerification = javascriptHelper
 						.executeScript(
@@ -913,7 +913,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.getAttribute("type");
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -923,7 +923,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 		softAssert.assertTrue(fieldValidation.contains("text"),
 				"email id field type should be text box but in application its not a text box");
 
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerReferenceJsPaths.getElement("email_id_input"))
 						.click();
@@ -931,7 +931,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.sendKeys(customerReferenceTestData.get("email_id"));
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -944,7 +944,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 			throws Throwable {
 		String mandatoryVerification = "";
 		String fieldValidation = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				mandatoryVerification = javascriptHelper
 						.executeScript(
@@ -955,7 +955,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.getAttribute("type");
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -965,7 +965,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 		softAssert.assertTrue(fieldValidation.contains("number"),
 				"number of years knows field type should be text box but in application its not a text box");
 
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerReferenceJsPaths.getElement("years_known_input"))
 						.click();
@@ -973,7 +973,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.sendKeys(customerReferenceTestData.get("no_of_years_known"));
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -986,7 +986,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 			throws Throwable {
 		String mandatoryVerification = "";
 		String fieldValidation = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				mandatoryVerification = javascriptHelper
 						.executeScript(
@@ -997,7 +997,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.getAttribute("type");
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1007,7 +1007,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 		softAssert.assertTrue(fieldValidation.contains("text"),
 				"CIF number field type should be text box but in application its not a text box");
 
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerReferenceJsPaths.getElement("cif_number_input"))
 						.click();
@@ -1015,7 +1015,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.sendKeys(customerReferenceTestData.get("cif_number"));
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1026,12 +1026,12 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 	@And("user_076 click on save button in customer reference list view record")
 	public void user_076_076_076_click_on_save_button_in_customer_reference_list_view_record() throws Throwable {
 
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(CommonJSElements.getElement("save_button")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1044,7 +1044,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 
 		String saveButtonValidationMessage = "";
 
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				saveButtonValidationMessage = javascriptHelper
 						.executeScript("return " + CommonJSElements.getElement("toast_container_message")).toString();
@@ -1052,7 +1052,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1071,12 +1071,12 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 	@And("user_076 click on save button without entering mandatory field in customer reference record at new app stage")
 	public void user_076_076_076_click_on_save_button_without_entering_mandatory_field_in_customer_reference_record_at_new_app_stage()
 			throws Throwable {
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(CommonJSElements.getElement("save_button")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1089,7 +1089,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 			throws Throwable {
 
 		String mandatoryValidationMessage = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				mandatoryValidationMessage = javascriptHelper
 						.executeScript("return " + CommonJSElements.getElement("toast_message")).toString();
@@ -1097,7 +1097,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -1110,7 +1110,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 	public void user_076_076_076_enter_the_special_character_input_in_first_name_text_box_in_customer_reference_at_new_app_stage()
 			throws Throwable {
 
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerReferenceJsPaths.getElement("first_name_input"))
 						.click();
@@ -1118,7 +1118,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.sendKeys(customerReferenceTestData.get("special_character_input"));
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1130,7 +1130,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 	public void user_076_076_076_should_get_the_special_character_validation_on_first_name_fiels_in_customer_reference_screen()
 			throws Throwable {
 		String specialCharacterInputvalidation = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				specialCharacterInputvalidation = javascriptHelper
 						.executeScript("return "
@@ -1140,7 +1140,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150)
+				if (i == 10)
 
 				{
 					Assert.fail(e.getMessage());
@@ -1155,7 +1155,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 	@And("user_076 enter the invalid mail id in email id field in customer reference screen")
 	public void user_076_076_076_enter_the_invalid_mail_id_in_email_id_field_in_customer_reference_screen()
 			throws Throwable {
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerReferenceJsPaths.getElement("email_id_input"))
 						.click();
@@ -1163,7 +1163,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.sendKeys(customerReferenceTestData.get("invalid_mail_id"));
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1174,7 +1174,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 	public void user_076_076_076_should_get_the_validation_for_invalid_mail_id_in_customer_reference_screen()
 			throws Throwable {
 		String invalidEmailIDvalidation = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				invalidEmailIDvalidation = javascriptHelper
 						.executeScript("return " + customerReferenceJsPaths.getElement("invalid_email_id_validation"))
@@ -1183,7 +1183,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150)
+				if (i == 10)
 
 				{
 					Assert.fail(e.getMessage());
@@ -1198,7 +1198,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 	@And("user_076 enter the character input in numeric firld in customer reference screen")
 	public void user_076_076_076_enter_the_character_input_in_numeric_firld_in_customer_reference_screen()
 			throws Throwable {
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerReferenceJsPaths.getElement("years_known_input"))
 						.click();
@@ -1206,7 +1206,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.sendKeys(customerReferenceTestData.get("alphabet_input"));
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1217,7 +1217,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 	public void user_076_076_076_numeric_field_wont_allowed_to_enter_the_special_character_input_in_numeric_field()
 			throws Throwable {
 		String numericFieldValidation = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				numericFieldValidation = javascriptHelper
 						.executeScript(
@@ -1225,7 +1225,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.toString();
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1236,12 +1236,12 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 
 	@And("user_076 click on back button in customer reference screen at new app stage")
 	public void user_076_076_076_click_on_back_button_in_customer_reference_screen_at_new_app_stage() throws Throwable {
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(CommonJSElements.getElement("back_button")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -1423,7 +1423,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 				}
 			}
 		}
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerReferenceJsPaths.getElement("first_name_input"))
 						.click();
@@ -1431,7 +1431,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.sendKeys(customerReferenceTestData.get("first_name"));
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1442,7 +1442,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 	public void user_076_076_verify_system_should_show_the_successful_update_pop_up_in_customer_reference_at_new_app_stage()
 			throws Throwable {
 		String updateSuccessMessage = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				updateSuccessMessage = javascriptHelper
 						.executeScript("return " + CommonJSElements.getElement("toast_container_message")).toString();
@@ -1450,7 +1450,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -1466,7 +1466,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 		String queryForListViewRecord = "document.querySelectorAll('ion-col[class=\\\"p-2 md hydrated\\\"]')["
 				+ indexOfListView + "].querySelectorAll('td')[3].innerText";
 		String updatedFirstNameFromScreen = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				updatedFirstNameFromScreen = javascriptHelper.executeScript("return " + queryForListViewRecord)
 						.toString();
@@ -1486,13 +1486,13 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 
 	@And("user_076 make salutation first as blank option at customer reference screen")
 	public void user_076_076_make_salutation_first_as_blank_option_at_customer_reference_screen() throws Throwable {
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerReferenceJsPaths.getElement("salutation_dropdown"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1559,7 +1559,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 
 		String tempRecordStatus = "";
 
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				tempRecordStatus = javascriptHelper
 						.executeScript("return " + customerReferenceJsPaths.getElement("opened_record_status"))
@@ -1569,25 +1569,25 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerReferenceJsPaths.getElement("status_button"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				customerReferenceRecordStatus = javascriptHelper
 						.executeScript("return " + customerReferenceJsPaths.getElement("opened_record_status"))
@@ -1597,7 +1597,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -1613,7 +1613,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 		String queryForListViewRecord = "document.querySelectorAll('ion-col[class=\\\"p-2 md hydrated\\\"]')["
 				+ indexOfListView + "].querySelectorAll('td')[6].innerText";
 		String listViewRecordStatus = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				listViewRecordStatus = javascriptHelper.executeScript("return " + queryForListViewRecord).toString();
 				if (!(listViewRecordStatus.isBlank())) {
@@ -1621,7 +1621,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -1696,13 +1696,13 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 		String search_query = "document.querySelectorAll('ion-col[class=\\\"p-2 md hydrated\\\"]')[" + indexOfListView
 				+ "].querySelector('button[ng-reflect-text=\"Search\"]')";
 
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 
 				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(search_query));
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -1710,13 +1710,13 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 
 		}
 
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(search_query).click();
 				break;
 
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -1747,14 +1747,14 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 		String extractSearchResult = "document.querySelectorAll('ion-col[class=\\\"p-2 md hydrated\\\"]')["
 				+ indexOfListView + "].querySelector('span[class=\"p-paginator-current ng-star-inserted\"]').innerText";
 		String matchedSearchResult = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				matchedSearchResult = javascriptHelper.executeScript("return " + extractSearchResult).toString();
 				if (!(matchedSearchResult.isBlank())) {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1798,7 +1798,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 				+ indexOfListView + "].querySelector('span[class=\"p-paginator-current ng-star-inserted\"]').innerText";
 		String unmatchedSearchResult = "";
 
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				if (i > 100) {
 					unmatchedSearchResult = javascriptHelper.executeScript("return " + extractSearchResult).toString();
@@ -1808,7 +1808,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 					}
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}

@@ -343,7 +343,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 
 		for (int i = 0; i <= 300; i++) {
 			try {
-				robot.mouseWheel(-200);
+				robot.mouseWheel(-20);
 				javascriptHelper.executeScriptWithWebElement(commonJSElements.getElement("save_button")).click();
 				break;
 			} catch (Exception e) {
@@ -386,14 +386,14 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 		String lengthOfTheLabel = "";
 		boolean isAddButttonClicked = false;
 		String labelName = "";
-		for (int i = 0; i <= 200; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				lengthOfTheLabel = javascriptHelper.executeScript("return " + labelLength).toString();
 				if (!(lengthOfTheLabel.isBlank())) {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 200) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -768,7 +768,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 
 		for (int i = 0; i <= 300; i++) {
 			try {
-				robot.mouseWheel(-200);
+				robot.mouseWheel(-20);
 				javascriptHelper.executeScriptWithWebElement(commonJSElements.getElement("save_button")).click();
 				break;
 			} catch (Exception e) {
@@ -806,14 +806,14 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 	public void user_076_click_on_save_button_customer_identification_details_screen_without_enter_the_mandatory_details_at_new_app_stage()
 			throws Throwable {
 		robot = new Robot();
-		for (int i = 0; i <= 200; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
-				robot.mouseWheel(-200);
+				robot.mouseWheel(-20);
 				System.out.println(commonJSElements.getElement("save_button"));
 				javascriptHelper.executeScriptWithWebElement(commonJSElements.getElement("save_button")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 200) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1384,7 +1384,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 
 		for (int i = 0; i <= 300; i++) {
 			try {
-				if (i > 200) {
+				if (i > 20) {
 					searchResult = javascriptHelper.executeScript(
 							"return document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]')["
 									+ indexOfListView
@@ -1600,14 +1600,14 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 		String lengthOfTheLabel = "";
 		boolean isAddButttonClicked = false;
 		String labelName = "";
-		for (int i = 0; i <= 200; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				lengthOfTheLabel = javascriptHelper.executeScript("return " + labelLength).toString();
 				if (!(lengthOfTheLabel.isBlank())) {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 200) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}

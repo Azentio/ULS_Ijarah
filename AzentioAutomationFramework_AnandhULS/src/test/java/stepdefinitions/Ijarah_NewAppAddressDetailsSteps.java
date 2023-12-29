@@ -202,14 +202,14 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 			throws Throwable {
 
 		WebElement searchTextBox;
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				searchTextBox = javascriptHelper
 						.executeScriptWithWebElement(commonJSElements.getElement("mail_box_search_text"));
 				searchTextBox.sendKeys(configFileReader.getIjarahRecordReferenceNumber());
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -222,14 +222,14 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 			throws Throwable {
 
 		WebElement searchTextBox;
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				searchTextBox = javascriptHelper
 						.executeScriptWithWebElement(commonJSElements.getElement("mail_box_search_text"));
 				searchTextBox.sendKeys(configFileReader.getIjarahRecordReferenceNumber());
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -242,7 +242,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 			throws Throwable {
 		String mailBoxRecordList = "document.querySelectorAll('td[class=\"ng-star-inserted\"]>span').length";
 		String numberOfRecordInMailBox = "";
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				numberOfRecordInMailBox = javascriptHelper.executeScript("return " + mailBoxRecordList).toString();
 				System.out.println("Number of record in mail box " + numberOfRecordInMailBox);
@@ -250,7 +250,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -258,7 +258,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 		int premitiveNumberOfRecordInMailBox = Integer.parseInt(numberOfRecordInMailBox);
 		// document.querySelectorAll('td[class="ng-star-inserted"]>span')[0].textContent
 		for (int j = 0; j < premitiveNumberOfRecordInMailBox; j++) {
-			for (int k = 0; k <= 80; k++) {
+			for (int k = 0; k <= 300; k++) {
 				try {
 					String recordRefNumber = javascriptHelper
 							.executeScript("return document.querySelectorAll('td[class=\"ng-star-inserted\"]>span')["
@@ -327,14 +327,14 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 	public void user_076_select_the_new_application_stage_record_from_mail_box() throws Throwable {
 		String mailBoxRecordList = "document.querySelectorAll('td[class=\"ng-star-inserted\"]>span').length";
 		String numberOfRecordInMailBox = "";
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				numberOfRecordInMailBox = javascriptHelper.executeScript("return " + mailBoxRecordList).toString();
 				if (!(numberOfRecordInMailBox.isBlank())) {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -343,7 +343,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 		System.out.println("Mail box Record " + premitiveNumberOfRecordInMailBox);
 		// document.querySelectorAll('td[class="ng-star-inserted"]>span')[0].textContent
 		for (int j = 0; j < premitiveNumberOfRecordInMailBox; j++) {
-			for (int k = 0; k <= 80; k++) {
+			for (int k = 0; k <= 300; k++) {
 				try {
 					String recordRefNumber = javascriptHelper
 							.executeScript("return document.querySelectorAll('td[class=\"ng-star-inserted\"]>span')["
@@ -360,7 +360,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 						break;
 					}
 				} catch (Exception e) {
-					if (k == 80) {
+					if (k == 8) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -377,7 +377,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 		System.out.println("");
 		for (int i = 0; i <= 300; i++) {
 			try {
-				if (i > 80) {
+				if (i > 8) {
 					System.out.println("Query " + labelLength);
 					lengthOfTheLabel = javascriptHelper.executeScript("return " + labelLength).toString();
 					if (!(lengthOfTheLabel.isBlank())) {
@@ -440,7 +440,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 			throws Throwable {
 		boolean saveButonVerification = false;
 		boolean backButtonVerification = false;
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				saveButonVerification = javascriptHelper
 						.executeScriptWithWebElement(commonJSElements.getElement("save_button")).isDisplayed();
@@ -448,13 +448,13 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 
 			}
 		}
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				backButtonVerification = javascriptHelper
 						.executeScriptWithWebElement(commonJSElements.getElement("back_button")).isDisplayed();
@@ -462,7 +462,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 
@@ -474,13 +474,13 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 	public void user_verify_address_type_field_should_be_editable_mandatory_dropdown_at_new_app_stage()
 			throws Throwable {
 
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(newAppAddressDetailsJSElements.getElement("address_type"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -500,14 +500,14 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 	@Then("user_076 verify address status field should be editablble mandatory dropdown at new app stage")
 	public void user_verify_address_status_field_should_be_editablble_mandatory_dropdown_at_new_app_stage()
 			throws Throwable {
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(newAppAddressDetailsJSElements.getElement("address_status"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -533,7 +533,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 	@Then("user_076 verify residential or occupancy status field should be editable mandatory dropdown at new app stage")
 	public void user_verify_residential_or_occupancy_status_field_should_be_editable_mandatory_dropdown_at_new_app_stage()
 			throws Throwable {
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
 						newAppAddressDetailsJSElements.getElement("residential_or_ocupency_status")).click();
@@ -543,7 +543,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 						.getAttribute("aria-label").contains("*"));
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -573,14 +573,14 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 	@Then("user_076 verify location category field should be mandatory editable lookup at new app stage")
 	public void user_verify_location_category_field_should_be_mandatory_editable_lookup_at_new_app_stage()
 			throws Throwable {
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(newAppAddressDetailsJSElements.getElement("location_category"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -607,7 +607,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 	public void user_verify_address_line_one_field_should_be_mandatory_editable_textbox_at_new_app_stage()
 			throws Throwable {
 		String fieldValidation = "";
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(newAppAddressDetailsJSElements.getElement("address_line1"))
 						.click();
@@ -618,19 +618,19 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 						.sendKeys(addressDetailsTestData.get("address_line_1"));
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScript(
 						"return " + newAppAddressDetailsJSElements.getElement("address_line1_mandatory_verification"));
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					softAssert.fail("address line 1 is a non mandatroy field hence failed");
 				}
 
@@ -643,7 +643,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 	public void user_verify_address_line_two_field_should_be_mandatory_editable_textbox_at_new_app_stage()
 			throws Throwable {
 		String fieldValidation = "";
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper
 						.executeScriptWithWebElement(newAppAddressDetailsJSElements.getElement("address_line2")));
@@ -656,19 +656,19 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 						.sendKeys(addressDetailsTestData.get("address_line_2"));
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScript(
 						"return " + newAppAddressDetailsJSElements.getElement("address_line2_mandatory_verification"));
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					softAssert.fail("address line 2 is a non mandatroy field hence failed");
 				}
 
@@ -679,13 +679,13 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 
 	@Then("user_076 verify country field should be mandatory editable textbox at new app stage")
 	public void user_verify_country_field_should_be_mandatory_editable_textbox_at_new_app_stage() throws Throwable {
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(newAppAddressDetailsJSElements.getElement("country"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -703,13 +703,13 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 	@Then("user_076 verify provience id field should be mandatory editable textbox at new app stage")
 	public void user_verify_provience_id_field_should_be_mandatory_editable_textbox_at_new_app_stage()
 			throws Throwable {
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(newAppAddressDetailsJSElements.getElement("province_id"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -727,7 +727,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 	public void user_verify_neighbourhood_district_name_field_should_be_mandatory_editable_textbox_at_new_app_stage()
 			throws Throwable {
 		String fieldValidation = "";
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper
 						.executeScriptWithWebElement(newAppAddressDetailsJSElements.getElement("district_name")));
@@ -740,18 +740,18 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 						.sendKeys(addressDetailsTestData.get("district_name"));
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScript(
 						"return " + newAppAddressDetailsJSElements.getElement("district_name_mandatory_verification"));
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					softAssert.fail("district name is a non mandatroy field hence failed");
 				} else {
 					break;
@@ -764,14 +764,14 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 
 	@Then("user_076 verify city field should be mandatory editable textbox at new app stage")
 	public void user_verify_city_field_should_be_mandatory_editable_textbox_at_new_app_stage() throws Throwable {
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper
 						.executeScriptWithWebElement(newAppAddressDetailsJSElements.getElement("city")));
 				javascriptHelper.executeScriptWithWebElement(newAppAddressDetailsJSElements.getElement("city")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 
@@ -788,7 +788,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 	@Then("user_076 verify zipcode field should be mandatory editable textbox at new app stage")
 	public void user_verify_zipcode_field_should_be_mandatory_editable_textbox_at_new_app_stage() throws Throwable {
 		String fieldValidation = "";
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper
 						.executeScriptWithWebElement(newAppAddressDetailsJSElements.getElement("zip_code")));
@@ -801,17 +801,17 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 						.sendKeys(addressDetailsTestData.get("zip_code"));
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScript("return " + newAppAddressDetailsJSElements.getElement("zip_code"));
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					softAssert.fail("zip code is a non mandatroy field hence failed");
 					break;
 				} else {
@@ -827,7 +827,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 	public void user_verify_po_box_number_field_should_be_non_mandatory_editable_textbox_at_new_app_stage()
 			throws Throwable {
 		String fieldValidation = "";
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper
 						.executeScriptWithWebElement(newAppAddressDetailsJSElements.getElement("po_box_number")));
@@ -840,16 +840,16 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 						.sendKeys(addressDetailsTestData.get("po_box_number"));
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				Object poBoxNumberObject = javascriptHelper.executeScript(
 						"return " + newAppAddressDetailsJSElements.getElement("po_box_number_mandatory_verification"));
-				if (i == 80) {
+				if (i == 300) {
 					if (poBoxNumberObject != null) {
 						softAssert.fail("po box number field should be non mandatory but here it is mandatory field");
 						break;
@@ -874,7 +874,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 		Double d = Double.valueOf(addressDetailsTestData.get("mobile_number"));
 		String mobileNumber = String.format("%.0f", d);
 
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
 						newAppAddressDetailsJSElements.getElement("mobile_number_primary")));
@@ -889,14 +889,14 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 						.sendKeys(mobileNumber);
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 		String poBoxNumberObject = "";
 
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				poBoxNumberObject = javascriptHelper.executeScript("return "
 						+ newAppAddressDetailsJSElements.getElement("mobile_number_primary_mandatory_verification"))
@@ -907,7 +907,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -922,7 +922,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 	public void user_verify_duration_of_stay_field_should_be_non_mandatory_editable_numeric_field_at_new_app_stage()
 			throws Throwable {
 		String fieldValidation = "";
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper
 						.executeScriptWithWebElement(newAppAddressDetailsJSElements.getElement("duration_on_stay")));
@@ -937,16 +937,16 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 						.sendKeys(addressDetailsTestData.get("duration_on_stay"));
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				Object poBoxNumberObject = javascriptHelper.executeScript("return "
 						+ newAppAddressDetailsJSElements.getElement("duration_on_stay_mandatory_verification"));
-				if (i == 80) {
+				if (i == 300) {
 					if (poBoxNumberObject != null) {
 						softAssert
 								.fail("duration on stay field should be non mandatory but here it is mandatory field");
@@ -967,7 +967,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 	public void user_verify_latitude_details_of_address_field_should_be_non_mandatory_editable_textbox_at_new_app_stage()
 			throws Throwable {
 		String fieldValidation = "";
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
 						newAppAddressDetailsJSElements.getElement("latitude_details_of_the_address")));
@@ -983,17 +983,17 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 						.sendKeys(addressDetailsTestData.get("latitude_details"));
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				Object poBoxNumberObject = javascriptHelper.executeScript("return " + newAppAddressDetailsJSElements
 						.getElement("latitude_details_of_the_address_mandatory_verification"));
-				if (i == 80) {
+				if (i == 300) {
 					if (poBoxNumberObject != null) {
 						softAssert
 								.fail("latitude details field should be non mandatory but here it is mandatory field");
@@ -1015,7 +1015,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 	public void user_verify_longitude_details_of_address_field_should_be_non_mandatory_editable_textbox_at_new_app_stage()
 			throws Throwable {
 		String fieldValidation = "";
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
 						newAppAddressDetailsJSElements.getElement("longitude_details_of_the_address")));
@@ -1031,16 +1031,16 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 						.sendKeys(addressDetailsTestData.get("longitude_details"));
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				Object poBoxNumberObject = javascriptHelper.executeScript("return " + newAppAddressDetailsJSElements
 						.getElement("longitude_details_of_the_address_mandatory_verification"));
-				if (i == 80) {
+				if (i == 300) {
 					if (poBoxNumberObject != null) {
 						softAssert
 								.fail("longitude details field should be non mandatory but here it is mandatory field");
@@ -1062,7 +1062,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 	public void user_verify_landmark_field_should_be_non_mandatory_editable_textbox_at_new_app_stage_at_new_app_stage()
 			throws Throwable {
 		String fieldValidation = "";
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper
 						.executeScriptWithWebElement(newAppAddressDetailsJSElements.getElement("landmark")));
@@ -1075,16 +1075,16 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 						.sendKeys(addressDetailsTestData.get("land_mark"));
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				Object landmark = javascriptHelper.executeScript(
 						"return " + newAppAddressDetailsJSElements.getElement("landmark_mandatory_verifcation"));
-				if (i == 80) {
+				if (i == 300) {
 					if (landmark != null) {
 						softAssert.fail("landmark field should be non mandatory but here it is mandatory field");
 						break;
@@ -1104,7 +1104,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 	public void user_verify_occupancy_date_field_should_be_mandatory_editable_calendar_at_new_app_stage_at_new_app_stage()
 			throws Throwable {
 		System.out.println("today Date " + commonJSElements.getElement("today_date"));
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper
 						.executeScriptWithWebElement(newAppAddressDetailsJSElements.getElement("occupency_date")));
@@ -1114,27 +1114,27 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 
 				javascriptHelper.executeScriptWithWebElement(commonJSElements.getElement("today_date")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				Object occupancyDate = javascriptHelper.executeScript(
 						"return " + newAppAddressDetailsJSElements.getElement("occupency_date_mandatory_verification"));
-				if (i == 80) {
+				if (i == 300) {
 					if (occupancyDate != null) {
 						softAssert.fail("occupancyDate field should be non mandatory but here it is mandatory field");
 						break;
@@ -1153,7 +1153,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 	public void user_verify_landlord_name_field_should_be_non_mandatory_editable_text_box_at_new_app_stage_at_new_app_stage()
 			throws Throwable {
 		String fieldValidation = "";
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper
 						.executeScriptWithWebElement(newAppAddressDetailsJSElements.getElement("landlord_name")));
@@ -1166,16 +1166,16 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 						.sendKeys(addressDetailsTestData.get("land_lord_name"));
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				Object landlordName = javascriptHelper.executeScript(
 						"return " + newAppAddressDetailsJSElements.getElement("landlord_name_Mandatory_verification"));
-				if (i == 80) {
+				if (i == 300) {
 					if (landlordName != null) {
 						softAssert.fail("landlordName field should be non mandatory but here it is mandatory field");
 						break;
@@ -1196,7 +1196,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 	public void user_verify_landlord_mobile_number_field_should_be_non_mandatory_editable_numeric_field_at_new_app_stage()
 			throws Throwable {
 		String fieldValidation = "";
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
 						newAppAddressDetailsJSElements.getElement("landlord_mobile_number")));
@@ -1215,16 +1215,16 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 						.sendKeys(mobileNumber);
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				Object landlordMobileNumber = javascriptHelper.executeScript("return "
 						+ newAppAddressDetailsJSElements.getElement("landlord_mobile_number_mandatory_verification"));
-				if (i == 80) {
+				if (i == 300) {
 					if (landlordMobileNumber != null) {
 						softAssert.fail(
 								"landlordMobileNumber field should be non mandatory but here it is mandatory field");
@@ -1246,7 +1246,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 	public void user_verify_rent_amount_field_should_be_non_mandatory_editable_numeric_field_at_new_app_stage()
 			throws Throwable {
 		String fieldValidation = "";
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper
 						.executeScriptWithWebElement(newAppAddressDetailsJSElements.getElement("rent_amount")));
@@ -1259,16 +1259,16 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 						.sendKeys(addressDetailsTestData.get("rent_amount"));
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				Object rentAmount = javascriptHelper.executeScript(
 						"return " + newAppAddressDetailsJSElements.getElement("rent_amount_mandatory_verification"));
-				if (i == 80) {
+				if (i == 300) {
 					if (rentAmount != null) {
 						softAssert.fail("rentAmount field should be non mandatory but here it is mandatory field");
 						break;
@@ -1300,7 +1300,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 
 			}
 		}
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(newAppAddressDetailsJSElements.getElement("address_line1"))
 						.click();
@@ -1308,7 +1308,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 						.sendKeys(addressDetailsTestData.get("address_line_1"));
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1325,14 +1325,14 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 //			}
 //		}
 
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				clicksAndActionsHelper.scrollIntoView(
 						javascriptHelper.executeScriptWithWebElement(commonJSElements.getElement("save_button")));
 				javascriptHelper.executeScriptWithWebElement(commonJSElements.getElement("save_button")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1343,7 +1343,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 	public void user_verify_address_details_record_got_saved_in_new_app_stage() throws Throwable {
 		String saveValidationPopup = "";
 
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				saveValidationPopup = javascriptHelper
 						.executeScript("return " + commonJSElements.getElement("toast_container_message")).toString();
@@ -1351,20 +1351,20 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 		System.out.println(saveValidationPopup);
 		Assert.assertTrue(saveValidationPopup.contains("Success! Record created"));
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
 						commonJSElements.getElement("toast_container_message_close_button")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1376,7 +1376,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 	public void user_verify_address_details_record_got_updated_in_new_app_stage() throws Throwable {
 		String saveValidationPopup = "";
 
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				saveValidationPopup = javascriptHelper
 						.executeScript("return " + commonJSElements.getElement("toast_container_message")).toString();
@@ -1384,20 +1384,20 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 		System.out.println(saveValidationPopup);
 		// Assert.assertTrue(saveValidationPopup.contains("Success! Record created"));
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
 						commonJSElements.getElement("toast_container_message_close_button")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1408,7 +1408,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 	@Then("user_076 verify frequency rent field should be non mandatory editable dropdown at new app stage")
 	public void user_verify_frequency_rent_field_should_be_non_mandatory_editable_dropdown_at_new_app_stage()
 			throws Throwable {
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				clicksAndActionsHelper.scrollIntoView(javascriptHelper
 						.executeScriptWithWebElement(newAppAddressDetailsJSElements.getElement("frequency_of_rent")));
@@ -1417,7 +1417,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1442,20 +1442,20 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 
 				javascriptHelper.executeScriptWithWebElement(commonJSElements.getElement("save_button")).click();
 
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1483,7 +1483,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 	public void user_verify_system_should_show_the_validation_for_fill_the_mandatory_details_of_customer_address_details_in_new_app_stage()
 			throws Throwable {
 		String mandatoryValidation = "";
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				mandatoryValidation = javascriptHelper
 						.executeScript("return " + commonJSElements.getElement("toast_message")).toString();
@@ -1491,7 +1491,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1505,7 +1505,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 	@And("user_076 enter the special caharcter input in address line one input box at new app stage")
 	public void user_enter_the_special_caharcter_input_in_address_line_one_input_box_at_new_app_stage()
 			throws Throwable {
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 
 				javascriptHelper.executeScriptWithWebElement(newAppAddressDetailsJSElements.getElement("address_line1"))
@@ -1514,7 +1514,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 						.sendKeys(addressDetailsTestData.get("special_character_input"));
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1526,14 +1526,14 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 	public void user_verify_address_line_one_field_should_show_the_validation_for_special_character_input_at_new_app_stage()
 			throws Throwable {
 		String speciaCharacterInput = "";
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				speciaCharacterInput = javascriptHelper.executeScript("return "
 						+ newAppAddressDetailsJSElements.getElement("address_line_1_special_character_validation"))
 						.toString();
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1546,7 +1546,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 
 	@And("user_076 enter the character input in rent amount field in new app stage")
 	public void user_enter_the_character_input_in_rent_amount_field_in_new_app_stage() throws Throwable {
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper
 						.executeScriptWithWebElement(newAppAddressDetailsJSElements.getElement("rent_amount")));
@@ -1556,7 +1556,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 						.sendKeys(addressDetailsTestData.get("characterInput"));
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1614,13 +1614,13 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 			}
 		}
 
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 
 				javascriptHelper.executeScriptWithWebElement(commonJSElements.getElement("back_button")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1637,7 +1637,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 		System.out.println("");
 		for (int i = 0; i <= 300; i++) {
 			try {
-				if (i > 80) {
+				if (i > 8) {
 					System.out.println("Query " + labelLength);
 					lengthOfTheLabel = javascriptHelper.executeScript("return " + labelLength).toString();
 					if (!(lengthOfTheLabel.isBlank())) {
@@ -2033,7 +2033,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 
 	@And("user_076 search the matched text in address details list view in new app stage")
 	public void user_search_the_matched_text_in_address_details_list_view_in_new_app_stage() throws Throwable {
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
 						newAppAddressDetailsJSElements.getElement("list_view_search_input_box")).click();
@@ -2043,7 +2043,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 						.sendKeys(addressDetailsTestData.get("match_search"));
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2058,7 +2058,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 
 		for (int i = 0; i <= 300; i++) {
 			try {
-				if (i > 80) {
+				if (i > 8) {
 					searchResult = javascriptHelper.executeScript(
 							"return document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]')["
 									+ indexOfListView
@@ -2095,7 +2095,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 
 			}
 		}
-		for (int i = 0; i <= 80; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
 						newAppAddressDetailsJSElements.getElement("list_view_search_input_box")).click();
@@ -2105,7 +2105,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 						.sendKeys(addressDetailsTestData.get("not_match_search"));
 				break;
 			} catch (Exception e) {
-				if (i == 80) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2121,7 +2121,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 
 		for (int i = 0; i <= 300; i++) {
 			try {
-				if (i > 80) {
+				if (i > 8) {
 					searchResult = javascriptHelper.executeScript(
 							"return document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]')["
 									+ indexOfListView

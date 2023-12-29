@@ -133,6 +133,18 @@ public class ConfigFileReader {
 		recordReferenceNumber = properties.getProperty("autoLoanReferenceNumber");
 		return recordReferenceNumber;
 	}
+	public String getAutioLoanAppDataEntryRefNo()
+	{
+		String recordReferenceNumber;
+		recordReferenceNumber = properties.getProperty("autoLoanAppDataEntryReferenceNumber");
+		return recordReferenceNumber;
+	}
+	public void SetAutoLoanReferenceNumber(String referenceNumber) throws IOException
+	{
+		OutputStream outputStream = new FileOutputStream(new File(propertyFilePath));
+		properties.setProperty("autoLoanReferenceNumber", referenceNumber);
+		properties.store(outputStream, null);
+	}
 	public String getTawruqqOfferingRecordReferenceNumber() {
 		String recordReferenceNumber;
 		recordReferenceNumber = properties.getProperty("TawruqqOfferingReferenceNumber");

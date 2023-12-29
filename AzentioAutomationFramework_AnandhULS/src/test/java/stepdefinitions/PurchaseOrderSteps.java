@@ -51,14 +51,14 @@ public class PurchaseOrderSteps extends BaseClass {
 	public void user_076_search_purchase_order_record_reference_number_in_mail_box_for_approve_test() throws Throwable {
 
 		WebElement searchTextBox;
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				searchTextBox = javascriptHelper
 						.executeScriptWithWebElement(CommonJsElements.getElement("mail_box_search_text"));
 				searchTextBox.sendKeys(configFileReader.getMurabahaPurchaseOrderApprovalRecordReferenceNumber());
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -71,7 +71,7 @@ public class PurchaseOrderSteps extends BaseClass {
 			throws Throwable {
 		String mailBoxRecordList = "document.querySelectorAll('td[class=\"ng-star-inserted\"]>span').length";
 		String numberOfRecordInMailBox = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				numberOfRecordInMailBox = javascriptHelper.executeScript("return " + mailBoxRecordList).toString();
 				System.out.println("Number of record in mail box " + numberOfRecordInMailBox);
@@ -79,7 +79,7 @@ public class PurchaseOrderSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -87,7 +87,7 @@ public class PurchaseOrderSteps extends BaseClass {
 		int premitiveNumberOfRecordInMailBox = Integer.parseInt(numberOfRecordInMailBox);
 		// document.querySelectorAll('td[class="ng-star-inserted"]>span')[0].textContent
 		for (int j = 0; j < premitiveNumberOfRecordInMailBox; j++) {
-			for (int k = 0; k <= 150; k++) {
+			for (int k = 0; k <= 10; k++) {
 				try {
 					String recordRefNumber = javascriptHelper
 							.executeScript("return document.querySelectorAll('td[class=\"ng-star-inserted\"]>span')["
@@ -114,14 +114,14 @@ public class PurchaseOrderSteps extends BaseClass {
 	public void user_076_search_purchase_order_record_reference_number_in_mail_box_for_murabaha() throws Throwable {
 
 		WebElement searchTextBox;
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				searchTextBox = javascriptHelper
 						.executeScriptWithWebElement(CommonJsElements.getElement("mail_box_search_text"));
 				searchTextBox.sendKeys(configFileReader.getMurabahaPurchaseOrderRecordRefereneNumber());
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -132,7 +132,7 @@ public class PurchaseOrderSteps extends BaseClass {
 	public void user_076_select_the_purchase_order_record_at_mail_box_for_murabaha_product() throws Throwable {
 		String mailBoxRecordList = "document.querySelectorAll('td[class=\"ng-star-inserted\"]>span').length";
 		String numberOfRecordInMailBox = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				numberOfRecordInMailBox = javascriptHelper.executeScript("return " + mailBoxRecordList).toString();
 				System.out.println("Number of record in mail box " + numberOfRecordInMailBox);
@@ -140,7 +140,7 @@ public class PurchaseOrderSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -148,7 +148,7 @@ public class PurchaseOrderSteps extends BaseClass {
 		int premitiveNumberOfRecordInMailBox = Integer.parseInt(numberOfRecordInMailBox);
 		// document.querySelectorAll('td[class="ng-star-inserted"]>span')[0].textContent
 		for (int j = 0; j < premitiveNumberOfRecordInMailBox; j++) {
-			for (int k = 0; k <= 150; k++) {
+			for (int k = 0; k <= 10; k++) {
 				try {
 					String recordRefNumber = javascriptHelper
 							.executeScript("return document.querySelectorAll('td[class=\"ng-star-inserted\"]>span')["
@@ -237,7 +237,7 @@ public class PurchaseOrderSteps extends BaseClass {
 	public void user_076_verify_beneficiary_name_field_should_be_mandatory_editable_text_box() throws Throwable {
 		String fieldValidation = "";
 		String mandatoryValidation = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				mandatoryValidation = javascriptHelper
 						.executeScript(
@@ -251,19 +251,19 @@ public class PurchaseOrderSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(purchaseOrderJSpaths.getElement("beneficiary_name"))
 						.sendKeys(purchaseOrderTestData.get("beneficiary_name"));
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -281,7 +281,7 @@ public class PurchaseOrderSteps extends BaseClass {
 
 		String fieldValidation = "";
 		String mandatoryValidation = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				mandatoryValidation = javascriptHelper
 						.executeScript(
@@ -295,7 +295,7 @@ public class PurchaseOrderSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -325,13 +325,13 @@ public class PurchaseOrderSteps extends BaseClass {
 
 	@And("user_076 verify beneficiary KYC field should be editable")
 	public void user_076_verify_beneficiary_kyc_field_should_be_editable() throws Throwable {
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(purchaseOrderJSpaths.getElement("beneficiary_kyc"))
 						.sendKeys(purchaseOrderTestData.get("beneficiary_KYC"));
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -341,13 +341,13 @@ public class PurchaseOrderSteps extends BaseClass {
 
 	@And("user_076 verify beneficiary address is editable text box")
 	public void user_076_verify_beneficiary_address_is_editable_text_box() throws Throwable {
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(purchaseOrderJSpaths.getElement("beneficiary_address"))
 						.sendKeys(purchaseOrderTestData.get("beneficiary_address"));
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -359,7 +359,7 @@ public class PurchaseOrderSteps extends BaseClass {
 	public void user_076_verify_account_type_field_should_be_editable_mandatory_text_box() throws Throwable {
 		String fieldValidation = "";
 		String mandatoryValidation = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				mandatoryValidation = javascriptHelper
 						.executeScript(
@@ -373,19 +373,19 @@ public class PurchaseOrderSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(purchaseOrderJSpaths.getElement("bank_account_type"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -400,7 +400,7 @@ public class PurchaseOrderSteps extends BaseClass {
 	public void user_076_verify_iban_field_should_be_editable_mandatory_text_box() throws Throwable {
 		String fieldValidation = "";
 		String mandatoryValidation = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				mandatoryValidation = javascriptHelper
 						.executeScript("return "
@@ -414,20 +414,20 @@ public class PurchaseOrderSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(purchaseOrderJSpaths.getElement("beneficiary_bank_account_no"))
 						.sendKeys(purchaseOrderTestData.get("account_number"));
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -476,7 +476,7 @@ public class PurchaseOrderSteps extends BaseClass {
 	public void user_076_verify_bank_field_should_be_mandatory_editable_lookup_value() throws Throwable {
 		String fieldValidation = "";
 		String mandatoryValidation = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				mandatoryValidation = javascriptHelper
 						.executeScript("return "
@@ -490,19 +490,19 @@ public class PurchaseOrderSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(purchaseOrderJSpaths.getElement("beneficiary_bank_code"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -517,7 +517,7 @@ public class PurchaseOrderSteps extends BaseClass {
 	public void user_076_verify_branch_name_field_should_be_mandatory_editable_lookup_value() throws Throwable {
 		String fieldValidation = "";
 		String mandatoryValidation = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				mandatoryValidation = javascriptHelper
 						.executeScript(
@@ -531,18 +531,18 @@ public class PurchaseOrderSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(purchaseOrderJSpaths.getElement("Branch_Name")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -589,12 +589,12 @@ public class PurchaseOrderSteps extends BaseClass {
 
 	@And("user_076 click on save button in purchase maker screen")
 	public void user_076_click_on_save_button_in_purchase_maker_screen() {
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(CommonJsElements.getElement("save_button")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -605,7 +605,7 @@ public class PurchaseOrderSteps extends BaseClass {
 	@Then("user_076 verify purchase maker screen should show the save validation while saving the record")
 	public void user_076_verify_purchase_maker_screen_should_show_the_save_validation_while_saving_the_record() {
 		String saveValidation = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				saveValidation = javascriptHelper
 						.executeScript("return " + CommonJsElements.getElement("toast_container_message")).toString();
@@ -613,7 +613,7 @@ public class PurchaseOrderSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -626,13 +626,13 @@ public class PurchaseOrderSteps extends BaseClass {
 	@And("user_076 click on search button in beneficiary details at purchase order stage")
 	public void user_076_click_on_search_button_in_beneficiary_details_at_purchase_order_stage() {
 
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(purchaseOrderJSpaths.getElement("list_view_search_button"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -641,7 +641,7 @@ public class PurchaseOrderSteps extends BaseClass {
 
 	@And("user_076 search the valid search text in beneficiary details search option at purchase order stage")
 	public void user_076_search_the_valid_search_text_in_beneficiary_details_search_option_at_purchase_order_stage() {
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(purchaseOrderJSpaths.getElement("list_view_search_text_box"))
@@ -651,7 +651,7 @@ public class PurchaseOrderSteps extends BaseClass {
 						.sendKeys(purchaseOrderTestData.get("valid_search_text"));
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -662,7 +662,7 @@ public class PurchaseOrderSteps extends BaseClass {
 	public void user_076_verify_beneficiary_details_search_grid_should_show_the_matched_result_at_purchase_order_stage() {
 //Showing 0 to 0 of 0 entries
 		String searchResult = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				searchResult = javascriptHelper
 						.executeScript("return " + purchaseOrderJSpaths.getElement("list_view_search_result"))
@@ -671,7 +671,7 @@ public class PurchaseOrderSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -696,7 +696,7 @@ public class PurchaseOrderSteps extends BaseClass {
 
 			}
 		}
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(purchaseOrderJSpaths.getElement("list_view_search_text_box"))
@@ -706,7 +706,7 @@ public class PurchaseOrderSteps extends BaseClass {
 						.sendKeys(purchaseOrderTestData.get("invalid_search_text"));
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -716,7 +716,7 @@ public class PurchaseOrderSteps extends BaseClass {
 	@Then("user_076 verify beneficiary details search grid should not show the result at purchase order stage")
 	public void user_076_verify_beneficiary_details_search_grid_should_not_show_the_result_at_purchase_order_stage() {
 		String searchResult = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				searchResult = javascriptHelper
 						.executeScript("return " + purchaseOrderJSpaths.getElement("list_view_search_result"))
@@ -725,7 +725,7 @@ public class PurchaseOrderSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -737,7 +737,7 @@ public class PurchaseOrderSteps extends BaseClass {
 	@And("user_076 click on asset details tab in purchase order stage")
 	public void user_076_click_on_asset_details_tab_in_purchase_order_stage() throws Throwable {
 		String elements = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				System.out.println(
 						"Query " + "return " + purchaseOrderJSpaths.getElement("asset_details_tab") + ".length");
@@ -748,7 +748,7 @@ public class PurchaseOrderSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -781,7 +781,7 @@ public class PurchaseOrderSteps extends BaseClass {
 	@And("user_076 click on configuration tab in purchase order stage")
 	public void user_076_click_on_configuration_tab_in_purchase_order_stage() throws Throwable {
 		String elements = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				elements = javascriptHelper
 						.executeScript("return " + purchaseOrderJSpaths.getElement("configuration_tab") + ".length")
@@ -790,7 +790,7 @@ public class PurchaseOrderSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -824,7 +824,7 @@ public class PurchaseOrderSteps extends BaseClass {
 	public void user_076_click_on_fees_details_tab_in_purchase_order_stage() throws Throwable {
 		String elements = "";
 		Thread.sleep(500);
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 
 				elements = javascriptHelper
@@ -834,7 +834,7 @@ public class PurchaseOrderSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -868,7 +868,7 @@ public class PurchaseOrderSteps extends BaseClass {
 	public void user_076_click_on_downpayment_summary_tab_in_purchase_order_stage() throws Throwable {
 
 		String elements = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				elements = javascriptHelper
 						.executeScript(
@@ -878,7 +878,7 @@ public class PurchaseOrderSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -913,7 +913,7 @@ public class PurchaseOrderSteps extends BaseClass {
 	public void user_076_click_on_insurance_info_in_purchase_order_stage() throws Throwable {
 
 		String elements = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				elements = javascriptHelper
 						.executeScript("return " + purchaseOrderJSpaths.getElement("insurance_info_tab") + ".length")
@@ -922,7 +922,7 @@ public class PurchaseOrderSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -957,7 +957,7 @@ public class PurchaseOrderSteps extends BaseClass {
 	public void user_076_click_on_document_details_in_purchase_order_stage() throws Throwable {
 
 		String elements = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				elements = javascriptHelper
 						.executeScript("return " + purchaseOrderJSpaths.getElement("document_details_tab") + ".length")
@@ -966,7 +966,7 @@ public class PurchaseOrderSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -1005,7 +1005,7 @@ public class PurchaseOrderSteps extends BaseClass {
 	public void user_076_click_on_application_details_tab_in_purchase_order_stage() throws Throwable {
 
 		String elements = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				elements = javascriptHelper
 						.executeScript(
@@ -1015,7 +1015,7 @@ public class PurchaseOrderSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -1474,7 +1474,7 @@ public class PurchaseOrderSteps extends BaseClass {
 	@And("user_076 click on application details in purchase order stage")
 	public void user_076_click_on_application_details_in_purchase_order_stage() throws Throwable {
 		String elements = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				elements = javascriptHelper
 						.executeScript(
@@ -1484,7 +1484,7 @@ public class PurchaseOrderSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -1533,13 +1533,13 @@ public class PurchaseOrderSteps extends BaseClass {
 	@And("user_076 click on view summary button in purchase order stage")
 	public void user_076_click_on_view_summary_button_in_purchase_order_stage() throws Throwable {
 
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(purchaseOrderJSpaths.getElement("view_workflow_button"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -1550,7 +1550,7 @@ public class PurchaseOrderSteps extends BaseClass {
 	@Then("user_076 verify view summary tab should get open at purchase order stage")
 	public void user_076_verify_view_summary_tab_should_get_open_at_purchase_order_stage() throws Throwable {
 		String viewSummaryText = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 
 				viewSummaryText = javascriptHelper
@@ -1560,7 +1560,7 @@ public class PurchaseOrderSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -1568,14 +1568,14 @@ public class PurchaseOrderSteps extends BaseClass {
 		}
 		System.out.println(viewSummaryText);
 		softAssert.assertEquals("Transaction summary", viewSummaryText, "View Summary is not getting opened");
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(purchaseOrderJSpaths.getElement("view_summary_colse_button"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -1586,7 +1586,7 @@ public class PurchaseOrderSteps extends BaseClass {
 	@And("user_076 click on submit button at purchase order stage for murabaha")
 	public void user_076_click_on_submit_button_at_purchase_order_stage_for_murabaha() throws Throwable {
 
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				clicksAndActionsHelper.scrollIntoView(
 						javascriptHelper.executeScriptWithWebElement(CommonJsElements.getElement("submit_button")));
@@ -1594,7 +1594,7 @@ public class PurchaseOrderSteps extends BaseClass {
 						javascriptHelper.executeScriptWithWebElement(CommonJsElements.getElement("submit_button")));
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -1605,14 +1605,14 @@ public class PurchaseOrderSteps extends BaseClass {
 	@And("user_076 click on return button at purchase order stage for murabaha")
 	public void user_076_click_on_return_button_at_purchase_order_stage_for_murabaha() throws Throwable {
 
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(CommonJsElements.getElement("return_button")));
 				clicksAndActionsHelper.clickOnElement(
 						javascriptHelper.executeScriptWithWebElement(CommonJsElements.getElement("return_button")));
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -1623,7 +1623,7 @@ public class PurchaseOrderSteps extends BaseClass {
 	@And("user_076 give alert remark and click the alert submit button in purchase order record at murabaha product")
 	public void user_076_give_alert_remark_and_click_the_alert_submit_button_in_purchase_order_record_at_murabaha_product()
 			throws Throwable {
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				System.out.println("Return Query " + CommonJsElements.getElement("alert_text_box_return"));
 				javascriptHelper.executeScriptWithWebElement(CommonJsElements.getElement("alert_text_box_return"))
@@ -1633,18 +1633,18 @@ public class PurchaseOrderSteps extends BaseClass {
 				break;
 
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(CommonJsElements.getElement("alert_submit")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -1658,7 +1658,7 @@ public class PurchaseOrderSteps extends BaseClass {
 			throws Throwable {
 
 		String approveText = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				approveText = javascriptHelper
 						.executeScript("return " + CommonJsElements.getElement("toast_container_message")).toString();
@@ -1667,7 +1667,7 @@ public class PurchaseOrderSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -1828,7 +1828,7 @@ public class PurchaseOrderSteps extends BaseClass {
 				}
 			}
 		}
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				lengthOfReturnStage = javascriptHelper
 						.executeScript("return " + CommonJsElements.getElement("return_dropdown_length")).toString();
@@ -1836,7 +1836,7 @@ public class PurchaseOrderSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -1880,7 +1880,7 @@ public class PurchaseOrderSteps extends BaseClass {
 			}
 		}
 
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				System.out.println("Stage position " + stagePosition);
 				javascriptHelper.executeScriptWithWebElement(
@@ -1889,7 +1889,7 @@ public class PurchaseOrderSteps extends BaseClass {
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -1917,7 +1917,7 @@ public class PurchaseOrderSteps extends BaseClass {
 				}
 			}
 		}
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				lengthOfReturnStage = javascriptHelper
 						.executeScript("return " + CommonJsElements.getElement("return_dropdown_length")).toString();
@@ -1926,7 +1926,7 @@ public class PurchaseOrderSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -1970,7 +1970,7 @@ public class PurchaseOrderSteps extends BaseClass {
 			}
 		}
 
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				System.out.println("Stage position " + stagePosition);
 				javascriptHelper.executeScriptWithWebElement(
@@ -1979,7 +1979,7 @@ public class PurchaseOrderSteps extends BaseClass {
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -1989,7 +1989,7 @@ public class PurchaseOrderSteps extends BaseClass {
 
 	@And("user_076 enter the return remark in purchase order checker stage for murabaha")
 	public void user_076_enter_the_return_remark_in_purchase_order_checker_stage_for_murabaha() throws Throwable {
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				System.out.println("Return Query " + CommonJsElements.getElement("alert_text_box_return"));
 				javascriptHelper.executeScriptWithWebElement(CommonJsElements.getElement("alert_text_box_return"))
@@ -1999,7 +1999,7 @@ public class PurchaseOrderSteps extends BaseClass {
 				break;
 
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -2009,7 +2009,7 @@ public class PurchaseOrderSteps extends BaseClass {
 
 	@And("user_076 enter the return remark in purchase order maker stage for murabaha")
 	public void user_076_enter_the_return_remark_in_purchase_order_maker_stage_for_murabaha() throws Throwable {
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				System.out.println("Return Query " + CommonJsElements.getElement("alert_text_box_return"));
 				javascriptHelper.executeScriptWithWebElement(CommonJsElements.getElement("alert_text_box_return"))
@@ -2019,7 +2019,7 @@ public class PurchaseOrderSteps extends BaseClass {
 				break;
 
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -2029,14 +2029,14 @@ public class PurchaseOrderSteps extends BaseClass {
 
 	@And("user_076 enter the alert return button in purchase order checker stage for murabaha")
 	public void user_076_enter_the_alert_return_button_in_purchase_order_checker_stage_for_murabaha() throws Throwable {
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(CommonJsElements.getElement("alert_return_button"))
 						.click();
 				break;
 
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -2046,14 +2046,14 @@ public class PurchaseOrderSteps extends BaseClass {
 
 	@And("user_076 enter the alert return button in purchase order maker stage for murabaha")
 	public void user_076_enter_the_alert_return_button_in_purchase_order_maker_stage_for_murabaha() throws Throwable {
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(CommonJsElements.getElement("alert_return_button"))
 						.click();
 				break;
 
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -2064,7 +2064,7 @@ public class PurchaseOrderSteps extends BaseClass {
 	@Then("user_076 verify murabaha record should get return to purchase order maker stage")
 	public void user_076_verify_murabaha_record_should_get_return_to_purchase_order_maker_stage() throws Throwable {
 		String approveText = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				approveText = javascriptHelper
 						.executeScript("return " + CommonJsElements.getElement("toast_container_message")).toString();
@@ -2073,7 +2073,7 @@ public class PurchaseOrderSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -2092,7 +2092,7 @@ public class PurchaseOrderSteps extends BaseClass {
 	@Then("user_076 verify murabaha record should get return to offering stage")
 	public void user_076_verify_murabaha_record_should_get_return_to_offering_stage() throws Throwable {
 		String approveText = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				approveText = javascriptHelper
 						.executeScript("return " + CommonJsElements.getElement("toast_container_message")).toString();
@@ -2101,7 +2101,7 @@ public class PurchaseOrderSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -2120,7 +2120,7 @@ public class PurchaseOrderSteps extends BaseClass {
 //	@Then("user_076 verify murabaha record should get return to offering stage")
 //	public void user_076_verify_murabaha_record_should_get_return_to_offering_stage() throws Throwable {
 //		String approveText = "";
-//		for (int i = 0; i <= 150; i++) {
+//		for (int i = 0; i <= 10; i++) {
 //			try {
 //				approveText = javascriptHelper
 //						.executeScript("return " + CommonJsElements.getElement("toast_container_message")).toString();
@@ -2129,7 +2129,7 @@ public class PurchaseOrderSteps extends BaseClass {
 //					break;
 //				}
 //			} catch (Exception e) {
-//				if (i == 150) {
+//				if (i == 10) {
 //					e.printStackTrace();
 //					Assert.fail(e.getMessage());
 //				}
@@ -2194,14 +2194,14 @@ public class PurchaseOrderSteps extends BaseClass {
 
 	@And("user_076 click on Approve button at offering stage for murabaha")
 	public void user_076_click_on_Approve_button_at_offering_stage_for_murabaha() throws Throwable {
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(CommonJsElements.getElement("approve_button")));
 				clicksAndActionsHelper.clickOnElement(
 						javascriptHelper.executeScriptWithWebElement(CommonJsElements.getElement("approve_button")));
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -2212,7 +2212,7 @@ public class PurchaseOrderSteps extends BaseClass {
 	@And("user_076 give alert remark and click the alert submit button in offering stage record at murabaha product")
 	public void user_076_give_alert_remark_and_click_the_alert_submit_button_in_offering_stage_record_at_murabaha_product()
 			throws Throwable {
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				System.out.println("Return Query " + CommonJsElements.getElement("alert_text_box_return"));
 				javascriptHelper.executeScriptWithWebElement(CommonJsElements.getElement("alert_text_box_return"))
@@ -2222,19 +2222,19 @@ public class PurchaseOrderSteps extends BaseClass {
 				break;
 
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(CommonJsElements.getElement("alert_approve_button"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}
@@ -2246,7 +2246,7 @@ public class PurchaseOrderSteps extends BaseClass {
 	public void user_076_verify_murabaha_offering_stage_record_got_submitted_to_purchase_order_maker_stage()
 			throws Throwable {
 		String approveText = "";
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 10; i++) {
 			try {
 				approveText = javascriptHelper
 						.executeScript("return " + CommonJsElements.getElement("toast_container_message")).toString();
@@ -2255,7 +2255,7 @@ public class PurchaseOrderSteps extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 10) {
 					e.printStackTrace();
 					Assert.fail(e.getMessage());
 				}

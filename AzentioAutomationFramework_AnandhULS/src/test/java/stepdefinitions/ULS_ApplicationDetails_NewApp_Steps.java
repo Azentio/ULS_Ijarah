@@ -53,6 +53,10 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 
 	ExcelData tawruqqExecutionSheet = new ExcelData(applicationDetailsExcelDataPath, "Tawruqq_ExecutionTracker",
 			"TestCase ID");
+	ExcelData autoLoanExecutionSheet = new ExcelData(configFileReader.getAutoLoanTestDataFilePath(),
+			"AutoLoanExecution", "TestCase ID");
+	ExcelData excelDataForApplicationDetailsTestDataForAutoLoan = new ExcelData(
+			configFileReader.getAutoLoanTestDataFilePath(), "ApplicationDetails_NewApp", "Dataset ID");
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
 	Map<String, String> newApplicationTestData = new HashMap<>();
 	Map<String, String> newApplicationExecutionData = new HashMap<>();
@@ -156,14 +160,39 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 
 	}
 
+	// Auto Loan
+	@And("user_076 get the test data for test case id AT_AL_APPDETAILS_01")
+	public void user_076_get_the_test_data_for_test_case_id_AT_AL_APPDETAILS_01() throws Throwable {
+		newApplicationExecutionData = autoLoanExecutionSheet.getTestdata("AT_AL_APPDETAILS_01");
+		System.out.println("Data Set ID " + newApplicationExecutionData.get("dataSet_ID"));
+		newApplicationTestData = excelDataForApplicationDetailsTestDataForAutoLoan
+				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
+	}
+
+	@And("user_076 get the test data for test case id AT_AL_APPDETAILS_02")
+	public void user_076_get_the_test_data_for_test_case_id_AT_AL_APPDETAILS_02() throws Throwable {
+		newApplicationExecutionData = autoLoanExecutionSheet.getTestdata("AT_AL_APPDETAILS_02");
+		System.out.println("Data Set ID " + newApplicationExecutionData.get("dataSet_ID"));
+		newApplicationTestData = excelDataForApplicationDetailsTestDataForAutoLoan
+				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
+	}
+
+	@And("user_076 get the test data for test case id AT_AL_APPDETAILS_03")
+	public void user_076_get_the_test_data_for_test_case_id_AT_AL_APPDETAILS_03() throws Throwable {
+		newApplicationExecutionData = autoLoanExecutionSheet.getTestdata("AT_AL_APPDETAILS_03");
+		System.out.println("Data Set ID " + newApplicationExecutionData.get("dataSet_ID"));
+		newApplicationTestData = excelDataForApplicationDetailsTestDataForAutoLoan
+				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
+	}
+
 	@And("user_076 click on menu bar in uls transaction screen")
 	public void user_076ser_click_on_menu_bar_in_uls_transaction_screen() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("menu_bar")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -173,13 +202,13 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 
 	@And("user_076 click on transactions module")
 	public void user_076ser_click_on_transactions_module() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("transaction_main_module"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -188,13 +217,13 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 
 	@And("user_076 click on applicationn manager feature")
 	public void user_076ser_click_on_applicationn_manager_feature() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("application_manager_module"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -204,15 +233,15 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	@And("user_076 search the new application stage record reference number for application details record")
 	public void user_076_search_the_new_application_stage_record_reference_number_for_application_details_record() {
 		WebElement searchTextBox;
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				searchTextBox = javascriptHelper
 						.executeScriptWithWebElement(commonJSPaths.getElement("mail_box_search_text"));
-				System.out.println("Record reference number "+newApplicationTestData.get("record_reference_number"));
+				System.out.println("Record reference number " + newApplicationTestData.get("record_reference_number"));
 				searchTextBox.sendKeys(newApplicationTestData.get("record_reference_number"));
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -270,7 +299,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		int labelLocation = 0;
 		String moduleName = "";
 		String applicationModuleLengthQuery = "document.querySelectorAll('ion-accordion[value=\"Transactions\"] ion-item ion-list ion-item ion-label').length";
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				noOfModule = javascriptHelper.executeScript("return " + applicationModuleLengthQuery).toString();
 				if (!(noOfModule.isBlank())) {
@@ -300,7 +329,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 			}
 		}
 
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
 						"document.querySelectorAll('ion-accordion[value=\"Transactions\"] ion-item ion-list ion-item ion-button')["
@@ -308,7 +337,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getLocalizedMessage());
 				}
 			}
@@ -371,14 +400,14 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	@And("user_076 search the new application stage record reference number")
 	public void user_076_search_the_new_application_stage_record_reference_number() throws Throwable {
 		WebElement searchTextBox;
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				searchTextBox = javascriptHelper
 						.executeScriptWithWebElement(commonJSPaths.getElement("mail_box_search_text"));
 				searchTextBox.sendKeys(newApplicationTestData.get("record_reference_number"));
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -388,7 +417,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 
 	@And("user_076 click on save button while open the application details record")
 	public void user_076_click_on_save_button_while_open_the_application_details_record() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("save_button")).click();
 				if (i > 150) {
@@ -398,7 +427,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -407,13 +436,13 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 
 	@And("user_076 click on add button of application details record")
 	public void user_076_click_on_add_button_of_application_details_record() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("application_details_add_button")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -422,93 +451,68 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 
 	@And("user_076 in customer search screen select the customer type")
 	public void user_076_in_customer_search_screen_select_the_customer_type() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerSearchJSPaths.getElement("customer_type_dropdown"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_type"));
-	/*	String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
-		String dropdownLength = "";
-		boolean isDropdownValueSelected = false;
-		String dropdownString = "";
-		for (int i = 0; i <= 100; i++) {
-			try {
-				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
-				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
-					break;
-				}
-			} catch (Exception e) {
-				if (i == 100) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
-		for (int j = 0; j <= premitiveDropdownLength; j++) {
-
-			for (int l = 0; l <= 100; l++) {
-				try {
-					System.out.println("L value is " + l);
-					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
-					dropdownString = javascriptHelper.executeScript(
-							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
-							.toString();
-					if (!(dropdownString.isEmpty())) {
-						System.out.println(dropdownString);
-						System.out.println("Loop count " + l + " got breaked");
-						break;
-					}
-				} catch (Exception e) {
-					if (l == 100 && !(dropdownString.isBlank())) {
-						Assert.fail(e.getMessage());
-					}
-				}
-				if (!(dropdownString.isEmpty())) {
-					System.out.println(dropdownString);
-					System.out.println("Loop count " + l + " got breaked");
-					break;
-				}
-			}
-			System.out.println("String " + dropdownString.trim());
-			System.out.println("Map " + newApplicationTestData.get("customer_type").trim());
-			if ((dropdownString.trim()).equalsIgnoreCase((newApplicationTestData.get("customer_type")).trim())) {
-
-				for (int k = 0; k <= 100; k++) {
-					try {
-
-						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
-								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
-								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-						isDropdownValueSelected = true;
-						break;
-					} catch (Exception e) {
-						if (k == 100) {
-							Assert.fail(e.getMessage());
-
-						}
-					}
-				}
-			}
-			if (isDropdownValueSelected == true) {
-				break;
-			}
-
-		}*/
+		clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_type"));
+		/*
+		 * String jqueryForDropdownLength =
+		 * "document.querySelectorAll('ion-radio-group ion-radio').length"; String
+		 * dropdownLength = ""; boolean isDropdownValueSelected = false; String
+		 * dropdownString = ""; for (int i = 0; i <= 300; i++) { try { dropdownLength =
+		 * javascriptHelper.executeScript("return " +
+		 * jqueryForDropdownLength).toString(); System.out.println("Dropdown length " +
+		 * dropdownLength); if (!(dropdownLength.isBlank()) &&
+		 * !(dropdownLength.equals("0"))) { break; } } catch (Exception e) { if (i ==
+		 * 10) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
+		 * Integer.parseInt(dropdownLength); for (int j = 0; j <=
+		 * premitiveDropdownLength; j++) {
+		 * 
+		 * for (int l = 0; l <= 300; l++) { try { System.out.println("L value is " + l);
+		 * System.out.println("document.querySelectorAll('ion-radio-group ion-label')["
+		 * + j + "].innerText"); dropdownString = javascriptHelper.executeScript(
+		 * "return document.querySelectorAll('ion-radio-group ion-label')[" + j +
+		 * "].innerText") .toString(); if (!(dropdownString.isEmpty())) {
+		 * System.out.println(dropdownString); System.out.println("Loop count " + l +
+		 * " got breaked"); break; } } catch (Exception e) { if (l == 10 &&
+		 * !(dropdownString.isBlank())) { Assert.fail(e.getMessage()); } } if
+		 * (!(dropdownString.isEmpty())) { System.out.println(dropdownString);
+		 * System.out.println("Loop count " + l + " got breaked"); break; } }
+		 * System.out.println("String " + dropdownString.trim());
+		 * System.out.println("Map " +
+		 * newApplicationTestData.get("customer_type").trim()); if
+		 * ((dropdownString.trim()).equalsIgnoreCase((newApplicationTestData.get(
+		 * "customer_type")).trim())) {
+		 * 
+		 * for (int k = 0; k <= 300; k++) { try {
+		 * 
+		 * clicksAndActionsHelper.moveToElement(javascriptHelper.
+		 * executeScriptWithWebElement(
+		 * "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+		 * clicksAndActionsHelper.clickOnElement(javascriptHelper.
+		 * executeScriptWithWebElement(
+		 * "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+		 * isDropdownValueSelected = true; break; } catch (Exception e) { if (k == 10) {
+		 * Assert.fail(e.getMessage());
+		 * 
+		 * } } } } if (isDropdownValueSelected == true) { break; }
+		 * 
+		 * }
+		 */
 
 	}
 
 	@And("user_076 in customer search screen enter customer name")
 	public void user_076_in_customer_search_screen_enter_customer_name() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerSearchJSPaths.getElement("customer_name_input"))
 						.click();
@@ -516,7 +520,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 						.sendKeys(newApplicationTestData.get("customer_name"));
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -525,93 +529,66 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 	@And("user_076 in custommer search screen select ID type")
 	public void user_076_in_custommer_search_screen_select_id_type() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerSearchJSPaths.getElement("id_type_dropdown"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 		clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("id_type"));
 		/*
-		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
-		String dropdownLength = "";
-		boolean isDropdownValueSelected = false;
-		String dropdownString = "";
-		for (int i = 0; i <= 100; i++) {
-			try {
-				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
-				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
-					break;
-				}
-			} catch (Exception e) {
-				if (i == 100) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
-		for (int j = 0; j <= premitiveDropdownLength; j++) {
-
-			for (int l = 0; l <= 100; l++) {
-				try {
-					System.out.println("L value is " + l);
-					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
-					dropdownString = javascriptHelper.executeScript(
-							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
-							.toString();
-					if (!(dropdownString.isEmpty())) {
-						System.out.println(dropdownString);
-						System.out.println("Loop count " + l + " got breaked");
-						break;
-					}
-				} catch (Exception e) {
-					if (l == 100 && !(dropdownString.isBlank())) {
-						Assert.fail(e.getMessage());
-					}
-				}
-				if (!(dropdownString.isEmpty())) {
-					System.out.println(dropdownString);
-					System.out.println("Loop count " + l + " got breaked");
-					break;
-				}
-			}
-			System.out.println("String " + dropdownString.trim());
-			System.out.println("Map " + newApplicationTestData.get("id_type").trim());
-			if ((dropdownString.trim()).equalsIgnoreCase((newApplicationTestData.get("id_type")).trim())) {
-
-				for (int k = 0; k <= 100; k++) {
-					try {
-
-						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
-								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
-								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-						isDropdownValueSelected = true;
-						break;
-					} catch (Exception e) {
-						if (k == 100) {
-							Assert.fail(e.getMessage());
-
-						}
-					}
-				}
-			}
-			if (isDropdownValueSelected == true) {
-				break;
-			}
-
-		}*/
+		 * String jqueryForDropdownLength =
+		 * "document.querySelectorAll('ion-radio-group ion-radio').length"; String
+		 * dropdownLength = ""; boolean isDropdownValueSelected = false; String
+		 * dropdownString = ""; for (int i = 0; i <= 300; i++) { try { dropdownLength =
+		 * javascriptHelper.executeScript("return " +
+		 * jqueryForDropdownLength).toString(); System.out.println("Dropdown length " +
+		 * dropdownLength); if (!(dropdownLength.isBlank()) &&
+		 * !(dropdownLength.equals("0"))) { break; } } catch (Exception e) { if (i ==
+		 * 10) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
+		 * Integer.parseInt(dropdownLength); for (int j = 0; j <=
+		 * premitiveDropdownLength; j++) {
+		 * 
+		 * for (int l = 0; l <= 300; l++) { try { System.out.println("L value is " + l);
+		 * System.out.println("document.querySelectorAll('ion-radio-group ion-label')["
+		 * + j + "].innerText"); dropdownString = javascriptHelper.executeScript(
+		 * "return document.querySelectorAll('ion-radio-group ion-label')[" + j +
+		 * "].innerText") .toString(); if (!(dropdownString.isEmpty())) {
+		 * System.out.println(dropdownString); System.out.println("Loop count " + l +
+		 * " got breaked"); break; } } catch (Exception e) { if (l == 10 &&
+		 * !(dropdownString.isBlank())) { Assert.fail(e.getMessage()); } } if
+		 * (!(dropdownString.isEmpty())) { System.out.println(dropdownString);
+		 * System.out.println("Loop count " + l + " got breaked"); break; } }
+		 * System.out.println("String " + dropdownString.trim());
+		 * System.out.println("Map " + newApplicationTestData.get("id_type").trim()); if
+		 * ((dropdownString.trim()).equalsIgnoreCase((newApplicationTestData.get(
+		 * "id_type")).trim())) {
+		 * 
+		 * for (int k = 0; k <= 300; k++) { try {
+		 * 
+		 * clicksAndActionsHelper.moveToElement(javascriptHelper.
+		 * executeScriptWithWebElement(
+		 * "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+		 * clicksAndActionsHelper.clickOnElement(javascriptHelper.
+		 * executeScriptWithWebElement(
+		 * "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+		 * isDropdownValueSelected = true; break; } catch (Exception e) { if (k == 10) {
+		 * Assert.fail(e.getMessage());
+		 * 
+		 * } } } } if (isDropdownValueSelected == true) { break; }
+		 * 
+		 * }
+		 */
 	}
 
 	@And("user_076 in customer search screen enter id number")
 	public void user_076_in_customer_search_screen_enter_id_number() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerSearchJSPaths.getElement("id_number_input"))
 						.click();
@@ -619,7 +596,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 						.sendKeys(newApplicationTestData.get("id_number"));
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -628,7 +605,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 	@And("user_076 in customer search screen enter date of birth of the customer")
 	public void user_076_in_customer_search_screen_enter_date_of_birth_of_the_customer() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(customerSearchJSPaths.getElement("date_of_birth_calendar_input"))
@@ -638,12 +615,12 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 						.sendKeys(newApplicationTestData.get("date_of_birth"));
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				System.out.println(customerSearchJSPaths.getElement("date_highlighted_button"));
 				javascriptHelper
@@ -651,7 +628,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -662,8 +639,8 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 	public void user_076_in_customer_search_screen_enter_customer_mobile_number() throws Throwable {
 		Random random = new Random();
 		int mobileFirstDigit = 9;
-		random.nextInt(1000000000);
-		String mobileNumberEnd = String.format("%09d", random.nextInt(1000000000));
+		random.nextInt(100000000);
+		String mobileNumberEnd = String.format("%09d", random.nextInt(100000000));
 		String mobNumber = mobileFirstDigit + mobileNumberEnd;
 		System.out.println("Mobile number " + mobNumber);
 		System.out.println("Mobile number js path " + customerSearchJSPaths.getElement("customer_search_mobile_input"));
@@ -687,14 +664,14 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 	@And("user_076 click on the search button in customer search screen")
 	public void user_076_click_on_the_search_button_in_customer_search_screen() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(customerSearchJSPaths.getElement("customer_search_search_button"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -703,14 +680,14 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 	@And("user_076 click on create new request buttton")
 	public void user_076_click_on_create_new_request_buttton() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
 						"document.querySelectorAll('button[class=\"p-element p-button-info p-button-sm w-90 m-2 pull-right p-button p-component\"]')[2]")
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -725,27 +702,28 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		for (int i = 0; i <= 50; i++) {
 			try {
 				saveButtonVerification = javascriptHelper
-						.executeScriptWithWebElement(commonJSPaths.getElement("save_button")).isDisplayed();
+						.executeScriptWithWebElement(commonJSPaths.getElement("confirmation_save_button"))
+						.isDisplayed();
 				break;
 			} catch (Exception e) {
 
 			}
 		}
-		
+
 		softAssert.assertTrue(saveButtonVerification, "Save button is not visisble hence failed");
-		
+
 	}
 
 	@Then("user_076 verify product field should be mandatory editable dropdown")
 	public void user_076_verify_product_field_should_be_mandatory_editable_dropdown() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("product_product_dropdown"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -754,22 +732,22 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * String jqueryForDropdownLength =
 		 * "document.querySelectorAll('ion-radio-group ion-radio').length"; String
 		 * dropdownLength = ""; boolean isDropdownValueSelected = false; String
-		 * dropdownString = ""; for (int i = 0; i <= 100; i++) { try { dropdownLength =
+		 * dropdownString = ""; for (int i = 0; i <= 300; i++) { try { dropdownLength =
 		 * javascriptHelper.executeScript("return " +
 		 * jqueryForDropdownLength).toString(); System.out.println("Dropdown length " +
 		 * dropdownLength); if (!(dropdownLength.isBlank()) &&
 		 * !(dropdownLength.equals("0"))) { break; } } catch (Exception e) { if (i ==
-		 * 100) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
+		 * 10) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
 		 * Integer.parseInt(dropdownLength); for (int j = 0; j <=
 		 * premitiveDropdownLength; j++) {
 		 * 
-		 * for (int l = 0; l <= 100; l++) { try { System.out.println("L value is " + l);
+		 * for (int l = 0; l <= 300; l++) { try { System.out.println("L value is " + l);
 		 * System.out.println("document.querySelectorAll('ion-radio-group ion-label')["
 		 * + j + "].innerText"); dropdownString = javascriptHelper.executeScript(
 		 * "return document.querySelectorAll('ion-radio-group ion-label')[" + j +
 		 * "].innerText") .toString(); if (!(dropdownString.isEmpty())) {
 		 * System.out.println(dropdownString); System.out.println("Loop count " + l +
-		 * " got breaked"); break; } } catch (Exception e) { if (l == 100 &&
+		 * " got breaked"); break; } } catch (Exception e) { if (l == 10 &&
 		 * !(dropdownString.isBlank())) { Assert.fail(e.getMessage()); } } if
 		 * (!(dropdownString.isEmpty())) { System.out.println(dropdownString);
 		 * System.out.println("Loop count " + l + " got breaked"); break; } }
@@ -779,7 +757,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * ((dropdownString.trim()).equalsIgnoreCase((newApplicationTestData.get(
 		 * "product_dropdown")).trim())) {
 		 * 
-		 * for (int k = 0; k <= 100; k++) { try {
+		 * for (int k = 0; k <= 300; k++) { try {
 		 * 
 		 * clicksAndActionsHelper.moveToElement(javascriptHelper.
 		 * executeScriptWithWebElement(
@@ -787,8 +765,8 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * clicksAndActionsHelper.clickOnElement(javascriptHelper.
 		 * executeScriptWithWebElement(
 		 * "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-		 * isDropdownValueSelected = true; break; } catch (Exception e) { if (k == 100)
-		 * { Assert.fail(e.getMessage());
+		 * isDropdownValueSelected = true; break; } catch (Exception e) { if (k == 10) {
+		 * Assert.fail(e.getMessage());
 		 * 
 		 * } } } } if (isDropdownValueSelected == true) { break; }
 		 * 
@@ -797,7 +775,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("product_dropdown"));
 		String mandatoryVerification = "";
 		String fieldTypeValidation = "";
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				mandatoryVerification = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("product_product_dropdown"))
@@ -809,7 +787,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -823,14 +801,14 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 	@Then("user_076 verify sub product field should be mandatory editable dropdown")
 	public void user_076_verify_sub_product_field_should_be_mandatory_editable_dropdown() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("sub_product_dropdown"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -839,22 +817,22 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * String jqueryForDropdownLength =
 		 * "document.querySelectorAll('ion-radio-group ion-radio').length"; String
 		 * dropdownLength = ""; boolean isDropdownValueSelected = false; String
-		 * dropdownString = ""; for (int i = 0; i <= 100; i++) { try { dropdownLength =
+		 * dropdownString = ""; for (int i = 0; i <= 300; i++) { try { dropdownLength =
 		 * javascriptHelper.executeScript("return " +
 		 * jqueryForDropdownLength).toString(); System.out.println("Dropdown length " +
 		 * dropdownLength); if (!(dropdownLength.isBlank()) &&
 		 * !(dropdownLength.equals("0"))) { break; } } catch (Exception e) { if (i ==
-		 * 100) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
+		 * 10) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
 		 * Integer.parseInt(dropdownLength); for (int j = 0; j <=
 		 * premitiveDropdownLength; j++) {
 		 * 
-		 * for (int l = 0; l <= 100; l++) { try { System.out.println("L value is " + l);
+		 * for (int l = 0; l <= 300; l++) { try { System.out.println("L value is " + l);
 		 * System.out.println("document.querySelectorAll('ion-radio-group ion-label')["
 		 * + j + "].innerText"); dropdownString = javascriptHelper.executeScript(
 		 * "return document.querySelectorAll('ion-radio-group ion-label')[" + j +
 		 * "].innerText") .toString(); if (!(dropdownString.isEmpty())) {
 		 * System.out.println(dropdownString); System.out.println("Loop count " + l +
-		 * " got breaked"); break; } } catch (Exception e) { if (l == 100 &&
+		 * " got breaked"); break; } } catch (Exception e) { if (l == 10 &&
 		 * !(dropdownString.isBlank())) { Assert.fail(e.getMessage()); } } if
 		 * (!(dropdownString.isEmpty())) { System.out.println(dropdownString);
 		 * System.out.println("Loop count " + l + " got breaked"); break; } }
@@ -864,7 +842,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * ((dropdownString.trim()).equalsIgnoreCase((newApplicationTestData.get(
 		 * "sub_product_dropdown")).trim())) {
 		 * 
-		 * for (int k = 0; k <= 100; k++) { try {
+		 * for (int k = 0; k <= 300; k++) { try {
 		 * 
 		 * clicksAndActionsHelper.moveToElement(javascriptHelper.
 		 * executeScriptWithWebElement(
@@ -872,8 +850,8 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * clicksAndActionsHelper.clickOnElement(javascriptHelper.
 		 * executeScriptWithWebElement(
 		 * "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-		 * isDropdownValueSelected = true; break; } catch (Exception e) { if (k == 100)
-		 * { Assert.fail(e.getMessage());
+		 * isDropdownValueSelected = true; break; } catch (Exception e) { if (k == 10) {
+		 * Assert.fail(e.getMessage());
 		 * 
 		 * } } } } if (isDropdownValueSelected == true) { break; }
 		 * 
@@ -882,7 +860,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("sub_product_dropdown"));
 		String mandatoryVerification = "";
 		String fieldTypeValidation = "";
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				mandatoryVerification = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("sub_product_dropdown"))
@@ -894,7 +872,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -908,14 +886,14 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 	@Then("user_076 verify clasification should be editable mandatory dropdown")
 	public void user_verify_clasification_should_be_editable_mandatory_dropdown() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("product_product_dropdown"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -923,7 +901,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("clasification_dropdown"));
 		String mandatoryVerification = "";
 		String fieldTypeValidation = "";
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				mandatoryVerification = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("clasification_dropdown"))
@@ -935,7 +913,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -949,14 +927,14 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 	@Then("user_076 verify product field should be editable mandatory drodown")
 	public void user_verify_product_field_should_be_editable_mandatory_drodown() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("product_product_dropdown"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -964,7 +942,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("product_dropdown"));
 		String mandatoryVerification = "";
 		String fieldTypeValidation = "";
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				mandatoryVerification = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("product_product_dropdown"))
@@ -976,7 +954,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -989,7 +967,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 	@Then("user_076 verify total finance amount request field should be mantatory numeric")
 	public void user_076_verify_total_finance_amount_request_field_should_be_mantatory_numeric() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("total_amount_requested_input")).click();
@@ -999,14 +977,14 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 						.sendKeys(newApplicationTestData.get("total_finance_amount_requested"));
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 		String mandatoryVerification = "";
 		String fieldTypeValidation = "";
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				// total_amount_requested_input
 				mandatoryVerification = javascriptHelper.executeScript("return "
@@ -1020,7 +998,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1034,7 +1012,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 	@Then("user_076 verify declared net monthly income field should be mandatory numeric")
 	public void user_076_verify_declared_net_monthly_income_field_should_be_mandatory_numeric() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("declared_net_income_input"))
@@ -1044,14 +1022,14 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 						.sendKeys(newApplicationTestData.get("declared_net_income_monthly"));
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 		String mandatoryVerification = "";
 		String fieldTypeValidation = "";
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				// total_amount_requested_input
 				mandatoryVerification = javascriptHelper
@@ -1065,7 +1043,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1079,7 +1057,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 	@Then("user_076 verify declared currrent obligation field should be non mandatory editable numeric")
 	public void user_076_verify_declared_currrent_obligation_field_should_be_non_mandatory_editable_numeric()
 			throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("declared_current_obligation_input")).click();
@@ -1089,14 +1067,14 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 						.sendKeys(newApplicationTestData.get("declared_current_obligation"));
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 		String mandatoryVerification = "";
 		String fieldTypeValidation = "";
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				// total_amount_requested_input
 				mandatoryVerification = javascriptHelper.executeScript("return "
@@ -1110,7 +1088,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1124,13 +1102,13 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 	@Then("user_076 verify special promotional campaign field should be non mandatory editable dropdown")
 	public void user_076_verify_special_promotional_campaign_field_should_be_non_mandatory_editable_dropdown()
 			throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("special_promotion_dropdown")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1139,22 +1117,22 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * String jqueryForDropdownLength =
 		 * "document.querySelectorAll('ion-radio-group ion-radio').length"; String
 		 * dropdownLength = ""; boolean isDropdownValueSelected = false; String
-		 * dropdownString = ""; for (int i = 0; i <= 100; i++) { try { dropdownLength =
+		 * dropdownString = ""; for (int i = 0; i <= 300; i++) { try { dropdownLength =
 		 * javascriptHelper.executeScript("return " +
 		 * jqueryForDropdownLength).toString(); System.out.println("Dropdown length " +
 		 * dropdownLength); if (!(dropdownLength.isBlank()) &&
 		 * !(dropdownLength.equals("0"))) { break; } } catch (Exception e) { if (i ==
-		 * 100) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
+		 * 10) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
 		 * Integer.parseInt(dropdownLength); for (int j = 0; j <=
 		 * premitiveDropdownLength; j++) {
 		 * 
-		 * for (int l = 0; l <= 100; l++) { try { System.out.println("L value is " + l);
+		 * for (int l = 0; l <= 300; l++) { try { System.out.println("L value is " + l);
 		 * System.out.println("document.querySelectorAll('ion-radio-group ion-label')["
 		 * + j + "].innerText"); dropdownString = javascriptHelper.executeScript(
 		 * "return document.querySelectorAll('ion-radio-group ion-label')[" + j +
 		 * "].innerText") .toString(); if (!(dropdownString.isEmpty())) {
 		 * System.out.println(dropdownString); System.out.println("Loop count " + l +
-		 * " got breaked"); break; } } catch (Exception e) { if (l == 100 &&
+		 * " got breaked"); break; } } catch (Exception e) { if (l == 10 &&
 		 * !(dropdownString.isBlank())) { Assert.fail(e.getMessage()); } } if
 		 * (!(dropdownString.isEmpty())) { System.out.println(dropdownString);
 		 * System.out.println("Loop count " + l + " got breaked"); break; } }
@@ -1165,7 +1143,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * .equalsIgnoreCase((newApplicationTestData.get("special_promotion_campaign")).
 		 * trim())) {
 		 * 
-		 * for (int k = 0; k <= 100; k++) { try {
+		 * for (int k = 0; k <= 300; k++) { try {
 		 * 
 		 * clicksAndActionsHelper.moveToElement(javascriptHelper.
 		 * executeScriptWithWebElement(
@@ -1173,8 +1151,8 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * clicksAndActionsHelper.clickOnElement(javascriptHelper.
 		 * executeScriptWithWebElement(
 		 * "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-		 * isDropdownValueSelected = true; break; } catch (Exception e) { if (k == 100)
-		 * { Assert.fail(e.getMessage());
+		 * isDropdownValueSelected = true; break; } catch (Exception e) { if (k == 10) {
+		 * Assert.fail(e.getMessage());
 		 * 
 		 * } } } } if (isDropdownValueSelected == true) { break; }
 		 * 
@@ -1185,7 +1163,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 		String mandatoryVerification = "";
 		String fieldTypeValidation = "";
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				mandatoryVerification = javascriptHelper
 						.executeScriptWithWebElement(
@@ -1199,7 +1177,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1212,14 +1190,14 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 	@Then("user_076 verify sourcing channel field should be mandatory editable dropdown")
 	public void user_076_verify_sourcing_channel_field_should_be_mandatory_editable_dropdown() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("sourcing_channel_dropdown"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1228,22 +1206,22 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * String jqueryForDropdownLength =
 		 * "document.querySelectorAll('ion-radio-group ion-radio').length"; String
 		 * dropdownLength = ""; boolean isDropdownValueSelected = false; String
-		 * dropdownString = ""; for (int i = 0; i <= 100; i++) { try { dropdownLength =
+		 * dropdownString = ""; for (int i = 0; i <= 300; i++) { try { dropdownLength =
 		 * javascriptHelper.executeScript("return " +
 		 * jqueryForDropdownLength).toString(); System.out.println("Dropdown length " +
 		 * dropdownLength); if (!(dropdownLength.isBlank()) &&
 		 * !(dropdownLength.equals("0"))) { break; } } catch (Exception e) { if (i ==
-		 * 100) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
+		 * 10) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
 		 * Integer.parseInt(dropdownLength); for (int j = 0; j <=
 		 * premitiveDropdownLength; j++) {
 		 * 
-		 * for (int l = 0; l <= 100; l++) { try { System.out.println("L value is " + l);
+		 * for (int l = 0; l <= 300; l++) { try { System.out.println("L value is " + l);
 		 * System.out.println("document.querySelectorAll('ion-radio-group ion-label')["
 		 * + j + "].innerText"); dropdownString = javascriptHelper.executeScript(
 		 * "return document.querySelectorAll('ion-radio-group ion-label')[" + j +
 		 * "].innerText") .toString(); if (!(dropdownString.isEmpty())) {
 		 * System.out.println(dropdownString); System.out.println("Loop count " + l +
-		 * " got breaked"); break; } } catch (Exception e) { if (l == 100 &&
+		 * " got breaked"); break; } } catch (Exception e) { if (l == 10 &&
 		 * !(dropdownString.isBlank())) { Assert.fail(e.getMessage()); } } if
 		 * (!(dropdownString.isEmpty())) { System.out.println(dropdownString);
 		 * System.out.println("Loop count " + l + " got breaked"); break; } }
@@ -1253,7 +1231,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * ((dropdownString.trim()).equalsIgnoreCase((newApplicationTestData.get(
 		 * "sourcing_channel")).trim())) {
 		 * 
-		 * for (int k = 0; k <= 100; k++) { try {
+		 * for (int k = 0; k <= 300; k++) { try {
 		 * 
 		 * clicksAndActionsHelper.moveToElement(javascriptHelper.
 		 * executeScriptWithWebElement(
@@ -1261,8 +1239,8 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * clicksAndActionsHelper.clickOnElement(javascriptHelper.
 		 * executeScriptWithWebElement(
 		 * "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-		 * isDropdownValueSelected = true; break; } catch (Exception e) { if (k == 100)
-		 * { Assert.fail(e.getMessage());
+		 * isDropdownValueSelected = true; break; } catch (Exception e) { if (k == 10) {
+		 * Assert.fail(e.getMessage());
 		 * 
 		 * } } } } if (isDropdownValueSelected == true) { break; }
 		 * 
@@ -1273,7 +1251,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 		String mandatoryVerification = "";
 		String fieldTypeValidation = "";
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				mandatoryVerification = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("sourcing_channel_dropdown"))
@@ -1285,7 +1263,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1298,13 +1276,13 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 	@Then("user_076 verify business center code field should be mandatory editable dropdown")
 	public void user_076_verify_business_center_code_field_should_be_mandatory_editable_dropdown() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("business_center_code_dropdown")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1313,22 +1291,22 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * String jqueryForDropdownLength =
 		 * "document.querySelectorAll('ion-radio-group ion-radio').length"; String
 		 * dropdownLength = ""; boolean isDropdownValueSelected = false; String
-		 * dropdownString = ""; for (int i = 0; i <= 100; i++) { try { dropdownLength =
+		 * dropdownString = ""; for (int i = 0; i <= 300; i++) { try { dropdownLength =
 		 * javascriptHelper.executeScript("return " +
 		 * jqueryForDropdownLength).toString(); System.out.println("Dropdown length " +
 		 * dropdownLength); if (!(dropdownLength.isBlank()) &&
 		 * !(dropdownLength.equals("0"))) { break; } } catch (Exception e) { if (i ==
-		 * 100) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
+		 * 10) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
 		 * Integer.parseInt(dropdownLength); for (int j = 0; j <=
 		 * premitiveDropdownLength; j++) {
 		 * 
-		 * for (int l = 0; l <= 100; l++) { try { System.out.println("L value is " + l);
+		 * for (int l = 0; l <= 300; l++) { try { System.out.println("L value is " + l);
 		 * System.out.println("document.querySelectorAll('ion-radio-group ion-label')["
 		 * + j + "].innerText"); dropdownString = javascriptHelper.executeScript(
 		 * "return document.querySelectorAll('ion-radio-group ion-label')[" + j +
 		 * "].innerText") .toString(); if (!(dropdownString.isEmpty())) {
 		 * System.out.println(dropdownString); System.out.println("Loop count " + l +
-		 * " got breaked"); break; } } catch (Exception e) { if (l == 100 &&
+		 * " got breaked"); break; } } catch (Exception e) { if (l == 10 &&
 		 * !(dropdownString.isBlank())) { Assert.fail(e.getMessage()); } } if
 		 * (!(dropdownString.isEmpty())) { System.out.println(dropdownString);
 		 * System.out.println("Loop count " + l + " got breaked"); break; } }
@@ -1338,7 +1316,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * ((dropdownString.trim()).equalsIgnoreCase((newApplicationTestData.get(
 		 * "Business_center_code")).trim())) {
 		 * 
-		 * for (int k = 0; k <= 100; k++) { try {
+		 * for (int k = 0; k <= 300; k++) { try {
 		 * 
 		 * clicksAndActionsHelper.moveToElement(javascriptHelper.
 		 * executeScriptWithWebElement(
@@ -1346,8 +1324,8 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * clicksAndActionsHelper.clickOnElement(javascriptHelper.
 		 * executeScriptWithWebElement(
 		 * "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-		 * isDropdownValueSelected = true; break; } catch (Exception e) { if (k == 100)
-		 * { Assert.fail(e.getMessage());
+		 * isDropdownValueSelected = true; break; } catch (Exception e) { if (k == 10) {
+		 * Assert.fail(e.getMessage());
 		 * 
 		 * } } } } if (isDropdownValueSelected == true) { break; }
 		 * 
@@ -1356,7 +1334,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("Business_center_code"));
 		String mandatoryVerification = "";
 		String fieldTypeValidation = "";
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				mandatoryVerification = javascriptHelper
 						.executeScriptWithWebElement(
@@ -1370,7 +1348,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1383,14 +1361,14 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 	@Then("user_076 verify service type field should be mandatory editable dropdown")
 	public void user_076_verify_service_type_field_should_be_mandatory_editable_dropdown() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("servicing_type_dropdown"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1399,22 +1377,22 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * String jqueryForDropdownLength =
 		 * "document.querySelectorAll('ion-radio-group ion-radio').length"; String
 		 * dropdownLength = ""; boolean isDropdownValueSelected = false; String
-		 * dropdownString = ""; for (int i = 0; i <= 100; i++) { try { dropdownLength =
+		 * dropdownString = ""; for (int i = 0; i <= 300; i++) { try { dropdownLength =
 		 * javascriptHelper.executeScript("return " +
 		 * jqueryForDropdownLength).toString(); System.out.println("Dropdown length " +
 		 * dropdownLength); if (!(dropdownLength.isBlank()) &&
 		 * !(dropdownLength.equals("0"))) { break; } } catch (Exception e) { if (i ==
-		 * 100) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
+		 * 10) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
 		 * Integer.parseInt(dropdownLength); for (int j = 0; j <=
 		 * premitiveDropdownLength; j++) {
 		 * 
-		 * for (int l = 0; l <= 100; l++) { try { System.out.println("L value is " + l);
+		 * for (int l = 0; l <= 300; l++) { try { System.out.println("L value is " + l);
 		 * System.out.println("document.querySelectorAll('ion-radio-group ion-label')["
 		 * + j + "].innerText"); dropdownString = javascriptHelper.executeScript(
 		 * "return document.querySelectorAll('ion-radio-group ion-label')[" + j +
 		 * "].innerText") .toString(); if (!(dropdownString.isEmpty())) {
 		 * System.out.println(dropdownString); System.out.println("Loop count " + l +
-		 * " got breaked"); break; } } catch (Exception e) { if (l == 100 &&
+		 * " got breaked"); break; } } catch (Exception e) { if (l == 10 &&
 		 * !(dropdownString.isBlank())) { Assert.fail(e.getMessage()); } } if
 		 * (!(dropdownString.isEmpty())) { System.out.println(dropdownString);
 		 * System.out.println("Loop count " + l + " got breaked"); break; } }
@@ -1424,7 +1402,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * ((dropdownString.trim()).equalsIgnoreCase((newApplicationTestData.get(
 		 * "servicing_type")).trim())) {
 		 * 
-		 * for (int k = 0; k <= 100; k++) { try {
+		 * for (int k = 0; k <= 300; k++) { try {
 		 * 
 		 * clicksAndActionsHelper.moveToElement(javascriptHelper.
 		 * executeScriptWithWebElement(
@@ -1432,8 +1410,8 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * clicksAndActionsHelper.clickOnElement(javascriptHelper.
 		 * executeScriptWithWebElement(
 		 * "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-		 * isDropdownValueSelected = true; break; } catch (Exception e) { if (k == 100)
-		 * { Assert.fail(e.getMessage());
+		 * isDropdownValueSelected = true; break; } catch (Exception e) { if (k == 10) {
+		 * Assert.fail(e.getMessage());
 		 * 
 		 * } } } } if (isDropdownValueSelected == true) { break; }
 		 * 
@@ -1444,7 +1422,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 		String mandatoryVerification = "";
 		String fieldTypeValidation = "";
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				mandatoryVerification = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("servicing_type_dropdown"))
@@ -1456,7 +1434,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1469,13 +1447,13 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 	@Then("user_076 verify region field should be mandatory editable dropdown")
 	public void user_076_verify_region_field_should_be_mandatory_editable_dropdown() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(applicationDetailsElements.getElement("region_dropdown"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1485,22 +1463,22 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * String jqueryForDropdownLength =
 		 * "document.querySelectorAll('ion-radio-group ion-radio').length"; String
 		 * dropdownLength = ""; boolean isDropdownValueSelected = false; String
-		 * dropdownString = ""; for (int i = 0; i <= 100; i++) { try { dropdownLength =
+		 * dropdownString = ""; for (int i = 0; i <= 300; i++) { try { dropdownLength =
 		 * javascriptHelper.executeScript("return " +
 		 * jqueryForDropdownLength).toString(); System.out.println("Dropdown length " +
 		 * dropdownLength); if (!(dropdownLength.isBlank()) &&
 		 * !(dropdownLength.equals("0"))) { break; } } catch (Exception e) { if (i ==
-		 * 100) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
+		 * 10) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
 		 * Integer.parseInt(dropdownLength); for (int j = 0; j <=
 		 * premitiveDropdownLength; j++) {
 		 * 
-		 * for (int l = 0; l <= 100; l++) { try { System.out.println("L value is " + l);
+		 * for (int l = 0; l <= 300; l++) { try { System.out.println("L value is " + l);
 		 * System.out.println("document.querySelectorAll('ion-radio-group ion-label')["
 		 * + j + "].innerText"); dropdownString = javascriptHelper.executeScript(
 		 * "return document.querySelectorAll('ion-radio-group ion-label')[" + j +
 		 * "].innerText") .toString(); if (!(dropdownString.isEmpty())) {
 		 * System.out.println(dropdownString); System.out.println("Loop count " + l +
-		 * " got breaked"); break; } } catch (Exception e) { if (l == 100 &&
+		 * " got breaked"); break; } } catch (Exception e) { if (l == 10 &&
 		 * !(dropdownString.isBlank())) { Assert.fail(e.getMessage()); } } if
 		 * (!(dropdownString.isEmpty())) { System.out.println(dropdownString);
 		 * System.out.println("Loop count " + l + " got breaked"); break; } }
@@ -1509,7 +1487,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * ((dropdownString.trim()).equalsIgnoreCase((newApplicationTestData.get(
 		 * "region")).trim())) {
 		 * 
-		 * for (int k = 0; k <= 100; k++) { try {
+		 * for (int k = 0; k <= 300; k++) { try {
 		 * 
 		 * clicksAndActionsHelper.moveToElement(javascriptHelper.
 		 * executeScriptWithWebElement(
@@ -1517,8 +1495,8 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * clicksAndActionsHelper.clickOnElement(javascriptHelper.
 		 * executeScriptWithWebElement(
 		 * "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-		 * isDropdownValueSelected = true; break; } catch (Exception e) { if (k == 100)
-		 * { Assert.fail(e.getMessage());
+		 * isDropdownValueSelected = true; break; } catch (Exception e) { if (k == 10) {
+		 * Assert.fail(e.getMessage());
 		 * 
 		 * } } } } if (isDropdownValueSelected == true) { break; }
 		 * 
@@ -1529,7 +1507,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 		String mandatoryVerification = "";
 		String fieldTypeValidation = "";
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				mandatoryVerification = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("region_dropdown"))
@@ -1541,7 +1519,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1554,14 +1532,14 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 	@Then("user_076 verify servicing branch field should be mandatory editable dropdown")
 	public void user_076_verify_servicing_branch_field_should_be_mandatory_editable_dropdown() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("servicing_branch_dropdown"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1570,22 +1548,22 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * String jqueryForDropdownLength =
 		 * "document.querySelectorAll('ion-radio-group ion-radio').length"; String
 		 * dropdownLength = ""; boolean isDropdownValueSelected = false; String
-		 * dropdownString = ""; for (int i = 0; i <= 100; i++) { try { dropdownLength =
+		 * dropdownString = ""; for (int i = 0; i <= 300; i++) { try { dropdownLength =
 		 * javascriptHelper.executeScript("return " +
 		 * jqueryForDropdownLength).toString(); System.out.println("Dropdown length " +
 		 * dropdownLength); if (!(dropdownLength.isBlank()) &&
 		 * !(dropdownLength.equals("0"))) { break; } } catch (Exception e) { if (i ==
-		 * 100) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
+		 * 10) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
 		 * Integer.parseInt(dropdownLength); for (int j = 0; j <=
 		 * premitiveDropdownLength; j++) {
 		 * 
-		 * for (int l = 0; l <= 100; l++) { try { System.out.println("L value is " + l);
+		 * for (int l = 0; l <= 300; l++) { try { System.out.println("L value is " + l);
 		 * System.out.println("document.querySelectorAll('ion-radio-group ion-label')["
 		 * + j + "].innerText"); dropdownString = javascriptHelper.executeScript(
 		 * "return document.querySelectorAll('ion-radio-group ion-label')[" + j +
 		 * "].innerText") .toString(); if (!(dropdownString.isEmpty())) {
 		 * System.out.println(dropdownString); System.out.println("Loop count " + l +
-		 * " got breaked"); break; } } catch (Exception e) { if (l == 100 &&
+		 * " got breaked"); break; } } catch (Exception e) { if (l == 10 &&
 		 * !(dropdownString.isBlank())) { Assert.fail(e.getMessage()); } } if
 		 * (!(dropdownString.isEmpty())) { System.out.println(dropdownString);
 		 * System.out.println("Loop count " + l + " got breaked"); break; } }
@@ -1595,7 +1573,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * ((dropdownString.trim()).equalsIgnoreCase((newApplicationTestData.get(
 		 * "servicing_branch")).trim())) {
 		 * 
-		 * for (int k = 0; k <= 100; k++) { try {
+		 * for (int k = 0; k <= 300; k++) { try {
 		 * 
 		 * clicksAndActionsHelper.moveToElement(javascriptHelper.
 		 * executeScriptWithWebElement(
@@ -1603,8 +1581,8 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * clicksAndActionsHelper.clickOnElement(javascriptHelper.
 		 * executeScriptWithWebElement(
 		 * "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-		 * isDropdownValueSelected = true; break; } catch (Exception e) { if (k == 100)
-		 * { Assert.fail(e.getMessage());
+		 * isDropdownValueSelected = true; break; } catch (Exception e) { if (k == 10) {
+		 * Assert.fail(e.getMessage());
 		 * 
 		 * } } } } if (isDropdownValueSelected == true) { break; }
 		 * 
@@ -1615,7 +1593,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 		String mandatoryVerification = "";
 		String fieldTypeValidation = "";
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				mandatoryVerification = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("servicing_branch_dropdown"))
@@ -1627,7 +1605,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1640,14 +1618,14 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 	@Then("user_076 verify spoke location field should be non mandatory editable dropdown")
 	public void user_076_verify_spoke_location_field_should_be_non_mandatory_editable_dropdown() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("spoke_location_dropdown"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1656,22 +1634,22 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * String jqueryForDropdownLength =
 		 * "document.querySelectorAll('ion-radio-group ion-radio').length"; String
 		 * dropdownLength = ""; boolean isDropdownValueSelected = false; String
-		 * dropdownString = ""; for (int i = 0; i <= 100; i++) { try { dropdownLength =
+		 * dropdownString = ""; for (int i = 0; i <= 300; i++) { try { dropdownLength =
 		 * javascriptHelper.executeScript("return " +
 		 * jqueryForDropdownLength).toString(); System.out.println("Dropdown length " +
 		 * dropdownLength); if (!(dropdownLength.isBlank()) &&
 		 * !(dropdownLength.equals("0"))) { break; } } catch (Exception e) { if (i ==
-		 * 100) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
+		 * 10) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
 		 * Integer.parseInt(dropdownLength); for (int j = 0; j <=
 		 * premitiveDropdownLength; j++) {
 		 * 
-		 * for (int l = 0; l <= 100; l++) { try { System.out.println("L value is " + l);
+		 * for (int l = 0; l <= 300; l++) { try { System.out.println("L value is " + l);
 		 * System.out.println("document.querySelectorAll('ion-radio-group ion-label')["
 		 * + j + "].innerText"); dropdownString = javascriptHelper.executeScript(
 		 * "return document.querySelectorAll('ion-radio-group ion-label')[" + j +
 		 * "].innerText") .toString(); if (!(dropdownString.isEmpty())) {
 		 * System.out.println(dropdownString); System.out.println("Loop count " + l +
-		 * " got breaked"); break; } } catch (Exception e) { if (l == 100 &&
+		 * " got breaked"); break; } } catch (Exception e) { if (l == 10 &&
 		 * !(dropdownString.isBlank())) { Assert.fail(e.getMessage()); } } if
 		 * (!(dropdownString.isEmpty())) { System.out.println(dropdownString);
 		 * System.out.println("Loop count " + l + " got breaked"); break; } }
@@ -1681,7 +1659,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * ((dropdownString.trim()).equalsIgnoreCase((newApplicationTestData.get(
 		 * "spoke_location")).trim())) {
 		 * 
-		 * for (int k = 0; k <= 100; k++) { try {
+		 * for (int k = 0; k <= 300; k++) { try {
 		 * 
 		 * clicksAndActionsHelper.moveToElement(javascriptHelper.
 		 * executeScriptWithWebElement(
@@ -1689,8 +1667,8 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * clicksAndActionsHelper.clickOnElement(javascriptHelper.
 		 * executeScriptWithWebElement(
 		 * "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-		 * isDropdownValueSelected = true; break; } catch (Exception e) { if (k == 100)
-		 * { Assert.fail(e.getMessage());
+		 * isDropdownValueSelected = true; break; } catch (Exception e) { if (k == 10) {
+		 * Assert.fail(e.getMessage());
 		 * 
 		 * } } } } if (isDropdownValueSelected == true) { break; }
 		 * 
@@ -1701,7 +1679,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 		String mandatoryVerification = "";
 		String fieldTypeValidation = "";
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				mandatoryVerification = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("spoke_location_dropdown"))
@@ -1713,7 +1691,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1727,7 +1705,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 	@Then("user_076 verify closing staff or servicing staff or RM field should be mandatory editable dropdown")
 	public void user_076_verify_closing_staff_or_servicing_staff_or_rm_field_should_be_mandatory_editable_dropdown()
 			throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(
@@ -1735,7 +1713,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1745,22 +1723,22 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * String jqueryForDropdownLength =
 		 * "document.querySelectorAll('ion-radio-group ion-radio').length"; String
 		 * dropdownLength = ""; boolean isDropdownValueSelected = false; String
-		 * dropdownString = ""; for (int i = 0; i <= 100; i++) { try { dropdownLength =
+		 * dropdownString = ""; for (int i = 0; i <= 300; i++) { try { dropdownLength =
 		 * javascriptHelper.executeScript("return " +
 		 * jqueryForDropdownLength).toString(); System.out.println("Dropdown length " +
 		 * dropdownLength); if (!(dropdownLength.isBlank()) &&
 		 * !(dropdownLength.equals("0"))) { break; } } catch (Exception e) { if (i ==
-		 * 100) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
+		 * 10) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
 		 * Integer.parseInt(dropdownLength); for (int j = 0; j <=
 		 * premitiveDropdownLength; j++) {
 		 * 
-		 * for (int l = 0; l <= 100; l++) { try { System.out.println("L value is " + l);
+		 * for (int l = 0; l <= 300; l++) { try { System.out.println("L value is " + l);
 		 * System.out.println("document.querySelectorAll('ion-radio-group ion-label')["
 		 * + j + "].innerText"); dropdownString = javascriptHelper.executeScript(
 		 * "return document.querySelectorAll('ion-radio-group ion-label')[" + j +
 		 * "].innerText") .toString(); if (!(dropdownString.isEmpty())) {
 		 * System.out.println(dropdownString); System.out.println("Loop count " + l +
-		 * " got breaked"); break; } } catch (Exception e) { if (l == 100 &&
+		 * " got breaked"); break; } } catch (Exception e) { if (l == 10 &&
 		 * !(dropdownString.isBlank())) { Assert.fail(e.getMessage()); } } if
 		 * (!(dropdownString.isEmpty())) { System.out.println(dropdownString);
 		 * System.out.println("Loop count " + l + " got breaked"); break; } }
@@ -1770,7 +1748,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * ((dropdownString.trim()) .equalsIgnoreCase((newApplicationTestData.get(
 		 * "closing_staff_servicing_staff_RM")).trim())) {
 		 * 
-		 * for (int k = 0; k <= 100; k++) { try {
+		 * for (int k = 0; k <= 300; k++) { try {
 		 * 
 		 * clicksAndActionsHelper.moveToElement(javascriptHelper.
 		 * executeScriptWithWebElement(
@@ -1778,8 +1756,8 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * clicksAndActionsHelper.clickOnElement(javascriptHelper.
 		 * executeScriptWithWebElement(
 		 * "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-		 * isDropdownValueSelected = true; break; } catch (Exception e) { if (k == 100)
-		 * { Assert.fail(e.getMessage());
+		 * isDropdownValueSelected = true; break; } catch (Exception e) { if (k == 10) {
+		 * Assert.fail(e.getMessage());
 		 * 
 		 * } } } } if (isDropdownValueSelected == true) { break; }
 		 * 
@@ -1790,7 +1768,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 		String mandatoryVerification = "";
 		String fieldTypeValidation = "";
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				mandatoryVerification = javascriptHelper
 						.executeScriptWithWebElement(
@@ -1804,7 +1782,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1819,14 +1797,14 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 	@Then("user_076 verify toupup type field should be visible in murabha product")
 	public void user_verify_toupup_type_field_should_be_visible_in_murabha_product() throws Throwable {
 		boolean statusOfTheField = false;
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				statusOfTheField = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("topup_type_dropdown"))
 						.isDisplayed();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1835,17 +1813,83 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 	}
 
+	@Then("user_076 verify topup type field should be non mandatory editable dropdown")
+	public void user_076_verify_topup_type_field_should_be_non_mandatory_editable_dropdown() {
+		String mandatoryValidation = "";
+		String fieldTypeValidation = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+				mandatoryValidation = javascriptHelper
+						.executeScriptWithWebElement(applicationDetailsElements.getElement("topup_type_dropdown"))
+						.getAttribute("aria-label");
+				fieldTypeValidation = javascriptHelper
+						.executeScriptWithWebElement(applicationDetailsElements.getElement("topup_type_dropdown"))
+						.getAttribute("ng-reflect-placeholder");
+				if ((mandatoryValidation.length() > 0) && (fieldTypeValidation.length() > 0)) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					e.printStackTrace();
+					Assert.fail(e.getMessage());
+				}
+			}
+
+		}
+		javascriptHelper.executeScriptWithWebElement(applicationDetailsElements.getElement("topup_type_dropdown"))
+				.click();
+		clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("topup_type"));
+		softAssert.assertTrue(!(mandatoryValidation.contains("*")), "Topup type is mandatory field hence failed");
+		softAssert.assertTrue(fieldTypeValidation.contains("Select"),
+				"Topup type is not a dropdown field hence failed");
+
+	}
+
+	@Then("user_076 verify topup application number field should be non mandatory editable input")
+	public void user_076_verify_topup_application_number_field_should_be_non_mandatory_editable_input() {
+		String mandatoryValidation = "";
+		String fieldTypeValidation = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+				mandatoryValidation = javascriptHelper.executeScript("return "
+						+ applicationDetailsElements.getElement("topup_application_number_mandatory_verification"))
+						.toString();
+				fieldTypeValidation = javascriptHelper
+						.executeScriptWithWebElement(
+								applicationDetailsElements.getElement("topup_application_number_input"))
+						.getAttribute("type");
+				if ((mandatoryValidation.length() > 0) && (fieldTypeValidation.length() > 0)) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					e.printStackTrace();
+					Assert.fail(e.getMessage());
+				}
+			}
+
+		}
+		javascriptHelper
+				.executeScriptWithWebElement(applicationDetailsElements.getElement("topup_application_number_input"))
+				.sendKeys(newApplicationTestData.get("topup_application_number"));
+		softAssert.assertTrue(!(mandatoryValidation.contains("*")),
+				"Topup application number is a mandatory field hence failed");
+		softAssert.assertTrue(fieldTypeValidation.contains("number"),
+				"Topup application number is not a input box hence failed");
+
+	}
+
 	@Then("user_076 verify topup application number field should be visible in murabha product")
 	public void user_verify_topup_application_number_field_should_be_visible_in_murabha_product() throws Throwable {
 		boolean statusOfTheField = false;
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				statusOfTheField = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("topup_type_dropdown"))
 						.isDisplayed();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1855,14 +1899,14 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 	@Then("user_076 verify sourcing type field should be mandatory editable lookup")
 	public void user_076_verify_sourcing_type_field_should_be_mandatory_editable_lookup() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("sourcing_type_dropdown"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1871,22 +1915,22 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * String jqueryForDropdownLength =
 		 * "document.querySelectorAll('ion-radio-group ion-radio').length"; String
 		 * dropdownLength = ""; boolean isDropdownValueSelected = false; String
-		 * dropdownString = ""; for (int i = 0; i <= 100; i++) { try { dropdownLength =
+		 * dropdownString = ""; for (int i = 0; i <= 300; i++) { try { dropdownLength =
 		 * javascriptHelper.executeScript("return " +
 		 * jqueryForDropdownLength).toString(); System.out.println("Dropdown length " +
 		 * dropdownLength); if (!(dropdownLength.isBlank()) &&
 		 * !(dropdownLength.equals("0"))) { break; } } catch (Exception e) { if (i ==
-		 * 100) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
+		 * 10) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
 		 * Integer.parseInt(dropdownLength); for (int j = 0; j <=
 		 * premitiveDropdownLength; j++) {
 		 * 
-		 * for (int l = 0; l <= 100; l++) { try { System.out.println("L value is " + l);
+		 * for (int l = 0; l <= 300; l++) { try { System.out.println("L value is " + l);
 		 * System.out.println("document.querySelectorAll('ion-radio-group ion-label')["
 		 * + j + "].innerText"); dropdownString = javascriptHelper.executeScript(
 		 * "return document.querySelectorAll('ion-radio-group ion-label')[" + j +
 		 * "].innerText") .toString(); if (!(dropdownString.isEmpty())) {
 		 * System.out.println(dropdownString); System.out.println("Loop count " + l +
-		 * " got breaked"); break; } } catch (Exception e) { if (l == 100 &&
+		 * " got breaked"); break; } } catch (Exception e) { if (l == 10 &&
 		 * !(dropdownString.isBlank())) { Assert.fail(e.getMessage()); } } if
 		 * (!(dropdownString.isEmpty())) { System.out.println(dropdownString);
 		 * System.out.println("Loop count " + l + " got breaked"); break; } }
@@ -1896,7 +1940,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * ((dropdownString.trim()).equalsIgnoreCase((newApplicationTestData.get(
 		 * "sourcing_type")).trim())) {
 		 * 
-		 * for (int k = 0; k <= 100; k++) { try {
+		 * for (int k = 0; k <= 300; k++) { try {
 		 * 
 		 * clicksAndActionsHelper.moveToElement(javascriptHelper.
 		 * executeScriptWithWebElement(
@@ -1904,8 +1948,8 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * clicksAndActionsHelper.clickOnElement(javascriptHelper.
 		 * executeScriptWithWebElement(
 		 * "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-		 * isDropdownValueSelected = true; break; } catch (Exception e) { if (k == 100)
-		 * { Assert.fail(e.getMessage());
+		 * isDropdownValueSelected = true; break; } catch (Exception e) { if (k == 10) {
+		 * Assert.fail(e.getMessage());
 		 * 
 		 * } } } } if (isDropdownValueSelected == true) { break; }
 		 * 
@@ -1916,7 +1960,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 		String mandatoryVerification = "";
 		String fieldTypeValidation = "";
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				mandatoryVerification = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("sourcing_type_dropdown"))
@@ -1928,7 +1972,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1941,14 +1985,14 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 	@Then("user_076 verify sourcing office field should be mandatory editable lookup")
 	public void user_076_verify_sourcing_office_field_should_be_mandatory_editable_lookup() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("sourcing_office_dropdown"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1957,22 +2001,22 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * String jqueryForDropdownLength =
 		 * "document.querySelectorAll('ion-radio-group ion-radio').length"; String
 		 * dropdownLength = ""; boolean isDropdownValueSelected = false; String
-		 * dropdownString = ""; for (int i = 0; i <= 100; i++) { try { dropdownLength =
+		 * dropdownString = ""; for (int i = 0; i <= 300; i++) { try { dropdownLength =
 		 * javascriptHelper.executeScript("return " +
 		 * jqueryForDropdownLength).toString(); System.out.println("Dropdown length " +
 		 * dropdownLength); if (!(dropdownLength.isBlank()) &&
 		 * !(dropdownLength.equals("0"))) { break; } } catch (Exception e) { if (i ==
-		 * 100) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
+		 * 10) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
 		 * Integer.parseInt(dropdownLength); for (int j = 0; j <=
 		 * premitiveDropdownLength; j++) {
 		 * 
-		 * for (int l = 0; l <= 100; l++) { try { System.out.println("L value is " + l);
+		 * for (int l = 0; l <= 300; l++) { try { System.out.println("L value is " + l);
 		 * System.out.println("document.querySelectorAll('ion-radio-group ion-label')["
 		 * + j + "].innerText"); dropdownString = javascriptHelper.executeScript(
 		 * "return document.querySelectorAll('ion-radio-group ion-label')[" + j +
 		 * "].innerText") .toString(); if (!(dropdownString.isEmpty())) {
 		 * System.out.println(dropdownString); System.out.println("Loop count " + l +
-		 * " got breaked"); break; } } catch (Exception e) { if (l == 100 &&
+		 * " got breaked"); break; } } catch (Exception e) { if (l == 10 &&
 		 * !(dropdownString.isBlank())) { Assert.fail(e.getMessage()); } } if
 		 * (!(dropdownString.isEmpty())) { System.out.println(dropdownString);
 		 * System.out.println("Loop count " + l + " got breaked"); break; } }
@@ -1982,7 +2026,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * ((dropdownString.trim()).equalsIgnoreCase((newApplicationTestData.get(
 		 * "sourcing_office")).trim())) {
 		 * 
-		 * for (int k = 0; k <= 100; k++) { try {
+		 * for (int k = 0; k <= 300; k++) { try {
 		 * 
 		 * clicksAndActionsHelper.moveToElement(javascriptHelper.
 		 * executeScriptWithWebElement(
@@ -1990,8 +2034,8 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * clicksAndActionsHelper.clickOnElement(javascriptHelper.
 		 * executeScriptWithWebElement(
 		 * "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-		 * isDropdownValueSelected = true; break; } catch (Exception e) { if (k == 100)
-		 * { Assert.fail(e.getMessage());
+		 * isDropdownValueSelected = true; break; } catch (Exception e) { if (k == 10) {
+		 * Assert.fail(e.getMessage());
 		 * 
 		 * } } } } if (isDropdownValueSelected == true) { break; }
 		 * 
@@ -2002,7 +2046,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 		String mandatoryVerification = "";
 		String fieldTypeValidation = "";
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				mandatoryVerification = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("sourcing_office_dropdown"))
@@ -2014,7 +2058,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2027,7 +2071,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 	@Then("user_076 verify sourcing entity field should be mandatory editable lookup")
 	public void user_076_verify_sourcing_entity_field_should_be_mandatory_editable_lookup() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("sourcing_entity_dropdown")));
@@ -2036,7 +2080,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2045,22 +2089,22 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * String jqueryForDropdownLength =
 		 * "document.querySelectorAll('ion-radio-group ion-radio').length"; String
 		 * dropdownLength = ""; boolean isDropdownValueSelected = false; String
-		 * dropdownString = ""; for (int i = 0; i <= 100; i++) { try { dropdownLength =
+		 * dropdownString = ""; for (int i = 0; i <= 300; i++) { try { dropdownLength =
 		 * javascriptHelper.executeScript("return " +
 		 * jqueryForDropdownLength).toString(); System.out.println("Dropdown length " +
 		 * dropdownLength); if (!(dropdownLength.isBlank()) &&
 		 * !(dropdownLength.equals("0"))) { break; } } catch (Exception e) { if (i ==
-		 * 100) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
+		 * 10) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
 		 * Integer.parseInt(dropdownLength); for (int j = 0; j <=
 		 * premitiveDropdownLength; j++) {
 		 * 
-		 * for (int l = 0; l <= 100; l++) { try { System.out.println("L value is " + l);
+		 * for (int l = 0; l <= 300; l++) { try { System.out.println("L value is " + l);
 		 * System.out.println("document.querySelectorAll('ion-radio-group ion-label')["
 		 * + j + "].innerText"); dropdownString = javascriptHelper.executeScript(
 		 * "return document.querySelectorAll('ion-radio-group ion-label')[" + j +
 		 * "].innerText") .toString(); if (!(dropdownString.isEmpty())) {
 		 * System.out.println(dropdownString); System.out.println("Loop count " + l +
-		 * " got breaked"); break; } } catch (Exception e) { if (l == 100 &&
+		 * " got breaked"); break; } } catch (Exception e) { if (l == 10 &&
 		 * !(dropdownString.isBlank())) { Assert.fail(e.getMessage()); } } if
 		 * (!(dropdownString.isEmpty())) { System.out.println(dropdownString);
 		 * System.out.println("Loop count " + l + " got breaked"); break; } }
@@ -2070,7 +2114,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * ((dropdownString.trim()).equalsIgnoreCase((newApplicationTestData.get(
 		 * "sourcing_entity")).trim())) {
 		 * 
-		 * for (int k = 0; k <= 100; k++) { try {
+		 * for (int k = 0; k <= 300; k++) { try {
 		 * 
 		 * clicksAndActionsHelper.moveToElement(javascriptHelper.
 		 * executeScriptWithWebElement(
@@ -2078,8 +2122,8 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * clicksAndActionsHelper.clickOnElement(javascriptHelper.
 		 * executeScriptWithWebElement(
 		 * "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-		 * isDropdownValueSelected = true; break; } catch (Exception e) { if (k == 100)
-		 * { Assert.fail(e.getMessage());
+		 * isDropdownValueSelected = true; break; } catch (Exception e) { if (k == 10) {
+		 * Assert.fail(e.getMessage());
 		 * 
 		 * } } } } if (isDropdownValueSelected == true) { break; }
 		 * 
@@ -2090,7 +2134,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 		String mandatoryVerification = "";
 		String fieldTypeValidation = "";
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				mandatoryVerification = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("sourcing_entity_dropdown"))
@@ -2102,7 +2146,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2115,14 +2159,14 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 	@Then("user_076 verify sourcing staff field should be non mandatory editable lookup")
 	public void user_076_verify_sourcing_staff_field_should_be_non_mandatory_editable_lookup() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("sourcing_staff_dropdown"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2131,22 +2175,22 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * String jqueryForDropdownLength =
 		 * "document.querySelectorAll('ion-radio-group ion-radio').length"; String
 		 * dropdownLength = ""; boolean isDropdownValueSelected = false; String
-		 * dropdownString = ""; for (int i = 0; i <= 100; i++) { try { dropdownLength =
+		 * dropdownString = ""; for (int i = 0; i <= 300; i++) { try { dropdownLength =
 		 * javascriptHelper.executeScript("return " +
 		 * jqueryForDropdownLength).toString(); System.out.println("Dropdown length " +
 		 * dropdownLength); if (!(dropdownLength.isBlank()) &&
 		 * !(dropdownLength.equals("0"))) { break; } } catch (Exception e) { if (i ==
-		 * 100) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
+		 * 10) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
 		 * Integer.parseInt(dropdownLength); for (int j = 0; j <=
 		 * premitiveDropdownLength; j++) {
 		 * 
-		 * for (int l = 0; l <= 100; l++) { try { System.out.println("L value is " + l);
+		 * for (int l = 0; l <= 300; l++) { try { System.out.println("L value is " + l);
 		 * System.out.println("document.querySelectorAll('ion-radio-group ion-label')["
 		 * + j + "].innerText"); dropdownString = javascriptHelper.executeScript(
 		 * "return document.querySelectorAll('ion-radio-group ion-label')[" + j +
 		 * "].innerText") .toString(); if (!(dropdownString.isEmpty())) {
 		 * System.out.println(dropdownString); System.out.println("Loop count " + l +
-		 * " got breaked"); break; } } catch (Exception e) { if (l == 100 &&
+		 * " got breaked"); break; } } catch (Exception e) { if (l == 10 &&
 		 * !(dropdownString.isBlank())) { Assert.fail(e.getMessage()); } } if
 		 * (!(dropdownString.isEmpty())) { System.out.println(dropdownString);
 		 * System.out.println("Loop count " + l + " got breaked"); break; } }
@@ -2156,7 +2200,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * ((dropdownString.trim()).equalsIgnoreCase((newApplicationTestData.get(
 		 * "sourcing_staff")).trim())) {
 		 * 
-		 * for (int k = 0; k <= 100; k++) { try {
+		 * for (int k = 0; k <= 300; k++) { try {
 		 * 
 		 * clicksAndActionsHelper.moveToElement(javascriptHelper.
 		 * executeScriptWithWebElement(
@@ -2164,8 +2208,8 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * clicksAndActionsHelper.clickOnElement(javascriptHelper.
 		 * executeScriptWithWebElement(
 		 * "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-		 * isDropdownValueSelected = true; break; } catch (Exception e) { if (k == 100)
-		 * { Assert.fail(e.getMessage());
+		 * isDropdownValueSelected = true; break; } catch (Exception e) { if (k == 10) {
+		 * Assert.fail(e.getMessage());
 		 * 
 		 * } } } } if (isDropdownValueSelected == true) { break; }
 		 * 
@@ -2176,7 +2220,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 		String mandatoryVerification = "";
 		String fieldTypeValidation = "";
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				mandatoryVerification = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("sourcing_staff_dropdown"))
@@ -2188,19 +2232,19 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		
+
 		softAssert.assertTrue(fieldTypeValidation.contains("Select"),
 				"sourcing staff field is not a dropdown field hence failed");
 	}
 
 	@Then("user_076 verify reference type field should be non mandatory editable lookup")
 	public void user_076_verify_reference_type_field_should_be_non_mandatory_editable_lookup() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("reference_type_dropdown")));
@@ -2209,7 +2253,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2218,22 +2262,22 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * String jqueryForDropdownLength =
 		 * "document.querySelectorAll('ion-radio-group ion-radio').length"; String
 		 * dropdownLength = ""; boolean isDropdownValueSelected = false; String
-		 * dropdownString = ""; for (int i = 0; i <= 100; i++) { try { dropdownLength =
+		 * dropdownString = ""; for (int i = 0; i <= 300; i++) { try { dropdownLength =
 		 * javascriptHelper.executeScript("return " +
 		 * jqueryForDropdownLength).toString(); System.out.println("Dropdown length " +
 		 * dropdownLength); if (!(dropdownLength.isBlank()) &&
 		 * !(dropdownLength.equals("0"))) { break; } } catch (Exception e) { if (i ==
-		 * 100) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
+		 * 10) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
 		 * Integer.parseInt(dropdownLength); for (int j = 0; j <=
 		 * premitiveDropdownLength; j++) {
 		 * 
-		 * for (int l = 0; l <= 100; l++) { try { System.out.println("L value is " + l);
+		 * for (int l = 0; l <= 300; l++) { try { System.out.println("L value is " + l);
 		 * System.out.println("document.querySelectorAll('ion-radio-group ion-label')["
 		 * + j + "].innerText"); dropdownString = javascriptHelper.executeScript(
 		 * "return document.querySelectorAll('ion-radio-group ion-label')[" + j +
 		 * "].innerText") .toString(); if (!(dropdownString.isEmpty())) {
 		 * System.out.println(dropdownString); System.out.println("Loop count " + l +
-		 * " got breaked"); break; } } catch (Exception e) { if (l == 100 &&
+		 * " got breaked"); break; } } catch (Exception e) { if (l == 10 &&
 		 * !(dropdownString.isBlank())) { Assert.fail(e.getMessage()); } } if
 		 * (!(dropdownString.isEmpty())) { System.out.println(dropdownString);
 		 * System.out.println("Loop count " + l + " got breaked"); break; } }
@@ -2243,7 +2287,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * ((dropdownString.trim()).equalsIgnoreCase((newApplicationTestData.get(
 		 * "reference_type")).trim())) {
 		 * 
-		 * for (int k = 0; k <= 100; k++) { try {
+		 * for (int k = 0; k <= 300; k++) { try {
 		 * 
 		 * clicksAndActionsHelper.moveToElement(javascriptHelper.
 		 * executeScriptWithWebElement(
@@ -2251,8 +2295,8 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * clicksAndActionsHelper.clickOnElement(javascriptHelper.
 		 * executeScriptWithWebElement(
 		 * "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-		 * isDropdownValueSelected = true; break; } catch (Exception e) { if (k == 100)
-		 * { Assert.fail(e.getMessage());
+		 * isDropdownValueSelected = true; break; } catch (Exception e) { if (k == 10) {
+		 * Assert.fail(e.getMessage());
 		 * 
 		 * } } } } if (isDropdownValueSelected == true) { break; }
 		 * 
@@ -2263,7 +2307,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 		String mandatoryVerification = "";
 		String fieldTypeValidation = "";
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				mandatoryVerification = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("reference_type_dropdown"))
@@ -2275,7 +2319,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2288,14 +2332,14 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 	@Then("user_076 verify reference entity field should be non mandatory editable lookup")
 	public void user_076_verify_reference_entity_field_should_be_non_mandatory_editable_lookup() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("reference_entity_dropdown"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2304,22 +2348,22 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * String jqueryForDropdownLength =
 		 * "document.querySelectorAll('ion-radio-group ion-radio').length"; String
 		 * dropdownLength = ""; boolean isDropdownValueSelected = false; String
-		 * dropdownString = ""; for (int i = 0; i <= 100; i++) { try { dropdownLength =
+		 * dropdownString = ""; for (int i = 0; i <= 300; i++) { try { dropdownLength =
 		 * javascriptHelper.executeScript("return " +
 		 * jqueryForDropdownLength).toString(); System.out.println("Dropdown length " +
 		 * dropdownLength); if (!(dropdownLength.isBlank()) &&
 		 * !(dropdownLength.equals("0"))) { break; } } catch (Exception e) { if (i ==
-		 * 100) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
+		 * 10) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
 		 * Integer.parseInt(dropdownLength); for (int j = 0; j <=
 		 * premitiveDropdownLength; j++) {
 		 * 
-		 * for (int l = 0; l <= 100; l++) { try { System.out.println("L value is " + l);
+		 * for (int l = 0; l <= 300; l++) { try { System.out.println("L value is " + l);
 		 * System.out.println("document.querySelectorAll('ion-radio-group ion-label')["
 		 * + j + "].innerText"); dropdownString = javascriptHelper.executeScript(
 		 * "return document.querySelectorAll('ion-radio-group ion-label')[" + j +
 		 * "].innerText") .toString(); if (!(dropdownString.isEmpty())) {
 		 * System.out.println(dropdownString); System.out.println("Loop count " + l +
-		 * " got breaked"); break; } } catch (Exception e) { if (l == 100 &&
+		 * " got breaked"); break; } } catch (Exception e) { if (l == 10 &&
 		 * !(dropdownString.isBlank())) { Assert.fail(e.getMessage()); } } if
 		 * (!(dropdownString.isEmpty())) { System.out.println(dropdownString);
 		 * System.out.println("Loop count " + l + " got breaked"); break; } }
@@ -2329,7 +2373,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * ((dropdownString.trim()).equalsIgnoreCase((newApplicationTestData.get(
 		 * "reference_entity")).trim())) {
 		 * 
-		 * for (int k = 0; k <= 100; k++) { try {
+		 * for (int k = 0; k <= 300; k++) { try {
 		 * 
 		 * clicksAndActionsHelper.moveToElement(javascriptHelper.
 		 * executeScriptWithWebElement(
@@ -2337,8 +2381,8 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		 * clicksAndActionsHelper.clickOnElement(javascriptHelper.
 		 * executeScriptWithWebElement(
 		 * "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-		 * isDropdownValueSelected = true; break; } catch (Exception e) { if (k == 100)
-		 * { Assert.fail(e.getMessage());
+		 * isDropdownValueSelected = true; break; } catch (Exception e) { if (k == 10) {
+		 * Assert.fail(e.getMessage());
 		 * 
 		 * } } } } if (isDropdownValueSelected == true) { break; }
 		 * 
@@ -2349,7 +2393,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 		String mandatoryVerification = "";
 		String fieldTypeValidation = "";
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				mandatoryVerification = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("reference_entity_dropdown"))
@@ -2361,7 +2405,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2374,7 +2418,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 	@Then("user_076 verify reference code field should be non mandatory editable textbox")
 	public void user_076_verify_reference_code_field_should_be_non_mandatory_editable_textbox() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("reference_code_input"))
@@ -2384,14 +2428,14 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 						.sendKeys(newApplicationTestData.get("reference_code"));
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 		String mandatoryVerification = "";
 		String fieldTypeValidation = "";
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				// total_amount_requested_input
 				mandatoryVerification = javascriptHelper
@@ -2405,7 +2449,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2429,12 +2473,24 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 			}
 		}
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("save_button")).click();
+				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("confirmation_save_button"))
+						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("save_confirmation_ok_button"))
+						.click();
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2444,7 +2500,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 	@Then("user_076 verify system should save the record of application details new app")
 	public void user_076_verify_system_should_save_the_record_of_application_details_new_app() throws Throwable {
 
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				toastMessage = javascriptHelper
 						.executeScript("return " + commonJSPaths.getElement("toast_container_message")).toString();
@@ -2452,7 +2508,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2476,6 +2532,14 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		System.out.println("Reference Number " + extractedReferenceNumber);
 		configFileReader.setMurabahaRecordReferenceNumber(extractedReferenceNumber);
 	}
+
+	@And("user_076 store the auto loan record reference number to test new app screens")
+	public void user_076_store_the_auto_loan_record_reference_number_to_test_new_app_screens() throws Throwable {
+		String extractedReferenceNumber = toastMessage.substring(37);
+		System.out.println("Reference Number " + extractedReferenceNumber);
+		configFileReader.SetAutoLoanReferenceNumber(extractedReferenceNumber);
+	}
+
 	@And("user_076 store the tawruqq record reference number to test new app screens")
 	public void user_076_store_the_tawruqq_record_reference_number_to_test_new_app_screens() throws Throwable {
 		String extractedReferenceNumber = toastMessage.substring(37);
@@ -2490,11 +2554,22 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		excelDataForApplicationDetailsTestDataForMurabha.updateTestData(newApplicationTestData.get("Dataset ID"),
 				"record_reference_number", finalRecordReferenceNumber);
 	}
+
 	@And("user_076 extract the application details record reference number in new app stage for tawruqq")
-	public void user_076_extract_the_application_details_record_reference_number_in_new_app_stage_for_tawruqq() throws Throwable {
+	public void user_076_extract_the_application_details_record_reference_number_in_new_app_stage_for_tawruqq()
+			throws Throwable {
 		String finalRecordReferenceNumber = toastMessageForReferenceNumber.substring(36).trim();
 		System.out.println("Final reference number " + finalRecordReferenceNumber);
 		excelDataForApplicationDetailsTestDataForTawrruq.updateTestData(newApplicationTestData.get("Dataset ID"),
+				"record_reference_number", finalRecordReferenceNumber);
+	}
+
+	@And("user_076 extract the application details record reference number in new app stage for auto loan")
+	public void user_076_extract_the_application_details_record_reference_number_in_new_app_stage_for_auto_loan()
+			throws Throwable {
+		String finalRecordReferenceNumber = toastMessageForReferenceNumber.substring(36).trim();
+		System.out.println("Final reference number " + finalRecordReferenceNumber);
+		excelDataForApplicationDetailsTestDataForAutoLoan.updateTestData(newApplicationTestData.get("Dataset ID"),
 				"record_reference_number", finalRecordReferenceNumber);
 	}
 
@@ -2502,7 +2577,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 	public void user_076_verify_system_should_show_the_message_for_updated_record_of_application_details_at_new_app_stage()
 			throws Throwable {
 		String toastMessage = "";
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				toastMessage = javascriptHelper
 						.executeScript("return " + commonJSPaths.getElement("toast_container_message")).toString();
@@ -2510,7 +2585,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2534,7 +2609,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 	@And("user_076 make any mandatory field blank in application details record in new app stage")
 	public void user_076_make_any_mandatory_field_blank_in_application_details_record_in_new_app_stage()
 			throws Throwable {
-		for (int i = 0; i <= 10; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(
@@ -2549,12 +2624,13 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 	@And("user_076 click on save button without enter the mandatory field in application details screen")
 	public void user_076_click_on_save_button_without_enter_the_mandatory_field_in_application_details_screen()
 			throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("save_button")).click();
+				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("confirmation_save_button"))
+						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2568,7 +2644,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		for (int i = 0; i <= 20; i++) {
 			try {
 				blankFieldVerification = javascriptHelper
-						.executeScript("return " + commonJSPaths.getElement("toast_message")).toString();
+						.executeScript("return " + commonJSPaths.getElement("toast_container_message")).toString();
 				if (!(blankFieldVerification.isBlank())) {
 					break;
 				}
@@ -2579,7 +2655,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 			}
 		}
 		// Please fill all the details
-		softAssert.assertEquals("Please fill all the details", blankFieldVerification);
+		softAssert.assertEquals("Please fill required fields", blankFieldVerification);
 		System.out.println(blankFieldVerification);
 
 	}
@@ -2682,7 +2758,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 	@And("user_076 enter the character input in numerical input field of charcter in input field in application details screen")
 	public void user_076_enter_the_character_input_in_numerical_input_field_of_charcter_in_input_field_in_application_details_screen()
 			throws Throwable {
-		for (int i = 0; i <= 10; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("total_amount_requested_input")).click();
@@ -2720,7 +2796,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		String characterInputValidation = "";
 		String query = "return " + applicationDetailsElements.getElement("total_amount_requested_input") + ".innerText";
 		System.out.println(query);
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				characterInputValidation = javascriptHelper.executeScript("return "
 						+ applicationDetailsElements.getElement("total_amount_requested_input") + ".innerText")
@@ -2729,7 +2805,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2741,13 +2817,13 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 	@And("user_076 click on edit button of new application list view record")
 	public void user_076_click_on_edit_button_of_new_application_list_view_record() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("new_application_listview_edit_button")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2768,7 +2844,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 			}
 		}
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("total_amount_requested_input")).click();
@@ -2778,7 +2854,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 						.sendKeys(newApplicationTestData.get("total_finance_amount_requested"));
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2799,7 +2875,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 	@Then("user_076 verify user can able to update the application details record")
 	public void user_076_verify_user_can_able_to_update_the_application_details_record() throws Throwable {
 		String updateValidation = "";
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				updateValidation = javascriptHelper
 						.executeScript("return " + commonJSPaths.getElement("toast_container_message")).toString();
@@ -2807,7 +2883,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2842,7 +2918,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 			}
 		}
 
-		for (int i = 0; i <= 10; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("reference_code_input"))
@@ -2931,7 +3007,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 				}
 			}
 		}
-		for (int i = 0; i <= 10; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("reference_code_input"))
@@ -2992,13 +3068,13 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 	@Then("user_076 verify application details screen have submit button")
 	public void user_076_verify_application_details_screen_have_submit_button() throws Throwable {
 		boolean statusOfSubmitButton = false;
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				statusOfSubmitButton = javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("new_application_submit_button")).isDisplayed();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3010,13 +3086,13 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 	@Then("user_076 verify application details screen have return button")
 	public void user_076_verify_application_details_screen_have_return_button() throws Throwable {
 		boolean statusOfReturnButton = false;
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				statusOfReturnButton = javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("new_application_return_button")).isDisplayed();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3027,7 +3103,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 	@Then("user_076 verify application details screen have view summary button")
 	public void user_076_verify_application_details_screen_have_view_summary_button() throws Throwable {
 		boolean statusOfViewSummaryButton = false;
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				statusOfViewSummaryButton = javascriptHelper
 						.executeScriptWithWebElement(
@@ -3035,7 +3111,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 						.isDisplayed();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3080,7 +3156,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 	@Then("user_076 verify system should show the summary of the record")
 	public void user_076_verify_system_should_show_the_summary_of_the_record() throws Throwable {
 		boolean statusOfViewSummaryScreen = false;
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				System.out.println(applicationDetailsElements.getElement("view_summary_verification"));
 				statusOfViewSummaryScreen = javascriptHelper
@@ -3089,19 +3165,19 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 				System.out.println(statusOfViewSummaryScreen);
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 		if (statusOfViewSummaryScreen == true) {
-			for (int i = 0; i <= 100; i++) {
+			for (int i = 0; i <= 300; i++) {
 				try {
 					javascriptHelper.executeScriptWithWebElement(
 							applicationDetailsElements.getElement("view_summary_close_button")).click();
 					break;
 				} catch (Exception e) {
-					if (i == 100) {
+					if (i == 300) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -3111,12 +3187,12 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 	@Then("user_076 click on back button in application details update screen")
 	public void user_076_click_on_back_button_in_application_details_update_screen() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("back_button")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3125,13 +3201,13 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 	@And("user_076 click on list view edit button in application details record at new app stage")
 	public void user_click_on_list_view_edit_button_in_application_details_record_at_new_app_stage() {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("application_details_list_view_record")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3167,7 +3243,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 	@And("user_076 update the application details record with valid input at new app stage")
 	public void user_update_the_application_details_record_with_valid_input_at_new_app_stage() {
 
-		for (int i = 0; i <= 10; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(
@@ -3177,7 +3253,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 			}
 		}
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("total_amount_requested_input")).click();
@@ -3187,7 +3263,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 						.sendKeys(newApplicationTestData.get("total_finance_amount_requested"));
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3198,13 +3274,13 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 	@Then("user_076 verify application details update screen should moved to previoues screen")
 	public void user_076_verify_application_details_update_screen_should_moved_to_previoues_screen() throws Throwable {
 		boolean addButtonStatus = false;
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				addButtonStatus = javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("application_details_add_button")).isDisplayed();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3215,7 +3291,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 	@Then("user_076 click on view summary button in application details screen in new app stage")
 	public void user_076_click_on_view_summary_button_in_application_details_screen_in_new_app_stage()
 			throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(
@@ -3223,7 +3299,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 100)
+				if (i == 300)
 
 				{
 					Assert.fail(e.getMessage());
@@ -3236,7 +3312,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 	public void user_076_verify_system_should_show_the_summary_of_the_application_details_record_at_new_app_stage()
 			throws Throwable {
 		boolean ststauOfViewSummary = false;
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				ststauOfViewSummary = javascriptHelper
 						.executeScriptWithWebElement(
@@ -3248,7 +3324,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 		}
 		softAssert.assertTrue(ststauOfViewSummary, " System didn't show the summary of the record");
 
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(
@@ -3256,7 +3332,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3322,7 +3398,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 	@And("user_076 click on search button in application details list view at new app stage")
 	public void user_076_click_on_search_button_in_application_details_list_view_at_new_app_stage() throws Throwable {
 
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(
@@ -3330,7 +3406,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3340,7 +3416,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 	@And("user_076 search with valid search text in application details list view at new app stage")
 	public void user_076_search_with_valid_search_text_in_application_details_list_view_at_new_app_stage()
 			throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("application_details_list_view_input")).click();
@@ -3350,7 +3426,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 						.sendKeys(newApplicationTestData.get("valid_search_text"));
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3360,7 +3436,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 	@Then("user_076 got the search result in application details at new app stage")
 	public void user_076_got_the_search_result_in_application_details_at_new_app_stage() throws Throwable {
 		String listViewSearchResponse = "";
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				listViewSearchResponse = javascriptHelper
 						.executeScript("return "
@@ -3369,7 +3445,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 				System.out.println(listViewSearchResponse);
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 
@@ -3382,7 +3458,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 	public void user_076_search_with_invalid_search_text_in_application_details_list_view_at_new_app_stage()
 			throws Throwable {
 
-		for (int i = 0; i <= 10; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("application_details_list_view_input")).click();
@@ -3396,7 +3472,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 			}
 		}
 
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("application_details_list_view_input")).click();
@@ -3406,7 +3482,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 						.sendKeys(newApplicationTestData.get("invalid_search_text"));
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3417,7 +3493,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 	@Then("user_076 didnt got the search result in application details at new app stage")
 	public void user_076_didnt_got_the_search_result_in_application_details_at_new_app_stage() throws Throwable {
 		String listViewSearchResponse = "";
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				listViewSearchResponse = javascriptHelper
 						.executeScript("return "
@@ -3426,7 +3502,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 				System.out.println(listViewSearchResponse);
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 
@@ -3536,12 +3612,12 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 
 	@And("user_076 enter the alert remark for application details record in new app stage")
 	public void user_076_enter_the_alert_remark_for_application_details_record_in_new_app_stage() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("alert_ok")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3552,12 +3628,12 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 	@And("user_076 click on alert submit button in application details at new app stage")
 	public void user_076_click_on_alert_submit_button_in_application_details_at_new_app_stage() throws Throwable {
 
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("alert_submit")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3665,7 +3741,7 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 	@Then("user_076 verify applicatio details record should get submitted from new app stage")
 	public void user_076_verify_applicatio_details_record_should_get_submitted_from_new_app_stage() throws Throwable {
 
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				toastMessage = javascriptHelper
 						.executeScript("return " + commonJSPaths.getElement("toast_container_message")).toString();
@@ -3673,12 +3749,14 @@ clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_ty
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 		System.out.println(toastMessage);
+		String finalUserID = toastMessage.substring(86).replace(".", "");
+		System.out.println("User ID " + finalUserID);
 		Assert.assertTrue(toastMessage.contains("Record APPROVED Successfully"));
 	}
 

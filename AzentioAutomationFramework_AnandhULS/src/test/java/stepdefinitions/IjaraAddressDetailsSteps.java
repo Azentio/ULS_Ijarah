@@ -64,6 +64,10 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 	public void user_076_login_with_valid_credentials_at_purchase_order_stage()throws Throwable {
 		ijaraLogin.loginWithIjaraApplication("userType05");
 	}
+	@Given("login with valid credentials for auto loan app data entry stage")
+	public void login_with_valid_credentials_for_auto_loan_app_data_entry_stage() {
+		ijaraLogin.loginWithIjaraApplication("userType07");
+	}
 	@And("user_076 login with valid offering stage user credentials")
 	public void user_076_login_with_valid_offering_stage_user_credentials()throws Throwable {
 		ijaraLogin.loginWithIjaraApplication("userType04");

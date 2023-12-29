@@ -1,4 +1,6 @@
 Feature: Create snippets
 Scenario: To create feature codes
-And user_076 click on back button in facility details screen at new app stage
-Then user_076 verify facility details screen should get move previous screen at new app stage
+And user_076 get the customer employment list view at app data entry stage
+And user_076 filter the active record in customer employment list view
+And user_076 click on edit button in customer employment list view
+And user_076 change the record status to inactive of customer employment list view

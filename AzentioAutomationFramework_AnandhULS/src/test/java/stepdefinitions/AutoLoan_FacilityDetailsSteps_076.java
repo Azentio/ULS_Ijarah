@@ -1,6 +1,8 @@
 package stepdefinitions;
 
+import java.io.File;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
@@ -12,10 +14,12 @@ import org.testng.asserts.SoftAssert;
 
 import dataProvider.ConfigFileReader;
 import dataProvider.ExcelData;
+import helper.BrowserHelper;
 import helper.ClicksAndActionsHelper;
 import helper.JavascriptHelper;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import pageobjects.JSPaths;
 import resources.BaseClass;
 
@@ -31,10 +35,13 @@ public class AutoLoan_FacilityDetailsSteps_076 extends BaseClass {
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
 	SoftAssert softAssert = new SoftAssert();
 	ExcelData facilityDetailsExecutionSheet = new ExcelData(configFileReader.getAutoLoanTestDataFilePath(),
-			"NewAppExecution", "TestCase ID");
+			"AutoLoanExecution", "TestCase ID");
+	ExcelData facilityInfoAppDataEntryTestData = new ExcelData(configFileReader.getAutoLoanTestDataFilePath(),
+			"AppDataEntry_FacilityInfoData", "Dataset ID");
 	ExcelData facilityDetailsTestData = new ExcelData(configFileReader.getAutoLoanTestDataFilePath(),
 			"Facility_info_TestData", "Dataset ID");
 	Logger log = LogManager.getLogger(AutoLoan_FacilityDetailsSteps_076.class);
+	BrowserHelper browserHelper = new BrowserHelper(driver);
 
 	@And("user_076 click on facility info tab in new app stage")
 	public void user_076_click_on_facility_info_tab_in_new_app_stage() throws Throwable {
@@ -115,6 +122,74 @@ public class AutoLoan_FacilityDetailsSteps_076 extends BaseClass {
 		facilityInfoExecution = facilityDetailsExecutionSheet.getTestdata("AT_AL_FD_03");
 		System.out.println("Data Set ID " + facilityInfoExecution.get("dataSet_ID"));
 		facilityInfoTestData = facilityDetailsTestData.getTestdata(facilityInfoExecution.get("dataSet_ID"));
+	}
+
+	@And("user_076 get the test data for the test case ID AT_AL_FD_04")
+	public void user_076_get_the_test_data_for_the_test_case_id_AT_AL_FD_04() throws Throwable {
+		facilityInfoExecution = facilityDetailsExecutionSheet.getTestdata("AT_AL_FD_04");
+		System.out.println("Data Set ID " + facilityInfoExecution.get("dataSet_ID"));
+		facilityInfoTestData = facilityDetailsTestData.getTestdata(facilityInfoExecution.get("dataSet_ID"));
+	}
+
+	@And("user_076 click on add button in facility info screen at app data entry stage")
+	public void user_076_click_on_add_button_in_facility_info_screen_at_app_data_entry_stage() throws Throwable {
+		for (int i = 0; i <= 150; i++) {
+			try {
+				javascriptHelper
+						.executeScriptWithWebElement(facilityInfoElements.getElement("facility_info_add_button"))
+						.click();
+				break;
+			} catch (Exception e) {
+				if (i == 150) {
+					e.printStackTrace();
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("user_076 get the test data for the test case ID AT_AL_FD_APPDATAENTRY_01")
+	public void user_076_get_the_test_data_for_the_test_case_id_AT_AL_FD_APPDATAENTRY_01() throws Throwable {
+		facilityInfoExecution = facilityDetailsExecutionSheet.getTestdata("AT_AL_FD_APPDATAENTRY_01");
+		System.out.println("Data Set ID " + facilityInfoExecution.get("dataSet_ID"));
+		facilityInfoTestData = facilityInfoAppDataEntryTestData.getTestdata(facilityInfoExecution.get("dataSet_ID"));
+	}
+
+	@And("user_076 get the test data for the test case ID AT_AL_FD_APPDATAENTRY_02")
+	public void user_076_get_the_test_data_for_the_test_case_id_AT_AL_FD_APPDATAENTRY_02() throws Throwable {
+		facilityInfoExecution = facilityDetailsExecutionSheet.getTestdata("AT_AL_FD_APPDATAENTRY_02");
+		System.out.println("Data Set ID " + facilityInfoExecution.get("dataSet_ID"));
+		facilityInfoTestData = facilityInfoAppDataEntryTestData.getTestdata(facilityInfoExecution.get("dataSet_ID"));
+	}
+
+	@And("user_076 get the test data for the test case ID AT_AL_FD_APPDATAENTRY_03")
+	public void user_076_get_the_test_data_for_the_test_case_id_AT_AL_FD_APPDATAENTRY_03() throws Throwable {
+		facilityInfoExecution = facilityDetailsExecutionSheet.getTestdata("AT_AL_FD_APPDATAENTRY_03");
+		System.out.println("Data Set ID " + facilityInfoExecution.get("dataSet_ID"));
+		facilityInfoTestData = facilityInfoAppDataEntryTestData.getTestdata(facilityInfoExecution.get("dataSet_ID"));
+	}
+
+	@And("user_076 get the test data for the test case ID AT_AL_FD_APPDATAENTRY_04")
+	public void user_076_get_the_test_data_for_the_test_case_id_AT_AL_FD_APPDATAENTRY_04() throws Throwable {
+		facilityInfoExecution = facilityDetailsExecutionSheet.getTestdata("AT_AL_FD_APPDATAENTRY_04");
+		System.out.println("Data Set ID " + facilityInfoExecution.get("dataSet_ID"));
+		facilityInfoTestData = facilityInfoAppDataEntryTestData.getTestdata(facilityInfoExecution.get("dataSet_ID"));
+	}
+
+	@And("user_076 click on facility details tab in app data entry stage")
+	public void user_076_click_on_facility_details_tab_in_app_data_entry_stage() throws Throwable {
+		for (int i = 0; i <= 150; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(facilityInfoElements.getElement("facility_info_tab"))
+						.click();
+				break;
+			} catch (Exception e) {
+				if (i == 150) {
+					e.printStackTrace();
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
 	}
 
 	@Then("user_076 verify facility info screen should have save and back button at new app stage")
@@ -1007,6 +1082,347 @@ public class AutoLoan_FacilityDetailsSteps_076 extends BaseClass {
 		}
 		softAssert.assertTrue(isAddButtonVisible, "Back button is not working hence failed");
 
+	}
+
+	@And("user_076 click on search button in facility list view in new app stage")
+	public void user_076_click_on_search_button_in_facility_list_view_in_new_app_stage() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+
+				javascriptHelper.executeScriptWithWebElement(CommonJsElements.getElement("list_view_search_button"))
+						.click();
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					e.printStackTrace();
+					Assert.fail(e.getMessage());
+				}
+			}
+
+		}
+	}
+
+	@And("user_076 search the valid search text in facility details list view")
+	public void user_076_search_the_valid_search_text_in_facility_details_list_view() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+
+				javascriptHelper.executeScriptWithWebElement(CommonJsElements.getElement("list_view_search_input"))
+						.click();
+				javascriptHelper.executeScriptWithWebElement(CommonJsElements.getElement("list_view_search_input"))
+						.sendKeys(facilityInfoTestData.get("valid_search_text"));
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					e.printStackTrace();
+					Assert.fail(e.getMessage());
+				}
+			}
+
+		}
+	}
+
+	@Then("user_076 verify facility list view search result should be visible")
+	public void user_076_verify_facility_list_view_search_result_should_be_visible() throws Throwable {
+		String searchResult = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+				searchResult = javascriptHelper
+						.executeScript("return " + CommonJsElements.getElement("list_view_search_result")).toString();
+				if (!(searchResult.equalsIgnoreCase("Showing 0 to 0 of 0 entries"))) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					e.printStackTrace();
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		System.out.println("Search Result " + searchResult);
+		// Showing 0 to 0 of 0 entries
+
+		softAssert.assertTrue(!(searchResult.equalsIgnoreCase("Showing 0 to 0 of 0 entries")));
+	}
+
+	@And("user_076 search the invalid search text in facility details list view")
+	public void user_076_search_the_invalid_search_text_in_facility_details_list_view() throws Throwable {
+		for (int i = 0; i < 3; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(CommonJsElements.getElement("list_view_search_input"))
+						.sendKeys(Keys.chord(Keys.CONTROL, "A", Keys.BACK_SPACE));
+
+			} catch (Exception e) {
+
+			}
+		}
+		for (int i = 0; i <= 300; i++) {
+			try {
+
+				javascriptHelper.executeScriptWithWebElement(CommonJsElements.getElement("list_view_search_input"))
+						.click();
+				javascriptHelper.executeScriptWithWebElement(CommonJsElements.getElement("list_view_search_input"))
+						.sendKeys(facilityInfoTestData.get("invalid_search_text"));
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					e.printStackTrace();
+					Assert.fail(e.getMessage());
+				}
+			}
+
+		}
+	}
+
+	@Then("user_076 verify facility list view search result should not be visible")
+	public void user_076_verify_facility_list_view_search_result_should_not_be_visible() throws Throwable {
+		String searchResult = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+				searchResult = javascriptHelper
+						.executeScript("return " + CommonJsElements.getElement("list_view_search_result")).toString();
+				if (searchResult.equalsIgnoreCase("Showing 0 to 0 of 0 entries")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					e.printStackTrace();
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		System.out.println("Search Result " + searchResult);
+		softAssert.assertTrue(searchResult.equalsIgnoreCase("Showing 0 to 0 of 0 entries"));
+	}
+
+	@And("user_076 click on export button in faciliy details list view")
+	public void user_076_click_on_export_button_in_faciliy_details_list_view() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(CommonJsElements.getElement("list_view_export_button"))
+						.click();
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					e.printStackTrace();
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("user_076 click on pdf option export the facility details content")
+	public void user_076_click_on_pdf_option_export_the_facility_details_content() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(CommonJsElements.getElement("pdf_download")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					e.printStackTrace();
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Then("user_076 verify pdf file is downloaded for facility details")
+	public void user_076_verify_pdf_file_is_downloaded_for_facility_details() throws Throwable {
+
+		browserHelper.SwitchToWindow(1);
+		browserHelper.switchToParentWithChildClose();
+
+		String homePath = System.getProperty("user.home");
+		String filePath = homePath + "/Downloads";
+		File file = new File(filePath);
+		File[] listFiles = file.listFiles();
+		file.delete();
+		for (File downloadsFile : listFiles) {
+			System.out.println(downloadsFile.getName());
+			if (downloadsFile.getName().contains("FacilityDetailsDataFile")) {
+				System.out.println("If condition " + downloadsFile.getName());
+				softAssert.assertTrue(downloadsFile.getName().contains("FacilityDetailsDataFile"),
+						"File is not downloaded hence failed");
+				downloadsFile.delete();
+			}
+
+		}
+	}
+
+	@And("user_076 click on xlsx option export the facility details content")
+	public void user_076_click_on_xlsx_option_export_the_facility_details_content() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(CommonJsElements.getElement("xls_download")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					e.printStackTrace();
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Then("user_076 verify xlsx file is downloaded for facility details")
+	public void user_076_verify_xlsx_file_is_downloaded_for_facility_details() throws Throwable {
+		String homePath = System.getProperty("user.home");
+		String filePath = homePath + "/Downloads";
+		File file = new File(filePath);
+		File[] listFiles = file.listFiles();
+		file.delete();
+		for (File downloadsFile : listFiles) {
+			System.out.println(downloadsFile.getName());
+			if (downloadsFile.getName().contains("FacilityDetailsDataFile_export_")) {
+				System.out.println("If condition " + downloadsFile.getName());
+				softAssert.assertTrue(downloadsFile.getName().contains("FacilityDetailsDataFile_export_"),
+						"File is not downloaded hence failed");
+				downloadsFile.delete();
+
+			}
+		}
+	}
+
+	@Then("user_076 verify facility info list view should be read only mode")
+	public void user_076_verify_facility_info_list_view_should_be_read_only_mode() throws Throwable {
+		boolean isEditable = true;
+		for (int i = 0; i <= 10; i++) {
+			try {
+				javascriptHelper
+						.executeScriptWithWebElement(facilityInfoElements.getElement("list_view_non_editable_field"))
+						.sendKeys("ABCDEF");
+			} catch (Exception e) {
+				if (i == 300) {
+					isEditable = true;
+				}
+			}
+		}
+		softAssert.assertTrue(isEditable, "List view field is editable henece failed");
+	}
+
+	@Then("user_076 facility info list view should have configured list view fields")
+	public void user_076_facility_info_list_view_should_have_configured_list_view_fields() throws Throwable {
+		String listViewFieldName = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+				listViewFieldName = javascriptHelper
+						.executeScript("return " + facilityInfoElements.getElement("list_view_header_field_name"))
+						.toString();
+				if (listViewFieldName.length() > 0) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					e.printStackTrace();
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		System.out.println("Field Name " + listViewFieldName);
+	}
+
+	@Then("user_076 verify facility info screen should have add button")
+	public void user_076_verify_facility_info_screen_should_have_add_button() throws Throwable {
+		boolean isAddButtonVisible = false;
+		for (int i = 0; i <= 300; i++) {
+			try {
+				isAddButtonVisible = javascriptHelper
+						.executeScriptWithWebElement(facilityInfoElements.getElement("facility_info_add_button"))
+						.isDisplayed();
+				if (isAddButtonVisible == true) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					e.printStackTrace();
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		softAssert.assertTrue(isAddButtonVisible, "Add button not visible hence failed");
+	}
+
+	@Then("user_076 verify facility info screen should have export button")
+	public void user_076_verify_facility_info_screen_should_have_export_button() throws Throwable {
+		boolean isExportButtonVisible = false;
+		for (int i = 0; i <= 300; i++) {
+			try {
+				isExportButtonVisible = javascriptHelper
+						.executeScriptWithWebElement(CommonJsElements.getElement("list_view_export_button"))
+						.isDisplayed();
+				if (isExportButtonVisible == true) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					e.printStackTrace();
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		softAssert.assertTrue(isExportButtonVisible, "Export button not visible hence failed");
+	}
+
+	@Then("user_076 verify facility info screen should have edit button")
+	public void user_076_verify_facility_info_screen_should_have_edit_button() throws Throwable {
+		boolean isEditButtonVisible = false;
+		for (int i = 0; i <= 300; i++) {
+			try {
+				isEditButtonVisible = javascriptHelper
+						.executeScriptWithWebElement(facilityInfoElements.getElement("list_view_edit_button"))
+						.isDisplayed();
+				if (isEditButtonVisible == true) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					e.printStackTrace();
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		softAssert.assertTrue(isEditButtonVisible, "Edit button not visible hence failed");
+	}
+
+	@When("user_076 click on edit button in facility info screen")
+	public void user_076_click_on_edit_button_in_facility_info_screen() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+
+				javascriptHelper.executeScriptWithWebElement(facilityInfoElements.getElement("list_view_edit_button"))
+						.click();
+
+				break;
+
+			} catch (Exception e) {
+				if (i == 300) {
+					e.printStackTrace();
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Then("user_076 verify facility info screen should get opened")
+	public void user_076_verify_facility_info_screen_should_get_opened() throws Throwable {
+		boolean isEditScreenWorking = false;
+		for (int i = 0; i <= 300; i++) {
+			try {
+				isEditScreenWorking = javascriptHelper
+						.executeScriptWithWebElement(facilityInfoElements.getElement("clasification_dropdown"))
+						.isDisplayed();
+				if (isEditScreenWorking == true) {
+
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					e.printStackTrace();
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		softAssert.assertTrue(isEditScreenWorking, "Edit screen is not working hence failed");
 	}
 
 	@And("user_076 invoke soft assert in facility info screen")
