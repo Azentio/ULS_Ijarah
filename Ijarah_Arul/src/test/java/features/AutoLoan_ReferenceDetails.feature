@@ -3,12 +3,12 @@ Feature: To check the Autoloan_Repayment mode feature
 Scenario: To verify that user can able to add employment details record in Autoloan_App data entry
 Given navigate the IJARA URL
 And login with valid credentials for Autoloan_Identification
-And User_074 get the test data for test case AT_AL_IDA_01
+And User_074 get the test data for test case AT_AL_APPDATAENTRY_REFDETAILS_03
 #And User click the module name dropdown in ULS application
 #And User select the module name as LOS in ULS application
 And User click the Mail box in ULS application
 And User click the Search button under inbox
-And User_074 search the Ref id under inbox for Autoloan_Identification details
+And User_074 search the Ref id under inbox for Autoloan_Reference details
 And User click the Entitle button under inbox
 And User navigate to Customer Financials tab in Autoloan_Employment details
 And Click on pencil icon of first record in Customer Personal Information
@@ -35,12 +35,12 @@ And Click on Save icon in Autoloan_Employment details
 Scenario: To verify that user can able to add employment details record with negative validation in Autoloan_App data entry
 Given navigate the IJARA URL
 And login with valid credentials for Autoloan_Identification
-And User_074 get the test data for test case AT_AL_IDA_01
+And User_074 get the test data for test case AT_AL_APPDATAENTRY_REFDETAILS_04
 #And User click the module name dropdown in ULS application
 #And User select the module name as LOS in ULS application
 And User click the Mail box in ULS application
 And User click the Search button under inbox
-And User_074 search the Ref id under inbox for Autoloan_Identification details
+And User_074 search the Ref id under inbox for Autoloan_Reference details
 And User click the Entitle button under inbox
 And User navigate to Customer Financials tab in Autoloan_Employment details
 And Click on pencil icon of first record in Customer Personal Information
@@ -53,13 +53,14 @@ And Validate alpha numeric characters allowed popup is displayed in Autoloan_Emp
 @AT_AL_APPDATAENTRY_REFDETAILS_05
 Scenario: To verify that fields are present in Autoloan_Employment details view list
 #This test case also covers the functionality of AT_AL_APPDATAENTRY_REFDETAILS_06
+Given navigate the IJARA URL
 And login with valid credentials for Autoloan_Identification
-And User_074 get the test data for test case AT_AL_IDA_01
+And User_074 get the test data for test case AT_AL_APPDATAENTRY_REFDETAILS_05
 #And User click the module name dropdown in ULS application
 #And User select the module name as LOS in ULS application
 And User click the Mail box in ULS application
 And User click the Search button under inbox
-And User_074 search the Ref id under inbox for Autoloan_Identification details
+And User_074 search the Ref id under inbox for Autoloan_Reference details
 And User click the Entitle button under inbox
 And User navigate to Customer Financials tab in Autoloan_Employment details
 And Click on pencil icon of first record in Customer Personal Information
@@ -73,13 +74,14 @@ And Click on Back icon in Customer Employment list section
 @AT_AL_APPDATAENTRY_REFDETAILS_07
 Scenario: To verify that export functionality in Autoloan_Employment details view list
 #This test case also covers the functionality of AT_AL_APPDATAENTRY_REFDETAILS_06
+Given navigate the IJARA URL
 And login with valid credentials for Autoloan_Identification
-And User_074 get the test data for test case AT_AL_IDA_01
+And User_074 get the test data for test case AT_AL_APPDATAENTRY_REFDETAILS_07
 #And User click the module name dropdown in ULS application
 #And User select the module name as LOS in ULS application
 And User click the Mail box in ULS application
 And User click the Search button under inbox
-And User_074 search the Ref id under inbox for Autoloan_Identification details
+And User_074 search the Ref id under inbox for Autoloan_Reference details
 And User click the Entitle button under inbox
 And User navigate to Customer Financials tab in Autoloan_Employment details
 And Click on pencil icon of first record in Customer Personal Information
@@ -90,28 +92,31 @@ And Validate the export to Excel functionality in Autoloan_Employment details
 @AT_AL_APPDATAENTRY_REFDETAILS_08
 Scenario: To verify that search criteria in Autoloan_Employment details view list
 #This test case also covers the functionality of AT_AL_APPDATAENTRY_REFDETAILS_06
+Given navigate the IJARA URL
 And login with valid credentials for Autoloan_Identification
-And User_074 get the test data for test case AT_AL_IDA_01
+And User_074 get the test data for test case AT_AL_APPDATAENTRY_REFDETAILS_08
 #And User click the module name dropdown in ULS application
 #And User select the module name as LOS in ULS application
 And User click the Mail box in ULS application
 And User click the Search button under inbox
-And User_074 search the Ref id under inbox for Autoloan_Identification details
+And User_074 search the Ref id under inbox for Autoloan_Reference details
 And User click the Entitle button under inbox
 And User navigate to Customer Financials tab in Autoloan_Employment details
 And Click on pencil icon of first record in Customer Personal Information
+And Find the position of Employment details view list at AutoLoan
 And Search the Autoloan_Employment details record with valid data
 And Search the Autoloan_Employment details record with invalid data
 
 @AT_AL_APPDATAENTRY_REFDETAILS_09
 Scenario: To verify that user can able to update the record in Autoloan_Employment details view list
+Given navigate the IJARA URL
 And login with valid credentials for Autoloan_Identification
-And User_074 get the test data for test case AT_AL_IDA_01
+And User_074 get the test data for test case AT_AL_APPDATAENTRY_REFDETAILS_09
 #And User click the module name dropdown in ULS application
 #And User select the module name as LOS in ULS application
 And User click the Mail box in ULS application
 And User click the Search button under inbox
-And User_074 search the Ref id under inbox for Autoloan_Identification details
+And User_074 search the Ref id under inbox for Autoloan_Reference details
 And User click the Entitle button under inbox
 And User navigate to Customer Financials tab in Autoloan_Employment details
 And Click on pencil icon of first record in Customer Personal Information
@@ -121,13 +126,11 @@ And Update the value in Company type dropdown in Autoloan_Employment details
 And Update the value in Profession dropdown in Autoloan_Employment details
 And Update the value in Profession type dropdown in Autoloan_Employment details
 And Update the value in Statutory Authority dropdown in Autoloan_Employment details
-And Update the value in Employment End date field in Autoloan_Employment details
 And Update the value in Employer phone extension field in Autoloan_Employment details
 And Update the value in No of partners field in Autoloan_Employment details
 And Update the value in Nature of Business field in Autoloan_Employment details
 And Update the value in Registered business name field in Autoloan_Employment details
 And Update the value in Registered business number field in Autoloan_Employment details
-And Update the value in Business Registration date field in Autoloan_Employment details
 And Update the value in Office premises type field in Autoloan_Employment details
 And Update the value in Share holder percentage field in Autoloan_Employment details
 And Update the value in No of Employees field in Autoloan_Employment details
@@ -137,13 +140,14 @@ And Click on Save icon in Autoloan_Employment details
 
 @AT_AL_APPDATAENTRY_REFDETAILS_10
 Scenario: To verify that user can able to update the record with negative validation in Autoloan_Employment details view list
+Given navigate the IJARA URL
 And login with valid credentials for Autoloan_Identification
-And User_074 get the test data for test case AT_AL_IDA_01
+And User_074 get the test data for test case AT_AL_APPDATAENTRY_REFDETAILS_10
 #And User click the module name dropdown in ULS application
 #And User select the module name as LOS in ULS application
 And User click the Mail box in ULS application
 And User click the Search button under inbox
-And User_074 search the Ref id under inbox for Autoloan_Identification details
+And User_074 search the Ref id under inbox for Autoloan_Reference details
 And User click the Entitle button under inbox
 And User navigate to Customer Financials tab in Autoloan_Employment details
 And Click on pencil icon of first record in Customer Personal Information

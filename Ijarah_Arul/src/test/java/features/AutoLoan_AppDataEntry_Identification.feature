@@ -126,10 +126,12 @@ And User click the Search button under inbox
 And User_074 search the Ref id under inbox for Autoloan_Identification details
 And User click the Entitle button under inbox
 And Navigate to Additional customer info tab in Tawarraq_Commodity maker
-And Search the Autoloan identification details record with valid data
-And Search the Autoloan identification details record with invalid data
-And Validate Export to PDF Functionality in Autoloan identification details
-And Validate Export to Excel Functionality in Autoloan identification details
+And User_074 Click on pencil icon of existing record in Customer personal Information section
+And Find the position of Identification details view list at AutoLoan
+And User_074 Search the Autoloan identification details record with valid data
+And User_074 Search the Autoloan identification details record with invalid data
+And User_074 Validate Export to PDF Functionality in Autoloan identification details
+And User_074 Validate Export to Excel Functionality in Autoloan identification details
 
 
 

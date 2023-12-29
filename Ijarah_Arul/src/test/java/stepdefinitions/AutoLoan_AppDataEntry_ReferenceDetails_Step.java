@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -45,10 +46,43 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step {
 	
 	//ExcelData documentdetailsExcelData  = new ExcelData(excelTestDataPath,"CF_DebtTestData","DataSet ID");
 	//ExcelData underWriterExcelData  = new ExcelData(excelTestDataPath,"UnderWriter_TestData","DataSet ID");
-	ExcelData identificationdetailsExcelData  = new ExcelData(excelTestDataPath,"AutoLoan_IdentificationDetails","DataSet ID");
+	ExcelData referencedetailsExcelData  = new ExcelData(excelTestDataPath,"AutoLoan_ReferenceDetails","DataSet ID");
 	
 	Map<String, String> testExecutionData;
 	Map<String, String> testData;
+	
+	@And("^User_074 get the test data for test case AT_AL_APPDATAENTRY_REFDETAILS_03$")
+	public void get_the_test_data_for_test_case_AT_AL_APPDATAENTRY_REFDETAILS_03() throws Throwable {
+		testData = referencedetailsExcelData.getTestdata("AT_AL_APPDATAENTRY_REFDETAILS_03_D1");
+	}
+	@And("^User_074 get the test data for test case AT_AL_APPDATAENTRY_REFDETAILS_04$")
+	public void get_the_test_data_for_test_case_AT_AL_APPDATAENTRY_REFDETAILS_04() throws Throwable {
+		testData = referencedetailsExcelData.getTestdata("AT_AL_APPDATAENTRY_REFDETAILS_04_D1");
+	}
+	@And("^User_074 get the test data for test case AT_AL_APPDATAENTRY_REFDETAILS_05$")
+	public void get_the_test_data_for_test_case_AT_AL_APPDATAENTRY_REFDETAILS_05() throws Throwable {
+		testData = referencedetailsExcelData.getTestdata("AT_AL_APPDATAENTRY_REFDETAILS_05_D1");
+	}
+	@And("^User_074 get the test data for test case AT_AL_APPDATAENTRY_REFDETAILS_06$")
+	public void get_the_test_data_for_test_case_AT_AL_APPDATAENTRY_REFDETAILS_06() throws Throwable {
+		testData = referencedetailsExcelData.getTestdata("AT_AL_APPDATAENTRY_REFDETAILS_06_D1");
+	}
+	@And("^User_074 get the test data for test case AT_AL_APPDATAENTRY_REFDETAILS_07$")
+	public void get_the_test_data_for_test_case_AT_AL_APPDATAENTRY_REFDETAILS_07() throws Throwable {
+		testData = referencedetailsExcelData.getTestdata("AT_AL_APPDATAENTRY_REFDETAILS_07_D1");
+	}
+	@And("^User_074 get the test data for test case AT_AL_APPDATAENTRY_REFDETAILS_08$")
+	public void get_the_test_data_for_test_case_AT_AL_APPDATAENTRY_REFDETAILS_08() throws Throwable {
+		testData = referencedetailsExcelData.getTestdata("AT_AL_APPDATAENTRY_REFDETAILS_08_D1");
+	}
+	@And("^User_074 get the test data for test case AT_AL_APPDATAENTRY_REFDETAILS_09$")
+	public void get_the_test_data_for_test_case_AT_AL_APPDATAENTRY_REFDETAILS_09() throws Throwable {
+		testData = referencedetailsExcelData.getTestdata("AT_AL_APPDATAENTRY_REFDETAILS_09_D1");
+	}
+	@And("^User_074 get the test data for test case AT_AL_APPDATAENTRY_REFDETAILS_10$")
+	public void get_the_test_data_for_test_case_AT_AL_APPDATAENTRY_REFDETAILS_10() throws Throwable {
+		testData = referencedetailsExcelData.getTestdata("AT_AL_APPDATAENTRY_REFDETAILS_10_D1");
+	}
 	
 	@And("User navigate to Customer Financials tab in Autoloan_Employment details")
 	public void user_navigate_to_customer_financials_tab_in_autoloan_employment_details() {
@@ -204,8 +238,8 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step {
 				}
 			}
 			System.out.println("String " + dropdownString.trim());
-			System.out.println("Map " + testData.get("IssuingAuthority").trim());
-			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("IssuingAuthority")).trim())) {
+			System.out.println("Map " + testData.get("NatureOfEmployment").trim());
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("NatureOfEmployment")).trim())) {
 				for (int k = 0; k <= 300; k++) {
 					try {
 						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
@@ -284,8 +318,8 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step {
 				}
 			}
 			System.out.println("String " + dropdownString.trim());
-			System.out.println("Map " + testData.get("IssuingAuthority").trim());
-			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("IssuingAuthority")).trim())) {
+			System.out.println("Map " + testData.get("CompanyType").trim());
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("CompanyType")).trim())) {
 				for (int k = 0; k <= 300; k++) {
 					try {
 						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
@@ -364,8 +398,8 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step {
 				}
 			}
 			System.out.println("String " + dropdownString.trim());
-			System.out.println("Map " + testData.get("IssuingAuthority").trim());
-			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("IssuingAuthority")).trim())) {
+			System.out.println("Map " + testData.get("Profession").trim());
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("Profession")).trim())) {
 				for (int k = 0; k <= 300; k++) {
 					try {
 						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
@@ -444,8 +478,8 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step {
 				}
 			}
 			System.out.println("String " + dropdownString.trim());
-			System.out.println("Map " + testData.get("IssuingAuthority").trim());
-			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("IssuingAuthority")).trim())) {
+			System.out.println("Map " + testData.get("ProfessionType").trim());
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("ProfessionType")).trim())) {
 				for (int k = 0; k <= 300; k++) {
 					try {
 						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
@@ -524,8 +558,8 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step {
 				}
 			}
 			System.out.println("String " + dropdownString.trim());
-			System.out.println("Map " + testData.get("IssuingAuthority").trim());
-			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("IssuingAuthority")).trim())) {
+			System.out.println("Map " + testData.get("StatutoryAuthority").trim());
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("StatutoryAuthority")).trim())) {
 				for (int k = 0; k <= 300; k++) {
 					try {
 						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
@@ -556,8 +590,8 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step {
 		System.out.println("Date " + format);
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("IssueDate")).click();
-				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("IssueDate")).sendKeys(format);
+				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("EmploymentEndDate")).click();
+				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("EmploymentEndDate")).sendKeys(format);
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -573,8 +607,8 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step {
 		javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("employerPhoneExInput")).click();
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("minimumInsurancePremium"))
-						.sendKeys(testData.get("minimumInsurancePremium"), Keys.TAB);
+				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("employerPhoneExInput"))
+						.sendKeys(testData.get("EmployerPhoneExtension"), Keys.TAB);
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -590,8 +624,8 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step {
 		javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("No of Partners Dropdown")).click();
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("minimumInsurancePremium"))
-						.sendKeys(testData.get("minimumInsurancePremium"), Keys.TAB);
+				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("No of Partners Dropdown"))
+						.sendKeys(testData.get("NoOfPartners"), Keys.TAB);
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -658,8 +692,8 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step {
 				}
 			}
 			System.out.println("String " + dropdownString.trim());
-			System.out.println("Map " + testData.get("IssuingAuthority").trim());
-			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("IssuingAuthority")).trim())) {
+			System.out.println("Map " + testData.get("NatureOfBusiness").trim());
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("NatureOfBusiness")).trim())) {
 				for (int k = 0; k <= 300; k++) {
 					try {
 						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
@@ -687,8 +721,8 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step {
 		javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Registered Business Name textbox")).click();
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("minimumInsurancePremium"))
-						.sendKeys(testData.get("minimumInsurancePremium"), Keys.TAB);
+				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Registered Business Name textbox"))
+						.sendKeys(testData.get("RegisteredBusinessName"), Keys.TAB);
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -704,8 +738,8 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step {
 		javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Registered Business Number texbox")).click();
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("minimumInsurancePremium"))
-						.sendKeys(testData.get("minimumInsurancePremium"), Keys.TAB);
+				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Registered Business Number texbox"))
+						.sendKeys(testData.get("RegisteredBusinessNumber"), Keys.TAB);
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -724,8 +758,8 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step {
 		System.out.println("Date " + format);
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("IssueDate")).click();
-				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("IssueDate")).sendKeys(format);
+				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Business Registration Date textbox")).click();
+				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Business Registration Date textbox")).sendKeys(format);
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -792,8 +826,8 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step {
 				}
 			}
 			System.out.println("String " + dropdownString.trim());
-			System.out.println("Map " + testData.get("IssuingAuthority").trim());
-			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("IssuingAuthority")).trim())) {
+			System.out.println("Map " + testData.get("OfficePremisesType").trim());
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("OfficePremisesType")).trim())) {
 				for (int k = 0; k <= 300; k++) {
 					try {
 						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
@@ -821,8 +855,8 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step {
 		javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Share Holder Percentage Dropdown")).click();
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("minimumInsurancePremium"))
-						.sendKeys(testData.get("minimumInsurancePremium"), Keys.TAB);
+				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Share Holder Percentage Dropdown"))
+						.sendKeys(testData.get("ShareHolderPercentage"), Keys.TAB);
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -838,8 +872,8 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step {
 		javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("No of Employees Dropdown")).click();
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("minimumInsurancePremium"))
-						.sendKeys(testData.get("minimumInsurancePremium"), Keys.TAB);
+				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("No of Employees Dropdown"))
+						.sendKeys(testData.get("NoOfEmployees"), Keys.TAB);
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -855,8 +889,8 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step {
 		javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("remarksTextarea")).click();
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("minimumInsurancePremium"))
-						.sendKeys(testData.get("minimumInsurancePremium"), Keys.TAB);
+				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("remarksTextarea"))
+						.sendKeys(testData.get("Remarks"), Keys.TAB);
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -892,11 +926,12 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step {
 
 	@And("Enter special characters in required field in Autoloan_Employment details")
 	public void enter_special_characters_in_required_field_in_autoloan_employment_details() {
-		javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Registered Business Name textbox")).click();
+		System.err.println(testData.get("EmployeeId"));
+		javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("EmployeeId")).click();
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("minimumInsurancePremium"))
-						.sendKeys(testData.get("minimumInsurancePremium"), Keys.TAB);
+				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("EmployeeId"))
+						.sendKeys(testData.get("EmployeeId"));
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -914,8 +949,18 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step {
 
 	@And("Validate Nature of employment field is present in Autoloan_Employment details view list")
 	public void validate_nature_of_employment_field_is_present_in_autoloan_employment_details_view_list() throws IOException {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("listview_NatureOfEmployment")));
-		Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("listview_NatureOfEmployment")).isDisplayed());
+		for (int i = 0; i <= 500; i++) {
+			try {
+				waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("listview_NatureOfEmployment")));
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("listview_NatureOfEmployment")).isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
 	    
 	}
 
@@ -958,26 +1003,410 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step {
 	}
 
 	@And("Validate the export to PDF functionality in Autoloan_Employment details")
-	public void validate_the_export_to_pdf_functionality_in_autoloan_employment_details() {
-	   
+	public void validate_the_export_to_pdf_functionality_in_autoloan_employment_details() throws IOException {
+		String length =null;
+		for (int i = 0; i <500; i++) {
+
+			try {
+
+			    length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title').length").toString();
+
+			    System.out.println(length);
+
+				if (!length.isBlank()) {
+
+					break;
+
+				}
+
+			} catch (Exception e) {
+
+				if (i==499) {
+
+					Assert.fail(e.getMessage());
+
+				}
+
+			}
+
+		}
+
+		for (int i = 0; i <500; i++) {
+
+		try {
+
+			for (int j = 0; j <Integer.parseInt(length); j++) {
+
+				String title ="return document.querySelectorAll('ion-title')["+j+"].innerText";
+
+				String titlename = javascriptHelper.executeScript(title).toString();
+
+				System.out.println(titlename);
+
+				if (titlename.trim().contains("Customer Employment List")) {
+
+					System.out.println("condition true");
+
+					String jspath ="document.querySelectorAll('ion-title')["+j+"].parentElement.nextElementSibling.querySelector('p-dropdown')";
+
+					WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
+
+//					System.out.println(jspath);
+
+//					javascriptHelper.scrollIntoView(addButton);
+
+					addButton.click();
+
+					break;
+
+				}
+
+			}
+
+			break;
+
+		} catch (Exception e) {
+
+			if (i==499) {
+
+				Assert.fail(e.getMessage());
+
+			}
+
+		}
+
+	}
+
+
+//for (int i = 0; i <= 2000; i++) {
+//	try {
+//		javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("ExportIcon"))
+//				.click();
+//		break;
+//	} catch (Exception e) {
+//		if (i == 2000) {
+//			Assert.fail(e.getMessage());
+//		}
+//	}
+//}
+
+waitHelper.waitForElementwithFluentwait(driver,
+		javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("ExportPDF")));
+for (int i = 0; i <= 300; i++) {
+	try {
+		javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("ExportPDF"))
+				.click();
+		break;
+	} catch (Exception e) {
+		if (i == 300) {
+			Assert.fail(e.getMessage());
+		}
+	}
+}
+
+browserHelper.SwitchToWindow(1);
+browserHelper.switchToParentWithChildClose();
+String homePath = System.getProperty("user.home");
+String filePath = homePath + "/Downloads";
+File file = new File(filePath);
+File[] listFiles = file.listFiles();
+file.delete();
+for (File downloadsFile : listFiles) {
+	System.out.println(downloadsFile.getName());
+	if (downloadsFile.getName().contains("Application Insurance Quotation Details")) {
+		System.out.println("If condition " + downloadsFile.getName());
+		softAssert.assertTrue(downloadsFile.getName().contains("Application Insurance Quotation Details"),
+				"File is nott downloaded hence failed");
+		downloadsFile.delete();
+	}
+}
 	    
 	}
 
 	@And("Validate the export to Excel functionality in Autoloan_Employment details")
 	public void validate_the_export_to_excel_functionality_in_autoloan_employment_details() {
-	   
+		String length =null;
+		for (int i = 0; i <500; i++) {
+
+			try {
+
+			    length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title').length").toString();
+
+			    System.out.println(length);
+
+				if (!length.isBlank()) {
+
+					break;
+
+				}
+
+			} catch (Exception e) {
+
+				if (i==499) {
+
+					Assert.fail(e.getMessage());
+
+				}
+
+			}
+
+		}
+
+		for (int i = 0; i <500; i++) {
+
+		try {
+
+			for (int j = 0; j <Integer.parseInt(length); j++) {
+
+				String title ="return document.querySelectorAll('ion-title')["+j+"].innerText";
+
+				String titlename = javascriptHelper.executeScript(title).toString();
+
+				System.out.println(titlename);
+
+				if (titlename.trim().contains("Customer Employment List")) {
+
+					System.out.println("condition true");
+
+					String jspath ="document.querySelectorAll('ion-title')["+j+"].parentElement.nextElementSibling.querySelector('p-dropdown')";
+
+					WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
+
+//					System.out.println(jspath);
+
+//					javascriptHelper.scrollIntoView(addButton);
+
+					addButton.click();
+
+					break;
+
+				}
+
+			}
+
+			break;
+
+		} catch (Exception e) {
+
+			if (i==499) {
+
+				Assert.fail(e.getMessage());
+
+			}
+
+		}
+
+	}
+//		for (int i = 0; i <= 2000; i++) {
+//			try {
+//				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("ExportIcon"))
+//						.click();
+//				break;
+//			} catch (Exception e) {
+//				if (i == 2000) {
+//					Assert.fail(e.getMessage());
+//				}
+//			}
+//		}
+
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("ExportXLS"))
+						.click();
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String homePath = System.getProperty("user.home");
+		String filePath = homePath + "/Downloads";
+		File file = new File(filePath);
+		File[] listFiles = file.listFiles();
+		file.delete();
+		for (File downloadsFile : listFiles) {
+			System.out.println(downloadsFile.getName());
+			if (downloadsFile.getName().contains("Application Insurance Quotation Details_export_")) {
+				System.out.println("If condition " + downloadsFile.getName());
+				softAssert.assertTrue(
+						downloadsFile.getName().contains("Application Insurance Quotation Details_export_"),
+						"File is nott downloaded hence failed");
+				downloadsFile.delete();
+			}
+		}
 	    
 	}
 
 	@And("Search the Autoloan_Employment details record with valid data")
-	public void search_the_autoloan_employment_details_record_with_valid_data() {
-	   
+	public void search_the_autoloan_employment_details_record_with_valid_data() throws InterruptedException {
+		String listViewQuery = "document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]').length";
+		// document.querySelectorAll('ion-col[class="m-0 p-0 ng-star-inserted md
+		// hydrated"]')[1].querySelector('button[icon="pi pi-pencil"')
+		String listViewName = "";
+		String noOfListView = "";
+		boolean isIndexFound = false;
+		for (int i = 0; i <= 300; i++) {
+			try {
+				noOfListView = javascriptHelper.executeScript("return " + listViewQuery).toString();
+				if (noOfListView.equals("0") && !(noOfListView.isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		System.out.println("No Of List view " + noOfListView);
+		int premitivListViews = Integer.parseInt(noOfListView);
+		for (int i = 0; i < premitivListViews; i++) {
+			for (int j = 0; j <= 300; j++) {
+				try {
+					listViewName = javascriptHelper.executeScript("return "
+							+ "document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]')["
+							+ i + "].innerText").toString();
+					if (listViewName.contains("Customer Identification")) {
+
+						indexOfListView = i;
+						System.out.println("List view index " + indexOfListView);
+
+						isIndexFound = true;
+						break;
+					} else {
+
+						isIndexFound = false;
+						break;
+					}
+				} catch (Exception e) {
+					if (j == 300) {
+						Assert.fail(e.getMessage());
+					}
+
+				}
+			}
+			if (isIndexFound == true) {
+				break;
+			}
+
+		}
+
+		String searchButton = "document.querySelectorAll(' ion-row button[ng-reflect-icon=\"pi pi-search\"]')["
+				+ indexOfListView + "]";
+
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(searchButton).click();
+
+				if (i > 250) {
+					javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(searchButton));
+					javascriptHelper.executeScriptWithWebElement(searchButton).click();
+					break;
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		for (int i = 0; i <= 300; i++) {
+			try {
+				System.out.println(testData.get("valid_search_text"));
+				javascriptHelper
+						.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("list_view_search_input"))
+						.click();
+				javascriptHelper
+						.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("list_view_search_input"))
+						.sendKeys(testData.get("valid_search_text"));
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+
+			}
+
+		}
+
+		String searchResult = "";
+		System.out.println("Index is " + indexOfListView);
+		Thread.sleep(500);
+		for (int i = 0; i <= 60000; i++) {
+			try {
+				if (i > 50000) {
+					searchResult = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]')["
+									+ indexOfListView
+									+ "].querySelector('span[class=\"p-paginator-current ng-star-inserted\"]').innerText")
+							.toString();
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 60000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+
+		}
+
+		System.out.println(searchResult);
+
+		softAssert.assertEquals(searchResult, "Showing 0 to 0 of 0 entries");
 	    
 	}
 
 	@And("Search the Autoloan_Employment details record with invalid data")
-	public void search_the_autoloan_employment_details_record_with_invalid_data() {
-	   
+	public void search_the_autoloan_employment_details_record_with_invalid_data() throws InterruptedException {
+		for (int i = 0; i <= 10; i++) {
+			try {
+				javascriptHelper
+						.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("list_view_search_input"))
+						.click();
+				javascriptHelper
+						.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("list_view_search_input"))
+						.sendKeys(Keys.chord(Keys.CONTROL, "A", Keys.BACK_SPACE));
+			} catch (Exception e) {
+			}
+		}
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper
+						.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("list_view_search_input"))
+						.click();
+				javascriptHelper
+						.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("list_view_search_input"))
+						.sendKeys(testData.get("invalid_search_text"));
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String searchResult = "";
+		System.out.println("Index is " + indexOfListView);
+		Thread.sleep(500);
+		for (int i = 0; i <= 60000; i++) {
+			try {
+				if (i > 50000) {
+					searchResult = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]')["
+									+ indexOfListView
+									+ "].querySelector('span[class=\"p-paginator-current ng-star-inserted\"]').innerText")
+							.toString();
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 60000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		System.out.println(searchResult);
+		softAssert.assertEquals(searchResult, "Showing 0 to 0 of 0 entries");
+
 	    
 	}
 
@@ -1054,8 +1483,8 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step {
 				}
 			}
 			System.out.println("String " + dropdownString.trim());
-			System.out.println("Map " + testData.get("IssuingAuthority").trim());
-			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("IssuingAuthority")).trim())) {
+			System.out.println("Map " + testData.get("NatureOfEmployment").trim());
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("NatureOfEmployment")).trim())) {
 				for (int k = 0; k <= 300; k++) {
 					try {
 						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
@@ -1134,8 +1563,8 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step {
 				}
 			}
 			System.out.println("String " + dropdownString.trim());
-			System.out.println("Map " + testData.get("IssuingAuthority").trim());
-			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("IssuingAuthority")).trim())) {
+			System.out.println("Map " + testData.get("CompanyType").trim());
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("CompanyType")).trim())) {
 				for (int k = 0; k <= 300; k++) {
 					try {
 						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
@@ -1214,8 +1643,8 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step {
 				}
 			}
 			System.out.println("String " + dropdownString.trim());
-			System.out.println("Map " + testData.get("IssuingAuthority").trim());
-			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("IssuingAuthority")).trim())) {
+			System.out.println("Map " + testData.get("Profession").trim());
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("Profession")).trim())) {
 				for (int k = 0; k <= 300; k++) {
 					try {
 						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
@@ -1294,8 +1723,8 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step {
 				}
 			}
 			System.out.println("String " + dropdownString.trim());
-			System.out.println("Map " + testData.get("IssuingAuthority").trim());
-			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("IssuingAuthority")).trim())) {
+			System.out.println("Map " + testData.get("ProfessionType").trim());
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("ProfessionType")).trim())) {
 				for (int k = 0; k <= 300; k++) {
 					try {
 						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
@@ -1374,8 +1803,8 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step {
 				}
 			}
 			System.out.println("String " + dropdownString.trim());
-			System.out.println("Map " + testData.get("IssuingAuthority").trim());
-			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("IssuingAuthority")).trim())) {
+			System.out.println("Map " + testData.get("StatutoryAuthority").trim());
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("StatutoryAuthority")).trim())) {
 				for (int k = 0; k <= 300; k++) {
 					try {
 						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
@@ -1398,19 +1827,14 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step {
 	    
 	}
 
-	@And("Update the value in Employment End date field in Autoloan_Employment details")
-	public void update_the_value_in_employment_end_date_field_in_autoloan_employment_details() {
-	   
-	    
-	}
-
 	@And("Update the value in Employer phone extension field in Autoloan_Employment details")
 	public void update_the_value_in_employer_phone_extension_field_in_autoloan_employment_details() {
 		javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("employerPhoneExInput")).click();
+		javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("employerPhoneExInput")).clear();
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("minimumInsurancePremium"))
-						.sendKeys(testData.get("minimumInsurancePremium"), Keys.TAB);
+				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("employerPhoneExInput"))
+						.sendKeys(testData.get("EmployerPhoneExtension"), Keys.TAB);
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -1424,10 +1848,11 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step {
 	@And("Update the value in No of partners field in Autoloan_Employment details")
 	public void update_the_value_in_no_of_partners_field_in_autoloan_employment_details() {
 		javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("No of Partners Dropdown")).click();
+		javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("No of Partners Dropdown")).clear();
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("minimumInsurancePremium"))
-						.sendKeys(testData.get("minimumInsurancePremium"), Keys.TAB);
+				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("No of Partners Dropdown"))
+						.sendKeys(testData.get("NoOfPartners"), Keys.TAB);
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -1494,8 +1919,8 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step {
 				}
 			}
 			System.out.println("String " + dropdownString.trim());
-			System.out.println("Map " + testData.get("IssuingAuthority").trim());
-			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("IssuingAuthority")).trim())) {
+			System.out.println("Map " + testData.get("NatureOfBusiness").trim());
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("NatureOfBusiness")).trim())) {
 				for (int k = 0; k <= 300; k++) {
 					try {
 						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
@@ -1521,10 +1946,11 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step {
 	@And("Update the value in Registered business name field in Autoloan_Employment details")
 	public void update_the_value_in_registered_business_name_field_in_autoloan_employment_details() {
 		javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Registered Business Name textbox")).click();
+		javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Registered Business Name textbox")).clear();
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("minimumInsurancePremium"))
-						.sendKeys(testData.get("minimumInsurancePremium"), Keys.TAB);
+				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Registered Business Name textbox"))
+						.sendKeys(testData.get("RegisteredBusinessName"), Keys.TAB);
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -1538,10 +1964,11 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step {
 	@And("Update the value in Registered business number field in Autoloan_Employment details")
 	public void update_the_value_in_registered_business_number_field_in_autoloan_employment_details() {
 		javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Registered Business Number texbox")).click();
+		javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Registered Business Number texbox")).clear();
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("minimumInsurancePremium"))
-						.sendKeys(testData.get("minimumInsurancePremium"), Keys.TAB);
+				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Registered Business Number texbox"))
+						.sendKeys(testData.get("RegisteredBusinessNumber"), Keys.TAB);
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -1552,85 +1979,6 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step {
 	    
 	}
 
-	@And("Update the value in Business Registration date field in Autoloan_Employment details")
-	public void update_the_value_in_business_registration_date_field_in_autoloan_employment_details() {
-		for (int i = 0; i <= 2000; i++) {
-			try {
-				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("IssuingAuthorityField"))
-						.click();
-				break;
-			} catch (Exception e) {
-				if (i == 2000) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
-		String dropdownLength = "";
-		boolean isDropdownValueSelected = false;
-		String dropdownString = "";
-		for (int i = 0; i <= 300; i++) {
-			try {
-				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
-				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
-					break;
-				}
-			} catch (Exception e) {
-				if (i == 300) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
-		for (int j = 0; j <= premitiveDropdownLength; j++) {
-			for (int l = 0; l <= 300; l++) {
-				try {
-					System.out.println("L value is " + l);
-					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
-					dropdownString = javascriptHelper.executeScript(
-							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
-							.toString();
-					if (!(dropdownString.isEmpty())) {
-						System.out.println(dropdownString);
-						System.out.println("Loop count " + l + " got breaked");
-						break;
-					}
-				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
-						Assert.fail(e.getMessage());
-					}
-				}
-				if (!(dropdownString.isEmpty())) {
-					System.out.println(dropdownString);
-					System.out.println("Loop count " + l + " got breaked");
-					break;
-				}
-			}
-			System.out.println("String " + dropdownString.trim());
-			System.out.println("Map " + testData.get("IssuingAuthority").trim());
-			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("IssuingAuthority")).trim())) {
-				for (int k = 0; k <= 300; k++) {
-					try {
-						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
-								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
-								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-						isDropdownValueSelected = true;
-						break;
-					} catch (Exception e) {
-						if (k == 300) {
-							Assert.fail(e.getMessage());
-						}
-					}
-				}
-			}
-			if (isDropdownValueSelected == true) {
-				break;
-			}
-		}
-	    
-	}
 
 	@And("Update the value in Office premises type field in Autoloan_Employment details")
 	public void update_the_value_in_office_premises_type_field_in_autoloan_employment_details() {
@@ -1688,8 +2036,8 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step {
 				}
 			}
 			System.out.println("String " + dropdownString.trim());
-			System.out.println("Map " + testData.get("IssuingAuthority").trim());
-			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("IssuingAuthority")).trim())) {
+			System.out.println("Map " + testData.get("OfficePremisesType").trim());
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("OfficePremisesType")).trim())) {
 				for (int k = 0; k <= 300; k++) {
 					try {
 						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
@@ -1715,10 +2063,11 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step {
 	@And("Update the value in Share holder percentage field in Autoloan_Employment details")
 	public void update_the_value_in_share_holder_percentage_field_in_autoloan_employment_details() {
 		javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Share Holder Percentage Dropdown")).click();
+		javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Share Holder Percentage Dropdown")).clear();
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("minimumInsurancePremium"))
-						.sendKeys(testData.get("minimumInsurancePremium"), Keys.TAB);
+				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Share Holder Percentage Dropdown"))
+						.sendKeys(testData.get("ShareHolderPercentage"), Keys.TAB);
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -1732,10 +2081,11 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step {
 	@And("Update the value in No of Employees field in Autoloan_Employment details")
 	public void update_the_value_in_no_of_employees_field_in_autoloan_employment_details() {
 		javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("No of Employees Dropdown")).click();
+		javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("No of Employees Dropdown")).clear();
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("minimumInsurancePremium"))
-						.sendKeys(testData.get("minimumInsurancePremium"), Keys.TAB);
+				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("No of Employees Dropdown"))
+						.sendKeys(testData.get("NoOfEmployees"), Keys.TAB);
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -1749,10 +2099,11 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step {
 	@And("Update the value in Reamrks field in Autoloan_Employment details")
 	public void update_the_value_in_reamrks_field_in_autoloan_employment_details() {
 		javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("remarksTextarea")).click();
+		javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("remarksTextarea")).clear();
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("minimumInsurancePremium"))
-						.sendKeys(testData.get("minimumInsurancePremium"), Keys.TAB);
+				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("remarksTextarea"))
+						.sendKeys(testData.get("Remarks"), Keys.TAB);
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -1766,17 +2117,8 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step {
 	@And("Remove the values in required field in Autoloan_Employment details")
 	public void remove_the_values_in_required_field_in_autoloan_employment_details() {
 		javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Registered Business Name textbox")).click();
-		for (int i = 0; i <= 500; i++) {
-			try {
-				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("minimumInsurancePremium"))
-						.sendKeys(testData.get("minimumInsurancePremium"), Keys.TAB);
-				break;
-			} catch (Exception e) {
-				if (i == 500) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
+		javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Registered Business Name textbox")).clear();
+		
 	    
 	}
 	@And("Update special characters in required field in Autoloan_Employment details")
@@ -1784,8 +2126,8 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step {
 		javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Registered Business Name textbox")).click();
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("minimumInsurancePremium"))
-						.sendKeys(testData.get("minimumInsurancePremium"), Keys.TAB);
+				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Registered Business Name textbox"))
+						.sendKeys(testData.get("RegisteredBusinessName"), Keys.TAB);
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -1794,5 +2136,77 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step {
 			}
 		}
 	}
+	@And("User_074 search the Ref id under inbox for Autoloan_Reference details")
+	public void user_074_search_the_ref_id_under_inbox_for_autoloan_reference_details() throws IOException {
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+				.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("inboxSearchInput")));
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper
+						.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("inboxSearchInput"))
+						.sendKeys(testData.get("Ref No"));
+				;
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	@And("Find the position of Employment details view list at AutoLoan")
+	public void find_the_position_of_employment_details_view_list_at_auto_loan() {
+		String listViewQuery = "document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]').length";
+		// document.querySelectorAll('ion-col[class="m-0 p-0 ng-star-inserted md
+		// hydrated"]')[1].querySelector('button[icon="pi pi-pencil"')
+		String listViewName = "";
+		String noOfListView = "";
+		boolean isIndexFound = false;
+		for (int i = 0; i <= 300; i++) {
+			try {
+				noOfListView = javascriptHelper.executeScript("return " + listViewQuery).toString();
+				if (noOfListView.equals("0") && !(noOfListView.isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		System.out.println("No Of List view " + noOfListView);
+		int premitivListViews = Integer.parseInt(noOfListView);
+		for (int i = 0; i < premitivListViews; i++) {
+			for (int j = 0; j <= 300; j++) {
+				try {
+					listViewName = javascriptHelper.executeScript("return "
+							+ "document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]')["
+							+ i + "].innerText").toString();
+					if (listViewName.contains("Customer Employment List")) {
+
+						indexOfListView = i;
+						System.out.println("List view index " + indexOfListView);
+
+						isIndexFound = true;
+						break;
+					} else {
+
+						isIndexFound = false;
+						break;
+					}
+				} catch (Exception e) {
+					if (j == 300) {
+						Assert.fail(e.getMessage());
+					}
+
+				}
+			}
+			if (isIndexFound == true) {
+				break;
+			}
+
+		}
+	}
+	
 
 }
