@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Dec 22 18:00:58 IST 2023</td>
+<td>Started on:</td><td>Fri Dec 29 11:55:27 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>99 seconds (99506 ms)</td>
+<tr><td>Total time:</td><td>46 seconds (46509 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,41 +67,18 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "To verify user is able to change the status of Debt record from Active to Inactive", "Optional[To check the Murabaha --> App Data Entry stage, Customer Debt screen]"</td>
-<td><div><pre>java.lang.AssertionError: javascript error: Cannot read properties of null (reading &apos;scrollIntoView&apos;)
-  (Session info: chrome=120.0.6099.110)
-Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [59f6e3750c941c1e1c15a4f8e66845eb, executeScript {script=arguments[0].scrollIntoView(), args=[null]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.110, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54782}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54782/devtoo..., se:cdpVersion: 120.0.6099.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 59f6e3750c941c1e1c15a4f8e66845eb
-	at org.junit.Assert.fail(Assert.java:88)
-	at stepdefinitions.IJARAH_Steps.user_608_click_the_update_button_in_customer_debt_screen(IJARAH_Steps.java:2041)
-	at ✽.User_608 click the Update button in Customer Debt screen(file:///C:/Users/inindc00608/git/KULS_Sankar/KULS_Sankar/src/test/java/features/MU_AppData_CFDebt.feature:266)
-</pre></div><a href='#' onClick='toggleBox("stack-trace2057747769", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2057747769'><pre>java.lang.AssertionError: javascript error: Cannot read properties of null (reading &apos;scrollIntoView&apos;)
-  (Session info: chrome=120.0.6099.110)
-Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [59f6e3750c941c1e1c15a4f8e66845eb, executeScript {script=arguments[0].scrollIntoView(), args=[null]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.110, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54782}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54782/devtoo..., se:cdpVersion: 120.0.6099.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 59f6e3750c941c1e1c15a4f8e66845eb
-	at org.junit.Assert.fail(Assert.java:88)
-	at stepdefinitions.IJARAH_Steps.user_608_click_the_update_button_in_customer_debt_screen(IJARAH_Steps.java:2041)
-	at ✽.User_608 click the Update button in Customer Debt screen(file:///C:/Users/inindc00608/git/KULS_Sankar/KULS_Sankar/src/test/java/features/MU_AppData_CFDebt.feature:266)
-</pre></div></td>
-<td>89</td>
-<td>Runner.TestApplication@1caa0244</td></tr>
+<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "List view of Customer Debt - To verify the functionality of Export to PDF and Excel button", "Optional[To check the Auto Loan - App Data Entry stage -> Customer Financial tab -> Financial Commitments/Customer Debt screen]"</td>
+<td></td>
+<td>35</td>
+<td>Runner.TestApplication@7ce026d3</td></tr>
 </table><p>
 </body>
 </html>

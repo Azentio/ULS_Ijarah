@@ -105,4 +105,6 @@ public JavascriptHelper(WebDriver driver)
 	public void backgroundBorder(WebElement element) {
 		executeScript("arguments[0].style.border='2px solid black'", element);
 	}
+	
+	
 }

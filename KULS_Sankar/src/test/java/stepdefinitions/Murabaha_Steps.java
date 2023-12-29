@@ -2123,14 +2123,13 @@ public class Murabaha_Steps {
 		}
 	}
 	
-	@And("User_608 validate the Error message in Customer Debt screen")
-	public void user_validate_the_error_message_in_customer_debt_screen() throws Throwable {
-//		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("mandatoryFillToastMsg")));
-		String madatoryErrorMsg = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("mandatoryFillToastMsg")).getText();
-		System.err.println("Mandatory Error : "+madatoryErrorMsg);
+	@And("User_608 validate the invalid data error message in Customer Debt screen")
+	public void user_validate_the_invalid_data_error_message_in_customer_debt_screen() throws Throwable {
 		for (int i = 0; i<2000; i++) {
           try {
-              Assert.assertTrue(madatoryErrorMsg.contains("SQL error"));
+        	  String errorMsg = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sqlErrorToastMsg")).getText();
+        	  System.err.println("Mandatory Error : "+errorMsg);
+        	  softAssert.assertTrue(errorMsg.contains("SQL error"), "System show the SQL Error message in customer debt screen");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -2146,6 +2145,32 @@ public class Murabaha_Steps {
 //				if (i == 500) {
 //					Assert.fail(e.getMessage());
 //				}
+			}
+		}
+	}
+	
+	@And("User_608 to verify system display the confirmation message post clicking on update button in Customer Debt screen")
+	public void user_to_verify_system_display_the_confirmation_message_post_clicking_on_update_button_in_customer_debt_screen() throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("successMsg")).getText();
+				softAssert.assertTrue(text.contains("Success"), "System should display the confirmation message as SUCCESS");				
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("toastMsgCloseBtn"))
+				.click();
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
 			}
 		}
 	}
@@ -2175,7 +2200,7 @@ public class Murabaha_Steps {
 				javascriptHelper.backgroundColor(searchResult);
 				String text = searchResult.getText().substring(13, 14);
 				System.out.println("Result value: "+text);
-				Assert.assertTrue(Integer.parseInt(text)>0);
+				softAssert.assertTrue(Integer.parseInt(text)>0, "System should display all the possible matching records");
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -2212,7 +2237,7 @@ public class Murabaha_Steps {
 				javascriptHelper.backgroundColor(searchResult);
 				String text = searchResult.getText().substring(13, 14);
 				System.out.println("Result value: "+text);
-				Assert.assertTrue(Integer.parseInt(text)==0);
+				softAssert.assertTrue(Integer.parseInt(text)==0, "System should display the message as No data found");
 				break;
 			} catch (Exception e) {
 				if (i == 500) {

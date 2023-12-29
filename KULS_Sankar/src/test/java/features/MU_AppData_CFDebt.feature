@@ -185,13 +185,14 @@ And User_608 clear the mandatory field value in Customer Debt screen
 And User_608 Update the record with mandatory field blank in Customer Debt screen
 And User_608 validate the mandatory field blank message in Customer Debt screen
 And User_608 enter the invalid data in any one field under Customer Debt screen in Customer Financials tab
-And User_608 Update the record with mandatory field blank in Customer Debt screen
-And User_608 validate the Error message in Customer Debt screen
+When User_608 click the Update button with invalid data in Customer Debt screen
+And User_608 validate the invalid data error message in Customer Debt screen
 And User_608 enter the Installment Amount under Customer Debt screen in Customer Financials tab
 And User_608 modify the Sanction Amount under Customer Debt screen in Customer Financials tab
-When User_608 click the Update button in Customer Debt screen
+When User_608 click the Update button with valid data in Customer Debt screen
+And User_608 to verify system display the confirmation message post clicking on update button in Customer Debt screen
 Then logout from the ijaraApplication
-
+And User_608 invoke soft assert in Customer Debt screen at Murabaha App Data Entry stage
 
 #CUD_04_01, CUD_04_02, CUD_04_03
 @AT_MCUD_07
@@ -221,7 +222,7 @@ And User_608 verify list view values should be not editable under Financial Comm
 And User_608 click Add button in Financial Commitments under Customer Financials tab
 And User_608 validate the Customer Debt screen is available in Financial Commitments
 Then logout from the ijaraApplication
-
+And User_608 invoke soft assert in Customer Debt screen at Murabaha App Data Entry stage
 
 # CUD_04_04, CUD_04_05
 @AT_MCUD_08
@@ -244,7 +245,7 @@ And User_608 verify the all the possible matching records are displayed under Fi
 And User_608 search mismatch value system should not display any records under Financial Commitments section
 And User_608 verify the system is should not displayed any records under Financial Commitments section
 Then logout from the ijaraApplication
-
+And User_608 invoke soft assert in Customer Debt screen at Murabaha App Data Entry stage
 
 #CUD_04_08
 @AT_MCUD_11

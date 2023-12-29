@@ -132,3 +132,153 @@ And User_608 verify Request for Balance Takeover as Non-Mandatory and LOV field 
 And User_608 verify NPA Classification as Non-Mandatory and LOV field under Customer Debt screen in Customer Financials tab
 Then logout from the ijaraApplication
 And User_608 invoke soft assert in Customer Debt screen at Auto Loan App Data Entry stage
+
+
+@AT_AL_CUD_04
+Scenario: Creation of Customer Dept record - To verify the impact when user keep any mandatory field blank, enter characters value in numeric field and click on save button
+
+Given navigate the IJARA URL
+And login with valid credentials - Auto Loan - App Data Entry
+And User_608 get the test data for test case AT_AL_CUD_04
+And User_608 click the Mail box in ULS application
+And User_608 click the Search button under inbox
+And User_608 search the Reference ID for Auto Loan
+And User_608 click the Entitle button under inbox
+And User_608 click the Customer Financials tab
+And User_608 click the pencil icon under Customer Financials tab
+And User_608 click Add button in Financial Commitments under Customer Financials tab
+And User_608 select the Finanace type value in Financial Commitments-Customer Debt screen
+And User_608 select the Financial Institution value in Financial Commitments-Customer Debt screen
+And User_608 enter the Account Number in Financial Commitments-Customer Debt screen
+And User_608 enter the Sanction Amount in Financial Commitments-Customer Debt screen
+And User_608 enter the Tenure in Financial Commitments-Customer Debt screen
+And User_608 enter the Installment Amount in Financial Commitments-Customer Debt screen
+When User_608 click the Save button in Customer Debt screen
+And User_608 validate the mandatory field blank message in Customer Debt screen
+And User_608 to verify the impact when user enter characters value in numeric field in Customer Debt screen
+When User_608 click the Save button in Customer Debt screen
+And User_608 validate the message for invalid data in Customer Debt screen
+Then logout from the ijaraApplication
+And User_608 invoke soft assert in Customer Debt screen at Auto Loan App Data Entry stage
+
+
+@AT_AL_CUD_05
+Scenario: Modification of Customer Debt record - To verify system allow user to modify the Customer Debt Information
+
+Given navigate the IJARA URL
+And login with valid credentials - Auto Loan - App Data Entry
+And User_608 get the test data for test case AT_AL_CUD_05
+And User_608 click the Mail box in ULS application
+And User_608 click the Search button under inbox
+And User_608 search the Reference ID for Auto Loan
+And User_608 click the Entitle button under inbox
+And User_608 click the Customer Financials tab
+And User_608 click the pencil icon under Customer Financials tab
+And User_608 click the pencil button under Financial Commitments in Customer Financials tab
+And User_608 validate the Update button available in Customer Debt screen
+And User_608 validate the Back button available in Customer Debt screen
+And User_608 to verify system allow user to modify the Customer Debt Information in Customer Debt screen
+And User_608 clear the mandatory field value in Customer Debt screen
+And User_608 Update the record with mandatory field blank in Customer Debt screen
+And User_608 validate the mandatory field blank message in Customer Debt screen
+And User_608 to verify while modification system enters the invalid data in Customer Debt screen
+When User_608 click the Update button with invalid data in Customer Debt screen
+And User_608 validate the invalid data error message in Customer Debt screen
+And User_608 to verify while modification system allow user to save the record with valid data in Customer Debt screen
+When User_608 click the Update button with valid data in Customer Debt screen
+And User_608 to verify system display the confirmation message post clicking on update button in Customer Debt screen
+Then logout from the ijaraApplication
+And User_608 invoke soft assert in Customer Debt screen at Auto Loan App Data Entry stage
+
+
+@AT_AL_CUD_06
+Scenario: List view of Customer Debt - To verify system allow user to modify the Customer Debt Information
+
+Given navigate the IJARA URL
+And login with valid credentials - Auto Loan - App Data Entry
+And User_608 get the test data for test case AT_AL_CUD_06
+And User_608 click the Mail box in ULS application
+And User_608 click the Search button under inbox
+And User_608 search the Reference ID for Auto Loan
+And User_608 click the Entitle button under inbox
+And User_608 click the Customer Financials tab
+And User_608 click the pencil icon under Customer Financials tab
+And User_608 scroll into view the financial commitments section under Customer Financials tab
+And User_608 verify the Financial Institution field is displayed in list view under Financial Commitments
+And User_608 verify the Loan Amount field is displayed in list view under Financial Commitments
+And User_608 verify the Installment Amount field is displayed in list view under Financial Commitments
+And User_608 verify the Tenure field is displayed in list view under Financial Commitments
+And User_608 verify the Next Due Date field is displayed in list view under Financial Commitments
+And User_608 verify the Principal Balance field is displayed in list view under Financial Commitments
+And User_608 verify the Currency field is displayed in list view under Financial Commitments
+And User_608 verify the Status field is displayed in list view under Financial Commitments
+And User_608 verify list view values should be not editable under Financial Commitments
+And User_608 click Add button in Financial Commitments under Customer Financials tab
+And User_608 validate the Customer Debt screen is available in Financial Commitments
+Then logout from the ijaraApplication
+And User_608 invoke soft assert in Customer Debt screen at Auto Loan App Data Entry stage
+
+
+@AT_AL_CUD_07
+Scenario: List view of Customer Debt - To verify system allow user to modify the Customer Debt Information
+
+Given navigate the IJARA URL
+And login with valid credentials - Auto Loan - App Data Entry
+And User_608 get the test data for test case AT_AL_CUD_07
+And User_608 click the Mail box in ULS application
+And User_608 click the Search button under inbox
+And User_608 search the Reference ID for Auto Loan
+And User_608 click the Entitle button under inbox
+And User_608 click the Customer Financials tab
+And User_608 click the pencil icon under Customer Financials tab
+And User_608 click Search button in Financial Commitments under Customer Financials tab
+And User_608 to verify the functionality of Search box with matching data under Financial Commitments section
+And User_608 verify the all the possible matching records are displayed under Financial Commitments section
+And User_608 to verify the functionality of Search box with mismatch data under Financial Commitments section
+And User_608 verify the system is should not displayed any records under Financial Commitments section
+Then logout from the ijaraApplication
+And User_608 invoke soft assert in Customer Debt screen at Auto Loan App Data Entry stage
+
+
+@AT_AL_CUD_08
+Scenario: List view of Customer Debt - To verify the functionality of Export to PDF and Excel button
+
+Given navigate the IJARA URL
+And login with valid credentials - Auto Loan - App Data Entry
+And User_608 get the test data for test case AT_AL_CUD_08
+And User_608 click the Mail box in ULS application
+And User_608 click the Search button under inbox
+And User_608 search the Reference ID for Auto Loan
+And User_608 click the Entitle button under inbox
+And User_608 click the Customer Financials tab
+And User_608 click the pencil icon under Customer Financials tab
+And User_608 click the Export button in Financial Commitments under Customer Financials tab
+And User_608 click the PDF and verify under Export in Financial Commitments
+And User_608 click the Export button in Financial Commitments under Customer Financials tab
+And User_608 click the XLS and verify under Export in Financial Commitments
+Then logout from the ijaraApplication
+And User_608 invoke soft assert in Customer Debt screen at Auto Loan App Data Entry stage
+
+
+#AZ1LN-8897
+@AT_AL_CUD_09
+Scenario: List view of Customer Debt - To verify the functionality of Export to PDF and Excel button
+
+Given navigate the IJARA URL
+And login with valid credentials - Auto Loan - App Data Entry
+And User_608 get the test data for test case AT_AL_CUD_09
+And User_608 click the Mail box in ULS application
+And User_608 click the Search button under inbox
+And User_608 search the Reference ID for Auto Loan
+And User_608 click the Entitle button under inbox
+And User_608 click the Customer Financials tab
+And User_608 click the pencil icon under Customer Financials tab
+And User_608 click any one active record Edit button under Financial Commitments section
+And User_608 click the Status Radio button under Customer Debt screen
+When User_608 click the Update button in Customer Debt screen
+And User_608 verify the first row status as In-Active under Financial Commitments in Customer Financials tab
+
+
+
+Then logout from the ijaraApplication
+And User_608 invoke soft assert in Customer Debt screen at Auto Loan App Data Entry stage

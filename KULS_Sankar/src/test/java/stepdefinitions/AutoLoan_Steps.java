@@ -124,6 +124,35 @@ public class AutoLoan_Steps {
 		testData = AppDataEntryCFDebtExcelData.getTestdata("DS_AT_AL_CUD_03");
     }
 	
+	@And("^User_608 get the test data for test case AT_AL_CUD_04$")
+    public void get_the_test_data_for_test_case_AT_AL_CUD_04() throws Throwable {
+		testData = AppDataEntryCFDebtExcelData.getTestdata("DS_AT_AL_CUD_04");
+    }
+	
+	@And("^User_608 get the test data for test case AT_AL_CUD_05$")
+    public void get_the_test_data_for_test_case_AT_AL_CUD_05() throws Throwable {
+		testData = AppDataEntryCFDebtExcelData.getTestdata("DS_AT_AL_CUD_05");
+    }
+	
+	@And("^User_608 get the test data for test case AT_AL_CUD_06$")
+    public void get_the_test_data_for_test_case_AT_AL_CUD_06() throws Throwable {
+		testData = AppDataEntryCFDebtExcelData.getTestdata("DS_AT_AL_CUD_06");
+    }
+	
+	@And("^User_608 get the test data for test case AT_AL_CUD_07$")
+    public void get_the_test_data_for_test_case_AT_AL_CUD_07() throws Throwable {
+		testData = AppDataEntryCFDebtExcelData.getTestdata("DS_AT_AL_CUD_07");
+    }
+	
+	@And("^User_608 get the test data for test case AT_AL_CUD_08$")
+    public void get_the_test_data_for_test_case_AT_AL_CUD_08() throws Throwable {
+		testData = AppDataEntryCFDebtExcelData.getTestdata("DS_AT_AL_CUD_08");
+    }
+	
+	@And("^User_608 get the test data for test case AT_AL_CUD_09$")
+    public void get_the_test_data_for_test_case_AT_AL_CUD_09() throws Throwable {
+		testData = AppDataEntryCFDebtExcelData.getTestdata("DS_AT_AL_CUD_09");
+    }
 	
 	
 	
@@ -4186,9 +4215,9 @@ public class AutoLoan_Steps {
 
 	@And("User_608 verify system should allow user to enter only positive numeric value in Amount considered field")
 	public void user_608_verify_system_should_allow_user_to_enter_only_positive_numeric_value_in_amount_considered_field() throws Throwable {
-		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("amountConsideredInput")).click();
 		for (int i = 0; i <= 500; i++) {
 			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("amountConsideredInput")).click();
 				actions.moveToElement(javascriptHelper.executeScriptWithWebElement(
 						customerDebtJsPaths.getElement("amountConsideredInput"))).build().perform();
 				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("amountConsideredInput"))
@@ -4200,6 +4229,8 @@ public class AutoLoan_Steps {
 				}
 			}
 		}
+		
+//		Temporary code
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("toastMsgCloseBtn")).click();				
@@ -4207,8 +4238,7 @@ public class AutoLoan_Steps {
 			} catch (Exception e) {
 				
 			}
-		}
-	    
+		}	    
 	}
 
 	@And("User_608 verify system should allow user to select any value from the LOV in Currency field")
@@ -4495,6 +4525,240 @@ public class AutoLoan_Steps {
 			}
 		}	    
 	}
+	
+	
+//	AT_AL_CUD_04
+	@And("User_608 to verify the impact when user enter characters value in numeric field in Customer Debt screen")
+	public void user_608_to_verify_the_impact_when_user_enter_characters_value_in_numeric_field_in_customer_debt_screen() throws Throwable {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("remainingTenureLabel")));
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("remainingTenureInput")).click();
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("remainingTenureInput"))
+				.sendKeys(testData.get("Remaining Tenure"),Keys.TAB);;
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}		
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("toastMsgCloseBtn")).click();				
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+//	AT_AL_CUD_05
+	@And("User_608 to verify system allow user to modify the Customer Debt Information in Customer Debt screen")
+	public void user_608_to_verify_system_allow_user_to_modify_the_customer_debt_information_in_customer_debt_screen() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financeTypeDropdown")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio-group ion-label').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println("Option: "+titlename);				
+					if (titlename.trim().equalsIgnoreCase(testData.get("Finance Type"))) {
+						String jspath = "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.moveToElement(btn).click().build().perform();
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}		
+	}
+	
+	
+	@And("User_608 to verify while modification system enters the invalid data in Customer Debt screen")
+	public void user_608_to_verify_while_modification_system_enters_the_invalid_data_in_customer_debt_screen() throws Throwable {
+		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtInput")).click();
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtInput"))
+				.sendKeys(testData.get("Invalid_data"),Keys.TAB);
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("toastMsgCloseBtn")).click();				
+				break;
+			} catch (Exception e) {
+//				if (i == 500) {
+//					Assert.fail(e.getMessage());
+//				}
+			}
+		}
+	}
+	
+	@And("User_608 to verify while modification system allow user to save the record with valid data in Customer Debt screen")
+	public void user_608_to_verify_while_modification_system_allow_user_to_save_the_record_with_valid_data_in_customer_debt_screen() throws Throwable {
+		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtInput")).click();
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtInput"))
+				.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtInput"))
+				.sendKeys(testData.get("Installment Amt"),Keys.TAB);
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 100; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("toastMsgCloseBtn")).click();				
+				break;
+			} catch (Exception e) {
+//				if (i == 500) {
+//					Assert.fail(e.getMessage());
+//				}
+			}
+		}
+	}
+	
+	
+//	AT_AL_CUD_07
+	@And("User_608 to verify the functionality of Search box with matching data under Financial Commitments section")
+	public void user_608_to_verify_the_functionality_of_search_box_with_matching_data_under_financial_commitments_section() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentSearchInput")));
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentSearchInput"))
+				.sendKeys(testData.get("Matched Currency"));
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 to verify the functionality of Search box with mismatch data under Financial Commitments section")
+	public void user_608_to_verify_the_functionality_of_search_box_with_mismatch_data_under_financial_commitments_section() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentSearchInput")));
+		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentSearchInput")).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentSearchInput"))
+				.sendKeys(testData.get("Mismatched Currency"));
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+	
+//	AT_AL_CUD_09
+	@And("User_608 click any one active record Edit button under Financial Commitments section")
+	public void user_608_click_any_one_active_record_edit_button_under_financial_commitments_section() throws Throwable {
+		Thread.sleep(1000);
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 500; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].innerText";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().contains("Financial Commitments")) {
+						System.out.println("condition true");
+						String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')"
+								+ "[" + j + "].parentElement.parentElement.querySelector('td button[icon=\"pi pi-pencil\"]')";
+						WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.JSEClick(addButton);
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+//		Temporary code
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("toastMsgCloseBtn")).click();				
+				break;
+			} catch (Exception e) {
+				
+			}
+		}
+	}
+	
+	
+	
+	
 	
 	
 	
