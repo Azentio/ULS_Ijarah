@@ -28,6 +28,11 @@ public class ConfigFileReader {
 		}
 	}
 	
+	public String getIjarahRecordReferenceNumber() {
+		String recordReferenceNumber;
+		recordReferenceNumber = properties.getProperty("IjarahRecordReferenceNumber");
+		return recordReferenceNumber;
+	}
 
 	public long getImplicitlyWait() {
 		String implicitlyWait = properties.getProperty("implicitlyWait");

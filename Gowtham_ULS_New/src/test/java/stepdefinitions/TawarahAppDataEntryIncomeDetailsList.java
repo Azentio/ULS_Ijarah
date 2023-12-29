@@ -2942,7 +2942,7 @@ public class TawarahAppDataEntryIncomeDetailsList {
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
-					Assert.fail(e.getMessage());
+					Assert.fail(e.getMessage()); 
 				}
 			}
 		}

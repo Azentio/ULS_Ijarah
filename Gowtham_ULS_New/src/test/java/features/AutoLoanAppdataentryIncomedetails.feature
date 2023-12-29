@@ -208,7 +208,7 @@ Feature: Auto Loan Appdata entry Income details
   Scenario: System should display the list of below mention fields for Income List
     Given navigate the IJARA URL
     And login with valid credentials7
-   And User_607 get the test data for test case AT_AL_INC_07
+    And User_607 get the test data for test case AT_AL_INC_07
     #And User_607 Select LOS in module name
     And User_607 Click inbox in the home page
     And User_607 Click Search in inbox

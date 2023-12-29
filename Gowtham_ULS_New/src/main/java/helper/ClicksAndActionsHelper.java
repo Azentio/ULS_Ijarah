@@ -70,16 +70,39 @@ public void clickUsingActionClass(WebElement hoveringelelement,WebElement clicki
 	}
 	
 	public void jsSelectUsingText(String dropdownValue) {
+		javascriptHelper = new JavascriptHelper(driver);
 		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
 		String dropdownLength = "";
 		boolean isDropdownValueSelected = false;
+		String dropdownOpenedQuery = "document.querySelector('ion-select-popover ion-list')";
+		String dropdownOpenQueryTwo = "document.querySelector('ion-select-popover ion-list').innerText";
+		boolean isDropdownOpened = false;
+		for (int i = 0; i <= 1500; i++) {
+			try {
+				System.out.println("I value " + i);
+				isDropdownOpened = javascriptHelper.executeScriptWithWebElement(dropdownOpenedQuery).isDisplayed();
+				System.out
+						.println("Dropdown Value " + javascriptHelper.executeScript("return " + dropdownOpenQueryTwo));
+				if (isDropdownOpened == true) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 1500) {
+					System.err.println("Dropdown is not getting opened");
+					e.printStackTrace();
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
 		String dropdownString = "";
-		javascriptHelper = new JavascriptHelper(driver);
+
 		for (int i = 0; i <= 300; i++) {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 
 				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+					System.out.println("Dropdown Length " + dropdownLength);
 					break;
 				}
 			} catch (Exception e) {
@@ -138,6 +161,13 @@ public void clickUsingActionClass(WebElement hoveringelelement,WebElement clicki
 			}
 
 		}
+	}
+	
+	public Actions returnKey() {
+		Actions actions = new Actions(driver);
+
+		return actions;
+
 	}
 
 }

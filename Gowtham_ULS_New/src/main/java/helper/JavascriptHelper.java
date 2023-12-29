@@ -15,7 +15,6 @@ public JavascriptHelper(WebDriver driver)
 	this.driver= driver;
 }
 	
-
 	public Object executeScript(String script) {
 		JavascriptExecutor exe = (JavascriptExecutor) driver;
 		//Log.info(script);
@@ -33,7 +32,6 @@ public JavascriptHelper(WebDriver driver)
 		//Log.info(script);
 		return exe.executeScript(script, args);
 	}
-	
 	
 	
 	//click to the element
