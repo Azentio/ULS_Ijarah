@@ -6,7 +6,9 @@ Feature: Customer Search
 Scenario: to test the functionality of customer search with valid data
 Given navigate the IJARA URL
 And login with valid credentials07
-Then user click the menu icon in after loginscreen
+And click on module dropdown in IJRARAH
+And click on LOS option in module dropdown
+And user_076 click on menu bar in uls transaction screen
 And user navigate to the Transactions flag
 Then user navigate to the Application manager flag
 Then user click the Application details flag
@@ -36,9 +38,11 @@ Then Check CIF ID field is editable
   @AT_IJCS_04
   Scenario: to test the functionality of customer search with valid data
     Given navigate the IJARA URL
-    And login with valid credentials
+    And login with valid credentials07
+    And click on module dropdown in IJRARAH
+And click on LOS option in module dropdown
     And User_607 Update testdata from AT_IJCS_01
-    And User_607 click the menu icon in after login screen
+    And user_076 click on menu bar in uls transaction screen
 		And User_607 navigate to the Transactions flag
 		And User_607 navigate to the Application manager flag
 		And User_607 click the Application details flag
@@ -53,9 +57,11 @@ Then Check CIF ID field is editable
 		@AT_IJCS_05
 		Scenario: to test the functionality of customer search with valid data
 		Given navigate the IJARA URL
-    And login with valid credentials
+    And login with valid credentials07
+    And click on module dropdown in IJRARAH
+And click on LOS option in module dropdown
     And User_607 Update testdata from AT_IJCS_02
-    And User_607 click the menu icon in after login screen
+    And user_076 click on menu bar in uls transaction screen
 		And User_607 navigate to the Transactions flag
 		And User_607 navigate to the Application manager flag
 		And User_607 click the Application details flag
@@ -75,16 +81,18 @@ Then Check CIF ID field is editable
  		And User_607 Enter date of birth
  		And User_607 Click Create New button
     And User_607 Check System must redirect the Application Details page
- 		And User_607 Save the record
- 		And User_607 Check Please Fill Details Popup showing or not
+ 		And user_076 click on save button without enter the mandatory field in application details screen
+Then user_076 verify system should show the validation for fill the mandatory field in application details screen
  		And User_607 User Check negative value accepct or not in the numaric field
  		
  		@AT_IJCS_06
 		Scenario: to test the functionality of customer search with valid data
 		Given navigate the IJARA URL
-    And login with valid credentials
+    And login with valid credentials07
+    And click on module dropdown in IJRARAH
+And click on LOS option in module dropdown
     And User_607 Update testdata from AT_IJCS_04
-    And User_607 click the menu icon in after login screen
+    And user_076 click on menu bar in uls transaction screen
 		And User_607 navigate to the Transactions flag
 		And User_607 navigate to the Application manager flag
 		And User_607 click the Application details flag
@@ -128,10 +136,10 @@ Then Check CIF ID field is editable
     @AT_IJCS_07
     Scenario: To test the functionality of Application Details with valid data
 		Given navigate the IJARA URL
-    And login with valid credentials
+    And login with valid credentials07
     And User_607 Update testdata from AT_IJCS_02
     And User_607 Select LOS in module name
-    And User_607 click the menu icon in after login screen
+    And user_076 click on menu bar in uls transaction screen
 		And User_607 navigate to the Transactions flag
 		And User_607 navigate to the Application manager flag
 		And User_607 click the Application details flag
@@ -181,10 +189,10 @@ Then Check CIF ID field is editable
     @AT_IJCS_08
     Scenario: To test the functionality of Application Details with valid data
 		Given navigate the IJARA URL
-    And login with valid credentials
+    And login with valid credentials07
     And User_607 Update testdata from AT_IJCS_02
     And User_607 Select LOS in module name
-    And User_607 click the menu icon in after login screen
+    And user_076 click on menu bar in uls transaction screen
 		And User_607 navigate to the Transactions flag
 		And User_607 navigate to the Application manager flag
 		And User_607 click the Application details flag
@@ -209,10 +217,10 @@ Then Check CIF ID field is editable
     @AT_IJCS_09
     Scenario: To test the functionality of Application Details with valid data
 		Given navigate the IJARA URL
-    And login with valid credentials
+    And login with valid credentials07
     And User_607 Update testdata from AT_IJCS_02
     And User_607 Select LOS in module name
-    And User_607 click the menu icon in after login screen
+    And user_076 click on menu bar in uls transaction screen
 		And User_607 navigate to the Transactions flag
 		And User_607 navigate to the Application manager flag
 		And User_607 click the Application details flag
@@ -234,10 +242,10 @@ Then Check CIF ID field is editable
     @AT_IJCS_10
     Scenario: To test the functionality of Application Details with valid data
 		Given navigate the IJARA URL
-    And login with valid credentials
+    And login with valid credentials07
     And User_607 Update testdata from AT_IJCS_02
     And User_607 Select LOS in module name
-    And User_607 click the menu icon in after login screen
+    And user_076 click on menu bar in uls transaction screen
 		And User_607 navigate to the Transactions flag
 		And User_607 navigate to the Application manager flag
 		And User_607 click the Application details flag
@@ -276,8 +284,8 @@ Then Check CIF ID field is editable
 		And User_607 Check Reference Type should be editable
 		And User_607 Check Reference Entity should be editable
 		And User_607 Enter characters in Reference Code
-    And User_607 Save the record
- 		And User_607 Check Please Fill Details Popup showing or not
+    And user_076 click on save button without enter the mandatory field in application details screen
+Then user_076 verify system should show the validation for fill the mandatory field in application details screen
  		
  		
  		

@@ -25,8 +25,7 @@ public class New_Application {
 	String excelTestDataPath = configFileReader.getIjarahTestDataFilePath();
 	WebDriver driver = BaseClass.driver;
 	JSPaths New_ApplicationPaths = new JSPaths(excelPath, "New_Application", "FieldName", "JSPath");
-	ExcelData excelDataForExecutionData = new ExcelData(excelTestDataPath,
-			"Ijarah_ExecutionTracker", "TestCase ID");
+	ExcelData excelDataForExecutionData = new ExcelData(excelTestDataPath, "Ijarah_ExecutionTracker", "TestCase ID");
 	Map<String, String> executionData;
 	ExcelData IncomeDetailsListexelData = new ExcelData(excelTestDataPath, "New_Application", "Data Set ID");
 	Map<String, String> testData;
@@ -305,8 +304,19 @@ public class New_Application {
 //			}
 //		}	
 //		}
-		javascriptHelper.scrollIntoView(javascriptHelper
-				.executeScriptWithWebElement(New_ApplicationPaths.getElement("Application Details Text")));
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(New_ApplicationPaths.getElement("Application Details Text")));
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					e.printStackTrace();
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
 		Thread.sleep(3000);
 		for (int i = 0; i < 700; i++) {
 			try {
@@ -3441,25 +3451,25 @@ public class New_Application {
 
 	@Given("User_607 Update testdata from AT_IJCS_01")
 	public void user_update_testdata_from_AT_IJCS_01() {
-		executionData  = excelDataForExecutionData.getTestdata("AT_IJCS_01");
+		executionData = excelDataForExecutionData.getTestdata("AT_IJCS_01");
 		testData = Customer_Search.getTestdata(executionData.get("dataSet_ID"));
 	}
 
 	@Given("User_607 Update testdata from AT_IJCS_02")
 	public void user_update_testdata_from_AT_IJCS_02() {
-		executionData  = excelDataForExecutionData.getTestdata("AT_IJCS_02");
+		executionData = excelDataForExecutionData.getTestdata("AT_IJCS_02");
 		testData = Customer_Search.getTestdata(executionData.get("dataSet_ID"));
 	}
 
 	@Given("User_607 Update testdata from AT_IJCS_03")
 	public void user_update_testdata_from_AT_IJCS_03() {
-		executionData  = excelDataForExecutionData.getTestdata("AT_IJCS_03");
+		executionData = excelDataForExecutionData.getTestdata("AT_IJCS_03");
 		testData = Customer_Search.getTestdata(executionData.get("dataSet_ID"));
 	}
 
 	@Given("User_607 Update testdata from AT_IJCS_04")
 	public void user_update_testdata_from_AT_IJCS_04() {
-		executionData  = excelDataForExecutionData.getTestdata("AT_IJCS_04");
+		executionData = excelDataForExecutionData.getTestdata("AT_IJCS_04");
 		testData = Customer_Search.getTestdata(executionData.get("dataSet_ID"));
 	}
 
@@ -3481,7 +3491,7 @@ public class New_Application {
 	public void user_navigate_to_the_transactions_flag() {
 		for (int i = 0; i < 500; i++) {
 			try {
-				System.out.println(New_ApplicationPaths.getElement("MenuButton"));
+
 				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("Transactions")).click();
 				break;
 			} catch (Exception e) {
