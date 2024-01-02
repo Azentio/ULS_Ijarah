@@ -1412,14 +1412,39 @@ for (File downloadsFile : listFiles) {
 
 	@And("Click on Edit icon of first record in Autoloan_Employment details")
 	public void click_on_edit_icon_of_first_record_in_autoloan_employment_details() {
-		for (int i = 0; i <= 50; i++) {
+		String length = null;
+		for (int i = 0; i < 500; i++) {
 			try {
-				javascriptHelper.JSEClick(
-						javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Edit_icon")));
-				// javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("SaveIcon")).click();
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equalsIgnoreCase("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 500; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-title')[" + j + "].innerText";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().contains("Customer Employment List")) {
+						System.out.println("condition true");
+						String jspath = "document.querySelectorAll('ion-title')["+j+"].parentElement.nextElementSibling.querySelectorAll('button[icon=\"pi pi-pencil\"]')[0]";
+						WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.JSEClick(addButton);
+						// addButton.click();
+						break;
+					}
+				}
 				break;
 			} catch (Exception e) {
-				if (i == 50) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2116,8 +2141,19 @@ for (File downloadsFile : listFiles) {
 
 	@And("Remove the values in required field in Autoloan_Employment details")
 	public void remove_the_values_in_required_field_in_autoloan_employment_details() {
-		javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Registered Business Name textbox")).click();
-		javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Registered Business Name textbox")).clear();
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Share Holder Percentage Dropdown")));
+				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Share Holder Percentage Dropdown")).click();
+				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Share Holder Percentage Dropdown")).sendKeys(Keys.chord(Keys.CONTROL, "A", Keys.BACK_SPACE));
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
 		
 	    
 	}
@@ -2127,7 +2163,7 @@ for (File downloadsFile : listFiles) {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("Registered Business Name textbox"))
-						.sendKeys(testData.get("RegisteredBusinessName"), Keys.TAB);
+						.sendKeys(testData.get("RegisteredBusinessName"));
 				break;
 			} catch (Exception e) {
 				if (i == 500) {

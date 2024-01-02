@@ -151,6 +151,7 @@ And User_074 search the Ref id under inbox for Autoloan_Reference details
 And User click the Entitle button under inbox
 And User navigate to Customer Financials tab in Autoloan_Employment details
 And Click on pencil icon of first record in Customer Personal Information
+And Click on Edit icon of first record in Autoloan_Employment details
 And Remove the values in required field in Autoloan_Employment details
 And Click on Save icon in Autoloan_Employment details
 And Validate Field is required popup is displayed in Autoloan_Employment details
