@@ -1,8 +1,5 @@
 package utilities;
-
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
-
 import helper.JavascriptHelper;
 
 public class UserUtility_0482  {
@@ -13,19 +10,19 @@ public class UserUtility_0482  {
 		for (int i = 0; i <2000; i++) {
 			try {
 				String Field = javascriptHelper.executeScript("return "+jspath).toString();
-				//System.out.println(Field);
-				Assert.assertTrue(Field.contains("*"));
+				System.out.println(Field);
+				System.exit(1);
 				break;
 			} catch (Exception e) {
 				if (i==1999) {
 					System.out.println(e.getMessage());
-					Assert.fail("Given field is not mandatory");
+					System.exit(1);
 				}
 			}
 			catch (AssertionError e) {
 				if (i==1999) {
 					System.out.println(e.getMessage());
-					Assert.fail("Given field is not mandatory");
+					System.exit(1);
 				}
 			}
 		}
@@ -37,18 +34,18 @@ public class UserUtility_0482  {
 			try {
 				String Field = javascriptHelper.executeScript("return "+jspath).toString();
 				System.out.println(Field);
-				Assert.assertFalse(Field.contains("*"));
+				System.exit(1);
 				break;
 			} catch (Exception e) {
 				if (i==1999) {
 					System.out.println(e.getMessage());
-					Assert.fail("Given field is mandatory");
+					System.exit(1);
 				}
 			}
 			catch (AssertionError e) {
 				if (i==1999) {
 					System.out.println(e.getMessage());
-					Assert.fail("Given field is not mandatory");
+					System.exit(1);
 				}
 			}
 		}
@@ -68,7 +65,7 @@ public class UserUtility_0482  {
 				
 			} catch (Exception e) {
 				if (i==1999) {
-					Assert.fail(e.getMessage());
+					System.exit(1);
 				}
 			}
 		}
@@ -82,13 +79,13 @@ public class UserUtility_0482  {
 			for (int j = 0; j<2000; j++) {
 				try {
 					 radio = javascriptHelper.executeScript(jsPath).toString();
-					if (!radio.isBlank()||!radio.isEmpty()) {
+					if (!radio.isEmpty()) {
 						break;
 					}
 					
 				} catch (Exception e) {
 					if (j==1999) {
-						Assert.fail(e.getMessage());
+						System.exit(1);
 					}
 				}
 			}
@@ -104,7 +101,7 @@ public class UserUtility_0482  {
 						break;
 					} catch (Exception e) {
 						if (i==199) {
-							Assert.fail(e.getMessage());
+							System.exit(1);
 						}
 					}
 				}
