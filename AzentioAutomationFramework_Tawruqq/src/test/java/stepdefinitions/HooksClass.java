@@ -1,16 +1,11 @@
 package stepdefinitions;
 
 import java.io.IOException;
-import java.lang.reflect.Field;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.lang3.ClassUtils;
-import org.apache.maven.surefire.shared.lang3.reflect.FieldUtils;
-import org.apache.xmlbeans.impl.xb.xsdschema.impl.SchemaDocumentImpl.SchemaImpl;
 import org.junit.Assume;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -26,7 +21,6 @@ import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
-import io.cucumber.plugin.event.Result;
 import resources.BaseClass;
 import tests.ExcelTest;
 import utilities.ExtentTestManager;
