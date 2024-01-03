@@ -15,11 +15,11 @@ import utilities.ExtentTestManager;
 
 public class NewExcelTestRunner {
 	ConfigFileReader configFileReader = new ConfigFileReader();
-	String path = configFileReader.getAutoLoanTestDataFilePath();
-	ExcelData testExecution = new ExcelData(path, "ULSExecution", "TestCase ID");
+	String path = configFileReader.getTawruqqTestDataFile();
+	ExcelData testExecution = new ExcelData(path, "Tawruqq_ExecutionTracker", "TestCase ID");
 	Map<String, String> testExecutionData;
 
-	ExcelTest excelTest = new ExcelTest(path, "ULSExecution", "TestCase ID");
+	ExcelTest excelTest = new ExcelTest(path, "Tawruqq_ExecutionTracker", "TestCase ID");
 	List<String> testCaseTagsFromExcel = excelTest.getTestCaseTagsfromExcel();
 	static String currentExecutionTag;
 
@@ -38,16 +38,16 @@ public class NewExcelTestRunner {
 
 	@Test()
 	public void test() {
-		ExcelTest excelTest = new ExcelTest(path, "ULSExecution", "TestCase ID");
+		ExcelTest excelTest = new ExcelTest(path, "Tawruqq_ExecutionTracker", "TestCase ID");
 		testCaseTagsFromExcel = excelTest.getTestCaseTagsfromExcel();
 		NewExcelTestRunner newExcelTestRunner = new NewExcelTestRunner();
 
 		for (String string : testCaseTagsFromExcel) {
-			ExcelTest excelTest2 = new ExcelTest(path, "ULSExecution", "TestCase ID");
+			ExcelTest excelTest2 = new ExcelTest(path, "Tawruqq_ExecutionTracker", "TestCase ID");
 			testCaseTagsFromExcel = excelTest2.getTestCaseTagsfromExcel();
 			System.out.println(string);
 			currentExecutionTag = string;
-			ExcelData testExecution = new ExcelData(path, "ULSExecution", "TestCase ID");
+			ExcelData testExecution = new ExcelData(path, "Tawruqq_ExecutionTracker", "TestCase ID");
 			testExecutionData = testExecution.getTestdata(string);
 			// run the scenarios based on tags from excel
 			newExcelTestRunner.excelTestArea(string, testCaseTagsFromExcel.size(),

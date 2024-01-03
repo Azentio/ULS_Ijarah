@@ -6,7 +6,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.testng.Assert;
 
 public class ClicksAndActionsHelper {
 	private WebDriver driver;
@@ -111,7 +110,7 @@ public class ClicksAndActionsHelper {
 				if (i == 1500) {
 					System.err.println("Dropdown is not getting opened");
 					e.printStackTrace();
-					Assert.fail(e.getMessage());
+					System.exit(1);
 				}
 			}
 		}
@@ -122,13 +121,14 @@ public class ClicksAndActionsHelper {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					System.out.println("Dropdown Length " + dropdownLength);
 					break;
 				}
 			} catch (Exception e) {
 				if (i == 300) {
-					Assert.fail(e.getMessage());
+					e.printStackTrace();
+					System.exit(1);
 				}
 			}
 		}
@@ -147,8 +147,9 @@ public class ClicksAndActionsHelper {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
-						Assert.fail(e.getMessage());
+					if (l == 300 && !(dropdownString.isEmpty())) {
+						e.printStackTrace();
+						System.exit(1);
 					}
 				}
 				if (!(dropdownString.isEmpty())) {
@@ -171,7 +172,8 @@ public class ClicksAndActionsHelper {
 						break;
 					} catch (Exception e) {
 						if (k == 300) {
-							Assert.fail(e.getMessage());
+							e.printStackTrace();
+							System.exit(1);
 
 						}
 					}

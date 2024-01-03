@@ -26,18 +26,13 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 	ConfigFileReader configFileReader = new ConfigFileReader();
 
 	String excelJSPath = configFileReader.getJSFilePath();
-	String excelTestDataPath = configFileReader.getTestDataFilePath();
+	String excelTestDataPath = configFileReader.getTawruqqTestDataFile();
 	JSPaths commonJSElements = new JSPaths(excelJSPath, "iJarah_CommonElements", "Ijarah_CommonFieldName", "JSPath");
 	JSPaths customerIdentificationDetailsElements = new JSPaths(excelJSPath, "NewApp_IdentificationDetailsJS",
 			"New_App_CustomerIdentificationDetailsElements", "JSPath");
-	ExcelData excelCustomerIdentificationTestData = new ExcelData(excelTestDataPath, "customer_I_Details_NewApp",
-			"Dataset ID");
-	ExcelData excelCustomerIdentificationMurabhaTestData = new ExcelData(excelTestDataPath,
-			"M_NewAppIDEDetails_TestData", "Dataset ID");
+	
 	ExcelData excelCustomerIdentificationTawruqqTestData = new ExcelData(excelTestDataPath, "TW_IdentDetails_TestData",
 			"Dataset ID");
-	ExcelData ijarahExecution = new ExcelData(excelTestDataPath, "Ijarah_ExecutionTracker", "TestCase ID");
-	ExcelData murabahaExecutionSheet = new ExcelData(excelTestDataPath, "Murabaha_ExecutionTracker", "TestCase ID");
 	ExcelData tawruqqExecutionSheet = new ExcelData(excelTestDataPath, "Tawruqq_ExecutionTracker", "TestCase ID");
 
 	Map<String, String> customerIdentificationDetailsTestData = new HashMap<>();
@@ -47,17 +42,8 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 	BrowserHelper browserHelper = new BrowserHelper(driver);
 	int indexOfListView = 0;
 	String listViewIDNumber = "";
-	Robot robot;
-
+	
 	SoftAssert softAssert = new SoftAssert();
-
-	@And("user_076 get the test data for test case id AT_IJ_NewApp_IDA_01")
-	public void user_076_get_the_test_data_for_test_case_id_at_ij_new_app_ida_01() throws Throwable {
-		customerIdentificationDetailsExecutionData = ijarahExecution.getTestdata("AT_IJ_NewApp_IDA_01");
-		customerIdentificationDetailsTestData = excelCustomerIdentificationTestData
-				.getTestdata(customerIdentificationDetailsExecutionData.get("dataSet_ID"));
-
-	}
 
 	@And("user_076 get the test data for test case id AT_TW_NEWAPP_IDA_01")
 	public void user_076_get_the_test_data_for_test_case_id_AT_TW_NEWAPP_IDA_01() throws Throwable {
@@ -116,162 +102,9 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 
 	}
 
-	@And("user_076 get the test data for test case id AT_NewAPP_M_IDA_01")
-	public void user_076_get_the_test_data_for_test_case_id_AT_NewAPP_M_IDA_01() throws Throwable {
-		customerIdentificationDetailsExecutionData = murabahaExecutionSheet.getTestdata("AT_NewAPP_M_IDA_01");
-		customerIdentificationDetailsTestData = excelCustomerIdentificationMurabhaTestData
-				.getTestdata(customerIdentificationDetailsExecutionData.get("dataSet_ID"));
+	
 
-	}
-
-	@And("user_076 get the test data for test case id AT_NewAPP_M_IDA_02")
-	public void user_076_get_the_test_data_for_test_case_id_AT_NewAPP_M_IDA_02() throws Throwable {
-		customerIdentificationDetailsExecutionData = murabahaExecutionSheet.getTestdata("AT_NewAPP_M_IDA_02");
-		customerIdentificationDetailsTestData = excelCustomerIdentificationMurabhaTestData
-				.getTestdata(customerIdentificationDetailsExecutionData.get("dataSet_ID"));
-
-	}
-
-	@And("user_076 get the test data for test case id AT_NewAPP_M_IDA_03")
-	public void user_076_get_the_test_data_for_test_case_id_AT_NewAPP_M_IDA_03() throws Throwable {
-		customerIdentificationDetailsExecutionData = murabahaExecutionSheet.getTestdata("AT_NewAPP_M_IDA_03");
-		customerIdentificationDetailsTestData = excelCustomerIdentificationMurabhaTestData
-				.getTestdata(customerIdentificationDetailsExecutionData.get("dataSet_ID"));
-
-	}
-
-	@And("user_076 get the test data for test case id AT_NewAPP_M_IDA_04")
-	public void user_076_get_the_test_data_for_test_case_id_AT_NewAPP_M_IDA_04() throws Throwable {
-		customerIdentificationDetailsExecutionData = murabahaExecutionSheet.getTestdata("AT_NewAPP_M_IDA_04");
-		customerIdentificationDetailsTestData = excelCustomerIdentificationMurabhaTestData
-				.getTestdata(customerIdentificationDetailsExecutionData.get("dataSet_ID"));
-
-	}
-
-	@And("user_076 get the test data for test case id AT_NewAPP_M_IDA_05")
-	public void user_076_get_the_test_data_for_test_case_id_AT_NewAPP_M_IDA_05() throws Throwable {
-		customerIdentificationDetailsExecutionData = murabahaExecutionSheet.getTestdata("AT_NewAPP_M_IDA_05");
-		customerIdentificationDetailsTestData = excelCustomerIdentificationMurabhaTestData
-				.getTestdata(customerIdentificationDetailsExecutionData.get("dataSet_ID"));
-
-	}
-
-	@And("user_076 get the test data for test case id AT_NewAPP_M_IDA_06")
-	public void user_076_get_the_test_data_for_test_case_id_AT_NewAPP_M_IDA_06() throws Throwable {
-		customerIdentificationDetailsExecutionData = murabahaExecutionSheet.getTestdata("AT_NewAPP_M_IDA_06");
-		customerIdentificationDetailsTestData = excelCustomerIdentificationMurabhaTestData
-				.getTestdata(customerIdentificationDetailsExecutionData.get("dataSet_ID"));
-
-	}
-
-	@And("user_076 get the test data for test case id AT_NewAPP_M_IDA_07")
-	public void user_076_get_the_test_data_for_test_case_id_AT_NewAPP_M_IDA_07() throws Throwable {
-		customerIdentificationDetailsExecutionData = murabahaExecutionSheet.getTestdata("AT_NewAPP_M_IDA_07");
-		customerIdentificationDetailsTestData = excelCustomerIdentificationMurabhaTestData
-				.getTestdata(customerIdentificationDetailsExecutionData.get("dataSet_ID"));
-
-	}
-
-	@And("user_076 get the test data for test case id AT_IJ_NewApp_IDA_02")
-	public void user_076_get_the_test_data_for_test_case_id_at_ij_new_app_ida_02() throws Throwable {
-		customerIdentificationDetailsExecutionData = ijarahExecution.getTestdata("AT_IJ_NewApp_IDA_02");
-		customerIdentificationDetailsTestData = excelCustomerIdentificationTestData
-				.getTestdata(customerIdentificationDetailsExecutionData.get("dataSet_ID"));
-
-	}
-
-	@And("user_076 get the test data for test case id AT_IJ_NewApp_IDA_03")
-	public void user_076_get_the_test_data_for_test_case_id_at_ij_new_app_ida_03() throws Throwable {
-		customerIdentificationDetailsExecutionData = ijarahExecution.getTestdata("AT_IJ_NewApp_IDA_03");
-		customerIdentificationDetailsTestData = excelCustomerIdentificationTestData
-				.getTestdata(customerIdentificationDetailsExecutionData.get("dataSet_ID"));
-
-	}
-
-	@And("user_076 get the test data for test case id AT_IJ_NewApp_IDA_04")
-	public void user_076_get_the_test_data_for_test_case_id_at_ij_new_app_ida_04() throws Throwable {
-		customerIdentificationDetailsExecutionData = ijarahExecution.getTestdata("AT_IJ_NewApp_IDA_04");
-		customerIdentificationDetailsTestData = excelCustomerIdentificationTestData
-				.getTestdata(customerIdentificationDetailsExecutionData.get("dataSet_ID"));
-
-	}
-
-	@And("user_076 get the test data for test case id AT_IJ_NewApp_IDA_05")
-	public void user_076_get_the_test_data_for_test_case_id_at_ij_new_app_ida_05() throws Throwable {
-		customerIdentificationDetailsExecutionData = ijarahExecution.getTestdata("AT_IJ_NewApp_IDA_05");
-		customerIdentificationDetailsTestData = excelCustomerIdentificationTestData
-				.getTestdata(customerIdentificationDetailsExecutionData.get("dataSet_ID"));
-
-	}
-
-	@And("user_076 get the test data for test case id AT_IJ_NewApp_IDA_06")
-	public void user_076_get_the_test_data_for_test_case_id_at_ij_new_app_ida_06() throws Throwable {
-		customerIdentificationDetailsExecutionData = ijarahExecution.getTestdata("AT_IJ_NewApp_IDA_06");
-		customerIdentificationDetailsTestData = excelCustomerIdentificationTestData
-				.getTestdata(customerIdentificationDetailsExecutionData.get("dataSet_ID"));
-
-	}
-
-	@And("user_076 search the new application stage customer identification details record reference number")
-	public void user_076_search_the_new_application_stage_customer_identification_details_record_reference_number()
-			throws Throwable {
-		WebElement searchTextBox;
-		for (int i = 0; i <= 300; i++) {
-			try {
-				searchTextBox = javascriptHelper
-						.executeScriptWithWebElement(commonJSElements.getElement("mail_box_search_text"));
-				searchTextBox.sendKeys(configFileReader.getIjarahRecordReferenceNumber());
-				break;
-			} catch (Exception e) {
-				if (i == 300) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-	}
-
-	@And("user_076 select the new application stage customer identification details record from mail box")
-	public void user_076_select_the_new_application_stage_customer_identification_details_record_from_mail_box()
-			throws Throwable {
-		String mailBoxRecordList = "document.querySelectorAll('td[class=\"ng-star-inserted\"]>span').length";
-		String numberOfRecordInMailBox = "";
-		for (int i = 0; i <= 300; i++) {
-			try {
-				numberOfRecordInMailBox = javascriptHelper.executeScript("return " + mailBoxRecordList).toString();
-				System.out.println("Number of record in mail box " + numberOfRecordInMailBox);
-				if (!(numberOfRecordInMailBox.isBlank())) {
-					break;
-				}
-			} catch (Exception e) {
-				if (i == 300) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-		int premitiveNumberOfRecordInMailBox = Integer.parseInt(numberOfRecordInMailBox);
-		// document.querySelectorAll('td[class="ng-star-inserted"]>span')[0].textContent
-		for (int j = 0; j < premitiveNumberOfRecordInMailBox; j++) {
-			for (int k = 0; k <= 300; k++) {
-				try {
-					String recordRefNumber = javascriptHelper
-							.executeScript("return document.querySelectorAll('td[class=\"ng-star-inserted\"]>span')["
-									+ j + "].textContent")
-							.toString();
-					System.out.println("Number of record in mail box " + recordRefNumber);
-					if (recordRefNumber.equals(configFileReader.getIjarahRecordReferenceNumber())) {
-						System.out.println("document.querySelectorAll('button[icon=\"pi pi-user-edit\"]')[" + j + "]");
-						// document.querySelectorAll('button[icon="pi pi-user-edit"]')[0]
-						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
-								"document.querySelectorAll('button[icon=\"pi pi-user-edit\"]')[" + j + "]"));
-						break;
-					}
-				} catch (Exception e) {
-
-				}
-			}
-		}
-
-	}
+	
 
 	@And("user_076 click on additional customer info tab in new application stage")
 	public void user_076_click_on_additional_customer_info_tab_in_new_application_stage() throws Throwable {
@@ -329,7 +162,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 					recordStatus = javascriptHelper.executeScript("return " + customerIdentificationDetailsElements
 							.getElement("customer_identification_details_record_status")).toString();
 					System.out.println("Record status " + recordStatus);
-					if (!(recordStatus.isBlank())) {
+					if (!(recordStatus.isEmpty())) {
 						break;
 					}
 				}
@@ -339,11 +172,11 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 				}
 			}
 		}
-		robot = new Robot();
+	
 
 		for (int i = 0; i <= 300; i++) {
 			try {
-				robot.mouseWheel(-20);
+	
 				javascriptHelper.executeScriptWithWebElement(commonJSElements.getElement("save_button")).click();
 				break;
 			} catch (Exception e) {
@@ -362,7 +195,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 							.toString();
 
 					System.out.println("List view Record status " + listViewRecordStatus);
-					if (!(listViewRecordStatus.isBlank())) {
+					if (!(listViewRecordStatus.isEmpty())) {
 						break;
 					}
 				}
@@ -389,7 +222,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 		for (int i = 0; i <= 300; i++) {
 			try {
 				lengthOfTheLabel = javascriptHelper.executeScript("return " + labelLength).toString();
-				if (!(lengthOfTheLabel.isBlank())) {
+				if (!(lengthOfTheLabel.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -409,7 +242,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 									+ i + "].innerText")
 							.toString();
 					System.out.println("label Name is " + labelName);
-					if (!(labelName.isBlank())
+					if (!(labelName.isEmpty())
 							&& (labelName.trim()).equalsIgnoreCase(("Customer Identification").trim())) {
 						if (j > 250) {
 							System.out.println("Inside final if condition");
@@ -485,7 +318,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 						.executeScriptWithWebElement(
 								customerIdentificationDetailsElements.getElement("id_type_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(idTypeMandatoryAttribute.isBlank()) && !(fieldValidation.isBlank())) {
+				if (!(idTypeMandatoryAttribute.isEmpty()) && !(fieldValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -527,7 +360,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 						.executeScriptWithWebElement(
 								customerIdentificationDetailsElements.getElement("id_number_input"))
 						.getAttribute("type");
-				if (!(mandatoryVerification.isBlank()) && !(fieldTypeVerification.isBlank())) {
+				if (!(mandatoryVerification.isEmpty()) && !(fieldTypeVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -572,7 +405,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 								+ customerIdentificationDetailsElements.getElement("date_of_issue_field_validation"))
 						.toString();
 
-				if (!(mandatoryVerification.isBlank()) && !(fieldTypeVerification.isBlank())) {
+				if (!(mandatoryVerification.isEmpty()) && !(fieldTypeVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -622,7 +455,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 						.executeScript("return "
 								+ customerIdentificationDetailsElements.getElement("date_of_expiry_field_validation"))
 						.toString();
-				if (!(mandatoryVerification.isBlank()) && !(fieldTypeVerification.isBlank())) {
+				if (!(mandatoryVerification.isEmpty()) && !(fieldTypeVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -672,7 +505,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 						.executeScriptWithWebElement(
 								customerIdentificationDetailsElements.getElement("Issuing_Authority_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(idTypeMandatoryAttribute.isBlank()) && !(fieldType.isBlank())) {
+				if (!(idTypeMandatoryAttribute.isEmpty()) && !(fieldType.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -713,7 +546,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 						.executeScriptWithWebElement(
 								customerIdentificationDetailsElements.getElement("Issuing_Authority_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(idTypeMandatoryAttribute.isBlank()) && !(fieldType.isBlank())) {
+				if (!(idTypeMandatoryAttribute.isEmpty()) && !(fieldType.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -749,7 +582,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 								customerIdentificationDetailsElements.getElement("primary_id_flag_toggle_button"))
 						.getAttribute("role");
 
-				if (!(toggleVerification.isBlank())) {
+				if (!(toggleVerification.isEmpty())) {
 					System.out.println("Toggle verification is " + toggleVerification);
 					break;
 				}
@@ -764,11 +597,11 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 
 	@And("user_076 click on save button in customer identification details of new app stage")
 	public void user_076_click_on_save_button_in_customer_identification_details_of_new_app_stage() throws Throwable {
-		robot = new Robot();
+		
 
 		for (int i = 0; i <= 300; i++) {
 			try {
-				robot.mouseWheel(-20);
+		
 				javascriptHelper.executeScriptWithWebElement(commonJSElements.getElement("save_button")).click();
 				break;
 			} catch (Exception e) {
@@ -787,7 +620,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 			try {
 				saveVaidation = javascriptHelper
 						.executeScript("return " + commonJSElements.getElement("toast_container_message")).toString();
-				if (!(saveVaidation.isBlank())) {
+				if (!(saveVaidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -805,10 +638,10 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 	@And("user_076 click on save button customer identification details screen without enter the mandatory details at new app stage")
 	public void user_076_click_on_save_button_customer_identification_details_screen_without_enter_the_mandatory_details_at_new_app_stage()
 			throws Throwable {
-		robot = new Robot();
+		
 		for (int i = 0; i <= 300; i++) {
 			try {
-				robot.mouseWheel(-20);
+		
 				System.out.println(commonJSElements.getElement("save_button"));
 				javascriptHelper.executeScriptWithWebElement(commonJSElements.getElement("save_button")).click();
 				break;
@@ -828,7 +661,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 			try {
 				mandatoryValidationPopup = javascriptHelper
 						.executeScript("return " + commonJSElements.getElement("toast_message")).toString();
-				if (!(mandatoryValidationPopup.isBlank())) {
+				if (!(mandatoryValidationPopup.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -870,7 +703,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 						.executeScript("return "
 								+ customerIdentificationDetailsElements.getElement("id_number_field_level_validation"))
 						.toString();
-				if (!(idNumberFieldValidation.isBlank())) {
+				if (!(idNumberFieldValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -922,7 +755,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 						.executeScript("return "
 								+ customerIdentificationDetailsElements.getElement("id_number_get_field_value"))
 						.toString();
-				if (!(idNumberFieldValidation.isBlank())) {
+				if (!(idNumberFieldValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -947,7 +780,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 		for (int i = 0; i <= 300; i++) {
 			try {
 				noOfListView = javascriptHelper.executeScript("return " + listViewQuery).toString();
-				if (noOfListView.equals("0") && !(noOfListView.isBlank())) {
+				if (noOfListView.equals("0") && !(noOfListView.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1127,7 +960,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 			try {
 				saveVaidation = javascriptHelper
 						.executeScript("return " + commonJSElements.getElement("toast_container_message")).toString();
-				if (!(saveVaidation.isBlank())) {
+				if (!(saveVaidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1153,7 +986,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 						"return  document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]')["
 								+ indexOfListView + "].querySelectorAll('td span')[7].innerText")
 						.toString();
-				if (!(listViewIDNumber.isBlank())) {
+				if (!(listViewIDNumber.isEmpty())) {
 					System.out.println("ID number from list view is " + listViewIDNumber);
 					break;
 				}
@@ -1208,7 +1041,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 		for (int i = 0; i <= 300; i++) {
 			try {
 				noOfListView = javascriptHelper.executeScript("return " + listViewQuery).toString();
-				if (noOfListView.equals("0") && !(noOfListView.isBlank())) {
+				if (noOfListView.equals("0") && !(noOfListView.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1290,7 +1123,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 		for (int i = 0; i <= 300; i++) {
 			try {
 				noOfListView = javascriptHelper.executeScript("return " + listViewQuery).toString();
-				if (noOfListView.equals("0") && !(noOfListView.isBlank())) {
+				if (noOfListView.equals("0") && !(noOfListView.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1603,7 +1436,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 		for (int i = 0; i <= 300; i++) {
 			try {
 				lengthOfTheLabel = javascriptHelper.executeScript("return " + labelLength).toString();
-				if (!(lengthOfTheLabel.isBlank())) {
+				if (!(lengthOfTheLabel.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1623,7 +1456,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 									+ i + "].innerText")
 							.toString();
 					System.out.println("label Name is " + labelName);
-					if (!(labelName.isBlank())
+					if (!(labelName.isEmpty())
 							&& (labelName.trim()).equalsIgnoreCase(("Customer Identification").trim())) {
 						if (i > 250) {
 							javascriptHelper
@@ -1672,7 +1505,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 		for (int i = 0; i <= 300; i++) {
 			try {
 				noOfListView = javascriptHelper.executeScript("return " + listViewQuery).toString();
-				if (noOfListView.equals("0") && !(noOfListView.isBlank())) {
+				if (noOfListView.equals("0") && !(noOfListView.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {

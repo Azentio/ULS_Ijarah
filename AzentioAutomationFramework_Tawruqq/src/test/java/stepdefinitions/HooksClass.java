@@ -35,12 +35,12 @@ public class HooksClass extends BaseClass {
 	WebDriver driver;
 
 	ConfigFileReader configFileReader = new ConfigFileReader();
-	String path = configFileReader.getAutoLoanTestDataFilePath();
-	ExcelData testExecution = new ExcelData(path, "ULSExecution", "TestCase ID");
+	String path = configFileReader.getTawruqqTestDataFile();
+	ExcelData testExecution = new ExcelData(path, "Tawruqq_ExecutionTracker", "TestCase ID");
 	Map<String, String> testExecutionData;
-	ExcelTest excelTest = new ExcelTest(path, "ULSExecution", "TestCase ID");
+	ExcelTest excelTest = new ExcelTest(path, "Tawruqq_ExecutionTracker", "TestCase ID");
 	List<String> testCaseTagsFromExcel = excelTest.getTestCaseTagsfromExcel();
-	boolean excelRunnerStatus = false;
+	boolean excelRunnerStatus = true;
 	ScreenshotHelper screenshotHelper = new ScreenshotHelper(driver);
 
 	@Before

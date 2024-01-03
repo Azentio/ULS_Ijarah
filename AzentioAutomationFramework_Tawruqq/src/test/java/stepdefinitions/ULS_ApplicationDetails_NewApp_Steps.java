@@ -28,7 +28,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	ConfigFileReader configFileReader = new ConfigFileReader();
 
 	String excelFilePathForJS = configFileReader.getJSFilePath();
-	String applicationDetailsExcelDataPath = configFileReader.getTestDataFilePath();
+	String applicationDetailsExcelDataPath = configFileReader.getTawruqqTestDataFile();
 	JSPaths commonJSPaths = new JSPaths(excelFilePathForJS, "iJarah_CommonElements", "Ijarah_CommonFieldName",
 			"JSPath");
 	JSPaths customerSearchJSPaths = new JSPaths(excelFilePathForJS, "customer_search_JS",
@@ -53,10 +53,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 
 	ExcelData tawruqqExecutionSheet = new ExcelData(applicationDetailsExcelDataPath, "Tawruqq_ExecutionTracker",
 			"TestCase ID");
-	ExcelData autoLoanExecutionSheet = new ExcelData(configFileReader.getAutoLoanTestDataFilePath(),
-			"AutoLoanExecution", "TestCase ID");
-	ExcelData excelDataForApplicationDetailsTestDataForAutoLoan = new ExcelData(
-			configFileReader.getAutoLoanTestDataFilePath(), "ApplicationDetails_NewApp", "Dataset ID");
+
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
 	Map<String, String> newApplicationTestData = new HashMap<>();
 	Map<String, String> newApplicationExecutionData = new HashMap<>();
@@ -160,30 +157,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 
 	}
 
-	// Auto Loan
-	@And("user_076 get the test data for test case id AT_AL_APPDETAILS_01")
-	public void user_076_get_the_test_data_for_test_case_id_AT_AL_APPDETAILS_01() throws Throwable {
-		newApplicationExecutionData = autoLoanExecutionSheet.getTestdata("AT_AL_APPDETAILS_01");
-		System.out.println("Data Set ID " + newApplicationExecutionData.get("dataSet_ID"));
-		newApplicationTestData = excelDataForApplicationDetailsTestDataForAutoLoan
-				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
-	}
-
-	@And("user_076 get the test data for test case id AT_AL_APPDETAILS_02")
-	public void user_076_get_the_test_data_for_test_case_id_AT_AL_APPDETAILS_02() throws Throwable {
-		newApplicationExecutionData = autoLoanExecutionSheet.getTestdata("AT_AL_APPDETAILS_02");
-		System.out.println("Data Set ID " + newApplicationExecutionData.get("dataSet_ID"));
-		newApplicationTestData = excelDataForApplicationDetailsTestDataForAutoLoan
-				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
-	}
-
-	@And("user_076 get the test data for test case id AT_AL_APPDETAILS_03")
-	public void user_076_get_the_test_data_for_test_case_id_AT_AL_APPDETAILS_03() throws Throwable {
-		newApplicationExecutionData = autoLoanExecutionSheet.getTestdata("AT_AL_APPDETAILS_03");
-		System.out.println("Data Set ID " + newApplicationExecutionData.get("dataSet_ID"));
-		newApplicationTestData = excelDataForApplicationDetailsTestDataForAutoLoan
-				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
-	}
+	
 
 	@And("user_076 click on menu bar in uls transaction screen")
 	public void user_076ser_click_on_menu_bar_in_uls_transaction_screen() throws Throwable {
@@ -257,7 +231,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		for (int i = 0; i <= 80; i++) {
 			try {
 				numberOfRecordInMailBox = javascriptHelper.executeScript("return " + mailBoxRecordList).toString();
-				if (!(numberOfRecordInMailBox.isBlank())) {
+				if (!(numberOfRecordInMailBox.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -302,7 +276,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				noOfModule = javascriptHelper.executeScript("return " + applicationModuleLengthQuery).toString();
-				if (!(noOfModule.isBlank())) {
+				if (!(noOfModule.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -470,7 +444,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		 * dropdownString = ""; for (int i = 0; i <= 300; i++) { try { dropdownLength =
 		 * javascriptHelper.executeScript("return " +
 		 * jqueryForDropdownLength).toString(); System.out.println("Dropdown length " +
-		 * dropdownLength); if (!(dropdownLength.isBlank()) &&
+		 * dropdownLength); if (!(dropdownLength.isEmpty()) &&
 		 * !(dropdownLength.equals("0"))) { break; } } catch (Exception e) { if (i ==
 		 * 10) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
 		 * Integer.parseInt(dropdownLength); for (int j = 0; j <=
@@ -483,7 +457,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		 * "].innerText") .toString(); if (!(dropdownString.isEmpty())) {
 		 * System.out.println(dropdownString); System.out.println("Loop count " + l +
 		 * " got breaked"); break; } } catch (Exception e) { if (l == 10 &&
-		 * !(dropdownString.isBlank())) { Assert.fail(e.getMessage()); } } if
+		 * !(dropdownString.isEmpty())) { Assert.fail(e.getMessage()); } } if
 		 * (!(dropdownString.isEmpty())) { System.out.println(dropdownString);
 		 * System.out.println("Loop count " + l + " got breaked"); break; } }
 		 * System.out.println("String " + dropdownString.trim());
@@ -548,7 +522,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		 * dropdownString = ""; for (int i = 0; i <= 300; i++) { try { dropdownLength =
 		 * javascriptHelper.executeScript("return " +
 		 * jqueryForDropdownLength).toString(); System.out.println("Dropdown length " +
-		 * dropdownLength); if (!(dropdownLength.isBlank()) &&
+		 * dropdownLength); if (!(dropdownLength.isEmpty()) &&
 		 * !(dropdownLength.equals("0"))) { break; } } catch (Exception e) { if (i ==
 		 * 10) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
 		 * Integer.parseInt(dropdownLength); for (int j = 0; j <=
@@ -561,7 +535,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		 * "].innerText") .toString(); if (!(dropdownString.isEmpty())) {
 		 * System.out.println(dropdownString); System.out.println("Loop count " + l +
 		 * " got breaked"); break; } } catch (Exception e) { if (l == 10 &&
-		 * !(dropdownString.isBlank())) { Assert.fail(e.getMessage()); } } if
+		 * !(dropdownString.isEmpty())) { Assert.fail(e.getMessage()); } } if
 		 * (!(dropdownString.isEmpty())) { System.out.println(dropdownString);
 		 * System.out.println("Loop count " + l + " got breaked"); break; } }
 		 * System.out.println("String " + dropdownString.trim());
@@ -735,7 +709,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		 * dropdownString = ""; for (int i = 0; i <= 300; i++) { try { dropdownLength =
 		 * javascriptHelper.executeScript("return " +
 		 * jqueryForDropdownLength).toString(); System.out.println("Dropdown length " +
-		 * dropdownLength); if (!(dropdownLength.isBlank()) &&
+		 * dropdownLength); if (!(dropdownLength.isEmpty()) &&
 		 * !(dropdownLength.equals("0"))) { break; } } catch (Exception e) { if (i ==
 		 * 10) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
 		 * Integer.parseInt(dropdownLength); for (int j = 0; j <=
@@ -748,7 +722,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		 * "].innerText") .toString(); if (!(dropdownString.isEmpty())) {
 		 * System.out.println(dropdownString); System.out.println("Loop count " + l +
 		 * " got breaked"); break; } } catch (Exception e) { if (l == 10 &&
-		 * !(dropdownString.isBlank())) { Assert.fail(e.getMessage()); } } if
+		 * !(dropdownString.isEmpty())) { Assert.fail(e.getMessage()); } } if
 		 * (!(dropdownString.isEmpty())) { System.out.println(dropdownString);
 		 * System.out.println("Loop count " + l + " got breaked"); break; } }
 		 * System.out.println("String " + dropdownString.trim());
@@ -783,7 +757,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 				fieldTypeValidation = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("product_product_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(mandatoryVerification.isBlank()) && !(fieldTypeValidation.isBlank())) {
+				if (!(mandatoryVerification.isEmpty()) && !(fieldTypeValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -820,7 +794,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		 * dropdownString = ""; for (int i = 0; i <= 300; i++) { try { dropdownLength =
 		 * javascriptHelper.executeScript("return " +
 		 * jqueryForDropdownLength).toString(); System.out.println("Dropdown length " +
-		 * dropdownLength); if (!(dropdownLength.isBlank()) &&
+		 * dropdownLength); if (!(dropdownLength.isEmpty()) &&
 		 * !(dropdownLength.equals("0"))) { break; } } catch (Exception e) { if (i ==
 		 * 10) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
 		 * Integer.parseInt(dropdownLength); for (int j = 0; j <=
@@ -833,7 +807,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		 * "].innerText") .toString(); if (!(dropdownString.isEmpty())) {
 		 * System.out.println(dropdownString); System.out.println("Loop count " + l +
 		 * " got breaked"); break; } } catch (Exception e) { if (l == 10 &&
-		 * !(dropdownString.isBlank())) { Assert.fail(e.getMessage()); } } if
+		 * !(dropdownString.isEmpty())) { Assert.fail(e.getMessage()); } } if
 		 * (!(dropdownString.isEmpty())) { System.out.println(dropdownString);
 		 * System.out.println("Loop count " + l + " got breaked"); break; } }
 		 * System.out.println("String " + dropdownString.trim());
@@ -868,7 +842,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 				fieldTypeValidation = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("sub_product_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(mandatoryVerification.isBlank()) && !(fieldTypeValidation.isBlank())) {
+				if (!(mandatoryVerification.isEmpty()) && !(fieldTypeValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -909,7 +883,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 				fieldTypeValidation = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("clasification_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(mandatoryVerification.isBlank()) && !(fieldTypeValidation.isBlank())) {
+				if (!(mandatoryVerification.isEmpty()) && !(fieldTypeValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -950,7 +924,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 				fieldTypeValidation = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("product_product_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(mandatoryVerification.isBlank()) && !(fieldTypeValidation.isBlank())) {
+				if (!(mandatoryVerification.isEmpty()) && !(fieldTypeValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -994,7 +968,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 						.executeScriptWithWebElement(
 								applicationDetailsElements.getElement("total_amount_requested_input"))
 						.getAttribute("inputmode");
-				if (!(mandatoryVerification.isBlank()) && !(fieldTypeValidation.isBlank())) {
+				if (!(mandatoryVerification.isEmpty()) && !(fieldTypeValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1039,7 +1013,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 				fieldTypeValidation = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("declared_net_income_input"))
 						.getAttribute("inputmode");
-				if (!(mandatoryVerification.isBlank()) && !(fieldTypeValidation.isBlank())) {
+				if (!(mandatoryVerification.isEmpty()) && !(fieldTypeValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1084,7 +1058,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 						.executeScriptWithWebElement(
 								applicationDetailsElements.getElement("declared_current_obligation_input"))
 						.getAttribute("inputmode");
-				if (!(mandatoryVerification.isBlank()) && !(fieldTypeValidation.isBlank())) {
+				if (!(mandatoryVerification.isEmpty()) && !(fieldTypeValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1120,7 +1094,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		 * dropdownString = ""; for (int i = 0; i <= 300; i++) { try { dropdownLength =
 		 * javascriptHelper.executeScript("return " +
 		 * jqueryForDropdownLength).toString(); System.out.println("Dropdown length " +
-		 * dropdownLength); if (!(dropdownLength.isBlank()) &&
+		 * dropdownLength); if (!(dropdownLength.isEmpty()) &&
 		 * !(dropdownLength.equals("0"))) { break; } } catch (Exception e) { if (i ==
 		 * 10) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
 		 * Integer.parseInt(dropdownLength); for (int j = 0; j <=
@@ -1133,7 +1107,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		 * "].innerText") .toString(); if (!(dropdownString.isEmpty())) {
 		 * System.out.println(dropdownString); System.out.println("Loop count " + l +
 		 * " got breaked"); break; } } catch (Exception e) { if (l == 10 &&
-		 * !(dropdownString.isBlank())) { Assert.fail(e.getMessage()); } } if
+		 * !(dropdownString.isEmpty())) { Assert.fail(e.getMessage()); } } if
 		 * (!(dropdownString.isEmpty())) { System.out.println(dropdownString);
 		 * System.out.println("Loop count " + l + " got breaked"); break; } }
 		 * System.out.println("String " + dropdownString.trim());
@@ -1173,7 +1147,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 						.executeScriptWithWebElement(
 								applicationDetailsElements.getElement("special_promotion_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(mandatoryVerification.isBlank()) && !(fieldTypeValidation.isBlank())) {
+				if (!(mandatoryVerification.isEmpty()) && !(fieldTypeValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1209,7 +1183,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		 * dropdownString = ""; for (int i = 0; i <= 300; i++) { try { dropdownLength =
 		 * javascriptHelper.executeScript("return " +
 		 * jqueryForDropdownLength).toString(); System.out.println("Dropdown length " +
-		 * dropdownLength); if (!(dropdownLength.isBlank()) &&
+		 * dropdownLength); if (!(dropdownLength.isEmpty()) &&
 		 * !(dropdownLength.equals("0"))) { break; } } catch (Exception e) { if (i ==
 		 * 10) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
 		 * Integer.parseInt(dropdownLength); for (int j = 0; j <=
@@ -1222,7 +1196,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		 * "].innerText") .toString(); if (!(dropdownString.isEmpty())) {
 		 * System.out.println(dropdownString); System.out.println("Loop count " + l +
 		 * " got breaked"); break; } } catch (Exception e) { if (l == 10 &&
-		 * !(dropdownString.isBlank())) { Assert.fail(e.getMessage()); } } if
+		 * !(dropdownString.isEmpty())) { Assert.fail(e.getMessage()); } } if
 		 * (!(dropdownString.isEmpty())) { System.out.println(dropdownString);
 		 * System.out.println("Loop count " + l + " got breaked"); break; } }
 		 * System.out.println("String " + dropdownString.trim());
@@ -1259,7 +1233,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 				fieldTypeValidation = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("sourcing_channel_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(mandatoryVerification.isBlank()) && !(fieldTypeValidation.isBlank())) {
+				if (!(mandatoryVerification.isEmpty()) && !(fieldTypeValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1294,7 +1268,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		 * dropdownString = ""; for (int i = 0; i <= 300; i++) { try { dropdownLength =
 		 * javascriptHelper.executeScript("return " +
 		 * jqueryForDropdownLength).toString(); System.out.println("Dropdown length " +
-		 * dropdownLength); if (!(dropdownLength.isBlank()) &&
+		 * dropdownLength); if (!(dropdownLength.isEmpty()) &&
 		 * !(dropdownLength.equals("0"))) { break; } } catch (Exception e) { if (i ==
 		 * 10) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
 		 * Integer.parseInt(dropdownLength); for (int j = 0; j <=
@@ -1307,7 +1281,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		 * "].innerText") .toString(); if (!(dropdownString.isEmpty())) {
 		 * System.out.println(dropdownString); System.out.println("Loop count " + l +
 		 * " got breaked"); break; } } catch (Exception e) { if (l == 10 &&
-		 * !(dropdownString.isBlank())) { Assert.fail(e.getMessage()); } } if
+		 * !(dropdownString.isEmpty())) { Assert.fail(e.getMessage()); } } if
 		 * (!(dropdownString.isEmpty())) { System.out.println(dropdownString);
 		 * System.out.println("Loop count " + l + " got breaked"); break; } }
 		 * System.out.println("String " + dropdownString.trim());
@@ -1344,7 +1318,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 						.executeScriptWithWebElement(
 								applicationDetailsElements.getElement("business_center_code_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(mandatoryVerification.isBlank()) && !(fieldTypeValidation.isBlank())) {
+				if (!(mandatoryVerification.isEmpty()) && !(fieldTypeValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1380,7 +1354,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		 * dropdownString = ""; for (int i = 0; i <= 300; i++) { try { dropdownLength =
 		 * javascriptHelper.executeScript("return " +
 		 * jqueryForDropdownLength).toString(); System.out.println("Dropdown length " +
-		 * dropdownLength); if (!(dropdownLength.isBlank()) &&
+		 * dropdownLength); if (!(dropdownLength.isEmpty()) &&
 		 * !(dropdownLength.equals("0"))) { break; } } catch (Exception e) { if (i ==
 		 * 10) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
 		 * Integer.parseInt(dropdownLength); for (int j = 0; j <=
@@ -1393,7 +1367,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		 * "].innerText") .toString(); if (!(dropdownString.isEmpty())) {
 		 * System.out.println(dropdownString); System.out.println("Loop count " + l +
 		 * " got breaked"); break; } } catch (Exception e) { if (l == 10 &&
-		 * !(dropdownString.isBlank())) { Assert.fail(e.getMessage()); } } if
+		 * !(dropdownString.isEmpty())) { Assert.fail(e.getMessage()); } } if
 		 * (!(dropdownString.isEmpty())) { System.out.println(dropdownString);
 		 * System.out.println("Loop count " + l + " got breaked"); break; } }
 		 * System.out.println("String " + dropdownString.trim());
@@ -1430,7 +1404,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 				fieldTypeValidation = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("servicing_type_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(mandatoryVerification.isBlank()) && !(fieldTypeValidation.isBlank())) {
+				if (!(mandatoryVerification.isEmpty()) && !(fieldTypeValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1466,7 +1440,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		 * dropdownString = ""; for (int i = 0; i <= 300; i++) { try { dropdownLength =
 		 * javascriptHelper.executeScript("return " +
 		 * jqueryForDropdownLength).toString(); System.out.println("Dropdown length " +
-		 * dropdownLength); if (!(dropdownLength.isBlank()) &&
+		 * dropdownLength); if (!(dropdownLength.isEmpty()) &&
 		 * !(dropdownLength.equals("0"))) { break; } } catch (Exception e) { if (i ==
 		 * 10) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
 		 * Integer.parseInt(dropdownLength); for (int j = 0; j <=
@@ -1479,7 +1453,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		 * "].innerText") .toString(); if (!(dropdownString.isEmpty())) {
 		 * System.out.println(dropdownString); System.out.println("Loop count " + l +
 		 * " got breaked"); break; } } catch (Exception e) { if (l == 10 &&
-		 * !(dropdownString.isBlank())) { Assert.fail(e.getMessage()); } } if
+		 * !(dropdownString.isEmpty())) { Assert.fail(e.getMessage()); } } if
 		 * (!(dropdownString.isEmpty())) { System.out.println(dropdownString);
 		 * System.out.println("Loop count " + l + " got breaked"); break; } }
 		 * System.out.println("String " + dropdownString.trim());
@@ -1515,7 +1489,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 				fieldTypeValidation = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("region_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(mandatoryVerification.isBlank()) && !(fieldTypeValidation.isBlank())) {
+				if (!(mandatoryVerification.isEmpty()) && !(fieldTypeValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1551,7 +1525,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		 * dropdownString = ""; for (int i = 0; i <= 300; i++) { try { dropdownLength =
 		 * javascriptHelper.executeScript("return " +
 		 * jqueryForDropdownLength).toString(); System.out.println("Dropdown length " +
-		 * dropdownLength); if (!(dropdownLength.isBlank()) &&
+		 * dropdownLength); if (!(dropdownLength.isEmpty()) &&
 		 * !(dropdownLength.equals("0"))) { break; } } catch (Exception e) { if (i ==
 		 * 10) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
 		 * Integer.parseInt(dropdownLength); for (int j = 0; j <=
@@ -1564,7 +1538,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		 * "].innerText") .toString(); if (!(dropdownString.isEmpty())) {
 		 * System.out.println(dropdownString); System.out.println("Loop count " + l +
 		 * " got breaked"); break; } } catch (Exception e) { if (l == 10 &&
-		 * !(dropdownString.isBlank())) { Assert.fail(e.getMessage()); } } if
+		 * !(dropdownString.isEmpty())) { Assert.fail(e.getMessage()); } } if
 		 * (!(dropdownString.isEmpty())) { System.out.println(dropdownString);
 		 * System.out.println("Loop count " + l + " got breaked"); break; } }
 		 * System.out.println("String " + dropdownString.trim());
@@ -1601,7 +1575,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 				fieldTypeValidation = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("servicing_branch_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(mandatoryVerification.isBlank()) && !(fieldTypeValidation.isBlank())) {
+				if (!(mandatoryVerification.isEmpty()) && !(fieldTypeValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1637,7 +1611,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		 * dropdownString = ""; for (int i = 0; i <= 300; i++) { try { dropdownLength =
 		 * javascriptHelper.executeScript("return " +
 		 * jqueryForDropdownLength).toString(); System.out.println("Dropdown length " +
-		 * dropdownLength); if (!(dropdownLength.isBlank()) &&
+		 * dropdownLength); if (!(dropdownLength.isEmpty()) &&
 		 * !(dropdownLength.equals("0"))) { break; } } catch (Exception e) { if (i ==
 		 * 10) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
 		 * Integer.parseInt(dropdownLength); for (int j = 0; j <=
@@ -1650,7 +1624,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		 * "].innerText") .toString(); if (!(dropdownString.isEmpty())) {
 		 * System.out.println(dropdownString); System.out.println("Loop count " + l +
 		 * " got breaked"); break; } } catch (Exception e) { if (l == 10 &&
-		 * !(dropdownString.isBlank())) { Assert.fail(e.getMessage()); } } if
+		 * !(dropdownString.isEmpty())) { Assert.fail(e.getMessage()); } } if
 		 * (!(dropdownString.isEmpty())) { System.out.println(dropdownString);
 		 * System.out.println("Loop count " + l + " got breaked"); break; } }
 		 * System.out.println("String " + dropdownString.trim());
@@ -1687,7 +1661,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 				fieldTypeValidation = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("spoke_location_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(mandatoryVerification.isBlank()) && !(fieldTypeValidation.isBlank())) {
+				if (!(mandatoryVerification.isEmpty()) && !(fieldTypeValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1726,7 +1700,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		 * dropdownString = ""; for (int i = 0; i <= 300; i++) { try { dropdownLength =
 		 * javascriptHelper.executeScript("return " +
 		 * jqueryForDropdownLength).toString(); System.out.println("Dropdown length " +
-		 * dropdownLength); if (!(dropdownLength.isBlank()) &&
+		 * dropdownLength); if (!(dropdownLength.isEmpty()) &&
 		 * !(dropdownLength.equals("0"))) { break; } } catch (Exception e) { if (i ==
 		 * 10) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
 		 * Integer.parseInt(dropdownLength); for (int j = 0; j <=
@@ -1739,7 +1713,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		 * "].innerText") .toString(); if (!(dropdownString.isEmpty())) {
 		 * System.out.println(dropdownString); System.out.println("Loop count " + l +
 		 * " got breaked"); break; } } catch (Exception e) { if (l == 10 &&
-		 * !(dropdownString.isBlank())) { Assert.fail(e.getMessage()); } } if
+		 * !(dropdownString.isEmpty())) { Assert.fail(e.getMessage()); } } if
 		 * (!(dropdownString.isEmpty())) { System.out.println(dropdownString);
 		 * System.out.println("Loop count " + l + " got breaked"); break; } }
 		 * System.out.println("String " + dropdownString.trim());
@@ -1778,7 +1752,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 						.executeScriptWithWebElement(
 								applicationDetailsElements.getElement("closing_staff_of_servicing_staff_RM_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(mandatoryVerification.isBlank()) && !(fieldTypeValidation.isBlank())) {
+				if (!(mandatoryVerification.isEmpty()) && !(fieldTypeValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1918,7 +1892,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		 * dropdownString = ""; for (int i = 0; i <= 300; i++) { try { dropdownLength =
 		 * javascriptHelper.executeScript("return " +
 		 * jqueryForDropdownLength).toString(); System.out.println("Dropdown length " +
-		 * dropdownLength); if (!(dropdownLength.isBlank()) &&
+		 * dropdownLength); if (!(dropdownLength.isEmpty()) &&
 		 * !(dropdownLength.equals("0"))) { break; } } catch (Exception e) { if (i ==
 		 * 10) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
 		 * Integer.parseInt(dropdownLength); for (int j = 0; j <=
@@ -1931,7 +1905,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		 * "].innerText") .toString(); if (!(dropdownString.isEmpty())) {
 		 * System.out.println(dropdownString); System.out.println("Loop count " + l +
 		 * " got breaked"); break; } } catch (Exception e) { if (l == 10 &&
-		 * !(dropdownString.isBlank())) { Assert.fail(e.getMessage()); } } if
+		 * !(dropdownString.isEmpty())) { Assert.fail(e.getMessage()); } } if
 		 * (!(dropdownString.isEmpty())) { System.out.println(dropdownString);
 		 * System.out.println("Loop count " + l + " got breaked"); break; } }
 		 * System.out.println("String " + dropdownString.trim());
@@ -1968,7 +1942,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 				fieldTypeValidation = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("sourcing_type_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(mandatoryVerification.isBlank()) && !(fieldTypeValidation.isBlank())) {
+				if (!(mandatoryVerification.isEmpty()) && !(fieldTypeValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2004,7 +1978,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		 * dropdownString = ""; for (int i = 0; i <= 300; i++) { try { dropdownLength =
 		 * javascriptHelper.executeScript("return " +
 		 * jqueryForDropdownLength).toString(); System.out.println("Dropdown length " +
-		 * dropdownLength); if (!(dropdownLength.isBlank()) &&
+		 * dropdownLength); if (!(dropdownLength.isEmpty()) &&
 		 * !(dropdownLength.equals("0"))) { break; } } catch (Exception e) { if (i ==
 		 * 10) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
 		 * Integer.parseInt(dropdownLength); for (int j = 0; j <=
@@ -2017,7 +1991,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		 * "].innerText") .toString(); if (!(dropdownString.isEmpty())) {
 		 * System.out.println(dropdownString); System.out.println("Loop count " + l +
 		 * " got breaked"); break; } } catch (Exception e) { if (l == 10 &&
-		 * !(dropdownString.isBlank())) { Assert.fail(e.getMessage()); } } if
+		 * !(dropdownString.isEmpty())) { Assert.fail(e.getMessage()); } } if
 		 * (!(dropdownString.isEmpty())) { System.out.println(dropdownString);
 		 * System.out.println("Loop count " + l + " got breaked"); break; } }
 		 * System.out.println("String " + dropdownString.trim());
@@ -2054,7 +2028,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 				fieldTypeValidation = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("sourcing_office_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(mandatoryVerification.isBlank()) && !(fieldTypeValidation.isBlank())) {
+				if (!(mandatoryVerification.isEmpty()) && !(fieldTypeValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2092,7 +2066,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		 * dropdownString = ""; for (int i = 0; i <= 300; i++) { try { dropdownLength =
 		 * javascriptHelper.executeScript("return " +
 		 * jqueryForDropdownLength).toString(); System.out.println("Dropdown length " +
-		 * dropdownLength); if (!(dropdownLength.isBlank()) &&
+		 * dropdownLength); if (!(dropdownLength.isEmpty()) &&
 		 * !(dropdownLength.equals("0"))) { break; } } catch (Exception e) { if (i ==
 		 * 10) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
 		 * Integer.parseInt(dropdownLength); for (int j = 0; j <=
@@ -2105,7 +2079,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		 * "].innerText") .toString(); if (!(dropdownString.isEmpty())) {
 		 * System.out.println(dropdownString); System.out.println("Loop count " + l +
 		 * " got breaked"); break; } } catch (Exception e) { if (l == 10 &&
-		 * !(dropdownString.isBlank())) { Assert.fail(e.getMessage()); } } if
+		 * !(dropdownString.isEmpty())) { Assert.fail(e.getMessage()); } } if
 		 * (!(dropdownString.isEmpty())) { System.out.println(dropdownString);
 		 * System.out.println("Loop count " + l + " got breaked"); break; } }
 		 * System.out.println("String " + dropdownString.trim());
@@ -2142,7 +2116,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 				fieldTypeValidation = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("sourcing_entity_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(mandatoryVerification.isBlank()) && !(fieldTypeValidation.isBlank())) {
+				if (!(mandatoryVerification.isEmpty()) && !(fieldTypeValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2178,7 +2152,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		 * dropdownString = ""; for (int i = 0; i <= 300; i++) { try { dropdownLength =
 		 * javascriptHelper.executeScript("return " +
 		 * jqueryForDropdownLength).toString(); System.out.println("Dropdown length " +
-		 * dropdownLength); if (!(dropdownLength.isBlank()) &&
+		 * dropdownLength); if (!(dropdownLength.isEmpty()) &&
 		 * !(dropdownLength.equals("0"))) { break; } } catch (Exception e) { if (i ==
 		 * 10) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
 		 * Integer.parseInt(dropdownLength); for (int j = 0; j <=
@@ -2191,7 +2165,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		 * "].innerText") .toString(); if (!(dropdownString.isEmpty())) {
 		 * System.out.println(dropdownString); System.out.println("Loop count " + l +
 		 * " got breaked"); break; } } catch (Exception e) { if (l == 10 &&
-		 * !(dropdownString.isBlank())) { Assert.fail(e.getMessage()); } } if
+		 * !(dropdownString.isEmpty())) { Assert.fail(e.getMessage()); } } if
 		 * (!(dropdownString.isEmpty())) { System.out.println(dropdownString);
 		 * System.out.println("Loop count " + l + " got breaked"); break; } }
 		 * System.out.println("String " + dropdownString.trim());
@@ -2228,7 +2202,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 				fieldTypeValidation = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("sourcing_staff_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(mandatoryVerification.isBlank()) && !(fieldTypeValidation.isBlank())) {
+				if (!(mandatoryVerification.isEmpty()) && !(fieldTypeValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2265,7 +2239,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		 * dropdownString = ""; for (int i = 0; i <= 300; i++) { try { dropdownLength =
 		 * javascriptHelper.executeScript("return " +
 		 * jqueryForDropdownLength).toString(); System.out.println("Dropdown length " +
-		 * dropdownLength); if (!(dropdownLength.isBlank()) &&
+		 * dropdownLength); if (!(dropdownLength.isEmpty()) &&
 		 * !(dropdownLength.equals("0"))) { break; } } catch (Exception e) { if (i ==
 		 * 10) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
 		 * Integer.parseInt(dropdownLength); for (int j = 0; j <=
@@ -2278,7 +2252,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		 * "].innerText") .toString(); if (!(dropdownString.isEmpty())) {
 		 * System.out.println(dropdownString); System.out.println("Loop count " + l +
 		 * " got breaked"); break; } } catch (Exception e) { if (l == 10 &&
-		 * !(dropdownString.isBlank())) { Assert.fail(e.getMessage()); } } if
+		 * !(dropdownString.isEmpty())) { Assert.fail(e.getMessage()); } } if
 		 * (!(dropdownString.isEmpty())) { System.out.println(dropdownString);
 		 * System.out.println("Loop count " + l + " got breaked"); break; } }
 		 * System.out.println("String " + dropdownString.trim());
@@ -2315,7 +2289,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 				fieldTypeValidation = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("reference_type_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(mandatoryVerification.isBlank()) && !(fieldTypeValidation.isBlank())) {
+				if (!(mandatoryVerification.isEmpty()) && !(fieldTypeValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2351,7 +2325,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		 * dropdownString = ""; for (int i = 0; i <= 300; i++) { try { dropdownLength =
 		 * javascriptHelper.executeScript("return " +
 		 * jqueryForDropdownLength).toString(); System.out.println("Dropdown length " +
-		 * dropdownLength); if (!(dropdownLength.isBlank()) &&
+		 * dropdownLength); if (!(dropdownLength.isEmpty()) &&
 		 * !(dropdownLength.equals("0"))) { break; } } catch (Exception e) { if (i ==
 		 * 10) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
 		 * Integer.parseInt(dropdownLength); for (int j = 0; j <=
@@ -2364,7 +2338,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		 * "].innerText") .toString(); if (!(dropdownString.isEmpty())) {
 		 * System.out.println(dropdownString); System.out.println("Loop count " + l +
 		 * " got breaked"); break; } } catch (Exception e) { if (l == 10 &&
-		 * !(dropdownString.isBlank())) { Assert.fail(e.getMessage()); } } if
+		 * !(dropdownString.isEmpty())) { Assert.fail(e.getMessage()); } } if
 		 * (!(dropdownString.isEmpty())) { System.out.println(dropdownString);
 		 * System.out.println("Loop count " + l + " got breaked"); break; } }
 		 * System.out.println("String " + dropdownString.trim());
@@ -2401,7 +2375,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 				fieldTypeValidation = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("reference_entity_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(mandatoryVerification.isBlank()) && !(fieldTypeValidation.isBlank())) {
+				if (!(mandatoryVerification.isEmpty()) && !(fieldTypeValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2445,7 +2419,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 				fieldTypeValidation = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("reference_code_input"))
 						.getAttribute("type");
-				if (!(mandatoryVerification.isBlank()) && !(fieldTypeValidation.isBlank())) {
+				if (!(mandatoryVerification.isEmpty()) && !(fieldTypeValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2504,7 +2478,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 			try {
 				toastMessage = javascriptHelper
 						.executeScript("return " + commonJSPaths.getElement("toast_container_message")).toString();
-				if (!(toastMessage.isBlank())) {
+				if (!(toastMessage.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2526,19 +2500,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 
 	}
 
-	@And("user_076 store the murabaha record reference number to test new app screens")
-	public void user_076_store_the_murabaha_record_reference_number_to_test_new_app_screens() throws Throwable {
-		String extractedReferenceNumber = toastMessage.substring(37);
-		System.out.println("Reference Number " + extractedReferenceNumber);
-		configFileReader.setMurabahaRecordReferenceNumber(extractedReferenceNumber);
-	}
-
-	@And("user_076 store the auto loan record reference number to test new app screens")
-	public void user_076_store_the_auto_loan_record_reference_number_to_test_new_app_screens() throws Throwable {
-		String extractedReferenceNumber = toastMessage.substring(37);
-		System.out.println("Reference Number " + extractedReferenceNumber);
-		configFileReader.SetAutoLoanReferenceNumber(extractedReferenceNumber);
-	}
+	
 
 	@And("user_076 store the tawruqq record reference number to test new app screens")
 	public void user_076_store_the_tawruqq_record_reference_number_to_test_new_app_screens() throws Throwable {
@@ -2564,15 +2526,6 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 				"record_reference_number", finalRecordReferenceNumber);
 	}
 
-	@And("user_076 extract the application details record reference number in new app stage for auto loan")
-	public void user_076_extract_the_application_details_record_reference_number_in_new_app_stage_for_auto_loan()
-			throws Throwable {
-		String finalRecordReferenceNumber = toastMessageForReferenceNumber.substring(36).trim();
-		System.out.println("Final reference number " + finalRecordReferenceNumber);
-		excelDataForApplicationDetailsTestDataForAutoLoan.updateTestData(newApplicationTestData.get("Dataset ID"),
-				"record_reference_number", finalRecordReferenceNumber);
-	}
-
 	@Then("user_076 verify system should show the message for updated record of application details at new app stage")
 	public void user_076_verify_system_should_show_the_message_for_updated_record_of_application_details_at_new_app_stage()
 			throws Throwable {
@@ -2581,7 +2534,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 			try {
 				toastMessage = javascriptHelper
 						.executeScript("return " + commonJSPaths.getElement("toast_container_message")).toString();
-				if (!(toastMessage.isBlank())) {
+				if (!(toastMessage.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2645,7 +2598,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 			try {
 				blankFieldVerification = javascriptHelper
 						.executeScript("return " + commonJSPaths.getElement("toast_container_message")).toString();
-				if (!(blankFieldVerification.isBlank())) {
+				if (!(blankFieldVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2742,7 +2695,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 				specialCharacterInput = javascriptHelper.executeScript(
 						"return " + applicationDetailsElements.getElement("total_amount_requested_input") + ".value")
 						.toString();
-				if (!(specialCharacterInput.isBlank())) {
+				if (!(specialCharacterInput.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2801,7 +2754,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 				characterInputValidation = javascriptHelper.executeScript("return "
 						+ applicationDetailsElements.getElement("total_amount_requested_input") + ".innerText")
 						.toString();
-				if (!(characterInputValidation.isBlank())) {
+				if (!(characterInputValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2879,7 +2832,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 			try {
 				updateValidation = javascriptHelper
 						.executeScript("return " + commonJSPaths.getElement("toast_container_message")).toString();
-				if (!(updateValidation.isBlank())) {
+				if (!(updateValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2950,7 +2903,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 							.executeScript("return "
 									+ applicationDetailsElements.getElement("list_view_record_status_verification"))
 							.toString();
-					if (!(listViewRecordStatus.isBlank())) {
+					if (!(listViewRecordStatus.isEmpty())) {
 						updateSoftAssert.assertEquals("Active", listViewRecordStatus);
 						break;
 					}
@@ -2966,7 +2919,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 							.executeScript("return "
 									+ applicationDetailsElements.getElement("list_view_record_status_verification"))
 							.toString();
-					if (!(listViewRecordStatus.isBlank())) {
+					if (!(listViewRecordStatus.isEmpty())) {
 						updateSoftAssert.assertEquals("In-active", listViewRecordStatus);
 						break;
 					}
@@ -3038,7 +2991,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 							.executeScript("return "
 									+ applicationDetailsElements.getElement("list_view_record_status_verification"))
 							.toString();
-					if (!(listViewRecordStatus.isBlank())) {
+					if (!(listViewRecordStatus.isEmpty())) {
 						updateSoftAssert.assertEquals("Active", listViewRecordStatus);
 						break;
 					}
@@ -3054,7 +3007,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 							.executeScript("return "
 									+ applicationDetailsElements.getElement("list_view_record_status_verification"))
 							.toString();
-					if (!(listViewRecordStatus.isBlank())) {
+					if (!(listViewRecordStatus.isEmpty())) {
 						updateSoftAssert.assertEquals("In-active", listViewRecordStatus);
 						break;
 					}
@@ -3223,7 +3176,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 						.executeScript(
 								"return " + applicationDetailsElements.getElement("total_amount_requested_get_input"))
 						.toString();
-				if (!(totalFinanceAmountRequested.isBlank())) {
+				if (!(totalFinanceAmountRequested.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -3745,7 +3698,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 			try {
 				toastMessage = javascriptHelper
 						.executeScript("return " + commonJSPaths.getElement("toast_container_message")).toString();
-				if (!(toastMessage.isBlank())) {
+				if (!(toastMessage.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {

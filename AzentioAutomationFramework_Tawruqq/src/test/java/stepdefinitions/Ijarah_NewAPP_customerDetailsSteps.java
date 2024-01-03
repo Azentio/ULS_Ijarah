@@ -4,13 +4,11 @@ import java.awt.Robot;
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
-
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.asserts.SoftAssert;
-
 import dataProvider.ConfigFileReader;
 import dataProvider.ExcelData;
 import helper.BrowserHelper;
@@ -26,19 +24,15 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 	ConfigFileReader configFileReader = new ConfigFileReader();
 
 	String jsPathExcelfile = configFileReader.getJSFilePath();
-	String excelTestData = configFileReader.getTestDataFilePath();
+	String excelTestData = configFileReader.getTawruqqTestDataFile();
 	JSPaths customerDetailsJSPaths = new JSPaths(jsPathExcelfile, "NewApp_CustomerDetailsElements",
 			"New_App_CustomerDetailsElements", "JSPath");
 	JSPaths CommonJsElements = new JSPaths(jsPathExcelfile, "iJarah_CommonElements", "Ijarah_CommonFieldName",
 			"JSPath");
 	Robot robot;
-	ExcelData excelDataForcustomerDetails = new ExcelData(excelTestData, "customerdetails_NewApp", "Dataset ID");
-	ExcelData IjarahExecutionSheet = new ExcelData(excelTestData, "Ijarah_ExecutionTracker", "TestCase ID");
-	ExcelData murabahaExecutionSheet = new ExcelData(excelTestData, "Murabaha_ExecutionTracker", "TestCase ID");
+
 	ExcelData tawruqqExecutionSheet = new ExcelData(excelTestData, "Tawruqq_ExecutionTracker", "TestCase ID");
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
-	ExcelData excelDataForMurabhaCustomerDetailsTestData = new ExcelData(excelTestData, "newApp_M_CustDetailsTestData",
-			"Dataset ID");
 	ExcelData excelDataForTawruqqCustomerDetailsTestData = new ExcelData(excelTestData,
 			"TW_NewApp_CustDetails_TestData", "Dataset ID");
 	Map<String, String> customerDetailsTestData = new HashMap<>();
@@ -50,21 +44,6 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 	String listViewRecordStatus = "";
 	SoftAssert softAssert = new SoftAssert();
 	BrowserHelper browserHelper = new BrowserHelper(driver);
-
-	@And("user_076 get the test data for test case id AT_IJ_NEWAPP_01")
-	public void user_076_get_the_test_data_for_test_case_id_at_ij_newapp() throws Throwable {
-		customerDetailsExecutionData = IjarahExecutionSheet.getTestdata("AT_IJ_NEWAPP_01");
-		customerDetailsTestData = excelDataForcustomerDetails
-				.getTestdata(customerDetailsExecutionData.get("dataSet_ID"));
-	}
-
-	@And("user_076 get the test data for the test case id NewApp_M_CustDetails_01")
-	public void user_076_user_get_the_test_data_for_the_test_case_id_NewApp_M_CustDetails_01() throws Throwable {
-		customerDetailsMurabhaExecutionData = murabahaExecutionSheet.getTestdata("NewApp_M_CustDetails_01");
-		System.out.println(customerDetailsMurabhaExecutionData.get("dataSet_ID"));
-		customerDetailsTestData = excelDataForMurabhaCustomerDetailsTestData
-				.getTestdata(customerDetailsMurabhaExecutionData.get("dataSet_ID"));
-	}
 
 	@And("user_076 get the test data for the test case id AT_TW_NewApp_CustDetails_01")
 	public void user_076_user_get_the_test_data_for_the_test_case_id_AT_TW_NewApp_CustDetails_01() throws Throwable {
@@ -114,169 +93,6 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 				.getTestdata(tawruqqExecutionData.get("dataSet_ID"));
 	}
 
-	@And("user_076 get the test data for the test case id NewApp_M_CustDetails_02")
-	public void user_076_user_get_the_test_data_for_the_test_case_id_NewApp_M_CustDetails_02() throws Throwable {
-		customerDetailsMurabhaExecutionData = murabahaExecutionSheet.getTestdata("NewApp_M_CustDetails_02");
-		System.out.println(customerDetailsMurabhaExecutionData.get("dataSet_ID"));
-		customerDetailsTestData = excelDataForMurabhaCustomerDetailsTestData
-				.getTestdata(customerDetailsMurabhaExecutionData.get("dataSet_ID"));
-	}
-
-	@And("user_076 get the test data for the test case id NewApp_M_CustDetails_03")
-	public void user_076_user_get_the_test_data_for_the_test_case_id_NewApp_M_CustDetails_03() throws Throwable {
-		customerDetailsMurabhaExecutionData = murabahaExecutionSheet.getTestdata("NewApp_M_CustDetails_03");
-		System.out.println(customerDetailsMurabhaExecutionData.get("dataSet_ID"));
-		customerDetailsTestData = excelDataForMurabhaCustomerDetailsTestData
-				.getTestdata(customerDetailsMurabhaExecutionData.get("dataSet_ID"));
-	}
-
-	@And("user_076 get the test data for the test case id NewApp_M_CustDetails_04")
-	public void user_076_user_get_the_test_data_for_the_test_case_id_NewApp_M_CustDetails_04() throws Throwable {
-		customerDetailsMurabhaExecutionData = murabahaExecutionSheet.getTestdata("NewApp_M_CustDetails_04");
-		System.out.println(customerDetailsMurabhaExecutionData.get("dataSet_ID"));
-		customerDetailsTestData = excelDataForMurabhaCustomerDetailsTestData
-				.getTestdata(customerDetailsMurabhaExecutionData.get("dataSet_ID"));
-	}
-
-	@And("user_076 get the test data for the test case id NewApp_M_CustDetails_05")
-	public void user_076_user_get_the_test_data_for_the_test_case_id_NewApp_M_CustDetails_05() throws Throwable {
-		customerDetailsMurabhaExecutionData = murabahaExecutionSheet.getTestdata("NewApp_M_CustDetails_05");
-		System.out.println(customerDetailsMurabhaExecutionData.get("dataSet_ID"));
-		customerDetailsTestData = excelDataForMurabhaCustomerDetailsTestData
-				.getTestdata(customerDetailsMurabhaExecutionData.get("dataSet_ID"));
-	}
-
-	@And("user_076 get the test data for the test case id NewApp_M_CustDetails_06")
-	public void user_076_user_get_the_test_data_for_the_test_case_id_NewApp_M_CustDetails_06() throws Throwable {
-		customerDetailsMurabhaExecutionData = murabahaExecutionSheet.getTestdata("NewApp_M_CustDetails_06");
-		System.out.println(customerDetailsMurabhaExecutionData.get("dataSet_ID"));
-		customerDetailsTestData = excelDataForMurabhaCustomerDetailsTestData
-				.getTestdata(customerDetailsMurabhaExecutionData.get("dataSet_ID"));
-	}
-
-	@And("user_076 get the test data for test case id AT_IJ_NEWAPP_02")
-	public void user_076_get_the_test_data_for_test_case_id_AT_IJ_NEWAPP_02() throws Throwable {
-		customerDetailsExecutionData = IjarahExecutionSheet.getTestdata("AT_IJ_NEWAPP_02");
-		customerDetailsTestData = excelDataForcustomerDetails
-				.getTestdata(customerDetailsExecutionData.get("dataSet_ID"));
-	}
-
-	@And("user_076 get the test data for test case id AT_IJ_NEWAPP_03")
-	public void user_076_get_the_test_data_for_test_case_id_AT_IJ_NEWAPP_03() throws Throwable {
-		customerDetailsExecutionData = IjarahExecutionSheet.getTestdata("AT_IJ_NEWAPP_03");
-		customerDetailsTestData = excelDataForcustomerDetails
-				.getTestdata(customerDetailsExecutionData.get("dataSet_ID"));
-	}
-
-	@And("user_076 get the test data for test case id AT_IJ_NEWAPP_05")
-	public void user_076_get_the_test_data_for_test_case_id_AT_IJ_NEWAPP_05() throws Throwable {
-		customerDetailsExecutionData = IjarahExecutionSheet.getTestdata("AT_IJ_NEWAPP_05");
-		customerDetailsTestData = excelDataForcustomerDetails
-				.getTestdata(customerDetailsExecutionData.get("dataSet_ID"));
-	}
-
-	@And("user_076 get the test data for test case id AT_IJ_NEWAPP_06")
-	public void user_076_get_the_test_data_for_test_case_id_AT_IJ_NEWAPP_06() throws Throwable {
-		customerDetailsExecutionData = IjarahExecutionSheet.getTestdata("AT_IJ_NEWAPP_06");
-		customerDetailsTestData = excelDataForcustomerDetails
-				.getTestdata(customerDetailsExecutionData.get("dataSet_ID"));
-	}
-
-	@And("user_076 search the Ijarah new app record reference number")
-	public void user_search_the_ijarah_new_app_record_reference_number() throws Throwable {
-
-		WebElement searchTextBox;
-		for (int i = 0; i <= 150; i++) {
-			try {
-				searchTextBox = javascriptHelper
-						.executeScriptWithWebElement(CommonJsElements.getElement("mail_box_search_text"));
-				System.out.println("Record reference Number " + configFileReader.getIjarahRecordReferenceNumber());
-				searchTextBox.sendKeys(configFileReader.getIjarahRecordReferenceNumber());
-				break;
-			} catch (Exception e) {
-				if (i == 150) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-	}
-
-	@And("user_076 select the Ijarah new app record at mail box")
-	public void user_select_the_ijarah_new_app_record_at_mail_box() throws Throwable {
-		String mailBoxRecordList = "document.querySelectorAll('td[class=\"ng-star-inserted\"]>span').length";
-		String numberOfRecordInMailBox = "";
-		for (int i = 0; i <= 150; i++) {
-			try {
-				numberOfRecordInMailBox = javascriptHelper.executeScript("return " + mailBoxRecordList).toString();
-				System.out.println("Number of record in mail box " + numberOfRecordInMailBox);
-				if (!(numberOfRecordInMailBox.isBlank())) {
-					break;
-				}
-			} catch (Exception e) {
-				if (i == 150) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-		int premitiveNumberOfRecordInMailBox = Integer.parseInt(numberOfRecordInMailBox);
-		// document.querySelectorAll('td[class="ng-star-inserted"]>span')[0].textContent
-		for (int j = 0; j < premitiveNumberOfRecordInMailBox; j++) {
-			for (int k = 0; k <= 150; k++) {
-				try {
-					String recordRefNumber = javascriptHelper
-							.executeScript("return document.querySelectorAll('td[class=\"ng-star-inserted\"]>span')["
-									+ j + "].textContent")
-							.toString();
-					System.out.println("Number of record in mail box " + recordRefNumber);
-					if (recordRefNumber.equals(configFileReader.getIjarahRecordReferenceNumber())) {
-						System.out.println("document.querySelectorAll('button[icon=\"pi pi-user-edit\"]')[" + j + "]");
-						// document.querySelectorAll('button[icon="pi pi-user-edit"]')[0]
-						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
-								"document.querySelectorAll('button[icon=\"pi pi-user-edit\"]')[" + j + "]"));
-						break;
-					}
-				} catch (Exception e) {
-
-				}
-			}
-		}
-	}
-
-	@And("user_076 search the new application stage customer details record reference number")
-	public void user_076_search_the_new_application_stage_customer_details_record_reference_number() throws Throwable {
-
-		WebElement searchTextBox;
-		for (int i = 0; i <= 150; i++) {
-			try {
-				searchTextBox = javascriptHelper
-						.executeScriptWithWebElement(CommonJsElements.getElement("mail_box_search_text"));
-				searchTextBox.sendKeys(configFileReader.getIjarahRecordReferenceNumber());
-				break;
-			} catch (Exception e) {
-				if (i == 150) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-	}
-
-	@And("user_076 search for murabaha record reference number in new app stage")
-	public void user_076_search_for_murabaha_record_reference_number_in_new_app_stage() throws Throwable {
-		WebElement searchTextBox;
-		for (int i = 0; i <= 150; i++) {
-			try {
-				searchTextBox = javascriptHelper
-						.executeScriptWithWebElement(CommonJsElements.getElement("mail_box_search_text"));
-				searchTextBox.sendKeys(configFileReader.getMurabahaRecordRefereneNumber());
-				break;
-			} catch (Exception e) {
-				if (i == 150) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-	}
-
 	@And("user_076 search for tawruqq record reference number in new app stage")
 	public void user_076_search_for_tawruqq_record_reference_number_in_new_app_stage() throws Throwable {
 		WebElement searchTextBox;
@@ -294,47 +110,6 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 		}
 	}
 
-	@And("user_076 select the murabaha record in new app stage")
-	public void user_076_select_the_murabaha_record_in_new_app_stage() throws Throwable {
-		String mailBoxRecordList = "document.querySelectorAll('td[class=\"ng-star-inserted\"]>span').length";
-		String numberOfRecordInMailBox = "";
-		for (int i = 0; i <= 150; i++) {
-			try {
-				numberOfRecordInMailBox = javascriptHelper.executeScript("return " + mailBoxRecordList).toString();
-				System.out.println("Number of record in mail box " + numberOfRecordInMailBox);
-				if (!(numberOfRecordInMailBox.isBlank())) {
-					break;
-				}
-			} catch (Exception e) {
-				if (i == 150) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-		int premitiveNumberOfRecordInMailBox = Integer.parseInt(numberOfRecordInMailBox);
-		// document.querySelectorAll('td[class="ng-star-inserted"]>span')[0].textContent
-		for (int j = 0; j < premitiveNumberOfRecordInMailBox; j++) {
-			for (int k = 0; k <= 150; k++) {
-				try {
-					String recordRefNumber = javascriptHelper
-							.executeScript("return document.querySelectorAll('td[class=\"ng-star-inserted\"]>span')["
-									+ j + "].textContent")
-							.toString();
-					System.out.println("Number of record in mail box " + recordRefNumber);
-					if (recordRefNumber.equals(configFileReader.getMurabahaRecordRefereneNumber())) {
-						System.out.println("document.querySelectorAll('button[icon=\"pi pi-user-edit\"]')[" + j + "]");
-						// document.querySelectorAll('button[icon="pi pi-user-edit"]')[0]
-						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
-								"document.querySelectorAll('button[icon=\"pi pi-user-edit\"]')[" + j + "]"));
-						break;
-					}
-				} catch (Exception e) {
-
-				}
-			}
-		}
-	}
-
 	@And("user_076 select the tawruqq record in new app stage")
 	public void user_076_select_the_tawruqq_record_in_new_app_stage() throws Throwable {
 		String mailBoxRecordList = "document.querySelectorAll('td[class=\"ng-star-inserted\"]>span').length";
@@ -343,7 +118,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 			try {
 				numberOfRecordInMailBox = javascriptHelper.executeScript("return " + mailBoxRecordList).toString();
 				System.out.println("Number of record in mail box " + numberOfRecordInMailBox);
-				if (!(numberOfRecordInMailBox.isBlank())) {
+				if (!(numberOfRecordInMailBox.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -363,47 +138,6 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 							.toString();
 					System.out.println("Number of record in mail box " + recordRefNumber);
 					if (recordRefNumber.equals(configFileReader.getTawruqqRecordRefereneNumber())) {
-						System.out.println("document.querySelectorAll('button[icon=\"pi pi-user-edit\"]')[" + j + "]");
-						// document.querySelectorAll('button[icon="pi pi-user-edit"]')[0]
-						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
-								"document.querySelectorAll('button[icon=\"pi pi-user-edit\"]')[" + j + "]"));
-						break;
-					}
-				} catch (Exception e) {
-
-				}
-			}
-		}
-	}
-
-	@And("user_076 select the new application stage customer details record from mail box")
-	public void user_076_select_the_new_application_stage_customer_details_record_from_mail_box() throws Throwable {
-		String mailBoxRecordList = "document.querySelectorAll('td[class=\"ng-star-inserted\"]>span').length";
-		String numberOfRecordInMailBox = "";
-		for (int i = 0; i <= 150; i++) {
-			try {
-				numberOfRecordInMailBox = javascriptHelper.executeScript("return " + mailBoxRecordList).toString();
-				System.out.println("Number of record in mail box " + numberOfRecordInMailBox);
-				if (!(numberOfRecordInMailBox.isBlank())) {
-					break;
-				}
-			} catch (Exception e) {
-				if (i == 150) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-		int premitiveNumberOfRecordInMailBox = Integer.parseInt(numberOfRecordInMailBox);
-		// document.querySelectorAll('td[class="ng-star-inserted"]>span')[0].textContent
-		for (int j = 0; j < premitiveNumberOfRecordInMailBox; j++) {
-			for (int k = 0; k <= 150; k++) {
-				try {
-					String recordRefNumber = javascriptHelper
-							.executeScript("return document.querySelectorAll('td[class=\"ng-star-inserted\"]>span')["
-									+ j + "].textContent")
-							.toString();
-					System.out.println("Number of record in mail box " + recordRefNumber);
-					if (recordRefNumber.equals(configFileReader.getIjarahRecordReferenceNumber())) {
 						System.out.println("document.querySelectorAll('button[icon=\"pi pi-user-edit\"]')[" + j + "]");
 						// document.querySelectorAll('button[icon="pi pi-user-edit"]')[0]
 						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
@@ -486,7 +220,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 			try {
 				tempRecordStatus = javascriptHelper
 						.executeScript("return " + customerDetailsJSPaths.getElement("get_record_status")).toString();
-				if (!(recordStatus.isBlank())) {
+				if (!(recordStatus.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -537,7 +271,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 				listViewRecordStatus = javascriptHelper
 						.executeScript("return " + customerDetailsJSPaths.getElement("list_view_record_status"))
 						.toString();
-				if (!(listViewRecordStatus.isBlank())) {
+				if (!(listViewRecordStatus.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -715,7 +449,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 				fieldVerification = javascriptHelper
 						.executeScriptWithWebElement(customerDetailsJSPaths.getElement("first_name_input"))
 						.getAttribute("type");
-				if (!(fieldVerification.isBlank())) {
+				if (!(fieldVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -766,7 +500,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 				fieldVerification = javascriptHelper
 						.executeScriptWithWebElement(customerDetailsJSPaths.getElement("middle_name_input"))
 						.getAttribute("type");
-				if (!(fieldVerification.isBlank())) {
+				if (!(fieldVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -816,7 +550,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 				fieldVerification = javascriptHelper
 						.executeScriptWithWebElement(customerDetailsJSPaths.getElement("first_name_input"))
 						.getAttribute("type");
-				if (!(fieldVerification.isBlank())) {
+				if (!(fieldVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -868,7 +602,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 				fieldVerification = javascriptHelper
 						.executeScriptWithWebElement(customerDetailsJSPaths.getElement("first_name_input"))
 						.getAttribute("type");
-				if (!(fieldVerification.isBlank())) {
+				if (!(fieldVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -919,7 +653,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 				fieldVerification = javascriptHelper
 						.executeScriptWithWebElement(customerDetailsJSPaths.getElement("middle_name_arabic_input"))
 						.getAttribute("type");
-				if (!(fieldVerification.isBlank())) {
+				if (!(fieldVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -971,7 +705,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 				fieldVerification = javascriptHelper
 						.executeScriptWithWebElement(customerDetailsJSPaths.getElement("first_name_input"))
 						.getAttribute("type");
-				if (!(fieldVerification.isBlank())) {
+				if (!(fieldVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1020,7 +754,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 				fieldVerification = javascriptHelper
 						.executeScriptWithWebElement(customerDetailsJSPaths.getElement("family_name_arabic_input"))
 						.getAttribute("type");
-				if (!(fieldVerification.isBlank())) {
+				if (!(fieldVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1069,7 +803,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 				fieldVerification = javascriptHelper
 						.executeScriptWithWebElement(customerDetailsJSPaths.getElement("family_name_input"))
 						.getAttribute("type");
-				if (!(fieldVerification.isBlank())) {
+				if (!(fieldVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1152,7 +886,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 						.executeScript(
 								"return " + customerDetailsJSPaths.getElement("date_of_birth_field_verification"))
 						.toString();
-				if (!(mandatoryVerification.isBlank()) || !(fieldVerification.isBlank())) {
+				if (!(mandatoryVerification.isEmpty()) || !(fieldVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1176,7 +910,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 			try {
 				ageAutoPopulateCheck = javascriptHelper
 						.executeScript("return " + customerDetailsJSPaths.getElement("age_get_value")).toString();
-				if (!(ageAutoPopulateCheck.isBlank())) {
+				if (!(ageAutoPopulateCheck.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1190,7 +924,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 				mandatoryVerification = javascriptHelper
 						.executeScript("return " + customerDetailsJSPaths.getElement("age_mandatory_verification"))
 						.toString();
-				if (!(mandatoryVerification.isBlank())) {
+				if (!(mandatoryVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1418,7 +1152,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 				fieldVerification = javascriptHelper
 						.executeScriptWithWebElement(customerDetailsJSPaths.getElement("no_of_dependents_input"))
 						.getAttribute("type");
-				if (!(mandatoryVerification.isBlank()) || !(fieldVerification.isBlank())) {
+				if (!(mandatoryVerification.isEmpty()) || !(fieldVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1473,7 +1207,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 				toggleVerification = javascriptHelper
 						.executeScriptWithWebElement(customerDetailsJSPaths.getElement("blacklisted_toggle"))
 						.getAttribute("role");
-				if (!(toggleVerification.isBlank())) {
+				if (!(toggleVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1488,7 +1222,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 						.executeScript(
 								"return " + customerDetailsJSPaths.getElement("blacklisted_mandatory_verification"))
 						.toString();
-				if (!(mandatoryVerification.isBlank())) {
+				if (!(mandatoryVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1555,7 +1289,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 				fieldVerification = javascriptHelper
 						.executeScriptWithWebElement(customerDetailsJSPaths.getElement("remarks_input"))
 						.getAttribute("type");
-				if (!(fieldVerification.isBlank())) {
+				if (!(fieldVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1594,7 +1328,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 			try {
 				updateSuccessMessage = javascriptHelper
 						.executeScript("return " + CommonJsElements.getElement("toast_container_message")).toString();
-				if (!(updateSuccessMessage.isBlank())) {
+				if (!(updateSuccessMessage.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1625,7 +1359,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 			try {
 				saveSuccessMessage = javascriptHelper
 						.executeScript("return " + CommonJsElements.getElement("toast_container_message")).toString();
-				if (!(saveSuccessMessage.isBlank())) {
+				if (!(saveSuccessMessage.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1697,7 +1431,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 			try {
 				mandatoryValidation = javascriptHelper
 						.executeScript("return " + CommonJsElements.getElement("toast_message")).toString();
-				if (!(mandatoryValidation.isBlank())) {
+				if (!(mandatoryValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1737,7 +1471,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 						.executeScript("return "
 								+ customerDetailsJSPaths.getElement("first_name_input_field_level_validation"))
 						.toString();
-				if (!(fieldLevelvalidation.isBlank())) {
+				if (!(fieldLevelvalidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1789,7 +1523,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 						.executeScript("return "
 								+ customerDetailsJSPaths.getElement("first_name_input_field_level_validation"))
 						.toString();
-				if (!(fieldLevelvalidation.isBlank())) {
+				if (!(fieldLevelvalidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1924,7 +1658,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 								+ customerDetailsJSPaths.getElement("customer_details_back_button_verification"))
 						.toString();
 				System.out.println(backButtonString);
-				if (!(backButtonString.isBlank())) {
+				if (!(backButtonString.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1981,7 +1715,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 						.executeScript("return "
 								+ customerDetailsJSPaths.getElement("customer_details_list_view_search_result"))
 						.toString();
-				if (!(searchResult.isBlank())) {
+				if (!(searchResult.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2040,7 +1774,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 						.executeScript("return "
 								+ customerDetailsJSPaths.getElement("customer_details_list_view_search_result"))
 						.toString();
-				if (!(searchResult.isBlank()) && i > 250) {
+				if (!(searchResult.isEmpty()) && i > 250) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2130,7 +1864,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 						.executeScript(
 								"return " + customerDetailsJSPaths.getElement("customer_details_list_view_record"))
 						.toString();
-				if (!(listViewRecordLabels.isBlank())) {
+				if (!(listViewRecordLabels.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2160,7 +1894,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 						.executeScript(
 								"return " + customerDetailsJSPaths.getElement("customer_details_list_view_record"))
 						.toString();
-				if (!(listViewRecordLabels.isBlank())) {
+				if (!(listViewRecordLabels.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {

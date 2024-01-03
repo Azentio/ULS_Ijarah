@@ -22,7 +22,7 @@ public class Tawruqq_CommodityPO_Steps extends BaseClass {
 	ConfigFileReader configFileReader = new ConfigFileReader();
 
 	String jsPathExcelFile = configFileReader.getJSFilePath();
-	String excelTestDataPath = configFileReader.getTestDataFilePath();
+	String excelTestDataPath = configFileReader.getTawruqqTestDataFile();
 	JSPaths commodityPoJspaths = new JSPaths(jsPathExcelFile, "CPUMKR_CommodityPOJSPtah", "ComoddityPOElementName",
 			"JSPaths");
 	JSPaths commonJSElements = new JSPaths(jsPathExcelFile, "iJarah_CommonElements", "Ijarah_CommonFieldName",
@@ -219,7 +219,7 @@ public class Tawruqq_CommodityPO_Steps extends BaseClass {
 				fieldTypeVerification = javascriptHelper
 						.executeScriptWithWebElement(commodityPoJspaths.getElement("BusinessPartner_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(fieldTypeVerification.isBlank())) {
+				if (!(fieldTypeVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -236,7 +236,7 @@ public class Tawruqq_CommodityPO_Steps extends BaseClass {
 								"return " + commodityPoJspaths.getElement("businessPartner_mandatory_verification"))
 						.toString();
 
-				if (!(fieldMandatoryVerification.isBlank())) {
+				if (!(fieldMandatoryVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -267,7 +267,7 @@ public class Tawruqq_CommodityPO_Steps extends BaseClass {
 				fieldTypeVerification = javascriptHelper
 						.executeScriptWithWebElement(commodityPoJspaths.getElement("Commodity_type_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(fieldTypeVerification.isBlank())) {
+				if (!(fieldTypeVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -284,7 +284,7 @@ public class Tawruqq_CommodityPO_Steps extends BaseClass {
 								"return " + commodityPoJspaths.getElement("commodity_type_mandatory_verification"))
 						.toString();
 
-				if (!(fieldMandatoryVerification.isBlank())) {
+				if (!(fieldMandatoryVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -313,7 +313,7 @@ public class Tawruqq_CommodityPO_Steps extends BaseClass {
 				fieldTypeVerification = javascriptHelper
 						.executeScriptWithWebElement(commodityPoJspaths.getElement("commodity_name_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(fieldTypeVerification.isBlank())) {
+				if (!(fieldTypeVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -330,7 +330,7 @@ public class Tawruqq_CommodityPO_Steps extends BaseClass {
 								"return " + commodityPoJspaths.getElement("commodity_name_mandatory_verification"))
 						.toString();
 
-				if (!(fieldMandatoryVerification.isBlank())) {
+				if (!(fieldMandatoryVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -363,7 +363,7 @@ public class Tawruqq_CommodityPO_Steps extends BaseClass {
 						.executeScriptWithWebElement(
 								commodityPoJspaths.getElement("proposed_amount_readonly_verification"))
 						.getAttribute("ng-reflect-readonly");
-				if (!(fieldTypeVerification.isBlank())) {
+				if (!(fieldTypeVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -380,7 +380,7 @@ public class Tawruqq_CommodityPO_Steps extends BaseClass {
 								"return " + commodityPoJspaths.getElement("amountproposed_mandatory_verification"))
 						.toString();
 
-				if (!(fieldMandatoryVerification.isBlank())) {
+				if (!(fieldMandatoryVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -408,7 +408,7 @@ public class Tawruqq_CommodityPO_Steps extends BaseClass {
 				fieldTypeVerification = javascriptHelper
 						.executeScriptWithWebElement(commodityPoJspaths.getElement("commodity_amount_text_box"))
 						.getAttribute("type");
-				if (!(fieldTypeVerification.isBlank())) {
+				if (!(fieldTypeVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -425,7 +425,7 @@ public class Tawruqq_CommodityPO_Steps extends BaseClass {
 								"return " + commodityPoJspaths.getElement("commodity_amount_mandatory_verification"))
 						.toString();
 
-				if (!(fieldMandatoryVerification.isBlank())) {
+				if (!(fieldMandatoryVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -478,7 +478,7 @@ public class Tawruqq_CommodityPO_Steps extends BaseClass {
 			try {
 				saveValidation = javascriptHelper
 						.executeScript("return " + commonJSElements.getElement("toast_container_message")).toString();
-				if (!(saveValidation.isBlank())) {
+				if (!(saveValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -515,7 +515,7 @@ public class Tawruqq_CommodityPO_Steps extends BaseClass {
 								commodityPoJspaths.getElement("unit_purchase_readonly_verification"))
 						.getAttribute("ng-reflect-readonly");
 				System.out.println("unit price field readonly value " + isFieldReadOnly);
-				if (!(fieldTypeVerification.isBlank()) || isFieldReadOnly.length() > 0) {
+				if (!(fieldTypeVerification.isEmpty()) || isFieldReadOnly.length() > 0) {
 					System.out.println("Field length " + isFieldReadOnly.length());
 					break;
 				}
@@ -532,7 +532,7 @@ public class Tawruqq_CommodityPO_Steps extends BaseClass {
 						.executeScript("return " + commodityPoJspaths.getElement("unit_price_mandatory_verification"))
 						.toString();
 
-				if (!(fieldMandatoryVerification.isBlank())) {
+				if (!(fieldMandatoryVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -568,7 +568,7 @@ public class Tawruqq_CommodityPO_Steps extends BaseClass {
 						.executeScriptWithWebElement(commodityPoJspaths.getElement("unit_type_readonly_verification"))
 						.getAttribute("ng-reflect-readonly");
 
-				if (!(fieldTypeVerification.isBlank()) || !(isReadOnlyMode.isBlank())) {
+				if (!(fieldTypeVerification.isEmpty()) || !(isReadOnlyMode.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -584,7 +584,7 @@ public class Tawruqq_CommodityPO_Steps extends BaseClass {
 						.executeScript("return " + commodityPoJspaths.getElement("unit_type_mandatory_verification"))
 						.toString();
 
-				if (!(fieldMandatoryVerification.isBlank())) {
+				if (!(fieldMandatoryVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -616,7 +616,7 @@ public class Tawruqq_CommodityPO_Steps extends BaseClass {
 				isReadOnlyMode = javascriptHelper
 						.executeScriptWithWebElement(commodityPoJspaths.getElement("quantity_readonly_verification"))
 						.getAttribute("ng-reflect-readonly");
-				if (!(fieldTypeVerification.isBlank()) || !(isReadOnlyMode.isBlank())) {
+				if (!(fieldTypeVerification.isEmpty()) || !(isReadOnlyMode.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -632,7 +632,7 @@ public class Tawruqq_CommodityPO_Steps extends BaseClass {
 						.executeScript("return " + commodityPoJspaths.getElement("quantity_mandatory_verification"))
 						.toString();
 
-				if (!(fieldMandatoryVerification.isBlank())) {
+				if (!(fieldMandatoryVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -662,7 +662,7 @@ public class Tawruqq_CommodityPO_Steps extends BaseClass {
 				fieldTypeVerification = javascriptHelper
 						.executeScriptWithWebElement(commodityPoJspaths.getElement("remarks_textbox"))
 						.getAttribute("type");
-				if (!(fieldTypeVerification.isBlank())) {
+				if (!(fieldTypeVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -678,7 +678,7 @@ public class Tawruqq_CommodityPO_Steps extends BaseClass {
 						.executeScript("return " + commodityPoJspaths.getElement("remarks_mandatory_verification"))
 						.toString();
 
-				if (!(fieldMandatoryVerification.isBlank())) {
+				if (!(fieldMandatoryVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {

@@ -19,7 +19,7 @@ public class Tawruqq_Offering_Steps extends BaseClass {
 	ConfigFileReader configFileReader = new ConfigFileReader();
 
 	String jsPathExcelFile = configFileReader.getJSFilePath();
-	String excelTestDataPath = configFileReader.getTestDataFilePath();
+	String excelTestDataPath = configFileReader.getTawruqqTestDataFile();
 	JSPaths commonJSElements = new JSPaths(jsPathExcelFile, "iJarah_CommonElements", "Ijarah_CommonFieldName",
 			"JSPath");
 	JSPaths offeringJSpaths = new JSPaths(jsPathExcelFile, "Offering_Jspaths", "Offering_fieldName", "JSPaths");
@@ -53,7 +53,7 @@ public class Tawruqq_Offering_Steps extends BaseClass {
 			try {
 				numberOfRecordInMailBox = javascriptHelper.executeScript("return " + mailBoxRecordList).toString();
 				System.out.println("Number of record in mail box " + numberOfRecordInMailBox);
-				if (!(numberOfRecordInMailBox.isBlank())) {
+				if (!(numberOfRecordInMailBox.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -656,13 +656,13 @@ public class Tawruqq_Offering_Steps extends BaseClass {
 		String isFieldReadOnly = "";
 		String offeredAmount = "";
 		String profitAmount = "";
-		String totalContractAmt="";
+		String totalContractAmt = "";
 		for (int i = 0; i <= 300; i++) {
 			try {
 				offeredAmount = javascriptHelper
 						.executeScript("return " + offeringJSpaths.getElement("get_offered_amount_value")).toString();
 				if (offeredAmount.length() > 0) {
-					System.out.println("Offered amount "+offeredAmount);
+					System.out.println("Offered amount " + offeredAmount);
 					break;
 				}
 			} catch (Exception e) {
@@ -676,7 +676,7 @@ public class Tawruqq_Offering_Steps extends BaseClass {
 				profitAmount = javascriptHelper
 						.executeScript("return " + offeringJSpaths.getElement("get_profit_amount_value")).toString();
 				if (profitAmount.length() > 0) {
-					System.out.println("profit amount "+profitAmount);
+					System.out.println("profit amount " + profitAmount);
 					break;
 				}
 			} catch (Exception e) {
@@ -690,7 +690,7 @@ public class Tawruqq_Offering_Steps extends BaseClass {
 				totalContractAmt = javascriptHelper
 						.executeScript("return " + offeringJSpaths.getElement("get_total_contract_value")).toString();
 				if (totalContractAmt.length() > 0) {
-					System.out.println("Contract amount "+totalContractAmt);
+					System.out.println("Contract amount " + totalContractAmt);
 					break;
 				}
 			} catch (Exception e) {
@@ -699,15 +699,15 @@ public class Tawruqq_Offering_Steps extends BaseClass {
 				}
 			}
 		}
-		
 
 		double premitiveProfitAmount = Double.parseDouble(profitAmount);
 		double premitiveOfferedAmount = Double.parseDouble(offeredAmount);
-		String stringCalTotalContractValue=String.valueOf(premitiveProfitAmount+premitiveOfferedAmount);
-		
-		softAssert.assertEquals(stringCalTotalContractValue, totalContractAmt," Contract value is not populating as per the calculation hence failed");
-		System.out.println("Contract Value as per screen "+totalContractAmt);
-		System.out.println("Contract value as per the calculation "+stringCalTotalContractValue);
+		String stringCalTotalContractValue = String.valueOf(premitiveProfitAmount + premitiveOfferedAmount);
+
+		softAssert.assertEquals(stringCalTotalContractValue, totalContractAmt,
+				" Contract value is not populating as per the calculation hence failed");
+		System.out.println("Contract Value as per screen " + totalContractAmt);
+		System.out.println("Contract value as per the calculation " + stringCalTotalContractValue);
 		for (int i = 0; i <= 300; i++) {
 			try {
 				isFieldReadOnly = javascriptHelper

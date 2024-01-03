@@ -80,20 +80,14 @@ public class ConfigFileReader {
 			throw new RuntimeException("pollingTime not specified in the Configuration.properties file.");
 	}
 
-	public String getTestDataFilePath() {
+	public String getTawruqqTestDataFile() {
 
 		String filePath;
-		filePath = System.getProperty("user.dir") + "\\TestData\\ulsTestData.xlsx";
+		filePath = System.getProperty("user.dir") + "\\TestData\\TawruqqTestData.xlsx";
 
 		return filePath;
 	}
-	public String getAutoLoanTestDataFilePath() {
-
-		String filePath;
-		filePath = System.getProperty("user.dir") + "\\TestData\\ULS_AutoLoanTestData.xlsx";
-
-		return filePath;
-	}
+	
 
 	public String getJSFilePath() {
 		String jsFilePath;
@@ -110,11 +104,7 @@ public class ConfigFileReader {
 
 	}
 
-	public String getIjarahRecordReferenceNumber() {
-		String recordReferenceNumber;
-		recordReferenceNumber = properties.getProperty("IjarahRecordReferenceNumber");
-		return recordReferenceNumber;
-	}
+	
 
 	public void setTawruqqRecordReferenceNumber(String refernceNumber) throws IOException {
 		OutputStream outputStream = new FileOutputStream(new File(propertyFilePath));
@@ -127,52 +117,12 @@ public class ConfigFileReader {
 		recordReferenceNumber = properties.getProperty("TawruqqRecordReferenceNumber");
 		return recordReferenceNumber;
 	}
-	public String getAutoLoanReferenceNumber()
-	{
-		String recordReferenceNumber;
-		recordReferenceNumber = properties.getProperty("autoLoanReferenceNumber");
-		return recordReferenceNumber;
-	}
-	public String getAutioLoanAppDataEntryRefNo()
-	{
-		String recordReferenceNumber;
-		recordReferenceNumber = properties.getProperty("autoLoanAppDataEntryReferenceNumber");
-		return recordReferenceNumber;
-	}
-	public void SetAutoLoanReferenceNumber(String referenceNumber) throws IOException
-	{
-		OutputStream outputStream = new FileOutputStream(new File(propertyFilePath));
-		properties.setProperty("autoLoanReferenceNumber", referenceNumber);
-		properties.store(outputStream, null);
-	}
+	
 	public String getTawruqqOfferingRecordReferenceNumber() {
 		String recordReferenceNumber;
 		recordReferenceNumber = properties.getProperty("TawruqqOfferingReferenceNumber");
 		return recordReferenceNumber;
 	}
 
-	public void setMurabahaRecordReferenceNumber(String referenceNumber) throws IOException {
-		OutputStream outputStream = new FileOutputStream(new File(propertyFilePath));
-		properties.setProperty("MurabaharecordReferenceNumber", referenceNumber);
-		properties.store(outputStream, null);
-
-	}
-
-	public String getMurabahaPurchaseOrderApprovalRecordReferenceNumber() throws IOException {
-		String recordReferenceNumber;
-		recordReferenceNumber = properties.getProperty("MurabahaPurchaseOrderApprovalRecordNumber");
-		return recordReferenceNumber;
-
-	}
-
-	public String getMurabahaRecordRefereneNumber() {
-		String recordReferenceNumber;
-		recordReferenceNumber = properties.getProperty("MurabaharecordReferenceNumber");
-		return recordReferenceNumber;
-	}
-	public String getMurabahaPurchaseOrderRecordRefereneNumber() {
-		String recordReferenceNumber;
-		recordReferenceNumber = properties.getProperty("MurabahaPurchaseOrderRefNo");
-		return recordReferenceNumber;
-	}
+	
 }
