@@ -3389,7 +3389,8 @@ public class New_Application {
 				String text = javascriptHelper
 						.executeScriptWithWebElement(New_ApplicationPaths.getElement("PleaseFillDetailsPopup"))
 						.getText();
-				Assert.assertTrue(text.contains("Please fill all the details"));
+				System.out.println(text);
+				Assert.assertTrue(text.trim().contains("Please fill required fields"));
 				break;
 			} catch (Exception e) {
 				if (i == 1999) {
@@ -3511,71 +3512,43 @@ public class New_Application {
 
 	@And("User_607 click the Application details flag")
 	public void user_click_the_application_details_flag() throws Throwable {
-//		for (int i = 0; i < 500; i++) {
-//			try {
-//				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("ApplicationDetails"))
-//						.click();
-//				break;
-//			} catch (Exception e) {
-//				if (i == 499) {
-//					Assert.fail(e.getMessage());
-//				}
-//			}
-//		}
-		Thread.sleep(1000);
-		String listOfAddButtonQuery = "document.querySelectorAll('ion-accordion[value=\"Transactions\"] ion-item').length";
-		String listOfAddButton = "";
-		String addButtonScreenName = "";
-		boolean isAddButtonClicked = false;
-		for (int i = 0; i <= 300; i++) {
+		String length =null;
+		for (int i = 0; i <500; i++) {
 			try {
-				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
-				System.out.println("List of add button " + listOfAddButton);
-				if (!(listOfAddButton.isBlank())) {
+			    length = javascriptHelper.executeScript("return document.querySelector('ion-accordion[ng-reflect-value=\"Transactions\"]').querySelector('ion-list').querySelectorAll('ion-label').length").toString();
+			    System.out.println(length);
+				if (!length.isBlank()&&!length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 300) {
+				if (i==499) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-
-		int premitiveListOfAddButton = Integer.parseInt(listOfAddButton);
-		for (int j = 0; j < premitiveListOfAddButton; j++) {
-			for (int k = 0; k <= 500; k++) {
-				try {
-					addButtonScreenName = javascriptHelper.executeScript(
-							"return document.querySelectorAll('ion-accordion[value=\"Transactions\"] ion-item')[" + j
-									+ "].textContent")
-							.toString();
-					System.out.println("Screen Name " + addButtonScreenName);
-					if (!(addButtonScreenName.isBlank())) {
-						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
-						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Application Details").trim())) {
-							System.out.println("Inside nested loop");
-							System.out.println(
-									"document.querySelectorAll('ion-accordion[value=\"Transactions\"] ion-item')[" + j
-											+ "].querySelector('ion-button')");
-							javascriptHelper.executeScriptWithWebElement(
-									"document.querySelectorAll('ion-accordion[value=\"Transactions\"] ion-item')[" + j
-											+ "].querySelector('ion-button')")
-									.click();
-							isAddButtonClicked = true;
-							break;
-						}
-					}
-				} catch (Exception e) {
-					if (k == 500) {
-						Assert.fail(e.getMessage());
-					}
+		for (int i = 0; i <500; i++) {
+		try {
+			for (int j = 0; j <Integer.parseInt(length); j++) {
+				String title ="return document.querySelector('ion-accordion[ng-reflect-value=\"Transactions\"]').querySelector('ion-list').querySelectorAll('ion-label')["+j+"].innerText";
+				String titlename = javascriptHelper.executeScript(title).toString();
+				System.out.println(titlename);
+				if (titlename.trim().contains("Application Details")) {
+					System.out.println("condition true");
+					String jspath ="document.querySelector('ion-accordion[ng-reflect-value=\"Transactions\"]').querySelector('ion-list').querySelectorAll('ion-label')["+j+"].nextElementSibling.querySelector('ion-button')";
+					WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
+//					System.out.println(jspath);
+//					javascriptHelper.scrollIntoView(addButton);
+					addButton.click();
+					break;
 				}
 			}
-			if (isAddButtonClicked == true) {
-				break;
+			break;
+		} catch (Exception e) {
+			if (i==499) {
+				Assert.fail(e.getMessage());
 			}
 		}
-
+	}
 	}
 
 	@And("User_607 click the add icon to add the customer details")

@@ -29,7 +29,7 @@ import resources.BaseClass;
 public class MURABHA_Steps {
 	ConfigFileReader configFileReader = new ConfigFileReader();
 	String excelPath = configFileReader.getJSFilePath();
-	String excelTestDataPath = configFileReader.getIjarahTestDataFilePath();
+	String excelTestDataPath = configFileReader.getMurabhaTestDataFilePath();
 	WebDriver driver = BaseClass.driver;
 	JSPaths jsPaths = new JSPaths(excelPath, "Ijara_loginElements", "Ijara_LoginFieldName", "JSPath");
 	JSPaths customerDebtJsPaths = new JSPaths(excelPath, "CF_Debt_Elements", "CF_Debt FieldName", "JSPath");
@@ -457,6 +457,7 @@ public class MURABHA_Steps {
 					if (titlename.trim().contains("Customer Financials")) {
 						System.out.println("condition true");
 						String jspath = "document.querySelectorAll('ion-segment-button')[" + j + "]";
+						System.out.println(jspath);
 						WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
 						javascriptHelper.JSEClick(addButton);
 						break;

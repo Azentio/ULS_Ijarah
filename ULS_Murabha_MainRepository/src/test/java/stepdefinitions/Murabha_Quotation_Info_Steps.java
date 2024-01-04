@@ -23,7 +23,7 @@ public class Murabha_Quotation_Info_Steps {
 	
 	ConfigFileReader configFileReader = new ConfigFileReader();
 	String excelPath = configFileReader.getJSFilePath();
-	String excelTestDataPath =configFileReader.getIjarahTestDataFilePath();
+	String excelTestDataPath =configFileReader.getMurabhaTestDataFilePath();
 	WebDriver driver = BaseClass.driver;
 	JSPaths jsPaths = new JSPaths(excelPath, "Ijara_loginElements", "Ijara_LoginFieldName", "JSPath");
 	JSPaths repaymentModeJpaths = new JSPaths(excelPath, "Ijara_Repayment_Mode", "Ijara_LoginFieldName", "JSPath");

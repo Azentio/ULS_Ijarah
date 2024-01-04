@@ -32,7 +32,7 @@ import resources.BaseClass;
 public class MURABHA_Steps_615 {
 	ConfigFileReader configFileReader = new ConfigFileReader();
 	String excelPath = configFileReader.getJSFilePath();
-	String excelTestDataPath = configFileReader.getIjarahTestDataFilePath();
+	String excelTestDataPath = configFileReader.getMurabhaTestDataFilePath();
 	WebDriver driver = BaseClass.driver;
 	JSPaths jsPaths = new JSPaths(excelPath, "Ijara_loginElements", "Ijara_LoginFieldName", "JSPath");
 	JSPaths commonJSElements = new JSPaths(excelPath, "iJarah_CommonElements", "Ijarah_CommonFieldName", "JSPath");

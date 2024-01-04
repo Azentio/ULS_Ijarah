@@ -125,6 +125,21 @@ public class Murabha_AddressDetailsSteps extends BaseClass {
 	public void logout_from_the_ULS_application() throws Throwable {
 		ijaraLogin.logoutFromMurabha();
 	}
+	
+//	Murabaha Product -- App Data Entry Stage ---> UserType06
+	@And("login with valid credentials-Murabaha App Data Entry")
+	public void login_with_valid_credentials_murabaha_app_data_entry()throws Throwable {
+		ijaraLogin.loginWithMurabhaApplication("userType16");
+	}
+	@Given("login with valid credentials-Murabaha Data Check stage")
+	public void login_with_valid_credentials_murabaha_data_check_stage() {
+		ijaraLogin.loginWithMurabhaApplication("userType18");
+
+	}
+	@And("login with valid credentials17")
+	public void login_with_valid_credentials17() {
+		ijaraLogin.loginWithMurabhaApplication("userType17");
+	}
 
 	@And("click on module dropdown in Murabha")
 	public void click_on_module_dropdown_in_Murabha() throws Throwable {

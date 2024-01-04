@@ -15,9 +15,17 @@ public class BrowserLaunch extends BaseClass {
 	public static void main(String[] args) {
 		ConfigFileReader confileReader = new ConfigFileReader();
 		String excelPath = confileReader.getJSFilePath();
-		JSPaths CommonJsElements = new JSPaths(excelPath, "Murabha_CommonElements", "Murabha_CommonFieldName",
-				"JSPath");
-		System.err.println(CommonJsElements.getElement("mail_box_search_text"));
+		String employmentDetailsExcelDataPath = confileReader.getMurabhaTestDataFilePath();
+		ExcelData excelDataForEmploymentDetailsMurabhaExecutionData = new ExcelData(employmentDetailsExcelDataPath,
+				"Appdata_EmployementDetailsExe", "TestCase ID");
+		ExcelData excelDataForEmploymentDetailsTestData = new ExcelData(employmentDetailsExcelDataPath,
+				"EmploymentDetails_AppData", "Dataset ID");
+		
+		Map<String, String> testdata = excelDataForEmploymentDetailsMurabhaExecutionData.getTestdata("AT_MU_EMPD_01");
+		System.out.println(testdata.get("dataSet_ID"));
+		Map<String, String> testdata2 = excelDataForEmploymentDetailsTestData
+				.getTestdata(testdata.get("dataSet_ID"));
+		System.out.println(testdata2.get("record_reference_number"));
 	}
 	
 	

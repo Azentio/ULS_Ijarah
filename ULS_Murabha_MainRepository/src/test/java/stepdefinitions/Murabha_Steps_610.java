@@ -19,7 +19,7 @@ import resources.BaseClass;
 public class Murabha_Steps_610 {
 	ConfigFileReader configFileReader = new ConfigFileReader();
 	String excelPath = configFileReader.getJSFilePath();
-	String excelTestDataPath =configFileReader.getIjarahTestDataFilePath();
+	String excelTestDataPath =configFileReader.getMurabhaTestDataFilePath();
 	WebDriver driver = BaseClass.driver;
 	JSPaths jsPaths2 = new JSPaths(excelPath, "Ijara_AD_DocumentDetails", "Ijara_LoginFieldName", "JSPath");
 	JSPaths jsPaths3 = new JSPaths(excelPath, "Murabha_Module", "Murabha_LoginFieldName", "JSPath");

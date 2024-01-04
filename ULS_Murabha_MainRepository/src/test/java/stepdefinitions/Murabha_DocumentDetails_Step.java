@@ -30,7 +30,7 @@ public class Murabha_DocumentDetails_Step {
 	
 	ConfigFileReader configFileReader = new ConfigFileReader();
 	String excelPath = configFileReader.getJSFilePath();
-	String excelTestDataPath = configFileReader.getIjarahTestDataFilePath();
+	String excelTestDataPath = configFileReader.getMurabhaTestDataFilePath();
 	WebDriver driver = BaseClass.driver;
 	JSPaths jsPaths = new JSPaths(excelPath, "Ijara_loginElements", "Ijara_LoginFieldName", "JSPath");
 	JSPaths documentdetailsJsPaths = new JSPaths(excelPath, "DocumentDetails_Elements", "DocumentDetails_FieldName",

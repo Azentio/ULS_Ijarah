@@ -26,7 +26,7 @@ import resources.BaseClass;
 public class MURABHA_AppDataEntryIncomeDetailsList {
 	ConfigFileReader configFileReader = new ConfigFileReader();
 	String excelPath = configFileReader.getJSFilePath();
-	String excelTestDataPath = configFileReader.getIjarahTestDataFilePath();
+	String excelTestDataPath = configFileReader.getMurabhaTestDataFilePath();
 	WebDriver driver = BaseClass.driver;
 	JSPaths IjarahAppDataEntryIncomeDetails = new JSPaths(excelPath, "IjarahAppDataEntryIncomeDetails", "FieldName", "JSPath");
 	ExcelData IjaraAppDataCheckQuationInfoexelData = new ExcelData(excelTestDataPath, "IjaraAppDataCheckQuationInfo", "Data Set ID");

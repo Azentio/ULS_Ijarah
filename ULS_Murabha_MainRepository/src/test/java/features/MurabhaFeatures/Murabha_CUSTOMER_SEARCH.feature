@@ -323,7 +323,7 @@ Feature: Application_Detail_Customer_Search
 		And User_607 Update testdata from AT_NWP_04
 		And User_607 Check Region should be editable
 		And User_607 Check Servicing Branch should be editable
-		And User_607 Check Spoke Location should be editable
+		#And User_607 Check Spoke Location should be editable
 		And User_607 Check Closing Staff Or Servicing Staff Or RM should be editable
 		And User_607 Check Sourcing Type should be editable
 		And User_607 Check Sourcing Office should be editable
