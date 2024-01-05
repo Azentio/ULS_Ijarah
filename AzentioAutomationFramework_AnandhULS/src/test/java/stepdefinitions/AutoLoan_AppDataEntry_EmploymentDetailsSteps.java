@@ -126,7 +126,7 @@ public class AutoLoan_AppDataEntry_EmploymentDetailsSteps extends BaseClass {
 									+ i + "].innerText")
 							.toString();
 					System.out.println("label Name is " + labelName);
-					if (!(labelName.isBlank())
+					if (!(labelName.isEmpty())
 							&& (labelName.trim()).equalsIgnoreCase(("Customer Employment List").trim())) {
 						if (j > 250) {
 							System.out.println("Inside final if condition");
@@ -351,7 +351,7 @@ public class AutoLoan_AppDataEntry_EmploymentDetailsSteps extends BaseClass {
 			try {
 				numberOfRecordInMailBox = javascriptHelper.executeScript("return " + mailBoxRecordList).toString();
 				System.out.println("Number of record in mail box " + numberOfRecordInMailBox);
-				if (!(numberOfRecordInMailBox.isBlank())) {
+				if (!(numberOfRecordInMailBox.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1556,7 +1556,7 @@ public class AutoLoan_AppDataEntry_EmploymentDetailsSteps extends BaseClass {
 									+ i + "].innerText")
 							.toString();
 					System.out.println("label Name is " + labelName);
-					if (!(labelName.isBlank())
+					if (!(labelName.isEmpty())
 							&& (labelName.trim()).equalsIgnoreCase(("Customer Employment List").trim())) {
 						listViewIndex = i;
 						isIndexFound = true;

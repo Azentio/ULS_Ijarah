@@ -10,9 +10,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-
 import dataProvider.ConfigFileReader;
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 public class BaseClass {

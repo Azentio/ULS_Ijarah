@@ -209,7 +209,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 			try {
 				numberOfRecordInMailBox = javascriptHelper.executeScript("return " + mailBoxRecordList).toString();
 				System.out.println("Number of record in mail box " + numberOfRecordInMailBox);
-				if (!(numberOfRecordInMailBox.isBlank())) {
+				if (!(numberOfRecordInMailBox.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -302,7 +302,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 			try {
 				numberOfRecordInMailBox = javascriptHelper.executeScript("return " + mailBoxRecordList).toString();
 				System.out.println("Number of record in mail box " + numberOfRecordInMailBox);
-				if (!(numberOfRecordInMailBox.isBlank())) {
+				if (!(numberOfRecordInMailBox.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -343,7 +343,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 			try {
 				numberOfRecordInMailBox = javascriptHelper.executeScript("return " + mailBoxRecordList).toString();
 				System.out.println("Number of record in mail box " + numberOfRecordInMailBox);
-				if (!(numberOfRecordInMailBox.isBlank())) {
+				if (!(numberOfRecordInMailBox.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -384,7 +384,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 			try {
 				numberOfRecordInMailBox = javascriptHelper.executeScript("return " + mailBoxRecordList).toString();
 				System.out.println("Number of record in mail box " + numberOfRecordInMailBox);
-				if (!(numberOfRecordInMailBox.isBlank())) {
+				if (!(numberOfRecordInMailBox.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -486,7 +486,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 			try {
 				tempRecordStatus = javascriptHelper
 						.executeScript("return " + customerDetailsJSPaths.getElement("get_record_status")).toString();
-				if (!(recordStatus.isBlank())) {
+				if (!(recordStatus.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -537,7 +537,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 				listViewRecordStatus = javascriptHelper
 						.executeScript("return " + customerDetailsJSPaths.getElement("list_view_record_status"))
 						.toString();
-				if (!(listViewRecordStatus.isBlank())) {
+				if (!(listViewRecordStatus.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -715,7 +715,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 				fieldVerification = javascriptHelper
 						.executeScriptWithWebElement(customerDetailsJSPaths.getElement("first_name_input"))
 						.getAttribute("type");
-				if (!(fieldVerification.isBlank())) {
+				if (!(fieldVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -766,7 +766,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 				fieldVerification = javascriptHelper
 						.executeScriptWithWebElement(customerDetailsJSPaths.getElement("middle_name_input"))
 						.getAttribute("type");
-				if (!(fieldVerification.isBlank())) {
+				if (!(fieldVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -816,7 +816,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 				fieldVerification = javascriptHelper
 						.executeScriptWithWebElement(customerDetailsJSPaths.getElement("first_name_input"))
 						.getAttribute("type");
-				if (!(fieldVerification.isBlank())) {
+				if (!(fieldVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -868,7 +868,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 				fieldVerification = javascriptHelper
 						.executeScriptWithWebElement(customerDetailsJSPaths.getElement("first_name_input"))
 						.getAttribute("type");
-				if (!(fieldVerification.isBlank())) {
+				if (!(fieldVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -919,7 +919,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 				fieldVerification = javascriptHelper
 						.executeScriptWithWebElement(customerDetailsJSPaths.getElement("middle_name_arabic_input"))
 						.getAttribute("type");
-				if (!(fieldVerification.isBlank())) {
+				if (!(fieldVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -971,7 +971,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 				fieldVerification = javascriptHelper
 						.executeScriptWithWebElement(customerDetailsJSPaths.getElement("first_name_input"))
 						.getAttribute("type");
-				if (!(fieldVerification.isBlank())) {
+				if (!(fieldVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1020,7 +1020,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 				fieldVerification = javascriptHelper
 						.executeScriptWithWebElement(customerDetailsJSPaths.getElement("family_name_arabic_input"))
 						.getAttribute("type");
-				if (!(fieldVerification.isBlank())) {
+				if (!(fieldVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1069,7 +1069,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 				fieldVerification = javascriptHelper
 						.executeScriptWithWebElement(customerDetailsJSPaths.getElement("family_name_input"))
 						.getAttribute("type");
-				if (!(fieldVerification.isBlank())) {
+				if (!(fieldVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1152,7 +1152,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 						.executeScript(
 								"return " + customerDetailsJSPaths.getElement("date_of_birth_field_verification"))
 						.toString();
-				if (!(mandatoryVerification.isBlank()) || !(fieldVerification.isBlank())) {
+				if (!(mandatoryVerification.isEmpty()) || !(fieldVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1176,7 +1176,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 			try {
 				ageAutoPopulateCheck = javascriptHelper
 						.executeScript("return " + customerDetailsJSPaths.getElement("age_get_value")).toString();
-				if (!(ageAutoPopulateCheck.isBlank())) {
+				if (!(ageAutoPopulateCheck.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1190,7 +1190,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 				mandatoryVerification = javascriptHelper
 						.executeScript("return " + customerDetailsJSPaths.getElement("age_mandatory_verification"))
 						.toString();
-				if (!(mandatoryVerification.isBlank())) {
+				if (!(mandatoryVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1418,7 +1418,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 				fieldVerification = javascriptHelper
 						.executeScriptWithWebElement(customerDetailsJSPaths.getElement("no_of_dependents_input"))
 						.getAttribute("type");
-				if (!(mandatoryVerification.isBlank()) || !(fieldVerification.isBlank())) {
+				if (!(mandatoryVerification.isEmpty()) || !(fieldVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1473,7 +1473,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 				toggleVerification = javascriptHelper
 						.executeScriptWithWebElement(customerDetailsJSPaths.getElement("blacklisted_toggle"))
 						.getAttribute("role");
-				if (!(toggleVerification.isBlank())) {
+				if (!(toggleVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1488,7 +1488,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 						.executeScript(
 								"return " + customerDetailsJSPaths.getElement("blacklisted_mandatory_verification"))
 						.toString();
-				if (!(mandatoryVerification.isBlank())) {
+				if (!(mandatoryVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1555,7 +1555,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 				fieldVerification = javascriptHelper
 						.executeScriptWithWebElement(customerDetailsJSPaths.getElement("remarks_input"))
 						.getAttribute("type");
-				if (!(fieldVerification.isBlank())) {
+				if (!(fieldVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1594,7 +1594,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 			try {
 				updateSuccessMessage = javascriptHelper
 						.executeScript("return " + CommonJsElements.getElement("toast_container_message")).toString();
-				if (!(updateSuccessMessage.isBlank())) {
+				if (!(updateSuccessMessage.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1625,7 +1625,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 			try {
 				saveSuccessMessage = javascriptHelper
 						.executeScript("return " + CommonJsElements.getElement("toast_container_message")).toString();
-				if (!(saveSuccessMessage.isBlank())) {
+				if (!(saveSuccessMessage.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1697,7 +1697,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 			try {
 				mandatoryValidation = javascriptHelper
 						.executeScript("return " + CommonJsElements.getElement("toast_message")).toString();
-				if (!(mandatoryValidation.isBlank())) {
+				if (!(mandatoryValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1737,7 +1737,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 						.executeScript("return "
 								+ customerDetailsJSPaths.getElement("first_name_input_field_level_validation"))
 						.toString();
-				if (!(fieldLevelvalidation.isBlank())) {
+				if (!(fieldLevelvalidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1789,7 +1789,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 						.executeScript("return "
 								+ customerDetailsJSPaths.getElement("first_name_input_field_level_validation"))
 						.toString();
-				if (!(fieldLevelvalidation.isBlank())) {
+				if (!(fieldLevelvalidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1924,7 +1924,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 								+ customerDetailsJSPaths.getElement("customer_details_back_button_verification"))
 						.toString();
 				System.out.println(backButtonString);
-				if (!(backButtonString.isBlank())) {
+				if (!(backButtonString.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1981,7 +1981,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 						.executeScript("return "
 								+ customerDetailsJSPaths.getElement("customer_details_list_view_search_result"))
 						.toString();
-				if (!(searchResult.isBlank())) {
+				if (!(searchResult.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2040,7 +2040,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 						.executeScript("return "
 								+ customerDetailsJSPaths.getElement("customer_details_list_view_search_result"))
 						.toString();
-				if (!(searchResult.isBlank()) && i > 250) {
+				if (!(searchResult.isEmpty()) && i > 250) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2130,7 +2130,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 						.executeScript(
 								"return " + customerDetailsJSPaths.getElement("customer_details_list_view_record"))
 						.toString();
-				if (!(listViewRecordLabels.isBlank())) {
+				if (!(listViewRecordLabels.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2160,7 +2160,7 @@ public class Ijarah_NewAPP_customerDetailsSteps extends BaseClass {
 						.executeScript(
 								"return " + customerDetailsJSPaths.getElement("customer_details_list_view_record"))
 						.toString();
-				if (!(listViewRecordLabels.isBlank())) {
+				if (!(listViewRecordLabels.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {

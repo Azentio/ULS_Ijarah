@@ -6,7 +6,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.testng.Assert;
 
 public class ClicksAndActionsHelper {
 	private WebDriver driver;
@@ -90,7 +89,7 @@ public class ClicksAndActionsHelper {
 		actions.scrollByAmount(100, 0).build().perform();
 	}
 
-	public void jsSelectUsingText(String dropdownValue) {
+	public void jsSelectUsingText(String dropdownValue) throws Exception {
 		javascriptHelper = new JavascriptHelper(driver);
 		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
 		String dropdownLength = "";
@@ -109,9 +108,9 @@ public class ClicksAndActionsHelper {
 				}
 			} catch (Exception e) {
 				if (i == 1500) {
-					System.err.println("Dropdown is not getting opened");
+					
 					e.printStackTrace();
-					Assert.fail(e.getMessage());
+					throw new Exception("Dropdown is not getting opened");
 				}
 			}
 		}
@@ -122,13 +121,13 @@ public class ClicksAndActionsHelper {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					System.out.println("Dropdown Length " + dropdownLength);
 					break;
 				}
 			} catch (Exception e) {
 				if (i == 300) {
-					Assert.fail(e.getMessage());
+					throw new Exception(e.getMessage());
 				}
 			}
 		}
@@ -147,8 +146,9 @@ public class ClicksAndActionsHelper {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
-						Assert.fail(e.getMessage());
+					if (l == 300 && !(dropdownString.isEmpty())) {
+						e.printStackTrace();
+						throw new Exception(e.getMessage());
 					}
 				}
 				if (!(dropdownString.isEmpty())) {
@@ -171,7 +171,8 @@ public class ClicksAndActionsHelper {
 						break;
 					} catch (Exception e) {
 						if (k == 300) {
-							Assert.fail(e.getMessage());
+							e.printStackTrace();
+							throw new Exception(e.getMessage());
 
 						}
 					}

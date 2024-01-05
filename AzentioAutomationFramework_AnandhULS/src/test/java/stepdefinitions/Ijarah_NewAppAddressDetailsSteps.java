@@ -246,7 +246,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 			try {
 				numberOfRecordInMailBox = javascriptHelper.executeScript("return " + mailBoxRecordList).toString();
 				System.out.println("Number of record in mail box " + numberOfRecordInMailBox);
-				if (!(numberOfRecordInMailBox.isBlank())) {
+				if (!(numberOfRecordInMailBox.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -288,7 +288,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 			try {
 				numberOfRecordInMailBox = javascriptHelper.executeScript("return " + mailBoxRecordList).toString();
 				System.out.println("Number of record in mail box " + numberOfRecordInMailBox);
-				if (!(numberOfRecordInMailBox.isBlank())) {
+				if (!(numberOfRecordInMailBox.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -330,7 +330,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				numberOfRecordInMailBox = javascriptHelper.executeScript("return " + mailBoxRecordList).toString();
-				if (!(numberOfRecordInMailBox.isBlank())) {
+				if (!(numberOfRecordInMailBox.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -380,7 +380,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 				if (i > 8) {
 					System.out.println("Query " + labelLength);
 					lengthOfTheLabel = javascriptHelper.executeScript("return " + labelLength).toString();
-					if (!(lengthOfTheLabel.isBlank())) {
+					if (!(lengthOfTheLabel.isEmpty())) {
 						break;
 					}
 				}
@@ -401,7 +401,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 									+ i + "].innerText")
 							.toString();
 					System.out.println("label Name is " + labelName);
-					if (!(labelName.isBlank()) && (labelName.trim()).equalsIgnoreCase(("Address Details").trim())) {
+					if (!(labelName.isEmpty()) && (labelName.trim()).equalsIgnoreCase(("Address Details").trim())) {
 
 						System.out.println("Label Name " + labelName);
 						if (i > 250) {
@@ -901,7 +901,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 				poBoxNumberObject = javascriptHelper.executeScript("return "
 						+ newAppAddressDetailsJSElements.getElement("mobile_number_primary_mandatory_verification"))
 						.toString();
-				if (!(poBoxNumberObject.isBlank())) {
+				if (!(poBoxNumberObject.isEmpty())) {
 					break;
 				} else {
 					break;
@@ -1347,7 +1347,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 			try {
 				saveValidationPopup = javascriptHelper
 						.executeScript("return " + commonJSElements.getElement("toast_container_message")).toString();
-				if (!(saveValidationPopup.isBlank())) {
+				if (!(saveValidationPopup.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1380,7 +1380,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 			try {
 				saveValidationPopup = javascriptHelper
 						.executeScript("return " + commonJSElements.getElement("toast_container_message")).toString();
-				if (!(saveValidationPopup.isBlank())) {
+				if (!(saveValidationPopup.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1487,7 +1487,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 			try {
 				mandatoryValidation = javascriptHelper
 						.executeScript("return " + commonJSElements.getElement("toast_message")).toString();
-				if (!(mandatoryValidation.isBlank())) {
+				if (!(mandatoryValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1640,7 +1640,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 				if (i > 8) {
 					System.out.println("Query " + labelLength);
 					lengthOfTheLabel = javascriptHelper.executeScript("return " + labelLength).toString();
-					if (!(lengthOfTheLabel.isBlank())) {
+					if (!(lengthOfTheLabel.isEmpty())) {
 						break;
 					}
 				}
@@ -1661,7 +1661,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 									+ i + "].innerText")
 							.toString();
 					System.out.println("label Name is " + labelName);
-					if (!(labelName.isBlank()) && (labelName.trim()).equalsIgnoreCase(("Address Details").trim())) {
+					if (!(labelName.isEmpty()) && (labelName.trim()).equalsIgnoreCase(("Address Details").trim())) {
 
 						System.out.println("Label Name " + labelName);
 						if (i > 250) {
@@ -1754,7 +1754,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				noOfListView = javascriptHelper.executeScript("return " + listViewQuery).toString();
-				if (noOfListView.equals("0") && !(noOfListView.isBlank())) {
+				if (noOfListView.equals("0") && !(noOfListView.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1888,7 +1888,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				noOfListView = javascriptHelper.executeScript("return " + listViewQuery).toString();
-				if (noOfListView.equals("0") && !(noOfListView.isBlank())) {
+				if (noOfListView.equals("0") && !(noOfListView.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1964,7 +1964,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				noOfListView = javascriptHelper.executeScript("return " + listViewQuery).toString();
-				if (noOfListView.equals("0") && !(noOfListView.isBlank())) {
+				if (noOfListView.equals("0") && !(noOfListView.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2154,7 +2154,7 @@ public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				noOfListView = javascriptHelper.executeScript("return " + listViewQuery).toString();
-				if (noOfListView.equals("0") && !(noOfListView.isBlank())) {
+				if (noOfListView.equals("0") && !(noOfListView.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {

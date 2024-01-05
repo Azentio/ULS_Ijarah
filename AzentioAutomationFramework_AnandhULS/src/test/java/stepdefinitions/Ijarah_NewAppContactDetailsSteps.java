@@ -232,7 +232,7 @@ public class Ijarah_NewAppContactDetailsSteps extends BaseClass {
 			try {
 				numberOfRecordInMailBox = javascriptHelper.executeScript("return " + mailBoxRecordList).toString();
 				System.out.println("Number of record in mail box " + numberOfRecordInMailBox);
-				if (!(numberOfRecordInMailBox.isBlank())) {
+				if (!(numberOfRecordInMailBox.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -277,7 +277,7 @@ public class Ijarah_NewAppContactDetailsSteps extends BaseClass {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				noOfListView = javascriptHelper.executeScript("return " + listViewQuery).toString();
-				if (noOfListView.equals("0") && !(noOfListView.isBlank())) {
+				if (noOfListView.equals("0") && !(noOfListView.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -351,7 +351,7 @@ public class Ijarah_NewAppContactDetailsSteps extends BaseClass {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				noOfListView = javascriptHelper.executeScript("return " + listViewQuery).toString();
-				if (noOfListView.equals("0") && !(noOfListView.isBlank())) {
+				if (noOfListView.equals("0") && !(noOfListView.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -474,7 +474,7 @@ public class Ijarah_NewAppContactDetailsSteps extends BaseClass {
 			try {
 				savePopup = javascriptHelper
 						.executeScript("return " + commonJSElements.getElement("toast_container_message")).toString();
-				if (!(savePopup.isBlank())) {
+				if (!(savePopup.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -527,7 +527,7 @@ public class Ijarah_NewAppContactDetailsSteps extends BaseClass {
 				if (i > 200) {
 					System.out.println("Query " + labelLength);
 					lengthOfTheLabel = javascriptHelper.executeScript("return " + labelLength).toString();
-					if (!(lengthOfTheLabel.isBlank())) {
+					if (!(lengthOfTheLabel.isEmpty())) {
 						break;
 					}
 				}
@@ -548,7 +548,7 @@ public class Ijarah_NewAppContactDetailsSteps extends BaseClass {
 									+ i + "].innerText")
 							.toString();
 					System.out.println("label Name is " + labelName);
-					if (!(labelName.isBlank()) && (labelName.trim()).equalsIgnoreCase(("Contact Details").trim())) {
+					if (!(labelName.isEmpty()) && (labelName.trim()).equalsIgnoreCase(("Contact Details").trim())) {
 
 						System.out.println("Label Name " + labelName);
 						if (i > 250) {
@@ -609,7 +609,7 @@ public class Ijarah_NewAppContactDetailsSteps extends BaseClass {
 			try {
 				mandatoryValidation = javascriptHelper
 						.executeScript("return " + commonJSElements.getElement("toast_message")).toString();
-				if (!(mandatoryValidation.isBlank())) {
+				if (!(mandatoryValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -652,7 +652,7 @@ public class Ijarah_NewAppContactDetailsSteps extends BaseClass {
 				fieldValidation = javascriptHelper
 						.executeScript("return " + contactDetailsJSElements.getElement("phone_number_field_validation"))
 						.toString();
-				if ((!fieldValidation.isBlank())) {
+				if ((!fieldValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -705,7 +705,7 @@ public class Ijarah_NewAppContactDetailsSteps extends BaseClass {
 				fieldValidation = javascriptHelper
 						.executeScript("return " + contactDetailsJSElements.getElement("phone_number_field_validation"))
 						.toString();
-				if ((!fieldValidation.isBlank())) {
+				if ((!fieldValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -759,7 +759,7 @@ public class Ijarah_NewAppContactDetailsSteps extends BaseClass {
 				fieldValidation = javascriptHelper
 						.executeScript("return " + contactDetailsJSElements.getElement("phone_number_field_validation"))
 						.toString();
-				if ((!fieldValidation.isBlank())) {
+				if ((!fieldValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -817,7 +817,7 @@ public class Ijarah_NewAppContactDetailsSteps extends BaseClass {
 				fieldValidation = javascriptHelper
 						.executeScript("return " + contactDetailsJSElements.getElement("email_id_field_validation"))
 						.toString();
-				if ((!fieldValidation.isBlank())) {
+				if ((!fieldValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -904,7 +904,7 @@ public class Ijarah_NewAppContactDetailsSteps extends BaseClass {
 				fieldValidation = javascriptHelper
 						.executeScript("return " + contactDetailsJSElements.getElement("phone_number_field_validation"))
 						.toString();
-				if ((!fieldValidation.isBlank())) {
+				if ((!fieldValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1016,7 +1016,7 @@ public class Ijarah_NewAppContactDetailsSteps extends BaseClass {
 						.executeScriptWithWebElement(
 								contactDetailsJSElements.getElement("prefered_time_for_contact_input"))
 						.getAttribute("type");
-				if (!(preferedTimeForContact.isBlank())) {
+				if (!(preferedTimeForContact.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1072,7 +1072,7 @@ public class Ijarah_NewAppContactDetailsSteps extends BaseClass {
 				preferedTimeForContact = javascriptHelper
 						.executeScriptWithWebElement(contactDetailsJSElements.getElement("email_input_input"))
 						.getAttribute("type");
-				if (!(preferedTimeForContact.isBlank())) {
+				if (!(preferedTimeForContact.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1106,7 +1106,7 @@ public class Ijarah_NewAppContactDetailsSteps extends BaseClass {
 			try {
 				savePopup = javascriptHelper
 						.executeScript("return " + commonJSElements.getElement("toast_container_message")).toString();
-				if (!(savePopup.isBlank())) {
+				if (!(savePopup.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1142,7 +1142,7 @@ public class Ijarah_NewAppContactDetailsSteps extends BaseClass {
 				tempRecordStatus = javascriptHelper
 						.executeScript("return " + contactDetailsJSElements.getElement("contact_details_toggle_status"))
 						.toString();
-				if (!(tempRecordStatus.isBlank())) {
+				if (!(tempRecordStatus.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1304,7 +1304,7 @@ public class Ijarah_NewAppContactDetailsSteps extends BaseClass {
 				fieldValidation = javascriptHelper
 						.executeScript("return " + contactDetailsJSElements.getElement("phone_number_field_validation"))
 						.toString();
-				if ((!fieldValidation.isBlank())) {
+				if ((!fieldValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1419,7 +1419,7 @@ public class Ijarah_NewAppContactDetailsSteps extends BaseClass {
 						.executeScriptWithWebElement(
 								contactDetailsJSElements.getElement("prefered_time_for_contact_input"))
 						.getAttribute("type");
-				if (!(preferedTimeForContact.isBlank())) {
+				if (!(preferedTimeForContact.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1476,7 +1476,7 @@ public class Ijarah_NewAppContactDetailsSteps extends BaseClass {
 				preferedTimeForContact = javascriptHelper
 						.executeScriptWithWebElement(contactDetailsJSElements.getElement("email_input_input"))
 						.getAttribute("type");
-				if (!(preferedTimeForContact.isBlank())) {
+				if (!(preferedTimeForContact.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1795,7 +1795,7 @@ public class Ijarah_NewAppContactDetailsSteps extends BaseClass {
 				if (i > 200) {
 					System.out.println("Query " + labelLength);
 					lengthOfTheLabel = javascriptHelper.executeScript("return " + labelLength).toString();
-					if (!(lengthOfTheLabel.isBlank())) {
+					if (!(lengthOfTheLabel.isEmpty())) {
 						break;
 					}
 				}
@@ -1816,7 +1816,7 @@ public class Ijarah_NewAppContactDetailsSteps extends BaseClass {
 									+ i + "].innerText")
 							.toString();
 					System.out.println("label Name is " + labelName);
-					if (!(labelName.isBlank()) && (labelName.trim()).equalsIgnoreCase(("Contact Details").trim())) {
+					if (!(labelName.isEmpty()) && (labelName.trim()).equalsIgnoreCase(("Contact Details").trim())) {
 
 						System.out.println("Label Name " + labelName);
 						if (i > 250) {

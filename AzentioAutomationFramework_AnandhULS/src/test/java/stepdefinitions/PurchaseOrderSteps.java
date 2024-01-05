@@ -75,7 +75,7 @@ public class PurchaseOrderSteps extends BaseClass {
 			try {
 				numberOfRecordInMailBox = javascriptHelper.executeScript("return " + mailBoxRecordList).toString();
 				System.out.println("Number of record in mail box " + numberOfRecordInMailBox);
-				if (!(numberOfRecordInMailBox.isBlank())) {
+				if (!(numberOfRecordInMailBox.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -136,7 +136,7 @@ public class PurchaseOrderSteps extends BaseClass {
 			try {
 				numberOfRecordInMailBox = javascriptHelper.executeScript("return " + mailBoxRecordList).toString();
 				System.out.println("Number of record in mail box " + numberOfRecordInMailBox);
-				if (!(numberOfRecordInMailBox.isBlank())) {
+				if (!(numberOfRecordInMailBox.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1711,7 +1711,7 @@ public class PurchaseOrderSteps extends BaseClass {
 				String otp = javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString();
 				System.out.println("OTP is " + otp);
 				if (!(javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString()
-						.isBlank())) {
+						.isEmpty())) {
 
 					break;
 				}
@@ -1739,7 +1739,7 @@ public class PurchaseOrderSteps extends BaseClass {
 				String otp = javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString();
 				System.out.println("OTP is " + otp);
 				if (!(javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString()
-						.isBlank())) {
+						.isEmpty())) {
 
 					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
 					break;
@@ -1768,7 +1768,7 @@ public class PurchaseOrderSteps extends BaseClass {
 				String otp = javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString();
 				System.out.println("OTP is " + otp);
 				if (!(javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString()
-						.isBlank())) {
+						.isEmpty())) {
 
 					break;
 				}
@@ -1796,7 +1796,7 @@ public class PurchaseOrderSteps extends BaseClass {
 				String otp = javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString();
 				System.out.println("OTP is " + otp);
 				if (!(javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString()
-						.isBlank())) {
+						.isEmpty())) {
 
 					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
 					break;

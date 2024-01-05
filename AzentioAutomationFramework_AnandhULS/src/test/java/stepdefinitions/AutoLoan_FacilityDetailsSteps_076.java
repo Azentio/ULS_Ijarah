@@ -730,7 +730,7 @@ public class AutoLoan_FacilityDetailsSteps_076 extends BaseClass {
 			try {
 				saveSuccessMessage = javascriptHelper
 						.executeScript("return " + CommonJsElements.getElement("toast_container_message")).toString();
-				if (!(saveSuccessMessage.isBlank())) {
+				if (!(saveSuccessMessage.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -871,7 +871,7 @@ public class AutoLoan_FacilityDetailsSteps_076 extends BaseClass {
 			try {
 				saveSuccessMessage = javascriptHelper
 						.executeScript("return " + CommonJsElements.getElement("toast_container_message")).toString();
-				if (!(saveSuccessMessage.isBlank())) {
+				if (!(saveSuccessMessage.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {

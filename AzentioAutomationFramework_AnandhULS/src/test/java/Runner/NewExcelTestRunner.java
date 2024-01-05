@@ -15,10 +15,9 @@ import utilities.ExtentTestManager;
 
 public class NewExcelTestRunner {
 	ConfigFileReader configFileReader = new ConfigFileReader();
-	String path = configFileReader.getAutoLoanTestDataFilePath();
+	String path = configFileReader.getTestDataFilePath();
 	ExcelData testExecution = new ExcelData(path, "ULSExecution", "TestCase ID");
 	Map<String, String> testExecutionData;
-
 	ExcelTest excelTest = new ExcelTest(path, "ULSExecution", "TestCase ID");
 	List<String> testCaseTagsFromExcel = excelTest.getTestCaseTagsfromExcel();
 	static String currentExecutionTag;

@@ -389,7 +389,7 @@ public class New_Application {
 
 				System.out.println("Dropdown length " + dropdownLength);
 
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 
 					break;
 
@@ -437,7 +437,7 @@ public class New_Application {
 
 				} catch (Exception e) {
 
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 
 						Assert.fail(e.getMessage());
 
@@ -545,7 +545,7 @@ public class New_Application {
 
 				System.out.println("Dropdown length " + dropdownLength);
 
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 
 					break;
 
@@ -593,7 +593,7 @@ public class New_Application {
 
 				} catch (Exception e) {
 
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 
 						Assert.fail(e.getMessage());
 
@@ -818,7 +818,7 @@ public class New_Application {
 
 				System.out.println("Dropdown length " + dropdownLength);
 
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 
 					break;
 
@@ -866,7 +866,7 @@ public class New_Application {
 
 				} catch (Exception e) {
 
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 
 						Assert.fail(e.getMessage());
 
@@ -975,7 +975,7 @@ public class New_Application {
 
 				System.out.println("Dropdown length " + dropdownLength);
 
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 
 					break;
 
@@ -1023,7 +1023,7 @@ public class New_Application {
 
 				} catch (Exception e) {
 
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 
 						Assert.fail(e.getMessage());
 
@@ -1133,7 +1133,7 @@ public class New_Application {
 
 				System.out.println("Dropdown length " + dropdownLength);
 
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 
 					break;
 
@@ -1181,7 +1181,7 @@ public class New_Application {
 
 				} catch (Exception e) {
 
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 
 						Assert.fail(e.getMessage());
 
@@ -1290,7 +1290,7 @@ public class New_Application {
 
 				System.out.println("Dropdown length " + dropdownLength);
 
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 
 					break;
 
@@ -1338,7 +1338,7 @@ public class New_Application {
 
 				} catch (Exception e) {
 
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 
 						Assert.fail(e.getMessage());
 
@@ -1447,7 +1447,7 @@ public class New_Application {
 
 				System.out.println("Dropdown length " + dropdownLength);
 
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 
 					break;
 
@@ -1495,7 +1495,7 @@ public class New_Application {
 
 				} catch (Exception e) {
 
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 
 						Assert.fail(e.getMessage());
 
@@ -1606,7 +1606,7 @@ public class New_Application {
 
 				System.out.println("Dropdown length " + dropdownLength);
 
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 
 					break;
 
@@ -1654,7 +1654,7 @@ public class New_Application {
 
 				} catch (Exception e) {
 
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 
 						Assert.fail(e.getMessage());
 
@@ -1762,7 +1762,7 @@ public class New_Application {
 
 				System.out.println("Dropdown length " + dropdownLength);
 
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 
 					break;
 
@@ -1810,7 +1810,7 @@ public class New_Application {
 
 				} catch (Exception e) {
 
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 
 						Assert.fail(e.getMessage());
 
@@ -1920,7 +1920,7 @@ public class New_Application {
 
 				System.out.println("Dropdown length " + dropdownLength);
 
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 
 					break;
 
@@ -1968,7 +1968,7 @@ public class New_Application {
 
 				} catch (Exception e) {
 
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 
 						Assert.fail(e.getMessage());
 
@@ -2077,7 +2077,7 @@ public class New_Application {
 
 				System.out.println("Dropdown length " + dropdownLength);
 
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 
 					break;
 
@@ -2125,7 +2125,7 @@ public class New_Application {
 
 				} catch (Exception e) {
 
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 
 						Assert.fail(e.getMessage());
 
@@ -2264,7 +2264,7 @@ public class New_Application {
 
 				System.out.println("Dropdown length " + dropdownLength);
 
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 
 					break;
 				}
@@ -2305,7 +2305,7 @@ public class New_Application {
 
 				} catch (Exception e) {
 
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 
 						Assert.fail(e.getMessage());
 
@@ -2420,7 +2420,7 @@ public class New_Application {
 
 				System.out.println("Dropdown length " + dropdownLength);
 
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 
 					break;
 				}
@@ -2461,7 +2461,7 @@ public class New_Application {
 
 				} catch (Exception e) {
 
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 
 						Assert.fail(e.getMessage());
 
@@ -2567,7 +2567,7 @@ public class New_Application {
 
 				System.out.println("Dropdown length " + dropdownLength);
 
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 
 					break;
 				}
@@ -2608,7 +2608,7 @@ public class New_Application {
 
 				} catch (Exception e) {
 
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 
 						Assert.fail(e.getMessage());
 
@@ -2710,7 +2710,7 @@ public class New_Application {
 
 				System.out.println("Dropdown length " + dropdownLength);
 
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 
 					break;
 				}
@@ -2751,7 +2751,7 @@ public class New_Application {
 
 				} catch (Exception e) {
 
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 
 						Assert.fail(e.getMessage());
 
@@ -2866,7 +2866,7 @@ public class New_Application {
 
 				System.out.println("Dropdown length " + dropdownLength);
 
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 
 					break;
 				}
@@ -2907,7 +2907,7 @@ public class New_Application {
 
 				} catch (Exception e) {
 
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 
 						Assert.fail(e.getMessage());
 
@@ -3011,7 +3011,7 @@ public class New_Application {
 
 				System.out.println("Dropdown length " + dropdownLength);
 
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 
 					break;
 				}
@@ -3052,7 +3052,7 @@ public class New_Application {
 
 				} catch (Exception e) {
 
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 
 						Assert.fail(e.getMessage());
 
@@ -3212,7 +3212,7 @@ public class New_Application {
 
 				System.out.println("Dropdown length " + dropdownLength);
 
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 
 					break;
 				}
@@ -3253,7 +3253,7 @@ public class New_Application {
 
 				} catch (Exception e) {
 
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 
 						Assert.fail(e.getMessage());
 
@@ -3523,7 +3523,7 @@ public class New_Application {
 			try {
 				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
 				System.out.println("List of add button " + listOfAddButton);
-				if (!(listOfAddButton.isBlank())) {
+				if (!(listOfAddButton.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -3542,7 +3542,7 @@ public class New_Application {
 									+ "].textContent")
 							.toString();
 					System.out.println("Screen Name " + addButtonScreenName);
-					if (!(addButtonScreenName.isBlank())) {
+					if (!(addButtonScreenName.isEmpty())) {
 						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
 						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Application Details").trim())) {
 							System.out.println("Inside nested loop");
@@ -3626,7 +3626,7 @@ public class New_Application {
 
 				System.out.println("Dropdown length " + dropdownLength);
 
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 
 					break;
 				}
@@ -3667,7 +3667,7 @@ public class New_Application {
 
 				} catch (Exception e) {
 
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 
 						Assert.fail(e.getMessage());
 
@@ -3750,7 +3750,7 @@ public class New_Application {
 
 				System.out.println("Dropdown length " + dropdownLength);
 
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 
 					break;
 				}
@@ -3791,7 +3791,7 @@ public class New_Application {
 
 				} catch (Exception e) {
 
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 
 						Assert.fail(e.getMessage());
 
@@ -3893,7 +3893,7 @@ public class New_Application {
 
 				System.out.println("Dropdown length " + dropdownLength);
 
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 
 					break;
 				}
@@ -3934,7 +3934,7 @@ public class New_Application {
 
 				} catch (Exception e) {
 
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 
 						Assert.fail(e.getMessage());
 
@@ -4176,7 +4176,7 @@ public class New_Application {
 
 				System.out.println("Dropdown length " + dropdownLength);
 
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 
 					break;
 				}
@@ -4217,7 +4217,7 @@ public class New_Application {
 
 				} catch (Exception e) {
 
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 
 						Assert.fail(e.getMessage());
 

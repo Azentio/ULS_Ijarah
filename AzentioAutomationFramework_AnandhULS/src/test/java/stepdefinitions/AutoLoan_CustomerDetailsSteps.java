@@ -70,7 +70,7 @@ public class AutoLoan_CustomerDetailsSteps extends BaseClass {
 			try {
 				numberOfRecordInMailBox = javascriptHelper.executeScript("return " + mailBoxRecordList).toString();
 				System.out.println("Number of record in mail box " + numberOfRecordInMailBox);
-				if (!(numberOfRecordInMailBox.isBlank())) {
+				if (!(numberOfRecordInMailBox.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -417,7 +417,7 @@ public class AutoLoan_CustomerDetailsSteps extends BaseClass {
 						.executeScript(
 								"return " + customerDetailsJSElements.getElement("no_of_childer_input") + ".innerText")
 						.toString();
-				if (!(characterInputValidation.isBlank())) {
+				if (!(characterInputValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1103,7 +1103,7 @@ public class AutoLoan_CustomerDetailsSteps extends BaseClass {
 						.executeScript(
 								"return " + customerDetailsJSElements.getElement("date_of_birth_field_verification"))
 						.toString();
-				if (!(mandatoryVerification.isBlank()) || !(fieldVerification.isBlank())) {
+				if (!(mandatoryVerification.isEmpty()) || !(fieldVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1806,7 +1806,7 @@ public class AutoLoan_CustomerDetailsSteps extends BaseClass {
 				toggleVerification = javascriptHelper
 						.executeScriptWithWebElement(customerDetailsJSElements.getElement("existing_customer_flag"))
 						.getAttribute("role");
-				if (!(toggleVerification.isBlank())) {
+				if (!(toggleVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1821,7 +1821,7 @@ public class AutoLoan_CustomerDetailsSteps extends BaseClass {
 						.executeScript("return "
 								+ customerDetailsJSElements.getElement("existing_customer_flag_mandatory_verification"))
 						.toString();
-				if (!(mandatoryVerification.isBlank())) {
+				if (!(mandatoryVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1846,7 +1846,7 @@ public class AutoLoan_CustomerDetailsSteps extends BaseClass {
 				toggleVerification = javascriptHelper
 						.executeScriptWithWebElement(customerDetailsJSElements.getElement("blacklisted_toggle"))
 						.getAttribute("role");
-				if (!(toggleVerification.isBlank())) {
+				if (!(toggleVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1861,7 +1861,7 @@ public class AutoLoan_CustomerDetailsSteps extends BaseClass {
 						.executeScript(
 								"return " + customerDetailsJSElements.getElement("blacklisted_mandatory_verification"))
 						.toString();
-				if (!(mandatoryVerification.isBlank())) {
+				if (!(mandatoryVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
