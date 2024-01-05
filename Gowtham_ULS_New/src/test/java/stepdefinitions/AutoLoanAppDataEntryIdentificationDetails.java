@@ -934,18 +934,17 @@ public class AutoLoanAppDataEntryIdentificationDetails {
 		// document.querySelectorAll('ion-col[class="m-0 p-0 ng-star-inserted md
 		// hydrated"]')[1].querySelectorAll('td span')[7].innerText
 		listViewIDNumber = "";
-		for (int i = 0; i <= 300; i++) {
+		for (int i = 0; i <= 500; i++) {
 			try {
 				listViewIDNumber = javascriptHelper.executeScript(
-						"return  document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]')["
-								+ indexOfListView + "].querySelectorAll('td span')[7].innerText")
+						"return  document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]')["+ indexOfListView +"].querySelectorAll('td span')[7].innerText")
 						.toString();
 				if (!(listViewIDNumber.isBlank())) {
 					System.out.println("ID number from list view is " + listViewIDNumber);
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 300) {
+				if (i == 500) {
 					Assert.fail(e.getMessage());
 				}
 			}

@@ -27,6 +27,7 @@ public class AutoLoanAppdataEntryContactDetails {
 	String excelTestDataPath = System.getProperty("user.dir") + "\\TestData\\ijaraTestData.xlsx";
 	WebDriver driver = BaseClass.driver;
 	JSPaths ALoanAppdataEntryContactDetails = new JSPaths(excelPath, "ALoanAppdataEntryContactDetails", "FieldName", "JSPath");
+	JSPaths IjADataEntryIdentifiDetails = new JSPaths(excelPath, "IjADataEntryIdentifiDetails", "FieldName", "JSPath");
 	ExcelData ALoanAppdataEntryContactDetailsexelData = new ExcelData(excelTestDataPath, "ALoanAppdataEntryContactDetails", "Data Set ID");
 	Map<String, String> testData;
 	
@@ -77,6 +78,20 @@ public class AutoLoanAppdataEntryContactDetails {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(ALoanAppdataEntryContactDetails.getElement("additional_customer_info_tab")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@Given("user_607 click on additional customer info tab in Ijarah AppData Entry Identification Details")
+	public void user_click_on_additional_customer_info_tab_in_ijarah_app_data_entry_identification_details() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(IjADataEntryIdentifiDetails.getElement("Additional_CustomerInformation")).click();
 				break;
 			} catch (Exception e) {
 				if (i == 1000) {

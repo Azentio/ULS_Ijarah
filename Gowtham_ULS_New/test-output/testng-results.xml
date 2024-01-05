@@ -2,35 +2,35 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-12-29T11:48:18 IST" name="Default suite" finished-at="2023-12-29T11:49:27 IST" duration-ms="68875">
+  <suite started-at="2024-01-05T10:53:00 IST" name="Default suite" finished-at="2024-01-05T10:53:47 IST" duration-ms="47924">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@72cc7e6f]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-12-29T11:48:18 IST" name="Default test" finished-at="2023-12-29T11:49:27 IST" duration-ms="68875">
+    <test started-at="2024-01-05T10:53:00 IST" name="Default test" finished-at="2024-01-05T10:53:47 IST" duration-ms="47924">
       <class name="Runner.TestApplication">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2023-12-29T11:48:18 IST" name="setUpClass" finished-at="2023-12-29T11:48:19 IST" duration-ms="926" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2024-01-05T10:53:00 IST" name="setUpClass" finished-at="2024-01-05T10:53:01 IST" duration-ms="1197" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2023-12-29T11:48:19 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-29T11:49:10 IST" duration-ms="50813" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2024-01-05T10:53:01 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-01-05T10:53:37 IST" duration-ms="35775" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["To test the customer identification details screen in new app stage"]]>
+                <![CDATA["to verify user can able to update the customer identification details record from list view"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[Auto Loan AppData Entry Identification Details]"]]>
+                <![CDATA["Optional[Ijarah AppData Entry Identification Details]"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2023-12-29T11:49:10 IST" name="tearDownClass" finished-at="2023-12-29T11:49:27 IST" duration-ms="17095" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2024-01-05T10:53:37 IST" name="tearDownClass" finished-at="2024-01-05T10:53:47 IST" duration-ms="10897" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
