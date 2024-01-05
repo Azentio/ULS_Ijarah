@@ -515,13 +515,13 @@ public class IjaraLogin extends BaseClass {
 				
 
 	public void logoutFromIjara() {
-		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userProfile")).click();
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <= 2000; i++) {
 			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userProfile")).click();
 				javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("logoutButton")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i == 2000) {
 					Assert.fail(e.getMessage());
 				}
 			}

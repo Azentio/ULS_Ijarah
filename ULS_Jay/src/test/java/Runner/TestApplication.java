@@ -11,7 +11,7 @@ import utilities.ExtentTestManager;
 @CucumberOptions(features = { 
 //	"src/test/java/features/Murabha_PurchaseChecker.feature",
 //	"src/test/java/features/Ijara_AD_DocumentDetails_610.feature",
-//	"src/test/java/features/Tawarruq_CommodityMaker_Configuration.feature",
+//	"src/test/java/features/Ijara_AppDataEntry_IdentificationDetails_610.feature",
 		
 		
 		"src/test/java/features/AutoLoan_AppDataEntry_DocumentsDetails.feature",
@@ -24,7 +24,8 @@ import utilities.ExtentTestManager;
 				"rerun:ReRunScenarios/FailedReRun.txt" }
 // ,dryRun = false //to check compilation errors/ , tags = "@AT_LEA_007"
  
-, tags="@AT_Al_DOC_02"                       
+, tags="@AT_Al_DOC_02"
+		+ ""                       
  
 )                                                                         
 public class TestApplication extends AbstractTestNGCucumberTests {

@@ -1,7 +1,9 @@
 package stepdefinitions;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 import helper.ClicksAndActionsHelper;
 import helper.JavascriptHelper;
@@ -17,8 +19,10 @@ public class AutoLoan_Stepa {
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
 	ClicksAndActionsHelper clicksAndActionsHelper = new ClicksAndActionsHelper(driver);
 	WaitHelper waitHelper = new WaitHelper(driver);
+	SoftAssert softAssert = new SoftAssert();
 	
 	String excelPath = System.getProperty("user.dir") + "\\TestData\\IjaraJSPaths.xlsx";
+	JSPaths jsPaths2 = new JSPaths(excelPath, "Ijara_AD_DocumentDetails", "Ijara_LoginFieldName", "JSPath");
 	JSPaths al_ADEntry_CustomerDetails = new JSPaths(excelPath, "Al_ADEntry_CustomerDetails_610", "AutoloanADEntry_CustomerDetails", "JSPath");
 	JSPaths al_ADEntryDocDetails_610 = new JSPaths(excelPath, "Al_ADEntryDocDetails_610", "AutoloanADEntry_DocumentsDetails", "JSPath");
 
@@ -4489,7 +4493,8 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 select document quality in documents details screen")
-		public void user_select_document_quality_in_documents_details_screen() {
+		public void user_select_document_quality_in_documents_details_screen() throws Throwable {
+			Thread.sleep(2000);
 			for (int i = 0; i < 300; i++) {
 				try {
 					javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("DocumentQuality")).click();
@@ -4586,7 +4591,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 select remark in documents details screen")
-		public void user_select_remark_in_documents_details_screen() {
+		public void user_select_remark_in_documents_details_screen() throws Throwable {
 			javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("Remark")));
 			//javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("Remark")).click();
 			for (int i = 0; i < 600; i++) {
@@ -4600,13 +4605,880 @@ public class AutoLoan_Stepa {
 					}
 					// TODO: handle exception
 					} 
-				      }
+				      }Thread.sleep(3000);
 		    
 		}
 
 		@And("User_610 click save and verify in documents details screen")
 		public void user_click_save_and_verify_in_documents_details_screen() throws Throwable {
-			javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("contactDetailsBackBtn")));
-		    Thread.sleep(5000);
+			
+//		String scroll = "document.querySelectorAll('ion-card-content[ng-reflect-ng-switch=\"string\"]')[1]";
+//		WebElement scroll1 = javascriptHelper.executeScriptWithWebElement(scroll);
+//		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement("scroll1"));
+
+		
+		
+			//javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("DocumentsDetailsScroll")));
+	//	    Thread.sleep(1000);
+		    
+//		    for (int b = 0; b < 300; b++) {
+//				try {
+//					javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("click_SaveButton_UnderFollowUp_610"))
+//							.click();
+//					break;
+//				} catch (Exception e) {
+//					if (b == 299) {
+//						Assert.fail(e.getMessage());
+//					}
+//				}
+//			}
+			
+			javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement("document.querySelector('[ng-reflect-icon=\"pi pi-save\"]')"));
+			 Thread.sleep(2000);
+			
+			for (int i = 0; i<=500; i++) {
+	         	try {
+	         		if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("successMsg_610")).isDisplayed()) {
+	             		Assert.assertTrue(true);
+	         		}
+	         		break;
+				} catch (Exception e) {
+					if(i==500) {
+						Assert.fail(e.getMessage());
+					}
+				}
+
+			}Thread.sleep(50000);
+		}
+		
+		//--------------------- @AT_Al_DOC_03
+		
+		@And("User_610 verify the customer name field mandatory dropdown al")
+		public void user_verify_the_customer_name_field_mandatory_dropdown_al() {
+			// ----------------validate non mandatory field
+
+			for (int i = 0; i < 200; i++) {
+				try {
+					String customerName = "document.querySelector('ion-label[ng-reflect-text=\"Customer Name.TOOLTIP\"]').innerText";
+					String customerNam = (String) javascriptHelper.executeScript("return " + customerName);
+					
+					System.err.println("BoxNoName:"+ customerNam);
+				
+					Assert.assertTrue(!customerNam.contains("*"));
+					break;
+				} catch (Exception e) {
+					if (i == 199) {
+						Assert.fail(e.getMessage());
+					}
+				}
+						}
+			
+			// -------------------validate type should be dropdown  --- Select
+
+			
+			String DocumentNameFormat = javascriptHelper
+					.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("CustomerName"))
+					.getAttribute("ng-reflect-placeholder");
+			System.err.println("first print  " + DocumentNameFormat);
+
+			String assertDocumentNameFormat = "Select";
+			Assert.assertEquals(assertDocumentNameFormat, DocumentNameFormat);
+
+		    
+		}
+
+		@And("User_610 verify the  document name field mandatory dropdown al")
+		public void user_verify_the_document_name_field_mandatory_dropdown_al() throws Throwable {
+			Thread.sleep(500);
+			// ----------------validate mandatory field
+
+						for (int i = 0; i < 2000; i++) {
+							try {
+								String DocumentsName = "document.querySelector('ion-label[ng-reflect-text=\"DOCUMENT_NAME.TOOLTIP\"]').innerText";
+								String DocumentsNameName2 = (String) javascriptHelper.executeScript("return " + DocumentsName);
+								
+								System.err.println("Documents:"+ DocumentsNameName2);
+								Assert.assertTrue(DocumentsNameName2.contains("*"));
+								break;
+							} catch (Exception e) {
+								if (i == 1999) {
+									Assert.fail(e.getMessage());
+								}
+							}
+									}
+						
+						// -------------------validate type should be dropdown  --- Select
+
+						
+						String DocumentNameFormat = javascriptHelper
+								.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("Documentname"))
+								.getAttribute("ng-reflect-placeholder");
+						System.err.println("first print  " + DocumentNameFormat);
+
+						String assertDocumentNameFormat = "Select";
+						Assert.assertEquals(assertDocumentNameFormat, DocumentNameFormat);
+		    
+		}
+
+		@And("User_610 verify the required at stage field mandatory al")
+		public void user_verify_the_required_at_stage_field_mandatory_al() {
+			// ----------------validate non mandatory field
+
+			for (int i = 0; i < 2000; i++) {
+				try {
+					String DocumentsName = "document.querySelector('ion-label[ng-reflect-text=\"REQUIRED_AT_STAGE.TOOLTIP\"').innerText";
+					String DocumentsNameName2 = (String) javascriptHelper.executeScript("return " + DocumentsName);
+					
+					System.err.println("Documents:"+ DocumentsNameName2);
+					Assert.assertTrue(!DocumentsNameName2.contains("*"));
+					break;
+				} catch (Exception e) {
+					if (i == 1999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+						}
+		    
+		}
+
+		@And("User_610 verify the document status field mandatory editable dropdown al")
+		public void user_verify_the_document_status_field_mandatory_editable_dropdown_al() {
+			// ----------------validate mandatory field
+
+			for (int i = 0; i < 2000; i++) {
+				try {
+					String DocumentStatus = "document.querySelector('ion-label[ng-reflect-text=\"DOCUMENT_STATUS.TOOLTIP\"').innerText";
+					String DocumentStatusName = (String) javascriptHelper.executeScript("return " + DocumentStatus);
+					
+					System.err.println("DocumentStatus:"+ DocumentStatusName);
+					Assert.assertTrue(DocumentStatusName.contains("*"));
+					break;
+				} catch (Exception e) {
+					if (i == 1999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+						}
+			
+			// -------------------validate type should be dropdown  --- Select
+
+			
+					String DocumentStatusFormat = javascriptHelper
+							.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("DocumentStatus"))
+							.getAttribute("ng-reflect-placeholder");
+					System.err.println("first print  " + DocumentStatusFormat);
+
+					String assertDocumentStatusFormat = "Select";
+					Assert.assertEquals(assertDocumentStatusFormat, DocumentStatusFormat);
+		    
+		}
+
+		@And("User_610 verify the mandatory optional field mandatory editable dropdown al")
+		public void user_verify_the_mandatory_optional_field_mandatory_editable_dropdown_al() {
+			// ----------------validate mandatory field
+			
+			for (int i = 0; i < 2000; i++) {
+				try {
+					String mandatoryOptional = "document.querySelector('ion-label[ng-reflect-text=\"MANDATORY_OR_OPTIONAL.TOOLTIP\"').innerText";
+					String mandatoryOptiona = (String) javascriptHelper.executeScript("return " + mandatoryOptional);
+					
+					System.err.println("mandatoryOptiona:"+ mandatoryOptiona);
+					Assert.assertTrue(mandatoryOptiona.contains("*"));
+					break;
+				} catch (Exception e) {
+					if (i == 1999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+						}
+			
+			// -------------------validate type should be dropdown  --- Select
+
+			
+					String mandatoryOptionaFormat = javascriptHelper
+							.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("MandatoryOptional"))
+							.getAttribute("ng-reflect-placeholder");
+					System.err.println("first print  " + mandatoryOptionaFormat);
+
+					String assertmandatoryOptionaFormat = "Select";
+					Assert.assertEquals(assertmandatoryOptionaFormat, mandatoryOptionaFormat);
+		    
+		}
+		
+		//--------------------- @AT_Al_DOC_04
+		
+		@And("User_610 verify the documents quality field mandatory al")
+		public void user_verify_the_documents_quality_field_mandatory_al() throws Throwable {
+			// ----------------validate mandatory field
+			Thread.sleep(2000);
+			for (int i = 0; i < 2000; i++) {
+				try {
+					String documentsQuality = "document.querySelector('ion-label[ng-reflect-text=\"Document Quality.TOOLTIP\"]').innerText";
+					String documentsQualit = (String) javascriptHelper.executeScript("return " + documentsQuality);
+					
+					System.err.println("documentsQualit:"+ documentsQualit);
+					Assert.assertTrue(documentsQualit.contains("*"));
+					break;
+				} catch (Exception e) {
+					if (i == 1999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+						}
+		    
+		}
+
+		@And("User_610 verify the  deferred stage field non mandatory select al")
+		public void user_verify_the_deferred_stage_field_non_mandatory_textbox_al() {
+			// ----------------validate non mandatory field
+			for (int i = 0; i < 2000; i++) {
+				try {
+					String deferredStage = "document.querySelector('ion-label[ng-reflect-text=\"Deferral Stage.TOOLTIP\"').innerText";
+					String deferredStag = (String) javascriptHelper.executeScript("return " + deferredStage);
+					
+					System.err.println("deferredStag:"+ deferredStag);
+					Assert.assertTrue(!deferredStag.contains("*"));
+					break;
+				} catch (Exception e) {
+					if (i == 1999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+						}
+			
+			// -------------------validate type should be dropdown  --- Select
+
+			
+			String deferredStageFormat = javascriptHelper
+					.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("DeferralStage"))
+					.getAttribute("ng-reflect-placeholder");
+			System.err.println("first print  " + deferredStageFormat);
+
+			String assertdeferredStageFormat = "Select";
+			Assert.assertEquals(assertdeferredStageFormat, deferredStageFormat);
+			
+		    
+		}
+
+		@And("User_610 verify the location where received field non mandatory select al")
+		public void user_verify_the_location_where_received_field_non_mandatory_textbox_al() {
+			// ----------------validate mandatory field
+			for (int i = 0; i < 2000; i++) {
+				try {
+					String locationWhereReceived = "document.querySelector('ion-label[ng-reflect-text=\"DOCUMENT_DETAILS_LOCATION_WHER\"]').innerText";
+					String locationWhereReceive = (String) javascriptHelper.executeScript("return " + locationWhereReceived);
+					
+					System.err.println("locationWhereReceive:"+ locationWhereReceive);
+					Assert.assertTrue(!locationWhereReceive.contains("*"));
+					break;
+				} catch (Exception e) {
+					if (i == 1999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+						}
+			
+			// -------------------validate type should be dropdown  --- Select
+
+			
+			String locationWhereReceivedFormat = javascriptHelper
+					.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("DocumentDetailsLocationWhereReceived"))
+					.getAttribute("ng-reflect-placeholder");
+			System.err.println("first print  " + locationWhereReceivedFormat);
+
+			String assertlocationWhereReceivedFormat = "Select";
+			Assert.assertEquals(assertlocationWhereReceivedFormat, locationWhereReceivedFormat);
+		    
+		}
+
+		@And("User_610 verify the rack number field non mandatory textbox al")
+		public void user_verify_the_rack_number_field_non_mandatory_textbox_al() {
+			// ----------------validate mandatory field
+			for (int i = 0; i < 2000; i++) {
+				try {
+					String rackNumber = "document.querySelector('ion-label[ng-reflect-text=\"FORM.RACK_NUMBER.TOOLTIP\"]').innerText";
+					String rackNumbe = (String) javascriptHelper.executeScript("return " + rackNumber);
+					
+					System.err.println("rackNumbe:"+ rackNumbe);
+					Assert.assertTrue(!rackNumbe.contains("*"));
+					break;
+				} catch (Exception e) {
+					if (i == 1999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+						}
+		    
+			//type text
+			
+			String rackNumbertext = javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("RackNo"))
+					.getAttribute("type");
+			System.err.println("first print  " + rackNumbertext);
+			String assertrackNumbertext = "text";
+			Assert.assertEquals(assertrackNumbertext, rackNumbertext);
+			
+		}
+
+		@And("User_610 verify the shelf number field non mandatory textbox al")
+		public void user_verify_the_shelf_number_field_non_mandatory_textbox_al() {
+			// ----------------validate non mandatory field
+			for (int i = 0; i < 2000; i++) {
+				try {
+					String shelfnumber = "document.querySelector('ion-label[ng-reflect-text=\"FORM.SHELF_NUMBER.TOOLTIP\"]').innerText";
+					String shelfnumbe = (String) javascriptHelper.executeScript("return " + shelfnumber);
+					
+					System.err.println("shelfnumbe:"+ shelfnumbe);
+					Assert.assertTrue(!shelfnumbe.contains("*"));
+					break;
+				} catch (Exception e) {
+					if (i == 1999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+						}
+		
+		//type text
+		
+				String shelfnumbertext = javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("ShelfNo"))
+						.getAttribute("type");
+				System.err.println("first print  " + shelfnumbertext);
+				String assertshelfnumbertext = "text";
+				Assert.assertEquals(assertshelfnumbertext, shelfnumbertext);
+				
+		}
+		
+		//-------------------------- @AT_Al_DOC_05
+		
+		@And("User_610 verify the  box number field non mandatory text al")
+		public void user_verify_the_box_number_field_non_mandatory_text_al() {
+			for (int i = 0; i < 2000; i++) {
+				try {
+					String boxnumber = "document.querySelector('ion-label[ng-reflect-text=\"FORM.BOX_NUMBER.TOOLTIP\"]').innerText";
+					String boxnumbe = (String) javascriptHelper.executeScript("return " + boxnumber);
+					
+					System.err.println("boxnumbe:"+ boxnumbe);
+					Assert.assertTrue(!boxnumbe.contains("*"));
+					break;
+				} catch (Exception e) {
+					if (i == 1999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+						}
+		
+		//type text
+		
+				String boxnumbertext = javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("BoxNo"))
+						.getAttribute("type");
+				System.err.println("first print  " + boxnumbertext);
+				String assertboxnumbertext = "text";
+				Assert.assertEquals(assertboxnumbertext, boxnumbertext);
+		    
+		}
+
+		@And("User_610 verify the document upload date field non mandatory date al")
+		public void user_verify_the_document_upload_date_field_non_mandatory_date_al() {
+			for (int i = 0; i < 2000; i++) {
+				try {
+					String uploaddate = "document.querySelector('digital-prime-date[id=\"uploadDate\"]').innerText";
+					String uploaddat = (String) javascriptHelper.executeScript("return " + uploaddate);
+					
+					System.err.println("uploaddat:"+ uploaddat);
+					Assert.assertTrue(!uploaddat.contains("*"));
+					break;
+				} catch (Exception e) {
+					if (i == 1999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+						}
+		
+		//type date
+		
+				String uploaddate = javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("UploadDate"))
+						.getTagName();
+				System.err.println("first print  " + uploaddate);
+				String assertuploaddate= "p-calendar";
+				Assert.assertEquals(assertuploaddate, uploaddate);
+		    
+		}
+
+		@And("User_610 verify the document category field mandatory select al")
+		public void user_verify_the_document_category_field_mandatory_select_al() {
+			for (int i = 0; i < 2000; i++) {
+				try {
+					String documentcategory = "document.querySelector('ion-label[ng-reflect-text=\"DOCUMENT_CATEGORY.TOOLTIP\"').innerText";
+					String documentcategor = (String) javascriptHelper.executeScript("return " + documentcategory);
+					
+					System.err.println("documentcategor:"+ documentcategor);
+					Assert.assertTrue(documentcategor.contains("*"));
+					break;
+				} catch (Exception e) {
+					if (i == 1999) {
+						Assert.fail(e.getMessage());
+					}
+					 }
+				      }
+				
+	// -------------------validate type should be dropdown  --- Select
+
+			
+			String documentcategoryFormat = javascriptHelper
+					.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("DocumentCategory"))
+					.getAttribute("ng-reflect-placeholder");
+			System.err.println("first print  " + documentcategoryFormat);
+
+			String assertdocumentcategoryFormat = "Select";
+			Assert.assertEquals(assertdocumentcategoryFormat, documentcategoryFormat);
+		}
+
+		@And("User_610 verify the document form field non mandatory select al")
+		public void user_verify_the_document_form_field_non_mandatory_select_al() {
+			for (int i = 0; i < 2000; i++) {
+				try {
+					String DocumentFrom = "document.querySelector('ion-label[ng-reflect-text=\"Document Form.TOOLTIP\"]').innerText";
+					String DocumentFro = (String) javascriptHelper.executeScript("return " + DocumentFrom);
+					
+					System.err.println("DocumentFro:"+ DocumentFro);
+					Assert.assertTrue(!DocumentFro.contains("*"));
+					break;
+				} catch (Exception e) {
+					if (i == 1999) {
+						Assert.fail(e.getMessage());
+				}
+		        	}
+                       }
+		
+		// -------------------validate type should be dropdown  --- Select
+
+		
+					String DocumentFromFormat = javascriptHelper
+							.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("DocumentFrom"))
+							.getAttribute("ng-reflect-placeholder");
+					System.err.println("first print  " + DocumentFromFormat);
+
+					String assertDocumentFromFormat= "Select";
+					Assert.assertEquals(assertDocumentFromFormat, DocumentFromFormat);
+		
+		}
+		
+		
+		
+		//------------------------- @AT_Al_DOC_06
+		
+		@And("User_610 verify the  expected date of receipt non mandatory date al")
+		public void user_verify_the_expected_date_of_receipt_non_mandatory_date_al() throws Throwable {
+			Thread.sleep(3000);
+			for (int i = 0; i < 2000; i++) {
+				try {
+					String expecteddate = "document.querySelector('digital-prime-date[id=\"expectedDateOfReceipt\"]').innerText";
+					String expecteddat = (String) javascriptHelper.executeScript("return " + expecteddate);
+					
+					System.err.println("expecteddat:"+ expecteddat);
+					Assert.assertTrue(!expecteddat.contains("*"));
+					break;
+				} catch (Exception e) {
+					if (i == 1999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+						}
+		
+		//type date
+		
+				String expecteddate = javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("ExpectedDateOfReceipt"))
+						.getTagName();
+				System.err.println("first print  " + expecteddate);
+				String assertexpecteddate= "p-calendar";
+				Assert.assertEquals(assertexpecteddate, expecteddate);
+		    
+		}
+
+		@And("User_610 verify the defferral approved by field non mandatory select al")
+		public void user_verify_the_defferral_approved_by_field_non_mandatory_select_al() {
+			for (int i = 0; i < 2000; i++) {
+				try {
+					String defferralapprovedby = "document.querySelector('ion-label[ng-reflect-text=\"DEF_APPROVED_BY.TOOLTIP\"').innerText";
+					String defferralapprovedb = (String) javascriptHelper.executeScript("return " + defferralapprovedby);
+					
+					System.err.println("defferralapprovedb:"+ defferralapprovedb);
+					Assert.assertTrue(!defferralapprovedb.contains("*"));
+					break;
+				} catch (Exception e) {
+					if (i == 1999) {
+						Assert.fail(e.getMessage());
+				}
+		        	}
+                       }
+		
+		// -------------------validate type should be dropdown  --- Select
+
+		
+					String DefApprovedByFormat = javascriptHelper
+							.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("DefApprovedBy"))
+							.getAttribute("ng-reflect-placeholder");
+					System.err.println("first print  " + DefApprovedByFormat);
+
+					String assertDefApprovedByFormat= "Select";
+					Assert.assertEquals(assertDefApprovedByFormat, DefApprovedByFormat);
+		    
+		}
+
+		@And("User_610 verify the change in natural of approved by field non mandatory select al")
+		public void user_verify_the_change_in_natural_of_approved_by_field_non_mandatory_select_al() {
+			for (int i = 0; i < 2000; i++) {
+				try {
+					String changeinnaturalofapproved = "document.querySelector('ion-label[ng-reflect-text=\"Change In Nature Approved By.T\"]').innerText";
+					String changeinnaturalofapprove = (String) javascriptHelper.executeScript("return " + changeinnaturalofapproved);
+					
+					System.err.println("changeinnaturalofapprove:"+ changeinnaturalofapprove);
+					Assert.assertTrue(!changeinnaturalofapprove.contains("*"));
+					break;
+				} catch (Exception e) {
+					if (i == 1999) {
+						Assert.fail(e.getMessage());
+				}
+		        	}
+                       }
+		
+		// -------------------validate type should be dropdown  --- Select
+
+		
+					String changeinnaturalofappr = javascriptHelper
+							.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("ChangeInNatureApprovedBy"))
+							.getAttribute("ng-reflect-placeholder");
+					System.err.println("first print  " + changeinnaturalofappr);
+
+					String assertDocumentFromFormat= "Select";
+					Assert.assertEquals(assertDocumentFromFormat, changeinnaturalofappr);
+		    
+		}
+
+		@And("User_610 verify the document reference number field non mandatory text al")
+		public void user_verify_the_document_reference_number_field_non_mandatory_text_al() {
+			for (int i = 0; i < 2000; i++) {
+				try {
+					String documentreference = "document.querySelector('ion-label[ng-reflect-text=\"FORM.DOCUMENT_NUMBER.TOOLTIP\"]').innerText";
+					String documentreferenc = (String) javascriptHelper.executeScript("return " + documentreference);
+					
+					System.err.println("documentreferenc:"+ documentreferenc);
+					Assert.assertTrue(!documentreferenc.contains("*"));
+					break;
+				} catch (Exception e) {
+					if (i == 1999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+						}
+		
+		//type text
+		
+				String documentreferencetext = javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("DocumentReferenceNumber"))
+						.getAttribute("type");
+				System.err.println("first print  " + documentreferencetext);
+				String assertdocumentreferencetext = "text";
+				Assert.assertEquals(assertdocumentreferencetext, documentreferencetext);
+
+		    
+		}
+
+		@And("User_610 verify the  document received by field non mandatory select al")
+		public void user_verify_the_document_received_by_field_non_mandatory_select_al() {
+			for (int i = 0; i < 2000; i++) {
+				try {
+					String documentReceived = "document.querySelector('ion-label[ng-reflect-text=\"Change In Nature Approved By.T\"]').innerText";
+					String documentReceive = (String) javascriptHelper.executeScript("return " + documentReceived);
+					
+					System.err.println("documentReceive:"+ documentReceive);
+					Assert.assertTrue(!documentReceive.contains("*"));
+					break;
+				} catch (Exception e) {
+					if (i == 1999) {
+						Assert.fail(e.getMessage());
+				}
+		        	}
+                       }
+		
+		// -------------------validate type should be dropdown  --- Select
+
+		
+					String documentreceivedbyselect = javascriptHelper
+							.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("DocumentApprovedBy"))
+							.getAttribute("ng-reflect-placeholder");
+					System.err.println("first print  " + documentreceivedbyselect);
+
+					String assertdocumentreceivedbyselect= "Select";
+					Assert.assertEquals(assertdocumentreceivedbyselect, documentreceivedbyselect);
+		    
+		}
+
+		@And("User_610 verify the remark date field mandatory text al")
+		public void user_verify_the_remark_date_field_mandatory_text_al() {
+			for (int i = 0; i < 2000; i++) {
+				try {
+					String remark = "document.querySelector('ion-label[ng-reflect-text=\"Remarks.TOOLTIP\"]').innerText";
+					String remar = (String) javascriptHelper.executeScript("return " + remark);
+					
+					System.err.println("remar:"+ remar);
+					Assert.assertTrue(remar.contains("*"));
+					break;
+				} catch (Exception e) {
+					if (i == 1999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+						}
+		
+		//type text
+		
+				String Remark = javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("Remark"))
+						.getAttribute("type");
+				System.err.println("first print  " + Remark);
+				String assertRemark = "text";
+				Assert.assertEquals(assertRemark, Remark);
+
+		    
+		}
+		
+		//---------------  @AT_Al_DOC_07  ---------
+		
+		@And("User_610 verify the blank field which is mandatory and should not allow user to save the record")
+		public void user_verify_the_blank_field_which_is_mandatory_and_should_not_allow_user_to_save_the_record() throws Throwable {
+			Thread.sleep(3000);
+			
+			
+			
+			for (int i = 0; i<=500; i++) {
+	         	try {
+	         		if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("fillAllTheDetails_Popup_610")).isDisplayed()) {
+	             		softAssert.fail();
+	         		}
+	         		break;
+				} catch (Exception e) {
+					if(i==500) {
+						Assert.fail(e.getMessage());
+					}
+				}
+
+			}
+		    Thread.sleep(4000);
+		}
+
+		@And("User_610 verify the user enter numeric value in character field should not allow user to save the record")
+		public void user_verify_the_user_enter_numeric_value_in_character_field_should_not_allow_user_to_save_the_record() throws Throwable {
+			Thread.sleep(3000);
+			String blank ="document.querySelector('digital-text-box[id=\"lodgmentAmt\"]').querySelector('ion-input').getAttribute('ng-reflect-model')";
+			WebElement blankk =javascriptHelper.executeScriptWithWebElement(blank);
+			
+			
+			
+			
+			for (int b = 0; b < 300; b++) {
+				try {
+					javascriptHelper.executeScriptWithWebElement("blankk").sendKeys("666");
+					break;
+				} catch (Exception e) {
+					if (b == 299) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			
+			System.err.println("empty value : " + blankk);
+		}
+
+		@And("User_610 verify the user enter character value in numeric field should not allow user to save the record")
+		public void user_verify_the_user_enter_character_value_in_numeric_field_should_not_allow_user_to_save_the_record() {
+		    
+		    
+		}
+		
+		//---------------------- @AT_Al_DOC_08
+		
+		
+		@And("User_610 verify the system should get open with already filled data")
+		public void user_verify_the_system_should_get_open_with_already_filled_data() throws Throwable {
+			Thread.sleep(2000);
+			
+			String Documentname = javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("Documentname"))
+					.getAttribute("aria-label");		 
+			System.err.println("Documentname :" + Documentname);
+			
+			for (int b = 0; b < 300; b++) {
+				try {
+					if (Documentname.isBlank()) {
+						Assert.assertTrue(true);
+						break;
+					}
+					} catch (Exception e) {
+					if (b == 299) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			
+			String DocumentStatus = javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("DocumentStatus"))
+					.getAttribute("aria-label");		 
+			System.err.println("DocumentStatus :" + DocumentStatus);
+			
+			for (int b = 0; b < 300; b++) {
+				try {
+					if (DocumentStatus.isBlank()) {
+						Assert.assertTrue(true);
+						break;
+					}
+					} catch (Exception e) {
+					if (b == 299) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			
+		}
+
+		@And("User_610 verify the System should allow user to modify the record")
+		public void user_verify_the_system_should_allow_user_to_modify_the_record() {
+			for (int i = 0; i < 300; i++) {
+				try {
+					javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("Documentname")).click();
+					break;
+					
+				} catch (Exception e) {
+					if (i==299) {
+						Assert.fail(e.getMessage());
+					}
+					// TODO: handle exception
+					} 
+				      }
+			
+            //-------dropdown 
+			
+			
+			String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+			String dropdownLength = "";
+			boolean isDropdownValueSelected = false;
+			String dropdownString = "";
+			for (int i = 0; i <= 300; i++) {
+				try {
+
+					dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+					System.out.println("Dropdown length " + dropdownLength);
+					if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+						break;
+					}
+				} catch (Exception e) {
+					if (i == 300) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+
+			int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+			for (int j = 0; j <= premitiveDropdownLength; j++) {
+				for (int l = 0; l <= 300; l++) {
+					try {
+						System.out.println("L value is " + l);
+						System.out
+								.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+						dropdownString = javascriptHelper.executeScript(
+								"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+								.toString();
+
+						if (!(dropdownString.isEmpty())) {
+							System.out.println(dropdownString);
+							System.out.println("Loop count " + l + " got breaked");
+							break;
+						}
+
+					} catch (Exception e) {
+						if (l == 300 && !(dropdownString.isBlank())) {
+							Assert.fail(e.getMessage());
+						}
+					}
+
+					if (!(dropdownString.isEmpty())) {
+						System.out.println(dropdownString);
+						System.out.println("Loop count " + l + " got breaked");
+						break;
+					}
+				}
+
+				System.out.println("String " + dropdownString.trim());
+
+			//	System.out.println("Map " + testData.get("ID Type").trim());
+
+				if ((dropdownString.trim())
+						.equalsIgnoreCase("Pan Card")) {
+
+					for (int k = 0; k <= 300; k++) {
+						try {
+							clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+							clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+							isDropdownValueSelected = true;
+							break;
+						} catch (Exception e) {
+							if (k == 300) {
+							Assert.fail(e.getMessage());
+							}
+						}
+					}
+				}
+				if (isDropdownValueSelected == true) {
+					break;
+				}
+			}
+		    
+		}
+
+		@And("User_610  verify the to do modification and same record should get saved")
+		public void user_verify_the_to_do_modification_and_same_record_should_get_saved() {
+		    
+		    
+		}
+
+		@And("User_610 verify the any mandatory field blank and save system should not allow user to save the record al")
+		public void user_verify_the_any_mandatory_field_blank_and_save_system_should_not_allow_user_to_save_the_record_al() throws Throwable {
+			javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("Remark")));
+			//javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("Remark")).click();
+			for (int i = 0; i < 600; i++) {
+				try {
+					javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("RemarkText")).clear();
+					break;
+					
+				} catch (Exception e) {
+					if (i==599) {
+						Assert.fail(e.getMessage());
+					}
+						} 
+				      }Thread.sleep(3000);
+		    
+//			 String scroll = "document.querySelectorAll('ion-card-content[ng-reflect-ng-switch=\"string\"]')[1]";
+//			 WebElement scroll1 = javascriptHelper.executeScriptWithWebElement(scroll);
+			 for (int i = 0; i < 600; i++) {
+					try {
+						javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement("document.querySelector('[ng-reflect-text=\"Go Back\"]')"));
+						break;
+					} catch (Exception e) {
+						if (i==599) {
+							Assert.fail(e.getMessage());
+						}
+							} 
+					      }
+			 javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement("document.querySelector('[ng-reflect-icon=\"pi pi-save\"]')"));
+			 Thread.sleep(2000);
+		}
+
+		@And("User_610 verify the  system should not allow user to do a modification with invalid data")
+		public void user_verify_the_system_should_not_allow_user_to_do_a_modification_with_invalid_data() {
+		    
+		    
+		}
+
+		@And("User_610 verify the save button and back button")
+		public void user_verify_the_save_button_and_back_button() {
+		    
+		    
 		}
 }
