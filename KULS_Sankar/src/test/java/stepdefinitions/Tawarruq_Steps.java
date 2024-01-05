@@ -150,15 +150,36 @@ public class Tawarruq_Steps {
 //	AT_TW_CD_01
 	@And("User_608 click the Customer Details tab")
 	public void user_608_click_the_customer_details_tab() throws Throwable {
-		Thread.sleep(100);
-		WebElement customerDetailsTab = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("customerDetailsTab"));
-		for (int i = 0; i <= 2500; i++) {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
 			try {
-				javascriptHelper.backgroundBorder(customerDetailsTab);
-				javascriptHelper.JSEClick(customerDetailsTab);
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 500; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-segment-button')[" + j + "].innerText";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains("Customer details")) {
+						String jspath = "document.querySelectorAll('ion-segment-button')[" + j + "]";
+						WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.JSEClick(addButton);
+						break;
+					}
+				}
 				break;
 			} catch (Exception e) {
-				if (i == 2500) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2331,8 +2352,10 @@ public class Tawarruq_Steps {
 
 	@And("User_608 verify Email ID is available and field should be Email format, editable under Contact details screen")
 	public void user_608_verify_email_id_is_available_and_field_should_be_email_format_editable_under_contact_details_screen() throws Throwable {
-		WebElement emailIDLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("emailIDLabel"));
-		WebElement emailIDInput = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("emailIDInput"));
+		WebElement emailIDLabel = javascriptHelper.executeScriptWithWebElement(
+				appDataCustomerDetailsJsPaths.getElement("emailIDLabel"));
+		WebElement emailIDInput = javascriptHelper.executeScriptWithWebElement(
+				appDataCustomerDetailsJsPaths.getElement("emailIDInput"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(emailIDLabel);
@@ -2995,28 +3018,63 @@ public class Tawarruq_Steps {
 //	@AT_TW_AD_DOC_05
 	@And("User_608 click the Document Details tab")
 	public void user_608_click_the_document_details_tab() throws Throwable {
-		for (int i = 0; i <= 10; i++) {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(appDataDocumentDetailsJsPaths.getElement("nextBtn")).click();
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
 			} catch (Exception e) {
-				if (i == 10) {
+				if (i == 4999) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-
-		WebElement documentDetailsTab = javascriptHelper.executeScriptWithWebElement(appDataDocumentDetailsJsPaths.getElement("documentDetailsTab"));
-//		String string = "document.getElementById(\"seg13\")";
-		for (int i = 0; i <= 10000; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
-				documentDetailsTab.click();
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-segment-button')[" + j + "].innerText";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains("Document Details")) {
+						String jspath = "document.querySelectorAll('ion-segment-button')[" + j + "]";
+						WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.moveToElement(addButton).build().perform();
+						javascriptHelper.JSEClick(addButton);
+						break;
+					}
+				}
 				break;
 			} catch (Exception e) {
-				if (i == 10000) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
-		}	    
+		}
+//		for (int i = 0; i <= 10; i++) {
+//			try {
+//				javascriptHelper.executeScriptWithWebElement(appDataDocumentDetailsJsPaths.getElement("nextBtn")).click();
+//			} catch (Exception e) {
+//				if (i == 10) {
+//					Assert.fail(e.getMessage());
+//				}
+//			}
+//		}
+//
+//		WebElement documentDetailsTab = javascriptHelper.executeScriptWithWebElement(appDataDocumentDetailsJsPaths.getElement("documentDetailsTab"));
+////		String string = "document.getElementById(\"seg13\")";
+//		for (int i = 0; i <= 10000; i++) {
+//			try {
+//				documentDetailsTab.click();
+//				break;
+//			} catch (Exception e) {
+//				if (i == 10000) {
+//					Assert.fail(e.getMessage());
+//				}
+//			}
+//		}	    
 	}
 
 	@And("User_608 click the Add button under Document Details tab")

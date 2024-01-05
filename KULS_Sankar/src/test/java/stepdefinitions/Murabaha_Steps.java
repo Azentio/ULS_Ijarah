@@ -1502,7 +1502,8 @@ public class Murabaha_Steps {
 	public void user_verify_currency_as_non_mandatory_and_lov_field_under_customer_debt_screen_in_customer_financials_tab() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
-				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("NPAClassificationLabel")));
+				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						customerDebtJsPaths.getElement("amountConsideredInput")));
 				break;
 			} catch (Exception e) {
 				if (i == 1000) {
@@ -1963,6 +1964,17 @@ public class Murabaha_Steps {
 
 	@And("User_608 verify Request for Balance Takeover as Non-Mandatory and LOV field under Customer Debt screen in Customer Financials tab")
 	public void user_verify_request_for_balance_takeover_as_non_mandatory_and_lov_field_under_customer_debt_screen_in_customer_financials_tab() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						customerDebtJsPaths.getElement("reqForBalanceTakeoverDropdown")));
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
 		WebElement reqForBalanceTakeoverLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("reqForBalanceTakeoverLabel"));
 //		Validate Non_mandatory
 		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("reqForBalanceTakeoverLabel")).getText();
@@ -1979,7 +1991,8 @@ public class Murabaha_Steps {
 		}
 		
 //		Verify LOV or Dropdown
-		WebElement reqForBalanceTakeoverDropdown = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("reqForBalanceTakeoverDropdown"));
+		WebElement reqForBalanceTakeoverDropdown = javascriptHelper.executeScriptWithWebElement(
+				customerDebtJsPaths.getElement("reqForBalanceTakeoverDropdown"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(reqForBalanceTakeoverDropdown);

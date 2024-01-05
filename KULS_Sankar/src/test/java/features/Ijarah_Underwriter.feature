@@ -44,16 +44,17 @@ And User_608 verify Facility Details section is displayed under Offer Decision t
 And User_608 verify Eligibility Details section is displayed under Offer Decision tab
 And User_608 verify Finance Configuration section is displayed under Offer Decision tab
 And User_608 verify Pricing Details section is displayed under Offer Decision tab
-And User_608 verify Instlment Details section is displayed under Offer Decision tab
+And User_608 verify Instalment Details section is displayed under Offer Decision tab
 And User_608 verify Approval Details Hyperlinks section is displayed under Offer Decision tab
 And User_608 verify Approval level field under Decision section in Offer Decision tab
 And User_608 verify Underwriter field under Decision section in Offer Decision tab
 And User_608 verify Reviewer field under Decision section in Offer Decision tab
 And User_608 verify Decision Date field under Decision section in Offer Decision tab
-And User_608 verify Decison field under Decision section in Offer Decision tab
+And User_608 verify Decision field under Decision section in Offer Decision tab
 And User_608 select the Decision dropdown as Accept\Reject under Decision section in Offer Decision tab
 And User_608 verify the Offer amount under Finance Configuration section in Offer Decision tab
 Then logout from the ijaraApplication
+And User_608 invoke soft assert in Offer Decision screen at Ijarah Underwriter stage
 
 
 # Unw_14, Unw_07, Unw_08, Unw_09. Unw_10
@@ -68,10 +69,10 @@ And User_608 click the Search button under inbox
 And User_608 search the Ref id under inbox
 And User_608 click the Entitle button under inbox
 And User_608 click the Pencil icon under Offer Decision tab
-And User_608 verify the Deviate button under Offer Decision screen
-And User_608 verify the Recompute button under Offer Decision screen
-And User_608 verify the Save button under Offer Decision screen
-And User_608 verify the Offer button under Offer Decision screen
+And User_608 verify the Deviate button available under Offer Decision screen
+And User_608 verify the Recompute button available under Offer Decision screen
+And User_608 verify the Save button available under Offer Decision screen
+And User_608 verify the Offer button available under Offer Decision screen
 And User_608 verify the Product field is displayed under Facility Details section
 And User_608 verify the Sub-Product field is displayed under Facility Details section
 And User_608 verify the Scheme field is displayed under Facility Details section
@@ -99,7 +100,7 @@ And User_608 verify Effective Rate field is displayed under Pricing Details sect
 And User_608 verify the Instalment Period field is displayed under Installment Details section
 And User_608 verify the Instalment Amount field is displayed under Installment Details section
 Then logout from the ijaraApplication
-
+And User_608 invoke soft assert in Offer Decision screen at Ijarah Underwriter stage
 
 @AT_UNW_002_02
 Scenario: To verify the Save button and Offer button functionality under offer decision scrren.
@@ -121,6 +122,25 @@ And User_608 verify the validation messgage after clicking Offer button under Of
 And User_608 select the Decision dropdown as Select under Decision section in Offer Decision tab
 And User_608 click the Offer button without selecting the Decision under Offer Decision tab
 And User_608 verify the validation messgage without selecting decision under Offer Decision tab
+Then logout from the ijaraApplication
+And User_608 invoke soft assert in Offer Decision screen at Ijarah Underwriter stage
+
+
+@Return
+Scenario: Return the record from Offering stage to Underwriter(L1)
+
+Given navigate the IJARA URL
+And login with valid credentials for return
+And User_608 get the test data for test case AT_UNW_002
+And User_608 click the Mail box in ULS application
+And User_608 click the Search button under inbox
+And User_608 search the Ref id under inbox
+And User_608 click the Entitle button under inbox
+And User_608 click the Application details tab
+And User_608 click the Return button under Application details tab
+And User_608 select L1 Approval from dropdown in Return popup screen
+And User_608 enter the Remarks under Return popup screen
+And User_608 click the Return button under Return popup screen
 Then logout from the ijaraApplication
 
 

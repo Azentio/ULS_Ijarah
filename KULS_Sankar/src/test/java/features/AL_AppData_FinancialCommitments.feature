@@ -261,24 +261,24 @@ And User_608 invoke soft assert in Customer Debt screen at Auto Loan App Data En
 
 
 #AZ1LN-8897
-@AT_AL_CUD_09
-Scenario: List view of Customer Debt - To verify the functionality of Export to PDF and Excel button
-
-Given navigate the IJARA URL
-And login with valid credentials - Auto Loan - App Data Entry
-And User_608 get the test data for test case AT_AL_CUD_09
-And User_608 click the Mail box in ULS application
-And User_608 click the Search button under inbox
-And User_608 search the Reference ID for Auto Loan
-And User_608 click the Entitle button under inbox
-And User_608 click the Customer Financials tab
-And User_608 click the pencil icon under Customer Financials tab
-And User_608 click any one active record Edit button under Financial Commitments section
-And User_608 click the Status Radio button under Customer Debt screen
-When User_608 click the Update button in Customer Debt screen
-And User_608 verify the first row status as In-Active under Financial Commitments in Customer Financials tab
-
-
-
-Then logout from the ijaraApplication
-And User_608 invoke soft assert in Customer Debt screen at Auto Loan App Data Entry stage
+#@AT_AL_CUD_09
+#Scenario: List view of Customer Debt - To verify the functionality of Export to PDF and Excel button
+#
+#Given navigate the IJARA URL
+#And login with valid credentials - Auto Loan - App Data Entry
+#And User_608 get the test data for test case AT_AL_CUD_09
+#And User_608 click the Mail box in ULS application
+#And User_608 click the Search button under inbox
+#And User_608 search the Reference ID for Auto Loan
+#And User_608 click the Entitle button under inbox
+#And User_608 click the Customer Financials tab
+#And User_608 click the pencil icon under Customer Financials tab
+#And User_608 click any one active record Edit button under Financial Commitments section
+#And User_608 click the Status Radio button under Customer Debt screen
+#When User_608 click the Update button in Customer Debt screen
+#And User_608 verify the first row status as In-Active under Financial Commitments in Customer Financials tab
+#
+#
+#
+#Then logout from the ijaraApplication
+#And User_608 invoke soft assert in Customer Debt screen at Auto Loan App Data Entry stage

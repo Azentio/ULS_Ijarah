@@ -27,7 +27,9 @@ public class AutoLoan_Steps {
 	WebDriver driver = BaseClass.driver;
 	JSPaths jsPaths = new JSPaths(excelPath, "Ijara_loginElements", "Ijara_LoginFieldName", "JSPath");
 	JSPaths customerDebtJsPaths = new JSPaths(excelPath, "CF_Debt_Elements", "CF_Debt FieldName", "JSPath");
-	JSPaths appDataAppDetailsJsPaths = new JSPaths(excelPath, "ApplicationDetails_Elements", "ApplicationDetails_FieldName", "JSPath");	
+	JSPaths appDataAppDetailsJsPaths = new JSPaths(excelPath, "ApplicationDetails_Elements", "ApplicationDetails_FieldName", "JSPath");
+	JSPaths underWriterJsPaths = new JSPaths(excelPath, "Underwriter_Elements", "Underwriter_FieldName", "JSPath");
+	JSPaths appDataCustomerDetailsJsPaths = new JSPaths(excelPath, "AppData_CustomerDetail_Elements", "AppData_CustomerDetails_FieldName", "JSPath");
 	
 	ExcelData exelData = new ExcelData(excelTestDataPath, "ijara_LoginCredentials", "UserType");
 	Map<String, String> loginTestData = new HashMap<>();
@@ -42,6 +44,7 @@ public class AutoLoan_Steps {
 	
 	ExcelData AppDataEntryApplicationDetails = new ExcelData(excelTestDataPath,"AL_AppData_AppDetails","DataSet ID");
 	ExcelData AppDataEntryCFDebtExcelData = new ExcelData(excelTestDataPath,"AL_AppData_CustomerDebt","DataSet ID");
+	ExcelData UnderwriterL1ExcelData = new ExcelData(excelTestDataPath,"AL_Underwriter_L1","DataSet ID");
 	
 	Map<String, String> testExecutionData;
 	Map<String, String> testData;
@@ -154,14 +157,39 @@ public class AutoLoan_Steps {
 		testData = AppDataEntryCFDebtExcelData.getTestdata("DS_AT_AL_CUD_09");
     }
 	
+//	Auto Loan -- Underwriter L1 
+	@And("^User_608 get the test data for test case AT_AL_UNWL1_01$")
+    public void get_the_test_data_for_test_case_AT_AL_UNWL1_01() throws Throwable {
+		testData = UnderwriterL1ExcelData.getTestdata("DS_AT_AL_UNWL1_01");
+    }
+	
+	@And("^User_608 get the test data for test case AT_AL_UNWL1_02$")
+    public void get_the_test_data_for_test_case_AT_AL_UNWL1_02() throws Throwable {
+		testData = UnderwriterL1ExcelData.getTestdata("DS_AT_AL_UNWL1_02");
+    }
+	
+	@And("^User_608 get the test data for test case AT_AL_UNWL1_03$")
+    public void get_the_test_data_for_test_case_AT_AL_UNWL1_03() throws Throwable {
+		testData = UnderwriterL1ExcelData.getTestdata("DS_AT_AL_UNWL1_03");
+    }
+	
+	@And("^User_608 get the test data for test case AT_AL_UNWL1_04$")
+    public void get_the_test_data_for_test_case_AT_AL_UNWL1_04() throws Throwable {
+		testData = UnderwriterL1ExcelData.getTestdata("DS_AT_AL_UNWL1_04");
+    }
+	
+	@And("^User_608 get the test data for test case AT_AL_UNWL1_05$")
+    public void get_the_test_data_for_test_case_AT_AL_UNWL1_05() throws Throwable {
+		testData = UnderwriterL1ExcelData.getTestdata("DS_AT_AL_UNWL1_05");
+    }
+	
+	
 	
 	
 	
 	
 	@And("User_608 search the Reference ID for Auto Loan")
 	public void user_search_the_reference_id_for_auto_loan() throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver,
-				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("inboxSearchInput")));
 		for (int i = 0; i <= 5000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("inboxSearchInput"))
@@ -4218,7 +4246,7 @@ public class AutoLoan_Steps {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("amountConsideredInput")).click();
-				actions.moveToElement(javascriptHelper.executeScriptWithWebElement(
+				actions.scrollToElement(javascriptHelper.executeScriptWithWebElement(
 						customerDebtJsPaths.getElement("amountConsideredInput"))).build().perform();
 				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("amountConsideredInput"))
 				.sendKeys(testData.get("Amt_Consider"),Keys.TAB);
@@ -4757,13 +4785,702 @@ public class AutoLoan_Steps {
 	}
 	
 	
+	@And("User_608 System should able to select Accept\\Reject from dropdown Decision section in Offer Decision tab")
+	public void user_608_system_should_able_to_select_accept_reject_from_dropdown_decision_section_in_offer_decision_tab() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(
+						"document.querySelectorAll('ion-select[ng-reflect-interface=\"popover\"]')[3]").click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio-group ion-label').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println("Option: "+titlename);				
+					if (titlename.trim().equalsIgnoreCase(testData.get("Decision"))) {
+						String jspath = "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.moveToElement(btn).click().build().perform();
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@And("User_608 invoke soft assert in Offer Decision screen at Auto loan - Underwriter L1 stage")
+	public void user_608_invoke_soft_assert_in_offer_decision_screen_at_auto_loan_underwriter_l1_stage() throws Throwable {
+		softAssert.assertAll();
+	}
 	
 	
+//	AT_AL_UNWL1_02
+	@And("User_608 click Recommendations\\Sanction Conditions Approval History link under Approval Details Hyperlinks section")
+	public void user_608_click_recommendations_sanction_conditions_approval_history_link_under_approval_details_hyperlinks_section() throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(underWriterJsPaths.getElement("JSERecommendations")));
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.JSEClick(
+						javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("JSERecommendations")));
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_608 click the Add button in List of condition section under Offer decision tab")
+	public void user_608_click_the_add_button_in_list_of_condition_section_under_offer_decision_tab() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.JSEClick(
+						javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("AddButton")));
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Recommendations\\Sanction Hyperlink screen get open under Offer decision tab")
+	public void user_608_verify_recommendations_sanction_hyperlink_screen_get_open_under_offer_decision_tab() throws Throwable {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println("Option: "+titlename);				
+					if (titlename.trim().contains("Recommendation")) {
+						String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]";
+						WebElement screen = javascriptHelper.executeScriptWithWebElement(jspath);
+						softAssert.assertTrue(screen.isDisplayed(), 
+								"Recommendations\\Sanction Hyperlink screen get open under Offer decision tab");
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
 	
 	
+//	AT_AL_UNWL1_03
+	@And("User_608 select the Note Code from dropdown under Recommendation\\Sanction Hyperlink screen")
+	public void user_608_select_the_note_code_from_dropdown_under_recommendation_sanction_hyperlink_screen() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("NoteCode"))
+				.click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio-group ion-label').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println("Option: "+titlename);				
+					if (titlename.trim().equalsIgnoreCase(testData.get("Note_Code"))) {
+						String jspath = "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.moveToElement(btn).click().build().perform();
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 enter Sequence Number under Recommendation\\Sanction Hyperlink screen")
+	public void user_608_enter_sequence_number_under_recommendation_sanction_hyperlink_screen() throws Throwable {
+		javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("SequenceNumber")).click();
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("SequenceNumber"))
+						.sendKeys(testData.get("Sequence_Number"),Keys.TAB);
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 select Note Sub Code from dropdown under Recommendation\\Sanction Hyperlink screen")
+	public void user_608_select_note_sub_code_from_dropdown_under_recommendation_sanction_hyperlink_screen() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("NoteSubcode"))
+				.click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio-group ion-label').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println("Option: "+titlename);				
+					if (titlename.trim().equalsIgnoreCase(testData.get("Note_Sub_Code"))) {
+						String jspath = "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.moveToElement(btn).click().build().perform();
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 enter Condition under Recommendation\\Sanction Hyperlink screen")
+	public void user_608_enter_condition_under_recommendation_sanction_hyperlink_screen() throws Throwable {
+		javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("Condition")).click();
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("Condition"))
+						.sendKeys(testData.get("Condition"),Keys.TAB);
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 enter Date under Recommendation\\Sanction Hyperlink screen")
+	public void user_608_enter_date_under_recommendation_sanction_hyperlink_screen() throws Throwable {
+		javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("Date")).click();
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("Date_today")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 enter Remarks under Recommendation\\Sanction Hyperlink screen")
+	public void user_608_enter_remarks_under_recommendation_sanction_hyperlink_screen() throws Throwable {
+		javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("Remarks")).click();
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("Remarks"))
+						.sendKeys(testData.get("Remarks"),Keys.TAB);
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+	
+	@And("User_608 click the Save button under Recommendation\\Sanction Hyperlink screen")
+	public void user_608_click_the_save_button_under_recommendation_sanction_hyperlink_screen() throws Throwable {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				javascriptHelper.JSEClick(
+						javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("SaveIcon")));
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 500000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("popupCloseBtn")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 500000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
 	
 	
+	@And("User_608 select Accept\\Reject from dropdown Decision section in Offer Decision tab")
+	public void user_608_select_accept_reject_from_dropdown_decision_section_in_offer_decision_tab() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(
+						"document.querySelectorAll('ion-select[ng-reflect-interface=\"popover\"]')[3]").click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio-group ion-label').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println("Option: "+titlename);				
+					if (titlename.trim().equalsIgnoreCase(testData.get("Decision"))) {
+						String jspath = "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.moveToElement(btn).click().build().perform();
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	
+	}
 	
+	@And("User_608 select the Decision value as Select under Decision section in Offer Decision tab")
+	public void user_608_select_the_decision_value_as_select_under_decision_section_in_offer_decision_tab()
+			throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(
+						"document.querySelectorAll('ion-select[ng-reflect-interface=\"popover\"]')[3]").click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio-group ion-label').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println("Option: "+titlename);				
+					if (titlename.trim().equalsIgnoreCase(testData.get("Decision2"))) {
+						String jspath = "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.moveToElement(btn).click().build().perform();
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	
+//	AT_AL_UNWL1_05
+	@And("User_608 click the Application details tab")
+	public void user_608_click_the_application_details_tab() throws Throwable {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 500; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-segment-button')[" + j + "].innerText";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains("Application Details")) {
+						String jspath = "document.querySelectorAll('ion-segment-button')[" + j + "]";
+						WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.JSEClick(addButton);
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify all the populate data correctly at this stage and display only in Application details screen")
+	public void user_608_verify_all_the_populate_data_correctly_at_this_stage_and_display_only_in_application_details_screen()
+			throws Throwable {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				WebElement element1 = javascriptHelper.executeScriptWithWebElement(
+						appDataAppDetailsJsPaths.getElement("productLabel"));
+				actions.scrollToElement(element1).build().perform();
+				WebElement element2 = javascriptHelper.executeScriptWithWebElement(
+						appDataAppDetailsJsPaths.getElement("referenceCode"));
+				actions.scrollToElement(element2).build().perform();
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 click the Eye button under Customer Details tab")
+	public void user_608_click_the_eye_button_under_customer_details_tab() throws Throwable {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				String jsPath = "document.querySelector('button[icon=\"pi pi-eye\"]')";
+				WebElement element = javascriptHelper.executeScriptWithWebElement(jsPath);
+				actions.moveToElement(element).click().build().perform();
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}    
+	}
+	
+	@And("User_608 verify all the populate data correctly at this stage and display only in Customer details screen")
+	public void user_608_verify_all_the_populate_data_correctly_at_this_stage_and_display_only_in_customer_details_screen()
+			 throws Throwable {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				WebElement element = javascriptHelper.executeScriptWithWebElement(
+						appDataCustomerDetailsJsPaths.getElement("remarks"));
+				javascriptHelper.scrollIntoView(element);
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+	
+	@And("User_608 verify all the populate data correctly at this stage and display only under Customer Financials tab")
+	public void user_608_verify_all_the_populate_data_correctly_at_this_stage_and_display_only_under_customer_financials_tab()
+			throws Throwable {
+		String length = null;
+		for (int i = 0; i < 500; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0") && !length.equals("1")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 500; i++) {
+			try {
+				String lastTitle = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + (Integer.parseInt(length)-1) + "]";
+				System.out.println("Path Length: "+lastTitle);
+				WebElement title = javascriptHelper.executeScriptWithWebElement(lastTitle);
+				javascriptHelper.scrollIntoView(title);
+				break;
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@And("User_608 click the Asset Details tab")
+	public void user_608_click_the_asset_details_tab() throws Throwable {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 500; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-segment-button')[" + j + "].innerText";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains("Asset Details")) {
+						String jspath = "document.querySelectorAll('ion-segment-button')[" + j + "]";
+						WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.JSEClick(addButton);
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 click the Policy Check tab")
+	public void user_608_click_the_policy_check_tab() throws Throwable {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 500; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-segment-button')[" + j + "].innerText";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains("Policy Check")) {
+						String jspath = "document.querySelectorAll('ion-segment-button')[" + j + "]";
+						WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.JSEClick(addButton);
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+	
+	@And("User_608 click the Eye button under Asset Details tab")
+	public void user_608_click_the_eye_button_under_asset_details_tab() throws Throwable {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				String jsPath = "document.querySelector('button[icon=\"pi pi-eye\"]')";
+				WebElement element = javascriptHelper.executeScriptWithWebElement(jsPath);
+				actions.moveToElement(element).click().build().perform();
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify all the populate data correctly at this stage and display only under Asset Details tab")
+	public void user_608_verify_all_the_populate_data_correctly_at_this_stage_and_display_only_under_Asset_details_tab()
+			throws Throwable {
+		String length = null;
+		for (int i = 0; i < 500; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-item[class*=\"sectiontitles\"]').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0") && !length.equals("1")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 500; i++) {
+			try {
+				String lastTitle = "document.querySelectorAll('ion-item[class*=\"sectiontitles\"]')[" + (Integer.parseInt(length)-1) + "]";
+				System.out.println("Path Length: "+lastTitle);
+				WebElement title = javascriptHelper.executeScriptWithWebElement(lastTitle);
+				javascriptHelper.scrollIntoView(title);
+				break;
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}	
+	
+	@And("User_608 click the Eye button under Document Details tab")
+	public void user_608_click_the_eye_button_under_document_details_tab() throws Throwable {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				String jsPath = "document.querySelector('button[icon=\"pi pi-eye\"]')";
+				WebElement element = javascriptHelper.executeScriptWithWebElement(jsPath);
+				actions.moveToElement(element).click().build().perform();
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
 	
 	
 	

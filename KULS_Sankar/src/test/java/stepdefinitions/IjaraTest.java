@@ -28,6 +28,11 @@ public class IjaraTest extends BaseClass{
 		ijaraLogin.loginWithIjaraApplicationAppData();
 	}
 	
+//	 Return the record
+	@And("login with valid credentials for return")
+	public void login_with_valid_credentials_for_return()throws Throwable {
+		ijaraLogin.loginWithIjaraForReturn();
+	}
 	
 //	Underwriter Stage --> UserType02
 	@And("login with valid credentials-Underwriter")
@@ -89,6 +94,12 @@ public class IjaraTest extends BaseClass{
 	@And("login with valid credentials - Auto Loan - App Data Entry")
 	public void login_with_valid_credentials_auto_loan_app_data_entry()throws Throwable {
 		ijaraLogin.loginWithAutoLoanAppDataEntry();
+	}
+	
+//	Auto Loan Product -- Underwriter L1 Stage ---> userType10
+	@And("login with valid credentials - Auto Loan - Underwriter L1")
+	public void login_with_valid_credentials_auto_loan_underwriter_l1()throws Throwable {
+		ijaraLogin.loginWithAutoLoanUnderwriterL1();
 	}
 	
 	

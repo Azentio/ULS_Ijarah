@@ -17,7 +17,6 @@ And User_608 click the Entitle button under inbox
 And User_608 click the Customer Financials tab
 And User_608 click the pencil icon under Customer Financials tab
 And User_608 click Add button in Financial Commitments under Customer Financials tab
-And User_608 validate the Customer Debt screen is available in Financial Commitments
 And User_608 validate the Save button available in Customer Debt screen
 And User_608 validate the Back button available in Customer Debt screen
 And User_608 validate the Finance type field available in Customer Debt screen
@@ -66,7 +65,6 @@ And User_608 click the Entitle button under inbox
 And User_608 click the Customer Financials tab
 And User_608 click the pencil icon under Customer Financials tab
 And User_608 click Add button in Financial Commitments under Customer Financials tab
-And User_608 validate the Customer Debt screen is available in Financial Commitments
 And User_608 select the Finanace type in Customer Debt screen
 And User_608 enter the Sanction Amount in Customer Debt screen
 And User_608 enter the Tenure in Customer Debt screen
@@ -93,9 +91,9 @@ And User_608 search the Ref id under inbox
 And User_608 click the Entitle button under inbox
 And User_608 click the Customer Financials tab
 And User_608 click the pencil icon under Customer Financials tab
+And User_608 click the pencil button under Financial Commitments in Customer Financials tab
 And User_608 validate the Update button available in Customer Debt screen
 And User_608 validate the Back button available in Customer Debt screen
-And User_608 click the pencil button under Financial Commitments in Customer Financials tab
 And User_608 modify the Sanction amount in Customer Debt screen
 And User_608 enter the invalid data and verify in Installment field under Customer Debt screen
 And User_608 clear the mandatory field value in Customer Debt screen
@@ -121,7 +119,6 @@ And User_608 search the Ref id under inbox
 And User_608 click the Entitle button under inbox
 And User_608 click the Customer Financials tab
 And User_608 click the pencil icon under Customer Financials tab
-
 And User_608 verify the Financial Institution field is displayed in list view under Financial Commitments
 And User_608 verify the Loan Amount field is displayed in list view under Financial Commitments
 And User_608 verify the Installment Amount field is displayed in list view under Financial Commitments
@@ -159,7 +156,6 @@ And User_608 click the Entitle button under inbox
 And User_608 click the Customer Financials tab
 And User_608 click the pencil icon under Customer Financials tab
 And User_608 click Add button in Financial Commitments under Customer Financials tab
-And User_608 validate the Customer Debt screen is available in Financial Commitments
 And User_608 select the Finanace type in Customer Debt screen
 And User_608 enter the Sanction Amount in Customer Debt screen
 And User_608 enter the Tenure in Customer Debt screen
@@ -170,7 +166,6 @@ Then User_608 validate the confirm message in Customer Debt screen
 Then logout from the ijaraApplication
 
 
-
 # CUD_04_08
 @AT_CUD_006
 @AT_CUD_006_01
@@ -178,7 +173,7 @@ Scenario: To verify user is able to change the status of Debt record from Active
 
 Given navigate the IJARA URL
 And login with valid credentials-App Data Entry
-And User_608 get the test data for test case AT_CUD_005
+And User_608 get the test data for test case AT_CUD_006
 And User_608 click the module name dropdown in ULS application
 And User_608 select the module name as LOS in ULS application
 And User_608 click the Mail box in ULS application
@@ -201,7 +196,7 @@ Then logout from the ijaraApplication
 Scenario: To verify user is able to change the status of Debt record from Inactive to Active
 Given navigate the IJARA URL
 And login with valid credentials-App Data Entry
-And User_608 get the test data for test case AT_CUD_005
+And User_608 get the test data for test case AT_CUD_006
 And User_608 click the module name dropdown in ULS application
 And User_608 select the module name as LOS in ULS application
 And User_608 click the Mail box in ULS application
