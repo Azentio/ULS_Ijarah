@@ -129,16 +129,33 @@ public class Murabha_AddressDetailsSteps extends BaseClass {
 //	Murabaha Product -- App Data Entry Stage ---> UserType06
 	@And("login with valid credentials-Murabaha App Data Entry")
 	public void login_with_valid_credentials_murabaha_app_data_entry()throws Throwable {
-		ijaraLogin.loginWithMurabhaApplication("userType16");
+		ijaraLogin.loginWithMurabhaApplication("userType03");
 	}
 	@Given("login with valid credentials-Murabaha Data Check stage")
 	public void login_with_valid_credentials_murabaha_data_check_stage() {
-		ijaraLogin.loginWithMurabhaApplication("userType18");
+		ijaraLogin.loginWithMurabhaApplication("userType17");
 
+	}
+	@Given("login with valid credentials for Murabha_Offering_OfferDetails")
+	public void login_with_valid_credentials_for_murabha_offering_offer_details() {
+		ijaraLogin.loginWithMurabhaApplication("userType18");
+	}
+	@Given("login with valid credentials for Murabha offering document details")
+	public void login_with_valid_credentials_for_murabha_offering_document_details() {
+		ijaraLogin.loginWithMurabhaApplication("userType19");
 	}
 	@And("login with valid credentials17")
 	public void login_with_valid_credentials17() {
-		ijaraLogin.loginWithMurabhaApplication("userType17");
+		ijaraLogin.loginWithMurabhaApplication("userType16");
+	}
+	@And("user_076 login with valid credentials at purchase order stage for approve record")
+	public void user_076_login_with_valid_credentials_at_purchase_order_stage_for_approve_record() throws Throwable {
+
+		ijaraLogin.loginWithMurabhaApplication("userType20");
+	}
+	@Given("user_076 login with valid credentials at purchase order stage")
+	public void user_076_login_with_valid_credentials_at_purchase_order_stage()throws Throwable {
+		ijaraLogin.loginWithMurabhaApplication("userType08");
 	}
 
 	@And("click on module dropdown in Murabha")

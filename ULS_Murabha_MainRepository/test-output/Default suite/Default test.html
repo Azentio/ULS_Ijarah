@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Jan 03 12:01:23 IST 2024</td>
+<td>Started on:</td><td>Fri Jan 05 13:45:57 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>79 seconds (79698 ms)</td>
+<tr><td>Total time:</td><td>72 seconds (72304 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,17 +75,19 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "To test the functionality of Application Details with valid data", "Optional[Application_Detail_Customer_Search]"</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;String.trim()&quot; because the return value of &quot;java.util.Map.get(Object)&quot; is null
-	at stepdefinitions.New_Application.user_check_product_field_should_be_editable(New_Application.java:465)
-	at ?.User_607 Check Product Field should be editable(file:///C:/Users/ININDC00482/git/Murabha/ULS_Murabha_MainRepository/src/test/java/features/MurabhaFeatures/Murabha_CUSTOMER_SEARCH.feature:313)
-</pre></div><a href='#' onClick='toggleBox("stack-trace2089456098", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2089456098'><pre>java.lang.NullPointerException: Cannot invoke &quot;String.trim()&quot; because the return value of &quot;java.util.Map.get(Object)&quot; is null
-	at stepdefinitions.New_Application.user_check_product_field_should_be_editable(New_Application.java:465)
-	at ?.User_607 Check Product Field should be editable(file:///C:/Users/ININDC00482/git/Murabha/ULS_Murabha_MainRepository/src/test/java/features/MurabhaFeatures/Murabha_CUSTOMER_SEARCH.feature:313)
+<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "To verify purchase order stage tabs are readonly mode (Asset Details,Configuration,Predisbursment fee (Fee details),Downpayment summary,Insurance Info,Document Details,Application Details)", "Optional[To Test the beneficiary details screen at purchase order stage]"</td>
+<td><div><pre>java.lang.AssertionError: Cannot invoke &quot;org.openqa.selenium.WebElement.click()&quot; because the return value of &quot;helper.JavascriptHelper.executeScriptWithWebElement(String)&quot; is null
+	at org.junit.Assert.fail(Assert.java:88)
+	at stepdefinitions.PurchaseOrderSteps.user_076_verify_asset_details_record_should_be_readonly_and_data_should_match_with_app_data_entry_stage_record(PurchaseOrderSteps.java:1067)
+	at ?.user_076 verify asset details record should be readonly and data should match with app data entry stage record(file:///C:/Users/ININDC00482/git/Murabha/ULS_Murabha_MainRepository/src/test/java/features/MurabhaFeatures/Murabaha_PURCHASEORDER_Beneficiary_detailsFEATURE.feature:69)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1925271900", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1925271900'><pre>java.lang.AssertionError: Cannot invoke &quot;org.openqa.selenium.WebElement.click()&quot; because the return value of &quot;helper.JavascriptHelper.executeScriptWithWebElement(String)&quot; is null
+	at org.junit.Assert.fail(Assert.java:88)
+	at stepdefinitions.PurchaseOrderSteps.user_076_verify_asset_details_record_should_be_readonly_and_data_should_match_with_app_data_entry_stage_record(PurchaseOrderSteps.java:1067)
+	at ?.user_076 verify asset details record should be readonly and data should match with app data entry stage record(file:///C:/Users/ININDC00482/git/Murabha/ULS_Murabha_MainRepository/src/test/java/features/MurabhaFeatures/Murabaha_PURCHASEORDER_Beneficiary_detailsFEATURE.feature:69)
 </pre></div></td>
-<td>64</td>
-<td>Runner.TestApplication@268f106e</td></tr>
+<td>62</td>
+<td>Runner.TestApplication@6e9a5ed8</td></tr>
 </table><p>
 </body>
 </html>

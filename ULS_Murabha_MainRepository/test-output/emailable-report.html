@@ -9,13 +9,14 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">79,698</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">72,304</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">Runner.TestApplication</td><td><a href="#m0">runScenario</a></td><td rowspan="1">1704263485002</td><td rowspan="1">64669</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">Runner.TestApplication</td><td><a href="#m0">runScenario</a></td><td rowspan="1">1704442559185</td><td rowspan="1">62223</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">Runner.TestApplication#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;To test the functionality of Application Details with valid data&quot;</td><td>&quot;Optional[Application_Detail_Customer_Search]&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;String.trim()&quot; because the return value of &quot;java.util.Map.get(Object)&quot; is null
-	at stepdefinitions.New_Application.user_check_product_field_should_be_editable(New_Application.java:465)
-	at ✽.User_607 Check Product Field should be editable(file:///C:/Users/ININDC00482/git/Murabha/ULS_Murabha_MainRepository/src/test/java/features/MurabhaFeatures/Murabha_CUSTOMER_SEARCH.feature:313)
+<h2>Default test</h2><h3 id="m0">Runner.TestApplication#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;To verify purchase order stage tabs are readonly mode (Asset Details,Configuration,Predisbursment fee (Fee details),Downpayment summary,Insurance Info,Document Details,Application Details)&quot;</td><td>&quot;Optional[To Test the beneficiary details screen at purchase order stage]&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.AssertionError: Cannot invoke &quot;org.openqa.selenium.WebElement.click()&quot; because the return value of &quot;helper.JavascriptHelper.executeScriptWithWebElement(String)&quot; is null
+	at org.junit.Assert.fail(Assert.java:88)
+	at stepdefinitions.PurchaseOrderSteps.user_076_verify_asset_details_record_should_be_readonly_and_data_should_match_with_app_data_entry_stage_record(PurchaseOrderSteps.java:1067)
+	at ✽.user_076 verify asset details record should be readonly and data should match with app data entry stage record(file:///C:/Users/ININDC00482/git/Murabha/ULS_Murabha_MainRepository/src/test/java/features/MurabhaFeatures/Murabaha_PURCHASEORDER_Beneficiary_detailsFEATURE.feature:69)
 </div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
