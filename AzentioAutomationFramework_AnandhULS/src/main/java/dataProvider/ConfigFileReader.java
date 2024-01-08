@@ -170,6 +170,11 @@ public class ConfigFileReader {
 		recordReferenceNumber = properties.getProperty("MurabaharecordReferenceNumber");
 		return recordReferenceNumber;
 	}
+	public String getTawruqqAppDataCheckReferenceNumber() {
+		String recordReferenceNumber;
+		recordReferenceNumber = properties.getProperty("TawruqqAppDataCheckReferenceNumber");
+		return recordReferenceNumber;
+	}
 	public String getMurabahaPurchaseOrderRecordRefereneNumber() {
 		String recordReferenceNumber;
 		recordReferenceNumber = properties.getProperty("MurabahaPurchaseOrderRefNo");

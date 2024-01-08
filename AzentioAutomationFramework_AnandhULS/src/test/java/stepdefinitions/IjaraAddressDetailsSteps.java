@@ -87,6 +87,11 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 	public void logout_from_the_ULS_application() throws Throwable {
 		ijaraLogin.logoutFromIjara();
 	}
+	@And("user_076 login with valid app data check stage userID for tawruqq product")
+	public void user_076_login_with_valid_app_data_check_stage_user_id_for_tawruqq_product()throws Throwable {
+		ijaraLogin.loginWithIjaraApplication("userType08");
+	    
+	}
 
 	@And("click on module dropdown in IJRARAH")
 	public void click_on_module_dropdown_in_ijrarah() throws Throwable {
