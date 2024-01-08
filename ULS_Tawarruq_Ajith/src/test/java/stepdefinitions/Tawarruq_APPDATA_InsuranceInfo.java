@@ -14,6 +14,7 @@ import dataProvider.ExcelData;
 import helper.BrowserHelper;
 import helper.ClicksAndActionsHelper;
 import helper.JavascriptHelper;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import pageobjects.JSPaths;
 import resources.BaseClass;
@@ -59,12 +60,19 @@ public class Tawarruq_APPDATA_InsuranceInfo {
 	    
 	}
 	
-	@Given("user_0482 get the test data for test case id AT_TW_INS_001")
+	@And("user_0482 get the test data for test case id AT_TW_INS_001")
 	public void user_0482_get_the_test_data_for_test_case_id_at_tw_ins_001() {
 		appdataEntrtyExecutionData = excelDataForApplicationDetailsTawarruqExecutionData.getTestdata("AT_TW_INS_001");
 		appdataEntrtyTestData = excelDataForInsuranceInfoTestData
 				.getTestdata(appdataEntrtyExecutionData.get("dataSet_ID"));
 	}
+	@And("user_0482 get the test data for test case id AT_TW_INS_002")
+	public void user_get_the_test_data_for_test_case_id_at_tw_ins() {
+		appdataEntrtyExecutionData = excelDataForApplicationDetailsTawarruqExecutionData.getTestdata("AT_TW_INS_002");
+		appdataEntrtyTestData = excelDataForInsuranceInfoTestData
+				.getTestdata(appdataEntrtyExecutionData.get("dataSet_ID"));
+	}
+
 	@Given("user_0482 search the new app data entry stage record reference number in Insurance Info")
 	public void user_search_the_new_app_data_entry_stage_record_reference_number_in_insurance_info() {
 		System.out.println(appdataEntrtyTestData.get("record_reference_number"));
@@ -354,7 +362,221 @@ public class Tawarruq_APPDATA_InsuranceInfo {
 		}
 	    
 	}
+	@And("user_0482 Verify Insurance year in List view")
+	public void user_0482_verify_insurance_year_in_list_view() {
+		for (int i = 0; i < 200; i++) {
+			try {
+				WebElement insuranceYear = javascriptHelper.executeScriptWithWebElement(insuranceInfoElements.getElement("Insurance Year Field in List view"));
+				Assert.assertTrue(insuranceYear.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
 
+	@And("user_0482 Verify Insurance year value in List view")
+	public void user_0482_verify_insurance_year_value_in_list_view() {
+		for (int i = 0; i < 200; i++) {
+			try {
+				String insuranceYear = javascriptHelper.executeScript("return "+insuranceInfoElements.getElement("Insurance Year Field Value in List view")).toString();
+				System.out.println(insuranceYear);
+				Assert.assertFalse(insuranceYear.isBlank());
+				break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("user_0482 Verify the Depreciation percentage in list view")
+	public void user_0482_verify_the_depreciation_percentage_in_list_view() {
+		for (int i = 0; i < 200; i++) {
+			try {
+				WebElement depreciationPercentage = javascriptHelper.executeScriptWithWebElement(insuranceInfoElements.getElement("Depreciation Percentage Field in List View"));
+				Assert.assertTrue(depreciationPercentage.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("user_0482 Verify the Depreciation percentage value in list view")
+	public void user_0482_verify_the_depreciation_percentage_value_in_list_view() {
+		for (int i = 0; i < 200; i++) {
+			try {
+				String depreciationPercentage = javascriptHelper.executeScript("return "+insuranceInfoElements.getElement("Depreciation Percentage Value in List view")).toString();
+				Assert.assertFalse(depreciationPercentage.isBlank());
+				break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("user_0482 Verify Asset Price in list view")
+	public void user_0482_verify_asset_price_in_list_view() {
+		for (int i = 0; i < 200; i++) {
+			try {
+				WebElement assetPrice = javascriptHelper.executeScriptWithWebElement(insuranceInfoElements.getElement("Asset Price Field in list view"));
+				Assert.assertTrue(assetPrice.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("user_0482 Verify Asset Price Value in list view")
+	public void user_0482_verify_asset_price_value_in_list_view() {
+		for (int i = 0; i < 200; i++) {
+			try {
+				String assetPrice = javascriptHelper.executeScript("return "+insuranceInfoElements.getElement("Asset Price Value in List View")).toString();
+				System.out.println(assetPrice);
+				Assert.assertFalse(assetPrice.isBlank());
+				break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("user_0482 Verify the Base Insurance premium in list view")
+	public void user_0482_verify_the_base_insurance_premium_in_list_view() {
+		for (int i = 0; i < 200; i++) {
+			try {
+				WebElement baseInsurancePremium = javascriptHelper.executeScriptWithWebElement(insuranceInfoElements.getElement("Base Premium Field in List View"));
+				Assert.assertTrue(baseInsurancePremium.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("user_0482 Verify the Base Insurance premium value in list view")
+	public void user_0482_verify_the_base_insurance_premium_value_in_list_view() {
+		for (int i = 0; i < 200; i++) {
+			try {
+				String baseInsurancePremium = javascriptHelper.executeScript("return "+insuranceInfoElements.getElement("Base Premium Field Value in List View")).toString();
+				Assert.assertFalse(baseInsurancePremium.isBlank());
+				break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("user_0482 Verify VAT premium in list view")
+	public void user_0428_verify_vat_premium_in_list_view() {
+		for (int i = 0; i < 200; i++) {
+			try {
+				WebElement vatPremium = javascriptHelper.executeScriptWithWebElement(insuranceInfoElements.getElement("VAT Premium Field in List View"));
+				Assert.assertTrue(vatPremium.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("user_0482 Verify VAT premium value in list view")
+	public void user_0482_verify_vat_premium_value_in_list_view() {
+		for (int i = 0; i < 200; i++) {
+			try {
+				String vatPremium = javascriptHelper.executeScript("return "+insuranceInfoElements.getElement("VAT Premium Value in List view")).toString();
+				Assert.assertFalse(vatPremium.isBlank());
+				break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("user_0482 Verify Net premium in list view")
+	public void user_0482_verify_net_premium_in_list_view() {
+		for (int i = 0; i < 200; i++) {
+			try {
+				WebElement netPremium = javascriptHelper.executeScriptWithWebElement(insuranceInfoElements.getElement("Net Premium Field in List View"));
+				Assert.assertTrue(netPremium.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("user_0482 Verify Net premium value in list view")
+	public void user_0482_verify_net_premium_value_in_list_view() {
+		for (int i = 0; i < 200; i++) {
+			try {
+				String netPremium = javascriptHelper.executeScript("return "+insuranceInfoElements.getElement("Net Premium value in List view")).toString();
+				Assert.assertFalse(netPremium.isBlank());
+				break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("user_0482 Verify Status in list view")
+	public void user_0482_verify_status_in_list_view() {
+		for (int i = 0; i < 200; i++) {
+			try {
+				WebElement status = javascriptHelper.executeScriptWithWebElement(insuranceInfoElements.getElement("Status Field in List View"));
+				Assert.assertTrue(status.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("user_0482 Verify Status value in list view")
+	public void user_0482_verify_status_value_in_list_view() {
+		for (int i = 0; i < 200; i++) {
+			try {
+				String status = javascriptHelper.executeScript("return "+insuranceInfoElements.getElement("Status Field Vlaue in List View")).toString();
+				Assert.assertFalse(status.isBlank());
+				break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	
+
+	
 	
 
 }

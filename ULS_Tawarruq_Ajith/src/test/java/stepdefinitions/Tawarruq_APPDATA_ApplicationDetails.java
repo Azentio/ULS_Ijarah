@@ -162,6 +162,10 @@ public class Tawarruq_APPDATA_ApplicationDetails {
 	public void login_with_valid_credentials_for_app_data_entry_stage() {
 		tawarruqLogin.loginWithTawarruqApplication("userType02");
 	}
+	@Given("login with valid credentials for offering stage for Tawarruq")
+	public void login_with_valid_credentials_for_offering_stage_for_tawarruq() {
+		tawarruqLogin.loginWithTawarruqApplication("userType03");
+	}
 
 	@Given("click on module dropdown in Tawarruq")
 	public void click_on_module_dropdown_in_tawarruq() {

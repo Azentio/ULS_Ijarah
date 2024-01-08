@@ -1,64 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-27T10:11:27 IST" name="Default suite" finished-at="2023-11-27T10:16:11 IST" duration-ms="284434">
+  <suite started-at="2024-01-08T15:09:54 IST" name="Default suite" finished-at="2024-01-08T15:10:47 IST" duration-ms="53205">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@6e9a5ed8]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-11-27T10:11:27 IST" name="Default test" finished-at="2023-11-27T10:16:11 IST" duration-ms="284434">
+    <test started-at="2024-01-08T15:09:54 IST" name="Default test" finished-at="2024-01-08T15:10:47 IST" duration-ms="53205">
       <class name="Runner.TestApplication">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@6e9a5ed8]" started-at="2023-11-27T10:11:27 IST" name="setUpClass" finished-at="2023-11-27T10:11:28 IST" duration-ms="1038" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@6e9a5ed8]" started-at="2024-01-08T15:09:54 IST" name="setUpClass" finished-at="2024-01-08T15:09:55 IST" duration-ms="1203" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@6e9a5ed8]" started-at="2023-11-27T10:11:28 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-27T10:15:56 IST" duration-ms="267942" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@6e9a5ed8]" started-at="2024-01-08T15:09:55 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-01-08T15:10:35 IST" duration-ms="40010" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["To verify post clicking on Add button, the Employment Details screen is getting open with all valid fields"]]>
+                <![CDATA["To Verify the fields in List view promissory note"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[To test the Functionalities of CF Employment Details]"]]>
+                <![CDATA["Optional[To Test the functionality of Contract signing stage in Murabha]"]]>
               </value>
             </param>
           </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[element click intercepted: Element <ion-label _ngcontent-tlo-c217="" position="stacked" class="p-element ion-text-capitalize ng-star-inserted sc-ion-label-ios-h sc-ion-label-ios-s ios label-stacked hydrated" ng-reflect-position="stacked" ng-reflect-text="FORM.EMPLOYER_PHONE_EXTENSION." id="ion-input-8-lbl">...</ion-label> is not clickable at point (534, 134). Other element would receive the click: <ion-item _ngcontent-tlo-c217="" lines="none" mode="ios" class="_textBox_item ion-star-inserted item-interactive item-input item-has-placeholder item ios item-lines-none item-fill-none hydrated ion-untouched ion-pristine ion-valid item-label item-label-stacked" ng-reflect-lines="none" ng-reflect-mode="ios" ng-reflect-ng-class="[object Object]">...</ion-item>
-  (Session info: chrome=119.0.6045.160)
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [5995ea5a72c8df212799015dbdf06678, clickElement {id=962F8E644495C66CD02B5572C6B6CE2C_element_122}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56088}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56088/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [org.openqa.selenium.remote.RemoteWebElement@2395f818 -> unknown locator]
-Session ID: 5995ea5a72c8df212799015dbdf06678]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: element click intercepted: Element <ion-label _ngcontent-tlo-c217="" position="stacked" class="p-element ion-text-capitalize ng-star-inserted sc-ion-label-ios-h sc-ion-label-ios-s ios label-stacked hydrated" ng-reflect-position="stacked" ng-reflect-text="FORM.EMPLOYER_PHONE_EXTENSION." id="ion-input-8-lbl">...</ion-label> is not clickable at point (534, 134). Other element would receive the click: <ion-item _ngcontent-tlo-c217="" lines="none" mode="ios" class="_textBox_item ion-star-inserted item-interactive item-input item-has-placeholder item ios item-lines-none item-fill-none hydrated ion-untouched ion-pristine ion-valid item-label item-label-stacked" ng-reflect-lines="none" ng-reflect-mode="ios" ng-reflect-ng-class="[object Object]">...</ion-item>
-  (Session info: chrome=119.0.6045.160)
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [5995ea5a72c8df212799015dbdf06678, clickElement {id=962F8E644495C66CD02B5572C6B6CE2C_element_122}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56088}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56088/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [org.openqa.selenium.remote.RemoteWebElement@2395f818 -> unknown locator]
-Session ID: 5995ea5a72c8df212799015dbdf06678
-at org.junit.Assert.fail(Assert.java:88)
-at stepdefinitions.Murabha_APPDATA_CustomerEmploymentDetails.user_0482_verify_employer_phone_extension_field_should_be_present(Murabha_APPDATA_CustomerEmploymentDetails.java:454)
-at ✽.User_0482 Verify Employer phone Extension field should be present(file:///C:/Users/ININDC00482/git/ULS_Tawarruq_Ajith/ULS_Tawarruq_Ajith/src/test/java/features/MurabhaFeatures/MurabhaAPPDATA_Employment%20Details.feature:33)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@6e9a5ed8]" started-at="2023-11-27T10:15:56 IST" name="tearDownClass" finished-at="2023-11-27T10:16:11 IST" duration-ms="15393" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@6e9a5ed8]" started-at="2024-01-08T15:10:35 IST" name="tearDownClass" finished-at="2024-01-08T15:10:47 IST" duration-ms="11949" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

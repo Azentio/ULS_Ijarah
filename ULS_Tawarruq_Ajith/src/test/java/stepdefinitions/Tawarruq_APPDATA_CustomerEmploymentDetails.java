@@ -54,6 +54,18 @@ public class Tawarruq_APPDATA_CustomerEmploymentDetails extends BaseClass {
 		appdataEntrtyTestData = excelDataForemploymetDetailsTestData
 				.getTestdata(appdataEntrtyExecutionData.get("dataSet_ID"));
 	}
+	@And("user_0482 get the test data for test case id AT_TW_AD_EMPD_02")
+	public void user_0482_get_the_test_data_for_test_case_id_at_tw_ad_empd() {
+		appdataEntrtyExecutionData = excelDataForDetailsTawarruqExecutionData.getTestdata("AT_TW_AD_EMPD_02");
+		appdataEntrtyTestData = excelDataForemploymetDetailsTestData
+				.getTestdata(appdataEntrtyExecutionData.get("dataSet_ID"));
+	}
+	@Given("user_0482 get the test data for test case id AT_TW_AD_EMPD_03")
+	public void user_0482_get_the_test_data_for_test_case_id_at_tw_ad_empd_03() {
+		appdataEntrtyExecutionData = excelDataForDetailsTawarruqExecutionData.getTestdata("AT_TW_AD_EMPD_03");
+		appdataEntrtyTestData = excelDataForemploymetDetailsTestData
+				.getTestdata(appdataEntrtyExecutionData.get("dataSet_ID"));
+	}
 
 	@And("user_0482 search the new app data entry stage record reference number in Tawarruq")
 	public void user_0482_search_the_new_app_data_entry_stage_record_reference_number_in_tawarruq() {
@@ -243,6 +255,38 @@ public class Tawarruq_APPDATA_CustomerEmploymentDetails extends BaseClass {
 		}
 	    
 	}
+	@Given("User_0482 Select Nature of Employment field as company firm in in Employment details Tawarruq app data entry")
+	public void user_0482_select_nature_of_employment_field_as_company_firm_in_in_employment_details_tawarruq_app_data_entry() {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper
+						.executeScriptWithWebElement(customerEmploymentDetailsElements.getElement("Nature of Employment Dropdown"))
+						.click();
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		clicksAndActionsHelper.jsSelectUsingText(appdataEntrtyTestData.get("Nature of Employment"));  
+	}
+	@Given("User_0482 Select Nature of Employment field as pensioner in Employment details Tawarruq app data entry")
+	public void user_0482_select_nature_of_employment_field_as_pensioner_in_employment_details_tawarruq_app_data_entry() {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper
+						.executeScriptWithWebElement(customerEmploymentDetailsElements.getElement("Nature of Employment Dropdown"))
+						.click();
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		clicksAndActionsHelper.jsSelectUsingText(appdataEntrtyTestData.get("Nature of Employment"));  
+	}
 
 	@Given("User_0482 Verify Nature of Employment field should be present in Employment details Tawarruq app data entry")
 	public void user_0482_verify_nature_of_employment_field_should_be_present_in_employment_details_tawarruq_app_data_entry() {
@@ -259,6 +303,66 @@ public class Tawarruq_APPDATA_CustomerEmploymentDetails extends BaseClass {
 		}
 	    
 	}
+	@Given("User_0482 Verify Company type field should be present in Employment details Tawarruq app data entry")
+	public void user_0482_verify_company_type_field_should_be_present_in_employment_details_tawarruq_app_data_entry() {
+		for (int i = 0; i < 200; i++) {
+			try {
+				WebElement primaryEmployment = javascriptHelper.executeScriptWithWebElement(customerEmploymentDetailsElements.getElement("Company Type Field"));
+				Assert.assertTrue(primaryEmployment.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Given("User_0482 Verify Profession field should be present in Employment details Tawarruq app data entry")
+	public void user_0482_verify_profession_field_should_be_present_in_employment_details_tawarruq_app_data_entry() {
+		for (int i = 0; i < 200; i++) {
+			try {
+				WebElement primaryEmployment = javascriptHelper.executeScriptWithWebElement(customerEmploymentDetailsElements.getElement("Profession Field"));
+				Assert.assertTrue(primaryEmployment.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Given("User_0482 Verify Profession Type field should be present in Employment details Tawarruq app data entry")
+	public void user_0482_verify_profession_type_field_should_be_present_in_employment_details_tawarruq_app_data_entry() {
+		for (int i = 0; i < 200; i++) {
+			try {
+				WebElement primaryEmployment = javascriptHelper.executeScriptWithWebElement(customerEmploymentDetailsElements.getElement("Profession Type Field"));
+				Assert.assertTrue(primaryEmployment.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Given("User_0482 Verify Statutory Authority field should be present in Employment details Tawarruq app data entry")
+	public void user_0482_verify_statutory_authority_field_should_be_present_in_employment_details_tawarruq_app_data_entry() {
+		for (int i = 0; i < 200; i++) {
+			try {
+				WebElement primaryEmployment = javascriptHelper.executeScriptWithWebElement(customerEmploymentDetailsElements.getElement("Statutory Authority Field"));
+				Assert.assertTrue(primaryEmployment.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
 
 	@Given("User_0482 Verify Employer Name field should be present in Employment details Tawarruq app data entry")
 	public void user_0482_verify_employer_name_field_should_be_present_in_employment_details_tawarruq_app_data_entry() {
@@ -793,4 +897,5 @@ public class Tawarruq_APPDATA_CustomerEmploymentDetails extends BaseClass {
 		}
 	    
 	}
+	
 }

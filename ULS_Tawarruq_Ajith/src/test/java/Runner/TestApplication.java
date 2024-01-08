@@ -9,7 +9,10 @@ import utilities.ExtentManager;
 import utilities.ExtentTestManager;
 
 @CucumberOptions(features = {
-		"src/test/java/features/MurabhaFeatures/MurabhaAPPDATA_Employment Details.feature"
+		"src/test/java/features/MurabhaFeatures",
+		"src/test/java/features/Tawarruq/TawarruqAPPDATA_Employment Details.feature",
+		"src/test/java/features/Tawarruq/Tawarruq_AppDataEntry_InsuranceInfo.feature",
+		"src/test/java/features/Tawarruq/Tawarruq_AdhocPaymentOffering.feature"
 		// Ijara_AssetDetailsFEATURE.feature
 
 }, glue = "stepdefinitions",
@@ -18,9 +21,9 @@ import utilities.ExtentTestManager;
 				"rerun:ReRunScenarios/FailedReRun.txt" }
 // ,dryRun = false //to check compilation errors
 // , tags = "@CW_032"
- , tags="@AT_EMPD_001"
+// , tags="@TW_APD_06"
 
-//, tags = "@AT_MAppDetails_NewApp_06"
+, tags = "@AT_MU_CS_04"
 
 )
 public class TestApplication extends AbstractTestNGCucumberTests {

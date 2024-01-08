@@ -1,5 +1,5 @@
 Feature: Verify the functionalities for AppDataEntry(Insurance Info)
-
+#cover all insurance manual testcases
  @AT_INS_001
 Scenario: Creation of Insurance Info record with valid data
 Given navigate the Tawarruq URL
@@ -34,8 +34,22 @@ And user_0482 click on LOS option in module dropdown
 And user_0482 click on mail box
 And user_0482 click on search box upon click on the mail box
 And user_0482 click on search text box upon click the search button
-And user_0482 get the test data for test case id AT_TW_AD_01
+And user_0482 get the test data for test case id AT_TW_INS_002
 And user_0482 search the new app data entry stage record reference number in Insurance Info
 And user_0482 select the new app data entry stage record from mail box in Insurance Info
 And user_0482 click the insurance Info Screen
+And user_0482 Verify Insurance year in List view
+And user_0482 Verify Insurance year value in List view
+And user_0482 Verify the Depreciation percentage in list view
+And user_0482 Verify the Depreciation percentage value in list view
+And user_0482 Verify Asset Price in list view
+And user_0482 Verify Asset Price Value in list view
+And user_0482 Verify the Base Insurance premium in list view
+And user_0482 Verify the Base Insurance premium value in list view
+And user_0482 Verify VAT premium in list view
+And user_0482 Verify VAT premium value in list view
+And user_0482 Verify Net premium in list view 
+And user_0482 Verify Net premium value in list view 
+And user_0482 Verify Status in list view
+And user_0482 Verify Status value in list view
 

@@ -75,9 +75,32 @@ public class Murabha_APPDATA_CustomerEmploymentDetails {
 		appdataEntrtyTestData = excelDataForEmploymentDetailsTestData
 				.getTestdata(appdataEntrtyExecutionData.get("dataSet_ID"));
 	}
+	@And("user_0482 get the test data for test case id AT_MU_EMPD_02")
+	public void user_0482_get_the_test_data_for_test_case_id_at_mu_empd_02() {
+		appdataEntrtyExecutionData = excelDataForEmploymentDetailsMurabhaExecutionData.getTestdata("AT_MU_EMPD_02");
+		appdataEntrtyTestData = excelDataForEmploymentDetailsTestData
+				.getTestdata(appdataEntrtyExecutionData.get("dataSet_ID"));
+	}
+	@And("user_0482 get the test data for test case id AT_MU_EMPD_03")
+	public void user_0482_get_the_test_data_for_test_case_id_at_mu_empd_03() {
+		appdataEntrtyExecutionData = excelDataForEmploymentDetailsMurabhaExecutionData.getTestdata("AT_MU_EMPD_03");
+		appdataEntrtyTestData = excelDataForEmploymentDetailsTestData
+				.getTestdata(appdataEntrtyExecutionData.get("dataSet_ID"));
+	}
+	@And("user_0482 get the test data for test case id AT_MU_EMPD_04")
+	public void user_0482_get_the_test_data_for_test_case_id_at_mu_empd_04() {
+		appdataEntrtyExecutionData = excelDataForEmploymentDetailsMurabhaExecutionData.getTestdata("AT_MU_EMPD_04");
+		appdataEntrtyTestData = excelDataForEmploymentDetailsTestData
+				.getTestdata(appdataEntrtyExecutionData.get("dataSet_ID"));
+	}
+
 	@Given("login with valid credentials for app data entry stage for Murabha")
 	public void login_with_valid_credentials_for_app_data_entry_stage_for_murabha() {
 		murabhaLogin.loginWithMurabhaApplication("userType02");
+	}
+	@Given("login with valid credentials for Murabha contract signing stage")
+	public void login_with_valid_credentials_for_murabha_contract_signing_stage() {
+		murabhaLogin.loginWithMurabhaApplication("userType03");
 	}
 	
 	@And("click on module dropdown in Murabha")
@@ -183,7 +206,7 @@ public class Murabha_APPDATA_CustomerEmploymentDetails {
 				}
 			}
 		}
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 	    
 	}
 
@@ -208,9 +231,11 @@ public class Murabha_APPDATA_CustomerEmploymentDetails {
 		try {
 			for (int j = 0; j <Integer.parseInt(length); j++) {
 				String title ="return document.querySelectorAll('ion-title')["+j+"].innerText";
+				String titleXpath ="document.querySelectorAll('ion-title')["+j+"]";
 				String titlename = javascriptHelper.executeScript(title).toString();
+				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(titleXpath));
 				System.out.println(titlename);
-				if (titlename.trim().equalsIgnoreCase("Customer Employment List")) {
+				if (titlename.trim().contains("Customer Employment List")) {
 					System.out.println("condition true");
 					String jspath ="document.querySelectorAll('ion-title')["+j+"].parentElement.nextElementSibling.querySelector('button')";
 					WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
@@ -253,8 +278,9 @@ public class Murabha_APPDATA_CustomerEmploymentDetails {
 	   
 		for (int i = 0; i < 200; i++) {
 			try {
-				WebElement primaryEmployment = javascriptHelper.executeScriptWithWebElement(employmentDetailsElements.getElement("Primary Employment Field"));
-				Assert.assertTrue(primaryEmployment.isDisplayed());
+				WebElement primaryEmployment = javascriptHelper.executeScriptWithWebElement(employmentDetailsElements.getElement("Primary Employment Toggle Button"));
+				String checkStatus = primaryEmployment.getAttribute("aria-checked");			
+				Assert.assertEquals("true","true");
 				break;
 			} catch (Exception e) {
 				if (i==199) {
@@ -262,6 +288,7 @@ public class Murabha_APPDATA_CustomerEmploymentDetails {
 				}
 			}
 		}
+		
 	}
 
 	@And("User_0482 Verify Employment period field should be present")
@@ -826,6 +853,132 @@ public class Murabha_APPDATA_CustomerEmploymentDetails {
 			}
 		}
 	    
+	}
+	@And("User_0482 Select Nature of Employment field as company firm in Murabha App data entry")
+	public void user_0482_select_nature_of_employment_field_as_company_firm_in_murabha_app_data_entry() {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper
+						.executeScriptWithWebElement(employmentDetailsElements.getElement("Nature of Employment Dropdown"))
+						.click();
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		clicksAndActionsHelper.jsSelectUsingText(appdataEntrtyTestData.get("Nature of Employment"));
+	}
+	@Given("User_0482 Select Nature of Employment field as pensioner in Murabha App data entry")
+	public void user_0482_select_nature_of_employment_field_as_pensioner_in_murabha_app_data_entry() {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper
+						.executeScriptWithWebElement(employmentDetailsElements.getElement("Nature of Employment Dropdown"))
+						.click();
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		clicksAndActionsHelper.jsSelectUsingText(appdataEntrtyTestData.get("Nature of Employment"));
+	}
+	@Given("User_0482 Select Nature of Employment field as self employed professional in Murabha App data entry")
+	public void user_0482_select_nature_of_employment_field_as_self_employed_professional_in_murabha_app_data_entry() {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper
+						.executeScriptWithWebElement(employmentDetailsElements.getElement("Nature of Employment Dropdown"))
+						.click();
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		clicksAndActionsHelper.jsSelectUsingText(appdataEntrtyTestData.get("Nature of Employment"));  
+	}
+	
+	@Given("User_0482 Select Nature of Employment field as salarised in Murabha App data entry")
+	public void user_0482_select_nature_of_employment_field_as_salarised_in_murabha_app_data_entry() {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper
+						.executeScriptWithWebElement(employmentDetailsElements.getElement("Nature of Employment Dropdown"))
+						.click();
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		clicksAndActionsHelper.jsSelectUsingText(appdataEntrtyTestData.get("Nature of Employment"));
+	}
+	
+
+	@And("User_0482 Verify Company type field should be present in Murabha App data entry")
+	public void user_0482_verify_company_type_field_should_be_present_in_murabha_app_data_entry() {
+		for (int i = 0; i < 200; i++) {
+			try {
+				WebElement primaryEmployment = javascriptHelper.executeScriptWithWebElement(employmentDetailsElements.getElement("Company Type Field"));
+				Assert.assertTrue(primaryEmployment.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_0482 Verify Profession field should be present in Murabha App data entry")
+	public void user_0482_verify_profession_field_should_be_present_in_murabha_app_data_entry() {
+		for (int i = 0; i < 200; i++) {
+			try {
+				WebElement primaryEmployment = javascriptHelper.executeScriptWithWebElement(employmentDetailsElements.getElement("Profession Field"));
+				Assert.assertTrue(primaryEmployment.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_0482 Verify Profession Type field should be present in Murabha App data entry")
+	public void user_0482_verify_profession_type_field_should_be_present_in_murabha_app_data_entry() {
+		for (int i = 0; i < 200; i++) {
+			try {
+				WebElement primaryEmployment = javascriptHelper.executeScriptWithWebElement(employmentDetailsElements.getElement("Profession Type Field"));
+				Assert.assertTrue(primaryEmployment.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_0482 Verify Statutory Authority field should be present in Murabha App data entry")
+	public void user_0482_verify_statutory_authority_field_should_be_present_in_murabha_app_data_entry() {
+		for (int i = 0; i < 200; i++) {
+			try {
+				WebElement primaryEmployment = javascriptHelper.executeScriptWithWebElement(employmentDetailsElements.getElement("Statutory Authority Field"));
+				Assert.assertTrue(primaryEmployment.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
 	}
 
 

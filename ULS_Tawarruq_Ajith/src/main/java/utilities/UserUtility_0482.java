@@ -13,7 +13,7 @@ public class UserUtility_0482  {
 		for (int i = 0; i <2000; i++) {
 			try {
 				String Field = javascriptHelper.executeScript("return "+jspath).toString();
-				//System.out.println(Field);
+			//	System.out.println(Field);
 				Assert.assertTrue(Field.contains("*"));
 				break;
 			} catch (Exception e) {
