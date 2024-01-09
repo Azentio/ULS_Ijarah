@@ -33,7 +33,7 @@ public class Murabha_Steps_610 {
 	SoftAssert softAssert = new SoftAssert();
 	ClicksAndActionsHelper clicksAndActionsHelper = new ClicksAndActionsHelper(driver);
 
-	String path = System.getProperty("user.dir") + "\\TestData\\ijaraTestData.xlsx";
+	String path = configFileReader.getMurabhaTestDataFilePath();
 	
 	ExcelData ad_CustomerFolllowUpDetails_610 = new ExcelData(excelTestDataPath, "AD_CustomerFolllowUpDetails_610", "DataSet ID");
 	ExcelData IjarahExecutionSheet = new ExcelData(excelTestDataPath, "Ijarah_ExecutionTracker", "TestCase ID");
@@ -41,6 +41,14 @@ public class Murabha_Steps_610 {
 	Map<String, String> executionData;
 	ExcelData morabha_AppDataEntry = new ExcelData(excelTestDataPath, "Morabha_AppDataEntry", "DataSet ID");
 	Map<String, String> testData01;
+	
+	
+	 //----------Murabha Contract Singing
+	
+	@And("User_610 get the test data set id for DS_AT_MU_CS_05")
+	public void get_the_test_data_set_id_for_DS_AT_MU_CS_05() {
+		testData = ad_CustomerFolllowUpDetails_610.getTestdata("DS_AT_MU_CS_05");
+	}
 
 	// ------------AD followUp Details
 

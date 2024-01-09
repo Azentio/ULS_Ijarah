@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Jan 05 13:45:57 IST 2024</td>
+<td>Started on:</td><td>Tue Jan 09 10:30:49 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>72 seconds (72304 ms)</td>
+<tr><td>Total time:</td><td>24 seconds (24776 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,18 +75,20 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "To verify purchase order stage tabs are readonly mode (Asset Details,Configuration,Predisbursment fee (Fee details),Downpayment summary,Insurance Info,Document Details,Application Details)", "Optional[To Test the beneficiary details screen at purchase order stage]"</td>
-<td><div><pre>java.lang.AssertionError: Cannot invoke &quot;org.openqa.selenium.WebElement.click()&quot; because the return value of &quot;helper.JavascriptHelper.executeScriptWithWebElement(String)&quot; is null
-	at org.junit.Assert.fail(Assert.java:88)
-	at stepdefinitions.PurchaseOrderSteps.user_076_verify_asset_details_record_should_be_readonly_and_data_should_match_with_app_data_entry_stage_record(PurchaseOrderSteps.java:1067)
-	at ?.user_076 verify asset details record should be readonly and data should match with app data entry stage record(file:///C:/Users/ININDC00482/git/Murabha/ULS_Murabha_MainRepository/src/test/java/features/MurabhaFeatures/Murabaha_PURCHASEORDER_Beneficiary_detailsFEATURE.feature:69)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1925271900", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1925271900'><pre>java.lang.AssertionError: Cannot invoke &quot;org.openqa.selenium.WebElement.click()&quot; because the return value of &quot;helper.JavascriptHelper.executeScriptWithWebElement(String)&quot; is null
-	at org.junit.Assert.fail(Assert.java:88)
-	at stepdefinitions.PurchaseOrderSteps.user_076_verify_asset_details_record_should_be_readonly_and_data_should_match_with_app_data_entry_stage_record(PurchaseOrderSteps.java:1067)
-	at ?.user_076 verify asset details record should be readonly and data should match with app data entry stage record(file:///C:/Users/ININDC00482/git/Murabha/ULS_Murabha_MainRepository/src/test/java/features/MurabhaFeatures/Murabaha_PURCHASEORDER_Beneficiary_detailsFEATURE.feature:69)
+<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "To verify that all fields are present in Asset details view list", "Optional[To check the Operation check feature]"</td>
+<td><div><pre>java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:97)
+	at stepdefinitions.MurabhaLogin.loginWithMurabhaApplication(MurabhaLogin.java:31)
+	at stepdefinitions.Murabha_AddressDetailsSteps.login_with_valid_credentials_for_murabha_operation_check(Murabha_AddressDetailsSteps.java:166)
+	at ?.login with valid credentials for Murabha_OperationCheck(file:///C:/Users/ININDC00482/git/Murabha/ULS_Murabha_MainRepository/src/test/java/features/MurabhaFeatures/Murabha_OperationCheck.feature:6)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1892560818", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1892560818'><pre>java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:97)
+	at stepdefinitions.MurabhaLogin.loginWithMurabhaApplication(MurabhaLogin.java:31)
+	at stepdefinitions.Murabha_AddressDetailsSteps.login_with_valid_credentials_for_murabha_operation_check(Murabha_AddressDetailsSteps.java:166)
+	at ?.login with valid credentials for Murabha_OperationCheck(file:///C:/Users/ININDC00482/git/Murabha/ULS_Murabha_MainRepository/src/test/java/features/MurabhaFeatures/Murabha_OperationCheck.feature:6)
 </pre></div></td>
-<td>62</td>
+<td>19</td>
 <td>Runner.TestApplication@6e9a5ed8</td></tr>
 </table><p>
 </body>

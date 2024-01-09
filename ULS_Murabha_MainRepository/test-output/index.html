@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\ININDC00482\AppData\Local\Temp\testng-eclipse-1905621708\testng-customsuite.xml</span>
+                    <span>C:\Users\ININDC00482\AppData\Local\Temp\testng-eclipse--1664967571\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -104,7 +104,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="Runner.TestApplication" class="method navigator-link" hash-for-method="runScenario(&quot;To verify purchase order stage tabs are readonly mode (Asset Details,Configuration,Predisbursment f...)">runScenario("To verify purchase order stage tabs are readonly mode (Asset Details,Configuration,Predisbursment f...)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="Runner.TestApplication" class="method navigator-link" hash-for-method="runScenario(&quot;To verify that all fields are present in Asset details view list&quot;, &quot;Optional[To check the Operation...)">runScenario("To verify that all fields are present in Asset details view list", "Optional[To check the Operation...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -127,14 +127,15 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="runScenario(&quot;To verify purchase order stage tabs are readonly mode (Asset Details,Configuration,Predisbursment f...)">
-                  </a> <!-- runScenario("To verify purchase order stage tabs are readonly mode (Asset Details,Configuration,Predisbursment f...) -->
+                  <a name="runScenario(&quot;To verify that all fields are present in Asset details view list&quot;, &quot;Optional[To check the Operation...)">
+                  </a> <!-- runScenario("To verify that all fields are present in Asset details view list", "Optional[To check the Operation...) -->
                   <span class="method-name">runScenario</span>
-                  <span class="parameters">("To verify purchase order stage tabs are readonly mode (Asset Details,Configuration,Predisbursment fee (Fee details),Downpayment summary,Insurance Info,Document Details,Application Details)", "Optional[To Test the beneficiary details screen at purchase order stage]")</span>
-                  <div class="stack-trace">java.lang.AssertionError: Cannot invoke &quot;org.openqa.selenium.WebElement.click()&quot; because the return value of &quot;helper.JavascriptHelper.executeScriptWithWebElement(String)&quot; is null
-	at org.junit.Assert.fail(Assert.java:88)
-	at stepdefinitions.PurchaseOrderSteps.user_076_verify_asset_details_record_should_be_readonly_and_data_should_match_with_app_data_entry_stage_record(PurchaseOrderSteps.java:1067)
-	at ✽.user_076 verify asset details record should be readonly and data should match with app data entry stage record(file:///C:/Users/ININDC00482/git/Murabha/ULS_Murabha_MainRepository/src/test/java/features/MurabhaFeatures/Murabaha_PURCHASEORDER_Beneficiary_detailsFEATURE.feature:69)
+                  <span class="parameters">("To verify that all fields are present in Asset details view list", "Optional[To check the Operation check feature]")</span>
+                  <div class="stack-trace">java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:97)
+	at stepdefinitions.MurabhaLogin.loginWithMurabhaApplication(MurabhaLogin.java:31)
+	at stepdefinitions.Murabha_AddressDetailsSteps.login_with_valid_credentials_for_murabha_operation_check(Murabha_AddressDetailsSteps.java:166)
+	at ✽.login with valid credentials for Murabha_OperationCheck(file:///C:/Users/ININDC00482/git/Murabha/ULS_Murabha_MainRepository/src/test/java/features/MurabhaFeatures/Murabha_OperationCheck.feature:6)
 
 </div> <!-- stack-trace -->
                   <em>
@@ -146,7 +147,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\ININDC00482\AppData\Local\Temp\testng-eclipse-1905621708\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\ININDC00482\AppData\Local\Temp\testng-eclipse--1664967571\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -207,12 +208,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
 data.setCell(0, 2, 'Runner.TestApplication')
-data.setCell(0, 3, 62223);
+data.setCell(0, 3, 19106);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 19 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -246,12 +247,12 @@ return data;
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">runScenario("To verify purchase order stage tabs are readonly mode (Asset Details,Configuration,Predisbursment f...)</span>
-                <span class="method-start">1304 ms</span>
+                <span class="method-name">runScenario("To verify that all fields are present in Asset details view list", "Optional[To check the Operation...)</span>
+                <span class="method-start">1392 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">63533 ms</span>
+                <span class="method-start">20506 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

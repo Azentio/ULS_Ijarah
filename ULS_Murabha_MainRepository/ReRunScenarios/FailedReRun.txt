@@ -1,1 +1,0 @@
-file:src/test/java/features/MurabhaFeatures/Murabaha_PURCHASEORDER_Beneficiary_detailsFEATURE.feature:57
