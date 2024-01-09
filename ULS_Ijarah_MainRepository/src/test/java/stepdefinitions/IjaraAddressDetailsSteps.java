@@ -87,6 +87,12 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 	public void login_with_valid_credentials_underwriter()throws Throwable {
 		ijaraLogin.loginWithIjaraApplication("userType09");
 	}
+//	 Return the record
+	@And("login with valid credentials for return")
+	public void login_with_valid_credentials_for_return()throws Throwable {
+		ijaraLogin.loginWithIjaraApplication("UserReturn");
+	}
+		
 	@And("login with valid credentials for insurance info ijarah")
 	public void login_with_valid_credentials_for_insurance_info_ijarah() {
 		ijaraLogin.loginWithIjaraApplication("userType05");

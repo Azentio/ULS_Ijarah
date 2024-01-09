@@ -3,7 +3,7 @@ Feature: To check the App Data Check - Income feature
 # AT_INCD_01-- Income -- Self Employed
 # IDC_01_01, IDC_01_02
 @AT_INCD_01
-Scenario: Income Summary Detail records for display only at Data Check stage.
+Scenario:  System should display the below mention fields and button under Income details section and display only at Data Check stage.
 
 Given navigate the IJARA URL
 And login with valid credentials-Data Check
@@ -69,7 +69,7 @@ Then logout from the ULS Application
 
 # IDC_01_05 <--> IDC_01_25
 @AT_INCD_03
-Scenario: To verify the fields available under income details section. 
+Scenario: To verify the below fields under income details section. 
 
 Given navigate the IJARA URL
 And login with valid credentials-Data Check

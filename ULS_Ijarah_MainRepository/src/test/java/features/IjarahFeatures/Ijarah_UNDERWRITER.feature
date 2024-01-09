@@ -122,6 +122,24 @@ And User_608 select the Decision dropdown as Select under Decision section in Of
 And User_608 click the Offer button without selecting the Decision under Offer Decision tab
 And User_608 verify the validation messgage without selecting decision under Offer Decision tab
 Then logout from the ULS Application
+And User_608 invoke soft assert in Offer Decision screen at Ijarah Underwriter stage
+
+@Return
+Scenario: Return the record from Offering stage to Underwriter(L1)
+
+Given navigate the IJARA URL
+And login with valid credentials for return
+And User_608 get the test data for test case AT_UNW_002
+And User_608 click the Mail box in ULS application
+And User_608 click the Search button under inbox
+And User_608 search the Ref id under inbox
+And User_608 click the Entitle button under inbox
+And User_608 click the Application details tab
+And User_608 click the Return button under Application details tab
+And User_608 select L1 Approval from dropdown in Return popup screen
+And User_608 enter the Remarks under Return popup screen
+And User_608 click the Return button under Return popup screen
+Then logout from the ULS Application
 
 
 @AT_UNW_003

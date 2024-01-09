@@ -3,7 +3,7 @@ Feature: To check the Customer debt details feature
 # *************************** userType01 **************************
 
 @AT_CUD_001
-Scenario: Customer Debt screen should get open with all valid fields in proper format with below mention buttons and all valid fields
+Scenario: Creation of Customer Dept record - Customer Debt screen should get open with all valid fields in proper format with below mention buttons
 
 Given navigate the IJARA URL
 And login with valid credentials for new application stage
@@ -17,7 +17,6 @@ And User_608 click the Entitle button under inbox
 And User_608 click the Customer Financials tab
 And User_608 click the pencil icon under Customer Financials tab
 And User_608 click Add button in Financial Commitments under Customer Financials tab
-And User_608 validate the Customer Debt screen is available in Financial Commitments
 And User_608 validate the Save button available in Customer Debt screen
 And User_608 validate the Back button available in Customer Debt screen
 And User_608 validate the Finance type field available in Customer Debt screen
@@ -66,8 +65,7 @@ And User_608 click the Entitle button under inbox
 And User_608 click the Customer Financials tab
 And User_608 click the pencil icon under Customer Financials tab
 And User_608 click Add button in Financial Commitments under Customer Financials tab
-And User_608 validate the Customer Debt screen is available in Financial Commitments
-And User_608 select the Finanacy type in Customer Debt screen
+And User_608 select the Finanace type in Customer Debt screen
 And User_608 enter the Sanction Amount in Customer Debt screen
 And User_608 enter the Tenure in Customer Debt screen
 And User_608 enter the Installment Amount in Customer Debt screen
@@ -93,9 +91,9 @@ And User_608 search the Ref id under inbox
 And User_608 click the Entitle button under inbox
 And User_608 click the Customer Financials tab
 And User_608 click the pencil icon under Customer Financials tab
+And User_608 click the pencil button under Financial Commitments in Customer Financials tab
 And User_608 validate the Update button available in Customer Debt screen
 And User_608 validate the Back button available in Customer Debt screen
-And User_608 click the pencil button under Financial Commitments in Customer Financials tab
 And User_608 modify the Sanction amount in Customer Debt screen
 And User_608 enter the invalid data and verify in Installment field under Customer Debt screen
 And User_608 clear the mandatory field value in Customer Debt screen
@@ -121,7 +119,6 @@ And User_608 search the Ref id under inbox
 And User_608 click the Entitle button under inbox
 And User_608 click the Customer Financials tab
 And User_608 click the pencil icon under Customer Financials tab
-
 And User_608 verify the Financial Institution field is displayed in list view under Financial Commitments
 And User_608 verify the Loan Amount field is displayed in list view under Financial Commitments
 And User_608 verify the Installment Amount field is displayed in list view under Financial Commitments
@@ -159,8 +156,7 @@ And User_608 click the Entitle button under inbox
 And User_608 click the Customer Financials tab
 And User_608 click the pencil icon under Customer Financials tab
 And User_608 click Add button in Financial Commitments under Customer Financials tab
-And User_608 validate the Customer Debt screen is available in Financial Commitments
-And User_608 select the Finanacy type in Customer Debt screen
+And User_608 select the Finanace type in Customer Debt screen
 And User_608 enter the Sanction Amount in Customer Debt screen
 And User_608 enter the Tenure in Customer Debt screen
 And User_608 enter the Installment Amount in Customer Debt screen

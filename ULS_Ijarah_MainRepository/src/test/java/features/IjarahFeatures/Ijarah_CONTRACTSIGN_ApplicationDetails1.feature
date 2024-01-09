@@ -57,7 +57,6 @@ And User_608 verify the Topup Type field available under Application details scr
 And User_608 verify the Topup Application No field available under Application details screen
 Then logout from the ULS Application
 
-
 @AT_CSAD_03
 Scenario: To verify post clicking on Application Detail tab system opens Referral/Sourcing Details section.
 
