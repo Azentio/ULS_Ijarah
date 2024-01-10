@@ -549,7 +549,9 @@ public class IjaraLogin extends BaseClass {
 				//murabha_AppDataEntry_RepaymentMode
 			
 				public void loginWithIjaraApplication_murabha_AppDataEntry_RepaymentMode(){
-					loginTestData = exelData.getTestdata("userType02");
+					loginTestData = exelData.getTestdata("userType04");
+					//for run
+					//loginTestData = exelData.getTestdata("userType02"); 
 					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName")).click();
 					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName"))
 					.sendKeys(loginTestData.get("UserName"));
@@ -699,7 +701,262 @@ public class IjaraLogin extends BaseClass {
 
 						Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).isDisplayed());
 					}
-				
+					
+					//ijara-App Data Entry-FacilityInfo
+					public void loginWithIjaraApplication_ijara_AppDataEntry_FacilityInfo(){
+						loginTestData = exelData.getTestdata("userType02");
+						javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName")).click();
+						javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName"))
+						.sendKeys(loginTestData.get("UserName"));
+						for (int i = 0; i <= 50; i++) {
+							try {
+								javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("continueButton")).click();
+								break;
+							} catch (Exception e) {
+								if (i == 50) {
+									Assert.fail(e.getMessage());
+								}
+							}
+						}
+						for (int i = 0; i <=100; i++) {
+							try {
+								javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
+								javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
+								.sendKeys(loginTestData.get("Password"));	
+								break;
+							} catch (Exception e) {
+								if(i==100)
+								{
+									Assert.fail(e.getMessage());
+								}
+								else if(i>50 &&i<100)
+								{
+									javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("continueButton")).click();
+								}
+							}
+						}
+						for (int i = 0; i <= 300; i++) {
+							try {
+								String otp = javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString();
+								System.out.println("OTP is " + otp);
+								if (!(javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString().isBlank())) {
+									javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
+									break;
+								}
+							} catch (Exception e) {
+								if (i == 300) {
+									Assert.fail(e.getMessage());
+								}
+							}
+						}
+
+						Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).isDisplayed());
+					}
+					//Tawarruq - App Data Check - InsuranceInfo
+					
+					public void loginWithIjaraApplication_Tawarruq_AppDataCheck_InsuranceInfo(){
+						loginTestData = exelData.getTestdata("userType11");
+						javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName")).click();
+						javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName"))
+						.sendKeys(loginTestData.get("UserName"));
+						for (int i = 0; i <= 50; i++) {
+							try {
+								javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("continueButton")).click();
+								break;
+							} catch (Exception e) {
+								if (i == 50) {
+									Assert.fail(e.getMessage());
+								}
+							}
+						}
+						for (int i = 0; i <=100; i++) {
+							try {
+								javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
+								javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
+								.sendKeys(loginTestData.get("Password"));	
+								break;
+							} catch (Exception e) {
+								if(i==100)
+								{
+									Assert.fail(e.getMessage());
+								}
+								else if(i>50 &&i<100)
+								{
+									javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("continueButton")).click();
+								}
+							}
+						}
+						for (int i = 0; i <= 300; i++) {
+							try {
+								String otp = javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString();
+								System.out.println("OTP is " + otp);
+								if (!(javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString().isBlank())) {
+									javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
+									break;
+								}
+							} catch (Exception e) {
+								if (i == 300) {
+									Assert.fail(e.getMessage());
+								}
+							}
+						}
+
+						Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).isDisplayed());
+					}
+                //Tawarruq - App Data Check - QuotationInfo
+					
+					public void loginWithIjaraApplication_Tawarruq_AppDataCheck_QuotationInfo(){
+						loginTestData = exelData.getTestdata("userType11");
+						javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName")).click();
+						javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName"))
+						.sendKeys(loginTestData.get("UserName"));
+						for (int i = 0; i <= 50; i++) {
+							try {
+								javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("continueButton")).click();
+								break;
+							} catch (Exception e) {
+								if (i == 50) {
+									Assert.fail(e.getMessage());
+								}
+							}
+						}
+						for (int i = 0; i <=100; i++) {
+							try {
+								javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
+								javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
+								.sendKeys(loginTestData.get("Password"));	
+								break;
+							} catch (Exception e) {
+								if(i==100)
+								{
+									Assert.fail(e.getMessage());
+								}
+								else if(i>50 &&i<100)
+								{
+									javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("continueButton")).click();
+								}
+							}
+						}
+						for (int i = 0; i <= 300; i++) {
+							try {
+								String otp = javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString();
+								System.out.println("OTP is " + otp);
+								if (!(javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString().isBlank())) {
+									javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
+									break;
+								}
+							} catch (Exception e) {
+								if (i == 300) {
+									Assert.fail(e.getMessage());
+								}
+							}
+						}
+
+						Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).isDisplayed());
+					}
+ //Tawarruq - App Data Check - RepaymentMode
+					
+					public void loginWithTawarruqApplication_Tawarruq_AppDataCheck_RepaymentMode(){
+						loginTestData = exelData.getTestdata("userType11");
+						javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName")).click();
+						javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName"))
+						.sendKeys(loginTestData.get("UserName"));
+						for (int i = 0; i <= 50; i++) {
+							try {
+								javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("continueButton")).click();
+								break;
+							} catch (Exception e) {
+								if (i == 50) {
+									Assert.fail(e.getMessage());
+								}
+							}
+						}
+						for (int i = 0; i <=100; i++) {
+							try {
+								javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
+								javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
+								.sendKeys(loginTestData.get("Password"));	
+								break;
+							} catch (Exception e) {
+								if(i==100)
+								{
+									Assert.fail(e.getMessage());
+								}
+								else if(i>50 &&i<100)
+								{
+									javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("continueButton")).click();
+								}
+							}
+						}
+						for (int i = 0; i <= 300; i++) {
+							try {
+								String otp = javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString();
+								System.out.println("OTP is " + otp);
+								if (!(javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString().isBlank())) {
+									javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
+									break;
+								}
+							} catch (Exception e) {
+								if (i == 300) {
+									Assert.fail(e.getMessage());
+								}
+							}
+						}
+
+						Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).isDisplayed());
+					}
+					//Tawarruq - AppDataEntry - Facility Details
+					public void loginWithIjaraApplication_Tawarruq_AppDataEntry_FacilityDetails() {
+						loginTestData = exelData.getTestdata("userType07");
+						javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName")).click();
+						javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName"))
+						.sendKeys(loginTestData.get("UserName"));
+						for (int i = 0; i <= 50; i++) {
+							try {
+								javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("continueButton")).click();
+								break;
+							} catch (Exception e) {
+								if (i == 50) {
+									Assert.fail(e.getMessage());
+								}
+							}
+						}
+						for (int i = 0; i <=100; i++) {
+							try {
+								javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).click();
+								javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password"))
+								.sendKeys(loginTestData.get("Password"));	
+								break;
+							} catch (Exception e) {
+								if(i==100)
+								{
+									Assert.fail(e.getMessage());
+								}
+								else if(i>50 &&i<100)
+								{
+									javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("continueButton")).click();
+								}
+							}
+						}
+						for (int i = 0; i <= 300; i++) {
+							try {
+								String otp = javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString();
+								System.out.println("OTP is " + otp);
+								if (!(javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString().isBlank())) {
+									javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
+									break;
+								}
+							} catch (Exception e) {
+								if (i == 300) {
+									Assert.fail(e.getMessage());
+								}
+							}
+						}
+
+						Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("password")).isDisplayed());
+					}
+
+					
 	//		loginTestData = exelData.getTestdata("userType02");
 	//		//loginTestData = exelData.getTestdata("userType03");
 	//		//loginTestData = exelData.getTestdata("userType06");

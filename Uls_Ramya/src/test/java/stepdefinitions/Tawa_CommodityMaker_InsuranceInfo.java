@@ -89,19 +89,53 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 
 	@And("User_6047 click insuranceInfo tab")
 	public void user_click_insurance_info_tab() {
-		for (int i = 0; i <= 1000; i++) {
+		String lengthOfTheSegmentButton = "";
+		boolean isClicked = false;
+		for (int i = 0; i <= 300; i++) {
 			try {
-				javascriptHelper.JSEClick(
-						javascriptHelper.executeScriptWithWebElement(Tawarruq_Commodity_InsuranceInfo_JS.getElement("InsuranceInfoTab")));
-				//javascriptHelper.executeScriptWithWebElement(Tawarruq_Commodity_InsuranceInfo_JS.getElement("InsuranceInfoTab")).click();
-		
-				break;
+				lengthOfTheSegmentButton = javascriptHelper.executeScript(
+						"return document.querySelector('ion-segment').querySelectorAll('ion-segment-button').length")
+						.toString();
+				if ((!lengthOfTheSegmentButton.isEmpty())) {
+					break;
+				}
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
-		}	    
+		}
+		int premitiveSegmentLength = Integer.parseInt(lengthOfTheSegmentButton);
+		// document.querySelector('ion-segment').querySelectorAll('ion-segment-button')[14].innerText
+		String segmentLabelName = "";
+		for (int i = 0; i < premitiveSegmentLength; i++) {
+			try {
+				for (int j = 0; j <= 200; j++) {
+					segmentLabelName = javascriptHelper.executeScript(
+							"return document.querySelector('ion-segment').querySelectorAll('ion-segment-button')[" + i
+									+ "].innerText")
+							.toString();
+					System.out.println("Segment Label Name " + segmentLabelName);
+					if (segmentLabelName.equalsIgnoreCase("Insurance Info")) {
+						javascriptHelper.executeScriptWithWebElement(
+								"document.querySelector('ion-segment').querySelectorAll('ion-segment-button')[" + i
+										+ "]")
+								.click();
+						isClicked = true;
+						break;
+
+					} else if (!(segmentLabelName.equalsIgnoreCase("Insurance Info"))) {
+						isClicked = false;
+						break;
+					}
+				}
+
+			} catch (Exception e) {
+			}
+			if (isClicked == true) {
+				break;
+			}
+		}    
 	}
 
 	@And("User_6047 click EyeButton")

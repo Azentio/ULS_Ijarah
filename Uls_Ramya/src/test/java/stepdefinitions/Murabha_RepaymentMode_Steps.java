@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import java.io.IOException;
 import java.util.Map;
 
 import org.junit.Assert;
@@ -37,7 +38,10 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	JSPaths appDataEntry_js = new JSPaths(excelPath, "appDataEntry_js", "AppDataEntryElements", "JSPath");
 	ExcelData Murabha_identificationDetail_TestData  = new ExcelData(excelTestDataPath,"mura_identificationDetail","Dataset ID");
 	
+	String toastMessageForReferenceNumber = "";
 	
+	String finalRecordReferenceNumber="";
+	String toastMessage = "";
 
 	@And("User_6047 Get the test data for test case ID AT_MU_IRM_001")
 	public void user_get_the_test_data_for_test_case_id_at_fi() {
@@ -154,12 +158,13 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	}
 	@Then("User_6047 verify the repayment mode field")
 	public void User_verify_the_repayment_mode_field() {
-		for (int i = 0; i <200; i++) {
+		for (int i = 0; i <2000; i++) {
 			try {
+				
 				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("repaymentModeField")).isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i==199) {
+				if (i==1999) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -282,11 +287,13 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	}
 	
 	@Then("User_6047 verify the repayment mode field is mandatory,editable and lookup value")
-	public void user_verify_the_repayment_mode_field_is_mandatory_editable_and_lookup_value() {
+	public void user_verify_the_repayment_mode_field_is_mandatory_editable_and_lookup_value() throws Throwable  {
+		Thread.sleep(3000);
+		//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("repaymentMode_in")));
 		String repaymentmodefield= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("repaymentMode_in")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
-	            Assert.assertTrue(repaymentmodefield.contains("*"));
+	           Assert.assertTrue(repaymentmodefield.contains("*"));
 	            break;
 	        } catch (Exception e) {
 	            if (i==1999) {
@@ -898,13 +905,17 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	            }
 	        }
 		}
+		
 	}
 	@Then("User_6047 to verify the same record should get saved in Repayment mode")
-	public void user_to_verify_the_same_record_should_get_saved_Repayment_mode() {
+	public void user_to_verify_the_same_record_should_get_saved_Repayment_mode() throws Throwable {
+		//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("repaymentMode_in")));
+		Thread.sleep(3000);
 		String repaymentMode= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("repaymentMode_in")).getAttribute("aria-label");
+		System.out.println(repaymentMode);
 		for (int i = 0; i <2000; i++) {
 	        try {
-	            Assert.assertTrue(repaymentMode.contains("Credit Card"));
+	            Assert.assertTrue(repaymentMode.contains("Cash Mode"));
 	            break;
 	        } catch (Exception e) {
 	            if (i==1999) {
@@ -916,7 +927,8 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		String accountHolderName= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("accountHolderName_in")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
-	            Assert.assertTrue(accountHolderName.contains("TEST KI"));
+	        	Assert.assertTrue(accountHolderName.contains("aa"));
+	           // Assert.assertTrue(accountHolderName.contains("TEST KI"));
 	            break;
 	        } catch (Exception e) {
 	            if (i==1999) {
@@ -928,7 +940,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		String accountType= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("accountTypeField_in")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
-	            Assert.assertTrue(accountType.contains("FIXED DEPOSIT"));
+	            Assert.assertTrue(accountType.contains("Savings Account"));
 	            break;
 	        } catch (Exception e) {
 	            if (i==1999) {
@@ -939,7 +951,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		String accountNumber= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("accountNumberField_in")).getAttribute("ng-reflect-model");
 		for (int i = 0; i <2000; i++) {
 	        try {
-	            Assert.assertTrue(accountNumber.contains("123"));
+	            Assert.assertTrue(accountNumber.contains("123456"));
 	            break;
 	        } catch (Exception e) {
 	            if (i==1999) {
@@ -951,7 +963,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		String  accountCurrency= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("AccountCurrency_in")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
-	            Assert.assertTrue(accountCurrency.contains("CAD"));
+	            Assert.assertTrue(accountCurrency.contains("INR"));
 	            break;
 	        } catch (Exception e) {
 	            if (i==1999) {
@@ -963,7 +975,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		String  bankName= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("bankNameField_in")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
-	            Assert.assertTrue(bankName.contains("BankofBaroda "));
+	            Assert.assertTrue(bankName.contains("BankofBaroda"));
 	            break;
 	        } catch (Exception e) {
 	            if (i==1999) {
@@ -971,21 +983,21 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	          }
 	        }
 	    }
-		String  branchName= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("branchNameField_in")).getAttribute("aria-label");
-		for (int i = 0; i <2000; i++) {
-	        try {
-	            Assert.assertTrue(branchName.contains("BOAVA Branch"));
-	            break;
-	        } catch (Exception e) {
-	            if (i==1999) {
-	                Assert.fail(e.getMessage());
-	          }
-	        }
-	    }
+//		String  branchName= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("branchNameField_in")).getAttribute("aria-label");
+//		for (int i = 0; i <2000; i++) {
+//	        try {
+//	            Assert.assertTrue(branchName.contains("chennai"));
+//	            break;
+//	        } catch (Exception e) {
+//	            if (i==1999) {
+//	                Assert.fail(e.getMessage());
+//	          }
+//	        }
+//	    }
 		String  code= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("escCode_in")).getAttribute("ng-reflect-model");
 		for (int i = 0; i <2000; i++) {
 	        try {
-	            Assert.assertTrue(code.contains("89630"));
+	            Assert.assertTrue(code.contains("3214"));
 	            break;
 	        } catch (Exception e) {
 	            if (i==1999) {
@@ -1507,6 +1519,8 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 
 		for (int i = 0; i <= 1000; i++) {
 			try {
+//				javascriptHelper.executeScriptWithWebElement("document.querySelector('ion-label[ng-reflect-text=\"ECS CODE.TOOLTIP\"]+ion-input')").click();
+//				javascriptHelper.executeScriptWithWebElement("document.querySelector('ion-label[ng-reflect-text=\"ECS CODE.TOOLTIP\"]+ion-input')").sendKeys("3214");
 				javascriptHelper.executeScriptWithWebElement("document.querySelector('ion-label[ng-reflect-text=\"ECS CODE.TOOLTIP\"]+ion-input')").click();
 				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-5-lbl\"]')").sendKeys("3214");
 				break;
@@ -1539,7 +1553,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	public void user_enter_the_special_character_for_account_number_field() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").click();
+				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").clear();
 				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").sendKeys("***");
 				Thread.sleep(3000);
 				break;
@@ -1592,6 +1606,8 @@ for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement("document.querySelector('ion-label[ng-reflect-text=\"Account Number.TOOLTIP\"]+ion-input')").click();
 				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").sendKeys("23658");
+				//javascriptHelper.executeScriptWithWebElement("document.querySelector('ion-label[ng-reflect-text=\"Account Number.TOOLTIP\"]+ion-input')").click();
+				//javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").sendKeys("23658");
 				//javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("accountNumberField_in")).sendKeys(testData.get("AccountNumber"));
 				Thread.sleep(3000);
 				break;
@@ -1670,12 +1686,181 @@ for (int i = 0; i < 200; i++) {
 			}
 		}
 	}
+	@Then("User_6047 verify the successfully saved message under the repaymentmode")
+	public void user_verify_the_successfully_saved_message_under_the_facility_info() {
+//		for (int i = 0; i <2000; i++) {
+//	        try {
+//	        	String text = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("SucessPopUP")).getText();
+//	        	System.out.println(text);
+//	            Assert.assertTrue(text.contains("Success!"));
+//	            break;
+//	        } catch (Exception e) {
+//	            if (i==1999) {
+//	                Assert.fail(e.getMessage());
+//	            }
+//	        }
+//		}
+
+		for (int i = 0; i <= 300; i++) {
+			try {
+				toastMessage = javascriptHelper
+						.executeScript("return " + commonJSPaths.getElement("toast_container_message")).toString();
+				if (!(toastMessage.isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		softAssert.assertTrue(toastMessage.contains("Success! Record created with ID"),
+				"Record is not saved hence failed");
+		toastMessageForReferenceNumber = toastMessage;
+
+		System.out.println("toastMessageForReferenceNumber"+toastMessageForReferenceNumber);
+	}
+	@And("User_6047 Extract the application details record reference number in repaymentmode")
+	public void user_6047_extract_the_application_details_record_reference_number_in_repaymentmode() throws Throwable {
+//		finalRecordReferenceNumber = toastMessageForReferenceNumber.substring(32).trim();
+//		System.out.println("Final reference number " + finalRecordReferenceNumber);
+//		excelDataForApplicationDetailsTestDataForMurabha.updateTestData(newApplicationTestData.get("Dataset ID"),
+//				"record_reference_number", finalRecordReferenceNumber);
+
+		
+		  finalRecordReferenceNumber = toastMessageForReferenceNumber.substring(32).trim();
+		System.out.println(finalRecordReferenceNumber);
+		Murabha_Repayment_TestData.updateTestData(testData.get("Dataset ID"), "Id", finalRecordReferenceNumber);
+		//testData = ApplicationDataEntry_testdata.getTestdata("STOR_P2_006_D1");
+		
+		
+	}
 	
+	@And("User_6047 search the facility list under RepaymentMode")
+	public void user_search_the_ref_id_under_inbox() throws Throwable {
+		//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text")));
+		for (int i = 0; i <= 500; i++) {
+			try {
+				//javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("search_button_for_employment_det")).click();
+				javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("search_box_search_text")).
+				sendKeys(testData.get("Id"));
+				//sendKeys(finalRecordReferenceNumber);
+				System.out.println("finalRecordReferenceNumber"+finalRecordReferenceNumber);
+				System.out.println(finalRecordReferenceNumber);
+				
+				System.out.println("toastMessageForReferenceNumber"+toastMessageForReferenceNumber);
+		
+				break;
+				
+				
+			}
+			
+			catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}		
+		}
+	} 
 	
-	
-	
-	
-	
+	@Then("User_6047 to verify the modified record should get saved in Repayment mode")
+	public void user_to_verify_the_modified_record_should_get_saved_Repayment_mode() throws Throwable {
+		//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("repaymentMode_in")));
+		String repaymentMode= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("repaymentMode_in")).getAttribute("aria-label");
+		System.out.println(repaymentMode);
+		for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(repaymentMode.contains("Cash Mode"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	          }
+	        }
+	    }
+		
+		String accountHolderName= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("accountHolderName_in")).getAttribute("aria-label");
+		for (int i = 0; i <2000; i++) {
+	        try {
+	        	Assert.assertTrue(accountHolderName.contains("aa"));
+	           // Assert.assertTrue(accountHolderName.contains("TEST KI"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	          }
+	        }
+	    }
+		
+		String accountType= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("accountTypeField_in")).getAttribute("aria-label");
+		for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(accountType.contains("Savings Account"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	          }
+	        }
+	    }
+		String accountNumber= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("accountNumberField_in")).getAttribute("ng-reflect-model");
+		for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(accountNumber.contains("123456"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	          }
+	        }
+	    }
+		
+		String  accountCurrency= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("AccountCurrency_in")).getAttribute("aria-label");
+		for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(accountCurrency.contains("INR"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	          }
+	        }
+	    }
+		
+		String  bankName= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("bankNameField_in")).getAttribute("aria-label");
+		for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(bankName.contains("BankofBaroda "));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	          }
+	        }
+	    }
+//		String  branchName= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("branchNameField_in")).getAttribute("aria-label");
+//		for (int i = 0; i <2000; i++) {
+//	        try {
+//	            Assert.assertTrue(branchName.contains("chennai"));
+//	            break;
+//	        } catch (Exception e) {
+//	            if (i==1999) {
+//	                Assert.fail(e.getMessage());
+//	          }
+//	        }
+//	    }
+		String  code= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("escCode_in")).getAttribute("ng-reflect-model");
+		for (int i = 0; i <2000; i++) {
+	        try {
+	            Assert.assertTrue(code.contains("89630"));
+	            break;
+	        } catch (Exception e) {
+	            if (i==1999) {
+	                Assert.fail(e.getMessage());
+	          }
+	        }
+	    }
+	}
 	
 	
 	

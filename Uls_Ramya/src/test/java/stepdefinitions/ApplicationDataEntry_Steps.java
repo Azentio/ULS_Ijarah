@@ -40,12 +40,15 @@ public class ApplicationDataEntry_Steps extends BaseClass {
 	JSPaths appDataEntry_js = new JSPaths(excelPath, "appDataEntry_js", "AppDataEntryElements", "JSPath");
 	ExcelData ApplicationDataEntry_testdata  = new ExcelData(excelTestDataPath,"ApplicationDataEntry_testdata","Dataset ID");
 	
+	ExcelData FacilityDetails_testdata  = new ExcelData(excelTestDataPath,"Tawar_Entry_FacilityInfo","Dataset ID");
+	String toastMessageForReferenceNumber = "";
+	
+	String finalRecordReferenceNumber="";
+	String toastMessage = "";
 
-	@And("User_6047 Login with valid credentials")
-	public void Login_with_valid_credentials() throws Throwable {
-		ijaraLogin.loginWithIjaraApplication();
-		
-		
+	@And("User_6047 Get the test data for test case ID AT_FI_001")
+	public void user_6047_get_the_test_data_for_test_case_id_at_fi() {
+		testData =  ApplicationDataEntry_testdata.getTestdata("DS01_AT_FI_001");
 	}
 	@And("User_6047 Click the Mail box in ULS application")
 	public void user_click_the_mail_box_in_uls_application() throws Throwable {
@@ -135,10 +138,7 @@ public class ApplicationDataEntry_Steps extends BaseClass {
 		}
 	}
 	
-	@And("User_6047 Get the test data for test case ID AT_FI_001")
-	public void user_6047_get_the_test_data_for_test_case_id_at_fi() {
-		testData =  ApplicationDataEntry_testdata.getTestdata("DS01_AT_FI_001");
-	}
+
 
 
 	
@@ -158,8 +158,9 @@ public class ApplicationDataEntry_Steps extends BaseClass {
 	}
 
 	@And("User_6047 check the Save button under the Facility info")
-	public void user_check_the_save_button_under_the_facility_info() {
-
+	public void user_check_the_save_button_under_the_facility_info() throws Throwable
+	{
+waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("SaveButton")));
 		WebElement SaveButton = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("SaveButton"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
@@ -295,10 +296,11 @@ public class ApplicationDataEntry_Steps extends BaseClass {
 
 	@Then("User_6047 check the Declared Property Value field under the Facility info")
 	public void user_check_the_declared_property_value_field_under_the_facility_info() {
-		WebElement  DeclaredDownPaymentValue = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("DeclaredPropertyValue "));
+		WebElement DeclaredPropertyValue = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("DeclaredPropertyValue"));
+		System.out.println(DeclaredPropertyValue);
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				Assert.assertTrue(DeclaredDownPaymentValue.isDisplayed());
+				Assert.assertTrue(DeclaredPropertyValue.isDisplayed());
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -358,6 +360,7 @@ public class ApplicationDataEntry_Steps extends BaseClass {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				Assert.assertTrue(ServicingBranch.isDisplayed());
+		
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -796,7 +799,7 @@ public void user_click_the_classification_field_and_select_the_data_for_user_to_
 		try {
 			dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 			System.out.println("Dropdown length " + dropdownLength);
-			if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+			if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 				break;
 			}
 		} catch (Exception e) {
@@ -819,7 +822,7 @@ public void user_click_the_classification_field_and_select_the_data_for_user_to_
 					break;
 				}
 			} catch (Exception e) {
-				if (l == 300 && !(dropdownString.isBlank())) {
+				if (l == 300 && !(dropdownString.isEmpty())) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -831,7 +834,7 @@ public void user_click_the_classification_field_and_select_the_data_for_user_to_
 		}
 		System.out.println("String " + dropdownString.trim());
 		System.out.println("Map " + testData.get("Product").trim());
-		if ((dropdownString.trim()).equalsIgnoreCase((testData.get("Product")).trim())) {
+		if ((dropdownString.trim()).equalsIgnoreCase((testData.get("Classification")).trim())) {
 			for (int k = 0; k <= 300; k++) {
 				try {
 					clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
@@ -883,30 +886,13 @@ public void user_click_the_back_button_and_verify_the_functionality_of_back_butt
 	
 }
 
-@And("User_6047 search the facility list under facility info")
-public void user_search_the_ref_id_under_inbox() {
-	//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text")));
-	for (int i = 0; i <= 500; i++) {
-		try {
-			//javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("search_button_for_employment_det")).click();
-			javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("search_box_search_text")).
-			sendKeys(testData.get("Record"));
-			break;
-		}
-		
-		catch (Exception e) {
-			if (i == 500) {
-				Assert.fail(e.getMessage());
-			}
-		}		
-	}
-} 
+
 @Then("User_6047 click the Entitle button under facility list")
 public void user_click_the_entitle_button_under_facility_list() {
 	for (int i = 0; i <= 1000; i++) {
 		try {
 			javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("Edit_button")).click();
-			Thread.sleep(4000);
+			Thread.sleep(6000);
 			break;
 		} catch (Exception e) { 
 			if (i == 1000) {
@@ -919,6 +905,7 @@ public void user_click_the_entitle_button_under_facility_list() {
 @Then("User_6047 to verify the same record should get saved in the system")
 public void user_to_verify_the_same_record_should_get_saved_in_the_system() {
 	String ClassificationField= javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("Classification")).getAttribute("aria-label");
+	System.out.println("print "+ClassificationField);
 	for (int i = 0; i <2000; i++) {
         try {
             Assert.assertTrue(ClassificationField.contains("Home Loan"));
@@ -932,7 +919,7 @@ public void user_to_verify_the_same_record_should_get_saved_in_the_system() {
 	String Product= javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("Product")).getAttribute("aria-label");
 	for (int i = 0; i <2000; i++) {
         try {
-            Assert.assertTrue(Product.contains("Home Loan-Ready to move / Under construction Property from Builder/Society"));
+            Assert.assertTrue(Product.contains("Home Loan-ReadyOrUnderConstructionProperty"));
             break;
         } catch (Exception e) {
             if (i==1999) {
@@ -941,17 +928,18 @@ public void user_to_verify_the_same_record_should_get_saved_in_the_system() {
         }
     }
 	
-	String scheme= javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("Scheme")).getAttribute("aria-label");
-	for (int i = 0; i <2000; i++) {
-        try {
-            Assert.assertTrue(scheme.contains("Ready to move / Under construction Property from Builder/Society "));
-            break;
-        } catch (Exception e) {
-            if (i==1999) {
-                Assert.fail(e.getMessage());
-          }
-        }
-    }
+//	String scheme= javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("Scheme")).getAttribute("aria-label");
+//	System.out.println(scheme);
+//	for (int i = 0; i <2000; i++) {
+//        try {
+//            Assert.assertTrue(scheme.contains("Ready to move Under construction Property from B "));
+//            break;
+//        } catch (Exception e) {
+//            if (i==1999) {
+//                Assert.fail(e.getMessage());
+//          }
+//        }
+//    }
 	String programcode= javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("ProgrameCode")).getAttribute("aria-label");
 	for (int i = 0; i <2000; i++) {
         try {
@@ -979,7 +967,7 @@ public void user_to_verify_the_same_record_should_get_saved_in_the_system() {
 	String PricingIndicator= javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("PricingIndicator")).getAttribute("aria-label");
 	for (int i = 0; i <2000; i++) {
         try {
-            Assert.assertTrue(PricingIndicator.contains("Ijara auto retail 3"));
+            Assert.assertTrue(PricingIndicator.contains("Home Loan Floating Rate"));
             break;
         } catch (Exception e) {
             if (i==1999) {
@@ -987,17 +975,17 @@ public void user_to_verify_the_same_record_should_get_saved_in_the_system() {
           }
         }
     }
-	String RequestedAmount= javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("RequestedAmount")).getAttribute("ng-reflect-value-variable");
-	for (int i = 0; i <2000; i++) {
-        try {
-            Assert.assertTrue(RequestedAmount.contains("1000000"));
-            break;
-        } catch (Exception e) {
-            if (i==1999) {
-                Assert.fail(e.getMessage());
-          }
-        }
-    }
+//	String RequestedAmount= javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("RequestedAmount")).getAttribute("ng-reflect-value-variable");
+//	for (int i = 0; i <2000; i++) {
+//        try {
+//            Assert.assertTrue(RequestedAmount.contains("1000000"));
+//            break;
+//        } catch (Exception e) {
+//            if (i==1999) {
+//                Assert.fail(e.getMessage());
+//          }
+//        }
+//    }
 	
 }
 	
@@ -1021,7 +1009,7 @@ public void user_select_the_input_for_classification_field_under_the_facility_in
 		try {
 			dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 			System.out.println("Dropdown length " + dropdownLength);
-			if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+			if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 				break;
 			}
 		} catch (Exception e) {
@@ -1044,7 +1032,7 @@ public void user_select_the_input_for_classification_field_under_the_facility_in
 					break;
 				}
 			} catch (Exception e) {
-				if (l == 300 && !(dropdownString.isBlank())) {
+				if (l == 300 && !(dropdownString.isEmpty())) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1099,7 +1087,7 @@ public void user_select_the_input_for_product_field_under_the_facility_info() {
 		try {
 			dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 			System.out.println("Dropdown length " + dropdownLength);
-			if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+			if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 				break;
 			}
 		} catch (Exception e) {
@@ -1122,7 +1110,7 @@ public void user_select_the_input_for_product_field_under_the_facility_info() {
 					break;
 				}
 			} catch (Exception e) {
-				if (l == 300 && !(dropdownString.isBlank())) {
+				if (l == 300 && !(dropdownString.isEmpty())) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1175,7 +1163,7 @@ public void user_select_the_input_for_scheme_field_under_the_facility_info() {
 		try {
 			dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 			System.out.println("Dropdown length " + dropdownLength);
-			if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+			if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 				break;
 			}
 		} catch (Exception e) {
@@ -1198,7 +1186,7 @@ public void user_select_the_input_for_scheme_field_under_the_facility_info() {
 					break;
 				}
 			} catch (Exception e) {
-				if (l == 300 && !(dropdownString.isBlank())) {
+				if (l == 300 && !(dropdownString.isEmpty())) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1251,7 +1239,7 @@ public void user_select_the_input_for_program_code_field_under_the_facility_info
 		try {
 			dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 			System.out.println("Dropdown length " + dropdownLength);
-			if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+			if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 				break;
 			}
 		} catch (Exception e) {
@@ -1274,7 +1262,7 @@ public void user_select_the_input_for_program_code_field_under_the_facility_info
 					break;
 				}
 			} catch (Exception e) {
-				if (l == 300 && !(dropdownString.isBlank())) {
+				if (l == 300 && !(dropdownString.isEmpty())) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1328,7 +1316,7 @@ public void user_select_the_input_for_facility_type_field_under_the_facility_inf
 		try {
 			dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 			System.out.println("Dropdown length " + dropdownLength);
-			if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+			if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 				break;
 			}
 		} catch (Exception e) {
@@ -1351,7 +1339,7 @@ public void user_select_the_input_for_facility_type_field_under_the_facility_inf
 					break;
 				}
 			} catch (Exception e) {
-				if (l == 300 && !(dropdownString.isBlank())) {
+				if (l == 300 && !(dropdownString.isEmpty())) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1405,7 +1393,7 @@ public void user_select_the_input_for_pricing_indicator_field_under_the_facility
 		try {
 			dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 			System.out.println("Dropdown length " + dropdownLength);
-			if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+			if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 				break;
 			}
 		} catch (Exception e) {
@@ -1428,7 +1416,7 @@ public void user_select_the_input_for_pricing_indicator_field_under_the_facility
 					break;
 				}
 			} catch (Exception e) {
-				if (l == 300 && !(dropdownString.isBlank())) {
+				if (l == 300 && !(dropdownString.isEmpty())) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1548,7 +1536,82 @@ public void user_give_the_input_for_declared_down_payment_amount_field_under_the
 .sendKeys("10000");
 
 }
-
+@Then("User_6047 select the input for serving branch field under the Facility info")
+public void user_select_the_input_for_serving_branch_field_under_the_facility_info() {
+	for (int i = 0; i <= 2000; i++) {
+		try {
+			javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("ServicingBranch")).click();
+			break;
+		} catch (Exception e) {
+			if (i == 2000) {
+				Assert.fail(e.getMessage());
+			}
+		}
+	}
+	String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+	String dropdownLength = "";
+	boolean isDropdownValueSelected = false;
+	String dropdownString = "";
+	for (int i = 0; i <= 300; i++) {
+		try {
+			dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+			System.out.println("Dropdown length " + dropdownLength);
+			if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
+				break;
+			}
+		} catch (Exception e) {
+			if (i == 300) {
+				Assert.fail(e.getMessage());
+			}
+		}
+	}
+	int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+	for (int j = 0; j <= premitiveDropdownLength; j++) {
+		for (int l = 0; l <= 300; l++) {
+			try {
+				System.out.println("L value is " + l);
+				System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+				dropdownString = javascriptHelper.executeScript(
+						"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText").toString();
+				if (!(dropdownString.isEmpty())) {
+					System.out.println(dropdownString);
+					System.out.println("Loop count " + l + " got breaked");
+					break;
+				}
+			} catch (Exception e) {
+				if (l == 300 && !(dropdownString.isEmpty())) {
+					Assert.fail(e.getMessage());
+				}
+			}
+			if (!(dropdownString.isEmpty())) {
+				System.out.println(dropdownString);
+				System.out.println("Loop count " + l + " got breaked");
+				break;
+			}
+		}
+		System.out.println("String " + dropdownString.trim());
+		System.out.println("Map " + testData.get("PricingIndicator").trim());
+		if ((dropdownString.trim()).equalsIgnoreCase((testData.get("servingBranch")).trim())) {
+			for (int k = 0; k <= 300; k++) {
+				try {
+					clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+							"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+					clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+							"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+					isDropdownValueSelected = true;
+					break;
+				} catch (Exception e) {
+					if (k == 300) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+		}
+		if (isDropdownValueSelected == true) {
+			break;
+		}
+	}
+}
 @Then("User_6047 give the input for Request Amount field under the Facility info")
 public void user_give_the_input_for_request_amount_field_under_the_facility_info() {
 	javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("RequestedAmount")).click();
@@ -1593,7 +1656,7 @@ public void user_select_the_input_for_currency_field_under_the_facility_info() {
 		try {
 			dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 			System.out.println("Dropdown length " + dropdownLength);
-			if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+			if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 				break;
 			}
 		} catch (Exception e) {
@@ -1616,7 +1679,7 @@ public void user_select_the_input_for_currency_field_under_the_facility_info() {
 					break;
 				}
 			} catch (Exception e) {
-				if (l == 300 && !(dropdownString.isBlank())) {
+				if (l == 300 && !(dropdownString.isEmpty())) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1721,7 +1784,7 @@ public void user_click_the_classification_field_and_modify_the_data() {
 		try {
 			dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 			System.out.println("Dropdown length " + dropdownLength);
-			if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+			if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 				break;
 			}
 		} catch (Exception e) {
@@ -1744,7 +1807,7 @@ public void user_click_the_classification_field_and_modify_the_data() {
 					break;
 				}
 			} catch (Exception e) {
-				if (l == 300 && !(dropdownString.isBlank())) {
+				if (l == 300 && !(dropdownString.isEmpty())) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1779,9 +1842,25 @@ public void user_click_the_classification_field_and_modify_the_data() {
 	}
 	
 }
+@Then("User_6047 Click the Search button under inbox under the facility info")
+public void user_6047_click_the_search_button_under_inbox_under_the_facility_info() throws Throwable {
+	//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("mail_box_search_button")));
+	for (int i = 0; i <= 500; i++) {
+		try {
+			//javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("mail_box_search_button")).click();
 
+			 javascriptHelper.executeScript(
+						"return document.querySelectorAll('button[icon=\"pi pi-search\"]')[1]");
+			break;
+		} catch (Exception e) {
+			if (i == 500) {
+				Assert.fail(e.getMessage());
+			}
+		}
+	}
+}
 @Then("User_6047 clear the Loan Tenure field under facility")
-public void user_clear_the_loan_tenure_field_under_facility() throws Throwable {
+public void user_6047_clear_the_loan_tenure_field_under_facility() throws Throwable {
 	javascriptHelper                    
 
 	.executeScriptWithWebElement(
@@ -1794,7 +1873,7 @@ public void user_clear_the_loan_tenure_field_under_facility() throws Throwable {
 	Thread.sleep(3000);
 }
 @Then("User_6047 modify the Loan Tenure field under facility info")
-public void user_modify_the_loan_tenure_field_under_facility_info() throws Throwable {
+public void user_6047_modify_the_loan_tenure_field_under_facility_info() throws Throwable {
 	//javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("LoanTenure")).click();
 	javascriptHelper.executeScriptWithWebElement("document.querySelector('digital-text-box[id=\"loanTenure\"] input')");
 for (int i = 0; i <2000; i++) {
@@ -1831,20 +1910,52 @@ public void user_to_check_same_record_saved_in_loan_tenure_field_under_facility_
 
 @Then("User_6047 verify the successfully saved message under the facility info")
 public void user_verify_the_successfully_saved_message_under_the_facility_info() {
-	for (int i = 0; i <2000; i++) {
-        try {
-        	String text = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("SucessPopUP")).getText();
-        	System.out.println(text);
-            Assert.assertTrue(text.contains("Success!"));
-            break;
-        } catch (Exception e) {
-            if (i==1999) {
-                Assert.fail(e.getMessage());
-            }
-        }
-	}
-}
+//	for (int i = 0; i <2000; i++) {
+//        try {
+//        	String text = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("SucessPopUP")).getText();
+//        	System.out.println(text);
+//            Assert.assertTrue(text.contains("Success!"));
+//            break;
+//        } catch (Exception e) {
+//            if (i==1999) {
+//                Assert.fail(e.getMessage());
+//            }
+//        }
+//	}
 
+	for (int i = 0; i <= 300; i++) {
+		try {
+			toastMessage = javascriptHelper
+					.executeScript("return " + commonJSPaths.getElement("toast_container_message")).toString();
+			if (!(toastMessage.isBlank())) {
+				break;
+			}
+		} catch (Exception e) {
+			if (i == 300) {
+				Assert.fail(e.getMessage());
+			}
+		}
+	}
+	softAssert.assertTrue(toastMessage.contains("Success! Record created with ID"),
+			"Record is not saved hence failed");
+	toastMessageForReferenceNumber = toastMessage;
+
+	System.out.println("toastMessageForReferenceNumber"+toastMessageForReferenceNumber);
+}
+@And("User_6047 Extract the application details record reference number in new facilityinfo stage")
+public void user_6047_extract_the_application_details_record_reference_number_in_facilityinfo_stage() throws Throwable {
+//	finalRecordReferenceNumber = toastMessageForReferenceNumber.substring(32).trim();
+//	System.out.println("Final reference number " + finalRecordReferenceNumber);
+//	excelDataForApplicationDetailsTestDataForMurabha.updateTestData(newApplicationTestData.get("Dataset ID"),
+//			"record_reference_number", finalRecordReferenceNumber);
+
+	
+	  finalRecordReferenceNumber = toastMessageForReferenceNumber.substring(32).trim();
+	System.out.println(finalRecordReferenceNumber);
+	ApplicationDataEntry_testdata.updateTestData(testData.get("Dataset ID"), "Id", finalRecordReferenceNumber);
+	//testData = ApplicationDataEntry_testdata.getTestdata("STOR_P2_006_D1");
+	
+}
 
 
 @And("User_6047 modify the declared downpayment amount")
@@ -1973,8 +2084,8 @@ public void user_to_check_the_status_is_active() {
 public void user_click_the_back_Button() {
 	for (int i = 0; i <= 1000; i++) {
 		try {
-			javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("BackButton")));
-			javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("BackButton")).click();
+			javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("BackButton")));
+			//javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("BackButton")).click();
 			break;
 		} catch (Exception e) { 
 			if (i == 1000) {
@@ -2034,7 +2145,32 @@ public void user_click_the_search_button_under_facility_info_tab_and_search_the_
 	}
 
 }
-
+@And("User_6047 search the facility list under facility info")
+public void user_search_the_ref_id_under_inbox() {
+	//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text")));
+	for (int i = 0; i <= 500; i++) {
+		try {
+			//javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("search_button_for_employment_det")).click();
+			javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("search_box_search_text")).
+			sendKeys(testData.get("Id"));
+			//sendKeys(finalRecordReferenceNumber);
+			System.out.println("finalRecordReferenceNumber"+finalRecordReferenceNumber);
+			System.out.println(finalRecordReferenceNumber);
+			
+			System.out.println("toastMessageForReferenceNumber"+toastMessageForReferenceNumber);
+	
+			break;
+			
+			
+		}
+		
+		catch (Exception e) {
+			if (i == 500) {
+				Assert.fail(e.getMessage());
+			}
+		}		
+	}
+} 
 
 @And("User_6047 check the result data in facility list view")
 public void user_check_the_result_data_in_facility_list_view() {

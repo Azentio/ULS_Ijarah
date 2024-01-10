@@ -809,7 +809,7 @@ public void user_check_the_match_result_data_in_list_view() {
 			searchResult = javascriptHelper.executeScript("return " + commonJSPaths
 					.getElement("list_view_search_result")).toString();
 			System.out.println(searchResult);
-			if (!(searchResult.isBlank())) {
+			if (!(searchResult.isEmpty())) {
 				break;
 			}
 		} catch (Exception e) {
@@ -861,7 +861,7 @@ public void user_check_the_mismatch_result_in_list_view() {
 			searchResult = javascriptHelper.executeScript("return " + commonJSPaths
 					.getElement("list_view_search_result")).toString();
 		
-			if (!(searchResult.isBlank()) && i > 250) {
+			if (!(searchResult.isEmpty()) && i > 250) {
 				break;
 			}
 		} catch (Exception e) {

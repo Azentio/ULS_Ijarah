@@ -3292,7 +3292,7 @@ public void user_click_the_search_button_under_customer_employment_and_check_the
 
 						System.out.println("List of add button " + listOfAddButton);
 
-						if (!(listOfAddButton.isBlank())) {
+						if (!(listOfAddButton.isEmpty())) {
 
 							break;
 
@@ -3348,7 +3348,7 @@ public void user_click_the_search_button_under_customer_employment_and_check_the
 
 							System.out.println("Screen Name " + addButtonScreenName);
 
-							if (!(addButtonScreenName.isBlank())) {
+							if (!(addButtonScreenName.isEmpty())) {
 
 								System.out.println("Screen Name" + addButtonScreenName + " is Not null");
 
@@ -3491,7 +3491,7 @@ public void user_click_the_search_button_under_customer_employment_and_check_the
 
 			System.out.println("List of add button " + listOfAddButton);
 
-			if (!(listOfAddButton.isBlank())) {
+			if (!(listOfAddButton.isEmpty())) {
 
 				break;
 
@@ -3547,7 +3547,7 @@ public void user_click_the_search_button_under_customer_employment_and_check_the
 
 				System.out.println("Screen Name " + addButtonScreenName);
 
-				if (!(addButtonScreenName.isBlank())) {
+				if (!(addButtonScreenName.isEmpty())) {
 
 					System.out.println("Screen Name" + addButtonScreenName + " is Not null");
 

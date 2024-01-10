@@ -131,3 +131,109 @@ Then User_6047 To verify agent name field should be non mandatory editable looku
 Then User_6047 To verify agent email ID field should be non mandatory editable textbox
 Then User_6047 To verify agent mobile number field should be non mandatory editable numeric
 Then logout from the ULS Application
+
+@AT_AL_ASD_07
+Scenario:  To verify the Asset Price and Down Payment Details section in AssetDetails
+
+Given Navigate the IJARA URL
+And User_6047 Login with valid credentials-AppDataEntry-AutoLoan-AssetDetails
+And User_6047 Get the test data for test case ID AT_AL_ASD_01
+#And And User click the module name dropdown in ULS application
+#And User select the module name as LOS in ULS application
+And User_6047 Click the Mail box in ULS application
+And User_6047 Click the Search button under inbox
+And User_6047 Search the Referen Id under inbox 
+And User_6047 Click the Entitle button under inbox 
+And User_6047 click on asset details segment button
+Then User_6047 click on add button in asset details tab
+Then User_6047 verify Asset Price field in asset detail
+Then User_6047 verify Down Payment field in asset detail
+Then User_6047 verify Down Payment Percentage field in asset detail
+Then User_6047 verify Green Card Issue Date field in asset detail
+Then User_6047 verify Residual Value field in asset detail
+Then User_6047 verify Green Card No field in asset detail
+Then User_6047 verify Weight field in asset detail
+Then User_6047 verify Mileage field in asset detail
+Then User_6047 verify Country of Manufacturing field in asset detail
+Then User_6047 verify Asset Agreed Fulfilment Location field in asset detail
+Then User_6047 verify Location of Signing the Agreement field in asset detail
+Then User_6047 verify Asset Received Location field in asset detail
+Then User_6047 verify Remark field in asset detail
+Then logout from the ULS Application
+@AT_AL_ASD_08
+Scenario:  To verify the Asset Price and Down Payment Details should be non-Mandatory,editable,numeric,date
+Given Navigate the IJARA URL
+And User_6047 Login with valid credentials-AppDataEntry-AutoLoan-AssetDetails
+And User_6047 Get the test data for test case ID AT_AL_ASD_01
+#And And User click the module name dropdown in ULS application
+#And User select the module name as LOS in ULS application
+And User_6047 Click the Mail box in ULS application
+And User_6047 Click the Search button under inbox
+And User_6047 Search the Referen Id under inbox 
+And User_6047 Click the Entitle button under inbox 
+And User_6047 click on asset details segment button
+Then User_6047 click on add button in asset details tab
+Then User_6047 verify Asset Price should be Mandatory,editable,numeric
+Then User_6047 verify Down Payment should be non-Mandatory,editable,numeric
+Then User_6047 verify Down Payment Percentage should be non-Mandatory,editable,numeric
+Then User_6047 verify Green Card Issue Date should be non-Mandatory,editable,date
+Then User_6047 verify Residual Value should be non-Mandatory,editable,numeric
+Then logout from the ULS Application
+@AT_AL_ASD_09
+Scenario:  To verify the Asset Price and Down Payment Details should be non-Mandatory,editable,numeric,date
+Given Navigate the IJARA URL
+And User_6047 Login with valid credentials-AppDataEntry-AutoLoan-AssetDetails
+And User_6047 Get the test data for test case ID AT_AL_ASD_01
+#And And User click the module name dropdown in ULS application
+#And User select the module name as LOS in ULS application
+And User_6047 Click the Mail box in ULS application
+And User_6047 Click the Search button under inbox
+And User_6047 Search the Referen Id under inbox 
+And User_6047 Click the Entitle button under inbox 
+And User_6047 click on asset details segment button
+Then User_6047 click on add button in asset details tab
+Then User_6047 verify Green Card No should be non-Mandatory,editable,numeric
+Then User_6047 verify Weight should be non-Mandatory,editable,numeric
+Then User_6047 verify Mileage should be non-Mandatory,editable,numeric
+Then User_6047 verify Country of Manufacturing should be non-Mandatory,editable,lookup value
+Then logout from the ULS Application
+@AT_AL_ASD_10
+Scenario:  To verify the Asset Price and Down Payment Details should be non-Mandatory,editable,numeric,date
+Given Navigate the IJARA URL
+And User_6047 Login with valid credentials-AppDataEntry-AutoLoan-AssetDetails
+And User_6047 Get the test data for test case ID AT_AL_ASD_01
+#And And User click the module name dropdown in ULS application
+#And User select the module name as LOS in ULS application
+And User_6047 Click the Mail box in ULS application
+And User_6047 Click the Search button under inbox
+And User_6047 Search the Referen Id under inbox 
+And User_6047 Click the Entitle button under inbox 
+And User_6047 click on asset details segment button
+Then User_6047 click on add button in asset details tab
+Then User_6047 verify Asset Agreed Fulfilment Location should be Mandatory,editable,lookup value
+Then User_6047 verify Location of Signing the Agreement should be Mandatory,editable,lookup value
+Then User_6047 verify Asset Received Location should be Mandatory,editable,lookup value
+Then User_6047 verify Remark should be Mandatory,editable,textbox
+Then logout from the ULS Application
+@AT_AL_ASD_11
+Scenario:  To verify the To test the asset details screen with invalid inputs
+Given Navigate the IJARA URL
+And User_6047 Login with valid credentials-AppDataEntry-AutoLoan-AssetDetails
+And User_6047 Get the test data for test case ID AT_AL_ASD_01
+#And And User click the module name dropdown in ULS application
+#And User select the module name as LOS in ULS application
+And User_6047 Click the Mail box in ULS application
+And User_6047 Click the Search button under inbox
+And User_6047 Search the Referen Id under inbox 
+And User_6047 Click the Entitle button under inbox 
+And User_6047 click on asset details segment button
+Then User_6047 click on add button in asset details tab
+Then User_6047 click the Save button
+Then User_6047 verify the popup of fill all field
+Then User_6047 Enter the character input in number of cylender input box
+Then User_6047 Verify number of cylender input field not accept the number of cylender input 
+Then User_6047 Enter the negative input in Down Payment input box
+Then User_6047 verify agent Down Payment field should show the validation for negative input
+Then User_6047 Enter the special character input in asset price input box
+Then User_6047 Verify asset price input field not accept the special character input 
+Then logout from the ULS Application

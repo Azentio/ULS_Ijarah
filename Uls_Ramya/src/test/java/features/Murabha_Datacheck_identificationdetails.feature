@@ -4,7 +4,8 @@ Feature: Customer Additional info -Data Check-Identifications Details under Data
  Scenario: To verify the availability of Customer Information tab is getting open with all valid button under Data check stage
  
 Given Navigate the IJARA URL
-And User_6047 Login with valid credentials
+
+And User_6047 login with valid credentials
 And User_6047 Get the test data for test case ID AT_DC_MU_ID_001 
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
@@ -20,7 +21,7 @@ Then User_6047 verify the Back button
 Scenario: Identification Details details screen should get open with all valid Fields
 
 Given Navigate the IJARA URL
-And User_6047 Login with valid credentials
+And User_6047 login with valid credentials
 And User_6047 Get the test data for test case ID AT_DC_MU_ID_001 
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
@@ -40,7 +41,7 @@ Then User_6047 verify the Country of Issue
 Scenario: to verify the Identification Details
 
 Given Navigate the IJARA URL
-And User_6047 Login with valid credentials
+And User_6047 login with valid credentials
 And User_6047 Get the test data for test case ID AT_DC_MU_ID_001
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
@@ -60,7 +61,7 @@ Then User_6047 verify the Data in Country of Issue identification details
 Scenario: to verify the Identification Details field
 
 Given Navigate the IJARA URL
-And User_6047 Login with valid credentials
+And User_6047 login with valid credentials
 And User_6047 Get the test data for test case ID AT_DC_MU_ID_001
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
@@ -77,7 +78,7 @@ Then User_6047 verify ID Issue Date field should be non mandatory display and ca
 Scenario: to verify the Identification Details field
 
 Given Navigate the IJARA URL
-And User_6047 Login with valid credentials
+And User_6047 login with valid credentials
 And User_6047 Get the test data for test case ID AT_DC_MU_ID_001
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
@@ -94,7 +95,7 @@ Then User_6047 verify Country of Issue field should be non mandatory display and
 Scenario: to verify the functionality of Back and Help Button
 
 Given Navigate the IJARA URL
-And User_6047 Login with valid credentials
+And User_6047 login with valid credentials
 And User_6047 Get the test data for test case ID AT_DC_MU_ID_001
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox

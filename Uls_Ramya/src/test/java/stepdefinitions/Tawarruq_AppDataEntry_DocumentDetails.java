@@ -57,7 +57,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 					.executeScript("return " + commonJSPaths.getElement("module_dropdown") + ".textContent")
 					.toString();
 			System.out.println("Module Name "+moduleName);
-			if ((!moduleName.isBlank())) {
+			if ((!moduleName.isEmpty())) {
 				break;
 			}
 			} catch (Exception e) {
@@ -88,7 +88,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 			try {
 				moduleLength = javascriptHelper.executeScript("return " + moduleListJSpath).toString();
 				System.out.println("Module Length " + moduleLength);
-				if (!(moduleLength.isBlank()) && !(moduleLength.equalsIgnoreCase("0"))) {
+				if (!(moduleLength.isEmpty()) && !(moduleLength.equalsIgnoreCase("0"))) {
 
 					break;
 				}
@@ -523,7 +523,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -546,7 +546,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -601,7 +601,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -624,7 +624,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -678,7 +678,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -701,7 +701,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -755,7 +755,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -778,7 +778,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -832,7 +832,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -855,7 +855,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -908,7 +908,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -931,7 +931,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}

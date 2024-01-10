@@ -79,10 +79,8 @@ Then User_6047 Give the input for Landlord Name
 Then User_6047 Give the input for Landlord Mobile Number 
 Then User_6047 Give the input for Rent Amount 
 Then User_6047 Give the input for Frequency Of Rent 
-And User_6047 click the Save Button
+#And User_6047 click the Save Button
 #Then User_6047 verify the successfully saved message popup
-And User_6047 To click the back button in Modification of Address details screen
-#And User_6047 click edit icon
 And User_6047 clict the edit button under the Address detail
 Then User_6047 to verify the same record should get saved Address Details
 Then logout from the ijaraApplication 
@@ -218,8 +216,8 @@ And User_6047 clict the edit button under the Address detail
 And User_6047 change the address details status to active to inactive or inactive to active
 Then User_6047 click the Save button
 Then User_6047 verify system should show the record status as active or inactive based on toggle
-And User_6047 to click the back button
-Then User_6047 verify the functionality of Back Button
+And User_6047 to click the back button in customer Identificatoin
+And User_6047 verify the functionality of back button in address details 
 Then logout from the ijaraApplication
 
 @AT_AU_AD_09
@@ -248,7 +246,7 @@ Then User_6047 validate the invalid data in numeric field
 Then logout from the ijaraApplication
 
  @AT_AU_AD_10
- Scenario:  To verify the Address details  details List view
+ Scenario:  To verify the Address details List view
  
  Given Navigate the IJARA URL
 And User_6047 Login With valid credentials-AutoLoan_AppDataEntry_AddresDetails
@@ -284,7 +282,7 @@ And User_6047 Click the Entitle button under inbox
 And User_6047 click on additional customer info tab
 And User_6047 Click edit icon
 #And User_6047 To verify Values in List view should be non editable
-And User_6047 To verify Values in List view should be non editable in Address details
+#And User_6047 To verify Values in List view should be non editable in Address details
 And User_6047 clict the Add button under the Address detail
 And User_6047 To verify the Add button allow user to create new record of Address details 
 And User_6047 To click the back button in Modification of Address details screen

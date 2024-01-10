@@ -479,7 +479,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -503,7 +503,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -644,7 +644,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 						.executeScript(
 								"return " + Tawarruq_NewApp_CustomerDetailsElements.getElement("LastName_ErrorMsg"))
 						.toString();
-				if (!(fieldLevelvalidation.isBlank())) {
+				if (!(fieldLevelvalidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -724,6 +724,27 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 		}
 	}
 
+	@Then("User_6047 to click the back button in customer Identificatoin")
+public void user_6047_to_click_the_back_button_in_customer_identificatoin( ) {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				javascriptHelper.JSEClick(
+						javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("BackButton")));
+
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+}
+
+@Then("User_6047 verify the functionality of Back Button in customer Identificatoin")
+public void user_6047_verify_the_functionality_of_back_button_in_customer_identificatoin() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
 	@Then("User_6047 verify system should show the record status as active or inactive based on toggle")
 	public void verify_system_should_show_the_record_status_as_active_or_inactive_based_on_toggle() throws Throwable {
 		Thread.sleep(1000);
@@ -739,7 +760,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 							.toString();
 
 					System.out.println("List view Record status " + listViewRecordStatus);
-					if (!(listViewRecordStatus.isBlank())) {
+					if (!(listViewRecordStatus.isEmpty())) {
 						break;
 					}
 				}
@@ -764,7 +785,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 				listViewRecordLabels = javascriptHelper.executeScript("return "
 						+ Tawarruq_NewApp_CustomerDetailsElements.getElement("customer_details_list_view_record"))
 						.toString();
-				if (!(listViewRecordLabels.isBlank())) {
+				if (!(listViewRecordLabels.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -827,7 +848,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 						.executeScript("return "
 								+ Tawarruq_NewApp_CustomerDetailsElements.getElement("addButton_verification"))
 						.toString();
-				if (!(listViewRecordLabels.isBlank())) {
+				if (!(listViewRecordLabels.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -894,7 +915,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 			try {
 				searchResult = javascriptHelper.executeScript("return " + Tawarruq_NewApp_CustomerDetailsElements
 						.getElement("customer_details_list_view_search_result")).toString();
-				if (!(searchResult.isBlank())) {
+				if (!(searchResult.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -961,7 +982,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 			try {
 				searchResult = javascriptHelper.executeScript("return " + Tawarruq_NewApp_CustomerDetailsElements
 						.getElement("customer_details_list_view_search_result")).toString();
-				if (!(searchResult.isBlank()) && i > 250) {
+				if (!(searchResult.isEmpty()) && i > 250) {
 					break;
 				}
 			} catch (Exception e) {
@@ -998,7 +1019,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 				inboxTitle = javascriptHelper
 						.executeScript("return " + Tawarruq_NewApp_CustomerDetailsElements.getElement("inbox_title"))
 						.toString();
-				if (!(inboxTitle.isBlank())) {
+				if (!(inboxTitle.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {

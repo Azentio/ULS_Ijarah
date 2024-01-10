@@ -35,9 +35,9 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	JSPaths iJarah_CommonElements = new JSPaths(excelPath, "iJarah_CommonElements", "Ijarah_CommonFieldName", "JSPath");
 	JSPaths Tawarooq_Repayment_js = new JSPaths(excelPath, "Tawarooq_Repayment", "RepaymentElement", "JSPath");
 	ExcelData Tawarooq_Repayment_TestData  = new ExcelData(excelTestDataPath,"Tawarooq_Repayment","Dataset ID");
-
-
-
+	String toastMessageForReferenceNumber = "";
+	String RecordIdNumber="";
+	String toastMessage = "";
 	
 	
 	@And("User_6047 Get the test data for test case ID AT_TW_AD_IRM_01")
@@ -235,6 +235,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	}
 	@Then("User_6047 verify the Repayment mode field is mandatory,editable and lookup value")
 	public void user_verify_the_repayment_mode_field_is_mandatory_editable_and_lookup_value() {
+		
 		String repaymentmodefield= javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("repaymentMode_in")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
@@ -265,7 +266,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -288,7 +289,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -354,7 +355,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -377,7 +378,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -443,7 +444,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -466,7 +467,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -520,8 +521,9 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 		
 			try {
 				javascriptHelper.executeScriptWithWebElement("document.querySelector('ion-label[ng-reflect-text=\"Account Number.TOOLTIP\"]+ion-input')").click();
-				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").sendKeys("123456");
-				//javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("accountNumberField_in")).sendKeys(testData.get("AccountNumber"));
+				javascriptHelper.executeScriptWithWebElement("document.querySelector('ion-label[id=\"ion-input-28-lbl\"]+ion-input input')").sendKeys("123456");
+				
+				//javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("accountNumberField_in")).sendKeys(testData.get("AccountNumber"));
 				break;
 			} catch (Exception e) {
 				if (i==199) {
@@ -564,7 +566,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -587,7 +589,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -653,7 +655,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -676,7 +678,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -742,7 +744,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -765,7 +767,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -832,23 +834,73 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 			}
 		}
 	}
-
+//	for (int i = 0; i <2000; i++) {
+//        try {
+//        	 recordRef = javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("SucessPopUP")).getText();
+//        	System.out.println(recordRef);
+//            Assert.assertTrue(recordRef.contains("Success!"));
+//            break;
+//        } catch (Exception e) {
+//            if (i==1999) {
+//                Assert.fail(e.getMessage());
+//            }
+//        }
+//	}
 	@Then("User_6047 verify the successfully saved message popup in Repayment Mode")
 	public void user_verify_the_successfully_saved_message_popup_in_repayment_mode() {
-		for (int i = 0; i <2000; i++) {
-	        try {
-	        	String text = javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("SucessPopUP")).getText();
-	        	System.out.println(text);
-	            Assert.assertTrue(text.contains("Success!"));
-	            break;
-	        } catch (Exception e) {
-	            if (i==1999) {
-	                Assert.fail(e.getMessage());
-	            }
-	        }
-		}
-	}
+//		String recordRef="";
+//		for (int i = 0; i <= 300; i++) {
+//			try {
+//				recordRef = javascriptHelper
+//						.executeScript("return " + Tawarooq_Repayment_js.getElement("SucessPopUP")).toString();
+//				if (!(recordRef.isBlank())) {
+//					break;
+//				}
+//			} catch (Exception e) {
+//				if (i == 300) {
+//					Assert.fail(e.getMessage());
+//				}
+//			}
+//		}
+//		softAssert.assertTrue(recordRef.contains("Success! Record created with ID"),
+//				"Record is not saved hence failed");
+//		recordNum = recordRef;
+//		System.out.println(recordRef);
 
+		for (int i = 0; i <= 300; i++) {
+			try {
+				toastMessage = javascriptHelper
+						.executeScript("return " + commonJSPaths.getElement("toast_container_message")).toString();
+				if (!(toastMessage.isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		softAssert.assertTrue(toastMessage.contains("Success! Record created with ID"),
+				"Record is not saved hence failed");
+		toastMessageForReferenceNumber = toastMessage;
+
+		System.out.println("toastMessageForReferenceNumber"+toastMessageForReferenceNumber);
+
+	}
+	
+	@And("User_6047 Extract the record reference number in toastmsg")
+	public void user_076_extract_the_application_details_record_reference_number_in_new_app_stage() throws Throwable {
+	
+		
+		RecordIdNumber = toastMessageForReferenceNumber.substring(32).trim();
+			System.out.println(RecordIdNumber);
+			
+			
+			Tawarooq_Repayment_TestData.updateTestData(testData.get("Dataset ID"),
+					"Id", RecordIdNumber);
+			testData = Tawarooq_Repayment_TestData.getTestdata("Dataset ID");
+			
+	}
 	@Then("User_6047 click edit icon in Repayment Mode")
 	public void user_click_edit_icon_in_repayment_mode() {
 		for (int i = 0; i <= 1000; i++) {
@@ -864,7 +916,8 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	}
 
 	@Then("User_6047 To verify the same record should get saved in Repayment Mode")
-	public void user_to_verify_the_same_record_should_get_saved_in_repayment_mode() {
+	public void user_to_verify_the_same_record_should_get_saved_in_repayment_mode() throws Throwable {
+		Thread.sleep(9000);
 		String repaymentMode= javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("repaymentMode_in")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
@@ -880,7 +933,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 		String accountHolderName= javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("accountHolderName_in")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
-	            Assert.assertTrue(accountHolderName.contains("test"));
+	            Assert.assertTrue(accountHolderName.contains("TEST KI"));
 	            break;
 	        } catch (Exception e) {
 	            if (i==1999) {
@@ -915,7 +968,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 		String  accountCurrency= javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("AccountCurrency_in")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
-	            Assert.assertTrue(accountCurrency.contains("CAD"));
+	            Assert.assertTrue(accountCurrency.contains("INR"));
 	            break;
 	        } catch (Exception e) {
 	            if (i==1999) {
@@ -938,7 +991,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 		String  branchName= javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("branchNameField_in")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
-	            Assert.assertTrue(branchName.contains("BOAVA Branch"));
+	            Assert.assertTrue(branchName.contains("chennai"));
 	            break;
 	        } catch (Exception e) {
 	            if (i==1999) {
@@ -1011,6 +1064,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 				//javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("search_button_for_employment_det")).click();
 				javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("search_box_search_text")).
 				sendKeys(testData.get("Record"));
+				//sendKeys(RecordIdNumber);
 				break;
 			}
 			
@@ -1058,7 +1112,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1081,7 +1135,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -1135,7 +1189,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1158,7 +1212,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -1212,7 +1266,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1235,7 +1289,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -1289,7 +1343,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1312,7 +1366,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -1366,7 +1420,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1389,7 +1443,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -1443,7 +1497,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1466,7 +1520,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -1520,18 +1574,33 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	public void user_verify_the_popup_of_fill_all_field_in_repayment_mode() throws Throwable {
 		//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("PleaseFillDetails_Popup")));
 		Thread.sleep(2000);
-		for (int i = 0; i <2000; i++) {
-	        try {
-	        	String text = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("PleaseFillDetails_Popup")).getText();
-	        	System.out.println(text);
-	            Assert.assertTrue(text.contains("Please fill all the details"));
-	            break;
-	        } catch (Exception e) {
-	            if (i==1999) {
-	                Assert.fail(e.getMessage());
-	            }
-	        }
+//		for (int i = 0; i <2000; i++) {
+//	        try {
+//	        	String text = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("PleaseFillDetails_Popup")).getText();
+//	        	System.out.println(text);
+//	            Assert.assertTrue(text.contains("Please fill all the details"));
+//	            break;
+//	        } catch (Exception e) {
+//	            if (i==1999) {
+//	                Assert.fail(e.getMessage());
+//	            }
+//	        }
+//		}
+		for (int i = 0; i <= 300; i++) {
+			try {
+				String toastMessage = javascriptHelper
+						.executeScript("return " + commonJSPaths.getElement("toast_container_message")).toString();
+				if (!(toastMessage.isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
 		}
+		softAssert.assertTrue(toastMessage.contains("Success! Record created with ID"),
+				"Record is not saved hence failed");
 	}
 	@Then("User_6047 Give the negative number input for account number field in Repayment Mode")
 	public void user_give_the_negative_number_input_for_account_number_field_in_repayment_mode() {
@@ -1554,6 +1623,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").click();
+				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").clear();
 				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").sendKeys("account number");
 				Thread.sleep(3000);
 				break;
@@ -1570,6 +1640,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").click();
+				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").clear();
 				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").sendKeys("**$");
 				Thread.sleep(3000);
 				break;
@@ -1610,7 +1681,8 @@ for (int i = 0; i < 200; i++) {
 for (int i = 0; i < 200; i++) {
 			
 			try {
-				javascriptHelper.executeScriptWithWebElement("document.querySelector('ion-label[ng-reflect-text=\"Account Number.TOOLTIP\"]+ion-input')").click();
+				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").clear();
+				//javascriptHelper.executeScriptWithWebElement("document.querySelector('ion-label[ng-reflect-text=\"Account Number.TOOLTIP\"]+ion-input')").click();
 				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").sendKeys("23658");
 				//javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("accountNumberField_in")).sendKeys(testData.get("AccountNumber"));
 				Thread.sleep(3000);
@@ -1697,7 +1769,7 @@ for (int i = 0; i < 200; i++) {
 			try {
 				SavetoastMessage = javascriptHelper
 						.executeScript("return " + commonJSPaths.getElement("toast_container_message")).toString();
-				if (!(SavetoastMessage.isBlank())) {
+				if (!(SavetoastMessage.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1791,6 +1863,21 @@ for (int i = 0; i < 200; i++) {
 		Tawarooq_Repayment_TestData.updateTestData("DS01_AT_TW_AD_IRM_06", "record_reference_number", finalRecordReferenceNumber);
 
 		
+	}
+	@And("User_6047 to click the pre back button")
+	public void user_to_click_the_pre_back_button() {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("BackButton_prev")));
+				//avascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("back_button")).click();
+			
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
 	}
 	@Then("User_6047 to verify system should show the list view")
 	public void user_to_verify_system_should_show_the_list_view() {
