@@ -35,7 +35,7 @@ Then user_076 verify total deduction considered field should be read only mode
 Then user_076 verify total deduction considered field should be read only mode
 Then logout from the ULS Application
 And invoke softAssert in income details app data screen
-@AT_TW_ADC_INCOME_01
+@AT_TW_ADC_INCOME_02
 Scenario: To verify income details fields should be read only mode
 Given navigate the IJARA URL
 And user_076 login with valid app data check stage userID for tawruqq product
@@ -50,3 +50,68 @@ And user_076 select the customer financials tab at app data check stage
 And user_076 select the customer personal information record at app data check stage
 And user_076 find the income details screen location at app data check stage
 Then user_076 verify income details list view should be non editable
+Then logout from the ULS Application
+And invoke softAssert in income details app data screen
+@AT_TW_ADC_INCOME_03
+Scenario: To verify income details list view search functionality in app data check stage (Tawruqq)
+Given navigate the IJARA URL
+And user_076 login with valid app data check stage userID for tawruqq product
+And click on module dropdown in IJRARAH
+And click on LOS option in module dropdown
+And click on mail box
+And click on search box upon click on the mail box
+And click on search text box upon click the search button
+And user_076 search the app data check tawruqq record in mail box
+And user_076 select the app data check tawruqq record from mail box
+And user_076 select the customer financials tab at app data check stage
+And user_076 select the customer personal information record at app data check stage
+And user_076 find the income details screen location at app data check stage
+And user_076 get the test data for test case id AT_TW_ADC_INCOME_03
+And user_076 click on search button in income details list view search button in app data check stage
+And user_076 search the valid search text in income details in app data check stage
+Then user_076 verify system should show the search result for valid search text in income details app data check stage
+And user_076 search the invalid search text in income details in app data check stage
+Then user_076 verify system should not show the search result for invalid search text in income details app data check stage
+Then logout from the ULS Application
+And invoke softAssert in income details app data screen
+@AT_TW_ADC_INCOME_04
+Scenario: To verify income details list view search functionality in app data check stage (Tawruqq)
+Given navigate the IJARA URL
+And user_076 login with valid app data check stage userID for tawruqq product
+And click on module dropdown in IJRARAH
+And click on LOS option in module dropdown
+And click on mail box
+And click on search box upon click on the mail box
+And click on search text box upon click the search button
+And user_076 search the app data check tawruqq record in mail box
+And user_076 select the app data check tawruqq record from mail box
+And user_076 select the customer financials tab at app data check stage
+And user_076 select the customer personal information record at app data check stage
+And user_076 find the income details screen location at app data check stage
+And user_076 click on export button in income details list view at app data check stage
+And user_076 click on pdf export button in income details list view export option
+Then user_076 verify income details list view file should be downloaded as pdf format at app data check stage
+And user_076 click on export button in income details list view at app data check stage
+And user_076 click on xlsx export button in income details list view export option
+Then user_076 verify income details list view file should be downloaded as xlsx format at app data check stage
+Then logout from the ULS Application
+And invoke softAssert in income details app data screen
+@AT_TW_ADC_INCOME_05
+Scenario: To verify income details fields should be read only mode
+Given navigate the IJARA URL
+And user_076 login with valid app data check stage userID for tawruqq product
+And click on module dropdown in IJRARAH
+And click on LOS option in module dropdown
+And click on mail box
+And click on search box upon click on the mail box
+And click on search text box upon click the search button
+And user_076 search the app data check tawruqq record in mail box
+And user_076 select the app data check tawruqq record from mail box
+And user_076 select the customer financials tab at app data check stage
+And user_076 select the customer personal information record at app data check stage
+And user_076 find the income details screen location at app data check stage
+And user_076 select the income details record at app data check stage
+And user_076 click on back button in income details screen at app data check stage
+Then user_076 verify income details screen should get navigate to backward at app data check stage
+Then logout from the ULS Application
+And invoke softAssert in income details app data screen
