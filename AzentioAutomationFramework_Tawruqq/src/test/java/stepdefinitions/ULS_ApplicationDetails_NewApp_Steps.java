@@ -19,6 +19,7 @@ import helper.BrowserHelper;
 import helper.ClicksAndActionsHelper;
 import helper.JavascriptHelper;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import pageobjects.JSPaths;
 import resources.BaseClass;
@@ -35,21 +36,13 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 			"Ijarah_customer_search_fieldName", "JSPath");
 	JSPaths applicationDetailsElements = new JSPaths(excelFilePathForJS, "newApp_AppllicationDetailsJS",
 			"Ijarah_NewApp_fieldName", "JSPath");
+	ExcelData excelDataForApplicationDetailsTestData = new ExcelData(applicationDetailsExcelDataPath,
+			"ApplicationDetails_AppData", "Dataset ID");
 
 	BrowserHelper browserHelper = new BrowserHelper(driver);
-	ExcelData excelDataForApplicationDetailsTestData = new ExcelData(applicationDetailsExcelDataPath,
-			"ApplicationDetails_NewApp", "Dataset ID");
 
-	ExcelData excelDataForApplicationDetailsTestDataForMurabha = new ExcelData(applicationDetailsExcelDataPath,
-			"newApp_ApplicationDetailsMuraba", "Dataset ID");
-
-	ExcelData IjarahExecutionSheet = new ExcelData(applicationDetailsExcelDataPath, "Ijarah_ExecutionTracker",
-			"TestCase ID");
 	ExcelData excelDataForApplicationDetailsTestDataForTawrruq = new ExcelData(applicationDetailsExcelDataPath,
 			"TW_NewApp_AppDetails_TestData", "Dataset ID");
-
-	ExcelData murabahaExecutionSheet = new ExcelData(applicationDetailsExcelDataPath, "Murabaha_ExecutionTracker",
-			"TestCase ID");
 
 	ExcelData tawruqqExecutionSheet = new ExcelData(applicationDetailsExcelDataPath, "Tawruqq_ExecutionTracker",
 			"TestCase ID");
@@ -62,36 +55,6 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	SoftAssert softAssert = new SoftAssert();
 	SoftAssert updateSoftAssert = new SoftAssert();
 	String toastMessageForReferenceNumber = "";
-
-	@And("user_076 get the test data for test case id AT_IJ_APP_01")
-	public void user_076_get_the_test_data_for_test_case_id_AT_IJ_APP_01() throws Throwable {
-		newApplicationExecutionData = IjarahExecutionSheet.getTestdata("AT_IJ_APP_01");
-		newApplicationTestData = excelDataForApplicationDetailsTestData
-				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
-	}
-
-	@And("user_076 get the test data for test case id AT_IJ_APP_02")
-	public void user_076_get_the_test_data_for_test_case_id_AT_IJ_APP_02() throws Throwable {
-		newApplicationExecutionData = IjarahExecutionSheet.getTestdata("AT_IJ_APP_02");
-		newApplicationTestData = excelDataForApplicationDetailsTestData
-				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
-	}
-
-	@And("user_076 get the test data for test case id AT_IJ_APP_03")
-	public void user_076_get_the_test_data_for_test_case_id_AT_IJ_APP_03() throws Throwable {
-		newApplicationExecutionData = IjarahExecutionSheet.getTestdata("AT_IJ_APP_03");
-		newApplicationTestData = excelDataForApplicationDetailsTestData
-				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
-	}
-
-	@And("user_076 get the test data for test case id AT_MAppDetails_NewApp_01")
-	public void user_076_get_the_test_data_for_test_case_id_AT_MAppDetails_NewApp_01() throws Throwable {
-		newApplicationExecutionData = murabahaExecutionSheet.getTestdata("AT_MAppDetails_NewApp_01");
-		System.out.println("Data Set ID " + newApplicationExecutionData.get("dataSet_ID"));
-		newApplicationTestData = excelDataForApplicationDetailsTestDataForMurabha
-				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
-
-	}
 
 	// Tawruqq
 	@And("user_076 get the test data for test case id AT_TW_NewApp_AD_02")
@@ -157,7 +120,30 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 
 	}
 
-	
+//App Data Entry code
+	@Given("user_0482 get the test data for test case id AT_TW_AD_01")
+	public void user_get_the_test_data_for_test_case_id_at_app_01() {
+
+		newApplicationExecutionData = tawruqqExecutionSheet.getTestdata("AT_TW_AD_01");
+		newApplicationTestData = excelDataForApplicationDetailsTestData
+				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
+	}
+
+	@Given("user_0482 get the test data for test case id AT_TW_AD_02")
+	public void user_get_the_test_data_for_test_case_id_AT_TW_AD_02() {
+
+		newApplicationTestData = tawruqqExecutionSheet.getTestdata("AT_TW_AD_02");
+		newApplicationTestData = excelDataForApplicationDetailsTestData
+				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
+	}
+
+	@Given("user_0482 get the test data for test case id AT_TW_AD_03")
+	public void user_get_the_test_data_for_test_case_id_AT_TW_AD_03() {
+
+		newApplicationExecutionData = tawruqqExecutionSheet.getTestdata("AT_TW_AD_03");
+		newApplicationTestData = excelDataForApplicationDetailsTestData
+				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
+	}
 
 	@And("user_076 click on menu bar in uls transaction screen")
 	public void user_076ser_click_on_menu_bar_in_uls_transaction_screen() throws Throwable {
@@ -317,58 +303,6 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 			}
 		}
 
-	}
-
-	@And("user_076 get the test data for test case id AT_MAppDetails_NewApp_02")
-	public void user_076_get_the_test_data_for_test_case_id_AT_MAppDetails_NewApp_02() throws Throwable {
-		newApplicationExecutionData = murabahaExecutionSheet.getTestdata("AT_MAppDetails_NewApp_02");
-		System.out.println("Data Set ID " + newApplicationExecutionData.get("dataSet_ID"));
-		newApplicationTestData = excelDataForApplicationDetailsTestDataForMurabha
-				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
-
-	}
-
-	@And("user_076 get the test data for test case id AT_MAppDetails_NewApp_03")
-	public void user_076_get_the_test_data_for_test_case_id_AT_MAppDetails_NewApp_03() throws Throwable {
-		newApplicationExecutionData = murabahaExecutionSheet.getTestdata("AT_MAppDetails_NewApp_03");
-		System.out.println("Data Set ID " + newApplicationExecutionData.get("dataSet_ID"));
-		newApplicationTestData = excelDataForApplicationDetailsTestDataForMurabha
-				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
-
-	}
-
-	@And("user_076 get the test data for test case id AT_MAppDetails_NewApp_04")
-	public void user_076_get_the_test_data_for_test_case_id_AT_MAppDetails_NewApp_04() throws Throwable {
-		newApplicationExecutionData = murabahaExecutionSheet.getTestdata("AT_MAppDetails_NewApp_04");
-		System.out.println("Data Set ID " + newApplicationExecutionData.get("dataSet_ID"));
-		newApplicationTestData = excelDataForApplicationDetailsTestDataForMurabha
-				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
-
-	}
-
-	@And("user_076 get the test data for test case id AT_MAppDetails_NewApp_05")
-	public void user_076_get_the_test_data_for_test_case_id_AT_MAppDetails_NewApp_05() throws Throwable {
-		newApplicationExecutionData = murabahaExecutionSheet.getTestdata("AT_MAppDetails_NewApp_05");
-		System.out.println("Data Set ID " + newApplicationExecutionData.get("dataSet_ID"));
-		newApplicationTestData = excelDataForApplicationDetailsTestDataForMurabha
-				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
-
-	}
-
-	@And("user_076 get the test data for test case id AT_MAppDetails_NewApp_06")
-	public void user_076_get_the_test_data_for_test_case_id_AT_MAppDetails_NewApp_06() throws Throwable {
-		newApplicationExecutionData = murabahaExecutionSheet.getTestdata("AT_MAppDetails_NewApp_06");
-		System.out.println("Data Set ID " + newApplicationExecutionData.get("dataSet_ID"));
-		newApplicationTestData = excelDataForApplicationDetailsTestDataForMurabha
-				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
-	}
-
-	@And("user_076 get the test data for test case id AT_MAppDetails_NewApp_07")
-	public void user_076_get_the_test_data_for_test_case_id_AT_MAppDetails_NewApp_07() throws Throwable {
-		newApplicationExecutionData = murabahaExecutionSheet.getTestdata("AT_MAppDetails_NewApp_07");
-		System.out.println("Data Set ID " + newApplicationExecutionData.get("dataSet_ID"));
-		newApplicationTestData = excelDataForApplicationDetailsTestDataForMurabha
-				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
 	}
 
 	@And("user_076 search the new application stage record reference number")
@@ -2500,21 +2434,11 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 
 	}
 
-	
-
 	@And("user_076 store the tawruqq record reference number to test new app screens")
 	public void user_076_store_the_tawruqq_record_reference_number_to_test_new_app_screens() throws Throwable {
 		String extractedReferenceNumber = toastMessage.substring(37);
 		System.out.println("Reference Number " + extractedReferenceNumber);
 		configFileReader.setTawruqqRecordReferenceNumber(extractedReferenceNumber);
-	}
-
-	@And("user_076 extract the application details record reference number in new app stage")
-	public void user_076_extract_the_application_details_record_reference_number_in_new_app_stage() throws Throwable {
-		String finalRecordReferenceNumber = toastMessageForReferenceNumber.substring(36).trim();
-		System.out.println("Final reference number " + finalRecordReferenceNumber);
-		excelDataForApplicationDetailsTestDataForMurabha.updateTestData(newApplicationTestData.get("Dataset ID"),
-				"record_reference_number", finalRecordReferenceNumber);
 	}
 
 	@And("user_076 extract the application details record reference number in new app stage for tawruqq")

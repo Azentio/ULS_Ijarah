@@ -38,7 +38,7 @@ And user_0482 click on save button in application details new app record
 Then user_0482 verify system should save the record of application details new app
 Then logout from the ULS Application
 And user_0482 invoke soft assert for new application screen
-@AT_APP_02
+@AT_TW_AD_02
 Scenario: To test user can able to create the application details record with in valid data
 Given navigate the IJARA URL
 And login with valid credentials for new application stage
@@ -47,9 +47,9 @@ And click on LOS option in module dropdown
 And click on mail box
 And click on search box upon click on the mail box
 And click on search text box upon click the search button
-And user_076 get the test data for test case id AT_APP_02
-And user_076 search the new application stage record reference number
-And user_076 select the new application stage record from mail box
+And user_0482 get the test data for test case id AT_TW_AD_02
+And user_0482 search the new app data entry stage record reference number
+And user_0482 select the new app data entry stage record from mail box
 And user_076 click on save button while open the application details record
 And user_076 click on add button of application details record
 And user_076 in customer search screen select the customer type
@@ -70,7 +70,7 @@ Then user_076 verify system wont allow user to enter the character input in appl
 Then logout from the ULS Application
 And user_076 invoke soft assert for new application screen
 
-@AT_APP_03
+@AT_TW_AD_03
 Scenario: To test user can able to create the application details record with in valid data
 Given navigate the IJARA URL
 And login with valid credentials for new application stage
@@ -79,9 +79,10 @@ And click on LOS option in module dropdown
 And click on mail box
 And click on search box upon click on the mail box
 And click on search text box upon click the search button
-And user_076 get the test data for test case id AT_APP_03
-And user_076 search the new application stage record reference number
-And user_076 select the new application stage record from mail box
+#user_0482 get the test data for test case id AT_TW_AD_03
+And user_0482 get the test data for test case id AT_TW_AD_03
+And user_0482 search the new app data entry stage record reference number
+And user_0482 select the new app data entry stage record from mail box
 And user_076 click on save button while open the application details record
 And user_076 click on edit button of new application list view record
 And user_076 update the list view record of application details record
@@ -98,3 +99,40 @@ And user_076 click on back button in application details update screen
 Then user_076 verify application details update screen should moved to previoues screen
 Then logout from the ULS Application
 And user_076 invoke soft assert for new application screen
+@AT_TW_AD_06
+Scenario: System should display the below mention fields on List view of Application Detail
+Given navigate the IJARA URL
+Given navigate the IJARA URL
+And login with valid credentials for new application stage
+And click on module dropdown in IJRARAH
+And click on LOS option in module dropdown
+And click on mail box
+And click on search box upon click on the mail box
+And click on search text box upon click the search button
+And user_0482 search the new app data entry stage record reference number
+And user_0482 select the new app data entry stage record from mail box
+And User_608 get the test data for test case AT_TW_AD_06
+And User_608 click the Update button under Application Details screen
+And User_608 verify Action field available in list view under Application Details screen
+And User_608 verify Client Name field available in list view under Application Details screen
+And User_608 verify Client Name(Alternate Lanuguage) field available in list view under Application Details screen
+And User_608 verify Product field available in list view under Application Details screen
+And User_608 verify Sub Product field available in list view under Application Details screen
+And User_608 verify Current Stage field available in list view under Application Details screen
+And User_608 verify Location field available in list view under Application Details screen
+And User_608 verify Allocated To field available in list view under Application Details screen
+And User_608 verify Service field available in list view under Application Details screen
+And User_608 verify Status field available in list view under Application Details screen
+And User_608 click the Search Icon under Application Details screen
+And User_608 search mismatch value system should not display any records under Application Details screen
+And User_608 verify the system is should not displayed any records under Application Details screen
+And User_608 search matching value system should display all the possible matching records under Application Details screen
+And User_608 verify the all the possible matching records are displayed under Application Details screen
+And User_608 click the Export button under Application Details screen
+And User_608 click the PDF and verify under Application Details screen
+And User_608 click the Export button under Application Details screen
+And User_608 click the XLS and verify under Application Details screen
+And User_608 click the Add button under Application Details screen
+And User_608 verfiy the new record creation page under Application Details screen
+Then logout from the ULS Application
+And User_608 invoke soft assert in Application details screen at Tawarruq App Data Entry stage

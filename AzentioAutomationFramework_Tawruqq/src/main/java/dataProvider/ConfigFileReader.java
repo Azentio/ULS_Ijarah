@@ -87,7 +87,6 @@ public class ConfigFileReader {
 
 		return filePath;
 	}
-	
 
 	public String getJSFilePath() {
 		String jsFilePath;
@@ -95,16 +94,12 @@ public class ConfigFileReader {
 		return jsFilePath;
 	}
 
-	
-
 	public void setJarahRecordReferenceNumber(String referenceNumber) throws IOException {
 		OutputStream outputStream = new FileOutputStream(new File(propertyFilePath));
 		properties.setProperty("IjarahRecordReferenceNumber", referenceNumber);
 		properties.store(outputStream, null);
 
 	}
-
-	
 
 	public void setTawruqqRecordReferenceNumber(String refernceNumber) throws IOException {
 		OutputStream outputStream = new FileOutputStream(new File(propertyFilePath));
@@ -117,12 +112,17 @@ public class ConfigFileReader {
 		recordReferenceNumber = properties.getProperty("TawruqqRecordReferenceNumber");
 		return recordReferenceNumber;
 	}
-	
+
 	public String getTawruqqOfferingRecordReferenceNumber() {
 		String recordReferenceNumber;
 		recordReferenceNumber = properties.getProperty("TawruqqOfferingReferenceNumber");
 		return recordReferenceNumber;
 	}
 
-	
+	public String getTawruqqAppDataEntryReferenceNumber() {
+		String recordReferenceNumber;
+		recordReferenceNumber = properties.getProperty("TawruqqAppDataEntryReferenceNumber");
+		return recordReferenceNumber;
+	}
+
 }

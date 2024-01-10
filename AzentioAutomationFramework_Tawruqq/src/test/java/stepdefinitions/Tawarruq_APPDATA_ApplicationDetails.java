@@ -26,17 +26,17 @@ public class Tawarruq_APPDATA_ApplicationDetails {
 	ConfigFileReader configFileReader = new ConfigFileReader();
 	TawarruqLogin tawarruqLogin = new TawarruqLogin();
 	UserUtility_0482 userUtility = new UserUtility_0482();
-	String excelFilePathForJS = System.getProperty("user.dir") + "\\TestData\\TawarruqJSPaths.xlsx";
+	String excelFilePathForJS = configFileReader.getJSFilePath();
 	JSPaths commonJSPaths = new JSPaths(excelFilePathForJS, "Tawarruq_CommonElements", "Tawarruq_CommonFieldName",
 			"JSPath");
 	JSPaths applicationDetailsElements = new JSPaths(excelFilePathForJS, "AppData_AppllicationDetailsJS",
 			"Tawarruq_NewApp_fieldName", "JSPath");
-	String applicationDetailsExcelDataPath = System.getProperty("user.dir") + "\\TestData\\TawarruqTestData.xlsx";
+	String applicationDetailsExcelDataPath = configFileReader.getTawruqqTestDataFile();
 	BrowserHelper browserHelper = new BrowserHelper(driver);
 	ExcelData excelDataForApplicationDetailsTestData = new ExcelData(applicationDetailsExcelDataPath,
 			"ApplicationDetails_AppData", "Dataset ID");
 	ExcelData excelDataForApplicationDetailsTawarruqExecutionData = new ExcelData(applicationDetailsExcelDataPath,
-			"Appdata_ApplicationDetailsExe", "TestCase ID");
+			"Tawruqq_ExecutionTracker", "TestCase ID");
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
 	Map<String, String> appdataEntrtyTestData = new HashMap<>();
 	Map<String, String> appdataEntrtyExecutionData = new HashMap<>();
@@ -157,7 +157,7 @@ public class Tawarruq_APPDATA_ApplicationDetails {
 
 	@Given("login with valid credentials for app data entry stage")
 	public void login_with_valid_credentials_for_app_data_entry_stage() {
-		tawarruqLogin.loginWithTawarruqApplication("userType02");
+		tawarruqLogin.loginWithTawarruqApplication("userType08");
 	}
 
 	@Given("click on module dropdown in Tawarruq")
@@ -192,13 +192,8 @@ public class Tawarruq_APPDATA_ApplicationDetails {
 
 	}
 
-	@Given("user_0482 get the test data for test case id AT_TW_AD_01")
-	public void user_get_the_test_data_for_test_case_id_at_app_01() {
-
-		appdataEntrtyExecutionData = excelDataForApplicationDetailsTawarruqExecutionData.getTestdata("AT_TW_AD_01");
-		appdataEntrtyTestData = excelDataForApplicationDetailsTestData
-				.getTestdata(appdataEntrtyExecutionData.get("dataSet_ID"));
-	}
+	
+	
 
 	@Given("user_0482 search the new app data entry stage record reference number")
 	public void user_search_the_new_app_data_entry_stage_record_reference_number() {
@@ -207,7 +202,7 @@ public class Tawarruq_APPDATA_ApplicationDetails {
 			try {
 				searchTextBox = javascriptHelper
 						.executeScriptWithWebElement(commonJSPaths.getElement("mail_box_search_text"));
-				searchTextBox.sendKeys(appdataEntrtyTestData.get("record_reference_number"));
+				searchTextBox.sendKeys(configFileReader.getTawruqqAppDataEntryReferenceNumber());
 				break;
 			} catch (Exception e) {
 				if (i == 300) {
@@ -281,8 +276,8 @@ public class Tawarruq_APPDATA_ApplicationDetails {
 									+ j + "].textContent")
 							.toString();
 					System.out.println("Number of record in mail box " + recordRefNumber);
-					System.out.println(appdataEntrtyTestData.get("record_reference_number"));
-					if (recordRefNumber.equals(appdataEntrtyTestData.get("record_reference_number"))) {
+					System.out.println(configFileReader.getTawruqqAppDataEntryReferenceNumber());
+					if (recordRefNumber.equals(configFileReader.getTawruqqAppDataEntryReferenceNumber())) {
 						System.out.println("document.querySelectorAll('button[icon=\"pi pi-user-edit\"]')[" + j + "]");
 						// document.querySelectorAll('button[icon="pi pi-user-edit"]')[0]
 						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
@@ -302,7 +297,7 @@ public class Tawarruq_APPDATA_ApplicationDetails {
 		userUtility.verifyGivenFieldIsMandatory(driver, applicationDetailsElements.getElement("product_Field"));
 		for (int i = 0; i <= 300; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(applicationDetailsElements.getElement("product_dropdown"))
+				javascriptHelper.executeScriptWithWebElement(applicationDetailsElements.getElement("sub_product_dropdown"))
 						.click();
 				break;
 			} catch (Exception e) {
@@ -321,7 +316,7 @@ public class Tawarruq_APPDATA_ApplicationDetails {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper
-						.executeScriptWithWebElement(applicationDetailsElements.getElement("clasification_dropdown"))
+						.executeScriptWithWebElement(applicationDetailsElements.getElement("product_Field"))
 						.click();
 				break;
 			} catch (Exception e) {

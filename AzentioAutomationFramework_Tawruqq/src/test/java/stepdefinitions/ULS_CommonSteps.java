@@ -29,6 +29,7 @@ public class ULS_CommonSteps extends BaseClass {
 	// String recordReferenceNumber = "2945";
 	ClicksAndActionsHelper clicksAndActionsHelper = new ClicksAndActionsHelper(driver);
 	BrowserHelper browserHelper = new BrowserHelper(driver);
+	JSPaths appDataEntry_js = new JSPaths(excelPath, "appDataEntry_js", "AppDataEntryElements", "JSPath");
 	int sectionIndex;
 
 	@Given("navigate the IJARA URL")
@@ -629,7 +630,6 @@ public class ULS_CommonSteps extends BaseClass {
 	public void verify_system_should_show_the_record_status_as_active() throws Throwable {
 		String status = "";
 		String query = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')[2].innerText";
-		int screenLocation;
 		String sectionLength = "";
 		boolean isClicked = false;
 		for (int i = 0; i <= 200; i++) {
@@ -1008,7 +1008,24 @@ public class ULS_CommonSteps extends BaseClass {
 	@And("user_076 invoke soft assert in address details in app data entry stage")
 	public void user_invoke_soft_assert_in_address_details_in_app_data_entry_stage() throws Throwable {
 		softAssert.assertAll();
-		;
+
+	}
+
+	@Then("User_6047 verify the successfully saved message popup")
+	public void user_verify_the_successfully_saved_message_popup() {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String text = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("SucessPopUP"))
+						.getText();
+				System.out.println(text);
+				Assert.assertTrue(text.contains("Success!"));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
 	}
 
 	@Then("verify system should download the xls file of addressdetails record")

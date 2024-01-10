@@ -25,17 +25,17 @@ public class Tawarruq_APPDATA_CustomerEmploymentDetails extends BaseClass {
 	ConfigFileReader configFileReader = new ConfigFileReader();
 	TawarruqLogin tawarruqLogin = new TawarruqLogin();
 	UserUtility_0482 userUtility = new UserUtility_0482();
-	String excelFilePathForJS = System.getProperty("user.dir") + "\\TestData\\TawarruqJSPaths.xlsx";
+	String excelFilePathForJS = configFileReader.getJSFilePath();
 	JSPaths commonJSPaths = new JSPaths(excelFilePathForJS, "Tawarruq_CommonElements", "Tawarruq_CommonFieldName",
 			"JSPath");
 	JSPaths customerEmploymentDetailsElements = new JSPaths(excelFilePathForJS, "AppData_EmploymentDetails",
 			"Tawarruq_Appdata_fieldName", "JSPath");
-	String employmentDeatilsExcelDataPath = System.getProperty("user.dir") + "\\TestData\\TawarruqTestData.xlsx";
+	String employmentDeatilsExcelDataPath = configFileReader.getTawruqqTestDataFile();
 	BrowserHelper browserHelper= new BrowserHelper(driver);
 	ExcelData excelDataForemploymetDetailsTestData = new ExcelData(employmentDeatilsExcelDataPath,
 			"EmploymentDetailsTestData", "Dataset ID");
 	ExcelData excelDataForDetailsTawarruqExecutionData = new ExcelData(employmentDeatilsExcelDataPath,
-			"Appdata_ApplicationDetailsExe", "TestCase ID");
+			"Tawruqq_ExecutionTracker", "TestCase ID");
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
 	Map<String, String> appdataEntrtyTestData = new HashMap<>();
 	Map<String, String> appdataEntrtyExecutionData = new HashMap<>();
@@ -46,7 +46,7 @@ public class Tawarruq_APPDATA_CustomerEmploymentDetails extends BaseClass {
 	
 	@Given("login with valid credentials for app data entry stage for Tawarruq")
 	public void login_with_valid_credentials_for_app_data_entry_stage_for_tawarruq() {
-		tawarruqLogin.loginWithTawarruqApplication("userType02");
+		tawarruqLogin.loginWithTawarruqApplication("userType08");
 	}
 	@And("user_0482 get the test data for test case id AT_TW_AD_EMPD_01")
 	public void user_0482_get_the_test_data_for_test_case_id_at_tw_empd() {

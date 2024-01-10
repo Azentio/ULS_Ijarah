@@ -10,8 +10,8 @@ And user_0482 click on mail box
 And user_0482 click on search box upon click on the mail box
 And user_0482 click on search text box upon click the search button
 And user_0482 get the test data for test case id AT_TW_INS_001
-And user_0482 search the new app data entry stage record reference number in Insurance Info
-And user_0482 select the new app data entry stage record from mail box in Insurance Info
+And user_0482 search the new app data entry stage record reference number
+And user_0482 select the new app data entry stage record from mail box
 And user_0482 click the insurance Info Screen
 And user_0482 click the Add button under insurance Info screen
 And user_0482 Verify insuranceQuotationId field should be Mandatory Dropdown and Editable
@@ -35,7 +35,7 @@ And user_0482 click on mail box
 And user_0482 click on search box upon click on the mail box
 And user_0482 click on search text box upon click the search button
 And user_0482 get the test data for test case id AT_TW_AD_01
-And user_0482 search the new app data entry stage record reference number in Insurance Info
-And user_0482 select the new app data entry stage record from mail box in Insurance Info
+And user_0482 search the new app data entry stage record reference number
+And user_0482 select the new app data entry stage record from mail box
 And user_0482 click the insurance Info Screen
 
