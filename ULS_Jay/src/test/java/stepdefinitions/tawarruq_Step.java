@@ -44,7 +44,7 @@ public class tawarruq_Step {
 	JSPaths tA_CommodityMaker_AdhocPayment = new JSPaths(excelPath, "TA_CommodityMaker_AdhocPayment", "Tawarruq_CommodityMaker_AdhocPayment", "JSPath");
 	JSPaths tA_CommondityMaker_Configuration = new JSPaths(excelPath, "TA_CommondityMaker_Configuratio", "Tawarruq_CommodityMaker_Configuration", "JSPath");
 	JSPaths ta_Offering_InterstRateStructure = new JSPaths(excelPath, "TA_Offering_InterstRateStructur", "Tawarruq_Offering_InterestRateStructure", "JSPath");
-	
+	JSPaths documentdetailsJsPaths = new JSPaths(excelPath, "Tawarrq_DocumentDetails_610", "DocumentDetails_FieldName","JSPath");
 	
 	
 	
@@ -66,13 +66,21 @@ public class tawarruq_Step {
 		testData = AppDataIncomeExcelData.getTestdata("DS_AT_MU_INC_08");
     }
 	
-	//----------Tawarrqu app data entery Living Expenses
-
-	@And("User_610 get the test data set id for DS_AT_TW_AD_LEA_002")
-	public void get_the_test_data_set_id_for_DS_AT_TW_AD_LEA_002() {
-		testData = Tawarruq_ADEntry_livingExpenses.getTestdata("DS_AT_TW_AD_LEA_002");
-		}
+	//------appData Check Document Details 
+	
+	@And("^User_610 get the test data for test case DS_AT_TW_ADC_DOC_001$")
+    public void get_the_test_data_for_test_case_DS_AT_TW_ADC_DOC_001() throws Throwable {
+		testData = AppDataIncomeExcelData.getTestdata("DS_AT_TW_ADC_DOC_001");
+    }
+	
+	
+	
 		
+	
+	
+	
+	//   ----------------------   Steps  ----------------------------------
+	
 	@And("User_610 verify the Employer name should be seen")
 	public void user_610_verify_the_employer_name_should_be_seen() throws Throwable {
 		Thread.sleep(3000);
@@ -1818,4 +1826,749 @@ public class tawarruq_Step {
 					Assert.fail(e.getMessage());
 				}  }  }
 	}
+	
+	//-----------------  @AT_TW_ADC_DOC_001
+	
+	
+	@And("Navigate to Document details section")
+	public void navigate_to_document_details_section() {
+		for (int i = 0; i <= 4; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("nextBtn")).click();
+				break;
+			} catch (Exception e) {
+				
+			}
+		}
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DocumentDetails_Button")));
+				break;
+			} catch (Exception e) { 
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	    
+	}
+	
+	@And("click on Eye icon of exsting record in document details")
+	public void click_on_eye_icon_of_exsting_record_in_document_details() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				javascriptHelper.JSEClick(
+						javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("EditIcon")));
+				// javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("SaveIcon")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@And("Validate the Customer name field is displayed in document details")
+	public void validate_the_customer_name_field_is_displayed_in_document_details() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("CustomerName")));
+				Assert.assertTrue(javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("CustomerName")).isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@And("Validate the Document name field is displayed in document details")
+	public void validate_the_document_name_field_is_displayed_in_document_details() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DocumentName")));
+				Assert.assertTrue(javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DocumentName")).isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@And("Validate the Required at stage field is displayed in document details")
+	public void validate_the_required_at_stage_field_is_displayed_in_document_details() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("RequiredAtStage")));
+				Assert.assertTrue(javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("RequiredAtStage"))
+						.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@And("Validate the Document status field is displayed in document details")
+	public void validate_the_document_status_field_is_displayed_in_document_details() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DocumentStatus")));
+				Assert.assertTrue(javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DocumentStatus"))
+						.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@And("Validate the Mandatory optional field is displayed in document details")
+	public void validate_the_mandatory_optional_field_is_displayed_in_document_details() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("MandatoryOptional")));
+				Assert.assertTrue(javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("MandatoryOptional"))
+						.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@And("Validate the Document category field is displayed in document details")
+	public void validate_the_document_category_field_is_displayed_in_document_details() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DocumentCategory")));
+				Assert.assertTrue(javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DocumentCategory"))
+						.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("Validate the Upload date field is displayed in document details")
+	public void validate_the_upload_date_field_is_displayed_in_document_details() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				waitHelper.waitForElementwithFluentwait(driver,
+						javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("UploadDate")));
+				Assert.assertTrue(javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("UploadDate")).isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@And("Validate the Expected receipt date field is displayed in document details")
+	public void validate_the_expected_receipt_date_field_is_displayed_in_document_details() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("ExpectedReceiptDate")));
+				Assert.assertTrue(javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("ExpectedReceiptDate"))
+						.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@And("Validate the Deferred stage field is displayed in document details")
+	public void validate_the_deferred_stage_field_is_displayed_in_document_details() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DeferralStage")));
+				Assert.assertTrue(javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DeferralStage")).isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@And("Validate the Def approved by field is displayed in document details")
+	public void validate_the_def_approved_by_field_is_displayed_in_document_details() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DefApprovedBy")));
+				Assert.assertTrue(javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DefApprovedBy")).isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@And("Validate the Change in nature approved by field is displayed in document details")
+	public void validate_the_change_in_nature_approved_by_field_is_displayed_in_document_details() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("ChangeInNatureApprovedBy")));
+				Assert.assertTrue(javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("ChangeInNatureApprovedBy"))
+						.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@And("Validate the Document form field is displayed in document details")
+	public void validate_the_document_form_field_is_displayed_in_document_details() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DocumentForm")));
+				Assert.assertTrue(javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DocumentForm")).isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@And("Validate the Document quality field is displayed in document details")
+	public void validate_the_document_quality_field_is_displayed_in_document_details() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+				//		.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DocumentQuality")));
+				javascriptHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DocumentQuality")));
+				Assert.assertTrue(javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DocumentQuality"))
+						.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@And("Validate the Document reference number field is displayed in document details")
+	public void validate_the_document_reference_number_field_is_displayed_in_document_details() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DocumentReferenceNumber")));
+				Assert.assertTrue(javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DocumentReferenceNumber"))
+						.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@And("Validate the Document received by field is displayed in document details")
+	public void validate_the_document_received_by_field_is_displayed_in_document_details() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DocumentReceivedBy")));
+				Assert.assertTrue(javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DocumentReceivedBy"))
+						.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@And("Validate the Location field is displayed in document details")
+	public void validate_the_location_field_is_displayed_in_document_details() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("LocationWhereReceived")));
+				Assert.assertTrue(javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("LocationWhereReceived"))
+						.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@And("Validate the Rack No field is displayed in document details")
+	public void validate_the_rack_no_field_is_displayed_in_document_details() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				waitHelper.waitForElementwithFluentwait(driver,
+						javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("RackNo")));
+				Assert.assertTrue(javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("RackNo")).isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@And("Validate the Shelf No field is displayed in document details")
+	public void validate_the_shelf_no_field_is_displayed_in_document_details() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				waitHelper.waitForElementwithFluentwait(driver,
+						javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("ShelfNo")));
+				Assert.assertTrue(javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("ShelfNo")).isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@And("Validate the Box No is displayed in document details")
+	public void validate_the_box_no_is_displayed_in_document_details() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				WebElement boxNo = javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("BoxNo"));
+				javascriptHelper.scrollIntoView(boxNo);
+				Assert.assertTrue(javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("BoxNo")).isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@And("Validate the Date of Expiry field is displayed in document details")
+	public void validate_the_date_of_expiry_field_is_displayed_in_document_details() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DateOfExpiry")).isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@And("Validate the Lodgement amount field is displayed in document details")
+	public void validate_the_lodgement_amount_field_is_displayed_in_document_details() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				Assert.assertTrue(javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("LodgementAmount"))
+						.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@And("Validate the Remarks field is displayed in document details")
+	public void validate_the_remarks_field_is_displayed_in_document_details() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				waitHelper.waitForElementwithFluentwait(driver,
+						javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("Remarks")));
+				Assert.assertTrue(javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("Remarks")).isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@And("Validate Back button functionality in document details")
+	public void validate_back_button_functionality_in_document_details() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				javascriptHelper.JSEClick(
+						javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("BackButton")));
+				// javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("BackButton")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	//-------------------- @AT_TW_ADC_DOC_002
+	
+	
+	@And("Validate Document name field is present in Document details view list")
+	public void validate_document_name_field_is_present_in_document_details_view_list() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("ViewList_DocumentNameField")));
+				Assert.assertTrue(javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("ViewList_DocumentNameField"))
+						.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@And("Validate Required at stage field is present in Document details view list")
+	public void validate_required_at_stage_field_is_present_in_document_details_view_list() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(
+						documentdetailsJsPaths.getElement("ViewList_RequredAtStageField")));
+				Assert.assertTrue(javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("ViewList_RequredAtStageField"))
+						.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@And("Validate Document Status field is present in Document details view list")
+	public void validate_document_status_field_is_present_in_document_details_view_list() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(
+						documentdetailsJsPaths.getElement("ViewList_DocumentStatusField")));
+				Assert.assertTrue(javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("ViewList_DocumentStatusField"))
+						.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@And("Validate MandatoryOptional field is present in Document details view list")
+	public void validate_mandatory_optional_field_is_present_in_document_details_view_list() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(
+						documentdetailsJsPaths.getElement("ViewList_MandatoryOptionalField")));
+				Assert.assertTrue(
+						javascriptHelper
+								.executeScriptWithWebElement(
+										documentdetailsJsPaths.getElement("ViewList_MandatoryOptionalField"))
+								.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@And("Validate Document Category field is present in Document details view list")
+	public void validate_document_category_field_is_present_in_document_details_view_list() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(
+						documentdetailsJsPaths.getElement("ViewList_DocumentCategoryField")));
+				Assert.assertTrue(
+						javascriptHelper
+								.executeScriptWithWebElement(
+										documentdetailsJsPaths.getElement("ViewList_DocumentCategoryField"))
+								.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@And("Validate DMS Upload status field is present in Document details view list")
+	public void validate_dms_upload_status_field_is_present_in_document_details_view_list() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("VierList_DMSUploadStatus")));
+				Assert.assertTrue(javascriptHelper
+						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("VierList_DMSUploadStatus"))
+						.isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

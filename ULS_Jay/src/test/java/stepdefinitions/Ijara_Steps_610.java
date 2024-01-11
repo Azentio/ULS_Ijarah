@@ -24,6 +24,7 @@ public class Ijara_Steps_610 {
 
 	JSPaths jsPaths2 = new JSPaths(excelPath, "Ijara_AD_DocumentDetails", "Ijara_LoginFieldName", "JSPath");
 	JSPaths jsPaths3 = new JSPaths(excelPath, "Murabha_Module", "Murabha_LoginFieldName", "JSPath");
+	JSPaths FacilityDetails = new JSPaths(excelPath, "Ijara_ADEntry_FacilityDet_610", "FacilityDetails_FieldName", "JSPath");
 	
 	ExcelData exelData = new ExcelData(excelTestDataPath, "ijara_LoginCredentials", "UserType");
 
@@ -164,6 +165,29 @@ public class Ijara_Steps_610 {
 			public void get_the_test_data_set_id_for_DS_AT_Al_CD_01() {
 				testData = ad_CustomerFolllowUpDetails_610.getTestdata("DS_AT_Al_CD_01");
 			}
+			
+       //---------- tawarrqu AppData Entry document details
+			
+			@And("User_610 get the test data set id for AT_TW_ADC_DOC_001")
+			public void get_the_test_data_set_id_for_AT_TW_ADC_DOC_001() {
+				testData = ad_CustomerFolllowUpDetails_610.getTestdata("AT_TW_ADC_DOC_001");
+			}
+			
+			
+		//----------Tawarrqu app data entery Living Expenses
+
+			@And("User_610 get the test data set id for DS_AT_TW_ADC_DOC_001")
+			public void get_the_test_data_set_id_for_DS_AT_TW_ADC_DOC_001() {
+				testData = ad_CustomerFolllowUpDetails_610.getTestdata("DS_AT_TW_ADC_DOC_001");
+				}
+			
+			
+		//----------Tawarrqu app data entery Living Expenses
+
+			@And("User_610 get the test data set id for DS_AT_FAC_DET_01")
+			public void get_the_test_data_set_id_for_DS_AT_FAC_DET_011() {
+				testData = ad_CustomerFolllowUpDetails_610.getTestdata("DS_AT_FAC_DET_01");
+				}
 	
 	// -------------steps ---------------
 	@And("User_610 click the module name")
@@ -186,44 +210,43 @@ public class Ijara_Steps_610 {
 	@And("User_610 select the LOS in module name")
 	public void user_610_select_the_los_in_module_name() throws Throwable {
 		
-			String moduleListJSpath = "document.querySelectorAll('ion-radio-group ion-item').length";
-	        String moduleLength = "";
-	        for (int i = 0; i <= 500; i++) {
-	            try {
-	                moduleLength = javascriptHelper.executeScript("return " + moduleListJSpath).toString();
-	                System.out.println("Module Length " + moduleLength);
-	                if (!(moduleLength.isBlank())) {
-	                    break;
-	                }
-	            } catch (Exception e) {
-	                if (i == 499) {
-	                    Assert.fail(e.getMessage());
-	                }
-	            }
-	        }
-	        int premitiveIntegerLength = Integer.parseInt(moduleLength);
+		String moduleListJSpath = "document.querySelectorAll('ion-radio-group ion-item').length";
+		String moduleLength = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+				moduleLength = javascriptHelper.executeScript("return " + moduleListJSpath).toString();
+				System.out.println("Module Length " + moduleLength);
+				if (!moduleLength.isBlank() && !moduleLength.equalsIgnoreCase("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		int premitiveIntegerLength = Integer.parseInt(moduleLength);
 
-//			document.querySelectorAll('ion-radio-group ion-item')[0].textContent
-	        for (int i = 0; i < premitiveIntegerLength; i++) {
-	            for (int j = 0; j <= 300; j++) {
-	                try {
-	                    String moduleName = javascriptHelper.executeScript(
-	                            "return  document.querySelectorAll('ion-radio-group ion-item')[" + i + "].textContent")
-	                            .toString();
-	                    System.out.println("Module name " + moduleName);
-	                    if (moduleName.equalsIgnoreCase("LOS")) {
-	                    //if (moduleName.equalsIgnoreCase(testData.get("Module Name"))) {
-	                        System.out
-	                                .println("document.querySelectorAll('ion-radio-group ion-item ion-radio')[" + i + "]");
-	                        javascriptHelper
-	                                .executeScriptWithWebElement(
-	                                        "document.querySelectorAll('ion-radio-group ion-item ion-radio')[" + i + "]")
-	                                .click();
-	                    }
-	                } catch (Exception e) {
-	 	                }
-	            }
-	        }	
+		for (int i = 0; i < premitiveIntegerLength; i++) {
+			for (int j = 0; j <= 300; j++) {
+				try {
+					String moduleName = javascriptHelper.executeScript(
+							"return  document.querySelectorAll('ion-radio-group ion-item')[" + i + "].textContent")
+							.toString();
+					System.out.println("Module name " + moduleName);
+					if (moduleName.equalsIgnoreCase("LOS")) {
+						System.out
+								.println("document.querySelectorAll('ion-radio-group ion-item ion-radio')[" + i + "]");
+						javascriptHelper
+								.executeScriptWithWebElement(
+										"document.querySelectorAll('ion-radio-group ion-item ion-radio')[" + i + "]")
+								.click();
+					}
+				} catch (Exception e) {
+
+				}
+			}
+		}
 	       
 	        	}
 
@@ -4060,7 +4083,26 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 	    
 	}
 	
-	                                 //************************************  Murabha Product ***************************************
+      //************************************  Tawarrqu Product ***************************************
+	
+	@And("User_610 click document details in tawarrqu")
+	public void user_610_click_document_details_in_tawarrqu() {
+			
+		for (int i = 0; i < 300; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Tawarrqu_DocumentsDetailsScreen_610")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+					// TODO: handle exception
+				}
+			}
+		}
+	
+}
+
+	                     //************************************  Murabha Product ***************************************
 	
 	@And("User_610 click document details in murabha")
 	public void user_610_click_document_details_in_murabha() {
@@ -6386,19 +6428,461 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 	}
 	
 	
+	//----------------------------  @AT_FAC_DET_01
+	
+	
+		
+	@And("User_610 click facility Details screen")
+	public void user_click_facility_details_screen() {
+	    
+		for (int b = 0; b < 300; b++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("Facility_info_Tab")).click();
+				break;
+			} catch (Exception e) {
+				if (b == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+	
+	@And("User_610 click add button")
+	public void user_click_add_button() {
+		for (int b = 0; b < 300; b++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("AddButton_under_FacilityInfo")).click();
+				break;
+			} catch (Exception e) {
+				if (b == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_610 verify the Classification field under Facility Details")
+	public void user_verify_the_classification_field_under_facility_details() throws Throwable {
+		Thread.sleep(3000);
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("Classification")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+
+	}
+
+	@And("User_610 verify the Product field under Facility Details")
+	public void user_verify_the_product_field_under_facility_details() {
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("Product")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+
+	}
+
+	@And("User_610 verify the Scheme field under Facility Details")
+	public void user_verify_the_scheme_field_under_facility_details() {
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("Scheme")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+
+	}
+
+	@And("User_610 verify the Program Code field under Facility Details")
+	public void user_verify_the_program_code_field_under_facility_details() {
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("ProgrameCode")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+
+	}
+
+	@And("User_610 verify the Facility Type field under Facility Details")
+	public void user_verify_the_facility_type_field_under_facility_details() {
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("FacilityType")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+
+	}
+
+	@And("User_610 verify the Pricing Indicator field under Facility Details")
+	public void user_verify_the_pricing_indicator_field_under_facility_details() {
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("PricingIndicator")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+
+	}
+
+	@And("User_610 verify the Requested Amount field under Facility Details")
+	public void user_verify_the_requested_amount_field_under_facility_details() {
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("RequestedAmount")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+
+	}
+
+	@And("User_610 verify the Declared Property Value Amount field under Facility Details")
+	public void user_verify_the_declared_property_value_amount_field_under_facility_details() {
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("DeclaredPropertyValue")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+
+	}
+
+	@And("User_610 verify the Declared Down Payment Amolunt field under Facility Details")
+	public void user_verify_the_declared_down_payment_amolunt_field_under_facility_details() {
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("DeclaredDownPaymentAmount")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+
+	}
+
+	@And("User_610 verify the Currency field under Facility Details")
+	public void user_verify_the_currency_field_under_facility_details() {
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("Currency")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+
+	}
+
+	@And("User_610 verify the Loan Tenure field under Facility Details")
+	public void user_verify_the_loan_tenure_field_under_facility_details() {
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("LoanTenure")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+
+	}
+
+	@And("User_610 verify the Servicing Branch field under Facility Details")
+	public void user_verify_the_servicing_branch_field_under_facility_details() {
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("ServicingBranch")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+
+	}
+
+	@And("User_610 verify the Back button field under Facility Details")
+	public void user_verify_the_back_button_field_under_facility_details() {
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("BackButton")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+
+	}
+
+	@And("User_610 verify the Save button field under Facility Details")
+	public void user_verify_the_save_button_field_under_facility_details() {
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("SaveButton")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+
+	}
 	
 	
 	
+	//----------------------------  @AT_FAC_DET_02
 	
 	
+	@And("User_610 verify the Classification field Mandatory Editable Select")
+	public void user_verify_the_classification_field_mandatory_editable_select() {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String Classification = "document.querySelector('digital-select-layout[id=\"product\"]').innerText";
+				String ClassificationMand = (String) javascriptHelper.executeScript("return " + Classification);
+				System.err.println(ClassificationMand);
+				Assert.assertTrue(ClassificationMand.contains("*"));
+				
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+					}
+		
+		//---------field should be editable
+		
+		String ClassificationEditable = javascriptHelper
+				.executeScriptWithWebElement(FacilityDetails.getElement("ClassificationEd"))
+				.getAttribute("ng-reflect-readonly");
+		System.err.println("first print  " + ClassificationEditable);
+
+		String assertClassificationEditable = "false";
+		Assert.assertEquals(assertClassificationEditable, ClassificationEditable);
+		
+		// -----------------select format 
+		
+		String ClassificationFormat = javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("Classification"))
+				.getAttribute("ng-reflect-placeholder");
+		
+		System.err.println("ClassificationFormat:  " + ClassificationFormat);
+
+		String assertClassificationFormat = "Select";
+		
+		Assert.assertEquals(assertClassificationFormat, ClassificationFormat);
+	    
+	}
+
+	@And("User_610 verify the Product field Mandatory Editable Select")
+	public void user_verify_the_product_field_mandatory_editable_select() {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String Product = "document.querySelector('digital-select-layout[id=\"subProductCode\"]').innerText";
+				String ProductMand = (String) javascriptHelper.executeScript("return " + Product);
+				System.err.println(ProductMand);
+				Assert.assertTrue(ProductMand.contains("*"));
+				
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+			
+		}
+		
+		//---------field should be editable
+		
+		String ProductEditable = javascriptHelper
+				.executeScriptWithWebElement(FacilityDetails.getElement("ProductEd"))
+				.getAttribute("ng-reflect-readonly");
+		System.err.println("first print  " + ProductEditable);
+
+		String assertProductEditable = "false";
+		Assert.assertEquals(assertProductEditable, ProductEditable);
+		
+		// -----------------select format 
+		
+		String ProductFormat = javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("Product"))
+				.getAttribute("ng-reflect-placeholder");
+		
+		System.err.println("ProductFormat:  " + ProductFormat);
+
+		String assertProductFormat = "Select";
+		
+		Assert.assertEquals(assertProductFormat, ProductFormat);
+	    
+	}
+
+	@And("User_610 verify the Scheme field Mandatory Editable Select")
+	public void user_verify_the_scheme_field_mandatory_editable_select() {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String Scheme = "document.querySelector('digital-select-layout[id=\"schemeId\"]').parentElement.innerText";
+				String SchemeMada = (String) javascriptHelper.executeScript("return " + Scheme);
+				System.err.println(SchemeMada);
+				Assert.assertTrue(SchemeMada.contains("*"));
+				
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+					}
+		
+		//---------field should be editable
+		
+		String SchemeEditable = javascriptHelper
+				.executeScriptWithWebElement(FacilityDetails.getElement("SchemeEd"))
+				.getAttribute("ng-reflect-readonly");
+		System.err.println("first print  " + SchemeEditable);
+
+		String assertSchemeEditable = "false";
+		Assert.assertEquals(assertSchemeEditable, SchemeEditable);
+		
+		
+		// -----------------select format 
+		
+		String SchemeFormat = javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("Scheme"))
+				.getAttribute("ng-reflect-placeholder");
+		
+		System.err.println("SchemeFormat:  " + SchemeFormat);
+
+		String assertSchemeFormat = "Select";
+		
+		Assert.assertEquals(assertSchemeFormat, assertSchemeFormat);
+	}
+
+	@And("User_610 verify the Program Code field Mandatory Editable Select")
+	public void user_verify_the_program_code_field_mandatory_editable_select() {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String ProgramCode = "document.querySelector('digital-select-layout[id=\"programCode\"]').innerText";
+				String ProgramCodeMada = (String) javascriptHelper.executeScript("return " + ProgramCode);
+				System.err.println(ProgramCodeMada);
+				Assert.assertTrue(ProgramCodeMada.contains("*"));
+				
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+			
+		}
+		
+		//---------field should be editable
+		
+		String ProgrameCodeEditable = javascriptHelper
+				.executeScriptWithWebElement(FacilityDetails.getElement("ProgrameCodeEd"))
+				.getAttribute("ng-reflect-readonly");
+		System.err.println("first print  " + ProgrameCodeEditable);
+
+		String assertProgrameCodeEditable = "false";
+		Assert.assertEquals(assertProgrameCodeEditable, ProgrameCodeEditable);
+		
+		// -----------------select format 
+		
+		String ProgramCodeFormat = javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("ProgrameCode"))
+				.getAttribute("ng-reflect-placeholder");
+		
+		System.err.println("ProgramCodeFormat:  " + ProgramCodeFormat);
+
+		String assertProgramCodeFormat = "Select";
+		
+		Assert.assertEquals(assertProgramCodeFormat, ProgramCodeFormat);
+	    
+	}
+
+	@And("User_610 verify the Servicing Branch field Mandatory Editable Select")
+	public void user_verify_the_servicing_branch_field_mandatory_editable_select() {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String ServicingBranch = "document.querySelector('digital-select-layout[id=\"location\"]').innerText";
+				String ServicingBranchmand = (String) javascriptHelper.executeScript("return " + ServicingBranch);
+				System.err.println(ServicingBranchmand);
+				Assert.assertTrue(ServicingBranchmand.contains("*"));
+				
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+			
+		}
+		
+		//---------field should be editable
+		
+		String ServicingBranchEditable = javascriptHelper
+				.executeScriptWithWebElement(FacilityDetails.getElement("ServicingBranchEd"))
+				.getAttribute("ng-reflect-readonly");
+		System.err.println("first print  " + ServicingBranchEditable);
+
+		String assertServicingBranchEditable = "false";
+		Assert.assertEquals(assertServicingBranchEditable, ServicingBranchEditable);
+	    
 	
 	
+	// -----------------select format 
+	
+	String ServicingBranchFormat = javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("ServicingBranchFormat"))
+			.getAttribute("ng-reflect-placeholder");
+	
+	System.err.println("ServicingBranchFormat:  " + ServicingBranchFormat);
+
+	String assertServicingBranchFormat = "Select";
+	
+	Assert.assertEquals(assertServicingBranchFormat, ServicingBranchFormat);
 	
 	
-	
-	
-	
-	
+	}
 	
 	
 	

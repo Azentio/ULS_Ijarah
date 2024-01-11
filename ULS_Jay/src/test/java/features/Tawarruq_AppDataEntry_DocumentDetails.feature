@@ -4,7 +4,7 @@ Feature: Tawarruq App Data Entry Document Details
 Scenario: verify fields should be non mandatory TextBox
     Given navigate the IJARA URL
     And login with valid credentials05
-		And User_610 get the test data set id for DS_AT_MU_DOC_01
+		And User_610 get the test data set id for DS_AT_TW_ADC_DOC_001
 		And User_610 click Inbox
     And User_610 click search button
     And User_610 enter the value in search button
