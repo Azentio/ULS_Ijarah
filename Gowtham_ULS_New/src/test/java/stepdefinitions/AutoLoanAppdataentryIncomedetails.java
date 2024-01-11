@@ -156,8 +156,8 @@ public class AutoLoanAppdataentryIncomedetails {
 		int l = 0 ;
 		for (int i = 0; i < 500; i++) {
 			try {
-				String Len = javascriptHelper.executeScriptWithWebElement("document.querySelector('ion-segment[role=\"tablist\"]').querySelectorAll('ion-segment-button').length").toString();
-				 l = Integer.parseInt(Len);
+				String Len = javascriptHelper.executeScript("return document.querySelector('ion-segment[role=\"tablist\"]').querySelectorAll('ion-segment-button').length").toString();
+				l = Integer.parseInt(Len);
 				 if (!Len.isBlank()&&!Len.equalsIgnoreCase("0")) {
 						break;
 					}
@@ -165,11 +165,27 @@ public class AutoLoanAppdataentryIncomedetails {
 			} catch (Exception e) {
 				if (i==499) {
 					Assert.fail(e.getMessage());
+				}}}
+		System.out.println("Length of tabs "+l);
+		for (int i = 0; i <= l; i++) {
+			try {
+				String TabText = javascriptHelper.executeScript("return document.querySelector('ion-segment[role=\"tablist\"]').querySelectorAll('ion-segment-button')["+i+"].innerText").toString();	
+				if (TabText.trim().contentEquals("Repayment Mode")) {
+				//	javascriptHelper.executeScriptWithWebElement("document.querySelector('ion-segment[role=\\\"tablist\\\"]').querySelectorAll('ion-segment-button')["+i+"]").click();
+					javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement("document.querySelector('ion-segment[role=\\\"tablist\\\"]').querySelectorAll('ion-segment-button')["+i+"]"));
+					System.out.println(TabText +" is selected");
+					break;
+				}
+			} catch (Exception e) {
+				if (i==l) {
+					Assert.fail("tab not found");
 				}
 			}
+			
+			
 		}
-	
-		System.out.println(l);
+		
+		
 	}
 	
 	

@@ -109,7 +109,7 @@ Feature: Ijarah AppData Entry Identification Details
     And user_607 enter the special character input in id number field
     Then user_607 verify system should show the validation for the id number field at new app stage
     And user_607 enter the character input in ID number field
-    #Then user_607 verify system wont allow user to enter the character input in ID number field at new app stage
+    Then user_607 verify system wont allow user to enter the character input in ID number field at new app stage
     Then logout from the ULSApplication
     And user_607 invoke soft asset in customer identification details screen at new app stage
     

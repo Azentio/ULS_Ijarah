@@ -62,4 +62,9 @@ public class IjaraTest extends BaseClass{
 		ijaraLogin.loginWithIjaraApplication8();
 	}
 	
+	@And("login with valid credentials9")
+	public void login_with_valid_credentials9()throws Throwable {
+		ijaraLogin.loginWithULSApplication9("userType09");
+	}
+	
 }
