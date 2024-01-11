@@ -434,7 +434,7 @@ public class MURABHA_Steps {
 	@And("User_608 click the Customer Financials tab")
 	public void user_608_click_the_customer_financials_tab() throws Throwable {
 		String length = null;
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <200; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
 						.toString();
@@ -443,7 +443,7 @@ public class MURABHA_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i == 200) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -6659,14 +6659,14 @@ public class MURABHA_Steps {
 //	AT_ADC_01
 	@And("User_608 verify the Back button available under Application details screen")
 	public void user_608_verify_the_back_button_available_under_application_details_screen() throws Throwable {
-		Thread.sleep(1000);
-		WebElement AppDetailsBackBtn = javascriptHelper
-				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("AppDetailsBackBtn"));
 		for (int i = 0; i <= 20000; i++) {
 			try {
-				javascriptHelper.backgroundBorder(AppDetailsBackBtn);
-				actions.moveToElement(AppDetailsBackBtn).perform();
-				Assert.assertTrue(AppDetailsBackBtn.isDisplayed());
+				javascriptHelper.backgroundBorder(javascriptHelper
+						.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("AppDetailsBackBtn")));
+				actions.moveToElement(javascriptHelper
+						.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("AppDetailsBackBtn"))).perform();
+				Assert.assertTrue(javascriptHelper
+						.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("AppDetailsBackBtn")).isDisplayed());
 				break;
 			} catch (Exception e) {
 				if (i == 20000) {

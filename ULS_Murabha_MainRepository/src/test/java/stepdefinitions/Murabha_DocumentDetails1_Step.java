@@ -669,6 +669,7 @@ public class Murabha_DocumentDetails1_Step {
 				documentDetailsSearchResult = javascriptHelper
 						.executeScript("return " + documentdetailsJsPaths.getElement("listViewSearchResultValidation"))
 						.toString();
+				System.out.println(documentDetailsSearchResult);
 				break;
 			} catch (Exception e) {
 				if (i == 300) {

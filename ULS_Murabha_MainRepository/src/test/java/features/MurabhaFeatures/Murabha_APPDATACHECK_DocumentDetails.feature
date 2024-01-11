@@ -3,7 +3,7 @@ Feature: To check the Murabah Document details feature
 @AT_M_DOC_01
 Scenario: To verify that all fields are present in Document Details
 Given navigate the MURABHA URL
-And login with valid credentials07
+And login with valid credentials-Murabaha Data Check stage
 And User get the test data for test case AT_M_DOC_01
 And User_608 click the module name dropdown in ULS application
 And User_608 select the module name as LOS in ULS application
@@ -41,7 +41,7 @@ And Validate Back button functionality in document details
 Scenario: To verify that all fields are present in Document Details view list
 #This test case also cover the functionality of AT_M_DOC_03
 Given navigate the MURABHA URL
-And login with valid credentials07
+And login with valid credentials-Murabaha Data Check stage
 And User get the test data for test case AT_M_DOC_02
 And User_608 click the module name dropdown in ULS application
 And User_608 select the module name as LOS in ULS application
