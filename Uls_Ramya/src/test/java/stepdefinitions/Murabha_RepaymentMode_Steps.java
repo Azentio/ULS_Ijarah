@@ -881,7 +881,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("SaveButton")).click();
-				Thread.sleep(3000);
+			
 				break;
 			} catch (Exception e) { 
 				if (i == 1000) {
@@ -1585,8 +1585,8 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		for (int i = 0; i < 200; i++) {
 			
 			try {
-				javascriptHelper.executeScriptWithWebElement("document.querySelector('ion-label[ng-reflect-text=\"Account Number.TOOLTIP\"]+ion-input')").click();
-				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").clear();
+				//javascriptHelper.executeScriptWithWebElement("document.querySelector('ion-label[ng-reflect-text=\"Account Number.TOOLTIP\"]+ion-input')").sendKeys(Keys.DELETE);
+				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").sendKeys(Keys.chord(Keys.CONTROL, "A", Keys.BACK_SPACE));
 				//javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("accountNumberField_in")).sendKeys(testData.get("AccountNumber"));
 				Thread.sleep(3000);
 				break;

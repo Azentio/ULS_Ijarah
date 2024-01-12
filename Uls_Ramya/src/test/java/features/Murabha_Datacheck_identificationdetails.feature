@@ -1,11 +1,11 @@
-Feature: Customer Additional info -Data Check-Identifications Details under Data Check Stage
-
+Feature: Murabha -Data Check-Identifications Details(Customer Additional info) under Data Check Stage
+ 
  @AT_DC_MU_ID_001
  Scenario: To verify the availability of Customer Information tab is getting open with all valid button under Data check stage
  
 Given Navigate the IJARA URL
-
 And User_6047 login with valid credentials
+#And User_6047 login with valid credentials-Murabha_Data Check-Identifications Details
 And User_6047 Get the test data for test case ID AT_DC_MU_ID_001 
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox

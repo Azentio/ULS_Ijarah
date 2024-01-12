@@ -1573,7 +1573,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	@Then("User_6047 Verify the popup of fill all field in Repayment Mode")
 	public void user_verify_the_popup_of_fill_all_field_in_repayment_mode() throws Throwable {
 		//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("PleaseFillDetails_Popup")));
-		Thread.sleep(2000);
+	
 //		for (int i = 0; i <2000; i++) {
 //	        try {
 //	        	String text = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("PleaseFillDetails_Popup")).getText();
@@ -1586,21 +1586,23 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 //	            }
 //	        }
 //		}
-		for (int i = 0; i <= 300; i++) {
+	
+		String toastContent = "";
+		for (int i = 0; i <= 100; i++) {
 			try {
-				String toastMessage = javascriptHelper
-						.executeScript("return " + commonJSPaths.getElement("toast_container_message")).toString();
-				if (!(toastMessage.isBlank())) {
+				toastContent = javascriptHelper.executeScript("return " + iJarah_CommonElements.getElement("toast_message"))
+						.toString();
+				System.out.println(toastContent);
+				if (!(toastContent.isBlank())) {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 300) {
+				if (i == 100) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		softAssert.assertTrue(toastMessage.contains("Success! Record created with ID"),
-				"Record is not saved hence failed");
+		Assert.assertEquals("Please fill all the details", toastContent);
 	}
 	@Then("User_6047 Give the negative number input for account number field in Repayment Mode")
 	public void user_give_the_negative_number_input_for_account_number_field_in_repayment_mode() {
@@ -1623,7 +1625,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").click();
-				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").clear();
+				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").sendKeys(Keys.chord(Keys.CONTROL, "A", Keys.BACK_SPACE));;
 				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").sendKeys("account number");
 				Thread.sleep(3000);
 				break;
@@ -1640,7 +1642,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").click();
-				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").clear();
+				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").sendKeys(Keys.chord(Keys.CONTROL, "A", Keys.BACK_SPACE));;
 				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").sendKeys("**$");
 				Thread.sleep(3000);
 				break;
@@ -1681,8 +1683,8 @@ for (int i = 0; i < 200; i++) {
 for (int i = 0; i < 200; i++) {
 			
 			try {
-				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").clear();
-				//javascriptHelper.executeScriptWithWebElement("document.querySelector('ion-label[ng-reflect-text=\"Account Number.TOOLTIP\"]+ion-input')").click();
+				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").sendKeys(Keys.chord(Keys.CONTROL, "A", Keys.BACK_SPACE));;
+
 				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").sendKeys("23658");
 				//javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("accountNumberField_in")).sendKeys(testData.get("AccountNumber"));
 				Thread.sleep(3000);

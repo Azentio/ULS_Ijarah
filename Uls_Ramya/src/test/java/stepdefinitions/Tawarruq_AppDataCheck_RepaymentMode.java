@@ -305,7 +305,7 @@ public class Tawarruq_AppDataCheck_RepaymentMode {
 		int i=0;
 		for ( i = 0; i <200; i++) {
 			try {
-				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Tawar_Repayment_js.getElement("Status")).isDisplayed());
+				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Tawar_Repayment_js.getElement("StatusCheck")).isDisplayed());
 				break;
 			} catch (Exception e) {
 				if (i==199) {

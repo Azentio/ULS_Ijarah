@@ -1868,9 +1868,9 @@ public void user_6047_clear_the_loan_tenure_field_under_facility() throws Throwa
 			
 	"document.querySelector('digital-text-box[id=\"loanTenure\"] input')")
 
-	
-.clear();
-	Thread.sleep(3000);
+	.sendKeys(Keys.chord(Keys.CONTROL, "A", Keys.DELETE));
+
+
 }
 @Then("User_6047 modify the Loan Tenure field under facility info")
 public void user_6047_modify_the_loan_tenure_field_under_facility_info() throws Throwable {
@@ -2146,7 +2146,7 @@ public void user_click_the_search_button_under_facility_info_tab_and_search_the_
 
 }
 @And("User_6047 search the facility list under facility info")
-public void user_search_the_ref_id_under_inbox() {
+public void user_search_the_facility_list_under_inbox() {
 	//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text")));
 	for (int i = 0; i <= 500; i++) {
 		try {

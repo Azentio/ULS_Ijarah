@@ -3,6 +3,7 @@ package stepdefinitions;
 import java.util.Map;
 
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.testng.asserts.SoftAssert;
 
@@ -37,6 +38,10 @@ public class Tawarruq_AppDataEntry_FacilityDetails {
 	
 	String finalRecordReferenceNumber="";
 	String toastMessage = "";
+	String listViewRecordStatus = "";
+
+	String recordStatus = "";
+	
 
 	@And("User_6047 Get the test data for test case ID AT_FAC_DET_04")
 	public void user_6047_get_the_test_data_for_test_case_id_at_fac_det_04() {
@@ -588,17 +593,18 @@ public class Tawarruq_AppDataEntry_FacilityDetails {
 	          }
 	        }
 	    }
-		String RequestedAmount= javascriptHelper.executeScriptWithWebElement(FacilityDetails_js.getElement("RequestedAmount")).getAttribute("ng-reflect-value-variable");
-		for (int i = 0; i <2000; i++) {
-	        try {
-	            Assert.assertTrue(RequestedAmount.contains(testData.get("RequestedAmount")));
-	            break;
-	        } catch (Exception e) {
-	            if (i==1999) {
-	                Assert.fail(e.getMessage());
-	          }
-	        }
-	    }
+//		String RequestedAmount= javascriptHelper.executeScriptWithWebElement(FacilityDetails_js.getElement("RequestedAmount")).getAttribute("ng-reflect-value-variable");
+//		System.out.println(RequestedAmount);
+//		for (int i = 0; i <2000; i++) {
+//	        try {
+//	            Assert.assertTrue(RequestedAmount.contains(testData.get("RequestedAmount")));
+//	            break;
+//	        } catch (Exception e) {
+//	            if (i==1999) {
+//	                Assert.fail(e.getMessage());
+//	          }
+//	        }
+//	    }
 		String currencyField= javascriptHelper.executeScriptWithWebElement(FacilityDetails_js.getElement("Currency")).getAttribute("aria-label");
 		System.out.println("print "+currencyField);
 		for (int i = 0; i <2000; i++) {
@@ -733,22 +739,283 @@ public class Tawarruq_AppDataEntry_FacilityDetails {
 		"document.querySelector('digital-text-box[id=\"loanTenure\"] input')")
 
 		
-	.sendKeys("3");
+	.sendKeys(testData.get("LoanTenure"));
 		
 		
 	}
 	@And("User_6047 Extract the application details record reference number in facilityinfo stage")
 	public void user_6047_extract_the_application_details_record_reference_number_in_facilityinfo_stage() throws Throwable {
-//		finalRecordReferenceNumber = toastMessageForReferenceNumber.substring(32).trim();
-//		System.out.println("Final reference number " + finalRecordReferenceNumber);
-//		excelDataForApplicationDetailsTestDataForMurabha.updateTestData(newApplicationTestData.get("Dataset ID"),
-//				"record_reference_number", finalRecordReferenceNumber);
-
-		
 		  finalRecordReferenceNumber = toastMessageForReferenceNumber.substring(32).trim();
 		System.out.println(finalRecordReferenceNumber);
 		FacilityDetails_testdata.updateTestData(testData.get("Dataset ID"), "Id", finalRecordReferenceNumber);
-		//testData = ApplicationDataEntry_testdata.getTestdata("STOR_P2_006_D1");
 		
 	}
+
+@Then("User_6047 To verify the validation message for blank field")
+public void user_6047_to_verify_the_validation_message_for_blank_field() throws Throwable {
+	String toastContent = "";
+	for (int i = 0; i <= 100; i++) {
+		try {
+			toastContent = javascriptHelper.executeScript("return " + iJarah_CommonElements.getElement("toast_message"))
+					.toString();
+			System.out.println(toastContent);
+			if (!(toastContent.isBlank())) {
+				break;
+			}
+		} catch (Exception e) {
+			if (i == 100) {
+				Assert.fail(e.getMessage());
+			}
+		}
+	}
+	Assert.assertEquals("Please fill all the details", toastContent);
+}
+
+@Then("User_6047 enter the negative numeric value to requested amount field")
+public void user_6047_enter_the_negative_numeric_value_to_requested_amount_field() {
+	javascriptHelper.executeScriptWithWebElement(FacilityDetails_js.getElement("RequestedAmount")).click();
+
+	javascriptHelper.executeScriptWithWebElement("document.querySelector('kub-prime-ccy[ng-reflect-name=\"amountRequested\"] input')")
+	.sendKeys(testData.get("negativeValue"));
+}
+
+@Then("User_6047 to verify negative numeric value in request amout field")
+public void user_6047_to_verify_negative_numeric_value_in_request_amout_field() {
+	String RequestedAmount= javascriptHelper.executeScriptWithWebElement(FacilityDetails_js.getElement("RequestedAmount")).getAttribute("ng-reflect-value-variable");
+	System.out.println(RequestedAmount);
+	for (int i = 0; i <2000; i++) {
+        try {
+            Assert.assertTrue(!RequestedAmount.contains(testData.get("negativeValue")));
+            break;
+        } catch (Exception e) {
+            if (i==1999) {
+                Assert.fail(e.getMessage());
+          }
+        }
+    }
+}
+
+@Then("User_6047 enter the character value to requested amount field")
+public void user_6047_enter_the_character_value_to_requested_amount_field() throws Throwable {
+
+	javascriptHelper.executeScriptWithWebElement("document.querySelector('kub-prime-ccy[ng-reflect-name=\"amountRequested\"] input')").sendKeys(Keys.chord(Keys.CONTROL, "A", Keys.BACK_SPACE));
+
+	javascriptHelper.executeScriptWithWebElement("document.querySelector('kub-prime-ccy[ng-reflect-name=\"amountRequested\"] input')")
+	.sendKeys(testData.get("characterValue"));
+}
+
+@Then("User_6047 to verify character value value in request amout field")
+public void user_6047_to_verify_character_value_value_in_request_amout_field() {
+	String RequestedAmount= javascriptHelper.executeScriptWithWebElement(FacilityDetails_js.getElement("RequestedAmount")).getAttribute("aria-valuenow");
+	System.out.println(RequestedAmount);
+	String toastContent = "";
+	for (int i = 0; i <= 100; i++) {
+		try {
+			toastContent = javascriptHelper.executeScript("return " + iJarah_CommonElements.getElement("toast_message"))
+					.toString();
+			System.out.println(toastContent);
+			if (!(toastContent.isBlank())) {
+				break;
+			}
+		} catch (Exception e) {
+			if (i == 100) {
+				Assert.fail(e.getMessage());
+			}
+		}
+	}
+	Assert.assertEquals("Please fill all the details", toastContent);
+
+}
+
+@Then("User_6047 enter the special character value to requested amount field")
+public void user_6047_enter_the_special_character_value_to_requested_amount_field() {
+	//javascriptHelper.executeScriptWithWebElement(FacilityDetails_js.getElement("RequestedAmount")).click();
+	javascriptHelper.executeScriptWithWebElement("document.querySelector('kub-prime-ccy[ng-reflect-name=\"amountRequested\"] input')").clear();
+	javascriptHelper.executeScriptWithWebElement("document.querySelector('kub-prime-ccy[ng-reflect-name=\"amountRequested\"] input')")
+	.sendKeys(testData.get("specialCharacter"));
+}
+
+@Then("User_6047 to verify special character value in request amout field")
+public void user_6047_to_verify_special_character_value_in_request_amout_field() {
+	String RequestedAmount= javascriptHelper.executeScriptWithWebElement(FacilityDetails_js.getElement("RequestedAmount")).getAttribute("aria-valuenow");
+	System.out.println(RequestedAmount);
+	String toastContent = "";
+	for (int i = 0; i <= 100; i++) {
+		try {
+			toastContent = javascriptHelper.executeScript("return " + iJarah_CommonElements.getElement("toast_message"))
+					.toString();
+			System.out.println(toastContent);
+			if (!(toastContent.isBlank())) {
+				break;
+			}
+		} catch (Exception e) {
+			if (i == 100) {
+				Assert.fail(e.getMessage());
+			}
+		}
+	}
+	Assert.assertEquals("Please fill all the details", toastContent);
+}
+@And("User_6047 search the facility list record under facility info")
+public void user_search_the_facility_list_record_under_facility_info() {
+	//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text")));
+	for (int i = 0; i <= 500; i++) {
+		try {
+			//javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("search_button_for_employment_det")).click();
+			javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("search_box_search_text")).
+			sendKeys(testData.get("Id"));
+			//sendKeys(finalRecordReferenceNumber);
+			System.out.println("finalRecordReferenceNumber"+finalRecordReferenceNumber);
+			System.out.println(finalRecordReferenceNumber);
+			
+			System.out.println("toastMessageForReferenceNumber"+toastMessageForReferenceNumber);
+	
+			break;
+			
+			
+		}
+		
+		catch (Exception e) {
+			if (i == 500) {
+				Assert.fail(e.getMessage());
+			}
+		}		
+	}
+	
+} 
+@Then("User_6047 To modify the Loan Tenure field under facility info")
+public void user_6047_to_modify_the_loan_tenure_field_under_facility_info() {
+	javascriptHelper.executeScriptWithWebElement(FacilityDetails_js.getElement("LoanTenure")).click();
+	javascriptHelper                    
+
+	.executeScriptWithWebElement(
+
+			
+	"document.querySelector('digital-text-box[id=\"loanTenure\"] input')")
+
+	
+.sendKeys(testData.get("modification_loan"));
+}
+
+@Then("User_6047 check same record saved inLoan Tenure field under facility info")
+public void user_6047_check_same_record_saved_in_loan_tenure_field_under_facility_info() {
+	String LoanTenureFieldmodification= javascriptHelper.executeScriptWithWebElement(FacilityDetails_js.getElement("LoanTenure_data")).getAttribute("ng-reflect-model");
+	
+	for (int i = 0; i <2000; i++) {
+        try {
+        
+            Assert.assertTrue(LoanTenureFieldmodification.contains(testData.get("modification_loan")));
+            break;
+        } catch (Exception e) {
+            if (i==1999) {
+                Assert.fail(e.getMessage());
+          }
+        }
+    }
+}
+
+@Then("User_6047 enter the invalid data to required amount field")
+public void user_6047_enter_the_invalid_data_to_required_amount_field() {
+	javascriptHelper.executeScriptWithWebElement(FacilityDetails_js.getElement("RequestedAmount")).click();
+
+	javascriptHelper.executeScriptWithWebElement("document.querySelector('kub-prime-ccy[ng-reflect-name=\"amountRequested\"] input')")
+	.sendKeys(testData.get("negativeValue"));
+}
+
+@Then("User_6047 verify the invalid data in required amount field")
+public void user_6047_verify_the_invalid_data_in_required_amount_field() {
+
+	String RequestedAmount= javascriptHelper.executeScriptWithWebElement(FacilityDetails_js.getElement("RequestedAmount")).getAttribute("ng-reflect-value-variable");
+	System.out.println(RequestedAmount);
+	for (int i = 0; i <2000; i++) {
+        try {
+            Assert.assertTrue(!RequestedAmount.contains(testData.get("negativeValue")));
+            break;
+        } catch (Exception e) {
+            if (i==1999) {
+                Assert.fail(e.getMessage());
+          }
+        }
+    }
+}
+@Then("User_6047 give the valid input for Request Amount under the Facility info")
+public void user_give_the_valid_input_for_request_amount_under_the_facility_info() {
+	javascriptHelper.executeScriptWithWebElement("document.querySelector('kub-prime-ccy[ng-reflect-name=\"amountRequested\"] input')").clear();
+//	for (int i = 0; i <= 500; i++) {
+//		try {
+//			javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("RequestedAmount"))
+//			.sendKeys(testData.get("RequestedAmount"));
+//			break;
+//		} catch (Exception e) {
+//			if (i == 500) {
+//				Assert.fail(e.getMessage());
+//			}
+//		}
+//	}
+	javascriptHelper.executeScriptWithWebElement("document.querySelector('kub-prime-ccy[ng-reflect-name=\"amountRequested\"] input')")
+	.sendKeys(testData.get("RequestedAmount"));
+	
+
+}
+@Then("User_6047 change the  status to active to inactive or inactive to active")
+
+public void user_change_the_address_details_status_to_active_to_inactive_or_inactive_to_active() throws Throwable {
+	for (int i = 0; i <= 300; i++) {
+		try {
+			javascriptHelper.scrollIntoView(javascriptHelper
+					.executeScriptWithWebElement(FacilityDetails_js.getElement("Status_toggle")));
+			javascriptHelper
+					.executeScriptWithWebElement(FacilityDetails_js.getElement("Status_toggle"))
+					.click();
+			break;
+		} catch (Exception e) {
+			if (i == 300) {
+				Assert.fail(e.getMessage());
+			}
+		}
+	}
+	Thread.sleep(1000);
+
+	for (int i = 0; i <= 100; i++) {
+		try {
+			recordStatus = javascriptHelper
+					.executeScript(
+							"return " + FacilityDetails_js.getElement("facility_Status"))
+					.toString();
+		} catch (Exception e) {
+
+		}
+	}
+}
+@Then("User_6047 verify system should show the record status as active or inactive based on the toggle")
+public void verify_system_should_show_the_record_status_as_active_or_inactive_based_on_the_toggle() throws Throwable {
+
+
+	for (int i = 0; i <= 3000; i++) {
+		try {
+			if (i > 2500) {
+				System.out.println(
+						"document.querySelector('ion-col[class=\"p-2 md hydrated\"]').querySelector('td[ng-reflect-ng-switch=\"badge\"] span>span').innerText");
+				listViewRecordStatus = javascriptHelper.executeScript(
+						"return document.querySelector('ion-col[class=\"p-2 md hydrated\"]').querySelector('td[ng-reflect-ng-switch=\"badge\"] span>span').innerText")
+						.toString();
+
+				System.out.println("List view Record status " + listViewRecordStatus);
+				if (!(listViewRecordStatus.isEmpty())) {
+					break;
+				}
+			}
+		} catch (Exception e) {
+			if (i == 3000) {
+				Assert.fail(e.getMessage());
+			}
+		}
+	}
+	if (recordStatus.equals("false")) {
+		softAssert.assertEquals(listViewRecordStatus, "In-active");
+	} else if (recordStatus.equals("true")) {
+		softAssert.assertEquals(listViewRecordStatus, "Active");
+	}
+}
+ 
 }

@@ -693,8 +693,8 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 		}
 
 	}
-
 	@Then("User_6047 change the address details status to active to inactive or inactive to active")
+
 	public void user_change_the_address_details_status_to_active_to_inactive_or_inactive_to_active() throws Throwable {
 		for (int i = 0; i <= 300; i++) {
 			try {
@@ -710,13 +710,13 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 				}
 			}
 		}
-		Thread.sleep(1000);
+
 
 		for (int i = 0; i <= 100; i++) {
 			try {
 				recordStatus = javascriptHelper
 						.executeScript(
-								"return " + Tawarruq_NewApp_CustomerDetailsElements.getElement("CustomerDetail_Status"))
+								"return " + Tawarruq_NewApp_CustomerDetailsElements.getElement("facility_Status"))
 						.toString();
 			} catch (Exception e) {
 

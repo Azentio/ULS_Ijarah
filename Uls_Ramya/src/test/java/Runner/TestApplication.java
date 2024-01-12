@@ -19,7 +19,7 @@ import utilities.ExtentTestManager;
 // ,dryRun = false //to check compilation errors
 //, tags = "@AT_FI_010 or @AT_FI_010"
 		
-, tags="@AT_FAC_DET_05"  
+, tags="@AT_FAC_DET_05" 
 
 
 )

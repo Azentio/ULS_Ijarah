@@ -134,7 +134,7 @@ And User_6047 verify the ESC code field
 Then User_6047 verify save button
 Then User_6047 modify the ESC code field
 And User_6047 click the save button under repayment mode screen
-Then User_6047 Verify the popup of fill all field in Repayment Mode
+Then User_6047 verify the successfully saved message popup
 And User_6047 click edit icon
 And User_6047 to verify the modified record should get saved in Repayment mode
 Then logout from the ijaraApplication 
@@ -180,18 +180,3 @@ And User_6047 verify the submit successfully popup
 Then logout from the ijaraApplication 
 #v0169
 
- @AT_DC_MU_ID_001
- Scenario: To verify the availability of Customer Information tab is getting open with all valid button under Data check stage
- 
-Given Navigate the IJARA URL
-And User_6047 Login with valid credentials
-And User_6047 Get the test data for test case ID AT_DC_MU_ID_001 
-And User_6047 Click the Mail box in ULS application
-And User_6047 Click the Search button under inbox
-Then User_6047 Search the Ref Id Under inbox 
-And User_6047 Click the Entitle button under inbox
-And User_6047 Click view button under customer personal information
-And User_6047 Click view button under customer identification
-Then User_6047 verify the Help button
-Then User_6047 verify the Back button
-Then logout from the ijaraApplication 

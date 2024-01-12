@@ -46,7 +46,7 @@ Then User_6047 verify the account number field Repaymentmode
 And User_6047 verify the bank name field Repaymentmode
 Then User_6047 verify the bank branch name field Repaymentmode
 And User_6047 verify the ESC code field Repaymentmode
-#And User_6047 verify the Status field Repaymentmode
+And User_6047 verify the Status field Repaymentmode
 Then User_6047 verify help button Repaymentmode
 And User_6047 click help icon in Repaymentmode
 Then User_6047 verify description of all the fields details in Repaymentmode

@@ -1,7 +1,6 @@
 Feature: To verify the tab Tawarruq - AppDataCheck - Quotation Info
 @AT_TW_QI_01 
 
-
 Scenario: Quotation Info screen should get open with all valid fields 
 
 Given Navigate the IJARA URL

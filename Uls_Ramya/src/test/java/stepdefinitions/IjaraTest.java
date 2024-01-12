@@ -97,6 +97,10 @@ public class IjaraTest extends BaseClass {
 	public void user_6047_login_with_valid_credentials_tawarruq_app_data_entry_facility_info() {
 		ijaraLogin.loginWithIjaraApplication_Tawarruq_AppDataEntry_FacilityDetails();
 	}
+	@Given("User_6047 login with valid credentials-Murabha_Data Check-Identifications Details")
+	public void user_6047_login_with_valid_credentials_murabha_data_check_identifications_details() {
+		ijaraLogin.loginWithIjaraApplication_Murabha_AppDataEntry_IdentificationDetails();
+	}
 
 	@Then("logout from the ijaraApplication")
 	public void logout_from_the_ijara_application() throws Throwable {
