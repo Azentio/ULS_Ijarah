@@ -32,7 +32,7 @@ public class NewExcelTestRunner {
 	@BeforeTest
 	public void beforeTest() {
 
-		System.out.println("Test Execution Started");
+		System.out.println(" *** Test Execution Started *** ");
 	}
 
 	@Test()
@@ -61,7 +61,7 @@ public class NewExcelTestRunner {
 
 	@AfterTest
 	public void afterTest() {
-		System.out.println("Test Execution Ended");
+		System.out.println(" *** Test Execution Ended *** ");
 		ExtentTestManager.endTest();
 		ExtentManager.getInstance().flush();
 	}
