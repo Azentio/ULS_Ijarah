@@ -2413,16 +2413,103 @@ public class tawarruq_Step {
 	}
 	
 	
+	@And("Click on Search icon in Document details")
+	public void click_on_search_icon_in_document_details() {
+		System.out.println(documentdetailsJsPaths.getElement("SearchButton"));
+		WebElement searchButton = javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("SearchButton"));
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				searchButton.click();
+				//javascriptHelper.JSEClick(searchButton);
+				//javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("SaveIcon")).click();
+				break;
+			} catch (Exception e) { 
+				
+			}
+		}
+		
+	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
+	@And("Search the murabha document details value with valid data")
+	public void search_the_murabha_document_details_value_with_valid_data() throws IOException {
+		waitHelper.waitForElementwithFluentwait(driver,
+				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("SearchInput")));
+		String documentDetailsSearchResult = "";
+		for (int i = 0; i <= 500; i++) {
+			try {
+//				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("financialCommitmentSearchInput"))
+//				.sendKeys("USD");
+				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("SearchInput"))
+						.sendKeys("no");
+
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		for (int i = 0; i <= 300; i++) {
+			try {
+				documentDetailsSearchResult = javascriptHelper
+						.executeScript("return " + documentdetailsJsPaths.getElement("listViewSearchResultValidation"))
+						.toString();
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		Assert.assertFalse(documentDetailsSearchResult.equalsIgnoreCase("Showing 0 to 0 of 0 entries"));
+
+	}
+		
+	@And("Search the murabha document details value with Invalid data")
+	public void search_the_murabha_document_details_value_with_invalid_data() {
+		String documentDetailsSearchResult = "";
+		for (int i = 0; i <= 1; i++) {
+			try {
+//				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("financialCommitmentSearchInput"))
+//				.sendKeys("USD");
+				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("SearchInput"))
+						.sendKeys(Keys.chord(Keys.CONTROL, "A", Keys.BACK_SPACE));
+
+			} catch (Exception e) {
+
+			}
+		}
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("SearchInput"))
+						.sendKeys("noo");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 300; i++) {
+			try {
+				
+				documentDetailsSearchResult = javascriptHelper
+						.executeScript("return " + documentdetailsJsPaths.getElement("listViewSearchResultValidation"))
+						.toString();
+				if(documentDetailsSearchResult.equalsIgnoreCase("Showing 0 to 0 of 0 entries"))
+				{
+				break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		Assert.assertTrue(documentDetailsSearchResult.equalsIgnoreCase("Showing 0 to 0 of 0 entries"));
+	}
 	
 	
 	

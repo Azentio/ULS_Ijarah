@@ -37,13 +37,16 @@ Feature: Tawarrq AppData Check Document Details
     And Validate the Lodgement amount field is displayed in document details
     And Validate the Remarks field is displayed in document details
     And Validate Back button functionality in document details
-
+		Then logout from the ijaraApplication
+		
    @AT_TW_ADC_DOC_002
   Scenario: To verify that all fields are present in Document Details view list
     #This test case also cover the functionality of  AT_TW_ADC_DOC_003
     Given navigate the IJARA URL
-    And login with valid credentials05
-    And User_610 get the test data set id for DS_AT_MU_DOC_01
+    And login with valid credentials16
+    And User_610 get the test data set id for DS_AT_TW_ADC_DOC_001
+    And User_610 click the module name
+    And User_610 select the LOS in module name
     And User_610 click Inbox
     And User_610 click search button
     And User_610 enter the value in search button
@@ -60,3 +63,4 @@ Feature: Tawarrq AppData Check Document Details
     And Search the murabha document details value with valid data
     And Click on Search icon in Document details
     And Search the murabha document details value with Invalid data
+		Then logout from the ijaraApplication

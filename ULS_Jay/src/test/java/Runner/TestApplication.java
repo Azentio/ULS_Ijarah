@@ -24,7 +24,7 @@ import utilities.ExtentTestManager;
 				"rerun:ReRunScenarios/FailedReRun.txt" }
 // ,dryRun = false //to check compilation errors/ , tags = "@AT_LEA_007"
  
-, tags="@AT_FAC_DET_02"                   
+, tags="@AT_FAC_DET_03"                   
  
 )                                                                         
 public class TestApplication extends AbstractTestNGCucumberTests {

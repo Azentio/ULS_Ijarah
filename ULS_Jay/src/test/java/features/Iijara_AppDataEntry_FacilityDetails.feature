@@ -52,3 +52,23 @@ Feature: Ijara App Data Entry Facility details
     And User_610 verify the Servicing Branch field Mandatory Editable Select
     Then logout from the ijaraApplication
     
+    @AT_FAC_DET_03
+  Scenario: To verify fields Mandatory Editable Type in Document Details
+    Given navigate the IJARA URL
+    And login with valid credentials17
+    And User_610 get the test data set id for DS_AT_FAC_DET_01
+    #And User_610 click the module name
+    #And User_610 select the LOS in module name
+    And User_610 click Inbox
+    And User_610 click search button
+    And User_610 enter the value in search button
+    And User_610 click edit button under inbox screen
+    #
+    And User_610 click facility Details screen
+    And User_610 click add button
+    And User_610 verify the Pricing Indicator field Mandatory Editable Select
+    And User_610 verify the Requested Amount field Mandatory Editable numberic
+    And User_610 verify the Declared Downpayment Amount field Mandatory Editable numberic
+    And User_610 verify the currency field Mandatory Editable Select
+    And User_610 verify the Loan Tenure field Mandatory Editable numberic
+    Then logout from the ijaraApplication

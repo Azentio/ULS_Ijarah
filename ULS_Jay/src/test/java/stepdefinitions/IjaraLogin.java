@@ -586,6 +586,15 @@ public class IjaraLogin extends BaseClass {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userProfile")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 2000; i++) {
+			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("logoutButton")).click();
 				break;
 			} catch (Exception e) {

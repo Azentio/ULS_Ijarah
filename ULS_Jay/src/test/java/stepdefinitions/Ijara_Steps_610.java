@@ -6872,7 +6872,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 	
 	// -----------------select format 
 	
-	String ServicingBranchFormat = javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("ServicingBranchFormat"))
+	String ServicingBranchFormat = javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("ServicingBranch"))
 			.getAttribute("ng-reflect-placeholder");
 	
 	System.err.println("ServicingBranchFormat:  " + ServicingBranchFormat);
@@ -6884,8 +6884,223 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 	
 	}
 	
+	//-----------------  @AT_FAC_DET_03
 	
 	
+	@And("User_610 verify the Pricing Indicator field Mandatory Editable Select")
+	public void user_verify_the_pricing_indicator_field_mandatory_editable_select() {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String PricingIndicator = "document.querySelector('digital-select-layout[id=\"packageId\"]').innerText";
+				String PricingIndicatorMand = (String) javascriptHelper.executeScript("return " + PricingIndicator);
+				System.err.println(PricingIndicatorMand);
+				Assert.assertTrue(PricingIndicatorMand.contains("*"));
+				
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+			
+		}
+		
+		//---------field should be editable
+		
+		String PricingIndicatorEditable = javascriptHelper
+				.executeScriptWithWebElement(FacilityDetails.getElement("PricingIndicatorEd"))
+				.getAttribute("ng-reflect-readonly");
+		System.err.println("first print  " + PricingIndicatorEditable);
+
+		String assertPricingIndicatorEditable = "false";
+		Assert.assertEquals(assertPricingIndicatorEditable, PricingIndicatorEditable);
+	    
+	
+	
+	// -----------------select format 
+	
+	String assertPricingIndicatorEditableFormat = javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("ServicingBranch"))
+			.getAttribute("ng-reflect-placeholder");
+	
+	System.err.println("assertPricingIndicatorEditableFormat:  " + assertPricingIndicatorEditableFormat);
+
+	String assertassertPricingIndicatorEditableFormat = "Select";
+	
+	Assert.assertEquals(assertassertPricingIndicatorEditableFormat, assertPricingIndicatorEditableFormat);
+	    
+	}
+
+	@And("User_610 verify the Requested Amount field Mandatory Editable numberic")
+	public void user_verify_the_requested_amount_field_mandatory_editable_numberic() {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String RequestedAmount = "document.querySelector('kub-prime-ccy[ng-reflect-name=\"amountRequested\"]').innerText";
+				String RequestedAmountMand = (String) javascriptHelper.executeScript("return " + RequestedAmount);
+				System.err.println(RequestedAmountMand);
+				Assert.assertTrue(RequestedAmountMand.contains("*"));
+				
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+			
+		}
+		
+		//---------field should be editable
+		
+		String RequestedAmountEditable = javascriptHelper
+				.executeScriptWithWebElement(FacilityDetails.getElement("RequestedAmount"))
+				.getAttribute("ng-reflect-readonly");
+		System.err.println("first print  " + RequestedAmountEditable);
+
+		String assertRequestedAmountEditable = "false";
+		Assert.assertEquals(assertRequestedAmountEditable, RequestedAmountEditable);
+	    
+	
+	
+	// -----------------numberic format 
+	
+	String RequestedAmountFormat = javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("RequestedAmountType"))
+			.getTagName();
+	
+	System.err.println("RequestedAmountFormat:  " + RequestedAmountFormat);
+
+	String assertRequestedAmountFormat = "p-inputnumber";
+	
+	Assert.assertEquals(assertRequestedAmountFormat, RequestedAmountFormat);
+	    
+	}
+
+	@And("User_610 verify the Declared Downpayment Amount field Mandatory Editable numberic")
+	public void user_verify_the_declared_downpayment_amount_field_mandatory_editable_numberic() {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String DeclaredDownpaymentAmt = "document.querySelector('kub-prime-ccy[id=\"downPaymentAmount\"]').innerText";
+				String DeclaredDownpaymentAmtMand = (String) javascriptHelper.executeScript("return " + DeclaredDownpaymentAmt);
+				System.err.println(DeclaredDownpaymentAmtMand);
+				Assert.assertTrue(DeclaredDownpaymentAmtMand.contains("*"));
+				
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+			
+		}
+		
+		//---------field should be editable
+		
+		String DeclaredDownpaymentAmtEditable = javascriptHelper
+				.executeScriptWithWebElement(FacilityDetails.getElement("DeclaredDownPaymentAmount"))
+				.getAttribute("ng-reflect-readonly");
+		System.err.println("first print  " + DeclaredDownpaymentAmtEditable);
+
+		String assertDeclaredDownpaymentAmtEditable = "false";
+		Assert.assertEquals(assertDeclaredDownpaymentAmtEditable, DeclaredDownpaymentAmtEditable);
+	    
+	
+	
+	// -----------------numberic format 
+	
+	String DeclaredDownpaymentAmtFormat = javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("DeclaredDownPaymentAmountType"))
+				.getTagName();
+	
+	System.err.println("DeclaredDownpaymentAmtFormat:  " + DeclaredDownpaymentAmtFormat);
+
+	String assertDeclaredDownpaymentAmtFormat = "p-inputnumber";
+	
+	Assert.assertEquals(assertDeclaredDownpaymentAmtFormat, DeclaredDownpaymentAmtFormat);
+	    
+	}
+
+	@And("User_610 verify the currency field Mandatory Editable Select")
+	public void user_verify_the_currency_field_mandatory_editable_select() {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String currency = "document.querySelector('digital-select-layout[id=\"currencyCode\"]').innerText";
+				String currencyMand = (String) javascriptHelper.executeScript("return " + currency);
+				System.err.println(currencyMand);
+				Assert.assertTrue(currencyMand.contains("*"));
+				
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+			
+		}
+		
+		//---------field should be editable
+		
+		String currencyMandEditable = javascriptHelper
+				.executeScriptWithWebElement(FacilityDetails.getElement("CurrencyEd"))
+				.getAttribute("ng-reflect-readonly");
+		System.err.println("first print  " + currencyMandEditable);
+
+		String assertcurrencyMandEditable = "false";
+		Assert.assertEquals(assertcurrencyMandEditable, currencyMandEditable);
+	    
+	
+	
+	// -----------------select format 
+	
+	String currencyFormat = javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("Currency"))
+			.getAttribute("ng-reflect-placeholder");
+	
+	System.err.println("currencyFormat:  " + currencyFormat);
+
+	String assertcurrencyFormat = "Select";
+	
+	Assert.assertEquals(assertcurrencyFormat, currencyFormat);
+	    
+	}
+
+	@And("User_610 verify the Loan Tenure field Mandatory Editable numberic")
+	public void user_verify_the_loan_tenure_field_mandatory_editable_numberic() {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String LoanTenure = "document.querySelector('digital-text-box[id=\"loanTenure\"]').innerText";
+				String LoanTenureMand = (String) javascriptHelper.executeScript("return " + LoanTenure);
+				System.err.println(LoanTenureMand);
+				Assert.assertTrue(LoanTenureMand.contains("*"));
+				
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+			
+		}
+		
+		//---------field should be editable
+		
+		String LoanTenureEditable = javascriptHelper
+				.executeScriptWithWebElement(FacilityDetails.getElement("LoanTenure"))
+				.getAttribute("ng-reflect-readonly");
+		System.err.println("first print  " + LoanTenureEditable);
+
+		String assertLoanTenureEditable = "false";
+		Assert.assertEquals(assertLoanTenureEditable, LoanTenureEditable);
+	    
+	
+	
+	// -----------------number format 
+	
+	String LoanTenureFormat = javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("LoanTenureType"))
+			.getAttribute("type");
+	
+	System.err.println("LoanTenureFormat:  " + LoanTenureFormat);
+
+	String assertLoanTenureFormat = "number";
+	
+	Assert.assertEquals(assertLoanTenureFormat, LoanTenureFormat);
+	    
+	}
 	
 	
 	
