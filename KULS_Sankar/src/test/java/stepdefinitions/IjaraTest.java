@@ -19,87 +19,94 @@ public class IjaraTest extends BaseClass{
 	}
 	@And("login with valid credentials")
 	public void login_with_valid_credentials()throws Throwable {
-		ijaraLogin.loginWithIjaraApplication();
+		ijaraLogin.loginWithIjaraApplication("userType13");
 	}
 
 //	App Data Stage --> UserType01
 	@And("login with valid credentials-App Data Entry")
 	public void login_with_valid_credentials_app_data_entry()throws Throwable {
-		ijaraLogin.loginWithIjaraApplicationAppData();
+		ijaraLogin.loginWithIjaraApplication("userType01");
 	}
 	
 //	 Return the record
 	@And("login with valid credentials for return")
 	public void login_with_valid_credentials_for_return()throws Throwable {
-		ijaraLogin.loginWithIjaraForReturn();
+		ijaraLogin.loginWithIjaraApplication("UserReturn");
 	}
 	
 //	Underwriter Stage --> UserType02
 	@And("login with valid credentials-Underwriter")
 	public void login_with_valid_credentials_underwriter()throws Throwable {
-		ijaraLogin.loginWithIjaraApplicationUnderwriter();
+		ijaraLogin.loginWithIjaraApplication("userType02");
 	}
 	
 //	Data Check Stage --> UserType03
 	@And("login with valid credentials-Data Check")
 	public void login_with_valid_credentials_data_check()throws Throwable {
-		ijaraLogin.loginWithIjaraApplicationDataCheck();
+		ijaraLogin.loginWithIjaraApplication("userType03");
 	}
 	
 //	Offering Stage --> UserType04
 	@And("login with valid credentials-Offering")
 	public void login_with_valid_credentials_offering()throws Throwable {
-		ijaraLogin.loginWithIjaraApplicationOfferingStage();
+		ijaraLogin.loginWithIjaraApplication("userType04");
 	}
 	
 //	Contract Signing Stage -- UserType05
 	@And("login with valid credentials-Contract Signing")
 	public void login_with_valid_credentials_contract_signing()throws Throwable {
-		ijaraLogin.loginWithIjaraApplicationContractSigning();
+		ijaraLogin.loginWithIjaraApplication("userType05");
 	}
 		
 	
 //	Murabaha Product -- App Data Entry Stage ---> UserType06
 	@And("login with valid credentials-Murabaha App Data Entry")
 	public void login_with_valid_credentials_murabaha_app_data_entry()throws Throwable {
-		ijaraLogin.loginWithMurabahaApplicationAppDataEntry();
+		ijaraLogin.loginWithIjaraApplication("userType06");
 	}
 	
 //	Murabaha Product -- App Data Check Stage ---> UserType07
 	@And("login with valid credentials-Murabaha Data Check stage")
 	public void login_with_valid_credentials_murabaha_data_check_stage()throws Throwable {
-		ijaraLogin.loginWithMurabahaApplicationDataCheck();
+		ijaraLogin.loginWithIjaraApplication("userType07");
 	}
 	
 //	************************** Tawarruq Product ***********************************
 //	Tawarruq Product -- App Data Entry Stage ---> UserType08
 	@And("login with valid credentials-Tawarruq App Data Entry")
 	public void login_with_valid_credentials_tawarruq_app_data_entry()throws Throwable {
-		ijaraLogin.loginWithTawarruqApplicationAppDataEntry();
+		ijaraLogin.loginWithIjaraApplication("userType08");
 	}
 	
 //	Tawarruq Product -- New Application Stage ---> UserType01
 	@And("login with valid credentials-Tawarruq New App")
 	public void login_with_valid_credentials_tawarruq_new_app()throws Throwable {
-		ijaraLogin.loginWithIjaraApplicationAppData();
+		ijaraLogin.loginWithIjaraApplication("userType01");
 	}
 	
 //	Tawarruq Product -- Offering Stage ---> userType09
 	@And("login with valid credentials-Tawarruq Offering stage")
 	public void login_with_valid_credentials_tawarruq_offering_stage()throws Throwable {
-		ijaraLogin.loginWithTawarruqApplicationOffering();
+		ijaraLogin.loginWithIjaraApplication("userType09");
 	}
+	
+//	Tawarruq Product -- App Data Check Stage ---> UserType12
+	@And("login with valid credentials-Tawarruq Data Check stage")
+	public void login_with_valid_credentials_tawarruq_data_check_stage()throws Throwable {
+		ijaraLogin.loginWithIjaraApplication("userType12");
+	}	
+	
 	
 //	Auto Loan Product -- App Data Entry Stage ---> userType10
 	@And("login with valid credentials - Auto Loan - App Data Entry")
 	public void login_with_valid_credentials_auto_loan_app_data_entry()throws Throwable {
-		ijaraLogin.loginWithAutoLoanAppDataEntry();
+		ijaraLogin.loginWithIjaraApplication("userType10");
 	}
 	
 //	Auto Loan Product -- Underwriter L1 Stage ---> userType10
 	@And("login with valid credentials - Auto Loan - Underwriter L1")
 	public void login_with_valid_credentials_auto_loan_underwriter_l1()throws Throwable {
-		ijaraLogin.loginWithAutoLoanUnderwriterL1();
+		ijaraLogin.loginWithIjaraApplication("userType11");
 	}
 	
 	

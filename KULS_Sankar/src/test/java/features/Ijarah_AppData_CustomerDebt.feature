@@ -3,7 +3,7 @@ Feature: To check the Customer debt details feature
 # *************************** userType01 **************************
 
 @AT_CUD_001
-Scenario: Customer Debt screen should get open with all valid fields in proper format with below mention buttons and all valid fields
+Scenario: Creation of Customer Dept record - Customer Debt screen should get open with all valid fields in proper format with below mention buttons
 
 Given navigate the IJARA URL
 And login with valid credentials-App Data Entry

@@ -139,28 +139,33 @@ And User_608 search the Reference id under inbox in ULS Application
 And User_608 click the Entitle button under inbox
 And User_608 click the Additional Customer Info tab
 And User_608 click the Pencil Icon button in Customer Personal Info section under Additional Customer Info tab
-
 And User_608 click the lable on button if the status of record is Active under Customer Identification section
 And User_608 to verify the functionality of Activate\Deactivate button under Customer Identification screen
 And User_608 click the Update button under Customer Identification screen
 And User_608 get the updated record ID under Customer Identification section
 And User_608 get the test data for test case AT_TW_NEWAPP_IDA_05
-And User_608 to verify if Status is Active then click the button system should show Deactivate under Customer Identification section
-
 And User_608 click the Additional Customer Info tab
 And User_608 click the Pencil Icon button in Customer Personal Info section under Additional Customer Info tab
+And User_608 click the Search button in Customer Identification section
+And User_608 search the Record ID in Customer Identification section
+And User_608 to verify if Status is Active then click the button system should show Deactivate under Customer Identification section
+
 And User_608 click the lable on button if the status of record is Deactive under Customer Identification section
 And User_608 change the status Deactive to Active under Customer Identification section
 And User_608 click the Update button under Customer Identification screen
 And User_608 get the updated record ID under Customer Identification section
 And User_608 get the test data for test case AT_TW_NEWAPP_IDA_05
+And User_608 click the Additional Customer Info tab
+And User_608 click the Pencil Icon button in Customer Personal Info section under Additional Customer Info tab
+And User_608 click the Search button in Customer Identification section
+And User_608 search the Record ID in Customer Identification section
 And User_608 to verify if Status is Deactive then click the button system should show Active under Customer Identification section
 Then logout from the ijaraApplication
 And User_608 invoke soft assert in Identification details screen under Additional Customer Info tab at Tawarruq New Application stage
 
 
 @AT_TW_NEWAPP_IDA_06
-Scenario: To verify user is able to modify Identification Details record in the system 
+Scenario: Modification of Identification Details record - To verify the functionality of View Summary button and Back button
 
 Given navigate the IJARA URL
 And login with valid credentials-Tawarruq New App
@@ -180,7 +185,3 @@ And User_608 to verify the functionality of Back button under Customer Identific
 And User_608 post clicking on Back button, system should navigate to the previous screen in Additional Customer Info
 Then logout from the ijaraApplication
 And User_608 invoke soft assert in Identification details screen under Additional Customer Info tab at Tawarruq New Application stage
-
-
-
-

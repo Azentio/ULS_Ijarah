@@ -641,30 +641,6 @@ public class AutoLoan_Steps {
 		}
 	}
 	
-	@And("User_608 verify the Reference Entity field available in Referral\\Sourcing Details section under Application Details tab")
-	public void user_608_verify_the_reference_entity_field_available_in_referral_sourcing_details_section_under_application_details_tab()
-			throws Throwable {
-		WebElement referenceTypeLabel = javascriptHelper
-				.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("referenceEntityLabel"));
-		WebElement referenceTypeDropdown = javascriptHelper
-				.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("referenceEntityDropdown"));
-		System.out.println("Field Name: " + referenceTypeLabel.getText());
-		for (int i = 0; i <= 2000; i++) {
-			try {
-				javascriptHelper.backgroundColor(referenceTypeLabel);
-				Assert.assertTrue(referenceTypeLabel.isDisplayed());
-				javascriptHelper.backgroundBorder(referenceTypeDropdown);
-				Assert.assertTrue(referenceTypeDropdown.isDisplayed());
-				break;
-			} catch (Exception e) {
-				if (i == 2000) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-	}
-	
-	
 //	AT_AL_APP_02
 	@And("User_608 select the Product in Application details screen")
 	public void user_608_select_the_product_in_application_details_screen() throws Throwable {

@@ -31,6 +31,7 @@ public class Murabaha_Steps {
 	JSPaths dataCheck_ApplicationDetailsJsPaths = new JSPaths(excelPath, "ApplicationDetails_Elements", "ApplicationDetails_FieldName", "JSPath");
 	JSPaths appData_IncomeJsPaths = new JSPaths(excelPath, "DataCheckIncome_Elements", "DataCheckIncome_FieldName", "JSPath");
 	JSPaths employmentDetailsJsPaths = new JSPaths(excelPath, "EmploymentDetails_Elements", "EmploymentDetails_FieldName", "JSPath");
+	JSPaths assetDetailsJsPaths = new JSPaths(excelPath, "AssetDetails_Elements", "AssetDetails_FieldName", "JSPath");
 	
 	ExcelData exelData = new ExcelData(excelTestDataPath, "ijara_LoginCredentials", "UserType");
 	Map<String, String> loginTestData = new HashMap<>();
@@ -47,7 +48,7 @@ public class Murabaha_Steps {
 	ExcelData DataCheckAppDetailsExcelData  = new ExcelData(excelTestDataPath,"MU_DataCheck_AppDetails","DataSet ID");
 	ExcelData AppDataIncomeExcelData  = new ExcelData(excelTestDataPath,"MU_AppData_Income","DataSet ID");
 	ExcelData DataCheckEmpDetailsExcelData  = new ExcelData(excelTestDataPath,"MU_DataCheck_EmpDetails","DataSet ID");
-	
+	ExcelData AppDataAssetDetailsExcelData  = new ExcelData(excelTestDataPath,"MU_AppData_AssetDetails","DataSet ID");
 	
 	Map<String, String> testExecutionData;
 	Map<String, String> testData;
@@ -215,10 +216,31 @@ public class Murabaha_Steps {
     }
 	
 	
+//	Murabaha -- App Data Entry -- Asset Details screen
+	@And("^User_608 get the test data for test case AT_MU_ADE_IAD_01$")
+    public void get_the_test_data_for_test_case_AT_MU_ADE_IAD_01() throws Throwable {
+		testData = AppDataAssetDetailsExcelData.getTestdata("DS_AT_MU_ADE_IAD_01");
+    }
 	
+	@And("^User_608 get the test data for test case AT_MU_ADE_IAD_02$")
+    public void get_the_test_data_for_test_case_AT_MU_ADE_IAD_02() throws Throwable {
+		testData = AppDataAssetDetailsExcelData.getTestdata("DS_AT_MU_ADE_IAD_02");
+    }
 	
+	@And("^User_608 get the test data for test case AT_MU_ADE_IAD_03$")
+    public void get_the_test_data_for_test_case_AT_MU_ADE_IAD_03() throws Throwable {
+		testData = AppDataAssetDetailsExcelData.getTestdata("DS_AT_MU_ADE_IAD_03");
+    }
 	
+	@And("^User_608 get the test data for test case AT_MU_ADE_IAD_05$")
+    public void get_the_test_data_for_test_case_AT_MU_ADE_IAD_05() throws Throwable {
+		testData = AppDataAssetDetailsExcelData.getTestdata("DS_AT_MU_ADE_IAD_05");
+    }
 	
+	@And("^User_608 get the test data for test case AT_MU_ADE_IAD_06$")
+    public void get_the_test_data_for_test_case_AT_MU_ADE_IAD_06() throws Throwable {
+		testData = AppDataAssetDetailsExcelData.getTestdata("DS_AT_MU_ADE_IAD_06");
+    }
 	
 	
 	
@@ -2207,9 +2229,9 @@ public class Murabaha_Steps {
 	
 	@And("User_608 verify the all the possible matching records are displayed under Financial Commitments section")
 	public void user_verify_the_all_the_possible_matching_records_are_displayed_under_financial_commitments_section() throws Throwable {
-		WebElement searchResult = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("searchResult"));
 		for (int i = 0; i <= 500; i++) {
 			try {
+				WebElement searchResult = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("searchResult"));
 				javascriptHelper.backgroundColor(searchResult);
 				String text = searchResult.getText().substring(13, 14);
 				System.out.println("Result value: "+text);
@@ -2243,10 +2265,9 @@ public class Murabaha_Steps {
 	
 	@And("User_608 verify the system is should not displayed any records under Financial Commitments section")
 	public void user_verify_the_system_is_should_not_displayed_any_records_under_financial_commitments_section() throws Throwable {
-		Thread.sleep(1000);
-		WebElement searchResult = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("searchResult"));
 		for (int i = 0; i <= 500; i++) {
 			try {
+				WebElement searchResult = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("searchResult"));
 				javascriptHelper.backgroundColor(searchResult);
 				String text = searchResult.getText().substring(13, 14);
 				System.out.println("Result value: "+text);
@@ -2259,6 +2280,7 @@ public class Murabaha_Steps {
 			}
 		}
 	}
+	
 	
 	
 //	AT_MU_AD_03
@@ -3120,7 +3142,7 @@ public class Murabaha_Steps {
           try {
         	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
         			  dataCheck_ApplicationDetailsJsPaths.getElement("sourcingStaffLabel")));
-              Assert.assertTrue(sourcingStaff.contains("*"));
+              Assert.assertTrue(!(sourcingStaff.contains("*")));
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -3205,6 +3227,54 @@ public class Murabaha_Steps {
 					Assert.fail(e.getMessage());
 				}
 			}
+		}	    
+	}
+	
+	@And("User_608 verify Reference Entity field as Non_mandatory, Non-editable and Dropdown under Referral\\Sourcing Details section")
+	public void user_verify_reference_entity_field_as_non_mandatory_non_editable_and_dropdown_under_referral_sourcing_details_section() throws Throwable {
+//		Validate Non-Mandatory
+		String referenceEntity = javascriptHelper.executeScriptWithWebElement(
+				dataCheck_ApplicationDetailsJsPaths.getElement("referenceEntityLabel")).getText();
+		for (int i = 0; i <2000; i++) {
+          try {
+        	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+        			  dataCheck_ApplicationDetailsJsPaths.getElement("referenceEntityLabel")));
+              Assert.assertTrue(!(referenceEntity.contains("*")));
+              break;
+          } catch (Exception e) {
+              if (i==1999) {
+                  Assert.fail(e.getMessage());
+              }
+          	}
+		}
+
+//		Verify field as non-editable
+		WebElement referenceEntityField = javascriptHelper.executeScriptWithWebElement(
+				dataCheck_ApplicationDetailsJsPaths.getElement("referenceEntity"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				Assert.assertTrue(referenceEntityField.getAttribute("ng-reflect-readonly").contains("true"));
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+//		Validate the field should be lookup value[Dropdown]
+		WebElement referenceEntityDropdown = javascriptHelper.executeScriptWithWebElement(
+				dataCheck_ApplicationDetailsJsPaths.getElement("referenceEntityDropdown"));
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.backgroundBorder(referenceEntityDropdown);
+				Assert.assertTrue(referenceEntityDropdown.getAttribute("ng-reflect-placeholder").contains("Select"));
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
 		}
 	    
 	}
@@ -3229,7 +3299,7 @@ public class Murabaha_Steps {
 		
 //		Verify field as non-editable
 		WebElement referenceCodeInput = javascriptHelper.executeScriptWithWebElement(
-				dataCheck_ApplicationDetailsJsPaths.getElement("referenceCodeInput"));
+				dataCheck_ApplicationDetailsJsPaths.getElement("referenceCode"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(referenceCodeInput);
@@ -3257,6 +3327,7 @@ public class Murabaha_Steps {
 			}
 		}	    
 	}
+
 	
 	
 //	@AT_MU_INC_01
@@ -9123,7 +9194,8 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify the functionality of Search box with mismatch data under Customer Employment section")
-	public void user_verify_the_functionality_of_search_box_with_mismatch_data_under_customer_employment_section() throws Throwable {
+	public void user_verify_the_functionality_of_search_box_with_mismatch_data_under_customer_employment_section()
+			throws Throwable {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("searchbox_Input"))
@@ -9140,7 +9212,8 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify system should not display any records or system should display the message as No data found under Customer Employment section")
-	public void user_verify_system_should_not_display_any_records_or_system_should_display_the_message_as_no_data_found_under_customer_employment_section() throws Throwable {
+	public void user_verify_system_should_not_display_any_records_or_system_should_display_the_message_as_no_data_found_under_customer_employment_section()
+			throws Throwable {
 		WebElement searchResult = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("searchResult"));
 		for (int i = 0; i <= 500; i++) {
 			try {
@@ -9158,13 +9231,2849 @@ public class Murabaha_Steps {
 	    
 	}
 	
+//	AT_MU_ADE_IAD_01
+	@And("User_608 clicks on the Asset Details tab")
+	public void user_608_clicks_on_the_asset_details_tab() throws Throwable {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0") && !length.equals("1")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 500; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-segment-button')[" + j + "].innerText";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().contains("Asset Details")) {
+						System.out.println("condition true");
+						String jspath = "document.querySelectorAll('ion-segment-button')[" + j + "]";
+						WebElement tab = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.JSEClick(tab);
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 click the Add button under Asset Details tab")
+	public void user_608_click_the_add_button_under_asset_details_tab() throws Throwable {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();			
+					if (titlename.trim().contains("Asset Details")) {
+						String jspath = "document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]";
+						WebElement pencilBtn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.JSEClick(pencilBtn);
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Back button availble in Asset Details screen")
+	public void user_608_verify_back_button_availble_in_asset_details_screen() throws Throwable {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('form button')[" + j + "].getAttribute('ng-reflect-text')";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains("Go Back")) {
+						String jspath = "document.querySelectorAll('form button')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.backgroundBorder(btn);
+						softAssert.assertTrue(btn.isDisplayed(),
+								"Back button should be displayed in Asset Details screen");
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Save button availble in Asset Details screen")
+	public void user_608_verify_save_button_availble_in_asset_details_screen() throws Throwable {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('form button')[" + j + "].getAttribute('ng-reflect-text')";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains("Save")) {
+						String jspath = "document.querySelectorAll('form button')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.backgroundBorder(btn);
+						softAssert.assertTrue(btn.isDisplayed(),
+								"Save button should be displayed in Asset Details screen");
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 invoke soft assert in Asset Details screen at Murabaha App Data Entry stage")
+	public void user_608_invoke_soft_assert_in_asset_details_screen_at_murabaha_app_data_entry_stage() throws Throwable {
+		softAssert.assertAll();
+	}
+	
+	@And("User_608 select the Asset Category under Asset Details section in Asset Details screen")
+	public void user_608_select_the_asset_category_under_asset_details_section_in_asset_details_screen() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetCategoryDropdown"))
+				.click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio-group ion-label').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains(testData.get("Asset_Category"))) {
+						String jspath = "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.moveToElement(btn).click().build().perform();
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 select the Asset Type under Asset Details section in Asset Details screen")
+	public void user_608_select_the_asset_type_under_asset_details_section_in_asset_details_screen() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(assetDetailsJsPaths.getElement("AssetTypeDropdown"))
+				.click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio-group ion-label').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains(testData.get("Asset_Type"))) {
+						String jspath = "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.moveToElement(btn).click().build().perform();
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 select the Asset Manufacture under Asset Details section in Asset Details screen")
+	public void user_608_select_the_asset_manufacture_under_asset_details_section_in_asset_details_screen() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetManufactureDropdown"))
+				.click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio-group ion-label').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains(testData.get("Asset_Manufacture"))) {
+						String jspath = "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.moveToElement(btn).click().build().perform();
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 select the Asset Model under Asset Details section in Asset Details screen")
+	public void user_608_select_the_asset_model_under_asset_details_section_in_asset_details_screen() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetModelDropdown"))
+				.click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio-group ion-label').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains(testData.get("Asset_Model"))) {
+						String jspath = "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.moveToElement(btn).click().build().perform();
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 select the Asset Model Type under Asset Details section in Asset Details screen")
+	public void user_608_select_the_asset_model_type_under_asset_details_section_in_asset_details_screen() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetModelTypeDropdown"))
+				.click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio-group ion-label').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains(testData.get("AssetModel_Type"))) {
+						String jspath = "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.moveToElement(btn).click().build().perform();
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 select the Asset Condition under Asset Details section in Asset Details screen")
+	public void user_608_select_the_asset_condition_under_asset_details_section_in_asset_details_screen() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetConditionDropdown"))
+				.click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio-group ion-label').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains(testData.get("Asset_Condition"))) {
+						String jspath = "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.moveToElement(btn).click().build().perform();
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 enter Chasis Number under Asset Details section in Asset Details screen")
+	public void user_608_enter_chasis_number_under_asset_details_section_in_asset_details_screen() throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement element = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("chasisNumberInput"));
+				element.click();
+				element.sendKeys(testData.get("ChasisNbr"));
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 enter Plate Number under Asset Details section in Asset Details screen")
+	public void user_608_enter_plate_number_under_asset_details_section_in_asset_details_screen() throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement element = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("plateNumberInput"));
+				element.click();
+				element.sendKeys(testData.get("PlateNbr"));
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 enter Plate Number Arabic under Asset Details section in Asset Details screen")
+	public void user_608_enter_plate_number_arabic_under_asset_details_section_in_asset_details_screen() throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement element = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("plateNbrArabicInput"));
+				element.click();
+				element.sendKeys(testData.get("PlateNbr_Arabic"));
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 select the Asset Dealer under Dealer Details section in Asset Details screen")
+	public void user_608_select_the_asset_dealer_under_dealer_details_section_in_asset_details_screen() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement element = javascriptHelper.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetDealerDropdown"));
+				actions.scrollToElement(element).build().perform();
+				element.click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio-group ion-label').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains(testData.get("Asset_Dealer"))) {
+						String jspath = "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.moveToElement(btn).click().build().perform();
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 enter Asset Price under Asset Price & Down Payment Details section in Asset Details screen")
+	public void user_608_enter_asset_price_under_asset_price_down_payment_details_section_in_asset_details_screen() throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement element = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("assetPriceInput"));
+				javascriptHelper.scrollIntoView(element);
+				element.click();
+				element.sendKeys(testData.get("Asset_Price"));
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 select the Asset Fulfilment Location under Asset Price & Down Payment Details section")
+	public void user_608_select_the_asset_fulfilment_location_under_asset_price_down_payment_details_section() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(assetDetailsJsPaths.getElement("fulfilmentLocationDropdown"))
+				.click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio-group ion-label').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains(testData.get("FulfilmentLocation"))) {
+						String jspath = "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.moveToElement(btn).click().build().perform();
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 select the Location of Signing under Asset Price & Down Payment Details section")
+	public void user_608_select_the_location_of_signing_under_asset_price_down_payment_details_section() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(assetDetailsJsPaths.getElement("locationOfSigningDropdown"))
+				.click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio-group ion-label').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains(testData.get("LocationOfSigning"))) {
+						String jspath = "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.moveToElement(btn).click().build().perform();
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 enter Remarks under Asset Price & Down Payment Details section in Asset Details screen")
+	public void user_608_enter_remarks_under_asset_price_down_payment_details_section_in_asset_details_screen() throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement element = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("remarksInput"));
+				element.click();
+				element.sendKeys(testData.get("Remarks"));
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+	
+	@And("User_608 to verify the impact when user keep any mandatory field and click on save button in Asset Details screen")
+	public void user_608_to_verify_the_impact_when_user_keep_any_mandatory_field_and_click_on_save_button_in_asset_details_screen() throws Throwable {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('form button')[" + j + "].getAttribute('ng-reflect-text')";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains("Save")) {
+						String jspath = "document.querySelectorAll('form button')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.JSEClick(btn);
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_608 to verify system should show the proper validation message for blank field in Asset Details screen")
+	public void user_608_to_verify_system_should_show_the_proper_validation_message_for_blank_field_in_asset_details_screen() throws Throwable {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				WebElement element = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("mandatoryFillToastMsg"));
+				String madatoryErrorMsg = element.getText();
+				System.err.println("Mandatory Error : " + madatoryErrorMsg);
+				softAssert.assertTrue(madatoryErrorMsg.contains("Please fill all the details"), 
+						"Mandatory field blank message in Customer Debt screen");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@And("User_608 clicks on the Save button under Asset Details screen")
+	public void user_608_clicks_on_the_save_button_under_asset_details_screen() throws Throwable {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('form button')[" + j + "].getAttribute('ng-reflect-text')";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains("Save")) {
+						String jspath = "document.querySelectorAll('form button')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.scrollToElement(btn).build().perform();
+						javascriptHelper.JSEClick(btn);
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_608 verify post clicking on save button system should display the confirmation message")
+	public void user_608_verify_post_clicking_on_save_button_system_should_display_the_confirmation_message() throws Throwable {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String text = javascriptHelper
+						.executeScriptWithWebElement(customerDebtJsPaths.getElement("successMsg")).getText();
+				softAssert.assertTrue(text.contains("Success!"), 
+						"System should display the confirmation message as SUCCESS");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("toastMsgCloseBtn"))
+						.click();
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	
+//	@AT_MU_ADE_IAD_02
+	@And("User_608 verify Asset Category field available under Asset Details section in Asset Details screen")
+	public void user_608_verify_asset_category_field_available_under_asset_details_section_in_asset_details_screen() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement label = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetCategoryLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Asset Category field available under Asset Details section");
+				
+				WebElement dropdown = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetCategoryDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(),"Asset Category field available under Asset Details section");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Asset Type field available under Asset Details section in Asset Details screen")
+	public void user_608_verify_asset_type_field_available_under_asset_details_section_in_asset_details_screen() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement label = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetTypeLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Asset Type field available under Asset Details section");
+				
+				WebElement dropdown = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("AssetTypeDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(),"Asset Type field available under Asset Details section");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Asset Manufacture field available under Asset Details section in Asset Details screen")
+	public void user_608_verify_asset_manufacture_field_available_under_asset_details_section_in_asset_details_screen() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement label = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetManufactureLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Asset Manufacture field available under Asset Details section");
+				
+				WebElement dropdown = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetManufactureDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(),"Asset Manufacture field available under Asset Details section");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Asset Model under field available under Details section in Asset Details screen")
+	public void user_608_verify_asset_model_under_field_available_under_details_section_in_asset_details_screen() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement label = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetModelLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Asset Model field available under Asset Details section");
+				
+				WebElement dropdown = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetModelDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(),"Asset Model field available under Asset Details section");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Asset Model Type field available under Asset Details section in Asset Details screen")
+	public void user_608_verify_asset_model_type_field_available_under_asset_details_section_in_asset_details_screen() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement label = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetModelTypeLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Asset Model Type field available under Asset Details section");
+				
+				WebElement dropdown = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetModelTypeDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(),"Asset Model Type field available under Asset Details section");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Year Of Manufacture field available under Asset Details section in Asset Details screen")
+	public void user_608_verify_year_of_manufacture_field_available_under_asset_details_section_in_asset_details_screen() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement label = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("yearOfManufactureLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Year Of Manufacture field available under Asset Details section");
+				
+				WebElement input = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("yearOfManufactureCalender"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.isDisplayed(),"Year Of Manufacture field available under Asset Details section");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Asset Condition field available under Asset Details section in Asset Details screen")
+	public void user_608_verify_asset_condition_field_available_under_asset_details_section_in_asset_details_screen() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement label = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetConditionLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Asset Condition field available under Asset Details section");
+				
+				WebElement dropdown = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetConditionDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(),"Asset Condition field available under Asset Details section");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Asset Color field available under Asset Details section in Asset Details screen")
+	public void user_608_verify_asset_color_field_available_under_asset_details_section_in_asset_details_screen() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement label = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetColorLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Asset Color field available under Asset Details section");
+				
+				WebElement dropdown = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetColorDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(),"Asset Color field available under Asset Details section");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Drivetrine field available under Asset Details section in Asset Details screen")
+	public void user_608_verify_drivetrine_field_available_under_asset_details_section_in_asset_details_screen() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement label = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("drivetrainLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Drivetrine field available under Asset Details section");
+				
+				WebElement dropdown = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("drivetrainDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(),"Drivetrine field available under Asset Details section");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Number of Cylinder field available under Asset Details section in Asset Details screen")
+	public void user_608_verify_number_of_cylinder_field_available_under_asset_details_section_in_asset_details_screen() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement label = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("noOfCyclindersLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Number of Cylinder field available under Asset Details section");
+				
+				WebElement input = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("noOfCyclindersInput"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.isDisplayed(),"Number of Cylinder field available under Asset Details section");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Volume Of Engine field available under Asset Details section in Asset Details screen")
+	public void user_608_verify_volume_of_engine_field_available_under_asset_details_section_in_asset_details_screen() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement label = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("volumeOfEngineLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Volume Of Engine field available under Asset Details section");
+				
+				WebElement input = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("volumeOfEngineInput"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.isDisplayed(),"Volume Of Engine field available under Asset Details section");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Number Of Units field available under Asset Details section in Asset Details screen")
+	public void user_608_verify_number_of_units_field_available_under_asset_details_section_in_asset_details_screen() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement label = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("noOfUnitsLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Number Of Units field available under Asset Details section");
+				
+				WebElement input = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("noOfUnitsInput"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.isDisplayed(),"Number Of Units field available under Asset Details section");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Chasis Number field available under Asset Details section in Asset Details screen")
+	public void user_608_verify_chasis_number_field_available_under_asset_details_section_in_asset_details_screen() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement label = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("chasisNumberLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Chasis Number field available under Asset Details section");
+				
+				WebElement input = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("chasisNumberInput"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.isDisplayed(),"Chasis Number field available under Asset Details section");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Plate Number field available under Asset Details section in Asset Details screen")
+	public void user_608_verify_plate_number_field_available_under_asset_details_section_in_asset_details_screen() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement label = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("plateNumberLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Plate Number field available under Asset Details section");
+				
+				WebElement input = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("plateNumberInput"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.isDisplayed(),"Plate Number field available under Asset Details section");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Plate Number Arabic field available under Asset Details section in Asset Details screen")
+	public void user_608_verify_plate_number_arabic_field_available_under_asset_details_section_in_asset_details_screen() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement label = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("plateNbrArabicLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Plate Number Arabic field available under Asset Details section");
+				
+				WebElement input = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("plateNbrArabicInput"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.isDisplayed(),"Plate Number Arabic field available under Asset Details section");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
 	
 	
+//	AT_MU_ADE_IAD_03
+	@And("User_608 verify Asset Category field as Mandatory, Editable and Lookup value in Asset Details section")
+	public void user_verify_asset_category_field_as_mandatory_editable_and_lookup_value_in_asset_details_section() throws Throwable {
+//		Validate Mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String label = javascriptHelper
+					.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetCategoryLabel")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("assetCategoryLabel")));
+				softAssert.assertTrue(label.contains("*"),"Asset Category field should be Mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Editable
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("assetCategory"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("false"),
+						"Asset Category field should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Validate the field should be lookup value[Dropdown]
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("assetCategoryDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Asset Category field should be Lookup value");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Asset Type field as Mandatory, Editable and Lookup value in Asset Details section")
+	public void user_verify_asset_type_field_as_mandatory_editable_and_lookup_value_in_asset_details_section() throws Throwable {
+//		Validate Mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String label = javascriptHelper
+					.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetTypeLabel")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("assetTypeLabel")));
+				softAssert.assertTrue(label.contains("*"),"Asset Type field should be Mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Editable
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("assetType"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("false"),
+						"Asset Type field should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Validate the field should be lookup value[Dropdown]
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("AssetTypeDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Asset Type field should be Lookup value");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Asset Manufacture field as Mandatory, Editable and Lookup value in Asset Details section")
+	public void user_verify_asset_manufacture_field_as_mandatory_editable_and_lookup_value_in_asset_details_section() throws Throwable {
+//		Validate Mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String label = javascriptHelper
+					.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetManufactureLabel")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("assetManufactureLabel")));
+				softAssert.assertTrue(label.contains("*"),"Asset Manufacture field should be Mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Editable
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("assetManufacture"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("false"),
+						"Asset Manufacture field should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Validate the field should be lookup value[Dropdown]
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("assetManufactureDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Asset Manufacture field should be Lookup value");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Asset Model under field as Mandatory, Editable and Lookup value in Details section")
+	public void user_verify_asset_model_under_field_as_mandatory_editable_and_lookup_value_in_details_section() throws Throwable {
+//		Validate Mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String label = javascriptHelper
+					.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetModelLabel")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("assetModelLabel")));
+				softAssert.assertTrue(label.contains("*"),"Asset Model field should be Mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Editable
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("assetModel"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("false"),
+						"Asset Model field should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Validate the field should be lookup value[Dropdown]
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("assetModelDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Asset Model field should be Lookup value");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Asset Model Type field as Mandatory, Editable and Lookup value in Asset Details section")
+	public void user_verify_asset_model_type_field_as_mandatory_editable_and_lookup_value_in_asset_details_section() throws Throwable {
+//		Validate Mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String label = javascriptHelper
+					.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetModelTypeLabel")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("assetModelTypeLabel")));
+				softAssert.assertTrue(label.contains("*"),"Asset Model Type field should be Mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Editable
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("assetModelType"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("false"),
+						"Asset Model Type field should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Validate the field should be lookup value[Dropdown]
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("assetModelTypeDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Asset Model Type field should be Lookup value");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Year Of Manufacture field as Non-mandatory, Editable and Calendar in Asset Details section")
+	public void user_verify_year_of_manufacture_field_as_non_mandatory_editable_and_calendar_in_asset_details_section() throws Throwable {
+//		Validate Non-mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String label = javascriptHelper
+					.executeScriptWithWebElement(assetDetailsJsPaths.getElement("yearOfManufactureLabel")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("yearOfManufactureLabel")));
+				softAssert.assertTrue(!(label.contains("*")),"Year Of Manufacture field should be Non-mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Editable
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("yearOfManufacture"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("false"),
+						"Year Of Manufacture field should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Validate the field should be Calendar
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("yearOfManufactureCalender"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getTagName().contains("calendar"),
+						"Year Of Manufacture field should be Calendar");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Asset Condition field as Mandatory, Editable and Lookup value in Asset Details section")
+	public void user_verify_asset_condition_field_as_mandatory_editable_and_lookup_value_in_asset_details_section() throws Throwable {
+//		Validate Mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String label = javascriptHelper
+					.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetConditionLabel")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("assetConditionLabel")));
+				softAssert.assertTrue(label.contains("*"),"Asset Condition field should be Mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Editable
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("assetCondition"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("false"),
+						"Asset Condition field should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Validate the field should be lookup value[Dropdown]
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("assetConditionDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Asset Condition field should be Lookup value");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Asset Color field as Non-mandatory, Editable and Lookup value in Asset Details section")
+	public void user_verify_asset_color_field_as_non_mandatory_editable_and_lookup_value_in_asset_details_section() throws Throwable {
+//		Validate Non-mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String label = javascriptHelper
+					.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetColorLabel")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("assetColorLabel")));
+				softAssert.assertTrue(!(label.contains("*")),"Asset Color field should be Non-mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Editable
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("assetColor"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("false"),
+						"Asset Color field should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Validate the field should be lookup value[Dropdown]
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("assetColorDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Asset Color field should be Lookup value");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Drivetrine field as Non-mandatory, Editable and Lookup value in Asset Details section")
+	public void user_verify_drivetrine_field_as_non_mandatory_editable_and_lookup_value_in_asset_details_section() throws Throwable {
+//		Validate Non-mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String label = javascriptHelper
+					.executeScriptWithWebElement(assetDetailsJsPaths.getElement("drivetrainLabel")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("drivetrainLabel")));
+				softAssert.assertTrue(!(label.contains("*")),"Drivetrine field should be Non-mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Editable
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("drivetrain"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("false"),
+						"Drivetrine field should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Validate the field should be lookup value[Dropdown]
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("drivetrainDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Drivetrine field should be Lookup value");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Number of Cylinder field as Non-mandatory, Editable and Numeric in Asset Details section")
+	public void user_verify_number_of_cylinder_field_as_non_mandatory_editable_and_numeric_in_asset_details_section() throws Throwable {
+//		Validate Non-mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String label = javascriptHelper
+					.executeScriptWithWebElement(assetDetailsJsPaths.getElement("noOfCyclindersLabel")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("noOfCyclindersLabel")));
+				softAssert.assertTrue(!(label.contains("*")),"Number of Cylinder field should be Non-mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Editable
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("noOfCyclinders"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("false"),
+						"Number of Cylinder field should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Numeric		
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement input = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("noOfCyclindersInput"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.getAttribute("type").contains("number"),
+						"Number of Cylinder field should be Numeric");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_608 verify Volume Of Engine field as Non-mandatory, Editable and Numeric in Asset Details section")
+	public void user_verify_volume_of_engine_field_as_non_mandatory_editable_and_numeric_in_asset_details_section() throws Throwable {
+//		Validate Non-mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String label = javascriptHelper
+					.executeScriptWithWebElement(assetDetailsJsPaths.getElement("volumeOfEngineLabel")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("volumeOfEngineLabel")));
+				softAssert.assertTrue(!(label.contains("*")),"Volume Of Engine field should be Non-mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Editable
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("volumeOfEngine"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("false"),
+						"Volume Of Engine field should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Numeric		
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement input = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("volumeOfEngineInput"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.getAttribute("type").contains("number"),
+						"Volume Of Engine field should be Numeric");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Number Of Units field as Non-mandatory, Editable and Numeric in Asset Details section")
+	public void user_verify_number_of_units_field_as_non_mandatory_editable_and_numeric_in_asset_details_section() throws Throwable {
+//		Validate Non-mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String label = javascriptHelper
+					.executeScriptWithWebElement(assetDetailsJsPaths.getElement("noOfUnitsLabel")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("noOfUnitsLabel")));
+				softAssert.assertTrue(!(label.contains("*")),"Number of Units field should be Non-mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Editable
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("noOfUnits"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("false"),
+						"Number of Units field should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Numeric		
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement input = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("noOfUnitsInput"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.getAttribute("type").contains("number"),
+						"Number of Units field should be Numeric");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Chasis Number field as Mandatory, Editable and Textbox in Asset Details section")
+	public void user_verify_chasis_number_field_as_mandatory_editable_and_textbox_in_asset_details_section() throws Throwable {
+//		Validate Mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String label = javascriptHelper
+					.executeScriptWithWebElement(assetDetailsJsPaths.getElement("chasisNumberLabel")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("chasisNumberLabel")));
+				softAssert.assertTrue(label.contains("*"),"Chasis Number field should be Mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Editable
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("chasisNumber"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("false"),
+						"Chasis Number field should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Textbox		
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement input = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("chasisNumberInput"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.getAttribute("type").contains("text"),
+						"Chasis Number field should be Textbox");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Plate Number field as Mandatory, Editable and Textbox in Asset Details section")
+	public void user_verify_plate_number_field_as_mandatory_editable_and_textbox_in_asset_details_section() throws Throwable {
+//		Validate Mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String label = javascriptHelper
+					.executeScriptWithWebElement(assetDetailsJsPaths.getElement("plateNumberLabel")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("plateNumberLabel")));
+				softAssert.assertTrue(label.contains("*"),"Plate Number field should be Mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Editable
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("plateNumber"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("false"),
+						"Plate Number field should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Textbox		
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement input = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("plateNumberInput"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.getAttribute("type").contains("text"),
+						"Plate Number field should be Textbox");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Plate Number Arabic field as Mandatory, Editable and Textbox in Asset Details section")
+	public void user_verify_plate_number_arabic_field_as_mandatory_editable_and_textbox_in_asset_details_section() throws Throwable {
+//		Validate Mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String label = javascriptHelper
+					.executeScriptWithWebElement(assetDetailsJsPaths.getElement("plateNbrArabicLabel")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("plateNbrArabicLabel")));
+				softAssert.assertTrue(label.contains("*"),"Plate Number Arabic field should be Mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Editable
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("plateNbrArabic"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("false"),
+						"Plate Number Arabic field should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Textbox		
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement input = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("plateNbrArabicInput"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.getAttribute("type").contains("text"),
+						"Plate Number Arabic field should be Textbox");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}	
 	
 	
+//	AT_MU_ADE_IAD_05
+	@And("User_608 verify Asset Price field available under Asset Price and Down Payment Details section")
+	public void user_608_verify_asset_price_field_available_under_asset_price_and_down_payment_details_section() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement label = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetPriceLabel"));
+				javascriptHelper.scrollIntoView(label);
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Asset Price field available under Asset Details section");
+				
+				WebElement dropdown = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetPriceInput"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(),"Asset Price field available under Asset Details section");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
 	
+	@And("User_608 verify Down Payment field available under Asset Price and Down Payment Details section")
+	public void user_608_verify_down_payment_field_available_under_asset_price_and_down_payment_details_section() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement label = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("downPaymentLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Down Payment field available under Asset Details section");
+				
+				WebElement dropdown = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("downPaymentInput"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(),"Down Payment field available under Asset Details section");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
 	
+	@And("User_608 verify Down Payment Percentage field available under Asset Price and Down Payment Details section")
+	public void user_608_verify_down_payment_percentage_field_available_under_asset_price_and_down_payment_details_section() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement label = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("downPaymentPercentLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Down Payment Percentage field available under Asset Details section");
+				
+				WebElement dropdown = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("downPaymentPercentInput"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(),"Down Payment Percentage field available under Asset Details section");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
 	
+	@And("User_608 verify Green Card Issue Date field available under Asset Price and Down Payment Details section")
+	public void user_608_verify_green_card_issue_date_field_available_under_asset_price_and_down_payment_details_section() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement label = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("greenCardIssueDateLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Green Card Issue Date field available under Asset Details section");
+				
+				WebElement dropdown = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("greenCardIssueDateCalender"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(),"Green Card Issue Date field available under Asset Details section");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+	
+	@And("User_608 verify Residual Value field available under Asset Price and Down Payment Details section")
+	public void user_608_verify_residual_value_field_available_under_asset_price_and_down_payment_details_section() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement label = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("residualValueLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Residual Value field available under Asset Details section");
+				
+				WebElement dropdown = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("residualValueInput"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(),"Residual Value field available under Asset Details section");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+	
+	@And("User_608 verify Green Card No field available under Asset Price and Down Payment Details section")
+	public void user_608_verify_green_card_no_field_available_under_asset_price_and_down_payment_details_section() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement label = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("greenCardNoLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Green Card No field available under Asset Details section");
+				
+				WebElement dropdown = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("greenCardNoInput"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(),"Green Card No field available under Asset Details section");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+	
+	@And("User_608 verify Weight field available under Asset Price and Down Payment Details section")
+	public void user_608_verify_weight_field_available_under_asset_price_and_down_payment_details_section() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement label = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("weightLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Weight field available under Asset Details section");
+				
+				WebElement dropdown = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("weightInput"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(),"Weight field available under Asset Details section");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+	
+	@And("User_608 verify Mileage field available under Asset Price and Down Payment Details section")
+	public void user_608_verify_mileage_field_available_under_asset_price_and_down_payment_details_section() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement label = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("mileageLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Mileage field available under Asset Details section");
+				
+				WebElement dropdown = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("mileageInput"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(),"Mileage field available under Asset Details section");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+	
+	@And("User_608 verify Country Of Manufacturing field available under Asset Price and Down Payment Details section")
+	public void user_608_verify_country_of_manufacturing_field_available_under_asset_price_and_down_payment_details_section() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement label = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("countryOfManufacturingLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Country Of Manufacturing field available under Asset Details section");
+				
+				WebElement dropdown = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("countryOfManufacturingDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(),"Country Of Manufacturing field available under Asset Details section");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+	
+	@And("User_608 verify Asset Fulfilment Location field available under Asset Price and Down Payment Details section")
+	public void user_608_verify_asset_fulfilment_location_field_available_under_asset_price_and_down_payment_details_section() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement label = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("fulfilmentLocationLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Asset Fulfilment Location field available under Asset Details section");
+				
+				WebElement dropdown = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("fulfilmentLocationDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(),"Asset Fulfilment Location field available under Asset Details section");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+	
+	@And("User_608 verify Location of Signing field available under Asset Price and Down Payment Details section")
+	public void user_608_verify_location_of_signing_field_available_under_asset_price_and_down_payment_details_section() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement label = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("locationOfSigningLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Location of Signing field available under Asset Details section");
+				
+				WebElement dropdown = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("locationOfSigningDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(),"Location of Signing field available under Asset Details section");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+	
+	@And("User_608 verify Asset Receive Location field available under Asset Price and Down Payment Details section")
+	public void user_608_verify_asset_receive_location_field_available_under_asset_price_and_down_payment_details_section() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement label = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("receivedLocationLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Asset Receive Location field available under Asset Details section");
+				
+				WebElement dropdown = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("receivedLocationDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(),"Asset Receive Location field available under Asset Details section");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+	
+	@And("User_608 verify Remarks field available under Asset Price and Down Payment Details section")
+	public void user_608_verify_remarks_field_available_under_asset_price_and_down_payment_details_section() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement label = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("remarksLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Remarks field available under Asset Details section");
+				
+				WebElement dropdown = javascriptHelper
+						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("remarksInput"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(),"Remarks field available under Asset Details section");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+	
+//	AT_MU_ADE_IAD_06
+	@And("User_608 verify Asset Price field as Mandatory, Editable and Numeric in Asset Price and Down Payment Details section")
+	public void user_608_verify_asset_price_field_as_mandatory_editable_and_numeric_in_asset_price_and_down_payment_details_section() {
+//		Validate Mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				javascriptHelper.scrollIntoView(javascriptHelper
+					.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetPriceLabel")));
+				String label = javascriptHelper
+					.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetPriceLabel")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("assetPriceLabel")));
+				softAssert.assertTrue(label.contains("*"),"Asset Price field should be Mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Editable
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("assetPrice"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("false"),
+						"Asset Pricefield should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Numeric		
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement input = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("assetPriceInput"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.getAttribute("type").contains("number"),
+						"Asset Price field should be Numeric");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Down Payment field as Non-mandatory, Editable and Numeric in Asset Price and Down Payment Details section")
+	public void user_608_verify_down_payment_field_as_non_mandatory_editable_and_numeric_in_asset_price_and_down_payment_details_section() {
+//		Validate Non-mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String label = javascriptHelper
+					.executeScriptWithWebElement(assetDetailsJsPaths.getElement("downPaymentLabel")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("downPaymentLabel")));
+				softAssert.assertTrue(!(label.contains("*")),"Down Payment field should be Non-mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Editable
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("downPayment"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("false"),
+						"Down Payment field should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Numeric		
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement input = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("downPaymentInput"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.getAttribute("type").contains("number"),
+						"Down Payment field should be Numeric");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Down Payment Percentage field as Non-mandatory, Editable and Numeric in Asset Price and Down Payment Details section")
+	public void user_608_verify_down_payment_percentage_field_as_non_mandatory_editable_and_numeric_in_asset_price_and_down_payment_details_section() {
+//		Validate Non-mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String label = javascriptHelper
+					.executeScriptWithWebElement(assetDetailsJsPaths.getElement("downPaymentPercentLabel")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("downPaymentPercentLabel")));
+				softAssert.assertTrue(!(label.contains("*")),"Down Payment Percentage field should be Non-mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Editable
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("downPaymentPercent"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("false"),
+						"Down Payment Percentage field should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Numeric		
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement input = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("downPaymentPercentInput"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.getAttribute("type").contains("number"),
+						"Down Payment Percentage field should be Numeric");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Green Card Issue Date field as Non-mandatory, Editable and Date Asset Price and Down Payment Details section")
+	public void user_608_verify_green_card_issue_date_field_as_non_mandatory_editable_and_date_asset_price_and_down_payment_details_section() {
+//		Validate Non-mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String label = javascriptHelper
+					.executeScriptWithWebElement(assetDetailsJsPaths.getElement("greenCardIssueDateLabel")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("greenCardIssueDateLabel")));
+				softAssert.assertTrue(!(label.contains("*")),"Green Card Issue Date field should be Non-mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Editable
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("greenCardIssueDate"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("false"),
+						"Green Card Issue Date field should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Numeric		
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement input = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("greenCardIssueDateCalender"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.getTagName().contains("calendar"),
+						"Green Card Issue Date field should be Date");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Residual Value field as Non-mandatory, Editable and Numeric in Asset Price and Down Payment Details section")
+	public void user_608_verify_residual_value_field_as_non_mandatory_editable_and_numeric_in_asset_price_and_down_payment_details_section() {
+//		Validate Non-mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String label = javascriptHelper
+					.executeScriptWithWebElement(assetDetailsJsPaths.getElement("residualValueLabel")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("residualValueLabel")));
+				softAssert.assertTrue(!(label.contains("*")),"Residual Value field should be Non-mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Editable
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("residualValue"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("false"),
+						"Residual Value field should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Numeric		
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement input = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("residualValueInput"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.getAttribute("type").contains("number"),
+						"Residual Value field should be Numeric");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	    
+	}
+
+	@And("User_608 verify Green Card No field as Non-mandatory, Editable and Textbox in Asset Price and Down Payment Details section")
+	public void user_608_verify_green_card_no_field_as_non_mandatory_editable_and_textbox_in_asset_price_and_down_payment_details_section() {
+//		Validate Non-mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String label = javascriptHelper
+					.executeScriptWithWebElement(assetDetailsJsPaths.getElement("greenCardNoLabel")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("greenCardNoLabel")));
+				softAssert.assertTrue(!(label.contains("*")),"Green Card No field should be Non-mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Editable
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("greenCardNo"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("false"),
+						"Green Card No field should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Textbox		
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement input = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("greenCardNoInput"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.getAttribute("type").contains("text"),
+						"Green Card No field should be Textbox");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	    
+	}
+
+	@And("User_608 verify Weight field as Non-mandatory, Editable and Numeric in Asset Price and Down Payment Details section")
+	public void user_608_verify_weight_field_as_non_mandatory_editable_and_numeric_in_asset_price_and_down_payment_details_section() {
+//		Validate Non-mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String label = javascriptHelper
+					.executeScriptWithWebElement(assetDetailsJsPaths.getElement("weightLabel")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("weightLabel")));
+				softAssert.assertTrue(!(label.contains("*")),"Weight field should be Non-mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Editable
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("weight"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("false"),
+						"Weight field should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Numeric		
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement input = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("weightInput"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.getAttribute("type").contains("number"),
+						"Weight field should be Numeric");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Mileage field as Non-mandatory, Editable and Numeric in Asset Price and Down Payment Details section")
+	public void user_608_verify_mileage_field_as_non_mandatory_editable_and_numeric_in_asset_price_and_down_payment_details_section() {
+//		Validate Non-mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String label = javascriptHelper
+					.executeScriptWithWebElement(assetDetailsJsPaths.getElement("mileageLabel")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("mileageLabel")));
+				softAssert.assertTrue(!(label.contains("*")),"Mileage field should be Non-mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Editable
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("mileage"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("false"),
+						"Mileage field should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Numeric		
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement input = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("mileageInput"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.getAttribute("type").contains("number"),
+						"Mileage field should be Numeric");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Country Of Manufacturing field as Non-mandatory, Editable and Lookup in Asset Price and Down Payment Details section")
+	public void user_608_verify_country_of_manufacturing_field_as_non_mandatory_editable_and_lookup_in_asset_price_and_down_payment_details_section() {
+//		Validate Non-mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String label = javascriptHelper
+					.executeScriptWithWebElement(assetDetailsJsPaths.getElement("countryOfManufacturingLabel")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("countryOfManufacturingLabel")));
+				softAssert.assertTrue(!(label.contains("*")),"Country Of Manufacturing field should be Non-mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Editable
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("countryOfManufacturing"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("false"),
+						"Country Of Manufacturing field should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Validate the field should be lookup value[Dropdown]
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("countryOfManufacturingDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Country Of Manufacturing field should be Lookup value");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Asset Fulfilment Location field as Mandatory, Editable and Lookup in Asset Price and Down Payment Details section")
+	public void user_608_verify_asset_fulfilment_location_field_as_mandatory_editable_and_lookup_in_asset_price_and_down_payment_details_section() {
+//		Validate Mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String label = javascriptHelper
+					.executeScriptWithWebElement(assetDetailsJsPaths.getElement("fulfilmentLocationLabel")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("fulfilmentLocationLabel")));
+				softAssert.assertTrue(label.contains("*"),"Asset Fulfilment Location field should be Mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Editable
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("fulfilmentLocation"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("false"),
+						"Asset Fulfilment Location field should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Validate the field should be lookup value[Dropdown]
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("fulfilmentLocationDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Asset Fulfilment Location field should be Lookup value");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Location of Signing field as Mandatory, Editable and Lookup in Asset Price and Down Payment Details section")
+	public void user_608_verify_location_of_signing_field_as_mandatory_editable_and_lookup_in_asset_price_and_down_payment_details_section() {
+//		Validate Mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String label = javascriptHelper
+					.executeScriptWithWebElement(assetDetailsJsPaths.getElement("locationOfSigningLabel")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("locationOfSigningLabel")));
+				softAssert.assertTrue(label.contains("*"),"Location of Signing field should be Mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Editable
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("locationOfSigning"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("false"),
+						"Location of Signing field should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Validate the field should be lookup value[Dropdown]
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("locationOfSigningDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Location of Signing field should be Lookup value");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Asset Receive Location field as Non-mandatory, Editable and Lookup in Asset Price and Down Payment Details section")
+	public void user_608_verify_asset_receive_location_field_as_non_mandatory_editable_and_lookup_in_asset_price_and_down_payment_details_section() {
+//		Validate Non-mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String label = javascriptHelper
+					.executeScriptWithWebElement(assetDetailsJsPaths.getElement("receivedLocationLabel")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("receivedLocationLabel")));
+				softAssert.assertTrue(!(label.contains("*")),"Receive Location field should be Non-mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Editable
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("receivedLocation"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("false"),
+						"Receive Location field should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Validate the field should be lookup value[Dropdown]
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("receivedLocationDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Receive Location field should be Lookup value");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Remarks field as Mandatory, Editable and Textbox in Asset Price and Down Payment Details section")
+	public void user_608_verify_remarks_field_as_mandatory_editable_and_textbox_in_asset_price_and_down_payment_details_section() {
+//		Validate Mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String label = javascriptHelper
+					.executeScriptWithWebElement(assetDetailsJsPaths.getElement("remarksLabel")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("remarksLabel")));
+				softAssert.assertTrue(label.contains("*"),"Remarks field should be Mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Editable
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("remarks"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("false"),
+						"Remarks field should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Textbox		
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement input = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("remarksInput"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.getAttribute("type").contains("text"),
+						"Remarks field should be Textbox");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
 	
 	
 	

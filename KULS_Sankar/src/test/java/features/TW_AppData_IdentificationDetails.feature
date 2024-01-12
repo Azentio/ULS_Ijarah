@@ -3,11 +3,13 @@ Feature: To check the Tawarruq -- App Data Entry -- Additional Customer Info fea
 
 # IDA_02_01,IDA_02_04    (IDA_02_02,IDA_02_03--> not scriptable)
 @AT_IDA_03
-Scenario: Customer Additional info - App Data Entry - Tawarruq
+Scenario: Creation of Identification Details - To verify the impact when user keep any mandatory field blank
 
 Given navigate the IJARA URL
 And login with valid credentials
 And User_608 get the test data for test case AT_IDA_03
+And User_608 click the module name dropdown in ULS application
+And User_608 select the module name as LOS in ULS application
 And User_608 click the Mail box in ULS application
 And User_608 click the Search button under inbox
 And User_608 search the Reference id under inbox in ULS Application

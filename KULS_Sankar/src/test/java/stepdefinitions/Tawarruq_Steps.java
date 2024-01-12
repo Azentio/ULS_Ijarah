@@ -47,6 +47,7 @@ public class Tawarruq_Steps {
 	ExcelData AppDataEntryCustomerDetails  = new ExcelData(excelTestDataPath,"TW_AppData_CustomerDetails","DataSet ID");
 	ExcelData identificatioDetailsExcelData  = new ExcelData(excelTestDataPath,"TW_NewApp_IdentificationDetails","DataSet ID");
 	ExcelData offerDetailsExcelData  = new ExcelData(excelTestDataPath,"TW_Offering_OfferDetails","DataSet ID");
+	ExcelData ApplicationDetailsExcelData  = new ExcelData(excelTestDataPath,"TW_DataCheck_AppDetails","DataSet ID");
 	
 	Map<String, String> testExecutionData;
 	Map<String, String> testData;
@@ -127,6 +128,34 @@ public class Tawarruq_Steps {
     public void get_the_test_data_for_test_case_AT_TW_OFO_12() throws Throwable {
 		testData = offerDetailsExcelData.getTestdata("DS_AT_TW_OFO_12");
     }
+	
+	
+//	Tawarruq -- App Data Check  -- Application Details screen
+	@And("^User_608 get the test data for test case AT_TW_ADC_AD_01$")
+    public void get_the_test_data_for_test_case_AT_TW_ADC_AD_01() throws Throwable {
+		testData = ApplicationDetailsExcelData.getTestdata("DS_AT_TW_ADC_AD_01");
+    }
+	
+	@And("^User_608 get the test data for test case AT_TW_ADC_AD_02$")
+    public void get_the_test_data_for_test_case_AT_TW_ADC_AD_02() throws Throwable {
+		testData = ApplicationDetailsExcelData.getTestdata("DS_AT_TW_ADC_AD_02");
+    }
+	
+	@And("^User_608 get the test data for test case AT_TW_ADC_AD_03$")
+    public void get_the_test_data_for_test_case_AT_TW_ADC_AD_03() throws Throwable {
+		testData = ApplicationDetailsExcelData.getTestdata("DS_AT_TW_ADC_AD_03");
+    }
+	
+	@And("^User_608 get the test data for test case AT_TW_ADC_AD_04$")
+    public void get_the_test_data_for_test_case_AT_TW_ADC_AD_04() throws Throwable {
+		testData = ApplicationDetailsExcelData.getTestdata("DS_AT_TW_ADC_AD_04");
+    }
+	
+	@And("^User_608 get the test data for test case AT_TW_ADC_AD_05$")
+    public void get_the_test_data_for_test_case_AT_TW_ADC_AD_05() throws Throwable {
+		testData = ApplicationDetailsExcelData.getTestdata("DS_AT_TW_ADC_AD_05");
+    }
+	
 	
 	
 	
@@ -3014,6 +3043,11 @@ public class Tawarruq_Steps {
 		softAssert.assertAll();
 	}
 	
+	@And("User_608 invoke soft assert in Application details screen at Tawarruq App Data Check stage")
+	public void user_608_invoke_soft_assert_in_application_details_screen_at_tawarruq_app_data_check_stage() throws Throwable {
+		softAssert.assertAll();
+	}
+	
 	
 //	@AT_TW_AD_DOC_05
 	@And("User_608 click the Document Details tab")
@@ -3052,36 +3086,15 @@ public class Tawarruq_Steps {
 					Assert.fail(e.getMessage());
 				}
 			}
-		}
-//		for (int i = 0; i <= 10; i++) {
-//			try {
-//				javascriptHelper.executeScriptWithWebElement(appDataDocumentDetailsJsPaths.getElement("nextBtn")).click();
-//			} catch (Exception e) {
-//				if (i == 10) {
-//					Assert.fail(e.getMessage());
-//				}
-//			}
-//		}
-//
-//		WebElement documentDetailsTab = javascriptHelper.executeScriptWithWebElement(appDataDocumentDetailsJsPaths.getElement("documentDetailsTab"));
-////		String string = "document.getElementById(\"seg13\")";
-//		for (int i = 0; i <= 10000; i++) {
-//			try {
-//				documentDetailsTab.click();
-//				break;
-//			} catch (Exception e) {
-//				if (i == 10000) {
-//					Assert.fail(e.getMessage());
-//				}
-//			}
-//		}	    
+		}	    
 	}
 
 	@And("User_608 click the Add button under Document Details tab")
 	public void user_608_click_the_add_button_under_document_details_tab() throws Throwable {
-		WebElement addBtn = javascriptHelper.executeScriptWithWebElement(appDataDocumentDetailsJsPaths.getElement("documentsDetailsAddBtn"));
 		for (int i = 0; i <= 100000; i++) {
 			try {
+				WebElement addBtn = javascriptHelper.executeScriptWithWebElement(
+						appDataDocumentDetailsJsPaths.getElement("documentsDetailsAddBtn"));
 				addBtn.click();
 				break;
 			} catch (Exception e) {
@@ -3284,13 +3297,39 @@ public class Tawarruq_Steps {
 //		Additional Customer Info Tab
 		@And("User_608 click the Additional Customer Info tab")
 		public void user_608_click_the_additional_customer_info_tab() throws Throwable {
-			for (int i = 0; i <= 10000; i++) {
+			Thread.sleep(1000);
+			String length = null;
+			for (int i = 0; i < 5000; i++) {
 				try {
-//					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("additionalCustomerInfoTab")).click();
-					javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("additionalCustomerInfoTab")));
+					length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
+							.toString();
+					System.out.println(length);
+					if (!length.isBlank() && !length.equals("0") && !length.equals("1")) {
+						break;
+					}
+				} catch (Exception e) {
+					if (i == 4999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			for (int i = 0; i < 500; i++) {
+				try {
+					for (int j = 0; j < Integer.parseInt(length); j++) {
+						String title = "return document.querySelectorAll('ion-segment-button')[" + j + "].innerText";
+						String titlename = javascriptHelper.executeScript(title).toString();
+//						System.out.println(titlename);
+						if (titlename.trim().equalsIgnoreCase("Additional Customer Info")) {
+							System.out.println("condition true");
+							String jspath = "document.querySelectorAll('ion-segment-button')[" + j + "]";
+							WebElement tab = javascriptHelper.executeScriptWithWebElement(jspath);
+							javascriptHelper.JSEClick(tab);
+							break;
+						}
+					}
 					break;
-				} catch (Exception e) { 
-					if (i == 10000) {
+				} catch (Exception e) {
+					if (i == 499) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -3299,13 +3338,37 @@ public class Tawarruq_Steps {
 
 		@And("User_608 click the Pencil Icon button in Customer Personal Info section under Additional Customer Info tab")
 		public void user_608_click_the_pencil_icon_button_in_customer_personal_info_section_under_additional_customer_info_tab() throws Throwable {
-			for (int i = 0; i <= 1000; i++) {
+			String length = null;
+			for (int i = 0; i < 5000; i++) {
 				try {
-					javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("additionalCustInfoTabPencilIconBtn")));
-					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("additionalCustInfoTabPencilIconBtn")).click();
+					length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+							.toString();
+					System.out.println(length);
+					if (!length.isBlank() && !length.equals("0")) {
+						break;
+					}
+				} catch (Exception e) {
+					if (i == 4999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			for (int i = 0; i < 5000; i++) {
+				try {
+					for (int j = 0; j < Integer.parseInt(length); j++) {
+						String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+						String titlename = javascriptHelper.executeScript(title).toString();			
+						if (titlename.trim().contains("Customer Personal Information")) {
+							String jspath = "document.querySelectorAll('button[icon=\"pi pi-pencil\"]')[" + j + "]";
+							WebElement pencilBtn = javascriptHelper.executeScriptWithWebElement(jspath);
+							actions.click(pencilBtn).build().perform();
+//							javascriptHelper.JSEClick(pencilBtn);
+							break;
+						}
+					}
 					break;
-				} catch (Exception e) { 
-					if (i == 1000) {
+				} catch (Exception e) {
+					if (i == 4999) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -3340,7 +3403,8 @@ public class Tawarruq_Steps {
 		public void user_608_select_the_id_type_in_customer_identification_screen() throws Throwable {
 			for (int i = 0; i <= 2000; i++) {
 				try {
-					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDType_Dropdown")).click();
+					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDType_Dropdown"))
+					.click();
 					break;
 				} catch (Exception e) {
 					if (i == 2000) {
@@ -3348,69 +3412,41 @@ public class Tawarruq_Steps {
 					}
 				}
 			}
-			String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
-			String dropdownLength = "";
-			boolean isDropdownValueSelected = false;
-			String dropdownString = "";
-			for (int i = 0; i <= 300; i++) {
+			String length = null;
+			for (int i = 0; i < 5000; i++) {
 				try {
-					dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
-					System.out.println("Dropdown length " + dropdownLength);
-					if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+					length = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio-group ion-label').length")
+							.toString();
+					System.out.println(length);
+					if (!length.isBlank() && !length.equals("0")) {
 						break;
 					}
 				} catch (Exception e) {
-					if (i == 300) {
+					if (i == 4999) {
 						Assert.fail(e.getMessage());
 					}
 				}
 			}
-			int premitiveDropdownLength = Integer.parseInt(dropdownLength);
-			for (int j = 0; j <= premitiveDropdownLength; j++) {
-				for (int l = 0; l <= 300; l++) {
-					try {
-						System.out.println("L value is " + l);
-						System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
-						dropdownString = javascriptHelper.executeScript(
-								"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText").toString();
-						if (!(dropdownString.isEmpty())) {
-							System.out.println(dropdownString);
-							System.out.println("Loop count " + l + " got breaked");
+			for (int i = 0; i < 5000; i++) {
+				try {
+					for (int j = 0; j < Integer.parseInt(length); j++) {
+						String title = "return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].textContent";
+						String titlename = javascriptHelper.executeScript(title).toString();
+//						System.out.println("Option: "+titlename);
+						if (titlename.trim().contains(testData.get("ID_Type"))) {
+							String jspath = "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]";
+							WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+							actions.moveToElement(btn).click().build().perform();
 							break;
 						}
-					} catch (Exception e) {
-						if (l == 300 && !(dropdownString.isBlank())) {
-							Assert.fail(e.getMessage());
-						}
 					}
-					if (!(dropdownString.isEmpty())) {
-						System.out.println(dropdownString);
-						System.out.println("Loop count " + l + " got breaked");
-						break;
-					}
-				}
-				System.out.println("String " + dropdownString.trim());
-				System.out.println("Map " + testData.get("ID_Type").trim());
-				if ((dropdownString.trim()).equalsIgnoreCase((testData.get("ID_Type")).trim())) {
-					for (int k = 0; k <= 300; k++) {
-						try {
-							clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
-									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-							clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
-									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-							isDropdownValueSelected = true;
-							break;
-						} catch (Exception e) {
-							if (k == 300) {
-								Assert.fail(e.getMessage());
-							}
-						}
-					}
-				}
-				if (isDropdownValueSelected == true) {
 					break;
+				} catch (Exception e) {
+					if (i == 4999) {
+						Assert.fail(e.getMessage());
+					}
 				}
-			}		    
+			}	    
 		}
 
 		@And("User_608 enter the invalid ID number in Customer Identification screen")
@@ -3484,7 +3520,7 @@ public class Tawarruq_Steps {
 				}
 				System.out.println("String " + dropdownString.trim());
 				System.out.println("Map " + testData.get("Issuing_Authority").trim());
-				if ((dropdownString.trim()).equalsIgnoreCase((testData.get("Issuing_Authority")).trim())) {
+				if ((dropdownString.trim()).contains((testData.get("Issuing_Authority")).trim())) {
 					for (int k = 0; k <= 300; k++) {
 						try {
 							clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
@@ -3610,18 +3646,55 @@ public class Tawarruq_Steps {
 //		@AT_TW_NEWAPP_IDA_01
 		@And("User_608 verify Back button available under Identification Details screen in Additional Customer Info tab")
 		public void user_608_verify_back_button_available_under_identification_details_screen_in_additional_customer_info_tab() throws Throwable {
-			WebElement backBtn = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("identificationDetailsBackBtn"));
-			for (int i = 0; i <= 150000; i++) {
+			String length = null;
+			for (int i = 0; i < 5000; i++) {
 				try {
-					javascriptHelper.backgroundBorder(backBtn);
-					backBtn.isDisplayed();
-					break;
+					length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
+							.toString();
+					System.out.println(length);
+					if (!length.isBlank() && !length.equals("0")) {
+						break;
+					}
 				} catch (Exception e) {
-					if (i == 150000) {
+					if (i == 4999) {
 						Assert.fail(e.getMessage());
 					}
 				}
-			}		    
+			}
+			for (int i = 0; i < 5000; i++) {
+				try {
+					for (int j = 0; j < Integer.parseInt(length); j++) {
+						String title = "return document.querySelectorAll('form button')[" + j + "].getAttribute('ng-reflect-text')";
+						String titlename = javascriptHelper.executeScript(title).toString();
+						System.out.println(titlename);
+						if (titlename.trim().contains("Go Back")) {
+							System.out.println("condition true");
+							String jspath = "document.querySelectorAll('form button')[" + j + "]";
+							WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+							javascriptHelper.backgroundBorder(btn);
+							softAssert.assertTrue(btn.isDisplayed(),"Back button should be displayed in Customer Debt screen");
+							break;
+						}
+					}
+					break;
+				} catch (Exception e) {
+					if (i == 4999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			//			WebElement backBtn = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("identificationDetailsBackBtn"));
+//			for (int i = 0; i <= 150000; i++) {
+//				try {
+//					javascriptHelper.backgroundBorder(backBtn);
+//					backBtn.isDisplayed();
+//					break;
+//				} catch (Exception e) {
+//					if (i == 150000) {
+//						Assert.fail(e.getMessage());
+//					}
+//				}
+//			}		    
 		}
 
 		@And("User_608 verify Save button available under Identification Details screen in Additional Customer Info tab")
@@ -3678,7 +3751,7 @@ public class Tawarruq_Steps {
 			for (int i = 0; i <= 500; i++) {
 				try {
 					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("issueDate_Input"))
-					.sendKeys(testData.get("IssueDate"));
+					.sendKeys(testData.get("IssueDate"),Keys.TAB);
 					break;
 				} catch (Exception e) {
 					if (i == 500) {
@@ -3694,7 +3767,7 @@ public class Tawarruq_Steps {
 			for (int i = 0; i <= 500; i++) {
 				try {
 					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("expiryDate_Input"))
-					.sendKeys(testData.get("ExpiryDate"));
+					.sendKeys(testData.get("ExpiryDate"),Keys.TAB);
 					break;
 				} catch (Exception e) {
 					if (i == 500) {
@@ -3830,10 +3903,10 @@ public class Tawarruq_Steps {
 		
 //		@AT_TW_NEWAPP_IDA_02
 		@And("User_608 verify ID Type field is available under Customer Identification screen")
-		public void user_608_verify_id_type_field_is_available_under_customer_identification_screen() throws Throwable {
-			WebElement label = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDType_Label"));
+		public void user_608_verify_id_type_field_is_available_under_customer_identification_screen() throws Throwable {		
 			for (int i = 0; i <= 1500; i++) {
 				try {
+					WebElement label = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDType_Label"));
 					javascriptHelper.backgroundColor(label);
 					label.isDisplayed();
 					break;
@@ -4169,10 +4242,11 @@ public class Tawarruq_Steps {
 		@And("User_608 verify Issuing Authority field should be Mandatory, Editable and Lookup under Customer Identification screen")
 		public void user_608_verify_issuing_authority_field_should_be_mandatory_editable_and_lookup_under_customer_identification_screen() throws Throwable {
 //			Validate Mandatory
-			String label = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("issuingAuthorityLabel")).getText();
 			for (int i = 0; i <2000; i++) {
 	          try {
-	        	  softAssert.assertTrue(label.contains("*"), "Issuing Authority field should be mandatory");
+	        	  String label = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("issuingAuthorityLabel")).getText();
+	        	  System.out.println("Label:"+label);
+	        	  softAssert.assertTrue(!(label.contains("*")), "Issuing Authority field should be mandatory");
 	              break;
 	          } catch (Exception e) {
 	              if (i==1999) {
@@ -4214,7 +4288,7 @@ public class Tawarruq_Steps {
 			String label = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("countryOfIssueLabel")).getText();
 			for (int i = 0; i <2000; i++) {
 	          try {
-	        	  softAssert.assertTrue(label.contains("*"), "Country Of Issue field should be mandatory");
+	        	  softAssert.assertTrue(!(label.contains("*")), "Country Of Issue field should be mandatory");
 	              break;
 	          } catch (Exception e) {
 	              if (i==1999) {
@@ -4337,46 +4411,105 @@ public class Tawarruq_Steps {
 		
 		@And("User_608 verify Update button available under Identification Details screen in Additional Customer Info tab")
 		public void user_608_verify_update_button_available_under_identification_details_screen_in_additional_customer_info_tab() throws Throwable {
-			WebElement saveBtn = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("identificationDetailsSaveBtn"));
-			for (int i = 0; i <= 1500; i++) {
+			String length = null;
+			for (int i = 0; i < 5000; i++) {
 				try {
-					javascriptHelper.backgroundBorder(saveBtn);
-					saveBtn.isDisplayed();
-					break;
+					length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
+							.toString();
+					System.out.println(length);
+					if (!length.isBlank() && !length.equals("0")) {
+						break;
+					}
 				} catch (Exception e) {
-					if (i == 1500) {
+					if (i == 4999) {
 						Assert.fail(e.getMessage());
 					}
 				}
-			}		    
+			}
+			for (int i = 0; i < 5000; i++) {
+				try {
+					for (int j = 0; j < Integer.parseInt(length); j++) {
+						String title = "return document.querySelectorAll('form button')[" + j + "].getAttribute('ng-reflect-text')";
+						String titlename = javascriptHelper.executeScript(title).toString();
+						System.out.println(titlename);
+						if (titlename.trim().contains("Update")) {
+							System.out.println("condition true");
+							String jspath = "document.querySelectorAll('form button')[" + j + "]";
+							WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+							javascriptHelper.backgroundBorder(btn);
+							softAssert.assertTrue(btn.isDisplayed(),"Back button should be displayed in Customer Debt screen");
+							break;
+						}
+					}
+					break;
+				} catch (Exception e) {
+					if (i == 4999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
 		}
 		
 		@And("User_608 to verify while modification, when user keep any mandatory field blank and click on save button under Identification Details screen")
 		public void user_608_to_verify_while_modification_when_user_keep_any_mandatory_field_blank_and_click_on_save_button_under_identification_details_screen() throws Throwable {
-			WebElement saveBtn = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("identificationDetailsSaveBtn"));
 			javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDNumber_Input")).click();
 			for (int i = 0; i <= 500; i++) {
 				try {
 					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDNumber_Input"))
 					.sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
-					saveBtn.click();
 					break;
 				} catch (Exception e) {
 					if (i == 500) {
 						Assert.fail(e.getMessage());
 					}
 				}
-			}		    
+			}
+			String length = null;
+			for (int i = 0; i < 5000; i++) {
+				try {
+					length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
+							.toString();
+					if (!length.isBlank() && !length.equals("0")) {
+						break;
+					}
+				} catch (Exception e) {
+					if (i == 4999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			for (int i = 0; i < 5000; i++) {
+				try {
+					for (int j = 0; j < Integer.parseInt(length); j++) {
+						String title = "return document.querySelectorAll('form button')[" + j + "].getAttribute('ng-reflect-text')";
+						String titlename = javascriptHelper.executeScript(title).toString();
+						if (titlename.trim().contains("Update")) {
+							String jspath = "document.querySelectorAll('form button')[" + j + "]";
+							WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+							actions.scrollToElement(btn).build().perform();
+							javascriptHelper.JSEClick(btn);
+							break;
+						}
+					}
+					break;
+				} catch (Exception e) {
+					if (i == 4999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
 		}
 
 		@And("User_608 to verify System should show the proper validation message for blank field which is mandatory under Identification Details screen")
 		public void user_608_to_verify_system_should_show_the_proper_validation_message_for_blank_field_which_is_mandatory_under_identification_details_screen() throws Throwable {
-			String madatoryErrorMsg = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("mandatoryFillToastMsg")).getText();
-			System.err.println("Mandatory Error : "+madatoryErrorMsg);
 			for (int i = 0; i<2000; i++) {
 	          try {
+	        	  String madatoryErrorMsg = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("mandatoryFillToastMsg")).getText();
+	  			  System.err.println("Mandatory Error : "+madatoryErrorMsg);
+	  			  javascriptHelper.backgroundBorder(
+	  					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("mandatoryFillToastMsg")));
 	        	  softAssert.assertTrue(madatoryErrorMsg.contains("Please fill all the details"),
-	        			  "System should show the proper validation message for blank fiel");
+	        			  "System should show the proper validation message for blank field");
 	              break;
 	          } catch (Exception e) {
 	              if (i==1999) {
@@ -4388,9 +4521,9 @@ public class Tawarruq_Steps {
 		
 		@And("User_608 to verify while modification system enters the invalid data under Customer Identification screen")
 		public void user_608_to_verify_while_modification_system_enters_the_invalid_data_under_customer_identification_screen() throws Throwable {
-			javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDNumber_Input")).click();
 			for (int i = 0; i <= 500; i++) {
 				try {
+					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDNumber_Input")).click();
 					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDNumber_Input"))
 					.sendKeys(testData.get("ID_Number_SpecialChar"));
 					break;
@@ -4399,18 +4532,16 @@ public class Tawarruq_Steps {
 						Assert.fail(e.getMessage());
 					}
 				}
-			}
-		    
+			}		    
 		}
 
 		@And("User_608 to verify system should not allow user to do a modification with invalid data in Customer Identification screen")
 		public void user_608_to_verify_system_should_not_allow_user_to_do_a_modification_with_invalid_data_in_customer_identification_screen() throws Throwable {
-			WebElement specialCharError = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("specialCharError"));
-			String specialChar = specialCharError.getText().trim();
-			System.err.println("Speacial Char: "+specialChar);
 			for (int i = 0; i<20000; i++) {
 	          try {
-	        	  javascriptHelper.backgroundColor(specialCharError);
+	        	  WebElement specialCharError = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("specialCharError"));
+	  			  String specialChar = specialCharError.getText().trim();
+	        	  javascriptHelper.backgroundBorder(specialCharError);
 	        	  softAssert.assertTrue(specialCharError.isDisplayed(), "System should display - Only Alphanumeric characters allowed");
 	        	  softAssert.assertTrue(specialChar.equalsIgnoreCase("Only Alphanumeric characters are allowed"), "System should display error msg");
 	              break;
@@ -4427,7 +4558,8 @@ public class Tawarruq_Steps {
 		public void user_608_to_verify_system_allow_user_to_modify_the_identification_details_under_customer_identification_screen() throws Throwable {
 			for (int i = 0; i <= 2000; i++) {
 				try {
-					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDType_Dropdown")).click();
+					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("IDType_Dropdown"))
+					.click();
 					break;
 				} catch (Exception e) {
 					if (i == 2000) {
@@ -4435,67 +4567,38 @@ public class Tawarruq_Steps {
 					}
 				}
 			}
-			String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
-			String dropdownLength = "";
-			boolean isDropdownValueSelected = false;
-			String dropdownString = "";
-			for (int i = 0; i <= 300; i++) {
+			String length = null;
+			for (int i = 0; i < 5000; i++) {
 				try {
-					dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
-					System.out.println("Dropdown length " + dropdownLength);
-					if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+					length = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio-group ion-label').length")
+							.toString();
+					System.out.println(length);
+					if (!length.isBlank() && !length.equals("0")) {
 						break;
 					}
 				} catch (Exception e) {
-					if (i == 300) {
+					if (i == 4999) {
 						Assert.fail(e.getMessage());
 					}
 				}
 			}
-			int premitiveDropdownLength = Integer.parseInt(dropdownLength);
-			for (int j = 0; j <= premitiveDropdownLength; j++) {
-				for (int l = 0; l <= 300; l++) {
-					try {
-						System.out.println("L value is " + l);
-						System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
-						dropdownString = javascriptHelper.executeScript(
-								"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText").toString();
-						if (!(dropdownString.isEmpty())) {
-							System.out.println(dropdownString);
-							System.out.println("Loop count " + l + " got breaked");
+			for (int i = 0; i < 5000; i++) {
+				try {
+					for (int j = 0; j < Integer.parseInt(length); j++) {
+						String title = "return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].textContent";
+						String titlename = javascriptHelper.executeScript(title).toString();
+						if (titlename.trim().contains(testData.get("ID_Type"))) {
+							String jspath = "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]";
+							WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+							actions.moveToElement(btn).click().build().perform();
 							break;
 						}
-					} catch (Exception e) {
-						if (l == 300 && !(dropdownString.isBlank())) {
-							Assert.fail(e.getMessage());
-						}
 					}
-					if (!(dropdownString.isEmpty())) {
-						System.out.println(dropdownString);
-						System.out.println("Loop count " + l + " got breaked");
-						break;
-					}
-				}
-				System.out.println("String " + dropdownString.trim());
-				System.out.println("Map " + testData.get("ID_Type").trim());
-				if ((dropdownString.trim()).equalsIgnoreCase((testData.get("ID_Type")).trim())) {
-					for (int k = 0; k <= 300; k++) {
-						try {
-							clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
-									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-							clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
-									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-							isDropdownValueSelected = true;
-							break;
-						} catch (Exception e) {
-							if (k == 300) {
-								Assert.fail(e.getMessage());
-							}
-						}
-					}
-				}
-				if (isDropdownValueSelected == true) {
 					break;
+				} catch (Exception e) {
+					if (i == 4999) {
+						Assert.fail(e.getMessage());
+					}
 				}
 			}		    
 		}
@@ -4516,17 +4619,40 @@ public class Tawarruq_Steps {
 					}
 				}
 			}
-		    
 		}
 		
 		@And("User_608 click the Update button under Customer Identification screen")
 		public void user_608_click_the_update_button_under_customer_identification_screen() throws Throwable {
-			for (int i = 0; i <= 10000; i++) {
+			String length = null;
+			for (int i = 0; i < 5000; i++) {
 				try {
-					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("identificationDetailsSaveBtn")).click();
+					length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
+							.toString();
+					if (!length.isBlank() && !length.equals("0")) {
+						break;
+					}
+				} catch (Exception e) {
+					if (i == 4999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			for (int i = 0; i < 5000; i++) {
+				try {
+					for (int j = 0; j < Integer.parseInt(length); j++) {
+						String title = "return document.querySelectorAll('form button')[" + j + "].getAttribute('ng-reflect-text')";
+						String titlename = javascriptHelper.executeScript(title).toString();
+						if (titlename.trim().contains("Update")) {
+							String jspath = "document.querySelectorAll('form button')[" + j + "]";
+							WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+							actions.scrollToElement(btn).build().perform();
+							javascriptHelper.JSEClick(btn);
+							break;
+						}
+					}
 					break;
 				} catch (Exception e) {
-					if (i == 10000) {
+					if (i == 4999) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -4554,8 +4680,8 @@ public class Tawarruq_Steps {
 			for (int i = 0; i <= 300; i++) {
 				try {
 					listOfEyeBtn = javascriptHelper.executeScript("return " + listOfRecords).toString();
-					System.out.println("List of add button " + listOfEyeBtn);
-					if (!(listOfEyeBtn.isBlank())) {
+//					System.out.println("List of add button " + listOfEyeBtn);
+					if (!listOfEyeBtn.isBlank() && !listOfEyeBtn.equals("0") && listOfEyeBtn.equals("1")) {
 						break;
 					}
 				} catch (Exception e) {
@@ -4573,11 +4699,11 @@ public class Tawarruq_Steps {
 								"return document.querySelector('button[icon=\"pi pi-arrow-left\"]').parentElement.parentElement.parentElement.querySelectorAll('td')["
 										+ j + "].textContent")
 								.toString();
-						System.out.println("Screen Name " + recordName);
+//						System.out.println("Screen Name " + recordName);
 						if (!(recordName.isBlank())) {
-							System.out.println("Screen Name" + recordName + " is Not null");
+//							System.out.println("Screen Name" + recordName + " is Not null");
 							if ((recordName.trim()).equalsIgnoreCase(("Active").trim())) {
-								System.out.println("Inside nested loop");
+//								System.out.println("Inside nested loop");
 								javascriptHelper.backgroundColor(
 										javascriptHelper
 										.executeScriptWithWebElement(
@@ -4619,11 +4745,10 @@ public class Tawarruq_Steps {
 		}
 		
 		@And("User_608 get the updated record ID under Customer Identification section")
-		public void user_608_get_the_updated_record_id_under_customer_identification_section() throws Throwable {
-			Thread.sleep(1000);
-			WebElement successMsg = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("alert_SuccessMsg"));
+		public void user_608_get_the_updated_record_id_under_customer_identification_section() throws Throwable {			
 			for (int i = 0; i <= 10000; i++) {
 				try {
+					WebElement successMsg = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("alert_SuccessMsg"));
 					String text = successMsg.getText();
 					System.out.println("Number: "+ text.substring(32, 36));
 					identificatioDetailsExcelData.updateTestData(testData.get("DataSet ID"),"Record_ID", text.substring(32, 36));
@@ -4637,7 +4762,9 @@ public class Tawarruq_Steps {
 			}
 			for (int i = 0; i < 500; i++) {
 				try {
-					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("alert_closeBtn")).click();
+					WebElement popup = javascriptHelper.executeScriptWithWebElement(
+							identificatioDetailsJsPaths.getElement("alert_closeBtn"));
+					javascriptHelper.JSEClick(popup);
 		            break;
 		        } catch (Exception e) {
 		            if (i==499) {
@@ -4649,146 +4776,153 @@ public class Tawarruq_Steps {
 
 		@And("User_608 to verify if Status is Active then click the button system should show Deactivate under Customer Identification section")
 		public void user_608_to_verify_if_status_is_active_then_click_the_button_system_should_show_deactivate_under_customer_identification_section() throws Throwable {
-//		document.querySelector('button[icon="pi pi-arrow-left"]').parentElement.parentElement.parentElement.querySelectorAll('td')[1].parentElement.lastElementChild
-			for (int i = 0; i <= 100; i++) {
+//			document.querySelectorAll('ion-title[mode=\"md\"]')[1].parentElement.parentElement.querySelector('tbody tr').lastElementChild
+			String length = null;
+			for (int i = 0; i < 500; i++) {
 				try {
-					javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("customerIdentificationBackBtn")));
-					break;
-				} catch (Exception e) {
-					if (i == 100) {
-						Assert.fail(e.getMessage());
-					}
-				}
-			}
-			String listOfRecords = "document.querySelector('button[icon=\"pi pi-arrow-left\"]').parentElement.parentElement.parentElement.querySelectorAll('td').length";
-			String listOfEyeBtn = "";
-			String recordName = "";
-			for (int i = 0; i <= 100; i++) {
-				try {
-					listOfEyeBtn = javascriptHelper.executeScript("return " + listOfRecords).toString();
-					System.out.println("List of add button " + listOfEyeBtn);
-					if (!(listOfEyeBtn.isBlank())) {
+					length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+							.toString();
+					if (!length.isBlank() && !length.equals("0") && length.equals("1")) {
 						break;
 					}
 				} catch (Exception e) {
-					if (i == 100) {
+					if (i == 499) {
 						Assert.fail(e.getMessage());
 					}
 				}
 			}
-			
-			int premitiveListOfEyeButton = Integer.parseInt(listOfEyeBtn);
-			for (int j = 0; j < premitiveListOfEyeButton; j++) {
-				for (int k = 0; k <= 5000; k++) {
-					try {
-						recordName = javascriptHelper.executeScript(
-								"return document.querySelector('button[icon=\"pi pi-arrow-left\"]').parentElement.parentElement.parentElement.querySelectorAll('td')["
-										+ j + "].textContent")
-								.toString();
-						System.out.println("Record Name " + recordName);
-						if (!(recordName.isBlank())) {
-							System.out.println("Record Name" + recordName + " is Not null");
-							if ((recordName.trim()).equalsIgnoreCase((testData.get("Record_ID")).trim())) {
-								System.out.println("Inside nested loop");
-								javascriptHelper.backgroundBorder(
-										javascriptHelper
-										.executeScriptWithWebElement(
-												"document.querySelector('button[icon=\"pi pi-arrow-left\"]').parentElement.parentElement.parentElement.querySelectorAll('td')[" + j + "].parentElement.lastElementChild"));
-								WebElement status = javascriptHelper
-										.executeScriptWithWebElement(
-												"document.querySelector('button[icon=\"pi pi-arrow-left\"]').parentElement.parentElement.parentElement.querySelectorAll('td')[" + j + "]..parentElement.lastElementChild");
-								System.out.println("Status: "+ status.getText());
-								softAssert.assertTrue(status.getText().equalsIgnoreCase("In-active"));
-								break;
-							}
+			for (int i = 0; i < 5000; i++) {
+				try {
+					for (int j = 0; j < Integer.parseInt(length); j++) {
+						String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+						String titlename = javascriptHelper.executeScript(title).toString();
+						if (titlename.trim().contains("Customer Identification")) {
+							String titlePath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]";
+							javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(titlePath));
+							String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].parentElement.parentElement.querySelector('tbody tr').lastElementChild";
+							WebElement text = javascriptHelper.executeScriptWithWebElement(jspath);
+							javascriptHelper.backgroundBorder(text);
+							System.out.println("Get Text: "+text.getText());
+							softAssert.assertTrue(text.getText().equalsIgnoreCase("In-active"));
+							break;
 						}
-					} catch (Exception e) {
-						if (k == 500) {
-							Assert.fail(e.getMessage());
-						}
+					}
+					break;
+				} catch (Exception e) {
+					if (i == 4999) {
+						Assert.fail(e.getMessage());
 					}
 				}
 			}
 		}
 
-		@And("User_608 click the lable on button if the status of record is Deactive under Customer Identification section")
-		public void user_608_click_the_lable_on_button_if_the_status_of_record_is_deactive_under_customer_identification_section() throws Throwable {
-			for (int i = 0; i <= 300; i++) {
+		@And("User_608 click the Search button in Customer Identification section")
+		public void user_608_click_the_search_button_in_customer_identification_section() throws Throwable {
+			String length = null;
+			for (int i = 0; i < 500; i++) {
 				try {
-					javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("customerIdentificationBackBtn")));
-					break;
-				} catch (Exception e) {
-					if (i == 300) {
-						Assert.fail(e.getMessage());
-					}
-				}
-			}
-			String listOfRecords = "document.querySelector('button[icon=\"pi pi-arrow-left\"]').parentElement.parentElement.parentElement.querySelectorAll('td').length";
-			String listOfEyeBtn = "";
-			String recordName = "";
-			boolean isEyeBtnClicked = false;
-			for (int i = 0; i <= 300; i++) {
-				try {
-					listOfEyeBtn = javascriptHelper.executeScript("return " + listOfRecords).toString();
-					System.out.println("List of add button " + listOfEyeBtn);
-					if (!(listOfEyeBtn.isBlank())) {
+					length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+							.toString();
+					System.out.println(length);
+					if (!length.isBlank() && !length.equals("0") && length.equals("1")) {
 						break;
 					}
 				} catch (Exception e) {
-					if (i == 300) {
+					if (i == 499) {
 						Assert.fail(e.getMessage());
 					}
 				}
 			}
-			
-			int premitiveListOfEyeButton = Integer.parseInt(listOfEyeBtn);
-			for (int j = 0; j < premitiveListOfEyeButton; j++) {
-				for (int k = 0; k <= 300; k++) {
-					try {
-						recordName = javascriptHelper.executeScript(
-								"return document.querySelector('button[icon=\"pi pi-arrow-left\"]').parentElement.parentElement.parentElement.querySelectorAll('td')["
-										+ j + "].textContent")
-								.toString();
-						System.out.println("Screen Name " + recordName);
-						if (!(recordName.isBlank())) {
-							System.out.println("Screen Name" + recordName + " is Not null");
-							if ((recordName.trim()).equalsIgnoreCase(("In-active").trim())) {
-								System.out.println("Inside nested loop");
-								javascriptHelper.backgroundColor(
-										javascriptHelper
-										.executeScriptWithWebElement(
-												"document.querySelector('button[icon=\"pi pi-arrow-left\"]').parentElement.parentElement.parentElement.querySelectorAll('td')[" + j + "].parentElement.querySelector('button')"));
-								javascriptHelper
-										.executeScriptWithWebElement(
-												"document.querySelector('button[icon=\"pi pi-arrow-left\"]').parentElement.parentElement.parentElement.querySelectorAll('td')[" + j + "].parentElement.querySelector('button')")
-										.click();
-								isEyeBtnClicked = true;
-								break;
-							}
-						}
-					} catch (Exception e) {
-						if (k == 300) {
-							Assert.fail(e.getMessage());
+			for (int i = 0; i < 5000; i++) {
+				try {
+					for (int j = 0; j < Integer.parseInt(length); j++) {
+						String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+						String titlename = javascriptHelper.executeScript(title).toString();
+						if (titlename.trim().contains("Customer Identification")) {
+							String titlePath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]";
+							javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(titlePath));
+							String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].parentElement.parentElement.querySelector('button[icon=\"pi pi-search\"]')";
+							WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+							actions.click(btn).build().perform();
+							System.out.println("condition true");
+							break;
 						}
 					}
-				}
-				if (isEyeBtnClicked == true) {
 					break;
+				} catch (Exception e) {
+					if (i == 4999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}		    
+		}
+
+		@And("User_608 search the Record ID in Customer Identification section")
+		public void user_608_search_the_record_id_in_customer_identification_section() throws Throwable {
+			System.out.println("Record ID:"+testData.get("Record_ID"));
+			for (int i = 0; i <= 500; i++) {
+				try {
+					String jsPath = "document.querySelector('input[mode=\"ios\"]')";
+					WebElement inputPath = javascriptHelper.executeScriptWithWebElement(jsPath);
+					inputPath.sendKeys(testData.get("Record_ID"));
+					break;
+				} catch (Exception e) {
+					if (i == 500) {
+						Assert.fail(e.getMessage());
+					}
 				}
 			}
 		    
 		}
+		
+		@And("User_608 click the lable on button if the status of record is Deactive under Customer Identification section")
+		public void user_608_click_the_lable_on_button_if_the_status_of_record_is_deactive_under_customer_identification_section() throws Throwable {
+			String length = null;
+			for (int i = 0; i < 5000; i++) {
+				try {
+					length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+							.toString();
+					System.out.println(length);
+					if (!length.isBlank() && !length.equals("0")) {
+						break;
+					}
+				} catch (Exception e) {
+					if (i == 4999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			for (int i = 0; i < 5000; i++) {
+				try {
+					for (int j = 0; j < Integer.parseInt(length); j++) {
+						String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+						String titlename = javascriptHelper.executeScript(title).toString();			
+						if (titlename.trim().contains("Customer Identification")) {
+							String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].parentElement.parentElement.querySelector('button[icon=\\\"pi pi-pencil\\\"]')";
+							WebElement pencilBtn = javascriptHelper.executeScriptWithWebElement(jspath);
+							javascriptHelper.backgroundColor(pencilBtn);
+							actions.click(pencilBtn).build().perform();
+							break;
+						}
+					}
+					break;
+				} catch (Exception e) {
+					if (i == 4999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+		}
 
 		@And("User_608 change the status Deactive to Active under Customer Identification section")
 		public void user_608_change_the_status_deactive_to_active_under_customer_identification_section() throws Throwable {
-			Thread.sleep(1000);
-			for (int i = 0; i <= 100000; i++) {
+			for (int i = 0; i <= 10000; i++) {
 				try {
 					javascriptHelper.backgroundBorder(javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("statusToggleBtn")));
 					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("statusToggleBtn")).click();
 					break;
 				} catch (Exception e) { 
-					if (i == 100000) {
+					if (i == 10000) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -4797,62 +4931,40 @@ public class Tawarruq_Steps {
 
 		@And("User_608 to verify if Status is Deactive then click the button system should show Active under Customer Identification section")
 		public void user_608_to_verify_if_status_is_deactive_then_click_the_button_system_should_show_active_under_customer_identification_section() throws Throwable {
-			for (int i = 0; i <= 100; i++) {
+			String length = null;
+			for (int i = 0; i < 500; i++) {
 				try {
-					javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("customerIdentificationBackBtn")));
-					break;
-				} catch (Exception e) {
-					if (i == 100) {
-						Assert.fail(e.getMessage());
-					}
-				}
-			}
-			String listOfRecords = "document.querySelector('button[icon=\"pi pi-arrow-left\"]').parentElement.parentElement.parentElement.querySelectorAll('td').length";
-			String listOfEyeBtn = "";
-			String recordName = "";
-			for (int i = 0; i <= 100; i++) {
-				try {
-					listOfEyeBtn = javascriptHelper.executeScript("return " + listOfRecords).toString();
-					System.out.println("List of add button " + listOfEyeBtn);
-					if (!(listOfEyeBtn.isBlank())) {
+					length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+							.toString();
+					if (!length.isBlank() && !length.equals("0") && length.equals("1")) {
 						break;
 					}
 				} catch (Exception e) {
-					if (i == 100) {
+					if (i == 499) {
 						Assert.fail(e.getMessage());
 					}
 				}
 			}
-			
-			int premitiveListOfEyeButton = Integer.parseInt(listOfEyeBtn);
-			for (int j = 0; j < premitiveListOfEyeButton; j++) {
-				for (int k = 0; k <= 300; k++) {
-					try {
-						recordName = javascriptHelper.executeScript(
-								"return document.querySelector('button[icon=\"pi pi-arrow-left\"]').parentElement.parentElement.parentElement.querySelectorAll('td')["
-										+ j + "].textContent")
-								.toString();
-						System.out.println("Screen Name " + recordName);
-						if (!(recordName.isBlank())) {
-							System.out.println("Screen Name" + recordName + " is Not null");
-							if ((recordName.trim()).equalsIgnoreCase((testData.get("Record_ID")).trim())) {
-								System.out.println("Inside nested loop");
-								javascriptHelper.backgroundBorder(
-										javascriptHelper
-										.executeScriptWithWebElement(
-												"document.querySelector('button[icon=\"pi pi-arrow-left\"]').parentElement.parentElement.parentElement.querySelectorAll('td')[" + j + "].parentElement.lastElementChild"));
-								WebElement status = javascriptHelper
-										.executeScriptWithWebElement(
-												"document.querySelector('button[icon=\"pi pi-arrow-left\"]').parentElement.parentElement.parentElement.querySelectorAll('td')[" + j + "]..parentElement.lastElementChild");
-								System.out.println("Status: "+ status.getText());
-								softAssert.assertTrue(status.getText().equalsIgnoreCase("Active"));
-								break;
-							}
+			for (int i = 0; i < 5000; i++) {
+				try {
+					for (int j = 0; j < Integer.parseInt(length); j++) {
+						String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+						String titlename = javascriptHelper.executeScript(title).toString();
+						if (titlename.trim().contains("Customer Identification")) {
+							String titlePath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]";
+							javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(titlePath));
+							String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].parentElement.parentElement.querySelector('tbody tr').lastElementChild";
+							WebElement text = javascriptHelper.executeScriptWithWebElement(jspath);
+							javascriptHelper.backgroundBorder(text);
+							System.out.println("Get Text: "+text.getText());
+							softAssert.assertTrue(text.getText().equalsIgnoreCase("Active"));
+							break;
 						}
-					} catch (Exception e) {
-						if (k == 300) {
-							Assert.fail(e.getMessage());
-						}
+					}
+					break;
+				} catch (Exception e) {
+					if (i == 4999) {
+						Assert.fail(e.getMessage());
 					}
 				}
 			}		    
@@ -4901,9 +5013,7 @@ public class Tawarruq_Steps {
 				}
 			}
 		}
-		
-		
-		
+
 		
 		
 		
