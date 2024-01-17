@@ -13,8 +13,8 @@ public class BrowserLaunch extends BaseClass {
 	WebDriver driver;
 	public static void main(String[] args) {
 		String excelTestDataPath = System.getProperty("user.dir") + "\\TestData\\ijaraTestData.xlsx";
-		ExcelData documentdetailsExcelData  = new ExcelData(excelTestDataPath,"Document_Details","DataSetID");
-		Map<String, String> testdata = documentdetailsExcelData.getTestdata("AT_DOC_001_D1");
+		ExcelData customerDebtExcelData  = new ExcelData(excelTestDataPath,"customerDebtExcelData","Dataset ID");
+		Map<String, String> testdata = customerDebtExcelData.getTestdata("AT_TW_ADC_CD_001_D1");
 		System.out.println(testdata.get("Ref No"));
 	}
 }
