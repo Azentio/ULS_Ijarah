@@ -3,7 +3,7 @@
 <suite name="Suite" >
 	<test thread-count="5" name="ULS Test">
 		<classes>
-			<class name="Runner.TestApplication" />
+			<class name="Runner.NewExcelTestRunner" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

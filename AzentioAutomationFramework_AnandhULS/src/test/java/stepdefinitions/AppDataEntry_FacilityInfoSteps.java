@@ -19,7 +19,7 @@ import io.cucumber.java.en.Then;
 import pageobjects.JSPaths;
 import resources.BaseClass;
 
-public class Ijarah_AppDataEntry_FacilityInfoSteps extends BaseClass {
+public class AppDataEntry_FacilityInfoSteps extends BaseClass {
 	WebDriver driver = BaseClass.driver;
 	ConfigFileReader configFileReader = new ConfigFileReader();
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);

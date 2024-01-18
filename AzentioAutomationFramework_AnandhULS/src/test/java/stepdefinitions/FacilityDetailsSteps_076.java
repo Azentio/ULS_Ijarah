@@ -23,7 +23,7 @@ import io.cucumber.java.en.When;
 import pageobjects.JSPaths;
 import resources.BaseClass;
 
-public class AutoLoan_FacilityDetailsSteps_076 extends BaseClass {
+public class FacilityDetailsSteps_076 extends BaseClass {
 	WebDriver driver = BaseClass.driver;
 	ConfigFileReader configFileReader = new ConfigFileReader();
 	String jsPathFile = configFileReader.getJSFilePath();
@@ -40,7 +40,7 @@ public class AutoLoan_FacilityDetailsSteps_076 extends BaseClass {
 			"AppDataEntry_FacilityInfoData", "Dataset ID");
 	ExcelData facilityDetailsTestData = new ExcelData(configFileReader.getAutoLoanTestDataFilePath(),
 			"Facility_info_TestData", "Dataset ID");
-	Logger log = LogManager.getLogger(AutoLoan_FacilityDetailsSteps_076.class);
+	Logger log = LogManager.getLogger(FacilityDetailsSteps_076.class);
 	BrowserHelper browserHelper = new BrowserHelper(driver);
 
 	@And("user_076 click on facility info tab in new app stage")

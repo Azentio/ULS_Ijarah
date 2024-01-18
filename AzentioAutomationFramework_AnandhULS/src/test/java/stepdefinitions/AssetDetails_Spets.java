@@ -18,7 +18,7 @@ import io.cucumber.java.en.Then;
 import pageobjects.JSPaths;
 import resources.BaseClass;
 
-public class IjarahAssetDetails_Spets extends BaseClass {
+public class AssetDetails_Spets extends BaseClass {
 	WebDriver driver = BaseClass.driver;
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
 	ConfigFileReader configFileReader = new ConfigFileReader();

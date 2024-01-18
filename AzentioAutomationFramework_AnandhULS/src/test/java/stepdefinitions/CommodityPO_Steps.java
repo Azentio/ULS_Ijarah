@@ -18,7 +18,7 @@ import io.cucumber.java.en.Then;
 import pageobjects.JSPaths;
 import resources.BaseClass;
 
-public class Tawruqq_CommodityPO_Steps extends BaseClass {
+public class CommodityPO_Steps extends BaseClass {
 	ConfigFileReader configFileReader = new ConfigFileReader();
 
 	String jsPathExcelFile = configFileReader.getJSFilePath();

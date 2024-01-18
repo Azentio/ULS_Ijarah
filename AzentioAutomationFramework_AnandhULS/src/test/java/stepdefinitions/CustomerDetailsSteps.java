@@ -20,7 +20,7 @@ import io.cucumber.java.en.Then;
 import pageobjects.JSPaths;
 import resources.BaseClass;
 
-public class AutoLoan_CustomerDetailsSteps extends BaseClass {
+public class CustomerDetailsSteps extends BaseClass {
 	ConfigFileReader configFileReader = new ConfigFileReader();
 	String excelFilePathForJS = configFileReader.getJSFilePath();
 	JSPaths customerSearchJSPaths = new JSPaths(excelFilePathForJS, "customer_search_JS",

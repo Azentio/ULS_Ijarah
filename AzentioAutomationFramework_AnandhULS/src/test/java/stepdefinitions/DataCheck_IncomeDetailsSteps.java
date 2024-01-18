@@ -20,7 +20,7 @@ import io.cucumber.java.en.Then;
 import pageobjects.JSPaths;
 import resources.BaseClass;
 
-public class Tawruqq_DataCheck_IncomeDetailsSteps extends BaseClass {
+public class DataCheck_IncomeDetailsSteps extends BaseClass {
 	WebDriver driver = BaseClass.driver;
 	ConfigFileReader configFileReader = new ConfigFileReader();
 	JSPaths incomeDetailsElements = new JSPaths(configFileReader.getJSFilePath(), "IncomeDetails_JSPaths",

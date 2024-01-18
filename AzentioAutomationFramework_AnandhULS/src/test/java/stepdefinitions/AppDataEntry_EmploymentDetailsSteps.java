@@ -19,7 +19,7 @@ import io.cucumber.java.en.Then;
 import pageobjects.JSPaths;
 import resources.BaseClass;
 
-public class AutoLoan_AppDataEntry_EmploymentDetailsSteps extends BaseClass {
+public class AppDataEntry_EmploymentDetailsSteps extends BaseClass {
 	ConfigFileReader configFileReader = new ConfigFileReader();
 	WebDriver driver = BaseClass.driver;
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);

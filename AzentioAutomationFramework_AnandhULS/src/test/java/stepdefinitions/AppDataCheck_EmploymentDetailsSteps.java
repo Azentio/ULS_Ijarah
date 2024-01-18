@@ -11,7 +11,7 @@ import io.cucumber.java.en.Then;
 import pageobjects.JSPaths;
 import resources.BaseClass;
 
-public class Tawruqq_AppDataCheck_EmploymentDetailsSteps extends BaseClass {
+public class AppDataCheck_EmploymentDetailsSteps extends BaseClass {
 	WebDriver driver = BaseClass.driver;
 	ConfigFileReader configFileReader = new ConfigFileReader();
 	JSPaths employmentDetailsWebElements = new JSPaths(configFileReader.getJSFilePath(), "CustomerEmploymentJSPaths",

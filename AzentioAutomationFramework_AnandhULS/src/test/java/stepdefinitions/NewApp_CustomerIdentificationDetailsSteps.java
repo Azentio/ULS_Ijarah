@@ -21,7 +21,7 @@ import io.cucumber.java.en.Then;
 import pageobjects.JSPaths;
 import resources.BaseClass;
 
-public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass {
+public class NewApp_CustomerIdentificationDetailsSteps extends BaseClass {
 	WebDriver driver = BaseClass.driver;
 	ConfigFileReader configFileReader = new ConfigFileReader();
 
