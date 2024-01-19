@@ -10,6 +10,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
 import dataProvider.ConfigFileReader;
 
 
@@ -25,6 +27,7 @@ public class BaseClass {
 	if(browserName.equalsIgnoreCase("chrome")) {
 		ChromeOptions options = new ChromeOptions();
 		//WebDriverManager.chromedriver().setup();
+		options.addArguments("--disable-popup-blocking");
 		options.addArguments("--remote-allow-origins=*");
 		options.addArguments("--disable-popup-blocking");
 		options.addArguments("--disable-notifications");

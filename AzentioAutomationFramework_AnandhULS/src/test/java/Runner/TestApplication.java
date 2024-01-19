@@ -9,7 +9,7 @@ import utilities.ExtentManager;
 import utilities.ExtentTestManager;
 
 @CucumberOptions(features = {
-		"src/test/java/features"
+		"src/test/java/features/IjarahFeatures/Ijarah_NewApp_IdentificationDetailsFEATURE.feature"
 	
 		}, glue = "stepdefinitions",
 		// monochrome=false, //to make steps in color
@@ -17,7 +17,7 @@ import utilities.ExtentTestManager;
 				"rerun:ReRunScenarios/FailedReRun.txt" }
 // ,dryRun = false //to check compilation errors
  //, tags = "@AT_M_PUR_12"
-		 //, tags = "@AT_FAC_DET_09"
+		 , tags = "@AT_IJ_NewApp_IDA_06"
 )
 public class TestApplication extends AbstractTestNGCucumberTests {
 	/*
