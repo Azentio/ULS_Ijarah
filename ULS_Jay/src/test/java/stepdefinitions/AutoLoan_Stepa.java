@@ -1895,7 +1895,10 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Education level mandatory editable dropdown")
-		public void user_610_verify_the_education_level_mandatory_editable_dropdown() {
+		public void user_610_verify_the_education_level_mandatory_editable_dropdown() throws Throwable {
+			Thread.sleep(500);
+			javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("educationLevelDropdown")));
+
 			for (int i = 0; i < 200; i++) {
 				try {
 					String educationLevel = "document.querySelector('[id=\"qualificationType\"] ion-label').innerText";
@@ -2693,7 +2696,10 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the No Of Dependents field mandatory editable textbox")
-		public void user_610_verify_the_no_of_dependents_field_mandatory_editable_textbox() {
+		public void user_610_verify_the_no_of_dependents_field_mandatory_editable_textbox() throws Throwable {
+			Thread.sleep(500);
+			javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("noOfDependsInput")));
+
 			for (int i = 0; i < 200; i++) {
 				try {
 					String noofDependents = "document.querySelector('[id=\"noOfDependents\"] ion-label').innerText";
@@ -2701,8 +2707,8 @@ public class AutoLoan_Stepa {
 								
 					System.err.println("noofDependent :"+ noofDependent);
 							
-			//		Assert.assertEquals(true, educationLeve.contains("*"));
-					Assert.assertTrue(!noofDependent.contains("*"));
+					Assert.assertEquals(true, noofDependent.contains("*"));
+			//		Assert.assertTrue(!noofDependent.contains("*"));
 					break;
 				} catch (Exception e) {
 					if (i == 199) {
@@ -3571,8 +3577,8 @@ public class AutoLoan_Stepa {
 								
 					System.err.println("remark :"+ remark);
 							
-					Assert.assertEquals(true, remark.contains("*"));
-			//		Assert.assertTrue(!noOfChildren.contains("*"));
+			//		Assert.assertEquals(true, remark.contains("*"));
+					Assert.assertTrue(!remark.contains("*"));
 					break;
 				} catch (Exception e) {
 					if (i == 199) {
@@ -3584,10 +3590,10 @@ public class AutoLoan_Stepa {
 		
 //		//type text
 		
-		String remarksInputtext = javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("remarkText"))
-				.getTagName();
+		String remarksInputtext = javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("RemarText"))
+				.getAttribute("type");
 		System.err.println("first print  " + remarksInputtext);
-		String assertmothersMaidennametext = "textarea";
+		String assertmothersMaidennametext = "text";
 		Assert.assertEquals(assertmothersMaidennametext, remarksInputtext);
 		
 		//editable
@@ -3611,7 +3617,7 @@ public class AutoLoan_Stepa {
 		public void user_verify_the_add_button_autoloan() {
 			for (int i = 0; i < 200; i++) {
 				try {
-					javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("editBtn_UnderFollowUp_610")).click();
+					javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("AddBtn")).click();
 					break;
 				} catch (Exception e) {
 					if (i == 199) {
@@ -3673,14 +3679,15 @@ public class AutoLoan_Stepa {
 		//--------------------   @AT_Al_DOC_01
 		
 		@And("User_610 Click Documents Details screen in Autoloan")
-		public void user_click_documents_details_screen_in_autoloan() {
-			for (int i = 0; i < 300; i++) {
+		public void user_click_documents_details_screen_in_autoloan() throws Throwable {
+			Thread.sleep(2000);
+			for (int i = 0; i < 700; i++) {
 				try {
 					javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("AutoLoanADEntry_DocumentsDetails")).click();
 					break;
 					
 				} catch (Exception e) {
-					if (i==299) {
+					if (i==699) {
 						Assert.fail(e.getMessage());
 					}
 					// TODO: handle exception

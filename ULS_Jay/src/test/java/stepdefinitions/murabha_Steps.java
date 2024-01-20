@@ -29,7 +29,8 @@ public class murabha_Steps {
 	JSPaths murabha_PurchasOrder = new JSPaths(excelPath, "Murabha_PurchasOrder", "Murabha_ContractSinging", "JSPath");
 	JSPaths murabha_UnderWriter_CustomerFin = new JSPaths(excelPath, "Murabha_UnderWriter_CustomerFin", "Murabha_UnderWriter", "JSPath");
 	JSPaths mur_AdditionalCustomerInfo_610 = new JSPaths(excelPath, "Mur_AdditionalCustomerInfo_610", "Murabha_AdditionalCustomerInfo", "JSPath");
-			
+	JSPaths al_ADEntry_CustomerDetails = new JSPaths(excelPath, "Al_ADEntry_CustomerDetails_610", "AutoloanADEntry_CustomerDetails", "JSPath");
+	
 	ExcelData exelData = new ExcelData(excelTestDataPath, "ijara_LoginCredentials", "UserType");
 
 	Map<String, String> loginTestData = new HashMap<>();
@@ -1258,7 +1259,7 @@ public class murabha_Steps {
 	//-------------------------Feature: Murabha Under Writer  Customer Financial Screen   @AT_MU_UNW_006_05     ---------------------------------  
 	
 	
-	@And("User_{int} click customer financial screen")
+	@And("User_610 click customer financial screen")
 	public void user_610_click_customer_financial_screen() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1273,7 +1274,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} click financial commitments tab in customer financial screen")
+	@And("User_610 click financial commitments tab in customer financial screen")
 	public void user_610_click_financial_commitments_tab_in_customer_financial_screen() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1288,7 +1289,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the Financial Type field in financila commitments tab")
+	@And("User_610 verify the Financial Type field in financila commitments tab")
 	public void user_610_verify_the_financial_type_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1304,7 +1305,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the financial Institution field in financila commitments tab")
+	@And("User_610 verify the financial Institution field in financila commitments tab")
 	public void user_610_verify_the_financial_institution_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1320,7 +1321,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the Sanction Amount field in financila commitments tab")
+	@And("User_610 verify the Sanction Amount field in financila commitments tab")
 	public void user_610_verify_the_sanction_amount_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1336,7 +1337,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the Interst Rate field in financila commitments tab")
+	@And("User_610 verify the Interst Rate field in financila commitments tab")
 	public void user_610_verify_the_interst_rate_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1352,7 +1353,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the Current Principal Balance field in financila commitments tab")
+	@And("User_610 verify the Current Principal Balance field in financila commitments tab")
 	public void user_610_verify_the_current_principal_balance_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1368,7 +1369,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the Tenure Month field in financila commitments tab")
+	@And("User_610 verify the Tenure Month field in financila commitments tab")
 	public void user_610_verify_the_tenure_month_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1384,7 +1385,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the Maturrity Date field in financila commitments tab")
+	@And("User_610 verify the Maturrity Date field in financila commitments tab")
 	public void user_610_verify_the_maturrity_date_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1400,7 +1401,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the Installment Amount field in financila commitments tab")
+	@And("User_610 verify the Installment Amount field in financila commitments tab")
 	public void user_610_verify_the_installment_amount_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1416,7 +1417,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the Amount Considered field in financila commitments tab")
+	@And("User_610 verify the Amount Considered field in financila commitments tab")
 	public void user_610_verify_the_amount_considered_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1432,7 +1433,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the currency field in financila commitments tab")
+	@And("User_610 verify the currency field in financila commitments tab")
 	public void user_610_verify_the_currency_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1448,7 +1449,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the Next Due date field in financila commitments tab")
+	@And("User_610 verify the Next Due date field in financila commitments tab")
 	public void user_610_verify_the_next_due_date_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1464,7 +1465,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the Close Date field in financila commitments tab")
+	@And("User_610 verify the Close Date field in financila commitments tab")
 	public void user_610_verify_the_close_date_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1480,7 +1481,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the Collateral Type field in financila commitments tab")
+	@And("User_610 verify the Collateral Type field in financila commitments tab")
 	public void user_610_verify_the_collateral_type_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1496,7 +1497,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the frequency field in financila commitments tab")
+	@And("User_610 verify the frequency field in financila commitments tab")
 	public void user_610_verify_the_frequency_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1512,7 +1513,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the last Payment Amount field in financila commitments tab")
+	@And("User_610 verify the last Payment Amount field in financila commitments tab")
 	public void user_610_verify_the_last_payment_amount_field_in_financila_commitments_tab() {
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(murabha_UnderWriter_CustomerFin.getElement("lastPaymentDate_610")));
 		for (int k = 0; k < 200; k++) {
@@ -1529,7 +1530,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the productName field in financila commitments tab")
+	@And("User_610 verify the productName field in financila commitments tab")
 	public void user_610_verify_the_product_name_field_in_financila_commitments_tab() {
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(murabha_UnderWriter_CustomerFin.getElement("productName")));
 		for (int k = 0; k < 200; k++) {
@@ -1546,7 +1547,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the facilityStatus field in financila commitments tab")
+	@And("User_610 verify the facilityStatus field in financila commitments tab")
 	public void user_610_verify_the_facility_status_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1562,7 +1563,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the remaining Tenure field in financila commitments tab")
+	@And("User_610 verify the remaining Tenure field in financila commitments tab")
 	public void user_610_verify_the_remaining_tenure_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1578,7 +1579,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the Sement Date field in financila commitments tab")
+	@And("User_610 verify the Sement Date field in financila commitments tab")
 	public void user_610_verify_the_sement_date_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1594,7 +1595,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the NPA Classification field in financila commitments tab")
+	@And("User_610 verify the NPA Classification field in financila commitments tab")
 	public void user_610_verify_the_npa_classification_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1613,7 +1614,7 @@ public class murabha_Steps {
 	//--------------------------------------- #Customer Identification Tab    @AT_MU_UNW_006_06
 	
 	
-	@And("User_{int} click Additional Customer Info screen")
+	@And("User_610 click Additional Customer Info screen")
 	public void user_610_click_additional_customer_info_screen() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1628,7 +1629,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} click Customer Identification tab in Additional Customer Info screen")
+	@And("User_610 click Customer Identification tab in Additional Customer Info screen")
 	public void user_610_click_customer_identification_tab_in_additional_customer_info_screen() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1643,7 +1644,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the Id Type field in financila commitments tab")
+	@And("User_610 verify the Id Type field in financila commitments tab")
 	public void user_610_verify_the_id_type_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1659,7 +1660,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the Id Number field in financila commitments tab")
+	@And("User_610 verify the Id Number field in financila commitments tab")
 	public void user_610_verify_the_id_number_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1675,7 +1676,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the Issue Date field in financila commitments tab")
+	@And("User_610 verify the Issue Date field in financila commitments tab")
 	public void user_610_verify_the_issue_date_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1691,7 +1692,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the Expiry Date field in financila commitments tab")
+	@And("User_610 verify the Expiry Date field in financila commitments tab")
 	public void user_610_verify_the_expiry_date_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1707,7 +1708,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the Issue Authority field in financila commitments tab")
+	@And("User_610 verify the Issue Authority field in financila commitments tab")
 	public void user_610_verify_the_issue_authority_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1723,7 +1724,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the Country Of Issuse field in financila commitments tab")
+	@And("User_610 verify the Country Of Issuse field in financila commitments tab")
 	public void user_610_verify_the_country_of_issuse_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1741,7 +1742,7 @@ public class murabha_Steps {
 
 //-----------------------------------   #Address Details Tab   @AT_MU_UNW_006_07
 	
-	@And("User_{int} click Adress Details tab in Additional Customer Info screen")
+	@And("User_610 click Adress Details tab in Additional Customer Info screen")
 	public void user_610_click_adress_details_tab_in_additional_customer_info_screen() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1757,7 +1758,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the Address Type field in financila commitments tab")
+	@And("User_610 verify the Address Type field in financila commitments tab")
 	public void user_610_verify_the_address_type_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1773,7 +1774,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the Address Status field in financila commitments tab")
+	@And("User_610 verify the Address Status field in financila commitments tab")
 	public void user_610_verify_the_address_status_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1789,7 +1790,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the Residential Or Ocupency Status field in financila commitments tab")
+	@And("User_610 verify the Residential Or Ocupency Status field in financila commitments tab")
 	public void user_610_verify_the_residential_or_ocupency_status_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1805,7 +1806,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the Communication Address field in financila commitments tab")
+	@And("User_610 verify the Communication Address field in financila commitments tab")
 	public void user_610_verify_the_communication_address_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1821,7 +1822,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the Location category field in financila commitments tab")
+	@And("User_610 verify the Location category field in financila commitments tab")
 	public void user_610_verify_the_location_category_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1837,7 +1838,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the Adderss Line1 field in financila commitments tab")
+	@And("User_610 verify the Adderss Line1 field in financila commitments tab")
 	public void user_610_verify_the_adderss_line1_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1853,7 +1854,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the Adderss Line2 field in financila commitments tab")
+	@And("User_610 verify the Adderss Line2 field in financila commitments tab")
 	public void user_610_verify_the_adderss_line2_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1869,7 +1870,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the Country field in financila commitments tab")
+	@And("User_610 verify the Country field in financila commitments tab")
 	public void user_610_verify_the_country_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1885,7 +1886,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the Province Id field in financila commitments tab")
+	@And("User_610 verify the Province Id field in financila commitments tab")
 	public void user_610_verify_the_province_id_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1901,7 +1902,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the City field in financila commitments tab")
+	@And("User_610 verify the City field in financila commitments tab")
 	public void user_610_verify_the_city_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1917,7 +1918,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the District Name field in financila commitments tab")
+	@And("User_610 verify the District Name field in financila commitments tab")
 	public void user_610_verify_the_district_name_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1933,7 +1934,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the Zip Code field in financila commitments tab")
+	@And("User_610 verify the Zip Code field in financila commitments tab")
 	public void user_610_verify_the_zip_code_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1949,7 +1950,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the Po Box Number field in financila commitments tab")
+	@And("User_610 verify the Po Box Number field in financila commitments tab")
 	public void user_610_verify_the_po_box_number_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1965,7 +1966,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the Mobile Number field in financila commitments tab")
+	@And("User_610 verify the Mobile Number field in financila commitments tab")
 	public void user_610_verify_the_mobile_number_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1981,7 +1982,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the Duration Of Stay in financila commitments tab")
+	@And("User_610 verify the Duration Of Stay in financila commitments tab")
 	public void user_610_verify_the_duration_of_stay_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1997,7 +1998,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the Latitude Details Of The Address field in financila commitments tab")
+	@And("User_610 verify the Latitude Details Of The Address field in financila commitments tab")
 	public void user_610_verify_the_latitude_details_of_the_address_field_in_financila_commitments_tab() {
 	    
 		for (int k = 0; k < 200; k++) {
@@ -2013,7 +2014,7 @@ public class murabha_Steps {
 		}
 	}
 
-	@And("User_{int} verify the Longitude Details Of The Adress field in financila commitments tab")
+	@And("User_610 verify the Longitude Details Of The Adress field in financila commitments tab")
 	public void user_610_verify_the_longitude_details_of_the_adress_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -2029,7 +2030,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the Landmark field in financila commitments tab")
+	@And("User_610 verify the Landmark field in financila commitments tab")
 	public void user_610_verify_the_landmark_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -2045,7 +2046,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the Occupency Date field in financila commitments tab")
+	@And("User_610 verify the Occupency Date field in financila commitments tab")
 	public void user_610_verify_the_occupency_date_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -2061,7 +2062,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the Landlord Name field in financila commitments tab")
+	@And("User_610 verify the Landlord Name field in financila commitments tab")
 	public void user_610_verify_the_landlord_name_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -2077,7 +2078,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the Landlord Mobile Number field in financila commitments tab")
+	@And("User_610 verify the Landlord Mobile Number field in financila commitments tab")
 	public void user_610_verify_the_landlord_mobile_number_field_in_financila_commitments_tab() {
 	    
 		for (int k = 0; k < 200; k++) {
@@ -2093,7 +2094,7 @@ public class murabha_Steps {
 		}
 	}
 
-	@And("User_{int} verify the Rent Amount field in financila commitments tab")
+	@And("User_610 verify the Rent Amount field in financila commitments tab")
 	public void user_610_verify_the_rent_amount_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -2109,7 +2110,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the Frequency of Rent in financila commitments tab")
+	@And("User_610 verify the Frequency of Rent in financila commitments tab")
 	public void user_610_verify_the_frequency_of_rent_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -2125,7 +2126,7 @@ public class murabha_Steps {
 	    
 	}
 
-	@And("User_{int} verify the Status field in financila commitments tab")
+	@And("User_610 verify the Status field in financila commitments tab")
 	public void user_610_verify_the_status_field_in_financila_commitments_tab() {
 	    
 		for (int k = 0; k < 200; k++) {
@@ -2141,6 +2142,361 @@ public class murabha_Steps {
 		}
 	}
 	
+	//---------------- @AT_MU_ADE_CD_01
 	
+	@And("User_610 Click Documents Details screen")
+	public void user_click_documents_details_screen() {
+	    
+		for (int i = 0; i < 200; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("murabha_SaveBtn")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
 
+	
+	//  --------------         @AT_MU_ADE_CD_03           ---------------------
+	 
+	
+	@And("User_610 verify the First Name Arabic field mandatory editable textbox")
+	public void user_verify_the_first_name_arabic_field_mandatory_editable_textbox() {
+		for (int i = 0; i < 200; i++) {
+			try {
+				String FirstNameArabic = "document.querySelector('digital-text-box[id=\"customerFirstNameInOtherLang\"]').innerText";
+				String FirstNameArabi = (String) javascriptHelper.executeScript("return " + FirstNameArabic);
+							
+				System.err.println("FirstNameArabi:"+ FirstNameArabi);
+						
+				Assert.assertEquals(true, FirstNameArabi.contains("*"));
+		//		Assert.assertTrue(!RemarkName.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+
+	//type text
+	
+	String FirstNameArabictext = javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("FirstNameArabic"))
+			.getAttribute("type");                                                        
+	System.err.println("FirstNameArabictext  " + FirstNameArabictext);
+	String assertFirstNameArabictext = "text";
+	Assert.assertEquals(assertFirstNameArabictext, FirstNameArabictext);
+	
+	//editable
+	
+	
+	String FirstNameArabicEditable = javascriptHelper
+			.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("FirstNameArabicEdi"))
+			.getAttribute("ng-reflect-readonly");
+	System.err.println("FirstNameArabicEditable  " + FirstNameArabicEditable);
+	String assertFirstNameArabicEditable = "false";
+	
+	Assert.assertEquals(assertFirstNameArabicEditable, FirstNameArabicEditable);
+	    
+	}
+
+	@And("User_610 verify the middle Name Arabic field non mandatory editable textbox")
+	public void user_verify_the_middle_name_arabic_field_non_mandatory_editable_textbox() {
+		for (int i = 0; i < 200; i++) {
+			try {
+				String middleNameArabic = "document.querySelector('digital-text-box[id=\"customerMiddleNameInOtherLang\"]').innerText";
+				String middleNameArabi = (String) javascriptHelper.executeScript("return " + middleNameArabic);
+							
+				System.err.println("middleNameArabi:"+ middleNameArabi);
+						
+		//		Assert.assertEquals(true, Firstnam.contains("*"));
+				Assert.assertTrue(!middleNameArabi.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+
+	//type text
+	
+	String MiddleNameArabictext = javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("MiddleNameArabic"))
+			.getAttribute("type");
+	System.err.println("first print  " + MiddleNameArabictext);
+	String assertMiddleNameArabictext = "text";
+	Assert.assertEquals(assertMiddleNameArabictext, MiddleNameArabictext);
+	
+	//editable
+	
+	
+	String MiddleNameArabicEditable = javascriptHelper
+			.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("MiddleNameArabicEdi"))
+			.getAttribute("ng-reflect-readonly");
+	System.err.println("first print  " + MiddleNameArabicEditable);
+	String assertMiddleNameArabicEditable = "false";
+	
+	Assert.assertEquals(assertMiddleNameArabicEditable, MiddleNameArabicEditable);
+	    
+	}
+
+	@And("User_610 verify the Last Name Arabic field mandatory editable textbox")
+	public void user_verify_the_last_name_arabic_field_mandatory_editable_textbox() {
+		for (int i = 0; i < 200; i++) {
+			try {
+				String LastNameArabic = "document.querySelector('digital-text-box[id=\"customerLastNameInOtherLang\"]').innerText";
+				String LastNameArabi = (String) javascriptHelper.executeScript("return " + LastNameArabic);
+							
+				System.err.println("LastNameArabi:"+ LastNameArabi);
+						
+				Assert.assertEquals(true, LastNameArabi.contains("*"));
+		//		Assert.assertTrue(!RemarkName.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+
+	//type text
+	
+	String LastNameArabictext = javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("LastNameArabic"))
+			.getAttribute("type");
+	System.err.println("first print  " + LastNameArabictext);
+	String assertLastNameArabic = "text";
+	Assert.assertEquals(assertLastNameArabic, LastNameArabictext);
+	
+	//editable
+	
+	
+	String LastNameArabicEditable = javascriptHelper
+			.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("LastNameArabicEdi"))
+			.getAttribute("ng-reflect-readonly");
+	System.err.println("first print  " + LastNameArabicEditable);
+	String assertLastNameArabicEditable = "false";
+	
+	Assert.assertEquals(assertLastNameArabicEditable, LastNameArabicEditable);
+	    
+	}
+
+	@And("User_610 verify the Family Name Arabic field non mandatory editable textbox")
+	public void user_verify_the_family_name_arabic_field_non_mandatory_editable_textbox() {
+		for (int i = 0; i < 200; i++) {
+			try {
+				String FamilyNameArabic = "document.querySelector('digital-text-box[id=\"customerNameInOtherLang\"]').innerText";
+				String FamilyNameArabi = (String) javascriptHelper.executeScript("return " + FamilyNameArabic);
+							
+				System.err.println("FamilyNameArabi:"+ FamilyNameArabi);
+						
+		//		Assert.assertEquals(true, Firstnam.contains("*"));
+				Assert.assertTrue(!FamilyNameArabi.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+
+	//type text
+	
+	String FamilyNameArabic = javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("FamilyNameArabic"))
+			.getAttribute("type");
+	System.err.println("first print  " + FamilyNameArabic);
+	String assertFamilyNameArabic = "text";
+	Assert.assertEquals(assertFamilyNameArabic, FamilyNameArabic);
+	
+	//editable
+	
+	
+	String FamilyNameArabicEdi = javascriptHelper
+			.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("FamilyNameArabicEdi"))
+			.getAttribute("ng-reflect-readonly");
+	System.err.println("first print  " + FamilyNameArabicEdi);
+	String assertFamilyNameArabicEdi = "false";
+	
+	Assert.assertEquals(assertFamilyNameArabicEdi, FamilyNameArabicEdi);
+	    
+	}
+	
+	//-----------------------            @AT_MU_ADE_CD_04                     ------------------------ 
+	
+	@And("User_610 verify the Family Name field non mandatory editable text")
+	public void user_verify_the_family_name_field_non_mandatory_editable_text() {
+		for (int i = 0; i < 200; i++) {
+			try {
+				String FamilyName = "document.querySelector('digital-text-box[id=\"customerThirdName\"]').innerText";
+				String FamilyNam = (String) javascriptHelper.executeScript("return " + FamilyName);
+							
+				System.err.println("FamilyNam:"+ FamilyNam);
+						
+		//		Assert.assertEquals(true, Firstnam.contains("*"));
+				Assert.assertTrue(!FamilyNam.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+
+	//type text
+	
+	String FamilyNametext = javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("FamilyName"))
+			.getAttribute("type");
+	System.err.println("FamilyNametext  " + FamilyNametext);
+	String assertFamilyNametext = "text";
+	Assert.assertEquals(assertFamilyNametext, FamilyNametext);
+	
+	//editable
+	
+	
+	String FamilyNameEdi = javascriptHelper
+			.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("FamilyNameEdi"))
+			.getAttribute("ng-reflect-readonly");
+	System.err.println("FamilyNameEdi  " + FamilyNameEdi);
+	String assertFamilyNameEdi = "false";
+	
+	Assert.assertEquals(assertFamilyNameEdi, FamilyNameEdi);
+	    
+	}
+
+	@And("User_610 verify the Age field non mandatory non editable text")
+	public void user_verify_the_age_field_non_mandatory_non_editable_text() {
+		for (int i = 0; i < 200; i++) {
+			try {
+				String Age = "document.querySelector('digital-text-box[id=\"customerNameInOtherLang\"]').innerText";
+				String Agee = (String) javascriptHelper.executeScript("return " + Age);
+							
+				System.err.println("Agee:"+ Agee);
+						
+		//		Assert.assertEquals(true, Firstnam.contains("*"));
+				Assert.assertTrue(!Agee.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+
+	//type number
+	
+	String AgeNum= javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("Age"))
+			.getAttribute("type");
+	System.err.println("first print  " + AgeNum);
+	String assertAgeNum = "number";
+	Assert.assertEquals(assertAgeNum, AgeNum);
+	
+	//editable
+	
+	
+	String AgeEdi = javascriptHelper
+			.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("AgeEdi"))
+			.getAttribute("ng-reflect-readonly");
+	System.err.println("first print  " + AgeEdi);
+	String assertAgeEdi = "true";
+	
+	Assert.assertEquals(assertAgeEdi, AgeEdi);
+	    
+	}
+	
+	//------------------------  @AT_MU_ADE_CD_08  --------------------
+	
+	@And("User_610 verify the Prefered Time For Contact field HH MM format Editable")
+	public void user_verify_the_prefered_time_for_contact_field_hh_mm_format_editable() {
+	    
+	    
+	}
+
+	@And("User_610 verify the Add button should allow create new record")
+	public void user_verify_the_add_button_should_allow_create_new_record() {
+		for (int i = 0; i < 200; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("AddBtn")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("customerTypeLabel")).isDisplayed()) {
+					Assert.assertTrue(true);
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				}
+	            	}
+		         		}
+		
+	}
+
+	@And("User_610 verify the Back button should navigate to previous screen")
+	public void user_verify_the_back_button_should_navigate_to_previous_screen() {
+		for (int i = 0; i < 200; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("customerDetailsBackBtn")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	    
+		for (int i = 0; i < 300; i++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("AddBtn")).isDisplayed()) {
+					Assert.assertTrue(true);
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				}
+	            	}
+		         		}
+	    
+	}
+
+	@And("User_610 verify the impact when user keep any mandatory field blank")
+	public void user_verify_the_impact_when_user_keep_any_mandatory_field_blank() {
+		
+	    
+	}
+
+	@And("User_610 verify the  impact when user enters negative numeric value")
+	public void user_verify_the_impact_when_user_enters_negative_numeric_value() {
+	    
+	    
+	}
+
+	@And("User_610 verify the  impact when user enters character in numeric value")
+	public void user_verify_the_impact_when_user_enters_character_in_numeric_value() {
+	    
+	    
+	}
+
+	@And("User_610 verify the impact when user enters only special characters value")
+	public void user_verify_the_impact_when_user_enters_only_special_characters_value() {
+	    
+	    
+	}
+	
 }

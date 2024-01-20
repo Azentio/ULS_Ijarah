@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -10,6 +11,7 @@ import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
 import dataProvider.ExcelData;
+import helper.BrowserHelper;
 import helper.ClicksAndActionsHelper;
 import helper.JavascriptHelper;
 import helper.WaitHelper;
@@ -21,6 +23,7 @@ public class Ijara_Steps_610 {
 	String excelPath = System.getProperty("user.dir") + "\\TestData\\IjaraJSPaths.xlsx";
 	String excelTestDataPath = System.getProperty("user.dir") + "\\TestData\\ijaraTestData.xlsx";
 	WebDriver driver = BaseClass.driver;
+	BrowserHelper browserHelper = new BrowserHelper(driver);
 
 	JSPaths jsPaths2 = new JSPaths(excelPath, "Ijara_AD_DocumentDetails", "Ijara_LoginFieldName", "JSPath");
 	JSPaths jsPaths3 = new JSPaths(excelPath, "Murabha_Module", "Murabha_LoginFieldName", "JSPath");
@@ -187,6 +190,13 @@ public class Ijara_Steps_610 {
 			@And("User_610 get the test data set id for DS_AT_FAC_DET_01")
 			public void get_the_test_data_set_id_for_DS_AT_FAC_DET_011() {
 				testData = ad_CustomerFolllowUpDetails_610.getTestdata("DS_AT_FAC_DET_01");
+				}
+			
+		//----------Murabha app data entery Customer details
+
+			@And("User_610 get the test data set id for DS_AT_MU_ADE_CD_01")
+			public void get_the_test_data_set_id_for_DS_AT_MU_ADE_CD_01() {
+				testData = ad_CustomerFolllowUpDetails_610.getTestdata("DS_AT_MU_ADE_CD_01");
 				}
 	
 	// -------------steps ---------------
@@ -6502,8 +6512,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 					break;
 				}
 			} catch (Exception e) {
-				// TODO: handle exception
-			}
+							}
 		}
 
 	}
@@ -7102,19 +7111,363 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 	    
 	}
 	
+	//------------------------  @AT_FAC_DET_08
 	
 	
 	
+	@And("User_610 verify the Classification field in list view")
+	public void user_verify_the_classification_field_in_list_view() {
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("Classification")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+							}
+		}
+
+	    
+	}
+
+	@And("User_610 verify the Product field in list view")
+	public void user_verify_the_product_field_in_list_view() {
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("Product")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+							}
+		}
+
+	    
+	}
+
+	@And("User_610 verify the Tenure field in list view")
+	public void user_verify_the_tenure_field_in_list_view() {
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("Tenure")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+							}
+		}
+
+	    
+	}
+
+	@And("User_610 verify the Requested Amount field in list view")
+	public void user_verify_the_requested_amount_field_in_list_view() {
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("RequestAmount")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+							}
+		}
+
+	    
+	}
+
+	@And("User_610 verify the Status field in list view")
+	public void user_verify_the_status_field_in_list_view() {
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("Status")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+							}
+		}
+
+	    
+	}
+
+	@And("User_610 verify the Add button field in list view")
+	public void user_verify_the_add_button_field_in_list_view() {
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("AddButton_under_FacilityInfo")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+							}
+		}
+
+	    
+	}
+
+	@And("User_610 verify the Export Pdf button field in list view")
+	public void user_verify_the_export_pdf_button_field_in_list_view() {
+		
+		for (int b = 0; b < 300; b++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("ExportDropDown")).click();
+				break;
+			} catch (Exception e) {
+				if (b == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("Pdf")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+							}
+		}
+
+	    
+	}
+
+	@And("User_610 verify the Export Xsl button field in list view")
+	public void user_verify_the_export_xslbutton_field_in_list_view() {
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("Xls")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+							}
+		}
+
+		for (int b = 0; b < 300; b++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("ExportDropDown")).click();
+				break;
+			} catch (Exception e) {
+				if (b == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
 	
 	
+	@And("User_610 verify the search button field in list view")
+	public void user_verify_the_search_button_field_in_list_view() {
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("Search")).isDisplayed()) {
+					Assert.assertTrue(true);
+					break;
+				}
+			} catch (Exception e) {
+							}
+		}
+	}
 	
 	
+	@And("User_610 verify Post entering any matching value system should display")
+	public void user_verify_post_entering_any_matching_value_system_should_display() {
+		for (int b = 0; b < 300; b++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("Search")).click();
+				break;
+			} catch (Exception e) {
+				if (b == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		for (int b = 0; b < 300; b++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("SearchInput")).sendKeys("60");
+				break;
+			} catch (Exception e) {
+				if (b == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
 	
 	
+	for (int j = 0; j < 200; j++) {
+		try {
+			if (javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("matchingData")).isDisplayed()) {
+				Assert.assertTrue(true);
+				break;
+			}
+		} catch (Exception e) {
+						}
+	}
+	
+	}
+	
+	@And("User_610 verify Post entering any mis matching value system should display")
+	public void user_verify_post_entering_any_mis_matching_value_system_should_display() {
+		for (int b = 0; b < 300; b++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("SearchInput")).clear();
+				javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("Search")).click();
+				break;
+			} catch (Exception e) {
+				if (b == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		for (int b = 0; b < 300; b++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("SearchInput")).sendKeys("600");
+				break;
+			} catch (Exception e) {
+				if (b == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
 	
 	
+	for (int j = 0; j < 200; j++) {
+		try {
+			if (javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("matchingData")).isDisplayed()) {
+				Assert.assertTrue(true);
+				break;
+			}
+		} catch (Exception e) {
+						}
+	}
+	
+	}
+	
+	//--------------  @AT_FAC_DET_09
 	
 	
+	@And("User_610 click export button")
+	public void user_click_export_button() throws Throwable {
+		for (int b = 0; b < 300; b++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("ExportDropDown")).click();
+				break;
+			} catch (Exception e) {
+				if (b == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		//Thread.sleep(5000);
+	}
+
+	@And("User_610 verify the PDF button should download the PDF file of that records")
+	public void user_verify_the_pdf_button_should_download_the_pdf_file_of_that_records() throws Throwable {
+		
+		for (int b = 0; b < 300; b++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("Pdf")).click();
+				break;
+			} catch (Exception e) {
+				if (b == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		 Thread.sleep(500);
+//		IncomeFormDataFile
+		browserHelper.SwitchToWindow(1);
+		browserHelper.switchToParentWithChildClose();
+		String homePath = System.getProperty("user.home");
+		String filePath = homePath + "/Downloads";
+		File file = new File(filePath);
+		File[] listFiles = file.listFiles();
+		file.delete();
+		for (File downloadsFile : listFiles) {
+			System.err.println(downloadsFile.getName());
+			if (downloadsFile.getName().contains("CollateralDataFile")) {
+				System.out.println("If condition " + downloadsFile.getName());
+				softAssert.assertTrue(downloadsFile.getName().contains("CollateralDataFile"),
+						"File is not downloaded hence failed");
+				downloadsFile.delete();
+			}
+        }	    
+		// Thread.sleep(5000);
+	}
+
+	@And("User_610 verify the Excel button should download the PDF file of that records")
+	public void user_verify_the_excel_button_should_download_the_pdf_file_of_that_records() throws Throwable {
+		for (int b = 0; b < 300; b++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("Xls")).click();
+				break;
+			} catch (Exception e) {
+				if (b == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		 Thread.sleep(500);
+	    
+		 
+		 String homePath = System.getProperty("user.home");
+			String filePath = homePath + "/Downloads";
+			File file = new File(filePath);
+			File[] listFiles = file.listFiles();
+			file.delete();
+			for (File downloadsFile : listFiles) {
+				System.out.println(downloadsFile.getName());
+				if (downloadsFile.getName().contains("FacilityDetailsDataFile_export_1705560679146")) {
+					System.out.println("If condition " + downloadsFile.getName());
+					softAssert.assertTrue(downloadsFile.getName().contains("FacilityDetailsDataFile_export_1705560679146"),
+							"File is not downloaded hence failed");
+					downloadsFile.delete();
+				}
+	        }
+			
+	}
+
+	@And("User_610 verify the back button")
+	public void user_verify_the_back_button() {
+	    
+		for (int b = 0; b < 300; b++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("AddButton_under_FacilityInfo")).click();
+				break;
+			} catch (Exception e) {
+				if (b == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	
+	for (int b = 0; b < 300; b++) {
+		try {
+			javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("BackButton")).click();
+			break;
+		} catch (Exception e) {
+			if (b == 299) {
+				Assert.fail(e.getMessage());
+			}
+		}
+	}
+	
+	for (int j = 0; j < 200; j++) {
+		try {
+			if (javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("ExportDropDown")).isDisplayed()) {
+				Assert.assertTrue(true);
+				break;
+			}
+		} catch (Exception e) {
+						}
+	}
+	
+}
 	
 	
 	

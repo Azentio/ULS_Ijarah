@@ -249,7 +249,7 @@ public class IjaraTest extends BaseClass{
 	public void login_with_valid_credentials17()throws Throwable {
 		for (int i = 0; i < 200; i++) {
             try {
-                ijaraLogin.loginWithIjaraApplication17();
+                ijaraLogin.loginWithIjaraApplication17("userType17");
                 break;
             } catch (Exception e) {
                 if (i==199) {

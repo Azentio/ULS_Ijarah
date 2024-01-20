@@ -14,7 +14,7 @@ import utilities.ExtentTestManager;
 //	"src/test/java/features/Ijara_Offering_OfferDetails_610.feature",
 		
 		
-		"src/test/java/features/Iijara_AppDataEntry_FacilityDetails.feature",
+		"src/test/java/features/Murabha_AppDataEntry_CustomerDetails.feature",
 		}
    
 
@@ -24,13 +24,13 @@ import utilities.ExtentTestManager;
 				"rerun:ReRunScenarios/FailedReRun.txt" }
 // ,dryRun = false //to check compilation errors/ , tags = "@AT_LEA_007"
  
-, tags="@AT_FAC_DET_03"                   
+ //, tags="@AT_MU_ADE_CD_01"                   
  
 )                                                                         
 public class TestApplication extends AbstractTestNGCucumberTests {
 	/*
 	 * @Override 
-	 *d
+	 *d..
 	 *
 	 *
 	 *

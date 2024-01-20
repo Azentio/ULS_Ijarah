@@ -72,3 +72,83 @@ Feature: Ijara App Data Entry Facility details
     And User_610 verify the currency field Mandatory Editable Select
     And User_610 verify the Loan Tenure field Mandatory Editable numberic
     Then logout from the ijaraApplication
+    
+    @AT_FAC_DET_08
+  Scenario: To verify fields in Document Details
+    Given navigate the IJARA URL
+    And login with valid credentials17
+    And User_610 get the test data set id for DS_AT_FAC_DET_01
+    #And User_610 click the module name
+    #And User_610 select the LOS in module name
+    And User_610 click Inbox
+    And User_610 click search button
+    And User_610 enter the value in search button
+    And User_610 click edit button under inbox screen
+    #
+    And User_610 click facility Details screen
+    And User_610 verify the Classification field in list view
+    And User_610 verify the Product field in list view
+    And User_610 verify the Tenure field in list view
+    And User_610 verify the Requested Amount field in list view
+    And User_610 verify the Status field in list view
+    And User_610 verify the Add button field in list view
+    And User_610 verify the Export Pdf button field in list view
+    And User_610 verify the Export Xsl button field in list view
+    And User_610 verify the search button field in list view
+    And User_610 verify Post entering any matching value system should display 
+    And User_610 verify Post entering any mis matching value system should display 
+    Then logout from the ijaraApplication
+    
+    @AT_FAC_DET_09
+  Scenario: To verify export button in Document Details
+    Given navigate the IJARA URL
+    And login with valid credentials17
+    And User_610 get the test data set id for DS_AT_FAC_DET_01
+    #And User_610 click the module name
+    #And User_610 select the LOS in module name
+    And User_610 click Inbox
+    And User_610 click search button
+    And User_610 enter the value in search button
+    And User_610 click edit button under inbox screen
+    #
+    And User_610 click facility Details screen
+    And User_610 click export button
+    And User_610 verify the PDF button should download the PDF file of that records 
+    And User_610 click export button
+    And User_610 verify the Excel button should download the PDF file of that records 
+    And User_610 verify the back button
+    Then logout from the ijaraApplication
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

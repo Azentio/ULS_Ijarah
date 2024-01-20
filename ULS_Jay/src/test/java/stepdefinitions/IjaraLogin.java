@@ -549,9 +549,9 @@ public class IjaraLogin extends BaseClass {
 				
         //---------user 17   Ijara AppData Entry Facility Details 
 				
-				public void loginWithIjaraApplication17() {
+				public void loginWithIjaraApplication17(String userType) {
 					
-					loginTestData = exelData.getTestdata("userType17");
+					loginTestData = exelData.getTestdata(userType);
 					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName")).click();
 					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userName"))
 							.sendKeys(loginTestData.get("UserName"));
