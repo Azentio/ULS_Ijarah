@@ -31,7 +31,7 @@ public class HooksClass extends BaseClass {
 	Map<String, String> testExecutionData;
 	ExcelTest excelTest = new ExcelTest(path, "ULSExecution", "TestCase ID");
 	List<String> testCaseTagsFromExcel = excelTest.getTestCaseTagsfromExcel();
-	boolean excelRunnerStatus = false;
+	boolean excelRunnerStatus = true;
 	ScreenshotHelper screenshotHelper = new ScreenshotHelper(driver);
 
 	@Before
