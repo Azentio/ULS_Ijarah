@@ -126,9 +126,7 @@ And User_608 verify the Tenure field is displayed in list view under Financial C
 And User_608 verify the Next Due Date field is displayed in list view under Financial Commitments
 And User_608 verify the Principal Balance field is displayed in list view under Financial Commitments
 And User_608 verify the Currency field is displayed in list view under Financial Commitments
-
 And User_608 verify list view values should be not editable under Financial Commitments
-
 And User_608 click Search button in Financial Commitments under Customer Financials tab
 And User_608 search the matched record in Financial Commitments under Customer Financials tab
 And User_608 verify the all the possible matching records are displayed under Financial Commitments section

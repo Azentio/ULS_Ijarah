@@ -161,3 +161,110 @@ And User_608 verify Remarks field as Mandatory, Editable and Textbox in Asset Pr
 Then logout from the ijaraApplication
 And User_608 invoke soft assert in Asset Details screen at Murabaha App Data Entry stage
 
+
+@AT_MU_ADE_IAD_07
+Scenario: Modification of Asset Details record - To verify below sections,button are available & while modification system allow user to save the record with valid data
+
+Given navigate the IJARA URL
+And login with valid credentials-Murabaha App Data Entry
+And User_608 get the test data for test case AT_MU_ADE_IAD_07
+And User_608 click the module name dropdown in ULS application
+And User_608 select the module name as LOS in ULS application
+And User_608 click the Mail box in ULS application
+And User_608 click the Search button under inbox
+And User_608 search the Ref id under inbox in ULS Application
+And User_608 click the Entitle button under inbox
+And User_608 clicks on the Asset Details tab
+And User_608 click the record Edit button under Asset Details tab
+And User_608 to verify Update button available in Asset Details screen
+And User_608 to verify Asset Details section available in Asset Details screen
+And User_608 to verify Dealer Details section available in Asset Details screen
+And User_608 to verify Registration Details section available in Asset Details screen
+And User_608 to verify Asset Price and Down Payment Details section available in Asset Details screen
+And User_608 verify system allow user modify the record in Asset Details screen
+And User_608 to verify while modification, keep any mandatory field blank and click on update button in Asset Details screen
+And User_608 to verify system should show the proper validation message for blank field in Asset Details screen
+And User_608 to verify while modification system allow user to update the record with valid data in Asset Details screen
+And User_608 clicks on the Update button under Asset Details screen
+And User_608 to verify system display the confirmation message post clicking on update button
+Then logout from the ijaraApplication
+And User_608 invoke soft assert in Asset Details screen at Murabaha App Data Entry stage
+
+
+@AT_MU_ADE_IAD_08
+Scenario: List view of of Asset Details - System display the below mention fields on List view in Asset Details & verify functionality of Add and Edit button
+
+Given navigate the IJARA URL
+And login with valid credentials-Murabaha App Data Entry
+And User_608 get the test data for test case AT_MU_ADE_IAD_08
+And User_608 click the module name dropdown in ULS application
+And User_608 select the module name as LOS in ULS application
+And User_608 click the Mail box in ULS application
+And User_608 click the Search button under inbox
+And User_608 search the Ref id under inbox in ULS Application
+And User_608 click the Entitle button under inbox
+And User_608 clicks on the Asset Details tab
+And User_608 verify Add button is available in list view under Asset Details tab
+And User_608 verify Edit button is available in list view under Asset Details tab
+And User_608 verify Search button is available in list view under Asset Details tab
+And User_608 verify Export to PDF button is available in list view under Asset Details tab
+And User_608 verify Export to Excel button is available in list view under Asset Details tab
+And User_608 verify Showing records entries field available in list view under Asset Details tab
+And User_608 verify Asset Manufacture field available in list view under Asset Details tab
+And User_608 verify Asset Model field available in list view under Asset Details tab
+And User_608 verify Asset Model Type field available in list view under Asset Details tab
+And User_608 verify Year of Manufacture field available in list view under Asset Details tab
+And User_608 verify Asset Price field available in list view under Asset Details tab
+And User_608 verify Status field available in list view under Asset Details tab
+And User_608 verify values in List view should be non editable under Asset Details tab
+And User_608 verify the functionality of Add button under Asset Details tab
+And User_608 click the Back button in Asset Details screen
+And User_608 verify the functionality of Edit button under Asset Details tab
+Then logout from the ijaraApplication
+And User_608 invoke soft assert in Asset Details screen at Murabaha App Data Entry stage
+
+
+@AT_MU_ADE_IAD_09
+Scenario: List view of of Asset Details - To verify the functionality of Search box with matching data & mismatch data
+
+Given navigate the IJARA URL
+And login with valid credentials-Murabaha App Data Entry
+And User_608 get the test data for test case AT_MU_ADE_IAD_09
+And User_608 click the module name dropdown in ULS application
+And User_608 select the module name as LOS in ULS application
+And User_608 click the Mail box in ULS application
+And User_608 click the Search button under inbox
+And User_608 search the Ref id under inbox in ULS Application
+And User_608 click the Entitle button under inbox
+And User_608 clicks on the Asset Details tab
+And User_608 click the Search button under Asset Details tab
+And User_608 to verify the functionality of Search box with matching data under Asset Details tab
+And User_608 to verify post entering any matching value system should display all the possible matching records
+And User_608 to verify the functionality of Search box with mismatch data under Asset Details tab
+And User_608 to verify post entering any mismatch value system should not display any records
+Then logout from the ijaraApplication
+And User_608 invoke soft assert in Asset Details screen at Murabaha App Data Entry stage
+
+
+
+@AT_MU_ADE_IAD_10
+Scenario: List view of of Asset Details - To verify the functionality of Export to PDF & Excel button
+
+Given navigate the IJARA URL
+And login with valid credentials-Murabaha App Data Entry
+And User_608 get the test data for test case AT_MU_ADE_IAD_10
+And User_608 click the module name dropdown in ULS application
+And User_608 select the module name as LOS in ULS application
+And User_608 click the Mail box in ULS application
+And User_608 click the Search button under inbox
+And User_608 search the Ref id under inbox in ULS Application
+And User_608 click the Entitle button under inbox
+And User_608 clicks on the Asset Details tab
+And User_608 click the Export button under Asset Details Tab
+And User_608 to verify the functionality of Export to PDF button under Asset Details Tab
+And User_608 to verify post clicking on PDF button system should download the PDF file of that records in Asset Details
+And User_608 click the Export button under Asset Details Tab
+And User_608 to verify the functionality of Export to Excel button under Asset Details Tab
+And User_608 to verify post clicking XLS button system should download the xls file of that records in Asset Details
+Then logout from the ijaraApplication
+And User_608 invoke soft assert in Asset Details screen at Murabaha App Data Entry stage

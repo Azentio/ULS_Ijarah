@@ -40,7 +40,7 @@ And User_608 verify Blocklisted field available under Customer Information scree
 And User_608 verify Credit Bureau field available under Customer Information screen
 And User_608 verify Remarks field available under Customer Information screen
 Then logout from the ijaraApplication
-
+And User_608 invoke soft assert in Customer Details screen at Tawarruq App Data Entry stage
 
 @AT_TW_CD_01
 @AT_TW_CD_01_01
@@ -81,7 +81,7 @@ And User_608 verify Remarks field as Non-Mandatory, Editable and Texbox under Cu
 And User_608 click the Back button under Customer Information screen
 And User_608 verify post clicking on Back button system should navigate to the previous screen under Customer Details tab
 Then logout from the ijaraApplication
-
+And User_608 invoke soft assert in Customer Details screen at Tawarruq App Data Entry stage
 
 
 @AT_TW_CD_01_02
@@ -107,7 +107,7 @@ And User_608 verify Prefered Time For Contact is available and field should be H
 And User_608 verify Email Type is available and field should be LOV, editable under Contact details screen
 And User_608 verify Email ID is available and field should be Email format, editable under Contact details screen
 Then logout from the ijaraApplication
-
+And User_608 invoke soft assert in Contact Details screen at Tawarruq App Data Entry stage
 
 
 @AT_TW_CD_02
@@ -122,16 +122,12 @@ And User_608 search the Reference id under inbox in ULS Application
 And User_608 click the Entitle button under inbox
 And User_608 click the Customer Details tab
 And User_608 click the Add button under Customer Details tab
-
 And User_608 select the Salutation Title in Customer Information screen
 And User_608 enter the First Name in Customer Information screen
 And User_608 enter the Last Name in Customer Information screen
 And User_608 click the Save button with mandatory field is blank in Customer Information screen
 And User_608 verify Mandatory blank field validation message in Customer Information screen
-
 And User_608 enter the Special charater in any field and verify the validation message in Customer Information screen
 And User_608 enter the Negative number in numberic field and verify the validation message in Customer Information screen
-
 Then logout from the ijaraApplication
-
-
+And User_608 invoke soft assert in Customer Details screen at Tawarruq App Data Entry stage

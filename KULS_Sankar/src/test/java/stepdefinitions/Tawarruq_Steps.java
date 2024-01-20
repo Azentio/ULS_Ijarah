@@ -202,7 +202,7 @@ public class Tawarruq_Steps {
 					if (titlename.trim().contains("Customer details")) {
 						String jspath = "document.querySelectorAll('ion-segment-button')[" + j + "]";
 						WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
-						javascriptHelper.JSEClick(addButton);
+						addButton.click();
 						break;
 					}
 				}
@@ -217,15 +217,36 @@ public class Tawarruq_Steps {
 
 	@And("User_608 click the Add button under Customer Details tab")
 	public void user_608_click_the_add_button_under_customer_details_tab() throws Throwable {
-		Thread.sleep(100);
-		WebElement customerDetailsAddBtn = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("customerDetailsAddBtn"));		
-		for (int i = 0; i <= 500; i++) {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
 			try {
-				javascriptHelper.backgroundBorder(customerDetailsAddBtn);
-				javascriptHelper.JSEClick(customerDetailsAddBtn);				
+				length = javascriptHelper.executeScript("return document.querySelectorAll('div[class*=\"grid \"] button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('div[class*=\"grid \"] button')[" + j + "].getAttribute('ng-reflect-text')";
+					String titlename = javascriptHelper.executeScript(title).toString();			
+					if (titlename.trim().contains("Add")) {
+						String jspath = "document.querySelectorAll('div[class*=\"grid \"] button')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						btn.click();
+						break;
+					}
+				}
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i == 4999) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -234,15 +255,36 @@ public class Tawarruq_Steps {
 	
 	@And("User_608 click the Pencil icon button under Customer Details tab")
 	public void user_608_click_the_pencil_icon_under_customer_details_tab() throws Throwable {
-		Thread.sleep(1000);
-		WebElement customerDetailsPencilBtn = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("customerDetailsPencilBtn"));		
-		for (int i = 0; i <= 500; i++) {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
 			try {
-				javascriptHelper.backgroundColor(customerDetailsPencilBtn);
-				javascriptHelper.JSEClick(customerDetailsPencilBtn);				
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();			
+					if (titlename.trim().contains("Customer Personal Information")) {
+						String jspath = "document.querySelectorAll('button[icon=\"pi pi-pencil\"]')[" + j + "]";
+						WebElement pencilBtn = javascriptHelper.executeScriptWithWebElement(jspath);
+						pencilBtn.click();
+						break;
+					}
+				}
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i == 4999) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -251,15 +293,38 @@ public class Tawarruq_Steps {
 
 	@And("User_608 verify Back button is available under Customer Information screen")
 	public void user_608_verify_back_button_is_available_under_customer_information_screen() throws Throwable {
-		Thread.sleep(100);
-		WebElement customerDetailsBackBtn = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("customerDetailsBackBtn"));
-		for (int i = 0; i <= 1500; i++) {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
 			try {
-				javascriptHelper.backgroundBorder(customerDetailsBackBtn);
-				customerDetailsBackBtn.isDisplayed();
+				length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('form button')[" + j + "].getAttribute('ng-reflect-text')";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains("Go Back")) {
+						String jspath = "document.querySelectorAll('form button')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.backgroundBorder(btn);
+						softAssert.assertTrue(btn.isDisplayed(),
+								"Back button should be displayed in Customer Details Details screen");
+						break;
+					}
+				}
 				break;
 			} catch (Exception e) {
-				if (i == 1500) {
+				if (i == 4999) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -268,14 +333,38 @@ public class Tawarruq_Steps {
 
 	@And("User_608 verify Save button is available under Customer Information screen")
 	public void user_608_verify_save_button_is_available_under_customer_information_screen() throws Throwable {
-		WebElement customerDetailsSaveBtn = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("customerDetailsSaveBtn"));
-		for (int i = 0; i <= 1500; i++) {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
 			try {
-				javascriptHelper.backgroundBorder(customerDetailsSaveBtn);
-				customerDetailsSaveBtn.isDisplayed();
+				length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('form button')[" + j + "].getAttribute('ng-reflect-text')";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains("Save")) {
+						String jspath = "document.querySelectorAll('form button')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.backgroundBorder(btn);
+						softAssert.assertTrue(btn.isDisplayed(),
+								"Save button should be displayed in Customer Details screen");
+						break;
+					}
+				}
 				break;
 			} catch (Exception e) {
-				if (i == 1500) {
+				if (i == 4999) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -284,12 +373,13 @@ public class Tawarruq_Steps {
 	
 	
 	@And("User_608 verify Applicant Type field available under Customer Information screen")
-	public void user_608_verify_applicant_type_field_available_under_customer_information_screen() throws Throwable {
-		WebElement applicantTypeLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("applicantTypeLabel"));
+	public void user_608_verify_applicant_type_field_available_under_customer_information_screen() throws Throwable {		
 		for (int i = 0; i <= 1500; i++) {
 			try {
+				WebElement applicantTypeLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("applicantTypeLabel"));
 				javascriptHelper.backgroundColor(applicantTypeLabel);
-				applicantTypeLabel.isDisplayed();
+				softAssert.assertTrue(applicantTypeLabel.isDisplayed(),
+						"Applicant Type field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -301,7 +391,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundBorder(applicantTypeDropdown);
-				applicantTypeDropdown.isDisplayed();
+				softAssert.assertTrue(applicantTypeDropdown.isDisplayed(),
+						"Applicant Type field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -317,7 +408,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(customerTypeLabel);
-				customerTypeLabel.isDisplayed();
+				softAssert.assertTrue(customerTypeLabel.isDisplayed(),
+						"Customer Type field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -329,7 +421,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundBorder(customerTypeDropdown);
-				customerTypeDropdown.isDisplayed();
+				softAssert.assertTrue(customerTypeDropdown.isDisplayed(),
+						"Customer Type field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -345,7 +438,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(titleLabel);
-				titleLabel.isDisplayed();
+				softAssert.assertTrue(titleLabel.isDisplayed(),
+						"Title field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -357,7 +451,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundBorder(titleDropdown);
-				titleDropdown.isDisplayed();
+				softAssert.assertTrue(titleDropdown.isDisplayed(),
+						"Title field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -373,7 +468,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(firstNameLabel);
-				firstNameLabel.isDisplayed();
+				softAssert.assertTrue(firstNameLabel.isDisplayed(),
+						"First Name field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -385,7 +481,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundBorder(firstNameInput);
-				firstNameInput.isDisplayed();
+				softAssert.assertTrue(firstNameInput.isDisplayed(),
+						"First Name field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -401,7 +498,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(middleNameLabel);
-				middleNameLabel.isDisplayed();
+				softAssert.assertTrue(middleNameLabel.isDisplayed(),
+						"Middle Name field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -413,7 +511,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundBorder(middleNameInput);
-				middleNameInput.isDisplayed();
+				softAssert.assertTrue(middleNameInput.isDisplayed(),
+						"Middle Name field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -429,7 +528,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(lastNameLabel);
-				lastNameLabel.isDisplayed();
+				softAssert.assertTrue(lastNameLabel.isDisplayed(),
+						"Last Name field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -441,7 +541,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundBorder(lastNameInput);
-				lastNameInput.isDisplayed();
+				softAssert.assertTrue(lastNameInput.isDisplayed(),
+						"Last Name field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -457,7 +558,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(familyNameLabel);
-				familyNameLabel.isDisplayed();
+				softAssert.assertTrue(familyNameLabel.isDisplayed(),
+						"Family Name field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -469,7 +571,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundBorder(familyNameInput);
-				familyNameInput.isDisplayed();
+				softAssert.assertTrue(familyNameInput.isDisplayed(),
+						"Family Name field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -485,7 +588,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(firstNameArabicLabel);
-				firstNameArabicLabel.isDisplayed();
+				softAssert.assertTrue(firstNameArabicLabel.isDisplayed(),
+						"First Name(Arabic) field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -497,7 +601,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundBorder(firstNameArabicInput);
-				firstNameArabicInput.isDisplayed();
+				softAssert.assertTrue(firstNameArabicInput.isDisplayed(),
+						"First Name(Arabic) field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -513,7 +618,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(middleNameArabicLabel);
-				middleNameArabicLabel.isDisplayed();
+				softAssert.assertTrue(middleNameArabicLabel.isDisplayed(),
+						"Middle Name(Arabic) field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -525,7 +631,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundBorder(middleNameArabicInput);
-				middleNameArabicInput.isDisplayed();
+				softAssert.assertTrue(middleNameArabicInput.isDisplayed(),
+						"Middle Name(Arabic) field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -541,7 +648,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(lastNameArabicLabel);
-				lastNameArabicLabel.isDisplayed();
+				softAssert.assertTrue(lastNameArabicLabel.isDisplayed(),
+						"Last Name(Arabic) field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -553,7 +661,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundBorder(lastNameArabicInput);
-				lastNameArabicInput.isDisplayed();
+				softAssert.assertTrue(lastNameArabicInput.isDisplayed(),
+						"Last Name(Arabic) field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -569,7 +678,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(familyNameArabicLabel);
-				familyNameArabicLabel.isDisplayed();
+				softAssert.assertTrue(familyNameArabicLabel.isDisplayed(),
+						"Family Name(Arabic) field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -581,7 +691,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundBorder(familyNameArabicInput);
-				familyNameArabicInput.isDisplayed();
+				softAssert.assertTrue(familyNameArabicInput.isDisplayed(),
+						"Family Name(Arabic) field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -597,7 +708,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(dobLabel);
-				dobLabel.isDisplayed();
+				softAssert.assertTrue(dobLabel.isDisplayed(),
+						"Date of Birth field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -609,7 +721,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundBorder(dobInput);
-				dobInput.isDisplayed();
+				softAssert.assertTrue(dobInput.isDisplayed(),
+						"Date of Birth field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -625,7 +738,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(ageLabel);
-				ageLabel.isDisplayed();
+				softAssert.assertTrue(ageLabel.isDisplayed(),
+						"Age field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -637,7 +751,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundBorder(ageInput);
-				ageInput.isDisplayed();
+				softAssert.assertTrue(ageInput.isDisplayed(),
+						"Age field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -655,7 +770,8 @@ public class Tawarruq_Steps {
 			try {
 				javascriptHelper.scrollIntoView(dobLabel);
 				javascriptHelper.backgroundColor(genderLabel);
-				genderLabel.isDisplayed();
+				softAssert.assertTrue(genderLabel.isDisplayed(),
+						"Gender field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -667,7 +783,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundBorder(genderDropdown);
-				genderDropdown.isDisplayed();
+				softAssert.assertTrue(genderDropdown.isDisplayed(),
+						"Gender field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -683,7 +800,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(maritalStatusLabel);
-				maritalStatusLabel.isDisplayed();
+				softAssert.assertTrue(maritalStatusLabel.isDisplayed(),
+						"Marital Status field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -695,7 +813,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundBorder(maritalStatusDropdown);
-				maritalStatusDropdown.isDisplayed();
+				softAssert.assertTrue(maritalStatusDropdown.isDisplayed(),
+						"Marital Status field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -711,7 +830,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(educationLevelLabel);
-				educationLevelLabel.isDisplayed();
+				softAssert.assertTrue(educationLevelLabel.isDisplayed(),
+						"Education Level field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -723,7 +843,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundBorder(educationLevelDropdown);
-				educationLevelDropdown.isDisplayed();
+				softAssert.assertTrue(educationLevelDropdown.isDisplayed(),
+						"Education Level field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -739,7 +860,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(nationalityLabel);
-				nationalityLabel.isDisplayed();
+				softAssert.assertTrue(nationalityLabel.isDisplayed(),
+						"Nationality field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -751,7 +873,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundBorder(nationalityDropdown);
-				nationalityDropdown.isDisplayed();
+				softAssert.assertTrue(nationalityDropdown.isDisplayed(),
+						"Nationality field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -767,7 +890,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(residentialStatusLabel);
-				residentialStatusLabel.isDisplayed();
+				softAssert.assertTrue(residentialStatusLabel.isDisplayed(),
+						"Residential Status field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -779,7 +903,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundBorder(residentialStatusDropdown);
-				residentialStatusDropdown.isDisplayed();
+				softAssert.assertTrue(residentialStatusDropdown.isDisplayed(),
+						"Residential Status field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -795,7 +920,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(languageLabel);
-				languageLabel.isDisplayed();
+				softAssert.assertTrue(languageLabel.isDisplayed(),
+						"Language field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -807,7 +933,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundBorder(languageDropdown);
-				languageDropdown.isDisplayed();
+				softAssert.assertTrue(languageDropdown.isDisplayed(),
+						"Language field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -823,7 +950,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(noOfDependsLabel);
-				noOfDependsLabel.isDisplayed();
+				softAssert.assertTrue(noOfDependsLabel.isDisplayed(),
+						"No of Dependents field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -835,7 +963,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundBorder(noOfDependsInput);
-				noOfDependsInput.isDisplayed();
+				softAssert.assertTrue(noOfDependsInput.isDisplayed(),
+						"No of Dependents field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -851,7 +980,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(clientCategoryLabel);
-				clientCategoryLabel.isDisplayed();
+				softAssert.assertTrue(clientCategoryLabel.isDisplayed(),
+						"Client Category field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -863,7 +993,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundBorder(clientCategoryDropdown);
-				clientCategoryDropdown.isDisplayed();
+				softAssert.assertTrue(clientCategoryDropdown.isDisplayed(),
+						"Client Category field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -879,7 +1010,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(blocklistLabel);
-				blocklistLabel.isDisplayed();
+				softAssert.assertTrue(blocklistLabel.isDisplayed(),
+						"Blocklisted field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -891,7 +1023,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundBorder(blocklistToggle);
-				blocklistToggle.isDisplayed();
+				softAssert.assertTrue(blocklistToggle.isDisplayed(),
+						"Blocklisted field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -907,7 +1040,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(creditBureauLabel);
-				creditBureauLabel.isDisplayed();
+				softAssert.assertTrue(creditBureauLabel.isDisplayed(),
+						"Credit Bureau field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -919,7 +1053,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundBorder(creditBureauDropdown);
-				creditBureauDropdown.isDisplayed();
+				softAssert.assertTrue(creditBureauDropdown.isDisplayed(),
+						"Credit Bureau field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -935,7 +1070,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(remarksLabel);
-				remarksLabel.isDisplayed();
+				softAssert.assertTrue(remarksLabel.isDisplayed(),
+						"Remarks field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -947,7 +1083,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundBorder(remarksInput);
-				remarksInput.isDisplayed();
+				softAssert.assertTrue(remarksInput.isDisplayed(),
+						"Remarks field available under Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -957,17 +1094,25 @@ public class Tawarruq_Steps {
 		}	    
 	}
 	
+	@And("User_608 invoke soft assert in Customer Details screen at Tawarruq App Data Entry stage")
+	public void user_608_invoke_soft_assert_in_customer_details_screen_at_tawarruq_app_data_entry_stage() throws Throwable {
+		softAssert.assertAll();
+	}
+	
+	@And("User_608 invoke soft assert in Contact Details screen at Tawarruq App Data Entry stage")
+	public void user_608_invoke_soft_assert_in_contact_details_screen_at_tawarruq_app_data_entry_stage() throws Throwable {
+		softAssert.assertAll();
+	}
 	
 //	TW_CD_01_01
 	@And("User_608 verify Applicant Type field as Mandatory, Editable and Dropdown under Customer Information screen")
 	public void user_608_verify_applicant_type_field_as_mandatory_editable_and_dropdown_under_customer_information_screen() throws Throwable {
-		Thread.sleep(5000);
 //		Validate Mandatory
-		String applicantTypeLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("applicantTypeLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
+        	  String applicantTypeLabel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("applicantTypeLabel")).getText();
         	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("applicantTypeLabel")));
-              Assert.assertTrue(applicantTypeLabel.contains("*"));
+        	  softAssert.assertTrue(applicantTypeLabel.contains("*"), "Applicant Type field as Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -980,7 +1125,8 @@ public class Tawarruq_Steps {
 		WebElement applicantType = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("applicantType"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				Assert.assertTrue(applicantType.getAttribute("ng-reflect-readonly").contains("false"));
+				softAssert.assertTrue(applicantType.getAttribute("ng-reflect-readonly").contains("false"),
+						"Applicant Type field as Editable");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -990,11 +1136,13 @@ public class Tawarruq_Steps {
 		}
 		
 //		Validate the field should be lookup value[Dropdown]
-		WebElement applicantTypeDropdown = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("applicantTypeDropdown"));
+		WebElement applicantTypeDropdown = javascriptHelper.executeScriptWithWebElement(
+				appDataCustomerDetailsJsPaths.getElement("applicantTypeDropdown"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(applicantTypeDropdown);
-				Assert.assertTrue(applicantTypeDropdown.getAttribute("ng-reflect-placeholder").contains("Select"));
+				softAssert.assertTrue(applicantTypeDropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Applicant Type field as Dropdown");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1011,7 +1159,7 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("customerTypeLabel")));
-              Assert.assertTrue(customerTypeLabel.contains("*"));
+        	  softAssert.assertTrue(customerTypeLabel.contains("*"),"Customer Type field as Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1024,7 +1172,8 @@ public class Tawarruq_Steps {
 		WebElement customerType = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("customerType"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				Assert.assertTrue(customerType.getAttribute("ng-reflect-readonly").contains("false"));
+				softAssert.assertTrue(customerType.getAttribute("ng-reflect-readonly").contains("false"),
+						"Customer Type field as Editable");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1038,7 +1187,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(customerTypeDropdown);
-				Assert.assertTrue(customerTypeDropdown.getAttribute("ng-reflect-placeholder").contains("Select"));
+				softAssert.assertTrue(customerTypeDropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Customer Type field as Dropdown");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1055,7 +1205,7 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("titleLabel")));
-              Assert.assertTrue(titleLabel.contains("*"));
+        	  softAssert.assertTrue(titleLabel.contains("*"),"Title field as Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1068,7 +1218,8 @@ public class Tawarruq_Steps {
 		WebElement title = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("title"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				Assert.assertTrue(title.getAttribute("ng-reflect-readonly").contains("false"));
+				softAssert.assertTrue(title.getAttribute("ng-reflect-readonly").contains("false"),
+						"Title field as Editable");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1082,7 +1233,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(titleDropdown);
-				Assert.assertTrue(titleDropdown.getAttribute("ng-reflect-placeholder").contains("Select"));
+				softAssert.assertTrue(titleDropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Title field as Dropdown");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1099,7 +1251,7 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("firstNameLabel")));
-              Assert.assertTrue(firstNameLabel.contains("*"));
+        	  softAssert.assertTrue(firstNameLabel.contains("*"),"First Name field as Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1112,7 +1264,8 @@ public class Tawarruq_Steps {
 		WebElement firstName = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("firstName"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				Assert.assertTrue(firstName.getAttribute("ng-reflect-readonly").contains("false"));
+				softAssert.assertTrue(firstName.getAttribute("ng-reflect-readonly").contains("false"),
+						"First Name field as Editable");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1126,7 +1279,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(firstNameInput);
-				Assert.assertTrue(firstNameInput.getAttribute("type").contains("text"));
+				softAssert.assertTrue(firstNameInput.getAttribute("type").contains("text"),
+						"First Name field as Input");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1143,7 +1297,7 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("middleNameLabel")));
-              Assert.assertTrue(!(middleNameLabel.contains("*")));
+        	  softAssert.assertTrue(!(middleNameLabel.contains("*")),"Middle Name field as Non-Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1156,7 +1310,8 @@ public class Tawarruq_Steps {
 		WebElement middleName = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("middleName"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				Assert.assertTrue(middleName.getAttribute("ng-reflect-readonly").contains("false"));
+				softAssert.assertTrue(middleName.getAttribute("ng-reflect-readonly").contains("false"),
+						"Middle Name field as Editable");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1170,7 +1325,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(middleNameInput);
-				Assert.assertTrue(middleNameInput.getAttribute("type").contains("text"));
+				softAssert.assertTrue(middleNameInput.getAttribute("type").contains("text"),
+						"Middle Name field as Input");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1187,7 +1343,7 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("lastNameLabel")));
-              Assert.assertTrue(lastNameLabel.contains("*"));
+        	  softAssert.assertTrue(lastNameLabel.contains("*"),"Last Name field as Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1200,7 +1356,8 @@ public class Tawarruq_Steps {
 		WebElement lastName = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("lastName"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				Assert.assertTrue(lastName.getAttribute("ng-reflect-readonly").contains("false"));
+				softAssert.assertTrue(lastName.getAttribute("ng-reflect-readonly").contains("false"),
+						"Last Name field as Editable");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1214,7 +1371,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(lastNameInput);
-				Assert.assertTrue(lastNameInput.getAttribute("type").contains("text"));
+				softAssert.assertTrue(lastNameInput.getAttribute("type").contains("text"),
+						"Last Name field as Input");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1232,7 +1390,7 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("familyNameLabel")));
-              Assert.assertTrue(!(familyNameLabel.contains("*")));
+        	  softAssert.assertTrue(!(familyNameLabel.contains("*")),"Family Name field as Non-Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1245,7 +1403,8 @@ public class Tawarruq_Steps {
 		WebElement familyName = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("familyName"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				Assert.assertTrue(familyName.getAttribute("ng-reflect-readonly").contains("false"));
+				softAssert.assertTrue(familyName.getAttribute("ng-reflect-readonly").contains("false"),
+						"Family Name field as Editable");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1259,7 +1418,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(familyNameInput);
-				Assert.assertTrue(familyNameInput.getAttribute("type").contains("text"));
+				softAssert.assertTrue(familyNameInput.getAttribute("type").contains("text"),
+						"Family Name field as Input");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1276,7 +1436,7 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("firstNameArabicLabel")));
-              Assert.assertTrue(firstNameArabicLabel.contains("*"));
+        	  softAssert.assertTrue(firstNameArabicLabel.contains("*"),"First Name(Arabic) field as Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1289,7 +1449,8 @@ public class Tawarruq_Steps {
 		WebElement firstNameArabic = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("firstNameArabic"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				Assert.assertTrue(firstNameArabic.getAttribute("ng-reflect-readonly").contains("false"));
+				softAssert.assertTrue(firstNameArabic.getAttribute("ng-reflect-readonly").contains("false"),
+						"First Name(Arabic) field as Editable");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1303,7 +1464,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(firstNameArabicInput);
-				Assert.assertTrue(firstNameArabicInput.getAttribute("type").contains("text"));
+				softAssert.assertTrue(firstNameArabicInput.getAttribute("type").contains("text"),
+						"First Name(Arabic) field as Input");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1320,7 +1482,7 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("middleNameArabicLabel")));
-              Assert.assertTrue(!(middleNameArabicLabel.contains("*")));
+        	  softAssert.assertTrue(!(middleNameArabicLabel.contains("*")),"Middle Name(Arabic) field as Non-Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1333,7 +1495,8 @@ public class Tawarruq_Steps {
 		WebElement middleNameArabic = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("middleNameArabic"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				Assert.assertTrue(middleNameArabic.getAttribute("ng-reflect-readonly").contains("false"));
+				softAssert.assertTrue(middleNameArabic.getAttribute("ng-reflect-readonly").contains("false"),
+						"Middle Name(Arabic) field as Editable");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1347,7 +1510,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(middleNameArabicInput);
-				Assert.assertTrue(middleNameArabicInput.getAttribute("type").contains("text"));
+				softAssert.assertTrue(middleNameArabicInput.getAttribute("type").contains("text"),
+						"Middle Name(Arabic) field as Input");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1364,7 +1528,7 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("lastNameArabicLabel")));
-              Assert.assertTrue(lastNameArabicLabel.contains("*"));
+        	  softAssert.assertTrue(lastNameArabicLabel.contains("*"),"Last Name(Arabic) field as Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1377,7 +1541,8 @@ public class Tawarruq_Steps {
 		WebElement lastNameArabic = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("lastNameArabic"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				Assert.assertTrue(lastNameArabic.getAttribute("ng-reflect-readonly").contains("false"));
+				softAssert.assertTrue(lastNameArabic.getAttribute("ng-reflect-readonly").contains("false"),
+						"Last Name(Arabic) field as Editable");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1391,7 +1556,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(lastNameArabicInput);
-				Assert.assertTrue(lastNameArabicInput.getAttribute("type").contains("text"));
+				softAssert.assertTrue(lastNameArabicInput.getAttribute("type").contains("text"),
+						"Last Name(Arabic) field as Input");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1408,7 +1574,7 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("familyNameArabicLabel")));
-              Assert.assertTrue(!(familyNameArabicLabel.contains("*")));
+        	  softAssert.assertTrue(!(familyNameArabicLabel.contains("*")),"Family Name(Arabic) field as Non-Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1421,7 +1587,8 @@ public class Tawarruq_Steps {
 		WebElement familyNameArabic = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("familyNameArabic"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				Assert.assertTrue(familyNameArabic.getAttribute("ng-reflect-readonly").contains("false"));
+				softAssert.assertTrue(familyNameArabic.getAttribute("ng-reflect-readonly").contains("false"),
+						"Family Name(Arabic) field as Editable");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1435,7 +1602,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(familyNameArabicInput);
-				Assert.assertTrue(familyNameArabicInput.getAttribute("type").contains("text"));
+				softAssert.assertTrue(familyNameArabicInput.getAttribute("type").contains("text"),
+						"Family Name(Arabic) field as Input");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1453,7 +1621,7 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("dobLabel")));
-              Assert.assertTrue(dobLabel.contains("*"));
+        	  softAssert.assertTrue(dobLabel.contains("*"),"Date of Birth field as Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1466,7 +1634,8 @@ public class Tawarruq_Steps {
 		WebElement dateOfBirth = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("dateOfBirth"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				Assert.assertTrue(dateOfBirth.getAttribute("ng-reflect-readonly").contains("false"));
+				softAssert.assertTrue(dateOfBirth.getAttribute("ng-reflect-readonly").contains("false"),
+						"Date of Birth field as Editable");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1481,7 +1650,8 @@ public class Tawarruq_Steps {
 			try {
 				javascriptHelper.backgroundBorder(dobCalender);
 				System.out.println("Tag Name: "+dobCalender.getTagName());
-				Assert.assertTrue(dobCalender.getTagName().contains("calendar"));
+				softAssert.assertTrue(dobCalender.getTagName().contains("calendar"),
+						"Date of Birth field as Input");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1498,7 +1668,7 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("ageLabel")));
-              Assert.assertTrue(!(ageLabel.contains("*")));
+        	  softAssert.assertTrue(!(ageLabel.contains("*")),"age field as Non-Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1511,7 +1681,8 @@ public class Tawarruq_Steps {
 		WebElement age = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("age"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				Assert.assertTrue(age.getAttribute("ng-reflect-readonly").contains("true"));
+				softAssert.assertTrue(age.getAttribute("ng-reflect-readonly").contains("true"),
+						"Title field as Non-Editable");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1525,7 +1696,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(ageInput);
-				Assert.assertTrue(ageInput.getAttribute("type").contains("number"));
+				softAssert.assertTrue(ageInput.getAttribute("type").contains("number"),
+						"Age field as Number");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1554,7 +1726,7 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("genderLabel")));
-              Assert.assertTrue(genderLabel.contains("*"));
+        	  softAssert.assertTrue(genderLabel.contains("*"),"Gender field as Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1567,7 +1739,8 @@ public class Tawarruq_Steps {
 		WebElement gender = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("gender"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				Assert.assertTrue(gender.getAttribute("ng-reflect-readonly").contains("false"));
+				softAssert.assertTrue(gender.getAttribute("ng-reflect-readonly").contains("false"),
+						"Gender field as Editable");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1581,7 +1754,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(genderDropdown);
-				Assert.assertTrue(genderDropdown.getAttribute("ng-reflect-placeholder").contains("Select"));
+				softAssert.assertTrue(genderDropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Gender field as Dropdown");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1598,7 +1772,7 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("maritalStatusLabel")));
-              Assert.assertTrue(maritalStatusLabel.contains("*"));
+        	  softAssert.assertTrue(maritalStatusLabel.contains("*"),"Marital Status field as Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1611,7 +1785,8 @@ public class Tawarruq_Steps {
 		WebElement maritalStatus = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("maritalStatus"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				Assert.assertTrue(maritalStatus.getAttribute("ng-reflect-readonly").contains("false"));
+				softAssert.assertTrue(maritalStatus.getAttribute("ng-reflect-readonly").contains("false"),
+						"Marital Status field as Editable");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1625,7 +1800,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(maritalStatusDropdown);
-				Assert.assertTrue(maritalStatusDropdown.getAttribute("ng-reflect-placeholder").contains("Select"));
+				softAssert.assertTrue(maritalStatusDropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Marital Status field as Dropdown");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1642,7 +1818,7 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("educationLevelLabel")));
-              Assert.assertTrue(educationLevelLabel.contains("*"));
+        	  softAssert.assertTrue(educationLevelLabel.contains("*"),"Education Level field as Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1655,7 +1831,8 @@ public class Tawarruq_Steps {
 		WebElement educationLevel = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("educationLevel"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				Assert.assertTrue(educationLevel.getAttribute("ng-reflect-readonly").contains("false"));
+				softAssert.assertTrue(educationLevel.getAttribute("ng-reflect-readonly").contains("false"),
+						"Education Level field as Editable");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1669,7 +1846,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(educationLevelDropdown);
-				Assert.assertTrue(educationLevelDropdown.getAttribute("ng-reflect-placeholder").contains("Select"));
+				softAssert.assertTrue(educationLevelDropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Education Level field as Dropdown");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1686,7 +1864,7 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("nationalityLabel")));
-              Assert.assertTrue(nationalityLabel.contains("*"));
+        	  softAssert.assertTrue(nationalityLabel.contains("*"),"Nationality field as Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1699,7 +1877,8 @@ public class Tawarruq_Steps {
 		WebElement nationality = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("nationality"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				Assert.assertTrue(nationality.getAttribute("ng-reflect-readonly").contains("false"));
+				softAssert.assertTrue(nationality.getAttribute("ng-reflect-readonly").contains("false"),
+						"Nationality field as Editable");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1713,7 +1892,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(nationalityDropdown);
-				Assert.assertTrue(nationalityDropdown.getAttribute("ng-reflect-placeholder").contains("Select"));
+				softAssert.assertTrue(nationalityDropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Nationality field as Dropdown");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1730,7 +1910,7 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("residentialStatusLabel")));
-              Assert.assertTrue(residentialStatusLabel.contains("*"));
+        	  softAssert.assertTrue(residentialStatusLabel.contains("*"),"Residential Status field as Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1743,7 +1923,8 @@ public class Tawarruq_Steps {
 		WebElement residentialStatus = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("residentialStatus"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				Assert.assertTrue(residentialStatus.getAttribute("ng-reflect-readonly").contains("false"));
+				softAssert.assertTrue(residentialStatus.getAttribute("ng-reflect-readonly").contains("false"),
+						"Residential Status field as Editable");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1757,7 +1938,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(residentialStatusDropdown);
-				Assert.assertTrue(residentialStatusDropdown.getAttribute("ng-reflect-placeholder").contains("Select"));
+				softAssert.assertTrue(residentialStatusDropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Residential Status field as Dropdown");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1774,7 +1956,7 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("languageLabel")));
-              Assert.assertTrue(languageLabel.contains("*"));
+        	  softAssert.assertTrue(languageLabel.contains("*"),"Language field as Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1787,7 +1969,8 @@ public class Tawarruq_Steps {
 		WebElement Language = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("Language"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				Assert.assertTrue(Language.getAttribute("ng-reflect-readonly").contains("false"));
+				softAssert.assertTrue(Language.getAttribute("ng-reflect-readonly").contains("false"),
+						"Language field as Editable");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1801,7 +1984,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(languageDropdown);
-				Assert.assertTrue(languageDropdown.getAttribute("ng-reflect-placeholder").contains("Select"));
+				softAssert.assertTrue(languageDropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Language field as Dropdown");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1818,7 +2002,7 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("noOfDependsLabel")));
-              Assert.assertTrue(noOfDependsLabel.contains("*"));
+        	  softAssert.assertTrue(noOfDependsLabel.contains("*"),"No of Dependents field as Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1831,7 +2015,8 @@ public class Tawarruq_Steps {
 		WebElement noOfDependents = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("noOfDependents"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				Assert.assertTrue(noOfDependents.getAttribute("ng-reflect-readonly").contains("false"));
+				softAssert.assertTrue(noOfDependents.getAttribute("ng-reflect-readonly").contains("false"),
+						"No of Dependents field as Editable");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1845,7 +2030,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(noOfDependsInput);
-				Assert.assertTrue(noOfDependsInput.getAttribute("type").contains("number"));
+				softAssert.assertTrue(noOfDependsInput.getAttribute("type").contains("number"),
+						"No of Dependents field as Input");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1862,7 +2048,7 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("clientCategoryLabel")));
-              Assert.assertTrue(clientCategoryLabel.contains("*"));
+        	  softAssert.assertTrue(clientCategoryLabel.contains("*"),"Client Category field as Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1875,7 +2061,8 @@ public class Tawarruq_Steps {
 		WebElement clientCategory = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("clientCategory"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				Assert.assertTrue(clientCategory.getAttribute("ng-reflect-readonly").contains("false"));
+				softAssert.assertTrue(clientCategory.getAttribute("ng-reflect-readonly").contains("false"),
+						"Client Category field as Editable");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1889,7 +2076,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(clientCategoryDropdown);
-				Assert.assertTrue(clientCategoryDropdown.getTagName().contains("select"));
+				softAssert.assertTrue(clientCategoryDropdown.getTagName().contains("select"),
+						"Client Category field as Dropdown");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1906,7 +2094,7 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("blocklistLabel")));
-              Assert.assertTrue(!(blocklistLabel.contains("*")));
+        	  softAssert.assertTrue(!(blocklistLabel.contains("*")),"Blocklisted field as Non-Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1919,7 +2107,8 @@ public class Tawarruq_Steps {
 		WebElement blocklisted = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("blocklisted"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				Assert.assertTrue(blocklisted.getAttribute("ng-reflect-readonly").contains("false"));
+				softAssert.assertTrue(blocklisted.getAttribute("ng-reflect-readonly").contains("false"),
+						"Blocklisted field as Editable");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1933,7 +2122,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(blocklistToggle);
-				Assert.assertTrue(blocklistToggle.getTagName().contains("toggle"));
+				softAssert.assertTrue(blocklistToggle.getTagName().contains("toggle"),
+						"Blocklisted field as Toggle button");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1950,7 +2140,7 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <2000; i++) {
           try {
         	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("remarksLabel")));
-              Assert.assertTrue(!(remarksLabel.contains("*")));
+        	  softAssert.assertTrue(!(remarksLabel.contains("*")),"Remarks field as Non-Mandatory");
               break;
           } catch (Exception e) {
               if (i==1999) {
@@ -1963,7 +2153,8 @@ public class Tawarruq_Steps {
 		WebElement remarks = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("remarks"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				Assert.assertTrue(remarks.getAttribute("ng-reflect-readonly").contains("false"));
+				softAssert.assertTrue(remarks.getAttribute("ng-reflect-readonly").contains("false"),
+						"Remarks field as Editable");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -1977,7 +2168,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.backgroundBorder(remarksInput);
-				Assert.assertTrue(remarksInput.getAttribute("type").contains("text"));
+				softAssert.assertTrue(remarksInput.getAttribute("type").contains("text"),
+						"Remarks field as Input");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -2025,72 +2217,77 @@ public class Tawarruq_Steps {
 //	@AT_TW_CD_01_02
 	@And("User_608 click the Add button under Contact details section in Additional Customer info tab")
 	public void user_608_click_the_add_button_under_contact_details_section_in_additional_customer_info_tab() throws Throwable {
-		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
-		String listOfAddButton = "";
-		String addButtonScreenName = "";
-		boolean isAddButtonClicked = false;
-		for (int i = 0; i <= 300; i++) {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
 			try {
-				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
-				System.out.println("List of add button " + listOfAddButton);
-				if (!(listOfAddButton.isBlank())) {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 300) {
+				if (i == 4999) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		
-		int premitiveListOfAddButton = Integer.parseInt(listOfAddButton);
-		for (int j = 0; j < premitiveListOfAddButton; j++) {
-			for (int k = 0; k <= 300; k++) {
-				try {
-					addButtonScreenName = javascriptHelper.executeScript(
-							"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
-									+ j + "].textContent")
-							.toString();
-					System.out.println("Screen Name " + addButtonScreenName);
-					if (!(addButtonScreenName.isBlank())) {
-						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
-						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Contact Details").trim())) {
-							System.out.println("Inside nested loop");
-							System.out.println("document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]");
-							javascriptHelper
-							.scrollIntoView(
-									javascriptHelper.executeScriptWithWebElement("document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')[" + j + "]"));
-							javascriptHelper
-									.executeScriptWithWebElement(
-											"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]")
-									.click();
-							isAddButtonClicked = true;
-							break;
-						}
-					}
-				} catch (Exception e) {
-					if (k == 300) {
-						Assert.fail(e.getMessage());
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();			
+					if (titlename.trim().contains("Contact Details")) {
+						String jspath = "document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]";
+						WebElement addBtn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.scrollToElement(addBtn).build().perform();
+						addBtn.click();
+						break;
 					}
 				}
-			}
-			if (isAddButtonClicked == true) {
 				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
 			}
 		}	    
 	}
 
 	@And("User_608 verfiy Back button is available under Contact details screen")
 	public void user_608_verfiy_back_button_is_available_under_contact_details_screen() throws Throwable {
-		Thread.sleep(100);
-		WebElement contactDetailsBackBtn = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("contactDetailsBackBtn"));
-		for (int i = 0; i <= 1500; i++) {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
 			try {
-				javascriptHelper.backgroundBorder(contactDetailsBackBtn);
-				contactDetailsBackBtn.isDisplayed();
+				length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('form button')[" + j + "].getAttribute('ng-reflect-text')";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains("Go Back")) {
+						String jspath = "document.querySelectorAll('form button')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.backgroundBorder(btn);
+						softAssert.assertTrue(btn.isDisplayed(),
+								"Back button should be displayed in Contact Details screen");
+						break;
+					}
+				}
 				break;
 			} catch (Exception e) {
-				if (i == 1500) {
+				if (i == 4999) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2099,14 +2296,38 @@ public class Tawarruq_Steps {
 
 	@And("User_608 verfiy Save button is available under Contact details screen")
 	public void user_608_verfiy_save_button_is_available_under_contact_details_screen() throws Throwable {
-		WebElement contactDetailsSaveBtn = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("contactDetailsSaveBtn"));
-		for (int i = 0; i <= 1500; i++) {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
 			try {
-				javascriptHelper.backgroundBorder(contactDetailsSaveBtn);
-				contactDetailsSaveBtn.isDisplayed();
+				length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('form button')[" + j + "].getAttribute('ng-reflect-text')";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains("Save")) {
+						String jspath = "document.querySelectorAll('form button')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.backgroundBorder(btn);
+						softAssert.assertTrue(btn.isDisplayed(),
+								"Save button should be displayed in Contact Details screen");
+						break;
+					}
+				}
 				break;
 			} catch (Exception e) {
-				if (i == 1500) {
+				if (i == 4999) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2120,9 +2341,9 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(phoneTypeLabel);
-				phoneTypeLabel.isDisplayed();
+				softAssert.assertTrue(phoneTypeLabel.isDisplayed(), "Phone Type field available in Contact details screen");
 				javascriptHelper.backgroundBorder(phoneTypeDropdown);
-				phoneTypeDropdown.isDisplayed();
+				softAssert.assertTrue(phoneTypeDropdown.isDisplayed(), "Phone Type field available in Contact details screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -2134,7 +2355,8 @@ public class Tawarruq_Steps {
 //		Validate the field should be lookup value[Dropdown]
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				Assert.assertTrue(phoneTypeDropdown.getAttribute("ng-reflect-placeholder").contains("Select"));
+				softAssert.assertTrue(phoneTypeDropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Phone Type field as Dropdown");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -2147,7 +2369,8 @@ public class Tawarruq_Steps {
 		WebElement phoneType = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("phoneType"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				Assert.assertTrue(phoneType.getAttribute("ng-reflect-readonly").contains("false"));
+				softAssert.assertTrue(phoneType.getAttribute("ng-reflect-readonly").contains("false"),
+						"Phone Type field as Editable");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -2164,9 +2387,9 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(phoneNumberLabel);
-				phoneNumberLabel.isDisplayed();
+				softAssert.assertTrue(phoneNumberLabel.isDisplayed(), "Phone Number field available in Contact details screen");				
 				javascriptHelper.backgroundBorder(phoneNumberInput);
-				phoneNumberInput.isDisplayed();
+				softAssert.assertTrue(phoneNumberInput.isDisplayed(), "Phone Number field available in Contact details screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -2178,7 +2401,8 @@ public class Tawarruq_Steps {
 //		Validate the field should be Textbox
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				Assert.assertTrue(phoneNumberInput.getAttribute("type").contains("text"));
+				softAssert.assertTrue(phoneNumberInput.getAttribute("type").contains("text"),
+						"Phone Number field as Input");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -2191,7 +2415,8 @@ public class Tawarruq_Steps {
 		WebElement phoneNumber = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("phoneNumber"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				Assert.assertTrue(phoneNumber.getAttribute("ng-reflect-readonly").contains("false"));
+				softAssert.assertTrue(phoneNumber.getAttribute("ng-reflect-readonly").contains("false"),
+						"Phone Number field as Editable");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -2208,9 +2433,11 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(consentPhoneLabel);
-				consentPhoneLabel.isDisplayed();
+				softAssert.assertTrue(consentPhoneLabel.isDisplayed(), 
+						"Consent For Phone Contact field available in Contact details screen");
 				javascriptHelper.backgroundBorder(consentPhoneDropdown);
-				consentPhoneDropdown.isDisplayed();
+				softAssert.assertTrue(consentPhoneDropdown.isDisplayed(), 
+						"Consent For Phone Contact field available in Contact details screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -2222,7 +2449,8 @@ public class Tawarruq_Steps {
 //		Validate the field should be lookup value[Dropdown]
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				Assert.assertTrue(consentPhoneDropdown.getAttribute("ng-reflect-placeholder").contains("Select"));
+				softAssert.assertTrue(consentPhoneDropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Consent For Phone Contact field as Dropdown");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -2235,7 +2463,8 @@ public class Tawarruq_Steps {
 		WebElement consentPhone = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("consentPhone"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				Assert.assertTrue(consentPhone.getAttribute("ng-reflect-readonly").contains("false"));
+				softAssert.assertTrue(consentPhone.getAttribute("ng-reflect-readonly").contains("false"),
+						"Consent For Phone Contact field as Editable");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -2252,9 +2481,11 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(contactTypeLabel);
-				contactTypeLabel.isDisplayed();
+				softAssert.assertTrue(contactTypeLabel.isDisplayed(),
+						"Prefered Phone Contact field available in Contact details screen");
 				javascriptHelper.backgroundBorder(contactTypeDropdown);
-				contactTypeDropdown.isDisplayed();
+				softAssert.assertTrue(contactTypeDropdown.isDisplayed(),
+						"Prefered Phone Contact field available in Contact details screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -2266,7 +2497,8 @@ public class Tawarruq_Steps {
 //		Validate the field should be lookup value[Dropdown]
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				Assert.assertTrue(contactTypeDropdown.getAttribute("ng-reflect-placeholder").contains("Select"));
+				softAssert.assertTrue(contactTypeDropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Prefered Phone Contact field as Dropdown");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -2279,7 +2511,8 @@ public class Tawarruq_Steps {
 		WebElement contactType = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("contactType"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				Assert.assertTrue(contactType.getAttribute("ng-reflect-readonly").contains("false"));
+				softAssert.assertTrue(contactType.getAttribute("ng-reflect-readonly").contains("false"),
+						"Prefered Phone Contact field as Editable");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -2296,9 +2529,11 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(preferdTimeContactLabel);
-				preferdTimeContactLabel.isDisplayed();
+				softAssert.assertTrue(preferdTimeContactLabel.isDisplayed(), 
+						"Prefered Time For Contact field available in Contact details screen");
 				javascriptHelper.backgroundBorder(preferdTimeContactInput);
-				preferdTimeContactInput.isDisplayed();
+				softAssert.assertTrue(preferdTimeContactInput.isDisplayed(), 
+						"Prefered Time For Contact field available in Contact details screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -2310,7 +2545,8 @@ public class Tawarruq_Steps {
 //		Validate the field should be Textbox
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				Assert.assertTrue(preferdTimeContactInput.getAttribute("type").contains("text"));
+				softAssert.assertTrue(preferdTimeContactInput.getAttribute("type").contains("text"),
+						"Prefered Time For Contact field as Input");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -2323,7 +2559,8 @@ public class Tawarruq_Steps {
 		WebElement preferdTimeContact = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("preferdTimeContact"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				Assert.assertTrue(preferdTimeContact.getAttribute("ng-reflect-readonly").contains("false"));
+				softAssert.assertTrue(preferdTimeContact.getAttribute("ng-reflect-readonly").contains("false"),
+						"Prefered Time For Contact field as Editable");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -2341,9 +2578,9 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(emailTypeLabel);
-				emailTypeLabel.isDisplayed();
+				softAssert.assertTrue(emailTypeLabel.isDisplayed(), "Email Type field available in Contact details screen");
 				javascriptHelper.backgroundBorder(emailTypeDropdown);
-				emailTypeDropdown.isDisplayed();
+				softAssert.assertTrue(emailTypeDropdown.isDisplayed(), "Email Type field available in Contact details screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -2355,7 +2592,8 @@ public class Tawarruq_Steps {
 //		Validate the field should be lookup value[Dropdown]
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				Assert.assertTrue(emailTypeDropdown.getAttribute("ng-reflect-placeholder").contains("Select"));
+				softAssert.assertTrue(emailTypeDropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Email Type field as Dropdown");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -2368,7 +2606,8 @@ public class Tawarruq_Steps {
 		WebElement emailType = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("emailType"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				Assert.assertTrue(emailType.getAttribute("ng-reflect-readonly").contains("false"));
+				softAssert.assertTrue(emailType.getAttribute("ng-reflect-readonly").contains("false"),
+						"Email Type field as Editable");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -2388,9 +2627,9 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundColor(emailIDLabel);
-				emailIDLabel.isDisplayed();
+				softAssert.assertTrue(emailIDLabel.isDisplayed(), "Email ID field available in Contact details screen");
 				javascriptHelper.backgroundBorder(emailIDInput);
-				emailIDInput.isDisplayed();
+				softAssert.assertTrue(emailIDInput.isDisplayed(), "Email ID field available in Contact details screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -2402,7 +2641,8 @@ public class Tawarruq_Steps {
 //		Validate the field should be Textbox
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				Assert.assertTrue(emailIDInput.getAttribute("type").contains("text"));
+				softAssert.assertTrue(emailIDInput.getAttribute("type").contains("text"),
+						"Email ID field as Input");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -2415,7 +2655,8 @@ public class Tawarruq_Steps {
 		WebElement emailID = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("emailID"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				Assert.assertTrue(emailID.getAttribute("ng-reflect-readonly").contains("false"));
+				softAssert.assertTrue(emailID.getAttribute("ng-reflect-readonly").contains("false"),
+						"Email ID field as Editable");
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -2429,9 +2670,10 @@ public class Tawarruq_Steps {
 //	@AT_TW_CD_02
 	@And("User_608 select the Salutation Title in Customer Information screen")
 	public void user_608_select_the_salutation_title_in_customer_information_screen() throws Throwable {
-		Thread.sleep(100);for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 2000; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("titleDropdown")).click();
+				javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("titleDropdown"))
+				.click();
 				break;
 			} catch (Exception e) {
 				if (i == 2000) {
@@ -2439,66 +2681,38 @@ public class Tawarruq_Steps {
 				}
 			}
 		}
-		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
-		String dropdownLength = "";
-		boolean isDropdownValueSelected = false;
-		String dropdownString = "";
-		for (int i = 0; i <= 300; i++) {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
 			try {
-				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
-				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio-group ion-label').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 300) {
+				if (i == 4999) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
-		for (int j = 0; j <= premitiveDropdownLength; j++) {
-			for (int l = 0; l <= 300; l++) {
-				try {
-					System.out.println("L value is " + l);
-					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
-					dropdownString = javascriptHelper.executeScript(
-							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText").toString();
-					if (!(dropdownString.isEmpty())) {
-						System.out.println(dropdownString);
-						System.out.println("Loop count " + l + " got breaked");
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains(testData.get("Title"))) {
+						String jspath = "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.moveToElement(btn).click().build().perform();
 						break;
 					}
-				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
-						Assert.fail(e.getMessage());
-					}
 				}
-				if (!(dropdownString.isEmpty())) {
-					System.out.println(dropdownString);
-					System.out.println("Loop count " + l + " got breaked");
-					break;
-				}
-			}
-			System.out.println("String " + dropdownString.trim());
-			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("Title")).trim())) {
-				for (int k = 0; k <= 300; k++) {
-					try {
-						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
-								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
-								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-						isDropdownValueSelected = true;
-						break;
-					} catch (Exception e) {
-						if (k == 300) {
-							Assert.fail(e.getMessage());
-						}
-					}
-				}
-			}
-			if (isDropdownValueSelected == true) {
 				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
 			}
 		}	    
 	}
@@ -2535,9 +2749,9 @@ public class Tawarruq_Steps {
 
 	@And("User_608 click the Save button with mandatory field is blank in Customer Information screen")
 	public void user_608_click_the_save_button_with_mandatory_field_is_blank_in_customer_information_screen() throws Throwable {	    
-		WebElement customerDetailsSaveBtn = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("customerDetailsSaveBtn"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
+				WebElement customerDetailsSaveBtn = javascriptHelper.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("customerDetailsSaveBtn"));
 				javascriptHelper.backgroundBorder(customerDetailsSaveBtn);
 				customerDetailsSaveBtn.click();
 				break;
@@ -2555,7 +2769,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundBorder(blankFieldError);
-				Assert.assertTrue(blankFieldError.getText().contains("Please fill all the details"));
+				softAssert.assertTrue(blankFieldError.getText().contains("Please fill all the details"),
+						"verify Mandatory blank field validation message in Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -2588,7 +2803,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundBorder(alphabetError);
-				Assert.assertTrue(alphabetError.getText().contains("Only Alphabets are allowed"));
+				softAssert.assertTrue(alphabetError.getText().contains("Only Alphabets are allowed"),
+						"verify Only Alphabets are allowed validation message in Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -2619,7 +2835,8 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 1500; i++) {
 			try {
 				javascriptHelper.backgroundBorder(negativeNbrError);
-				Assert.assertTrue(negativeNbrError.getText().contains("less than 0"));
+				softAssert.assertTrue(negativeNbrError.getText().contains("less than 0"),
+						"verify the Negative number validation message in Customer Information screen");
 				break;
 			} catch (Exception e) {
 				if (i == 1500) {
@@ -2866,7 +3083,7 @@ public class Tawarruq_Steps {
 				javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("searchBox"))
 				.sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
 				javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("searchBox"))
-				.sendKeys(testData.get("Matching_Value"));
+				.sendKeys(testData.get("Matching_Value"),Keys.TAB);
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -2878,7 +3095,6 @@ public class Tawarruq_Steps {
 
 	@And("User_608 verify the all the possible matching records are displayed under Application Details screen")
 	public void user_608_verify_the_all_the_possible_matching_records_are_displayed_under_application_details_screen() throws Throwable {
-		Thread.sleep(1000);
 		WebElement searchResult = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("searchResult"));
 		for (int i = 0; i <= 500; i++) {
 			try {
@@ -2900,7 +3116,7 @@ public class Tawarruq_Steps {
 		for (int i = 0; i <= 500; i++) {
 			try {				
 				javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("searchBox"))
-				.sendKeys(testData.get("Mismatched_Value"));
+				.sendKeys(testData.get("Mismatched_Value"), Keys.TAB);
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -2912,7 +3128,6 @@ public class Tawarruq_Steps {
 
 	@And("User_608 verify the system is should not displayed any records under Application Details screen")
 	public void user_608_verify_the_system_is_should_not_displayed_any_records_under_application_details_screen() throws Throwable {
-		Thread.sleep(500);
 		WebElement searchResult = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("searchResult"));
 		for (int i = 0; i <= 500; i++) {
 			try {
@@ -2967,9 +3182,9 @@ public class Tawarruq_Steps {
 		File[] listFiles = file.listFiles();
 		file.delete();
 		for (File downloadsFile : listFiles) {
-			System.out.println(downloadsFile.getName());
+//			System.out.println(downloadsFile.getName());
 			if (downloadsFile.getName().contains("Application Details")) {
-				System.out.println("If condition " + downloadsFile.getName());
+//				System.out.println("If condition " + downloadsFile.getName());
 				softAssert.assertTrue(downloadsFile.getName().contains("Application Details"),
 						"File is nott downloaded hence failed");
 				downloadsFile.delete();
@@ -2979,7 +3194,6 @@ public class Tawarruq_Steps {
 
 	@And("User_608 click the XLS and verify under Application Details screen")
 	public void user_608_click_the_xls_and_verify_under_application_details_screen() throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("exportXLS")));
 		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("exportXLS")).click();
@@ -2996,11 +3210,11 @@ public class Tawarruq_Steps {
 		File[] listFiles = file.listFiles();
 		file.delete();
 		for (File downloadsFile : listFiles) {
-			System.out.println(downloadsFile.getName());
-			if (downloadsFile.getName().contains("Application Details")) {
+//			System.out.println(downloadsFile.getName());
+			if (downloadsFile.getName().contains("Application")) {
 				System.out.println("If condition " + downloadsFile.getName());
-				softAssert.assertTrue(downloadsFile.getName().contains("Application Details"),
-						"File is nott downloaded hence failed");
+				softAssert.assertTrue(downloadsFile.getName().contains("Application"),
+						"File is not downloaded hence failed");
 				downloadsFile.delete();
 			}
         }	    
@@ -3024,11 +3238,11 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verfiy the new record creation page under Application Details screen")
-	public void user_608_verfiy_the_new_record_creation_page_under_application_details_screen() throws Throwable {
-		WebElement customerSearchPage = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("customerSearchPage"));
+	public void user_608_verfiy_the_new_record_creation_page_under_application_details_screen() throws Throwable {		
 		for (int i = 0; i <= 15000; i++) {
 			try {
-				customerSearchPage.isDisplayed();
+				WebElement customerSearchPage = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("customerSearchPage"));
+				softAssert.assertTrue(customerSearchPage.isDisplayed(),"New record creation page in Application Details screen");
 				break;
 			} catch (Exception e) {
 				if (i == 15000) {
@@ -3297,7 +3511,6 @@ public class Tawarruq_Steps {
 //		Additional Customer Info Tab
 		@And("User_608 click the Additional Customer Info tab")
 		public void user_608_click_the_additional_customer_info_tab() throws Throwable {
-			Thread.sleep(1000);
 			String length = null;
 			for (int i = 0; i < 5000; i++) {
 				try {
@@ -3323,7 +3536,7 @@ public class Tawarruq_Steps {
 							System.out.println("condition true");
 							String jspath = "document.querySelectorAll('ion-segment-button')[" + j + "]";
 							WebElement tab = javascriptHelper.executeScriptWithWebElement(jspath);
-							javascriptHelper.JSEClick(tab);
+							tab.click();
 							break;
 						}
 					}
@@ -3361,8 +3574,7 @@ public class Tawarruq_Steps {
 						if (titlename.trim().contains("Customer Personal Information")) {
 							String jspath = "document.querySelectorAll('button[icon=\"pi pi-pencil\"]')[" + j + "]";
 							WebElement pencilBtn = javascriptHelper.executeScriptWithWebElement(jspath);
-							actions.click(pencilBtn).build().perform();
-//							javascriptHelper.JSEClick(pencilBtn);
+							pencilBtn.click();
 							break;
 						}
 					}

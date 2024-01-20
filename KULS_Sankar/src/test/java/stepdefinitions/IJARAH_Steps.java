@@ -4827,14 +4827,12 @@ public class IJARAH_Steps {
 	@And("User_608 search the mismatched record in Financial Commitments under Customer Financials tab")
 	public void user_608_search_the_mismatched_record_in_financial_commitments_under_customer_financials_tab()
 			throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
-				.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentSearchInput")));
-		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentSearchInput"))
-				.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		for (int i = 0; i <= 500; i++) {
 			try {
 //				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentSearchInput"))
 //				.sendKeys("USD");
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentSearchInput"))
+				.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 				javascriptHelper
 						.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentSearchInput"))
 						.sendKeys(testData.get("Mismatched Currency"));

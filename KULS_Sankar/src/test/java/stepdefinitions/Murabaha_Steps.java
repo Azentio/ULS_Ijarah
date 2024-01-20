@@ -242,7 +242,25 @@ public class Murabaha_Steps {
 		testData = AppDataAssetDetailsExcelData.getTestdata("DS_AT_MU_ADE_IAD_06");
     }
 	
+	@And("^User_608 get the test data for test case AT_MU_ADE_IAD_07$")
+    public void get_the_test_data_for_test_case_AT_MU_ADE_IAD_07() throws Throwable {
+		testData = AppDataAssetDetailsExcelData.getTestdata("DS_AT_MU_ADE_IAD_07");
+    }
 	
+	@And("^User_608 get the test data for test case AT_MU_ADE_IAD_08$")
+    public void get_the_test_data_for_test_case_AT_MU_ADE_IAD_08() throws Throwable {
+		testData = AppDataAssetDetailsExcelData.getTestdata("DS_AT_MU_ADE_IAD_08");
+    }
+	
+	@And("^User_608 get the test data for test case AT_MU_ADE_IAD_09$")
+    public void get_the_test_data_for_test_case_AT_MU_ADE_IAD_09() throws Throwable {
+		testData = AppDataAssetDetailsExcelData.getTestdata("DS_AT_MU_ADE_IAD_09");
+    }
+	
+	@And("^User_608 get the test data for test case AT_MU_ADE_IAD_10$")
+    public void get_the_test_data_for_test_case_AT_MU_ADE_IAD_10() throws Throwable {
+		testData = AppDataAssetDetailsExcelData.getTestdata("DS_AT_MU_ADE_IAD_10");
+    }
 	
 	
 	
@@ -12074,6 +12092,1195 @@ public class Murabaha_Steps {
 			}
 		}	    
 	}
+	
+	
+//	AT_MU_ADE_IAD_07
+	@And("User_608 click the record Edit button under Asset Details tab")
+	public void user_608_click_the_record_edit_button_under_asset_details_tab() throws Throwable {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();			
+					if (titlename.trim().contains("Asset Details")) {
+						String jspath = "document.querySelectorAll('button[icon=\"pi pi-pencil\"]')[" + j + "]";
+						WebElement pencilBtn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.JSEClick(pencilBtn);
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+	
+	@And("User_608 to verify Update button available in Asset Details screen")
+	public void user_608_to_verify_update_button_available_in_asset_details_screen() {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('form button')[" + j + "].getAttribute('ng-reflect-text')";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains("Update")) {
+						String jspath = "document.querySelectorAll('form button')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.backgroundBorder(btn);
+						softAssert.assertTrue(btn.isDisplayed(),
+								"Update button should be available in Asset Details screen");
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 to verify Asset Details section available in Asset Details screen")
+	public void user_608_to_verify_asset_details_section_available_in_asset_details_screen() {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('div[class=\"dynsectiontitles\"] ion-label').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('div[class=\"dynsectiontitles\"] ion-label')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains("Asset Details")) {
+						String jspath = "document.querySelectorAll('div[class=\"dynsectiontitles\"] ion-label')[" + j + "]";
+						WebElement sections = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.backgroundColor(sections);
+						softAssert.assertTrue(sections.isDisplayed(),
+								"Asset Details section available in Asset Details screen");
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 to verify Dealer Details section available in Asset Details screen")
+	public void user_608_to_verify_dealer_details_section_available_in_asset_details_screen() {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('div[class=\"dynsectiontitles\"] ion-label').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('div[class=\"dynsectiontitles\"] ion-label')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains("Dealer Details")) {
+						String jspath = "document.querySelectorAll('div[class=\"dynsectiontitles\"] ion-label')[" + j + "]";
+						WebElement sections = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.scrollToElement(sections).build().perform();
+						javascriptHelper.backgroundColor(sections);
+						softAssert.assertTrue(sections.isDisplayed(),
+								"Dealer Details section available in Asset Details screen");
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 to verify Registration Details section available in Asset Details screen")
+	public void user_608_to_verify_registration_details_section_available_in_asset_details_screen() {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('div[class=\"dynsectiontitles\"] ion-label').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('div[class=\"dynsectiontitles\"] ion-label')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains("Registration Details")) {
+						String jspath = "document.querySelectorAll('div[class=\"dynsectiontitles\"] ion-label')[" + j + "]";
+						WebElement sections = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.scrollToElement(sections).build().perform();
+						javascriptHelper.backgroundColor(sections);
+						softAssert.assertTrue(sections.isDisplayed(),
+								"Registration Details section available in Asset Details screen");
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 to verify Asset Price and Down Payment Details section available in Asset Details screen")
+	public void user_608_to_verify_asset_price_and_down_payment_details_section_available_in_asset_details_screen() {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('div[class=\"dynsectiontitles\"] ion-label').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('div[class=\"dynsectiontitles\"] ion-label')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains("Asset Price")) {
+						String jspath = "document.querySelectorAll('div[class=\"dynsectiontitles\"] ion-label')[" + j + "]";
+						WebElement sections = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.scrollToElement(sections).build().perform();
+						javascriptHelper.backgroundColor(sections);
+						softAssert.assertTrue(sections.isDisplayed(),
+								"Asset Price section available in Asset Details screen");
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}	
+	
+	@And("User_608 verify system allow user modify the record in Asset Details screen")
+	public void user_608_verify_system_allow_user_modify_the_record_in_asset_details_screen() {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement element = javascriptHelper.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetCategoryDropdown"));
+				actions.scrollToElement(element).build().perform();				
+				javascriptHelper.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetModelTypeDropdown")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio-group ion-label').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains(testData.get("AssetModel_Type"))) {
+						String jspath = "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.moveToElement(btn).click().build().perform();
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 to verify while modification, keep any mandatory field blank and click on update button in Asset Details screen")
+	public void user_608_to_verify_while_modification_keep_any_mandatory_field_blank_and_click_on_update_button_in_asset_details_screen() {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement element = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("plateNumberInput"));
+				element.click();
+				element.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('form button')[" + j + "].getAttribute('ng-reflect-text')";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains("Update")) {
+						String jspath = "document.querySelectorAll('form button')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.scrollToElement(btn).build().perform();
+						btn.click();						
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 to verify while modification system allow user to update the record with valid data in Asset Details screen")
+	public void user_608_to_verify_while_modification_system_allow_user_to_update_the_record_with_valid_data_in_asset_details_screen() {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement element = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("chasisNumberInput"));
+				element.click();
+				element.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+				element.sendKeys(testData.get("ChasisNbr"));
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement element = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("plateNumberInput"));
+				element.click();
+				element.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+				element.sendKeys(testData.get("PlateNbr"));
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement element = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("plateNbrArabicInput"));
+				element.click();
+				element.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+				element.sendKeys(testData.get("PlateNbr_Arabic"));
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+	
+	@And("User_608 clicks on the Update button under Asset Details screen")
+	public void user_608_clicks_on_the_update_button_under_asset_details_screen() throws Throwable {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('form button')[" + j + "].getAttribute('ng-reflect-text')";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains("Update")) {
+						String jspath = "document.querySelectorAll('form button')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.scrollToElement(btn).build().perform();
+						btn.click();						
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_608 to verify system display the confirmation message post clicking on update button")
+	public void user_608_to_verify_system_display_the_confirmation_message_post_clicking_on_update_button() {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String text = javascriptHelper
+						.executeScriptWithWebElement(customerDebtJsPaths.getElement("successMsg")).getText();
+				softAssert.assertTrue(text.contains("Success!"), 
+						"System should display the confirmation message as SUCCESS");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("toastMsgCloseBtn"))
+						.click();
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+	
+//	AT_MU_ADE_IAD_08
+	@And("User_608 verify Add button is available in list view under Asset Details tab")
+	public void user_608_verify_add_button_is_available_in_list_view_under_asset_details_tab() {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('div[class*=\"grid \"] button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('div[class*=\"grid \"] button')[" + j + "].getAttribute('ng-reflect-text')";
+					String titlename = javascriptHelper.executeScript(title).toString();			
+					if (titlename.trim().contains("Add")) {
+						String jspath = "document.querySelectorAll('div[class*=\"grid \"] button')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.backgroundBorder(btn);
+						softAssert.assertTrue(btn.isDisplayed(),"Add button available under asset details tab");
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Edit button is available in list view under Asset Details tab")
+	public void user_608_verify_edit_button_is_available_in_list_view_under_asset_details_tab() {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();			
+					if (titlename.trim().contains("Asset Details")) {
+						String jspath = "document.querySelectorAll('button[icon=\"pi pi-pencil\"]')[" + j + "]";
+						WebElement pencilBtn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.backgroundBorder(pencilBtn);
+						softAssert.assertTrue(pencilBtn.isDisplayed(), "Edit button available under asset details tab");
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Search button is available in list view under Asset Details tab")
+	public void user_608_verify_search_button_is_available_in_list_view_under_asset_details_tab() {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('div[class*=\"grid \"] button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('div[class*=\"grid \"] button')[" + j + "].getAttribute('ng-reflect-text')";
+					String titlename = javascriptHelper.executeScript(title).toString();			
+					if (titlename.trim().contains("Search")) {
+						String jspath = "document.querySelectorAll('div[class*=\"grid \"] button')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.backgroundBorder(btn);
+						softAssert.assertTrue(btn.isDisplayed(),"Add button available under asset details tab");
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Export to PDF button is available in list view under Asset Details tab")
+	public void user_608_verify_export_to_pdf_button_is_available_in_list_view_under_asset_details_tab() {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement btn = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("exportBtn"));
+				btn.click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('p-dropdownitem').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('p-dropdownitem li')[" + j + "].textContent";
+					System.out.println("Name: "+title);
+					String titlename = javascriptHelper.executeScript(title).toString();			
+					if (titlename.trim().contains("PDF")) {
+						String jspath = "document.querySelectorAll('p-dropdownitem li')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.backgroundColor(btn);
+						softAssert.assertTrue(btn.isDisplayed(),"PDF button available under asset details tab");
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_608 verify Export to Excel button is available in list view under Asset Details tab")
+	public void user_608_verify_export_to_excel_button_is_available_in_list_view_under_asset_details_tab() {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('p-dropdownitem').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('p-dropdownitem li')[" + j + "].textContent";
+					System.out.println("Name: "+title);
+					String titlename = javascriptHelper.executeScript(title).toString();			
+					if (titlename.trim().contains("XLS")) {
+						String jspath = "document.querySelectorAll('p-dropdownitem li')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.backgroundColor(btn);
+						softAssert.assertTrue(btn.isDisplayed(),"Excel button available under asset details tab");
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Showing records entries field available in list view under Asset Details tab")
+	public void user_608_verify_showing_records_entries_field_available_in_list_view_under_asset_details_tab() {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("showingPageReport"));
+				javascriptHelper.backgroundColor(field);
+				softAssert.assertTrue(field.isDisplayed(), "Showing records entries field should be displayed");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+	
+	@And("User_608 verify Asset Manufacture field available in list view under Asset Details tab")
+	public void user_608_verify_asset_manufacture_field_available_in_list_view_under_asset_details_tab() {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("listview_assetManufacture"));
+				javascriptHelper.backgroundColor(field);
+				softAssert.assertTrue(field.isDisplayed(), "Asset Price field available in List view");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Asset Model field available in list view under Asset Details tab")
+	public void user_608_verify_asset_model_field_available_in_list_view_under_asset_details_tab() {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("listview_assetModel"));
+				javascriptHelper.backgroundColor(field);
+				softAssert.assertTrue(field.isDisplayed(), "Asset Price field available in List view");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Asset Model Type field available in list view under Asset Details tab")
+	public void user_608_verify_asset_model_type_field_available_in_list_view_under_asset_details_tab() {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("listview_assetModelType"));
+				javascriptHelper.backgroundColor(field);
+				softAssert.assertTrue(field.isDisplayed(), "Asset Price field available in List view");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Year of Manufacture field available in list view under Asset Details tab")
+	public void user_608_verify_year_of_manufacture_field_available_in_list_view_under_asset_details_tab() {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("listview_yearOfManufacture"));
+				javascriptHelper.backgroundColor(field);
+				softAssert.assertTrue(field.isDisplayed(), "Year of Manufacture field available in List view");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Asset Price field available in list view under Asset Details tab")
+	public void user_608_verify_asset_price_field_available_in_list_view_under_asset_details_tab() {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("listview_assetPrice"));
+				javascriptHelper.backgroundColor(field);
+				softAssert.assertTrue(field.isDisplayed(), "Asset Price field available in List view");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 verify Status field available in list view under Asset Details tab")
+	public void user_608_verify_status_field_available_in_list_view_under_asset_details_tab() {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("listview_Status"));
+				javascriptHelper.backgroundColor(field);
+				softAssert.assertTrue(field.isDisplayed(), "Status field available in List view");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+	
+	@And("User_608 verify values in List view should be non editable under Asset Details tab")
+	public void user_608_verify_values_in_list_view_should_be_non_editable_under_asset_details_tab() throws Throwable {
+//		String jspath = "document.querySelectorAll('table')[1].querySelectorAll('td p-celleditor')";
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('table')[1].querySelectorAll('td p-celleditor').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 500; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String jspath = "document.querySelectorAll('table')[1].querySelectorAll('td p-celleditor')[" + j + "]";
+					javascriptHelper.backgroundBorder(javascriptHelper.executeScriptWithWebElement(jspath));
+					String title = "return document.querySelectorAll('table')[1].querySelectorAll('td p-celleditor')[" + j + "].isContentEditable";
+					String result = javascriptHelper.executeScript(title).toString();
+//					System.out.println(result);					
+					softAssert.assertTrue(result.contains("false"), "Asset details list view values are non editable");					
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}		
+	}
+	
+	@And("User_608 verify the functionality of Add button under Asset Details tab")
+	public void user_608_verify_the_functionality_of_add_button_under_asset_details_tab() {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();			
+					if (titlename.trim().contains("Asset Details")) {
+						String jspath = "document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]";
+						WebElement pencilBtn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.JSEClick(pencilBtn);
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 click the Back button in Asset Details screen")
+	public void user_608_click_the_back_button_in_asset_details_screen() {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('form button')[" + j + "].getAttribute('ng-reflect-text')";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains("Go Back")) {
+						String jspath = "document.querySelectorAll('form button')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.backgroundBorder(btn);
+						btn.click();
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+	
+	@And("User_608 verify the functionality of Edit button under Asset Details tab")
+	public void user_608_verify_the_functionality_of_edit_button_under_asset_details_tab() {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();			
+					if (titlename.trim().contains("Asset Details")) {
+						String jspath = "document.querySelectorAll('button[icon=\"pi pi-pencil\"]')[" + j + "]";
+						WebElement pencilBtn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.JSEClick(pencilBtn);
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+	
+	
+//	AT_MU_ADE_IAD_09
+	@And("User_608 click the Search button under Asset Details tab")
+	public void user_608_click_the_search_button_under_asset_details_tab() {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('div[class*=\"grid \"] button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('div[class*=\"grid \"] button')[" + j + "].getAttribute('ng-reflect-text')";
+					String titlename = javascriptHelper.executeScript(title).toString();			
+					if (titlename.trim().contains("Search")) {
+						String jspath = "document.querySelectorAll('div[class*=\"grid \"] button')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						btn.click();
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 to verify the functionality of Search box with matching data under Asset Details tab")
+	public void user_608_to_verify_the_functionality_of_search_box_with_matching_data_under_asset_details_tab() {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(assetDetailsJsPaths.getElement("listview_searchBox"))
+				.sendKeys(testData.get("Matching_Data"));;
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 to verify post entering any matching value system should display all the possible matching records")
+	public void user_608_to_verify_post_entering_any_matching_value_system_should_display_all_the_possible_matching_records() {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement searchResult = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("showingPageReport"));
+				javascriptHelper.backgroundColor(searchResult);
+				String text = searchResult.getText().substring(13, 14);
+				System.out.println("Result value: "+text);
+				softAssert.assertTrue(Integer.parseInt(text)>0, "System should display all the possible matching records");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 to verify the functionality of Search box with mismatch data under Asset Details tab")
+	public void user_608_to_verify_the_functionality_of_search_box_with_mismatch_data_under_asset_details_tab() {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(assetDetailsJsPaths.getElement("listview_searchBox"))
+				.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+				javascriptHelper.executeScriptWithWebElement(assetDetailsJsPaths.getElement("listview_searchBox"))
+				.sendKeys(testData.get("Mismatch_Data"),Keys.TAB);
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 to verify post entering any mismatch value system should not display any records")
+	public void user_608_to_verify_post_entering_any_mismatch_value_system_should_not_display_any_records() {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement searchResult = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("showingPageReport"));
+				javascriptHelper.backgroundColor(searchResult);
+				String text = searchResult.getText().substring(13, 14);
+				System.out.println("Result value: "+text);
+				softAssert.assertTrue(Integer.parseInt(text)==0, "System should display the message as No data found");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	    
+	}
+	
+	
+//	AT_MU_ADE_IAD_10
+	@And("User_608 click the Export button under Asset Details Tab")
+	public void user_608_click_the_export_button_under_asset_details_tab() {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement btn = javascriptHelper.executeScriptWithWebElement(
+						assetDetailsJsPaths.getElement("exportBtn"));
+				btn.click();
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 to verify the functionality of Export to PDF button under Asset Details Tab")
+	public void user_608_to_verify_the_functionality_of_export_to_pdf_button_under_asset_details_tab() {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('p-dropdownitem').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('p-dropdownitem li')[" + j + "].textContent";
+					System.out.println("Name: "+title);
+					String titlename = javascriptHelper.executeScript(title).toString();			
+					if (titlename.trim().contains("PDF")) {
+						String jspath = "document.querySelectorAll('p-dropdownitem li')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						btn.click();
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}	    
+	}
+
+	@And("User_608 to verify post clicking on PDF button system should download the PDF file of that records in Asset Details")
+	public void user_608_to_verify_post_clicking_on_pdf_button_system_should_download_the_pdf_file_of_that_records_in_asset_details() throws Throwable {
+		browserHelper.SwitchToWindow(1);
+		browserHelper.switchToParentWithChildClose();
+		String homePath = System.getProperty("user.home");
+		String filePath = homePath + "/Downloads";
+		File file = new File(filePath);
+		File[] listFiles = file.listFiles();
+		file.delete();
+		for (File downloadsFile : listFiles) {
+//			System.out.println(downloadsFile.getName());
+			if (downloadsFile.getName().contains("Application Asset Details")) {
+//				System.out.println("If condition " + downloadsFile.getName());
+				softAssert.assertTrue(downloadsFile.getName().contains("Application Asset Details"),
+						"File is not downloaded hence failed");
+				downloadsFile.delete();
+			}
+		}	    
+	}
+
+	@And("User_608 to verify the functionality of Export to Excel button under Asset Details Tab")
+	public void user_608_to_verify_the_functionality_of_export_to_excel_button_under_asset_details_tab() {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('p-dropdownitem').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('p-dropdownitem li')[" + j + "].textContent";
+					System.out.println("Name: "+title);
+					String titlename = javascriptHelper.executeScript(title).toString();			
+					if (titlename.trim().contains("XLS")) {
+						String jspath = "document.querySelectorAll('p-dropdownitem li')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						btn.click();
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	    
+	}
+
+	@And("User_608 to verify post clicking XLS button system should download the xls file of that records in Asset Details")
+	public void user_608_to_verify_post_clicking_xls_button_system_should_download_the_xls_file_of_that_records_in_asset_details() {
+		String homePath = System.getProperty("user.home");
+		String filePath = homePath + "/Downloads";
+		File file = new File(filePath);
+		File[] listFiles = file.listFiles();
+		file.delete();
+		for (File downloadsFile : listFiles) {
+//			System.out.println(downloadsFile.getName());
+			if (downloadsFile.getName().contains("Application Asset")) {
+//				System.out.println("If condition " + downloadsFile.getName());
+				softAssert.assertTrue(downloadsFile.getName().contains("Application Asset"),
+						"File is nott downloaded hence failed");
+				downloadsFile.delete();
+			}
+		}	    
+	}
+	
+	
+	
+	
 	
 	
 	
