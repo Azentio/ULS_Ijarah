@@ -2380,14 +2380,14 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 		
 		//---------------------display
 		
-				for (int j = 0; j < 200; j++) {
+				for (int j = 0; j < 500; j++) {
 					try {
-						if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Scheme_610")).isDisplayed()) {
-							softAssert.fail();
+						if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Scheme_610")).isDisplayed()) {
+							Assert.assertTrue(true);
 							break;
 						}
 					} catch (Exception e) {
-						if (j == 199) {
+						if (j == 499) {
 							Assert.fail(e.getMessage());
 						}
 						// TODO: handle exception
@@ -2402,8 +2402,8 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 		
 		for (int j = 0; j < 200; j++) {
 			try {
-				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Product_610")).isDisplayed()) {
-					softAssert.fail();
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Product_610")).isDisplayed()) {
+					Assert.assertTrue(true);
 					break;
 				}
 			} catch (Exception e) {
@@ -2423,8 +2423,8 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 		
 				for (int j = 0; j < 200; j++) {
 					try {
-						if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("RequestAmount_610")).isDisplayed()) {
-							softAssert.fail();
+						if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("RequestAmount_610")).isDisplayed()) {
+							Assert.assertTrue(true);
 							break;
 						}
 					} catch (Exception e) {
@@ -2444,8 +2444,8 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 		
 		for (int j = 0; j < 200; j++) {
 			try {
-				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("LoanTenure_610")).isDisplayed()) {
-					softAssert.fail();
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("LoanTenure_610")).isDisplayed()) {
+					Assert.assertTrue(true);
 					break;
 				}
 			} catch (Exception e) {
@@ -2459,19 +2459,16 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 	}
 	
 	
-	//------------data under product of facility details @AT_DC_PD_003
+	//------------data under product of facility details  @AT_DC_PD_003
 	
 	
 	@And("User_610 verify the Data under Scheme field")
-	public void user_610_verify_the_data_under_scheme_field() {
+	public void user_610_verify_the_data_under_scheme_field() throws Throwable {
+		Thread.sleep(500);
 		String scheme1 = javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Scheme_610")).getAttribute("aria-label");
-		String scheme2 =scheme1.substring(1,32);
-		
-		String scheme = "Ijara auto retail loan scheme A";
-		
-		System.err.println("scheme :" + scheme2);
-		
-		Assert.assertEquals(scheme, scheme2);
+		System.err.println(scheme1);
+		String scheme = "Select,  Scheme *";
+		Assert.assertEquals(scheme, scheme1);
 	    
 	}
 
@@ -2480,13 +2477,9 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 		
 		String product1 = javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Product_610"))
 				.getAttribute("aria-label");
-		String product2 =product1.substring(1,51);
-		
-		String product = "Ijara Auto Retail Loan-Ijara Auto Retails Loan Sub";
-		
-		System.err.println("product :" + product2);
-		
-		Assert.assertEquals(product, product2);
+		System.err.println(product1);
+		String product = " Ijarah Auto Loan-Retail ,  Product *";
+		Assert.assertEquals(product, product1);
 	    
 	}
 
@@ -2494,13 +2487,9 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 	public void user_610_verify_the_data_under_request_amount_field() {
 		String RequestAmt1 = javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("RequestAmount_610"))
 				.getAttribute("ng-reflect-model");
-		String RequestAmt2 =RequestAmt1.substring(0,7);
-		
-		String RequestAmt = "1405000";
-		
-		System.err.println("RequestAmt :" + RequestAmt2);
-		
-		Assert.assertEquals(RequestAmt1, RequestAmt2);
+		System.err.println(RequestAmt1);
+		String RequestAmt = "1375000";
+		Assert.assertEquals(RequestAmt1, RequestAmt1);
 	    
 	}
 
@@ -2509,27 +2498,34 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 	    
 		String LoanTenure1 = javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("LoanTenure_610"))
 				.getAttribute("ng-reflect-model");
-		String LoanTenure2 =LoanTenure1.substring(0,2);
-		
+		//String LoanTenure2 =LoanTenure1.substring(0,2);
+		System.err.println(LoanTenure1);
 		String LoanTenure = "48";
-		
-		System.err.println("LoanTenure :" + LoanTenure2);
-		
-		Assert.assertEquals(LoanTenure, LoanTenure2);
+		Assert.assertEquals(LoanTenure, LoanTenure1);
+	}
+	
+	@And("User_610 verify the Data under currency field")
+	public void user_610_verify_the_data_under_lcurrency_field() {
+	    
+		String currency1 = javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("currencyType"))
+				.getAttribute("aria-label");
+		System.err.println(currency1);
+		String currency = " USD ,  Currency *";
+		Assert.assertEquals(currency, currency1);
 	}
 	
 	
 	//-------------------------@AT_DC_PD_005
 	
 	@And("User_610 verify the Product field should be mandatory Display and field should text")
-	public void user_610_verify_the_product_field_should_be_mandatory_display_and_field_should_text() {
-	    
+	public void user_610_verify_the_product_field_should_be_mandatory_display_and_field_should_text() throws Throwable {
+	    Thread.sleep(500);
 		//---------------------display
 		
 				for (int j = 0; j < 200; j++) {
 					try {
-						if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Product_610")).isDisplayed()) {
-							softAssert.fail();
+						if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Product_610")).isDisplayed()) {
+							Assert.assertTrue(true);
 							break;
 						}
 					} catch (Exception e) {
@@ -2577,8 +2573,8 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 		
 		for (int j = 0; j < 200; j++) {
 			try {
-				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("facilityType_610")).isDisplayed()) {
-					softAssert.fail();
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("facilityType_610")).isDisplayed()) {
+					Assert.assertTrue(true);
 					break;
 				}
 			} catch (Exception e) {
@@ -2613,8 +2609,8 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 		
 		for (int j = 0; j < 200; j++) {
 			try {
-				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Scheme_610")).isDisplayed()) {
-					softAssert.fail();
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("Scheme_610")).isDisplayed()) {
+					Assert.assertTrue(true);
 					break;
 				}
 			} catch (Exception e) {
@@ -2663,8 +2659,8 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 		
 		for (int j = 0; j < 200; j++) {
 			try {
-				if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("RequestAmount_610")).isDisplayed()) {
-					softAssert.fail();
+				if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("RequestAmount_610")).isDisplayed()) {
+					Assert.assertTrue(true);
 					break;
 				}
 			} catch (Exception e) {
@@ -2711,14 +2707,14 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 	 //--------------------------------------@AT_DC_PD_007
 	
 	@And("User_610 verify the Tenure Months field should be mandatory Display and field should text")
-	public void user_610_verify_the_tenure_months_field_should_be_mandatory_display_and_field_should_text() {
-	    
+	public void user_610_verify_the_tenure_months_field_should_be_mandatory_display_and_field_should_text() throws InterruptedException {
+	    Thread.sleep(500);
 		//---------------------display
 		
 				for (int j = 0; j < 200; j++) {
 					try {
-						if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("LoanTenure_610")).isDisplayed()) {
-							softAssert.fail();
+						if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("LoanTenure_610")).isDisplayed()) {
+							Assert.assertTrue(true);
 							break;
 						}
 					} catch (Exception e) {

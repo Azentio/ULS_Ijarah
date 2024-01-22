@@ -11,10 +11,10 @@ import utilities.ExtentTestManager;
 @CucumberOptions(features = { 
 //	"src/test/java/features/Murabha_PurchaseChecker.feature",
 //	"src/test/java/features/Ijara_NewApplication_CustomerReference.feature",
-//	"src/test/java/features/Ijara_Offering_OfferDetails_610.feature",
+	"src/test/java/features/Ijara_AppDataCheck_ProductDetails_610.feature",
 		
 		
-		"src/test/java/features/Murabha_AppDataEntry_CustomerDetails.feature",
+		//"src/test/java/features/Murabha_AppDataEntry_CustomerDetails.feature",
 		}
    
 
@@ -24,7 +24,7 @@ import utilities.ExtentTestManager;
 				"rerun:ReRunScenarios/FailedReRun.txt" }
 // ,dryRun = false //to check compilation errors/ , tags = "@AT_LEA_007"
  
- //, tags="@AT_MU_ADE_CD_01"                   
+// , tags="@AT_DC_PD_003"                   
  
 )                                                                         
 public class TestApplication extends AbstractTestNGCucumberTests {
