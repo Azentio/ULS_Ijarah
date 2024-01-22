@@ -101,7 +101,18 @@ public class IjaraTest extends BaseClass {
 	public void user_6047_login_with_valid_credentials_murabha_data_check_identifications_details() {
 		ijaraLogin.loginWithIjaraApplication_Murabha_AppDataEntry_IdentificationDetails();
 	}
-
+	@Given("User_6047 Login With valid credentials-Murabha_AppDataEntry_AddresDetails")
+	public void user_6047_login_with_valid_credentials_murabha_app_data_entry_addres_details() {
+		ijaraLogin.loginWithIjaraApplication_Murabha_AppDataEntry_AdressDetails();
+	}
+	@And("User_6047 Login With valid credentials-Murabha-offering-offerDetail")
+	public void userLogin_with_valid_credentials_murabha_offering_offerDetail() {
+		ijaraLogin.loginWithIjaraApplication_murabha_offering_offerDetail();	
+	}
+	@And("User_6047 login with valid credentials-Murabha-DataCheck-ProductDetails")
+	public void user_login_with_valid_credentials_murabha_data_check_product_details() {
+		ijaraLogin.loginWithIjaraApplication_Murabha_AppDataCheck_ProductDetails();
+	}
 	@Then("logout from the ijaraApplication")
 	public void logout_from_the_ijara_application() throws Throwable {
 		ijaraLogin.logoutFromIjara();

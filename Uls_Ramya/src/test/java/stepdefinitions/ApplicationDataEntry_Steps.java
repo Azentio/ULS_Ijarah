@@ -51,7 +51,7 @@ public class ApplicationDataEntry_Steps extends BaseClass {
 		testData =  ApplicationDataEntry_testdata.getTestdata("DS01_AT_FI_001");
 	}
 	@And("User_6047 Click the Mail box in ULS application")
-	public void user_click_the_mail_box_in_uls_application() throws Throwable {
+	public void user_6047_click_the_mail_box_in_uls_application() throws Throwable {
 			for (int i = 0; i <= 300; i++) {
 				try {
 					javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box"))
@@ -65,7 +65,7 @@ public class ApplicationDataEntry_Steps extends BaseClass {
 			}
 	}
 	@And("User_6047 Click the Search button under inbox")
-	public void user_click_the_search_button_under_inbox() throws Throwable {
+	public void user_6047_click_the_search_button_under_inbox() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_button")));
 		for (int i = 0; i <= 500; i++) {
 			try {
@@ -80,7 +80,7 @@ public class ApplicationDataEntry_Steps extends BaseClass {
 		}	    
 	}	
 	@And("User_6047 Search the Ref Id under inbox")
-	public void user_search_the_ref_id_under_inbox_6047() throws Throwable {
+	public void user_6047_search_the_ref_id_under_inbox_6047() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text")));
 		for (int i = 0; i <= 500; i++) {
 			try {
@@ -95,7 +95,7 @@ public class ApplicationDataEntry_Steps extends BaseClass {
 		}
 	}
 	@And("User_6047 search the Ref Id Under inbox for submit")
-	public void user_search_the_ref_id_under_inbox_for_submit() throws Throwable {
+	public void user_6047_search_the_ref_id_under_inbox_for_submit() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text")));
 		//javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text"))
 		//.sendKeys(testData.get("Ref No"));
@@ -158,7 +158,7 @@ public class ApplicationDataEntry_Steps extends BaseClass {
 	}
 
 	@And("User_6047 check the Save button under the Facility info")
-	public void user_check_the_save_button_under_the_facility_info() throws Throwable
+	public void user_6047_check_the_save_button_under_the_facility_info() throws Throwable
 	{
 waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("SaveButton")));
 		WebElement SaveButton = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("SaveButton"));
@@ -175,7 +175,7 @@ waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWi
 	}
 
 	@Then("User_6047 check the Back button under the Facility info")
-	public void user_check_the_back_button_under_the_facility_info() {
+	public void user_6047_check_the_back_button_under_the_facility_info() {
 		WebElement BackButton = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("BackButton"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
@@ -190,7 +190,7 @@ waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWi
 	}
 
 	@Then("User_6047 check the Classification field under the Facility info")
-	public void user_check_the_classification_field_under_the_facility_info() {
+	public void user_6047_check_the_classification_field_under_the_facility_info() {
 		WebElement Classification = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("Classification"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
@@ -205,7 +205,7 @@ waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWi
 	}
 
 	@Then("User_6047 check the Product field under the Facility info")
-	public void user_check_the_product_field_under_the_facility_info() {
+	public void user_6047_check_the_product_field_under_the_facility_info() {
 		WebElement Product = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("Product"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
@@ -220,7 +220,7 @@ waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWi
 	}
 
 	@Then("User_6047 check the Scheme field under the Facility info")
-	public void user_check_the_scheme_field_under_the_facility_info() {
+	public void user_6047_check_the_scheme_field_under_the_facility_info() {
 		WebElement Scheme = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("Scheme"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
@@ -235,7 +235,7 @@ waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWi
 	}
 
 	@Then("User_6047 check the Program Code field under the Facility info")
-	public void user_check_the_program_code_field_under_the_facility_info() {
+	public void user_6047_check_the_program_code_field_under_the_facility_info() {
 		WebElement ProgramCode = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("ProgrameCode"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
@@ -250,7 +250,7 @@ waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWi
 	}
 
 	@Then("User_6047 check the Facility type field under the Facility info")
-	public void user_check_the_facility_type_field_under_the_facility_info() {
+	public void user_6047_check_the_facility_type_field_under_the_facility_info() {
 		WebElement FacilityType = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("FacilityType"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
@@ -265,7 +265,7 @@ waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWi
 	}
 
 	@Then("User_6047 check the Pricing Indicator field under the Facility info")
-	public void user_check_the_pricing_indicator_field_under_the_facility_info() {
+	public void user_6047_check_the_pricing_indicator_field_under_the_facility_info() {
 		WebElement PricingIndicator = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("PricingIndicator"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
@@ -280,7 +280,7 @@ waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWi
 	}
 
 	@Then("User_6047 check the Requested Amount field under the Facility info")
-	public void user_check_the_requested_amount_field_under_the_facility_info() {
+	public void user_6047_check_the_requested_amount_field_under_the_facility_info() {
 		WebElement RequestedAmount = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("RequestedAmount"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
@@ -295,7 +295,7 @@ waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWi
 	}
 
 	@Then("User_6047 check the Declared Property Value field under the Facility info")
-	public void user_check_the_declared_property_value_field_under_the_facility_info() {
+	public void user_6047_check_the_declared_property_value_field_under_the_facility_info() {
 		WebElement DeclaredPropertyValue = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("DeclaredPropertyValue"));
 		System.out.println(DeclaredPropertyValue);
 		for (int i = 0; i <= 2000; i++) {
@@ -310,7 +310,7 @@ waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWi
 		}
 	}
 	@Then("User_6047 check the Declared Down Payment Amount field under the Facility info")
-	public void user_check_the_declared_down_payment_amount_field_under_the_facility_info() {
+	public void user_6047_check_the_declared_down_payment_amount_field_under_the_facility_info() {
 		WebElement  DeclaredDownPaymentAmount = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("DeclaredDownPaymentAmount"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
@@ -325,7 +325,7 @@ waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWi
 	}
 
 	@Then("User_6047 check the Currency field under the Facility info")
-	public void user_check_the_currency_field_under_the_facility_info() {
+	public void user_6047_check_the_currency_field_under_the_facility_info() {
 		WebElement Currency = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("Currency"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
@@ -340,7 +340,7 @@ waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWi
 	}
 
 	@Then("User_6047 check the Loan Tenure field under the Facility info")
-	public void user_check_the_loan_tenure_field_under_the_facility_info() {
+	public void user_6047_check_the_loan_tenure_field_under_the_facility_info() {
 		WebElement LoanTenure = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("LoanTenure"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
@@ -355,7 +355,7 @@ waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWi
 	}
 
 	@Then("User_6047 check the Servicing Branch field under the Facility info")
-	public void user_check_the_servicing_branch_field_under_the_facility_info() {
+	public void user_6047_check_the_servicing_branch_field_under_the_facility_info() {
 		WebElement ServicingBranch = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("ServicingBranch"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
@@ -371,7 +371,7 @@ waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWi
 	}
 
 	@Given("User_6047 Verify the Classification field should be mandatory,editable,text lookup")
-	public void user_verify_the_classification_field_should_be_mandatory_editable_text_lookup() {
+	public void user_6047_verify_the_classification_field_should_be_mandatory_editable_text_lookup() {
 		String Classification_Mandy= javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("Classification")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
@@ -411,7 +411,7 @@ waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWi
 	 }
 
 	@Given("User_6047 Verify the Product field should be mandatory,editable,text lookup")
-	public void user_verify_the_product_field_should_be_mandatory_editable_text_lookup() {
+	public void user_6047_verify_the_product_field_should_be_mandatory_editable_text_lookup() {
 		String Product_Mandy= javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("Product")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
@@ -451,7 +451,7 @@ waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWi
 	}
 
 	@Given("User_6047 Verify the Scheme field should be mandatory,editable,text lookup")
-	public void user_verify_the_scheme_field_should_be_mandatory_editable_numeric_lookup() {
+	public void user_6047_verify_the_scheme_field_should_be_mandatory_editable_numeric_lookup() {
 		String Scheme_mandy= javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("Scheme")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
@@ -491,7 +491,7 @@ waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWi
 	}
 
 	@Then("User_6047 Verify the Program code field should be mandatory,editable,text lookup")
-	public void user_verify_the_program_code_field_should_be_mandatory_editable_numeric_lookup() {
+	public void user_6047_verify_the_program_code_field_should_be_mandatory_editable_numeric_lookup() {
 		String ProgramCode_mandy= javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("ProgrameCode")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
@@ -531,7 +531,7 @@ waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWi
 	}
 
 	@Then("User_6047 Verify the Servicing branch field should be mandatory,editable")
-	public void user_verify_the_servicing_branch_field_should_be_mandatory_editable() {
+	public void user_6047_verify_the_servicing_branch_field_should_be_mandatory_editable() {
 		String ServicingBranch_mandy= javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("ServicingBranch")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
@@ -561,7 +561,7 @@ waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWi
 	}
 
 	@Then("User_6047 Verify the Pricing indicator field should be mandatory,editable,text lookup")
-	public void user_verify_the_pricing_indicator_field_should_be_mandatory_editable_text_lookup() {
+	public void user_6047_verify_the_pricing_indicator_field_should_be_mandatory_editable_text_lookup() {
 		String PricingIndicator_mandy= javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("PricingIndicator")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
@@ -602,7 +602,7 @@ waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWi
 
 
 	@Then("User_6047 Verify the Requested amount field should be mandatory,editable,num")
-	public void user_verify_the_requested_amount_field_should_be_mandatory_editable_num() {
+	public void user_6047_verify_the_requested_amount_field_should_be_mandatory_editable_num() {
 		String RequestedAmount_mandy= javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("RequestedAmount_mandy")).getText();
 		for (int i = 0; i <2000; i++) {
 	        try {
@@ -642,7 +642,7 @@ waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWi
 	}
 
 	@Then("User_6047 Verify the Declared downpayment amount field should be mandatory,editable,num")
-	public void user_verify_the_declared_downpayment_amount_field_should_be_mandatory_editable_text() {
+	public void user_6047_verify_the_declared_downpayment_amount_field_should_be_mandatory_editable_text() {
 		String DeclaredDownpaymentAmount_mandy= javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("DeclaredDownPaymentAmount_mandy")).getText();
 		for (int i = 0; i <2000; i++) {
 	        try {
@@ -682,7 +682,7 @@ waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWi
 	}
 
 	@Then("User_6047 Verify the Currency field should be mandatory,editable,text lookup")
-	public void user_verify_the_currency_field_should_be_mandatory_editable_text_lookup() {
+	public void user_6047_verify_the_currency_field_should_be_mandatory_editable_text_lookup() {
 		String Currency_mandy= javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("Currency")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
@@ -722,7 +722,7 @@ waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWi
 	}
 
 	@Then("User_6047 Verify the Loan tenure\\(months) field should be mandatory,editable,numeric lookup")
-	public void user_verify_the_loan_tenure_months_field_should_be_mandatory_editable_numeric_lookup() {
+	public void user_6047_verify_the_loan_tenure_months_field_should_be_mandatory_editable_numeric_lookup() {
 		String LoanTenure_mandy= javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("LoanTenure")).getAttribute("ng-reflect-required");
 		for (int i = 0; i <2000; i++) {
 	        try {
@@ -761,11 +761,11 @@ waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWi
 	    }
 	}
 	@And ("User_6047 Get the test data for test case ID AT_FI_005")
-	public void user_get_the_test_data_for_test_case_id_at_fi_005() {
+	public void user_6047_get_the_test_data_for_test_case_id_at_fi_005() {
 		testData =  ApplicationDataEntry_testdata.getTestdata("DS01_AT_FI_005");
 	}
 @Then("User_6047 click the classification field and select the data for user to add new record")
-public void user_click_the_classification_field_and_select_the_data_for_user_to_add_new_record() {
+public void user_6047_click_the_classification_field_and_select_the_data_for_user_to_add_new_record() {
 	//to check the classification field is present
 	WebElement Classification = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("Classification"));
 	for (int i = 0; i <= 2000; i++) {
@@ -859,11 +859,11 @@ public void user_click_the_classification_field_and_select_the_data_for_user_to_
 	
 }
 @Then("User_6047 click the Back button and verify the functionality of back button")
-public void user_click_the_back_button_and_verify_the_functionality_of_back_button() {
+public void user_6047_click_the_back_button_and_verify_the_functionality_of_back_button() {
 	for (int i = 0; i <= 1000; i++) {
 		try {
 			javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("BackButton")).click();
-			Thread.sleep(4000);
+			Thread.sleep(3000);
 			break;
 		} catch (Exception e) { 
 			if (i == 1000) {
@@ -888,7 +888,7 @@ public void user_click_the_back_button_and_verify_the_functionality_of_back_butt
 
 
 @Then("User_6047 click the Entitle button under facility list")
-public void user_click_the_entitle_button_under_facility_list() {
+public void user_6047_click_the_entitle_button_under_facility_list() {
 	for (int i = 0; i <= 1000; i++) {
 		try {
 			javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("Edit_button")).click();
@@ -903,7 +903,7 @@ public void user_click_the_entitle_button_under_facility_list() {
 }
 
 @Then("User_6047 to verify the same record should get saved in the system")
-public void user_to_verify_the_same_record_should_get_saved_in_the_system() {
+public void user_6047_to_verify_the_same_record_should_get_saved_in_the_system() {
 	String ClassificationField= javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("Classification")).getAttribute("aria-label");
 	System.out.println("print "+ClassificationField);
 	for (int i = 0; i <2000; i++) {
@@ -990,7 +990,7 @@ public void user_to_verify_the_same_record_should_get_saved_in_the_system() {
 }
 	
 @Then("User_6047 select the input for Classification field under the Facility info")
-public void user_select_the_input_for_classification_field_under_the_facility_info() {
+public void user_6047_select_the_input_for_classification_field_under_the_facility_info() {
 	for (int i = 0; i <= 2000; i++) {
 		try {
 			javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("Classification")).click();
@@ -1068,7 +1068,7 @@ public void user_select_the_input_for_classification_field_under_the_facility_in
 }
 
 @Then("User_6047 select the input for Product field under the Facility info")
-public void user_select_the_input_for_product_field_under_the_facility_info() {
+public void user_6047_select_the_input_for_product_field_under_the_facility_info() {
 	for (int i = 0; i <= 2000; i++) {
 		try {
 			javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("Product")).click();
@@ -1144,7 +1144,7 @@ public void user_select_the_input_for_product_field_under_the_facility_info() {
 	}
 }
 @Then("User_6047 select the input for Scheme field under the Facility info")
-public void user_select_the_input_for_scheme_field_under_the_facility_info() {
+public void user_6047_select_the_input_for_scheme_field_under_the_facility_info() {
 	for (int i = 0; i <= 2000; i++) {
 		try {
 			javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("Scheme")).click();
@@ -1220,7 +1220,7 @@ public void user_select_the_input_for_scheme_field_under_the_facility_info() {
 	}}
 
 @Then("User_6047 select the input for Program Code field under the Facility info")
-public void user_select_the_input_for_program_code_field_under_the_facility_info() {
+public void user_6047_select_the_input_for_program_code_field_under_the_facility_info() {
 	for (int i = 0; i <= 2000; i++) {
 		try {
 			javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("ProgrameCode")).click();
@@ -1297,7 +1297,7 @@ public void user_select_the_input_for_program_code_field_under_the_facility_info
 }
 
 @Then("User_6047 select the input for Facility type field under the Facility info")
-public void user_select_the_input_for_facility_type_field_under_the_facility_info() {
+public void user_6047_select_the_input_for_facility_type_field_under_the_facility_info() {
 	for (int i = 0; i <= 2000; i++) {
 		try {
 			javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("FacilityType")).click();
@@ -1374,7 +1374,7 @@ public void user_select_the_input_for_facility_type_field_under_the_facility_inf
 }
 
 @Then("User_6047 select the input for Pricing Indicator field under the Facility info")
-public void user_select_the_input_for_pricing_indicator_field_under_the_facility_info() {
+public void user_6047_select_the_input_for_pricing_indicator_field_under_the_facility_info() {
 	for (int i = 0; i <= 2000; i++) {
 		try {
 			javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("PricingIndicator")).click();
@@ -1451,7 +1451,7 @@ public void user_select_the_input_for_pricing_indicator_field_under_the_facility
 }
 
 @Then("User_6047 give the input for Declared Property Value field under the Facility info")
-public void user_give_the_input_for_declared_property_value_field_under_the_facility_info() {
+public void user_6047_give_the_input_for_declared_property_value_field_under_the_facility_info() {
 	javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("DeclaredPropertyValue_Input")).click();
 //	for (int i = 0; i <= 500; i++) {
 //		try {
@@ -1474,7 +1474,7 @@ public void user_give_the_input_for_declared_property_value_field_under_the_faci
 
 }
 @And("User_6047 enter the characters to the declared downpayment amount")
-public void user_enter_the_characters_to_the_declared_downpayment_amount() throws Throwable {
+public void user_6047_enter_the_characters_to_the_declared_downpayment_amount() throws Throwable {
 	javascriptHelper.executeScriptWithWebElement("document.querySelector('kub-prime-ccy[id=\"downPaymentAmount\"] input')")
 .clear();
 	javascriptHelper.executeScriptWithWebElement("document.querySelector('kub-prime-ccy[id=\"downPaymentAmount\"] input')")
@@ -1483,7 +1483,7 @@ public void user_enter_the_characters_to_the_declared_downpayment_amount() throw
 
 }
 @And("User_6047 enter the special characters to the declared downpayment amount")
-public void user_enter_the_special_characters_to_the_declared_downpayment_amount() throws Throwable {
+public void user_6047_enter_the_special_characters_to_the_declared_downpayment_amount() throws Throwable {
 
 	javascriptHelper.executeScriptWithWebElement("document.querySelector('kub-prime-ccy[id=\"downPaymentAmount\"] input')").sendKeys("*");
 	Thread.sleep(6000);
@@ -1497,7 +1497,7 @@ public void user_enter_the_negative_number_to_the_declared_downpayment_amount() 
 }
 
 @Given("User_6047 check the negative data in the declared downpayment amount")
-public void user_check_the_negative_data_in_the_declared_downpayment_amount() {
+public void user_6047_check_the_negative_data_in_the_declared_downpayment_amount() {
 	String value= javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("DeclaredDownPaymentAmount_num")).getAttribute("aria-valuenow");
 	for (int i = 0; i <2000; i++) {
         try { 
@@ -1513,7 +1513,7 @@ public void user_check_the_negative_data_in_the_declared_downpayment_amount() {
 }
 
 @Then("User_6047 give the input for Declared Down Payment Amount field under the Facility info")
-public void user_give_the_input_for_declared_down_payment_amount_field_under_the_facility_info() {
+public void user_6047_give_the_input_for_declared_down_payment_amount_field_under_the_facility_info() {
 	javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("DeclaredPropertyValue_Input")).click();
 //	for (int i = 0; i <= 500; i++) {
 //		try {
@@ -1537,7 +1537,7 @@ public void user_give_the_input_for_declared_down_payment_amount_field_under_the
 
 }
 @Then("User_6047 select the input for serving branch field under the Facility info")
-public void user_select_the_input_for_serving_branch_field_under_the_facility_info() {
+public void user_6047_select_the_input_for_serving_branch_field_under_the_facility_info() {
 	for (int i = 0; i <= 2000; i++) {
 		try {
 			javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("ServicingBranch")).click();
@@ -1613,7 +1613,7 @@ public void user_select_the_input_for_serving_branch_field_under_the_facility_in
 	}
 }
 @Then("User_6047 give the input for Request Amount field under the Facility info")
-public void user_give_the_input_for_request_amount_field_under_the_facility_info() {
+public void user_6047_give_the_input_for_request_amount_field_under_the_facility_info() {
 	javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("RequestedAmount")).click();
 //	for (int i = 0; i <= 500; i++) {
 //		try {
@@ -1637,7 +1637,7 @@ public void user_give_the_input_for_request_amount_field_under_the_facility_info
 }
 
 @Then("User_6047 select the input for Currency field under the Facility info")
-public void user_select_the_input_for_currency_field_under_the_facility_info() {
+public void user_6047_select_the_input_for_currency_field_under_the_facility_info() {
 	for (int i = 0; i <= 2000; i++) {
 		try {
 			javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("Currency")).click();
@@ -1715,7 +1715,7 @@ public void user_select_the_input_for_currency_field_under_the_facility_info() {
 
 
 @Then("User_6047 give the input for Loan Tenure field under the Facility info")
-public void user_give_the_input_for_loan_tenure_field_under_the_facility_info() {
+public void user_6047_give_the_input_for_loan_tenure_field_under_the_facility_info() {
 	javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("LoanTenure")).click();
 	javascriptHelper                    
 
@@ -1732,7 +1732,7 @@ public void user_give_the_input_for_loan_tenure_field_under_the_facility_info() 
 
 
 @Then("User_6047 click the save button under the facility info")
-public void user_click_the_save_button_under_the_facility_info() {
+public void user_6047_click_the_save_button_under_the_facility_info() {
 	for (int i = 0; i <= 1000; i++) {
 		try {
 			javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("SaveButton")).click();
@@ -1765,7 +1765,7 @@ public void user_verify_the_popup_of_fill_all_field() throws Throwable {
 
 
 @Then("User_6047 modify the classification field data")
-public void user_click_the_classification_field_and_modify_the_data() {
+public void user_6047_click_the_classification_field_and_modify_the_data() {
 	for (int i = 0; i <= 2000; i++) {
 		try {
 			javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("Classification")).click();
@@ -1893,7 +1893,7 @@ for (int i = 0; i <2000; i++) {
 }
 }
 @Given("User_6047 to check same record saved inLoan Tenure field under facility info")
-public void user_to_check_same_record_saved_in_loan_tenure_field_under_facility_info() {
+public void user_6047_to_check_same_record_saved_in_loan_tenure_field_under_facility_info() {
 	for (int i = 0; i <2000; i++) {
         try {
         	String text = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("LoanTenure_value")).getAttribute("ng-reflect-model");
@@ -1909,7 +1909,7 @@ public void user_to_check_same_record_saved_in_loan_tenure_field_under_facility_
 }
 
 @Then("User_6047 verify the successfully saved message under the facility info")
-public void user_verify_the_successfully_saved_message_under_the_facility_info() {
+public void user_6047_verify_the_successfully_saved_message_under_the_facility_info() {
 //	for (int i = 0; i <2000; i++) {
 //        try {
 //        	String text = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("SucessPopUP")).getText();
@@ -1959,7 +1959,7 @@ public void user_6047_extract_the_application_details_record_reference_number_in
 
 
 @And("User_6047 modify the declared downpayment amount")
-public void user_modify_the_declared_downpayment_amount() throws Throwable {
+public void user_6047_modify_the_declared_downpayment_amount() throws Throwable {
 	javascriptHelper.executeScriptWithWebElement("document.querySelector('kub-prime-ccy[id=\"downPaymentAmount\"] input')")
 .clear();
 	javascriptHelper.executeScriptWithWebElement("document.querySelector('kub-prime-ccy[id=\"downPaymentAmount\"] input')")
@@ -1968,7 +1968,7 @@ public void user_modify_the_declared_downpayment_amount() throws Throwable {
 }
 
 @And("User_6047 check the invalid data in the declared downpayment amount")
-public void user_check_the_modified_data_in_the_declared_downpayment_amount() {
+public void user_6047_check_the_modified_data_in_the_declared_downpayment_amount() {
 	
 	String value= javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("DeclaredDownPaymentAmount_num")).getAttribute("aria-valuenow");
 	System.out.println(value);
@@ -1986,7 +1986,7 @@ public void user_check_the_modified_data_in_the_declared_downpayment_amount() {
 
 }
 @And("User_6047 modify the correct data for declared downpayment amount")
-public void user_modify_the_correct_data_for_declared_downpayment_amount() throws Throwable {
+public void user_6047_modify_the_correct_data_for_declared_downpayment_amount() throws Throwable {
 	javascriptHelper.executeScriptWithWebElement("document.querySelector('kub-prime-ccy[id=\"downPaymentAmount\"] input')")
 .clear();
 	javascriptHelper.executeScriptWithWebElement("document.querySelector('kub-prime-ccy[id=\"downPaymentAmount\"] input')")
@@ -1994,7 +1994,7 @@ public void user_modify_the_correct_data_for_declared_downpayment_amount() throw
 
 }
 @And("User_6047 Click the back button in facility list")
-public void user_click_the_back_button_in_facility_list() {
+public void user_6047_click_the_back_button_in_facility_list() {
 	for (int i = 0; i <= 1000; i++) {
 		try {
 			javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("BackButton_prev")).click();
@@ -2023,7 +2023,7 @@ public void user_verify_the_the_back_button_function_using_inbox_label_in_facili
 }
 
 @And("User_6047 click the status toggle button for deactivate")
-public void user_click_the_status_toggle_button_for_deactivate() {
+public void user_6047_click_the_status_toggle_button_for_deactivate() {
 	for (int i = 0; i <= 1000; i++) {
 		try {
 			javascriptHelper.JSEClick(
@@ -2038,7 +2038,7 @@ public void user_click_the_status_toggle_button_for_deactivate() {
 }
 
 @And("User_6047 click the status toggle button for activate")
-public void user_click_the_status_toggle_button_for_activate() {
+public void user_6047_click_the_status_toggle_button_for_activate() {
 	for (int i = 0; i <= 1000; i++) {
 		try {
 			javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("status_ToggleButton")));
@@ -2052,7 +2052,7 @@ public void user_click_the_status_toggle_button_for_activate() {
 }
 
 @And("User_6047 to check the status is deactive")
-public void user_to_check_the_status_is_deactive() {
+public void user_6047_to_check_the_status_is_deactive() {
 	String value= javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("status_ToggleButton")).getAttribute("aria-checked");
 	for (int i = 0; i <2000; i++) {
         try { 
@@ -2067,7 +2067,7 @@ public void user_to_check_the_status_is_deactive() {
 }
 
 @And("User_6047 to check the status is active")
-public void user_to_check_the_status_is_active() {
+public void user_6047_to_check_the_status_is_active() {
 	String value= javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("status_ToggleButton")).getAttribute("aria-checked");
 	for (int i = 0; i <2000; i++) {
         try { 
@@ -2081,7 +2081,7 @@ public void user_to_check_the_status_is_active() {
     } 
 }
 @And("User_6047 click the back Button")
-public void user_click_the_back_Button() {
+public void user_6047_click_the_back_Button() {
 	for (int i = 0; i <= 1000; i++) {
 		try {
 			javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("BackButton")));
@@ -2096,7 +2096,7 @@ public void user_click_the_back_Button() {
 }
 
 @And("User_6047 to verify the functionality of back button with add button display")
-public void user_to_verify_the_functionality_of_back_button_with_add_button_display() {
+public void user_6047_to_verify_the_functionality_of_back_button_with_add_button_display() {
 	WebElement Scheme = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("AddButton_under_FacilityInfo"));
 	for (int i = 0; i <= 2000; i++) {
 		try {
@@ -2110,13 +2110,13 @@ public void user_to_verify_the_functionality_of_back_button_with_add_button_disp
 	}
 }
 @And ("User_6047 Get the test data for test case ID AT_FI_012")
-public void user_get_the_test_data_for_test_case_id_at_fi_012() {
+public void user_6047_get_the_test_data_for_test_case_id_at_fi_012() {
 	testData =  ApplicationDataEntry_testdata.getTestdata("DS01_AT_FI_012");
 }
 
 
 @And("User_6047 click the Search button under facility info tab and search the matching data in listview")
-public void user_click_the_search_button_under_facility_info_tab_and_search_the_matching_data_in_listview() {
+public void user_6047_click_the_search_button_under_facility_info_tab_and_search_the_matching_data_in_listview() {
 
 	for (int i = 0; i <= 500; i++) {
 		try {
@@ -2146,8 +2146,8 @@ public void user_click_the_search_button_under_facility_info_tab_and_search_the_
 
 }
 @And("User_6047 search the facility list under facility info")
-public void user_search_the_facility_list_under_inbox() {
-	//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text")));
+public void user_6047_search_the_facility_list_under_inbox() {
+	
 	for (int i = 0; i <= 500; i++) {
 		try {
 			//javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("search_button_for_employment_det")).click();
@@ -2173,7 +2173,7 @@ public void user_search_the_facility_list_under_inbox() {
 } 
 
 @And("User_6047 check the result data in facility list view")
-public void user_check_the_result_data_in_facility_list_view() {
+public void user_6047_check_the_result_data_in_facility_list_view() {
 
 	String searchResult = "";
 	for (int i = 0; i <= 300; i++) {
@@ -2203,7 +2203,7 @@ public void user_check_the_result_data_in_facility_list_view() {
 	softAssert.assertNotEquals(searchResult, "Showing 0 to 0 of 0 entries");
 }
 @And("User_6047 clear the search box")
-public void user_clear_the_search_box() {
+public void user_6047_clear_the_search_box() {
 	for (int i = 0; i <= 500; i++) {
 		try {
 			javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("search_box_search_text"))
@@ -2219,7 +2219,7 @@ public void user_clear_the_search_box() {
 
 
 @And("User_6047 click the Search button under facility info tab and search the mismatching data in listview")
-public void user_click_the_search_button_under_facility_info_tab_and_sheck_the_mismatching_data_in_listview() {
+public void user_6047_click_the_search_button_under_facility_info_tab_and_sheck_the_mismatching_data_in_listview() {
 	for (int i = 0; i <= 500; i++) {
 		try {
 			javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_button")).click();
@@ -2246,7 +2246,7 @@ public void user_click_the_search_button_under_facility_info_tab_and_sheck_the_m
 }
 
 @And("User_6047 check the result in facility list view")
-public void user_check_the_result_in_facility_list_view() {
+public void user_6047_check_the_result_in_facility_list_view() {
 
 	String searchResult = "";
 	for (int i = 0; i <= 300; i++) {
@@ -2277,12 +2277,12 @@ public void user_check_the_result_in_facility_list_view() {
 }
 
 @Given("User_6047 Get the test data for test case ID AT_FI_013")
-public void user_get_the_test_data_for_test_case_id_at_fi_() {
+public void user_6047_get_the_test_data_for_test_case_id_at_fi_() {
 	testData =  ApplicationDataEntry_testdata.getTestdata("DS01_AT_FI_013");
 }
 
 @And("User_6047 Click the Export button under Facility info tab")
-public void user_click_the_export_button_under_facility_info_tab() throws Throwable {
+public void user_6047_click_the_export_button_under_facility_info_tab() throws Throwable {
 
 	for (int i = 0; i <= 500; i++) {
 		try {
@@ -2297,7 +2297,7 @@ public void user_click_the_export_button_under_facility_info_tab() throws Throwa
 }
 
 @And("User_6047 Click the PDF button under Export")
-public void user_click_the_pdf_button_under_export() throws Throwable {
+public void user_6047_click_the_pdf_button_under_export() throws Throwable {
 	javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("ExportButton")).click();
 	Thread.sleep(3000);
 	
@@ -2318,7 +2318,7 @@ public void user_click_the_pdf_button_under_export() throws Throwable {
 }
 
 @And("User_6047 Click the Excel button under Export")
-public void user_click_the_excel_button_under_export() throws Throwable {
+public void user_6047_click_the_excel_button_under_export() throws Throwable {
 	
 	for (int i = 0; i <= 500; i++) {
 	try {

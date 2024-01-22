@@ -45,26 +45,26 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 	
 
 	@And("User_6047 Get the test data for test case ID AT_TW_CD_03")
-	public void user_get_the_test_data_for_test_case() {
+	public void user_6047_get_the_test_data_for_test_case() {
 		testData = Tawarruq_CustomerDetails_TestData.getTestdata("DS01_AT_TW_CD_03");
 
 	}
 
 	@And("User_6047 Get the test data for test case ID AT_TW_CD_05")
-	public void user_get_the_test_data_for_test_case_id() {
+	public void user_6047_get_the_test_data_for_test_case_id() {
 		testData = Tawarruq_CustomerDetails_TestData.getTestdata("DS01_AT_TW_CD_05");
 
 	
 	}
 
 	@And("User_6047 Get the test data for test case ID AT_TW_CD_06")
-	public void user_get_the_test_data_for_test_case_id_() {
+	public void user_6047_get_the_test_data_for_test_case_id_() {
 		testData = Tawarruq_CustomerDetails_TestData.getTestdata("DS01_AT_TW_CD_06");
 
 	}
 
 	@And("User_6047 Search the Ref id Under inbox")
-	public void user_search_the_ref_id_under_inbox_() throws Throwable {
+	public void user_6047_search_the_ref_id_under_inbox_() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver,
 				javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text")));
 		for (int i = 0; i <= 500; i++) {
@@ -81,7 +81,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 	}
 
 	@And("User_6047 Click Customer Details module")
-	public void user_click_customer_details_module() {
+	public void user_6047_click_customer_details_module() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -97,7 +97,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 verify the Date of Birth field")
-	public void user_verify_the_date_of_birth_field() {
+	public void user_6047_verify_the_date_of_birth_field() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper
@@ -115,7 +115,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 verify the Education Level field")
-	public void user_verify_the_education_level_field() {
+	public void user_6047_verify_the_education_level_field() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				Assert.assertTrue(
@@ -134,7 +134,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 verify the Customer Age field")
-	public void user_verify_the_customer_age_field() {
+	public void user_6047_verify_the_customer_age_field() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper
@@ -151,7 +151,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 verify the No of Dependent field")
-	public void user_verify_the_no_of_dependent_field() {
+	public void user_6047_verify_the_no_of_dependent_field() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				Assert.assertTrue(
@@ -174,7 +174,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 verify the Gender field")
-	public void user_verify_the_gender_field() {
+	public void user_6047_verify_the_gender_field() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				Assert.assertTrue(
@@ -193,7 +193,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 verify the Customer Type field")
-	public void user_verify_the_customer_type_field() {
+	public void user_6047_verify_the_customer_type_field() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper
@@ -211,7 +211,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 verify the Applicant Type field")
-	public void user_verify_the_applicant_type_field() {
+	public void user_6047_verify_the_applicant_type_field() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				Assert.assertTrue(
@@ -230,7 +230,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 verify the Last Name or Family Name field")
-	public void user_verify_the_last_name_or_family_name_field() {
+	public void user_6047_verify_the_last_name_or_family_name_field() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper
@@ -247,7 +247,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 verify the First Name field")
-	public void user_verify_the_first_name_field() {
+	public void user_6047_verify_the_first_name_field() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper
@@ -264,7 +264,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 verify the Middle Name field")
-	public void user_verify_the_middle_name_field() {
+	public void user_6047_verify_the_middle_name_field() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper
@@ -281,7 +281,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 verify the Black Listed field")
-	public void user_verify_the_black_listed_field() {
+	public void user_6047_verify_the_black_listed_field() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				//Assert.assertTrue(
@@ -304,7 +304,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 verify the Salutation or Title field")
-	public void user_verify_the_salutation_or_title_field() {
+	public void user_6047_verify_the_salutation_or_title_field() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper
@@ -320,7 +320,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 verify the Language field")
-	public void user_verify_the_language_field() {
+	public void user_6047_verify_the_language_field() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper
@@ -336,7 +336,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 verify the Category of Client field")
-	public void user_verify_the_category_of_client_field() {
+	public void user_6047_verify_the_category_of_client_field() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				//Assert.assertTrue(
@@ -358,7 +358,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 verify the Marital Status field")
-	public void user_verify_the_marital_status_field() {
+	public void user_6047_verify_the_marital_status_field() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				Assert.assertTrue(
@@ -376,7 +376,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 verify the Resident Status field")
-	public void user_verify_the_resident_status_field() {
+	public void user_6047_verify_the_resident_status_field() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper
@@ -393,7 +393,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 verify the Nationality field")
-	public void user_verify_the_nationality_field() {
+	public void user_6047_verify_the_nationality_field() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper
@@ -409,7 +409,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 verify the Save button")
-	public void user_verify_the_save_button() {
+	public void user_6047_verify_the_save_button() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper
@@ -424,7 +424,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 verify the back button")
-	public void user_verify_the_back_button() {
+	public void user_6047_verify_the_back_button() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper
@@ -439,7 +439,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 verify the Activate\\/Deactivate")
-	public void user_verify_the_activate_deactivate() {
+	public void user_6047_verify_the_activate_deactivate() {
 		for (int i = 0; i < 200; i++) {
 			try {
 //				Assert.assertTrue(javascriptHelper
@@ -459,7 +459,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 modify the nationality input")
-	public void user_modify_the_nationality_input() {
+	public void user_6047_modify_the_nationality_input() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -538,7 +538,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 click the Save button")
-	public void user_click_the_save_button() {
+	public void user_6047_click_the_save_button() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.JSEClick(
@@ -554,7 +554,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 verify the successfully saved message")
-	public void user_verify_the_successfully_saved_message() {
+	public void user_6047_verify_the_successfully_saved_message() {
 		for (int i = 0; i < 2000; i++) {
 			try {
 				String text = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("SucessPopUP"))
@@ -571,7 +571,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 Click the back Button in customer deyails")
-	public void user_click_the_back_button_in_customer_deyails() {
+	public void user_6047_click_the_back_button_in_customer_deyails() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -586,7 +586,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 clear the last name")
-	public void user_clear_the_last_name() throws Throwable {
+	public void user_6047_clear_the_last_name() throws Throwable {
 		for (int i = 0; i <= 10; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -607,7 +607,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 verify customer details screen should show the validation for empty mandatory field")
-	public void user_076_verify_customer_details_screen_should_show_the_validation_for_empty_mandatory_field() {
+	public void user_6047__verify_customer_details_screen_should_show_the_validation_for_empty_mandatory_field() {
 		for (int i = 0; i < 2000; i++) {
 			try {
 				String text = javascriptHelper
@@ -624,7 +624,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 enter the invalid data in last name")
-	public void user_enter_the_invalid_data_in_last_name() {
+	public void user_6047_enter_the_invalid_data_in_last_name() {
 
 		javascriptHelper
 
@@ -636,7 +636,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 verify the invalid msg in last name")
-	public void user_verify_the_invalid_msg_in_last_name() {
+	public void user_6047_verify_the_invalid_msg_in_last_name() {
 		String fieldLevelvalidation = "";
 		for (int i = 0; i <= 300; i++) {
 			try {
@@ -658,7 +658,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 	}
 
 	@And("User_6047 click search button")
-	public void user_click_search_button() {
+	public void user_6047_click_search_button() {
 
 		for (int i = 0; i <= 500; i++) {
 			try {
@@ -675,7 +675,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 	}
 
 	@And("User_6047 search the record")
-	public void user_search_the_record() {
+	public void user_6047_search_the_record() {
 
 		for (int i = 0; i <= 500; i++) {
 			try {
@@ -695,7 +695,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 	}
 	@Then("User_6047 change the address details status to active to inactive or inactive to active")
 
-	public void user_change_the_address_details_status_to_active_to_inactive_or_inactive_to_active() throws Throwable {
+	public void user_6047_change_the_address_details_status_to_active_to_inactive_or_inactive_to_active() throws Throwable {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper
@@ -746,7 +746,7 @@ public void user_6047_verify_the_functionality_of_back_button_in_customer_identi
     throw new io.cucumber.java.PendingException();
 }
 	@Then("User_6047 verify system should show the record status as active or inactive based on toggle")
-	public void verify_system_should_show_the_record_status_as_active_or_inactive_based_on_toggle() throws Throwable {
+	public void verify_6047_system_should_show_the_record_status_as_active_or_inactive_based_on_toggle() throws Throwable {
 		Thread.sleep(1000);
 		// System.out.println("Index value in list view record validation " +
 		// indexOfListView);
@@ -778,7 +778,7 @@ public void user_6047_verify_the_functionality_of_back_button_in_customer_identi
 	}
 
 	@Then("User_6047 to verify the fields on list view of Customer Personal Information")
-	public void user_to_verify_the_fields_on_list_view_of_customer_personal_information() {
+	public void user_6047_to_verify_the_fields_on_list_view_of_customer_personal_information() {
 		String listViewRecordLabels = "";
 		for (int i = 0; i <= 300; i++) {
 			try {
@@ -824,7 +824,7 @@ public void user_6047_verify_the_functionality_of_back_button_in_customer_identi
 	}
 
 	@And("User_6047 click the add button")
-	public void user_click_the_add_button() {
+	public void user_6047_click_the_add_button() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper
@@ -840,7 +840,7 @@ public void user_6047_verify_the_functionality_of_back_button_in_customer_identi
 	}
 
 	@Then("User_6047 verify clicking on Add button allow user to create new record of Customer Information details")
-	public void user_verify_clicking_on_add_button_allow_user_to_create_new_record_of_customer_information_details() {
+	public void user_6047_verify_clicking_on_add_button_allow_user_to_create_new_record_of_customer_information_details() {
 		String listViewRecordLabels = "";
 		for (int i = 0; i <= 300; i++) {
 			try {
@@ -862,7 +862,7 @@ public void user_6047_verify_the_functionality_of_back_button_in_customer_identi
 	}
 
 	@Then("User_6047 click the back button in customer information")
-	public void user_click_the_back_button_in_customer_information() {
+	public void user_6047_click_the_back_button_in_customer_information() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -877,7 +877,7 @@ public void user_6047_verify_the_functionality_of_back_button_in_customer_identi
 	}
 
 	@Then("User_6047 click the Search button under customer details tab and search the matching data in listview")
-	public void user_click_the_search_button_under_customer_details_tab_and_search_the_matching_data_in_listview() {
+	public void user_6047_click_the_search_button_under_customer_details_tab_and_search_the_matching_data_in_listview() {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper
@@ -909,7 +909,7 @@ public void user_6047_verify_the_functionality_of_back_button_in_customer_identi
 	}
 
 	@Then("User_6047 check the match result data in customer details list view")
-	public void user_check_the_match_result_data_in_customer_details_list_view() {
+	public void user_6047_check_the_match_result_data_in_customer_details_list_view() {
 		String searchResult = "";
 		for (int i = 0; i <= 300; i++) {
 			try {
@@ -929,7 +929,7 @@ public void user_6047_verify_the_functionality_of_back_button_in_customer_identi
 	}
 
 	@Then("User_6047 clear the search box in customer details")
-	public void user_clear_the_search_box_in_customer_details() {
+	public void user_6047_clear_the_search_box_in_customer_details() {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("search_box_search_text"))
@@ -944,7 +944,7 @@ public void user_6047_verify_the_functionality_of_back_button_in_customer_identi
 	}
 
 	@Then("User_6047 click the Search button under customer details tab and search the mismatching data in listview")
-	public void user_click_the_search_button_under_customer_details_tab_and_search_the_mismatching_data_in_listview() {
+	public void user_6047_click_the_search_button_under_customer_details_tab_and_search_the_mismatching_data_in_listview() {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper
@@ -962,7 +962,7 @@ public void user_6047_verify_the_functionality_of_back_button_in_customer_identi
 
 				javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("search_box_search_text"))
 						.sendKeys(testData.get("mismatch data"));
-				Thread.sleep(3000);
+			
 				break;
 			}
 
@@ -976,7 +976,7 @@ public void user_6047_verify_the_functionality_of_back_button_in_customer_identi
 	}
 
 	@Then("User_6047 check the mismatch result in customer details list view")
-	public void user_check_the_mismatch_result_in_customer_details_list_view() {
+	public void user_6047_check_the_mismatch_result_in_customer_details_list_view() {
 		String searchResult = "";
 		for (int i = 0; i <= 300; i++) {
 			try {
@@ -997,7 +997,7 @@ public void user_6047_verify_the_functionality_of_back_button_in_customer_identi
 	}
 
 	@Then("User_6047 click the back button in customer details")
-	public void user_click_the_back_button_in_customer_details() {
+	public void user_6047_click_the_back_button_in_customer_details() {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -1012,7 +1012,7 @@ public void user_6047_verify_the_functionality_of_back_button_in_customer_identi
 	}
 
 	@Then("User_6047 verify the back button functionality")
-	public void user_verify_the_back_button_functionality() {
+	public void user_6047_verify_the_back_button_functionality() {
 		String inboxTitle = "";
 		for (int i = 0; i <= 300; i++) {
 			try {
@@ -1033,7 +1033,7 @@ public void user_6047_verify_the_functionality_of_back_button_in_customer_identi
 	}
 
 	@Then("User_6047 to verify the Values in list view should be in read only mode in customer details")
-	public void user_to_verify_the_values_in_list_view_should_be_in_read_only_mode_in_customer_details() {
+	public void user_6047_to_verify_the_values_in_list_view_should_be_in_read_only_mode_in_customer_details() {
 		boolean status = false;
 		for (int i = 0; i <= 20; i++) {
 			try {

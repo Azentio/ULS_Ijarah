@@ -38,13 +38,13 @@ public class Murabha_DataCheck_identificationDetails extends BaseClass{
 
 	
 	@And("User_6047 Get the test data for test case ID AT_DC_MU_ID_001")
-	public void user_get_the_test_data_for_test_case_id_at_fi() {
+	public void user_6047_get_the_test_data_for_test_case_id_at_fi() {
 		testData =  Murabha_identificationDetail_TestData.getTestdata("DS01_AT_DC_MU_ID_001");
 	}
 
 
 	@And("User_6047 Search the Ref Id Under Inbox")
-	public void user_search_the_ref_id_under_inbox_6047() throws Throwable {
+	public void user_6047_search_the_ref_id_under_inbox_6047() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text")));
 		javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text"))
 		.sendKeys(testData.get("Ref No"));
@@ -61,7 +61,7 @@ public class Murabha_DataCheck_identificationDetails extends BaseClass{
 //		}
 	}
 	@And("User_6047 click additional customer info")
-	public void user_click_additional_customer_info() {
+	public void user_6047_click_additional_customer_info() {
 		for (int i = 0; i <= 100; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(Murabha_IdentificationDetail_Js.getElement("AdditionalCustomerInfo_tab")).click();
@@ -75,7 +75,7 @@ public class Murabha_DataCheck_identificationDetails extends BaseClass{
 	}
 	
 	@And("User_6047 Click view button under customer personal information")
-	public void user_click_view_button_under_customer_personal_information() {
+	public void user_6047_click_view_button_under_customer_personal_information() {
 		for (int i = 0; i <= 100; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(Murabha_IdentificationDetail_Js.getElement("ViewButton")).click();
@@ -89,7 +89,7 @@ public class Murabha_DataCheck_identificationDetails extends BaseClass{
 	}
 
 	@And("User_6047 Click view button under customer identification")
-	public void user_click_view_button_under_customer_identification() {
+	public void user_6047_click_view_button_under_customer_identification() {
 		for (int i = 0; i <= 100; i++) {
 		try {
 				javascriptHelper.executeScriptWithWebElement(Murabha_IdentificationDetail_Js.getElement("ViewButton_customerIdentification")).click();
@@ -168,7 +168,7 @@ public class Murabha_DataCheck_identificationDetails extends BaseClass{
 	
 
 	@Then("User_6047 verify the Help button")
-	public void user_verify_the_help_button() {
+	public void user_6047_verify_the_help_button() {
 		boolean HelpButtonVerification = false;
 		for (int i = 0; i <= 300; i++) {
 			try {
@@ -186,7 +186,7 @@ public class Murabha_DataCheck_identificationDetails extends BaseClass{
 		}
 
 	@Then("User_6047 verify the Back button")
-	public void user_verify_the_back_button() {
+	public void user_6047_verify_the_back_button() {
 		boolean BackButtonVerification = false;
 		for (int i = 0; i <= 300; i++) {
 			try {
@@ -202,7 +202,7 @@ public class Murabha_DataCheck_identificationDetails extends BaseClass{
 	}
 	}
 	@Then("User_6047 verify the ID Type")
-	public void user_verify_the_id_type() {
+	public void user_6047_verify_the_id_type() {
 		boolean IDType = false;
 		for (int i = 0; i <= 300; i++) {
 			try {
@@ -219,7 +219,7 @@ public class Murabha_DataCheck_identificationDetails extends BaseClass{
 	}
 
 	@Then("User_6047 verify the ID Number")
-	public void user_verify_the_id_number() {
+	public void user_6047_verify_the_id_number() {
 		boolean IDNumber = false;
 		for (int i = 0; i <= 300; i++) {
 			try {
@@ -236,7 +236,7 @@ public class Murabha_DataCheck_identificationDetails extends BaseClass{
 	}
 
 	@Then("User_6047 verify the ID Issue Date")
-	public void user_verify_the_id_issue_date() {
+	public void user_6047_verify_the_id_issue_date() {
 		boolean IDIssueDate = false;
 		for (int i = 0; i <= 300; i++) {
 			try {
@@ -253,7 +253,7 @@ public class Murabha_DataCheck_identificationDetails extends BaseClass{
 	}
 
 	@Then("User_6047 verify the ID Expiry Date")
-	public void user_verify_the_id_expiry_date() {
+	public void user_6047_verify_the_id_expiry_date() {
 		boolean IDExpiryDate = false;
 		for (int i = 0; i <= 300; i++) {
 			try {
@@ -270,7 +270,7 @@ public class Murabha_DataCheck_identificationDetails extends BaseClass{
 	}
 
 	@Then("User_6047 verify the Issuing Authority")
-	public void user_verify_the_issuing_authority() {
+	public void user_6047_verify_the_issuing_authority() {
 		boolean IssuingAuthority = false;
 		for (int i = 0; i <= 300; i++) {
 			try {
@@ -287,7 +287,7 @@ public class Murabha_DataCheck_identificationDetails extends BaseClass{
 	}
 
 	@Then("User_6047 verify the Country of Issue")
-	public void user_verify_the_country_of_issue() {
+	public void user_6047_verify_the_country_of_issue() {
 		boolean CountryofIssue = false;
 		for (int i = 0; i <= 300; i++) {
 			try {
@@ -303,7 +303,7 @@ public class Murabha_DataCheck_identificationDetails extends BaseClass{
 	}
 	}
 	@Then("User_6047 verify the Data in ID Type under identification details")
-	public void user_verify_the_data_in_id_type_under_identification_details() {
+	public void user_6047_verify_the_data_in_id_type_under_identification_details() {
 		
 		String ID ="document.querySelector('digital-select-layout[ng-reflect-name=\"idType\"] ion-select').getAttribute(\"aria-label\")";
 		String IDVerify = (String) javascriptHelper.executeScript("return "+ID);
@@ -322,7 +322,7 @@ public class Murabha_DataCheck_identificationDetails extends BaseClass{
 
 
 	@Then("User_6047 verify the Data in ID Number under identification details")
-	public void user_verify_the_data_in_id_number_under_identification_details() {
+	public void user_6047_verify_the_data_in_id_number_under_identification_details() {
 		String IDNumberdata = javascriptHelper.executeScriptWithWebElement(Murabha_IdentificationDetail_Js.getElement("Id_Number"))
 				.getAttribute("ng-reflect-model");
 	
@@ -336,7 +336,7 @@ public class Murabha_DataCheck_identificationDetails extends BaseClass{
 	}
 
 	@Then("User_6047 verify the Data in ID Issue Date under identification details")
-	public void user_verify_the_data_in_id_issue_date_under_identification_details() {
+	public void user_6047_verify_the_data_in_id_issue_date_under_identification_details() {
 		//String IDIssueDate1 = javascriptHelper.executeScriptWithWebElement(Murabha_IdentificationDetail_Js.getElement("Issue_Date")).getText();
 		String IDdate ="document.querySelector('digital-prime-date[ng-reflect-title=\"FORM.ISSUE_DATE\"] input').innerText";
 		String IDdateVerify = (String) javascriptHelper.executeScript("return "+IDdate);
@@ -357,7 +357,7 @@ public class Murabha_DataCheck_identificationDetails extends BaseClass{
 	}
 
 	@Then("User_6047 verify the Data in ID Expiry Date under identification details")
-	public void user_verify_the_data_in_id_expiry_date_under_identification_details() {
+	public void user_6047_verify_the_data_in_id_expiry_date_under_identification_details() {
 		//String IDExpiryDate1 = javascriptHelper.executeScriptWithWebElement(Murabha_IdentificationDetail_Js.getElement("Expiry_Date_Value")).getText();
 		//String IDExpiryDate2 =IDExpiryDate1.substring(4,15);
 		String IDExdate ="document.querySelector('digital-prime-date[ng-reflect-title=\"FORM.EXPIRY_DATE\"] input').innerText";
@@ -378,7 +378,7 @@ public class Murabha_DataCheck_identificationDetails extends BaseClass{
 	}
 
 	@Then("User_6047 verify the Data in Issuing Authority under identification details")
-	public void user_verify_the_data_in_issuing_authority_under_identification_details() {
+	public void user_6047_verify_the_data_in_issuing_authority_under_identification_details() {
 		String  IssuingAuthorityData1 = javascriptHelper.executeScriptWithWebElement(Murabha_IdentificationDetail_Js.getElement("IssuingAuthority")).getAttribute("aria-label");
 		String IssuingAuthorityData2 =IssuingAuthorityData1.substring(1,20);
         String IDTypeValue="Government of India";
@@ -396,7 +396,7 @@ public class Murabha_DataCheck_identificationDetails extends BaseClass{
 	}
 
 	@Then("User_6047 verify the Data in Country of Issue identification details")
-	public void user_verify_the_data_in_country_of_issue_identification_details() {
+	public void user_6047_verify_the_data_in_country_of_issue_identification_details() {
 		String CountryofIssueData1 = javascriptHelper.executeScriptWithWebElement(Murabha_IdentificationDetail_Js.getElement("CountryOfIssue")).getAttribute("aria-label");
 		String CountryofIssueData2 =CountryofIssueData1.substring(1,6);
         String IDTypeValue="INDIA";
@@ -414,7 +414,7 @@ public class Murabha_DataCheck_identificationDetails extends BaseClass{
 	}
 
 	@Then("User_6047 verify ID Type field should be mandatory display only and text box")
-	public void user_verify_id_type_field_should_be_mandatory_display_only_and_text_box() {
+	public void user_6047_verify_id_type_field_should_be_mandatory_display_only_and_text_box() {
 		for (int i = 0; i <2000; i++) {
 			try {
 				String repayment ="document.querySelector('digital-select-layout[ng-reflect-form-control-name-label=\"idType\"]>ion-item>ion-select').getAttribute(\"aria-label\")";
@@ -467,7 +467,7 @@ public class Murabha_DataCheck_identificationDetails extends BaseClass{
 	}
 
 	@Then("User_6047 verify ID number should be mandatory display only and numberic")
-	public void user_verify_id_number_should_be_mandatory_display_only_and_numberic() {
+	public void user_6047_verify_id_number_should_be_mandatory_display_only_and_numberic() {
 		String IDNumber_mandy= javascriptHelper.executeScriptWithWebElement(Murabha_IdentificationDetail_Js.getElement("Id_Number_value")).getAttribute("ng-reflect-required");
 		for (int i = 0; i <2000; i++) {
 	        try {
@@ -507,7 +507,7 @@ public class Murabha_DataCheck_identificationDetails extends BaseClass{
 	}
 
 	@Then("User_6047 verify ID Issue Date field should be non mandatory display and calender")
-	public void user_verify_id_issue_date_field_should_be_non_mandatory_display_and_calender() {
+	public void user_6047_verify_id_issue_date_field_should_be_non_mandatory_display_and_calender() {
 		String IDIssueDate_mandy= javascriptHelper.executeScriptWithWebElement(Murabha_IdentificationDetail_Js.getElement("Issue_Date_Attribute")).getAttribute("ng-reflect-required");
 		for (int i = 0; i <2000; i++) {
 	        try {
@@ -547,7 +547,7 @@ public class Murabha_DataCheck_identificationDetails extends BaseClass{
 	}
 
 	@Then("User_6047 verify ID Expiry Date field should be non mandatory display and calender")
-	public void user_verify_id_expiry_date_field_should_be_non_mandatory_display_and_text_box() {
+	public void user_6047_verify_id_expiry_date_field_should_be_non_mandatory_display_and_text_box() {
 		for (int i = 0; i <2000; i++) {
 			try {
 				String repayment ="document.querySelector('digital-prime-date[ng-reflect-name=\"dateOfExpiry\"]').getAttribute(\"ng-reflect-required\")";
@@ -600,7 +600,7 @@ public class Murabha_DataCheck_identificationDetails extends BaseClass{
 	}
 
 	@Then("User_6047 verify Issuing Authority number should be non mandatory display and lookup")
-	public void user_verify_issuing_authority_number_should_be_non_mandatory_display_and_numberic() {
+	public void user_6047_verify_issuing_authority_number_should_be_non_mandatory_display_and_numberic() {
 		String IssuingAuthorityNumber_mandy= javascriptHelper.executeScriptWithWebElement(Murabha_IdentificationDetail_Js.getElement("IssuingAuthority_attribute")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
@@ -640,7 +640,7 @@ public class Murabha_DataCheck_identificationDetails extends BaseClass{
 	}
 
 	@Then("User_6047 verify Country of Issue field should be non mandatory display and lookup")
-	public void user_verify_country_of_issue_field_should_be_non_mandatory_display_and_calender() {
+	public void user_6047_verify_country_of_issue_field_should_be_non_mandatory_display_and_calender() {
 		String CountryOfIssue_mandy= javascriptHelper.executeScriptWithWebElement(Murabha_IdentificationDetail_Js.getElement("CountryOfIssue_Attribute")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
@@ -680,7 +680,7 @@ public class Murabha_DataCheck_identificationDetails extends BaseClass{
 	}
 
 	@Then("User_6047 verify Post clicking on Back button, system should navigate to the previous screen")
-	public void user_verify_post_clicking_on_back_button_system_should_navigate_to_the_previous_screen() {
+	public void user_6047_verify_post_clicking_on_back_button_system_should_navigate_to_the_previous_screen() {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -712,7 +712,7 @@ public class Murabha_DataCheck_identificationDetails extends BaseClass{
 	}
 
 	@Then("User_6047 verify Post clicking on Help button, system should display the description of all the fields in details")
-	public void user_verify_post_clicking_on_help_button_system_should_display_the_description_of_all_the_fields_in_details() {
+	public void user_6047_verify_post_clicking_on_help_button_system_should_display_the_description_of_all_the_fields_in_details() {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(

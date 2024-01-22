@@ -41,17 +41,17 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	
 	
 	@And("User_6047 Get the test data for test case ID AT_TW_AD_IRM_01")
-	public void user_get_the_test_data_for_test_case_id_at_tw_ad_irm() {
+	public void user_6047_get_the_test_data_for_test_case_id_at_tw_ad_irm() {
 		testData =  Tawarooq_Repayment_TestData.getTestdata("DS01_AT_TW_AD_IRM_01");
 	}
 
 	@And("User_6047 Get the test data for test case ID AT_TW_AD_IRM_04")
-	public void user_get_the_test_data_for_test_case_id_at_tw_ad_irm_04() {
+	public void user_6047_get_the_test_data_for_test_case_id_at_tw_ad_irm_04() {
 		testData =  Tawarooq_Repayment_TestData.getTestdata("DS01_AT_TW_AD_IRM_04");
 	}
 
 	@And("User_6047 Get the test data for test case ID AT_TW_AD_IRM_06")
-	public void user_get_the_test_data_for_test_case_id_at_tw_ad_irm_06() {
+	public void user_6047_get_the_test_data_for_test_case_id_at_tw_ad_irm_06() {
 		testData =  Tawarooq_Repayment_TestData.getTestdata("DS01_AT_TW_AD_IRM_06");
 	}
 	@Then("logout from the ULS Application")
@@ -60,7 +60,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	}
 	
 	@And("User_6047 search the Ref Id Under inbox")
-	public void user_search_the_ref_id_under_inbox_6047() throws Throwable {
+	public void user_6047_search_the_ref_id_under_inbox() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text")));
 		//javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text"))
 		//.sendKeys(testData.get("Ref No"));
@@ -76,7 +76,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 			}
 		}	}
 	@And("User_6047 Click repayment mode section")
-	public void user_click_repayment_mode_section() {
+	public void user_6047_click_repayment_mode_section() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("repaymentModeSection")).click();
@@ -92,7 +92,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	}
 
 	@And("User_6047 Click Add icon")
-	public void user_click_add_icon() {
+	public void user_6047_click_add_icon() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("AddButton")).click();
@@ -108,7 +108,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	}
 
 	@Then("User_6047 verify the repayment mode field in Repayment mode")
-	public void user_verify_the_repayment_mode_field_in_repayment_mode() {
+	public void user_6047_verify_the_repayment_mode_field_in_repayment_mode() {
 		for (int i = 0; i <200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("repaymentModeField")).isDisplayed());
@@ -137,7 +137,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	}
 
 	@Then("User_6047 verify the account type field Repayment mode")
-	public void user_verify_the_account_type_field_repayment_mode() {
+	public void user_6047_verify_the_account_type_field_repayment_mode() {
 		for (int i = 0; i <200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("accountTypeField")).isDisplayed());
@@ -151,7 +151,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	}
 
 	@Then("User_6047 verify the account number field Repayment mode")
-	public void user_verify_the_account_number_field_repayment_mode() {
+	public void user_6047_verify_the_account_number_field_repayment_mode() {
 		for (int i = 0; i <200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("accountNumberField")).isDisplayed());
@@ -165,7 +165,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	}
 
 	@Then("User_6047 verify the bank name field Repayment mode")
-	public void user_verify_the_bank_name_field_repayment_mode() {
+	public void user_6047_verify_the_bank_name_field_repayment_mode() {
 		for (int i = 0; i <200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("bankNameField")).isDisplayed());
@@ -179,7 +179,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	}
 
 	@Then("User_6047 verify the bank branch name field Repayment mode")
-	public void user_verify_the_bank_branch_name_field_repayment_mode() {
+	public void user_6047_verify_the_bank_branch_name_field_repayment_mode() {
 		for (int i = 0; i <200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("branchNameField")).isDisplayed());
@@ -193,7 +193,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	}
 
 	@Then("User_6047 verify the ESC code field Repayment mode")
-	public void user_verify_the_esc_code_field_repayment_mode() {
+	public void user_6047_verify_the_esc_code_field_repayment_mode() {
 		for (int i = 0; i <200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("escCode")).isDisplayed());
@@ -207,7 +207,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	}
 
 	@Then("User_6047 verify save button Repayment mode")
-	public void user_verify_save_button_repayment_mode() {
+	public void user_6047_verify_save_button_repayment_mode() {
 		for (int i = 0; i <200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("saveButton")).isDisplayed());
@@ -221,7 +221,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	}
 
 	@Then("User_6047 verify help button Repayment mode")
-	public void user_verify_help_button_repayment_mode() {
+	public void user_6047_verify_help_button_repayment_mode() {
 		for (int i = 0; i <200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("helpButton")).isDisplayed());
@@ -234,7 +234,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 		}
 	}
 	@Then("User_6047 verify the Repayment mode field is mandatory,editable and lookup value")
-	public void user_verify_the_repayment_mode_field_is_mandatory_editable_and_lookup_value() {
+	public void user_6047_verify_the_repayment_mode_field_is_mandatory_editable_and_lookup_value() {
 		
 		String repaymentmodefield= javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("repaymentMode_in")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
@@ -324,7 +324,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	}
 
 	@Then("User_6047 validate the Account holder name field is mandatory,editable and lookup value")
-	public void user_validate_the_account_holder_name_field_is_mandatory_editable_and_lookup_value() {
+	public void user_6047_validate_the_account_holder_name_field_is_mandatory_editable_and_lookup_value() {
 		String repaymentmodefield= javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("accountHolderName_in")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
@@ -413,7 +413,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	}
 
 	@Then("User_6047 verify the Account type field is mandatory,editable and lookup value")
-	public void user_verify_the_account_type_field_is_mandatory_editable_and_lookup_value() {
+	public void user_6047_verify_the_account_type_field_is_mandatory_editable_and_lookup_value() {
 		String repaymentmodefield= javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("accountTypeField_in")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
@@ -502,7 +502,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	}
 
 	@Then("User_6047 verify the Account number field is mandatory,editable and numeric")
-	public void user_verify_the_account_number_field_is_mandatory_editable_and_numeric() {
+	public void user_6047_verify_the_account_number_field_is_mandatory_editable_and_numeric() {
 		for (int i = 0; i <2000; i++) {
 			try {
 				String repayment ="document.querySelector('ion-label[ng-reflect-text=\"Account Number.TOOLTIP\"').innerText";
@@ -535,7 +535,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	}
 
 	@Then("User_6047 click the Account currency field is mandatory,editable and lookup value")
-	public void user_click_the_account_currency_field_is_mandatory_editable_and_lookup_value() {
+	public void user_6047_click_the_account_currency_field_is_mandatory_editable_and_lookup_value() {
 		String repaymentmodefield= javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("AccountCurrency_in")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
@@ -624,7 +624,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	}
 
 	@Then("User_6047 verify the Bank name field is mandatory,editable and lookup value")
-	public void user_verify_the_bank_name_field_is_mandatory_editable_and_lookup_value() {
+	public void user_6047_verify_the_bank_name_field_is_mandatory_editable_and_lookup_value() {
 		String repaymentmodefield= javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("bankNameField_in")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
@@ -713,7 +713,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	}
 
 	@Then("User_6047 verify the Branch name field is mandatory,editable and lookup value")
-	public void user_verify_the_branch_name_field_is_mandatory_editable_and_lookup_value() {
+	public void user_6047_verify_the_branch_name_field_is_mandatory_editable_and_lookup_value() {
 		String repaymentmodefield= javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("branchNameField_in")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
@@ -802,7 +802,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	}
 
 	@Then("User_6047 verify the Code field is mandatory,editable and numeric")
-	public void user_verify_the_code_field_is_mandatory_editable_and_numeric() {
+	public void user_6047_verify_the_code_field_is_mandatory_editable_and_numeric() {
 		for (int i = 0; i <2000; i++) {
 			try {
 				String repayment ="document.querySelector('ion-label[ng-reflect-text=\"ECS CODE.TOOLTIP\"').innerText";
@@ -822,7 +822,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	}
 
 	@Then("User_6047 click the Save button under repayment mode screen")
-	public void user_click_the_save_button_under_repayment_mode_screen() {
+	public void user_6047_click_the_save_button_under_repayment_mode_screen() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("SaveButton")).click();
@@ -847,7 +847,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 //        }
 //	}
 	@Then("User_6047 verify the successfully saved message popup in Repayment Mode")
-	public void user_verify_the_successfully_saved_message_popup_in_repayment_mode() {
+	public void user_6047_verify_the_successfully_saved_message_popup_in_repayment_mode() {
 //		String recordRef="";
 //		for (int i = 0; i <= 300; i++) {
 //			try {
@@ -889,7 +889,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	}
 	
 	@And("User_6047 Extract the record reference number in toastmsg")
-	public void user_076_extract_the_application_details_record_reference_number_in_new_app_stage() throws Throwable {
+	public void user_6047__extract_the_application_details_record_reference_number_in_new_app_stage() throws Throwable {
 	
 		
 		RecordIdNumber = toastMessageForReferenceNumber.substring(32).trim();
@@ -902,7 +902,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 			
 	}
 	@Then("User_6047 click edit icon in Repayment Mode")
-	public void user_click_edit_icon_in_repayment_mode() {
+	public void user_6047_click_edit_icon_in_repayment_mode() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("editIcon")).click();
@@ -916,7 +916,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	}
 
 	@Then("User_6047 To verify the same record should get saved in Repayment Mode")
-	public void user_to_verify_the_same_record_should_get_saved_in_repayment_mode() throws Throwable {
+	public void user_6047_to_verify_the_same_record_should_get_saved_in_repayment_mode() throws Throwable {
 		Thread.sleep(9000);
 		String repaymentMode= javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("repaymentMode_in")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
@@ -1013,7 +1013,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	}
 
 	@And("User_6047 click help icon in Repayment Mode")
-	public void user_click_help_icon_in_repayment_mode() {
+	public void user_6047_click_help_icon_in_repayment_mode() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("helpButton")).click();
@@ -1027,7 +1027,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	}
 
 	@Then("User_6047 verify description of all the fields details in Repayment Mode")
-	public void user_verify_description_of_all_the_fields_details_in_repayment_mode() {
+	public void user_6047_verify_description_of_all_the_fields_details_in_repayment_mode() {
 		for (int i = 0; i <2000; i++) {
 			try {
 				String repayment ="document.querySelector('pre[class=\"ng-star-inserted\"]').innerText";
@@ -1058,7 +1058,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	}
 
 	@Then("User_6047 search the Repayment list under Repayment mode")
-	public void user_search_the_repayment_list_under_repayment_mode() {
+	public void user_6047_search_the_repayment_list_under_repayment_mode() {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				//javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("search_button_for_employment_det")).click();
@@ -1077,7 +1077,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	}
 
 	@Then("User_6047 click the Entitle button under Repayment mode")
-	public void user_click_the_entitle_button_under_repayment_mode() {
+	public void user_6047_click_the_entitle_button_under_repayment_mode() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("Edit_button")).click();
@@ -1093,7 +1093,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 
 
 	@Then("User_6047 Give the input for repayment mode field in Repayment Mode")
-	public void user_give_the_input_for_repayment_mode_field_in_repayment_mode() {
+	public void user_6047_give_the_input_for_repayment_mode_field_in_repayment_mode() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("repaymentMode_in")).click();
@@ -1170,7 +1170,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	}
 
 	@Then("User_6047 Give the input for account holder name field in Repayment Mode")
-	public void user_give_the_input_for_account_holder_name_field_in_repayment_mode() {
+	public void user_6047_give_the_input_for_account_holder_name_field_in_repayment_mode() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("accountHolderName_in")).click();
@@ -1247,7 +1247,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	}
 
 	@Then("User_6047 Give the input for account type field in Repayment Mode")
-	public void user_give_the_input_for_account_type_field_in_repayment_mode() {
+	public void user_6047_give_the_input_for_account_type_field_in_repayment_mode() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("accountTypeField_in")).click();
@@ -1324,7 +1324,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	}
 
 	@Then("User_6047 Give the input for account currency field in Repayment Mode")
-	public void user_give_the_input_for_account_currency_field_in_repayment_mode() {
+	public void user_6047_give_the_input_for_account_currency_field_in_repayment_mode() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("AccountCurrency_in")).click();
@@ -1401,7 +1401,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	}
 
 	@Then("User_6047 Give the input for bank name field in Repayment Mode")
-	public void user_give_the_input_for_bank_name_field_in_repayment_mode() {
+	public void user_6047_give_the_input_for_bank_name_field_in_repayment_mode() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("bankNameField_in")).click();
@@ -1478,7 +1478,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	}
 
 	@Then("User_6047 Give the input for branch name field in Repayment Mode")
-	public void user_give_the_input_for_branch_name_field_in_repayment_mode() {
+	public void user_6047_give_the_input_for_branch_name_field_in_repayment_mode() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("branchNameField_in")).click();
@@ -1555,7 +1555,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	}
 
 	@Then("User_6047 Give the input for code field in Repayment Mode")
-	public void user_give_the_input_for_code_field_in_repayment_mode() {
+	public void user_6047_give_the_input_for_code_field_in_repayment_mode() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement("document.querySelector('ion-label[ng-reflect-text=\"ECS CODE.TOOLTIP\"]+ion-input')").click();
@@ -1571,7 +1571,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 
 
 	@Then("User_6047 Verify the popup of fill all field in Repayment Mode")
-	public void user_verify_the_popup_of_fill_all_field_in_repayment_mode() throws Throwable {
+	public void user_6047_verify_the_popup_of_fill_all_field_in_repayment_mode() throws Throwable {
 		//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("PleaseFillDetails_Popup")));
 	
 //		for (int i = 0; i <2000; i++) {
@@ -1605,7 +1605,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 		Assert.assertEquals("Please fill all the details", toastContent);
 	}
 	@Then("User_6047 Give the negative number input for account number field in Repayment Mode")
-	public void user_give_the_negative_number_input_for_account_number_field_in_repayment_mode() {
+	public void user_6047_give_the_negative_number_input_for_account_number_field_in_repayment_mode() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").click();
@@ -1621,7 +1621,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	}
 
 	@Then("User_6047 Give the character input for account number field in Repayment Mode")
-	public void user_give_the_character_input_for_account_number_field_in_repayment_mode() {
+	public void user_6047_give_the_character_input_for_account_number_field_in_repayment_mode() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").click();
@@ -1638,7 +1638,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	}
 
 	@Then("User_6047 Enter the special character for account number field in Repayment Mode")
-	public void user_enter_the_special_character_for_account_number_field_in_repayment_mode() {
+	public void user_6047_enter_the_special_character_for_account_number_field_in_repayment_mode() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").click();
@@ -1655,7 +1655,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	}
 	
 	@Then("User_6047 Delete the account number Repayment mode screen")
-	public void user_delete_the_account_number_repayment_mode_screen() {
+	public void user_6047_delete_the_account_number_repayment_mode_screen() {
 for (int i = 0; i < 200; i++) {
 			
 			try {
@@ -1679,7 +1679,7 @@ for (int i = 0; i < 200; i++) {
 	}
 
 	@Then("User_6047 give the input for account number field in Repayment mode screen")
-	public void user_give_the_input_for_account_number_field_in_repayment_mode_screen() {
+	public void user_6047_give_the_input_for_account_number_field_in_repayment_mode_screen() {
 for (int i = 0; i < 200; i++) {
 			
 			try {
@@ -1699,7 +1699,7 @@ for (int i = 0; i < 200; i++) {
 	}
 
 	@Then("User_6047 click the submit button in Repayment mode")
-	public void user_click_the_submit_button_in_repayment_mode() {
+	public void user_6047_click_the_submit_button_in_repayment_mode() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement("document.querySelector('button[label=\"Submit\"]')").click();
@@ -1714,7 +1714,7 @@ for (int i = 0; i < 200; i++) {
 	}
 
 	@Then("User_6047 click the ok button in action conform field in Repayment mode")
-	public void user_click_the_ok_button_in_action_conform_field_in_repayment_mode() {
+	public void user_6047_click_the_ok_button_in_action_conform_field_in_repayment_mode() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.JSEClick(
@@ -1731,7 +1731,7 @@ for (int i = 0; i < 200; i++) {
 	}
 
 	@Then("User_6047 click the submit in action conform field in  Repayment mode")
-	public void user_click_the_submit_in_action_conform_field_in_repayment_mode() {
+	public void user_6047_click_the_submit_in_action_conform_field_in_repayment_mode() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.JSEClick(
@@ -1748,7 +1748,7 @@ for (int i = 0; i < 200; i++) {
 	}
 
 	@Then("User_6047 verify the submit successfully popup in  Repayment mode")
-	public void user_verify_the_submit_successfully_popup_in_repayment_mode() {
+	public void user_6047_verify_the_submit_successfully_popup_in_repayment_mode() {
 		for (int i = 0; i <2000; i++) {
 	        try {
 	        	String text = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("SucessPopUP")).getText();
@@ -1764,7 +1764,7 @@ for (int i = 0; i < 200; i++) {
 	}
 
 	@Then("User_6047 verify the successfully saved message popup and get the reference number")
-	public void user_verify_the_successfully_saved_message_popup_and_get_the_reference_number() {
+	public void user_6047_verify_the_successfully_saved_message_popup_and_get_the_reference_number() {
 		String SavetoastMessage = "";
 		String toastMessageForReferenceNumber = "";
 		for (int i = 0; i <= 300; i++) {
@@ -1794,7 +1794,7 @@ for (int i = 0; i < 200; i++) {
 	}
 
 	@Then("User_6047 Click the submit button")
-	public void user_click_the_submit_button() {
+	public void user_6047_click_the_submit_button() {
 		
 		for (int i = 0; i <= 1000; i++) {
 			try {
@@ -1810,7 +1810,7 @@ for (int i = 0; i < 200; i++) {
 	}
 
 	@Then("User_6047 Click the ok button in action conform field")
-	public void user_click_the_ok_button_in_action_conform_field() {
+	public void user_6047_click_the_ok_button_in_action_conform_field() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.JSEClick(
@@ -1827,7 +1827,7 @@ for (int i = 0; i < 200; i++) {
 	}
 
 	@Then("User_6047 Click the submit in action conform field")
-	public void user_click_the_submit_in_action_conform_field() {
+	public void user_6047_click_the_submit_in_action_conform_field() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.JSEClick(
@@ -1844,7 +1844,7 @@ for (int i = 0; i < 200; i++) {
 	}
 
 	@Then("User_6047 verify the submit successfully popup and get reference number")
-	public void user_verify_the_submit_successfully_popup_and_get_reference_number() {
+	public void user_6047_verify_the_submit_successfully_popup_and_get_reference_number() {
 		String submitRecord ="";
 		for (int i = 0; i <2000; i++) {
 	        try {
@@ -1867,7 +1867,7 @@ for (int i = 0; i < 200; i++) {
 		
 	}
 	@And("User_6047 to click the pre back button")
-	public void user_to_click_the_pre_back_button() {
+	public void user_6047_to_click_the_pre_back_button() {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("BackButton_prev")));
@@ -1882,7 +1882,7 @@ for (int i = 0; i < 200; i++) {
 		}
 	}
 	@Then("User_6047 to verify system should show the list view")
-	public void user_to_verify_system_should_show_the_list_view() {
+	public void user_6047_to_verify_system_should_show_the_list_view() {
 		String NumberOFlistViewRecord = "";
 		
 		for (int i = 0; i <= 300; i++) {

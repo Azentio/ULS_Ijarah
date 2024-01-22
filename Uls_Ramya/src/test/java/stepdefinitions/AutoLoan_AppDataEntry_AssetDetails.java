@@ -40,17 +40,17 @@ public class AutoLoan_AppDataEntry_AssetDetails {
 
 	
 	@And("User_6047 Get the test data for test case ID AT_AL_ASD_01")
-	public void user_get_the_test_data_for_test_case_id_at_al_asd_01() {
+	public void user_6047_get_the_test_data_for_test_case_id_at_al_asd_01() {
 		testData =  AssetDetails_TestData.getTestdata("DS01_AT_AL_ASD_01");
 	}
 	@And("User_6047 Search the Referen Id under inbox")
-	public void user_6047_search_the_ref_id_under_inbox_6047() throws Throwable {
+	public void user_6047_search_the_ref_id_under_inbox() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("mail_box_search_text")));
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("mail_box_search_text"))
-				.sendKeys("4138");
-				//.sendKeys(testData.get("Ref No"));
+				//.sendKeys("4138");
+				.sendKeys(testData.get("Ref No"));
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -60,7 +60,7 @@ public class AutoLoan_AppDataEntry_AssetDetails {
 		}
 	}
 	@Then("User_6047 click on asset details segment button")
-	public void user_click_on_asset_details_segment_button() {
+	public void user_6047_click_on_asset_details_segment_button() {
 		String lengthOfTheSegmentButton = "";
 		boolean isClicked = false;
 		for (int i = 0; i <= 300; i++) {
@@ -112,7 +112,7 @@ public class AutoLoan_AppDataEntry_AssetDetails {
 	}
 
 	@Then("User_6047 verify the add button in asset details segment")
-	public void user_verify_the_add_button_in_asset_details_segment() {
+	public void user_6047_verify_the_add_button_in_asset_details_segment() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper
@@ -398,7 +398,7 @@ public class AutoLoan_AppDataEntry_AssetDetails {
 		}
 	}
 	@Then("User_6047 To verify Asset Manufacture should be Mandatory,editable,Lookup value")
-	public void user_to_verify_asset_manufacture_should_be_mandatory_editable_lookup_value() {
+	public void user_6047_to_verify_asset_manufacture_should_be_mandatory_editable_lookup_value() {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper
@@ -1842,7 +1842,7 @@ public class AutoLoan_AppDataEntry_AssetDetails {
 	}
 
 	@Then("User_6047 verify Asset Agreed Fulfilment Location field in asset detail")
-	public void user_verify_asset_agreed_fulfilment_location_field_in_asset_detail() {
+	public void user_6047_verify_asset_agreed_fulfilment_location_field_in_asset_detail() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper

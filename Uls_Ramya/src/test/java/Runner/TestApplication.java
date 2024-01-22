@@ -9,17 +9,18 @@ import utilities.ExtentManager;
 import utilities.ExtentTestManager;
 
 @CucumberOptions(features = { // "src/test/java/features/CSM_TransactionsFEATURE.feature",
-		"src/test/java/features/Tawarruq_AppDataEntry_FacilityDetails.feature" }, glue = "stepdefinitions",
+
+		"src/test/java/features/Murabha_AppDataCheck_ProductDetails.feature"} , glue = "stepdefinitions",
 	
-			//"src/test/java/features/Tawarruq_AppDataCheck_RepaymentMode.feature" }, glue = "stepdefinitions",
+			//"src/test/java/features/Tawarruq_AppDataCheck_InsuranceInfo.feature" }, glue = "stepdefinitions",
 		// monochrome=false, //to make steps in color
 		plugin = { "pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 				"rerun:ReRunScenarios/FailedReRun.txt" }
 
 // ,dryRun = false //to check compilation errors
 //, tags = "@AT_FI_010 or @AT_FI_010"
-		
-, tags="@AT_FAC_DET_05" 
+, tags="@AT_DC_PD_003" 	
+ 
 
 
 )

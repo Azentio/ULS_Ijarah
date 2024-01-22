@@ -48,8 +48,8 @@ public class Tawarruq_AppDataEntry_FacilityDetails {
 		testData =  FacilityDetails_testdata.getTestdata("DS01_AT_FAC_DET_04");
 	}
 	@And("User_6047 Search the Reff Id under inbox")
-	public void user_search_the_reff_id_under_inbox_6047() throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text")));
+	public void user_6047_search_the_reff_id_under_inbox_6047() throws Throwable {
+		//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text")));
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text"))
@@ -63,7 +63,7 @@ public class Tawarruq_AppDataEntry_FacilityDetails {
 		}
 	}
 	@Then("User_6047 give the input for Classification field under the Facility info")
-	public void user_give_the_input_for_classification_field_under_the_facility_info() {
+	public void user_6047_give_the_input_for_classification_field_under_the_facility_info() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(FacilityDetails_js.getElement("Classification")).click();
@@ -138,7 +138,7 @@ public class Tawarruq_AppDataEntry_FacilityDetails {
 			}
 		}}
 	@Then("User_6047 give the input for Product field under the Facility info")
-	public void user_give_the_input_for_product_field_under_the_facility_info() {
+	public void user_6047_give_the_input_for_product_field_under_the_facility_info() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(FacilityDetails_js.getElement("Product")).click();
@@ -214,7 +214,7 @@ public class Tawarruq_AppDataEntry_FacilityDetails {
 		}
 	}
 	@Then("User_6047 give the input for Scheme field under the Facility info")
-	public void user_6047_give_the_input_for_scheme_field_under_the_facility_info() {
+	public void user_6047_6047_give_the_input_for_scheme_field_under_the_facility_info() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(FacilityDetails_js.getElement("Scheme")).click();
@@ -632,7 +632,7 @@ public class Tawarruq_AppDataEntry_FacilityDetails {
 	    }
 	}
 	@Then("User_6047 give the input for Request Amount under the Facility info")
-	public void user_give_the_input_for_request_amount_under_the_facility_info() {
+	public void user_6047_give_the_input_for_request_amount_under_the_facility_info() {
 		javascriptHelper.executeScriptWithWebElement(FacilityDetails_js.getElement("RequestedAmount")).click();
 //		for (int i = 0; i <= 500; i++) {
 //			try {
@@ -729,7 +729,7 @@ public class Tawarruq_AppDataEntry_FacilityDetails {
 
 
 	@Then("User_6047 give the input for Loan Tenure under the Facility info")
-	public void user_give_the_input_for_loan_tenure_under_the_facility_info() {
+	public void user_6047_give_the_input_for_loan_tenure_under_the_facility_info() {
 		javascriptHelper.executeScriptWithWebElement(FacilityDetails_js.getElement("LoanTenure")).click();
 		javascriptHelper                    
 
@@ -857,7 +857,7 @@ public void user_6047_to_verify_special_character_value_in_request_amout_field()
 	Assert.assertEquals("Please fill all the details", toastContent);
 }
 @And("User_6047 search the facility list record under facility info")
-public void user_search_the_facility_list_record_under_facility_info() {
+public void user_6047_search_the_facility_list_record_under_facility_info() {
 	//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text")));
 	for (int i = 0; i <= 500; i++) {
 		try {
@@ -939,7 +939,7 @@ public void user_6047_verify_the_invalid_data_in_required_amount_field() {
     }
 }
 @Then("User_6047 give the valid input for Request Amount under the Facility info")
-public void user_give_the_valid_input_for_request_amount_under_the_facility_info() {
+public void user_6047_give_the_valid_input_for_request_amount_under_the_facility_info() {
 	javascriptHelper.executeScriptWithWebElement("document.querySelector('kub-prime-ccy[ng-reflect-name=\"amountRequested\"] input')").clear();
 //	for (int i = 0; i <= 500; i++) {
 //		try {
@@ -959,7 +959,7 @@ public void user_give_the_valid_input_for_request_amount_under_the_facility_info
 }
 @Then("User_6047 change the  status to active to inactive or inactive to active")
 
-public void user_change_the_address_details_status_to_active_to_inactive_or_inactive_to_active() throws Throwable {
+public void user_6047_change_the_address_details_status_to_active_to_inactive_or_inactive_to_active() throws Throwable {
 	for (int i = 0; i <= 300; i++) {
 		try {
 			javascriptHelper.scrollIntoView(javascriptHelper
@@ -988,7 +988,7 @@ public void user_change_the_address_details_status_to_active_to_inactive_or_inac
 	}
 }
 @Then("User_6047 verify system should show the record status as active or inactive based on the toggle")
-public void verify_system_should_show_the_record_status_as_active_or_inactive_based_on_the_toggle() throws Throwable {
+public void user_6047_verify_system_should_show_the_record_status_as_active_or_inactive_based_on_the_toggle() throws Throwable {
 
 
 	for (int i = 0; i <= 3000; i++) {
@@ -1016,6 +1016,40 @@ public void verify_system_should_show_the_record_status_as_active_or_inactive_ba
 	} else if (recordStatus.equals("true")) {
 		softAssert.assertEquals(listViewRecordStatus, "Active");
 	}
+}
+@Then("User_6047 verify the successfully saved message under the facility info screen")
+public void user_6047_verify_the_successfully_saved_message_under_the_facility_info_screen() {
+//	for (int i = 0; i <2000; i++) {
+//        try {
+//        	String text = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("SucessPopUP")).getText();
+//        	System.out.println(text);
+//            Assert.assertTrue(text.contains("Success!"));
+//            break;
+//        } catch (Exception e) {
+//            if (i==1999) {
+//                Assert.fail(e.getMessage());
+//            }
+//        }
+//	}
+
+	for (int i = 0; i <= 300; i++) {
+		try {
+			toastMessage = javascriptHelper
+					.executeScript("return " + iJarah_CommonElements.getElement("toast_container_message")).toString();
+			if (!(toastMessage.isBlank())) {
+				break;
+			}
+		} catch (Exception e) {
+			if (i == 300) {
+				Assert.fail(e.getMessage());
+			}
+		}
+	}
+	softAssert.assertTrue(toastMessage.contains("Success! Record created with ID"),
+			"Record is not saved hence failed");
+	toastMessageForReferenceNumber = toastMessage;
+
+	System.out.println("toastMessageForReferenceNumber"+toastMessageForReferenceNumber);
 }
  
 }

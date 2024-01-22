@@ -11,8 +11,6 @@ And User_6047 Click the Search button under inbox
 And User_6047 Search the Ref Id under Inbox 
 And User_6047 Click the Entitle button under inbox 
 And User_6047 click on additional customer info tab
-#And User_6047 click the search button
-#And User_6047 click on search text box and search the record
 And User_6047 Click edit icon
 And User_6047 clict the Add button under the Address detail
 And User_6047 verify back button should visible in address details screen
@@ -53,8 +51,6 @@ And User_6047 Click the Search button under inbox
 And User_6047 Search the Ref Id under Inbox 
 And User_6047 Click the Entitle button under inbox 
 And User_6047 click on additional customer info tab
-#And User_6047 click the search button
-#And User_6047 click on search text box and search the record
 And User_6047 Click edit icon
 And User_6047 clict the Add button under the Address detail
 Then User_6047 Give the input for Address type 
@@ -96,8 +92,6 @@ And User_6047 Click the Search button under inbox
 And User_6047 Search the Ref Id under Inbox 
 And User_6047 Click the Entitle button under inbox 
 And User_6047 click on additional customer info tab
-#And User_6047 click the search button
-#And User_6047 click on search text box and search the record
 And User_6047 Click edit icon
 And User_6047 clict the Add button under the Address detail
 Then User_6047 verify Address type should be mandatory,editable,dropdown
@@ -138,8 +132,6 @@ And User_6047 Click the Search button under inbox
 And User_6047 Search the Ref Id under Inbox 
 And User_6047 Click the Entitle button under inbox 
 And User_6047 click on additional customer info tab
-#And User_6047 click the search button
-#And User_6047 click on search text box and search the record
 And User_6047 Click edit icon
 And User_6047 clict the Add button under the Address detail
 Then User_6047 verify Province Id should be mandatory,editable,dropdown
@@ -159,8 +151,6 @@ And User_6047 Click the Search button under inbox
 And User_6047 Search the Ref Id under Inbox 
 And User_6047 Click the Entitle button under inbox 
 And User_6047 click on additional customer info tab
-#And User_6047 click the search button
-#And User_6047 click on search text box and search the record
 And User_6047 Click edit icon
 And User_6047 clict the Add button under the Address detail
 Then User_6047 verify PO Box Number should be editable,text box
@@ -181,8 +171,6 @@ And User_6047 Click the Search button under inbox
 And User_6047 Search the Ref Id under Inbox 
 And User_6047 Click the Entitle button under inbox 
 And User_6047 click on additional customer info tab
-#And User_6047 click the search button
-#And User_6047 click on search text box and search the record
 And User_6047 Click edit icon
 And User_6047 clict the Add button under the Address detail
 Then User_6047 verify Longitude Details Of The Address should be editable,text box
@@ -205,8 +193,6 @@ And User_6047 Click the Search button under inbox
 And User_6047 Search the Ref Id under Inbox 
 And User_6047 Click the Entitle button under inbox 
 And User_6047 click on additional customer info tab
-#And User_6047 click the search button
-#And User_6047 click on search text box and search the record
 And User_6047 Click edit icon
 And User_6047 clict the edit button under the Address detail
 And User_6047 change the address details status to active to inactive or inactive to active
@@ -225,14 +211,12 @@ Scenario: To verify the impact when user keep invalid input in address datails f
 
 Given Navigate the IJARA URL
 And User_6047 Login With valid credentials-AutoLoan_AppDataEntry_AddresDetails
-And User_6047 Get the test data for test case ID AT_AU_AD_01
+And User_6047 Get the test data for test case ID AT_AU_AD_09
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
 And User_6047 Search the Ref Id under Inbox 
 And User_6047 Click the Entitle button under inbox 
 And User_6047 click on additional customer info tab
-#And User_6047 click the search button
-#And User_6047 click on search text box and search the record
 And User_6047 Click edit icon
 And User_6047 clict the Add button under the Address detail
 Then User_6047 click the Save button

@@ -41,19 +41,19 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	
 
 	@And("User_6047 Get the test data for test case ID AT_TW_CSM_17")
-	public void user_get_the_test_data_for_test_case_AT_TW_CSM_17() {
+	public void user_6047_get_the_test_data_for_test_case_AT_TW_CSM_17() {
 		testData = Tawa_Commoditymaker_TestData.getTestdata("DS01_AT_TW_CSM_17");
 
 	}
 	@And("User_6047 Get the test data for test case ID AT_TW_CSM_18")
-	public void user_get_the_test_data_for_test_case_AT_TW_CSM_18() {
+	public void user_6047_get_the_test_data_for_test_case_AT_TW_CSM_18() {
 		testData = Tawa_Commoditymaker_TestData.getTestdata("DS01_AT_TW_CSM_18");
 
 	}
 
 	
 	@And("User_6047 search the Ref id under Inbox")
-	public void user_search_the_ref_id_under_inbox_6047() throws Throwable {
+	public void user_6047_search_the_ref_id_under_inbox() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text")));
 		for (int i = 0; i <= 500; i++) {
 			try {
@@ -72,7 +72,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	
 	
 	@And("User_6047 click next Button")
-	public void user_click_next_button() {
+	public void user_6047_click_next_button() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				//javascriptHelper.executeScriptWithWebElement("document.querySelector('button[class=\"btnNext ng-star-inserted\"]')").click();
@@ -88,7 +88,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	}
 
 	@And("User_6047 click insuranceInfo tab")
-	public void user_click_insurance_info_tab() {
+	public void user_6047_click_insurance_info_tab() {
 		String lengthOfTheSegmentButton = "";
 		boolean isClicked = false;
 		for (int i = 0; i <= 300; i++) {
@@ -139,7 +139,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	}
 
 	@And("User_6047 click EyeButton")
-	public void user_click_eye_button() {
+	public void user_6047_click_eye_button() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("Eye_Button")));
@@ -154,7 +154,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	}
 
 	@Then("User_6047 To verify the Insurance Quatation Id field in Insurance Info screen")
-	public void user_to_verify_the_insurance_quatation_id_field_in_insurance_info_screen() {
+	public void user_6047_to_verify_the_insurance_quatation_id_field_in_insurance_info_screen() {
 		boolean InsuranceQuatationId = false;
 		int i;
 		for ( i = 0; i <= 300; i++) {
@@ -188,7 +188,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	
 
 	@Then("User_6047 To verify the Insurance Year field in Insurance Info screen")
-	public void user_to_verify_the_insurance_year_field_in_insurance_info_screen() {
+	public void user_6047_to_verify_the_insurance_year_field_in_insurance_info_screen() {
 		boolean InsuranceYear = false;
 		int i;
 		for ( i = 0; i <= 300; i++) {
@@ -223,7 +223,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	}
 
 	@Then("User_6047 To verify the Deprication field in Insurance Info screen")
-	public void user_to_verify_the_deprication_field_in_insurance_info_screen() {
+	public void user_6047_to_verify_the_deprication_field_in_insurance_info_screen() {
 		boolean Deprication = false;
 		int i;
 		for ( i = 0; i <= 300; i++) {
@@ -259,7 +259,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	}
 
 	@Then("User_6047 To verify the Asset Price field in Insurance Info screen")
-	public void user_to_verify_the_asset_price_field_in_insurance_info_screen() {
+	public void user_6047_to_verify_the_asset_price_field_in_insurance_info_screen() {
 		boolean AssetPrice = false;
 		int i;
 		for ( i = 0; i <= 300; i++) {
@@ -294,7 +294,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	}
 
 	@Then("User_6047 To verify the Rate Per Asset field in Insurance Info screen")
-	public void user_to_verify_the_rate_per_asset_field_in_insurance_info_screen() {
+	public void user_6047_to_verify_the_rate_per_asset_field_in_insurance_info_screen() {
 		boolean RatePerAsset = false;
 		int i;
 		for ( i = 0; i <= 300; i++) {
@@ -329,7 +329,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	}
 
 	@Then("User_6047 To verify the Minium Insurance Premium field in Insurance Info screen")
-	public void user_to_verify_the_minium_insurance_premium_field_in_insurance_info_screen() {
+	public void user_6047_to_verify_the_minium_insurance_premium_field_in_insurance_info_screen() {
 		boolean MiniumInsurancePremium = false;
 		int i;
 		for ( i = 0; i <= 300; i++) {
@@ -366,7 +366,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	}
 
 	@Then("User_6047 To verify the Base Insurance Premium field in Insurance Info screen")
-	public void user_to_verify_the_base_insurance_premium_field_in_insurance_info_screen() {
+	public void user_6047_to_verify_the_base_insurance_premium_field_in_insurance_info_screen() {
 		boolean BaseInsurancePremium = false;
 		int i;
 		for ( i = 0; i <= 300; i++) {
@@ -401,7 +401,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	}
 
 	@Then("User_6047 To verify the VAT Premium field in Insurance Info screen")
-	public void user_to_verify_the_vat_premium_field_in_insurance_info_screen() {
+	public void user_6047_to_verify_the_vat_premium_field_in_insurance_info_screen() {
 		boolean VATPremium = false;
 		int i;
 		for ( i = 0; i <= 300; i++) {
@@ -436,7 +436,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	}
 
 	@Then("User_6047 To verify the NET Premium field in Insurance Info screen")
-	public void user_to_verify_the_net_premium_field_in_insurance_info_screen() {
+	public void user_6047_to_verify_the_net_premium_field_in_insurance_info_screen() {
 		boolean NETPremium = false;
 		int i;
 		for ( i = 0; i <= 300; i++) {
@@ -471,7 +471,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	}
 
 	@Then("User_6047 click Document Details tab")
-	public void user_click_document_details_tab() {
+	public void user_6047_click_document_details_tab() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.JSEClick(
@@ -488,7 +488,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	}
 
 	@Then("User_6047 To verify the Customer Name field in Insurance Info screen")
-	public void user_to_verify_the_customer_name_field_in_insurance_info_screen() {
+	public void user_6047_to_verify_the_customer_name_field_in_insurance_info_screen() {
 		boolean CustomerName = false;
 		int i;
 		for ( i = 0; i <= 300; i++) {
@@ -523,7 +523,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	}
 
 	@Then("User_6047 To verify the Document Name field in Insurance Info screen")
-	public void user_to_verify_the_document_name_field_in_insurance_info_screen() {
+	public void user_6047_to_verify_the_document_name_field_in_insurance_info_screen() {
 		boolean DocumentName = false;
 		int i;
 		for ( i = 0; i <= 300; i++) {
@@ -558,7 +558,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	}
 
 	@Then("User_6047 To verify the Required At Stage field in Insurance Info screen")
-	public void user_to_verify_the_required_at_stage_field_in_insurance_info_screen() {
+	public void user_6047_to_verify_the_required_at_stage_field_in_insurance_info_screen() {
 	    // Write code here that turns the phrase above into concrete actions
 		boolean RequiredAtStage = false;
 		int i;
@@ -594,7 +594,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	}
 
 	@Then("User_6047 To verify the Document Status field in Insurance Info screen")
-	public void user_to_verify_the_document_status_field_in_insurance_info_screen() {
+	public void user_6047_to_verify_the_document_status_field_in_insurance_info_screen() {
 		boolean DocumentStatus = false;
 		int i;
 		for ( i = 0; i <= 300; i++) {
@@ -629,7 +629,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	}
 
 	@Then("User_6047 To verify the Mandatory\\/optional field in Insurance Info screen")
-	public void user_to_verify_the_mandatory_optional_field_in_insurance_info_screen() {
+	public void user_6047_to_verify_the_mandatory_optional_field_in_insurance_info_screen() {
 		boolean Mandatory_optional = false;
 		int i;
 		for ( i = 0; i <= 300; i++) {
@@ -664,7 +664,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	}
 
 	@Then("User_6047 To verify the document Category field in Insurance Info screen")
-	public void user_to_verify_the_document_category_field_in_insurance_info_screen() {
+	public void user_6047_to_verify_the_document_category_field_in_insurance_info_screen() {
 		boolean documentCategory = false;
 		int i;
 		for ( i = 0; i <= 300; i++) {
@@ -699,7 +699,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	}
 
 	@Then("User_6047 To verify the Upload Date field in Insurance Info screen")
-	public void user_to_verify_the_upload_date_field_in_insurance_info_screen() {
+	public void user_6047_to_verify_the_upload_date_field_in_insurance_info_screen() {
 		boolean UploadDate = false;
 		int i;
 		for ( i = 0; i <= 300; i++) {
@@ -734,7 +734,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	}
 
 	@Then("User_6047 To verify the Expected Receipt Date field in Insurance Info screen")
-	public void user_to_verify_the_expected_receipt_date_field_in_insurance_info_screen() {
+	public void user_6047_to_verify_the_expected_receipt_date_field_in_insurance_info_screen() {
 		boolean ExpectedReceiptDate = false;
 		int i;
 		for ( i = 0; i <= 300; i++) {
@@ -769,7 +769,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	}
 
 	@Then("User_6047 To verify the Defferal Stage field in Insurance Info screen")
-	public void user_to_verify_the_defferal_stage_field_in_insurance_info_screen() {
+	public void user_6047_to_verify_the_defferal_stage_field_in_insurance_info_screen() {
 		boolean DefferalStage = false;
 		int i;
 		for ( i = 0; i <= 300; i++) {
@@ -804,7 +804,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	}
 
 	@Then("User_6047 To verify the Def Approved By field in Insurance Info screen")
-	public void user_to_verify_the_def_approved_by_field_in_insurance_info_screen() {
+	public void user_6047_to_verify_the_def_approved_by_field_in_insurance_info_screen() {
 		boolean DefApprovedBy = false;
 		int i;
 		for ( i = 0; i <= 300; i++) {
@@ -839,7 +839,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	}
 
 	@Then("User_6047 To verify the Change in Nature Approved By field in Insurance Info screen")
-	public void user_to_verify_the_change_in_nature_approved_by_field_in_insurance_info_screen() {
+	public void user_6047_to_verify_the_change_in_nature_approved_by_field_in_insurance_info_screen() {
 		boolean ChangeinNatureApprovedBy = false;
 		int i;
 		for ( i = 0; i <= 300; i++) {
@@ -874,7 +874,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	}
 
 	@Then("User_6047 To verify the Document Form field in Insurance Info screen")
-	public void user_to_verify_the_document_form_field_in_insurance_info_screen() {
+	public void user_6047_to_verify_the_document_form_field_in_insurance_info_screen() {
 		boolean DocumentForm = false;
 		int i;
 		for ( i = 0; i <= 300; i++) {
@@ -910,7 +910,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	}
 
 	@Then("User_6047 To verify the Document Quality field in Insurance Info screen")
-	public void user_to_verify_the_document_quality_field_in_insurance_info_screen() {
+	public void user_6047_to_verify_the_document_quality_field_in_insurance_info_screen() {
 		boolean DocumentQuality = false;
 		int i;
 		for ( i = 0; i <= 300; i++) {
@@ -945,7 +945,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	}
 
 	@Then("User_6047 To verify the Document Ref Num field in Insurance Info screen")
-	public void user_to_verify_the_document_ref_num_field_in_insurance_info_screen() {
+	public void user_6047_to_verify_the_document_ref_num_field_in_insurance_info_screen() {
 		boolean DocumentRefNum = false;
 		int i;
 		for ( i = 0; i <= 300; i++) {
@@ -980,7 +980,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	}
 
 	@Then("User_6047 To verify the Document Received By field in Insurance Info screen")
-	public void user_to_verify_the_document_received_by_field_in_insurance_info_screen() {
+	public void user_6047_to_verify_the_document_received_by_field_in_insurance_info_screen() {
 		boolean DocumentReceivedBy = false;
 		int i;
 		for ( i = 0; i <= 300; i++) {
@@ -1016,7 +1016,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	}
 
 	@Then("User_6047 To verify the Location Where Received field in Insurance Info screen")
-	public void user_to_verify_the_location_where_received_field_in_insurance_info_screen() {
+	public void user_6047_to_verify_the_location_where_received_field_in_insurance_info_screen() {
 		boolean LocationWhereReceived = false;
 		int i;
 		for ( i = 0; i <= 300; i++) {
@@ -1052,7 +1052,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	}
 
 	@Then("User_6047 To verify the Rack No field in Insurance Info screen")
-	public void user_to_verify_the_rack_no_field_in_insurance_info_screen() {
+	public void user_6047_to_verify_the_rack_no_field_in_insurance_info_screen() {
 		boolean RackNo = false;
 		int i;
 		for ( i = 0; i <= 300; i++) {
@@ -1087,7 +1087,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	}
 
 	@Then("User_6047 To verify the Shelf No field in Insurance Info screen")
-	public void user_to_verify_the_shelf_no_field_in_insurance_info_screen() {
+	public void user_6047_to_verify_the_shelf_no_field_in_insurance_info_screen() {
 		boolean ShelfNo = false;
 		int i;
 		for ( i = 0; i <= 300; i++) {
@@ -1122,7 +1122,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	}
 
 	@Then("User_6047 To verify the Box No field in Insurance Info screen")
-	public void user_to_verify_the_box_no_field_in_insurance_info_screen() {
+	public void user_6047_to_verify_the_box_no_field_in_insurance_info_screen() {
 		boolean BoxNo = false;
 		int i;
 		for ( i = 0; i <= 300; i++) {
@@ -1160,7 +1160,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	}
 
 	@Then("User_6047 To verify the DateOfExpiry field in Insurance Info screen")
-	public void user_to_verify_the_date_of_expiry_field_in_insurance_info_screen() {
+	public void user_6047_to_verify_the_date_of_expiry_field_in_insurance_info_screen() {
 		boolean DateOfExpiry = false;
 		int i;
 		for ( i = 0; i <= 300; i++) {
@@ -1195,7 +1195,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	}
 
 	@Then("User_6047 To verify the Lodgement Amount field in Insurance Info screen")
-	public void user_to_verify_the_lodgement_amount_field_in_insurance_info_screen() {
+	public void user_6047_to_verify_the_lodgement_amount_field_in_insurance_info_screen() {
 		boolean LodgementAmount = false;
 		int i;
 		for ( i = 0; i <= 300; i++) {
@@ -1230,7 +1230,7 @@ public class Tawa_CommodityMaker_InsuranceInfo {
 	}
 
 	@Then("User_6047 To verify the Remarks field in Insurance Info screen")
-	public void user_to_verify_the_remarks_field_in_insurance_info_screen() {
+	public void user_6047_to_verify_the_remarks_field_in_insurance_info_screen() {
 		boolean Remarks = false;
 		int i;
 		for ( i = 0; i <= 300; i++) {

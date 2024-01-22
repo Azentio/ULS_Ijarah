@@ -32,7 +32,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	// Ijarah_CommonFieldName
 	SoftAssert softAssert = new SoftAssert();
 	ClicksAndActionsHelper clicksAndActionsHelper = new ClicksAndActionsHelper(driver);
-	JSPaths commonJSPaths = new JSPaths(excelPath, "iJarah_CommonElements", "Ijarah_CommonFieldName", "JSPath");
+
 	SoftAssert SoftAssert = new SoftAssert();
 	Map<String, String> testData;
 	//Map<String, String> testData = new HashMap<>();
@@ -47,12 +47,16 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 
 	
 	@And("User_6047 Get the test data for test case ID AT_AU_AD_01" )
-	public void get_the_test_data_for_test_case_id_at_au_ad01() {
+	public void user_6047_get_the_test_data_for_test_case_id_at_au_ad01() {
 		testData =  AddressDetails_TestData.getTestdata("DS01_AT_AU_AD_01");
+	}
+	@And("User_6047 Get the test data for test case ID AT_AU_AD_09" )
+	public void user_6047_get_the_test_data_for_test_case_id_at_au_ad09() {
+		testData =  AddressDetails_TestData.getTestdata("DS01_AT_AU_AD_09");
 	}
 	
 	@And("User_6047 Search the Ref Id under Inbox")
-	public void user_search_the_ref_id_under_inbox() throws Throwable {
+	public void user_6047_search_the_ref_id_under_inbox() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text")));
 		//javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text"))
 		//.sendKeys(testData.get("Ref No"));
@@ -68,78 +72,77 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 			}
 		}	}
 	@And("User_6047 click on additional customer info tab")
-	public void user_click_on_additional_customer_info_tab() {
+	public void user_6047_click_on_additional_customer_info_tab() {
+//		for (int i = 0; i <= 300; i++) {
+//			try {
+//				javascriptHelper
+//						.executeScriptWithWebElement(AddressDetails_js.getElement("additonal_customer_info"))
+//						.click();
+//				break;
+//			} catch (Exception e) {
+//				if (i == 300) {
+//					Assert.fail(e.getMessage());
+//				}
+//			}
+//		}
+		String lengthOfTheSegmentButton = "";
+		boolean isClicked = false;
 		for (int i = 0; i <= 300; i++) {
 			try {
-				javascriptHelper
-						.executeScriptWithWebElement(AddressDetails_js.getElement("additonal_customer_info"))
-						.click();
-				break;
+				lengthOfTheSegmentButton = javascriptHelper.executeScript(
+						"return document.querySelector('ion-segment').querySelectorAll('ion-segment-button').length")
+						.toString();
+				if ((!lengthOfTheSegmentButton.isEmpty())) {
+					break;
+				}
 			} catch (Exception e) {
 				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
+		int premitiveSegmentLength = Integer.parseInt(lengthOfTheSegmentButton);
+		// document.querySelector('ion-segment').querySelectorAll('ion-segment-button')[14].innerText
+		String segmentLabelName = "";
+		for (int i = 0; i < premitiveSegmentLength; i++) {
+			try {
+				for (int j = 0; j <= 200; j++) {
+					segmentLabelName = javascriptHelper.executeScript(
+							"return document.querySelector('ion-segment').querySelectorAll('ion-segment-button')[" + i
+									+ "].innerText")
+							.toString();
+					System.out.println("Segment Label Name " + segmentLabelName);
+					if (segmentLabelName.equalsIgnoreCase("Additional Customer Info")) {
+						javascriptHelper.executeScriptWithWebElement(
+								"document.querySelector('ion-segment').querySelectorAll('ion-segment-button')[" + i
+										+ "]")
+								.click();
+						isClicked = true;
+						break;
+
+					} else if (!(segmentLabelName.equalsIgnoreCase("Additional Customer Info"))) {
+						isClicked = false;
+						break;
+					}
+				}
+
+			} catch (Exception e) {
+			}
+			if (isClicked == true) {
+				break;
+			}
+		} 
 	}
 
-	@And("User_6047 click the search button")
-	public void user_click_the_search_button() {
-		for (int i = 0; i <= 300; i++) {
-			try {
-				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("mail_box_search_button"))
-						.click();
-				 javascriptHelper
-					.executeScriptWithWebElement(commonJSPaths.getElement("mail_box_search_text")).click();
-				break;
-			} catch (Exception e) {
-				if (i == 300) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-	}
 
-	@And("User_6047 click on search text box and search the record")
-	public void user_click_on_search_text_box_and_select_the_record() {
-		//WebElement searchTextBox;
-		for (int i = 0; i <= 300; i++) {
-			try {
-				 javascriptHelper
-					.executeScriptWithWebElement(commonJSPaths.getElement("mail_box_search_text")).click();
-				//javascriptHelper
-					//	.executeScriptWithWebElement(commonJSPaths.getElement("mail_box_search_text")).sendKeys("4385");
-			//searchTextBox.sendKeys("4385");
-				//	searchTextBox.sendKeys(testData.get("Record1"));
-				break;
-			} catch (Exception e) {
-				if (i == 300) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-		for (int i = 0; i <= 300; i++) {
-			try {
-				// javascriptHelper
-					//.executeScriptWithWebElement(commonJSPaths.getElement("mail_box_search_text")).click();
-				javascriptHelper
-						.executeScriptWithWebElement(commonJSPaths.getElement("mail_box_search_text")).sendKeys("4385");
-			//searchTextBox.sendKeys("4385");
-				//	searchTextBox.sendKeys(testData.get("Record1"));
-				break;
-			} catch (Exception e) {
-				if (i == 300) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}	
-	}
+
+
 	
 	@And("User_6047 Click edit icon")
 	public void user_click_edit_icon_() {
 			for (int i = 0; i <= 1000; i++) {
 				try {
-					javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("Edit_button")).click();
+					javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("Edit_button")).click();
 					break;
 				} catch (Exception e) { 
 					if (i == 1000) {
@@ -149,7 +152,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 			}
 	}
 	@And("User_6047 clict the Add button under the Address detail")
-	public void user_clict_the_add_button_under_the_address_detail() {
+	public void user_6047_clict_the_add_button_under_the_address_detail() {
 //		String labelLength = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
 //
 //				String lengthOfTheLabel = "";
@@ -337,23 +340,23 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 			}
 	}
 	@And("User_6047 verify back button should visible in address details screen")
-	public void user_verify_back_button_should_visible_in_address_details_screen() throws Throwable {
+	public void user_6047_verify_back_button_should_visible_in_address_details_screen() throws Throwable {
 		Thread.sleep(3000);
-		if (javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("back_button")).isDisplayed()) {
+		if (javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("back_button")).isDisplayed()) {
 			SoftAssert.fail("Check back button");
 		}
 		
 	}
 
 	@And("User_6047 verify save button should visible in address details screen")
-	public void user_verify_save_button_should_visible_in_address_details_screen() {
-		if (javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("save_button")).isDisplayed()) {
+	public void user_6047_verify_save_button_should_visible_in_address_details_screen() {
+		if (javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("save_button")).isDisplayed()) {
 			SoftAssert.fail("Check save button Field");
 		}
 		
 	}
 	@Then("User_6047 verify Address type should visible in address details screen")
-	public void verify_address_type_should_visible_in_address_details_screen() {
+	public void user_6047_verify_address_type_should_visible_in_address_details_screen() {
 		if (javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("Address_Type")).isDisplayed()) {
 			SoftAssert.fail("Check Address Type Field");
 		}
@@ -362,7 +365,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	    
 	    
 	@Then("User_6047 verify Address Status should visible in address details screen")
-	public void verify_address_status_should_visible_in_address_details_screen() {
+	public void user_6047_verify_6047_address_status_should_visible_in_address_details_screen() {
 		if (javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("address_status")).isDisplayed()) {
 			SoftAssert.fail("Check Address Status Field");
 		}
@@ -370,15 +373,15 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	}
 
 	@Then("User_6047 verify Residential or Occupancy Status should visible in address details screen")
-	public void verify_residential_or_occupancy_status_should_visible_in_address_details_screen() {
-		if (!javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("residential_or_ocupency_status")).isDisplayed()) {
+	public void user_6047_verify_residential_or_occupancy_status_should_visible_in_address_details_screen() {
+		if (javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("residential_or_ocupency_status")).isDisplayed()) {
 			SoftAssert.fail("Check residential or ocupency status Field");
 		}
 	    
 	}
 
 	@Then("User_6047 verify Communication Address should visible in address details screen")
-	public void verify_communication_address_should_visible_in_address_details_screen() {
+	public void user_6047_verify_6047_communication_address_should_visible_in_address_details_screen() {
 		if (javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("communication_address_toggle")).isDisplayed()) {
 			SoftAssert.fail("Check communication address toggle Field");
 		}
@@ -386,7 +389,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	}
 
 	@Then("User_6047 verify Location Category should visible in address details screen")
-	public void verify_location_category_should_visible_in_address_details_screen() {
+	public void user_6047_verify_location_category_should_visible_in_address_details_screen() {
 		if (javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("location_category")).isDisplayed()) {
 			SoftAssert.fail("Check location category Field");
 		}
@@ -394,7 +397,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	}
 
 	@Then("User_6047 verify Address line1 should visible in address details screen")
-	public void verify_address_line1_should_visible_in_address_details_screen() {
+	public void user_6047_verify_address_line1_should_visible_in_address_details_screen() {
 		if (javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("address_line1")).isDisplayed()) {
 			SoftAssert.fail("Check address_line1 Field");
 		}
@@ -402,7 +405,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	}
 
 	@Then("User_6047 verify Address line2 should visible in address details screen")
-	public void verify_address_line2_should_visible_in_address_details_screen() {
+	public void user_6047_verify_address_line2_should_visible_in_address_details_screen() {
 		if (javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("address_line2")).isDisplayed()) {
 			SoftAssert.fail("Check address_line2 Field");
 		}
@@ -410,7 +413,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	}
 
 	@Then("User_6047 verify Country should visible in address details screen")
-	public void verify_country_should_visible_in_address_details_screen() {
+	public void user_6047_verify_country_should_visible_in_address_details_screen() {
 		if (javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("country")).isDisplayed()) {
 			SoftAssert.fail("Check country AddressDetails Field");
 		}
@@ -419,7 +422,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	}
 
 	@Then("User_6047 verify Province id  should visible in address details screen")
-	public void verify_province_id_should_visible_in_address_details_screen() {
+	public void user_6047_verify_province_id_should_visible_in_address_details_screen() {
 		if (javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("province_id")).isDisplayed()) {
 			SoftAssert.fail("Check province id Field");
 		}
@@ -427,22 +430,22 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	}
 
 	@Then("User_6047 verify Neighbourhood should visible in address details screen")
-	public void verify_neighbourhood_should_visible_in_address_details_screen() {
-		if (javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("neighbourhood")).isDisplayed()) {
+	public void user_6047_verify_neighbourhood_should_visible_in_address_details_screen() {
+		if (javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("neighbourhood_districtName")).isDisplayed()) {
 			SoftAssert.fail("Check neighbourhood Field");
 		}		    
 	}
 
 	@Then("User_6047 verify City should visible in address details screen")
-	public void verify_city_should_visible_in_address_details_screen() {
-		if (javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("city")).isDisplayed()) {
+	public void user_6047_verify_city_should_visible_in_address_details_screen() {
+		if (javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("City")).isDisplayed()) {
 			SoftAssert.fail("Check city Field");
 		}
 	    
 	} 
 
 	@Then("User_6047 verify Zip Code should visible in address details screen")
-	public void verify_zip_code_should_visible_in_address_details_screen() {
+	public void user_6047_verify_zip_code_should_visible_in_address_details_screen() {
 		if (javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("zip_code")).isDisplayed()) {
 			SoftAssert.fail("Check zip code Field");
 		}
@@ -450,7 +453,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	}
 
 	@Then("User_6047 verify PO BOX Number should visible in address details screen")
-	public void verify_po_box_number_should_visible_in_address_details_screen() {
+	public void user_6047_verify_po_box_number_should_visible_in_address_details_screen() {
 		if (javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("po_box_number")).isDisplayed()) {
 			SoftAssert.fail("Check po box number Field");
 		}
@@ -458,7 +461,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	}
 
 	@Then("User_6047 verify Mobile Number should visible in address details screen")
-	public void verify_mobile_number_should_visible_in_address_details_screen() {
+	public void user_6047_verify_mobile_number_should_visible_in_address_details_screen() {
 		if (javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("mobile_number_primary")).isDisplayed()) {
 			SoftAssert.fail("Check mobile_number_primary Field");
 		}
@@ -466,7 +469,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	}
 
 	@Then("User_6047 verify Duration Of Stay should visible in address details screen")
-	public void verify_duration_of_stay_should_visible_in_address_details_screen() {
+	public void user_6047_verify_duration_of_stay_should_visible_in_address_details_screen() {
 		if (javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("duration_on_stay")).isDisplayed()) {
 			SoftAssert.fail("Check duration_on_stay Field");
 		}
@@ -482,7 +485,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	}
 
 	@Then("User_6047 verify Longitude Details Of The Address should visible in address details screen")
-	public void verify_longitude_details_of_the_address_should_visible_in_address_details_screen() {
+	public void user_6047_verify_longitude_details_of_the_address_should_visible_in_address_details_screen() {
 		if (javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("longitude_details_of_the_address")).isDisplayed()) {
 			SoftAssert.fail("Check longitude_details_of_the_address Field");
 		}
@@ -491,7 +494,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	}
 
 	@Then("User_6047 verify Land Mark should visible in address details screen")
-	public void verify_land_mark_should_visible_in_address_details_screen() {
+	public void user_6047_verify_land_mark_should_visible_in_address_details_screen() {
 		if (javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("landmark")).isDisplayed()) {
 			SoftAssert.fail("Check landmark Field");
 		}
@@ -499,14 +502,14 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	}
 
 	@Then("User_6047 verify Occupancy Date should visible in address details screen")
-	public void verify_occupancy_date_should_visible_in_address_details_screen() {
+	public void user_6047_verify_occupancy_date_should_visible_in_address_details_screen() {
 		if (!javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("occupency_date")).isDisplayed()) {
 			SoftAssert.fail("Check occupency_date Field");
 		}		    
 	}
 
 	@Then("User_6047 verify Landlord Name  should visible in address details screen")
-	public void verify_landlord_name_should_visible_in_address_details_screen() {
+	public void user_6047_verify_landlord_name_should_visible_in_address_details_screen() {
 		if (javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("landlord_name")).isDisplayed()) {
 			SoftAssert.fail("Check landlord_name Field");
 		} 
@@ -514,28 +517,28 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	}
 
 	@Then("User_6047 verify Landlord Mobile Number should visible in address details screen")
-	public void verify_landlord_mobile_number_should_visible_in_address_details_screen() {
+	public void user_6047_verify_landlord_mobile_number_should_visible_in_address_details_screen() {
 		if (javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("landlord_mobile_number")).isDisplayed()) {
 			SoftAssert.fail("Check landlord Mobile Number Field");
 		} 		    
 	}
 
 	@Then("User_6047 verify Rent Amount should visible in address details screen")
-	public void verify_rent_amount_should_visible_in_address_details_screen() {
-		if (!javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("rent_amount")).isDisplayed()) {
+	public void user_6047_verify_rent_amount_should_visible_in_address_details_screen() {
+		if (javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("rent_amount")).isDisplayed()) {
 			SoftAssert.fail("Check Rent Amount Field");
 		}    
 	}
 
 	@Then("User_6047 verify Frequency Of Rent should visible in address details screen")
-	public void verify_frequency_of_rent_should_visible_in_address_details_screen() {
+	public void user_6047_verify_frequency_of_rent_should_visible_in_address_details_screen() {
 		if (javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("frequency_of_rent")).isDisplayed()) {
 			SoftAssert.fail("Check Frequency Of Rent Field");
 		}
 	    
 	}
 	@Then("User_6047 Give the input for Address type")
-	public void user_give_the_input_for_address_type() {
+	public void user_6047_give_the_input_for_address_type() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("address_type")).click();
@@ -612,7 +615,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	}
 
 	@Then("User_6047 Give the input for Address Status")
-	public void user_give_the_input_for_address_status() {
+	public void user_6047_give_the_input_for_address_status() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("address_status")).click();
@@ -689,7 +692,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	}
 
 	@Then("User_6047 Give the input for Residential or Occupancy Status")
-	public void user_give_the_input_for_residential_or_occupancy_status() {
+	public void user_6047_give_the_input_for_residential_or_occupancy_status() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("residential_or_ocupency_status")).click();
@@ -768,7 +771,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 
 
 	@Then("User_6047 Give the input for Location Category")
-	public void user_give_the_input_for_location_category() {
+	public void user_6047_give_the_input_for_location_category() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("location_category")).click();
@@ -845,11 +848,12 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	}
 
 	@Then("User_6047 Give the input for Address line1")
-	public void user_give_the_input_for_address_line1() {
+	public void user_6047_give_the_input_for_address_line1() {
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("address_line1")).sendKeys("Address1");
-				//.sendKeys((testData.get("AddressLine1")));
+				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("address_line1"))
+				//.sendKeys("Address1");
+				.sendKeys(testData.get("AddressLine1"));
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -860,11 +864,12 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	}
 
 	@Then("User_6047 Give the input for Address line2")
-	public void user_give_the_input_for_address_line2() {
+	public void user_6047_give_the_input_for_address_line2() {
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("address_line2")).sendKeys("Address2");
-				//.sendKeys(testData.get("AddressLine2"));
+				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("address_line2"))
+				//.sendKeys("Address2");
+				.sendKeys(testData.get("AddressLine2"));
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -875,7 +880,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	}
 
 	@Then("User_6047 Give the input for Country")
-	public void user_give_the_input_for_country() {
+	public void user_6047_give_the_input_for_country() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("country")).click();
@@ -952,7 +957,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	}
 
 	@Then("User_6047 Give the input for Province id")
-	public void user_give_the_input_for_province_id() {
+	public void user_6047_give_the_input_for_province_id() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("province_id")).click();
@@ -1029,7 +1034,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	}
 
 	@Then("User_6047 Give the input for Neighbourhood")
-	public void user_give_the_input_for_neighbourhood() {
+	public void user_6047_give_the_input_for_neighbourhood() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("neighbourhood")).click();
@@ -1106,11 +1111,18 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	}
 
 	@Then("User_6047 Give the input for City")
-	public void user_give_the_input_for_city() {
+	public void user_6047_give_the_input_for_city() {
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("city")).sendKeys("BHANDARA");
+				//javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("city"))
+				//.sendKeys("BHANDARA");
 				//.sendKeys(testData.get("city"));
+			
+	
+				
+				javascriptHelper.executeScriptWithWebElement("document.querySelector('ion-label[ng-reflect-text=\"City.TOOLTIP\"]+ion-input>input')")
+				.sendKeys(testData.get("city"));
+		
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -1121,11 +1133,12 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	}
 
 	@Then("User_6047 Give the input for Zip Code")
-	public void user_give_the_input_for_zip_code() {
+	public void user_6047_give_the_input_for_zip_code() {
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("zip_code")).sendKeys("987456");
-				//.sendKeys(testData.get("zip_code"));
+				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("zip_code"))
+				
+				.sendKeys(testData.get("zip_code"));
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -1136,11 +1149,12 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	}
 
 	@Then("User_6047 Give the input for PO BOX Number")
-	public void user_give_the_input_for_po_box_number() {
+	public void user_6047_give_the_input_for_po_box_number() {
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("po_box_number")).sendKeys("974121");
-				//.sendKeys(testData.get("po_box_number"));
+				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("po_box_number"))
+				
+				.sendKeys(testData.get("po_box_number"));
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -1151,11 +1165,12 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	}
 
 	@Then("User_6047 Give the input for Mobile Number")
-	public void user_give_the_input_for_mobile_number() {
+	public void user_6047_give_the_input_for_mobile_number() {
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("mobile_number_primary")).sendKeys("9632587410");
-				//.sendKeys(testData.get("MobileNumber"));
+				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("mobile_number_primary"))
+		
+				.sendKeys(testData.get("MobileNumber"));
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -1166,11 +1181,13 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	}
 
 	@Then("User_6047 Give the input for Duration Of Stay")
-	public void user_give_the_input_for_duration_of_stay() {
+	public void user_6047_give_the_input_for_duration_of_stay() {
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("duration_on_stay")).sendKeys("20 ");
-				//.sendKeys(testData.get("duration_on_stay"));
+				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("duration_on_stay"))
+
+				.sendKeys(testData.get("duration_on_stay"));
+				
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -1181,11 +1198,12 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	}
 
 	@Then("User_6047 Give the input for Latitude Details Of The Address")
-	public void user_give_the_input_for_latitude_details_of_the_address() {
+	public void user_6047_give_the_input_for_latitude_details_of_the_address() {
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("latitude_details_of_the_address")).sendKeys("10101010");
-				//.sendKeys(testData.get("latitude_details"));
+				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("latitude_details_of_the_address"))
+		
+				.sendKeys(testData.get("latitude_details"));
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -1196,11 +1214,13 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	}
 
 	@Then("User_6047 Give the input for Longitude Details Of The Address")
-	public void user_give_the_input_for_longitude_details_of_the_address() {
+	public void user_6047_give_the_input_for_longitude_details_of_the_address() {
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("longitude_details_of_the_address")).sendKeys("10101010");
-				//.sendKeys(testData.get("longitude_details"));
+				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("longitude_details_of_the_address")));
+				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("longitude_details_of_the_address"))
+			
+				.sendKeys(testData.get("longitude_details"));
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -1211,11 +1231,13 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	}
 
 	@Then("User_6047 Give the input for Land Mark")
-	public void user_give_the_input_for_land_mark() {
+	public void user_6047_give_the_input_for_land_mark() {
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("landmark")).sendKeys("test");
-				//.sendKeys(testData.get("land_mark"));
+				
+				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("landmark"))
+				
+				.sendKeys(testData.get("land_mark"));
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -1226,28 +1248,56 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	}
 
 	@Then("User_6047 Give the input for Occupancy Date")
-	public void user_6047__give_the_input_for_occupancy_date() {
-		for (int i = 0; i <= 500; i++) {
+	public void user_6047_give_the_input_for_occupancy_date() {
+//		for (int i = 0; i <= 500; i++) {
+//			try {
+//				
+//				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("occupency_date")));
+//				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("occupency_date"))
+//				//.sendKeys("10-Sep-2000");
+//				.sendKeys(testData.get("occupancy_date"));
+//				break;
+//			} catch (Exception e) {
+//				if (i == 500) {
+//					Assert.fail(e.getMessage());
+//				}
+//			}
+//		}
+		for (int i = 0; i <= 100; i++) {
 			try {
-				
-				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("occupency_date")));
-				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("occupency_date")).sendKeys("10-Sep-2000");
-				//.sendKeys(testData.get("occupancy_date"));
+				javascriptHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(AddressDetails_js.getElement("occupency_date")));
+				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("occupency_date"))
+						.click();
+
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i == 100) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
+		for (int i = 0; i <= 100; i++) {
+			try {
+
+				javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("today_date")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 100) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
 	}
 
 	@Then("User_6047 Give the input for Landlord Name")
-	public void user_6047__give_the_input_for_landlord_name() {
+	public void user_6047_give_the_input_for_landlord_name() {
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("landlord_name")).sendKeys("test");
-				//.sendKeys(testData.get("land_lord_name"));
+				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("landlord_name"))
+				//.sendKeys("test");
+				.sendKeys(testData.get("land_lord_name"));
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -1258,11 +1308,12 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	}
 
 	@Then("User_6047 Give the input for Landlord Mobile Number")
-	public void user_6047__give_the_input_for_landlord_mobile_number() {
+	public void user_6047_give_the_input_for_landlord_mobile_number() {
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("landlord_mobile_number")).sendKeys("9632587415");
-				//.sendKeys(testData.get("land_lord_mobile_number"));
+				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("landlord_mobile_number"))
+				//.sendKeys("9632587415");
+				.sendKeys(testData.get("land_lord_mobile_number"));
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -1273,11 +1324,12 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	}
 
 	@Then("User_6047 Give the input for Rent Amount")
-	public void user_6047__give_the_input_for_rent_amount() {
+	public void user_6047_give_the_input_for_rent_amount() {
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("rent_amount")).sendKeys("10000");
-				//.sendKeys(testData.get("rent_amount"));
+				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("rent_amount"))
+				//.sendKeys("10000");
+				.sendKeys(testData.get("rent_amount"));
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -1288,7 +1340,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	}
 
 	@Then("User_6047 Give the input for Frequency Of Rent")
-	public void user_6047__give_the_input_for_frequency_of_rent() {
+	public void user_6047_give_the_input_for_frequency_of_rent() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("frequency_of_rent")).click();
@@ -1365,15 +1417,15 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	}
 
 	@Then("User_6047 to verify the same record should get saved Address Details")
-	public void user_6047__to_verify_the_same_record_should_get_saved_address_details() throws Throwable {
+	public void user_6047_to_verify_the_same_record_should_get_saved_address_details() throws Throwable {
 		//javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("address_type")));
 	Thread.sleep(3000);
-		String AddressTypeData="Office ";
+		//String AddressTypeData="Office ";
 		String AddressType= javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("address_type")).getAttribute("aria-label");
 		
 		for (int i = 0; i <2000; i++) {
 			try {
-				Assert.assertTrue(AddressType.contains(AddressTypeData));
+				Assert.assertTrue(AddressType.contains(testData.get("Address Type")));
 				break;
 			} catch (Exception e) {
 				if (i==1999) {
@@ -1386,7 +1438,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 
 		for (int i = 0; i <2000; i++) {
             try {
-                Assert.assertTrue(AddressStatus.contains(AddressStatusData));
+                Assert.assertTrue(AddressStatus.contains(testData.get("Address status")));
                 break;
             } catch (Exception e) {
                 if (i==1999) {
@@ -1398,7 +1450,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 		String ResidentalText = javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("residential_or_ocupency_status")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
             try {
-                Assert.assertTrue(ResidentalText.contains(ResidentalData));
+                Assert.assertTrue(ResidentalText.contains(testData.get("residential_or_ocupency_status")));
                 break;
             } catch (Exception e) {
                 if (i==1999) {
@@ -1411,7 +1463,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 //		System.out.println(LocationEdit);
 //		for (int i = 0; i <2000; i++) {
 //            try {
-//                Assert.assertTrue(LocationEdit.contains(LocationData));
+//                Assert.assertTrue(LocationEdit.contains(testData.get("location_category")));
 //                break;
 //            } catch (Exception e) {
 //                if (i==1999) {
@@ -1423,7 +1475,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 		String Addressline1 = javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("address_line1_Verify")).getAttribute("ng-reflect-model");
 		for (int i = 0; i <2000; i++) {
             try {
-                Assert.assertTrue(Addressline1.contains(Addressline1Data));
+                Assert.assertTrue(Addressline1.contains(testData.get("AddressLine1")));
                 break;
             } catch (Exception e) {
                 if (i==1999) {
@@ -1435,7 +1487,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 		String Addressline2 = javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("addressLine2_verify")).getAttribute("ng-reflect-model");
 		for (int i = 0; i <2000; i++) {
             try {
-                Assert.assertTrue(Addressline2.contains(Addressline2Data));
+                Assert.assertTrue(Addressline2.contains(testData.get("AddressLine2")));
                 break;
             } catch (Exception e) {
                 if (i==1999) {
@@ -1447,7 +1499,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 		String Country= javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("country")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
             try {
-                Assert.assertTrue(Country.contains(CountryData));
+                Assert.assertTrue(Country.contains(testData.get("country")));
                 break;
             } catch (Exception e) {
                 if (i==1999) {
@@ -1459,7 +1511,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 		String Province= javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("province_id")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
             try {
-                Assert.assertTrue(Province.contains(ProvinceData));
+                Assert.assertTrue(Province.contains(testData.get("provience_id")));
                 break;
             } catch (Exception e) {
                 if (i==1999) {
@@ -1471,7 +1523,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 		String neighbourhood = javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("neighbourhood")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
             try {
-                Assert.assertTrue(neighbourhood.contains(neighbourhoodData));
+                Assert.assertTrue(neighbourhood.contains(testData.get("district_name")));
                 break;
             } catch (Exception e) {
                 if (i==1999) {
@@ -1483,7 +1535,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 		String City = javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("city_verify")).getAttribute("ng-reflect-model");
 		for (int i = 0; i <2000; i++) {
             try {
-                Assert.assertTrue(City.contains(CityData));
+                Assert.assertTrue(City.contains(testData.get("city")));
                 break;
             } catch (Exception e) {
                 if (i==1999) {
@@ -1495,7 +1547,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 		String Zip = javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("zipcode_verify")).getAttribute("ng-reflect-model");
 		for (int i = 0; i <2000; i++) {
             try {
-                Assert.assertTrue(Zip.contains(ZipData));
+                Assert.assertTrue(Zip.contains(testData.get("zip_code")));
                 break;
             } catch (Exception e) {
                 if (i==1999) {
@@ -1507,7 +1559,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 		String PO= javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("po_box_number_verify")).getAttribute("ng-reflect-model");
 		for (int i = 0; i <2000; i++) {
             try {
-                Assert.assertTrue(PO.contains(POData));
+                Assert.assertTrue(PO.contains(testData.get("po_box_number")));
                 break;
             } catch (Exception e) {
                 if (i==1999) {
@@ -1519,7 +1571,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 		String Mobile= javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("mobile_number_Verify")).getAttribute("ng-reflect-model");
 		for (int i = 0; i <2000; i++) {
             try {
-                Assert.assertTrue(Mobile.contains(MobileData));
+                Assert.assertTrue(Mobile.contains(testData.get("MobileNumber")));
                 break;
             } catch (Exception e) {
                 if (i==1999) {
@@ -1532,7 +1584,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 		String Latitude= javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("latitude_details_of_the_address_verify")).getAttribute("ng-reflect-model");
 		for (int i = 0; i <2000; i++) {
             try {
-                Assert.assertTrue(Latitude.contains(LatitudeData));
+                Assert.assertTrue(Latitude.contains(testData.get("latitude_details")));
                 break;
             } catch (Exception e) {
                 if (i==1999) {
@@ -1544,7 +1596,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 		String Duration= javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("duration_on_stay_verify")).getAttribute("ng-reflect-model");
 		for (int i = 0; i <2000; i++) {
             try {
-                Assert.assertTrue(Duration.contains(DurationData));
+                Assert.assertTrue(Duration.contains(testData.get("duration_on_stay")));
                 break;
             } catch (Exception e) {
                 if (i==1999) {
@@ -1556,7 +1608,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 		String longitudedetails= javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("longitude_details_of_the_address_Data")).getAttribute("ng-reflect-model");
 		for (int i = 0; i <2000; i++) {
             try {
-                Assert.assertTrue(longitudedetails.contains(longitudedetailsData));
+                Assert.assertTrue(longitudedetails.contains(testData.get("longitude_details")));
                 break;
             } catch (Exception e) {
                 if (i==1999) {
@@ -1569,7 +1621,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 		String landMark= javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("landmark_data")).getAttribute("ng-reflect-model");
 		for (int i = 0; i <2000; i++) {
             try {
-                Assert.assertTrue(landMark.contains(landMarkData));
+                Assert.assertTrue(landMark.contains(testData.get("land_mark")));
                 break;
             } catch (Exception e) {
                 if (i==1999) {
@@ -1595,7 +1647,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 		String landlordname= javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("landlord_name_Data")).getAttribute("ng-reflect-model");
 		for (int i = 0; i <2000; i++) {
             try {
-                Assert.assertTrue(landlordname.contains(landlordnameData));
+                Assert.assertTrue(landlordname.contains(testData.get("land_lord_name")));
                 break;
             } catch (Exception e) {
                 if (i==1999) {
@@ -1607,7 +1659,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 		String landlordmobilenumber= javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("landlord_mobile_number_Data")).getAttribute("ng-reflect-model");
 		for (int i = 0; i <2000; i++) {
             try {
-                Assert.assertTrue(landlordmobilenumber.contains(landlordmobilenumberData));
+                Assert.assertTrue(landlordmobilenumber.contains(testData.get("land_lord_mobile_number")));
                 break;
             } catch (Exception e) {
                 if (i==1999) {
@@ -1619,7 +1671,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 		String rentamount= javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("rent_amount_Data")).getAttribute("ng-reflect-model");
 		for (int i = 0; i <2000; i++) {
             try {
-                Assert.assertTrue(rentamount.contains(rentamountData));
+                Assert.assertTrue(rentamount.contains(testData.get("rent_amount")));
                 break;
             } catch (Exception e) {
                 if (i==1999) {
@@ -1632,7 +1684,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 		for (int i = 0; i <2000; i++) {
 			System.out.println(frequencyOfRent);
             try {
-                Assert.assertTrue(frequencyOfRent.contains(frequencyOfRent_Data));
+                Assert.assertTrue(frequencyOfRent.contains(testData.get("frequency_of_rent")));
                 break;
             } catch (Exception e) {
                 if (i==1999) {
@@ -1642,7 +1694,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
             }
 	}
 	@Then("User_6047 verify Address type should be mandatory,editable,dropdown")
-	public void user_6047__verify_address_type_should_be_mandatory_editable_dropdown() throws Throwable {
+	public void user_6047_verify_address_type_should_be_mandatory_editable_dropdown() throws Throwable {
 		
 		Thread.sleep(3000);
 		String AddressTypeText = javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("address_type_mandatory_verification")).getText();
@@ -1683,7 +1735,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	}
 
 	@Then("User_6047 verify Address Status should be mandatory,editable,dropdown")
-	public void user_6047__verify_address_status_should_be_mandatory_editable_dropdown() {
+	public void user_6047_verify_address_status_should_be_mandatory_editable_dropdown() {
 		String AddressStatusMandy = javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("address_status")).getAttribute("aria-label");
 
 		for (int i = 0; i <2000; i++) {
@@ -1725,7 +1777,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	}
 
 	@Then("User_6047 verify Residential or occupancy status should be mandatory,editable,dropdown")
-	public void user_6047__verify_residential_or_occupancy_status_should_be_mandatory_editable_dropdown() {
+	public void user_6047_verify_residential_or_occupancy_status_should_be_mandatory_editable_dropdown() {
 		String ResidentalText = javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("residential_or_ocupency_status")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
             try {
@@ -1763,7 +1815,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	}
 
 	@Then("User_6047 verify Communication address should be a toggle button,editable")
-	public void user_6047__verify_communication_address_should_be_a_toggle_button_editable() {
+	public void user_6047_verify_communication_address_should_be_a_toggle_button_editable() {
 		String Communicationdropdown = javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("communication_address_toggle")).getAttribute("role");
 
 		for (int i = 0; i <2000; i++) {
@@ -1984,7 +2036,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
                 }
             }
         }
-		String neighbourhoodEdit= javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("neighbourhood")).getAttribute("ng-reflect-is-disabled");
+		String neighbourhoodEdit= javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("neighbourhood_districtName_verify")).getAttribute("ng-reflect-is-disabled");
 		for (int i = 0; i <2000; i++) {
             try {
                 Assert.assertTrue(neighbourhoodEdit.contains("false"));
@@ -1995,10 +2047,10 @@ public class AutoLoan_AppDataEntry_AddressDetails {
                 }
             }
         }
-		String NeighbourhoodText = javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("neighbourhood")).getAttribute("ng-reflect-placeholder");
+		String NeighbourhoodText = javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("neighbourhood_districtName_verify")).getAttribute("type");
 		for (int i = 0; i <2000; i++) {
             try {
-                Assert.assertTrue(NeighbourhoodText.contains("Select"));
+                Assert.assertTrue(NeighbourhoodText.contains("text"));
                 break;
             } catch (Exception e) {
                 if (i==1999) {
@@ -2021,7 +2073,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
                 }
             }
         }
-		String City1Edit= javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("city_verify")).getAttribute("ng-reflect-is-disabled");
+		String City1Edit= javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("City")).getAttribute("ng-reflect-is-disabled");
 		for (int i = 0; i <2000; i++) {
             try {
                 Assert.assertTrue(City1Edit.contains("false"));
@@ -2032,10 +2084,10 @@ public class AutoLoan_AppDataEntry_AddressDetails {
                 }
             }
         }
-		String City_Text= javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("city_verify")).getAttribute("type");
+		String City_Text= javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("City")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
             try {
-                Assert.assertTrue(City_Text.contains("text"));
+                Assert.assertTrue(City_Text.contains("Select"));
                 break;
             } catch (Exception e) {
                 if (i==1999) {
@@ -2150,7 +2202,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 		String Duration_Text= javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("duration_on_stay_verify")).getAttribute("type");
 		for (int i = 0; i <2000; i++) {
             try {
-                Assert.assertTrue(Duration_Text.contains("number"));
+                Assert.assertTrue(Duration_Text.contains("text"));
                 break;
             } catch (Exception e) {
                 if (i==1999) {
@@ -2346,7 +2398,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 		String RentAmountEdit_Text= javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("duration_on_stay_verify")).getAttribute("type");
 		for (int i = 0; i <2000; i++) {
             try {
-                Assert.assertTrue(RentAmountEdit_Text.contains("number"));
+                Assert.assertTrue(RentAmountEdit_Text.contains("text"));
                 break;
             } catch (Exception e) {
                 if (i==1999) {
@@ -2479,9 +2531,9 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 
 //					System.out.println(jspath);
 
-			//	javascriptHelper.scrollIntoView(addButton);
+				//javascriptHelper.scrollIntoView(editButton);
 					javascriptHelper.JSEClick(editButton);
-					//addButton.click();
+				//editButton.click();
 
 					break;
 
@@ -2511,7 +2563,8 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("zip_code")).sendKeys("data");
+				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("zip_code")).sendKeys(testData.get("characterInput"));
+				//.sendKeys("data");
 
 				break;
 			} catch (Exception e) {
@@ -2552,7 +2605,8 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("zip_code")).sendKeys(Keys.chord(Keys.CONTROL, "A", Keys.BACK_SPACE));
-				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("zip_code")).sendKeys("-123");
+				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("zip_code")).sendKeys(testData.get("negative_numeric"));
+				//.sendKeys("-123");
 
 				break;
 			} catch (Exception e) {
@@ -2568,7 +2622,8 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("zip_code")).sendKeys(Keys.chord(Keys.CONTROL, "A", Keys.BACK_SPACE));
-				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("zip_code")).sendKeys("@#$%^");
+				javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("zip_code")).sendKeys(testData.get("special_character_input"));
+				//.sendKeys("@#$%^");
 
 				break;
 			} catch (Exception e) {
@@ -2918,8 +2973,8 @@ public void user_6047_verify_the_export_to_pdf_in_address_details_list_view() {
 
 	for (int i = 0; i <= 100; i++) {
 		try {
-			javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("pdf_download")).isDisplayed();
-			javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("xls_download")).isDisplayed();
+			javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("pdf_download")).isDisplayed();
+			javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("xls_download")).isDisplayed();
 			break;
 		} catch (Exception e) {
 			if (i == 100) {
@@ -2933,7 +2988,7 @@ public void user_6047_verify_the_export_to_pdf_in_address_details_list_view() {
 
 
 @Then("User_6047 verify list view fields are shown in address details list view")
-public void user_verify_list_view_fields_are_shown_in_address_details_list_view() {
+public void user_6047_verify_list_view_fields_are_shown_in_address_details_list_view() {
 	String fieldName = "";
 	String query = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')[2].innerText";
 	int screenLocation;
@@ -3190,7 +3245,7 @@ public void user_6047_to_verify_values_in_list_view_should_be_non_editable_in_ad
 }
 
 @And("User_6047 To verify the Add button allow user to create new record of Address details")
-public void user_to_verify_the_add_button_allow_user_to_create_new_record_of_address_details() {
+public void user_6047_to_verify_the_add_button_allow_user_to_create_new_record_of_address_details() {
 	for (int i = 0; i <= 2000; i++) {
 		try {
 			javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("address_type")).click();
@@ -3267,7 +3322,7 @@ public void user_to_verify_the_add_button_allow_user_to_create_new_record_of_add
 }
 
 @And("User_6047 To verify if user click the edit button System should redirect user to edit page")
-public void user_to_verify_if_user_click_the_edit_button_system_should_redirect_user_to_edit_page() {
+public void user_6047_to_verify_if_user_click_the_edit_button_system_should_redirect_user_to_edit_page() {
 	for (int i = 0; i <= 500; i++) {
 		try {
 			javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("zip_code")).sendKeys(Keys.chord(Keys.CONTROL, "A", Keys.BACK_SPACE));
@@ -3699,7 +3754,7 @@ public void user_6047_to_click_the_back_button_in_modification_of_address_detail
 }
 
 @Then("User_6047 verify the functionality of back button in  Modification of Address details screen")
-public void user_verify_the_functionality_of_back_button_in_modification_of_address_details_screen() {
+public void user_6047_verify_the_functionality_of_back_button_in_modification_of_address_details_screen() {
 	String labelLength = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
 
 	String lengthOfTheLabel = "";

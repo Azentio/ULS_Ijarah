@@ -25,7 +25,7 @@ Then User_6047 give the input for Currency field under the Facility info
 Then User_6047 give the input for Loan Tenure under the Facility info
  #for save
 Then User_6047 click the save button under the facility info
-Then User_6047 verify the successfully saved message under the facility info
+Then User_6047 verify the successfully saved message under the facility info screen
 Then User_6047 Extract the application details record reference number in facilityinfo stage
 Then User_6047 click the Back button and verify the functionality of back button
 And User_6047 Click the Search button under inbox

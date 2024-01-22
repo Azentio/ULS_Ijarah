@@ -44,17 +44,17 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	String toastMessage = "";
 
 	@And("User_6047 Get the test data for test case ID AT_MU_IRM_001")
-	public void user_get_the_test_data_for_test_case_id_at_fi() {
+	public void user_6047_get_the_test_data_for_test_case_id_at_fi() {
 		testData =  Murabha_Repayment_TestData.getTestdata("DS01_AT_MU_IRM_001");
 	}
 	@And("User_6047 Get the test data for test case ID AT_MU_IRM_007")
-	public void user_get_the_test_data_for_test_case_id_at_fi_() {
+	public void user_6047_get_the_test_data_for_test_case_id_at_fi_() {
 		testData =  Murabha_Repayment_TestData.getTestdata("DS01_AT_MU_IRM_007");
 	}
 
 
 	@And("User_6047 click the module name dropdown in ULS application")
-	public void user_click_the_module_name_dropdown_in_uls_application() throws Throwable {
+	public void user_6047_click_the_module_name_dropdown_in_uls_application() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(Ijarah_CustomerDebt.getElement("moduleNameDropdown")));
 		for (int i = 0; i <= 500; i++) {
 			try {
@@ -68,7 +68,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		}
 	}
 	@And("User_6047 select the module name as LOS in ULS application")
-	public void user_select_the_module_name_as_los_in_uls_application() throws Throwable {
+	public void user_6047_select_the_module_name_as_los_in_uls_application() throws Throwable {
 		String moduleListJSpath = "document.querySelectorAll('ion-radio-group ion-item').length";
         String moduleLength = "";
         for (int i = 0; i <= 300; i++) {
@@ -110,7 +110,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
         }	
 	}
 	@And("User_6047 Search the Ref Id Under inbox")
-	public void user_search_the_ref_id_under_inbox_6047() throws Throwable {
+	public void user_6047_search_the_ref_id_under_inbox_6047() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text")));
 		//javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text"))
 		//.sendKeys(testData.get("Ref No"));
@@ -127,7 +127,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		}	}
 	
 	@And("User_6047 click repayment mode section")
-	public void user_click_repayment_mode_section() {
+	public void user_6047_click_repayment_mode_section() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("repaymentModeSection")).click();
@@ -142,7 +142,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		}
 	}
 	@And("User_6047 click Add icon")
-	public void user_click_edit_icon() {
+	public void user_6047_click_edit_icon() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("AddButton")).click();
@@ -157,7 +157,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		}
 	}
 	@Then("User_6047 verify the repayment mode field")
-	public void User_verify_the_repayment_mode_field() {
+	public void User_6047_verify_the_repayment_mode_field() {
 		for (int i = 0; i <2000; i++) {
 			try {
 				
@@ -189,7 +189,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 verify the account type field")
-	public void User_verify_the_account_type_field() {
+	public void User_6047_verify_the_account_type_field() {
 		for (int i = 0; i <200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("accountTypeField")).isDisplayed());
@@ -203,7 +203,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 verify the account number field")
-	public void User_verify_the_account_number_field() {
+	public void User_6047_verify_the_account_number_field() {
 		for (int i = 0; i <200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("accountNumberField")).isDisplayed());
@@ -217,7 +217,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 verify the bank name field")
-	public void User_verify_the_bank_name_field() {
+	public void User_6047_verify_the_bank_name_field() {
 		for (int i = 0; i <200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("bankNameField")).isDisplayed());
@@ -231,7 +231,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 verify the bank branch name field")
-	public void User_verify_the_bank_branch_name_field() {
+	public void User_6047_verify_the_bank_branch_name_field() {
 		for (int i = 0; i <200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("branchNameField")).isDisplayed());
@@ -245,7 +245,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 verify the ESC code field")
-	public void User_verify_the_ecs_code_field() {
+	public void User_6047_verify_the_ecs_code_field() {
 		for (int i = 0; i <200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("escCode")).isDisplayed());
@@ -259,7 +259,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 verify save button")
-	public void User_verify_save_button() {
+	public void User_6047_verify_save_button() {
 		for (int i = 0; i <200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("saveButton")).isDisplayed());
@@ -273,7 +273,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 verify help button")
-	public void User_verify_help_button() {
+	public void User_6047_verify_help_button() {
 		for (int i = 0; i <200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("helpButton")).isDisplayed());
@@ -287,7 +287,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	}
 	
 	@Then("User_6047 verify the repayment mode field is mandatory,editable and lookup value")
-	public void user_verify_the_repayment_mode_field_is_mandatory_editable_and_lookup_value() throws Throwable  {
+	public void user_6047_verify_the_repayment_mode_field_is_mandatory_editable_and_lookup_value() throws Throwable  {
 		Thread.sleep(3000);
 		//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("repaymentMode_in")));
 		String repaymentmodefield= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("repaymentMode_in")).getAttribute("aria-label");
@@ -378,7 +378,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 validate the account holder name field is mandatory,editable and lookup value")
-	public void user_validate_the_account_holder_name_field_is_mandatory_editable_and_lookup_value() {
+	public void user_6047_validate_the_account_holder_name_field_is_mandatory_editable_and_lookup_value() {
 		String repaymentmodefield= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("accountHolderName_in")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
@@ -467,7 +467,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 verify the account type field is mandatory,editable and lookup value")
-	public void user_verify_the_account_type_field_is_mandatory_editable_and_lookup_value() {
+	public void user_6047_verify_the_account_type_field_is_mandatory_editable_and_lookup_value() {
 		String repaymentmodefield= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("accountTypeField_in")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
@@ -556,7 +556,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 verify the account number field is mandatory,editable and numeric")
-	public void user_verify_the_account_number_field_is_mandatory_editable_and_numeric() {
+	public void user_6047_verify_the_account_number_field_is_mandatory_editable_and_numeric() {
 		for (int i = 0; i <2000; i++) {
 			try {
 				String repayment ="document.querySelector('ion-label[ng-reflect-text=\"Account Number.TOOLTIP\"').innerText";
@@ -589,7 +589,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		
 	
 	@Then("User_6047 click the account currency field is mandatory,editable and lookup value")
-	public void user_click_the_account_currency_field_is_mandatory_editable_and_lookup_value() {
+	public void user_6047_click_the_account_currency_field_is_mandatory_editable_and_lookup_value() {
 		String repaymentmodefield= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("AccountCurrency_in")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
@@ -678,7 +678,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 verify the bank name field is mandatory,editable and lookup value")
-	public void user_verify_the_bank_name_field_is_mandatory_editable_and_lookup_value() {
+	public void user_6047_verify_the_bank_name_field_is_mandatory_editable_and_lookup_value() {
 		String repaymentmodefield= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("bankNameField_in")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
@@ -767,7 +767,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 verify the branch name field is mandatory,editable and lookup value")
-	public void user_verify_the_branch_name_field_is_mandatory_editable_and_lookup_value() {
+	public void user_6047_verify_the_branch_name_field_is_mandatory_editable_and_lookup_value() {
 		String repaymentmodefield= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("branchNameField_in")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 	        try {
@@ -856,7 +856,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 verify the code field is mandatory,editable and numeric")
-	public void user_verify_the_code_field_is_mandatory_editable_and_numeric() {
+	public void user_6047_verify_the_code_field_is_mandatory_editable_and_numeric() {
 		for (int i = 0; i <2000; i++) {
 			try {
 				String repayment ="document.querySelector('ion-label[ng-reflect-text=\"ECS CODE.TOOLTIP\"').innerText";
@@ -877,7 +877,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	
 	
 	@Then("User_6047 click the save button under repayment mode screen")
-	public void user_click_the_save_button_under_the_repayment_mode_screen() {
+	public void user_6047_click_the_save_button_under_the_repayment_mode_screen() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("SaveButton")).click();
@@ -892,7 +892,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	}
 	
 	@Then("User_6047 verify the successfully saved message popup")
-	public void user_verify_the_successfully_saved_message_popup() {
+	public void user_6047_verify_the_successfully_saved_message_popup() {
 		for (int i = 0; i <2000; i++) {
 	        try {
 	        	String text = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("SucessPopUP")).getText();
@@ -908,7 +908,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		
 	}
 	@Then("User_6047 to verify the same record should get saved in Repayment mode")
-	public void user_to_verify_the_same_record_should_get_saved_Repayment_mode() throws Throwable {
+	public void user_6047_to_verify_the_same_record_should_get_saved_Repayment_mode() throws Throwable {
 		//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("repaymentMode_in")));
 		Thread.sleep(3000);
 		String repaymentMode= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("repaymentMode_in")).getAttribute("aria-label");
@@ -1021,7 +1021,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		}
 	}
 	@And("User_6047 click help icon")
-	public void user_click_help_icon() {
+	public void user_6047_click_help_icon() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("helpButton")).click();
@@ -1034,7 +1034,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		}
 	}
 	@Then("User_6047 verify description of all the fields details")
-	public void user_verify_description_of_all_the_fields_details() {
+	public void user_6047_verify_description_of_all_the_fields_details() {
 		for (int i = 0; i <2000; i++) {
 			try {
 				String repayment ="document.querySelector('pre[class=\"ng-star-inserted\"]').innerText";
@@ -1052,7 +1052,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	}
 	
 	@Then("User_6047 give the input for repayment mode field")
-	public void user_give_the_input_for_repayment_mode_field() {
+	public void user_6047_give_the_input_for_repayment_mode_field() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("repaymentMode_in")).click();
@@ -1129,7 +1129,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 give the input for account holder name field")
-	public void user_give_the_input_for_account_holder_name_field() {
+	public void user_6047_give_the_input_for_account_holder_name_field() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("accountHolderName_in")).click();
@@ -1206,7 +1206,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 give the input for account type field")
-	public void user_give_the_input_for_account_type_field() {
+	public void user_6047_give_the_input_for_account_type_field() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("accountTypeField_in")).click();
@@ -1284,7 +1284,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
  
 
 	@Then("User_6047 give the input for account currency field")
-	public void user_give_the_input_for_account_currency_field() {
+	public void user_6047_give_the_input_for_account_currency_field() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("AccountCurrency_in")).click();
@@ -1361,7 +1361,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 give the input for bank name field")
-	public void user_give_the_input_for_bank_name_field() {
+	public void user_6047_give_the_input_for_bank_name_field() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("bankNameField_in")).click();
@@ -1438,7 +1438,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 give the input for branch name field")
-	public void user_give_the_input_for_branch_name_field() {
+	public void user_6047_give_the_input_for_branch_name_field() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("branchNameField_in")).click();
@@ -1515,7 +1515,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 give the input for code field")
-	public void user_give_the_input_for_code_field() {
+	public void user_6047_give_the_input_for_code_field() {
 
 		for (int i = 0; i <= 1000; i++) {
 			try {
@@ -1533,7 +1533,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	}
 
 	@And("User_6047 give the character input for account number field")
-	public void user_give_the_input_for_account_number_field() {
+	public void user_6047_give_the_input_for_account_number_field() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").click();
@@ -1550,7 +1550,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	}
 		
 	@And("User_6047 enter the special character for account number field")
-	public void user_enter_the_special_character_for_account_number_field() {
+	public void user_6047_enter_the_special_character_for_account_number_field() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").clear();
@@ -1565,7 +1565,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 		}
 	}
 	@Then("User_6047 modify the ESC code field")
-	public void user_modify_the_ESC_code_field() {
+	public void user_6047_modify_the_ESC_code_field() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement("document.querySelector('ion-label[ng-reflect-text=\"ECS CODE.TOOLTIP\"]+ion-input')").click();
@@ -1581,7 +1581,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	}
 	
 	@Then("User_6047 delete the account number")
-	public void user_delete_the_account_number() {
+	public void user_6047_delete_the_account_number() {
 		for (int i = 0; i < 200; i++) {
 			
 			try {
@@ -1600,13 +1600,13 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	}
 
 	@Then("User_6047 give the input for account number field")
-	public void user_give_the_input_for_account_number_field_() {
+	public void user_6047_give_the_input_for_account_number_field_() {
 for (int i = 0; i < 200; i++) {
 			
 			try {
 				javascriptHelper.executeScriptWithWebElement("document.querySelector('ion-label[ng-reflect-text=\"Account Number.TOOLTIP\"]+ion-input')").click();
 				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").sendKeys("23658");
-				//javascriptHelper.executeScriptWithWebElement("document.querySelector('ion-label[ng-reflect-text=\"Account Number.TOOLTIP\"]+ion-input')").click();
+				
 				//javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").sendKeys("23658");
 				//javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("accountNumberField_in")).sendKeys(testData.get("AccountNumber"));
 				Thread.sleep(3000);
@@ -1621,7 +1621,7 @@ for (int i = 0; i < 200; i++) {
 	}
 	
 	@Then("User_6047 click the submit button")
-	public void user_click_the_submit_button() {
+	public void user_6047_click_the_submit_button() {
 		
 			for (int i = 0; i <= 1000; i++) {
 				try {
@@ -1637,7 +1637,7 @@ for (int i = 0; i < 200; i++) {
 	}
 
 	@And("User_6047 verify the submit successfully popup")
-	public void user_verify_the_submit_successfully_popup() {
+	public void user_6047_verify_the_submit_successfully_popup() {
 		for (int i = 0; i <2000; i++) {
 	        try {
 	        	String text = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("SucessPopUP")).getText();
@@ -1654,7 +1654,7 @@ for (int i = 0; i < 200; i++) {
 	
 	
 	@And("User_6047 click the ok button in action conform field")
-	public void user_click_the_ok_button_in_active_conform_field() {
+	public void user_6047_click_the_ok_button_in_active_conform_field() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.JSEClick(
@@ -1671,7 +1671,7 @@ for (int i = 0; i < 200; i++) {
 	}
 
 	@And("User_6047 click the submit in action conform field")
-	public void user_click_the_submit_in_active_conform_field() {
+	public void user_6047_click_the_submit_in_active_conform_field() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.JSEClick(
@@ -1687,7 +1687,7 @@ for (int i = 0; i < 200; i++) {
 		}
 	}
 	@Then("User_6047 verify the successfully saved message under the repaymentmode")
-	public void user_verify_the_successfully_saved_message_under_the_facility_info() {
+	public void user_6047_verify_the_successfully_saved_message_under_the_facility_info() {
 //		for (int i = 0; i <2000; i++) {
 //	        try {
 //	        	String text = javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("SucessPopUP")).getText();
@@ -1737,7 +1737,7 @@ for (int i = 0; i < 200; i++) {
 	}
 	
 	@And("User_6047 search the facility list under RepaymentMode")
-	public void user_search_the_ref_id_under_inbox() throws Throwable {
+	public void user_6047_search_the_ref_id_under_inbox() throws Throwable {
 		//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text")));
 		for (int i = 0; i <= 500; i++) {
 			try {
@@ -1764,7 +1764,7 @@ for (int i = 0; i < 200; i++) {
 	} 
 	
 	@Then("User_6047 to verify the modified record should get saved in Repayment mode")
-	public void user_to_verify_the_modified_record_should_get_saved_Repayment_mode() throws Throwable {
+	public void user_6047_to_verify_the_modified_record_should_get_saved_Repayment_mode() throws Throwable {
 		//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("repaymentMode_in")));
 		String repaymentMode= javascriptHelper.executeScriptWithWebElement(Murabha_Repayment_js.getElement("repaymentMode_in")).getAttribute("aria-label");
 		System.out.println(repaymentMode);

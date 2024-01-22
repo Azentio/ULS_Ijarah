@@ -40,7 +40,7 @@ public class Tawarruq_AppDataCheck_RepaymentMode {
 	}
 
 	@And("User_6047 Search the Reference Id Under inbox")
-	public void user_search_the_reference_id_under_inbox_6047() throws Throwable {
+	public void user_6047_search_the_reference_id_under_inbox_6047() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text")));
 		//javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text"))
 		//.sendKeys(testData.get("Ref No"));
@@ -107,7 +107,7 @@ public class Tawarruq_AppDataCheck_RepaymentMode {
 		}    
 	}
 	@Then("User_6047 verify the repayment mode field in Repaymentmode")
-	public void user_6047_6047_verify_the_repayment_mode_field_in_repayment_mode() {
+	public void user_6047_verify_the_repayment_mode_field_in_repayment_mode() {
 		int i=0;
 		for ( i = 0; i <200; i++) {
 			try {
@@ -343,7 +343,7 @@ public class Tawarruq_AppDataCheck_RepaymentMode {
 	}
 
 	@Then("User_6047 verify description of all the fields details in Repaymentmode")
-	public void user_verify_description_of_all_the_fields_details_in_repayment_mode() {
+	public void user_6047_verify_description_of_all_the_fields_details_in_repayment_mode() {
 		for (int i = 0; i <2000; i++) {
 			try {
 				String repayment ="document.querySelector('pre[class=\"ng-star-inserted\"]').innerText";

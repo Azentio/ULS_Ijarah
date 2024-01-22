@@ -42,17 +42,17 @@ public class Murabha_Offering_DocumentDetails {
 
 
 	@And("User_6047 Get the test data for test case ID AT_DOC_01")
-	public void user_get_the_test_data_for_test_case_ID_AT_DOC_01() {
+	public void user_6047_get_the_test_data_for_test_case_ID_AT_DOC_01() {
 		testData = Murabha_DocumentDetails_TestData.getTestdata("DS01_AT_DOC_01");
 
 	}
 	@And("User_6047 Get the test data for test case ID AT_DOC_04")
-	public void user_get_the_test_data_for_test_case_ID_AT_DOC_04() {
+	public void user_6047_get_the_test_data_for_test_case_ID_AT_DOC_04() {
 		testData = Murabha_DocumentDetails_TestData.getTestdata("DS01_AT_DOC_04");
 
 	}
 	@And("User_6047 search the Refer id under Inbox")
-	public void user_search_the_ref_id_under_inbox_6047() throws Throwable {
+	public void user_6047_search_the_ref_id_under_inbox_6047() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text")));
 		for (int i = 0; i <= 500; i++) {
 			try {
@@ -69,7 +69,7 @@ public class Murabha_Offering_DocumentDetails {
 	
 
 @And("User_6047 click the Document Details tab")
-public void user_click_the_document_details_tab() {
+public void user_6047_click_the_document_details_tab() {
 	for (int i = 0; i <= 1000; i++) {
 		try {
 		//	javascriptHelper.JSEClick(
@@ -88,7 +88,7 @@ public void user_click_the_document_details_tab() {
 }
 
 @And("User_6047 click the Eye button")
-public void user_click_the_eye_button() {
+public void user_6047_click_the_eye_button() {
 	for (int i = 0; i <= 1000; i++) {
 		try {
 		
@@ -105,7 +105,7 @@ public void user_click_the_eye_button() {
 }
 
 @And("User_6047 To verify the Document Name field")
-public void user_to_verify_the_document_name_field() throws IOException {
+public void user_6047_to_verify_the_document_name_field() throws IOException {
 	boolean DocumentName = false;
 	int i;
 	for ( i = 0; i <= 300; i++) {
@@ -139,7 +139,7 @@ public void user_to_verify_the_document_name_field() throws IOException {
 }
 
 @Then("User_6047 To verify the Completion Stage field")
-public void user_to_verify_the_completion_stage_field() {
+public void user_6047_to_verify_the_completion_stage_field() {
 	boolean RequiredAtStage = false;
 	int i;
 	for ( i = 0; i <= 300; i++) {
@@ -171,7 +171,7 @@ public void user_to_verify_the_completion_stage_field() {
 }
 
 @Then("User_6047 To verify the Status field")
-public void user_to_verify_the_status_field() {
+public void user_6047_to_verify_the_status_field() {
 	boolean DocumentStatus = false;
 	int i = 0;
 	for ( i = 0; i <= 300; i++) {
@@ -203,7 +203,7 @@ public void user_to_verify_the_status_field() {
 }
 
 @Then("User_6047 To verify the Quality field")
-public void user_to_verify_the_quality_field() {
+public void user_6047_to_verify_the_quality_field() {
 	boolean DocumentQuality = false;
 	int i = 0;
 	for ( i = 0; i <= 300; i++) {
@@ -236,7 +236,7 @@ public void user_to_verify_the_quality_field() {
 }
 
 @Then("User_6047 To verify the Date field")
-public void user_to_verify_the_date_field() {
+public void user_6047_to_verify_the_date_field() {
 	boolean UploadDate = false;
 	int i = 0;
 	for ( i = 0; i <= 300; i++) {
@@ -269,7 +269,7 @@ public void user_to_verify_the_date_field() {
 }
 
 @Then("User_6047 To verify the Deferred Stage field")
-public void user_to_verify_the_deferred_stage_field() {
+public void user_6047_to_verify_the_deferred_stage_field() {
 	boolean DefferalStage = false;
 	int i = 0;
 	for (i = 0; i <= 300; i++) {
@@ -301,7 +301,7 @@ public void user_to_verify_the_deferred_stage_field() {
 }
 
 @Then("User_6047 To verify the Location field")
-public void user_to_verify_the_location_field() {
+public void user_6047_to_verify_the_location_field() {
 	boolean LocationWhereReceived = false;
 	int i = 0; 
 	for ( i = 0; i <= 300; i++) {
@@ -333,7 +333,7 @@ public void user_to_verify_the_location_field() {
 }
 
 @Then("User_6047 To verify the Rack No field")
-public void user_to_verify_the_rack_no_field() {
+public void user_6047_to_verify_the_rack_no_field() {
 	boolean RackNo = false;
 	int i = 0;
 	for (i = 0; i <= 300; i++) {
@@ -365,7 +365,7 @@ public void user_to_verify_the_rack_no_field() {
 }
 
 @Then("User_6047 To verify the Shelf No field")
-public void user_to_verify_the_shelf_no_field() {
+public void user_6047_to_verify_the_shelf_no_field() {
 
 	boolean ShelfNo = false;
 	int i = 0;
@@ -398,7 +398,7 @@ public void user_to_verify_the_shelf_no_field() {
 }
 
 @Then("User_6047 To verify the Box No field")
-public void user_to_verify_the_box_no_field() {
+public void user_6047_to_verify_the_box_no_field() {
 	boolean BoxNo = false;
 	int i = 0;
 	for (i = 0; i <= 300; i++) {
@@ -431,7 +431,7 @@ public void user_to_verify_the_box_no_field() {
 
 
 @Then("User_6047 To verify the Document Category field")
-public void user_to_verify_the_document_category_field() {
+public void user_6047_to_verify_the_document_category_field() {
 	boolean documentCategory = false;
 	int i = 0; 
 	for ( i = 0; i <= 300; i++) {
@@ -463,7 +463,7 @@ public void user_to_verify_the_document_category_field() {
 }
 
 @Then("User_6047 To verify the Document Form field")
-public void user_to_verify_the_document_form_field() {
+public void user_6047_to_verify_the_document_form_field() {
 	boolean DocumentForm = false;
 	int i = 0;
 	for ( i = 0; i <= 300; i++) {
@@ -495,7 +495,7 @@ public void user_to_verify_the_document_form_field() {
 }
 
 @Then("User_6047 To verify the Expected Date of Receipt field")
-public void user_to_verify_the_expected_date_of_receipt_field() {
+public void user_6047_to_verify_the_expected_date_of_receipt_field() {
 	boolean ExpectedReceiptDate = false;
 	int i = 0;
 	for ( i = 0; i <= 300; i++) {
@@ -527,7 +527,7 @@ public void user_to_verify_the_expected_date_of_receipt_field() {
 }
 
 @Then("User_6047 To verify the Waiver\\/Defferral Approved By field")
-public void user_to_verify_the_waiver_defferral_approved_by_field() {
+public void user_6047_to_verify_the_waiver_defferral_approved_by_field() {
 	boolean DefApprovedBy = false;
 	int i = 0; 
 	for (i = 0; i <= 300; i++) {
@@ -560,7 +560,7 @@ public void user_to_verify_the_waiver_defferral_approved_by_field() {
 }
 
 @Then("User_6047 To verify the Change in Nature of Document Approved By field")
-public void user_to_verify_the_change_in_nature_of_document_approved_by_field() {
+public void user_6047_to_verify_the_change_in_nature_of_document_approved_by_field() {
 	boolean ChangeinNatureApprovedBy = false;
 	int i = 0; 
 	for (i = 0; i <= 300; i++) {
@@ -592,7 +592,7 @@ public void user_to_verify_the_change_in_nature_of_document_approved_by_field() 
 }
 
 @Then("User_6047 To verify the Document Number field")
-public void user_to_verify_the_document_number_field() {
+public void user_6047_to_verify_the_document_number_field() {
 	boolean DocumentRefNum = false;
 	int i = 0;
 	for (i = 0; i <= 300; i++) {
@@ -624,7 +624,7 @@ public void user_to_verify_the_document_number_field() {
 }
 
 @Then("User_6047 To verify the Branch Remarks field")
-public void user_to_verify_the_branch_remarks_field() {
+public void user_6047_to_verify_the_branch_remarks_field() {
 	
 	boolean Remarks = false;
 	int i = 0;
@@ -658,7 +658,7 @@ public void user_to_verify_the_branch_remarks_field() {
 }
 
 @Then("User_6047 To verify the Upload field")
-public void user_to_verify_the_upload_field() {
+public void user_6047_to_verify_the_upload_field() {
 	boolean Upload = false;
 	int i = 0; 
 	for (i = 0; i <= 300; i++) {
@@ -678,7 +678,7 @@ public void user_to_verify_the_upload_field() {
 }
 
 @Then("User_6047 To verify the View field")
-public void user_to_verify_the_view_field() {
+public void user_6047_to_verify_the_view_field() {
 	boolean view = false;
 	int i = 0;
 	for (i = 0; i <= 300; i++) {
@@ -698,7 +698,7 @@ public void user_to_verify_the_view_field() {
 }
 
 @Then("User_6047 To verify the Help Button field")
-public void user_to_verify_the_help_button_field() {
+public void user_6047_to_verify_the_help_button_field() {
 	//javascriptHelper.executeScriptWithWebElement(Murabha_offering_documentDetail_js.getElement("ShelfNo"))
 //	.sendKeys(Keys.PAGE_UP);
 	boolean Help_Button = false;
@@ -718,7 +718,7 @@ public void user_to_verify_the_help_button_field() {
 }
 
 @Then("User_6047 To verify the Back Button field")
-public void user_to_verify_the_back_button_field() {
+public void user_6047_to_verify_the_back_button_field() {
 	boolean Pre_Back_Button = false;
 	int i = 0;
 	for ( i = 0; i <= 300; i++) {
@@ -736,7 +736,7 @@ public void user_to_verify_the_back_button_field() {
 }
 
 @Then("User_6047 To click the Back Button field")
-public void user_to_click_the_back_button_field() {
+public void user_6047_to_click_the_back_button_field() {
 	javascriptHelper.executeScriptWithWebElement(Murabha_offering_documentDetail_js.getElement("ShelfNo"))
 	.sendKeys(Keys.PAGE_UP);
 	for (int i = 0; i <= 1000; i++) {
@@ -755,7 +755,7 @@ public void user_to_click_the_back_button_field() {
 }
 
 @Then("User_6047 verify the functionality of Back Button")
-public void user_verify_the_functionality_of_back_button() {
+public void user_6047_verify_the_functionality_of_back_button() {
 	for (int i = 0; i <200; i++) {
 		try {
 			Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Murabha_offering_documentDetail_js.getElement("backButton_verify")).isDisplayed());
@@ -769,7 +769,7 @@ public void user_verify_the_functionality_of_back_button() {
     
 }
 @Then("User_6047 click the Search button and search the matching data in listview")
-public void user_click_the_search_button_and_search_the_matching_data_in_listview() {
+public void user_6047_click_the_search_button_and_search_the_matching_data_in_listview() {
 	for (int i = 0; i <= 500; i++) {
 		try {
 			//javascriptHelper.executeScriptWithWebElement("document.querySelector('button[ng-reflect-icon=\"pi pi-search\"] span[class=\"p-button-icon pi pi-search\"]')").click();
@@ -802,7 +802,7 @@ public void user_click_the_search_button_and_search_the_matching_data_in_listvie
 }
 
 @Then("User_6047 check the match result data in list view")
-public void user_check_the_match_result_data_in_list_view() {
+public void user_6047_check_the_match_result_data_in_list_view() {
 	String searchResult = "";
 	for (int i = 0; i <= 300; i++) {
 		try {
@@ -823,7 +823,7 @@ public void user_check_the_match_result_data_in_list_view() {
 }
 
 @Then("User_6047 click the Search button and search the mismatching data in listview")
-public void user_click_the_search_button_and_search_the_mismatching_data_in_listview() {
+public void user_6047_click_the_search_button_and_search_the_mismatching_data_in_listview() {
 	for (int i = 0; i <= 500; i++) {
 		try {
 			javascriptHelper
@@ -854,7 +854,7 @@ public void user_click_the_search_button_and_search_the_mismatching_data_in_list
 }
 
 @Then("User_6047 check the mismatch result in list view")
-public void user_check_the_mismatch_result_in_list_view() {
+public void user_6047_check_the_mismatch_result_in_list_view() {
 	String searchResult = "";
 	for (int i = 0; i <= 300; i++) {
 		try {

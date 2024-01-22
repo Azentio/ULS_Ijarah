@@ -36,28 +36,42 @@ public class Tawarruq_offering_offerDetail {
 
 	
 	@And("User_6047 Get the test data for test case ID AT_TW_OFO_02")
-	public void user_get_the_test_data_for_test_case_id_at_tw_ofo_02() {	
+	public void user_6047_get_the_test_data_for_test_case_id_at_tw_ofo_02() {	
 		testData =  Tawar_offering_TestData.getTestdata("DS01_AT_TW_OFO_02");
 	}
 	@And("User_6047 search  the Ref Id Under inbox")
-	public void user_search_the_ref_id_under_inbox_6047() throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text")));
-		//javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text"))
+	public void user_6047_search_the_ref_id_under_inbox() throws Throwable {
+waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("mail_box_search_text")));
+for (int i = 0; i <= 500; i++) {
+	try {
+		javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("mail_box_search_text"))
+		.sendKeys("3330");
 		//.sendKeys(testData.get("Ref No"));
-		for (int i = 0; i <= 500; i++) {
-			try {
-				javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text"))
-				//.sendKeys(testData.get("Ref No")); 
-				.sendKeys("3841"); 
-				break;
-			} catch (Exception e) {
-				if (i == 500) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}	}
+		break;
+	} catch (Exception e) {
+		if (i == 500) {
+			Assert.fail(e.getMessage());
+		}
+	}
+}	}
+//	@And("User_6047 search the Referen Id under inbox")
+//	public void user_6047_search_the_ref_id_under_inbox() throws Throwable {
+//		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("mail_box_search_text")));
+//		for (int i = 0; i <= 500; i++) {
+//			try {
+//				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("mail_box_search_text"))
+//				//.sendKeys("4138");
+//				.sendKeys(testData.get("Ref No"));
+//				break;
+//			} catch (Exception e) {
+//				if (i == 500) {
+//					Assert.fail(e.getMessage());
+//				}
+//			}
+//		}
+//	}
 	@And("User_6047 Click the Entitle Button under inbox")
-	public void user_click_the_entitle_button_under_inbox() {
+	public void user_6047_click_the_entitle_button_under_inbox() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("Edit_button")).click();
@@ -71,7 +85,7 @@ public class Tawarruq_offering_offerDetail {
 	}
 	
 @And("User_6047 Click the search button in facilityinfo")
-public void user_click_the_search_button_in_facilityinfo() {
+public void user_6047_click_the_search_button_in_facilityinfo() {
 	for (int i = 0; i <= 500; i++) {
 		try {
 			javascriptHelper
@@ -104,7 +118,7 @@ public void user_click_the_search_button_in_facilityinfo() {
 }
 
 @And("User_6047 Select the record in facilityinfo")
-public void user_select_the_record_in_facilityinfo() {
+public void user_6047_select_the_record_in_facilityinfo() {
 	for (int i = 0; i <= 500; i++) {
 		try {
 			//javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("search_button_for_employment_det")).click();
@@ -121,7 +135,7 @@ public void user_select_the_record_in_facilityinfo() {
 	}
 }
 @Then("User_6047 To verify the Amount Requested field in Finance Details section")
-public void user_to_verify_the_amount_requested_field_in_finance_details_section() {
+public void user_6047_to_verify_the_amount_requested_field_in_finance_details_section() {
 //	for (int i = 0; i <200; i++) {
 //		try {
 //			Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Tawarruq_offering.getElement("AmountRequest")).isDisplayed());
@@ -148,7 +162,7 @@ public void user_to_verify_the_amount_requested_field_in_finance_details_section
 }
 
 @Then("User_6047 To verify the Down Payment Percentage field in Finance Details section")
-public void user_to_verify_the_down_payment_percentage_field_in_finance_details_section() {
+public void user_6047_to_verify_the_down_payment_percentage_field_in_finance_details_section() {
 //	for (int i = 0; i <200; i++) {
 //		try {
 //			Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(Tawarruq_offering.getElement("DownPaymentPercentage")).isDisplayed());
@@ -175,7 +189,7 @@ public void user_to_verify_the_down_payment_percentage_field_in_finance_details_
 }
 
 @Then("User_6047 To verify the Down Payment Amount  field in Finance Details section")
-public void user_to_verify_the_down_payment_amount_field_in_finance_details_section() {
+public void user_6047_to_verify_the_down_payment_amount_field_in_finance_details_section() {
 
 	boolean DownPaymentAmount = false;
 	for (int i = 0; i <= 300; i++) {
@@ -193,7 +207,7 @@ public void user_to_verify_the_down_payment_amount_field_in_finance_details_sect
 }
 
 @Then("User_6047 To verify the Additional Down payment field in Finance Details section")
-public void user_to_verify_the_additional_down_payment_field_in_finance_details_section() {
+public void user_6047_to_verify_the_additional_down_payment_field_in_finance_details_section() {
 
 	boolean AdditionalDownPayment = false;
 	for (int i = 0; i <= 300; i++) {
@@ -211,7 +225,7 @@ public void user_to_verify_the_additional_down_payment_field_in_finance_details_
 }
 
 @Then("User_6047 To verify the Total Down Payment Amount field in Finance Details section")
-public void user_to_verify_the_total_down_payment_amount_field_in_finance_details_section() {
+public void user_6047_to_verify_the_total_down_payment_amount_field_in_finance_details_section() {
 	
 	boolean TotalDownPaymentAmount = false;
 	for (int i = 0; i <= 300; i++) {
@@ -229,7 +243,7 @@ public void user_to_verify_the_total_down_payment_amount_field_in_finance_detail
 }
 
 @Then("User_6047 To verify the Profit Amount field in Finance Details section")
-public void user_to_verify_the_profit_amount_field_in_finance_details_section() {
+public void user_6047_to_verify_the_profit_amount_field_in_finance_details_section() {
 	
 	boolean profitAmount = false;
 	for (int i = 0; i <= 300; i++) {
@@ -247,7 +261,7 @@ public void user_to_verify_the_profit_amount_field_in_finance_details_section() 
 }
 
 @Then("User_6047 To verify the Total Fees field in Finance Details section")
-public void user_to_verify_the_total_fees_field_in_finance_details_section() {
+public void user_6047_to_verify_the_total_fees_field_in_finance_details_section() {
 
 	boolean TotalFees = false;
 	for (int i = 0; i <= 300; i++) {
@@ -265,7 +279,7 @@ public void user_to_verify_the_total_fees_field_in_finance_details_section() {
 }
 
 @Then("User_6047 To verify the Total Contract Value field in Finance Details section")
-public void user_to_verify_the_total_contract_value_field_in_finance_details_section() {
+public void user_6047_to_verify_the_total_contract_value_field_in_finance_details_section() {
 	
 		boolean TotalContractValue = false;
 		for (int i = 0; i <= 300; i++) {
@@ -284,7 +298,7 @@ public void user_to_verify_the_total_contract_value_field_in_finance_details_sec
 }
 
 @Then("User_6047 To verify the Tenure field in Finance Details section")
-public void user_to_verify_the_tenure_field_in_finance_details_section() {
+public void user_6047_to_verify_the_tenure_field_in_finance_details_section() {
 
 	boolean Tenure = false;
 	for (int i = 0; i <= 300; i++) {
@@ -302,7 +316,7 @@ public void user_to_verify_the_tenure_field_in_finance_details_section() {
 }
 
 @Then("User_6047 To verify the Total Income field in Finance Details section")
-public void user_to_verify_the_total_income_field_in_finance_details_section() {
+public void user_6047_to_verify_the_total_income_field_in_finance_details_section() {
 	
 	boolean TotalIncome = false;
 	for (int i = 0; i <= 300; i++) {
@@ -320,7 +334,7 @@ public void user_to_verify_the_total_income_field_in_finance_details_section() {
 }
 
 @Then("User_6047 To verify the Total Obligations field in Finance Details section")
-public void user_to_verify_the_total_obligations_field_in_finance_details_section() {
+public void user_6047_to_verify_the_total_obligations_field_in_finance_details_section() {
 	boolean Totalobligation = false;
 	for (int i = 0; i <= 300; i++) {
 		try {
@@ -355,7 +369,7 @@ public void user_to_verify_the_total_net_income_field_in_finance_details_section
 }
 
 @Then("User_6047 To verify the No. of Installments field in Finance Details section")
-public void user_to_verify_the_no_of_installments_field_in_finance_details_section() {
+public void user_6047_to_verify_the_no_of_installments_field_in_finance_details_section() {
 
 	boolean NoOfInstallment = false;
 	for (int i = 0; i <= 300; i++) {
@@ -373,7 +387,7 @@ public void user_to_verify_the_no_of_installments_field_in_finance_details_secti
 }
 
 @Then("User_6047 To verify the Installment Frequency field in Finance Details section")
-public void user_to_verify_the_installment_frequency_field_in_finance_details_section() {
+public void user_6047_to_verify_the_installment_frequency_field_in_finance_details_section() {
 	
 	boolean InstallmentFrequency = false;
 	for (int i = 0; i <= 300; i++) {
@@ -391,7 +405,7 @@ public void user_to_verify_the_installment_frequency_field_in_finance_details_se
 }
 
 @Then("User_6047 To verify the IRR field in Finance Details section")
-public void user_to_verify_the_irr_field_in_finance_details_section() {
+public void user_6047_to_verify_the_irr_field_in_finance_details_section() {
 
 
 	boolean IRR = false;
@@ -410,7 +424,7 @@ public void user_to_verify_the_irr_field_in_finance_details_section() {
 }
 
 @Then("User_6047 To verify the APR field in Finance Details section")
-public void user_to_verify_the_apr_field_in_finance_details_section() {
+public void user_6047_to_verify_the_apr_field_in_finance_details_section() {
 	
 	boolean APR = false;
 	for (int i = 0; i <= 300; i++) {
@@ -428,7 +442,7 @@ public void user_to_verify_the_apr_field_in_finance_details_section() {
 }
 
 @Then("User_6047 To verify the Last Installment Amount field in Finance Details section")
-public void user_to_verify_the_last_installment_amount_field_in_finance_details_section() {
+public void user_6047_to_verify_the_last_installment_amount_field_in_finance_details_section() {
 
 	boolean LastInstallmentamount = false;
 	for (int i = 0; i <= 300; i++) {
@@ -446,7 +460,7 @@ public void user_to_verify_the_last_installment_amount_field_in_finance_details_
 }
 
 @Then("User_6047 To verify the Eligibility Type field in Eligibility Details")
-public void user_to_verify_the_eligibility_type_field_in_finance_details_section() {
+public void user_6047_to_verify_the_eligibility_type_field_in_finance_details_section() {
 
 	boolean Eligibility_Type = false;
 	for (int i = 0; i <= 300; i++) {
@@ -466,7 +480,7 @@ public void user_to_verify_the_eligibility_type_field_in_finance_details_section
 }
 
 @Then("User_6047 To verify the Eligibility Amount field in Eligibility Details")
-public void user_to_verify_the_eligibility_amount_field_in_finance_details_section() {
+public void user_6047_to_verify_the_eligibility_amount_field_in_finance_details_section() {
 
 	boolean EligibilityAmount = false;
 	for (int i = 0; i <= 300; i++) {
@@ -487,7 +501,7 @@ public void user_to_verify_the_eligibility_amount_field_in_finance_details_secti
 }
 
 @Then("User_6047 To verify the Eligibility Percentage field in Eligibility Details")
-public void user_to_verify_the_eligibility_percentage_field_in_finance_details_section() {
+public void user_6047_to_verify_the_eligibility_percentage_field_in_finance_details_section() {
 	
 	boolean EligibilityPercentage = false;
 	for (int i = 0; i <= 300; i++) {
@@ -505,7 +519,7 @@ public void user_to_verify_the_eligibility_percentage_field_in_finance_details_s
 }
 
 @Then("User_6047 To verify the Currency field in Eligibility Details")
-public void user_to_verify_the_currency_field_in_finance_details_section() {
+public void user_6047_to_verify_the_currency_field_in_finance_details_section() {
 	
 	boolean Currency = false;
 	for (int i = 0; i <= 300; i++) {
@@ -523,7 +537,7 @@ public void user_to_verify_the_currency_field_in_finance_details_section() {
 }
 
 @Then("User_6047 To verify the Actual Percentage field in Eligibility Details")
-public void user_to_verify_the_actual_percentage_field_in_finance_details_section() {
+public void user_6047_to_verify_the_actual_percentage_field_in_finance_details_section() {
 
 	boolean Actual_percentage = false;
 	for (int i = 0; i <= 300; i++) {
@@ -541,7 +555,7 @@ public void user_to_verify_the_actual_percentage_field_in_finance_details_sectio
 }
 
 @Then("User_6047 To verify the Deviation Level field in Eligibility Details")
-public void user_to_verify_the_deviation_level_field_in_finance_details_section() {
+public void user_6047_to_verify_the_deviation_level_field_in_finance_details_section() {
 
 	boolean deviationLevel = false;
 	for (int i = 0; i <= 300; i++) {
@@ -558,7 +572,7 @@ public void user_to_verify_the_deviation_level_field_in_finance_details_section(
 }
 }
 @Then("User_6047 To verify the Back Button in Offer details screen")
-public void user_to_verify_the_back_button_in_offer_details_screen() {
+public void user_6047_to_verify_the_back_button_in_offer_details_screen() {
 	boolean BackButton_screen = false;
 	for (int i = 0; i <= 300; i++) {
 		try {
@@ -575,7 +589,7 @@ public void user_to_verify_the_back_button_in_offer_details_screen() {
 }
 
 @Then("User_6047 To verify the Accept Offer in Offer details screen")
-public void user_to_verify_the_accept_offer_in_offer_details_screen() {
+public void user_6047_to_verify_the_accept_offer_in_offer_details_screen() {
 	boolean AcceptOffer = false;
 	for (int i = 0; i <= 300; i++) {
 		try {
@@ -592,7 +606,7 @@ public void user_to_verify_the_accept_offer_in_offer_details_screen() {
 }
 
 @Then("User_6047 To verify the Offer Details section in Offer details screen")
-public void user_to_verify_the_offer_details_section_in_offer_details_screen() {
+public void user_6047_to_verify_the_offer_details_section_in_offer_details_screen() {
 	boolean OfferDetail_Verify = false;
 	for (int i = 0; i <= 300; i++) {
 		try {
@@ -609,7 +623,7 @@ public void user_to_verify_the_offer_details_section_in_offer_details_screen() {
 }
 
 @Then("User_6047 To verify the Finance Details section in Offer details screen")
-public void user_to_verify_the_finance_details_section_in_offer_details_screen() {
+public void user_6047_to_verify_the_finance_details_section_in_offer_details_screen() {
 	boolean BackButton_screen = false;
 	for (int i = 0; i <= 300; i++) {
 		try {
@@ -626,7 +640,7 @@ public void user_to_verify_the_finance_details_section_in_offer_details_screen()
 }
 
 @Then("User_6047 To verify the Credit Risk Factor \\(CONV) section in Offer details screen")
-public void user_to_verify_the_credit_risk_factor_conv_section_in_offer_details_screen() {
+public void user_6047_to_verify_the_credit_risk_factor_conv_section_in_offer_details_screen() {
 	boolean BackButton_screen = false;
 	for (int i = 0; i <= 300; i++) {
 		try {
@@ -643,7 +657,7 @@ public void user_to_verify_the_credit_risk_factor_conv_section_in_offer_details_
 }
 
 @Then("User_6047 To verify the Credit Score Details \\(CONV) section in Offer details screen")
-public void user_to_verify_the_credit_score_details_conv_section_in_offer_details_screen() {
+public void user_6047_to_verify_the_credit_score_details_conv_section_in_offer_details_screen() {
 	boolean BackButton_screen = false;
 	for (int i = 0; i <= 300; i++) {
 		try {
@@ -660,7 +674,7 @@ public void user_to_verify_the_credit_score_details_conv_section_in_offer_detail
 }
 
 @Then("User_6047 To verify the Eligibility Details section in Offer details screen")
-public void user_to_verify_the_eligibility_details_section_in_offer_details_screen() {
+public void user_6047_to_verify_the_eligibility_details_section_in_offer_details_screen() {
 	boolean BackButton_screen = false;
 	for (int i = 0; i <= 300; i++) {
 		try {
@@ -677,7 +691,7 @@ public void user_to_verify_the_eligibility_details_section_in_offer_details_scre
 }
 
 @Then("User_6047 To verify the Interest Rate Structure section in Offer details screen")
-public void user_to_verify_the_interest_rate_structure_section_in_offer_details_screen() {
+public void user_6047_to_verify_the_interest_rate_structure_section_in_offer_details_screen() {
 	boolean BackButton_screen = false;
 	for (int i = 0; i <= 300; i++) {
 		try {
@@ -694,7 +708,7 @@ public void user_to_verify_the_interest_rate_structure_section_in_offer_details_
 }
 
 @Then("User_6047 To verify the Installments section in Offer details screen")
-public void user_to_verify_the_installments_section_in_offer_details_screen() {
+public void user_6047_to_verify_the_installments_section_in_offer_details_screen() {
 	boolean BackButton_screen = false;
 	for (int i = 0; i <= 300; i++) {
 		try {
@@ -711,7 +725,7 @@ public void user_to_verify_the_installments_section_in_offer_details_screen() {
 }
 
 @Then("User_6047 To verify the Appeal Request section in Offer details screen")
-public void user_to_verify_the_appeal_request_section_in_offer_details_screen() {
+public void user_6047_to_verify_the_appeal_request_section_in_offer_details_screen() {
 	boolean BackButton_screen = false;
 	for (int i = 0; i <= 300; i++) {
 		try {
@@ -727,7 +741,7 @@ public void user_to_verify_the_appeal_request_section_in_offer_details_screen() 
 }
 }
 @Then("User_6047 To verify the Eligibility Type field is non-editable")
-public void user_to_verify_the_eligibility_type_field_is_non_editable() {
+public void user_6047_to_verify_the_eligibility_type_field_is_non_editable() {
 	boolean status = false;
 	for (int i = 0; i <= 20; i++) {
 		try {
@@ -749,7 +763,7 @@ public void user_to_verify_the_eligibility_type_field_is_non_editable() {
 }
 
 @Then("User_6047 To verify the Eligibility Amount field is non-editable")
-public void user_to_verify_the_eligibility_amount_field_is_non_editable() {
+public void user_6047_to_verify_the_eligibility_amount_field_is_non_editable() {
 	boolean status = false;
 	for (int i = 0; i <= 20; i++) {
 		try {
@@ -771,7 +785,7 @@ public void user_to_verify_the_eligibility_amount_field_is_non_editable() {
 }
 
 @Then("User_6047 To verify the Eligibility Percentage field is non-editable")
-public void user_to_verify_the_eligibility_percentage_field_is_non_editable() {
+public void user_6047_to_verify_the_eligibility_percentage_field_is_non_editable() {
 	boolean status = false;
 	for (int i = 0; i <= 20; i++) {
 		try {
@@ -792,7 +806,7 @@ public void user_to_verify_the_eligibility_percentage_field_is_non_editable() {
 }
 
 @Then("User_6047 To verify the Currency field in is non-editable")
-public void user_to_verify_the_currency_field_in_is_non_editable() {
+public void user_6047_to_verify_the_currency_field_in_is_non_editable() {
 	boolean status = false;
 	for (int i = 0; i <= 20; i++) {
 		try {
@@ -812,7 +826,7 @@ public void user_to_verify_the_currency_field_in_is_non_editable() {
 }
 
 @Then("User_6047 To verify the Actual Percentage field is non-editable")
-public void user_to_verify_the_actual_percentage_field_is_non_editable() {
+public void user_6047_to_verify_the_actual_percentage_field_is_non_editable() {
 	boolean status = false;
 	for (int i = 0; i <= 20; i++) {
 		try {
@@ -832,7 +846,7 @@ public void user_to_verify_the_actual_percentage_field_is_non_editable() {
 }
 
 @Then("User_6047 To verify the Deviation Level field in is non-editable")
-public void user_to_verify_the_deviation_level_field_in_is_non_editable() {
+public void user_6047_to_verify_the_deviation_level_field_in_is_non_editable() {
 	boolean status = false;
 	for (int i = 0; i <= 20; i++) {
 		try {

@@ -40,16 +40,16 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 
 
 	@And("User_6047 Get the test data for test case ID AT_TW_AD_DOC_01")
-	public void user_get_the_test_data_for_test_case_id_at_tw_ad_doc() {
+	public void user_6047_get_the_test_data_for_test_case_id_at_tw_ad_doc() {
 		testData =  DocumentDetails_TestData.getTestdata("DS01_AT_TW_AD_DOC_01");
 	}
 
 	@And("User_6047 Get the test data for test case ID AT_TW_AD_DOC_02")
-	public void user_get_the_test_data_for_test_case_id_at_tw_ad_doc02() {
+	public void user_6047_get_the_test_data_for_test_case_id_at_tw_ad_doc02() {
 		testData =  DocumentDetails_TestData.getTestdata("DS01_AT_TW_AD_DOC_02");
 	}
 	@And("User_6047 Click the module name dropdown in ULS application")
-	public void Click_the_module_name_dropdown_in_ULS_application() throws Throwable {
+	public void user_6047_Click_the_module_name_dropdown_in_ULS_application() throws Throwable {
 		String moduleName = "";
 		for (int i = 0; i <= 100; i++) {
 
@@ -81,7 +81,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	}
 
 	@And("User_6047 Select the module name as LOS in ULS application")
-	public void Select_the_module_name_as_LOS_in_ULS_application() throws Throwable {
+	public void user_6047_Select_the_module_name_as_LOS_in_ULS_application() throws Throwable {
 		String moduleListJSpath = "document.querySelectorAll('ion-radio-group ion-item').length";
 		String moduleLength = "";
 		for (int i = 0; i <= 100; i++) {
@@ -137,7 +137,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 
 
 	@And("User_6047 Search the  Ref Id Under Inbox")
-	public void user_search_the_ref_id_under_inbox() throws Throwable {
+	public void user_6047_user_search_the_ref_id_under_inbox() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text")));
 		//javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text"))
 		//.sendKeys(testData.get("Ref No"));
@@ -154,7 +154,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 		}	}
 
 	@And("User_6047 click the Document Details section")
-	public void user_click_the_document_details_section() {
+	public void user_6047_click_the_document_details_section() {
 		for (int i = 0; i < 200; i++) {
 			try {
 
@@ -174,7 +174,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	}
 
 	@Then("User_6047 verify the Customer Name field")
-	public void user_verify_the_customer_name_field() {
+	public void user_6047_verify_the_customer_name_field() {
 		for (int i = 0; i <500; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(DocumentDetails_js.getElement("customerName")).isDisplayed());
@@ -189,7 +189,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	}
 
 	@Then("User_6047 verify the Document Name field")
-	public void user_verify_the_document_name_field() {
+	public void user_6047_verify_the_document_name_field() {
 		for (int i = 0; i <200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(DocumentDetails_js.getElement("documentName")).isDisplayed());
@@ -203,7 +203,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	}
 
 	@Then("User_6047 verify the Required Stage field")
-	public void user_verify_the_required_stage_field() {
+	public void user_6047_verify_the_required_stage_field() {
 		for (int i = 0; i <200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(DocumentDetails_js.getElement("requiredAtStage")).isDisplayed());
@@ -217,7 +217,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	}
 
 	@Then("User_6047 verify the Document Staus field")
-	public void user_verify_the_document_staus_field() {
+	public void user_6047_verify_the_document_staus_field() {
 		for (int i = 0; i <200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(DocumentDetails_js.getElement("documentStatus")).isDisplayed());
@@ -231,7 +231,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	}
 
 	@Then("User_6047 verify the Mandatory\\/optional field")
-	public void user_verify_the_mandatory_optional_field() {
+	public void user_6047_verify_the_mandatory_optional_field() {
 		for (int i = 0; i <200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(DocumentDetails_js.getElement("mandatory/optional")).isDisplayed());
@@ -245,7 +245,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	}
 
 	@Then("User_6047 verify the Document Category field")
-	public void user_verify_the_document_category_field() {
+	public void user_6047_verify_the_document_category_field() {
 		for (int i = 0; i <200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(DocumentDetails_js.getElement("documentCategory")).isDisplayed());
@@ -259,7 +259,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	}
 
 	@Then("User_6047 verify the Upload date field")
-	public void user_verify_the_upload_date_field() {
+	public void user_6047_verify_the_upload_date_field() {
 		for (int i = 0; i <200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(DocumentDetails_js.getElement("uploadDate")).isDisplayed());
@@ -273,7 +273,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	}
 
 	@Then("User_6047 verify the Expected receipt date Stage field")
-	public void user_verify_the_expected_receipt_date_stage_field() {
+	public void user_6047_verify_the_expected_receipt_date_stage_field() {
 		for (int i = 0; i <200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(DocumentDetails_js.getElement("expectedReceiptDate")).isDisplayed());
@@ -287,7 +287,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	}
 
 	@Then("User_6047 verify the Deferral Stage field")
-	public void user_verify_the_deferral_stage_field() {
+	public void user_6047_verify_the_deferral_stage_field() {
 		for (int i = 0; i <200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(DocumentDetails_js.getElement("referralStage")).isDisplayed());
@@ -301,7 +301,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	}
 
 	@Then("User_6047 verify the Def Approved By Stage field")
-	public void user_verify_the_def_approved_by_stage_field() {
+	public void user_6047_verify_the_def_approved_by_stage_field() {
 		for (int i = 0; i <200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(DocumentDetails_js.getElement("defApprovedBy")).isDisplayed());
@@ -316,7 +316,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	}
 
 	@Then("User_6047 verify the Change In Nature Approved By field")
-	public void user_verify_the_change_in_nature_approved_by_field() {
+	public void user_6047_verify_the_change_in_nature_approved_by_field() {
 		for (int i = 0; i <200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(DocumentDetails_js.getElement("changeInNatureApprovedBy")).isDisplayed());
@@ -330,7 +330,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	}
 
 	@Then("User_6047 verify the Document Form field")
-	public void user_verify_the_document_form_field() {
+	public void user_6047_verify_the_document_form_field() {
 		for (int i = 0; i <200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(DocumentDetails_js.getElement("documentForm")).isDisplayed());
@@ -344,7 +344,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	}
 
 	@Then("User_6047 verify the Document Quality field")
-	public void user_verify_the_document_quality_field() {
+	public void user_6047_verify_the_document_quality_field() {
 		for (int i = 0; i <200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(DocumentDetails_js.getElement("documentQuality")).isDisplayed());
@@ -358,7 +358,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	}
 
 	@Then("User_6047 verify the Document Reference Number field")
-	public void user_verify_the_document_reference_number_field() {
+	public void user_6047_verify_the_document_reference_number_field() {
 		for (int i = 0; i <200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(DocumentDetails_js.getElement("documentReferrenceNumber")).isDisplayed());
@@ -372,7 +372,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	}
 
 	@Then("User_6047 verify the Document Received By field")
-	public void user_verify_the_document_received_by_field() {
+	public void user_6047_verify_the_document_received_by_field() {
 		for (int i = 0; i <200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(DocumentDetails_js.getElement("documentReceivedBy")).isDisplayed());
@@ -386,7 +386,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	}
 
 	@Then("User_6047 verify the Location Where Received field")
-	public void user_verify_the_location_where_received_field() {
+	public void user_6047_verify_the_location_where_received_field() {
 		for (int i = 0; i <200; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(DocumentDetails_js.getElement("locationWhereReceived")).isDisplayed());
@@ -400,7 +400,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	}
 
 	@Then("User_6047 verify the Rack No field")
-	public void user_verify_the_rack_no_field() {
+	public void user_6047_verify_the_rack_no_field() {
 		for (int i = 0; i <200; i++) {
 			try {
 				javascriptHelper.scrollIntoView(
@@ -417,7 +417,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	}
 
 	@Then("User_6047 verify the  Shelf No field")
-	public void user_verify_the_shelf_no_field() {
+	public void user_6047_verify_the_shelf_no_field() {
 		for (int i = 0; i <200; i++) {
 			try {
 				javascriptHelper.scrollIntoView(
@@ -434,7 +434,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	}
 
 	@Then("User_6047 verify the Box No field")
-	public void user_verify_the_box_no_field() {
+	public void user_6047_verify_the_box_no_field() {
 		for (int i = 0; i <200; i++) {
 			try {
 				javascriptHelper.scrollIntoView(
@@ -452,7 +452,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	}
 
 	@Then("User_6047 verify the Date Of Expiry field")
-	public void user_verify_the_date_of_expiry_field() {
+	public void user_6047_verify_the_date_of_expiry_field() {
 		for (int i = 0; i <200; i++) {
 			try {
 				javascriptHelper.scrollIntoView(
@@ -470,7 +470,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	}
 
 	@Then("User_6047 verify the Lodgement Amount field")
-	public void user_verify_the_lodgement_amount_field() {
+	public void user_6047_verify_the_lodgement_amount_field() {
 		for (int i = 0; i <200; i++) {
 			try {
 				javascriptHelper.scrollToElemet(
@@ -488,7 +488,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	}
 
 	@Then("User_6047 verify the Remarks field")
-	public void user_verify_the_remarks_field() {
+	public void user_6047_verify_the_remarks_field() {
 		for (int i = 0; i <200; i++) {
 			try {
 				javascriptHelper.scrollToElemet(
@@ -582,7 +582,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	}
 
 	@Then("User_6047 Give the input for Required Stage")
-	public void user_give_the_input_for_required_stage() {
+	public void user_6047_give_the_input_for_required_stage() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(DocumentDetails_js.getElement("requiredAtStage")).click();
@@ -659,7 +659,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	}
 
 	@Then("User_6047 Give the input for Document Staus")
-	public void user_give_the_input_for_document_staus() {
+	public void user_6047_give_the_input_for_document_staus() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(DocumentDetails_js.getElement("documentStatus")).click();
@@ -736,7 +736,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	}
 
 	@Then("User_6047 Give the input for Mandatory\\/optional")
-	public void user_give_the_input_for_mandatory_optional() {
+	public void user_6047_give_the_input_for_mandatory_optional() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(DocumentDetails_js.getElement("mandatory/optional")).click();
@@ -813,7 +813,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	}
 
 	@Then("User_6047 Give the input for Document Category")
-	public void user_give_the_input_for_document_category() {
+	public void user_6047_give_the_input_for_document_category() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(DocumentDetails_js.getElement("documentCategory")).click();
@@ -889,7 +889,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 		}}
 
 	@Then("User_6047 Give the input for Document Quality field")
-	public void user_give_the_input_for_document_quality_field() {
+	public void user_6047_give_the_input_for_document_quality_field() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(DocumentDetails_js.getElement("documentQuality")).click();
@@ -965,7 +965,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 		}}
 
 	@Then("User_6047 Give the input for Remarks")
-	public void user_give_the_input_for_remarks() throws Throwable {
+	public void user_6047_give_the_input_for_remarks() throws Throwable {
 		javascriptHelper.scrollIntoView(
 				javascriptHelper.executeScriptWithWebElement("document.querySelector('ion-label[id=\"ion-textarea-0-lbl\"]+ion-textarea>div>textarea')"));
 		//javascriptHelper.executeScriptWithWebElement("document.querySelector('ion-label[id=\"ion-textarea-0-lbl\"]+ion-textarea>div>textarea')").click();
@@ -991,7 +991,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 
 	}
 	@Then("User_6047 click the Save Button")
-	public void user_click_the_save_button() {
+	public void user_6047_click_the_save_button() {
 		for (int i = 0; i <20; i++) {
 			try {
 
@@ -1008,7 +1008,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	}
 
 	@Then("User_6047 to verify the same record should get saved in Document details")
-	public void user_to_verify_the_same_record_should_get_saved_in_document_details() {
+	public void user_6047_to_verify_the_same_record_should_get_saved_in_document_details() {
 		String documentName= javascriptHelper.executeScriptWithWebElement(DocumentDetails_js.getElement("documentName")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 			try {
@@ -1097,7 +1097,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 
 	}
 	@And("User_6047 to click the back button")
-	public void user_to_click_the_back_button() {
+	public void user_6047_to_click_the_back_button() {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("back_button")));
@@ -1111,7 +1111,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 		}
 	}
 	@And("User_6047 verify the functionality of back button")
-	public void user_verify_the_functionality_of_back_button() {
+	public void user_6047_verify_the_functionality_of_back_button() {
 
 		for (int i = 0; i <200; i++) {
 			try {
@@ -1125,7 +1125,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 		}
 	}
 	@Then("User_6047 to verify the Document Name field should be mandatory,Dropdown")
-	public void user_to_verify_the_document_name_field_should_be_mandatory_text_box() {
+	public void user_6047_to_verify_the_document_name_field_should_be_mandatory_text_box() {
 		String DocumentNameMandy= javascriptHelper.executeScriptWithWebElement(DocumentDetails_js.getElement("documentName")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 			try {
@@ -1152,7 +1152,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	}
 
 	@Then("User_6047 to verify the Completion Stage field should be mandatory")
-	public void user_to_verify_the_completion_stage_field_should_be_mandatory() {
+	public void user_6047_to_verify_the_completion_stage_field_should_be_mandatory() {
 		String CompletionStageMandy= javascriptHelper.executeScriptWithWebElement(DocumentDetails_js.getElement("repaymentMode_in")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 			try {
@@ -1168,7 +1168,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	}
 
 	@Then("User_6047 to verify the Status field should be mandatory,Editable,dropdown")
-	public void user_to_verify_the_status_field_should_be_mandatory_editable_dropdown() {
+	public void user_6047_to_verify_the_status_field_should_be_mandatory_editable_dropdown() {
 		String StatusFieldMandy= javascriptHelper.executeScriptWithWebElement(DocumentDetails_js.getElement("documentStatus")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 			try {
@@ -1194,7 +1194,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	}
 
 	@Then("User_6047 to verify the Quality field should be mandatory,Editable,dropdown")
-	public void user_to_verify_the_quality_field_should_be_mandatory_editable_dropdown() {
+	public void user_6047_to_verify_the_quality_field_should_be_mandatory_editable_dropdown() {
 		String QualityMandy= javascriptHelper.executeScriptWithWebElement(DocumentDetails_js.getElement("documentQuality")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 			try {
@@ -1231,7 +1231,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	}
 
 	@Then("User_6047 to verify the Date field should be nonmandatory,Date")
-	public void user_to_verify_the_date_field_should_be_mandatory_date() {
+	public void user_6047_to_verify_the_date_field_should_be_mandatory_date() {
 		String Date_Mandy= javascriptHelper.executeScriptWithWebElement(DocumentDetails_js.getElement("uploadDate")).getAttribute("ng-reflect-required");
 		for (int i = 0; i <2000; i++) {
 			try {
@@ -1257,7 +1257,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	}
 
 	@Then("User_6047 to verify the Deferred stage field should be nonmandatory,Dropdown")
-	public void user_to_verify_the_deferred_stage_field_should_be_mandatory_text_box() {
+	public void user_6047_to_verify_the_deferred_stage_field_should_be_mandatory_text_box() {
 		String DeferredStage_Mandy= javascriptHelper.executeScriptWithWebElement(DocumentDetails_js.getElement("referralStage")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 			try {
@@ -1283,7 +1283,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	}
 
 	@Then("User_6047 to verify the Location field should be nonmandatory,Dropdown")
-	public void user_to_verify_the_location_field_should_be_mandatory_text_box() {
+	public void user_6047_to_verify_the_location_field_should_be_mandatory_text_box() {
 		String Location_Mandy= javascriptHelper.executeScriptWithWebElement(DocumentDetails_js.getElement("locationWhereReceived")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 			try {
@@ -1309,7 +1309,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	}
 
 	@Then("User_6047 to verify the Rack Number field should be nonmandatory,Text box")
-	public void user_to_verify_the_rack_number_field_should_be_mandatory_text_box() {
+	public void user_6047_to_verify_the_rack_number_field_should_be_mandatory_text_box() {
 		String RackNumber_Mandy= javascriptHelper.executeScriptWithWebElement(DocumentDetails_js.getElement("rackNo_nonmandy")).getAttribute("ng-reflect-required");
 		for (int i = 0; i <2000; i++) {
 			try {
@@ -1335,7 +1335,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	}
 
 	@Then("User_6047 to verify the Shelf Number field should be nonmandatory,Text box")
-	public void user_to_verify_the_shelf_number_field_should_be_mandatory_text_box() {
+	public void user_6047_to_verify_the_shelf_number_field_should_be_mandatory_text_box() {
 		String ShelfNumber_Mandy= javascriptHelper.executeScriptWithWebElement(DocumentDetails_js.getElement("shelfno_nonMandy")).getAttribute("ng-reflect-required");
 		for (int i = 0; i <2000; i++) {
 			try {
@@ -1361,7 +1361,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	}
 
 	@Then("User_6047 to verify the Box Number field should be nonmandatory,Text box")
-	public void user_to_verify_the_box_number_field_should_be_mandatory_text_box() {
+	public void user_6047_to_verify_the_box_number_field_should_be_mandatory_text_box() {
 		String BoxNumber_Mandy= javascriptHelper.executeScriptWithWebElement(DocumentDetails_js.getElement("boxNo_nonMandy")).getAttribute("ng-reflect-required");
 		for (int i = 0; i <2000; i++) {
 			try {
@@ -1387,7 +1387,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	}
 
 	@Then("User_6047 to verify the Document with field should be nonmandatory,dropdown")
-	public void user_to_verify_the_document_with_field_should_be_mandatory_text_box() {
+	public void user_6047_to_verify_the_document_with_field_should_be_mandatory_text_box() {
 		String DocumentWith_Mandy= javascriptHelper.executeScriptWithWebElement(DocumentDetails_js.getElement("documentReceivedBy")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
 			try {
