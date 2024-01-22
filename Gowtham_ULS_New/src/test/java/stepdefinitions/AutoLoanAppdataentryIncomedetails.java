@@ -106,7 +106,7 @@ public class AutoLoanAppdataentryIncomedetails {
     }
 	
 	@Given("User_607 Search in the search Field Auto Loan App Data Entry Income Details List")
-	public void user_607_search_in_the_search_field_tawarah_app_data_entry_income_details_list() {
+	public void user_607_607_search_in_the_search_field_tawarah_app_data_entry_income_details_list() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(TawaAppDataEntryIncomeDetails.getElement("searchInInbox")).sendKeys(testData.get("Search Record"),Keys.ENTER);
@@ -120,7 +120,7 @@ public class AutoLoanAppdataentryIncomedetails {
 	}
 	
 	@Given("User_607 Search record in the search Field for Ijarah AppData Entry Identification Details")
-	public void user_607_Search_record_in_the_search_Field_for_Ijarah_AppData_Entry_Identification_Details() {
+	public void user_607_607_Search_record_in_the_search_Field_for_Ijarah_AppData_Entry_Identification_Details() {
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(TawaAppDataEntryIncomeDetails.getElement("searchInInbox")).sendKeys(IjADataEntryIdentifiDetailsexelDatatestData.get("Search Record"),Keys.ENTER);
@@ -134,7 +134,7 @@ public class AutoLoanAppdataentryIncomedetails {
 	}
 	
 	@Given("User_607 click the Customer Financials tab in Auto Loan App Data Entry Income Details List")
-	public void user_click_the_customer_financials_tab_in_auto_loan_app_data_entry_income_details_list() throws Throwable {
+	public void user_607_click_the_customer_financials_tab_in_auto_loan_app_data_entry_income_details_list() throws Throwable {
 			Thread.sleep(1000);
 			WebElement customerFinancialsTab = javascriptHelper.executeScriptWithWebElement(ALoanAppdataentryIncomedetails.getElement("customerFinancialsTab"));
 			for (int i = 0; i <= 2000; i++) {
@@ -152,7 +152,7 @@ public class AutoLoanAppdataentryIncomedetails {
 	
 	
 	@Given("User_607 Select required tab in the record")
-	public void user_select_required_tab_in_the_record() {
+	public void user_607_select_required_tab_in_the_record() {
 		int l = 0 ;
 		for (int i = 0; i < 500; i++) {
 			try {

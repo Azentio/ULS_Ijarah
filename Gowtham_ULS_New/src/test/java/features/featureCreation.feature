@@ -4,4 +4,5 @@ Feature: Title of your feature
 
   @tag1
   Scenario: Verify the fields in document details info tab Auto Loan App Data Entry
- 		And User_607 Search the Ref Id under inbox Tawaraq AppData Check Address Details
+ 		And user_607 Verify Return screen open or not
+    And user_607 Close Return screen

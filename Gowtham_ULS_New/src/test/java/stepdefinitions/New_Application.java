@@ -27,9 +27,10 @@ public class New_Application {
 	WebDriver driver = BaseClass.driver;
 	JSPaths New_ApplicationPaths = new JSPaths(excelPath, "New_Application", "FieldName", "JSPath");
 	
-	ExcelData IncomeDetailsListexelData = new ExcelData(excelTestDataPath, "New_Application", "Data Set ID");
+	ExcelData New_ApplicationexelData = new ExcelData(excelTestDataPath, "New_Application", "Data Set ID");
 	Map<String, String> testData;
 	ExcelData Customer_Search = new ExcelData(excelTestDataPath, "Customer_Search", "Data Set ID");
+	ExcelData MurApDataEntryAppDetailsexelData = new ExcelData(excelTestDataPath, "MurApDataEntryAppDetails", "Data Set ID");
 //	Map<String, String> TestData = new HashMap<>();
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
 	WaitHelper waitHelper = new WaitHelper(driver);
@@ -41,20 +42,23 @@ public class New_Application {
 	
 	@Given("User_607 Update testdata from AT_NEWAPP_02")
 	public void user_607_update_testdata_from_at_newapp_02() {
-		testData = IncomeDetailsListexelData.getTestdata("DS_AT_NEWAPP_02");
+		testData = New_ApplicationexelData.getTestdata("DS_AT_NEWAPP_02");
 	}
 	
 	@Given("User_607 Update testdata from AT_NWP_03")
 	public void user_607_update_testdata_from_at_nwp_03() {
-		testData = IncomeDetailsListexelData.getTestdata("DS_AT_NWP_03");
+		testData = New_ApplicationexelData.getTestdata("DS_AT_NWP_03");
 	}
 	
 	@Given("User_607 Update testdata from AT_NWP_04")
 	public void user_607_update_testdata_from_at_nwp_04() {
-		testData = IncomeDetailsListexelData.getTestdata("DS_AT_NWP_04");
+		testData = New_ApplicationexelData.getTestdata("DS_AT_NWP_04");
 	}
 	
-	
+	@Given("User_607 get the test data for test case AT_MU_APE_AD_01")
+	public void user_get_the_test_data_for_test_case_at_mu_ape_ad_01() {
+		testData = MurApDataEntryAppDetailsexelData.getTestdata("DS_AT_MU_APE_AD_01");
+	}
 	
 	@Given("User_607 Check GoBack Field")
 	public void user_607_check_go_back_field() {
@@ -287,7 +291,8 @@ public class New_Application {
 		Thread.sleep(3000);
 		for (int i = 0; i < 700; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("Savebutton")).click();
+			//	javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("Savebutton")).click();
+				javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("Savebutton")));
 				break;
 			} catch (Exception e) {
 				if (i==699) {
@@ -1241,6 +1246,7 @@ public class New_Application {
 
 	@Given("User_607 Check Servicing Type should be editable")
 	public void user_607_check_servicing_type_should_be_editable() {
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("ReferenceCode")));
 		for (int i = 0; i < 700; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("ServicingType")).click();
@@ -1490,9 +1496,7 @@ public class New_Application {
 						System.out.println(dropdownString);
 
 						System.out.println("Loop count " + l + " got breaked");
-
 						break;
-
 					}
 
 				}
@@ -2209,6 +2213,7 @@ public class New_Application {
 	
 	@Given("User_607 Check Sourcing Type should be mandatory")
 	public void user_607_check_sourcing_type_should_be_mandatory() {
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("SourcingStaff")));
 		for (int i = 0; i <2000; i++) {
             try {
             	String repayment = New_ApplicationPaths.getElement("SourcingType*");
@@ -2470,10 +2475,10 @@ public class New_Application {
 
 			System.out.println("String " + dropdownString.trim());
 
-			System.out.println("Map " + " Bangalore ".trim());
+			System.out.println("Map " + " EASTERN ".trim());
 
 			if ((dropdownString.trim())
-					.equalsIgnoreCase(" Bangalore ".trim())) {
+					.equalsIgnoreCase(" EASTERN ".trim())) {
 
 				for (int k = 0; k <= 300; k++) {
 
@@ -2617,10 +2622,10 @@ public class New_Application {
 
 			System.out.println("String " + dropdownString.trim());
 
-			System.out.println("Map " + " Cent Bank Finance LTD. ".trim());
+			System.out.println("Map " + " East Zone ".trim());
 
 			if ((dropdownString.trim())
-					.equalsIgnoreCase(" Cent Bank Finance LTD. ".trim())) {
+					.equalsIgnoreCase(" East Zone ".trim())) {
 
 				for (int k = 0; k <= 300; k++) {
 
@@ -2665,6 +2670,24 @@ public class New_Application {
                 String accountholdername = (String) javascriptHelper.executeScript("return "+repayment);
                 System.out.println(accountholdername);
                 Assert.assertTrue(accountholdername.contains("*"));
+                break;
+            } catch (Exception e) {
+                if (i==1999) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+		}
+	}
+	
+	@Given("User_607 Check Sourcing Staff should be nonmandatory")
+	public void user_607_check_sourcing_staff_should_be_nonmandatory() {
+		for (int i = 0; i <2000; i++) {
+            try {
+            	String repayment = New_ApplicationPaths.getElement("SourcingStaff*");
+               // String repayment ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+                String accountholdername = (String) javascriptHelper.executeScript("return "+repayment);
+                System.out.println(accountholdername);
+                Assert.assertTrue(!accountholdername.contains("*"));
                 break;
             } catch (Exception e) {
                 if (i==1999) {
@@ -3062,10 +3085,10 @@ public class New_Application {
 
 			System.out.println("String " + dropdownString.trim());
 
-			System.out.println("Map " + " RIYADH BK ".trim());
+			System.out.println("Map " + " East Zone ".trim());
 
 			if ((dropdownString.trim())
-					.equalsIgnoreCase(" RIYADH BK ".trim())) {
+					.equalsIgnoreCase(" East Zone ".trim())) {
 
 				for (int k = 0; k <= 300; k++) {
 
@@ -4321,7 +4344,320 @@ public class New_Application {
 				}
 				}
 			}
+	}
+	
+	@Given("User_607 Check Product Field should be editable in Murabha AppDataEntry Application Details")
+	public void user_check_product_field_should_be_editable_in_murabha_app_data_entry_application_details() throws Throwable {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("Product1")).click();
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+				}
+			}
+		Thread.sleep(2000);
+		
+		
+			String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+
+			String dropdownLength = "";
+
+			boolean isDropdownValueSelected = false;
+
+			String dropdownString = "";
+
+			for (int i = 0; i <= 300; i++) {
+
+				try {
+
+					dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+					System.out.println("Dropdown length " + dropdownLength);
+
+					if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (i == 300) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+			}
+
+			int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+			for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+				for (int l = 0; l <= 300; l++) {
+
+					try {
+
+						System.out.println("L value is " + l);
+
+						System.out
+								.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+						dropdownString = javascriptHelper.executeScript(
+
+								"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+								.toString();
+
+						if (!(dropdownString.isEmpty())) {
+
+							System.out.println(dropdownString);
+
+							System.out.println("Loop count " + l + " got breaked");
+
+							break;
+
+						}
+
+					} catch (Exception e) {
+
+						if (l == 300 && !(dropdownString.isBlank())) {
+
+							Assert.fail(e.getMessage());
+
+						}
+
+					}
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				}
+
+				System.out.println("String " + dropdownString.trim());
+
+				System.out.println("Map " + testData.get("SelectOptionInProduct").trim());
+
+				if ((dropdownString.trim())
+						.equalsIgnoreCase((testData.get("SelectOptionInProduct")).trim())) {
+
+					for (int k = 0; k <= 300; k++) {
+
+						try {
+
+							clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+							clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+							isDropdownValueSelected = true;
+
+							break;
+
+						} catch (Exception e) {
+
+							if (k == 300) {
+
+								Assert.fail(e.getMessage());
+							}
+						}
+					}
+				}
+				if (isDropdownValueSelected == true) {
+
+					break;
+
+				}
+			}
 	    
+	}
+
+	@Given("User_607 Check Sub Product Field should be editable in Murabha AppDataEntry Application Details")
+	public void user_check_sub_product_field_should_be_editable_in_murabha_app_data_entry_application_details() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("Subproduct1")).click();
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+				}
+			}
+		
+			String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+
+			String dropdownLength = "";
+
+			boolean isDropdownValueSelected = false;
+
+			String dropdownString = "";
+
+			for (int i = 0; i <= 300; i++) {
+
+				try {
+
+					dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+					System.out.println("Dropdown length " + dropdownLength);
+
+					if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (i == 300) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+			}
+
+			int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+			for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+				for (int l = 0; l <= 300; l++) {
+
+					try {
+
+						System.out.println("L value is " + l);
+
+						System.out
+								.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+						dropdownString = javascriptHelper.executeScript(
+
+								"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+								.toString();
+
+						if (!(dropdownString.isEmpty())) {
+
+							System.out.println(dropdownString);
+
+							System.out.println("Loop count " + l + " got breaked");
+
+							break;
+
+						}
+
+					} catch (Exception e) {
+
+						if (l == 300 && !(dropdownString.isBlank())) {
+
+							Assert.fail(e.getMessage());
+
+						}
+
+					}
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				}
+
+				System.out.println("String " + dropdownString.trim());
+
+				System.out.println("Map " + (testData.get("SubProductField")).trim());
+				
+				
+				if ((dropdownString.trim())
+						.equalsIgnoreCase(testData.get("SubProductField").trim())) {
+
+					for (int k = 0; k <= 300; k++) {
+
+						try {
+
+							clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+							clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+									"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+							isDropdownValueSelected = true;
+
+							break;
+
+						} catch (Exception e) {
+
+							if (k == 300) {
+
+								Assert.fail(e.getMessage());
+							}
+						}
+					}
+				}
+				if (isDropdownValueSelected == true) {
+
+					break;
+
+				}
+			}
+	}
+	
+	@Given("User_607 Check Product field should be mandatory in Murabha AppDataEntry Application Details")
+	public void user_check_product_field_should_be_mandatory_in_murabha_app_data_entry_application_details() {
+		 for (int i = 0; i <2000; i++) {
+             try {
+             	String repayment = New_ApplicationPaths.getElement("Product1*");
+                 String accountholdername = (String) javascriptHelper.executeScript("return "+repayment);
+                 Assert.assertTrue(accountholdername.contains("*"));
+                 break;
+             } catch (Exception e) {
+                 if (i==1999) {
+                     Assert.fail(e.getMessage());
+                 }
+             }
+         }
+	}
+
+	@Given("User_607 Check Sub Product field should be mandatory in Murabha AppDataEntry Application Details")
+	public void user_check_sub_product_field_should_be_mandatory_in_murabha_app_data_entry_application_details() {
+		  for (int i = 0; i <2000; i++) {
+              try {
+              	String repayment = New_ApplicationPaths.getElement("Subproduct1*");
+                 // String repayment ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+                  String accountholdername = (String) javascriptHelper.executeScript("return "+repayment);
+                  System.out.println(accountholdername);
+                  Assert.assertTrue(accountholdername.contains("*"));
+                  break;
+              } catch (Exception e) {
+                  if (i==1999) {
+                      Assert.fail(e.getMessage());
+                  }
+              }
+          }
 	}
 	
 	

@@ -39,7 +39,7 @@ public class AutoLoanAppDataEntryDocumentDetails {
 	
 	
 	@And("User_607 click on document details info tab Auto Loan App Data Entry")
-	public void user_click_on_document_details_info_tab_auto_loan_app_data_entry() {
+	public void user_607_click_on_document_details_info_tab_auto_loan_app_data_entry() {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -55,7 +55,7 @@ public class AutoLoanAppDataEntryDocumentDetails {
 	}
 
 	@And("User_607 Verify back button in document details Auto Loan App Data Entry")
-	public void user_verify_back_button_in_document_details_auto_loan_app_data_entry() {
+	public void user_607_verify_back_button_in_document_details_auto_loan_app_data_entry() {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -71,7 +71,7 @@ public class AutoLoanAppDataEntryDocumentDetails {
 	}
 
 	@And("User_607 Verify Add button in document details Auto Loan App Data Entry")
-	public void user_verify_add_button_in_document_details_auto_loan_app_data_entry() {
+	public void user_607_verify_add_button_in_document_details_auto_loan_app_data_entry() {
 		for (int i = 0; i <= 500; i++) {
 			try {
 					javascriptHelper.executeScriptWithWebElement(
@@ -87,7 +87,7 @@ public class AutoLoanAppDataEntryDocumentDetails {
 	}
 
 	@And("User_607 Verify Search box in document details Auto Loan App Data Entry")
-	public void user_verify_search_box_in_document_details_auto_loan_app_data_entry() {
+	public void user_607_verify_search_box_in_document_details_auto_loan_app_data_entry() {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -103,7 +103,7 @@ public class AutoLoanAppDataEntryDocumentDetails {
 	}
 
 	@And("User_607 Verify Export to PDF in document details Auto Loan App Data Entry")
-	public void user_verify_export_to_pdf_in_document_details_auto_loan_app_data_entry() {
+	public void user_607_verify_export_to_pdf_in_document_details_auto_loan_app_data_entry() {
 		for (int i = 0; i <= 500; i++) {
 			try {
 			javascriptHelper.executeScriptWithWebElement(
@@ -130,7 +130,7 @@ public class AutoLoanAppDataEntryDocumentDetails {
 	}
 
 	@And("User_607 Verify Export to Excel in document details Auto Loan App Data Entry")
-	public void user_verify_export_to_excel_in_document_details_auto_loan_app_data_entry() {
+	public void user_607_verify_export_to_excel_in_document_details_auto_loan_app_data_entry() {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -156,7 +156,7 @@ public class AutoLoanAppDataEntryDocumentDetails {
 	}
 
 	@And("User_607 Verify Already filled data in document details Auto Loan App Data Entry")
-	public void user_verify_already_filled_data_in_document_details_auto_loan_app_data_entry() {
+	public void user_607_verify_already_filled_data_in_document_details_auto_loan_app_data_entry() {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				String attribute = javascriptHelper.executeScriptWithWebElement(
@@ -175,7 +175,7 @@ public class AutoLoanAppDataEntryDocumentDetails {
 	}
 	
 	@And("User_607 Click Edit button in list view screen")
-	public void user_click_edit_button_in_list_view_screen() {
+	public void user_607_click_edit_button_in_list_view_screen() {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -190,7 +190,7 @@ public class AutoLoanAppDataEntryDocumentDetails {
 	}
 	
 	@And("User_607 Click view button in list view screen")
-	public void user_click_view_button_in_list_view_screen() {
+	public void user_607_click_view_button_in_list_view_screen() {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -205,7 +205,7 @@ public class AutoLoanAppDataEntryDocumentDetails {
 	}
 
 	@And("User_607 Verify Post clicking on Add button system should allow user to create new record")
-	public void user_verify_post_clicking_on_add_button_system_should_allow_user_to_create_new_record() {
+	public void user_607_verify_post_clicking_on_add_button_system_should_allow_user_to_create_new_record() {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -337,7 +337,7 @@ public class AutoLoanAppDataEntryDocumentDetails {
 	}
 	
 	@And("User_607 Click back button in document details Auto Loan App Data Entry record")
-	public void user_click_back_button_in_document_details_auto_loan_app_data_entry_record() {
+	public void user_607_click_back_button_in_document_details_auto_loan_app_data_entry_record() {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -352,7 +352,7 @@ public class AutoLoanAppDataEntryDocumentDetails {
 	}
 
 	@And("User_607 Search matching value system should display all the possible matching records")
-	public void user_search_matching_value_system_should_display_all_the_possible_matching_records() {
+	public void user_607_search_matching_value_system_should_display_all_the_possible_matching_records() {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -388,7 +388,7 @@ public class AutoLoanAppDataEntryDocumentDetails {
 	}
 
 	@And("User_607 Search missmatching value system should display not matching any records")
-	public void user_search_missmatching_value_system_should_display_not_matching_any_records() throws Throwable {
+	public void user_607_search_missmatching_value_system_should_display_not_matching_any_records() throws Throwable {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -419,7 +419,7 @@ public class AutoLoanAppDataEntryDocumentDetails {
 	}
 	
 	@Given("User_607 Verify the back button in List View screen")
-	public void user_verify_the_back_button_in_list_view_screen() {
+	public void user_607_verify_the_back_button_in_list_view_screen() {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
