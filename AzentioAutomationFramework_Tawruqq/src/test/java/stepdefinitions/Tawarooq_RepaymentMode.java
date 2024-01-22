@@ -54,10 +54,6 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 	public void user_get_the_test_data_for_test_case_id_at_tw_ad_irm_06() {
 		testData =  Tawarooq_Repayment_TestData.getTestdata("DS01_AT_TW_AD_IRM_06");
 	}
-	@Then("logout from the ULS Application")
-	public void logout_from_the_ULS_application() throws Throwable {
-		ijaraLogin.logoutFromIjara();
-	}
 	
 	@And("User_6047 search the Ref Id Under inbox")
 	public void user_search_the_ref_id_under_inbox_6047() throws Throwable {
@@ -1823,6 +1819,19 @@ for (int i = 0; i < 200; i++) {
 		}
 
 		System.out.println(NumberOFlistViewRecord);
+	}
+	@And("User_6047 click edit icon")
+	public void user_click_edit_icon_() {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("editIcon")).click();
+				break;
+			} catch (Exception e) { 
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
 	}
 
 

@@ -21,7 +21,7 @@ import io.cucumber.java.en.Then;
 import pageobjects.JSPaths;
 import resources.BaseClass;
 
-public class Ijarah_NewAppContactDetailsSteps extends BaseClass {
+public class Tawarruq_NewAppContactDetailsSteps extends BaseClass {
 	WebDriver driver = BaseClass.driver;
 	ConfigFileReader configFileReader = new ConfigFileReader();
 	String jsExcelPath = configFileReader.getJSFilePath();

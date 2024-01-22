@@ -23,8 +23,8 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	WebDriver driver = BaseClass.driver;
 	ConfigFileReader configFileReader = new ConfigFileReader();
 	IjaraLogin ijaraLogin = new IjaraLogin();
-	String excelPath = System.getProperty("user.dir") + "\\TestData\\IjaraJSPaths.xlsx";
-	String excelTestDataPath = System.getProperty("user.dir") + "\\TestData\\ijaraTestData.xlsx";
+	String excelPath = configFileReader.getJSFilePath();
+	String excelTestDataPath = configFileReader.getTawruqqTestDataFile();
 	// Ijarah_CommonFieldName
 	SoftAssert softAssert = new SoftAssert();
 	ClicksAndActionsHelper clicksAndActionsHelper = new ClicksAndActionsHelper(driver);

@@ -1,7 +1,7 @@
 Feature: To Test the identificatio details screen at new app stage with Tawruqq product
 @AT_TW_NEWAPP_IDA_01
 Scenario: To Test the identification details screen with valid input (Tawruqq)
-Given navigate the IJARA URL
+Given navigate the Tawarruq URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
@@ -29,7 +29,7 @@ And user_076 invoke soft asset in customer identification details screen at new 
 
 @AT_TW_NEWAPP_IDA_02
 Scenario: to test the customer identificatin details screen with in valid input at new app stage (Tawruqq)
-Given navigate the IJARA URL
+Given navigate the Tawarruq URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
@@ -53,7 +53,7 @@ Then logout from the ULS Application
 And user_076 invoke soft asset in customer identification details screen at new app stage
 @AT_TW_NEWAPP_IDA_03
 Scenario: to verify user can able to update the customer identification details record from list view (Tawruqq)
-Given navigate the IJARA URL
+Given navigate the Tawarruq URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
@@ -75,7 +75,7 @@ Then logout from the ULS Application
 
 @AT_TW_NEWAPP_IDA_04
 Scenario: to test the customer identificatin details screen with in valid input at new app stage (Tawruqq)
-Given navigate the IJARA URL
+Given navigate the Tawarruq URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
@@ -100,7 +100,7 @@ Then logout from the ULS Application
 And user_076 invoke soft asset in customer identification details screen at new app stage
 @AT_TW_NEWAPP_IDA_05
 Scenario: To verify user can able to change the identification details list view record in new app stage(Tawruqq)
-Given navigate the IJARA URL
+Given navigate the Tawarruq URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
@@ -124,7 +124,7 @@ And user_076 invoke soft asset in customer identification details screen at new 
 
 @AT_TW_NEWAPP_IDA_06
 Scenario: To test the list view search functionality in identificatio details record (Tawruqq)
-Given navigate the IJARA URL
+Given navigate the Tawarruq URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
@@ -146,7 +146,7 @@ Then logout from the ULS Application
 And user_076 invoke soft asset in customer identification details screen at new app stage
 @AT_TW_NEWAPP_IDA_07
 Scenario: To test the export functionality in identification details list view (Tawruqq)
-Given navigate the IJARA URL
+Given navigate the Tawarruq URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown

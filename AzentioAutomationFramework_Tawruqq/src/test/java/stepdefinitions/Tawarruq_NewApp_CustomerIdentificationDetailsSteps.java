@@ -9,6 +9,7 @@ import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.asserts.SoftAssert;
 
 import dataProvider.ConfigFileReader;
@@ -21,7 +22,7 @@ import io.cucumber.java.en.Then;
 import pageobjects.JSPaths;
 import resources.BaseClass;
 
-public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass {
+public class Tawarruq_NewApp_CustomerIdentificationDetailsSteps extends BaseClass {
 	WebDriver driver = BaseClass.driver;
 	ConfigFileReader configFileReader = new ConfigFileReader();
 
@@ -215,63 +216,43 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 
 	@And("user_076 click on add button in customer identification screen")
 	public void user_076_click_on_add_button_in_customer_identification_screen() throws Throwable {
-		String labelLength = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
-		String lengthOfTheLabel = "";
-		boolean isAddButttonClicked = false;
-		String labelName = "";
-		for (int i = 0; i <= 300; i++) {
+		String length =null;
+		for (int i = 0; i <500; i++) {
 			try {
-				lengthOfTheLabel = javascriptHelper.executeScript("return " + labelLength).toString();
-				if (!(lengthOfTheLabel.isEmpty())) {
+			    length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title').length").toString();
+			    System.out.println(length);
+				if (!length.isBlank()&&!length.equalsIgnoreCase("0")&&!length.equalsIgnoreCase("1")) {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 300) {
+				if (i==499) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		int premitiveLabelLength = Integer.parseInt(lengthOfTheLabel);
-		System.out.println("Length of the label " + premitiveLabelLength);
-
-		for (int i = 0; i < premitiveLabelLength; i++) {
-			for (int j = 0; j <= 1000; j++) {
-				try {
-					labelName = javascriptHelper.executeScript(
-							"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
-									+ i + "].innerText")
-							.toString();
-					System.out.println("label Name is " + labelName);
-					if (!(labelName.isEmpty())
-							&& (labelName.trim()).equalsIgnoreCase(("Customer Identification").trim())) {
-						if (j > 250) {
-							System.out.println("Inside final if condition");
-							clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
-									"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + i + "]"));
-						}
-						System.out.println("Inside final if condition");
-						System.out.println("Label Name " + labelName);
-						javascriptHelper.executeScriptWithWebElement(
-								"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + i + "]").click();
-						isAddButttonClicked = true;
-						break;
-					} else {
-						isAddButttonClicked = false;
-						break;
-					}
-				} catch (Exception e) {
-					if (j == 1000) {
-						Assert.fail(e.getMessage());
-					}
+		for (int i = 0; i <500; i++) {
+		try {
+			for (int j = 0; j <Integer.parseInt(length); j++) {
+				String title ="return document.querySelectorAll('ion-title')["+j+"].innerText";
+				String titlename = javascriptHelper.executeScript(title).toString();
+				System.out.println(titlename);
+				if (titlename.trim().contains("Customer Identification")) {
+					System.out.println("condition true");
+					String jspath ="document.querySelectorAll('ion-title')["+j+"].parentElement.nextElementSibling.querySelector('button')";
+					WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
+					Actions actions = new Actions(driver);
+					actions.scrollToElement(addButton);
+					addButton.click();
+					break;
 				}
 			}
-			if (isAddButttonClicked == true) {
-				break;
+			break;
+		} catch (Exception e) {
+			if (i==499) {
+				Assert.fail(e.getMessage());
 			}
 		}
-		if (isAddButttonClicked == false) {
-			Assert.fail("Add button is not clicked hence test case failed");
-		}
+	}
 	}
 
 	@Then("user_076 verify customer identification screen should get open with save and back button in new app stage")

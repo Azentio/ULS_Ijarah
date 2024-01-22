@@ -20,7 +20,7 @@ import io.cucumber.java.en.Then;
 import pageobjects.JSPaths;
 import resources.BaseClass;
 
-public class Ijarah_NewAppAddressDetailsSteps extends BaseClass {
+public class Tawarruq_NewAppAddressDetailsSteps extends BaseClass {
 	WebDriver driver = BaseClass.driver;
 	ConfigFileReader configFileReader = new ConfigFileReader();
 	String excelTestDataPath = configFileReader.getTawruqqTestDataFile();

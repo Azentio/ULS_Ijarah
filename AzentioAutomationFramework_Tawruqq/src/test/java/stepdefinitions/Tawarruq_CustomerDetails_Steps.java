@@ -18,7 +18,7 @@ import io.cucumber.java.en.Then;
 import pageobjects.JSPaths;
 import resources.BaseClass;
 
-public class Tawarooq_CustomerDetails_Steps extends BaseClass {
+public class Tawarruq_CustomerDetails_Steps extends BaseClass {
 	WebDriver driver = BaseClass.driver;
 	ConfigFileReader configFileReader = new ConfigFileReader();
 	IjaraLogin ijaraLogin = new IjaraLogin();

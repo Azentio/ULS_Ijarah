@@ -1,7 +1,7 @@
 Feature: To test the address details screen in new app stage (Tawruqq)
 @AT_TW_NewApp_AddDetails_01
 Scenario: To test the address details screen at new app stage with valid input (Tawruqq)
-Given navigate the IJARA URL
+Given navigate the Tawarruq URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
@@ -45,7 +45,7 @@ And user_076 invoke soft assert in address details screen at new appp stage
 
 @AT_TW_NewApp_AddDetails_02
 Scenario: To test the address details screen at new app stage with in valid input (Tawruqq)
-Given navigate the IJARA URL
+Given navigate the Tawarruq URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
@@ -71,7 +71,7 @@ And user_076 invoke soft assert in address details screen at new appp stage
 
 @AT_TW_NewApp_AddDetails_03
 Scenario: to verify user can able to update the list view record of address details in new app stage (Tawruqq)
-Given navigate the IJARA URL
+Given navigate the Tawarruq URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
@@ -91,7 +91,7 @@ Then logout from the ULS Application
 And user_076 invoke soft assert in address details screen at new appp stage
 @AT_TW_NewApp_AddDetails_04
 Scenario: to verify user can able to update the list view record of address details in new app stage (Tawruqq)
-Given navigate the IJARA URL
+Given navigate the Tawarruq URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
@@ -118,7 +118,7 @@ Then logout from the ULS Application
 And user_076 invoke soft assert in address details screen at new appp stage
 @AT_TW_NewApp_AddDetails_05
 Scenario: to verify user can able to update the list view record status of address details in new app stage (Tawruqq)
-Given navigate the IJARA URL
+Given navigate the Tawarruq URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
@@ -143,7 +143,7 @@ And user_076 invoke soft assert in address details screen at new appp stage
 
 @AT_TW_NewApp_AddDetails_06
 Scenario: to verify user can able to update the list view record of address details in new app stage (Tawruqq)
-Given navigate the IJARA URL
+Given navigate the Tawarruq URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
@@ -163,7 +163,7 @@ And user_076 search the unmatched text in address details list view in new app s
 Then user_076 verify system should not show matches in address details list view in new app stage
 @AT_TW_NewApp_AddDetails_07
 Scenario: To test the export functionality in address details screen at new app stage (Tawruqq)
-Given navigate the IJARA URL
+Given navigate the Tawarruq URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown

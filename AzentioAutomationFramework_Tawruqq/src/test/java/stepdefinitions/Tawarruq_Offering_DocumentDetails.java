@@ -18,7 +18,7 @@ import io.cucumber.java.en.Then;
 import pageobjects.JSPaths;
 import resources.BaseClass;
 
-public class Murabha_Offering_DocumentDetails {
+public class Tawarruq_Offering_DocumentDetails {
 	WebDriver driver = BaseClass.driver;
 	ConfigFileReader configFileReader = new ConfigFileReader();
 	IjaraLogin ijaraLogin = new IjaraLogin();

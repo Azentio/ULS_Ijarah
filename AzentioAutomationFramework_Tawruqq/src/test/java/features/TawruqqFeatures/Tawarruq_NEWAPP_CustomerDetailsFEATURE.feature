@@ -1,18 +1,18 @@
 Feature: To test the Tawruqq customer details screen with Tawruqq product
 @AT_TW_NewApp_CustDetails_01
 Scenario: To test the Tawruqq customer details with valid input
-Given navigate the IJARA URL
-And  login with valid credentials for new application stage
-And  click on module dropdown in IJRARAH
-And  click on LOS option in module dropdown
-And  click on mail box
-And  click on search box upon click on the mail box
-And  click on search text box upon click the search button
+Given navigate the Tawarruq URL
+And login with valid credentials for new application stage
+And click on module dropdown in IJRARAH
+And click on LOS option in module dropdown
+And click on mail box
+And click on search box upon click on the mail box
+And click on search text box upon click the search button
 And user_076 get the test data for the test case id AT_TW_NewApp_CustDetails_01
 And user_076 search for tawruqq record reference number in new app stage
 And user_076 select the tawruqq record in new app stage
-And  user_076 click on customer details tab in new app stage
-And  user_076 click on add button in customer details screen
+And user_076 click on customer details tab in new app stage
+And user_076 click on add button in customer details screen
 Then user_076 verify application type field should be editable mandatory dropdown
 Then user_076 verify customer type field should be mandatory editable dropdown
 Then user_076 verify title field should be editable mandatory dropdown
@@ -43,13 +43,13 @@ And user_076 invoke soft assert for customer details screen
 
 @AT_TW_NewApp_CustDetails_02
 Scenario: To test the customer details screen with invalid input Tawruqq
-Given navigate the IJARA URL
-And  login with valid credentials for new application stage
-And  click on module dropdown in IJRARAH
-And  click on LOS option in module dropdown
-And  click on mail box
-And  click on search box upon click on the mail box
-And  click on search text box upon click the search button
+Given navigate the Tawarruq URL
+And login with valid credentials for new application stage
+And click on module dropdown in IJRARAH
+And click on LOS option in module dropdown
+And click on mail box
+And click on search box upon click on the mail box
+And click on search text box upon click the search button
 And user_076 get the test data for the test case id AT_TW_NewApp_CustDetails_02
 And user_076 search for tawruqq record reference number in new app stage
 And user_076 select the tawruqq record in new app stage
@@ -67,7 +67,7 @@ Then logout from the ULS Application
 And user_076 invoke soft assert for customer details screen
 @AT_TW_NewApp_CustDetails_03
 Scenario: to update the customer details list view record with valid input
-Given navigate the IJARA URL
+Given navigate the Tawarruq URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
@@ -87,7 +87,7 @@ Then logout from the ULS Application
 
 @AT_TW_NewApp_CustDetails_04
 Scenario: to update the customer details list view record with invalid input
-Given navigate the IJARA URL
+Given navigate the Tawarruq URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
@@ -113,7 +113,7 @@ And user_076 invoke soft assert for customer details screen
 
 @AT_TW_NewApp_CustDetails_05
 Scenario: To test whether user can able to change the customer details record status active/inactive
-Given navigate the IJARA URL
+Given navigate the Tawarruq URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
@@ -136,7 +136,7 @@ Then logout from the ULS Application
 And user_076 invoke soft assert for customer details screen
 @AT_TW_NewApp_CustDetails_06
 Scenario: to test the record search functionality in customer details list view in new app stage (Tawruqq)
-Given navigate the IJARA URL
+Given navigate the Tawarruq URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown

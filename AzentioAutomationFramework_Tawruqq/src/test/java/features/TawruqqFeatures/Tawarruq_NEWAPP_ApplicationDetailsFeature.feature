@@ -1,7 +1,7 @@
 Feature: To test the tawrruq application details screen with murabha product
 @AT_TW_NewApp_AD_01
 Scenario: To test user can able to create the application details record with valid valid
-Given navigate the IJARA URL
+Given navigate the Tawarruq URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
@@ -50,7 +50,7 @@ And user_076 invoke soft assert for new application screen
 
 @AT_TW_NewApp_AD_02
 Scenario: To test user can able to create the application details record with in valid data
-Given navigate the IJARA URL
+Given navigate the Tawarruq URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
@@ -81,7 +81,7 @@ And user_076 invoke soft assert for new application screen
 
 @AT_TW_NewApp_AD_03
 Scenario: To test user can able to update the list application details list view record at new app stage
-Given navigate the IJARA URL
+Given navigate the Tawarruq URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
@@ -104,7 +104,7 @@ Then logout from the ULS Application
 
 @AT_TW_NewApp_AD_04
 Scenario: To test user can able to update the list view record of application details at new app stage
-Given navigate the IJARA URL
+Given navigate the Tawarruq URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
@@ -132,7 +132,7 @@ And user_076 invoke soft assert for new application screen
 
 @AT_TW_NewApp_AD_05
 Scenario: To test the submit functionality of application details in new app stage
-Given navigate the IJARA URL
+Given navigate the Tawarruq URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
@@ -188,7 +188,7 @@ Then user_076 verify applicatio details record should get submitted from new app
 Then logout from the ULS Application
 @AT_TW_NewApp_AD_06
 Scenario: To verify user can able to export the list view contentof application details in pdf and excel format
-Given navigate the IJARA URL
+Given navigate the Tawarruq URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
@@ -211,7 +211,7 @@ And user_076 invoke soft assert for new application screen
 
 @AT_TW_NewApp_AD_07
 Scenario: To verify user can able to test the search functionality in application details (New app stage)
-Given navigate the IJARA URL
+Given navigate the Tawarruq URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown

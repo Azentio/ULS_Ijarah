@@ -1,7 +1,7 @@
 Feature: To Test the Tawruqq contact details record at new app stagge
 @AT_TW_NewApp_CD_01
 Scenario: To test user can able to create contact details record with valid input (Tawruqq)
-Given navigate the IJARA URL
+Given navigate the Tawarruq URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
@@ -28,7 +28,7 @@ Then logout from the ULS Application
 And user_076 invoke softAssert in contac details new new app stage
 @AT_TW_NewApp_CD_02
 Scenario: To test user can able to create contact details record with invalid input (Tawruqq)
-Given navigate the IJARA URL
+Given navigate the Tawarruq URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
@@ -58,7 +58,7 @@ And user_076 invoke softAssert in contac details new new app stage
 
 @AT_TW_NewApp_CD_03
 Scenario: To verify user can able to update the contact details record with valid input (Tawruqq)
-Given navigate the IJARA URL
+Given navigate the Tawarruq URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
@@ -79,7 +79,7 @@ And user_076 invoke softAssert in contac details new new app stage
 
 @AT_TW_NewApp_CD_04
 Scenario: To verify user can able to update the contact details record with invalid input (Tawruqq)
-Given navigate the IJARA URL
+Given navigate the Tawarruq URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
@@ -110,7 +110,7 @@ Then logout from the ULS Application
 And user_076 invoke softAssert in contac details new new app stage
 @AT_TW_NewApp_CD_05
 Scenario: To verify user can able to activate and de activate the contact details list view record (Tawruqq)
-Given navigate the IJARA URL
+Given navigate the Tawarruq URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
@@ -137,7 +137,7 @@ Then logout from the ULS Application
 And user_076 invoke softAssert in contac details new new app stage
 @AT_TW_NewApp_CD_06
 Scenario: to test the record search functionality in customer details list view in new app stage (Tawruqq)
-Given navigate the IJARA URL
+Given navigate the Tawarruq URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
@@ -159,7 +159,7 @@ Then logout from the ULS Application
 And user_076 invoke softAssert in contac details new new app stage
 @AT_TW_NewApp_CD_07
 Scenario: To verify user can able to activate and de activate the contact details list view record (Tawruqq)
-Given navigate the IJARA URL
+Given navigate the Tawarruq URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
 And click on LOS option in module dropdown
