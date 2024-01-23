@@ -147,7 +147,7 @@ public class Ijara_DocumentDetails_Step {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -171,7 +171,7 @@ public class Ijara_DocumentDetails_Step {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -226,7 +226,7 @@ public class Ijara_DocumentDetails_Step {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -250,7 +250,7 @@ public class Ijara_DocumentDetails_Step {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -306,7 +306,7 @@ public class Ijara_DocumentDetails_Step {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -330,7 +330,7 @@ public class Ijara_DocumentDetails_Step {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -386,7 +386,7 @@ public class Ijara_DocumentDetails_Step {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -410,7 +410,7 @@ public class Ijara_DocumentDetails_Step {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -466,7 +466,7 @@ public class Ijara_DocumentDetails_Step {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -490,7 +490,7 @@ public class Ijara_DocumentDetails_Step {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -546,7 +546,7 @@ public class Ijara_DocumentDetails_Step {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -570,7 +570,7 @@ public class Ijara_DocumentDetails_Step {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -659,7 +659,7 @@ public class Ijara_DocumentDetails_Step {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -683,7 +683,7 @@ public class Ijara_DocumentDetails_Step {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -739,7 +739,7 @@ public class Ijara_DocumentDetails_Step {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -763,7 +763,7 @@ public class Ijara_DocumentDetails_Step {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -820,7 +820,7 @@ public class Ijara_DocumentDetails_Step {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -844,7 +844,7 @@ public class Ijara_DocumentDetails_Step {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -899,7 +899,7 @@ public class Ijara_DocumentDetails_Step {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -923,7 +923,7 @@ public class Ijara_DocumentDetails_Step {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -979,7 +979,7 @@ public class Ijara_DocumentDetails_Step {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1003,7 +1003,7 @@ public class Ijara_DocumentDetails_Step {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -1089,7 +1089,7 @@ public class Ijara_DocumentDetails_Step {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1113,7 +1113,7 @@ public class Ijara_DocumentDetails_Step {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -1171,7 +1171,7 @@ public class Ijara_DocumentDetails_Step {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1195,7 +1195,7 @@ public class Ijara_DocumentDetails_Step {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}

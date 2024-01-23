@@ -239,7 +239,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 			try {
 				numberOfRecordInMailBox = javascriptHelper.executeScript("return " + mailBoxRecordList).toString();
 				System.out.println("Number of record in mail box " + numberOfRecordInMailBox);
-				if (!(numberOfRecordInMailBox.isBlank())) {
+				if (!(numberOfRecordInMailBox.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -329,7 +329,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 					recordStatus = javascriptHelper.executeScript("return " + customerIdentificationDetailsElements
 							.getElement("customer_identification_details_record_status")).toString();
 					System.out.println("Record status " + recordStatus);
-					if (!(recordStatus.isBlank())) {
+					if (!(recordStatus.isEmpty())) {
 						break;
 					}
 				}
@@ -362,7 +362,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 							.toString();
 
 					System.out.println("List view Record status " + listViewRecordStatus);
-					if (!(listViewRecordStatus.isBlank())) {
+					if (!(listViewRecordStatus.isEmpty())) {
 						break;
 					}
 				}
@@ -389,7 +389,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 		for (int i = 0; i <= 200; i++) {
 			try {
 				lengthOfTheLabel = javascriptHelper.executeScript("return " + labelLength).toString();
-				if (!(lengthOfTheLabel.isBlank())) {
+				if (!(lengthOfTheLabel.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -409,7 +409,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 									+ i + "].innerText")
 							.toString();
 					System.out.println("label Name is " + labelName);
-					if (!(labelName.isBlank())
+					if (!(labelName.isEmpty())
 							&& (labelName.trim()).equalsIgnoreCase(("Customer Identification").trim())) {
 						if (j > 250) {
 							System.out.println("Inside final if condition");
@@ -485,7 +485,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 						.executeScriptWithWebElement(
 								customerIdentificationDetailsElements.getElement("id_type_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(idTypeMandatoryAttribute.isBlank()) && !(fieldValidation.isBlank())) {
+				if (!(idTypeMandatoryAttribute.isEmpty()) && !(fieldValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -527,7 +527,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 						.executeScriptWithWebElement(
 								customerIdentificationDetailsElements.getElement("id_number_input"))
 						.getAttribute("type");
-				if (!(mandatoryVerification.isBlank()) && !(fieldTypeVerification.isBlank())) {
+				if (!(mandatoryVerification.isEmpty()) && !(fieldTypeVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -572,7 +572,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 								+ customerIdentificationDetailsElements.getElement("date_of_issue_field_validation"))
 						.toString();
 
-				if (!(mandatoryVerification.isBlank()) && !(fieldTypeVerification.isBlank())) {
+				if (!(mandatoryVerification.isEmpty()) && !(fieldTypeVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -622,7 +622,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 						.executeScript("return "
 								+ customerIdentificationDetailsElements.getElement("date_of_expiry_field_validation"))
 						.toString();
-				if (!(mandatoryVerification.isBlank()) && !(fieldTypeVerification.isBlank())) {
+				if (!(mandatoryVerification.isEmpty()) && !(fieldTypeVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -672,7 +672,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 						.executeScriptWithWebElement(
 								customerIdentificationDetailsElements.getElement("Issuing_Authority_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(idTypeMandatoryAttribute.isBlank()) && !(fieldType.isBlank())) {
+				if (!(idTypeMandatoryAttribute.isEmpty()) && !(fieldType.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -713,7 +713,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 						.executeScriptWithWebElement(
 								customerIdentificationDetailsElements.getElement("Issuing_Authority_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(idTypeMandatoryAttribute.isBlank()) && !(fieldType.isBlank())) {
+				if (!(idTypeMandatoryAttribute.isEmpty()) && !(fieldType.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -749,7 +749,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 								customerIdentificationDetailsElements.getElement("primary_id_flag_toggle_button"))
 						.getAttribute("role");
 
-				if (!(toggleVerification.isBlank())) {
+				if (!(toggleVerification.isEmpty())) {
 					System.out.println("Toggle verification is " + toggleVerification);
 					break;
 				}
@@ -787,7 +787,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 			try {
 				saveVaidation = javascriptHelper
 						.executeScript("return " + commonJSElements.getElement("toast_container_message")).toString();
-				if (!(saveVaidation.isBlank())) {
+				if (!(saveVaidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -828,7 +828,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 			try {
 				mandatoryValidationPopup = javascriptHelper
 						.executeScript("return " + commonJSElements.getElement("toast_message")).toString();
-				if (!(mandatoryValidationPopup.isBlank())) {
+				if (!(mandatoryValidationPopup.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -870,7 +870,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 						.executeScript("return "
 								+ customerIdentificationDetailsElements.getElement("id_number_field_level_validation"))
 						.toString();
-				if (!(idNumberFieldValidation.isBlank())) {
+				if (!(idNumberFieldValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -922,7 +922,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 						.executeScript("return "
 								+ customerIdentificationDetailsElements.getElement("id_number_get_field_value"))
 						.toString();
-				if (!(idNumberFieldValidation.isBlank())) {
+				if (!(idNumberFieldValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -947,7 +947,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 		for (int i = 0; i <= 300; i++) {
 			try {
 				noOfListView = javascriptHelper.executeScript("return " + listViewQuery).toString();
-				if (noOfListView.equals("0") && !(noOfListView.isBlank())) {
+				if (noOfListView.equals("0") && !(noOfListView.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1127,7 +1127,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 			try {
 				saveVaidation = javascriptHelper
 						.executeScript("return " + commonJSElements.getElement("toast_container_message")).toString();
-				if (!(saveVaidation.isBlank())) {
+				if (!(saveVaidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1153,7 +1153,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 						"return  document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]')["
 								+ indexOfListView + "].querySelectorAll('td span')[7].innerText")
 						.toString();
-				if (!(listViewIDNumber.isBlank())) {
+				if (!(listViewIDNumber.isEmpty())) {
 					System.out.println("ID number from list view is " + listViewIDNumber);
 					break;
 				}
@@ -1209,7 +1209,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 		for (int i = 0; i <= 300; i++) {
 			try {
 				noOfListView = javascriptHelper.executeScript("return " + listViewQuery).toString();
-				if (noOfListView.equals("0") && !(noOfListView.isBlank())) {
+				if (noOfListView.equals("0") && !(noOfListView.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1291,7 +1291,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 		for (int i = 0; i <= 300; i++) {
 			try {
 				noOfListView = javascriptHelper.executeScript("return " + listViewQuery).toString();
-				if (noOfListView.equals("0") && !(noOfListView.isBlank())) {
+				if (noOfListView.equals("0") && !(noOfListView.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1602,7 +1602,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 		for (int i = 0; i <= 200; i++) {
 			try {
 				lengthOfTheLabel = javascriptHelper.executeScript("return " + labelLength).toString();
-				if (!(lengthOfTheLabel.isBlank())) {
+				if (!(lengthOfTheLabel.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1622,7 +1622,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 									+ i + "].innerText")
 							.toString();
 					System.out.println("label Name is " + labelName);
-					if (!(labelName.isBlank())
+					if (!(labelName.isEmpty())
 							&& (labelName.trim()).equalsIgnoreCase(("Customer Identification").trim())) {
 						if (i > 250) {
 							javascriptHelper
@@ -1671,7 +1671,7 @@ public class Ijarah_NewApp_CustomerIdentificationDetailsSteps extends BaseClass 
 		for (int i = 0; i <= 300; i++) {
 			try {
 				noOfListView = javascriptHelper.executeScript("return " + listViewQuery).toString();
-				if (noOfListView.equals("0") && !(noOfListView.isBlank())) {
+				if (noOfListView.equals("0") && !(noOfListView.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {

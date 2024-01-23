@@ -26,7 +26,7 @@ public class ExcelTest {
 		
 		for (int i = 2; i <=columnCount; i++) {
 			String cellData = excelReader.getCellData(sheetName, columnName, i);
-			if (!(cellData.isBlank())) {
+			if (!(cellData.isEmpty())) {
 				li.add(cellData);
 			}
 			

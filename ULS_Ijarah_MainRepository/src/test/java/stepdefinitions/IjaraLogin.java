@@ -40,7 +40,7 @@ public class IjaraLogin extends BaseClass {
 				String otp = javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString();
 				System.out.println("OTP is " + otp);
 				if (!(javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString()
-						.isBlank())) {
+						.isEmpty())) {
 
 					
 					break;
@@ -70,7 +70,7 @@ public class IjaraLogin extends BaseClass {
 				String otp = javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString();
 				System.out.println("OTP is " + otp);
 				if (!(javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString()
-						.isBlank())) {
+						.isEmpty())) {
 
 					javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("signInButton")).click();
 					break;
@@ -97,7 +97,7 @@ public class IjaraLogin extends BaseClass {
 //					String otp = javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString();
 //					System.out.println("OTP is " + otp);
 //					if (!(javascriptHelper.executeScript("return " + jsPaths.getElement("otpField")).toString()
-//							.isBlank())) {
+//							.isEmpty())) {
 //
 //						break;
 //					}

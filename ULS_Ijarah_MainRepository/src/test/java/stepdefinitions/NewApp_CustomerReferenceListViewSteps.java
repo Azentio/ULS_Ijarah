@@ -165,7 +165,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 			try {
 				numberOfRecordInMailBox = javascriptHelper.executeScript("return " + mailBoxRecordList).toString();
 				System.out.println("Number of record in mail box " + numberOfRecordInMailBox);
-				if (!(numberOfRecordInMailBox.isBlank())) {
+				if (!(numberOfRecordInMailBox.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -208,7 +208,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 		for (int i = 0; i <= 200; i++) {
 			try {
 				lengthOfTheLabel = javascriptHelper.executeScript("return " + labelLength).toString();
-				if (!(lengthOfTheLabel.isBlank())) {
+				if (!(lengthOfTheLabel.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -228,7 +228,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 									+ i + "].innerText")
 							.toString();
 					System.out.println("label Name is " + labelName);
-					if (!(labelName.isBlank())
+					if (!(labelName.isEmpty())
 							&& (labelName.trim()).equalsIgnoreCase(("References List View").trim())) {
 						if (j > 250) {
 							clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
@@ -305,7 +305,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 				fieldValidation = javascriptHelper
 						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("relationship_type_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(mandatoryVerification.isBlank()) && !(fieldValidation.isBlank())) {
+				if (!(mandatoryVerification.isEmpty()) && !(fieldValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -348,7 +348,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 				fieldValidation = javascriptHelper
 						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("salutation_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(mandatoryVerification.isBlank()) && !(fieldValidation.isBlank())) {
+				if (!(mandatoryVerification.isEmpty()) && !(fieldValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -563,7 +563,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.executeScriptWithWebElement(
 								customerReferenceJsPaths.getElement("identification_type_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(mandatoryVerification.isBlank()) && !(fieldValidation.isBlank())) {
+				if (!(mandatoryVerification.isEmpty()) && !(fieldValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1048,7 +1048,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 			try {
 				saveButtonValidationMessage = javascriptHelper
 						.executeScript("return " + CommonJSElements.getElement("toast_container_message")).toString();
-				if (!(saveButtonValidationMessage.isBlank())) {
+				if (!(saveButtonValidationMessage.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1093,7 +1093,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 			try {
 				mandatoryValidationMessage = javascriptHelper
 						.executeScript("return " + CommonJSElements.getElement("toast_message")).toString();
-				if (!(mandatoryValidationMessage.isBlank())) {
+				if (!(mandatoryValidationMessage.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1136,7 +1136,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.executeScript("return "
 								+ customerReferenceJsPaths.getElement("first_name_special_character_input_validation"))
 						.toString();
-				if (!(specialCharacterInputvalidation.isBlank())) {
+				if (!(specialCharacterInputvalidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1179,7 +1179,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 				invalidEmailIDvalidation = javascriptHelper
 						.executeScript("return " + customerReferenceJsPaths.getElement("invalid_email_id_validation"))
 						.toString();
-				if (!(invalidEmailIDvalidation.isBlank())) {
+				if (!(invalidEmailIDvalidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1259,7 +1259,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 		for (int i = 0; i <= 200; i++) {
 			try {
 				lengthOfTheLabel = javascriptHelper.executeScript("return " + labelLength).toString();
-				if (!(lengthOfTheLabel.isBlank())) {
+				if (!(lengthOfTheLabel.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1279,7 +1279,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 									+ i + "].innerText")
 							.toString();
 					System.out.println("label Name is " + labelName);
-					if (!(labelName.isBlank())
+					if (!(labelName.isEmpty())
 							&& (labelName.trim()).equalsIgnoreCase(("References List View").trim())) {
 						if (j > 250) {
 							javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
@@ -1318,7 +1318,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				noOfListView = javascriptHelper.executeScript("return " + listViewQuery).toString();
-				if (noOfListView.equals("0") && !(noOfListView.isBlank())) {
+				if (noOfListView.equals("0") && !(noOfListView.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1446,7 +1446,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 			try {
 				updateSuccessMessage = javascriptHelper
 						.executeScript("return " + CommonJSElements.getElement("toast_container_message")).toString();
-				if (!(updateSuccessMessage.isBlank())) {
+				if (!(updateSuccessMessage.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1470,7 +1470,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 			try {
 				updatedFirstNameFromScreen = javascriptHelper.executeScript("return " + queryForListViewRecord)
 						.toString();
-				if (!(updatedFirstNameFromScreen.isBlank())) {
+				if (!(updatedFirstNameFromScreen.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1564,7 +1564,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 				tempRecordStatus = javascriptHelper
 						.executeScript("return " + customerReferenceJsPaths.getElement("opened_record_status"))
 						.toString();
-				if (!(tempRecordStatus.isBlank())) {
+				if (!(tempRecordStatus.isEmpty())) {
 					System.out.println("Opened Record Status " + tempRecordStatus);
 					break;
 				}
@@ -1616,7 +1616,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 		for (int i = 0; i <= 150; i++) {
 			try {
 				listViewRecordStatus = javascriptHelper.executeScript("return " + queryForListViewRecord).toString();
-				if (!(listViewRecordStatus.isBlank())) {
+				if (!(listViewRecordStatus.isEmpty())) {
 					System.out.println("List view Record status" + listViewRecordStatus);
 					break;
 				}
@@ -1645,7 +1645,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				noOfListView = javascriptHelper.executeScript("return " + listViewQuery).toString();
-				if (noOfListView.equals("0") && !(noOfListView.isBlank())) {
+				if (noOfListView.equals("0") && !(noOfListView.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1750,7 +1750,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 		for (int i = 0; i <= 150; i++) {
 			try {
 				matchedSearchResult = javascriptHelper.executeScript("return " + extractSearchResult).toString();
-				if (!(matchedSearchResult.isBlank())) {
+				if (!(matchedSearchResult.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1802,7 +1802,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 			try {
 				if (i > 100) {
 					unmatchedSearchResult = javascriptHelper.executeScript("return " + extractSearchResult).toString();
-					if (!(unmatchedSearchResult.isBlank())
+					if (!(unmatchedSearchResult.isEmpty())
 							|| unmatchedSearchResult.contains("Showing 0 to 0 of 0 entries")) {
 						break;
 					}

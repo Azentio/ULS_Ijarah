@@ -167,7 +167,7 @@ public class Ijara_Steps_610 {
 	            try {
 	                moduleLength = javascriptHelper.executeScript("return " + moduleListJSpath).toString();
 	                System.out.println("Module Length " + moduleLength);
-	                if (!(moduleLength.isBlank())) {
+	                if (!(moduleLength.isEmpty())) {
 	                    break;
 	                }
 	            } catch (Exception e) {
@@ -885,7 +885,7 @@ public class Ijara_Steps_610 {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -911,7 +911,7 @@ public class Ijara_Steps_610 {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -1055,7 +1055,7 @@ for (int i = 0; i <= 300; i++) {
 	try {
 		dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 		System.out.println("Dropdown length " + dropdownLength);
-		if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+		if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 			break;
 		}
 	} catch (Exception e) {
@@ -1081,7 +1081,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 				break;
 			}
 		} catch (Exception e) {
-			if (l == 300 && !(dropdownString.isBlank())) {
+			if (l == 300 && !(dropdownString.isEmpty())) {
 				Assert.fail(e.getMessage());
 			}
 		}
@@ -3275,7 +3275,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			try {
 				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
 				System.out.println("List of add button " + listOfAddButton);
-				if (!(listOfAddButton.isBlank())) {
+				if (!(listOfAddButton.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -3294,7 +3294,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 									+ j + "].textContent")
 							.toString();
 					System.out.println("Screen Name " + addButtonScreenName);
-					if (!(addButtonScreenName.isBlank())) {
+					if (!(addButtonScreenName.isEmpty())) {
 						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
 						if ((addButtonScreenName.trim()).equalsIgnoreCase((" References List View ").trim())) {
 							System.out.println("Inside nested loop");
@@ -4143,7 +4143,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -4171,7 +4171,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 					}
 
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -4238,7 +4238,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -4266,7 +4266,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 					}
 
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -4334,7 +4334,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -4362,7 +4362,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 					}
 
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -4430,7 +4430,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -4458,7 +4458,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 					}
 
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -4526,7 +4526,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -4554,7 +4554,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 					}
 
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -5658,7 +5658,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 					try {
 						dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 						System.out.println("Dropdown length " + dropdownLength);
-						if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+						if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 							break;
 						}
 					} catch (Exception e) {
@@ -5684,7 +5684,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 								break;
 							}
 						} catch (Exception e) {
-							if (l == 300 && !(dropdownString.isBlank())) {
+							if (l == 300 && !(dropdownString.isEmpty())) {
 								Assert.fail(e.getMessage());
 							}
 						}

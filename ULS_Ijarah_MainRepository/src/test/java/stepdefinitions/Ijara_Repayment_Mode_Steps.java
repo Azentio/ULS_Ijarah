@@ -349,7 +349,7 @@ public class Ijara_Repayment_Mode_Steps {
 			for (int j = 0; i <2000; i++) {
 				try {
 					radio = (String) javascriptHelper.executeScript(jsPath);
-					if (!radio.isBlank()||!radio.isEmpty()) {
+					if (!(radio.isEmpty())) {
 						break;
 					}
 					
@@ -425,7 +425,7 @@ public class Ijara_Repayment_Mode_Steps {
 				for (int j = 0; i <2000; i++) {
 					try {
 						radio = (String) javascriptHelper.executeScript(jsPath);
-						if (!radio.isBlank()||!radio.isEmpty()) {
+						if (!(radio.isEmpty())) {
 							break;
 						}
 						
@@ -503,7 +503,7 @@ public class Ijara_Repayment_Mode_Steps {
 				for (int j = 0; i <2000; i++) {
 					try {
 						radio = (String) javascriptHelper.executeScript(jsPath);
-						if (!radio.isBlank()||!radio.isEmpty()) {
+						if (!(radio.isEmpty())) {
 							break;
 						}
 						
@@ -629,7 +629,7 @@ public class Ijara_Repayment_Mode_Steps {
 				for (int j = 0; i <2000; i++) {
 					try {
 						radio = (String) javascriptHelper.executeScript(jsPath);
-						if (!radio.isBlank()||!radio.isEmpty()) {
+						if (!(radio.isEmpty())) {
 							break;
 						}
 						
@@ -688,7 +688,7 @@ public class Ijara_Repayment_Mode_Steps {
 				for (int j = 0; i <2000; i++) {
 					try {
 						radio = (String) javascriptHelper.executeScript(jsPath);
-						if (!radio.isBlank()||!radio.isEmpty()) {
+						if (!(radio.isEmpty())) {
 							break;
 						}
 						
@@ -764,7 +764,7 @@ public class Ijara_Repayment_Mode_Steps {
 				for (int j = 0; i <2000; i++) {
 					try {
 						radio = (String) javascriptHelper.executeScript(jsPath);
-						if (!radio.isBlank()||!radio.isEmpty()) {
+						if (!(radio.isEmpty())) {
 							break;
 						}
 						

@@ -67,7 +67,7 @@ public class UserUtility_615 {
 			for (int j = 0; j<2000; j++) {
 				try {
 					 radio = javascriptHelper.executeScript(jsPath).toString();
-					if (!radio.isBlank()||!radio.isEmpty()) {
+					if (!radio.isEmpty()||!radio.isEmpty()) {
 						break;
 					}
 					

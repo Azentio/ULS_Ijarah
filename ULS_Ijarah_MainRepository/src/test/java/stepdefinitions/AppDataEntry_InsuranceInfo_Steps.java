@@ -134,7 +134,7 @@ public class AppDataEntry_InsuranceInfo_Steps {
 				try {
 				dropdownLength = javaScriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 				break;
 				}
 				} catch (Exception e) {
@@ -158,7 +158,7 @@ public class AppDataEntry_InsuranceInfo_Steps {
 				break;
 				}
 				} catch (Exception e) {
-				if (l == 300 && !(dropdownString.isBlank())) {
+				if (l == 300 && !(dropdownString.isEmpty())) {
 				Assert.fail(e.getMessage());
 				}
 				}
@@ -214,7 +214,7 @@ public class AppDataEntry_InsuranceInfo_Steps {
 		try {
 		dropdownLength = javaScriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 		System.out.println("Dropdown length " + dropdownLength);
-		if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+		if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 		break;
 		}
 		} catch (Exception e) {
@@ -238,7 +238,7 @@ public class AppDataEntry_InsuranceInfo_Steps {
 		break;
 		}
 		} catch (Exception e) {
-		if (l == 300 && !(dropdownString.isBlank())) {
+		if (l == 300 && !(dropdownString.isEmpty())) {
 		Assert.fail(e.getMessage());
 		}
 		}

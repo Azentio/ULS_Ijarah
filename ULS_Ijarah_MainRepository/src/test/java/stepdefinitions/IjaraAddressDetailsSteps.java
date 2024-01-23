@@ -137,7 +137,7 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 						.executeScript("return " + commonJSPaths.getElement("module_dropdown") + ".textContent")
 						.toString();
 				System.out.println("Module Name " + moduleName);
-				if ((!moduleName.isBlank())) {
+				if ((!moduleName.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -168,7 +168,7 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 			try {
 				moduleLength = javascriptHelper.executeScript("return " + moduleListJSpath).toString();
 				System.out.println("Module Length " + moduleLength);
-				if (!(moduleLength.isBlank()) && !(moduleLength.equalsIgnoreCase("0"))) {
+				if (!(moduleLength.isEmpty()) && !(moduleLength.equalsIgnoreCase("0"))) {
 
 					break;
 				}
@@ -290,7 +290,7 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 			try {
 				numberOfRecordInMailBox = javascriptHelper.executeScript("return " + mailBoxRecordList).toString();
 				System.out.println("Number of record in mail box " + numberOfRecordInMailBox);
-				if (!(numberOfRecordInMailBox.isBlank())) {
+				if (!(numberOfRecordInMailBox.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -367,7 +367,7 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 			try {
 				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
 				System.out.println("List of add button " + listOfAddButton);
-				if (!(listOfAddButton.isBlank())) {
+				if (!(listOfAddButton.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -386,7 +386,7 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 									+ j + "].textContent")
 							.toString();
 					System.out.println("Screen Name " + addButtonScreenName);
-					if (!(addButtonScreenName.isBlank())) {
+					if (!(addButtonScreenName.isEmpty())) {
 						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
 						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Address Details").trim())) {
 							System.out.println("Inside nested loop");
@@ -514,7 +514,7 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -539,7 +539,7 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 100 && !(dropdownString.isBlank())) {
+					if (l == 100 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -606,7 +606,7 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -631,7 +631,7 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 100 && !(dropdownString.isBlank())) {
+					if (l == 100 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -698,7 +698,7 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -723,7 +723,7 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 100 && !(dropdownString.isBlank())) {
+					if (l == 100 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -881,7 +881,7 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -906,7 +906,7 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 100 && !(dropdownString.isBlank())) {
+					if (l == 100 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -969,7 +969,7 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -994,7 +994,7 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 100 && !(dropdownString.isBlank())) {
+					if (l == 100 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -1089,7 +1089,7 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1114,7 +1114,7 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 100 && !(dropdownString.isBlank())) {
+					if (l == 100 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -1525,7 +1525,7 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1550,7 +1550,7 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 100 && !(dropdownString.isBlank())) {
+					if (l == 100 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -1657,7 +1657,7 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 				toastContent = javascriptHelper.executeScript("return " + commonJSPaths.getElement("toast_message"))
 						.toString();
 				System.out.println(toastContent);
-				if (!(toastContent.isBlank())) {
+				if (!(toastContent.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1696,7 +1696,7 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 								+ addressDetailsJSPaths.getElement("address_line_1_special_character_validation"))
 						.toString();
 				System.out.println(specialCharacterValidation);
-				if (!(specialCharacterValidation.isBlank())) {
+				if (!(specialCharacterValidation.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1754,7 +1754,7 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 				sectionLength = javascriptHelper.executeScript(
 						"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length")
 						.toString();
-				if (!(sectionLength.isBlank()) && sectionLength.equals("0")) {
+				if (!(sectionLength.isEmpty()) && sectionLength.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1798,7 +1798,7 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 						.executeScript("return " + addressDetailsJSPaths.getElement("address_line1") + ".value")
 						.toString();
 				System.out.println(addressDetailsLength);
-				if (!(addressDetailsLength.isBlank()) || addressDetailsLength.equals("0")) {
+				if (!(addressDetailsLength.isEmpty()) || addressDetailsLength.equals("0")) {
 
 					break;
 				}
@@ -1847,7 +1847,7 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 						.executeScript("return " + addressDetailsJSPaths.getElement("address_line1") + ".value")
 						.toString();
 				System.out.println(addressDetailsLength);
-				if (!(addressDetailsLength.isBlank()) || addressDetailsLength.equals("0")) {
+				if (!(addressDetailsLength.isEmpty()) || addressDetailsLength.equals("0")) {
 
 					break;
 				}
@@ -1871,7 +1871,7 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 						.executeScript("return " + addressDetailsJSPaths.getElement("address_line1") + ".value")
 						.toString();
 				System.out.println(addressDetailsLength);
-				if (!(addressDetailsLength.isBlank()) || addressDetailsLength.equals("0")) {
+				if (!(addressDetailsLength.isEmpty()) || addressDetailsLength.equals("0")) {
 
 					break;
 				}
@@ -1941,7 +1941,7 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 				sectionLength = javascriptHelper.executeScript(
 						"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length")
 						.toString();
-				if (!(sectionLength.isBlank()) && sectionLength.equals("0")) {
+				if (!(sectionLength.isEmpty()) && sectionLength.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2024,7 +2024,7 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 				sectionLength = javascriptHelper.executeScript(
 						"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length")
 						.toString();
-				if (!(sectionLength.isBlank()) && sectionLength.equals("0")) {
+				if (!(sectionLength.isEmpty()) && sectionLength.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2088,7 +2088,7 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 				sectionLength = javascriptHelper.executeScript(
 						"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length")
 						.toString();
-				if (!(sectionLength.isBlank()) && sectionLength.equals("0")) {
+				if (!(sectionLength.isEmpty()) && sectionLength.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2126,7 +2126,7 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 										+ "].innerText")
 								.toString();
 						System.out.println(fieldName);
-						if (!(fieldName.isBlank())) {
+						if (!(fieldName.isEmpty())) {
 
 							System.out.println("l loop got breaked ");
 							break;
@@ -2176,7 +2176,7 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 				sectionLength = javascriptHelper.executeScript(
 						"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length")
 						.toString();
-				if (!(sectionLength.isBlank()) && sectionLength.equals("0")) {
+				if (!(sectionLength.isEmpty()) && sectionLength.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2275,7 +2275,7 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 								+ (sectionIndex + 1)
 								+ "].querySelector('p-paginator span[class=\"p-paginator-current ng-star-inserted\"]').innerText")
 						.toString();
-				if ((searchResult.isBlank())) {
+				if ((searchResult.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2312,7 +2312,7 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 				sectionLength = javascriptHelper.executeScript(
 						"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length")
 						.toString();
-				if (!(sectionLength.isBlank()) && sectionLength.equals("0")) {
+				if (!(sectionLength.isEmpty()) && sectionLength.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2399,7 +2399,7 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 								+ (sectionIndex + 1)
 								+ "].querySelector('p-paginator span[class=\"p-paginator-current ng-star-inserted\"]').innerText")
 						.toString();
-				if ((searchResult.isBlank())) {
+				if ((searchResult.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2428,7 +2428,7 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 				sectionLength = javascriptHelper.executeScript(
 						"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length")
 						.toString();
-				if (!(sectionLength.isBlank()) && sectionLength.equals("0")) {
+				if (!(sectionLength.isEmpty()) && sectionLength.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2517,7 +2517,7 @@ public class IjaraAddressDetailsSteps extends BaseClass {
 				sectionLength = javascriptHelper.executeScript(
 						"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length")
 						.toString();
-				if (!(sectionLength.isBlank()) && sectionLength.equals("0")) {
+				if (!(sectionLength.isEmpty()) && sectionLength.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {

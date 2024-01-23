@@ -122,7 +122,7 @@ public class ClicksAndActionsHelper {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					System.out.println("Dropdown Length " + dropdownLength);
 					break;
 				}
@@ -147,7 +147,7 @@ public class ClicksAndActionsHelper {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}

@@ -400,7 +400,7 @@ public class IJARAH_Steps_615 {
 			try {
 				moduleLength = javascriptHelper.executeScript("return " + moduleListJSpath).toString();
 				System.out.println("Module Length " + moduleLength);
-				if (!(moduleLength.isBlank())) {
+				if (!(moduleLength.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1096,7 +1096,7 @@ public class IJARAH_Steps_615 {
 			try {
 				recordStatus = javascriptHelper.executeScript("return " + applicationDetailsJsPaths
 						.getElement("statusToggleBtn")).toString();
-				if (!(recordStatus.isBlank())) {
+				if (!(recordStatus.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1128,7 +1128,7 @@ public class IJARAH_Steps_615 {
 		 * javascriptHelper.executeScript("return"+document.querySelectorAll('ion-col[
 		 * class="m-0 p-0 ng-star-inserted md hydrated"]')[" + i +
 		 * "].querySelector('p-tag span').innerText").toString(); if
-		 * (!(listViewRecordStatus.isBlank())) { break; } } catch (Exception e) { if (i
+		 * (!(listViewRecordStatus.isEmpty())) { break; } } catch (Exception e) { if (i
 		 * == 300) { Assert.fail(e.getMessage()); } } } if
 		 * (recordStatus.equals("false")) {
 		 * softAssert.assertEquals(listViewRecordStatus, "Active"); } else if
@@ -1287,7 +1287,7 @@ public class IJARAH_Steps_615 {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				popUp =javascriptHelper.executeScript("return "+applicationDetailsJsPaths.getElement("postClickSavePopup")).toString();
-				if (!popUp.isBlank()||!popUp.isEmpty()) {
+				if (!popUp.isEmpty()||!popUp.isEmpty()) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1800,7 +1800,7 @@ public class IJARAH_Steps_615 {
 			try {
 				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
 				System.out.println("List of add button " + listOfAddButton);
-				if (!(listOfAddButton.isBlank())) {
+				if (!(listOfAddButton.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1829,7 +1829,7 @@ public class IJARAH_Steps_615 {
 									+ j + "].textContent")
 							.toString();
 					System.out.println("Screen Name " + addButtonScreenName);
-					if (!(addButtonScreenName.isBlank())) {
+					if (!(addButtonScreenName.isEmpty())) {
 						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
 						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Financial Commitments").trim())) {
 							System.out.println("Inside nested loop");
@@ -1967,7 +1967,7 @@ public class IJARAH_Steps_615 {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1991,7 +1991,7 @@ public class IJARAH_Steps_615 {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -3040,7 +3040,7 @@ public class IJARAH_Steps_615 {
 			try {
 				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
 				System.out.println("List of add button " + listOfAddButton);
-				if (!(listOfAddButton.isBlank())) {
+				if (!(listOfAddButton.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -3069,7 +3069,7 @@ public class IJARAH_Steps_615 {
 									+ j + "].textContent")
 							.toString();
 					System.out.println("Screen Name " + addButtonScreenName);
-					if (!(addButtonScreenName.isBlank())) {
+					if (!(addButtonScreenName.isEmpty())) {
 						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
 						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Financial Commitments").trim())) {
 							System.out.println("Inside nested loop");
@@ -3784,7 +3784,7 @@ public class IJARAH_Steps_615 {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -3808,7 +3808,7 @@ public class IJARAH_Steps_615 {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -4676,7 +4676,7 @@ public class IJARAH_Steps_615 {
 			try {
 				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
 				System.out.println("List of add button " + listOfAddButton);
-				if (!(listOfAddButton.isBlank())) {
+				if (!(listOfAddButton.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -4705,7 +4705,7 @@ public class IJARAH_Steps_615 {
 									+ j + "].textContent")
 							.toString();
 					System.out.println("Screen Name " + addButtonScreenName);
-					if (!(addButtonScreenName.isBlank())) {
+					if (!(addButtonScreenName.isEmpty())) {
 						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
 						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Financial Commitments").trim())) {
 							System.out.println("Inside nested loop");
@@ -4762,7 +4762,7 @@ public class IJARAH_Steps_615 {
 			try {
 				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
 				System.out.println("List of add button " + listOfAddButton);
-				if (!(listOfAddButton.isBlank())) {
+				if (!(listOfAddButton.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -4791,7 +4791,7 @@ public class IJARAH_Steps_615 {
 									+ j + "].textContent")
 							.toString();
 					System.out.println("Screen Name " + addButtonScreenName);
-					if (!(addButtonScreenName.isBlank())) {
+					if (!(addButtonScreenName.isEmpty())) {
 						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
 						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Financial Commitments").trim())) {
 							System.out.println("Inside nested loop");
@@ -4829,7 +4829,7 @@ public class IJARAH_Steps_615 {
 			try {
 				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
 				System.out.println("List of add button " + listOfAddButton);
-				if (!(listOfAddButton.isBlank())) {
+				if (!(listOfAddButton.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -4858,7 +4858,7 @@ public class IJARAH_Steps_615 {
 									+ j + "].textContent")
 							.toString();
 					System.out.println("Screen Name " + addButtonScreenName);
-					if (!(addButtonScreenName.isBlank())) {
+					if (!(addButtonScreenName.isEmpty())) {
 						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
 						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Financial Commitments").trim())) {
 							System.out.println("Inside nested loop");

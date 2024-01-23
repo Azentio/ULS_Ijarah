@@ -291,7 +291,7 @@ public class IJARAH_Steps {
 			try {
 				moduleLength = javascriptHelper.executeScript("return " + moduleListJSpath).toString();
 				System.out.println("Module Length " + moduleLength);
-				if (!(moduleLength.isBlank()) && !moduleLength.equals("0")) {
+				if (!(moduleLength.isEmpty()) && !moduleLength.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -379,7 +379,7 @@ public class IJARAH_Steps {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('button[ng-reflect-text=\"Entitle\"]').length")
 						.toString();
 				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0") && length.equals("1")) {
+				if (!length.isEmpty() && !length.equals("0") && length.equals("1")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -411,7 +411,7 @@ public class IJARAH_Steps {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
 						.toString();
 				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0")) {
+				if (!length.isEmpty() && !length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -451,7 +451,7 @@ public class IJARAH_Steps {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
 						.toString();
 				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0")) {
+				if (!length.isEmpty() && !length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -492,7 +492,7 @@ public class IJARAH_Steps {
 			try {
 				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
 				System.out.println("Length:" + listOfAddButton);
-				if (!(listOfAddButton.isBlank()) && !listOfAddButton.equals("0") && !listOfAddButton.equals("1")) {
+				if (!(listOfAddButton.isEmpty()) && !listOfAddButton.equals("0") && !listOfAddButton.equals("1")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -510,7 +510,7 @@ public class IJARAH_Steps {
 							"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
 									+ j + "].textContent")
 							.toString();
-					if (!(addButtonScreenName.isBlank())) {
+					if (!(addButtonScreenName.isEmpty())) {
 						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Financial Commitments").trim())) {
 							actions.moveToElement(javascriptHelper.executeScriptWithWebElement(
 											"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]")).build().perform();
@@ -542,7 +542,7 @@ public class IJARAH_Steps {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
 						.toString();
 				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0")) {
+				if (!length.isEmpty() && !length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -583,7 +583,7 @@ public class IJARAH_Steps {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
 						.toString();
 				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0")) {
+				if (!length.isEmpty() && !length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -624,7 +624,7 @@ public class IJARAH_Steps {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
 						.toString();
 				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0")) {
+				if (!length.isEmpty() && !length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1543,7 +1543,7 @@ public class IJARAH_Steps {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1567,7 +1567,7 @@ public class IJARAH_Steps {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -1865,7 +1865,7 @@ public class IJARAH_Steps {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
 						.toString();
 				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0") && !length.equals("1")) {
+				if (!length.isEmpty() && !length.equals("0") && !length.equals("1")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1912,7 +1912,7 @@ public class IJARAH_Steps {
 			try {
 				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
 				System.out.println("List of add button " + listOfAddButton);
-				if (!(listOfAddButton.isBlank())) {
+				if (!(listOfAddButton.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1930,7 +1930,7 @@ public class IJARAH_Steps {
 									+ j + "].textContent")
 							.toString();
 					System.out.println("Screen Name " + addButtonScreenName);
-					if (!(addButtonScreenName.isBlank())) {
+					if (!(addButtonScreenName.isEmpty())) {
 						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
 						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Financial Commitments").trim())) {
 							System.out.println("Inside nested loop");
@@ -2674,7 +2674,7 @@ public class IJARAH_Steps {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2698,7 +2698,7 @@ public class IJARAH_Steps {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -3687,7 +3687,7 @@ public class IJARAH_Steps {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -3711,7 +3711,7 @@ public class IJARAH_Steps {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -3804,7 +3804,7 @@ public class IJARAH_Steps {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
 						.toString();
 				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0")) {
+				if (!length.isEmpty() && !length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -3842,7 +3842,7 @@ public class IJARAH_Steps {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('kub-workflow-decision button').length")
 						.toString();
 				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0")) {
+				if (!length.isEmpty() && !length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -3894,7 +3894,7 @@ public class IJARAH_Steps {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio-group ion-label').length")
 						.toString();
 				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0")) {
+				if (!length.isEmpty() && !length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -3933,7 +3933,7 @@ public class IJARAH_Steps {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-chip ion-label').length")
 						.toString();
 				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0")) {
+				if (!length.isEmpty() && !length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -4043,7 +4043,7 @@ public class IJARAH_Steps {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -4067,7 +4067,7 @@ public class IJARAH_Steps {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -4135,7 +4135,7 @@ public class IJARAH_Steps {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -4159,7 +4159,7 @@ public class IJARAH_Steps {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -4233,7 +4233,7 @@ public class IJARAH_Steps {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -4257,7 +4257,7 @@ public class IJARAH_Steps {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -4352,7 +4352,7 @@ public class IJARAH_Steps {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
 						.toString();
 				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0")) {
+				if (!length.isEmpty() && !length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -4470,7 +4470,7 @@ public class IJARAH_Steps {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
 						.toString();
 				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0")) {
+				if (!length.isEmpty() && !length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -4527,7 +4527,7 @@ public class IJARAH_Steps {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
 						.toString();
 				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0")) {
+				if (!length.isEmpty() && !length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -4585,7 +4585,7 @@ public class IJARAH_Steps {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
 						.toString();
 				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0")) {
+				if (!length.isEmpty() && !length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -4642,7 +4642,7 @@ public class IJARAH_Steps {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
 						.toString();
 				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0")) {
+				if (!length.isEmpty() && !length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -4682,7 +4682,7 @@ public class IJARAH_Steps {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
 						.toString();
 				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0")) {
+				if (!length.isEmpty() && !length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -4722,7 +4722,7 @@ public class IJARAH_Steps {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
 						.toString();
 				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0")) {
+				if (!length.isEmpty() && !length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -4762,7 +4762,7 @@ public class IJARAH_Steps {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
 						.toString();
 				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0")) {
+				if (!length.isEmpty() && !length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -4803,7 +4803,7 @@ public class IJARAH_Steps {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
 						.toString();
 				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0")) {
+				if (!length.isEmpty() && !length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -4844,7 +4844,7 @@ public class IJARAH_Steps {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
 						.toString();
 				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0")) {
+				if (!length.isEmpty() && !length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -4884,7 +4884,7 @@ public class IJARAH_Steps {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
 						.toString();
 				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0")) {
+				if (!length.isEmpty() && !length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -4928,7 +4928,7 @@ public class IJARAH_Steps {
 			try {
 				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
 				System.out.println("List of add button " + listOfAddButton);
-				if (!(listOfAddButton.isBlank())) {
+				if (!(listOfAddButton.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -4945,7 +4945,7 @@ public class IJARAH_Steps {
 							"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
 									+ j + "].textContent")
 							.toString();
-					if (!(addButtonScreenName.isBlank())) {
+					if (!(addButtonScreenName.isEmpty())) {
 						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Financial Commitments").trim())) {
 							javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
 									"document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
@@ -5059,7 +5059,7 @@ public class IJARAH_Steps {
 			try {
 				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
 				System.out.println("List of add button " + listOfAddButton);
-				if (!(listOfAddButton.isBlank())) {
+				if (!(listOfAddButton.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -5076,7 +5076,7 @@ public class IJARAH_Steps {
 							"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
 									+ j + "].textContent")
 							.toString();
-					if (!(addButtonScreenName.isBlank())) {
+					if (!(addButtonScreenName.isEmpty())) {
 						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Financial Commitments").trim())) {
 							javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
 									"document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
@@ -5177,7 +5177,7 @@ public class IJARAH_Steps {
 			try {
 				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
 				System.out.println("List of add button " + listOfAddButton);
-				if (!(listOfAddButton.isBlank())) {
+				if (!(listOfAddButton.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -5194,7 +5194,7 @@ public class IJARAH_Steps {
 							"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
 									+ j + "].textContent")
 							.toString();
-					if (!(addButtonScreenName.isBlank())) {
+					if (!(addButtonScreenName.isEmpty())) {
 						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Financial Commitments").trim())) {
 							javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
 									"document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
@@ -5260,7 +5260,7 @@ public class IJARAH_Steps {
 			try {
 				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
 				System.out.println("List of add button " + listOfAddButton);
-				if (!(listOfAddButton.isBlank())) {
+				if (!(listOfAddButton.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -5277,7 +5277,7 @@ public class IJARAH_Steps {
 							"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
 									+ j + "].textContent")
 							.toString();
-					if (!(addButtonScreenName.isBlank())) {
+					if (!(addButtonScreenName.isEmpty())) {
 						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Financial Commitments").trim())) {
 							WebElement status = javascriptHelper.executeScriptWithWebElement(
 									"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j
@@ -5308,7 +5308,7 @@ public class IJARAH_Steps {
 			try {
 				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
 				System.out.println("List of add button " + listOfAddButton);
-				if (!(listOfAddButton.isBlank())) {
+				if (!(listOfAddButton.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -5326,7 +5326,7 @@ public class IJARAH_Steps {
 									+ j + "].textContent")
 							.toString();
 					System.out.println("Screen Name " + addButtonScreenName);
-					if (!(addButtonScreenName.isBlank())) {
+					if (!(addButtonScreenName.isEmpty())) {
 						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
 						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Financial Commitments").trim())) {
 							System.out.println("Inside nested loop");
@@ -5361,7 +5361,7 @@ public class IJARAH_Steps {
 			try {
 				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
 				System.out.println("List of add button " + listOfAddButton);
-				if (!(listOfAddButton.isBlank())) {
+				if (!(listOfAddButton.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -5380,7 +5380,7 @@ public class IJARAH_Steps {
 									+ j + "].textContent")
 							.toString();
 					System.out.println("Screen Name " + addButtonScreenName);
-					if (!(addButtonScreenName.isBlank())) {
+					if (!(addButtonScreenName.isEmpty())) {
 						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
 						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Financial Commitments").trim())) {
 							System.out.println("Inside nested loop");
@@ -5553,7 +5553,7 @@ public class IJARAH_Steps {
 			try {
 				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
 				System.out.println("List of add button " + listOfAddButton);
-				if (!(listOfAddButton.isBlank())) {
+				if (!(listOfAddButton.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -5571,7 +5571,7 @@ public class IJARAH_Steps {
 									+ j + "].textContent")
 							.toString();
 					System.out.println("Screen Name " + addButtonScreenName);
-					if (!(addButtonScreenName.isBlank())) {
+					if (!(addButtonScreenName.isEmpty())) {
 						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
 						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Financial Commitments").trim())) {
 							System.out.println("Inside nested loop");
@@ -5633,7 +5633,7 @@ public class IJARAH_Steps {
 			try {
 				listOfEyeBtn = javascriptHelper.executeScript("return " + listOfRecords).toString();
 				System.out.println("List of add button " + listOfEyeBtn);
-				if (!(listOfEyeBtn.isBlank())) {
+				if (!(listOfEyeBtn.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -5652,7 +5652,7 @@ public class IJARAH_Steps {
 									+ j + "].textContent")
 							.toString();
 					System.out.println("Screen Name " + recordName);
-					if (!(recordName.isBlank())) {
+					if (!(recordName.isEmpty())) {
 						System.out.println("Screen Name" + recordName + " is Not null");
 						if ((recordName.trim()).equalsIgnoreCase(("Self Employed").trim())) {
 							System.out.println("Inside nested loop");
@@ -5688,7 +5688,7 @@ public class IJARAH_Steps {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('income button').length")
 						.toString();
 				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0")) {
+				if (!length.isEmpty() && !length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -5729,7 +5729,7 @@ public class IJARAH_Steps {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('income button').length")
 						.toString();
 				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0")) {
+				if (!length.isEmpty() && !length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -6602,7 +6602,7 @@ public class IJARAH_Steps {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
 						.toString();
 				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0")) {
+				if (!length.isEmpty() && !length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -6645,7 +6645,7 @@ public class IJARAH_Steps {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
 						.toString();
 				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0")) {
+				if (!length.isEmpty() && !length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -6689,7 +6689,7 @@ public class IJARAH_Steps {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
 						.toString();
 				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0")) {
+				if (!length.isEmpty() && !length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -6732,7 +6732,7 @@ public class IJARAH_Steps {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
 						.toString();
 				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0")) {
+				if (!length.isEmpty() && !length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -6773,7 +6773,7 @@ public class IJARAH_Steps {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
 						.toString();
 				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0")) {
+				if (!length.isEmpty() && !length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -6829,7 +6829,7 @@ public class IJARAH_Steps {
 			try {
 				listOfEyeBtn = javascriptHelper.executeScript("return " + listOfRecords).toString();
 
-				if (!(listOfEyeBtn.isBlank())) {
+				if (!(listOfEyeBtn.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -6889,7 +6889,7 @@ public class IJARAH_Steps {
 			try {
 				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
 				System.out.println("List of add button " + listOfAddButton);
-				if (!(listOfAddButton.isBlank())) {
+				if (!(listOfAddButton.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -6907,7 +6907,7 @@ public class IJARAH_Steps {
 									+ j + "].textContent")
 							.toString();
 					System.out.println("Screen Name " + addButtonScreenName);
-					if (!(addButtonScreenName.isBlank())) {
+					if (!(addButtonScreenName.isEmpty())) {
 						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
 						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Income").trim())) {
 							System.out.println("Inside nested loop");
@@ -6968,7 +6968,7 @@ public class IJARAH_Steps {
 			try {
 				listOfEyeBtn = javascriptHelper.executeScript("return " + listOfRecords).toString();
 				System.out.println("List of add button " + listOfEyeBtn);
-				if (!(listOfEyeBtn.isBlank())) {
+				if (!(listOfEyeBtn.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -6986,7 +6986,7 @@ public class IJARAH_Steps {
 							"return document.querySelector('th[ng-reflect-field=\"totalIncomeConsidered\"]').parentElement.parentElement.parentElement.querySelectorAll('td')["
 									+ j + "].textContent")
 							.toString();
-					if (!(recordName.isBlank())) {
+					if (!(recordName.isEmpty())) {
 						if ((recordName.trim()).equalsIgnoreCase(("Salaried").trim())) {
 							WebElement value = javascriptHelper.executeScriptWithWebElement(
 									"document.querySelector('th[ng-reflect-field=\"totalIncomeConsidered\"]').parentElement.parentElement.parentElement.querySelectorAll('td')["
@@ -7043,7 +7043,7 @@ public class IJARAH_Steps {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('kub-workflow-decision button').length")
 						.toString();
 				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0")) {
+				if (!length.isEmpty() && !length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -7082,7 +7082,7 @@ public class IJARAH_Steps {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('kub-workflow-decision button').length")
 						.toString();
 				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0")) {
+				if (!length.isEmpty() && !length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {

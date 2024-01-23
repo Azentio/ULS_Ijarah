@@ -182,7 +182,7 @@ public class IjarahCustomerSearchStep extends BaseClass {
 
 				System.out.println("Dropdown length " + dropdownLength);
 
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 
 					break;
 
@@ -230,7 +230,7 @@ public class IjarahCustomerSearchStep extends BaseClass {
 
 				} catch (Exception e) {
 
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 
 						Assert.fail(e.getMessage());
 
@@ -365,7 +365,7 @@ public class IjarahCustomerSearchStep extends BaseClass {
 
 				System.out.println("Dropdown length " + dropdownLength);
 
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 
 					break;
 
@@ -413,7 +413,7 @@ public class IjarahCustomerSearchStep extends BaseClass {
 
 				} catch (Exception e) {
 
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 
 						Assert.fail(e.getMessage());
 
@@ -610,7 +610,7 @@ public class IjarahCustomerSearchStep extends BaseClass {
 
 				System.out.println("Dropdown length " + dropdownLength);
 
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 
 					break;
 
@@ -658,7 +658,7 @@ public class IjarahCustomerSearchStep extends BaseClass {
 
 				} catch (Exception e) {
 
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 
 						Assert.fail(e.getMessage());
 

@@ -1321,7 +1321,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 
 					System.out.println("Dropdown length " + dropdownLength);
 
-					if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+					if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 
 						break;
 
@@ -1370,7 +1370,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 
 					} catch (Exception e) {
 
-						if (l == 300 && !(dropdownString.isBlank())) {
+						if (l == 300 && !(dropdownString.isEmpty())) {
 
 							Assert.fail(e.getMessage());
 
@@ -1496,7 +1496,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 	@Given("User_607 check value auto populated")
 	public void user_check_value_auto_populated() {
 		String text = javascriptHelper.executeScriptWithWebElement(IjarahAppDataEntryIncomeDetails.getElement("Employment Type")).getText();
-		if (text.isEmpty()||text.isBlank()) {
+		if (text.isEmpty()||text.isEmpty()) {
 			Assert.fail();
 		}
 		
@@ -1570,7 +1570,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 			try {
 				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
 				System.out.println("List of add button " + listOfAddButton);
-				if (!(listOfAddButton.isBlank())) {
+				if (!(listOfAddButton.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1589,7 +1589,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 									+ j + "].textContent")
 							.toString();
 					System.out.println("Screen Name " + addButtonScreenName);
-					if (!(addButtonScreenName.isBlank())) {
+					if (!(addButtonScreenName.isEmpty())) {
 						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
 						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Income").trim())) {
 							System.out.println("Inside nested loop");
@@ -1670,7 +1670,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1693,7 +1693,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -1774,7 +1774,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 			try {
 				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
 				System.out.println("List of add button " + listOfAddButton);
-				if (!(listOfAddButton.isBlank())) {
+				if (!(listOfAddButton.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1793,7 +1793,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 									+ j + "].textContent")
 							.toString();
 					System.out.println("Screen Name " + addButtonScreenName);
-					if (!(addButtonScreenName.isBlank())) {
+					if (!(addButtonScreenName.isEmpty())) {
 						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
 						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Income").trim())) {
 							javascriptHelper
@@ -1869,7 +1869,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1892,7 +1892,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -1945,7 +1945,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1968,7 +1968,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -2051,7 +2051,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2074,7 +2074,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -2127,7 +2127,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2150,7 +2150,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -2203,7 +2203,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2226,7 +2226,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -2280,7 +2280,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2303,7 +2303,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -2388,7 +2388,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2411,7 +2411,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -2489,7 +2489,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 			try {
 				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
 				System.out.println("List of add button " + listOfAddButton);
-				if (!(listOfAddButton.isBlank())) {
+				if (!(listOfAddButton.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2507,7 +2507,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 									+ j + "].textContent")
 							.toString();
 					System.out.println("Screen Name " + addButtonScreenName);
-					if (!(addButtonScreenName.isBlank())) {
+					if (!(addButtonScreenName.isEmpty())) {
 						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
 						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Income").trim())) {
 							System.out.println("Inside nested loop");
@@ -2609,7 +2609,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2632,7 +2632,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -2701,7 +2701,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2724,7 +2724,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -2964,7 +2964,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2987,7 +2987,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -3208,7 +3208,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -3231,7 +3231,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -3301,7 +3301,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -3324,7 +3324,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -3475,7 +3475,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -3498,7 +3498,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -3551,7 +3551,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -3574,7 +3574,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -3668,7 +3668,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 			try {
 				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
 				System.out.println("List of add button " + listOfAddButton);
-				if (!(listOfAddButton.isBlank())) {
+				if (!(listOfAddButton.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -3686,7 +3686,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 									+ j + "].textContent")
 							.toString();
 					System.out.println("Screen Name " + addButtonScreenName);
-					if (!(addButtonScreenName.isBlank())) {
+					if (!(addButtonScreenName.isEmpty())) {
 						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
 						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Income").trim())) {
 							System.out.println("Inside nested loop");
@@ -3823,7 +3823,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 			try {
 				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
 				System.out.println("List of add button " + listOfAddButton);
-				if (!(listOfAddButton.isBlank())) {
+				if (!(listOfAddButton.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -3842,7 +3842,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 									+ j + "].textContent")
 							.toString();
 					System.out.println("Screen Name " + addButtonScreenName);
-					if (!(addButtonScreenName.isBlank())) {
+					if (!(addButtonScreenName.isEmpty())) {
 						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
 						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Income").trim())) {
 							System.out.println("Inside nested loop");
@@ -3975,7 +3975,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 			try {
 				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
 				System.out.println("List of add button " + listOfAddButton);
-				if (!(listOfAddButton.isBlank())) {
+				if (!(listOfAddButton.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -3993,7 +3993,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 									+ j + "].textContent")
 							.toString();
 					System.out.println("Screen Name " + addButtonScreenName);
-					if (!(addButtonScreenName.isBlank())) {
+					if (!(addButtonScreenName.isEmpty())) {
 						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
 						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Income").trim())) {
 							System.out.println("Inside nested loop");
@@ -4035,7 +4035,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 			try {
 				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
 				System.out.println("List of add button " + listOfAddButton);
-				if (!(listOfAddButton.isBlank())) {
+				if (!(listOfAddButton.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -4054,7 +4054,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 									+ j + "].textContent")
 							.toString();
 					System.out.println("Screen Name " + addButtonScreenName);
-					if (!(addButtonScreenName.isBlank())) {
+					if (!(addButtonScreenName.isEmpty())) {
 						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
 						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Income").trim())) {
 							System.out.println("Inside nested loop");
@@ -4111,7 +4111,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 			try {
 				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
 				System.out.println("List of add button " + listOfAddButton);
-				if (!(listOfAddButton.isBlank())) {
+				if (!(listOfAddButton.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -4129,7 +4129,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 									+ j + "].textContent")
 							.toString();
 					System.out.println("Screen Name " + addButtonScreenName);
-					if (!(addButtonScreenName.isBlank())) {
+					if (!(addButtonScreenName.isEmpty())) {
 						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
 						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Income").trim())) {
 							System.out.println("Inside nested loop");
@@ -4238,7 +4238,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 			try {
 				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
 				System.out.println("List of add button " + listOfAddButton);
-				if (!(listOfAddButton.isBlank())) {
+				if (!(listOfAddButton.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -4256,7 +4256,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 									+ j + "].textContent")
 							.toString();
 					System.out.println("Screen Name " + addButtonScreenName);
-					if (!(addButtonScreenName.isBlank())) {
+					if (!(addButtonScreenName.isEmpty())) {
 						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
 						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Income").trim())) {
 							System.out.println("Inside nested loop");
@@ -4324,7 +4324,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 			try {
 				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
 				System.out.println("List of add button " + listOfAddButton);
-				if (!(listOfAddButton.isBlank())) {
+				if (!(listOfAddButton.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -4342,7 +4342,7 @@ public class IjarahAppDataEntryIncomeDetailsList {
 									+ j + "].textContent")
 							.toString();
 					System.out.println("Screen Name " + addButtonScreenName);
-					if (!(addButtonScreenName.isBlank())) {
+					if (!(addButtonScreenName.isEmpty())) {
 						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
 						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Income").trim())) {
 							System.out.println("Inside nested loop");

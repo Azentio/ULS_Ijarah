@@ -82,7 +82,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 			try {
 				numberOfRecordInMailBox = javascriptHelper.executeScript("return " + mailBoxRecordList).toString();
 				System.out.println("Number of record in mail box " + numberOfRecordInMailBox);
-				if (!(numberOfRecordInMailBox.isBlank())) {
+				if (!(numberOfRecordInMailBox.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -127,7 +127,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 				lengthOfTheSegmentButton = javascriptHelper.executeScript(
 						"return document.querySelector('ion-segment').querySelectorAll('ion-segment-button').length")
 						.toString();
-				if ((!lengthOfTheSegmentButton.isBlank())) {
+				if ((!lengthOfTheSegmentButton.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -359,7 +359,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -384,7 +384,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -430,7 +430,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 				dropDownAttribute = javascriptHelper
 						.executeScriptWithWebElement(assetDetailsJSPaths.getElement("asset_category_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(fieldMandatoryAttribute.isBlank()) || !(dropDownAttribute.isBlank())) {
+				if (!(fieldMandatoryAttribute.isEmpty()) || !(dropDownAttribute.isEmpty())) {
 					break;
 				}
 
@@ -471,7 +471,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -496,7 +496,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -542,7 +542,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 				dropDownAttribute = javascriptHelper
 						.executeScriptWithWebElement(assetDetailsJSPaths.getElement("asset_manufacture_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(fieldMandatoryAttribute.isBlank()) || !(dropDownAttribute.isBlank())) {
+				if (!(fieldMandatoryAttribute.isEmpty()) || !(dropDownAttribute.isEmpty())) {
 					break;
 				}
 
@@ -581,7 +581,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -606,7 +606,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -652,7 +652,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 				dropDownAttribute = javascriptHelper
 						.executeScriptWithWebElement(assetDetailsJSPaths.getElement("asset_model_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(fieldMandatoryAttribute.isBlank()) || !(dropDownAttribute.isBlank())) {
+				if (!(fieldMandatoryAttribute.isEmpty()) || !(dropDownAttribute.isEmpty())) {
 					break;
 				}
 
@@ -692,7 +692,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -717,7 +717,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -763,7 +763,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 				dropDownAttribute = javascriptHelper
 						.executeScriptWithWebElement(assetDetailsJSPaths.getElement("asset_model_type_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(fieldMandatoryAttribute.isBlank()) || !(dropDownAttribute.isBlank())) {
+				if (!(fieldMandatoryAttribute.isEmpty()) || !(dropDownAttribute.isEmpty())) {
 					break;
 				}
 
@@ -824,7 +824,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -849,7 +849,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -895,7 +895,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 				dropDownAttribute = javascriptHelper
 						.executeScriptWithWebElement(assetDetailsJSPaths.getElement("asset_condition_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(fieldMandatoryAttribute.isBlank()) || !(dropDownAttribute.isBlank())) {
+				if (!(fieldMandatoryAttribute.isEmpty()) || !(dropDownAttribute.isEmpty())) {
 					break;
 				}
 
@@ -934,7 +934,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -959,7 +959,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -1005,7 +1005,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 				dropDownAttribute = javascriptHelper
 						.executeScriptWithWebElement(assetDetailsJSPaths.getElement("asset_color_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(fieldMandatoryAttribute.isBlank()) || !(dropDownAttribute.isBlank())) {
+				if (!(fieldMandatoryAttribute.isEmpty()) || !(dropDownAttribute.isEmpty())) {
 					break;
 				}
 
@@ -1043,7 +1043,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1068,7 +1068,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -1114,7 +1114,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 				dropDownAttribute = javascriptHelper
 						.executeScriptWithWebElement(assetDetailsJSPaths.getElement("drivetrain_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(fieldMandatoryAttribute.isBlank()) || !(dropDownAttribute.isBlank())) {
+				if (!(fieldMandatoryAttribute.isEmpty()) || !(dropDownAttribute.isEmpty())) {
 					break;
 				}
 
@@ -1156,7 +1156,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 						.executeScript(
 								"return " + assetDetailsJSPaths.getElement("number_of_cylinder_mandatory_verification"))
 						.toString();
-				if (!(inputFieldMandatoryVerification.isBlank())) {
+				if (!(inputFieldMandatoryVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1199,7 +1199,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 						.executeScript(
 								"return " + assetDetailsJSPaths.getElement("volume_of_engine_mandatory_verification"))
 						.toString();
-				if (!(inputFieldMandatoryVerification.isBlank())) {
+				if (!(inputFieldMandatoryVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1241,7 +1241,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 						.executeScript(
 								"return " + assetDetailsJSPaths.getElement("number_of_units_mandatory_verification"))
 						.toString();
-				if (!(inputFieldMandatoryVerification.isBlank())) {
+				if (!(inputFieldMandatoryVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1283,7 +1283,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 						.executeScript(
 								"return " + assetDetailsJSPaths.getElement("chasis_number_mandatory_verification"))
 						.toString();
-				if (!(inputFieldMandatoryVerification.isBlank())) {
+				if (!(inputFieldMandatoryVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1326,7 +1326,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 						.executeScript(
 								"return " + assetDetailsJSPaths.getElement("plate_number_mandatory_verification"))
 						.toString();
-				if (!(inputFieldMandatoryVerification.isBlank())) {
+				if (!(inputFieldMandatoryVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1371,7 +1371,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 						.executeScript("return "
 								+ assetDetailsJSPaths.getElement("plate_number_arabic_mandatory_verification"))
 						.toString();
-				if (!(inputFieldMandatoryVerification.isBlank())) {
+				if (!(inputFieldMandatoryVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1410,7 +1410,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1435,7 +1435,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -1481,7 +1481,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 				dropDownAttribute = javascriptHelper
 						.executeScriptWithWebElement(assetDetailsJSPaths.getElement("asset_dealer_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(fieldMandatoryAttribute.isBlank()) || !(dropDownAttribute.isBlank())) {
+				if (!(fieldMandatoryAttribute.isEmpty()) || !(dropDownAttribute.isEmpty())) {
 					break;
 				}
 
@@ -1523,7 +1523,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1548,7 +1548,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -1594,7 +1594,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 				dropDownAttribute = javascriptHelper
 						.executeScriptWithWebElement(assetDetailsJSPaths.getElement("agent_name_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(fieldMandatoryAttribute.isBlank()) || !(dropDownAttribute.isBlank())) {
+				if (!(fieldMandatoryAttribute.isEmpty()) || !(dropDownAttribute.isEmpty())) {
 					break;
 				}
 
@@ -1637,7 +1637,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 						.executeScript(
 								"return " + assetDetailsJSPaths.getElement("agent_email_id_mandatory_verification"))
 						.toString();
-				if (!(inputFieldMandatoryVerification.isBlank())) {
+				if (!(inputFieldMandatoryVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1681,7 +1681,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 						.executeScript("return "
 								+ assetDetailsJSPaths.getElement("agent_mobile_number_mandatory_verification"))
 						.toString();
-				if (!(inputFieldMandatoryVerification.isBlank())) {
+				if (!(inputFieldMandatoryVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1724,7 +1724,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 				inputFieldMandatoryVerification = javascriptHelper
 						.executeScript("return " + assetDetailsJSPaths.getElement("asset_price_mandatory_verification"))
 						.toString();
-				if (!(inputFieldMandatoryVerification.isBlank())) {
+				if (!(inputFieldMandatoryVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1766,7 +1766,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 						.executeScript(
 								"return " + assetDetailsJSPaths.getElement("down_payment_mandatory_verification"))
 						.toString();
-				if (!(inputFieldMandatoryVerification.isBlank())) {
+				if (!(inputFieldMandatoryVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1808,7 +1808,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 						.executeScript("return "
 								+ assetDetailsJSPaths.getElement("down_payment_percentage_mandatory_verification"))
 						.toString();
-				if (!(inputFieldMandatoryVerification.isBlank())) {
+				if (!(inputFieldMandatoryVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1873,7 +1873,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 						.executeScript(
 								"return " + assetDetailsJSPaths.getElement("residual_value_mandatory_verification"))
 						.toString();
-				if (!(inputFieldMandatoryVerification.isBlank())) {
+				if (!(inputFieldMandatoryVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1915,7 +1915,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 						.executeScript(
 								"return " + assetDetailsJSPaths.getElement("green_card_number_mandatory_verification"))
 						.toString();
-				if (!(inputFieldMandatoryVerification.isBlank())) {
+				if (!(inputFieldMandatoryVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1957,7 +1957,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 						.executeScript(
 								"return " + assetDetailsJSPaths.getElement("weight_in_tons_mandatory_verification"))
 						.toString();
-				if (!(inputFieldMandatoryVerification.isBlank())) {
+				if (!(inputFieldMandatoryVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -1997,7 +1997,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 				inputFieldMandatoryVerification = javascriptHelper
 						.executeScript("return " + assetDetailsJSPaths.getElement("mileage_mandatory_verification"))
 						.toString();
-				if (!(inputFieldMandatoryVerification.isBlank())) {
+				if (!(inputFieldMandatoryVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2036,7 +2036,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2061,7 +2061,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -2107,7 +2107,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 				dropDownAttribute = javascriptHelper
 						.executeScriptWithWebElement(assetDetailsJSPaths.getElement("country_of_manufacture_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(fieldMandatoryAttribute.isBlank()) || !(dropDownAttribute.isBlank())) {
+				if (!(fieldMandatoryAttribute.isEmpty()) || !(dropDownAttribute.isEmpty())) {
 					break;
 				}
 
@@ -2152,7 +2152,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2177,7 +2177,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -2226,7 +2226,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 						.executeScriptWithWebElement(
 								assetDetailsJSPaths.getElement("asset_agreed_fulfilment_location_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(fieldMandatoryAttribute.isBlank()) || !(dropDownAttribute.isBlank())) {
+				if (!(fieldMandatoryAttribute.isEmpty()) || !(dropDownAttribute.isEmpty())) {
 					break;
 				}
 
@@ -2265,7 +2265,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2290,7 +2290,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -2339,7 +2339,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 						.executeScriptWithWebElement(
 								assetDetailsJSPaths.getElement("location_of_signing_the_agreem_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(fieldMandatoryAttribute.isBlank()) || !(dropDownAttribute.isBlank())) {
+				if (!(fieldMandatoryAttribute.isEmpty()) || !(dropDownAttribute.isEmpty())) {
 					break;
 				}
 
@@ -2380,7 +2380,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 			try {
 				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
 				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
 					break;
 				}
 			} catch (Exception e) {
@@ -2405,7 +2405,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 						break;
 					}
 				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
+					if (l == 300 && !(dropdownString.isEmpty())) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -2452,7 +2452,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 				dropDownAttribute = javascriptHelper
 						.executeScriptWithWebElement(assetDetailsJSPaths.getElement("asset_received_location_dropdown"))
 						.getAttribute("ng-reflect-placeholder");
-				if (!(fieldMandatoryAttribute.isBlank()) || !(dropDownAttribute.isBlank())) {
+				if (!(fieldMandatoryAttribute.isEmpty()) || !(dropDownAttribute.isEmpty())) {
 					break;
 				}
 
@@ -2493,7 +2493,7 @@ public class IjarahAssetDetails_Spets extends BaseClass {
 				inputFieldMandatoryVerification = javascriptHelper
 						.executeScript("return " + assetDetailsJSPaths.getElement("remarks_mandatory_verification"))
 						.toString();
-				if (!(inputFieldMandatoryVerification.isBlank())) {
+				if (!(inputFieldMandatoryVerification.isEmpty())) {
 					break;
 				}
 			} catch (Exception e) {
