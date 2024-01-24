@@ -1,15 +1,15 @@
-Feature: Verify the functionality of Customer Debt Module in Tawarraq URL
-@AT_TW_ADC_CD_001
+Feature: Verify the functionality of Customer Debt Module in Murabha_AppDataCheck
+@AT_DC_CD_001
 Scenario: To verify the Customer Debt record is available in the system 
 #002 003 included
 Given navigate the IJARA URL
-And login with valid credentials for Tawarraq_App data check_Customer Debt
-And User get the test data for test case AT_TW_ADC_CD_001
+And login with valid credentials for Murabha data check_Customer Debt
+And User get the test data for test case AT_DC_CD_001
 And User click the module name dropdown in ULS application
 And User select the module name as LOS in ULS application
 And User click the Mail box in ULS application
 And User click the Search button under inbox
-And User search the Ref id under inbox for Tawarraq_App data check_Customer Debt
+And User search the Ref id under inbox for Murabha_App data check_Customer Debt
 And User click the Entitle button under inbox
 And User Navigate to Customer financials section
 And user_626 click On the Action button below Customer Financials

@@ -82,6 +82,12 @@ public class IjaraTest extends BaseClass{
 	public void login_with_valid_credentials_for_tawarraq_app_data_check_customer_debt() {
 		ijaraLogin.loginWithIjaraApplication("userType16");
 	}
+	
+	@And("login with valid credentials for Murabha data check_Customer Debt")
+	public void login_with_valid_credentials_for_murabha_data_check_customer_debt() {
+		ijaraLogin.loginWithIjaraApplication("userType19");
+	   
+	}
 
 	
 	
