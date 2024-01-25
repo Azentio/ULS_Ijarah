@@ -144,8 +144,6 @@ And User_608 to verify the functionality of Activate\Deactivate button under Cus
 And User_608 click the Update button under Customer Identification screen
 And User_608 get the updated record ID under Customer Identification section
 And User_608 get the test data for test case AT_TW_NEWAPP_IDA_05
-And User_608 click the Additional Customer Info tab
-And User_608 click the Pencil Icon button in Customer Personal Info section under Additional Customer Info tab
 And User_608 click the Search button in Customer Identification section
 And User_608 search the Record ID in Customer Identification section
 And User_608 to verify if Status is Active then click the button system should show Deactivate under Customer Identification section
@@ -155,9 +153,6 @@ And User_608 change the status Deactive to Active under Customer Identification 
 And User_608 click the Update button under Customer Identification screen
 And User_608 get the updated record ID under Customer Identification section
 And User_608 get the test data for test case AT_TW_NEWAPP_IDA_05
-And User_608 click the Additional Customer Info tab
-And User_608 click the Pencil Icon button in Customer Personal Info section under Additional Customer Info tab
-And User_608 click the Search button in Customer Identification section
 And User_608 search the Record ID in Customer Identification section
 And User_608 to verify if Status is Deactive then click the button system should show Active under Customer Identification section
 Then logout from the ijaraApplication

@@ -35,8 +35,12 @@ public class IJARAH_Steps {
 	JSPaths underWriterJsPaths = new JSPaths(excelPath, "Underwriter_Elements", "Underwriter_FieldName", "JSPath");
 	JSPaths dataCheck_IncomeJsPaths = new JSPaths(excelPath, "DataCheckIncome_Elements", "DataCheckIncome_FieldName",
 			"JSPath");
-	JSPaths dataCheck_ApplicationDetailsJsPaths = new JSPaths(excelPath, "ApplicationDetails_Elements", "ApplicationDetails_FieldName", "JSPath");
-	JSPaths offering_OfferDetailsJsPaths = new JSPaths(excelPath, "OfferingOfferDetails_Elements", "Offering_OfferDetails_FieldName", "JSPath");
+	JSPaths dataCheck_ApplicationDetailsJsPaths = new JSPaths(excelPath, "ApplicationDetails_Elements",
+			"ApplicationDetails_FieldName", "JSPath");
+	JSPaths offering_OfferDetailsJsPaths = new JSPaths(excelPath, "OfferingOfferDetails_Elements",
+			"Offering_OfferDetails_FieldName", "JSPath");
+	JSPaths contractSign_RepaymentModeJsPaths = new JSPaths(excelPath, "RepaymentMode_Elements",
+			"AddressDetails_FieldName", "JSPath");
 
 	ExcelData excelData = new ExcelData(excelTestDataPath, "ijara_LoginCredentials", "UserType");
 	Map<String, String> loginTestData = new HashMap<>();
@@ -56,6 +60,8 @@ public class IJARAH_Steps {
 			"DataSet ID");
 	ExcelData offering_OfferDetailsExcelData = new ExcelData(excelTestDataPath, "Offering_OfferDetails", "DataSet ID");
 	ExcelData contractSign_ApplicationDetailsExcelData = new ExcelData(excelTestDataPath, "ContractSign_AppDetails",
+			"DataSet ID");
+	ExcelData contractSign_RepaymentModeExcelData = new ExcelData(excelTestDataPath, "Ijarah_CS_RepaymentMode",
 			"DataSet ID");
 
 	Map<String, String> testExecutionData;
@@ -251,6 +257,24 @@ public class IJARAH_Steps {
 		testData = contractSign_ApplicationDetailsExcelData.getTestdata("DS_AT_CSAD_05");
 	}
 
+//	Contract Signing -- Repayment mode Tab
+	@And("^User_608 get the test data for test case AT_CS_RDC_01$")
+	public void get_the_test_data_for_test_case_AT_CS_RDC_01() throws Throwable {
+		testData = contractSign_RepaymentModeExcelData.getTestdata("DS_AT_CS_RDC_01");
+	}
+	
+	@And("^User_608 get the test data for test case AT_CS_RDC_02$")
+	public void get_the_test_data_for_test_case_AT_CS_RDC_02() throws Throwable {
+		testData = contractSign_RepaymentModeExcelData.getTestdata("DS_AT_CS_RDC_02");
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	@And("User_608 click the module name dropdown in ULS application")
 	public void user_608_click_the_module_name_dropdown_in_uls_application() throws Throwable {
 		for (int i = 0; i <= 500; i++) {
@@ -414,7 +438,7 @@ public class IJARAH_Steps {
 						System.out.println("condition true");
 						String jspath = "document.querySelectorAll('ion-segment-button')[" + j + "]";
 						WebElement tab = javascriptHelper.executeScriptWithWebElement(jspath);
-						javascriptHelper.JSEClick(tab);
+						tab.click();
 						break;
 					}
 				}
@@ -452,7 +476,8 @@ public class IJARAH_Steps {
 					if (titlename.trim().contains("Customer Personal Information")) {
 						String jspath = "document.querySelectorAll('button[icon=\"pi pi-pencil\"]')[" + j + "]";
 						WebElement pencilBtn = javascriptHelper.executeScriptWithWebElement(jspath);
-						javascriptHelper.JSEClick(pencilBtn);
+						javascriptHelper.backgroundBorder(pencilBtn);
+						pencilBtn.click();
 						break;
 					}
 				}
@@ -1894,7 +1919,8 @@ public class IJARAH_Steps {
 								+ ".parentElement.parentElement.querySelector('td button[icon=\"pi pi-pencil\"]')";
 						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
 						actions.moveToElement(btn).build().perform();
-						javascriptHelper.JSEClick(btn);
+						javascriptHelper.backgroundColor(btn);
+						btn.click();
 						break;
 					}
 				}
@@ -4389,8 +4415,7 @@ public class IJARAH_Steps {
 						System.out.println("condition true");
 						String jspath = "document.querySelectorAll('ion-segment-button')[" + j + "]";
 						WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
-						javascriptHelper.JSEClick(addButton);
-//						addButton.click();
+						addButton.click();
 						break;
 					}
 				}
@@ -6863,7 +6888,7 @@ public class IJARAH_Steps {
 //	AT_ADC_01
 	@And("User_608 verify the Back button available under Application details screen")
 	public void user_608_verify_the_back_button_available_under_application_details_screen() throws Throwable {
-		for (int i = 0; i <= 20000; i++) {
+		for (int i = 0; i <= 500; i++) {
 			try {
 				WebElement AppDetailsBackBtn = javascriptHelper
 						.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("AppDetailsBackBtn"));
@@ -6873,7 +6898,7 @@ public class IJARAH_Steps {
 						"Back button available under Application details screen");
 				break;
 			} catch (Exception e) {
-				if (i == 20000) {
+				if (i == 500) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -7479,23 +7504,21 @@ public class IJARAH_Steps {
 	@And("User_608 verify the Sourcing Type field available in Referral\\Sourcing Details section under Application Details tab")
 	public void user_608_verify_the_sourcing_type_field_available_in_referral_sourcing_details_section_under_application_details_tab()
 			throws Throwable {
-//		Thread.sleep(1000);
-		WebElement sourcingTypeLabel = javascriptHelper
-				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingTypeLabel"));
-		WebElement sourcingTypeDropdown = javascriptHelper
-				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingTypeDropdown"));
-//		System.out.println("Field Name: " + sourcingTypeLabel.getText());
-		for (int i = 0; i <= 200000; i++) {
+		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
 						dataCheck_ApplicationDetailsJsPaths.getElement("sourcingTypeLabel")));
+				WebElement sourcingTypeLabel = javascriptHelper
+						.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingTypeLabel"));				
 				javascriptHelper.backgroundColor(sourcingTypeLabel);
 				Assert.assertTrue(sourcingTypeLabel.isDisplayed());
+				WebElement sourcingTypeDropdown = javascriptHelper
+						.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingTypeDropdown"));
 				javascriptHelper.backgroundBorder(sourcingTypeDropdown);
 				Assert.assertTrue(sourcingTypeDropdown.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 200000) {
+				if (i == 1000) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -10752,16 +10775,515 @@ public class IJARAH_Steps {
 //					Assert.fail(e.getMessage());
 //				}
 			}
-		}
-	    
+		}	    
 	}
 	
+//	AT_CS_RDC_01
+	@And("^User_608 click the Repayment Mode tab$")
+	public void user_608_click_the_repayment_mode_tab() throws Throwable {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0") && !length.equals("1")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 500; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-segment-button')[" + j + "].innerText";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().contains("Repayment Mode")) {
+						System.out.println("condition true");
+						String jspath = "document.querySelectorAll('ion-segment-button')[" + j + "]";
+						WebElement tab = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.JSEClick(tab);
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 click the View button under Repayment Mode tab$")
+	public void user_608_click_the_view_button_under_repayment_mode_tab() throws Throwable {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();			
+					if (titlename.trim().contains("List of Repayment Mode")) {
+						String jspath = "document.querySelectorAll('button[icon=\"pi pi-eye\"]')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.backgroundColor(btn);
+						btn.click();
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Back button available in Repayment Mode screen$")
+	public void user_608_verify_back_button_available_in_repayment_mode_screen() throws Throwable {
+		String length = null;
+		for (int i = 0; i < 500; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 500; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('form button')[" + j + "].getAttribute('ng-reflect-text')";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains("Go Back")) {
+						String jspath = "document.querySelectorAll('form button')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.backgroundBorder(btn);
+						softAssert.assertTrue(btn.isDisplayed(),
+								"Back button should be displayed in Repayment Mode screen");
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Help button available in Repayment Mode screen$")
+	public void user_608_verify_help_button_available_in_repayment_mode_screen() throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement btn = javascriptHelper.executeScriptWithWebElement(
+						contractSign_RepaymentModeJsPaths.getElement("helpbtn"));	
+				javascriptHelper.backgroundBorder(btn);
+				softAssert.assertTrue(btn.isDisplayed(), "Help button available in Repayment Mode screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Repayment Mode field available in Repayment Mode screen$")
+	public void user_608_verify_repayment_mode_field_available_in_repayment_mode_screen() throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement label = javascriptHelper.executeScriptWithWebElement(
+						contractSign_RepaymentModeJsPaths.getElement("repayModeLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Repayment Mode field available in Repayment Mode screen");
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						contractSign_RepaymentModeJsPaths.getElement("repayModeDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(), "Repayment Mode field available in Repayment Mode screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Account Holder Name field available in Repayment Mode screen$")
+	public void user_608_verify_account_holder_name_field_available_in_repayment_mode_screen() throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement label = javascriptHelper.executeScriptWithWebElement(
+						contractSign_RepaymentModeJsPaths.getElement("accHolderNameLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Account Holder Name field available in Repayment Mode screen");
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						contractSign_RepaymentModeJsPaths.getElement("accHolderNameDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(), "Account Holder Name field available in Repayment Mode screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Account Type field available in Repayment Mode screen$")
+	public void user_608_verify_account_type_field_available_in_repayment_mode_screen() throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement label = javascriptHelper.executeScriptWithWebElement(
+						contractSign_RepaymentModeJsPaths.getElement("accountTypeLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Account Type field available in Repayment Mode screen");
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						contractSign_RepaymentModeJsPaths.getElement("accountTypeDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(), "Account Type field available in Repayment Mode screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Account Number field available in Repayment Mode screen$")
+	public void user_608_verify_account_number_field_available_in_repayment_mode_screen() throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement label = javascriptHelper.executeScriptWithWebElement(
+						contractSign_RepaymentModeJsPaths.getElement("accountNbrLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Account Number field available in Repayment Mode screen");
+				WebElement input = javascriptHelper.executeScriptWithWebElement(
+						contractSign_RepaymentModeJsPaths.getElement("accountNbrInput"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.isDisplayed(), "Account Number field available in Repayment Mode screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Account Currency field available in Repayment Mode screen$")
+	public void user_608_verify_account_currency_field_available_in_repayment_mode_screen() throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement label = javascriptHelper.executeScriptWithWebElement(
+						contractSign_RepaymentModeJsPaths.getElement("accCurrencyLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Account Currency field available in Repayment Mode screen");
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						contractSign_RepaymentModeJsPaths.getElement("accCurrencyDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(), "Account Currency field available in Repayment Mode screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
 	
+	@And("^User_608 verify Bank Name field available in Repayment Mode screen$")
+	public void user_608_verify_bank_name_field_available_in_repayment_mode_screen() throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement label = javascriptHelper.executeScriptWithWebElement(
+						contractSign_RepaymentModeJsPaths.getElement("bankNameLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Bank Name field available in Repayment Mode screen");
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						contractSign_RepaymentModeJsPaths.getElement("bankNameDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(), "Bank Name field available in Repayment Mode screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Branch Name field available in Repayment Mode screen$")
+	public void user_608_verify_branch_name_field_available_in_repayment_mode_screen() throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement label = javascriptHelper.executeScriptWithWebElement(
+						contractSign_RepaymentModeJsPaths.getElement("branchNameLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Branch Name field available in Repayment Mode screen");
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						contractSign_RepaymentModeJsPaths.getElement("branchNameDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(), "Branch Name field available in Repayment Mode screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify ECS Code field available in Repayment Mode screen$")
+	public void user_608_verify_ecs_code_field_available_in_repayment_mode_screen() throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement label = javascriptHelper.executeScriptWithWebElement(
+						contractSign_RepaymentModeJsPaths.getElement("ecsCodeLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"ECS Code field available in Repayment Mode screen");
+				WebElement input = javascriptHelper.executeScriptWithWebElement(
+						contractSign_RepaymentModeJsPaths.getElement("ecsCodeInput"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.isDisplayed(), "ECS Code field available in Repayment Mode screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
 	
+	@And("User_608 invoke soft assert in Repayment Mode screen at Ijarah Contract Signing stage")
+	public void user_608_invoke_soft_assert_in_repayment_mode_screen_at_ijarah_contract_signing_stage() throws Throwable {
+		softAssert.assertAll();
+	}
 	
+//	AT_CS_RDC_02
+	@And("^User_608 verify Repayment Mode value should be Display only in Repayment Mode screen$")
+	public void user_608_verify_repayment_mode_value_should_be_display_only_in_repayment_mode_screen()
+			throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						contractSign_RepaymentModeJsPaths.getElement("repayModeDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(), "Repayment Mode value should be displayed in Repayment Mode screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Account Holder Name value should be Display only in Repayment Mode screen$")
+	public void user_608_verify_account_holder_name_value_should_be_display_only_in_repayment_mode_screen()
+			throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						contractSign_RepaymentModeJsPaths.getElement("accHolderNameDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(), "Account Holder Name value should be displayed in Repayment Mode screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Account Type value should be Display only in Repayment Mode screen$")
+	public void user_608_verify_account_type_value_should_be_display_only_in_repayment_mode_screen() throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						contractSign_RepaymentModeJsPaths.getElement("accountTypeDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(), "Account Type value should be displayed in Repayment Mode screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Account Number value should be Display only in Repayment Mode screen$")
+	public void user_608_verify_account_number_value_should_be_display_only_in_repayment_mode_screen()
+			throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement input = javascriptHelper.executeScriptWithWebElement(
+						contractSign_RepaymentModeJsPaths.getElement("accountNbrInput"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.isDisplayed(), "Account Number value should be displayed in Repayment Mode screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Account Currency value should be Display only in Repayment Mode screen$")
+	public void user_608_verify_account_currency_value_should_be_display_only_in_repayment_mode_screen()
+			throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						contractSign_RepaymentModeJsPaths.getElement("accCurrencyDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(), 
+						"Account Currency value should be displayed in Repayment Mode screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Bank Name value should be Display only in Repayment Mode screen$")
+	public void user_608_verify_bank_name_value_should_be_display_only_in_repayment_mode_screen() throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						contractSign_RepaymentModeJsPaths.getElement("bankNameDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(), "Bank Name value should be displayed in Repayment Mode screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Branch Name value should be Display only in Repayment Mode screen$")
+	public void user_608_verify_branch_name_value_should_be_display_only_in_repayment_mode_screen() throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						contractSign_RepaymentModeJsPaths.getElement("branchNameDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(), "Branch Name value should be displayed in Repayment Mode screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify ECS Code value should be Display only in Repayment Mode screen$")
+	public void user_608_verify_ecs_code_value_should_be_display_only_in_repayment_mode_screen() throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement input = javascriptHelper.executeScriptWithWebElement(
+						contractSign_RepaymentModeJsPaths.getElement("ecsCodeInput"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.isDisplayed(), "ECS Code value should be displayed in Repayment Mode screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Status field should be Display in Repayment Mode screen$")
+	public void user_608_verify_status_field_should_be_display_in_repayment_mode_screen() throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement btn = javascriptHelper.executeScriptWithWebElement(
+						contractSign_RepaymentModeJsPaths.getElement("statusToggleBtn"));
+				javascriptHelper.backgroundBorder(btn);
+				softAssert.assertTrue(btn.isDisplayed(), "Status field should be displayed in Repayment Mode screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
 	
-	
-	
-	
+	@And("^User_608 verify Delete button should be available in Repayment Mode screen$")
+	public void user_608_verify_delete_button_should_be_available_in_repayment_mode_screen()throws Throwable{
+		String length = null;
+		for (int i = 0; i < 500; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 500; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();			
+					if (titlename.trim().contains("List of Repayment Mode")) {
+						String jspath = "document.querySelectorAll('button[icon=\"pi pi-trash\"]')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.backgroundColor(btn);
+						softAssert.assertTrue(btn.isDisplayed(), "Delete button should be displayed in Repayment mode screen");
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
 
 }

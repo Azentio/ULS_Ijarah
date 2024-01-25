@@ -2,35 +2,35 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-20T10:13:57 IST" name="Default suite" finished-at="2024-01-20T10:14:40 IST" duration-ms="43877">
+  <suite started-at="2024-01-25T14:12:25 IST" name="Default suite" finished-at="2024-01-25T14:13:11 IST" duration-ms="46511">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@1caa0244]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7ce026d3]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-01-20T10:13:57 IST" name="Default test" finished-at="2024-01-20T10:14:40 IST" duration-ms="43877">
+    <test started-at="2024-01-25T14:12:25 IST" name="Default test" finished-at="2024-01-25T14:13:11 IST" duration-ms="46511">
       <class name="Runner.TestApplication">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@1caa0244]" started-at="2024-01-20T10:13:57 IST" name="setUpClass" finished-at="2024-01-20T10:13:57 IST" duration-ms="923" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@7ce026d3]" started-at="2024-01-25T14:12:25 IST" name="setUpClass" finished-at="2024-01-25T14:12:26 IST" duration-ms="913" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@1caa0244]" started-at="2024-01-20T10:13:57 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-01-20T10:14:30 IST" duration-ms="32579" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@7ce026d3]" started-at="2024-01-25T14:12:26 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-01-25T14:12:58 IST" duration-ms="31968" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["To verify the below fields are Dropdown, Textbox, Mandatory/Non-Mandatory and Editable"]]>
+                <![CDATA["To verify Repayment mode records Values display only at Contract signing stage."]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[To check the Tawarruq --> App Data Entry stage --> Document details screen]"]]>
+                <![CDATA["Optional[To check the Contract Signing Stage - Repayment Mode screen]"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@1caa0244]" started-at="2024-01-20T10:14:30 IST" name="tearDownClass" finished-at="2024-01-20T10:14:40 IST" duration-ms="10327" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@7ce026d3]" started-at="2024-01-25T14:12:58 IST" name="tearDownClass" finished-at="2024-01-25T14:13:11 IST" duration-ms="13585" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

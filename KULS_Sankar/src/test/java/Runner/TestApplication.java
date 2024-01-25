@@ -8,14 +8,14 @@ import io.cucumber.testng.CucumberOptions;
 import utilities.ExtentManager;
 import utilities.ExtentTestManager;
 
-@CucumberOptions(features = {"src/test/java/features/TW_AppData_DocumentDetails.feature"}
+@CucumberOptions(features = {"src/test/java/features/Ijarah_ContractSign_RepaymentMode.feature"}
 //		"src/test/java/features/CustomerDebt.feature" }
 		, glue = "stepdefinitions",
 		 monochrome=true, //to make steps in color
 		plugin = { "pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 				"rerun:ReRunScenarios/FailedReRun.txt" }
 //		,dryRun = false //to check compilation errors
-//		, tags = "@AT_TW_CD_02"
+		, tags = "@AT_CS_RDC_02"
 				
 //		, tags = "@AT_AL_UNWL1_04 or @Return"
 

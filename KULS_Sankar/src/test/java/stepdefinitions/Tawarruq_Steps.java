@@ -3533,7 +3533,6 @@ public class Tawarruq_Steps {
 						String titlename = javascriptHelper.executeScript(title).toString();
 //						System.out.println(titlename);
 						if (titlename.trim().equalsIgnoreCase("Additional Customer Info")) {
-							System.out.println("condition true");
 							String jspath = "document.querySelectorAll('ion-segment-button')[" + j + "]";
 							WebElement tab = javascriptHelper.executeScriptWithWebElement(jspath);
 							tab.click();
@@ -3758,11 +3757,12 @@ public class Tawarruq_Steps {
 		
 		@And("User_608 verify the invalid data validation in Customer Identification screen")
 		public void user_608_verify_the_invalid_data_validation_in_customer_identification_screen() throws Throwable {
-			WebElement invalidData = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("invalidDataError"));
-			System.err.println("Invalid Data Error : "+invalidData.getText());
 			for (int i = 0; i<2000; i++) {
 	          try {
-	              Assert.assertTrue(invalidData.isDisplayed());
+	        	  WebElement invalidData = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("invalidDataError"));
+	  			  System.err.println("Invalid Data Error : "+invalidData.getText());
+	  			  softAssert.assertTrue(invalidData.isDisplayed(),
+	  					  "verify the invalid data validation in Customer Identification screen");
 	              break;
 	          } catch (Exception e) {
 	              if (i==1999) {
@@ -3792,16 +3792,17 @@ public class Tawarruq_Steps {
 		
 		@And("User_608 verify the Special character validation in Customer Identification screen")
 		public void user_608_verify_the_special_character_validation_in_customer_identification_screen() throws Throwable {
-			WebElement specialCharError = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("specialCharError"));
-			String specialChar = specialCharError.getText().trim();
-			System.err.println("Speacial Char: "+specialChar);
+			
 			for (int i = 0; i<20000; i++) {
 	          try {
-//	        	  Thread.sleep(1000);
-//	           Assert.assertTrue(specialChar.equalsIgnoreCase("Only Alphanumeric characters allowed"));
-	        	  javascriptHelper.backgroundColor(specialCharError);
-	        	  softAssert.assertTrue(specialCharError.isDisplayed(), "System should display - Only Alphanumeric characters allowed");
-	        	  softAssert.assertTrue(specialChar.equalsIgnoreCase("Only Alphanumeric characters are allowed"), "System should display error msg");
+					WebElement specialCharError = javascriptHelper
+							.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("specialCharError"));
+					String specialChar = specialCharError.getText().trim();
+					System.err.println("Speacial Char: " + specialChar);
+					javascriptHelper.backgroundColor(specialCharError);
+					softAssert.assertTrue(specialCharError.isDisplayed(),
+							"System should display - Only Alphanumeric characters allowed");
+					softAssert.assertTrue(specialChar.equalsIgnoreCase("Only Alphanumeric characters are allowed"), "System should display error msg");
 	              break;
 	          } catch (Exception e) {
 	              if (i==19999) {
@@ -3827,11 +3828,12 @@ public class Tawarruq_Steps {
 
 		@And("User_608 verify the Validation error msg in Customer Identification screen")
 		public void user_608_verify_the_validation_error_msg_in_customer_identification_screen() throws Throwable {
-			String madatoryErrorMsg = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("mandatoryFillToastMsg")).getText();
-			System.err.println("Mandatory Error : "+madatoryErrorMsg);
 			for (int i = 0; i<2000; i++) {
 	          try {
-	              Assert.assertTrue(madatoryErrorMsg.contains("Please fill all the details"));
+	        	  String madatoryErrorMsg = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("mandatoryFillToastMsg")).getText();
+	  			  System.err.println("Mandatory Error : "+madatoryErrorMsg);
+	  			  softAssert.assertTrue(madatoryErrorMsg.contains("Please fill all the details"),
+	  					  "verify the Validation error msg in Customer Identification screen");
 	              break;
 	          } catch (Exception e) {
 	              if (i==1999) {
@@ -3859,7 +3861,7 @@ public class Tawarruq_Steps {
 		@And("User_608 verify Back button available under Identification Details screen in Additional Customer Info tab")
 		public void user_608_verify_back_button_available_under_identification_details_screen_in_additional_customer_info_tab() throws Throwable {
 			String length = null;
-			for (int i = 0; i < 5000; i++) {
+			for (int i = 0; i < 500; i++) {
 				try {
 					length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
 							.toString();
@@ -3868,12 +3870,12 @@ public class Tawarruq_Steps {
 						break;
 					}
 				} catch (Exception e) {
-					if (i == 4999) {
+					if (i == 499) {
 						Assert.fail(e.getMessage());
 					}
 				}
 			}
-			for (int i = 0; i < 5000; i++) {
+			for (int i = 0; i < 500; i++) {
 				try {
 					for (int j = 0; j < Integer.parseInt(length); j++) {
 						String title = "return document.querySelectorAll('form button')[" + j + "].getAttribute('ng-reflect-text')";
@@ -3890,35 +3892,24 @@ public class Tawarruq_Steps {
 					}
 					break;
 				} catch (Exception e) {
-					if (i == 4999) {
+					if (i == 499) {
 						Assert.fail(e.getMessage());
 					}
 				}
-			}
-			//			WebElement backBtn = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("identificationDetailsBackBtn"));
-//			for (int i = 0; i <= 150000; i++) {
-//				try {
-//					javascriptHelper.backgroundBorder(backBtn);
-//					backBtn.isDisplayed();
-//					break;
-//				} catch (Exception e) {
-//					if (i == 150000) {
-//						Assert.fail(e.getMessage());
-//					}
-//				}
-//			}		    
+			}		    
 		}
 
 		@And("User_608 verify Save button available under Identification Details screen in Additional Customer Info tab")
-		public void user_608_verify_save_button_available_under_identification_details_screen_in_additional_customer_info_tab() throws Throwable {
-			WebElement saveBtn = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("identificationDetailsSaveBtn"));
-			for (int i = 0; i <= 1500; i++) {
+		public void user_608_verify_save_button_available_under_identification_details_screen_in_additional_customer_info_tab() throws Throwable {			
+			for (int i = 0; i <= 500; i++) {
 				try {
+					WebElement saveBtn = javascriptHelper.executeScriptWithWebElement(
+							identificatioDetailsJsPaths.getElement("identificationDetailsSaveBtn"));
 					javascriptHelper.backgroundBorder(saveBtn);
 					saveBtn.isDisplayed();
 					break;
 				} catch (Exception e) {
-					if (i == 1500) {
+					if (i == 500) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -3927,9 +3918,10 @@ public class Tawarruq_Steps {
 
 		@And("User_608 verify Help button available under Identification Details screen in Additional Customer Info tab")
 		public void user_608_verify_help_button_available_under_identification_details_screen_in_additional_customer_info_tab() throws Throwable {
-			WebElement helpBtn = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("identificationDetailsHelpBtn"));
 			for (int i = 0; i <= 1500; i++) {
 				try {
+					WebElement helpBtn = javascriptHelper.executeScriptWithWebElement(
+							identificatioDetailsJsPaths.getElement("identificationDetailsHelpBtn"));
 					javascriptHelper.backgroundBorder(helpBtn);
 					helpBtn.isDisplayed();
 					break;
@@ -4111,6 +4103,10 @@ public class Tawarruq_Steps {
 		    softAssert.assertAll();
 		}
 		
+		@And("User_608 invoke soft assert in Identification details screen under Additional Customer Info tab at Tawarruq App Data Entry stage")
+		public void user_608_invoke_soft_assert_in_identification_details_screen_under_additional_customer_tab_at_tawarruq_app_data_entry_stage() throws Throwable {
+		    softAssert.assertAll();
+		}
 		
 		
 //		@AT_TW_NEWAPP_IDA_02
@@ -4559,7 +4555,10 @@ public class Tawarruq_Steps {
 				try {
 					javascriptHelper.scrollIntoView(helpBtn);
 					javascriptHelper.backgroundBorder(helpBtn);
-					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("help_fieldDescription")).isDisplayed();
+					WebElement element = javascriptHelper.executeScriptWithWebElement(
+							identificatioDetailsJsPaths.getElement("help_fieldDescription"));
+					softAssert.assertTrue(element.isDisplayed(),
+							"post clicking on Help button,System display the description of all the fields in details");
 					break;
 				} catch (Exception e) { 
 					if (i == 1000) {
@@ -4889,7 +4888,7 @@ public class Tawarruq_Steps {
 			String listOfEyeBtn = "";
 			String recordName = "";
 			boolean isEyeBtnClicked = false;
-			for (int i = 0; i <= 300; i++) {
+			for (int i = 0; i <= 100; i++) {
 				try {
 					listOfEyeBtn = javascriptHelper.executeScript("return " + listOfRecords).toString();
 //					System.out.println("List of add button " + listOfEyeBtn);
@@ -4897,7 +4896,7 @@ public class Tawarruq_Steps {
 						break;
 					}
 				} catch (Exception e) {
-					if (i == 300) {
+					if (i == 100) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -4905,7 +4904,7 @@ public class Tawarruq_Steps {
 			
 			int premitiveListOfEyeButton = Integer.parseInt(listOfEyeBtn);
 			for (int j = 0; j < premitiveListOfEyeButton; j++) {
-				for (int k = 0; k <= 300; k++) {
+				for (int k = 0; k <= 100; k++) {
 					try {
 						recordName = javascriptHelper.executeScript(
 								"return document.querySelector('button[icon=\"pi pi-arrow-left\"]').parentElement.parentElement.parentElement.querySelectorAll('td')["
@@ -4929,7 +4928,7 @@ public class Tawarruq_Steps {
 							}
 						}
 					} catch (Exception e) {
-						if (k == 300) {
+						if (k == 100) {
 							Assert.fail(e.getMessage());
 						}
 					}
@@ -4942,14 +4941,14 @@ public class Tawarruq_Steps {
 		
 		@And("User_608 to verify the functionality of Activate\\Deactivate button under Customer Identification screen")
 		public void user_608_to_verify_the_functionality_of_activate_deactivate_button_under_customer_identification_screen() throws Throwable {
-			Thread.sleep(1000);
-			for (int i = 0; i <= 100000; i++) {
+			for (int i = 0; i <= 1000; i++) {
 				try {
-					javascriptHelper.backgroundBorder(javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("statusToggleBtn")));
-					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("statusToggleBtn")).click();
+					WebElement toggleBtn = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("statusToggleBtn"));
+					javascriptHelper.backgroundBorder(toggleBtn);
+					toggleBtn.click();
 					break;
 				} catch (Exception e) { 
-					if (i == 100000) {
+					if (i == 1000) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -4958,16 +4957,15 @@ public class Tawarruq_Steps {
 		
 		@And("User_608 get the updated record ID under Customer Identification section")
 		public void user_608_get_the_updated_record_id_under_customer_identification_section() throws Throwable {			
-			for (int i = 0; i <= 10000; i++) {
+			for (int i = 0; i <= 1000; i++) {
 				try {
 					WebElement successMsg = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("alert_SuccessMsg"));
 					String text = successMsg.getText();
 					System.out.println("Number: "+ text.substring(32, 36));
 					identificatioDetailsExcelData.updateTestData(testData.get("DataSet ID"),"Record_ID", text.substring(32, 36));
 					break;
-				} catch (Exception e) { 
-					e.printStackTrace();
-					if (i == 10000) {
+				} catch (Exception e) {
+					if (i == 1000) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -4976,7 +4974,7 @@ public class Tawarruq_Steps {
 				try {
 					WebElement popup = javascriptHelper.executeScriptWithWebElement(
 							identificatioDetailsJsPaths.getElement("alert_closeBtn"));
-					javascriptHelper.JSEClick(popup);
+					popup.click();
 		            break;
 		        } catch (Exception e) {
 		            if (i==499) {
@@ -4988,85 +4986,119 @@ public class Tawarruq_Steps {
 
 		@And("User_608 to verify if Status is Active then click the button system should show Deactivate under Customer Identification section")
 		public void user_608_to_verify_if_status_is_active_then_click_the_button_system_should_show_deactivate_under_customer_identification_section() throws Throwable {
-//			document.querySelectorAll('ion-title[mode=\"md\"]')[1].parentElement.parentElement.querySelector('tbody tr').lastElementChild
-			String length = null;
-			for (int i = 0; i < 500; i++) {
+			for (int i = 0; i <= 1000; i++) {
 				try {
-					length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
-							.toString();
-					if (!length.isBlank() && !length.equals("0") && length.equals("1")) {
-						break;
-					}
-				} catch (Exception e) {
-					if (i == 499) {
-						Assert.fail(e.getMessage());
-					}
-				}
-			}
-			for (int i = 0; i < 5000; i++) {
-				try {
-					for (int j = 0; j < Integer.parseInt(length); j++) {
-						String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
-						String titlename = javascriptHelper.executeScript(title).toString();
-						if (titlename.trim().contains("Customer Identification")) {
-							String titlePath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]";
-							javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(titlePath));
-							String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].parentElement.parentElement.querySelector('tbody tr').lastElementChild";
-							WebElement text = javascriptHelper.executeScriptWithWebElement(jspath);
-							javascriptHelper.backgroundBorder(text);
-							System.out.println("Get Text: "+text.getText());
-							softAssert.assertTrue(text.getText().equalsIgnoreCase("In-active"));
-							break;
-						}
-					}
+					String path = "document.querySelector('th[ng-reflect-field=\"idTypeDesc\"]')"
+							+ ".parentElement.parentElement.nextElementSibling.querySelector('tr').lastElementChild";
+					WebElement text = javascriptHelper.executeScriptWithWebElement(path);
+					javascriptHelper.backgroundBorder(text);
+					System.out.println("Get Text: "+text.getText());
+					softAssert.assertTrue(text.getText().equalsIgnoreCase("In-active"));
 					break;
-				} catch (Exception e) {
-					if (i == 4999) {
+				} catch (Exception e) { 
+					if (i == 1000) {
 						Assert.fail(e.getMessage());
 					}
 				}
 			}
+			//			for (int i = 0; i < 500; i++) {
+//				try {
+//					length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+//							.toString();
+//					if (!length.isBlank() && !length.equals("0") && length.equals("1")) {
+//						break;
+//					}
+//				} catch (Exception e) {
+//					if (i == 499) {
+//						Assert.fail(e.getMessage());
+//					}
+//				}
+//			}
+//			for (int i = 0; i < 5000; i++) {
+//				try {
+//					for (int j = 0; j < Integer.parseInt(length); j++) {
+//						String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+//						String titlename = javascriptHelper.executeScript(title).toString();
+//						if (titlename.trim().contains("Customer Identification")) {
+//							String titlePath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]";
+//							javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(titlePath));
+//							String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].parentElement.parentElement.querySelector('tbody tr').lastElementChild";
+//							WebElement text = javascriptHelper.executeScriptWithWebElement(jspath);
+//							javascriptHelper.backgroundBorder(text);
+//							System.out.println("Get Text: "+text.getText());
+//							softAssert.assertTrue(text.getText().equalsIgnoreCase("In-active"));
+//							break;
+//						}
+//					}
+//					break;
+//				} catch (Exception e) {
+//					if (i == 4999) {
+//						Assert.fail(e.getMessage());
+//					}
+//				}
+//			}
 		}
 
 		@And("User_608 click the Search button in Customer Identification section")
-		public void user_608_click_the_search_button_in_customer_identification_section() throws Throwable {
-			String length = null;
-			for (int i = 0; i < 500; i++) {
+		public void user_608_click_the_search_button_in_customer_identification_section() throws Throwable {			
+			for (int i = 0; i <= 1000; i++) {
 				try {
-					length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
-							.toString();
-					System.out.println(length);
-					if (!length.isBlank() && !length.equals("0") && length.equals("1")) {
-						break;
-					}
-				} catch (Exception e) {
-					if (i == 499) {
+					String path = "document.querySelector('th[ng-reflect-field=\"idTypeDesc\"]')"
+							+ ".parentElement.parentElement.parentElement.parentElement.parentElement"
+							+ ".querySelector('button[icon=\"pi pi-search\"]')";
+					WebElement btn = javascriptHelper.executeScriptWithWebElement(path);
+					javascriptHelper.backgroundBorder(btn);
+					btn.click();
+					break;
+				} catch (Exception e) { 
+					if (i == 1000) {
 						Assert.fail(e.getMessage());
 					}
 				}
 			}
-			for (int i = 0; i < 5000; i++) {
-				try {
-					for (int j = 0; j < Integer.parseInt(length); j++) {
-						String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
-						String titlename = javascriptHelper.executeScript(title).toString();
-						if (titlename.trim().contains("Customer Identification")) {
-							String titlePath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]";
-							javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(titlePath));
-							String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].parentElement.parentElement.querySelector('button[icon=\"pi pi-search\"]')";
-							WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
-							actions.click(btn).build().perform();
-							System.out.println("condition true");
-							break;
-						}
-					}
-					break;
-				} catch (Exception e) {
-					if (i == 4999) {
-						Assert.fail(e.getMessage());
-					}
-				}
-			}		    
+			
+			
+			//			String length = null;
+//			for (int i = 0; i < 500; i++) {
+//				try {
+//					length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+//							.toString();
+//					System.out.println(length);
+//					if (!length.isBlank() && !length.equals("0") && length.equals("1")) {
+//						break;
+//					}
+//				} catch (Exception e) {
+//					if (i == 499) {
+//						Assert.fail(e.getMessage());
+//					}
+//				}
+//			}
+//			for (int i = 0; i < 500; i++) {
+//				try {
+//					for (int j = 0; j < Integer.parseInt(length); j++) {
+//						String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+//						String titlename = javascriptHelper.executeScript(title).toString();
+//						System.out.println(titlename);
+//						if (titlename.trim().contains("Customer Identification")) {
+//							System.out.println("True");
+//							String titlePath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]";
+//							javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(titlePath));
+//							String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]"
+//									+ ".parentElement.parentElement.querySelector('button[icon=\"pi pi-search\"]')";
+//							System.out.println(jspath);
+//							WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);							
+//							btn.click();
+//							System.out.println("Clicked......");
+//							break;
+//						}
+//					}
+//					break;
+//				} catch (Exception e) {
+//					if (i == 499) {
+//						Assert.fail(e.getMessage());
+//					}
+//				}
+//			}		    
 		}
 
 		@And("User_608 search the Record ID in Customer Identification section")
@@ -5083,47 +5115,27 @@ public class Tawarruq_Steps {
 						Assert.fail(e.getMessage());
 					}
 				}
-			}
-		    
+			}		    
 		}
 		
 		@And("User_608 click the lable on button if the status of record is Deactive under Customer Identification section")
 		public void user_608_click_the_lable_on_button_if_the_status_of_record_is_deactive_under_customer_identification_section() throws Throwable {
-			String length = null;
-			for (int i = 0; i < 5000; i++) {
+			for (int i = 0; i <= 500; i++) {
 				try {
-					length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
-							.toString();
-					System.out.println(length);
-					if (!length.isBlank() && !length.equals("0")) {
-						break;
-					}
-				} catch (Exception e) {
-					if (i == 4999) {
-						Assert.fail(e.getMessage());
-					}
-				}
-			}
-			for (int i = 0; i < 5000; i++) {
-				try {
-					for (int j = 0; j < Integer.parseInt(length); j++) {
-						String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
-						String titlename = javascriptHelper.executeScript(title).toString();			
-						if (titlename.trim().contains("Customer Identification")) {
-							String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].parentElement.parentElement.querySelector('button[icon=\\\"pi pi-pencil\\\"]')";
-							WebElement pencilBtn = javascriptHelper.executeScriptWithWebElement(jspath);
-							javascriptHelper.backgroundColor(pencilBtn);
-							actions.click(pencilBtn).build().perform();
-							break;
-						}
-					}
+					String path = "document.querySelector('th[ng-reflect-field=\"idTypeDesc\"]')"
+							+ ".parentElement.parentElement.nextElementSibling.querySelector('button[icon=\"pi pi-pencil\"]')";
+					WebElement btn = javascriptHelper.executeScriptWithWebElement(path);
+					javascriptHelper.backgroundColor(btn);
+					btn.click();
 					break;
 				} catch (Exception e) {
-					if (i == 4999) {
+					if (i == 500) {
 						Assert.fail(e.getMessage());
 					}
 				}
 			}
+			
+			
 		}
 
 		@And("User_608 change the status Deactive to Active under Customer Identification section")
@@ -5143,43 +5155,59 @@ public class Tawarruq_Steps {
 
 		@And("User_608 to verify if Status is Deactive then click the button system should show Active under Customer Identification section")
 		public void user_608_to_verify_if_status_is_deactive_then_click_the_button_system_should_show_active_under_customer_identification_section() throws Throwable {
-			String length = null;
-			for (int i = 0; i < 500; i++) {
+			for (int i = 0; i <= 1000; i++) {
 				try {
-					length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
-							.toString();
-					if (!length.isBlank() && !length.equals("0") && length.equals("1")) {
-						break;
-					}
-				} catch (Exception e) {
-					if (i == 499) {
+					String path = "document.querySelector('th[ng-reflect-field=\"idTypeDesc\"]')"
+							+ ".parentElement.parentElement.nextElementSibling.querySelector('tr').lastElementChild";
+					WebElement text = javascriptHelper.executeScriptWithWebElement(path);
+					javascriptHelper.backgroundBorder(text);
+					System.out.println("Get Text: "+text.getText());
+					softAssert.assertTrue(text.getText().equalsIgnoreCase("Active"));
+					break;
+				} catch (Exception e) { 
+					if (i == 1000) {
 						Assert.fail(e.getMessage());
 					}
 				}
 			}
-			for (int i = 0; i < 5000; i++) {
-				try {
-					for (int j = 0; j < Integer.parseInt(length); j++) {
-						String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
-						String titlename = javascriptHelper.executeScript(title).toString();
-						if (titlename.trim().contains("Customer Identification")) {
-							String titlePath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]";
-							javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(titlePath));
-							String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].parentElement.parentElement.querySelector('tbody tr').lastElementChild";
-							WebElement text = javascriptHelper.executeScriptWithWebElement(jspath);
-							javascriptHelper.backgroundBorder(text);
-							System.out.println("Get Text: "+text.getText());
-							softAssert.assertTrue(text.getText().equalsIgnoreCase("Active"));
-							break;
-						}
-					}
-					break;
-				} catch (Exception e) {
-					if (i == 4999) {
-						Assert.fail(e.getMessage());
-					}
-				}
-			}		    
+			
+			//			String length = null;
+//			for (int i = 0; i < 500; i++) {
+//				try {
+//					length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+//							.toString();
+//					if (!length.isBlank() && !length.equals("0") && length.equals("1")) {
+//						break;
+//					}
+//				} catch (Exception e) {
+//					if (i == 499) {
+//						Assert.fail(e.getMessage());
+//					}
+//				}
+//			}
+//			for (int i = 0; i < 5000; i++) {
+//				try {
+//					for (int j = 0; j < Integer.parseInt(length); j++) {
+//						String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+//						String titlename = javascriptHelper.executeScript(title).toString();
+//						if (titlename.trim().contains("Customer Identification")) {
+//							String titlePath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]";
+//							javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(titlePath));
+//							String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].parentElement.parentElement.querySelector('tbody tr').lastElementChild";
+//							WebElement text = javascriptHelper.executeScriptWithWebElement(jspath);
+//							javascriptHelper.backgroundBorder(text);
+//							System.out.println("Get Text: "+text.getText());
+//							softAssert.assertTrue(text.getText().equalsIgnoreCase("Active"));
+//							break;
+//						}
+//					}
+//					break;
+//				} catch (Exception e) {
+//					if (i == 4999) {
+//						Assert.fail(e.getMessage());
+//					}
+//				}
+//			}		    
 		}
 		
 		

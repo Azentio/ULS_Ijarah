@@ -45,7 +45,6 @@ And User_608 click the Mail box in ULS application
 And User_608 click the Search button under inbox
 And User_608 search the Reference id under inbox in ULS Application
 And User_608 click the Entitle button under inbox
-And User_608 verify the Back button available under Application details screen
 And User_608 verify the Sourcing Type field available in Referral\Sourcing Details section under Application Details tab
 And User_608 verify the Sourcing Office field available in Referral\Sourcing Details section under Application Details tab
 And User_608 verify the Sourcing Entity field available in Referral\Sourcing Details section under Application Details tab

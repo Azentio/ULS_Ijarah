@@ -26,3 +26,4 @@ And User_608 select the Issuing Authority in Customer Identification screen
 And User_608 click the save button with mandatory field blank in Customer Identification screen
 And User_608 verify the Validation error msg in Customer Identification screen
 Then logout from the ijaraApplication
+And User_608 invoke soft assert in Identification details screen under Additional Customer Info tab at Tawarruq App Data Entry stage

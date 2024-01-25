@@ -32,6 +32,7 @@ public class Murabaha_Steps {
 	JSPaths appData_IncomeJsPaths = new JSPaths(excelPath, "DataCheckIncome_Elements", "DataCheckIncome_FieldName", "JSPath");
 	JSPaths employmentDetailsJsPaths = new JSPaths(excelPath, "EmploymentDetails_Elements", "EmploymentDetails_FieldName", "JSPath");
 	JSPaths assetDetailsJsPaths = new JSPaths(excelPath, "AssetDetails_Elements", "AssetDetails_FieldName", "JSPath");
+	JSPaths addressDetailsJsPaths = new JSPaths(excelPath, "AddressDetails_Elements", "AddressDetails_FieldName", "JSPath");
 	
 	ExcelData exelData = new ExcelData(excelTestDataPath, "ijara_LoginCredentials", "UserType");
 	Map<String, String> loginTestData = new HashMap<>();
@@ -49,6 +50,7 @@ public class Murabaha_Steps {
 	ExcelData AppDataIncomeExcelData  = new ExcelData(excelTestDataPath,"MU_AppData_Income","DataSet ID");
 	ExcelData DataCheckEmpDetailsExcelData  = new ExcelData(excelTestDataPath,"MU_DataCheck_EmpDetails","DataSet ID");
 	ExcelData AppDataAssetDetailsExcelData  = new ExcelData(excelTestDataPath,"MU_AppData_AssetDetails","DataSet ID");
+	ExcelData DataCheckAddressDetailsExcelData  = new ExcelData(excelTestDataPath,"MU_DataCheck_AddressDetails","DataSet ID");
 	
 	Map<String, String> testExecutionData;
 	Map<String, String> testData;
@@ -261,6 +263,34 @@ public class Murabaha_Steps {
     public void get_the_test_data_for_test_case_AT_MU_ADE_IAD_10() throws Throwable {
 		testData = AppDataAssetDetailsExcelData.getTestdata("DS_AT_MU_ADE_IAD_10");
     }
+	
+//	Murabaha -- Data Check -- Address Details screen
+	@And("^User_608 get the test data for test case AT_MU_DATACHECK_ADC_01$")
+    public void get_the_test_data_for_test_case_AT_MU_DATACHECK_ADC_01() throws Throwable {
+		testData = DataCheckAddressDetailsExcelData.getTestdata("DS_AT_MU_DATACHECK_ADC_01");
+    }
+	
+	@And("^User_608 get the test data for test case AT_MU_DATACHECK_ADC_02$")
+    public void get_the_test_data_for_test_case_AT_MU_DATACHECK_ADC_02() throws Throwable {
+		testData = DataCheckAddressDetailsExcelData.getTestdata("DS_AT_MU_DATACHECK_ADC_02");
+    }
+	
+	@And("^User_608 get the test data for test case AT_MU_DATACHECK_ADC_03$")
+    public void get_the_test_data_for_test_case_AT_MU_DATACHECK_ADC_03() throws Throwable {
+		testData = DataCheckAddressDetailsExcelData.getTestdata("DS_AT_MU_DATACHECK_ADC_03");
+    }
+	
+	@And("^User_608 get the test data for test case AT_MU_DATACHECK_ADC_04$")
+    public void get_the_test_data_for_test_case_AT_MU_DATACHECK_ADC_04() throws Throwable {
+		testData = DataCheckAddressDetailsExcelData.getTestdata("DS_AT_MU_DATACHECK_ADC_04");
+    }
+	
+	@And("^User_608 get the test data for test case AT_MU_DATACHECK_ADC_05$")
+    public void get_the_test_data_for_test_case_AT_MU_DATACHECK_ADC_05() throws Throwable {
+		testData = DataCheckAddressDetailsExcelData.getTestdata("DS_AT_MU_DATACHECK_ADC_05");
+    }
+	
+	
 	
 	
 	
@@ -2304,12 +2334,13 @@ public class Murabaha_Steps {
 //	AT_MU_AD_03
 	@And("User_608 verify Classification field as Mandatory, Non-editable and Dropdown under Application details screen")
 	public void user_verify_classification_field_as_mandatory_non_editable_and_dropdown_under_application_details_screen() throws Throwable {
-		Thread.sleep(1000);
-//		Verify field as Mandatory
-		String sourcingType = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("classificationLabel")).getText();
+//		Verify field as Mandatory		
 		for (int i = 0; i <2000; i++) {
           try {
-        	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("classificationLabel")));
+        	  WebElement element = javascriptHelper.executeScriptWithWebElement(
+        			  dataCheck_ApplicationDetailsJsPaths.getElement("classificationLabel"));
+        	  String sourcingType = element.getText();
+        	  javascriptHelper.backgroundColor(element);
               Assert.assertTrue(sourcingType.contains("*"));
               break;
           } catch (Exception e) {
@@ -2320,9 +2351,10 @@ public class Murabaha_Steps {
 		}	 
 		
 //		Verify field as Dropdown
-		WebElement classificationDropdown = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("classificationDropdown"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
+				WebElement classificationDropdown = javascriptHelper.executeScriptWithWebElement(
+						dataCheck_ApplicationDetailsJsPaths.getElement("classificationDropdown"));
 				javascriptHelper.backgroundBorder(classificationDropdown);
 				Assert.assertTrue(classificationDropdown.getAttribute("ng-reflect-placeholder").contains("Select"));
 				break;
@@ -2333,7 +2365,8 @@ public class Murabaha_Steps {
 			}
 		}
 //		Verify field as Non-editable
-		WebElement classification = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("classification"));
+		WebElement classification = javascriptHelper.executeScriptWithWebElement(
+				dataCheck_ApplicationDetailsJsPaths.getElement("classification"));
 		String read = classification.getAttribute("ng-reflect-readonly");
 		for (int i = 0; i <= 2000; i++) {
 			try {
@@ -2350,10 +2383,11 @@ public class Murabaha_Steps {
 	@And("User_608 verify Product field as Mandatory, Non-editable and Dropdown under Application details screen")
 	public void user_verify_product_field_as_mandatory_non_editable_and_dropdown_under_application_details_screen() throws Throwable {
 //		Verify field as Mandatory
-		String field = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("productLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
-        	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("productLabel")));
+        	  WebElement element = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("productLabel"));
+        	  String field = element.getText();
+        	  javascriptHelper.backgroundColor(element);
               Assert.assertTrue(field.contains("*"));
               break;
           } catch (Exception e) {
@@ -2576,14 +2610,15 @@ public class Murabaha_Steps {
 //	AT_MU_AD_04
 	@And("User_608 verify Sourcing Channel field as Mandatory, Non-editable and Dropdown under Application details screen")
 	public void user_verify_sourcing_channel_field_as_mandatory_non_editable_and_dropdown_under_application_details_screen() throws Throwable {
-		Thread.sleep(1000);
-//		Verify field as Mandatory
-		String sourcingChannelLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingChannelLabel")).getText();
+//		Verify field as Mandatory		
 		for (int i = 0; i <2000; i++) {
           try {
-        	  javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("AppDetailsSectionLabel")));
-        	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
-        			  dataCheck_ApplicationDetailsJsPaths.getElement("sourcingChannelLabel")));
+        	  javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+        			  dataCheck_ApplicationDetailsJsPaths.getElement("AppDetailsSectionLabel")));
+        	  WebElement element = javascriptHelper.executeScriptWithWebElement(
+        			  dataCheck_ApplicationDetailsJsPaths.getElement("sourcingChannelLabel"));
+        	  String sourcingChannelLabel = element.getText();
+        	  javascriptHelper.backgroundColor(element);
               Assert.assertTrue(sourcingChannelLabel.contains("*"));
               break;
           } catch (Exception e) {
@@ -2594,10 +2629,10 @@ public class Murabaha_Steps {
 		}	
 		
 //		Verify field as Dropdown
-		WebElement sourcingChannelDropdown = javascriptHelper.executeScriptWithWebElement(
-				dataCheck_ApplicationDetailsJsPaths.getElement("sourcingChannelDropdown"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
+				WebElement sourcingChannelDropdown = javascriptHelper.executeScriptWithWebElement(
+						dataCheck_ApplicationDetailsJsPaths.getElement("sourcingChannelDropdown"));
 				javascriptHelper.backgroundBorder(sourcingChannelDropdown);
 				Assert.assertTrue(sourcingChannelDropdown.getAttribute("ng-reflect-placeholder").contains("Select"));
 				break;
@@ -2627,10 +2662,10 @@ public class Murabaha_Steps {
 	@And("User_608 verify Business Center Code field as Mandatory, Non-editable and Dropdown under Application details screen")
 	public void user_verify_business_center_code_field_as_mandatory_non_editable_and_dropdown_under_application_details_screen() throws Throwable {
 //		Verify field as Mandatory
-		String businessCenterCode = javascriptHelper.executeScriptWithWebElement(
-				dataCheck_ApplicationDetailsJsPaths.getElement("businessCenterCodeLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
+        	  String businessCenterCode = javascriptHelper.executeScriptWithWebElement(
+      				dataCheck_ApplicationDetailsJsPaths.getElement("businessCenterCodeLabel")).getText();
         	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
         			  dataCheck_ApplicationDetailsJsPaths.getElement("businessCenterCodeLabel")));
               Assert.assertTrue(businessCenterCode.contains("*"));
@@ -3014,10 +3049,13 @@ public class Murabaha_Steps {
 			}
 		}
 //		Validate Mandatory
-		String sourcingType = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingTypeLabel")).getText();
+		
 		for (int i = 0; i <2000; i++) {
           try {
-        	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingTypeLabel")));
+        	  String sourcingType = javascriptHelper.executeScriptWithWebElement(
+        			  dataCheck_ApplicationDetailsJsPaths.getElement("sourcingTypeLabel")).getText();
+        	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+        			  dataCheck_ApplicationDetailsJsPaths.getElement("sourcingTypeLabel")));
               Assert.assertTrue(sourcingType.contains("*"));
               break;
           } catch (Exception e) {
@@ -3058,10 +3096,10 @@ public class Murabaha_Steps {
 	@And("User_608 verify Sourcing Office field as Mandatory, Non-editable and Dropdown under Referral\\Sourcing Details section")
 	public void user_verify_sourcing_office_field_as_mandatory_non_editable_and_dropdown_under_referral_sourcing_details_section() throws Throwable {
 //		Validate Mandatory
-		String sourcingOffice = javascriptHelper.executeScriptWithWebElement(
-				dataCheck_ApplicationDetailsJsPaths.getElement("sourcingOfficeLabel")).getText();
 		for (int i = 0; i <2000; i++) {
           try {
+        	  String sourcingOffice = javascriptHelper.executeScriptWithWebElement(
+      				dataCheck_ApplicationDetailsJsPaths.getElement("sourcingOfficeLabel")).getText();
         	  javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
         			  dataCheck_ApplicationDetailsJsPaths.getElement("sourcingOfficeLabel")));
               Assert.assertTrue(sourcingOffice.contains("*"));
@@ -9331,7 +9369,7 @@ public class Murabaha_Steps {
 	@And("User_608 verify Back button availble in Asset Details screen")
 	public void user_608_verify_back_button_availble_in_asset_details_screen() throws Throwable {
 		String length = null;
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
 						.toString();
@@ -9340,12 +9378,12 @@ public class Murabaha_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('form button')[" + j + "].getAttribute('ng-reflect-text')";
@@ -9361,7 +9399,7 @@ public class Murabaha_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -12120,7 +12158,8 @@ public class Murabaha_Steps {
 					if (titlename.trim().contains("Asset Details")) {
 						String jspath = "document.querySelectorAll('button[icon=\"pi pi-pencil\"]')[" + j + "]";
 						WebElement pencilBtn = javascriptHelper.executeScriptWithWebElement(jspath);
-						javascriptHelper.JSEClick(pencilBtn);
+						javascriptHelper.backgroundColor(pencilBtn);
+						pencilBtn.click();
 						break;
 					}
 				}
@@ -12904,9 +12943,15 @@ public class Murabaha_Steps {
 					String jspath = "document.querySelectorAll('table')[1].querySelectorAll('td p-celleditor')[" + j + "]";
 					javascriptHelper.backgroundBorder(javascriptHelper.executeScriptWithWebElement(jspath));
 					String title = "return document.querySelectorAll('table')[1].querySelectorAll('td p-celleditor')[" + j + "].isContentEditable";
-					String result = javascriptHelper.executeScript(title).toString();
+//					String result = javascriptHelper.executeScript(title).toString();
 //					System.out.println(result);					
-					softAssert.assertTrue(result.contains("false"), "Asset details list view values are non editable");					
+//					softAssert.assertTrue(result.contains("false"), "Asset details list view values are non editable");
+					WebElement field = javascriptHelper.executeScriptWithWebElement(title);
+					String output = field.getAttribute("readonly");
+					System.out.println("Out: "+ output);
+					javascriptHelper.backgroundBorder(field);
+					softAssert.assertNull(output,
+							"Listview values should be non editable under Asset Details section");
 				}
 				break;
 			} catch (Exception e) {
@@ -13096,7 +13141,8 @@ public class Murabaha_Steps {
 				javascriptHelper.backgroundColor(searchResult);
 				String text = searchResult.getText().substring(13, 14);
 				System.out.println("Result value: "+text);
-				softAssert.assertTrue(Integer.parseInt(text)>0, "System should display all the possible matching records");
+				softAssert.assertTrue(Integer.parseInt(text)>0,
+						"System should display all the possible matching records in Asset Details section");
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -13132,7 +13178,8 @@ public class Murabaha_Steps {
 				javascriptHelper.backgroundColor(searchResult);
 				String text = searchResult.getText().substring(13, 14);
 				System.out.println("Result value: "+text);
-				softAssert.assertTrue(Integer.parseInt(text)==0, "System should display the message as No data found");
+				softAssert.assertTrue(Integer.parseInt(text)==0,
+						"System should display the message as No data found in Asset Details section");
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -13256,8 +13303,7 @@ public class Murabaha_Steps {
 					Assert.fail(e.getMessage());
 				}
 			}
-		}
-	    
+		}	    
 	}
 
 	@And("User_608 to verify post clicking XLS button system should download the xls file of that records in Asset Details")
@@ -13279,6 +13325,2371 @@ public class Murabaha_Steps {
 	}
 	
 	
+//	AT_MU_DATACHECK_ADC_01
+	@And("User_608 click the Eye button under Customer Personal Info section in Additional Customer Info tab")
+	public void user_608_click_the_eye_button_under_customer_personal_info_section_in_additional_customer_info_tab() throws Throwable {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();			
+					if (titlename.trim().contains("Customer Personal Information")) {
+						String jspath = "document.querySelectorAll('button[icon=\"pi pi-eye\"]')[" + j + "]";
+						WebElement eyeBtn = javascriptHelper.executeScriptWithWebElement(jspath);
+						eyeBtn.click();
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@And("User_608 click the Eye button under Address Details section in Additional Customer Info tab")
+	public void user_608_click_the_eye_button_under_address_details_section_in_additional_customer_info_tab() throws Throwable {
+		String length = null;
+		for (int i = 0; i < 500; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0") && !length.equals("1")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 500; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+//					System.out.println(titlename.trim());
+					if (titlename.trim().contains("Address Details")) {
+//						System.out.println("Condition true");
+						String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].parentElement.parentElement.querySelector('button[icon=\"pi pi-eye\"]')";
+						WebElement eyeBtn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.scrollToElement(eyeBtn).build().perform();
+						eyeBtn.click();
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@And("^User_608 verify Back button available in Address Details screen under Additional Customer info tab$")
+	public void User_608_verify_Back_button_available_in_Address_Details_screen_under_Additional_Customer_info_tab()
+			throws Throwable {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('form button')[" + j + "].getAttribute('ng-reflect-text')";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains("Go Back")) {
+						String jspath = "document.querySelectorAll('form button')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.backgroundBorder(btn);
+						softAssert.assertTrue(btn.isDisplayed(),
+								"Back button should be displayed in Asset Details screen");
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Address Type field available in Address Details screen under Additional Customer info tab$")
+	public void User_608_verify_Address_Type_field_available_in_Address_Details_screen_under_Additional_Customer_info_tab()
+			throws Throwable {		
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement label = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("addressTypeLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Address Type field available in Address Details screen");
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("addressTypeDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(), "Address Type field available in Address Details screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Address Status field available in Address Details screen under Additional Customer info tab$")
+	public void User_608_verify_Address_Status_field_available_in_Address_Details_screen_under_Additional_Customer_info_tab()
+			throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement label = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("addressStatusLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Address Status field available in Address Details screen");
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("addressStatusDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(), "Address Status field available in Address Details screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Residential Status field available in Address Details screen under Additional Customer info tab$")
+	public void User_608_verify_Residential_Status_field_available_in_Address_Details_screen_under_Additional_Customer_info_tab()
+			throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement label = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("residentialStatusLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Residential Status field available in Address Details screen");
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("residentialStatusDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(), "Residential Status field available in Address Details screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Communication Address field available in Address Details screen under Additional Customer info tab$")
+	public void User_608_verify_Communication_Address_field_available_in_Address_Details_screen_under_Additional_Customer_info_tab()
+			throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement label = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("communicationAddressLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Communication Address field available in Address Details screen");
+				WebElement btn = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("communicationAddressToggle"));
+				javascriptHelper.backgroundBorder(btn);
+				softAssert.assertTrue(btn.isDisplayed(), "Communication Address field available in Address Details screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Location Category field available in Address Details screen under Additional Customer info tab$")
+	public void User_608_verify_Location_Category_field_available_in_Address_Details_screen_under_Additional_Customer_info_tab()
+			throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement label = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("locationCategoryLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Location Category field available in Address Details screen");
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("locationCategoryDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(), "Location Category field available in Address Details screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Address Line1 field available in Address Details screen under Additional Customer info tab$")
+	public void User_608_verify_Address_Line1_field_available_in_Address_Details_screen_under_Additional_Customer_info_tab()
+			throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement label = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("addressLine1Label"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Address Line1 field available in Address Details screen");
+				WebElement input = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("addressLine1Input"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.isDisplayed(), "Address Line1 field available in Address Details screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Address Line2 field available in Address Details screen under Additional Customer info tab$")
+	public void User_608_verify_Address_Line2_field_available_in_Address_Details_screen_under_Additional_Customer_info_tab()
+			throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement label = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("addressLine2Label"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Address Line2 field available in Address Details screen");
+				WebElement input = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("addressLine2Input"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.isDisplayed(), "Address Line2 field available in Address Details screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Country field available in Address Details screen under Additional Customer info tab$")
+	public void User_608_verify_Country_field_available_in_Address_Details_screen_under_Additional_Customer_info_tab()
+			throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement label = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("countryLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Country field available in Address Details screen");
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("countryDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(), "Country field available in Address Details screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Province ID field available in Address Details screen under Additional Customer info tab$")
+	public void User_608_verify_Province_ID_field_available_in_Address_Details_screen_under_Additional_Customer_info_tab()
+			throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement label = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("provinceIdLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Province ID field available in Address Details screen");
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("provinceIdDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(), "Province ID field available in Address Details screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify District Name field available in Address Details screen under Additional Customer info tab$")
+	public void User_608_verify_District_Name_field_available_in_Address_Details_screen_under_Additional_Customer_info_tab()
+			throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement label = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("districtNameLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"District Name field available in Address Details screen");
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("districtNameDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(), "District Name field available in Address Details screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify City field available in Address Details screen under Additional Customer info tab$")
+	public void User_608_verify_City_field_available_in_Address_Details_screen_under_Additional_Customer_info_tab()
+			throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement label = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("cityNameLabel"));
+				javascriptHelper.scrollIntoView(label);
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement label = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("cityNameLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"City field available in Address Details screen");
+				WebElement input = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("cityNameInput"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.isDisplayed(), "City field available in Address Details screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Zip Code field available in Address Details screen under Additional Customer info tab$")
+	public void User_608_verify_Zip_Code_field_available_in_Address_Details_screen_under_Additional_Customer_info_tab()
+			throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement label = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("zipCodeLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Zip Code field available in Address Details screen");
+				WebElement input = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("zipCodeInput"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.isDisplayed(), "Zip Code field available in Address Details screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify PO Box Number field available in Address Details screen under Additional Customer info tab$")
+	public void User_608_verify_PO_Box_Number_field_available_in_Address_Details_screen_under_Additional_Customer_info_tab()
+			throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement label = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("poBoxNbrLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"PO Box Number field available in Address Details screen");
+				WebElement input = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("poBoxNbrInput"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.isDisplayed(), "PO Box Number field available in Address Details screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Mobile Number field available in Address Details screen under Additional Customer info tab$")
+	public void User_608_verify_Mobile_Number_field_available_in_Address_Details_screen_under_Additional_Customer_info_tab()
+			throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement label = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("mobileNbrLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Mobile Number field available in Address Details screen");
+				WebElement input = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("mobileNbrInput"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.isDisplayed(), "Mobile Number field available in Address Details screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Duration of Stay field available in Address Details screen under Additional Customer info tab$")
+	public void User_608_verify_Duration_of_Stay_field_available_in_Address_Details_screen_under_Additional_Customer_info_tab()
+			throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement label = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("durationOfStayLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Duration of Stayfield available in Address Details screen");
+				WebElement input = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("durationOfStayInput"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.isDisplayed(), "Duration of Stay field available in Address Details screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Latitude Details field available in Address Details screen under Additional Customer info tab$")
+	public void User_608_verify_Latitude_Details_field_available_in_Address_Details_screen_under_Additional_Customer_info_tab()
+			throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement label = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("latitudeDetailsLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Latitude Details field available in Address Details screen");
+				WebElement input = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("latitudeDetailsInput"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.isDisplayed(), "Latitude Details field available in Address Details screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Longitude Details field available in Address Details screen under Additional Customer info tab$")
+	public void User_608_verify_Longitude_Details_field_available_in_Address_Details_screen_under_Additional_Customer_info_tab()
+			throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement label = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("longitudeDetailsLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Longitude Details field available in Address Details screen");
+				WebElement input = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("longitudeDetailsInput"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.isDisplayed(), "Longitude Details field available in Address Details screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Landmark field available in Address Details screen under Additional Customer info tab$")
+	public void User_608_verify_Landmark_field_available_in_Address_Details_screen_under_Additional_Customer_info_tab()
+			throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement label = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("landmarkLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Landmark field available in Address Details screen");
+				WebElement input = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("landmarkInput"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.isDisplayed(), "Landmark field available in Address Details screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Occupancy Date field available in Address Details screen under Additional Customer info tab$")
+	public void User_608_verify_Occupancy_Date_field_available_in_Address_Details_screen_under_Additional_Customer_info_tab()
+			throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement label = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("occupancyDateLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Occupancy Date field available in Address Details screen");
+				WebElement date = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("occupancyDateCalendar"));
+				javascriptHelper.backgroundBorder(date);
+				softAssert.assertTrue(date.isDisplayed(), "Occupancy Date field available in Address Details screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Landlord Name field available in Address Details screen under Additional Customer info tab$")
+	public void User_608_verify_Landlord_Name_field_available_in_Address_Details_screen_under_Additional_Customer_info_tab()
+			throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement label = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("landlordNameLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Landlord Name field available in Address Details screen");
+				WebElement input = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("landlordNameInput"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.isDisplayed(), "Landlord Name field available in Address Details screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Landlord Mobile Number field available in Address Details screen under Additional Customer info tab$")
+	public void User_608_verify_Landlord_Mobile_Number_field_available_in_Address_Details_screen_under_Additional_Customer_info_tab()
+			throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement label = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("landlordMobileNbrLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Landlord Mobile Number field available in Address Details screen");
+				WebElement input = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("landlordMobileNbrInput"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.isDisplayed(), "Landlord Mobile Number field available in Address Details screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Rent Amount field available in Address Details screen under Additional Customer info tab$")
+	public void User_608_verify_Rent_Amount_field_available_in_Address_Details_screen_under_Additional_Customer_info_tab()
+			throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement label = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("rentAmountLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Rent Amount field available in Address Details screen");
+				WebElement input = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("rentAmountInput"));
+				javascriptHelper.backgroundBorder(input);
+				softAssert.assertTrue(input.isDisplayed(), "Rent Amount field available in Address Details screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Frequency of Rent field available in Address Details screen under Additional Customer info tab$")
+	public void User_608_verify_Frequency_of_Rent_field_available_in_Address_Details_screen_under_Additional_Customer_info_tab()
+			throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement label = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("frequencyOfRentLabel"));
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(label.isDisplayed(),"Frequency of Rent field available in Address Details screen");
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("frequencyOfRentDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.isDisplayed(), "Frequency of Rent field available in Address Details screen");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_608 invoke soft assert in Address Details screen at Murabaha App Data Check stage")
+	public void user_608_invoke_soft_assert_in_address_details_screen_at_murabaha_app_data_check_stage() throws Throwable {
+		softAssert.assertAll();
+	}
+	
+	
+//	AT_MU_DATACHECK_ADC_02
+	@And("^User_608 verify Address Type field as Mandatory, display only and Dropdown in Address Details screen$")
+	public void user_608_verify_address_type_field_as_mandatory_display_only_and_dropdown_in_address_details_screen()
+			throws Throwable {
+//		Validate Mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String label = javascriptHelper
+					.executeScriptWithWebElement(addressDetailsJsPaths.getElement("addressTypeLabel")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("addressTypeLabel")));
+				softAssert.assertTrue(label.contains("*"),"Address Type field should be Mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Display only
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("addressType"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("true"),
+						"Address Type field should be Display only");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Validate the field should be lookup value[Dropdown]
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("addressTypeDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Address Type field should be Dropdown");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Address status field as Mandatory, display only and Dropdown in Address Details screen$")
+	public void user_608_verify_address_status_field_as_mandatory_display_only_and_dropdown_in_address_details_screen()
+			throws Throwable {
+//		Validate Mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String label = javascriptHelper
+					.executeScriptWithWebElement(addressDetailsJsPaths.getElement("addressStatusLabel")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("addressStatusLabel")));
+				softAssert.assertTrue(label.contains("*"),"Address Status field should be Mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Display only
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("addressStatus"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("true"),
+						"Address Status field should be Display only");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Validate the field should be lookup value[Dropdown]
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("addressStatusDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Address Status field should be Dropdown");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Residential Status field as Mandatory, display only and Dropdown in Address Details screen$")
+	public void user_608_verify_residential_status_field_as_mandatory_display_only_and_dropdown_in_address_details_screen()
+			throws Throwable {
+//		Validate Mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String label = javascriptHelper
+					.executeScriptWithWebElement(addressDetailsJsPaths.getElement("residentialStatusLabel")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("residentialStatusLabel")));
+				softAssert.assertTrue(label.contains("*"),"Residential Status field should be Mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Display only
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("residentialStatus"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("true"),
+						"Residential Status field should be Display only");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Validate the field should be lookup value[Dropdown]
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("residentialStatusDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Residential Status field should be Dropdown");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Communication Address field as display only and Toggle button in Address Details screen$")
+	public void user_608_verify_communication_address_field_as_mandatory_display_only_and_toggle_button_in_address_details_screen()
+			throws Throwable {
+//		Verify field as Display only
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("communicationAddress"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("true"),
+						"Communication Address field should be Display only");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Validate the field should be Toggle button
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("communicationAddressToggle"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getTagName().contains("toggle"),
+						"Communication Address field should be Toggle button");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Location Category field as display only and Dropdown in Address Details screen$")
+	public void user_608_verify_location_category_field_as_display_only_and_dropdown_in_address_details_screen()
+			throws Throwable {
+//		Verify field as Display only
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("locationCategory"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("true"),
+						"Address Type field should be Display only");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Validate the field should be lookup value[Dropdown]
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("locationCategoryDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Address Type field should be Dropdown");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@And("^User_608 verify Address line1 field as Mandatory, display only and Textbox in Address Details screen$")
+	public void user_608_verify_address_line1_field_as_mandatory_display_only_and_textbox_in_address_details_screen()
+			throws Throwable {
+//		Validate Mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String label = javascriptHelper
+					.executeScriptWithWebElement(addressDetailsJsPaths.getElement("addressLine1Label")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("addressLine1Label")));
+				softAssert.assertTrue(label.contains("*"),"Address line1 field should be Mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Display only
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("addressLine1"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("true"),
+						"Address line1 field should be Display only");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Validate the field should be Textbox
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("addressLine1Input"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("type").contains("text"),
+						"Address line1 field should be Textbox");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Address line2 field as Mandatory, display only and Textbox in Address Details screen$")
+	public void user_608_verify_address_line2_field_as_mandatory_display_only_and_textbox_in_address_details_screen()
+			throws Throwable {
+//		Validate Mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String label = javascriptHelper
+					.executeScriptWithWebElement(addressDetailsJsPaths.getElement("addressLine2Label")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("addressLine2Label")));
+				softAssert.assertTrue(label.contains("*"),"Address line2 field should be Mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Display only
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("addressLine2"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("true"),
+						"Address line2 field should be Display only");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Validate the field should be Textbox
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("addressLine2Input"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("type").contains("text"),
+						"Address line2 field should be Textbox");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Country field as Mandatory, display only and Textbox in Address Details screen$")
+	public void user_608_verify_country_field_as_mandatory_display_only_and_textbox_in_address_details_screen()
+			throws Throwable {
+//		Validate Mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String label = javascriptHelper
+					.executeScriptWithWebElement(addressDetailsJsPaths.getElement("countryLabel")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("countryLabel")));
+				softAssert.assertTrue(label.contains("*"),"Country field should be Mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Display only
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("country"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("true"),
+						"Country field should be Display only");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Validate the field should be lookup value[Dropdown]
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("countryDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Address Type field should be Dropdown");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Province Id field as Mandatory, display only and Textbox in Address Details screen$")
+	public void user_608_verify_province_id_field_as_mandatory_display_only_and_textbox_in_address_details_screen()
+			throws Throwable {
+//		Validate Mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String label = javascriptHelper
+					.executeScriptWithWebElement(addressDetailsJsPaths.getElement("provinceIdLabel")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("provinceIdLabel")));
+				softAssert.assertTrue(label.contains("*"),"Province Id field should be Mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Display only
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("provinceId"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("true"),
+						"Province Id field should be Display only");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Validate the field should be lookup value[Dropdown]
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("provinceIdDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Province Id field should be Dropdown");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify District Name field as Mandatory, display only and Textbox in Address Details screen$")
+	public void user_608_verify_district_name_field_as_mandatory_display_only_and_textbox_in_address_details_screen()
+			throws Throwable {
+//		Validate Mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String label = javascriptHelper
+					.executeScriptWithWebElement(addressDetailsJsPaths.getElement("districtNameLabel")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("districtNameLabel")));
+				softAssert.assertTrue(label.contains("*"),"Address line1 field should be Mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Display only
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("districtName"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("true"),
+						"Address line1 field should be Display only");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Validate the field should be lookup value[Dropdown]
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("districtNameDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Address Type field should be Dropdown");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@And("^User_608 verify City field as Mandatory, display only and Textbox in Address Details screen$")
+	public void user_608_verify_city_field_as_mandatory_display_only_and_textbox_in_address_details_screen()
+			throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement label = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("cityNameLabel"));
+				javascriptHelper.scrollIntoView(label);
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+//		Validate Mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String label = javascriptHelper
+					.executeScriptWithWebElement(addressDetailsJsPaths.getElement("cityNameLabel")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("cityNameLabel")));
+				softAssert.assertTrue(label.contains("*"),"City field should be Mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Display only
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("cityName"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("true"),
+						"City field should be Display only");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Validate the field should be Textbox
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("cityNameInput"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("type").contains("text"),
+						"City field should be Textbox");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Zip code field as Mandatory, display only and Textbox in Address Details screen$")
+	public void user_608_verify_zip_code_field_as_mandatory_display_only_and_textbox_in_address_details_screen()
+			throws Throwable {
+//		Validate Mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String label = javascriptHelper
+					.executeScriptWithWebElement(addressDetailsJsPaths.getElement("zipCodeLabel")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("zipCodeLabel")));
+				softAssert.assertTrue(label.contains("*"),"Zip code field should be Mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Display only
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("zipCode"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("true"),
+						"Zip code field should be Display only");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Validate the field should be Textbox
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("zipCodeInput"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("type").contains("text"),
+						"Zip code field should be Textbox");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify PO Box Number field as Editable and Textbox in Address Details screen$")
+	public void user_608_verify_po_box_number_field_as_editable_and_textbox_in_address_details_screen()
+			throws Throwable {
+//		Verify field as Display only
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("poBoxNbrInput"));
+				String output = field.getAttribute("readonly");
+				System.out.println("Out: "+ output);
+				softAssert.assertNull(output, "PO Box number field should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Validate the field should be Textbox
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("poBoxNbrInput"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("type").contains("number"),
+						"PO Box Number field should be Textbox");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Mobile number field as Editable and Textbox in Address Details screen$")
+	public void user_608_verify_mobile_number_field_as_editable_and_textbox_in_address_details_screen()
+			throws Throwable {
+//		Verify field as Display only
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("mobileNbrInput"));
+				String output = field.getAttribute("readonly");
+				System.out.println("Out: "+ output);
+				softAssert.assertNull(output, "Mobile number field should be Editable");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Validate the field should be Textbox
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("mobileNbrInput"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("type").contains("text"),
+						"Mobile number field should be Textbox");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Duration Of Stay field as display only and Textbox in Address Details screen$")
+	public void user_608_verify_duration_of_stay_field_as_display_only_and_textbox_in_address_details_screen()
+			throws Throwable {
+//		Verify field as Display only
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("durationOfStay"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("true"),
+						"Duration Of Stay field should be Display only");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Validate the field should be Textbox
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("durationOfStayInput"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("type").contains("number"),
+						"Duration Of Stay field should be Textbox");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@And("^User_608 verify Latitude Details Of the Address field as display only and Textbox in Address Details screen$")
+	public void user_608_verify_latitude_details_of_the_address_field_as_display_only_and_textbox_in_address_details_screen()
+			throws Throwable {
+//		Verify field as Display only
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("latitudeDetails"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("true"),
+						"Latitude Details Of the Address field should be Display only");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Validate the field should be Textbox
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("latitudeDetailsInput"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("type").contains("text"),
+						"Latitude Details Of the Address field should be Textbox");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Longitude Details Of the Address field as display only and Textbox in Address Details screen$")
+	public void user_608_verify_longitude_details_of_the_address_field_as_display_only_and_textbox_in_address_details_screen()
+			throws Throwable {
+//		Verify field as Display only
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("longitudeDetails"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("true"),
+						"Longitude Details Of the Address field should be Display only");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Validate the field should be Textbox
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("longitudeDetailsInput"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("type").contains("text"),
+						"Longitude Details Of the Address field should be Textbox");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Land Mark field as display only and Textbox in Address Details screen$")
+	public void user_608_verify_land_mark_field_as_display_only_and_textbox_in_address_details_screen()
+			throws Throwable {
+//		Verify field as Display only
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("landmark"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("true"),
+						"Land Mark field should be Display only");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Validate the field should be Textbox
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("landmarkInput"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("type").contains("text"),
+						"Land Mark field should be Textbox");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Occupancy Date field as Mandatory, display only and Date in Address Details screen$")
+	public void user_608_verify_occupancy_date_field_as_mandatory_display_only_and_date_in_address_details_screen()
+			throws Throwable {
+//		Validate Mandatory
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String label = javascriptHelper
+					.executeScriptWithWebElement(addressDetailsJsPaths.getElement("occupancyDateLabel")).getText();
+				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("occupancyDateLabel")));
+				softAssert.assertTrue(label.contains("*"),"Occupancy Date field should be Mandatory");
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Verify field as Display only
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("occupancyDate"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("true"),
+						"Occupancy Date field should be Display only");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Validate the field should be Date
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("occupancyDateCalendar"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getTagName().contains("calendar"),
+						"Occupancy Date field should be Date");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Landlord Name field as display only and Textbox in Address Details screen$")
+	public void user_608_verify_landlord_name_field_as_display_only_and_textbox_in_address_details_screen()
+			throws Throwable {
+//		Verify field as Display only
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("landlordName"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("true"),
+						"Landlord Name field should be Display only");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Validate the field should be Textbox
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("landlordNameInput"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("type").contains("text"),
+						"Landlord Name field should be Textbox");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Landlord Mobile number field as display only and Textbox in Address Details screen$")
+	public void user_608_verify_landlord_mobile_number_field_as_display_only_and_textbox_in_address_details_screen()
+			throws Throwable {
+//		Verify field as Display only
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("landlordMobileNbr"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("true"),
+						"Landlord Mobile number field should be Display only");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Validate the field should be Textbox
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("landlordMobileNbrInput"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("type").contains("text"),
+						"Landlord Mobile number field should be Textbox");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Rent Amount field as display only and Textbox in Address Details screen$")
+	public void user_608_verify_rent_amount_field_as_display_only_and_textbox_in_address_details_screen()
+			throws Throwable {
+//		Verify field as Display only
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("rentAmount"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("true"),
+						"Rent Amount field should be Display only");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Validate the field should be Textbox
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("rentAmountInput"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("type").contains("number"),
+						"Rent Amount field should be Textbox");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Frequency Of Rent field as display only and Dropdown in Address Details screen$")
+	public void user_608_verify_frequency_of_rent_field_as_display_only_and_dropdown_in_address_details_screen()
+			throws Throwable {
+//		Verify field as Display only
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("frequencyOfRent"));
+				softAssert.assertTrue(field.getAttribute("ng-reflect-readonly").contains("true"),
+						"Frequency Of Rent field should be Display only");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+//		Validate the field should be lookup value[Dropdown]
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("frequencyOfRentDropdown"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Frequency Of Rent field should be Dropdown");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@And("^User_608 verify Status field as toggle button in Address Detais screen$")
+	public void user_608_verify_status_field_as_toggle_button_in_address_detais_screen()throws Throwable{
+//		Validate the field should be Toggle button
+		for (int i = 0; i <= 500; i++) {
+			try {
+				WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("statusToggleBtn"));
+				javascriptHelper.backgroundBorder(dropdown);
+				softAssert.assertTrue(dropdown.getTagName().contains("toggle"),
+						"Communication Address field should be Toggle button");
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@And("^User_608 verify the functionality of Back button in Address Detais screen$")
+	public void user_608_verify_the_functionality_of_back_button_in_address_detais_screen()throws Throwable{
+		String length = null;
+		for (int i = 0; i < 500; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 500; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('form button')[" + j + "].getAttribute('ng-reflect-text')";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains("Go Back")) {
+						String jspath = "document.querySelectorAll('form button')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.scrollToElement(btn).build().perform();
+						btn.click();
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@And("^User_608 verify post clicking on back button system should navigate to the previous screen$")
+	public void user_608_verify_post_clicking_on_back_button_system_should_navigate_to_the_previous_screen()throws Throwable{
+		String length = null;
+		for (int i = 0; i < 500; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 500; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+//					System.out.println(titlename.trim());
+					if (titlename.trim().contains("Address Details")) {
+//						System.out.println("Condition true");
+						String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]";
+						WebElement section = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.scrollToElement(section).build().perform();
+						javascriptHelper.backgroundColor(section);
+						softAssert.assertTrue(section.isDisplayed(), "System should navigate to the previous screen");
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+//	AT_MU_DATACHECK_ADC_03
+	@And("^User_608 verify Search button available in listview under Address Details section$")
+	public void user_608_verify_search_button_available_in_listview_under_address_details_section() throws Throwable {
+		String length = null;
+		for (int i = 0; i < 300; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+						.toString();
+//				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0") && !length.equals("1")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 500; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains("Address Details")) {
+						String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].parentElement.parentElement.querySelector('button[icon=\"pi pi-search\"]')";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.scrollToElement(btn).build().perform();
+						javascriptHelper.backgroundBorder(btn);
+						softAssert.assertTrue(btn.isDisplayed(), "Search button available in Address Details section");
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 click the Export button under Address Details section in Additional Customer Info tab$")
+	public void user_608_click_the_export_button_under_address_details_section_in_additional_customer_info_tab()
+			throws Throwable {
+		String length = null;
+		for (int i = 0; i < 500; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0") && !length.equals("1")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 500; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains("Address Details")) {
+						String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]"
+								+ ".parentElement.parentElement.querySelector('p-dropdown')";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.scrollToElement(btn).build().perform();
+						javascriptHelper.backgroundBorder(btn);
+						btn.click();
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify PDF button available in listview under Address Details section$")
+	public void user_608_verify_pdf_button_available_in_listview_under_address_details_section() throws Throwable {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('p-dropdownitem').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('p-dropdownitem li')[" + j + "].textContent";
+					System.out.println("Name: "+title);
+					String titlename = javascriptHelper.executeScript(title).toString();			
+					if (titlename.trim().contains("PDF")) {
+						String jspath = "document.querySelectorAll('p-dropdownitem li')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.backgroundColor(btn);
+						softAssert.assertTrue(btn.isDisplayed(),"PDF button available under asset details tab");
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Excel button available in listview under Address Details section$")
+	public void user_608_verify_excel_button_available_in_listview_under_address_details_section() throws Throwable {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('p-dropdownitem').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('p-dropdownitem li')[" + j + "].textContent";
+					System.out.println("Name: "+title);
+					String titlename = javascriptHelper.executeScript(title).toString();			
+					if (titlename.trim().contains("XLS")) {
+						String jspath = "document.querySelectorAll('p-dropdownitem li')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.backgroundColor(btn);
+						softAssert.assertTrue(btn.isDisplayed(),"Excel button available under asset details tab");
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@And("^User_608 verify Address Type field available in listview under Address Details section$")
+	public void user_608_verify_address_type_field_available_in_listview_under_address_details_section()
+			throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("listview_AddressType"));
+				javascriptHelper.backgroundColor(field);
+				softAssert.assertTrue(field.isDisplayed(), "Address Type field available in Address Details listview");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Country field available in listview under Address Details section$")
+	public void user_608_verify_country_field_available_in_listview_under_address_details_section() throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("listview_Country"));
+				javascriptHelper.backgroundColor(field);
+				softAssert.assertTrue(field.isDisplayed(), "Country field available in Address Details listview");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Occupancy Status field available in listview under Address Details section$")
+	public void user_608_verify_occupancy_status_field_available_in_listview_under_address_details_section()
+			throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("listview_OccupancyStatus"));
+				javascriptHelper.backgroundColor(field);
+				softAssert.assertTrue(field.isDisplayed(), "Occupancy Status field available in Address Details listview");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Occupance Since field available in listview under Address Details section$")
+	public void user_608_verify_occupance_since_field_available_in_listview_under_address_details_section()
+			throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("listview_OccupanceSince"));
+				javascriptHelper.backgroundColor(field);
+				softAssert.assertTrue(field.isDisplayed(), "Occupance Since field available in Address Details listview");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Contact Address field available in listview under Address Details section$")
+	public void user_608_verify_contact_address_field_available_in_listview_under_address_details_section()
+			throws Throwable {
+		for (int i = 0; i <= 2000; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						addressDetailsJsPaths.getElement("listview_ContactAddress"));
+				javascriptHelper.backgroundColor(field);
+				softAssert.assertTrue(field.isDisplayed(), "Contact Address field available in Address Details listview");
+				break;
+			} catch (Exception e) {
+				if (i == 2000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Status field available in listview under Address Details section$")
+	public void user_608_verify_status_field_available_in_listview_under_address_details_section() throws Throwable {
+		String length = null;
+		for (int i = 0; i < 500; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0") && !length.equals("1")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 500; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains("Address Details")) {
+						String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]"
+								+ ".parentElement.parentElement.querySelector('[ng-reflect-field=\"recStatus\"]')";
+						WebElement field = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.backgroundColor(field);
+						softAssert.assertTrue(field.isDisplayed(), "Status field available in Address Details listview");
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_608 verify values in List view should be non editable under Address Details section")
+	public void user_608_verify_values_in_list_view_should_be_non_editable_under_address_details_section() throws Throwable {
+//		String jspath = "document.querySelectorAll('table')[1].querySelectorAll('td p-celleditor')";
+		String length = null;
+		for (int i = 0; i < 300; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+						.toString();
+//				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0") && !length.equals("1")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 500; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains("Address Details")) {
+						String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]"
+								+ ".parentElement.parentElement.querySelector('table').querySelectorAll('td p-celleditor')[1]";
+						WebElement field = javascriptHelper.executeScriptWithWebElement(jspath);
+						String output = field.getAttribute("readonly");
+						System.out.println("Out: "+ output);
+						javascriptHelper.backgroundBorder(field);
+						softAssert.assertNull(output,
+								"Listview values should be non editable under Address Details section");
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}		
+	}
+
+	
+//	AT_MU_DATACHECK_ADC_04
+	@And("^User_608 click the Search button under Address Details section in Additional Customer Info tab$")
+	public void user_608_click_the_search_button_under_address_details_section_in_additional_customer_info_tab()
+			throws Throwable {
+		String length = null;
+		for (int i = 0; i < 300; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+						.toString();
+//				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0") && !length.equals("1")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 500; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains("Address Details")) {
+						String titlePath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]";
+						WebElement element = javascriptHelper.executeScriptWithWebElement(titlePath);
+						javascriptHelper.scrollIntoView(element);
+						String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]"
+								+ ".parentElement.parentElement.querySelector('button[icon=\"pi pi-search\"]')";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						btn.click();
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 to verify the functionality of Search box with matching data under Address Details section$")
+	public void user_608_to_verify_the_functionality_of_search_box_with_matching_data_under_address_details_section()
+			throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(addressDetailsJsPaths.getElement("listview_SearchBox"))
+				.sendKeys(testData.get("Matching_Data"));;
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 to verify post entering any matching value system display all the possible matching records in Address Details section$")
+	public void user_608_to_verify_post_entering_any_matching_value_system_display_all_the_possible_matching_records_in_address_details_section()
+			throws Throwable {
+		String length = null;
+		for (int i = 0; i < 300; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+						.toString();
+//				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0") && !length.equals("1")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 500; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains("Address Details")) {
+						String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]"
+								+ ".parentElement.parentElement.querySelector('span[class*=\"p-paginator-current\"]')";
+						WebElement searchResult = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.backgroundColor(searchResult);
+						String text = searchResult.getText().substring(13, 14);
+						System.out.println("Result value: "+text);
+						softAssert.assertTrue(Integer.parseInt(text)>0,
+								"System should display all the possible matching records in Address Details section");
+						
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 to verify the functionality of Search box with mismatch data under Address Details section$")
+	public void user_608_to_verify_the_functionality_of_search_box_with_mismatch_data_under_address_details_section()
+			throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(addressDetailsJsPaths.getElement("listview_SearchBox"))
+				.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+				javascriptHelper.executeScriptWithWebElement(addressDetailsJsPaths.getElement("listview_SearchBox"))
+				.sendKeys(testData.get("Mismatch_Data"),Keys.TAB);
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 to verify post entering any mismatch value system should not display any records in Address Details section$")
+	public void user_608_to_verify_post_entering_any_mismatch_value_system_should_not_display_any_records_in_address_details_section()
+			throws Throwable {
+		String length = null;
+		for (int i = 0; i < 300; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+						.toString();
+//				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0") && !length.equals("1")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 500; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains("Address Details")) {
+						String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]"
+								+ ".parentElement.parentElement.querySelector('span[class*=\"p-paginator-current\"]')";
+						WebElement searchResult = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.backgroundColor(searchResult);
+						String text = searchResult.getText().substring(13, 14);
+						System.out.println("Result value: "+text);
+						softAssert.assertTrue(Integer.parseInt(text)==0,
+								"System should display the message as No data found in Address Details section");						
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+//	AT_MU_DATACHECK_ADC_05
+	@And("^User_608 to verify the functionality of Export to PDF button under Address Details section$")
+	public void user_608_to_verify_the_functionality_of_export_to_pdf_button_under_address_details_section()
+			throws Throwable {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('p-dropdownitem').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('p-dropdownitem li')[" + j + "].textContent";
+					System.out.println("Name: "+title);
+					String titlename = javascriptHelper.executeScript(title).toString();			
+					if (titlename.trim().contains("PDF")) {
+						String jspath = "document.querySelectorAll('p-dropdownitem li')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						btn.click();
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 to verify post clicking on PDF button system should download the PDF file of that records in Address Details$")
+	public void user_608_to_verify_post_clicking_on_pdf_button_system_should_download_the_pdf_file_of_that_records_in_address_details()
+			throws Throwable {
+		browserHelper.SwitchToWindow(1);
+		browserHelper.switchToParentWithChildClose();
+		String homePath = System.getProperty("user.home");
+		String filePath = homePath + "/Downloads";
+		File file = new File(filePath);
+		File[] listFiles = file.listFiles();
+		file.delete();
+		for (File downloadsFile : listFiles) {
+//			System.out.println(downloadsFile.getName());
+			if (downloadsFile.getName().contains("CustomerAddressDataFile")) {
+//				System.out.println("If condition " + downloadsFile.getName());
+				softAssert.assertTrue(downloadsFile.getName().contains("CustomerAddressDataFile"),
+						"File is not downloaded hence failed");
+				downloadsFile.delete();
+			}
+		}
+	}
+
+	@And("^User_608 to verify the functionality of Export to Excel button under Address Details section$")
+	public void user_608_to_verify_the_functionality_of_export_to_excel_button_under_address_details_section()
+			throws Throwable {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('p-dropdownitem').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('p-dropdownitem li')[" + j + "].textContent";
+					System.out.println("Name: "+title);
+					String titlename = javascriptHelper.executeScript(title).toString();			
+					if (titlename.trim().contains("XLS")) {
+						String jspath = "document.querySelectorAll('p-dropdownitem li')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						btn.click();
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 to verify post clicking XLS button system should download the xls file of that records in Address Details$")
+	public void user_608_to_verify_post_clicking_xls_button_system_should_download_the_xls_file_of_that_records_in_address_details()
+			throws Throwable {
+		String homePath = System.getProperty("user.home");
+		String filePath = homePath + "/Downloads";
+		File file = new File(filePath);
+		File[] listFiles = file.listFiles();
+		file.delete();
+		for (File downloadsFile : listFiles) {
+//			System.out.println(downloadsFile.getName());
+			if (downloadsFile.getName().contains("CustomerAddressDataFile")) {
+//				System.out.println("If condition " + downloadsFile.getName());
+				softAssert.assertTrue(downloadsFile.getName().contains("CustomerAddressDataFile"),
+						"File is nott downloaded hence failed");
+				downloadsFile.delete();
+			}
+		}
+	}
 	
 	
 	
