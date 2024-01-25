@@ -3614,7 +3614,7 @@ public class AutoLoan_Stepa {
 		
 		
 		@And("User_610 verify the add button Autoloan")
-		public void user_verify_the_add_button_autoloan() {
+		public void user_610_verify_the_add_button_autoloan() {
 			for (int i = 0; i < 200; i++) {
 				try {
 					javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("AddBtn")).click();
@@ -3646,31 +3646,31 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the back button Autoloan")
-		public void user_verify_the_back_button_autoloan() {
+		public void user_610_verify_the_back_button_autoloan() {
 		    
 		    
 		}
 
 		@And("User_610 verify the any mandatory field blank and save system should not allow user to save the record Autoloan")
-		public void user_verify_the_any_mandatory_field_blank_and_save_system_should_not_allow_user_to_save_the_record_autoloan() {
+		public void user_610_verify_the_any_mandatory_field_blank_and_save_system_should_not_allow_user_to_save_the_record_autoloan() {
 		    
 		    
 		}
 
 		@And("User_610 verfiy enter negative value system should not allow user to save the record Autoloan")
-		public void user_verfiy_enter_negative_value_system_should_not_allow_user_to_save_the_record_autoloan() {
+		public void user_610_verfiy_enter_negative_value_system_should_not_allow_user_to_save_the_record_autoloan() {
 		    
 		    
 		}
 
 		@And("User_610 verfiy enter character value in numeric field system should not allow user to save the record Autoloan")
-		public void user_verfiy_enter_character_value_in_numeric_field_system_should_not_allow_user_to_save_the_record_autoloan() {
+		public void user_610_verfiy_enter_character_value_in_numeric_field_system_should_not_allow_user_to_save_the_record_autoloan() {
 		    
 		    
 		}
 
 		@And("User_610 verify enters only special characters value in any field system should not allow user to save the record Autoloan")
-		public void user_verify_enters_only_special_characters_value_in_any_field_system_should_not_allow_user_to_save_the_record_autoloan() {
+		public void user_610_verify_enters_only_special_characters_value_in_any_field_system_should_not_allow_user_to_save_the_record_autoloan() {
 		    
 		    
 		}
@@ -3679,7 +3679,7 @@ public class AutoLoan_Stepa {
 		//--------------------   @AT_Al_DOC_01
 		
 		@And("User_610 Click Documents Details screen in Autoloan")
-		public void user_click_documents_details_screen_in_autoloan() throws Throwable {
+		public void user_610_click_documents_details_screen_in_autoloan() throws Throwable {
 			Thread.sleep(2000);
 			for (int i = 0; i < 700; i++) {
 				try {
@@ -3696,7 +3696,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 Click Add button under documents details AL")
-		public void user_click_add_button_under_documents_details_al() {
+		public void user_610_click_add_button_under_documents_details_al() {
 			for (int i = 0; i < 300; i++) {
 				try {
 					javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("AddBtn")).click();
@@ -3714,7 +3714,7 @@ public class AutoLoan_Stepa {
 		//------------ @AT_Al_DOC_01
 		
 		@And("User_610 verify the Customer Name field in Al")
-		public void user_verify_the_customer_name_field_in_al() {
+		public void user_610_verify_the_customer_name_field_in_al() {
 			for (int i = 0; i < 600; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("CustomerName")).isDisplayed()) {
@@ -3732,7 +3732,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Document Name field in Al")
-		public void user_verify_the_document_name_field_in_al() {
+		public void user_610_verify_the_document_name_field_in_al() {
 			for (int i = 0; i < 600; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("Documentname")).isDisplayed()) {
@@ -3750,7 +3750,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Required At Stage field in Al")
-		public void user_verify_the_required_at_stage_field_in_al() {
+		public void user_610_verify_the_required_at_stage_field_in_al() {
 			for (int i = 0; i < 600; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("RequiredAtStage")).isDisplayed()) {
@@ -3768,7 +3768,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Document Status field in Al")
-		public void user_verify_the_document_status_field_in_al() {
+		public void user_610_verify_the_document_status_field_in_al() {
 			for (int i = 0; i < 600; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("DocumentStatus")).isDisplayed()) {
@@ -3786,7 +3786,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Mandatory Optional field in Al")
-		public void user_verify_the_mandatory_optional_field_in_al() {
+		public void user_610_verify_the_mandatory_optional_field_in_al() {
 			for (int i = 0; i < 600; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("MandatoryOptional")).isDisplayed()) {
@@ -3804,7 +3804,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Document Category field in Al")
-		public void user_verify_the_document_category_field_in_al() {
+		public void user_610_verify_the_document_category_field_in_al() {
 			for (int i = 0; i < 600; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("DocumentCategory")).isDisplayed()) {
@@ -3822,7 +3822,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Upload Date field in Al")
-		public void user_verify_the_upload_date_field_in_al() {
+		public void user_610_verify_the_upload_date_field_in_al() {
 			for (int i = 0; i < 600; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("UploadDate")).isDisplayed()) {
@@ -3840,7 +3840,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Expected Date Of Receipt field in Al")
-		public void user_verify_the_expected_date_of_receipt_field_in_al() {
+		public void user_610_verify_the_expected_date_of_receipt_field_in_al() {
 			for (int i = 0; i < 600; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("ExpectedDateOfReceipt")).isDisplayed()) {
@@ -3858,7 +3858,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Deferral Stage field in Al")
-		public void user_verify_the_deferral_stage_field_in_al() {
+		public void user_610_verify_the_deferral_stage_field_in_al() {
 			for (int i = 0; i < 600; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("DeferralStage")).isDisplayed()) {
@@ -3876,7 +3876,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Def Approved By field in Al")
-		public void user_verify_the_def_approved_by_field_in_al() {
+		public void user_610_verify_the_def_approved_by_field_in_al() {
 			for (int i = 0; i < 600; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("DefApprovedBy")).isDisplayed()) {
@@ -3894,7 +3894,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Change In Nature Approved By field in Al")
-		public void user_verify_the_change_in_nature_approved_by_field_in_al() {
+		public void user_610_verify_the_change_in_nature_approved_by_field_in_al() {
 			for (int i = 0; i < 600; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("ChangeInNatureApprovedBy")).isDisplayed()) {
@@ -3912,7 +3912,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Document From field in Al")
-		public void user_verify_the_document_from_field_in_al() {
+		public void user_610_verify_the_document_from_field_in_al() {
 			for (int i = 0; i < 600; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("DocumentFrom")).isDisplayed()) {
@@ -3930,7 +3930,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Document Quality field in Al")
-		public void user_verify_the_document_quality_field_in_al() {
+		public void user_610_verify_the_document_quality_field_in_al() {
 			for (int i = 0; i < 600; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("DocumentQuality")).isDisplayed()) {
@@ -3948,7 +3948,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Document Reference Number field in Al")
-		public void user_verify_the_document_reference_number_field_in_al() {
+		public void user_610_verify_the_document_reference_number_field_in_al() {
 			for (int i = 0; i < 600; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("DocumentReferenceNumber")).isDisplayed()) {
@@ -3966,7 +3966,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Document Approved By field in Al")
-		public void user_verify_the_document_approved_by_field_in_al() {
+		public void user_610_verify_the_document_approved_by_field_in_al() {
 			for (int i = 0; i < 600; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("DocumentApprovedBy")).isDisplayed()) {
@@ -3984,7 +3984,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Document Details Location Where Received field in Al")
-		public void user_verify_the_document_details_location_where_received_field_in_al() {
+		public void user_610_verify_the_document_details_location_where_received_field_in_al() {
 			for (int i = 0; i < 600; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("DocumentDetailsLocationWhereReceived")).isDisplayed()) {
@@ -4002,7 +4002,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Rack No field in Al")
-		public void user_verify_the_rack_no_field_in_al() {
+		public void user_610_verify_the_rack_no_field_in_al() {
 			for (int i = 0; i < 600; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("RackNo")).isDisplayed()) {
@@ -4020,7 +4020,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Shelf No field in Al")
-		public void user_verify_the_shelf_no_field_in_al() {
+		public void user_610_verify_the_shelf_no_field_in_al() {
 			for (int i = 0; i < 600; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("ShelfNo")).isDisplayed()) {
@@ -4038,7 +4038,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Box No field in Al")
-		public void user_verify_the_box_no_field_in_al() {
+		public void user_610_verify_the_box_no_field_in_al() {
 			for (int i = 0; i < 600; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("BoxNo")).isDisplayed()) {
@@ -4056,7 +4056,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Date Of Expiry field in Al")
-		public void user_verify_the_date_of_expiry_field_in_al() {
+		public void user_610_verify_the_date_of_expiry_field_in_al() {
 			for (int i = 0; i < 600; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("DateOfExpiry")).isDisplayed()) {
@@ -4074,7 +4074,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Lodgement Amount field in Al")
-		public void user_verify_the_lodgement_amount_field_in_al() {
+		public void user_610_verify_the_lodgement_amount_field_in_al() {
 			for (int i = 0; i < 600; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("LodgementAmount")).isDisplayed()) {
@@ -4092,7 +4092,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Remark field in Al")
-		public void user_verify_the_remark_field_in_al() {
+		public void user_610_verify_the_remark_field_in_al() {
 			for (int i = 0; i < 600; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("Remark")).isDisplayed()) {
@@ -4112,7 +4112,7 @@ public class AutoLoan_Stepa {
 		//----------------- @AT_Al_DOC_02
 		
 		@And("User_610 select document name in documents details screen")
-		public void user_select_document_name_in_documents_details_screen() {
+		public void user_610_select_document_name_in_documents_details_screen() {
 			for (int i = 0; i < 300; i++) {
 				try {
 					javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("Documentname")).click();
@@ -4209,7 +4209,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 select document status in documents details screen")
-		public void user_select_document_status_in_documents_details_screen() {
+		public void user_610_select_document_status_in_documents_details_screen() {
 			for (int i = 0; i < 300; i++) {
 				try {
 					javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("DocumentStatus")).click();
@@ -4306,7 +4306,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 select Mandatory optional in documents details screen")
-		public void user_select_mandatory_optional_in_documents_details_screen() {
+		public void user_610_select_mandatory_optional_in_documents_details_screen() {
 			for (int i = 0; i < 300; i++) {
 				try {
 					javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("MandatoryOptional")).click();
@@ -4403,7 +4403,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 select document category in documents details screen")
-		public void user_select_document_category_in_documents_details_screen() {
+		public void user_610_select_document_category_in_documents_details_screen() {
 			for (int i = 0; i < 300; i++) {
 				try {
 					javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("DocumentCategory")).click();
@@ -4500,7 +4500,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 select document quality in documents details screen")
-		public void user_select_document_quality_in_documents_details_screen() throws Throwable {
+		public void user_610_select_document_quality_in_documents_details_screen() throws Throwable {
 			Thread.sleep(2000);
 			for (int i = 0; i < 300; i++) {
 				try {
@@ -4598,7 +4598,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 select remark in documents details screen")
-		public void user_select_remark_in_documents_details_screen() throws Throwable {
+		public void user_610_select_remark_in_documents_details_screen() throws Throwable {
 			javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("Remark")));
 			//javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("Remark")).click();
 			for (int i = 0; i < 600; i++) {
@@ -4617,7 +4617,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 click save and verify in documents details screen")
-		public void user_click_save_and_verify_in_documents_details_screen() throws Throwable {
+		public void user_610_click_save_and_verify_in_documents_details_screen() throws Throwable {
 			
 //		String scroll = "document.querySelectorAll('ion-card-content[ng-reflect-ng-switch=\"string\"]')[1]";
 //		WebElement scroll1 = javascriptHelper.executeScriptWithWebElement(scroll);
@@ -4640,6 +4640,7 @@ public class AutoLoan_Stepa {
 //				}
 //			}
 			
+			//js click
 			javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement("document.querySelector('[ng-reflect-icon=\"pi pi-save\"]')"));
 			 Thread.sleep(2000);
 			
@@ -4655,13 +4656,13 @@ public class AutoLoan_Stepa {
 					}
 				}
 
-			}Thread.sleep(50000);
+			}Thread.sleep(500);
 		}
 		
 		//--------------------- @AT_Al_DOC_03
 		
 		@And("User_610 verify the customer name field mandatory dropdown al")
-		public void user_verify_the_customer_name_field_mandatory_dropdown_al() {
+		public void user_610_verify_the_customer_name_field_mandatory_dropdown_al() {
 			// ----------------validate non mandatory field
 
 			for (int i = 0; i < 200; i++) {
@@ -4695,7 +4696,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the  document name field mandatory dropdown al")
-		public void user_verify_the_document_name_field_mandatory_dropdown_al() throws Throwable {
+		public void user_610_verify_the_document_name_field_mandatory_dropdown_al() throws Throwable {
 			Thread.sleep(500);
 			// ----------------validate mandatory field
 
@@ -4728,7 +4729,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the required at stage field mandatory al")
-		public void user_verify_the_required_at_stage_field_mandatory_al() {
+		public void user_610_verify_the_required_at_stage_field_mandatory_al() {
 			// ----------------validate non mandatory field
 
 			for (int i = 0; i < 2000; i++) {
@@ -4749,7 +4750,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the document status field mandatory editable dropdown al")
-		public void user_verify_the_document_status_field_mandatory_editable_dropdown_al() {
+		public void user_610_verify_the_document_status_field_mandatory_editable_dropdown_al() {
 			// ----------------validate mandatory field
 
 			for (int i = 0; i < 2000; i++) {
@@ -4781,7 +4782,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the mandatory optional field mandatory editable dropdown al")
-		public void user_verify_the_mandatory_optional_field_mandatory_editable_dropdown_al() {
+		public void user_610_verify_the_mandatory_optional_field_mandatory_editable_dropdown_al() {
 			// ----------------validate mandatory field
 			
 			for (int i = 0; i < 2000; i++) {
@@ -4815,7 +4816,7 @@ public class AutoLoan_Stepa {
 		//--------------------- @AT_Al_DOC_04
 		
 		@And("User_610 verify the documents quality field mandatory al")
-		public void user_verify_the_documents_quality_field_mandatory_al() throws Throwable {
+		public void user_610_verify_the_documents_quality_field_mandatory_al() throws Throwable {
 			// ----------------validate mandatory field
 			Thread.sleep(2000);
 			for (int i = 0; i < 2000; i++) {
@@ -4836,7 +4837,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the  deferred stage field non mandatory select al")
-		public void user_verify_the_deferred_stage_field_non_mandatory_textbox_al() {
+		public void user_610_verify_the_deferred_stage_field_non_mandatory_textbox_al() {
 			// ----------------validate non mandatory field
 			for (int i = 0; i < 2000; i++) {
 				try {
@@ -4868,7 +4869,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the location where received field non mandatory select al")
-		public void user_verify_the_location_where_received_field_non_mandatory_textbox_al() {
+		public void user_610_verify_the_location_where_received_field_non_mandatory_textbox_al() {
 			// ----------------validate mandatory field
 			for (int i = 0; i < 2000; i++) {
 				try {
@@ -4899,7 +4900,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the rack number field non mandatory textbox al")
-		public void user_verify_the_rack_number_field_non_mandatory_textbox_al() {
+		public void user_610_verify_the_rack_number_field_non_mandatory_textbox_al() {
 			// ----------------validate mandatory field
 			for (int i = 0; i < 2000; i++) {
 				try {
@@ -4927,7 +4928,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the shelf number field non mandatory textbox al")
-		public void user_verify_the_shelf_number_field_non_mandatory_textbox_al() {
+		public void user_610_verify_the_shelf_number_field_non_mandatory_textbox_al() {
 			// ----------------validate non mandatory field
 			for (int i = 0; i < 2000; i++) {
 				try {
@@ -4957,7 +4958,7 @@ public class AutoLoan_Stepa {
 		//-------------------------- @AT_Al_DOC_05
 		
 		@And("User_610 verify the  box number field non mandatory text al")
-		public void user_verify_the_box_number_field_non_mandatory_text_al() {
+		public void user_610_verify_the_box_number_field_non_mandatory_text_al() {
 			for (int i = 0; i < 2000; i++) {
 				try {
 					String boxnumber = "document.querySelector('ion-label[ng-reflect-text=\"FORM.BOX_NUMBER.TOOLTIP\"]').innerText";
@@ -4984,7 +4985,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the document upload date field non mandatory date al")
-		public void user_verify_the_document_upload_date_field_non_mandatory_date_al() {
+		public void user_610_verify_the_document_upload_date_field_non_mandatory_date_al() {
 			for (int i = 0; i < 2000; i++) {
 				try {
 					String uploaddate = "document.querySelector('digital-prime-date[id=\"uploadDate\"]').innerText";
@@ -5011,7 +5012,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the document category field mandatory select al")
-		public void user_verify_the_document_category_field_mandatory_select_al() {
+		public void user_610_verify_the_document_category_field_mandatory_select_al() {
 			for (int i = 0; i < 2000; i++) {
 				try {
 					String documentcategory = "document.querySelector('ion-label[ng-reflect-text=\"DOCUMENT_CATEGORY.TOOLTIP\"').innerText";
@@ -5040,7 +5041,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the document form field non mandatory select al")
-		public void user_verify_the_document_form_field_non_mandatory_select_al() {
+		public void user_610_verify_the_document_form_field_non_mandatory_select_al() {
 			for (int i = 0; i < 2000; i++) {
 				try {
 					String DocumentFrom = "document.querySelector('ion-label[ng-reflect-text=\"Document Form.TOOLTIP\"]').innerText";
@@ -5074,7 +5075,7 @@ public class AutoLoan_Stepa {
 		//------------------------- @AT_Al_DOC_06
 		
 		@And("User_610 verify the  expected date of receipt non mandatory date al")
-		public void user_verify_the_expected_date_of_receipt_non_mandatory_date_al() throws Throwable {
+		public void user_610_verify_the_expected_date_of_receipt_non_mandatory_date_al() throws Throwable {
 			Thread.sleep(3000);
 			for (int i = 0; i < 2000; i++) {
 				try {
@@ -5102,7 +5103,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the defferral approved by field non mandatory select al")
-		public void user_verify_the_defferral_approved_by_field_non_mandatory_select_al() {
+		public void user_610_verify_the_defferral_approved_by_field_non_mandatory_select_al() {
 			for (int i = 0; i < 2000; i++) {
 				try {
 					String defferralapprovedby = "document.querySelector('ion-label[ng-reflect-text=\"DEF_APPROVED_BY.TOOLTIP\"').innerText";
@@ -5132,7 +5133,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the change in natural of approved by field non mandatory select al")
-		public void user_verify_the_change_in_natural_of_approved_by_field_non_mandatory_select_al() {
+		public void user_610_verify_the_change_in_natural_of_approved_by_field_non_mandatory_select_al() {
 			for (int i = 0; i < 2000; i++) {
 				try {
 					String changeinnaturalofapproved = "document.querySelector('ion-label[ng-reflect-text=\"Change In Nature Approved By.T\"]').innerText";
@@ -5162,7 +5163,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the document reference number field non mandatory text al")
-		public void user_verify_the_document_reference_number_field_non_mandatory_text_al() {
+		public void user_610_verify_the_document_reference_number_field_non_mandatory_text_al() {
 			for (int i = 0; i < 2000; i++) {
 				try {
 					String documentreference = "document.querySelector('ion-label[ng-reflect-text=\"FORM.DOCUMENT_NUMBER.TOOLTIP\"]').innerText";
@@ -5190,7 +5191,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the  document received by field non mandatory select al")
-		public void user_verify_the_document_received_by_field_non_mandatory_select_al() {
+		public void user_610_verify_the_document_received_by_field_non_mandatory_select_al() {
 			for (int i = 0; i < 2000; i++) {
 				try {
 					String documentReceived = "document.querySelector('ion-label[ng-reflect-text=\"Change In Nature Approved By.T\"]').innerText";
@@ -5220,7 +5221,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the remark date field mandatory text al")
-		public void user_verify_the_remark_date_field_mandatory_text_al() {
+		public void user_610_verify_the_remark_date_field_mandatory_text_al() {
 			for (int i = 0; i < 2000; i++) {
 				try {
 					String remark = "document.querySelector('ion-label[ng-reflect-text=\"Remarks.TOOLTIP\"]').innerText";
@@ -5250,7 +5251,7 @@ public class AutoLoan_Stepa {
 		//---------------  @AT_Al_DOC_07  ---------
 		
 		@And("User_610 verify the blank field which is mandatory and should not allow user to save the record")
-		public void user_verify_the_blank_field_which_is_mandatory_and_should_not_allow_user_to_save_the_record() throws Throwable {
+		public void user_610_verify_the_blank_field_which_is_mandatory_and_should_not_allow_user_to_save_the_record() throws Throwable {
 			Thread.sleep(3000);
 			
 			
@@ -5272,7 +5273,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the user enter numeric value in character field should not allow user to save the record")
-		public void user_verify_the_user_enter_numeric_value_in_character_field_should_not_allow_user_to_save_the_record() throws Throwable {
+		public void user_610_verify_the_user_enter_numeric_value_in_character_field_should_not_allow_user_to_save_the_record() throws Throwable {
 			Thread.sleep(3000);
 			String blank ="document.querySelector('digital-text-box[id=\"lodgmentAmt\"]').querySelector('ion-input').getAttribute('ng-reflect-model')";
 			WebElement blankk =javascriptHelper.executeScriptWithWebElement(blank);
@@ -5295,7 +5296,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the user enter character value in numeric field should not allow user to save the record")
-		public void user_verify_the_user_enter_character_value_in_numeric_field_should_not_allow_user_to_save_the_record() {
+		public void user_610_verify_the_user_enter_character_value_in_numeric_field_should_not_allow_user_to_save_the_record() {
 		    
 		    
 		}
@@ -5304,7 +5305,7 @@ public class AutoLoan_Stepa {
 		
 		
 		@And("User_610 verify the system should get open with already filled data")
-		public void user_verify_the_system_should_get_open_with_already_filled_data() throws Throwable {
+		public void user_610_verify_the_system_should_get_open_with_already_filled_data() throws Throwable {
 			Thread.sleep(2000);
 			
 			String Documentname = javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("Documentname"))
@@ -5344,7 +5345,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the System should allow user to modify the record")
-		public void user_verify_the_system_should_allow_user_to_modify_the_record() {
+		public void user_610_verify_the_system_should_allow_user_to_modify_the_record() {
 			for (int i = 0; i < 300; i++) {
 				try {
 					javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("Documentname")).click();
@@ -5440,13 +5441,13 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610  verify the to do modification and same record should get saved")
-		public void user_verify_the_to_do_modification_and_same_record_should_get_saved() {
+		public void user_610_verify_the_to_do_modification_and_same_record_should_get_saved() {
 		    
 		    
 		}
 
 		@And("User_610 verify the any mandatory field blank and save system should not allow user to save the record al")
-		public void user_verify_the_any_mandatory_field_blank_and_save_system_should_not_allow_user_to_save_the_record_al() throws Throwable {
+		public void user_610_verify_the_any_mandatory_field_blank_and_save_system_should_not_allow_user_to_save_the_record_al() throws Throwable {
 			javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("Remark")));
 			//javascriptHelper.executeScriptWithWebElement(al_ADEntryDocDetails_610.getElement("Remark")).click();
 			for (int i = 0; i < 600; i++) {
@@ -5478,13 +5479,13 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the  system should not allow user to do a modification with invalid data")
-		public void user_verify_the_system_should_not_allow_user_to_do_a_modification_with_invalid_data() {
+		public void user_610_verify_the_system_should_not_allow_user_to_do_a_modification_with_invalid_data() {
 		    
 		    
 		}
 
 		@And("User_610 verify the save button and back button")
-		public void user_verify_the_save_button_and_back_button() {
+		public void user_610_verify_the_save_button_and_back_button() {
 		    
 		    
 		}

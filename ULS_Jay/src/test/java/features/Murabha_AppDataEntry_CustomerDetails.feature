@@ -147,8 +147,9 @@ Feature: Murabha App Data Entry Customer details
     #phone number NA
     Then logout from the ijaraApplication
     
-    @AT_MU_ADE_CD_07
-  Scenario: To verify  fields Mandatory Editable Dropdown in Customer Details
+    #blocked
+    @AT_MU_ADE_CD_07   
+    Scenario: To verify  fields Mandatory Editable Dropdown in Customer Details
     Given navigate the IJARA URL
     And login with valid credentials06
     And User_610 get the test data set id for DS_AT_MU_ADE_CD_01
@@ -181,15 +182,131 @@ Feature: Murabha App Data Entry Customer details
     And User_610 click edit button under inbox screen
     #
     And User_610 Click Customer Details screen in Autoloan
-    #And User_610 click edit button under additional customer info 
-    # NA And User_610 verify the Prefered Time For Contact field HH MM format Editable  
+    #And User_610 verify the Prefered Time For Contact field HH MM format Editable    NA
     And User_610 verify the Add button should allow create new record 
     And User_610 verify the Back button should navigate to previous screen
     And User_610 verify the impact when user keep any mandatory field blank 
-    #And User_610 verify the  impact when user enters negative numeric value
-    #And User_610 verify the  impact when user enters character in numeric value
-    #And User_610 verify the impact when user enters only special characters value
+    And User_610 verify the  impact when user enters negative numeric value
+    And User_610 verify the  impact when user enters character in numeric value
+    And User_610 verify the impact when user enters only special characters value
+    Then logout from the ijaraApplication
+    
+     @AT_MU_ADE_CD_09
+  Scenario: To verify that all fields are present in Customer Details
+    Given navigate the IJARA URL
+    And login with valid credentials06
+    And User_610 get the test data set id for DS_AT_MU_ADE_CD_01
+    And User_610 click the module name
+    And User_610 select the LOS in module name
+    And User_610 click Inbox
+    And User_610 click search button
+    And User_610 enter the value in search button
+    And User_610 click edit button under inbox screen
+    #
+    And User_610 Click Customer Details screen in Autoloan
+    And User_610 click edit button under additional customer info
+    #And User_610 verify the Add button should allow create new record 
+    And User_610 verify the Back button field on Customer details screen
+    And User_610 verify the Save button field on Customer details screen
+    And User_610 verify the Customer Type field on Customer details screen
+    And User_610 verify the Applicant Type field on Customer details screen
+    And User_610 verify the Salutation field on Customer details screen
+    And User_610 verify the First Name field on Customer details screen
+    And User_610 verify the Middle Name field on Customer details screen
+    And User_610 verify the Last Name field on Customer details screen
+    And User_610 verify the Data Of Birth field on Customer details screen
+    And User_610 verify the Gender field on Customer details screen
+    And User_610 verify the Education level field on Customer details screen
+    And User_610 verify the Marital Status field on Customer details screen
+    And User_610 verify the Nationality field on Customer details screen
+    And User_610 verify the Residential Status field on Customer details screen
+    And User_610 verify the Language field on Customer details screen
+    And User_610 verify the No Of Department field on Customer details screen
+    And User_610 verify the Industry Segmentation field on Customer details screen
+    And User_610 verify the Block List field on Customer details screen
+    And User_610 verify the Remark field on Customer details screen
+    Then logout from the ijaraApplication
+    
+    @AT_MU_ADE_CD_10
+  Scenario: To verify that all fields are present in Customer Details
+    Given navigate the IJARA URL
+    And login with valid credentials06
+    And User_610 get the test data set id for DS_AT_MU_ADE_CD_01
+    And User_610 click the module name
+    And User_610 select the LOS in module name
+    And User_610 click Inbox
+    And User_610 click search button
+    And User_610 enter the value in search button
+    And User_610 click edit button under inbox screen
+    #
+    And User_610 Click Customer Details screen in Autoloan
+    And User_610 click edit button under additional customer info
+    And User_610 To verify system allow modify the Customer Information
+    And User_610 To verify while modification any mandatory field blank 
+    And User_610 To verify while modification system enters the invalid data middle name arabic
+    And User_610 To verify system display the confirmation message post clicking on save button
+    #And User_610 To verify the functionality of Submit button at Maker stage  NA
+    #And User_610 To verify system display the confirmation message post clicking on Submit button at Maker stage NA
+    Then logout from the ijaraApplication
+    
+    @AT_MU_ADE_CD_11
+  Scenario: To verify  functionality of Activate Deactivate button
+    Given navigate the IJARA URL
+    And login with valid credentials06
+    And User_610 get the test data set id for DS_AT_MU_ADE_CD_01
+    And User_610 click the module name
+    And User_610 select the LOS in module name
+    And User_610 click Inbox
+    And User_610 click search button
+    And User_610 enter the value in search button
+    And User_610 click edit button under inbox screen
+    #
+    And User_610 Click Customer Details screen in Autoloan
+    And User_610 click edit button under additional customer info
+    And User_610 change the status of the record as active or deactive
+    And User_610 label should toggle based on the status if status is active
+    And User_610 label should toggle based on the status if status is deactive
+    #And User_610 verify the back button customer details screen
     Then logout from the ijaraApplication
     
     
+    @AT_MU_ADE_CD_12
+  Scenario: To verify  fields list view
+    Given navigate the IJARA URL
+    And login with valid credentials06
+    And User_610 get the test data set id for DS_AT_MU_ADE_CD_01
+    And User_610 click the module name
+    And User_610 select the LOS in module name
+    And User_610 click Inbox
+    And User_610 click search button
+    And User_610 enter the value in search button
+    And User_610 click edit button under inbox screen
+    #
+    And User_610 Click Customer Details screen in Autoloan
+    #And User_610 verify the field in list view of customer personal information 
+    #And User_610 verify the value in list view should be in read only mode
+    And User_610 verify the functionality of search box with matching data
+    And User_610 verify the functionality of search box with mismatching data
+    Then logout from the ijaraApplication
+    
+    
+     @AT_MU_ADE_CD_13
+  Scenario: To verify  PDF and EXcel button
+    Given navigate the IJARA URL
+    And login with valid credentials06
+    And User_610 get the test data set id for DS_AT_MU_ADE_CD_01
+    And User_610 click the module name
+    And User_610 select the LOS in module name
+    And User_610 click Inbox
+    And User_610 click search button
+    And User_610 enter the value in search button
+    And User_610 click edit button under inbox screen
+    #
+    And User_610 Click Customer Details screen in Autoloan
+    And User_610 click export button
+    And User_610 verify the PDF button should download the PDF file of that records 
+    And User_610 click export button
+    And User_610 verify the Excel button should download the PDF file of that records 
+    And User_610 verify the back button
+    Then logout from the ijaraApplication
     
