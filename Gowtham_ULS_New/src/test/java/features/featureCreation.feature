@@ -4,5 +4,4 @@ Feature: Title of your feature
 
   @tag1
   Scenario: Verify the fields in document details info tab Auto Loan App Data Entry
- 		And user_607 Verify Return screen open or not
-    And user_607 Close Return screen
+ 		And user_607 Validate that Status field is displayed in repayment mode page
