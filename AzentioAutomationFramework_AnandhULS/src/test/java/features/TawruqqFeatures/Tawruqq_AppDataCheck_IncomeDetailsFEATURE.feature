@@ -75,7 +75,7 @@ Then user_076 verify system should not show the search result for invalid search
 Then logout from the ULS Application
 And invoke softAssert in income details app data screen
 @AT_TW_ADC_INCOME_04
-Scenario: To verify income details list view search functionality in app data check stage (Tawruqq)
+Scenario: To test the export funtionality income details screen (Tawruqq)
 Given navigate the IJARA URL
 And user_076 login with valid app data check stage userID for tawruqq product
 And click on module dropdown in IJRARAH

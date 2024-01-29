@@ -9,15 +9,15 @@ import utilities.ExtentManager;
 import utilities.ExtentTestManager;
 
 @CucumberOptions(features = {
-		"src/test/java/features/IjarahFeatures/Ijarah_NewApp_IdentificationDetailsFEATURE.feature"
+		"src/test/java/features/MurabhaFeatures/Murabaha_DataCheck_IncomeDetailsFEATURE.feature"
 	
 		}, glue = "stepdefinitions",
 		// monochrome=false, //to make steps in color
 		plugin = { "pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
-				"rerun:ReRunScenarios/FailedReRun.txt" }
+				"rerun:ReRunScenariallos/FailedReRun.txt" }
 // ,dryRun = false //to check compilation errors
  //, tags = "@AT_M_PUR_12"
-		 , tags = "@AT_IJ_NewApp_IDA_06"
+		, tags = "@AT_MU_IDC_02"
 )
 public class TestApplication extends AbstractTestNGCucumberTests {
 	/*
