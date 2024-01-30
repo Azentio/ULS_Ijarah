@@ -1,4 +1,4 @@
-package dataProvider;
+package dataprovider;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

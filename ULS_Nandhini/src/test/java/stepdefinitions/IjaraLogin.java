@@ -6,7 +6,7 @@ import java.util.Map;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
-import dataProvider.ExcelData;
+import dataprovider.ExcelData;
 import helper.JavascriptHelper;
 import pageobjects.JSPaths;
 import resources.BaseClass;

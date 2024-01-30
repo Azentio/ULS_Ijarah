@@ -1,4 +1,4 @@
-package Runner;
+package runner;
 
 import java.util.List;
 import java.util.Map;
@@ -8,7 +8,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import dataProvider.ExcelData;
+import dataprovider.ExcelData;
 import tests.ExcelTest;
 import utilities.ExtentManager;
 import utilities.ExtentTestManager;
