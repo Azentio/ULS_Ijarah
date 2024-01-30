@@ -1,4 +1,4 @@
-package Runner;
+package runner;
 
 import static java.util.Collections.emptyList;
 import static java.util.stream.Collectors.collectingAndThen;

@@ -13,7 +13,6 @@ import org.openqa.selenium.WebDriver;
 
 import com.aventstack.extentreports.Status;
 
-import Runner.NewExcelTestRunner;
 import dataProvider.ExcelData;
 import helper.ScreenshotHelper;
 import io.cucumber.java.After;
@@ -21,6 +20,7 @@ import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import resources.BaseClass;
+import runner.NewExcelTestRunner;
 import tests.ExcelTest;
 import utilities.ExtentTestManager;
 

@@ -1,4 +1,4 @@
-package Runner;
+package runner;
 
 import java.util.List;
 import java.util.Map;
