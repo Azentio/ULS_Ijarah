@@ -2,7 +2,7 @@ package stepdefinitions;
 
 import org.openqa.selenium.WebDriver;
 
-import dataProvider.ConfigFileReader;
+import dataprovider.ConfigFileReader;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -94,7 +94,14 @@ public class IjaraTest extends BaseClass{
 	@And("login with valid credentials-Tawarruq Data Check stage")
 	public void login_with_valid_credentials_tawarruq_data_check_stage()throws Throwable {
 		ijaraLogin.loginWithIjaraApplication("userType12");
-	}	
+	}
+	
+//	Tawarruq Product -- Underwriter Stage ---> UserType14
+	@And("login with valid credentials-Tawarruq Underwriter")
+	public void login_with_valid_credentials_tawarruq_underwriter()throws Throwable {
+		ijaraLogin.loginWithIjaraApplication("userType14");
+	}
+	
 	
 	
 //	Auto Loan Product -- App Data Entry Stage ---> userType10

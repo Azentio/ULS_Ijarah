@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.asserts.SoftAssert;
 
-import dataProvider.ExcelData;
+import dataprovider.ExcelData;
 import helper.BrowserHelper;
 import helper.ClicksAndActionsHelper;
 import helper.DropDownHelper;

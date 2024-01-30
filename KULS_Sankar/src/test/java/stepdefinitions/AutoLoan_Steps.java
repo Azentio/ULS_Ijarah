@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.asserts.SoftAssert;
 
-import dataProvider.ExcelData;
+import dataprovider.ExcelData;
 import helper.BrowserHelper;
 import helper.ClicksAndActionsHelper;
 import helper.DropDownHelper;
@@ -5035,9 +5035,9 @@ public class AutoLoan_Steps {
 
 	@And("User_608 enter Date under Recommendation\\Sanction Hyperlink screen")
 	public void user_608_enter_date_under_recommendation_sanction_hyperlink_screen() throws Throwable {
-		javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("Date")).click();
 		for (int i = 0; i <= 500; i++) {
 			try {
+				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("Date")).click();
 				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("Date_today")).click();
 				break;
 			} catch (Exception e) {
@@ -5068,8 +5068,8 @@ public class AutoLoan_Steps {
 	public void user_608_click_the_save_button_under_recommendation_sanction_hyperlink_screen() throws Throwable {
 		for (int i = 0; i <= 1000; i++) {
 			try {
-				javascriptHelper.JSEClick(
-						javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("SaveIcon")));
+				WebElement saveBtn = javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("SaveIcon"));
+				saveBtn.click();
 				break;
 			} catch (Exception e) {
 				if (i == 1000) {
@@ -5077,12 +5077,12 @@ public class AutoLoan_Steps {
 				}
 			}
 		}
-		for (int i = 0; i <= 500000; i++) {
+		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("popupCloseBtn")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 500000) {
+				if (i == 500) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5201,7 +5201,7 @@ public class AutoLoan_Steps {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
 						.toString();
 				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0")) {
+				if (!length.isBlank() && !length.equals("0") && !length.equals("1")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -5218,7 +5218,7 @@ public class AutoLoan_Steps {
 					if (titlename.trim().contains("Application Details")) {
 						String jspath = "document.querySelectorAll('ion-segment-button')[" + j + "]";
 						WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
-						javascriptHelper.JSEClick(addButton);
+						addButton.click();
 						break;
 					}
 				}
@@ -5270,14 +5270,14 @@ public class AutoLoan_Steps {
 	@And("User_608 verify all the populate data correctly at this stage and display only in Customer details screen")
 	public void user_608_verify_all_the_populate_data_correctly_at_this_stage_and_display_only_in_customer_details_screen()
 			 throws Throwable {
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <= 100; i++) {
 			try {
 				WebElement element = javascriptHelper.executeScriptWithWebElement(
 						appDataCustomerDetailsJsPaths.getElement("remarks"));
 				javascriptHelper.scrollIntoView(element);
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i == 100) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5446,9 +5446,9 @@ public class AutoLoan_Steps {
 	public void user_608_click_the_eye_button_under_document_details_tab() throws Throwable {
 		for (int i = 0; i <= 1000; i++) {
 			try {
-				String jsPath = "document.querySelector('button[icon=\"pi pi-eye\"]')";
-				WebElement element = javascriptHelper.executeScriptWithWebElement(jsPath);
-				actions.moveToElement(element).click().build().perform();
+				WebElement element = javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("eyeBtn"));
+				actions.moveToElement(element).build().perform();
+				element.click();
 				break;
 			} catch (Exception e) {
 				if (i == 1000) {

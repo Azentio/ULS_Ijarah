@@ -1,3 +1,0 @@
-@And("^User_608 verify Delete button should be available in Repayment Mode screen$")
-public void user_608_verify_delete_button_should_be_available_in_repayment_mode_screen()throws Throwable{
-}

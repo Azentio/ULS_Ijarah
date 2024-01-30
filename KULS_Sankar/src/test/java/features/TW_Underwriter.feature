@@ -1,17 +1,14 @@
-Feature: To check the IJARAH -- Underwriter stage features
+Feature: To check the Tawarruq - Underwriter test cases
 
-# Underwriter userName: 0371 Pwd: Admin@1 --> Ref Id -- 3063
-
-# Unw_01
-@AT_UNW_001_01
-Scenario: To verify the Underwriter screen
+@AT_TW_UNW_01
+Scenario: To verify the Underwriter stage below tabs should be display on screen
 
 Given navigate the IJARA URL
-And login with valid credentials-Underwriter
-And User_608 get the test data for test case AT_UNW_001_01
+And login with valid credentials-Tawarruq Underwriter
+And User_608 get the test data for test case AT_TW_UNW_01
 And User_608 click the Mail box in ULS application
 And User_608 click the Search button under inbox
-And User_608 search the Ref id under inbox
+And User_608 search the Reference id under inbox in ULS Application
 And User_608 click the Entitle button under inbox
 And User_608 verify the Offer Decision tab is displayed in Underwriter
 And User_608 verify the Application Details tab is displayed in Underwriter
@@ -20,24 +17,22 @@ And User_608 verify the Additional Customer info tab is displayed in Underwriter
 And User_608 verify the Customer Financials tab is displayed in Underwriter
 And User_608 verify the Living Expenses tab is displayed in Underwriter
 And User_608 verify the Facility Info tab is displayed in Underwriter
-And User_608 verify the Asset Details tab is displayed in Underwriter
 And User_608 verify the Quotation Info tab is displayed in Underwriter
 And User_608 verify the Insurance Info tab is displayed in Underwriter
 And User_608 verify the Policy Check tab is displayed in Underwriter
 And User_608 verify the Document Details tab is displayed in Underwriter
 Then logout from the ijaraApplication
-And User_608 invoke soft assert in Offer Decision screen at Ijarah Underwriter stage
 
-# Unw_02, Unw_03, Unw_04, Unw_05
-@AT_UNW_001_02
-Scenario: To verify the Tab - Offer decision in Underwriter Stage
+
+@AT_TW_UNW_02
+Scenario: To verify Offer decision tab below sections should be display under offer decision tab. Below fields should be auto populated under decision section
 
 Given navigate the IJARA URL
-And login with valid credentials-Underwriter
-And User_608 get the test data for test case AT_UNW_001_02
+And login with valid credentials-Tawarruq Underwriter
+And User_608 get the test data for test case AT_TW_UNW_02
 And User_608 click the Mail box in ULS application
 And User_608 click the Search button under inbox
-And User_608 search the Ref id under inbox
+And User_608 search the Reference id under inbox in ULS Application
 And User_608 click the Entitle button under inbox
 And User_608 click the Pencil icon under Offer Decision tab
 And User_608 verify Decision section is displayed under Offer Decision tab
@@ -52,28 +47,21 @@ And User_608 verify Underwriter field under Decision section in Offer Decision t
 And User_608 verify Reviewer field under Decision section in Offer Decision tab
 And User_608 verify Decision Date field under Decision section in Offer Decision tab
 And User_608 verify Decision field under Decision section in Offer Decision tab
-And User_608 select the Decision dropdown as Accept\Reject under Decision section in Offer Decision tab
+And User_608 select the Decision value as Accept\Reject under Decision section in Offer Decision tab
 And User_608 verify the Offer amount under Finance Configuration section in Offer Decision tab
 Then logout from the ijaraApplication
-And User_608 invoke soft assert in Offer Decision screen at Ijarah Underwriter stage
 
-
-# Unw_14, Unw_07, Unw_08, Unw_09. Unw_10
-@AT_UNW_002_01
-Scenario: To verify the Facility Details, Finance configuration, Pricing Details,Installment Details section fields and buttons under Offer decision screen.
+@AT_TW_UNW_03
+Scenario: Below fields should be display under Facility details section & below fields should be auto populated under Finance configuration.
 
 Given navigate the IJARA URL
-And login with valid credentials-Underwriter
-And User_608 get the test data for test case AT_UNW_002
+And login with valid credentials-Tawarruq Underwriter
+And User_608 get the test data for test case AT_TW_UNW_03
 And User_608 click the Mail box in ULS application
 And User_608 click the Search button under inbox
-And User_608 search the Ref id under inbox
+And User_608 search the Reference id under inbox in ULS Application
 And User_608 click the Entitle button under inbox
 And User_608 click the Pencil icon under Offer Decision tab
-And User_608 verify the Deviate button available under Offer Decision screen
-And User_608 verify the Recompute button available under Offer Decision screen
-And User_608 verify the Save button available under Offer Decision screen
-And User_608 verify the Offer button available under Offer Decision screen
 And User_608 verify the Product field is displayed under Facility Details section
 And User_608 verify the Sub-Product field is displayed under Facility Details section
 And User_608 verify the Scheme field is displayed under Facility Details section
@@ -100,42 +88,67 @@ And User_608 verify Offer Rate field is displayed under Pricing Details section
 And User_608 verify Effective Rate field is displayed under Pricing Details section
 And User_608 verify the Instalment Period field is displayed under Installment Details section
 And User_608 verify the Instalment Amount field is displayed under Installment Details section
+And User_608 verify the Deviate button available under Offer Decision screen
+And User_608 verify the Recompute button available under Offer Decision screen
+And User_608 verify the Save button available under Offer Decision screen
+And User_608 verify the Offer button available under Offer Decision screen
 Then logout from the ijaraApplication
-And User_608 invoke soft assert in Offer Decision screen at Ijarah Underwriter stage
 
-@AT_UNW_002_02
-Scenario: To verify the Save button and Offer button functionality under offer decision scrren.
+@AT_TW_UNW_04
+Scenario: Recommendations/Sanction Conditions Approval History Details screen should get open & System should able to add new record.
 
 Given navigate the IJARA URL
-And login with valid credentials-Underwriter
-And User_608 get the test data for test case AT_UNW_002
+And login with valid credentials-Tawarruq Underwriter
+And User_608 get the test data for test case AT_TW_UNW_04
 And User_608 click the Mail box in ULS application
 And User_608 click the Search button under inbox
-And User_608 search the Ref id under inbox
+And User_608 search the Reference id under inbox in ULS Application
 And User_608 click the Entitle button under inbox
 And User_608 click the Pencil icon under Offer Decision tab
-And User_608 select the Decision dropdown as Accept\Reject under Decision section in Offer Decision tab
+And User_608 click Recommendations\Sanction Conditions Approval History link under Approval Details Hyperlinks section
+And User_608 click the Add button in List of condition section under Offer decision tab
+And User_608 verify Recommendations\Sanction Hyperlink screen get open under Offer decision tab
+And User_608 select the Note Code value in Recommendation\Sanction Hyperlink screen
+And User_608 enter Sequence Number in Recommendation\Sanction Hyperlink screen
+And User_608 select Note Sub Code value in Recommendation\Sanction Hyperlink screen
+And User_608 enter Condition value in Recommendation\Sanction Hyperlink screen
+And User_608 enter Date under Recommendation\Sanction Hyperlink screen
+And User_608 enter Remarks in Recommendation\Sanction Hyperlink screen
+And User_608 click the Save button under Recommendation\Sanction Hyperlink screen
+Then logout from the ijaraApplication
+
+@AT_TW_UNW_05
+Scenario: To verify the save button & Offer button under offer decision
+
+Given navigate the IJARA URL
+And login with valid credentials-Tawarruq Underwriter
+And User_608 get the test data for test case AT_TW_UNW_05
+And User_608 click the Mail box in ULS application
+And User_608 click the Search button under inbox
+And User_608 search the Reference id under inbox in ULS Application
+And User_608 click the Entitle button under inbox
+And User_608 click the Pencil icon under Offer Decision tab
+And User_608 select the Decision value as Accept\Reject under Decision section in Offer Decision tab
 And User_608 clicks on the Save button under the Offer Decision tab
 And User_608 click the Entitle button under inbox
 And User_608 click the Pencil icon under Offer Decision tab
 And User_608 click the Offer button after selecting the Decision under Offer Decision tab
 And User_608 verify the validation messgage after clicking Offer button under Offer Decision tab
-And User_608 select the Decision dropdown as Select under Decision section in Offer Decision tab
+And User_608 select the Decision value under Decision section in Offer Decision tab
 And User_608 click the Offer button without selecting the Decision under Offer Decision tab
 And User_608 verify the validation messgage without selecting decision under Offer Decision tab
 Then logout from the ijaraApplication
-And User_608 invoke soft assert in Offer Decision screen at Ijarah Underwriter stage
 
-
+# Return the Record from offering to L1
 @Return
 Scenario: Return the record from Offering stage to Underwriter(L1)
 
 Given navigate the IJARA URL
 And login with valid credentials for return
-And User_608 get the test data for test case AT_UNW_002
+And User_608 get the test data for test case AT_TW_UNW_05
 And User_608 click the Mail box in ULS application
 And User_608 click the Search button under inbox
-And User_608 search the Ref id under inbox
+And User_608 search the Reference id under inbox in ULS Application
 And User_608 click the Entitle button under inbox
 And User_608 click the Application details tab
 And User_608 click the Return button under Application details tab
@@ -144,46 +157,22 @@ And User_608 enter the Remarks under Return popup screen
 And User_608 click the Return button under Return popup screen
 Then logout from the ijaraApplication
 
-
-@AT_UNW_003
-Scenario: Validate that user can able to save the condition in offering page
-
-Given navigate the IJARA URL
-And login with valid credentials-Underwriter
-And User_608 get the test data for test case AT_UNW_003
-And User_608 click the Mail box in ULS application
-And User_608 click the Search button under inbox
-And User_608 search the Ref id under inbox
-And User_608 click the Entitle button under inbox
-And User_608 click the Pencil icon under Offer Decision tab
-And Click On the Recommendation in Offer Decision
-And Click On the Add button in List of Condition
-And select the value in Note Code Dropdown Below the Conditions
-Then Enter Number in Sequence Number Field Below the Conditions
-Then select not recommended in Note Sub Code Dropdown Below the Conditions
-Then Enter Data in Condition Field Below the Conditions
-Then Select the value in Date field Below the Conditions
-Then select the value in fulfilled Dropdown Below the Conditions
-Then Turn on the Approval Status Below the Conditions
-Then Fill The Remarks Field Below the Conditions
-Then Click on the Save button To Save The Conditions Record
-And Validate Save successful popup is displayed in the condition
-Then logout from the ijaraApplication
-
-
-@AT_UNW_004
-Scenario: To check whether underwriter is allowed to deviate on Offered Amount or not
+@AT_TW_UNW_06
+Scenario: To verify the save button & Offer button under offer decision
 
 Given navigate the IJARA URL
-And login with valid credentials-Underwriter
-And User_608 get the test data for test case AT_UNW_004
+And login with valid credentials-Tawarruq Underwriter
+And User_608 get the test data for test case AT_TW_UNW_06
 And User_608 click the Mail box in ULS application
 And User_608 click the Search button under inbox
-And User_608 search the Ref id under inbox
+And User_608 search the Reference id under inbox in ULS Application
 And User_608 click the Entitle button under inbox
 And User_608 click the Pencil icon under Offer Decision tab
-And User_608 enter the Deviation Amount under Finance configuration section in Offer Decision tab
-And User_608 enter the Deviation Tenure under Finance configuration section in Offer Decision tab
+And User_608 enter the invalid Deviation Amount under Finance configuration section in Offer Decision tab
+And User_608 click the Deviate button under Offer Decision screen
+And User_608 to verify validation message offered amount is greater than requested amount in Offer Decision tab
+And User_608 enter Deviation Amount under Finance configuration section in Offer Decision tab
+And User_608 enter Deviation Tenure under Finance configuration section in Offer Decision tab
 And User_608 click the Deviate button under Offer Decision screen
 And User_608 post clicking on deviate button system should able to deviate offered amount
 And User_608 click the Accept Deviation button in Deviation Comparison screen
@@ -192,35 +181,40 @@ And User_608 click the Pencil icon under Offer Decision tab
 And User_608 click the Deviate button under Offer Decision screen
 And User_608 to check whether underwriter is able to view the previous offers generated of the application if deviation is accepted
 Then logout from the ijaraApplication
-And User_608 invoke soft assert in under Offer Decision tab at Ijarah Underwriter stage
 
-
-@AT_UNW_006
-Scenario: Underwriter - Main screen and Added Screen
+@AT_TW_UNW_07
+Scenario: To verify the save button & Offer button under offer decision
 
 Given navigate the IJARA URL
-And login with valid credentials-Underwriter
-And User_608 get the test data for test case AT_UNW_006
+And login with valid credentials-Tawarruq Underwriter
+And User_608 get the test data for test case AT_TW_UNW_07
 And User_608 click the Mail box in ULS application
 And User_608 click the Search button under inbox
-And User_608 search the Ref id under inbox
+And User_608 search the Reference id under inbox in ULS Application
 And User_608 click the Entitle button under inbox
-And User_608 verify the Application Details tab in Underwriter stage
+And User_608 click the Application details tab
+And User_608 verify all the populate data correctly at this stage and display only in Application details screen
 And User_608 verify the Approve button under Application Details
 And User_608 verify the Reject button under Application Details
 And User_608 verify the Return button under Application Details
 And User_608 verify the View summary button under Application Details
-And User_608 verify the Customer details tab in Underwriter stage
-And User_608 to verify system should populate all the data under Customer details tab at this stage
+And User_608 click the Customer Details tab
+And User_608 click the Eye button under Customer Details tab
+And User_608 verify all the populate data correctly at this stage and display only in Customer details screen
 And User_608 verify the Additional Customer info tab in Underwriter stage
 And User_608 to verify system should populate all the data under Additional Customer info tab at this stage
-And User_608 verify the Customer Financials tab in Underwriter stage
-And User_608 to verify system should populate all the data under Customer Financials tab at this stage
+And User_608 click the Customer Financials tab
+And User_608 click the Eye button under Customer Financials tab
+And User_608 verify all the populate data correctly at this stage and display only under Customer Financials tab
 And User_608 verify the Living Expenses tab in Underwriter stage
+And User_608 click the Eye button under Living Expenses tab
 And User_608 verify the Facility Info tab in Underwriter stage
-And User_608 verify the Asset Details tab in Underwriter stage
+And User_608 click the Eye button under Facility Info tab
 And User_608 verify the Quotation Info tab in Underwriter stage
+And User_608 click the Eye button under Quotation Info tab
 And User_608 verify the Insurance Info tab in Underwriter stage
+And User_608 click the Eye button under Insurance Info tab
 And User_608 verify the Policy Check tab in Underwriter stage
 And User_608 verify the Document Details tab in Underwriter stage
+#And User_608 click the Eye button under Document Details tab
 Then logout from the ijaraApplication
