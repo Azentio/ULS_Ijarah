@@ -26,6 +26,7 @@ And User_608 verify the Insurance Info tab is displayed in Underwriter
 And User_608 verify the Policy Check tab is displayed in Underwriter
 And User_608 verify the Document Details tab is displayed in Underwriter
 Then logout from the ULS Application
+And User_608 invoke soft assert in Offer Decision screen at Ijarah Underwriter stage
 
 # Unw_02, Unw_03, Unw_04, Unw_05
 @AT_UNW_001_02
@@ -166,7 +167,7 @@ Then Fill The Remarks Field Below the Conditions
 Then Click on the Save button To Save The Conditions Record
 And Validate Save successful popup is displayed in the condition
 Then logout from the ULS Application
-
+And User_608 invoke soft assert in under Offer Decision tab at Ijarah Underwriter stage
 
 @AT_UNW_004
 Scenario: To check whether underwriter is allowed to deviate on Offered Amount or not
@@ -214,10 +215,16 @@ And User_608 to verify system should populate all the data under Additional Cust
 And User_608 verify the Customer Financials tab in Underwriter stage
 And User_608 to verify system should populate all the data under Customer Financials tab at this stage
 And User_608 verify the Living Expenses tab in Underwriter stage
+And User_608 click the Eye button under Living Expenses tab
 And User_608 verify the Facility Info tab in Underwriter stage
+And User_608 click the Eye button under Facility Info tab
 And User_608 verify the Asset Details tab in Underwriter stage
+And User_608 click the Eye button under Asset Details tab
 And User_608 verify the Quotation Info tab in Underwriter stage
+And User_608 click the Eye button under Quotation Info tab
 And User_608 verify the Insurance Info tab in Underwriter stage
+And User_608 click the Eye button under Insurance Info tab
 And User_608 verify the Policy Check tab in Underwriter stage
 And User_608 verify the Document Details tab in Underwriter stage
 Then logout from the ULS Application
+And User_608 invoke soft assert in under Offer Decision tab at Ijarah Underwriter stage
