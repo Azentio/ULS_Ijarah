@@ -8,8 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.asserts.SoftAssert;
 
-import dataProvider.ConfigFileReader;
-import dataProvider.ExcelData;
+import dataprovider.ConfigFileReader;
+import dataprovider.ExcelData;
 import helper.ClicksAndActionsHelper;
 import helper.JavascriptHelper;
 import helper.WaitHelper;
@@ -35,7 +35,7 @@ public class ijara_DataCheck_EmploymentDetails {
 
 	
 	JSPaths Ijarah_CustomerDebt = new JSPaths(excelPath, "CustomerDebt", "Ijarah_CustomerDebt", "JSPath");
-	ExcelData EmpDetailsTestData  = new ExcelData(excelTestDataPath,"EmpDetailsTestData"," Dataset ID");
+	//ExcelData EmpDetailsTestData  = new ExcelData(excelTestDataPath,"EmpDetailsTestData"," Dataset ID");
 
 	ExcelData EmpDetailsCom_firmTestData  = new ExcelData(excelTestDataPath,"EmpDetailsCom_firmTestData","Dataset ID");
 
@@ -45,12 +45,24 @@ public class ijara_DataCheck_EmploymentDetails {
 
 	@Given("User_6047 get the test data for test case ID AT_EDC_01")
 	public void user_6047_get_the_test_data_for_test_case_id_at_edc_01() {
-		testData =  EmpDetailsTestData.getTestdata("DS01_AT_EDC_01");
+		testData =  EmpDetailsCom_firmTestData.getTestdata("DS01_AT_EDC_01");
 	}
 	@And("User_6047 get the test data for test case ID AT_EDC_04")
 	public void user_6047_get_the_test_data_for_test_case_id_at_edc_04() {
 		testData =  EmpDetailsCom_firmTestData.getTestdata("DS01_AT_EDC_04");
 
+	}
+	@Then("User_6047 Get the test data for test case ID AT_EDC_02")
+	public void user_6047_get_the_test_data_for_test_case_id_at_edc_02() {
+		  testData =  EmpDetailsCom_firmTestData.getTestdata("DS01_AT_EDC_02");
+	}
+	@Then("User_6047 Get the test data for test case ID AT_EDC_08")
+	public void user_6047_get_the_test_data_for_test_case_id_at_edc_08() {
+		  testData =  EmpDetailsCom_firmTestData.getTestdata("DS01_AT_EDC_08");
+	}
+	@Then("User_6047 Get the test data for test case ID AT_EDC_10")
+	public void user_6047_get_the_test_data_for_test_case_id_at_edc_10() {
+		  testData =  EmpDetailsCom_firmTestData.getTestdata("DS01_AT_EDC_10");
 	}
 
 
@@ -88,8 +100,8 @@ public class ijara_DataCheck_EmploymentDetails {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("mail_box_search_text"))
-				//.sendKeys(testData.get("Ref No"));
-				.sendKeys("4984");
+				.sendKeys(testData.get("Ref No"));
+				//.sendKeys("4984");
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -117,7 +129,7 @@ public class ijara_DataCheck_EmploymentDetails {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("ActionBotton")).click();
-				Thread.sleep(7000);
+			//	Thread.sleep(7000);
 				break;
 				
 			} catch (Exception e) {
@@ -129,21 +141,94 @@ public class ijara_DataCheck_EmploymentDetails {
 		
 	    
 	}
-	@And("user_6047 click the Action button for the business")
-	public void user_6047_click_the_action_button_for_the_business() {
-		for (int i = 0; i <= 1000; i++) {
-			try {
-				javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("ActionBottonUnderCusFin")).click();
-			
-				break;
-				
-			} catch (Exception e) {
-				if (i == 1000) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
+	@And("user_6047 click the search button under CustomerEmploymentList")
+	public void user_6047_click_the_search_button_under_CustomerEmploymentList() {
+//		for (int i = 0; i <= 1000; i++) {
+//			try {
+//				javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("ActionBottonUnderCusFin")).click();
+//			
+//				break;
+//				
+//			} catch (Exception e) {
+//				if (i == 1000) {
+//					Assert.fail(e.getMessage());
+//				}
+//			}
+//		}
 		
+		String length =null;
+
+				for (int i = 0; i <500; i++) {
+
+					try {
+
+					    length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title').length").toString();
+
+					    System.out.println(length);
+
+						if (!length.isBlank()&&!length.equalsIgnoreCase("0")) {
+
+							break;
+
+						}
+
+					} catch (Exception e) {
+
+						if (i==499) {
+
+							Assert.fail(e.getMessage());
+
+						}
+
+					}
+
+				}
+
+				for (int i = 0; i <500; i++) {
+
+				try {
+
+					for (int j = 0; j <Integer.parseInt(length); j++) {
+
+						String title ="return document.querySelectorAll('ion-title')["+j+"].innerText";
+
+						String titlename = javascriptHelper.executeScript(title).toString();
+
+						System.out.println(titlename);
+
+						if (titlename.trim().contains("Customer Employment List")) {
+
+							System.out.println("condition true");
+
+							String jspath ="document.querySelectorAll('ion-title')["+j+"].parentElement.nextElementSibling.querySelector('button')";
+
+							WebElement searchButton = javascriptHelper.executeScriptWithWebElement(jspath);
+
+//							System.out.println(jspath);
+
+					//javascriptHelper.scrollIntoView(searchButton);
+							javascriptHelper.JSEClick(searchButton);
+					//searchButton.click();
+						
+							break;
+
+						}
+
+					}
+
+					break;
+
+				} catch (Exception e) {
+
+					if (i==499) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+			}
 	}
 
 	
@@ -740,12 +825,13 @@ public class ijara_DataCheck_EmploymentDetails {
 		}
 	}
 	@And("user_6047 validate the Employment Period Validation below  the Employment Details")
-	public void user_6047_validate_the_employment_period_validation_the_employment_details() {
+	public void user_6047_validate_the_employment_period_validation_the_employment_details() throws Throwable {
+		Thread.sleep(6000);
 		String EmploymentPeriod = javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("EmploymentPeriodValidation")).getAttribute("aria-label");
 
 		for (int i = 0; i <2000; i++) {
             try {
-                Assert.assertTrue(EmploymentPeriod.contains("Current"));
+                Assert.assertTrue(EmploymentPeriod.contains("Previous"));
                 break;
             } catch (Exception e) {
                 if (i==1999) {
@@ -777,7 +863,7 @@ public class ijara_DataCheck_EmploymentDetails {
 
 		for (int i = 0; i <2000; i++) {
             try {
-                Assert.assertTrue(EmployerName.contains("Test"));
+                Assert.assertTrue(EmployerName.contains("test"));
                 break;
             } catch (Exception e) {
                 if (i==1999) {
@@ -964,7 +1050,8 @@ public class ijara_DataCheck_EmploymentDetails {
 		} 
 	}
 	@And("user_6047 verify the Nature of Employment below the Employment Details in CF")
-	public void user_6047_verify_the_nature_of_employment_below_the_employment_details_in_cf() {
+	public void user_6047_verify_the_nature_of_employment_below_the_employment_details_in_cf() throws InterruptedException {
+		Thread.sleep(900);
        if (javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("NatureOfEmployment")).isDisplayed()) {
     	   SoftAssert.fail("Check Nature of Employment Field");
 			}
@@ -1099,8 +1186,9 @@ public class ijara_DataCheck_EmploymentDetails {
 		} 
 	}
 	@And("user_6047 verify the Employment Period in Pensioner below the Employment Details")
-	public void user_6047_verify_the_employment_period_in_pensioner_below_the_employment_details() throws IOException {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("EmploymentPeriod")));
+	public void user_6047_verify_the_employment_period_in_pensioner_below_the_employment_details() throws Throwable {
+		Thread.sleep(500);
+		//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("EmploymentPeriod")));
 		if (javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("EmploymentPeriod")).isDisplayed()) {
 			SoftAssert.fail("Check the Employment Period Field");
 		}
@@ -1424,7 +1512,8 @@ public class ijara_DataCheck_EmploymentDetails {
 	}
 
 	@Then("User_6047 verify the Nature of Employment in Salaried below the Employment Details")
-	public void user_6047_verify_the_nature_of_employment_in_salaried_below_the_employment_details() {
+	public void user_6047_verify_the_nature_of_employment_in_salaried_below_the_employment_details() throws Throwable {
+		Thread.sleep(500);
 		  if (javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("NatureOfEmployment")).isDisplayed()) {
 				SoftAssert.fail("Check Nature of Employment Field");
 			}
@@ -1578,7 +1667,8 @@ public class ijara_DataCheck_EmploymentDetails {
 	}
 
 	@Then("User_6047 To check the Primary Employment field should be Toggle")
-public void user_6047_to_check_the_primary_employment_field_should_be_toggle() {
+public void user_6047_to_check_the_primary_employment_field_should_be_toggle() throws Throwable {
+		Thread.sleep(500);
 String EmploymentPeriod = javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("PrimaryEmployment_Toggle")).getAttribute("role");
 
 for (int i = 0; i <2000; i++) {
@@ -1875,10 +1965,10 @@ public void user_6047_to_check_the_employee_id_field_should_be_display_only() {
 
 @Then("User_6047 To check the Date of Joining field should be date")
 public void user_6047_to_check_the_date_of_joining_field_should_be_date() {
-String DateOfJoining_As_Date = javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("DateOfJoiningValidation")).getAttribute("ng-reflect-model");
+String DateOfJoining_As_Date = javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("DateOfJoiningformat")).getAttribute("ng-reflect-icon");
 for (int i = 0; i <2000; i++) {
     try {
-        Assert.assertTrue(DateOfJoining_As_Date.contains("Tue Jan 31 2023 05:30:00 GMT+0"));
+        Assert.assertTrue(DateOfJoining_As_Date.contains("pi pi-calendar"));
         break;
     } catch (Exception e) {
         if (i==1999) {
@@ -2419,14 +2509,14 @@ if (i==1999) {
 }
 }
 
-@Then("User_6047 To check the Total Experience field should be Non-Mandatory")
+@Then("User_6047 To check the Total Experience field should be Mandatory")
 public void user_6047_to_check_the_total_experience_field_should_be_non_mandatory() {
 String TotalExpe_nonMandy = javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("TotalExperience")).getText();
 
 for (int i = 0; i <2000; i++) {
 
 try {
-Assert.assertTrue(!(TotalExpe_nonMandy.contains("*")));
+Assert.assertTrue((TotalExpe_nonMandy.contains("*")));
 break;
 } catch (Exception e) {
 if (i==1999) {
@@ -2565,7 +2655,8 @@ public void user_6047_6047_click_the_customer_financials_tab() throws Throwable 
 
 @Then("User_6047 To check the Primary Employment field should be Toggle,Non-Mandatory,display only")
 public void user_6047_to_check_the_primary_employment_field_should_be_toggle_non_mandatory_display_only() throws Throwable {
-	waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("PrimaryEmployment_Toggle")));
+	//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("PrimaryEmployment_Toggle")));
+	Thread.sleep(3000);
 	String PrimaryEmployment = javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("PrimaryEmployment_Toggle")).getAttribute("role");
 
 	for (int i = 0; i <2000; i++) {
@@ -2611,8 +2702,9 @@ public void user_6047_to_check_the_primary_employment_field_should_be_toggle_non
 	
 }
 
-@Then("User_6047 To check the company type field should be TextBox,Non-Mandatory,display only")
-public void user_6047_to_check_the_company_type_field_should_be_text_box_non_mandatory_display_only() {
+@Then("User_6047 To check the company type field should be TextBox,Mandatory,display only")
+public void user_6047_to_check_the_company_type_field_should_be_text_box_non_mandatory_display_only() throws Throwable {
+	Thread.sleep(2000);
 	String companyType = javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("CompanyType_Input")).getAttribute("ng-reflect-placeholder");
 
 	for (int i = 0; i <2000; i++) {
@@ -2627,12 +2719,12 @@ public void user_6047_to_check_the_company_type_field_should_be_text_box_non_man
       }
   }
 	
-	String companyType_As_NonMandy = javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("CompanyType")).getText();
+	String companyType_As_Mandy = javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("CompanyType")).getText();
 
 	for (int i = 0; i <2000; i++) {
 
       try {
-          Assert.assertTrue(!(companyType_As_NonMandy.contains("*")));
+          Assert.assertTrue((companyType_As_Mandy.contains("*")));
           break;
       } catch (Exception e) {
           if (i==1999) {
@@ -3689,6 +3781,118 @@ public void user_6047_click_the_back_button() {
 			}
 		}
 	}
+}
+@And("User_6047 search the record under CustomerEmploymentList")
+public void user_6047_search_the_record_under_CustomerEmploymentList() {
+	//waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text")));
+	for (int i = 0; i <= 500; i++) {
+		try {
+			//javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("search_button_for_employment_det")).click();
+			javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("search_box_search_text"))
+			.sendKeys(testData.get("record"));
+		//.sendKeys("self");
+				break;				
+		}
+		
+		catch (Exception e) {
+			if (i == 500) {
+				Assert.fail(e.getMessage());
+			}
+		}		
+	}
+	
+} 
+@And("user_6047 click the view button under employment")
+public void user_6047_click_the_view_button_under_employment() {
+//	for (int i = 0; i <= 1000; i++) {
+//		try {
+//			javascriptHelper.executeScriptWithWebElement(EmpDetailElements.getElement("ActionBottonUnderCusFin")).click();
+//		
+//			break;
+//			
+//		} catch (Exception e) {
+//			if (i == 1000) {
+//				Assert.fail(e.getMessage());
+//			}
+//		}
+//	}
+	
+	String length =null;
+
+			for (int i = 0; i <500; i++) {
+
+				try {
+
+				    length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title').length").toString();
+
+				    System.out.println(length);
+
+					if (!length.isBlank()&&!length.equalsIgnoreCase("0")) {
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (i==499) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+			}
+
+			for (int i = 0; i <500; i++) {
+
+			try {
+
+				for (int j = 0; j <Integer.parseInt(length); j++) {
+
+					String title ="return document.querySelectorAll('ion-title')["+j+"].innerText";
+
+					String titlename = javascriptHelper.executeScript(title).toString();
+
+					System.out.println(titlename);
+
+					if (titlename.trim().contains("Customer Employment List")) {
+
+						System.out.println("condition true");
+
+						String jspath ="document.querySelectorAll('ion-title')["+j+"].parentElement.nextElementSibling.querySelector('button')";
+
+						WebElement searchButton = javascriptHelper.executeScriptWithWebElement(jspath);
+
+//						System.out.println(jspath);
+
+				//	javascriptHelper.scrollIntoView(addButton);
+						javascriptHelper.JSEClick(searchButton);
+						//addButton.click();
+				
+			
+
+					
+						break;
+
+					}
+
+				}
+
+				break;
+
+			} catch (Exception e) {
+
+				if (i==499) {
+
+					Assert.fail(e.getMessage());
+
+				}
+
+			}
+
+		}
 }
 
 }

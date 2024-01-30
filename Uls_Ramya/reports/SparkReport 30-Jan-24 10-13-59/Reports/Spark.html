@@ -1,0 +1,3161 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Automation Report HTML</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@c43b89d03a7c43dae8bb8f0f078bad1997af6b3b/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa bdd-report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Azentio Automation Suite Report</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Jan 30, 2024 10:13:59 am</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">@AT_TW_AD_IRM_05</a><a class="dropdown-item" href="#">@AT_TW_AD_IRM_06</a><a class="dropdown-item" href="#">@AT_TW_AD_IRM_03</a><a class="dropdown-item" href="#">@AT_TW_AD_IRM_01</a><a class="dropdown-item" href="#">@AT_TW_AD_IRM_07</a><a class="dropdown-item" href="#">@AT_TW_AD_IRM_04</a><a class="dropdown-item" href="#">@AT_TW_AD_IRM_02</a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="fail" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">To verify the functionality of repayment mode in Tawarooq</p>
+            <p class="text-sm">
+              <span>10:14:00 am</span> / <span>33:31:794</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">To verify the functionality of repayment mode in Tawarooq</h5>
+<span class='badge badge-success'>01.30.2024 10:14:00</span>
+<span class='badge badge-danger'>01.30.2024 10:17:32</span>
+<span class='badge badge-default'>33:31:794</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>To verify post clicking on Add asset button, the Repayment Mode screen should be open with all valid fields</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdefinitions.IjaraTest.Navigate_the_ijara_url()">
+                <span>Given Navigate the IJARA URL</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded1.png' src="../Spark_Screenshots/embedded1.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.IjaraTest.user_login_with_valid_credentials_tawarruq_app_data_entry_repayment()">
+                <span>And User_6047 Login with valid credentials - Tawarruq-AppDataEntry-Repayment</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded2.png' src="../Spark_Screenshots/embedded2.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_get_the_test_data_for_test_case_id_at_tw_ad_irm()">
+                <span>And User_6047 Get the test data for test case ID AT_TW_AD_IRM_01</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded3.png' src="../Spark_Screenshots/embedded3.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarruq_AppDataEntry_DocumentDetails.user_6047_Click_the_module_name_dropdown_in_ULS_application()">
+                <span>And User_6047 Click the module name dropdown in ULS application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded4.png' src="../Spark_Screenshots/embedded4.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarruq_AppDataEntry_DocumentDetails.user_6047_Select_the_module_name_as_LOS_in_ULS_application()">
+                <span>And User_6047 Select the module name as LOS in ULS application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded5.png' src="../Spark_Screenshots/embedded5.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.ApplicationDataEntry_Steps.user_6047_click_the_mail_box_in_uls_application()">
+                <span>And User_6047 Click the Mail box in ULS application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded6.png' src="../Spark_Screenshots/embedded6.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.ApplicationDataEntry_Steps.user_6047_click_the_search_button_under_inbox()">
+                <span>And User_6047 Click the Search button under inbox</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded7.png' src="../Spark_Screenshots/embedded7.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_search_the_ref_id_under_inbox()">
+                <span>And User_6047 search the Ref Id Under inbox</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded8.png' src="../Spark_Screenshots/embedded8.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.ApplicationDataEntry_Steps.user_6047_click_the_entitle_button_under_inbox()">
+                <span>And User_6047 Click the Entitle button under inbox</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded9.png' src="../Spark_Screenshots/embedded9.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_click_repayment_mode_section()">
+                <span>And User_6047 Click repayment mode section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded10.png' src="../Spark_Screenshots/embedded10.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_click_add_icon()">
+                <span>And User_6047 Click Add icon</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded11.png' src="../Spark_Screenshots/embedded11.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_the_repayment_mode_field_in_repayment_mode()">
+                <span>Then User_6047 verify the repayment mode field in Repayment mode</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded12.png' src="../Spark_Screenshots/embedded12.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_verify_the_account_holder_name_field_repayment_mode()">
+                <span>Then User_6047 verify the account holder name field Repayment mode</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded13.png' src="../Spark_Screenshots/embedded13.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_the_account_type_field_repayment_mode()">
+                <span>And User_6047 verify the account type field Repayment mode</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded14.png' src="../Spark_Screenshots/embedded14.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_the_account_number_field_repayment_mode()">
+                <span>Then User_6047 verify the account number field Repayment mode</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded15.png' src="../Spark_Screenshots/embedded15.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_the_bank_name_field_repayment_mode()">
+                <span>And User_6047 verify the bank name field Repayment mode</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded16.png' src="../Spark_Screenshots/embedded16.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_the_bank_branch_name_field_repayment_mode()">
+                <span>Then User_6047 verify the bank branch name field Repayment mode</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded17.png' src="../Spark_Screenshots/embedded17.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_the_esc_code_field_repayment_mode()">
+                <span>And User_6047 verify the ESC code field Repayment mode</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded18.png' src="../Spark_Screenshots/embedded18.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_save_button_repayment_mode()">
+                <span>Then User_6047 verify save button Repayment mode</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded19.png' src="../Spark_Screenshots/embedded19.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_help_button_repayment_mode()">
+                <span>Then User_6047 verify help button Repayment mode</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded20.png' src="../Spark_Screenshots/embedded20.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.IjaraTest.logout_from_the_ijara_application()">
+                <span>Then logout from the ijaraApplication</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded21.png' src="../Spark_Screenshots/embedded21.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="48"><span class="badge log fail-bg mr-2">Fail</span>To verify the fields are mandatory, editable,lookup and numeric in repayment mode</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdefinitions.IjaraTest.Navigate_the_ijara_url()">
+                <span>Given Navigate the IJARA URL</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded22.png' src="../Spark_Screenshots/embedded22.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.IjaraTest.user_login_with_valid_credentials_tawarruq_app_data_entry_repayment()">
+                <span>And User_6047 Login with valid credentials - Tawarruq-AppDataEntry-Repayment</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded23.png' src="../Spark_Screenshots/embedded23.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_get_the_test_data_for_test_case_id_at_tw_ad_irm()">
+                <span>And User_6047 Get the test data for test case ID AT_TW_AD_IRM_01</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded24.png' src="../Spark_Screenshots/embedded24.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarruq_AppDataEntry_DocumentDetails.user_6047_Click_the_module_name_dropdown_in_ULS_application()">
+                <span>And User_6047 Click the module name dropdown in ULS application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded25.png' src="../Spark_Screenshots/embedded25.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarruq_AppDataEntry_DocumentDetails.user_6047_Select_the_module_name_as_LOS_in_ULS_application()">
+                <span>And User_6047 Select the module name as LOS in ULS application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded26.png' src="../Spark_Screenshots/embedded26.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.ApplicationDataEntry_Steps.user_6047_click_the_mail_box_in_uls_application()">
+                <span>And User_6047 Click the Mail box in ULS application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded27.png' src="../Spark_Screenshots/embedded27.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.ApplicationDataEntry_Steps.user_6047_click_the_search_button_under_inbox()">
+                <span>And User_6047 Click the Search button under inbox</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded28.png' src="../Spark_Screenshots/embedded28.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_search_the_ref_id_under_inbox()">
+                <span>And User_6047 search the Ref Id Under inbox</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded29.png' src="../Spark_Screenshots/embedded29.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.ApplicationDataEntry_Steps.user_6047_click_the_entitle_button_under_inbox()">
+                <span>And User_6047 Click the Entitle button under inbox</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded30.png' src="../Spark_Screenshots/embedded30.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_click_repayment_mode_section()">
+                <span>And User_6047 Click repayment mode section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded31.png' src="../Spark_Screenshots/embedded31.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_click_add_icon()">
+                <span>And User_6047 Click Add icon</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded32.png' src="../Spark_Screenshots/embedded32.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_the_repayment_mode_field_is_mandatory_editable_and_lookup_value()">
+                <span>Then User_6047 verify the Repayment mode field is mandatory,editable and lookup value</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded33.png' src="../Spark_Screenshots/embedded33.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_validate_the_account_holder_name_field_is_mandatory_editable_and_lookup_value()">
+                <span>And User_6047 validate the Account holder name field is mandatory,editable and lookup value</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded34.png' src="../Spark_Screenshots/embedded34.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_the_account_type_field_is_mandatory_editable_and_lookup_value()">
+                <span>And User_6047 verify the Account type field is mandatory,editable and lookup value</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded35.png' src="../Spark_Screenshots/embedded35.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_the_account_number_field_is_mandatory_editable_and_numeric()">
+                <span>And User_6047 verify the Account number field is mandatory,editable and numeric</span>
+      <div>
+        <textarea disabled class="code-block">java.lang.AssertionError: Cannot invoke "org.openqa.selenium.WebElement.sendKeys(java.lang.CharSequence[])" because the return value of "helper.JavascriptHelper.executeScriptWithWebElement(String)" is null
+	at org.junit.Assert.fail(Assert.java:88)
+	at stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_the_account_number_field_is_mandatory_editable_and_numeric(Tawarooq_RepaymentMode.java:530)
+	at ✽.User_6047 verify the Account number field is mandatory,editable and numeric(file:///C:/Users/ININDC00071/git/ULs_Ramya1/Uls_Ramya/src/test/java/features/Tawarruq_AppDataEntry_RepaymentMode.feature:44)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded36.png' src="../Spark_Screenshots/embedded36.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_click_the_account_currency_field_is_mandatory_editable_and_lookup_value()">
+                <span>And User_6047 click the Account currency field is mandatory,editable and lookup value</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_the_bank_name_field_is_mandatory_editable_and_lookup_value()">
+                <span>And User_6047 verify the Bank name field is mandatory,editable and lookup value</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_the_branch_name_field_is_mandatory_editable_and_lookup_value()">
+                <span>And User_6047 verify the Branch name field is mandatory,editable and lookup value</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_the_code_field_is_mandatory_editable_and_numeric()">
+                <span>And User_6047 verify the Code field is mandatory,editable and numeric</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.IjaraTest.logout_from_the_ijara_application()">
+                <span>Then logout from the ijaraApplication</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="92"><span class="badge log fail-bg mr-2">Fail</span>To verify the functionality of save,delete and help button</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdefinitions.IjaraTest.Navigate_the_ijara_url()">
+                <span>Given Navigate the IJARA URL</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded37.png' src="../Spark_Screenshots/embedded37.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.IjaraTest.user_login_with_valid_credentials_tawarruq_app_data_entry_repayment()">
+                <span>And User_6047 Login with valid credentials - Tawarruq-AppDataEntry-Repayment</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded38.png' src="../Spark_Screenshots/embedded38.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_get_the_test_data_for_test_case_id_at_tw_ad_irm()">
+                <span>And User_6047 Get the test data for test case ID AT_TW_AD_IRM_01</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded39.png' src="../Spark_Screenshots/embedded39.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarruq_AppDataEntry_DocumentDetails.user_6047_Click_the_module_name_dropdown_in_ULS_application()">
+                <span>And User_6047 Click the module name dropdown in ULS application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded40.png' src="../Spark_Screenshots/embedded40.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarruq_AppDataEntry_DocumentDetails.user_6047_Select_the_module_name_as_LOS_in_ULS_application()">
+                <span>And User_6047 Select the module name as LOS in ULS application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded41.png' src="../Spark_Screenshots/embedded41.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.ApplicationDataEntry_Steps.user_6047_click_the_mail_box_in_uls_application()">
+                <span>And User_6047 Click the Mail box in ULS application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded42.png' src="../Spark_Screenshots/embedded42.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.ApplicationDataEntry_Steps.user_6047_click_the_search_button_under_inbox()">
+                <span>And User_6047 Click the Search button under inbox</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded43.png' src="../Spark_Screenshots/embedded43.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_search_the_ref_id_under_inbox()">
+                <span>And User_6047 search the Ref Id Under inbox</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded44.png' src="../Spark_Screenshots/embedded44.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.ApplicationDataEntry_Steps.user_6047_click_the_entitle_button_under_inbox()">
+                <span>And User_6047 Click the Entitle button under inbox</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded45.png' src="../Spark_Screenshots/embedded45.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_click_repayment_mode_section()">
+                <span>And User_6047 Click repayment mode section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded46.png' src="../Spark_Screenshots/embedded46.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_click_add_icon()">
+                <span>And User_6047 Click Add icon</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded47.png' src="../Spark_Screenshots/embedded47.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_the_repayment_mode_field_is_mandatory_editable_and_lookup_value()">
+                <span>Then User_6047 verify the Repayment mode field is mandatory,editable and lookup value</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded48.png' src="../Spark_Screenshots/embedded48.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_validate_the_account_holder_name_field_is_mandatory_editable_and_lookup_value()">
+                <span>And User_6047 validate the Account holder name field is mandatory,editable and lookup value</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded49.png' src="../Spark_Screenshots/embedded49.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_the_account_type_field_is_mandatory_editable_and_lookup_value()">
+                <span>And User_6047 verify the Account type field is mandatory,editable and lookup value</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded50.png' src="../Spark_Screenshots/embedded50.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_the_account_number_field_is_mandatory_editable_and_numeric()">
+                <span>And User_6047 verify the Account number field is mandatory,editable and numeric</span>
+      <div>
+        <textarea disabled class="code-block">java.lang.AssertionError: Cannot invoke "org.openqa.selenium.WebElement.sendKeys(java.lang.CharSequence[])" because the return value of "helper.JavascriptHelper.executeScriptWithWebElement(String)" is null
+	at org.junit.Assert.fail(Assert.java:88)
+	at stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_the_account_number_field_is_mandatory_editable_and_numeric(Tawarooq_RepaymentMode.java:530)
+	at ✽.User_6047 verify the Account number field is mandatory,editable and numeric(file:///C:/Users/ININDC00071/git/ULs_Ramya1/Uls_Ramya/src/test/java/features/Tawarruq_AppDataEntry_RepaymentMode.feature:68)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded51.png' src="../Spark_Screenshots/embedded51.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_click_the_account_currency_field_is_mandatory_editable_and_lookup_value()">
+                <span>And User_6047 click the Account currency field is mandatory,editable and lookup value</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_the_bank_name_field_is_mandatory_editable_and_lookup_value()">
+                <span>And User_6047 verify the Bank name field is mandatory,editable and lookup value</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_the_branch_name_field_is_mandatory_editable_and_lookup_value()">
+                <span>And User_6047 verify the Branch name field is mandatory,editable and lookup value</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_the_code_field_is_mandatory_editable_and_numeric()">
+                <span>And User_6047 verify the Code field is mandatory,editable and numeric</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_click_the_save_button_under_repayment_mode_screen()">
+                <span>And User_6047 click the Save button under repayment mode screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_the_successfully_saved_message_popup_in_repayment_mode()">
+                <span>Then User_6047 verify the successfully saved message popup in Repayment Mode</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047__extract_the_application_details_record_reference_number_in_new_app_stage()">
+                <span>Then User_6047 Extract the record reference number in toastmsg</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_click_edit_icon_in_repayment_mode()">
+                <span>And User_6047 click edit icon in Repayment Mode</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_to_verify_the_same_record_should_get_saved_in_repayment_mode()">
+                <span>Then User_6047 To verify the same record should get saved in Repayment Mode</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_click_help_icon_in_repayment_mode()">
+                <span>And User_6047 click help icon in Repayment Mode</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_description_of_all_the_fields_details_in_repayment_mode()">
+                <span>Then User_6047 verify description of all the fields details in Repayment Mode</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.IjaraTest.logout_from_the_ijara_application()">
+                <span>Then logout from the ijaraApplication</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="150"><span class="badge log fail-bg mr-2">Fail</span>To verify the impact when user keep any mandatory field blank ,negative numeric,characters,special characters and click on save button</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdefinitions.IjaraTest.Navigate_the_ijara_url()">
+                <span>Given Navigate the IJARA URL</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded52.png' src="../Spark_Screenshots/embedded52.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.IjaraTest.user_login_with_valid_credentials_tawarruq_app_data_entry_repayment()">
+                <span>And User_6047 Login with valid credentials - Tawarruq-AppDataEntry-Repayment</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded53.png' src="../Spark_Screenshots/embedded53.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_get_the_test_data_for_test_case_id_at_tw_ad_irm_04()">
+                <span>And User_6047 Get the test data for test case ID AT_TW_AD_IRM_04</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded54.png' src="../Spark_Screenshots/embedded54.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarruq_AppDataEntry_DocumentDetails.user_6047_Click_the_module_name_dropdown_in_ULS_application()">
+                <span>And User_6047 Click the module name dropdown in ULS application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded55.png' src="../Spark_Screenshots/embedded55.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarruq_AppDataEntry_DocumentDetails.user_6047_Select_the_module_name_as_LOS_in_ULS_application()">
+                <span>And User_6047 Select the module name as LOS in ULS application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded56.png' src="../Spark_Screenshots/embedded56.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.ApplicationDataEntry_Steps.user_6047_click_the_mail_box_in_uls_application()">
+                <span>And User_6047 Click the Mail box in ULS application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded57.png' src="../Spark_Screenshots/embedded57.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.ApplicationDataEntry_Steps.user_6047_click_the_search_button_under_inbox()">
+                <span>And User_6047 Click the Search button under inbox</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded58.png' src="../Spark_Screenshots/embedded58.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_search_the_ref_id_under_inbox()">
+                <span>And User_6047 search the Ref Id Under inbox</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded59.png' src="../Spark_Screenshots/embedded59.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.ApplicationDataEntry_Steps.user_6047_click_the_entitle_button_under_inbox()">
+                <span>And User_6047 Click the Entitle button under inbox</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded60.png' src="../Spark_Screenshots/embedded60.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_click_repayment_mode_section()">
+                <span>And User_6047 Click repayment mode section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded61.png' src="../Spark_Screenshots/embedded61.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_click_add_icon()">
+                <span>And User_6047 Click Add icon</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded62.png' src="../Spark_Screenshots/embedded62.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_give_the_input_for_repayment_mode_field_in_repayment_mode()">
+                <span>Then User_6047 Give the input for repayment mode field in Repayment Mode</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded63.png' src="../Spark_Screenshots/embedded63.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_give_the_input_for_account_holder_name_field_in_repayment_mode()">
+                <span>Then User_6047 Give the input for account holder name field in Repayment Mode</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded64.png' src="../Spark_Screenshots/embedded64.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_give_the_input_for_account_type_field_in_repayment_mode()">
+                <span>Then User_6047 Give the input for account type field in Repayment Mode</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded65.png' src="../Spark_Screenshots/embedded65.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_give_the_input_for_account_currency_field_in_repayment_mode()">
+                <span>Then User_6047 Give the input for account currency field in Repayment Mode</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded66.png' src="../Spark_Screenshots/embedded66.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_give_the_input_for_bank_name_field_in_repayment_mode()">
+                <span>Then User_6047 Give the input for bank name field in Repayment Mode</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded67.png' src="../Spark_Screenshots/embedded67.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_give_the_input_for_branch_name_field_in_repayment_mode()">
+                <span>Then User_6047 Give the input for branch name field in Repayment Mode</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded68.png' src="../Spark_Screenshots/embedded68.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_give_the_input_for_code_field_in_repayment_mode()">
+                <span>Then User_6047 Give the input for code field in Repayment Mode</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded69.png' src="../Spark_Screenshots/embedded69.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_click_the_save_button_under_repayment_mode_screen()">
+                <span>And User_6047 click the Save button under repayment mode screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded70.png' src="../Spark_Screenshots/embedded70.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_the_popup_of_fill_all_field_in_repayment_mode()">
+                <span>Then User_6047 Verify the popup of fill all field in Repayment Mode</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded71.png' src="../Spark_Screenshots/embedded71.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_give_the_negative_number_input_for_account_number_field_in_repayment_mode()">
+                <span>Then User_6047 Give the negative number input for account number field in Repayment Mode</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded72.png' src="../Spark_Screenshots/embedded72.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_click_the_save_button_under_repayment_mode_screen()">
+                <span>And User_6047 click the Save button under repayment mode screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded73.png' src="../Spark_Screenshots/embedded73.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_the_popup_of_fill_all_field_in_repayment_mode()">
+                <span>Then User_6047 Verify the popup of fill all field in Repayment Mode</span>
+      <div>
+        <textarea disabled class="code-block">java.lang.AssertionError: javascript error: Cannot read properties of null (reading 'shadowRoot')
+  (Session info: chrome=120.0.6099.225)
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [84b1166bd69da29c2d3882a38080c0a3, executeScript {script=return document.querySelector('ion-toast[role="status"]').shadowRoot.querySelector('div[part="message"]').textContent, args=[]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50785}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50785/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 84b1166bd69da29c2d3882a38080c0a3
+	at org.junit.Assert.fail(Assert.java:88)
+	at stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_the_popup_of_fill_all_field_in_repayment_mode(Tawarooq_RepaymentMode.java:1601)
+	at ✽.User_6047 Verify the popup of fill all field in Repayment Mode(file:///C:/Users/ININDC00071/git/ULs_Ramya1/Uls_Ramya/src/test/java/features/Tawarruq_AppDataEntry_RepaymentMode.feature:107)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded74.png' src="../Spark_Screenshots/embedded74.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_give_the_character_input_for_account_number_field_in_repayment_mode()">
+                <span>Then User_6047 Give the character input for account number field in Repayment Mode</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_click_the_save_button_under_repayment_mode_screen()">
+                <span>And User_6047 click the Save button under repayment mode screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_the_popup_of_fill_all_field_in_repayment_mode()">
+                <span>Then User_6047 Verify the popup of fill all field in Repayment Mode</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_enter_the_special_character_for_account_number_field_in_repayment_mode()">
+                <span>Then User_6047 Enter the special character for account number field in Repayment Mode</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_click_the_save_button_under_repayment_mode_screen()">
+                <span>And User_6047 click the Save button under repayment mode screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_the_popup_of_fill_all_field_in_repayment_mode()">
+                <span>Then User_6047 Verify the popup of fill all field in Repayment Mode</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.IjaraTest.logout_from_the_ijara_application()">
+                <span>Then logout from the ijaraApplication</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="214"><span class="badge log fail-bg mr-2">Fail</span>To verify Modification of RepaymentMode record</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdefinitions.IjaraTest.Navigate_the_ijara_url()">
+                <span>Given Navigate the IJARA URL</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded75.png' src="../Spark_Screenshots/embedded75.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.IjaraTest.user_login_with_valid_credentials_tawarruq_app_data_entry_repayment()">
+                <span>And User_6047 Login with valid credentials - Tawarruq-AppDataEntry-Repayment</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded76.png' src="../Spark_Screenshots/embedded76.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_get_the_test_data_for_test_case_id_at_tw_ad_irm_04()">
+                <span>And User_6047 Get the test data for test case ID AT_TW_AD_IRM_04</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded77.png' src="../Spark_Screenshots/embedded77.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarruq_AppDataEntry_DocumentDetails.user_6047_Click_the_module_name_dropdown_in_ULS_application()">
+                <span>And User_6047 Click the module name dropdown in ULS application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded78.png' src="../Spark_Screenshots/embedded78.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarruq_AppDataEntry_DocumentDetails.user_6047_Select_the_module_name_as_LOS_in_ULS_application()">
+                <span>And User_6047 Select the module name as LOS in ULS application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded79.png' src="../Spark_Screenshots/embedded79.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.ApplicationDataEntry_Steps.user_6047_click_the_mail_box_in_uls_application()">
+                <span>And User_6047 Click the Mail box in ULS application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded80.png' src="../Spark_Screenshots/embedded80.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.ApplicationDataEntry_Steps.user_6047_click_the_search_button_under_inbox()">
+                <span>And User_6047 Click the Search button under inbox</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded81.png' src="../Spark_Screenshots/embedded81.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_search_the_ref_id_under_inbox()">
+                <span>And User_6047 search the Ref Id Under inbox</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded82.png' src="../Spark_Screenshots/embedded82.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.ApplicationDataEntry_Steps.user_6047_click_the_entitle_button_under_inbox()">
+                <span>And User_6047 Click the Entitle button under inbox</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded83.png' src="../Spark_Screenshots/embedded83.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_click_repayment_mode_section()">
+                <span>And User_6047 Click repayment mode section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded84.png' src="../Spark_Screenshots/embedded84.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_click_the_search_button()">
+                <span>And User_6047 Click the Search button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded85.png' src="../Spark_Screenshots/embedded85.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_search_the_repayment_list_under_repayment_mode()">
+                <span>Then User_6047 search the Repayment list under Repayment mode</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded86.png' src="../Spark_Screenshots/embedded86.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_click_edit_icon_in_repayment_mode()">
+                <span>And User_6047 click edit icon in Repayment Mode</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded87.png' src="../Spark_Screenshots/embedded87.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_the_repayment_mode_field_in_repayment_mode()">
+                <span>Then User_6047 verify the repayment mode field in Repayment mode</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded88.png' src="../Spark_Screenshots/embedded88.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_verify_the_account_holder_name_field_repayment_mode()">
+                <span>Then User_6047 verify the account holder name field Repayment mode</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded89.png' src="../Spark_Screenshots/embedded89.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_the_account_type_field_repayment_mode()">
+                <span>And User_6047 verify the account type field Repayment mode</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded90.png' src="../Spark_Screenshots/embedded90.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_the_account_number_field_repayment_mode()">
+                <span>Then User_6047 verify the account number field Repayment mode</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded91.png' src="../Spark_Screenshots/embedded91.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_the_bank_name_field_repayment_mode()">
+                <span>And User_6047 verify the bank name field Repayment mode</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded92.png' src="../Spark_Screenshots/embedded92.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_the_bank_branch_name_field_repayment_mode()">
+                <span>Then User_6047 verify the bank branch name field Repayment mode</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded93.png' src="../Spark_Screenshots/embedded93.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_the_esc_code_field_repayment_mode()">
+                <span>And User_6047 verify the ESC code field Repayment mode</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded94.png' src="../Spark_Screenshots/embedded94.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_save_button_repayment_mode()">
+                <span>Then User_6047 verify save button Repayment mode</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded95.png' src="../Spark_Screenshots/embedded95.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Murabha_RepaymentMode_Steps.user_6047_modify_the_ESC_code_field()">
+                <span>Then User_6047 modify the ESC code field</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded96.png' src="../Spark_Screenshots/embedded96.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Murabha_RepaymentMode_Steps.user_6047_click_the_save_button_under_the_repayment_mode_screen()">
+                <span>And User_6047 click the save button under repayment mode screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded97.png' src="../Spark_Screenshots/embedded97.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Murabha_RepaymentMode_Steps.user_6047_verify_the_successfully_saved_message_popup()">
+                <span>Then User_6047 verify the successfully saved message popup</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded98.png' src="../Spark_Screenshots/embedded98.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_click_the_search_button()">
+                <span>And User_6047 Click the Search button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded99.png' src="../Spark_Screenshots/embedded99.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_search_the_repayment_list_under_repayment_mode()">
+                <span>Then User_6047 search the Repayment list under Repayment mode</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded100.png' src="../Spark_Screenshots/embedded100.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_click_edit_icon_in_repayment_mode()">
+                <span>And User_6047 click edit icon in Repayment Mode</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded101.png' src="../Spark_Screenshots/embedded101.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_to_verify_the_same_record_should_get_saved_in_repayment_mode()">
+                <span>Then User_6047 To verify the same record should get saved in Repayment Mode</span>
+      <div>
+        <textarea disabled class="code-block">java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at stepdefinitions.Tawarooq_RepaymentMode.user_6047_to_verify_the_same_record_should_get_saved_in_repayment_mode(Tawarooq_RepaymentMode.java:948)
+	at ✽.User_6047 To verify the same record should get saved in Repayment Mode(file:///C:/Users/ININDC00071/git/ULs_Ramya1/Uls_Ramya/src/test/java/features/Tawarruq_AppDataEntry_RepaymentMode.feature:146)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded102.png' src="../Spark_Screenshots/embedded102.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.IjaraTest.logout_from_the_ijara_application()">
+                <span>Then logout from the ijaraApplication</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="276"><span class="badge log pass-bg mr-2">Pass</span>To verify the list view</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdefinitions.IjaraTest.Navigate_the_ijara_url()">
+                <span>Given Navigate the IJARA URL</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded103.png' src="../Spark_Screenshots/embedded103.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.IjaraTest.user_login_with_valid_credentials_tawarruq_app_data_entry_repayment()">
+                <span>And User_6047 Login with valid credentials - Tawarruq-AppDataEntry-Repayment</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded104.png' src="../Spark_Screenshots/embedded104.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarruq_AppDataEntry_DocumentDetails.user_6047_Click_the_module_name_dropdown_in_ULS_application()">
+                <span>And User_6047 Click the module name dropdown in ULS application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded105.png' src="../Spark_Screenshots/embedded105.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarruq_AppDataEntry_DocumentDetails.user_6047_Select_the_module_name_as_LOS_in_ULS_application()">
+                <span>And User_6047 Select the module name as LOS in ULS application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded106.png' src="../Spark_Screenshots/embedded106.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_get_the_test_data_for_test_case_id_at_tw_ad_irm_06()">
+                <span>And User_6047 Get the test data for test case ID AT_TW_AD_IRM_06</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded107.png' src="../Spark_Screenshots/embedded107.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.ApplicationDataEntry_Steps.user_6047_click_the_mail_box_in_uls_application()">
+                <span>And User_6047 Click the Mail box in ULS application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded108.png' src="../Spark_Screenshots/embedded108.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.ApplicationDataEntry_Steps.user_6047_click_the_search_button_under_inbox()">
+                <span>And User_6047 Click the Search button under inbox</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded109.png' src="../Spark_Screenshots/embedded109.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_search_the_ref_id_under_inbox()">
+                <span>And User_6047 search the Ref Id Under inbox</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded110.png' src="../Spark_Screenshots/embedded110.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.ApplicationDataEntry_Steps.user_6047_click_the_entitle_button_under_inbox()">
+                <span>And User_6047 Click the Entitle button under inbox</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded111.png' src="../Spark_Screenshots/embedded111.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_click_repayment_mode_section()">
+                <span>And User_6047 Click repayment mode section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded112.png' src="../Spark_Screenshots/embedded112.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_to_verify_system_should_show_the_list_view()">
+                <span>Then User_6047 to verify system should show the list view</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded113.png' src="../Spark_Screenshots/embedded113.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.IjaraTest.logout_from_the_ijara_application()">
+                <span>Then logout from the ijaraApplication</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded114.png' src="../Spark_Screenshots/embedded114.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="304"><span class="badge log pass-bg mr-2">Pass</span>To verify Modification of Repayment Mode record</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdefinitions.IjaraTest.Navigate_the_ijara_url()">
+                <span>Given Navigate the IJARA URL</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded115.png' src="../Spark_Screenshots/embedded115.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.IjaraTest.user_login_with_valid_credentials_tawarruq_app_data_entry_repayment()">
+                <span>And User_6047 Login with valid credentials - Tawarruq-AppDataEntry-Repayment</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded116.png' src="../Spark_Screenshots/embedded116.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_get_the_test_data_for_test_case_id_at_tw_ad_irm_06()">
+                <span>And User_6047 Get the test data for test case ID AT_TW_AD_IRM_06</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded117.png' src="../Spark_Screenshots/embedded117.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarruq_AppDataEntry_DocumentDetails.user_6047_Click_the_module_name_dropdown_in_ULS_application()">
+                <span>And User_6047 Click the module name dropdown in ULS application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded118.png' src="../Spark_Screenshots/embedded118.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarruq_AppDataEntry_DocumentDetails.user_6047_Select_the_module_name_as_LOS_in_ULS_application()">
+                <span>And User_6047 Select the module name as LOS in ULS application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded119.png' src="../Spark_Screenshots/embedded119.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.ApplicationDataEntry_Steps.user_6047_click_the_mail_box_in_uls_application()">
+                <span>And User_6047 Click the Mail box in ULS application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded120.png' src="../Spark_Screenshots/embedded120.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.ApplicationDataEntry_Steps.user_6047_click_the_search_button_under_inbox()">
+                <span>And User_6047 Click the Search button under inbox</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded121.png' src="../Spark_Screenshots/embedded121.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_search_the_ref_id_under_inbox()">
+                <span>And User_6047 search the Ref Id Under inbox</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded122.png' src="../Spark_Screenshots/embedded122.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.ApplicationDataEntry_Steps.user_6047_click_the_entitle_button_under_inbox()">
+                <span>And User_6047 Click the Entitle button under inbox</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded123.png' src="../Spark_Screenshots/embedded123.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_click_repayment_mode_section()">
+                <span>And User_6047 Click repayment mode section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded124.png' src="../Spark_Screenshots/embedded124.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_click_the_search_button()">
+                <span>And User_6047 Click the Search button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded125.png' src="../Spark_Screenshots/embedded125.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_search_the_repayment_list_under_repayment_mode()">
+                <span>Then User_6047 search the Repayment list under Repayment mode</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded126.png' src="../Spark_Screenshots/embedded126.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_click_edit_icon_in_repayment_mode()">
+                <span>And User_6047 click edit icon in Repayment Mode</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded127.png' src="../Spark_Screenshots/embedded127.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_delete_the_account_number_repayment_mode_screen()">
+                <span>Then User_6047 Delete the account number Repayment mode screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded128.png' src="../Spark_Screenshots/embedded128.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_click_the_save_button_under_repayment_mode_screen()">
+                <span>And User_6047 click the Save button under repayment mode screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded129.png' src="../Spark_Screenshots/embedded129.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_the_popup_of_fill_all_field_in_repayment_mode()">
+                <span>Then User_6047 Verify the popup of fill all field in Repayment Mode</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded130.png' src="../Spark_Screenshots/embedded130.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_enter_the_special_character_for_account_number_field_in_repayment_mode()">
+                <span>Then User_6047 Enter the special character for account number field in Repayment Mode</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded131.png' src="../Spark_Screenshots/embedded131.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_click_the_save_button_under_repayment_mode_screen()">
+                <span>And User_6047 click the Save button under repayment mode screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded132.png' src="../Spark_Screenshots/embedded132.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_the_popup_of_fill_all_field_in_repayment_mode()">
+                <span>Then User_6047 Verify the popup of fill all field in Repayment Mode</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded133.png' src="../Spark_Screenshots/embedded133.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_give_the_input_for_account_number_field_in_repayment_mode_screen()">
+                <span>And User_6047 give the input for account number field in Repayment mode screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded134.png' src="../Spark_Screenshots/embedded134.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_click_the_save_button_under_repayment_mode_screen()">
+                <span>And User_6047 click the Save button under repayment mode screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded135.png' src="../Spark_Screenshots/embedded135.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.Tawarooq_RepaymentMode.user_6047_to_click_the_pre_back_button()">
+                <span>And User_6047 to click the pre back button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded136.png' src="../Spark_Screenshots/embedded136.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.ApplicationDataEntry_Steps.user_6047_click_the_entitle_button_under_inbox()">
+                <span>And User_6047 Click the Entitle button under inbox</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded137.png' src="../Spark_Screenshots/embedded137.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.IjaraTest.logout_from_the_ijara_application()">
+                <span>Then logout from the ijaraApplication</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded138.png' src="../Spark_Screenshots/embedded138.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Jan 30, 2024 10:13:59 am</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Jan 30, 2024 10:17:32 am</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Features Passed</p>
+<h3>0</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Features Failed</p>
+<h3>1</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Features</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='0%'>
+<b>0</b> features passed
+</small>
+</div>
+<div>
+<small data-tooltip='100%'><b>1</b> features failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Scenarios</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='child-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='42%'><b>3</b> scenarios passed</small></div>
+<div>
+<small data-tooltip='57%'><b>4</b> scenarios failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Steps</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='grandchild-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='90%'><b>272</b> steps passed</small></div>
+<div>
+<small data-tooltip='1%'><b>4</b> steps failed,
+<b>25</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"To verify the functionality of repayment mode in Tawarooq":211.794
+};
+</script>
+<div class="row">
+<div class="col-md-4 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>@AT_TW_AD_IRM_05</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@AT_TW_AD_IRM_06</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@AT_TW_AD_IRM_03</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@AT_TW_AD_IRM_01</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@AT_TW_AD_IRM_07</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@AT_TW_AD_IRM_04</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@AT_TW_AD_IRM_02</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="col-md-4 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>version</td>
+<td>10</td>
+</tr>
+<tr>
+<td>os</td>
+<td>windows</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 0,
+failParent: 1,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 3,
+failChild: 4,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 272,
+failGrandChild: 4,
+warningGrandChild: 0,
+skipGrandChild: 25,
+infoGrandChild: 0,
+eventsCount: 5,
+};
+</script><div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">7</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@AT_TW_AD_IRM_05</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@AT_TW_AD_IRM_05</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>10:16:09 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='214'>To verify Modification of RepaymentMode record</a>
+<div class="">
+<span class="badge badge-default">To verify the functionality of repayment mode in Tawarooq.To verify Modification of RepaymentMode record</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@AT_TW_AD_IRM_06</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@AT_TW_AD_IRM_06</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>10:16:59 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='304'>To verify Modification of Repayment Mode record</a>
+<div class="">
+<span class="badge badge-default">To verify the functionality of repayment mode in Tawarooq.To verify Modification of Repayment Mode record</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@AT_TW_AD_IRM_03</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@AT_TW_AD_IRM_03</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>10:15:01 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='92'>To verify the functionality of save,delete and help button</a>
+<div class="">
+<span class="badge badge-default">To verify the functionality of repayment mode in Tawarooq.To verify the functionality of save,delete and help button</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@AT_TW_AD_IRM_01</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@AT_TW_AD_IRM_01</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>10:14:00 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>To verify post clicking on Add asset button, the Repayment Mode screen should be open with all valid fields</a>
+<div class="">
+<span class="badge badge-default">To verify the functionality of repayment mode in Tawarooq.To verify post clicking on Add asset button, the Repayment Mode screen should be open with all valid fields</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@AT_TW_AD_IRM_07</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@AT_TW_AD_IRM_07</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>10:16:41 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='276'>To verify the list view</a>
+<div class="">
+<span class="badge badge-default">To verify the functionality of repayment mode in Tawarooq.To verify the list view</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@AT_TW_AD_IRM_04</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@AT_TW_AD_IRM_04</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>10:15:34 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='150'>To verify the impact when user keep any mandatory field blank ,negative numeric,characters,special characters and click on save button</a>
+<div class="">
+<span class="badge badge-default">To verify the functionality of repayment mode in Tawarooq.To verify the impact when user keep any mandatory field blank ,negative numeric,characters,special characters and click on save button</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@AT_TW_AD_IRM_02</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@AT_TW_AD_IRM_02</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>10:14:28 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='48'>To verify the fields are mandatory, editable,lookup and numeric in repayment mode</a>
+<div class="">
+<span class="badge badge-default">To verify the functionality of repayment mode in Tawarooq.To verify the fields are mandatory, editable,lookup and numeric in repayment mode</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">java.lang.AssertionError</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>java.lang.AssertionError</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>10:14:49 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='79'>And User_6047 verify the Account number field is mandatory,editable and numeric</a>
+<div class="">
+<span class="badge badge-default">To verify the functionality of repayment mode in Tawarooq.To verify the fields are mandatory, editable,lookup and numeric in repayment mode.And User_6047 verify the Account number field is mandatory,editable and numeric</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>10:15:22 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='123'>And User_6047 verify the Account number field is mandatory,editable and numeric</a>
+<div class="">
+<span class="badge badge-default">To verify the functionality of repayment mode in Tawarooq.To verify the functionality of save,delete and help button.And User_6047 verify the Account number field is mandatory,editable and numeric</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>10:16:03 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='197'>Then User_6047 Verify the popup of fill all field in Repayment Mode</a>
+<div class="">
+<span class="badge badge-default">To verify the functionality of repayment mode in Tawarooq.To verify the impact when user keep any mandatory field blank ,negative numeric,characters,special characters and click on save button.Then User_6047 Verify the popup of fill all field in Repayment Mode</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>10:16:31 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='271'>Then User_6047 To verify the same record should get saved in Repayment Mode</a>
+<div class="">
+<span class="badge badge-default">To verify the functionality of repayment mode in Tawarooq.To verify Modification of RepaymentMode record.Then User_6047 To verify the same record should get saved in Repayment Mode</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@14e9bb345ef7e2ed3a102f271d84e9f0267c88e7/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>

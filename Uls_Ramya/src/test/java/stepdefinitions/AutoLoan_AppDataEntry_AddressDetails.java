@@ -13,8 +13,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.asserts.SoftAssert;
 
-import dataProvider.ConfigFileReader;
-import dataProvider.ExcelData;
+import dataprovider.ConfigFileReader;
+import dataprovider.ExcelData;
 import helper.ClicksAndActionsHelper;
 import helper.JavascriptHelper;
 import helper.WaitHelper;
@@ -1843,8 +1843,8 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 
 	@Then("User_6047 verify Location Category should be editable,dropdown")
 	public void user_6047_verify_location_category_should_be_editable_dropdown() throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("location_category")));
-
+	//	waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("location_category")));
+Thread.sleep(500);
 		String LocationEdit= javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("location_category")).getAttribute("ng-reflect-is-disabled");
 		for (int i = 0; i <2000; i++) {
             try {

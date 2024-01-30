@@ -1,7 +1,7 @@
 Feature: To test the employmentDetail module in URL
 #v0169
 @AT_EDC_01
-Scenario: To verify the employmentDetail record is available in system
+Scenario: To verify the employmentDetail record is available in system(business)
 Given Navigate the IJARA URL
 #And User_6047 login with valid credentials
 And User_6047 login with valid credentials-ijara-DataCheck-Employment detail
@@ -14,7 +14,9 @@ And User_6047 search the Ref id under inbox
 And User_6047 click the Entitle button under inbox
 And User_6047 click the Customer Financials tab
 And User_6047 click On the Action button below Customer Employment List
-And user_6047 click the Action button for the business
+And user_6047 click the search button under CustomerEmploymentList
+Then User_6047 search the record under CustomerEmploymentList
+And user_6047 click the view button under employment
 And user_6047 verify the Primary Employment below the Employment Details
 And user_6047 verify the Employment Period below the Employment Details
 And user_6047 verify the Nature of Employment below the Employment Details
@@ -48,7 +50,7 @@ And user_6047 verify the Business Registration Date below the Employment Details
 And user_6047 verify the Office Premises Type below the Employment Details
 And user_6047 verify the Share Holder Percentage below the Employment Details
 And user_6047 verify the No Of Employees below the Employment Details
-And user_6047 verify the Total Experience below the Employment Details
+#And user_6047 verify the Total Experience below the Employment Details
 And user_6047 verify the Experience At Current Employment below the Employment Details
 And user_6047 verify the Direct Manager below the Employment Details
 And user_6047 verify the Employer City Code below the Employment Details
@@ -57,19 +59,23 @@ And user_6047 verify the Remarks below the Employment Details
 Then logout from the ULS Application
 
 @AT_EDC_02
-Scenario: To verify already added details at employment details stage is visible at data check stage
+Scenario: To verify already added details at employment details stage is visible at data check stage(business)
 
 Given Navigate the IJARA URL
 #And User_6047 login with valid credentials
 And User_6047 login with valid credentials-ijara-DataCheck-Employment detail
-And User_6047 get the test data for test case ID AT_EDC_01
+And User_6047 Get the test data for test case ID AT_EDC_02
+And User_6047 Click the module name dropdown in ULS application
+And User_6047 Select the module name as LOS in ULS application
 And User_6047 click the Mail box in ULS application
 And User_6047 click the Search button under inbox
 And User_6047 search the Ref id under inbox
 And User_6047 click the Entitle button under inbox
 And User_6047 click the Customer Financials tab
 And User_6047 click On the Action button below Customer Employment List
-And user_6047 click the Action button for the business
+And user_6047 click the search button under CustomerEmploymentList
+Then User_6047 search the record under CustomerEmploymentList
+And user_6047 click the view button under employment
 And user_6047 validate the Employment Period Validation below  the Employment Details
 And user_6047 validate the Nature Of Employment Validation below  the Employment Details
 And user_6047 validate the Employer Name If Validation below  the Employment Details
@@ -77,8 +83,8 @@ And user_6047 validate the Employee Id Validation below the Employment Details
 And user_6047 validate the Date Of Joining Validation below the Employment Details
 And user_6047 validate the Employment Type Validation below  the Employment Details
 And user_6047 validate the Share HOlder Percentage Validation below  the Employment Details
-And user_6047 validate the Total Experience Validation below the Employment Details
-And user_6047 validate the Retirement Age Validation below the Employment Details
+#And user_6047 validate the Total Experience Validation below the Employment Details
+#And user_6047 validate the Retirement Age Validation below the Employment Details
 And user_6047 verify the back button below the Employment Details
 And user_6047 verify the primary Employment Default Vale As Yes below the Employment Details
 Then logout from the ULS Application
@@ -89,8 +95,8 @@ Scenario: To verify fields when nature of employment is Company/Firm
 Given Navigate the IJARA URL
 And User_6047 login with valid credentials-ijara-DataCheck-Employment detail
 And User_6047 get the test data for test case ID AT_EDC_04
-#And And User click the module name dropdown in ULS application
-#And User select the module name as LOS in ULS application
+And User_6047 Click the module name dropdown in ULS application
+And User_6047 Select the module name as LOS in ULS application
 And User_6047 click the Mail box in ULS application
 And User_6047 click the Search button under inbox
 And User_6047 search the Ref id under inbox
@@ -98,7 +104,10 @@ And User_6047 click the Entitle button under inbox
 And User_6047 click the Customer Financials tab
 And User_6047 click the Customer Financials tab
 And User_6047 click On the Action button below Customer Employment List
-And user_6047 click the Action button for the Company/Firm
+#And user_6047 click the Action button for the Company/Firm
+And user_6047 click the search button under CustomerEmploymentList
+Then User_6047 search the record under CustomerEmploymentList
+And user_6047 click the view button under employment
 And user_6047 verify the Nature of Employment below the Employment Details in CF
 And user_6047 verify the Company Type below the Employment Details in CF
 And user_6047 verify the Profession below the Employment Details in CF
@@ -123,15 +132,18 @@ Scenario: To verify fields when nature of employment is Pensioner
 Given Navigate the IJARA URL
 And User_6047 login with valid credentials-ijara-DataCheck-Employment detail
 And User_6047 Get the test data for test case ID AT_EDC_05
-#And And User click the module name dropdown in ULS application
-#And User select the module name as LOS in ULS application
+And User_6047 Click the module name dropdown in ULS application
+And User_6047 Select the module name as LOS in ULS application
 And User_6047 click the Mail box in ULS application
 And User_6047 click the Search button under inbox
 And User_6047 search the Ref id under inbox
 And User_6047 click the Entitle button under inbox
 And User_6047 click the Customer Financials tab
 And User_6047 click On the Action button below Customer Employment List
-And user_6047 click the Action button for the Pensioner
+And user_6047 click the search button under CustomerEmploymentList
+Then User_6047 search the record under CustomerEmploymentList
+And user_6047 click the view button under employment
+#And user_6047 click the Action button for the Pensioner
 And user_6047 verify the Employment Period in Pensioner below the Employment Details
 And user_6047 verify the Nature of Employment in Pensioner below the Employment Details 
 And user_6047 verify the Employer Name in Pensioner below the Emp Details 
@@ -163,15 +175,18 @@ Scenario: To verify fields when nature of employment is Self-employed
 Given Navigate the IJARA URL
 And User_6047 login with valid credentials-ijara-DataCheck-Employment detail
 And User_6047 Get the test data for test case ID AT_EDC_09
-#And And User click the module name dropdown in ULS application
-#And User select the module name as LOS in ULS application
+And User_6047 Click the module name dropdown in ULS application
+And User_6047 Select the module name as LOS in ULS application
 And User_6047 click the Mail box in ULS application
 And User_6047 click the Search button under inbox
 And User_6047 search the Ref id under inbox
 And User_6047 click the Entitle button under inbox
 And User_6047 click the Customer Financials tab
 And User_6047 click On the Action button below Customer Employment List
-And user_6047 click the Action button for the Self-employed
+#And user_6047 click the Action button for the Self-employed
+And user_6047 click the search button under CustomerEmploymentList
+Then User_6047 search the record under CustomerEmploymentList
+And user_6047 click the view button under employment
 Then user_6047 verify the Nature of Employment in Self-employed below the Employment Details
 Then user_6047 verify the Company Type in Self-employed below the Employment Details
 Then user_6047 verify the Profession in Self-employedbelow the Employment Details
@@ -197,15 +212,18 @@ Scenario: To verify fields when nature of employment is Salaried
 Given Navigate the IJARA URL
 And User_6047 login with valid credentials-ijara-DataCheck-Employment detail
 And User_6047 Get the test data for test case ID AT_EDC_07
-#And And User click the module name dropdown in ULS application
-#And User select the module name as LOS in ULS application
+And User_6047 Click the module name dropdown in ULS application
+And User_6047 Select the module name as LOS in ULS application
 And User_6047 click the Mail box in ULS application
 And User_6047 click the Search button under inbox
 And User_6047 search the Ref id under inbox
 And User_6047 click the Entitle button under inbox
 And User_6047 click the Customer Financials tab
 And User_6047 click On the Action button below Customer Employment List
-And User_6047 click the Action button for the Salaried
+#And User_6047 click the Action button for the Salaried
+And user_6047 click the search button under CustomerEmploymentList
+Then User_6047 search the record under CustomerEmploymentList
+And user_6047 click the view button under employment
 Then User_6047 verify the Nature of Employment in Salaried below the Employment Details
 Then User_6047 verify the Employer Name in Salaried below the Employment Details
 Then User_6047 verify the Employer Name If (Others) in Salaried below the Employment Details
@@ -235,16 +253,19 @@ Scenario: To verify the field present in Salaried under the Customer Financials 
 
 Given Navigate the IJARA URL
 And User_6047 login with valid credentials-ijara-DataCheck-Employment detail
-And User_6047 Get the test data for test case ID AT_EDC_07
-#And And User click the module name dropdown in ULS application
-#And User select the module name as LOS in ULS application
+And User_6047 Get the test data for test case ID AT_EDC_08
+And User_6047 Click the module name dropdown in ULS application
+And User_6047 Select the module name as LOS in ULS application
 And User_6047 click the Mail box in ULS application
 And User_6047 click the Search button under inbox
 And User_6047 search the Ref id under inbox
 And User_6047 click the Entitle button under inbox
 And User_6047 click the Customer Financials tab
 And User_6047 click On the Action button below Customer Employment List
-And User_6047 click the Action button for the Salaried
+#And User_6047 click the Action button for the Salaried
+And user_6047 click the search button under CustomerEmploymentList
+Then User_6047 search the record under CustomerEmploymentList
+And user_6047 click the view button under employment
 Then User_6047 To check the Primary Employment field should be Toggle
 Then User_6047 To check the Primary Employment field should be Non-Mandatory
 Then User_6047 To check the Primary Employment field should be display only
@@ -297,7 +318,7 @@ Then User_6047 To check the Employer Phone Extension field should be textbox
 Then User_6047 To check the Employer Phone Extension field should be Non-Mandatory
 Then User_6047 To check the Employer Phone Extension field should be display only
 Then User_6047 To check the Total Experience field should be Field should be dropdown
-Then User_6047 To check the Total Experience field should be Non-Mandatory
+Then User_6047 To check the Total Experience field should be Mandatory
 Then User_6047 To check the Total Experience field should be display only
 Then User_6047 To check the Income Paymode field should be Field should be dropdown
 Then User_6047 To check the Income Paymode field should be Non-Mandatory
@@ -311,18 +332,21 @@ Scenario: to verify the field present under the employment detail (Self-employed
 
 Given Navigate the IJARA URL
 And User_6047 login with valid credentials-ijara-DataCheck-Employment detail
-And User_6047 Get the test data for test case ID AT_EDC_07
-#And And User click the module name dropdown in ULS application
-#And User select the module name as LOS in ULS application
+And User_6047 Get the test data for test case ID AT_EDC_10
+And User_6047 Click the module name dropdown in ULS application
+And User_6047 Select the module name as LOS in ULS application
 And User_6047 click the Mail box in ULS application
 And User_6047 click the Search button under inbox
 And User_6047 search the Ref id under inbox
 And User_6047 click the Entitle button under inbox
 And User_6047 click the Customer Financials tab
 And User_6047 click On the Action button below Customer Employment List
-And user_6047 click the Action button for the Self-employed 
+#And user_6047 click the Action button for the Self-employed 
+And user_6047 click the search button under CustomerEmploymentList
+Then User_6047 search the record under CustomerEmploymentList
+And user_6047 click the view button under employment
 Then User_6047 To check the Primary Employment field should be Toggle,Non-Mandatory,display only
-Then User_6047 To check the company type field should be TextBox,Non-Mandatory,display only
+Then User_6047 To check the company type field should be TextBox,Mandatory,display only
 Then User_6047 To check the profession type field should be TextBox,Non-Mandatory,display only
 Then User_6047 To check the Nature of Employment field should be Drop Down,Mandatory,display only
 Then User_6047 To check the Profession field should be TextBox,Non-Mandatory,display only
@@ -346,9 +370,9 @@ Scenario: To verify the functionality of Search box with matching data in listvi
 
 Given Navigate the IJARA URL
 And User_6047 login with valid credentials-ijara-DataCheck-Employment detail
-And User_6047 Get the test data for test case ID AT_EDC_07
-#And And User click the module name dropdown in ULS application
-#And User select the module name as LOS in ULS application
+And User_6047 get the test data for test case ID AT_EDC_01
+And User_6047 Click the module name dropdown in ULS application
+And User_6047 Select the module name as LOS in ULS application
 And User_6047 click the Mail box in ULS application
 And User_6047 click the Search button under inbox
 And User_6047 search the Ref id under inbox

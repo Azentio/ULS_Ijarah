@@ -5,8 +5,8 @@ import java.util.Map;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-import dataProvider.ConfigFileReader;
-import dataProvider.ExcelData;
+import dataprovider.ConfigFileReader;
+import dataprovider.ExcelData;
 import helper.JavascriptHelper;
 import helper.WaitHelper;
 import io.cucumber.java.en.And;
@@ -191,6 +191,321 @@ public void user_6047_verify_the_data_under_lcurrency_field() {
 	Assert.assertEquals(currency, currency2);
 }
 
+@And("User_6047 verify the Product field should be mandatory Display and field should text")
+public void user_6047_verify_the_product_field_should_be_mandatory_display_and_field_should_text() throws Throwable {
+    Thread.sleep(500);
 
 	
+			for (int j = 0; j < 200; j++) {
+				try {
+					if (javascriptHelper.executeScriptWithWebElement(FacilityDetails_js.getElement("Classification")).isDisplayed()) {
+						Assert.assertTrue(true);
+						break;
+					}
+				} catch (Exception e) {
+					if (j == 199) {
+						Assert.fail(e.getMessage());
+					}
+	
+				}
+			}
+		
+			for (int i = 0; i < 2000; i++) {
+				try {
+					String productMandtory1 = javascriptHelper.executeScriptWithWebElement(FacilityDetails_js.getElement("Classification"))
+							.getAttribute("aria-label");
+			
+					
+					System.err.println("productMandtory:"+productMandtory1);
+									
+					Assert.assertTrue(productMandtory1.contains("*"));
+					break;
+				} catch (Exception e) {
+					if (i == 1999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+								}
+
+			
+			String productSelectFormat = javascriptHelper.executeScriptWithWebElement(FacilityDetails_js.getElement("Classification"))
+					.getAttribute("ng-reflect-placeholder");
+			
+			System.err.println("productSelect:  " + productSelectFormat);
+
+			String assertProductSelectFormat = "Select";
+			
+			Assert.assertEquals(assertProductSelectFormat, productSelectFormat);		
+    
+}
+@And("User_6047 verify the subProduct field should be mandatory Display and field should text")
+public void user_6047_verify_the_subproduct_field_should_be_mandatory_display_and_field_should_text() throws Throwable {
+
+	
+			for (int j = 0; j < 200; j++) {
+				try {
+					if (javascriptHelper.executeScriptWithWebElement(FacilityDetails_js.getElement("Product")).isDisplayed()) {
+						Assert.assertTrue(true);
+						break;
+					}
+				} catch (Exception e) {
+					if (j == 199) {
+						Assert.fail(e.getMessage());
+					}
+		
+				}
+			}
+
+			for (int i = 0; i < 2000; i++) {
+				try {
+				
+					String subproductMandtory1 = javascriptHelper.executeScriptWithWebElement(FacilityDetails_js.getElement("Classification"))
+							.getAttribute("aria-label");
+			
+					Assert.assertTrue(subproductMandtory1.contains("*"));		
+					
+					break;
+				} catch (Exception e) {
+					if (i == 1999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+								}
+		// -----------------select format 
+			
+			String productSelectFormat = javascriptHelper.executeScriptWithWebElement(FacilityDetails_js.getElement("Product"))
+					.getAttribute("ng-reflect-placeholder");
+			
+			System.err.println("productSelect:  " + productSelectFormat);
+
+			String assertProductSelectFormat = "Select";
+			
+			Assert.assertEquals(assertProductSelectFormat, productSelectFormat);		
+    
+}
+@And("User_6047 verify the Request Type field should be mandatory Display and field should text")
+public void user_6047_verify_the_request_type_field_should_be_mandatory_display_and_field_should_text() {
+    
+	
+	for (int j = 0; j < 200; j++) {
+		try {
+			if (javascriptHelper.executeScriptWithWebElement(FacilityDetails_js.getElement("FacilityType")).isDisplayed()) {
+				Assert.assertTrue(true);
+				break;
+			}
+		} catch (Exception e) {
+			if (j == 199) {
+				Assert.fail(e.getMessage());
+			}
+		
+		}
+	}
+	for (int i = 0; i < 2000; i++) {
+		try {
+		
+			String requestType = javascriptHelper.executeScriptWithWebElement(FacilityDetails_js.getElement("FacilityType"))
+					.getAttribute("aria-label");
+	
+			Assert.assertTrue(requestType.contains("*"));		
+			
+			break;
+		} catch (Exception e) {
+			if (i == 1999) {
+				Assert.fail(e.getMessage());
+			}
+		}
+
+
+
+String facilityTypeSelectFormat = javascriptHelper.executeScriptWithWebElement(FacilityDetails_js.getElement("FacilityType"))
+		.getAttribute("ng-reflect-placeholder");
+
+System.err.println("facilityTypeSelectFormat:  " + facilityTypeSelectFormat);
+
+String assertfacilityTypeSelectFormat = "Select";
+
+Assert.assertEquals(assertfacilityTypeSelectFormat, facilityTypeSelectFormat);		
+
+
+}
+
+
+}
+@And("User_6047 verify the Scheme field should be mandatory Display and field should text")
+public void user_6047_verify_the_scheme_field_should_be_mandatory_display_and_field_should_text() {
+	
+	for (int j = 0; j < 200; j++) {
+		try {
+			if (javascriptHelper.executeScriptWithWebElement(FacilityDetails_js.getElement("Scheme")).isDisplayed()) {
+				Assert.assertTrue(true);
+				break;
+			}
+		} catch (Exception e) {
+			if (j == 199) {
+				Assert.fail(e.getMessage());
+			}
+		
+		}
+	}
+
+	for (int i = 0; i < 2000; i++) {
+		try {
+		
+			String requestType = javascriptHelper.executeScriptWithWebElement(FacilityDetails_js.getElement("Scheme"))
+					.getAttribute("aria-label");
+	
+			Assert.assertTrue(requestType.contains("*"));		
+			
+			break;
+		} catch (Exception e) {
+			if (i == 1999) {
+				Assert.fail(e.getMessage());
+			}
+		}
+						}
+	
+	
+	String schemeSelectFormat = javascriptHelper.executeScriptWithWebElement(FacilityDetails_js.getElement("Scheme"))
+			.getAttribute("ng-reflect-placeholder");
+	
+	System.err.println("schemeSelectFormat:  " + schemeSelectFormat);
+
+	String assertschemeSelectFormat= "Select";
+	
+	Assert.assertEquals(assertschemeSelectFormat, schemeSelectFormat);
+    
+}
+
+@And("User_6047 verify the Request Amount field should be Non mandatory Display and field should text")
+public void user_6047_verify_the_request_amount_field_should_be_non_mandatory_display_and_field_should_text() {
+
+	
+	for (int j = 0; j < 200; j++) {
+		try {
+			if (javascriptHelper.executeScriptWithWebElement(FacilityDetails_js.getElement("RequestedAmount")).isDisplayed()) {
+				Assert.assertTrue(true);
+				break;
+			}
+		} catch (Exception e) {
+			if (j == 199) {
+				Assert.fail(e.getMessage());
+			}
+	
+		}
+	}
+
+
+	for (int i = 0; i < 2000; i++) {
+		try {
+			String requestAmountMandtory = "document.querySelector('ion-label[ng-reflect-text=\"SCR.MODULE.FACILITY_DETAILS.AM\"]').innerText";
+			String requestAmountMandtoryName = (String) javascriptHelper.executeScript("return " + requestAmountMandtory);
+			
+			System.err.println("requestAmountMandtoryName:"+requestAmountMandtoryName);
+							
+			Assert.assertTrue(requestAmountMandtoryName.contains("*"));
+			break;
+		} catch (Exception e) {
+			if (i == 1999) {
+				Assert.fail(e.getMessage());
+			}
+		}
+						}
+
+	
+	String requestAmtNumericFormat = javascriptHelper.executeScriptWithWebElement(FacilityDetails_js.getElement("RequestedAmount_type"))
+			.getAttribute("mode");
+	
+	System.err.println("requestAmtNumericFormat:  " + requestAmtNumericFormat);
+
+	String assertrequestAmtNumericFormat = "decimal";
+	
+	Assert.assertEquals(assertrequestAmtNumericFormat, requestAmtNumericFormat);
+	
+    
+}
+
+@And("User_6047 verify the Tenure Months field should be mandatory Display and field should text")
+public void user_6047_verify_the_tenure_months_field_should_be_mandatory_display_and_field_should_text() throws InterruptedException {
+    Thread.sleep(500);
+	
+			for (int j = 0; j < 200; j++) {
+				try {
+					if (javascriptHelper.executeScriptWithWebElement(FacilityDetails_js.getElement("LoanTenure")).isDisplayed()) {
+						Assert.assertTrue(true);
+						break;
+					}
+				} catch (Exception e) {
+					if (j == 199) {
+						Assert.fail(e.getMessage());
+					}
+	
+				}
+			}
+			
+			
+	
+
+			for (int i = 0; i < 2000; i++) {
+				try {
+					String tenureMonthMandtory = "document.querySelector('ion-label[ng-reflect-text=\"SCR.MODULE.FACILITY_DETAILS.TE\"]').innerText";
+					String tenureMonthMandtoryName = (String) javascriptHelper.executeScript("return " + tenureMonthMandtory);
+					
+					System.err.println("tenureMonthMandtoryName:"+tenureMonthMandtoryName);
+									
+					Assert.assertTrue(tenureMonthMandtoryName.contains("*"));
+					break;
+				} catch (Exception e) {
+					if (i == 1999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+								}
+			
+	
+			
+			String requestAmtNumericFormat = javascriptHelper.executeScriptWithWebElement(FacilityDetails_js.getElement("LoanTenure"))
+					.getAttribute("ng-reflect-input-type");
+			
+			System.err.println("requestAmtNumericFormat:  " + requestAmtNumericFormat);
+
+			String assertrequestAmtNumericFormat = "number";
+			
+			Assert.assertEquals(assertrequestAmtNumericFormat, requestAmtNumericFormat);
+			
+			
+}
+
+@And("User_6047 verify the pricing indicator field should be mandatory Display")
+public void user_6047_verify_the_pricing_indicator_field_should_be_mandatory_display() throws InterruptedException {
+    Thread.sleep(500);
+
+	for (int j = 0; j < 200; j++) {
+		try {
+			if (javascriptHelper.executeScriptWithWebElement(FacilityDetails_js.getElement("PricingIndicator")).isDisplayed()) {
+				Assert.assertTrue(true);
+				break;
+			}
+		} catch (Exception e) {
+			if (j == 199) {
+				Assert.fail(e.getMessage());
+			}
+
+		}
+	}
+	for (int i = 0; i < 2000; i++) {
+		try {
+		
+			String subproductMandtory1 = javascriptHelper.executeScriptWithWebElement(FacilityDetails_js.getElement("PricingIndicator"))
+					.getAttribute("aria-label");
+	
+			Assert.assertTrue(subproductMandtory1.contains("*"));		
+			
+			break;
+		} catch (Exception e) {
+			if (i == 1999) {
+				Assert.fail(e.getMessage());
+			}
+		}	
+}
+}
 }

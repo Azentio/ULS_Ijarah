@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 4 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\ININDC00071\AppData\Local\Temp\testng-eclipse-858711483\testng-customsuite.xml</span>
+                    <span>C:\Users\ININDC00071\AppData\Local\Temp\testng-eclipse-1686454483\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,36 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">7 methods, 4 failed,   3 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="Runner.TestApplication" class="method navigator-link" hash-for-method="runScenario(&quot;To verify the functionality of save,delete and help button&quot;, &quot;Optional[To verify the functionality ...)">runScenario("To verify the functionality of save,delete and help button", "Optional[To verify the functionality ...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="Runner.TestApplication" class="method navigator-link" hash-for-method="runScenario(&quot;To verify the impact when user keep any mandatory field blank ,negative numeric,characters,special ...)">runScenario("To verify the impact when user keep any mandatory field blank ,negative numeric,characters,special ...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="Runner.TestApplication" class="method navigator-link" hash-for-method="runScenario(&quot;To verify the fields are mandatory, editable,lookup and numeric in repayment mode&quot;, &quot;Optional[To ve...)">runScenario("To verify the fields are mandatory, editable,lookup and numeric in repayment mode", "Optional[To ve...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="Runner.TestApplication" class="method navigator-link" hash-for-method="runScenario(&quot;To verify Modification of RepaymentMode record&quot;, &quot;Optional[To verify the functionality of repayment...)">runScenario("To verify Modification of RepaymentMode record", "Optional[To verify the functionality of repayment...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,7 +133,17 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="Runner.TestApplication" class="method navigator-link" hash-for-method="runScenario(&quot;To verify the availability of Product details record with all valid fields&quot;, &quot;Optional[Murabha-App ...)">runScenario("To verify the availability of Product details record with all valid fields", "Optional[Murabha-App ...)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="Runner.TestApplication" class="method navigator-link" hash-for-method="runScenario(&quot;To verify Modification of Repayment Mode record&quot;, &quot;Optional[To verify the functionality of repaymen...)">runScenario("To verify Modification of Repayment Mode record", "Optional[To verify the functionality of repaymen...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="Runner.TestApplication" class="method navigator-link" hash-for-method="runScenario(&quot;To verify post clicking on Add asset button, the Repayment Mode screen should be open with all vali...)">runScenario("To verify post clicking on Add asset button, the Repayment Mode screen should be open with all vali...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="Runner.TestApplication" class="method navigator-link" hash-for-method="runScenario(&quot;To verify the list view&quot;, &quot;Optional[To verify the functionality of repayment mode in Tawarooq]&quot;)">runScenario("To verify the list view", "Optional[To verify the functionality of repayment mode in Tawarooq]")</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -119,6 +158,87 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
+          <div class="suite-Default_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">Runner.TestApplication</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;To verify the functionality of save,delete and help button&quot;, &quot;Optional[To verify the functionality ...)">
+                  </a> <!-- runScenario("To verify the functionality of save,delete and help button", "Optional[To verify the functionality ...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("To verify the functionality of save,delete and help button", "Optional[To verify the functionality of repayment mode in Tawarooq]")</span>
+                  <div class="stack-trace">java.lang.AssertionError: Cannot invoke &quot;org.openqa.selenium.WebElement.sendKeys(java.lang.CharSequence[])&quot; because the return value of &quot;helper.JavascriptHelper.executeScriptWithWebElement(String)&quot; is null
+	at org.junit.Assert.fail(Assert.java:88)
+	at stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_the_account_number_field_is_mandatory_editable_and_numeric(Tawarooq_RepaymentMode.java:530)
+	at ✽.User_6047 verify the Account number field is mandatory,editable and numeric(file:///C:/Users/ININDC00071/git/ULs_Ramya1/Uls_Ramya/src/test/java/features/Tawarruq_AppDataEntry_RepaymentMode.feature:68)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;To verify the impact when user keep any mandatory field blank ,negative numeric,characters,special ...)">
+                  </a> <!-- runScenario("To verify the impact when user keep any mandatory field blank ,negative numeric,characters,special ...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("To verify the impact when user keep any mandatory field blank ,negative numeric,characters,special characters and click on save button", "Optional[To verify the functionality of repayment mode in Tawarooq]")</span>
+                  <div class="stack-trace">java.lang.AssertionError: javascript error: Cannot read properties of null (reading &apos;shadowRoot&apos;)
+  (Session info: chrome=120.0.6099.225)
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;19.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [84b1166bd69da29c2d3882a38080c0a3, executeScript {script=return document.querySelector(&apos;ion-toast[role=&quot;status&quot;]&apos;).shadowRoot.querySelector(&apos;div[part=&quot;message&quot;]&apos;).textContent, args=[]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50785}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50785/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 84b1166bd69da29c2d3882a38080c0a3
+	at org.junit.Assert.fail(Assert.java:88)
+	at stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_the_popup_of_fill_all_field_in_repayment_mode(Tawarooq_RepaymentMode.java:1601)
+	at ✽.User_6047 Verify the popup of fill all field in Repayment Mode(file:///C:/Users/ININDC00071/git/ULs_Ramya1/Uls_Ramya/src/test/java/features/Tawarruq_AppDataEntry_RepaymentMode.feature:107)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;To verify the fields are mandatory, editable,lookup and numeric in repayment mode&quot;, &quot;Optional[To ve...)">
+                  </a> <!-- runScenario("To verify the fields are mandatory, editable,lookup and numeric in repayment mode", "Optional[To ve...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("To verify the fields are mandatory, editable,lookup and numeric in repayment mode", "Optional[To verify the functionality of repayment mode in Tawarooq]")</span>
+                  <div class="stack-trace">java.lang.AssertionError: Cannot invoke &quot;org.openqa.selenium.WebElement.sendKeys(java.lang.CharSequence[])&quot; because the return value of &quot;helper.JavascriptHelper.executeScriptWithWebElement(String)&quot; is null
+	at org.junit.Assert.fail(Assert.java:88)
+	at stepdefinitions.Tawarooq_RepaymentMode.user_6047_verify_the_account_number_field_is_mandatory_editable_and_numeric(Tawarooq_RepaymentMode.java:530)
+	at ✽.User_6047 verify the Account number field is mandatory,editable and numeric(file:///C:/Users/ININDC00071/git/ULs_Ramya1/Uls_Ramya/src/test/java/features/Tawarruq_AppDataEntry_RepaymentMode.feature:44)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;To verify Modification of RepaymentMode record&quot;, &quot;Optional[To verify the functionality of repayment...)">
+                  </a> <!-- runScenario("To verify Modification of RepaymentMode record", "Optional[To verify the functionality of repayment...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("To verify Modification of RepaymentMode record", "Optional[To verify the functionality of repayment mode in Tawarooq]")</span>
+                  <div class="stack-trace">java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at stepdefinitions.Tawarooq_RepaymentMode.user_6047_to_verify_the_same_record_should_get_saved_in_repayment_mode(Tawarooq_RepaymentMode.java:948)
+	at ✽.User_6047 To verify the same record should get saved in Repayment Mode(file:///C:/Users/ININDC00071/git/ULs_Ramya1/Uls_Ramya/src/test/java/features/Tawarruq_AppDataEntry_RepaymentMode.feature:146)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -127,10 +247,30 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="runScenario(&quot;To verify the availability of Product details record with all valid fields&quot;, &quot;Optional[Murabha-App ...)">
-                  </a> <!-- runScenario("To verify the availability of Product details record with all valid fields", "Optional[Murabha-App ...) -->
+                  <a name="runScenario(&quot;To verify Modification of Repayment Mode record&quot;, &quot;Optional[To verify the functionality of repaymen...)">
+                  </a> <!-- runScenario("To verify Modification of Repayment Mode record", "Optional[To verify the functionality of repaymen...) -->
                   <span class="method-name">runScenario</span>
-                  <span class="parameters">("To verify the availability of Product details record with all valid fields", "Optional[Murabha-App DataCheck-Product details or Facility Details]")</span>
+                  <span class="parameters">("To verify Modification of Repayment Mode record", "Optional[To verify the functionality of repayment mode in Tawarooq]")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;To verify post clicking on Add asset button, the Repayment Mode screen should be open with all vali...)">
+                  </a> <!-- runScenario("To verify post clicking on Add asset button, the Repayment Mode screen should be open with all vali...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("To verify post clicking on Add asset button, the Repayment Mode screen should be open with all valid fields", "Optional[To verify the functionality of repayment mode in Tawarooq]")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;To verify the list view&quot;, &quot;Optional[To verify the functionality of repayment mode in Tawarooq]&quot;)">
+                  </a> <!-- runScenario("To verify the list view", "Optional[To verify the functionality of repayment mode in Tawarooq]") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("To verify the list view", "Optional[To verify the functionality of repayment mode in Tawarooq]")</span>
                   <em>
 (Runs Cucumber Scenarios)                  </em>
                 </div> <!-- method-content -->
@@ -140,7 +280,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\ININDC00071\AppData\Local\Temp\testng-eclipse-858711483\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\ININDC00071\AppData\Local\Temp\testng-eclipse-1686454483\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -197,16 +337,40 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(7);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
 data.setCell(0, 2, 'Runner.TestApplication')
-data.setCell(0, 3, 26444);
+data.setCell(0, 3, 35199);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'runScenario')
+data.setCell(1, 2, 'Runner.TestApplication')
+data.setCell(1, 3, 33232);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'runScenario')
+data.setCell(2, 2, 'Runner.TestApplication')
+data.setCell(2, 3, 32784);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'runScenario')
+data.setCell(3, 2, 'Runner.TestApplication')
+data.setCell(3, 3, 32719);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'runScenario')
+data.setCell(4, 2, 'Runner.TestApplication')
+data.setCell(4, 3, 32127);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'runScenario')
+data.setCell(5, 2, 'Runner.TestApplication')
+data.setCell(5, 3, 28134);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'runScenario')
+data.setCell(6, 2, 'Runner.TestApplication')
+data.setCell(6, 3, 18421);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 26 seconds</span>
+              <span class="suite-total-time">Total running time: 3 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -238,12 +402,44 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">runScenario("To verify the availability of Product details record with all valid fields", "Optional[Murabha-App ...)</span>
-                <span class="method-start">935 ms</span>
+                <span class="method-name">runScenario("To verify post clicking on Add asset button, the Repayment Mode screen should be open with all vali...)</span>
+                <span class="method-start">895 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("To verify the fields are mandatory, editable,lookup and numeric in repayment mode", "Optional[To ve...)</span>
+                <span class="method-start">29032 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("To verify the functionality of save,delete and help button", "Optional[To verify the functionality ...)</span>
+                <span class="method-start">62267 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("To verify the impact when user keep any mandatory field blank ,negative numeric,characters,special ...)</span>
+                <span class="method-start">94987 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("To verify Modification of RepaymentMode record", "Optional[To verify the functionality of repayment...)</span>
+                <span class="method-start">130194 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("To verify the list view", "Optional[To verify the functionality of repayment mode in Tawarooq]")</span>
+                <span class="method-start">162328 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("To verify Modification of Repayment Mode record", "Optional[To verify the functionality of repaymen...)</span>
+                <span class="method-start">180756 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">27385 ms</span>
+                <span class="method-start">213547 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

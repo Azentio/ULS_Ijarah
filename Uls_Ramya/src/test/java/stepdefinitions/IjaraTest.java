@@ -3,7 +3,7 @@ package stepdefinitions;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-import dataProvider.ConfigFileReader;
+import dataprovider.ConfigFileReader;
 import helper.JavascriptHelper;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -106,13 +106,18 @@ public class IjaraTest extends BaseClass {
 		ijaraLogin.loginWithIjaraApplication_Murabha_AppDataEntry_AdressDetails();
 	}
 	@And("User_6047 Login With valid credentials-Murabha-offering-offerDetail")
-	public void userLogin_with_valid_credentials_murabha_offering_offerDetail() {
+	public void user_6047_Login_with_valid_credentials_murabha_offering_offerDetail() {
 		ijaraLogin.loginWithIjaraApplication_murabha_offering_offerDetail();	
 	}
 	@And("User_6047 login with valid credentials-Murabha-DataCheck-ProductDetails")
 	public void user_login_with_valid_credentials_murabha_data_check_product_details() {
 		ijaraLogin.loginWithIjaraApplication_Murabha_AppDataCheck_ProductDetails();
 	}
+	@Given("User_6047 Login with valid credentials-AutoLoan-Offering-CustomerDetails")
+	public void user_login_with_valid_credentials_auto_loan_offering_customer_details() {
+		ijaraLogin.loginWithIjaraApplication_AutoLoan_offering_CustomerDetails();
+	}
+	
 	@Then("logout from the ijaraApplication")
 	public void logout_from_the_ijara_application() throws Throwable {
 		ijaraLogin.logoutFromIjara();

@@ -95,8 +95,7 @@ And User_6047 Click the Search button under inbox
 And User_6047 Search the Referencee Id under Inbox 
 And User_6047 Click the Entitle button under inbox 
 And User_6047 click on additional customer info tab
-#And User_6047 click the search button
-#And User_6047 click on search text box and search the record
+
 And User_6047 Click edit icon
 And User_6047 clict the Add button under the Address detail
 Then User_6047 verify Address type should be mandatory,editable,dropdown
@@ -122,8 +121,6 @@ And User_6047 Click the Search button under inbox
 And User_6047 Search the Referencee Id under Inbox 
 And User_6047 Click the Entitle button under inbox 
 And User_6047 click on additional customer info tab
-#And User_6047 click the search button
-#And User_6047 click on search text box and search the record
 And User_6047 Click edit icon
 And User_6047 clict the Add button under the Address detail
 Then User_6047 verify Zip code should be mandatory,editable,text box
