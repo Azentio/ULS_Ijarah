@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
-import dataProvider.ExcelData;
+import dataprovider.ExcelData;
 import helper.BrowserHelper;
 import helper.ClicksAndActionsHelper;
 import helper.JavascriptHelper;
@@ -198,6 +198,21 @@ public class Ijara_Steps_610 {
 			public void get_the_test_data_set_id_for_DS_AT_MU_ADE_CD_01() {
 				testData = ad_CustomerFolllowUpDetails_610.getTestdata("DS_AT_MU_ADE_CD_01");
 				}
+			
+		//----------Auto Loan Offering Facility Details
+
+			@And("User_610 get the test data set id for DS_AT_Al_OFF_FD_01")
+			public void get_the_test_data_set_id_for_DS_AT_Al_OFF_FD_01() {
+				testData = ad_CustomerFolllowUpDetails_610.getTestdata("DS_AT_Al_OFF_FD_01");
+				}
+			
+			
+		//----------Auto Loan Offering Facility Details
+
+			@And("User_610 get the test data set id for DS_AT_TW_ADC_EDC_01")
+			public void get_the_test_data_set_id_for_DS_AT_TW_ADC_EDC_01() {
+				testData = ad_CustomerFolllowUpDetails_610.getTestdata("DS_AT_TW_ADC_EDC_01");
+				}
 	
 	// -------------steps ---------------
 	@And("User_610 click the module name")
@@ -226,7 +241,7 @@ public class Ijara_Steps_610 {
 			try {
 				moduleLength = javascriptHelper.executeScript("return " + moduleListJSpath).toString();
 				System.out.println("Module Length " + moduleLength);
-				if (!moduleLength.isBlank() && !moduleLength.equalsIgnoreCase("0")) {
+				if (!(moduleLength.isBlank()) && !moduleLength.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
@@ -236,14 +251,12 @@ public class Ijara_Steps_610 {
 			}
 		}
 		int premitiveIntegerLength = Integer.parseInt(moduleLength);
-
 		for (int i = 0; i < premitiveIntegerLength; i++) {
 			for (int j = 0; j <= 300; j++) {
 				try {
 					String moduleName = javascriptHelper.executeScript(
 							"return  document.querySelectorAll('ion-radio-group ion-item')[" + i + "].textContent")
 							.toString();
-					System.out.println("Module name " + moduleName);
 					if (moduleName.equalsIgnoreCase("LOS")) {
 						System.out
 								.println("document.querySelectorAll('ion-radio-group ion-item ion-radio')[" + i + "]");
@@ -257,8 +270,9 @@ public class Ijara_Steps_610 {
 				}
 			}
 		}
+		}
 	       
-	        	}
+	       
 
 	// -------------------
 
@@ -6454,6 +6468,22 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 
 	}
 	
+	@And("User_610 click facility Details screen Al")
+	public void user_610_click_facility_details_screen_al() {
+	    
+		for (int b = 0; b < 300; b++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("Facility_info_Tab_AL")).click();
+				break;
+			} catch (Exception e) {
+				if (b == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+	
 	@And("User_610 click add button")
 	public void user_610_click_add_button() {
 		for (int b = 0; b < 300; b++) {
@@ -6684,12 +6714,13 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 	
 	
 	@And("User_610 verify the Classification field Mandatory Editable Select")
-	public void user_610_verify_the_classification_field_mandatory_editable_select() {
+	public void user_610_verify_the_classification_field_mandatory_editable_select() throws Throwable {
+		Thread.sleep(500);
 		for (int i = 0; i < 2000; i++) {
 			try {
 				String Classification = "document.querySelector('digital-select-layout[id=\"product\"]').innerText";
 				String ClassificationMand = (String) javascriptHelper.executeScript("return " + Classification);
-				System.err.println(ClassificationMand);
+				System.err.println("ClassificationMand : "+ ClassificationMand);
 				Assert.assertTrue(ClassificationMand.contains("*"));
 				
 				break;

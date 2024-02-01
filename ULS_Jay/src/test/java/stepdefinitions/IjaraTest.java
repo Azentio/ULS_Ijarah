@@ -3,7 +3,7 @@ package stepdefinitions;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-import dataProvider.ConfigFileReader;
+import dataprovider.ConfigFileReader;
 import helper.JavascriptHelper;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -250,6 +250,34 @@ public class IjaraTest extends BaseClass{
 		for (int i = 0; i < 200; i++) {
             try {
                 ijaraLogin.loginWithIjaraApplication17("userType17");
+                break;
+            } catch (Exception e) {
+                if (i==199) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+        }
+	}
+	
+	@And("login with valid credentials18")                                     
+	public void login_with_valid_credentials18()throws Throwable {
+		for (int i = 0; i < 200; i++) {
+            try {
+                ijaraLogin.loginWithIjaraApplication18("userType18");
+                break;
+            } catch (Exception e) {
+                if (i==199) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+        }
+	}
+	
+	@And("login with valid credentials19")                                     
+	public void login_with_valid_credentials19()throws Throwable {
+		for (int i = 0; i < 200; i++) {
+            try {
+                ijaraLogin.loginWithIjaraApplication19("userType19");
                 break;
             } catch (Exception e) {
                 if (i==199) {

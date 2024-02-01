@@ -25,6 +25,8 @@ public class AutoLoan_Stepa {
 	JSPaths jsPaths2 = new JSPaths(excelPath, "Ijara_AD_DocumentDetails", "Ijara_LoginFieldName", "JSPath");
 	JSPaths al_ADEntry_CustomerDetails = new JSPaths(excelPath, "Al_ADEntry_CustomerDetails_610", "AutoloanADEntry_CustomerDetails", "JSPath");
 	JSPaths al_ADEntryDocDetails_610 = new JSPaths(excelPath, "Al_ADEntryDocDetails_610", "AutoloanADEntry_DocumentsDetails", "JSPath");
+	JSPaths FacilityDetails = new JSPaths(excelPath, "Ijara_ADEntry_FacilityDet_610", "FacilityDetails_FieldName", "JSPath");
+	
 
 	
 	
@@ -5489,4 +5491,568 @@ public class AutoLoan_Stepa {
 		    
 		    
 		}
+	
+		
+		
+		//---------------------- @AT_Al_OFF_FD_02 ----------------------
+		
+		
+		@And("User_610 verify the Classification field Mandatory Non Editable Select Al")
+		public void user_verify_the_classification_field_mandatory_non_editable_select_al() throws Throwable {
+			Thread.sleep(500);
+			for (int i = 0; i < 2000; i++) {
+				try {
+					String Classification = "document.querySelector('digital-select-layout[id=\"product\"]').innerText";
+					String ClassificationMand = (String) javascriptHelper.executeScript("return " + Classification);
+					System.err.println("ClassificationMand : "+ ClassificationMand);
+					Assert.assertTrue(ClassificationMand.contains("*"));
+					
+					break;
+				} catch (Exception e) {
+					if (i == 1999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+						}
+			
+			//---------field should be Non editable
+			
+			String ClassificationEditable = javascriptHelper
+					.executeScriptWithWebElement(FacilityDetails.getElement("ClassificationEd"))
+					.getAttribute("ng-reflect-readonly");
+			System.err.println("first print  " + ClassificationEditable);
+
+			String assertClassificationEditable = "true";
+			Assert.assertEquals(assertClassificationEditable, ClassificationEditable);
+			
+			// -----------------select format 
+			
+			String ClassificationFormat = javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("Classification"))
+					.getAttribute("ng-reflect-placeholder");
+			
+			System.err.println("ClassificationFormat:  " + ClassificationFormat);
+
+			String assertClassificationFormat = "Select";
+			
+			Assert.assertEquals(assertClassificationFormat, ClassificationFormat);
+		    
+		}
+
+		@And("User_610 verify the Product field Mandatory Non Editable Select Al")
+		public void user_verify_the_product_field_mandatory_non_editable_select_al() {
+			for (int i = 0; i < 2000; i++) {
+				try {
+					String Product = "document.querySelector('digital-select-layout[id=\"subProductCode\"]').innerText";
+					String ProductMand = (String) javascriptHelper.executeScript("return " + Product);
+					System.err.println(ProductMand);
+					Assert.assertTrue(ProductMand.contains("*"));
+					
+					break;
+				} catch (Exception e) {
+					if (i == 1999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+				
+			}
+			
+			//---------field should be Non editable
+			
+			String ProductEditable = javascriptHelper
+					.executeScriptWithWebElement(FacilityDetails.getElement("ProductEd"))
+					.getAttribute("ng-reflect-readonly");
+			System.err.println("first print  " + ProductEditable);
+
+			String assertProductEditable = "true";
+			Assert.assertEquals(assertProductEditable, ProductEditable);
+			
+			// -----------------select format 
+			
+			String ProductFormat = javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("Product"))
+					.getAttribute("ng-reflect-placeholder");
+			
+			System.err.println("ProductFormat:  " + ProductFormat);
+
+			String assertProductFormat = "Select";
+			
+			Assert.assertEquals(assertProductFormat, ProductFormat);
+		    
+		}
+
+		@And("User_610 verify the Scheme field Mandatory Non Editable Select Al")
+		public void user_verify_the_scheme_field_mandatory_non_editable_select_al() {
+			for (int i = 0; i < 2000; i++) {
+				try {
+					String Scheme = "document.querySelector('digital-select-layout[id=\"schemeId\"]').parentElement.innerText";
+					String SchemeMada = (String) javascriptHelper.executeScript("return " + Scheme);
+					System.err.println(SchemeMada);
+					Assert.assertTrue(SchemeMada.contains("*"));
+					
+					break;
+				} catch (Exception e) {
+					if (i == 1999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+						}
+			
+			//---------field should be Non editable
+			
+			String SchemeEditable = javascriptHelper
+					.executeScriptWithWebElement(FacilityDetails.getElement("SchemeEd"))
+					.getAttribute("ng-reflect-readonly");
+			System.err.println("first print  " + SchemeEditable);
+
+			String assertSchemeEditable = "true";
+			Assert.assertEquals(assertSchemeEditable, SchemeEditable);
+			
+			
+			// -----------------select format 
+			
+			String SchemeFormat = javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("Scheme"))
+					.getAttribute("ng-reflect-placeholder");
+			
+			System.err.println("SchemeFormat:  " + SchemeFormat);
+
+			String assertSchemeFormat = "Select";
+			
+			Assert.assertEquals(assertSchemeFormat, assertSchemeFormat);
+		    
+		}
+
+		@And("User_610 verify the Program Code field Non Mandatory Editable Select Al")
+		public void user_verify_the_program_code_field_non_mandatory_editable_select_al() {
+			for (int i = 0; i < 2000; i++) {
+				try {
+					String ProgramCode = "document.querySelector('digital-select-layout[id=\"programCode\"]').innerText";
+					String ProgramCodeMada = (String) javascriptHelper.executeScript("return " + ProgramCode);
+					System.err.println(ProgramCodeMada);
+					Assert.assertTrue(ProgramCodeMada.contains("*"));
+					
+					break;
+				} catch (Exception e) {
+					if (i == 1999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+				
+			}
+			
+			//---------field should be Non editable
+			
+			String ProgrameCodeEditable = javascriptHelper
+					.executeScriptWithWebElement(FacilityDetails.getElement("ProgrameCodeEd"))
+					.getAttribute("ng-reflect-readonly");
+			System.err.println("first print  " + ProgrameCodeEditable);
+
+			String assertProgrameCodeEditable = "true";
+			Assert.assertEquals(assertProgrameCodeEditable, ProgrameCodeEditable);
+			
+			// -----------------select format 
+			
+			String ProgramCodeFormat = javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("ProgrameCode"))
+					.getAttribute("ng-reflect-placeholder");
+			
+			System.err.println("ProgramCodeFormat:  " + ProgramCodeFormat);
+
+			String assertProgramCodeFormat = "Select";
+			
+			Assert.assertEquals(assertProgramCodeFormat, ProgramCodeFormat);
+		    
+		}
+
+		@And("User_610 verify the Facility Details field Non Mandatory Editable Select Al")
+		public void user_verify_the_facility_details_field_non_mandatory_editable_select_al() {
+			for (int i = 0; i < 2000; i++) {
+				try {
+					String FacilityDetails = "document.querySelector('digital-select-layout[id=\"facilityTypeCode\"]').parentElement.innerText";
+					String FacilityDetail = (String) javascriptHelper.executeScript("return " + FacilityDetails);
+					System.err.println(FacilityDetail);
+					Assert.assertTrue(FacilityDetail.contains("*"));
+					
+					break;
+				} catch (Exception e) {
+					if (i == 1999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+				
+			}
+			
+			//---------field should be Non editable
+			
+			String FacilityTypeEditable = javascriptHelper
+					.executeScriptWithWebElement(FacilityDetails.getElement("Facility"))
+					.getAttribute("ng-reflect-readonly");
+			System.err.println("first print  " + FacilityTypeEditable);
+
+			String assertFacilityTypeEditable = "true";
+			Assert.assertEquals(assertFacilityTypeEditable, FacilityTypeEditable);
+			
+			// -----------------select format 
+			
+			String ProgramCodeFormat = javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("FacilityType"))
+					.getAttribute("ng-reflect-placeholder");
+			
+			System.err.println("ProgramCodeFormat:  " + ProgramCodeFormat);
+
+			String assertProgramCodeFormat = "Select";
+			
+			Assert.assertEquals(assertProgramCodeFormat, ProgramCodeFormat);
+		    
+		}
+		
+		
+		//---------------------- @AT_Al_OFF_FD_03 ----------------------
+		
+		
+		@And("User_610 verify the Servicing Branch field Non Mandatory Non Editable Select Al")
+		public void user_verify_the_servicing_branch_field_non_mandatory_non_editable_select_al() {
+			for (int i = 0; i < 2000; i++) {
+				try {
+					String ServicingBranch = "document.querySelector('digital-select-layout[id=\"location\"]').innerText";
+					String ServicingBranchmand = (String) javascriptHelper.executeScript("return " + ServicingBranch);
+					System.err.println(ServicingBranchmand);
+					Assert.assertTrue(!ServicingBranchmand.contains("*"));
+					
+					break;
+				} catch (Exception e) {
+					if (i == 1999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+				
+			}
+			
+			//---------field should be non editable
+			
+			String ServicingBranchEditable = javascriptHelper
+					.executeScriptWithWebElement(FacilityDetails.getElement("ServicingBranchEd"))
+					.getAttribute("ng-reflect-readonly");
+			System.err.println("first print  " + ServicingBranchEditable);
+
+			String assertServicingBranchEditable = "true";
+			Assert.assertEquals(assertServicingBranchEditable, ServicingBranchEditable);
+		    
+		
+		
+		// -----------------select format 
+		
+		String ServicingBranchFormat = javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("ServicingBranch"))
+				.getAttribute("ng-reflect-placeholder");
+		
+		System.err.println("ServicingBranchFormat:  " + ServicingBranchFormat);
+
+		String assertServicingBranchFormat = "Select";
+		
+		Assert.assertEquals(assertServicingBranchFormat, ServicingBranchFormat);
+		    
+		}
+
+		@And("User_610 verify the Pricing Indicator field Non Mandatory Non Editable Select Al")
+		public void user_verify_the_pricing_indicator_field_non_mandatory_non_editable_select_al() {
+			for (int i = 0; i < 2000; i++) {
+				try {
+					String PricingIndicator = "document.querySelector('digital-select-layout[id=\"packageId\"]').innerText";
+					String PricingIndicatorMand = (String) javascriptHelper.executeScript("return " + PricingIndicator);
+					System.err.println(PricingIndicatorMand);
+					Assert.assertTrue(!PricingIndicatorMand.contains("*"));
+					
+					break;
+				} catch (Exception e) {
+					if (i == 1999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+				
+			}
+			
+			//---------field should be non editable
+			
+			String PricingIndicatorEditable = javascriptHelper
+					.executeScriptWithWebElement(FacilityDetails.getElement("PricingIndicatorEd"))
+					.getAttribute("ng-reflect-readonly");
+			System.err.println("first print  " + PricingIndicatorEditable);
+
+			String assertPricingIndicatorEditable = "true";
+			Assert.assertEquals(assertPricingIndicatorEditable, PricingIndicatorEditable);
+		    
+		
+		
+		// -----------------select format 
+		
+		String assertPricingIndicatorEditableFormat = javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("ServicingBranch"))
+				.getAttribute("ng-reflect-placeholder");
+		
+		System.err.println("assertPricingIndicatorEditableFormat:  " + assertPricingIndicatorEditableFormat);
+
+		String assertassertPricingIndicatorEditableFormat = "Select";
+		
+		Assert.assertEquals(assertassertPricingIndicatorEditableFormat, assertPricingIndicatorEditableFormat);
+		    
+		}
+
+		@And("User_610 verify the Declared Property Value field Mandatory Non Editable Select Al")
+		public void user_verify_the_declared_property_value_field_mandatory_non_editable_select_al() {
+			for (int i = 0; i < 2000; i++) {
+				try {
+					String DeclaredDownpaymentAmt = "document.querySelector('kub-prime-ccy[id=\"downPaymentAmount\"]').innerText";
+					String DeclaredDownpaymentAmtMand = (String) javascriptHelper.executeScript("return " + DeclaredDownpaymentAmt);
+					System.err.println(DeclaredDownpaymentAmtMand);
+					Assert.assertTrue(DeclaredDownpaymentAmtMand.contains("*"));
+					
+					break;
+				} catch (Exception e) {
+					if (i == 1999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+				
+			}
+			
+			//---------field should be non editable
+			
+			String DeclaredDownpaymentAmtEditable = javascriptHelper
+					.executeScriptWithWebElement(FacilityDetails.getElement("DeclaredDownPaymentAmount"))
+					.getAttribute("ng-reflect-readonly");
+			System.err.println("first print  " + DeclaredDownpaymentAmtEditable);
+
+			String assertDeclaredDownpaymentAmtEditable = "true";
+			Assert.assertEquals(assertDeclaredDownpaymentAmtEditable, DeclaredDownpaymentAmtEditable);
+		    
+		
+		
+		// -----------------numberic format 
+		
+		String DeclaredDownpaymentAmtFormat = javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("DeclaredDownPaymentAmountType"))
+					.getTagName();
+		
+		System.err.println("DeclaredDownpaymentAmtFormat:  " + DeclaredDownpaymentAmtFormat);
+
+		String assertDeclaredDownpaymentAmtFormat = "p-inputnumber";
+		
+		Assert.assertEquals(assertDeclaredDownpaymentAmtFormat, DeclaredDownpaymentAmtFormat);
+		    
+		}
+
+		@And("User_610 verify the Declared Downpayment Amount field Mandatory Non Editable numberic Al")
+		public void user_verify_the_declared_downpayment_amount_field_mandatory_non_editable_numberic_al() throws Throwable {
+			Thread.sleep(500);
+			for (int i = 0; i < 2000; i++) {
+				try {
+					String DeclaredDownpaymentAmt = "document.querySelector('digital-text-box[id=\"downPaymentAmount\"]').innerText";
+					String DeclaredDownpaymentAmtMand = (String) javascriptHelper.executeScript("return " + DeclaredDownpaymentAmt);
+					Assert.assertTrue(DeclaredDownpaymentAmtMand.contains("*"));
+					
+					break;
+				} catch (Exception e) {
+					if (i == 1999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+				
+			}
+			
+			//---------field should be non editable
+			
+			String DeclaredDownpaymentAmtEditable = javascriptHelper
+					.executeScriptWithWebElement(FacilityDetails.getElement("DeclaredDownPaymentAmount"))
+					.getAttribute("ng-reflect-readonly");
+			System.err.println("first print  " + DeclaredDownpaymentAmtEditable);
+
+			String assertDeclaredDownpaymentAmtEditable = "true";
+			Assert.assertEquals(assertDeclaredDownpaymentAmtEditable, DeclaredDownpaymentAmtEditable);
+		    
+		
+		
+		// -----------------numberic format 
+		
+		String DeclaredDownpaymentAmtFormat = javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("DeclaredDownPaymentAmountTypeAL"))
+					.getTagName();
+		
+		System.err.println("DeclaredDownpaymentAmtFormat:  " + DeclaredDownpaymentAmtFormat);
+
+		String assertDeclaredDownpaymentAmtFormat = "ion-input";
+		
+		Assert.assertEquals(assertDeclaredDownpaymentAmtFormat, DeclaredDownpaymentAmtFormat);
+		    
+		}
+
+		@And("User_610 verify the Requested Amount field Mandatory Non Editable numberic Al")
+		public void user_verify_the_requested_amount_field_mandatory_non_editable_numberic_al() {
+			for (int i = 0; i < 2000; i++) {
+				try {
+					String RequestedAmount = "document.querySelector('kub-prime-ccy[ng-reflect-name=\"amountRequested\"]').innerText";
+					String RequestedAmountMand = (String) javascriptHelper.executeScript("return " + RequestedAmount);
+					System.err.println(RequestedAmountMand);
+					Assert.assertTrue(RequestedAmountMand.contains("*"));
+					
+					break;
+				} catch (Exception e) {
+					if (i == 1999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+				
+			}
+			
+			//---------field should be non editable
+			
+			String RequestedAmountEditable = javascriptHelper
+					.executeScriptWithWebElement(FacilityDetails.getElement("RequestedAmount"))
+					.getAttribute("ng-reflect-readonly");
+			System.err.println("first print  " + RequestedAmountEditable);
+
+			String assertRequestedAmountEditable = "true";
+			Assert.assertEquals(assertRequestedAmountEditable, RequestedAmountEditable);
+		    
+		
+		
+		// -----------------numberic format 
+		
+		String RequestedAmountFormat = javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("RequestedAmountType"))
+				.getTagName();
+		
+		System.err.println("RequestedAmountFormat:  " + RequestedAmountFormat);
+
+		String assertRequestedAmountFormat = "p-inputnumber";
+		
+		Assert.assertEquals(assertRequestedAmountFormat, RequestedAmountFormat);
+		    
+		}
+		
+		
+		//---------------------------------  @AT_Al_OFF_FD_04   ----------------------
+		
+		
+		@And("User_610 verify the currency field Mandatory Non Editable Select Al")
+		public void user_verify_the_currency_field_mandatory_non_editable_select_al() throws Throwable {
+			Thread.sleep(500);
+			for (int i = 0; i < 2000; i++) {
+				try {
+					String currency = "document.querySelector('digital-select-layout[id=\"currencyCode\"]').innerText";
+					String currencyMand = (String) javascriptHelper.executeScript("return " + currency);
+					Assert.assertTrue(currencyMand.contains("*"));
+					
+					break;
+				} catch (Exception e) {
+					if (i == 1999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+				
+			}
+			
+			//---------field should be non editable
+			
+			String currencyMandEditable = javascriptHelper
+					.executeScriptWithWebElement(FacilityDetails.getElement("CurrencyEd"))
+					.getAttribute("ng-reflect-readonly");
+			System.err.println("first print  " + currencyMandEditable);
+
+			String assertcurrencyMandEditable = "true";
+			Assert.assertEquals(assertcurrencyMandEditable, currencyMandEditable);
+		    
+		
+		
+		// -----------------select format 
+		
+		String currencyFormat = javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("Currency"))
+				.getAttribute("ng-reflect-placeholder");
+		
+		System.err.println("currencyFormat:  " + currencyFormat);
+
+		String assertcurrencyFormat = "Select";
+		
+		Assert.assertEquals(assertcurrencyFormat, currencyFormat);
+		    
+		}
+
+		@And("User_610 verify the Loan Tenure field Mandatory Non Editable numberic Al")
+		public void user_verify_the_loan_tenure_field_mandatory_non_editable_numberic_al() {
+			for (int i = 0; i < 2000; i++) {
+				try {
+					String LoanTenure = "document.querySelector('digital-text-box[id=\"loanTenure\"]').innerText";
+					String LoanTenureMand = (String) javascriptHelper.executeScript("return " + LoanTenure);
+					System.err.println(LoanTenureMand);
+					Assert.assertTrue(LoanTenureMand.contains("*"));
+					
+					break;
+				} catch (Exception e) {
+					if (i == 1999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+				
+			}
+			
+			//---------field should be non editable
+			
+			String LoanTenureEditable = javascriptHelper
+					.executeScriptWithWebElement(FacilityDetails.getElement("LoanTenure"))
+					.getAttribute("ng-reflect-readonly");
+			System.err.println("first print  " + LoanTenureEditable);
+
+			String assertLoanTenureEditable = "true";
+			Assert.assertEquals(assertLoanTenureEditable, LoanTenureEditable);
+		    
+		
+		
+		// -----------------number format 
+		
+		String LoanTenureFormat = javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("LoanTenureType"))
+				.getAttribute("type");
+		
+		System.err.println("LoanTenureFormat:  " + LoanTenureFormat);
+
+		String assertLoanTenureFormat = "number";
+		
+		Assert.assertEquals(assertLoanTenureFormat, LoanTenureFormat);
+		    
+		}
+
+		@And("User_610 verify the status field Non mandatory Non editable toggle Al")
+		public void user_verify_the_status_field_non_mandatory_non_editable_toggle_al() {
+			for (int i = 0; i < 2000; i++) {
+				try {
+					String status = "document.querySelector('digital-text-box[id=\"loanTenure\"]').innerText";
+					String statu = (String) javascriptHelper.executeScript("return " + status);
+					Assert.assertTrue(statu.contains("*"));
+					
+					break;
+				} catch (Exception e) {
+					if (i == 1999) {
+						Assert.fail(e.getMessage());
+					}
+				}
+				
+			}
+			
+			//---------field should be non editable
+			
+			String LoanTenureEditable = javascriptHelper
+					.executeScriptWithWebElement(FacilityDetails.getElement("status_ToggleButton_NonEdi"))
+					.getAttribute("ng-reflect-readonly");
+			System.err.println("first print  " + LoanTenureEditable);
+
+			String assertLoanTenureEditable = "true";
+			Assert.assertEquals(assertLoanTenureEditable, LoanTenureEditable);
+		    
+		
+		
+		// -----------------toggle format 
+		
+		String statusFormat = javascriptHelper.executeScriptWithWebElement(FacilityDetails.getElement("status_ToggleButton"))
+				.getTagName();
+		
+		System.err.println("statusFormat:  " + statusFormat);
+
+		String assertstatusFormat = "ion-toggle";
+		
+		Assert.assertEquals(assertstatusFormat, statusFormat);
+		    
+		}
+		
+		
+		
 }

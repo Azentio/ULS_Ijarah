@@ -1,232 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="13" passed="13" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="1" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-25T14:59:07 IST" name="Default suite" finished-at="2024-01-25T15:08:25 IST" duration-ms="558831">
+  <suite started-at="2024-02-01T16:38:21 IST" name="Default suite" finished-at="2024-02-01T16:41:08 IST" duration-ms="167338">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@72cc7e6f]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestApplication@72cc7e6f]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-01-25T14:59:07 IST" name="Default test" finished-at="2024-01-25T15:08:25 IST" duration-ms="558831">
-      <class name="Runner.TestApplication">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2024-01-25T14:59:07 IST" name="setUpClass" finished-at="2024-01-25T14:59:08 IST" duration-ms="1093" status="PASS">
+    <test started-at="2024-02-01T16:38:21 IST" name="Default test" finished-at="2024-02-01T16:41:08 IST" duration-ms="167338">
+      <class name="runner.TestApplication">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:runner.TestApplication@72cc7e6f]" started-at="2024-02-01T16:38:21 IST" name="setUpClass" finished-at="2024-02-01T16:38:22 IST" duration-ms="1227" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2024-01-25T14:59:08 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-01-25T14:59:53 IST" duration-ms="45618" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestApplication@72cc7e6f]" started-at="2024-02-01T16:38:22 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-01T16:39:25 IST" duration-ms="62965" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["To verify that all fields are present in Customer Details"]]>
+                <![CDATA["verify the fielda"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[Murabha App Data Entry Customer details]"]]>
+                <![CDATA["Optional[To verify the Tawarruq Application --> Data check stage --> Customer Financials --> Employment details screen]"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+Date of Joining label expected [true] but found [false],
+Share Holder Percentage label expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+Date of Joining label expected [true] but found [false],
+Share Holder Percentage label expected [true] but found [false]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at stepdefinitions.tawarruq_Step.user_610_invoke_soft_assert_in_employment_details_screen_under_customer_financials_tab_at_data_check_stage(tawarruq_Step.java:3233)
+at ✽.User_610 invoke soft assert in Employment details screen under Customer Financials tab at Data Check stage(file:///C:/Users/inindc00610/git/ULS_Jay1/ULS_Jay/src/test/java/features/Tawarruq_AppDataCheck_EmployementDetails.feature:66)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestApplication@72cc7e6f]" started-at="2024-02-01T16:39:25 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-01T16:40:14 IST" duration-ms="49222" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["verify the fielda"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To verify the Tawarruq Application --> Data check stage --> Customer Financials --> Employment details screen]"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Cannot invoke "org.openqa.selenium.WebElement.click()" because the return value of "helper.JavascriptHelper.executeScriptWithWebElement(String)" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Cannot invoke "org.openqa.selenium.WebElement.click()" because the return value of "helper.JavascriptHelper.executeScriptWithWebElement(String)" is null
+at org.testng.Assert.fail(Assert.java:99)
+at stepdefinitions.tawarruq_Step.user_610_click_view_button_customer_financials_tab_al(tawarruq_Step.java:3292)
+at ✽.User_610 click view button Customer Financials tab Al(file:///C:/Users/inindc00610/git/ULS_Jay1/ULS_Jay/src/test/java/features/Tawarruq_AppDataCheck_EmployementDetails.feature:84)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestApplication@72cc7e6f]" started-at="2024-02-01T16:40:14 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-01T16:40:56 IST" duration-ms="41371" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["verify the fielda"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To verify the Tawarruq Application --> Data check stage --> Customer Financials --> Employment details screen]"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2024-01-25T14:59:53 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-01-25T15:00:29 IST" duration-ms="35248" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["To verify  fields Mandatory Editable Dropdown in Customer Details"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[Murabha App Data Entry Customer details]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2024-01-25T15:00:29 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-01-25T15:00:59 IST" duration-ms="30752" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["To verify  fields Mandatory Editable Dropdown in Customer Details"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[Murabha App Data Entry Customer details]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2024-01-25T15:00:59 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-01-25T15:01:30 IST" duration-ms="31139" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["To verify  fields Mandatory Editable Dropdown in Customer Details"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[Murabha App Data Entry Customer details]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2024-01-25T15:01:30 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-01-25T15:02:05 IST" duration-ms="34113" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["To verify  fields Mandatory Editable Dropdown in Customer Details"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[Murabha App Data Entry Customer details]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2024-01-25T15:02:05 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-01-25T15:02:39 IST" duration-ms="34271" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["To verify  fields Mandatory Editable Dropdown in Customer Details"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[Murabha App Data Entry Customer details]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2024-01-25T15:02:39 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-01-25T15:03:06 IST" duration-ms="27055" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["To verify  fields Mandatory Editable Dropdown in Customer Details"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[Murabha App Data Entry Customer details]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2024-01-25T15:03:06 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-01-25T15:03:41 IST" duration-ms="34608" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["To verify  fields Mandatory Editable Dropdown in Customer Details"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[Murabha App Data Entry Customer details]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2024-01-25T15:03:41 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-01-25T15:04:13 IST" duration-ms="32912" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["To verify that all fields are present in Customer Details"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[Murabha App Data Entry Customer details]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2024-01-25T15:04:13 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-01-25T15:04:50 IST" duration-ms="36573" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["To verify that all fields are present in Customer Details"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[Murabha App Data Entry Customer details]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2024-01-25T15:04:50 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-01-25T15:05:37 IST" duration-ms="46515" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["To verify  functionality of Activate Deactivate button"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[Murabha App Data Entry Customer details]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2024-01-25T15:05:37 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-01-25T15:06:03 IST" duration-ms="26759" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["To verify  fields list view"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[Murabha App Data Entry Customer details]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2024-01-25T15:06:03 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-01-25T15:06:37 IST" duration-ms="33447" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["To verify  PDF and EXcel button"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[Murabha App Data Entry Customer details]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2024-01-25T15:06:37 IST" name="tearDownClass" finished-at="2024-01-25T15:08:25 IST" duration-ms="108642" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.TestApplication@72cc7e6f]" started-at="2024-02-01T16:40:56 IST" name="tearDownClass" finished-at="2024-02-01T16:41:08 IST" duration-ms="12496" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- Runner.TestApplication -->
+      </class> <!-- runner.TestApplication -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
