@@ -1,40 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-25T13:59:59 IST" name="Default suite" finished-at="2024-01-25T14:00:48 IST" duration-ms="48991">
+  <suite started-at="2024-01-31T11:55:15 IST" name="Default suite" finished-at="2024-01-31T11:56:48 IST" duration-ms="93065">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@72cc7e6f]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestApplication@72cc7e6f]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-01-25T13:59:59 IST" name="Default test" finished-at="2024-01-25T14:00:48 IST" duration-ms="48991">
-      <class name="Runner.TestApplication">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2024-01-25T13:59:59 IST" name="setUpClass" finished-at="2024-01-25T14:00:00 IST" duration-ms="1184" status="PASS">
+    <test started-at="2024-01-31T11:55:15 IST" name="Default test" finished-at="2024-01-31T11:56:48 IST" duration-ms="93065">
+      <class name="runner.TestApplication">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:runner.TestApplication@72cc7e6f]" started-at="2024-01-31T11:55:15 IST" name="setUpClass" finished-at="2024-01-31T11:55:17 IST" duration-ms="1265" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2024-01-25T14:00:00 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-01-25T14:00:35 IST" duration-ms="35154" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestApplication@72cc7e6f]" started-at="2024-01-31T11:55:17 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-01-31T11:56:32 IST" duration-ms="74877" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["To verify that all fields are present in App data check_Repayment mode module"]]>
+                <![CDATA["to test the functionality of customer search with valid data"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[Murabh app Data Check Repayment Mode]"]]>
+                <![CDATA["Optional[Auto Loan Customer Search]"]]>
               </value>
             </param>
           </params>
+          <exception class="java.lang.IllegalArgumentException">
+            <message>
+              <![CDATA[Keys to send should be a not null CharSequence]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:97)
+at stepdefinitions.New_Application.user_607_check_mobile_number_field_should_accept_only_numeric_values(New_Application.java:4190)
+at ✽.User_607 Check Mobile Number Field should accept only numeric values(file:///C:/Users/inindc00607/git/ULS_Ijarah_1/Gowtham_ULS_New/src/test/java/features/AutoLoanCustomerSearch.feature:25)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IllegalArgumentException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@72cc7e6f]" started-at="2024-01-25T14:00:35 IST" name="tearDownClass" finished-at="2024-01-25T14:00:48 IST" duration-ms="12612" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.TestApplication@72cc7e6f]" started-at="2024-01-31T11:56:32 IST" name="tearDownClass" finished-at="2024-01-31T11:56:48 IST" duration-ms="16884" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- Runner.TestApplication -->
+      </class> <!-- runner.TestApplication -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

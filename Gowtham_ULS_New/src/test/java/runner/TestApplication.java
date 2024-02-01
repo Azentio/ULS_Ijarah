@@ -1,4 +1,4 @@
-package Runner;
+package runner;
 import org.junit.After;
 import org.junit.Before;
 
@@ -8,12 +8,12 @@ import utilities.ExtentManager;
 import utilities.ExtentTestManager;
 
 @CucumberOptions(features = { // "src/test/java/features/CSM_TransactionsFEATURE.feature",
-		"src/test/java/features/MurabhaAppDataCheckRepaymentMode.feature"}, glue = "stepdefinitions",
+		"src/test/java/features/AutoLoanCustomerSearch.feature"}, glue = "stepdefinitions",
 		// monochrome=false, //to make steps in color
 		plugin = { "pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 				"rerun:ReRunScenarios/FailedReRun.txt" }
 // ,dryRun = false //to check compilation errors
- , tags = "@AT_MU_ADC_RE_01"
+ , tags = "@AT_AL_CUS_01"
 )
 public class TestApplication extends AbstractTestNGCucumberTests {
 	/*

@@ -4,4 +4,4 @@ Feature: Title of your feature
 
   @tag1
   Scenario: Verify the fields in document details info tab Auto Loan App Data Entry
- 		And user_607 Validate that Status field is displayed in repayment mode page
+ 		And User_607 Click okay in the confirm save popup

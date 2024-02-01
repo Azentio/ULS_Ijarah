@@ -12,7 +12,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.asserts.SoftAssert;
 
-import dataProvider.ExcelData;
+import dataprovider.ConfigFileReader;
+import dataprovider.ExcelData;
 import helper.BrowserHelper;
 import helper.ClicksAndActionsHelper;
 import helper.DropDownHelper;
@@ -23,7 +24,6 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import pageobjects.JSPaths;
 import resources.BaseClass;
-import dataProvider.ConfigFileReader;
 
 public class AutoLoanAppDataEntryIdentificationDetails {
 	String excelPath = System.getProperty("user.dir") + "\\TestData\\IjaraJSPaths.xlsx";

@@ -5,8 +5,8 @@ import java.util.Map;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
-import dataProvider.ConfigFileReader;
-import dataProvider.ExcelData;
+import dataprovider.ConfigFileReader;
+import dataprovider.ExcelData;
 import pageobjects.JSPaths;
 import resources.BaseClass;
 

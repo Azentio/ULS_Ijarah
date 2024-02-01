@@ -2,7 +2,7 @@ package stepdefinitions;
 
 import org.openqa.selenium.WebDriver;
 
-import dataProvider.ConfigFileReader;
+import dataprovider.ConfigFileReader;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;

@@ -2,7 +2,7 @@ package tests;
 
 import java.util.Map;
 
-import dataProvider.ExcelData;
+import dataprovider.ExcelData;
 import pageobjects.JSPaths;
 
 public class TestMobileEmulator {

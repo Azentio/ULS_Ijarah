@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
-import dataProvider.ExcelData;
+import dataprovider.ExcelData;
 import helper.ClicksAndActionsHelper;
 import helper.DropDownHelper;
 import helper.JavascriptHelper;
