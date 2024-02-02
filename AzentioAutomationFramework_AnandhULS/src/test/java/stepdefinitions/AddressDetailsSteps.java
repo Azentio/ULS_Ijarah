@@ -14,8 +14,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.asserts.SoftAssert;
 
-import dataProvider.ConfigFileReader;
-import dataProvider.ExcelData;
+import dataprovider.ConfigFileReader;
+import dataprovider.ExcelData;
 import helper.BrowserHelper;
 import helper.ClicksAndActionsHelper;
 import helper.JavascriptHelper;
@@ -66,7 +66,7 @@ public class AddressDetailsSteps extends BaseClass {
 	}
 	@Given("login with valid credentials for auto loan app data entry stage")
 	public void login_with_valid_credentials_for_auto_loan_app_data_entry_stage() {
-		ijaraLogin.loginWithIjaraApplication("userType07");
+		ijaraLogin.loginWithIjaraApplication("userType15");
 	}
 	@And("user_076 login with valid offering stage user credentials")
 	public void user_076_login_with_valid_offering_stage_user_credentials()throws Throwable {

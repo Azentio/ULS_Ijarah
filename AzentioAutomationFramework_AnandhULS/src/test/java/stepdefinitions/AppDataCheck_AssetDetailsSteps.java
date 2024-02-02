@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.asserts.SoftAssert;
 
-import dataProvider.ConfigFileReader;
+import dataprovider.ConfigFileReader;
 import helper.ClicksAndActionsHelper;
 import helper.JavascriptHelper;
 import io.cucumber.java.en.And;

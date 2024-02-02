@@ -12,7 +12,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import dataProvider.ConfigFileReader;
+import dataprovider.ConfigFileReader;
 
 
 public class BaseClass {

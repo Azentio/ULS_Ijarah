@@ -3,7 +3,7 @@ package stepdefinitions;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-import dataProvider.ConfigFileReader;
+import dataprovider.ConfigFileReader;
 import helper.ClicksAndActionsHelper;
 import helper.JavascriptHelper;
 import io.cucumber.java.en.And;

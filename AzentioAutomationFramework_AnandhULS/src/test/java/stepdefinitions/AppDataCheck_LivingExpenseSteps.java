@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
-import dataProvider.ConfigFileReader;
+import dataprovider.ConfigFileReader;
 import helper.JavascriptHelper;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;

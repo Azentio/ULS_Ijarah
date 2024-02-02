@@ -1,4 +1,4 @@
-package dataProvider;
+package dataprovider;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -200,4 +200,11 @@ public class ConfigFileReader {
 		recordReferenceNumber = properties.getProperty("MurabahaDataCheckRefNo");
 		return recordReferenceNumber;
 	}
+	//AutoLoanDisbMkrRecordNo
+	public String getAutoloanDisMkrRecordNo() {
+		String recordReferenceNumber;
+		recordReferenceNumber = properties.getProperty("AutoLoanDisbMkrRecordNo");
+		return recordReferenceNumber;
+	}
+	
 }

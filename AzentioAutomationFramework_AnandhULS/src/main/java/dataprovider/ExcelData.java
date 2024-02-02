@@ -1,4 +1,4 @@
-package dataProvider;
+package dataprovider;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

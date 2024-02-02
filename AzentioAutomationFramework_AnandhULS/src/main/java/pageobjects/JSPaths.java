@@ -1,6 +1,6 @@
 package pageobjects;
 
-import dataProvider.ExcelReader;
+import dataprovider.ExcelReader;
 
 public class JSPaths {
 	String excelFilePath;

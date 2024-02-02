@@ -19,7 +19,7 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import dataProvider.ConfigFileReader;
+import dataprovider.ConfigFileReader;
 
 public class WaitHelper {
 	private WebDriver driver;

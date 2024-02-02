@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.apache.poi.openxml4j.util.ZipSecureFile;
 
-import dataProvider.ExcelReader;
+import dataprovider.ExcelReader;
 
 public class ExcelTest {
 	String path;

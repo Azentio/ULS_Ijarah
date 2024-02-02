@@ -3,8 +3,8 @@ package tests;
 import java.util.HashMap;
 import java.util.Map;
 
-import dataProvider.ConfigFileReader;
-import dataProvider.ExcelData;
+import dataprovider.ConfigFileReader;
+import dataprovider.ExcelData;
 
 public class ExcelDataUpdate {
 	public static void main(String args[])
