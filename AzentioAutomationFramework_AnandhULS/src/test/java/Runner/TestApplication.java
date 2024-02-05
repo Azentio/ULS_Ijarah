@@ -14,7 +14,7 @@ import utilities.ExtentTestManager;
 		}, glue = "stepdefinitions",
 		// monochrome=false, //to make steps in color
 		plugin = { "pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
-				"rerun:ReRunScenariallos/FailedReRun.txt" }
+				"rerun:ReRunScenarios/FailedReRun.txt" }
 // ,dryRun = false //to check compilation errors
  //, tags = "@AT_M_PUR_12"
 		, tags = "@AT_AD_AL_DMC_02"

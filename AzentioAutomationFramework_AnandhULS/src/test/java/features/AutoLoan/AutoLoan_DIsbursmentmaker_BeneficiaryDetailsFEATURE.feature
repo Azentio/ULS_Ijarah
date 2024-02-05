@@ -11,6 +11,7 @@ And user_076 select the auto loan disbursment maker record in mail box
 And user_76 click on beneficiary details tab at disbursment maker stage
 And user_76 click on add button in beneficiary details disbursment maker stage
 And user_076 get the test data for test case ID AT_AL_BD_DMC_01_02
+And user_076 save button and back button isvisible in beneficiary details at disbursment maker stage
 Then user_076 verify facility application ID field should be visible non mandatory dropdown at disbursment maker stage
 Then user_076 verify beneficiary name field should be visible mandatory editable text box at disbursment maker stage
 Then user_076 verify beneficiary type field should be visible mandatory editable dropdown at disbursment maker stage

@@ -177,6 +177,25 @@ public class DisbursmentMaker_BeneficiaryDetailsSteps extends BaseClass {
 
 	}
 
+	@And("^user_076 save button and back button isvisible in beneficiary details at disbursment maker stage$")
+	public void user_076_save_button_and_back_button_isvisible_in_beneficiary_details_at_disbursment_maker_stage()
+			throws Throwable {
+	boolean isSaveButtonVisible=false;
+	boolean isBackButtonVisible=false;
+	for (int i = 0; i <=150; i++) {
+		try {
+			javascriptHelper.executeScriptWithWebElement(commonJSElements.getElement("")).isDisplayed();
+			
+		} catch (Exception e) {
+if(i==150)
+{
+	e.printStackTrace();
+	Assert.fail(e.getMessage());
+}
+		}
+	}
+	}
+
 	@Then("^user_076 verify facility application ID field should be visible non mandatory dropdown at disbursment maker stage$")
 	public void user_076_verify_facility_application_id_field_should_be_visible_non_mandatory_dropdown_at_disbursment_maker_stage()
 			throws Throwable {
@@ -1695,8 +1714,10 @@ public class DisbursmentMaker_BeneficiaryDetailsSteps extends BaseClass {
 			throws Throwable {
 		for (int i = 0; i <= 150; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(
-						beneficiaryDetailsWebElements.getElement("list_view_beneficiary_details_view_button")).click();
+				javascriptHelper
+						.executeScriptWithWebElement(
+								beneficiaryDetailsWebElements.getElement("list_view_beneficiary_details_view_button"))
+						.click();
 				break;
 			} catch (Exception e) {
 				if (i == 150) {
@@ -1805,8 +1826,7 @@ public class DisbursmentMaker_BeneficiaryDetailsSteps extends BaseClass {
 		for (int i = 0; i <= 150; i++) {
 			try {
 				beneficiaryccountNo = javascriptHelper
-						.executeScript(
-								"return " + beneficiaryDetailsWebElements.getElement("get_account_no_value"))
+						.executeScript("return " + beneficiaryDetailsWebElements.getElement("get_account_no_value"))
 						.toString();
 				if (beneficiaryccountNo.length() > 0) {
 					softAssert.assertTrue(
