@@ -88,6 +88,11 @@ public class IjaraTest extends BaseClass{
 		ijaraLogin.loginWithIjaraApplication("userType19");
 	   
 	}
+	
+	@And("login with valid credentials for Auto loan_Offering_Application details")
+	public void login_with_valid_credentials_for_auto_loan_offering_application_details() {
+		ijaraLogin.loginWithIjaraApplication("userType20");
+	}
 
 	
 	

@@ -97,6 +97,7 @@ public class Ijara_AppDataCheck_ApplicationDetails_Step {
 
 	@And("Validate that Topup application No field is present in Application details")
 	public void validate_that_topup_application_no_field_is_present_in_application_details() throws IOException {
+		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(applicationdetailsJsPaths.getElement("TopupApplicationNo")));
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(applicationdetailsJsPaths.getElement("TopupApplicationNo")));
 		Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(applicationdetailsJsPaths.getElement("TopupApplicationNo")).isDisplayed());
 	    
@@ -173,4 +174,8 @@ public class Ijara_AppDataCheck_ApplicationDetails_Step {
 			}
 		} 
 	}
+	
+	
+	
+	
 }
