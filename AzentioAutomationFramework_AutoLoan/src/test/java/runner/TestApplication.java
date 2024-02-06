@@ -9,7 +9,7 @@ import utilities.ExtentManager;
 import utilities.ExtentTestManager;
 
 @CucumberOptions(features = {
-		"src/test/java/features/autoloan/AutoLoan_AppDataEntry_ReferenceDetailsFEATURE.feature"
+		"src/test/java/features/autoloan/AL_Underwriter_L1.feature"
 	
 		}, glue = "stepdefinitions",
 		// monochrome=false, //to make steps in color
@@ -17,7 +17,7 @@ import utilities.ExtentTestManager;
 				"rerun:ReRunScenarios/FailedReRun.txt" }
 // ,dryRun = false //to check compilation errors
  //, tags = "@AT_M_PUR_12"
-		//, tags = "@AT_AL_FD_APPDATAENTRY_02"
+		, tags = "@AT_AL_UNWL1_03"
 )
 public class TestApplication extends AbstractTestNGCucumberTests {
 	/*
