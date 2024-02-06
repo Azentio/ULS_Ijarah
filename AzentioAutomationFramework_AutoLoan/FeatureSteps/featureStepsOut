@@ -1,0 +1,24 @@
+@And("^user_076 enter character input in own contribution amount field in margin money screen$")
+public void user_076_enter_character_input_in_own_contribution_amount_field_in_margin_money_screen()throws Throwable{
+}
+@Then("^user_076 verify own contribution amount should not accept character input in margin money screen$")
+public void user_076_verify_own_contribution_amount_should_not_accept_character_input_in_margin_money_screen()throws Throwable{
+}
+@And("^user_076 enter special character input in own contribution amount field in margin money screen$")
+public void user_076_enter_special_character_input_in_own_contribution_amount_field_in_margin_money_screen()throws Throwable{
+}
+@Then("^user_076 verify own contribution amount should not accept special character input in margin money screen$")
+public void user_076_verify_own_contribution_amount_should_not_accept_special_character_input_in_margin_money_screen()throws Throwable{
+}
+@And("^user_076 enter character input in amount field in margin money screen$")
+public void user_076_enter_character_input_in_amount_field_in_margin_money_screen()throws Throwable{
+}
+@Then("^user_076 verify amount should not accept character input in margin money screen$")
+public void user_076_verify_amount_should_not_accept_character_input_in_margin_money_screen()throws Throwable{
+}
+@And("^user_076 enter special character input in amount field in margin money screen$")
+public void user_076_enter_special_character_input_in_amount_field_in_margin_money_screen()throws Throwable{
+}
+@Then("^user_076 verify amount should not accept special character input in margin money screen$")
+public void user_076_verify_amount_should_not_accept_special_character_input_in_margin_money_screen()throws Throwable{
+}

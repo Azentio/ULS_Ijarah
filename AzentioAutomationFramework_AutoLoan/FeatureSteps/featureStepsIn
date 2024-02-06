@@ -1,0 +1,8 @@
+And user_076 enter character input in own contribution amount field in margin money screen
+Then user_076 verify own contribution amount should not accept character input in margin money screen
+And user_076 enter special character input in own contribution amount field in margin money screen
+Then user_076 verify own contribution amount should not accept special character input in margin money screen
+And user_076 enter character input in amount field in margin money screen
+Then user_076 verify amount should not accept character input in margin money screen
+And user_076 enter special character input in amount field in margin money screen
+Then user_076 verify amount should not accept special character input in margin money screen
