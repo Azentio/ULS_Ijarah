@@ -9,15 +9,15 @@ import utilities.ExtentManager;
 import utilities.ExtentTestManager;
 
 @CucumberOptions(features = {
-		"src/test/java/features/autoloan/AL_Underwriter_L1.feature"
+		"src/test/java/features/autoloan/AL_AppData_FinancialCommitments.feature"
 	
 		}, glue = "stepdefinitions",
 		// monochrome=false, //to make steps in color
 		plugin = { "pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 				"rerun:ReRunScenarios/FailedReRun.txt" }
 // ,dryRun = false //to check compilation errors
- //, tags = "@AT_M_PUR_12"
-		, tags = "@AT_AL_UNWL1_03"
+ , tags = "@AT_AL_CUD_05"
+//		, tags = "@AT_AL_UNWL1_03"
 )
 public class TestApplication extends AbstractTestNGCucumberTests {
 	/*

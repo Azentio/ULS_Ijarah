@@ -9,10 +9,14 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">60,745</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">111,681</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">runner.TestApplication</td><td><a href="#m0">runScenario</a></td><td rowspan="1">1707212527408</td><td rowspan="1">46706</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">runner.TestApplication</td><td><a href="#m0">runScenario</a></td><td rowspan="1">1707222759658</td><td rowspan="1">95720</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">runner.TestApplication#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;To check underwriter user can add new record in recommendation/sanction condition screen&quot;</td><td>&quot;Optional[To check the Auto Loan -- Underwriter L1 stage]&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Default test</h2><h3 id="m0">runner.TestApplication#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Modification of Customer Debt record - To verify system allow user to modify the Customer Debt Information&quot;</td><td>&quot;Optional[To check the Auto Loan - App Data Entry stage -&gt; Customer Financial tab -&gt; Financial Commitments/Customer Debt screen]&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.AssertionError: Cannot invoke &quot;Object.toString()&quot; because the return value of &quot;helper.JavascriptHelper.executeScript(String)&quot; is null
+	at org.junit.Assert.fail(Assert.java:88)
+	at stepdefinitions.AutoLoan_Steps.user_608_click_the_update_button_with_valid_data_in_customer_debt_screen(AutoLoan_Steps.java:10580)
+	at ✽.User_608 click the Update button with valid data in Customer Debt screen(file:///C:/Users/inindc00608/git/ULS_Ijarah_AutoLoanMaster/AzentioAutomationFramework_AutoLoan/src/test/java/features/autoloan/AL_AppData_FinancialCommitments.feature:196)
+</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
