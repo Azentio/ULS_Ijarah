@@ -1,52 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-06T18:02:38 IST" name="Default suite" finished-at="2024-02-06T18:04:30 IST" duration-ms="111681">
+  <suite started-at="2024-02-06T18:43:01 IST" name="Default suite" finished-at="2024-02-06T19:54:14 IST" duration-ms="4273205">
     <groups>
-      <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestApplication@4a83a74a]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
-      </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-02-06T18:02:38 IST" name="Default test" finished-at="2024-02-06T18:04:30 IST" duration-ms="111681">
-      <class name="runner.TestApplication">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:runner.TestApplication@4a83a74a]" started-at="2024-02-06T18:02:38 IST" name="setUpClass" finished-at="2024-02-06T18:02:39 IST" duration-ms="1055" status="PASS">
+    <test started-at="2024-02-06T18:43:01 IST" name="Default test" finished-at="2024-02-06T19:54:14 IST" duration-ms="4273205">
+      <class name="runner.NewExcelTestRunner">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:runner.NewExcelTestRunner@2a76840c]" started-at="2024-02-06T18:43:01 IST" name="beforeTest" finished-at="2024-02-06T18:43:01 IST" duration-ms="22" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestApplication@4a83a74a]" started-at="2024-02-06T18:02:39 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-06T18:04:15 IST" duration-ms="95720" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Modification of Customer Debt record - To verify system allow user to modify the Customer Debt Information"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[To check the Auto Loan - App Data Entry stage -> Customer Financial tab -> Financial Commitments/Customer Debt screen]"]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Cannot invoke "Object.toString()" because the return value of "helper.JavascriptHelper.executeScript(String)" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Cannot invoke "Object.toString()" because the return value of "helper.JavascriptHelper.executeScript(String)" is null
-at org.junit.Assert.fail(Assert.java:88)
-at stepdefinitions.AutoLoan_Steps.user_608_click_the_update_button_with_valid_data_in_customer_debt_screen(AutoLoan_Steps.java:10580)
-at ✽.User_608 click the Update button with valid data in Customer Debt screen(file:///C:/Users/inindc00608/git/ULS_Ijarah_AutoLoanMaster/AzentioAutomationFramework_AutoLoan/src/test/java/features/autoloan/AL_AppData_FinancialCommitments.feature:196)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        </test-method> <!-- beforeTest -->
+        <test-method signature="test()[pri:0, instance:runner.NewExcelTestRunner@2a76840c]" started-at="2024-02-06T18:43:01 IST" name="test" finished-at="2024-02-06T19:54:13 IST" duration-ms="4272415" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.TestApplication@4a83a74a]" started-at="2024-02-06T18:04:15 IST" name="tearDownClass" finished-at="2024-02-06T18:04:30 IST" duration-ms="14842" status="PASS">
+        </test-method> <!-- test -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:runner.NewExcelTestRunner@2a76840c]" started-at="2024-02-06T19:54:14 IST" name="afterTest" finished-at="2024-02-06T19:54:14 IST" duration-ms="674" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDownClass -->
-      </class> <!-- runner.TestApplication -->
+        </test-method> <!-- afterTest -->
+      </class> <!-- runner.NewExcelTestRunner -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
