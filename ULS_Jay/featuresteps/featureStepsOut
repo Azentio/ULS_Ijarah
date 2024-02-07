@@ -1,0 +1,39 @@
+@And("^User_610 verify the customer type field$")
+public void user_610_verify_the_customer_type_field()throws Throwable{
+}
+@And("^User_610 verify the Cif Id field$")
+public void user_610_verify_the_cif_id_field()throws Throwable{
+}
+@And("^User_610 To select Customer type as Individual Type$")
+public void user_610_to_select_customer_type_as_individual_type()throws Throwable{
+}
+@And("^User_610 verify the Application number field$")
+public void user_610_verify_the_application_number_field()throws Throwable{
+}
+@And("^User_610 verify the customer name field$")
+public void user_610_verify_the_customer_name_field()throws Throwable{
+}
+@And("^User_610 verify the Id type field$")
+public void user_610_verify_the_id_type_field()throws Throwable{
+}
+@And("^User_610 verify the Id number field$")
+public void user_610_verify_the_id_number_field()throws Throwable{
+}
+@And("^User_610 verify the mobile number field$")
+public void user_610_verify_the_mobile_number_field()throws Throwable{
+}
+@And("^User_610 verify the Date of birth field$")
+public void user_610_verify_the_date_of_birth_field()throws Throwable{
+}
+@And("^User_610 verify the email field$")
+public void user_610_verify_the_email_field()throws Throwable{
+}
+@And("^User_610 verify the search field$")
+public void user_610_verify_the_search_field()throws Throwable{
+}
+@And("^User_610 verify the clear field$")
+public void user_610_verify_the_clear_field()throws Throwable{
+}
+@And("^User_610 verify the create new reqest field$")
+public void user_610_verify_the_create_new_reqest_field()throws Throwable{
+}

@@ -16,16 +16,14 @@ import utilities.ExtentTestManager;
 		
 		"src/test/java/features/Tawarruq_AppDataCheck_EmployementDetails.feature",
 		}
-
    
-
          , glue = "stepdefinitions",
 		// monochrome=false, //to make steps in color
 		plugin = { "pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 				"rerun:ReRunScenarios/FailedReRun.txt" }
 // ,dryRun = false //to check compilation errors/ , tags = "@AT_LEA_007"
  
-// , tags="@AT_MU_EDC_03"                   
+, tags="@AT_TW_ADC_EDC_03"                   
  
 )                                                                         
 public class TestApplication extends AbstractTestNGCucumberTests {

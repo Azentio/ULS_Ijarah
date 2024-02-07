@@ -1,0 +1,13 @@
+And User_610 verify the customer type field
+    And User_610 verify the Cif Id field
+    And User_610 To select Customer type as Individual Type
+    And User_610 verify the Application number field
+    And User_610 verify the customer name field
+    And User_610 verify the Id type field
+    And User_610 verify the Id number field
+    And User_610 verify the mobile number field
+    And User_610 verify the Date of birth field
+    And User_610 verify the email field
+    And User_610 verify the search field
+    And User_610 verify the clear field
+    And User_610 verify the create new reqest field

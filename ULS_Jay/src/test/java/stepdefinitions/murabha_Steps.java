@@ -73,7 +73,7 @@ public class murabha_Steps {
 	//-------------------***************************************************-------------------------------------
 	
 	@And("User_610 click Living Expenses Screen in App Data Entery")
-	public void user_610_610_610_click_living_expenses_screen_in_app_data_entery() throws Throwable {
+	public void user_610_click_living_expenses_screen_in_app_data_entery() throws Throwable {
 		
 		for (int i = 0; i < 200; i++) {
 			try {
@@ -89,7 +89,7 @@ public class murabha_Steps {
 	}
 	
 	@And("User_610 verify the system not allow user to do a modification with invalid data Spouse Salary")
-	public void user_610_610_610_verify_the_system_not_allow_user_to_do_a_modification_with_invalid_data_spouse_salary() throws Throwable {
+	public void user_610_verify_the_system_not_allow_user_to_do_a_modification_with_invalid_data_spouse_salary() throws Throwable {
 
 		for (int i = 0; i < 200; i++) {
 			try {
@@ -118,7 +118,7 @@ public class murabha_Steps {
 	}
 	
 	@And("User_610 save button and verify the success message in murabha")
-	public void user_610_610_610_save_button_and_verify_the_success_message_in_murabha() {
+	public void user_610_save_button_and_verify_the_success_message_in_murabha() {
 	    
 		
 		for (int i = 0; i < 200; i++) {
@@ -153,7 +153,7 @@ public class murabha_Steps {
 	
 	
 	@And("User_610 click the Customer Financials Screen")
-	public void user_610_610_610_click_the_customer_financials_screen() {
+	public void user_610_click_the_customer_financials_screen() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("customerFinancials_Screen_610")).click();
@@ -168,7 +168,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 click Edit button")
-	public void user_610_610_610_click_edit_button() {
+	public void user_610_click_edit_button() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("editBtn_610")).click();
@@ -183,7 +183,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 click the add button under Customer Employment Details")
-	public void user_610_610_610_click_the_add_button_under_customer_employment_details() throws Throwable {
+	public void user_610_click_the_add_button_under_customer_employment_details() throws Throwable {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("addBtn_Under_customerEmployementDetails")).click();
@@ -198,7 +198,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 select nature of employment")
-	public void user_610_610_610_select_nature_of_employment() throws Throwable {
+	public void user_610_select_nature_of_employment() throws Throwable {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("natureOfEmployement_610")).click();
@@ -287,7 +287,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 select nature of period")
-	public void user_610_610_610_select_nature_of_period() throws Throwable {
+	public void user_610_select_nature_of_period() throws Throwable {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("employmentPeriod_610")).click();
@@ -376,7 +376,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 enter employer name")
-	public void user_610_610_610_enter_employer_name() throws Throwable {
+	public void user_610_enter_employer_name() throws Throwable {
 		Thread.sleep(500);
 		for (int i = 0; i < 200; i++) {
 			try {
@@ -394,7 +394,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 enter employee ID")
-	public void user_610_610_610_enter_employee_id() throws Throwable {
+	public void user_610_enter_employee_id() throws Throwable {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("employeID_610"))
@@ -411,7 +411,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 select the Data Of Joining")
-	public void user_610_610_610_select_the_data_of_joining() throws Throwable {
+	public void user_610_select_the_data_of_joining() throws Throwable {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("dateOfJoining_610")).click();
@@ -439,7 +439,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 select Employment type")
-	public void user_610_610_610_select_employment_type() throws Throwable {
+	public void user_610_select_employment_type() throws Throwable {
 		
 		//javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("employementType_61")));
 		for (int i = 0; i < 200; i++) {
@@ -530,7 +530,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 select Share Holder Percentage")
-	public void user_610_610_610_select_share_holder_percentage() {
+	public void user_610_select_share_holder_percentage() {
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("shareHolderPercentage_610")));
 		
 		for (int i = 0; i < 200; i++) {
@@ -548,7 +548,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 enter the Total Experience")
-	public void user_610_610_610_enter_the_total_experience() {
+	public void user_610_enter_the_total_experience() {
 	//	WebElement totalExp1 = javascriptHelper.executeScriptWithWebElement("document.querySelector('[id=\"totalExperience\"] ion-label')");
 //		WebElement totalEx = javascriptHelper.executeScriptWithWebElement("document.querySelector('[id=\"totalExperience\"]')");
 		
@@ -577,7 +577,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 scroll up and view customer employment")
-	public void user_610_610_610_scroll_up_and_view_customer_employment() throws Throwable {
+	public void user_610_scroll_up_and_view_customer_employment() throws Throwable {
 		
 				
 		 for (int i = 0; i < 500; i++) {
@@ -593,7 +593,7 @@ public class murabha_Steps {
 	    	}
 
 	@And("User_610 verify the confirmation message")
-	public void user_610_610_610_verify_the_confirmation_message() {
+	public void user_610_verify_the_confirmation_message() {
 		
 		for (int i = 0; i < 200; i++) {
 			try {
@@ -623,7 +623,7 @@ public class murabha_Steps {
 	//-----------  @AT_MU_EMPD_08
 	
 	@And("User_610 blank validation message")
-	public void user_610_610_610_blank_validation_message() {
+	public void user_610_blank_validation_message() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("saveBtn_610")).click();
@@ -649,7 +649,7 @@ public class murabha_Steps {
 }
 
 	@And("User_610 verify the enter special characters value proper validation message")
-	public void user_610_610_610_verify_the_enter_special_characters_value_proper_validation_message() throws Throwable {
+	public void user_610_verify_the_enter_special_characters_value_proper_validation_message() throws Throwable {
 	    Thread.sleep(2000);
 	    
 	    for (int i = 0; i < 400; i++) {
@@ -692,14 +692,14 @@ public class murabha_Steps {
 	//------------------ @AT_MU_EMPD_09
 	
 	@And("User_610 verify the list view under Customer Employment Details")
-	public void user_610_610_610_verify_the_list_view_under_customer_employment_details() {
+	public void user_610_verify_the_list_view_under_customer_employment_details() {
 	    
 	}
 	
 	//------------  -@AT_MU_QA_01
 	
 	@And("User_610 click Quatation Info screen")
-	public void user_610_610_610_click_quatation_info_screen() {
+	public void user_610_click_quatation_info_screen() {
 		for (int b = 0; b < 300; b++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("Quotation Info")).click();
@@ -713,7 +713,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the field Insurance Company, Base Premium ,Vat on Base Premium")
-	public void user_610_610_610_verify_the_field_insurance_company_base_premium_vat_on_base_premium() {
+	public void user_610_verify_the_field_insurance_company_base_premium_vat_on_base_premium() {
 		for (int j = 0; j < 200; j++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("InsuranceCompanyBpId")).isDisplayed();
@@ -752,7 +752,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the field Net Base Premium , Total Discount , Expiry Date , Quatatio Reference Number")
-	public void user_610_610_610_verify_the_field_net_base_premium_total_discount_expiry_date_quatatio_reference_number() {
+	public void user_610_verify_the_field_net_base_premium_total_discount_expiry_date_quatatio_reference_number() {
 	    
 		for (int j = 0; j < 200; j++) {
 			try {
@@ -807,7 +807,7 @@ public class murabha_Steps {
 	//---------------------- @AT_MU_QA_02
 	
 	@And("User_610 verify the field Insurance Company")
-	public void user_610_610_610_verify_the_field_insurance_company() {
+	public void user_610_verify_the_field_insurance_company() {
 		for (int j = 0; j < 200; j++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("InsuranceCompanyBpId")).isDisplayed();
@@ -823,7 +823,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the field Base Premium")
-	public void user_610_610_610_verify_the_field_base_premium() {
+	public void user_610_verify_the_field_base_premium() {
 		for (int j = 0; j < 200; j++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("BasePremiumAmount")).isDisplayed();
@@ -839,7 +839,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the field Vat On Base Premium")
-	public void user_610_610_610_verify_the_field_vat_on_base_premium() {
+	public void user_610_verify_the_field_vat_on_base_premium() {
 		for (int j = 0; j < 200; j++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("VatOnBasePremiumAmount")).isDisplayed();
@@ -858,7 +858,7 @@ public class murabha_Steps {
 	//-----------------@AT_MU_QA_03
 	
 	@And("User_610 verify the field Net Base Premium")
-	public void user_610_610_610_verify_the_field_net_base_premium() {
+	public void user_610_verify_the_field_net_base_premium() {
 		for (int j = 0; j < 200; j++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("NetBasePremiumAmount")).isDisplayed();
@@ -873,7 +873,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the field Total Discount")
-	public void user_610_610_610_verify_the_field_total_discount() {
+	public void user_610_verify_the_field_total_discount() {
 		for (int j = 0; j < 200; j++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("totalDiscountAmount")).isDisplayed();
@@ -888,7 +888,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the field Expiry Date")
-	public void user_610_610_610_verify_the_field_expiry_date() {
+	public void user_610_verify_the_field_expiry_date() {
 		for (int j = 0; j < 200; j++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("ExpiryDate")).isDisplayed();
@@ -905,7 +905,7 @@ public class murabha_Steps {
 	//-------------------@AT_MU_QA_04
 	
 	@And("User_610 verify the field Quatation Reference Number")
-	public void user_610_610_610_verify_the_field_quatation_reference_number() {
+	public void user_610_verify_the_field_quatation_reference_number() {
 		for (int j = 0; j < 200; j++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("QuoteReferenceNo")).isDisplayed();
@@ -921,7 +921,7 @@ public class murabha_Steps {
 	}
 	
 	@And("User_610 click search button and enter matching data")
-	public void user_610_610_610_click_search_button_and_enter_matching_data() throws Throwable {		
+	public void user_610_click_search_button_and_enter_matching_data() throws Throwable {		
 		//---webelement
 //		Thread.sleep(2000);		
 //		String jsPath = "document.querySelectorAll('button[icon=\"pi pi-search\"]')[0]";
@@ -964,7 +964,7 @@ public class murabha_Steps {
 		}
 
 	@And("User_610 click search button and enter mismatching data")
-	public void user_610_610_610_click_search_button_and_enter_mismatching_data() {
+	public void user_610_click_search_button_and_enter_mismatching_data() {
 		for (int i = 0; i < 600; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("enter_searchBtn_610_Mu")).clear();
@@ -993,7 +993,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the PDF button")
-	public void user_610_610_610_verify_the_pdf_button() {
+	public void user_610_verify_the_pdf_button() {
 	    
 	}
 	
@@ -1001,7 +1001,7 @@ public class murabha_Steps {
 	//------------------Feature: Murabha Contract Singing    @AT_MU_CS_06
 	
 	@And("User_610 click Contract Singing Screen in Murabha")
-	public void user_610_610_610_click_contract_singing_screen_in_murabha() {
+	public void user_610_click_contract_singing_screen_in_murabha() {
 		for (int j = 0; j < 200; j++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(murabhaContractSinging.getElement("Mu_ContractSingingScreen")).click();
@@ -1016,7 +1016,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Contract Singing Authority field under Contract Singing Screen in Murabha")
-	public void user_610_610_610_verify_the_contract_singing_authority_field_under_contract_singing_screen_in_murabha() {
+	public void user_610_verify_the_contract_singing_authority_field_under_contract_singing_screen_in_murabha() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(murabhaContractSinging.getElement("ContractSingingAuthority")).isDisplayed();
@@ -1032,7 +1032,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Offered Amount field under Contract Singing Screen in Murabha")
-	public void user_610_610_610_verify_the_offered_amount_field_under_contract_singing_screen_in_murabha() {
+	public void user_610_verify_the_offered_amount_field_under_contract_singing_screen_in_murabha() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(murabhaContractSinging.getElement("OfferedAmount")).isDisplayed();
@@ -1048,7 +1048,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Contract Singin Date field under Contract Singing Screen in Murabha")
-	public void user_610_610_610_verify_the_contract_singin_date_field_under_contract_singing_screen_in_murabha() {
+	public void user_610_verify_the_contract_singin_date_field_under_contract_singing_screen_in_murabha() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(murabhaContractSinging.getElement("ContractSingingDate")).isDisplayed();
@@ -1064,7 +1064,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Contract Validity field under Contract Singing Screen in Murabha")
-	public void user_610_610_610_verify_the_contract_validity_field_under_contract_singing_screen_in_murabha() {
+	public void user_610_verify_the_contract_validity_field_under_contract_singing_screen_in_murabha() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(murabhaContractSinging.getElement("ContractValidity")).isDisplayed();
@@ -1083,7 +1083,7 @@ public class murabha_Steps {
 	
 	
 	@And("User_610 click the purchase order screen")
-	public void user_610_610_610_click_the_purchase_order_screen() throws Throwable {
+	public void user_610_click_the_purchase_order_screen() throws Throwable {
 		Thread.sleep(1000);
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1099,7 +1099,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Po Reference Number field")
-	public void user_610_610_610_verify_the_po_reference_number_field() {
+	public void user_610_verify_the_po_reference_number_field() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(murabha_PurchasOrder.getElement("PoReferenceNumber_610")).isDisplayed();
@@ -1115,7 +1115,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Purchas Order Date field")
-	public void user_610_610_610_verify_the_purchas_order_date_field() {
+	public void user_610_verify_the_purchas_order_date_field() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(murabha_PurchasOrder.getElement("PurchasOrderDate_610")).isDisplayed();
@@ -1131,7 +1131,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Estimated Purchas Due Date field")
-	public void user_610_610_610_verify_the_estimated_purchas_due_date_field() {
+	public void user_610_verify_the_estimated_purchas_due_date_field() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(murabha_PurchasOrder.getElement("EstimatedPurchasDueDate_610")).isDisplayed();
@@ -1147,7 +1147,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Assert Avaliablity field")
-	public void user_610_610_610_verify_the_assert_avaliablity_field() {
+	public void user_610_verify_the_assert_avaliablity_field() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(murabha_PurchasOrder.getElement("AssertAvaliablity_610")).isDisplayed();
@@ -1163,7 +1163,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Receiver Name field")
-	public void user_610_610_610_verify_the_receiver_name_field() {
+	public void user_610_verify_the_receiver_name_field() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(murabha_PurchasOrder.getElement("ReceiverName_610")).isDisplayed();
@@ -1179,7 +1179,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Discount Percentage field")
-	public void user_610_610_610_verify_the_discount_percentage_field() {
+	public void user_610_verify_the_discount_percentage_field() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(murabha_PurchasOrder.getElement("DiscountPercentage_610")).isDisplayed();
@@ -1195,7 +1195,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Istemara Fees field")
-	public void user_610_610_610_verify_the_istemara_fees_field() {
+	public void user_610_verify_the_istemara_fees_field() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(murabha_PurchasOrder.getElement("IstemaraFees_610")).isDisplayed();
@@ -1211,7 +1211,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Assert Price With Vat field")
-	public void user_610_610_610_verify_the_assert_price_with_vat_field() {
+	public void user_610_verify_the_assert_price_with_vat_field() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(murabha_PurchasOrder.getElement("AssertPriceWithVat_610")).isDisplayed();
@@ -1227,7 +1227,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Net Amount Payable To Dealer field")
-	public void user_610_610_610_verify_the_net_amount_payable_to_dealer_field() {
+	public void user_610_verify_the_net_amount_payable_to_dealer_field() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(murabha_PurchasOrder.getElement("NetAmountPayableToDealer_610")).isDisplayed();
@@ -1243,7 +1243,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Assert ID field")
-	public void user_610_610_610_verify_the_assert_id_field() {
+	public void user_610_verify_the_assert_id_field() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(murabha_PurchasOrder.getElement("AssertID_610")).isDisplayed();
@@ -1262,7 +1262,7 @@ public class murabha_Steps {
 	
 	
 	@And("User_610 click customer financial screen")
-	public void user_610_610_610_click_customer_financial_screen() {
+	public void user_610_click_customer_financial_screen() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(murabha_UnderWriter_CustomerFin.getElement("CustomerFinancialScreen_610")).click();
@@ -1277,7 +1277,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 click financial commitments tab in customer financial screen")
-	public void user_610_610_610_click_financial_commitments_tab_in_customer_financial_screen() {
+	public void user_610_click_financial_commitments_tab_in_customer_financial_screen() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(murabha_UnderWriter_CustomerFin.getElement("viewBtn_FinancialCommitment_UnderCustomerFinancial_610")).click();
@@ -1292,7 +1292,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Financial Type field in financila commitments tab")
-	public void user_610_610_610_verify_the_financial_type_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_financial_type_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(murabha_UnderWriter_CustomerFin.getElement("financialType_610")).isDisplayed();
@@ -1308,7 +1308,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the financial Institution field in financila commitments tab")
-	public void user_610_610_610_verify_the_financial_institution_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_financial_institution_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(murabha_UnderWriter_CustomerFin.getElement("financialInstitution_610")).isDisplayed();
@@ -1324,7 +1324,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Sanction Amount field in financila commitments tab")
-	public void user_610_610_610_verify_the_sanction_amount_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_sanction_amount_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(murabha_UnderWriter_CustomerFin.getElement("sanctionAmount_610")).isDisplayed();
@@ -1340,7 +1340,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Interst Rate field in financila commitments tab")
-	public void user_610_610_610_verify_the_interst_rate_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_interst_rate_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(murabha_UnderWriter_CustomerFin.getElement("interstRate_610")).isDisplayed();
@@ -1356,7 +1356,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Current Principal Balance field in financila commitments tab")
-	public void user_610_610_610_verify_the_current_principal_balance_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_current_principal_balance_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(murabha_UnderWriter_CustomerFin.getElement("currentprincipalBalance_610")).isDisplayed();
@@ -1372,7 +1372,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Tenure Month field in financila commitments tab")
-	public void user_610_610_610_verify_the_tenure_month_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_tenure_month_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(murabha_UnderWriter_CustomerFin.getElement("TenureMonths_610")).isDisplayed();
@@ -1388,7 +1388,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Maturrity Date field in financila commitments tab")
-	public void user_610_610_610_verify_the_maturrity_date_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_maturrity_date_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(murabha_UnderWriter_CustomerFin.getElement("maturrityDate_610")).isDisplayed();
@@ -1404,7 +1404,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Installment Amount field in financila commitments tab")
-	public void user_610_610_610_verify_the_installment_amount_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_installment_amount_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(murabha_UnderWriter_CustomerFin.getElement("installmentAmount_610")).isDisplayed();
@@ -1420,7 +1420,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Amount Considered field in financila commitments tab")
-	public void user_610_610_610_verify_the_amount_considered_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_amount_considered_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(murabha_UnderWriter_CustomerFin.getElement("amountConsidered_610")).isDisplayed();
@@ -1436,7 +1436,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the currency field in financila commitments tab")
-	public void user_610_610_610_verify_the_currency_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_currency_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(murabha_UnderWriter_CustomerFin.getElement("currency_610")).isDisplayed();
@@ -1452,7 +1452,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Next Due date field in financila commitments tab")
-	public void user_610_610_610_verify_the_next_due_date_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_next_due_date_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(murabha_UnderWriter_CustomerFin.getElement("nextDuedate_610")).isDisplayed();
@@ -1468,7 +1468,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Close Date field in financila commitments tab")
-	public void user_610_610_610_verify_the_close_date_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_close_date_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(murabha_UnderWriter_CustomerFin.getElement("closeDate_610")).isDisplayed();
@@ -1484,7 +1484,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Collateral Type field in financila commitments tab")
-	public void user_610_610_610_verify_the_collateral_type_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_collateral_type_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(murabha_UnderWriter_CustomerFin.getElement("collateralType_610")).isDisplayed();
@@ -1500,7 +1500,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the frequency field in financila commitments tab")
-	public void user_610_610_610_verify_the_frequency_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_frequency_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(murabha_UnderWriter_CustomerFin.getElement("frequency_610")).isDisplayed();
@@ -1516,7 +1516,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the last Payment Amount field in financila commitments tab")
-	public void user_610_610_610_verify_the_last_payment_amount_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_last_payment_amount_field_in_financila_commitments_tab() {
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(murabha_UnderWriter_CustomerFin.getElement("lastPaymentDate_610")));
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1533,7 +1533,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the productName field in financila commitments tab")
-	public void user_610_610_610_verify_the_product_name_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_product_name_field_in_financila_commitments_tab() {
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(murabha_UnderWriter_CustomerFin.getElement("productName")));
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -1550,7 +1550,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the facilityStatus field in financila commitments tab")
-	public void user_610_610_610_verify_the_facility_status_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_facility_status_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(murabha_UnderWriter_CustomerFin.getElement("facilityStatus_610")).isDisplayed();
@@ -1566,7 +1566,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the remaining Tenure field in financila commitments tab")
-	public void user_610_610_610_verify_the_remaining_tenure_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_remaining_tenure_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(murabha_UnderWriter_CustomerFin.getElement("remainingTenure_610")).isDisplayed();
@@ -1582,7 +1582,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Sement Date field in financila commitments tab")
-	public void user_610_610_610_verify_the_sement_date_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_sement_date_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(murabha_UnderWriter_CustomerFin.getElement("sementDate")).isDisplayed();
@@ -1598,7 +1598,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the NPA Classification field in financila commitments tab")
-	public void user_610_610_610_verify_the_npa_classification_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_npa_classification_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(murabha_UnderWriter_CustomerFin.getElement("NPAClassification_610")).isDisplayed();
@@ -1617,7 +1617,7 @@ public class murabha_Steps {
 	
 	
 	@And("User_610 click Additional Customer Info screen")
-	public void user_610_610_610_click_additional_customer_info_screen() {
+	public void user_610_click_additional_customer_info_screen() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(mur_AdditionalCustomerInfo_610.getElement("AdditionalCustomerInfoScreen_610")).click();
@@ -1632,7 +1632,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 click Customer Identification tab in Additional Customer Info screen")
-	public void user_610_610_610_click_customer_identification_tab_in_additional_customer_info_screen() {
+	public void user_610_click_customer_identification_tab_in_additional_customer_info_screen() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(mur_AdditionalCustomerInfo_610.getElement("CustomerIdentification_UnderadditionalCust_610")).click();
@@ -1647,7 +1647,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Id Type field in financila commitments tab")
-	public void user_610_610_610_verify_the_id_type_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_id_type_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(mur_AdditionalCustomerInfo_610.getElement("IdType")).isDisplayed();
@@ -1663,7 +1663,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Id Number field in financila commitments tab")
-	public void user_610_610_610_verify_the_id_number_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_id_number_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(mur_AdditionalCustomerInfo_610.getElement("IdNumber")).isDisplayed();
@@ -1679,7 +1679,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Issue Date field in financila commitments tab")
-	public void user_610_610_610_verify_the_issue_date_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_issue_date_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(mur_AdditionalCustomerInfo_610.getElement("Issuuedate")).isDisplayed();
@@ -1695,7 +1695,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Expiry Date field in financila commitments tab")
-	public void user_610_610_610_verify_the_expiry_date_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_expiry_date_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(mur_AdditionalCustomerInfo_610.getElement("ExpiryDate")).isDisplayed();
@@ -1711,7 +1711,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Issue Authority field in financila commitments tab")
-	public void user_610_610_610_verify_the_issue_authority_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_issue_authority_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(mur_AdditionalCustomerInfo_610.getElement("IssueAuthority")).isDisplayed();
@@ -1727,7 +1727,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Country Of Issuse field in financila commitments tab")
-	public void user_610_610_610_verify_the_country_of_issuse_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_country_of_issuse_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(mur_AdditionalCustomerInfo_610.getElement("CountryOfIssuse")).isDisplayed();
@@ -1745,7 +1745,7 @@ public class murabha_Steps {
 //-----------------------------------   #Address Details Tab   @AT_MU_UNW_006_07
 	
 	@And("User_610 click Adress Details tab in Additional Customer Info screen")
-	public void user_610_610_610_click_adress_details_tab_in_additional_customer_info_screen() {
+	public void user_610_click_adress_details_tab_in_additional_customer_info_screen() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(mur_AdditionalCustomerInfo_610.getElement("AdderssDetailsTab_610")).isDisplayed();
@@ -1761,7 +1761,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Address Type field in financila commitments tab")
-	public void user_610_610_610_verify_the_address_type_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_address_type_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(mur_AdditionalCustomerInfo_610.getElement("address_type")).isDisplayed();
@@ -1777,7 +1777,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Address Status field in financila commitments tab")
-	public void user_610_610_610_verify_the_address_status_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_address_status_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(mur_AdditionalCustomerInfo_610.getElement("address_status")).isDisplayed();
@@ -1793,7 +1793,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Residential Or Ocupency Status field in financila commitments tab")
-	public void user_610_610_610_verify_the_residential_or_ocupency_status_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_residential_or_ocupency_status_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(mur_AdditionalCustomerInfo_610.getElement("residential_or_ocupency_status")).isDisplayed();
@@ -1809,7 +1809,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Communication Address field in financila commitments tab")
-	public void user_610_610_610_verify_the_communication_address_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_communication_address_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(mur_AdditionalCustomerInfo_610.getElement("communication_address_toggle")).isDisplayed();
@@ -1825,7 +1825,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Location category field in financila commitments tab")
-	public void user_610_610_610_verify_the_location_category_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_location_category_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(mur_AdditionalCustomerInfo_610.getElement("location_category")).isDisplayed();
@@ -1841,7 +1841,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Adderss Line1 field in financila commitments tab")
-	public void user_610_610_610_verify_the_adderss_line1_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_adderss_line1_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(mur_AdditionalCustomerInfo_610.getElement("address_line1")).isDisplayed();
@@ -1857,7 +1857,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Adderss Line2 field in financila commitments tab")
-	public void user_610_610_610_verify_the_adderss_line2_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_adderss_line2_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(mur_AdditionalCustomerInfo_610.getElement("address_line2")).isDisplayed();
@@ -1873,7 +1873,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Country field in financila commitments tab")
-	public void user_610_610_610_verify_the_country_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_country_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(mur_AdditionalCustomerInfo_610.getElement("country")).isDisplayed();
@@ -1889,7 +1889,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Province Id field in financila commitments tab")
-	public void user_610_610_610_verify_the_province_id_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_province_id_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(mur_AdditionalCustomerInfo_610.getElement("province_id")).isDisplayed();
@@ -1905,7 +1905,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the City field in financila commitments tab")
-	public void user_610_610_610_verify_the_city_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_city_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(mur_AdditionalCustomerInfo_610.getElement("city")).isDisplayed();
@@ -1921,7 +1921,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the District Name field in financila commitments tab")
-	public void user_610_610_610_verify_the_district_name_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_district_name_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(mur_AdditionalCustomerInfo_610.getElement("district_name")).isDisplayed();
@@ -1937,7 +1937,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Zip Code field in financila commitments tab")
-	public void user_610_610_610_verify_the_zip_code_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_zip_code_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(mur_AdditionalCustomerInfo_610.getElement("zip_code")).isDisplayed();
@@ -1953,7 +1953,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Po Box Number field in financila commitments tab")
-	public void user_610_610_610_verify_the_po_box_number_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_po_box_number_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(mur_AdditionalCustomerInfo_610.getElement("po_box_number")).isDisplayed();
@@ -1969,7 +1969,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Mobile Number field in financila commitments tab")
-	public void user_610_610_610_verify_the_mobile_number_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_mobile_number_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(mur_AdditionalCustomerInfo_610.getElement("mobile_number_primary")).isDisplayed();
@@ -1985,7 +1985,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Duration Of Stay in financila commitments tab")
-	public void user_610_610_610_verify_the_duration_of_stay_in_financila_commitments_tab() {
+	public void user_610_verify_the_duration_of_stay_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(mur_AdditionalCustomerInfo_610.getElement("duration_on_stay")).isDisplayed();
@@ -2001,7 +2001,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Latitude Details Of The Address field in financila commitments tab")
-	public void user_610_610_610_verify_the_latitude_details_of_the_address_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_latitude_details_of_the_address_field_in_financila_commitments_tab() {
 	    
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -2017,7 +2017,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Longitude Details Of The Adress field in financila commitments tab")
-	public void user_610_610_610_verify_the_longitude_details_of_the_adress_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_longitude_details_of_the_adress_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(mur_AdditionalCustomerInfo_610.getElement("longitude_details_of_the_address")).isDisplayed();
@@ -2033,7 +2033,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Landmark field in financila commitments tab")
-	public void user_610_610_610_verify_the_landmark_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_landmark_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(mur_AdditionalCustomerInfo_610.getElement("landmark")).isDisplayed();
@@ -2049,7 +2049,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Occupency Date field in financila commitments tab")
-	public void user_610_610_610_verify_the_occupency_date_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_occupency_date_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(mur_AdditionalCustomerInfo_610.getElement("occupency_date")).isDisplayed();
@@ -2065,7 +2065,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Landlord Name field in financila commitments tab")
-	public void user_610_610_610_verify_the_landlord_name_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_landlord_name_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(mur_AdditionalCustomerInfo_610.getElement("landlord_name")).isDisplayed();
@@ -2081,7 +2081,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Landlord Mobile Number field in financila commitments tab")
-	public void user_610_610_610_verify_the_landlord_mobile_number_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_landlord_mobile_number_field_in_financila_commitments_tab() {
 	    
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -2097,7 +2097,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Rent Amount field in financila commitments tab")
-	public void user_610_610_610_verify_the_rent_amount_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_rent_amount_field_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(mur_AdditionalCustomerInfo_610.getElement("rent_amount")).isDisplayed();
@@ -2113,7 +2113,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Frequency of Rent in financila commitments tab")
-	public void user_610_610_610_verify_the_frequency_of_rent_in_financila_commitments_tab() {
+	public void user_610_verify_the_frequency_of_rent_in_financila_commitments_tab() {
 		for (int k = 0; k < 200; k++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(mur_AdditionalCustomerInfo_610.getElement("frequency_of_rent")).isDisplayed();
@@ -2129,7 +2129,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Status field in financila commitments tab")
-	public void user_610_610_610_verify_the_status_field_in_financila_commitments_tab() {
+	public void user_610_verify_the_status_field_in_financila_commitments_tab() {
 	    
 		for (int k = 0; k < 200; k++) {
 			try {
@@ -2147,7 +2147,7 @@ public class murabha_Steps {
 	//---------------- @AT_MU_ADE_CD_01
 	
 	@And("User_610 Click Documents Details screen")
-	public void user_610_610_click_documents_details_screen() {
+	public void user_610_click_documents_details_screen() {
 	    
 		for (int i = 0; i < 200; i++) {
 			try {
@@ -2166,7 +2166,7 @@ public class murabha_Steps {
 	 
 	
 	@And("User_610 verify the First Name Arabic field mandatory editable textbox")
-	public void user_610_610_verify_the_first_name_arabic_field_mandatory_editable_textbox() {
+	public void user_610_verify_the_first_name_arabic_field_mandatory_editable_textbox() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				String FirstNameArabic = "document.querySelector('digital-text-box[id=\"customerFirstNameInOtherLang\"]').innerText";
@@ -2207,7 +2207,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the middle Name Arabic field non mandatory editable textbox")
-	public void user_610_610_verify_the_middle_name_arabic_field_non_mandatory_editable_textbox() {
+	public void user_610_verify_the_middle_name_arabic_field_non_mandatory_editable_textbox() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				String middleNameArabic = "document.querySelector('digital-text-box[id=\"customerMiddleNameInOtherLang\"]').innerText";
@@ -2248,7 +2248,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Last Name Arabic field mandatory editable textbox")
-	public void user_610_610_verify_the_last_name_arabic_field_mandatory_editable_textbox() {
+	public void user_610_verify_the_last_name_arabic_field_mandatory_editable_textbox() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				String LastNameArabic = "document.querySelector('digital-text-box[id=\"customerLastNameInOtherLang\"]').innerText";
@@ -2289,7 +2289,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Family Name Arabic field non mandatory editable textbox")
-	public void user_610_610_verify_the_family_name_arabic_field_non_mandatory_editable_textbox() {
+	public void user_610_verify_the_family_name_arabic_field_non_mandatory_editable_textbox() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				String FamilyNameArabic = "document.querySelector('digital-text-box[id=\"customerNameInOtherLang\"]').innerText";
@@ -2332,7 +2332,7 @@ public class murabha_Steps {
 	//-----------------------            @AT_MU_ADE_CD_04                     ------------------------ 
 	
 	@And("User_610 verify the Family Name field non mandatory editable text")
-	public void user_610_610_verify_the_family_name_field_non_mandatory_editable_text() {
+	public void user_610_verify_the_family_name_field_non_mandatory_editable_text() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				String FamilyName = "document.querySelector('digital-text-box[id=\"customerThirdName\"]').innerText";
@@ -2373,7 +2373,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Age field non mandatory non editable text")
-	public void user_610_610_verify_the_age_field_non_mandatory_non_editable_text() {
+	public void user_610_verify_the_age_field_non_mandatory_non_editable_text() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				String Age = "document.querySelector('digital-text-box[id=\"customerNameInOtherLang\"]').innerText";
@@ -2416,13 +2416,13 @@ public class murabha_Steps {
 	//------------------------  @AT_MU_ADE_CD_08  --------------------
 	
 	@And("User_610 verify the Prefered Time For Contact field HH MM format Editable")
-	public void user_610_610_verify_the_prefered_time_for_contact_field_hh_mm_format_editable() {
+	public void user_610_verify_the_prefered_time_for_contact_field_hh_mm_format_editable() {
 	    
 	    
 	}
 
 	@And("User_610 verify the Add button should allow create new record")
-	public void user_610_610_verify_the_add_button_should_allow_create_new_record() {
+	public void user_610_verify_the_add_button_should_allow_create_new_record() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("AddBtn")).click();
@@ -2451,7 +2451,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the Back button should navigate to previous screen")
-	public void user_610_610_verify_the_back_button_should_navigate_to_previous_screen() {
+	public void user_610_verify_the_back_button_should_navigate_to_previous_screen() {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("customerDetailsBackBtn")).click();
@@ -2480,7 +2480,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the impact when user keep any mandatory field blank")
-	public void user_610_610_verify_the_impact_when_user_keep_any_mandatory_field_blank() throws Throwable {
+	public void user_610_verify_the_impact_when_user_keep_any_mandatory_field_blank() throws Throwable {
 		
 		for (int i = 0; i < 200; i++) {
 			try {
@@ -2522,7 +2522,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the  impact when user enters negative numeric value")
-	public void user_610_610_verify_the_impact_when_user_enters_negative_numeric_value() throws Throwable {
+	public void user_610_verify_the_impact_when_user_enters_negative_numeric_value() throws Throwable {
 		Thread.sleep(500);
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("noOfDependsInputt")));
 		for (int i = 0; i < 200; i++) {
@@ -2553,7 +2553,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the  impact when user enters character in numeric value")
-	public void user_610_610_verify_the_impact_when_user_enters_character_in_numeric_value() throws Throwable {
+	public void user_610_verify_the_impact_when_user_enters_character_in_numeric_value() throws Throwable {
 		Thread.sleep(500);
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("firstNameInput")));
 		for (int i = 0; i < 200; i++) {
@@ -2584,7 +2584,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the impact when user enters only special characters value")
-	public void user_610_610_verify_the_impact_when_user_enters_only_special_characters_value() throws Throwable {
+	public void user_610_verify_the_impact_when_user_enters_only_special_characters_value() throws Throwable {
 		Thread.sleep(500);
 		for (int i = 0; i < 200; i++) {
 			try {
@@ -3011,7 +3011,7 @@ public class murabha_Steps {
 	//--------------------  @AT_MU_ADE_CD_11  --------------------
 	
 	@And("User_610 change the status of the record as active or deactive")
-	public void user_change_the_status_of_the_record_as_active_or_deactive() throws Throwable {
+	public void user_610_change_the_status_of_the_record_as_active_or_deactive() throws Throwable {
 		Thread.sleep(500);
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("StatusToggle")));
 		for (int i = 0; i < 200; i++) {
@@ -3031,7 +3031,7 @@ public class murabha_Steps {
 							}
 
 	@And("User_610 label should toggle based on the status if status is active")
-	public void user_label_should_toggle_based_on_the_status_if_status_is_active() throws Throwable {
+	public void user_610_label_should_toggle_based_on_the_status_if_status_is_active() throws Throwable {
 		
 		String status1 = javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("StatusToggle"))
 				.getAttribute("aria-checked");
@@ -3076,7 +3076,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 label should toggle based on the status if status is deactive")
-	public void user_label_should_toggle_based_on_the_status_if_status_is_deactive() throws Throwable {
+	public void user_610_label_should_toggle_based_on_the_status_if_status_is_deactive() throws Throwable {
 		
 		for (int i = 0; i < 200; i++) {
 			try {
@@ -3146,7 +3146,7 @@ public class murabha_Steps {
 			}
 
 	@And("User_610 verify the back button customer details screen")
-	public void user_verify_the_back_button_customer_details_screen() throws Throwable {
+	public void user_610_verify_the_back_button_customer_details_screen() throws Throwable {
 		for (int i = 0; i < 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("AddBtn")).click();
@@ -3192,13 +3192,13 @@ public class murabha_Steps {
 	
 	
 	@And("User_610 verify the value in list view should be in read only mode")
-	public void user_verify_the_value_in_list_view_should_be_in_read_only_mode() {
+	public void user_610_verify_the_value_in_list_view_should_be_in_read_only_mode() {
 	    
 	    
 	}
 
 	@And("User_610 verify the functionality of search box with matching data")
-	public void user_verify_the_functionality_of_search_box_with_matching_data() {
+	public void user_610_verify_the_functionality_of_search_box_with_matching_data() {
 		for (int i = 0; i < 200; i++) {
 		    try {
 		   	javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("Search")).click();
@@ -3243,7 +3243,7 @@ public class murabha_Steps {
 	}
 
 	@And("User_610 verify the functionality of search box with mismatching data")
-	public void user_verify_the_functionality_of_search_box_with_mismatching_data() {
+	public void user_610_verify_the_functionality_of_search_box_with_mismatching_data() {
 		for (int i = 0; i < 200; i++) {
 		    try {
 		   	javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("SearchInput")).clear();

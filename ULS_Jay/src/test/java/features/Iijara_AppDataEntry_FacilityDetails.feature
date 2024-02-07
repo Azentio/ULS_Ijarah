@@ -116,7 +116,7 @@ Feature: Ijara App Data Entry Facility details
     And User_610 verify the PDF button should download the PDF file of that records 
     And User_610 click export button
     And User_610 verify the Excel button should download the PDF file of that records 
-    And User_610 verify the back button
+    And User_610 verify the back button FD
     Then logout from the ijaraApplication
     
     

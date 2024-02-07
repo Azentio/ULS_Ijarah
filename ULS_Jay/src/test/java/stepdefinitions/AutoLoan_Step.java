@@ -12,7 +12,7 @@ import io.cucumber.java.en.And;
 import pageobjects.JSPaths;
 import resources.BaseClass;
 
-public class AutoLoan_Stepa {
+public class AutoLoan_Step {
 	
 	WebDriver driver = BaseClass.driver;
 	
@@ -34,7 +34,7 @@ public class AutoLoan_Stepa {
 	
 	
 	@And("User_610 Click Customer Details screen in Autoloan")
-	public void user_610_610_click_customer_details_screen_in_autoloan() {
+	public void user_610_click_customer_details_screen_in_autoloan() {
 		for (int i = 0; i < 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("customerDetailsTab")).click();
@@ -51,7 +51,7 @@ public class AutoLoan_Stepa {
 	}
 
 	@And("User_610 verify the Back button field on Customer details screen")
-	public void user_610_610_verify_the_back_button_field_on_customer_details_screen() {
+	public void user_610_verify_the_back_button_field_on_customer_details_screen() {
 		for (int i = 0; i < 600; i++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("contactDetailsBackBtn")).isDisplayed()) {
@@ -69,7 +69,7 @@ public class AutoLoan_Stepa {
 	}
 
 	@And("User_610 verify the Save button field on Customer details screen")
-	public void user_610_610_verify_the_save_button_field_on_customer_details_screen() {
+	public void user_610_verify_the_save_button_field_on_customer_details_screen() {
 		for (int i = 0; i < 300; i++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("contactDetailsSaveBtn")).isDisplayed()) {
@@ -87,7 +87,7 @@ public class AutoLoan_Stepa {
 	}
 	
 	@And ("User_610 verify the Customer Type field on Customer details screen")
-	public void user_610_610_verify_the_customer_type_field_on_customer_details_screen() {
+	public void user_610_verify_the_customer_type_field_on_customer_details_screen() {
 		for (int i = 0; i < 300; i++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("customerTypeDropdown")).isDisplayed()) {
@@ -105,7 +105,7 @@ public class AutoLoan_Stepa {
 	}
 
 	@And("User_610 verify the Applicant Type field on Customer details screen")
-	public void user_610_610_verify_the_applicant_type_field_on_customer_details_screen() {
+	public void user_610_verify_the_applicant_type_field_on_customer_details_screen() {
 		for (int i = 0; i < 300; i++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("applicantTypeDropdown")).isDisplayed()) {
@@ -123,7 +123,7 @@ public class AutoLoan_Stepa {
 	}
 
 	@And("User_610 verify the Salutation field on Customer details screen")
-	public void user_610_610_verify_the_salutation_field_on_customer_details_screen() {
+	public void user_610_verify_the_salutation_field_on_customer_details_screen() {
 		for (int i = 0; i < 300; i++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("titleDropdown")).isDisplayed()) {
@@ -141,7 +141,7 @@ public class AutoLoan_Stepa {
 	}
 
 	@And("User_610 verify the First Name field on Customer details screen")
-	public void user_610_610_verify_the_first_name_field_on_customer_details_screen() {
+	public void user_610_verify_the_first_name_field_on_customer_details_screen() {
 		for (int i = 0; i < 300; i++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("firstNameInput")).isDisplayed()) {
@@ -159,7 +159,7 @@ public class AutoLoan_Stepa {
 	}
 
 	@And("User_610 verify the Middle Name field on Customer details screen")
-	public void user_610_610_verify_the_middle_name_field_on_customer_details_screen() {
+	public void user_610_verify_the_middle_name_field_on_customer_details_screen() {
 		for (int i = 0; i < 300; i++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("middleNameInput")).isDisplayed()) {
@@ -177,7 +177,7 @@ public class AutoLoan_Stepa {
 	}
 
 	@And("User_610 verify the Last Name field on Customer details screen")
-	public void user_610_610_verify_the_last_name_field_on_customer_details_screen() {
+	public void user_610_verify_the_last_name_field_on_customer_details_screen() {
 		for (int i = 0; i < 300; i++) {
 			try {
 				if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("lastNameInput")).isDisplayed()) {
@@ -194,7 +194,7 @@ public class AutoLoan_Stepa {
 	}
 		
 		@And("User_610 verify the Fathers First Name field on Customer details screen")
-		public void user_610_610_verify_the_fathers_first_name_field_on_customer_details_screen() {
+		public void user_610_verify_the_fathers_first_name_field_on_customer_details_screen() {
 			for (int i = 0; i < 300; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("FatherFirstName")).isDisplayed()) {
@@ -212,7 +212,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Fathers Middle Name field on Customer details screen")
-		public void user_610_610_verify_the_fathers_middle_name_field_on_customer_details_screen() {
+		public void user_610_verify_the_fathers_middle_name_field_on_customer_details_screen() {
 			for (int i = 0; i < 300; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("FatherMiddleName")).isDisplayed()) {
@@ -230,7 +230,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Fathers Last Name field on Customer details screen")
-		public void user_610_610_verify_the_fathers_last_name_field_on_customer_details_screen() {
+		public void user_610_verify_the_fathers_last_name_field_on_customer_details_screen() {
 			for (int i = 0; i < 300; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("FatherLastName")).isDisplayed()) {
@@ -248,7 +248,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Spouse First Name field on Customer details screen")
-		public void user_610_610_verify_the_spouse_first_name_field_on_customer_details_screen() {
+		public void user_610_verify_the_spouse_first_name_field_on_customer_details_screen() {
 			for (int i = 0; i < 300; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("SpouseFirstName")).isDisplayed()) {
@@ -266,7 +266,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Spouse Middle Name field on Customer details screen")
-		public void user_610_610_verify_the_spouse_middle_name_field_on_customer_details_screen() {
+		public void user_610_verify_the_spouse_middle_name_field_on_customer_details_screen() {
 			for (int i = 0; i < 300; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("SpouseMiddleName")).isDisplayed()) {
@@ -284,7 +284,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Spouse Last Name field on Customer details screen")
-		public void user_610_610_verify_the_spouse_last_name_field_on_customer_details_screen() {
+		public void user_610_verify_the_spouse_last_name_field_on_customer_details_screen() {
 			for (int i = 0; i < 300; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("SpouseLastName")).isDisplayed()) {
@@ -302,7 +302,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Data Of Birth field on Customer details screen")
-		public void user_610_610_verify_the_data_of_birth_field_on_customer_details_screen() {
+		public void user_610_verify_the_data_of_birth_field_on_customer_details_screen() {
 			for (int i = 0; i < 300; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("dobInput")).isDisplayed()) {
@@ -320,7 +320,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Gender field on Customer details screen")
-		public void user_610_610_verify_the_gender_field_on_customer_details_screen() {
+		public void user_610_verify_the_gender_field_on_customer_details_screen() {
 			for (int i = 0; i < 300; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("genderDropdown")).isDisplayed()) {
@@ -338,7 +338,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Education level field on Customer details screen")
-		public void user_610_610_verify_the_education_level_field_on_customer_details_screen() {
+		public void user_610_verify_the_education_level_field_on_customer_details_screen() {
 			for (int i = 0; i < 300; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("educationLevelDropdown")).isDisplayed()) {
@@ -356,7 +356,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Marital Status field on Customer details screen")
-		public void user_610_610_verify_the_marital_status_field_on_customer_details_screen() {
+		public void user_610_verify_the_marital_status_field_on_customer_details_screen() {
 			for (int i = 0; i < 300; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("maritalStatusDropdown")).isDisplayed()) {
@@ -374,7 +374,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Nationality field on Customer details screen")
-		public void user_610_610_verify_the_nationality_field_on_customer_details_screen() {
+		public void user_610_verify_the_nationality_field_on_customer_details_screen() {
 			for (int i = 0; i < 300; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("nationalityDropdown")).isDisplayed()) {
@@ -392,7 +392,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Category field on Customer details screen")
-		public void user_610_610_verify_the_category_field_on_customer_details_screen() {
+		public void user_610_verify_the_category_field_on_customer_details_screen() {
 			for (int i = 0; i < 300; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("clientCategory")).isDisplayed()) {
@@ -410,7 +410,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Religion field on Customer details screen")
-		public void user_610_610_verify_the_religion_field_on_customer_details_screen() {
+		public void user_610_verify_the_religion_field_on_customer_details_screen() {
 			for (int i = 0; i < 300; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("Religion")).isDisplayed()) {
@@ -428,7 +428,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Residential Status field on Customer details screen")
-		public void user_610_610_verify_the_residential_status_field_on_customer_details_screen() {
+		public void user_610_verify_the_residential_status_field_on_customer_details_screen() {
 			javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("residentialStatusDropdown")));
 
 			for (int i = 0; i < 300; i++) {
@@ -448,7 +448,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Language field on Customer details screen")
-		public void user_610_610_verify_the_language_field_on_customer_details_screen() {
+		public void user_610_verify_the_language_field_on_customer_details_screen() {
 			for (int i = 0; i < 300; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("languageDropdown")).isDisplayed()) {
@@ -466,7 +466,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the No Of Department field on Customer details screen")
-		public void user_610_610_verify_the_no_of_department_field_on_customer_details_screen() {
+		public void user_610_verify_the_no_of_department_field_on_customer_details_screen() {
 			for (int i = 0; i < 300; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("noOfDependsInput")).isDisplayed()) {
@@ -485,7 +485,7 @@ public class AutoLoan_Stepa {
 
 		
 		@And("User_610 verify the No Of Children field on Customer details screen")
-		public void user_610_610_verify_the_no_of_children_field_on_customer_details_screen() {
+		public void user_610_verify_the_no_of_children_field_on_customer_details_screen() {
 			for (int i = 0; i < 300; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("NoOfChildren")).isDisplayed()) {
@@ -505,7 +505,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Spouse Status field on Customer details screen")
-		public void user_610_610_verify_the_spouse_status_field_on_customer_details_screen() {
+		public void user_610_verify_the_spouse_status_field_on_customer_details_screen() {
 			for (int i = 0; i < 300; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("SpouseStatus")).isDisplayed()) {
@@ -523,7 +523,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Residential Status Label field on Customer details screen")
-		public void user_610_610_verify_the_residential_status_label_field_on_customer_details_screen() {
+		public void user_610_verify_the_residential_status_label_field_on_customer_details_screen() {
 			for (int i = 0; i < 300; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("residentialStatusDropdown")).isDisplayed()) {
@@ -541,7 +541,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Mother Maiden Name field on Customer details screen")
-		public void user_610_610_verify_the_mother_maiden_name_field_on_customer_details_screen() {
+		public void user_610_verify_the_mother_maiden_name_field_on_customer_details_screen() {
 			for (int i = 0; i < 300; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("MotherMaidenName")).isDisplayed()) {
@@ -559,7 +559,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Types Of Residence field on Customer details screen")
-		public void user_610_610_verify_the_types_of_residence_field_on_customer_details_screen() {
+		public void user_610_verify_the_types_of_residence_field_on_customer_details_screen() {
 			for (int i = 0; i < 300; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("TypesOfResidence")).isDisplayed()) {
@@ -577,7 +577,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Industry Segmentation field on Customer details screen")
-		public void user_610_610_verify_the_industry_segmentation_field_on_customer_details_screen() {
+		public void user_610_verify_the_industry_segmentation_field_on_customer_details_screen() {
 			for (int i = 0; i < 300; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("IndustrySegmentation")).isDisplayed()) {
@@ -595,7 +595,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Is Income Consider field on Customer details screen")
-		public void user_610_610_verify_the_is_income_consider_field_on_customer_details_screen() {
+		public void user_610_verify_the_is_income_consider_field_on_customer_details_screen() {
 			for (int i = 0; i < 300; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("IsIncomeConsider")).isDisplayed()) {
@@ -613,7 +613,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Customer Profile field on Customer details screen")
-		public void user_610_610_verify_the_customer_profile_field_on_customer_details_screen() {
+		public void user_610_verify_the_customer_profile_field_on_customer_details_screen() {
 			for (int i = 0; i < 300; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("CustomerProfile")).isDisplayed()) {
@@ -631,7 +631,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Relationship field on Customer details screen")
-		public void user_610_610_verify_the_relationship_field_on_customer_details_screen() {
+		public void user_610_verify_the_relationship_field_on_customer_details_screen() {
 			for (int i = 0; i < 300; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("Relationship")).isDisplayed()) {
@@ -649,7 +649,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the political Exposed field on Customer details screen")
-		public void user_610_610_verify_the_political_exposed_field_on_customer_details_screen() {
+		public void user_610_verify_the_political_exposed_field_on_customer_details_screen() {
 			for (int i = 0; i < 300; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("PoliticalExposed")).isDisplayed()) {
@@ -667,7 +667,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Block List field on Customer details screen")
-		public void user_610_610_verify_the_block_list_field_on_customer_details_screen() {
+		public void user_610_verify_the_block_list_field_on_customer_details_screen() {
 			for (int i = 0; i < 300; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("blocklistLabel")).isDisplayed()) {
@@ -684,7 +684,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Remark field on Customer details screen")
-		public void user_610_610_verify_the_remark_field_on_customer_details_screen() {
+		public void user_610_verify_the_remark_field_on_customer_details_screen() {
 			for (int i = 0; i < 300; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("remarksInput")).isDisplayed()) {
@@ -706,7 +706,8 @@ public class AutoLoan_Stepa {
 		
 		
 		@And("User_610 verify the Phone Number field on Customer details screen")
-		public void user_610_610_verify_the_phone_number_field_on_customer_details_screen() {
+		public void user_610_verify_the_phone_number_field_on_customer_details_screen() throws Throwable {
+			Thread.sleep(500);
 			javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("PhoneNumber")));
 			for (int i = 0; i < 300; i++) {
 				try {
@@ -725,7 +726,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Mobile Number Primary field on Customer details screen")
-		public void user_610_610_verify_the_mobile_number_primary_field_on_customer_details_screen() {
+		public void user_610_verify_the_mobile_number_primary_field_on_customer_details_screen() {
 			for (int i = 0; i < 300; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("MobileNumberPrimary")).isDisplayed()) {
@@ -743,7 +744,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Mobile Number Secondary field on Customer details screen")
-		public void user_610_610_verify_the_mobile_number_secondary_field_on_customer_details_screen() {
+		public void user_610_verify_the_mobile_number_secondary_field_on_customer_details_screen() {
 			for (int i = 0; i < 300; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("MobileNumberSecondary")).isDisplayed()) {
@@ -761,7 +762,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Emali field on Customer details screen")
-		public void user_610_610_verify_the_emali_field_on_customer_details_screen() {
+		public void user_610_verify_the_emali_field_on_customer_details_screen() {
 			for (int i = 0; i < 300; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("Email_610")).isDisplayed()) {
@@ -779,7 +780,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Preferred Contact Method field on Customer details screen")
-		public void user_610_610_verify_the_preferred_contact_method_field_on_customer_details_screen() {
+		public void user_610_verify_the_preferred_contact_method_field_on_customer_details_screen() {
 			for (int i = 0; i < 300; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("PreferredContactMethod")).isDisplayed()) {
@@ -797,7 +798,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Preferred Time For Contract field on Customer details screen")
-		public void user_610_610_verify_the_preferred_time_for_contract_field_on_customer_details_screen() {
+		public void user_610_verify_the_preferred_time_for_contract_field_on_customer_details_screen() {
 			for (int i = 0; i < 300; i++) {
 				try {
 					if (javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("preferredTimeForContract")).isDisplayed()) {
@@ -818,10 +819,11 @@ public class AutoLoan_Stepa {
 		//-----------------------------  @AT_Al_CD_03
 		
 		@And("User_610 verify the Customer Type field mandatory editable dropdown")
-		public void user_610_610_verify_the_customer_type_field_mandatory_editable_dropdown() throws Throwable {
+		public void user_610_verify_the_customer_type_field_mandatory_editable_dropdown() throws Throwable {
 			
 			Thread.sleep(2000);
 			// ----------------validate mandatory field
+			javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("contactDetailsSaveBtn")));
 
 			for (int i = 0; i < 500; i++) {
 				try {
@@ -937,7 +939,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Applicant Type field mandatory editable textbox")
-		public void user_610_610_verify_the_applicant_type_field_mandatory_editable_textbox() {
+		public void user_610_verify_the_applicant_type_field_mandatory_editable_textbox() {
 			
 			// ----------------validate mandatory field
 			
@@ -1055,7 +1057,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the KYC status field non-mandatory non-editable textbox")
-		public void user_610_610_verify_the_kyc_status_field_non_mandatory_non_editable_textbox() {
+		public void user_610_verify_the_kyc_status_field_non_mandatory_non_editable_textbox() {
 			// ----------------validate non mandatory field
 
 			for (int i = 0; i < 200; i++) {
@@ -1089,7 +1091,7 @@ public class AutoLoan_Stepa {
 		            }
 
 		@And("User_610 verify the salutation field mandatory editable dropdown")
-		public void user_610_610_verify_the_salutation_field_mandatory_editable_dropdown() {
+		public void user_610_verify_the_salutation_field_mandatory_editable_dropdown() {
 			// ----------------validate mandatory field
 
 			for (int i = 0; i < 200; i++) {
@@ -1204,7 +1206,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the First name field mandatory editable textbox")
-		public void user_610_610_verify_the_first_name_field_mandatory_editable_textbox() {
+		public void user_610_verify_the_first_name_field_mandatory_editable_textbox() {
 			// ----------------validate mandatory field
 
 		for (int i = 0; i < 200; i++) {
@@ -1250,8 +1252,8 @@ public class AutoLoan_Stepa {
 		
 		
 		@And("User_610 verify the Middle Name field non mandatory editable textbox")
-		public void user_610_verify_the_middle_name_field_non_mandatory_editable_textbox() {
-			
+		public void user_610_verify_the_middle_name_field_non_mandatory_editable_textbox() throws Throwable {
+			Thread.sleep(500);
 			// ----------------validate mandatory field
 			for (int i = 0; i < 200; i++) {
 				try {
@@ -1500,7 +1502,10 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Spouse Middle Name non mandatory editable textbox")
-		public void user_610_verify_the_spouse_middle_name_non_mandatory_editable_textbox() {
+		public void user_610_verify_the_spouse_middle_name_non_mandatory_editable_textbox() throws Throwable {
+			Thread.sleep(500);
+			javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(al_ADEntry_CustomerDetails.getElement("SpouseMiddleName")));
+
 			// ----------------validate non mandatory field
 			for (int i = 0; i < 200; i++) {
 				try {
@@ -3615,6 +3620,7 @@ public class AutoLoan_Stepa {
 		//------------------------------- @AT_Al_CD_11
 		
 		
+		
 		@And("User_610 verify the add button Autoloan")
 		public void user_610_verify_the_add_button_autoloan() {
 			for (int i = 0; i < 200; i++) {
@@ -5498,7 +5504,7 @@ public class AutoLoan_Stepa {
 		
 		
 		@And("User_610 verify the Classification field Mandatory Non Editable Select Al")
-		public void user_verify_the_classification_field_mandatory_non_editable_select_al() throws Throwable {
+		public void user_610_verify_the_classification_field_mandatory_non_editable_select_al() throws Throwable {
 			Thread.sleep(500);
 			for (int i = 0; i < 2000; i++) {
 				try {
@@ -5539,7 +5545,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Product field Mandatory Non Editable Select Al")
-		public void user_verify_the_product_field_mandatory_non_editable_select_al() {
+		public void user_610_verify_the_product_field_mandatory_non_editable_select_al() {
 			for (int i = 0; i < 2000; i++) {
 				try {
 					String Product = "document.querySelector('digital-select-layout[id=\"subProductCode\"]').innerText";
@@ -5580,7 +5586,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Scheme field Mandatory Non Editable Select Al")
-		public void user_verify_the_scheme_field_mandatory_non_editable_select_al() {
+		public void user_610_verify_the_scheme_field_mandatory_non_editable_select_al() {
 			for (int i = 0; i < 2000; i++) {
 				try {
 					String Scheme = "document.querySelector('digital-select-layout[id=\"schemeId\"]').parentElement.innerText";
@@ -5621,7 +5627,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Program Code field Non Mandatory Editable Select Al")
-		public void user_verify_the_program_code_field_non_mandatory_editable_select_al() {
+		public void user_610_verify_the_program_code_field_non_mandatory_editable_select_al() {
 			for (int i = 0; i < 2000; i++) {
 				try {
 					String ProgramCode = "document.querySelector('digital-select-layout[id=\"programCode\"]').innerText";
@@ -5662,7 +5668,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Facility Details field Non Mandatory Editable Select Al")
-		public void user_verify_the_facility_details_field_non_mandatory_editable_select_al() {
+		public void user_610_verify_the_facility_details_field_non_mandatory_editable_select_al() {
 			for (int i = 0; i < 2000; i++) {
 				try {
 					String FacilityDetails = "document.querySelector('digital-select-layout[id=\"facilityTypeCode\"]').parentElement.innerText";
@@ -5707,7 +5713,7 @@ public class AutoLoan_Stepa {
 		
 		
 		@And("User_610 verify the Servicing Branch field Non Mandatory Non Editable Select Al")
-		public void user_verify_the_servicing_branch_field_non_mandatory_non_editable_select_al() {
+		public void user_610_verify_the_servicing_branch_field_non_mandatory_non_editable_select_al() {
 			for (int i = 0; i < 2000; i++) {
 				try {
 					String ServicingBranch = "document.querySelector('digital-select-layout[id=\"location\"]').innerText";
@@ -5750,7 +5756,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Pricing Indicator field Non Mandatory Non Editable Select Al")
-		public void user_verify_the_pricing_indicator_field_non_mandatory_non_editable_select_al() {
+		public void user_610_verify_the_pricing_indicator_field_non_mandatory_non_editable_select_al() {
 			for (int i = 0; i < 2000; i++) {
 				try {
 					String PricingIndicator = "document.querySelector('digital-select-layout[id=\"packageId\"]').innerText";
@@ -5793,7 +5799,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Declared Property Value field Mandatory Non Editable Select Al")
-		public void user_verify_the_declared_property_value_field_mandatory_non_editable_select_al() {
+		public void user_610_verify_the_declared_property_value_field_mandatory_non_editable_select_al() {
 			for (int i = 0; i < 2000; i++) {
 				try {
 					String DeclaredDownpaymentAmt = "document.querySelector('kub-prime-ccy[id=\"downPaymentAmount\"]').innerText";
@@ -5836,7 +5842,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Declared Downpayment Amount field Mandatory Non Editable numberic Al")
-		public void user_verify_the_declared_downpayment_amount_field_mandatory_non_editable_numberic_al() throws Throwable {
+		public void user_610_verify_the_declared_downpayment_amount_field_mandatory_non_editable_numberic_al() throws Throwable {
 			Thread.sleep(500);
 			for (int i = 0; i < 2000; i++) {
 				try {
@@ -5879,7 +5885,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Requested Amount field Mandatory Non Editable numberic Al")
-		public void user_verify_the_requested_amount_field_mandatory_non_editable_numberic_al() {
+		public void user_610_verify_the_requested_amount_field_mandatory_non_editable_numberic_al() {
 			for (int i = 0; i < 2000; i++) {
 				try {
 					String RequestedAmount = "document.querySelector('kub-prime-ccy[ng-reflect-name=\"amountRequested\"]').innerText";
@@ -5926,7 +5932,7 @@ public class AutoLoan_Stepa {
 		
 		
 		@And("User_610 verify the currency field Mandatory Non Editable Select Al")
-		public void user_verify_the_currency_field_mandatory_non_editable_select_al() throws Throwable {
+		public void user_610_verify_the_currency_field_mandatory_non_editable_select_al() throws Throwable {
 			Thread.sleep(500);
 			for (int i = 0; i < 2000; i++) {
 				try {
@@ -5969,7 +5975,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the Loan Tenure field Mandatory Non Editable numberic Al")
-		public void user_verify_the_loan_tenure_field_mandatory_non_editable_numberic_al() {
+		public void user_610_verify_the_loan_tenure_field_mandatory_non_editable_numberic_al() {
 			for (int i = 0; i < 2000; i++) {
 				try {
 					String LoanTenure = "document.querySelector('digital-text-box[id=\"loanTenure\"]').innerText";
@@ -6012,7 +6018,7 @@ public class AutoLoan_Stepa {
 		}
 
 		@And("User_610 verify the status field Non mandatory Non editable toggle Al")
-		public void user_verify_the_status_field_non_mandatory_non_editable_toggle_al() {
+		public void user_610_verify_the_status_field_non_mandatory_non_editable_toggle_al() {
 			for (int i = 0; i < 2000; i++) {
 				try {
 					String status = "document.querySelector('digital-text-box[id=\"loanTenure\"]').innerText";
