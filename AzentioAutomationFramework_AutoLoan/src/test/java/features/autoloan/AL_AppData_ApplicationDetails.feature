@@ -323,7 +323,6 @@ And User_608 search the Reference ID for Auto Loan
 And User_608 click the Entitle button under inbox
 And User_608 click the Save button under Application Details screen
 And User_608 click the Confimation popup Ok button in Application Details screen
-And User_608 search the record ID under Application Details screen
 And User_608 verify Action field available in list view under Application Details screen
 And User_608 verify Client Name field available in list view under Application Details screen
 And User_608 verify Client Name(Alternate Lanuguage) field available in list view under Application Details screen
