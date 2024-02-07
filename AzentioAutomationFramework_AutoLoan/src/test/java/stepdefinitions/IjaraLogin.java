@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 import org.junit.Assert;
+import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.WebDriver;
 
 import dataprovider.ConfigFileReader;
@@ -91,13 +92,17 @@ public class IjaraLogin extends BaseClass {
 						isApplicationLoggedIn = javascriptHelper
 								.executeScriptWithWebElement(commonElements.getElement("module_dropdown"))
 								.isDisplayed();
+						System.out.println("From Try Block "+isApplicationLoggedIn);
 						if (isApplicationLoggedIn == true) {
+							System.out.println("From IF Block "+isApplicationLoggedIn);
+							System.out.println("I value "+i);
 							break;
 						}
 					} catch (Exception e) {
 						if (i == 50) {
-							e.printStackTrace();
-						
+							throw new ElementNotInteractableException(
+									commonElements.getElement("module_dropdown") + "is Not visible");
+
 						}
 					}
 				}
@@ -105,7 +110,7 @@ public class IjaraLogin extends BaseClass {
 					break;
 				}
 			} catch (Exception e) {
-				if(j < 3) {
+				if (j < 3) {
 					driver.get(configFileReader.getIjaraApplicationURL());
 				}
 				if (j == 3) {
