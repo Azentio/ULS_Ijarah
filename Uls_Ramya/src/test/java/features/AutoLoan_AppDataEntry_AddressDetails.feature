@@ -6,7 +6,9 @@ Scenario: The Address details screen is getting open with all valid fields
 Given Navigate the IJARA URL
 And User_6047 Login With valid credentials-AutoLoan_AppDataEntry_AddresDetails
 And User_6047 Get the test data for test case ID AT_AU_AD_01
-And User_6047 Click the Mail box in ULS application
+And click on module dropdown in IJRARAH
+And User_6047 Click the module name dropdown in ULS application
+And User_6047 Select the module name as LOS in ULS application
 And User_6047 Click the Search button under inbox
 And User_6047 Search the Ref Id under Inbox 
 And User_6047 Click the Entitle button under inbox 
@@ -46,6 +48,8 @@ Scenario: To verify the Address details screen data
 Given Navigate the IJARA URL
 And User_6047 Login With valid credentials-AutoLoan_AppDataEntry_AddresDetails
 And User_6047 Get the test data for test case ID AT_AU_AD_01
+And User_6047 Click the module name dropdown in ULS application
+And User_6047 Select the module name as LOS in ULS application
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
 And User_6047 Search the Ref Id under Inbox 
@@ -75,8 +79,8 @@ Then User_6047 Give the input for Landlord Name
 Then User_6047 Give the input for Landlord Mobile Number 
 Then User_6047 Give the input for Rent Amount 
 Then User_6047 Give the input for Frequency Of Rent 
-#And User_6047 click the Save Button
-#Then User_6047 verify the successfully saved message popup
+And User_6047 click the Save Button
+Then User_6047 verify the successfully saved message popup
 And User_6047 clict the edit button under the Address detail
 Then User_6047 to verify the same record should get saved Address Details
 Then logout from the ijaraApplication 
@@ -87,6 +91,8 @@ Scenario: To verify the field Address Type,Address status,Residential or occupan
 Given Navigate the IJARA URL
 And User_6047 Login With valid credentials-AutoLoan_AppDataEntry_AddresDetails
 And User_6047 Get the test data for test case ID AT_AU_AD_01
+And User_6047 Click the module name dropdown in ULS application
+And User_6047 Select the module name as LOS in ULS application
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
 And User_6047 Search the Ref Id under Inbox 
@@ -106,6 +112,8 @@ Scenario:To verify the field Location Category,Address line1,Address line2,Count
 Given Navigate the IJARA URL
 And User_6047 Login With valid credentials-AutoLoan_AppDataEntry_AddresDetails
 And User_6047 Get the test data for test case ID AT_AU_AD_01
+And User_6047 Click the module name dropdown in ULS application
+And User_6047 Select the module name as LOS in ULS application
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
 And User_6047 Search the Ref Id under Inbox 
@@ -127,6 +135,8 @@ Scenario:To verify the field Province Id,Neighbourhood,City,Zip code
 Given Navigate the IJARA URL
 And User_6047 Login With valid credentials-AutoLoan_AppDataEntry_AddresDetails
 And User_6047 Get the test data for test case ID AT_AU_AD_01
+And User_6047 Click the module name dropdown in ULS application
+And User_6047 Select the module name as LOS in ULS application
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
 And User_6047 Search the Ref Id under Inbox 
@@ -146,6 +156,8 @@ Then logout from the ijaraApplication
  Given Navigate the IJARA URL
 And User_6047 Login With valid credentials-AutoLoan_AppDataEntry_AddresDetails
 And User_6047 Get the test data for test case ID AT_AU_AD_01
+And User_6047 Click the module name dropdown in ULS application
+And User_6047 Select the module name as LOS in ULS application
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
 And User_6047 Search the Ref Id under Inbox 
@@ -166,6 +178,8 @@ Then logout from the ijaraApplication
 Given Navigate the IJARA URL
 And User_6047 Login With valid credentials-AutoLoan_AppDataEntry_AddresDetails
 And User_6047 Get the test data for test case ID AT_AU_AD_01
+And User_6047 Click the module name dropdown in ULS application
+And User_6047 Select the module name as LOS in ULS application
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
 And User_6047 Search the Ref Id under Inbox 
@@ -188,6 +202,8 @@ Scenario: To verify the field status and functionality of back button
 Given Navigate the IJARA URL
 And User_6047 Login With valid credentials-AutoLoan_AppDataEntry_AddresDetails
 And User_6047 Get the test data for test case ID AT_AU_AD_01
+And User_6047 Click the module name dropdown in ULS application
+And User_6047 Select the module name as LOS in ULS application
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
 And User_6047 Search the Ref Id under Inbox 
@@ -212,6 +228,8 @@ Scenario: To verify the impact when user keep invalid input in address datails f
 Given Navigate the IJARA URL
 And User_6047 Login With valid credentials-AutoLoan_AppDataEntry_AddresDetails
 And User_6047 Get the test data for test case ID AT_AU_AD_09
+And User_6047 Click the module name dropdown in ULS application
+And User_6047 Select the module name as LOS in ULS application
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
 And User_6047 Search the Ref Id under Inbox 
@@ -235,6 +253,8 @@ Then logout from the ijaraApplication
  Given Navigate the IJARA URL
 And User_6047 Login With valid credentials-AutoLoan_AppDataEntry_AddresDetails
 And User_6047 Get the test data for test case ID AT_AU_AD_01
+And User_6047 Click the module name dropdown in ULS application
+And User_6047 Select the module name as LOS in ULS application
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
 And User_6047 Search the Ref Id under Inbox 
@@ -250,23 +270,21 @@ Then User_6047 verify the Export to PDF,XLS in address details list view
 Then User_6047 verify list view fields are shown in address details list view
 Then logout from the ijaraApplication
 
-#todo
-
-
  @AT_AU_AD_11
  Scenario: To verify Values in List view should be non editable,functionality of add and edit button in address details
  
  Given Navigate the IJARA URL
 And User_6047 Login With valid credentials-AutoLoan_AppDataEntry_AddresDetails
 And User_6047 Get the test data for test case ID AT_AU_AD_01
+And User_6047 Click the module name dropdown in ULS application
+And User_6047 Select the module name as LOS in ULS application
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
 And User_6047 Search the Ref Id under Inbox 
 And User_6047 Click the Entitle button under inbox 
 And User_6047 click on additional customer info tab
 And User_6047 Click edit icon
-#And User_6047 To verify Values in List view should be non editable
-#And User_6047 To verify Values in List view should be non editable in Address details
+And User_6047 To verify Values in List view should be non editable
 And User_6047 clict the Add button under the Address detail
 And User_6047 To verify the Add button allow user to create new record of Address details 
 And User_6047 To click the back button in Modification of Address details screen
@@ -280,6 +298,8 @@ Then logout from the ijaraApplication
 Given Navigate the IJARA URL
 And User_6047 Login With valid credentials-AutoLoan_AppDataEntry_AddresDetails
 And User_6047 Get the test data for test case ID AT_AU_AD_01
+And User_6047 Click the module name dropdown in ULS application
+And User_6047 Select the module name as LOS in ULS application
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
 And User_6047 Search the Ref Id under Inbox 
@@ -302,6 +322,8 @@ Scenario: To verify  the modification of address detail screen
 Given Navigate the IJARA URL
 And User_6047 Login With valid credentials-AutoLoan_AppDataEntry_AddresDetails
 And User_6047 Get the test data for test case ID AT_AU_AD_01
+And User_6047 Click the module name dropdown in ULS application
+And User_6047 Select the module name as LOS in ULS application
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
 And User_6047 Search the Ref Id under Inbox 

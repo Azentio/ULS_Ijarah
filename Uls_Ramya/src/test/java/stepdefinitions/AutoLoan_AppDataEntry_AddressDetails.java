@@ -43,7 +43,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	ExcelData AddressDetails_TestData  = new ExcelData(excelTestDataPath,"AutoL_AppDataEn_AddressDetail","Dataset ID");
 	Robot robot;
 	int sectionIndex;
-	
+	int indexOfListView = 0;
 
 	
 	@And("User_6047 Get the test data for test case ID AT_AU_AD_01" )
@@ -63,7 +63,8 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text"))
-				.sendKeys(testData.get("Ref No")); 
+				//.sendKeys(testData.get("Ref No")); 
+				.sendKeys("5231");
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -117,6 +118,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 								"document.querySelector('ion-segment').querySelectorAll('ion-segment-button')[" + i
 										+ "]")
 								.click();
+						indexOfListView=i;
 						isClicked = true;
 						break;
 
@@ -1986,7 +1988,8 @@ Thread.sleep(500);
 	}
 
 	@Then("User_6047 verify Province Id should be mandatory,editable,dropdown")
-	public void user_6047_verify_province_id_should_be_editable_dropdown() {
+	public void user_6047_verify_province_id_should_be_editable_dropdown() throws Throwable {
+		Thread.sleep(3000);
 		String ProvinceMandy = javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("province_id")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
             try {
@@ -2202,7 +2205,7 @@ Thread.sleep(500);
 		String Duration_Text= javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("duration_on_stay_verify")).getAttribute("type");
 		for (int i = 0; i <2000; i++) {
             try {
-                Assert.assertTrue(Duration_Text.contains("text"));
+                Assert.assertTrue(Duration_Text.contains("number"));
                 break;
             } catch (Exception e) {
                 if (i==1999) {
@@ -2398,7 +2401,7 @@ Thread.sleep(500);
 		String RentAmountEdit_Text= javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("duration_on_stay_verify")).getAttribute("type");
 		for (int i = 0; i <2000; i++) {
             try {
-                Assert.assertTrue(RentAmountEdit_Text.contains("text"));
+                Assert.assertTrue(RentAmountEdit_Text.contains("number"));
                 break;
             } catch (Exception e) {
                 if (i==1999) {
@@ -3075,174 +3078,80 @@ public void user_6047_verify_list_view_fields_are_shown_in_address_details_list_
 
 public void user_6047_to_verify_values_in_list_view_should_be_non_editable() {
 
-	String fieldName = "";
-	boolean status = false;
-	String sectionLength = "";
-	boolean isClicked = false;
-	for (int i = 0; i <= 200; i++) {
+	boolean statusOfListViewRecord = false;
+	String listViewQuery = "document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]').length";
+	String listViewName = "";
+	String noOfListView = "";
+
+	boolean isIndexFound = false;
+	for (int i = 0; i <= 300; i++) {
 		try {
-			sectionLength = javascriptHelper.executeScript(
-					"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length")
-					.toString();
-			if (!(sectionLength.isBlank()) && sectionLength.equals("0")) {
+			noOfListView = javascriptHelper.executeScript("return " + listViewQuery).toString();
+			if (noOfListView.equals("0") && !(noOfListView.isBlank())) {
 				break;
 			}
 		} catch (Exception e) {
-
+			if (i == 300) {
+				Assert.fail(e.getMessage());
+			}
 		}
 	}
-	int premitiveSectionLength = Integer.parseInt(sectionLength);
-	for (int i = 1; i <= premitiveSectionLength; i++) {
-		String sectionName = "";
-		for (int j = 0; j <= 200; i++) {
+	System.out.println("No Of List view " + noOfListView);
+	int premitivListViews = Integer.parseInt(noOfListView);
+	for (int i = 0; i < premitivListViews; i++) {
+		for (int j = 0; j <= 300; j++) {
 			try {
-				sectionName = javascriptHelper.executeScript(
-						"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
-								+ i + "].innerText")
-						.toString();
-				System.out.println("Section Name " + sectionName + " i value " + i);
-				if (!(sectionName.isEmpty())) {
-					System.out.println("J loop got breaked");
+				listViewName = javascriptHelper.executeScript("return "
+						+ "document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]')["
+						+ i + "].innerText").toString();
+				if (listViewName.contains("Address Details")) {
+
+					//indexOfListView = i;
+
+					isIndexFound = true;
+					break;
+				} else {
+
+					isIndexFound = false;
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 200) {
+				if (j == 300) {
 					Assert.fail(e.getMessage());
 				}
+
 			}
 		}
-		if (sectionName.equals("Address Details")) {
-			// document.querySelectorAll('thead[class="p-datatable-thead"]')[3].innerText
-			System.out.println(
-					"document.querySelectorAll('thead[class=\"p-datatable-thead\"]')[" + (i + 1) + "].innerText");
-			for (int l = 0; l <= 20; l++) {
-				try {
-					javascriptHelper
-					.executeScriptWithWebElement(
-							"document.querySelector('tbody td[ng-reflect-ng-switch=\"string\"]')")
-					.sendKeys("123456");
-					System.out.println(fieldName);
-					if (!(fieldName.isBlank())) {
-
-						System.out.println("l loop got breaked ");
-						break;
-					}
-				} catch (Exception e) {
-					if (l == 20) {
-						Assert.fail(e.getMessage());
-						
-					}
-				}
-			}
-
-			if (!(fieldName.isEmpty())) {
-				System.out.println(fieldName);
-
-				isClicked = true;
-				break;
-			}
-
-		}
-		if (isClicked == true)
-
-		{
+		if (isIndexFound == true) {
 			break;
 		}
+
 	}
-	
-	Assert.assertTrue(status);
 
-}
-
-@Then("User_6047 To verify Values in List view should be non editable in Address details")
-
-public void user_6047_to_verify_values_in_list_view_should_be_non_editable_in_address_details() {
-	boolean status = false;
-	
-	String fieldName = "";
-	String query = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')[2].innerText";
-	int screenLocation;
-	String sectionLength = "";
-	boolean isClicked = false;
-	for (int i = 0; i <= 200; i++) {
+	for (int i = 0; i <= 50; i++) {
 		try {
-			sectionLength = javascriptHelper.executeScript(
-					"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length")
-					.toString();
-			if (!(sectionLength.isBlank()) && sectionLength.equals("0")) {
-				break;
+
+			javascriptHelper.executeScriptWithWebElement(
+					"document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]')["
+							+ indexOfListView + "].querySelector('p-tag')")
+					.click();
+			if (i > 40) {
+				javascriptHelper.executeScriptWithWebElement(
+						"document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]')["
+								+ indexOfListView + "].querySelector('p-tag')")
+						.sendKeys(Keys.PAGE_DOWN);
 			}
 		} catch (Exception e) {
-
+			if (i == 50) {
+				statusOfListViewRecord = true;
+			}
 		}
 	}
-	int premitiveSectionLength = Integer.parseInt(sectionLength);
-	for (int i = 1; i <= premitiveSectionLength; i++) {
-		String sectionName = "";
-		for (int j = 0; j <= 200; i++) {
-			try {
-				sectionName = javascriptHelper.executeScript(
-						"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
-								+ i + "].innerText")
-						.toString();
-				System.out.println("Section Name " + sectionName + " i value " + i);
-				if (!(sectionName.isEmpty())) {
-					System.out.println("J loop got breaked");
-					break;
-				}
-			} catch (Exception e) {
-				if (i == 200) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-		if (sectionName.equals("Address Details")) {
-			// document.querySelectorAll('thead[class="p-datatable-thead"]')[3].innerText
-			System.out.println(
-					"document.querySelectorAll('thead[class=\"p-datatable-thead\"]')[" + (i + 1) + "].innerText");
-			for (int l = 0; l <= 20; l++) {
-				try {
-					
-//					fieldName = javascriptHelper.executeScript(
-//							"return document.querySelectorAll('thead[class=\"p-datatable-thead\"]')[" + (i + 1)
-//									+ "].innerText")
-//							.toString();
-					javascriptHelper
-					.executeScriptWithWebElement(
-							"document.querySelector('tbody td[ng-reflect-ng-switch=\"string\"]')")
-					.sendKeys("123456");
-					System.out.println(fieldName);
-					if (!(fieldName.isBlank())) {
-
-						System.out.println("l loop got breaked ");
-						break;
-					}
-				} catch (Exception e) {
-					if (l == 20) {
-					 status = true;
-						Assert.fail(e.getMessage());
-					}
-				}
-			}
-
-			if (!(fieldName.isEmpty())) {
-				System.out.println(fieldName);
-
-				isClicked = true;
-				break;
-			}
-
-		}
-		if (isClicked == true)
-
-		{
-			break;
-		}
-	}
-	System.out.println("Field Name " + fieldName);
-	Assert.assertTrue(status);
+	System.out.println(statusOfListViewRecord);
+	Assert.assertTrue(statusOfListViewRecord);
 
 }
+
 
 @And("User_6047 To verify the Add button allow user to create new record of Address details")
 public void user_6047_to_verify_the_add_button_allow_user_to_create_new_record_of_address_details() {

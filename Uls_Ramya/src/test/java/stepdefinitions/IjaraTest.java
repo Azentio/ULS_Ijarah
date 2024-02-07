@@ -29,43 +29,43 @@ public class IjaraTest extends BaseClass {
 		ijaraLogin.loginWithIjaraApplication();
 	}
 	@And("User_6047 Login With valid credentials-Tawarruq-offering-offerDetails")
-	public void Login_with_valid_credentials_Tawarruq_offering_offerDetails() throws Throwable {
+	public void user_6047_login_with_valid_credentials_Tawarruq_offering_offerDetails() throws Throwable {
 		ijaraLogin.loginWithIjaraApplication_offoring();	
 	}
 	@And("User_6047 Login with valid credentials- NewApp-CustometDetails")
-	public void Login_with_valid_credentials_NewApp_CustometDetails() throws Throwable {
+	public void user_6047_login_with_valid_credentials_NewApp_CustometDetails() throws Throwable {
 		ijaraLogin.loginWithIjaraApplication_Tawarruq_NewApp_CustomerDetails();	
 	}
 	@And("User_6047 Login with valid credentials - AppDataEntry-DocumentDetails")
-	public void user_login_with_valid_credentials_AppDataEntry_DocumentDetails() {
+	public void user_6047_login_with_valid_credentials_AppDataEntry_DocumentDetails() {
 		ijaraLogin.loginWithIjaraApplication_Tawarruq_AppDataEntry_DocumentDetails();
 	}
 	@And("User_6047 Login with valid credentials - Tawarruq-AppDataEntry-Repayment")
-	public void user_login_with_valid_credentials_tawarruq_app_data_entry_repayment() {
+	public void user_6047_login_with_valid_credentials_tawarruq_app_data_entry_repayment() {
 		ijaraLogin.loginWithIjaraApplication_Tawarruq_AppDataEntry_Repayment();	
 	}
 	@And("User_6047 Login with valid credentials-Tawarruq-AppDataEntry-customerDetails")
-	public void user_login_with_valid_credentials_tawarruq_app_data_entry_customer_details() {
+	public void user_6047_login_with_valid_credentials_tawarruq_app_data_entry_customer_details() {
 		ijaraLogin.loginWithIjaraApplication_Tawarruq_AppDataEntry_customerDetails();
 	}
 	@And("User_6047 Login With valid credentials - commodity-insuranceIfo,documentDetails")
-	public void Login_with_valid_credentials_commodity_insuranceIfo_documentDetails()throws Throwable {
+	public void user_6047_login_with_valid_credentials_commodity_insuranceIfo_documentDetails()throws Throwable {
 		ijaraLogin.loginWithIjaraApplication_commodity_insuranceIfo_documentDetails();	
 	}
 	@And("User_6047 Login with valid credentials-Murabha-AppDataEntry-RepaymentMode")
-	public void user6047_login_with_valid_credentials_murabha_app_data_entry_repayment_mode() {
+	public void user_6047_login_with_valid_credentials_murabha_app_data_entry_repayment_mode() {
 		ijaraLogin.loginWithIjaraApplication_murabha_AppDataEntry_RepaymentMode();
 	}
 	@And("User_6047 Login With valid credentials-Murabha-offering-offerDetails")
-	public void Login_with_valid_credentials() throws Throwable {
+	public void user_6047_login_with_valid_credentials() throws Throwable {
 		ijaraLogin.loginWithIjaraApplication();	
 	}
 	@And("User_6047 Login with valid credentials - murabha-DocumentDetails")
-	public void Login_with_valid_credentials_murabha_DocumentDetails()throws Throwable {
+	public void user_6047_login_with_valid_credentials_murabha_DocumentDetails()throws Throwable {
 		ijaraLogin.loginWithIjaraApplication_Murabha_offering_Document_Details();	
 	}
 	@And("User_6047 login with valid credentials-ijara-DataCheck-Employment detail")
-	public void user_login_with_valid_credentials_ijara_data_check_employment_detail() {
+	public void user_6047_login_with_valid_credentials_ijara_data_check_employment_detail() {
 		ijaraLogin.loginWithIjaraApplication_ijara_data_check_employment_detail();
 	
 	}
@@ -74,11 +74,11 @@ public class IjaraTest extends BaseClass {
 		ijaraLogin.loginWithIjaraApplication_AppDataEntry_AutoLoan_AssetDetails();	
 	}
 	@And("User_6047 Login With valid credentials-AutoLoan_AppDataEntry_AddresDetails")
-	public void Login_with_valid_credentials_autoloan_appdataentry_addressdetails() throws Throwable {
+	public void Login_6047_with_valid_credentials_autoloan_appdataentry_addressdetails() throws Throwable {
 		ijaraLogin.loginWithIjaraApplication_AutoLoan_AppDataEntry_AddresDetails();	
 	}
 	@And("User_6047 Login with valid credentials-ijara-AppDataEntry_FacilityInfo")
-	public void user_login_with_valid_credentials_ijara_app_data_entry_facility_info() {
+	public void user_6047_login_with_valid_credentials_ijara_app_data_entry_facility_info() {
 		ijaraLogin.loginWithIjaraApplication_ijara_AppDataEntry_FacilityInfo();
 	}
 	@And("User_6047 Login With valid credentials -Tawarruq - AppDataCheck - InsuranceIfo")
@@ -110,12 +110,20 @@ public class IjaraTest extends BaseClass {
 		ijaraLogin.loginWithIjaraApplication_murabha_offering_offerDetail();	
 	}
 	@And("User_6047 login with valid credentials-Murabha-DataCheck-ProductDetails")
-	public void user_login_with_valid_credentials_murabha_data_check_product_details() {
+	public void user_6047_login_with_valid_credentials_murabha_data_check_product_details() {
 		ijaraLogin.loginWithIjaraApplication_Murabha_AppDataCheck_ProductDetails();
 	}
-	@Given("User_6047 Login with valid credentials-AutoLoan-Offering-CustomerDetails")
-	public void user_login_with_valid_credentials_auto_loan_offering_customer_details() {
+	@And("User_6047 Login with valid credentials-AutoLoan-Offering-CustomerDetails")
+	public void user_6047_login_with_valid_credentials_auto_loan_offering_customer_details() {
 		ijaraLogin.loginWithIjaraApplication_AutoLoan_offering_CustomerDetails();
+	}
+	@And("User_6047 Login with valid credentials-AutoLoan-Disbursion maker-Margin Money")
+	public void user_6047_login_with_valid_credentials_auto_loan_disbursion_maker_margin_money() {
+		ijaraLogin.loginWithIjaraApplication_AutoLoan_DisbursionMaker_MarginMoney();
+	}
+	@Given("User_6047 Login with valid credentials_PersonalLoan_NewApp_Customer Details")
+	public void user_6047_login_with_valid_credentials_personal_loan_new_app_customer_details() {
+		ijaraLogin.loginWithIjaraApplication_PersonalLoan_NewApp_ustomerDetails();
 	}
 	
 	@Then("logout from the ijaraApplication")

@@ -520,8 +520,12 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 		for (int i = 0; i < 200; i++) {
 		
 			try {
-				javascriptHelper.executeScriptWithWebElement("document.querySelector('ion-label[ng-reflect-text=\"Account Number.TOOLTIP\"]+ion-input')").click();
-				javascriptHelper.executeScriptWithWebElement("document.querySelector('ion-label[id=\"ion-input-28-lbl\"]+ion-input input')").sendKeys("123456");
+//				javascriptHelper.executeScriptWithWebElement("document.querySelector('ion-label[ng-reflect-text=\"Account Number.TOOLTIP\"]+ion-input')").click();
+//				javascriptHelper.executeScriptWithWebElement("document.querySelector('ion-label[id=\"ion-input-28-lbl\"]+ion-input input')").sendKeys("123456");
+				
+				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").click();
+				//javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").sendKeys(Keys.chord(Keys.CONTROL, "A", Keys.BACK_SPACE));;
+				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-4-lbl\"]')").sendKeys("123456");
 				
 				//javascriptHelper.executeScriptWithWebElement(Tawarooq_Repayment_js.getElement("accountNumberField_in")).sendKeys(testData.get("AccountNumber"));
 				break;
@@ -817,7 +821,7 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 			}
 		}
 				javascriptHelper.executeScriptWithWebElement("document.querySelector('ion-label[ng-reflect-text=\"ECS CODE.TOOLTIP\"]+ion-input')").click();
-				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-5-lbl\"]')").sendKeys("3214");
+				javascriptHelper.executeScriptWithWebElement("document.querySelector('input[aria-labelledby=\"ion-input-5-lbl\"]')").sendKeys("89630");
 				
 	}
 
@@ -1063,8 +1067,8 @@ public class Tawarooq_RepaymentMode extends BaseClass{
 			try {
 				//javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("search_button_for_employment_det")).click();
 				javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("search_box_search_text")).
-				sendKeys(testData.get("Record"));
-				//sendKeys(RecordIdNumber);
+				//sendKeys(testData.get("Record"));
+				sendKeys(testData.get("Id"));
 				break;
 			}
 			

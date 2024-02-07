@@ -453,7 +453,7 @@ public class Murabha_AppDataEntry_AddressDetails {
 			try {
 				javascriptHelper.executeScriptWithWebElement(Mura_AddressDetails_js.getElement("address_line1"))
 				//.sendKeys(testData.get("address_line_1"));
-				.sendKeys(testData.get("AddressLine1"));
+				.sendKeys(testData.get("address_line_1"));
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -469,7 +469,7 @@ public class Murabha_AppDataEntry_AddressDetails {
 			try {
 				javascriptHelper.executeScriptWithWebElement(Mura_AddressDetails_js.getElement("address_line2"))
 				//.sendKeys(testData.get("address_line_2"));
-				.sendKeys(testData.get("AddressLine2"));
+				.sendKeys(testData.get("address_line_2"));
 				break;
 			} catch (Exception e) {
 				if (i == 500) {

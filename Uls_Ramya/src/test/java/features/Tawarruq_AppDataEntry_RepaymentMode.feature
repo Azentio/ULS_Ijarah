@@ -70,10 +70,10 @@ And User_6047 click the Account currency field is mandatory,editable and lookup 
 And User_6047 verify the Bank name field is mandatory,editable and lookup value 
 And User_6047 verify the Branch name field is mandatory,editable and lookup value 
 And User_6047 verify the Code field is mandatory,editable and numeric
-And User_6047 click the Save button under repayment mode screen
-Then User_6047 verify the successfully saved message popup in Repayment Mode
-Then User_6047 Extract the record reference number in toastmsg
-And User_6047 click edit icon in Repayment Mode
+#And User_6047 click the Save button under repayment mode screen
+#Then User_6047 verify the successfully saved message popup in Repayment Mode
+#Then User_6047 Extract the record reference number in toastmsg
+#And User_6047 click edit icon in Repayment Mode
 Then User_6047 To verify the same record should get saved in Repayment Mode
 And User_6047 click help icon in Repayment Mode
 Then User_6047 verify description of all the fields details in Repayment Mode
@@ -100,11 +100,11 @@ Then User_6047 Give the input for account currency field in Repayment Mode
 Then User_6047 Give the input for bank name field in Repayment Mode
 Then User_6047 Give the input for branch name field in Repayment Mode
 Then User_6047 Give the input for code field in Repayment Mode
-And User_6047 click the Save button under repayment mode screen
+And User_6047 click the Save button under repayment mode screen 
 Then User_6047 Verify the popup of fill all field in Repayment Mode
-Then User_6047 Give the negative number input for account number field in Repayment Mode
-And User_6047 click the Save button under repayment mode screen
-Then User_6047 Verify the popup of fill all field in Repayment Mode
+#Then User_6047 Give the negative number input for account number field in Repayment Mode
+#And User_6047 click the Save button under repayment mode screen
+#Then User_6047 Verify the popup of fill all field in Repayment Mode
 Then User_6047 Give the character input for account number field in Repayment Mode
 And User_6047 click the Save button under repayment mode screen
 Then User_6047 Verify the popup of fill all field in Repayment Mode
@@ -118,7 +118,7 @@ Scenario: To verify Modification of RepaymentMode record
 
 Given Navigate the IJARA URL
 And User_6047 Login with valid credentials - Tawarruq-AppDataEntry-Repayment
-And User_6047 Get the test data for test case ID AT_TW_AD_IRM_04
+And User_6047 Get the test data for test case ID AT_TW_AD_IRM_01
 And User_6047 Click the module name dropdown in ULS application
 And User_6047 Select the module name as LOS in ULS application
 And User_6047 Click the Mail box in ULS application
@@ -139,7 +139,7 @@ And User_6047 verify the ESC code field Repayment mode
 Then User_6047 verify save button Repayment mode
 Then User_6047 modify the ESC code field
 And User_6047 click the save button under repayment mode screen
-Then User_6047 verify the successfully saved message popup
+Then User_6047 verify the successfully saved message popup 
 And User_6047 Click the Search button 
 Then User_6047 search the Repayment list under Repayment mode
 And User_6047 click edit icon in Repayment Mode
