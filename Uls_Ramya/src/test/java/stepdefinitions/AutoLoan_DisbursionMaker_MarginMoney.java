@@ -47,6 +47,31 @@ public class AutoLoan_DisbursionMaker_MarginMoney {
 	public void user_6047_get_the_test_data_for_test_case_id_at_al_dsb_mm_04() {
 		testData = AL_DSB_MM_TestData.getTestdata("DS01_AT_AL_DSB_MM_04");
 	}
+
+	@And("User_6047 Get the test data for test case ID AT_AL_DSB_MM_05")
+	public void user_6047_get_the_test_data_for_test_case_id_at_al_dsb_mm_05() {
+		testData = AL_DSB_MM_TestData.getTestdata("DS01_AT_AL_DSB_MM_05");
+	}
+
+	@And("User_6047 Get the test data for test case ID AT_AL_DSB_MM_06")
+	public void user_6047_get_the_test_data_for_test_case_id_at_al_dsb_mm_06() {
+		testData = AL_DSB_MM_TestData.getTestdata("DS01_AT_AL_DSB_MM_06");
+	}
+
+	@And("User_6047 Get the test data for test case ID AT_AL_DSB_MM_07")
+	public void user_6047_get_the_test_data_for_test_case_id_at_al_dsb_mm_07() {
+		testData = AL_DSB_MM_TestData.getTestdata("DS01_AT_AL_DSB_MM_07");
+	}
+
+	@And("User_6047 Get the test data for test case ID AT_AL_DSB_MM_08")
+	public void user_6047_get_the_test_data_for_test_case_id_at_al_dsb_mm_08() {
+		testData = AL_DSB_MM_TestData.getTestdata("DS01_AT_AL_DSB_MM_08");
+	}
+
+	@And("User_6047 Get the test data for test case ID AT_AL_DSB_MM_09")
+	public void user_6047_get_the_test_data_for_test_case_id_at_al_dsb_mm_09() {
+		testData = AL_DSB_MM_TestData.getTestdata("DS01_AT_AL_DSB_MM_09");
+	}
 	@And("User_6047 search the refer id under Inbox")
 	public void user_6047_search_the_ref_id_under_inbox() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text")));

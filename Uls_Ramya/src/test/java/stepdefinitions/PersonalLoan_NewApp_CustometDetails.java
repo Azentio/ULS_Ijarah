@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Map;
 
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.testng.asserts.SoftAssert;
 
@@ -41,6 +42,14 @@ public class PersonalLoan_NewApp_CustometDetails {
 	@And("User_6047 Get the test data for test case ID AT_PL_NEWAPP_CD_11")
 	public void user_6047_get_the_test_data_for_test_case_id_at_pl_newapp_cd_11() {
 		testData = PL_Newapp_CustomerDetails_TestData.getTestdata("DS01_AT_PL_NEWAPP_CD_11");
+	}
+	@And("User_6047 Get the test data for test case ID AT_PL_NEWAPP_CD_12")
+	public void user_6047_get_the_test_data_for_test_case_id_at_pl_newapp_cd_12() {
+		testData = PL_Newapp_CustomerDetails_TestData.getTestdata("DS01_AT_PL_NEWAPP_CD_12");
+	}
+	@And("User_6047 Get the test data for test case ID AT_PL_NEWAPP_CD_13")
+	public void user_6047_get_the_test_data_for_test_case_id_at_pl_newapp_cd_13() {
+		testData = PL_Newapp_CustomerDetails_TestData.getTestdata("DS01_AT_PL_NEWAPP_CD_13");
 	}
 	@Then("User_6047 search the Reference Id Under Inbox")
 	public void user_6047_search_the_reference_id_under_inbox() throws Throwable {
@@ -297,6 +306,134 @@ public class PersonalLoan_NewApp_CustometDetails {
 				}
 			}
 		}
+	}
+	@Then("User_6047 Delete the First name")
+	public void user_6047_delete_the_first_name() {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(PL_Newapp_CustomerDetails_JS  .getElement("FirstName_input")).sendKeys(Keys.chord(Keys.CONTROL, "A", Keys.BACK_SPACE));
+			
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Then("User_6047 Enter the negative numeric value in customer details field")
+	public void user_6047_enter_the_negative_numeric_value_in_customer_details_field() {
+		for (int i = 0; i <= 500; i++) {
+			try {
+			
+				javascriptHelper.executeScriptWithWebElement(PL_Newapp_CustomerDetails_JS  .getElement("FirstName_input"))
+				.sendKeys(testData.get("Negative numeric value"));
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Then("User_6047 Verify the error msg of negative numeric value")
+	public void user_6047_verify_the_error_msg_of_negative_numeric_value() 
+		throws Throwable {
+	String negativevalueValidation = "";
+
+	for (int i = 0; i <= 300; i++) {
+		try {
+		negativevalueValidation = javascriptHelper
+					.executeScript("return " + PL_Newapp_CustomerDetails_JS.getElement("FirstName_errormsg"))
+					.toString();
+			System.out.println("validation msg" + negativevalueValidation);
+			break;
+		} catch (Exception e) {
+			if (i == 300) {
+				Assert.fail(e.getMessage());
+			}
+		}
+	}
+	Assert.assertEquals("Only Alphabets are allowed", negativevalueValidation);
+
+	}
+
+	@Then("User_6047 Enter the charater value in numeric field")
+	public void user_6047_6047_enter_the_charater_value_in_numeric_field() {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(PL_Newapp_CustomerDetails_JS.getElement("PreferedTimeForContact_input")));
+				//javascriptHelper.executeScriptWithWebElement(PL_Newapp_CustomerDetails_JS  .getElement("PreferedTimeForContact_input")).sendKeys(Keys.chord(Keys.CONTROL, "A", Keys.BACK_SPACE));
+				javascriptHelper.executeScriptWithWebElement(PL_Newapp_CustomerDetails_JS  .getElement("PreferedTimeForContact_input"))
+				.sendKeys(testData.get("Charater value"));
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Then("User_6047 Verify the error msg of charater numeric value")
+	public void user_verify_the_error_msg_of_charater_numeric_value() 
+		throws Throwable {
+	String charactervalueValidation = "";
+
+	for (int i = 0; i <= 300; i++) {
+		try {
+		charactervalueValidation = javascriptHelper
+					.executeScript("return " + PL_Newapp_CustomerDetails_JS.getElement("preferedTimeForContact_errormsg"))
+					.toString();
+			System.out.println("validation msg" + charactervalueValidation);
+			break;
+		} catch (Exception e) {
+			if (i == 300) {
+				Assert.fail(e.getMessage());
+			}
+		}
+	}
+	Assert.assertEquals("Invalid time format (HH:MM)", charactervalueValidation);
+	}
+
+	@Then("User_6047 Enter the special charater value in any field")
+	public void user_6047_enter_the_special_charater_value_in_any_field() {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(PL_Newapp_CustomerDetails_JS.getElement("FirstName_input")));
+				javascriptHelper.executeScriptWithWebElement(PL_Newapp_CustomerDetails_JS  .getElement("FirstName_input")).sendKeys(Keys.chord(Keys.CONTROL, "A", Keys.BACK_SPACE));
+				javascriptHelper.executeScriptWithWebElement(PL_Newapp_CustomerDetails_JS  .getElement("FirstName_input"))
+				.sendKeys(testData.get("Special character"));
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Then("User_6047 Verify the error msg of special charater value")
+	public void user_6047_verify_the_error_msg_of_special_charater_value() 
+		throws Throwable {
+	String specialCharacterValidation = "";
+
+	for (int i = 0; i <= 300; i++) {
+		try {
+		specialCharacterValidation = javascriptHelper
+					.executeScript("return " + PL_Newapp_CustomerDetails_JS.getElement("FirstName_errormsg"))
+					.toString();
+			System.out.println("validation msg" + specialCharacterValidation);
+			break;
+		} catch (Exception e) {
+			if (i == 300) {
+				Assert.fail(e.getMessage());
+			}
+		}
+	}
+	Assert.assertEquals("Only Alphabets are allowed", specialCharacterValidation);
 	}
 
 }

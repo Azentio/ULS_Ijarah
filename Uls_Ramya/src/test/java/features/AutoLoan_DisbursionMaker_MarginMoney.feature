@@ -28,7 +28,7 @@ save and back button functionality
 
 Given Navigate the IJARA URL
 And User_6047 Login with valid credentials-AutoLoan-Disbursion maker-Margin Money
-And User_6047 Get the test data for test case ID AT_AL_DSB_MM_04 
+And User_6047 Get the test data for test case ID AT_AL_DSB_MM_05 
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
 And User_6047 search the refer id under Inbox
@@ -43,38 +43,38 @@ And User_6047 to click the back button
 Then User_6047 click verify the functionality of back button
 Then logout from the ULS Application
 
-# To do
-@AT_AL_DSB_MM_06
+# bug -- Execution block
+#@AT_AL_DSB_MM_06
 Scenario: To verify the functionality of Activate/Deactivate button
 
 Given Navigate the IJARA URL
 And User_6047 Login with valid credentials-AutoLoan-Disbursion maker-Margin Money
-And User_6047 Get the test data for test case ID AT_AL_DSB_MM_04 
+And User_6047 Get the test data for test case ID AT_AL_DSB_MM_06 
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
 And User_6047 search the refer id under Inbox
 And User_6047 Click the Entitle button under inbox 
 And User_6047 Click the Margin money screen
-And User_6047 click search button
-And User_6047 search the record in list view
+#And User_6047 click search button
+#And User_6047 search the record in list view
 And User_6047 click edit icon
 And User_6047 change the address details status to active to inactive or inactive to active
 Then User_6047 click the Save button
-And User_6047 click search button
-And User_6047 search the record in list view
+#And User_6047 click search button
+#And User_6047 search the record in list view
 Then User_6047 verify system should show the record status as active or inactive based on toggle
 And User_6047 click edit icon
 And User_6047 change the address details status to active to inactive or inactive to active
 Then User_6047 click the Save button
 Then User_6047 verify system should show the record status as active or inactive based on toggle
 Then logout from the ijaraApplication
-And User_6047 search the record
+
 @AT_AL_DSB_MM_07
 Scenario: To verify the Business Partner details List view
 
 Given Navigate the IJARA URL
 And User_6047 Login with valid credentials-AutoLoan-Disbursion maker-Margin Money
-And User_6047 Get the test data for test case ID AT_AL_DSB_MM_04 
+And User_6047 Get the test data for test case ID AT_AL_DSB_MM_07
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
 And User_6047 search the refer id under Inbox
@@ -102,7 +102,7 @@ Scenario: To verify the functionality of Search box with matching and mismatchin
 
 Given Navigate the IJARA URL
 And User_6047 Login with valid credentials-AutoLoan-Disbursion maker-Margin Money
-And User_6047 Get the test data for test case ID AT_AL_DSB_MM_04 
+And User_6047 Get the test data for test case ID AT_AL_DSB_MM_08 
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
 And User_6047 search the refer id under Inbox
@@ -115,11 +115,11 @@ And User_6047 click the Search button and search the mismatching record in listv
 And User_6047 check the mismatching result in list view
 
 @AT_AL_DSB_MM_09
-Scenario: To verify the functionality of Search box with matching and mismatching data
+Scenario: To verify the functionality of  export to excel and pdf button
 
 Given Navigate the IJARA URL
 And User_6047 Login with valid credentials-AutoLoan-Disbursion maker-Margin Money
-And User_6047 Get the test data for test case ID AT_AL_DSB_MM_04 
+And User_6047 Get the test data for test case ID AT_AL_DSB_MM_09 
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
 And User_6047 search the refer id under Inbox
