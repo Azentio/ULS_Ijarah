@@ -9,7 +9,7 @@ import utilities.ExtentManager;
 import utilities.ExtentTestManager;
 
 @CucumberOptions(features = {
-		"src/test/java/features/autoloan/AL_AppData_FinancialCommitments.feature"
+		"src/test/java/features/autoloan/AutoLoanAppDataEntryDocumentDetails.feature"
 	
 		}, glue = "stepdefinitions",
 		// monochrome=false, //to make steps in color
