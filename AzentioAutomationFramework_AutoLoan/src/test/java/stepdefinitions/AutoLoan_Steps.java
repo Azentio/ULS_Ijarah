@@ -7662,7 +7662,7 @@ public class AutoLoan_Steps {
 						System.out.println("condition true");
 						String jspath = "document.querySelectorAll('ion-segment-button')[" + j + "]";
 						WebElement tab = javascriptHelper.executeScriptWithWebElement(jspath);
-						javascriptHelper.JSEClick(tab);
+						tab.click();
 						break;
 					}
 				}
@@ -7681,8 +7681,8 @@ public class AutoLoan_Steps {
 	public void user_608_click_the_eye_button_under_customer_financials_tab() throws Throwable {
 		for (int i = 0; i <= 150; i++) {
 			try {
-				javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement(
-						dataCheck_IncomeJsPaths.getElement("customerFinancialsTabEyeBtn")));
+				javascriptHelper.executeScriptWithWebElement(
+						dataCheck_IncomeJsPaths.getElement("customerFinancialsTabEyeBtn")).click();;
 				break;
 			} catch (Exception e) {
 				{
@@ -7743,7 +7743,7 @@ public class AutoLoan_Steps {
 			try {
 				WebElement lov = javascriptHelper
 						.executeScriptWithWebElement(underWriterJsPaths.getElement("return_dropdown"));
-				javascriptHelper.JSEClick(lov);
+				lov.click();
 				break;
 			} catch (Exception e) {
 				{
@@ -7817,7 +7817,8 @@ public class AutoLoan_Steps {
 					if (titlename.trim().contains("return")) {
 						String jspath = "document.querySelectorAll('ion-chip ion-label')[" + j + "]";
 						WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
-						javascriptHelper.JSEClick(addButton);
+						addButton.click();
+						
 						break;
 					}
 				}
