@@ -250,7 +250,8 @@ public class AutoLoan_Steps {
 			try {
 				WebElement element = javascriptHelper
 						.executeScriptWithWebElement(customerDebtJsPaths.getElement("moduleNameDropdown"));
-				javascriptHelper.JSEClick(element);
+				
+				element.click();
 				break;
 			} catch (Exception e) {
 				{
@@ -305,7 +306,9 @@ public class AutoLoan_Steps {
 			try {
 				WebElement element = javascriptHelper
 						.executeScriptWithWebElement(customerDebtJsPaths.getElement("mailBox"));
-				javascriptHelper.JSEClick(element);
+				
+				element.click();
+				
 				break;
 			} catch (Exception e) {
 				{
@@ -357,8 +360,9 @@ public class AutoLoan_Steps {
 						+ (Integer.parseInt(length) - 1) + "]";
 //				System.out.println("Path: "+jspath);
 				WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
-				javascriptHelper.JSEClick(btn);
-				;
+				
+				btn.click();
+				
 				break;
 			} catch (Exception e) {
 				{
@@ -414,7 +418,8 @@ public class AutoLoan_Steps {
 						System.out.println("condition true");
 						String jspath = "document.querySelectorAll('ion-cards button')[" + j + "]";
 						WebElement saveBtn = javascriptHelper.executeScriptWithWebElement(jspath);
-						javascriptHelper.JSEClick(saveBtn);
+						
+						saveBtn.click();
 						break;
 					}
 				}
@@ -481,7 +486,9 @@ public class AutoLoan_Steps {
 						System.out.println("condition true");
 						String jspath = "document.querySelectorAll('mat-dialog-container button')[" + j + "]";
 						WebElement okayBtn = javascriptHelper.executeScriptWithWebElement(jspath);
-						javascriptHelper.JSEClick(okayBtn);
+						
+						okayBtn.click();
+						;
 						break;
 					}
 				}
@@ -733,7 +740,9 @@ public class AutoLoan_Steps {
 						System.out.println("condition true");
 						String jspath = "document.querySelectorAll('button')[" + j + "]";
 						WebElement searchBtn = javascriptHelper.executeScriptWithWebElement(jspath);
-						javascriptHelper.JSEClick(searchBtn);
+						
+						searchBtn.click();
+						
 						break;
 					}
 				}
@@ -1841,7 +1850,9 @@ public class AutoLoan_Steps {
 						String jspath = "document.querySelectorAll('ion-cards button')[" + j + "]";
 						WebElement saveBtn = javascriptHelper.executeScriptWithWebElement(jspath);
 						actions.moveToElement(saveBtn).build().perform();
-						javascriptHelper.JSEClick(saveBtn);
+						
+						saveBtn.click();
+						
 						break;
 					}
 				}
@@ -3040,7 +3051,9 @@ public class AutoLoan_Steps {
 						String jspath = "document.querySelectorAll('ion-cards button')[" + j + "]";
 						WebElement saveBtn = javascriptHelper.executeScriptWithWebElement(jspath);
 						actions.moveToElement(saveBtn).build().perform();
-						javascriptHelper.JSEClick(saveBtn);
+						
+						saveBtn.click();
+						
 						break;
 					}
 				}
@@ -3382,7 +3395,9 @@ public class AutoLoan_Steps {
 						System.out.println("condition true");
 						String jspath = "document.querySelectorAll('ion-cards button')[" + j + "]";
 						WebElement saveBtn = javascriptHelper.executeScriptWithWebElement(jspath);
-						javascriptHelper.JSEClick(saveBtn);
+						
+						saveBtn.click();
+						
 						break;
 					}
 				}
@@ -3447,7 +3462,9 @@ public class AutoLoan_Steps {
 						System.out.println("condition true");
 						String jspath = "document.querySelectorAll('ion-cards button')[" + j + "]";
 						WebElement saveBtn = javascriptHelper.executeScriptWithWebElement(jspath);
-						javascriptHelper.JSEClick(saveBtn);
+						
+						saveBtn.click();
+						
 						break;
 					}
 				}
@@ -3516,7 +3533,8 @@ public class AutoLoan_Steps {
 						.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("AppDetailsBackBtn"));
 				actions.moveToElement(btn).build().perform();
 				javascriptHelper.backgroundBorder(btn);
-				javascriptHelper.JSEClick(btn);
+				
+				btn.click();;
 				break;
 			} catch (Exception e) {
 				{
@@ -5086,7 +5104,9 @@ public class AutoLoan_Steps {
 						String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')" + "[" + j
 								+ "].parentElement.parentElement.querySelector('td button[icon=\"pi pi-pencil\"]')";
 						WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
-						javascriptHelper.JSEClick(addButton);
+						
+						addButton.click();
+						
 						break;
 					}
 				}
@@ -5185,8 +5205,8 @@ public class AutoLoan_Steps {
 		}
 		for (int i = 0; i <= 150; i++) {
 			try {
-				javascriptHelper.JSEClick(javascriptHelper
-						.executeScriptWithWebElement(underWriterJsPaths.getElement("JSERecommendations")));
+				javascriptHelper
+				.executeScriptWithWebElement(underWriterJsPaths.getElement("JSERecommendations")).click();
 				break;
 			} catch (Exception e) {
 				{
@@ -5200,8 +5220,7 @@ public class AutoLoan_Steps {
 	public void user_608_click_the_add_button_in_list_of_condition_section_under_offer_decision_tab() throws Throwable {
 		for (int i = 0; i <= 150; i++) {
 			try {
-				javascriptHelper.JSEClick(
-						javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("AddButton")));
+				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("AddButton")).click();
 				break;
 			} catch (Exception e) {
 				{
@@ -5739,7 +5758,9 @@ public class AutoLoan_Steps {
 					if (titlename.trim().contains("Asset Details")) {
 						String jspath = "document.querySelectorAll('ion-segment-button')[" + j + "]";
 						WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
-						javascriptHelper.JSEClick(addButton);
+						
+						addButton.click();
+						
 						break;
 					}
 				}
@@ -5777,7 +5798,9 @@ public class AutoLoan_Steps {
 					if (titlename.trim().contains("Policy Check")) {
 						String jspath = "document.querySelectorAll('ion-segment-button')[" + j + "]";
 						WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
-						javascriptHelper.JSEClick(addButton);
+						
+						addButton.click();
+						
 						break;
 					}
 				}
@@ -5867,7 +5890,9 @@ public class AutoLoan_Steps {
 						String jspath = "document.querySelectorAll('ion-segment-button')[" + j + "]";
 						WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
 						actions.moveToElement(addButton).build().perform();
-						javascriptHelper.JSEClick(addButton);
+						
+						addButton.click();
+						
 						break;
 					}
 				}
