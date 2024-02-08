@@ -115,6 +115,7 @@ And Navigate to Manual bank tab in Autoloan_Manual bank
 And Click on pencil icon of existing record in Autoloan_Manual bank
 And Update the status to Inactive in Autoloan_Manual bank
 And Click on Save icon in Autoloan_Manual bank
+And Click on pencil icon of existing record in Autoloan_Manual bank
 And Update the status to Active in Autoloan_Manual bank
 And Click on Save icon in Autoloan_Manual bank
 And Click on pencil icon of existing record in Autoloan_Manual bank

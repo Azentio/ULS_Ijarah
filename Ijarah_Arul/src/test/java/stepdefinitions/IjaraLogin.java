@@ -78,7 +78,17 @@ public class IjaraLogin extends BaseClass {
 	}
 
 	public void logoutFromIjara() {
-		javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userProfile")).click();
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("userProfile")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
 		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(jsPaths.getElement("logoutButton")).click();
