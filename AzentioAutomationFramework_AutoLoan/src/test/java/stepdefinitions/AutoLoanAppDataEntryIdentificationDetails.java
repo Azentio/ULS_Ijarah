@@ -98,7 +98,7 @@ public class AutoLoanAppDataEntryIdentificationDetails {
 	public void user_search_in_the_search_field_auto_loan_app_data_entry_Identification_Details() {
 		for (int i = 0; i < 700; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(TawaAppDataEntryIncomeDetails.getElement("searchInInbox")).sendKeys(ALADEntryIdentificationDetailsexelData.get("Record No"));
+				javascriptHelper.executeScriptWithWebElement(ALADEntryIdentificationDetails.getElement("searchInInbox")).sendKeys(ALADEntryIdentificationDetailsexelData.get("Record No"));
 				break;
 			} catch (Exception e) {
 				if (i==699) {

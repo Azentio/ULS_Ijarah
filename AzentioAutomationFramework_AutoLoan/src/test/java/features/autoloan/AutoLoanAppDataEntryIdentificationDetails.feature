@@ -27,11 +27,12 @@ Feature: Auto Loan AppData Entry Identification Details
     Given navigate the IJARA URL
     And login with valid credentials7
     And user_607 get the test data for test case id AT_AL_IND_01
-    And User_607 Select LOS in module name
-    And User_607 Click inbox in the home page
-    And User_607 Click Search in inbox
+    And click on module dropdown in IJRARAH
+    And click on LOS option in module dropdown
+		And click on mail box
+		And click on search box upon click on the mail box
     And User_607 Search in the search Field Auto Loan App Data Entry Identification Details
-    And User_607 Select record after search
+    And User_608 click the Entitle button under inbox
     And user_607 click on additional customer info tab in new application stage
     And user_607 click on edit button customer personal information screen at new app stage
     And user_607 click on add button in customer identification screen
@@ -44,7 +45,7 @@ Feature: Auto Loan AppData Entry Identification Details
     Then user_607 verify primary ID flag field should be toggle buttton
     And user_607 click on save button in customer identification details of new app stage
     Then user_607 system should show the success pop up for identification details saved record in new app stage
-    Then logout from the ULSApplication
+    Then logout from the ULS Application
     And user_607 invoke soft asset in customer identification details screen at new app stage
     
 	
@@ -53,11 +54,12 @@ Feature: Auto Loan AppData Entry Identification Details
     Given navigate the IJARA URL
     And login with valid credentials7
     And user_607 get the test data for test case id AT_AL_IND_01
-    And User_607 Select LOS in module name
-    And User_607 Click inbox in the home page
-    And User_607 Click Search in inbox
+    And click on module dropdown in IJRARAH
+    And click on LOS option in module dropdown
+		And click on mail box
+		And click on search box upon click on the mail box
     And User_607 Search in the search Field Auto Loan App Data Entry Identification Details
-    And User_607 Select record after search
+    And User_608 click the Entitle button under inbox
     And user_607 click on additional customer info tab in new application stage
     And user_607 click on edit button customer personal information screen at new app stage
     And user_607 click on add button in customer identification screen
@@ -67,7 +69,7 @@ Feature: Auto Loan AppData Entry Identification Details
     Then user_607 verify system should show the validation for the id number field at new app stage
     And user_607 enter the character input in ID number field
     #Then user_607 verify system wont allow user to enter the character input in ID number field at new app stage
-    Then logout from the ULSApplication
+    Then logout from the ULS Application
     And user_607 invoke soft asset in customer identification details screen at new app stage
     
     
@@ -76,11 +78,12 @@ Feature: Auto Loan AppData Entry Identification Details
      Given navigate the IJARA URL
     And login with valid credentials7
     And user_607 get the test data for test case id AT_AL_IND_01
-    And User_607 Select LOS in module name
-    And User_607 Click inbox in the home page
-    And User_607 Click Search in inbox
+    And click on module dropdown in IJRARAH
+    And click on LOS option in module dropdown
+		And click on mail box
+		And click on search box upon click on the mail box
     And User_607 Search in the search Field Auto Loan App Data Entry Identification Details
-    And User_607 Select record after search
+    And User_608 click the Entitle button under inbox
     And user_607 click on additional customer info tab in new application stage
     And user_607 click on edit button customer personal information screen at new app stage
     And user_607 click on edit button of customer identification details list view record
@@ -89,18 +92,19 @@ Feature: Auto Loan AppData Entry Identification Details
     Then user_607 verify system should show the successful update pop up in identification details screen at new appp stage
     And user_607 get the list view record of customer identification at new app stage
     Then user_607 verify system should show the updated value in identification details at new app stage
-    Then logout from the ULSApplication
+    Then logout from the ULS Application
 
   @AT_AL_IND_05
   Scenario: to test the customer identificatin details screen with in valid input at new app stage
      Given navigate the IJARA URL
     And login with valid credentials7
     And user_607 get the test data for test case id AT_AL_IND_01
-    And User_607 Select LOS in module name
-    And User_607 Click inbox in the home page
-    And User_607 Click Search in inbox
+   And click on module dropdown in IJRARAH
+    And click on LOS option in module dropdown
+		And click on mail box
+		And click on search box upon click on the mail box
     And User_607 Search in the search Field Auto Loan App Data Entry Identification Details
-    And User_607 Select record after search
+    And User_608 click the Entitle button under inbox
     And user_607 click on additional customer info tab in new application stage
     And user_607 click on edit button customer personal information screen at new app stage
     And user_607 click on edit button of customer identification details list view record
@@ -110,7 +114,7 @@ Feature: Auto Loan AppData Entry Identification Details
     Then user_607 verify system should show the validation for the id number field at new app stage
     And user_607 enter the character input in ID number field
     #Then user_607 verify system wont allow user to enter the character input in ID number field at new app stage
-    Then logout from the ULSApplication
+    Then logout from the ULS Application
     And user_607 invoke soft asset in customer identification details screen at new app stage
 
   @AT_AL_IND_06
@@ -118,11 +122,12 @@ Feature: Auto Loan AppData Entry Identification Details
      Given navigate the IJARA URL
     And login with valid credentials7
     And user_607 get the test data for test case id AT_AL_IND_01
-    And User_607 Select LOS in module name
-    And User_607 Click inbox in the home page
-    And User_607 Click Search in inbox
+    And click on module dropdown in IJRARAH
+    And click on LOS option in module dropdown
+		And click on mail box
+		And click on search box upon click on the mail box
     And User_607 Search in the search Field Auto Loan App Data Entry Identification Details
-    And User_607 Select record after search
+    And User_608 click the Entitle button under inbox
     And user_607 click on additional customer info tab in new application stage
     And user_607 click on edit button customer personal information screen at new app stage
     And user_607 click on edit button of customer identification details list view record
@@ -132,7 +137,7 @@ Feature: Auto Loan AppData Entry Identification Details
     And user_607 click on edit button of the list view record of customer identification at new app stage
     And user_607 click on view summary button in identification new app stage record
     Then user_607 verify system should show the record summary of identification at new app stage
-    Then logout from the ULSApplication
+    Then logout from the ULS Application
     And user_607 invoke soft asset in customer identification details screen at new app stage
 
   @AT_AL_IND_07
@@ -140,11 +145,12 @@ Feature: Auto Loan AppData Entry Identification Details
      Given navigate the IJARA URL
     And login with valid credentials7
     And user_607 get the test data for test case id AT_AL_IND_01
-    And User_607 Select LOS in module name
-    And User_607 Click inbox in the home page
-    And User_607 Click Search in inbox
+    And click on module dropdown in IJRARAH
+    And click on LOS option in module dropdown
+		And click on mail box
+		And click on search box upon click on the mail box
     And User_607 Search in the search Field Auto Loan App Data Entry Identification Details
-    And User_607 Select record after search
+    And User_608 click the Entitle button under inbox
     And user_607 click on additional customer info tab in new application stage
     And user_607 click on edit button customer personal information screen at new app stage
     And user_607 verify identification list view record should be read only not editable at new app stage
@@ -165,5 +171,5 @@ Feature: Auto Loan AppData Entry Identification Details
     And user_607 click on edit button of customer identification details list view record
     And user_607 click on back button in customer identification details in new app stage
     Then user_607 verify identififcation details screen got move backward to previos screen at new app stage
-    Then logout from the ULSApplication
+    Then logout from the ULS Application
     And user_607 invoke soft asset in customer identification details screen at new app stage

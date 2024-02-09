@@ -3,9 +3,10 @@ Feature: Auto Loan Customer Search
   @AT_AL_CUS_01
   Scenario: to test the functionality of customer search with valid data
     Given navigate the IJARA URL
-    And login with valid credentials
+    And login with valid credentials7
     And User_607 Update testdata from AT_AL_CUS_01
-    And User_607 Select LOS in module name
+    And click on module dropdown in IJRARAH
+    And click on LOS option in module dropdown
     And User_607 click the menu icon in after login screen
 		And User_607 navigate to the Transactions flag
 		And User_607 navigate to the Application manager flag
@@ -17,14 +18,15 @@ Feature: Auto Loan Customer Search
 		And User_607 Check CIF ID Field should be numeric
 		And User_607 Check ID Type Field should be Selectable
 		And User_607 Check ID Number Field should be Alphanumeric
-		And logout from the ULSApplication
+		Then logout from the ULS Application
    
    @AT_AL_CUS_02
 		Scenario: to test the functionality of customer search with valid data
 		Given navigate the IJARA URL
-    And login with valid credentials
+    And login with valid credentials7
     And User_607 Update testdata from AT_AL_CUS_01
-    And User_607 Select LOS in module name
+    And click on module dropdown in IJRARAH
+    And click on LOS option in module dropdown
     And User_607 click the menu icon in after login screen
 		And User_607 navigate to the Transactions flag
 		And User_607 navigate to the Application manager flag
@@ -45,14 +47,15 @@ Feature: Auto Loan Customer Search
  		And User_607 Enter date of birth
  		And User_607 Click Create New button
     And User_607 Check System must redirect the Application Details page
-    And logout from the ULSApplication
+    Then logout from the ULS Application
     
     @AT_AL_CUS_03
     Scenario: to test the functionality of customer search with valid data
 		Given navigate the IJARA URL
-    And login with valid credentials
+    And login with valid credentials7
     And User_607 Update testdata from AT_AL_CUS_01
-    And User_607 Select LOS in module name
+    And click on module dropdown in IJRARAH
+    And click on LOS option in module dropdown
     And User_607 click the menu icon in after login screen
 		And User_607 navigate to the Transactions flag
 		And User_607 navigate to the Application manager flag
@@ -68,15 +71,16 @@ Feature: Auto Loan Customer Search
  		And User_607 Save the record in Application Details screen
  		And User_607 Check Please Fill Details toast Popup showing or not
  		And User_607 User Check negative value accepct or not in the numaric field
- 		And logout from the ULSApplication
+ 		Then logout from the ULS Application
  		
  		
  		@AT_AL_CUS_04
 		Scenario: to test the functionality of customer search with valid data
 		Given navigate the IJARA URL
-    And login with valid credentials
+    And login with valid credentials7
     And User_607 Update testdata from AT_AL_CUS_01
-    And User_607 Select LOS in module name
+    And click on module dropdown in IJRARAH
+    And click on LOS option in module dropdown
     And User_607 click the menu icon in after login screen
 		And User_607 navigate to the Transactions flag
 		And User_607 navigate to the Application manager flag
@@ -91,14 +95,15 @@ Feature: Auto Loan Customer Search
  		And User_607 Click Create New button
     And User_607 Check able to enter characters value in numeric field
     And User_607 Check able to enter special characters in any field
-    And logout from the ULSApplication
+    Then logout from the ULS Application
     
      @AT_AL_CUS_05
     Scenario: To test the functionality of Application Details with valid data
 		Given navigate the IJARA URL
-    And login with valid credentials
+    And login with valid credentials7
     And User_607 Update testdata from AT_AL_CUS_01
-    And User_607 Select LOS in module name
+    And click on module dropdown in IJRARAH
+    And click on LOS option in module dropdown
     And User_607 click the menu icon in after login screen
 		And User_607 navigate to the Transactions flag
 		And User_607 navigate to the Application manager flag
@@ -139,9 +144,10 @@ Feature: Auto Loan Customer Search
  		@AT_AL_CUS_06
     Scenario: To test the functionality of Application Details with valid data
 		Given navigate the IJARA URL
-    And login with valid credentials
+    And login with valid credentials7
     And User_607 Update testdata from AT_AL_CUS_01
-    And User_607 Select LOS in module name
+    And click on module dropdown in IJRARAH
+    And click on LOS option in module dropdown
     And User_607 click the menu icon in after login screen
 		And User_607 navigate to the Transactions flag
 		And User_607 navigate to the Application manager flag
@@ -164,15 +170,16 @@ Feature: Auto Loan Customer Search
  		And User_607 Check Declared Net Monthly Income should be editable
  		And User_607 Check Declared Current Obligations should be non mandatory
  		And User_607 Check Declared Current Obligations should be editable
- 		And logout from the ULSApplication
+ 		Then logout from the ULS Application
  		
  		
  		@AT_AL_CUS_07
     Scenario: To test the functionality of Application Details with valid data
 		Given navigate the IJARA URL
-    And login with valid credentials
+    And login with valid credentials7
     And User_607 Update testdata from AT_AL_CUS_01
-    And User_607 Select LOS in module name
+    And click on module dropdown in IJRARAH
+    And click on LOS option in module dropdown
     And User_607 click the menu icon in after login screen
 		And User_607 navigate to the Transactions flag
 		And User_607 navigate to the Application manager flag
@@ -197,15 +204,16 @@ Feature: Auto Loan Customer Search
  		And User_607 Check Region should be editable
  		And User_607 Check Servicing Branch should be mandatory
  		And User_607 Check Servicing Branch should be editable
- 		And logout from the ULSApplication
+ 		Then logout from the ULS Application
  		
  		
  		@AT_AL_CUS_08
     Scenario: To test the functionality of Application Details with valid data
 		Given navigate the IJARA URL
-    And login with valid credentials
+    And login with valid credentials7
     And User_607 Update testdata from AT_AL_CUS_01
-    And User_607 Select LOS in module name
+    And click on module dropdown in IJRARAH
+    And click on LOS option in module dropdown
     And User_607 click the menu icon in after login screen
 		And User_607 navigate to the Transactions flag
 		And User_607 navigate to the Application manager flag
@@ -225,14 +233,15 @@ Feature: Auto Loan Customer Search
  		And User_607 Check Topup Type should be editable
  		And User_607 Check Topup Application No should be Non mandatory
  		And User_607 Check Topup Application No should be editable
- 		And logout from the ULSApplication
+ 		Then logout from the ULS Application
  		
  		@AT_AL_CUS_09
     Scenario: To test the functionality of Application Details with valid data
 		Given navigate the IJARA URL
-    And login with valid credentials
+    And login with valid credentials7
     And User_607 Update testdata from AT_AL_CUS_01
-    And User_607 Select LOS in module name
+    And click on module dropdown in IJRARAH
+    And click on LOS option in module dropdown
     And User_607 click the menu icon in after login screen
 		And User_607 navigate to the Transactions flag
 		And User_607 navigate to the Application manager flag
@@ -253,14 +262,15 @@ Feature: Auto Loan Customer Search
  		And User_607 Check Sourcing Entity should be editable
  		And User_607 Check Sourcing Staff should be mandatory
  		And User_607 Check Sourcing Staff should be editable
- 		And logout from the ULSApplication
+ 		Then logout from the ULS Application
  		
  		@AT_AL_CUS_10
     Scenario: To test the functionality of Application Details with valid data
 		Given navigate the IJARA URL
-    And login with valid credentials
+    And login with valid credentials7
     And User_607 Update testdata from AT_AL_CUS_01
-    And User_607 Select LOS in module name
+    And click on module dropdown in IJRARAH
+    And click on LOS option in module dropdown
     And User_607 click the menu icon in after login screen
 		And User_607 navigate to the Transactions flag
 		And User_607 navigate to the Application manager flag
@@ -279,14 +289,15 @@ Feature: Auto Loan Customer Search
  		And User_607 Check Reference Entity should be editable
     And User_607 Check Reference Code should be non mandatory
     And User_607 Check Reference Code should be editable
-    And logout from the ULSApplication
+    Then logout from the ULS Application
     
      @AT_AL_CUS_11
     Scenario: To test the functionality of Application Details with valid data
 		Given navigate the IJARA URL
-    And login with valid credentials
+    And login with valid credentials7
     And User_607 Update testdata from AT_AL_CUS_01
-    And User_607 Select LOS in module name
+    And click on module dropdown in IJRARAH
+    And click on LOS option in module dropdown
     And User_607 click the menu icon in after login screen
 		And User_607 navigate to the Transactions flag
 		And User_607 navigate to the Application manager flag
@@ -325,5 +336,5 @@ Feature: Auto Loan Customer Search
 		And User_607 Enter characters in Reference Code
     And User_607 Save the record in Application Details screen
  		And User_607 Check Please Fill Details toast Popup showing or not
- 		And logout from the ULSApplication
+ 		Then logout from the ULS Application
  		

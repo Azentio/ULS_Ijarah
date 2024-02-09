@@ -33,9 +33,9 @@ Feature: Auto Loan Appdata Entry Contact Details
     And login with valid credentials7
     And user_607 get the test data for the test case ID AT_AL_APD_CD_02
     And click on module dropdown in IJRARAH
-    And User_608 select the module name as LOS in ULS application
-		And User_608 click the Mail box in ULS application
-		And User_608 click the Search button under inbox
+    And click on LOS option in module dropdown
+		And click on mail box
+		And click on search box upon click on the mail box
     And User_607 Search the Ref Id under inbox Auto Loan Appdata Entry Contact Details
     And User_608 click the Entitle button under inbox
     And user_607 click on additional customer info tab in new application stage
@@ -60,9 +60,9 @@ Feature: Auto Loan Appdata Entry Contact Details
     And login with valid credentials7
     And user_607 get the test data for the test case ID AT_AL_APD_CD_03
     And click on module dropdown in IJRARAH
-    And User_608 select the module name as LOS in ULS application
-		And User_608 click the Mail box in ULS application
-		And User_608 click the Search button under inbox
+    And click on LOS option in module dropdown
+		And click on mail box
+		And click on search box upon click on the mail box
     And User_607 Search the Ref Id under inbox Auto Loan Appdata Entry Contact Details
     And User_608 click the Entitle button under inbox
     And user_607 click on additional customer info tab in new application stage
@@ -80,9 +80,9 @@ Feature: Auto Loan Appdata Entry Contact Details
     And login with valid credentials7
     And user_607 get the test data for the test case ID AT_AL_APD_CD_04
     And click on module dropdown in IJRARAH
-    And User_608 select the module name as LOS in ULS application
-		And User_608 click the Mail box in ULS application
-		And User_608 click the Search button under inbox
+    And click on LOS option in module dropdown
+		And click on mail box
+		And click on search box upon click on the mail box
     And User_607 Search the Ref Id under inbox Auto Loan Appdata Entry Contact Details
     And User_608 click the Entitle button under inbox
     And user_607 click on additional customer info tab in new application stage
@@ -106,10 +106,10 @@ Feature: Auto Loan Appdata Entry Contact Details
     Given navigate the IJARA URL
     And login with valid credentials7
     And user_607 get the test data for the test case ID AT_AL_APD_CD_05
-    And click on module dropdown in IJRARAH
-    And User_608 select the module name as LOS in ULS application
-		And User_608 click the Mail box in ULS application
-		And User_608 click the Search button under inbox
+   And click on module dropdown in IJRARAH
+    And click on LOS option in module dropdown
+		And click on mail box
+		And click on search box upon click on the mail box
     And User_607 Search the Ref Id under inbox Auto Loan Appdata Entry Contact Details
     And User_608 click the Entitle button under inbox
     And user_607 click on additional customer info tab in new application stage
@@ -136,9 +136,9 @@ Feature: Auto Loan Appdata Entry Contact Details
     And login with valid credentials7
     And user_607 get the test data for the test case ID AT_AL_APD_CD_05
     And click on module dropdown in IJRARAH
-    And User_608 select the module name as LOS in ULS application
-		And User_608 click the Mail box in ULS application
-		And User_608 click the Search button under inbox
+    And click on LOS option in module dropdown
+		And click on mail box
+		And click on search box upon click on the mail box
     And User_607 Search the Ref Id under inbox Auto Loan Appdata Entry Contact Details
     And User_608 click the Entitle button under inbox
     And user_607 click on additional customer info tab in new application stage

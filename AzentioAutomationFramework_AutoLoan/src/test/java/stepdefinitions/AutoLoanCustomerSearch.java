@@ -1,0 +1,4825 @@
+package stepdefinitions;
+
+import java.util.Iterator;
+import java.util.Map;
+
+import org.apache.poi.hssf.record.PageBreakRecord.Break;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
+
+import dataprovider.ConfigFileReader;
+import dataprovider.ExcelData;
+import helper.ClicksAndActionsHelper;
+import helper.DropDownHelper;
+import helper.JavascriptHelper;
+import helper.Selenium_Actions;
+import helper.WaitHelper;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import pageobjects.JSPaths;
+import resources.BaseClass;
+
+public class AutoLoanCustomerSearch {
+	ConfigFileReader configFileReader = new ConfigFileReader();
+	String excelPath = configFileReader.getJSFilePath();
+	String excelTestDataPath = configFileReader.getAutoLoanTestDataFilePath();
+	WebDriver driver = BaseClass.driver;
+	JSPaths AutoLoanCustomerSearchPaths = new JSPaths(excelPath, "AutoLoanCustomerSearch", "FieldName", "JSPath");
+
+	ExcelData AutoLoanCustomerSearchexelData = new ExcelData(excelTestDataPath, "AutoLoanCustomerSearch", "Data Set ID");
+	Map<String, String> testData;
+	ExcelData Customer_Search = new ExcelData(excelTestDataPath, "Customer_Search", "Data Set ID");
+	ExcelData AutoLoanCustomer_Search = new ExcelData(excelTestDataPath, "AutoLoanCustomerSearch", "Data Set ID");
+	ExcelData MurApDataEntryAppDetailsexelData = new ExcelData(excelTestDataPath, "MurApDataEntryAppDetails",
+			"Data Set ID");
+//	Map<String, String> TestData = new HashMap<>();
+	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
+	WaitHelper waitHelper = new WaitHelper(driver);
+	ClicksAndActionsHelper clicksAndActionsHelper = new ClicksAndActionsHelper(driver);
+	Selenium_Actions selenium_Actions = new Selenium_Actions(driver);
+	JavascriptHelper JavascriptHelper = new JavascriptHelper(driver);
+	DropDownHelper DropDownHelper = new DropDownHelper(driver);
+	SoftAssert SoftAssert = new SoftAssert();
+	ExcelData AutoLoanExecutionExcel = new ExcelData(excelTestDataPath, "AutoLoanExecution", "TestCase ID");
+	Map<String, String> AutoLoanExecution;
+
+	@Given("User_607 Update testdata from AT_NEWAPP_02")
+	public void user_607_update_testdata_from_at_newapp_02() {
+		testData = AutoLoanCustomerSearchexelData.getTestdata("DS_AT_NEWAPP_02");
+	}
+
+	@Given("User_607 Update testdata from AT_NWP_03")
+	public void user_607_update_testdata_from_at_nwp_03() {
+		testData = AutoLoanCustomerSearchexelData.getTestdata("DS_AT_NWP_03");
+	}
+
+	@Given("User_607 Update testdata from AT_NWP_04")
+	public void user_607_update_testdata_from_at_nwp_04() {
+		testData = AutoLoanCustomerSearchexelData.getTestdata("DS_AT_NWP_04");
+	}
+
+	@Given("User_607 get the test data for test case AT_MU_APE_AD_01")
+	public void user_607_get_the_test_data_for_test_case_at_mu_ape_ad_01() {
+		testData = MurApDataEntryAppDetailsexelData.getTestdata("DS_AT_MU_APE_AD_01");
+	}
+
+	@Given("User_607 Check GoBack Field")
+	public void user_607_check_go_back_field() {
+		if (!javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("GoBack")).isDisplayed()) {
+			SoftAssert.fail();
+		}
+	}
+
+	@Given("User_607 Check Save button Field")
+	public void user_607_check_save_button_field() {
+		if (!javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("Savebutton"))
+				.isDisplayed()) {
+			SoftAssert.fail();
+		}
+	}
+
+	@Given("User_607 Check Submit button Field")
+	public void user_607_check_submit_button_field() {
+		if (!javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("Submitbutton"))
+				.isDisplayed()) {
+			SoftAssert.fail();
+		}
+	}
+
+	@Given("User_607 Check Return button Field")
+	public void user_607_check_return_button_field() {
+		if (!javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("Returnbutton"))
+				.isDisplayed()) {
+			SoftAssert.fail();
+		}
+	}
+
+	@Given("User_607 Check Views summary Field")
+	public void user_607_check_views_summary_field() {
+		if (!javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("Viewsummary"))
+				.isDisplayed()) {
+			SoftAssert.fail();
+		}
+
+	}
+
+	@Given("User_607 Check Product Field")
+	public void user_607_check_product_field() {
+		if (!javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("Product")).isDisplayed()) {
+			SoftAssert.fail();
+		}
+
+	}
+
+	@Given("User_607 Check Subproduct Field")
+	public void user_607_check_subproduct_field() {
+		if (!javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("Subproduct"))
+				.isDisplayed()) {
+			SoftAssert.fail();
+		}
+
+	}
+
+	@Given("User_607 Check Total Finance Amount Requested Field")
+	public void user_607_check_total_finance_amount_requested_field() {
+		if (!javascriptHelper
+				.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("TotalFinanceAmountRequested"))
+				.isDisplayed()) {
+			SoftAssert.fail();
+		}
+
+	}
+
+	@Given("User_607 Check Declared Net Monthly Income Field")
+	public void user_607_check_declared_net_monthly_income_field() {
+		if (!javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("DeclaredNetMonthlyIncome"))
+				.isDisplayed()) {
+			SoftAssert.fail();
+		}
+
+	}
+
+	@Given("User_607 Check Declared Current Obligations Field")
+	public void user_607_check_declared_current_obligations_field() {
+		if (!javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("DeclaredCurrentObligations"))
+				.isDisplayed()) {
+			SoftAssert.fail();
+		}
+
+	}
+
+	@Given("User_607 Check Special Promotion\\/Campaign Field")
+	public void user_607_check_special_promotion_campaign_field() {
+		if (!javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("Special Promotion/Campaign"))
+				.isDisplayed()) {
+			SoftAssert.fail();
+		}
+
+	}
+
+	@Given("User_607 Check Sourcing Channel Field")
+	public void user_607_check_sourcing_channel_field() {
+		if (!javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("SourcingChannel"))
+				.isDisplayed()) {
+			SoftAssert.fail();
+		}
+
+	}
+
+	@Given("User_607 Check Business Center Code Field")
+	public void user_607_check_business_center_code_field() {
+		if (!javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("BusinessCenterCode"))
+				.isDisplayed()) {
+			SoftAssert.fail();
+		}
+
+	}
+
+	@Given("User_607 Check Servicing Type Field")
+	public void user_607_check_servicing_type_field() {
+		if (!javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("ServicingType"))
+				.isDisplayed()) {
+			SoftAssert.fail();
+		}
+
+	}
+
+	@Given("User_607 Check Region Field")
+	public void user_607_check_region_field() {
+		if (!javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("Region")).isDisplayed()) {
+			SoftAssert.fail();
+		}
+
+	}
+
+	@Given("User_607 Check Servicing Branch Field")
+	public void user_607_check_servicing_branch_field() {
+		if (!javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("ServicingBranch"))
+				.isDisplayed()) {
+			SoftAssert.fail();
+		}
+
+	}
+
+	@Given("User_607 Check Spoke Location Field")
+	public void user_607_check_spoke_location_field() {
+		if (!javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("SpokeLocation"))
+				.isDisplayed()) {
+			SoftAssert.fail();
+		}
+
+	}
+
+	@Given("User_607 Check Closing Staff Or Servicing Staff Or RM Field")
+	public void user_607_check_closing_staff_or_servicing_staff_or_rm_field() {
+		if (!javascriptHelper
+				.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("ClosingStaffOrServicingStaffOrRM"))
+				.isDisplayed()) {
+			SoftAssert.fail();
+		}
+
+	}
+
+	@Given("User_607 Check Topup Type Field")
+	public void user_607_check_topup_type_field() {
+		if (!javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("TopupType")).isDisplayed()) {
+			SoftAssert.fail();
+		}
+
+	}
+
+	@Given("User_607 Check Topup Application No Field")
+	public void user_607_check_topup_application_no_field() {
+		if (!javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("TopupApplicationNo"))
+				.isDisplayed()) {
+			SoftAssert.fail();
+		}
+
+	}
+
+	@Given("User_607 Check SourcingType Field")
+	public void user_607_check_sourcing_type_field() {
+		if (!javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("SourcingType"))
+				.isDisplayed()) {
+			SoftAssert.fail();
+		}
+
+	}
+
+	@Given("User_607 Check SourcingOffice Field")
+	public void user_607_check_sourcing_office_field() {
+		if (!javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("SourcingOffice"))
+				.isDisplayed()) {
+			SoftAssert.fail();
+		}
+
+	}
+
+	@Given("User_607 Check SourcingEntity Field")
+	public void user_607_check_sourcing_entity_field() {
+		if (!javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("SourcingEntity"))
+				.isDisplayed()) {
+			SoftAssert.fail();
+		}
+
+	}
+
+	@Given("User_607 Check SourcingStaff Field")
+	public void user_607_check_sourcing_staff_field() {
+		if (!javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("SourcingStaff"))
+				.isDisplayed()) {
+			SoftAssert.fail();
+		}
+
+	}
+
+	@Given("User_607 Check ReferenceType Field")
+	public void user_607_check_reference_type_field() {
+		if (!javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("ReferenceType"))
+				.isDisplayed()) {
+			SoftAssert.fail();
+		}
+
+	}
+
+	@Given("User_607 Check ReferenceEntity Field")
+	public void user_607_check_reference_entity_field() {
+		if (!javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("ReferenceEntity"))
+				.isDisplayed()) {
+			SoftAssert.fail();
+		}
+
+	}
+
+	@Given("User_607 Check ReferenceCode Field")
+	public void user_607_check_reference_code_field() {
+		if (!javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("ReferenceCode"))
+				.isDisplayed()) {
+			SoftAssert.fail();
+		}
+
+	}
+
+	@Given("User_607 Save the record")
+	public void user_607_save_the_record() throws Throwable {
+//		for (int i = 0; i < 500; i++) {
+//		try {
+//			javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("ScrollToInbox")));
+//			break;
+//		} catch (Exception e) {
+//			if (i==499) {
+//				Assert.fail(e.getMessage());
+//			}
+//		}	
+//		}
+		javascriptHelper.scrollIntoView(javascriptHelper
+				.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("Application Details Text")));
+		Thread.sleep(2000);
+		for (int i = 0; i < 700; i++) {
+			try {
+				// javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("Savebutton")).click();
+				javascriptHelper.JSEClick(
+						javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("Savebutton")));
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Given("User_607 Save the record in Application Details screen")
+	public void user_607_save_the_record_in_application_details_screen() throws Throwable {
+		String length =null;
+		for (int i = 0; i <500; i++) {
+			try {
+			    length = javascriptHelper.executeScript("return document.querySelectorAll('button').length").toString();
+			    System.out.println(length);
+				if (!length.isBlank()&&!length.equalsIgnoreCase("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i==499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <500; i++) {
+		try {
+			for (int j = 0; j <Integer.parseInt(length); j++) {
+				String title ="return document.querySelectorAll('button')["+j+"].innerText";
+				String titlename = javascriptHelper.executeScript(title).toString();
+				System.out.println(titlename);
+				if (titlename.trim().contains("Save")) {
+					System.out.println("condition true");
+					String jspath ="document.querySelectorAll('button')["+j+"]";
+					WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
+//					System.out.println(jspath);
+//					javascriptHelper.scrollIntoView(addButton);
+					javascriptHelper.JSEClick(addButton);
+		//			addButton.click();
+					break;
+				}
+			}
+			break;
+		} catch (Exception e) {
+			if (i==499) {
+				Assert.fail(e.getMessage());
+			}
+		}
+	}
+	}
+	
+	@Given("User_607 Click okay in the confirm save popup")
+	public void user_607_click_okay_in_the_confirm_save_popup() throws Throwable {
+		Thread.sleep(2000);
+		String length =null;
+		for (int i = 0; i <500; i++) {
+			try {
+			    length = javascriptHelper.executeScript("return document.querySelectorAll('button').length").toString();
+			    System.out.println(length);
+				if (!length.isBlank()&&!length.equalsIgnoreCase("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i==499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <500; i++) {
+		try {
+			for (int j = 0; j <Integer.parseInt(length); j++) {
+				String title ="return document.querySelectorAll('button')["+j+"].innerText";
+				String titlename = javascriptHelper.executeScript(title).toString();
+				System.out.println(titlename);
+				if (titlename.trim().contains("Okay")) {
+					System.out.println("condition true");
+					String jspath ="document.querySelectorAll('button')["+j+"]";
+					WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
+//					System.out.println(jspath);
+//					javascriptHelper.scrollIntoView(addButton);
+					javascriptHelper.JSEClick(addButton);
+		//			addButton.click();
+					break;
+				}
+			}
+			break;
+		} catch (Exception e) {
+			if (i==499) {
+				Assert.fail(e.getMessage());
+			}
+		}
+	}
+	}
+	
+	@Given("User_607 Check Please Fill Details toast Popup showing or not")
+	public void user_607_check_please_fill_details_toast_popup_showing_or_not() throws Throwable {
+		Thread.sleep(1000);
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				
+				WebElement text1 = javascriptHelper
+						.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("PleaseFillToastPopUp"));
+				String text = text1.getText();
+				Assert.assertTrue(text.contains("Please fill required fields"));
+				break;
+			} catch (Exception e) {
+				if (i == 999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Given("User_607 Check popup after save the record")
+	public void user_607_check_popup_after_save_the_record() throws Throwable {
+		Thread.sleep(2000);
+		if (!javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("SuccessSavePopup"))
+				.isDisplayed()) {
+			SoftAssert.fail();
+		}
+		SoftAssert.assertAll();
+	}
+
+	@Given("User_607 Click back button to move main page")
+	public void user_607_click_back_button_to_move_main_page() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("backButton")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@Given("User_607 Check Product field should be mandatory")
+	public void user_607_check_product_field_should_be_mandatory() {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String repayment = AutoLoanCustomerSearchPaths.getElement("Product*");
+				String accountholdername = (String) javascriptHelper.executeScript("return " + repayment);
+				Assert.assertTrue(accountholdername.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Given("User_607 Check Product Field should be editable")
+	public void user_607_check_product_field_should_be_editable() {
+
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("Product")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+
+		String dropdownLength = "";
+
+		boolean isDropdownValueSelected = false;
+
+		String dropdownString = "";
+
+		for (int i = 0; i <= 300; i++) {
+
+			try {
+
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+				System.out.println("Dropdown length " + dropdownLength);
+
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+					break;
+
+				}
+
+			} catch (Exception e) {
+
+				if (i == 300) {
+
+					Assert.fail(e.getMessage());
+
+				}
+
+			}
+
+		}
+
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+			for (int l = 0; l <= 300; l++) {
+
+				try {
+
+					System.out.println("L value is " + l);
+
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+					dropdownString = javascriptHelper.executeScript(
+
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+							.toString();
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (l == 300 && !(dropdownString.isBlank())) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+				if (!(dropdownString.isEmpty())) {
+
+					System.out.println(dropdownString);
+
+					System.out.println("Loop count " + l + " got breaked");
+
+					break;
+
+				}
+
+			}
+
+			System.out.println("String " + dropdownString.trim());
+
+			System.out.println("Map " + testData.get("SelectOptionInProduct").trim());
+
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("SelectOptionInProduct")).trim())) {
+
+				for (int k = 0; k <= 300; k++) {
+
+					try {
+
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						isDropdownValueSelected = true;
+
+						break;
+
+					} catch (Exception e) {
+
+						if (k == 300) {
+
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+
+				break;
+
+			}
+		}
+	}
+
+	@Given("User_607 Check Sub Product field should be mandatory")
+	public void user_607_check_sub_product_field_should_be_mandatory() {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String repayment = AutoLoanCustomerSearchPaths.getElement("Subproduct*");
+				// String repayment
+				// ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+				String accountholdername = (String) javascriptHelper.executeScript("return " + repayment);
+				System.out.println(accountholdername);
+				Assert.assertTrue(accountholdername.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Given("User_607 Check Sub Product Field should be editable")
+	public void user_607_check_sub_product_field_should_be_editable() {
+
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("Subproduct")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+
+		String dropdownLength = "";
+
+		boolean isDropdownValueSelected = false;
+
+		String dropdownString = "";
+
+		for (int i = 0; i <= 300; i++) {
+
+			try {
+
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+				System.out.println("Dropdown length " + dropdownLength);
+
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+					break;
+
+				}
+
+			} catch (Exception e) {
+
+				if (i == 300) {
+
+					Assert.fail(e.getMessage());
+
+				}
+
+			}
+
+		}
+
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+			for (int l = 0; l <= 300; l++) {
+
+				try {
+
+					System.out.println("L value is " + l);
+
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+					dropdownString = javascriptHelper.executeScript(
+
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+							.toString();
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (l == 300 && !(dropdownString.isBlank())) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+				if (!(dropdownString.isEmpty())) {
+
+					System.out.println(dropdownString);
+
+					System.out.println("Loop count " + l + " got breaked");
+
+					break;
+
+				}
+
+			}
+
+			System.out.println("String " + dropdownString.trim());
+
+			System.out.println("Map " + (testData.get("SubProductField")).trim());
+
+			if ((dropdownString.trim()).equalsIgnoreCase(testData.get("SubProductField").trim())) {
+
+				for (int k = 0; k <= 300; k++) {
+
+					try {
+
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						isDropdownValueSelected = true;
+
+						break;
+
+					} catch (Exception e) {
+
+						if (k == 300) {
+
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+
+				break;
+
+			}
+		}
+	}
+
+	@Given("User_607 Check Total Finance Amount Requested should be mandatory")
+	public void user_607_check_total_finance_amount_requested_should_be_mandatory() throws Throwable {
+		Thread.sleep(3000);
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String repayment = AutoLoanCustomerSearchPaths.getElement("TotalFinanceAmountRequested*");
+				// String repayment
+				// ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+				String accountholdername = (String) javascriptHelper.executeScript("return " + repayment);
+				System.out.println(accountholdername);
+				Assert.assertTrue(accountholdername.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Given("User_607 Check Total Finance Amount Requested should be editable")
+	public void user_607_check_total_finance_amount_requested_should_be_editable() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				// javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("TotalFinanceAmountRequested")).click();
+				clicksAndActionsHelper.doubleClick((javascriptHelper
+						.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("TotalFinanceAmountRequested"))));
+				javascriptHelper
+						.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("TotalFinanceAmountRequested"))
+						.sendKeys(testData.get("TotalFinanceAmountRequested"));
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@Given("User_607 Check Declared Net Monthly Income should be mandatory")
+	public void user_607_check_declared_net_monthly_income_should_be_mandatory() {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String repayment = AutoLoanCustomerSearchPaths.getElement("DeclaredNetMonthlyIncome*");
+				// String repayment
+				// ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+				String accountholdername = (String) javascriptHelper.executeScript("return " + repayment);
+				System.out.println(accountholdername);
+				Assert.assertTrue(accountholdername.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@Given("User_607 Check Declared Net Monthly Income should be editable")
+	public void user_607_check_declared_net_monthly_income_should_be_editable() {
+
+		for (int i = 0; i < 700; i++) {
+			try {
+				// javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("DeclaredNetMonthlyIncome")).click();
+				clicksAndActionsHelper.doubleClick((javascriptHelper
+						.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("DeclaredNetMonthlyIncome"))));
+				javascriptHelper
+						.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("DeclaredNetMonthlyIncome"))
+						.sendKeys(testData.get("DeclaredNetMonthlyIncome"));
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@Given("User_607 Check Declared Current Obligations should be non mandatory")
+	public void user_607_check_declared_current_obligations_should_be_non_mandatory() {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String repayment = AutoLoanCustomerSearchPaths.getElement("CheckNonManDeclaredCurrentObligations");
+				// String repayment
+				// ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+				String accountholdername = (String) javascriptHelper.executeScript("return " + repayment);
+				System.out.println(accountholdername);
+				Assert.assertTrue(!accountholdername.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Given("User_607 Check Declared Current Obligations should be editable")
+	public void user_607_check_declared_current_obligations_should_be_editable() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper
+						.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("DeclaredCurrentObligations"))
+						.sendKeys(testData.get("DeclaredCurrentObligations"));
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Given("User_607 Check Special Promotion Campaign should be non mandatory")
+	public void user_607_check_special_promotion_campaign_should_be_non_mandatory() {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String repayment = AutoLoanCustomerSearchPaths.getElement("SpecialPromotion/CampaignCheckNonMan");
+				// String repayment
+				// ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+				String accountholdername = (String) javascriptHelper.executeScript("return " + repayment);
+				System.out.println(accountholdername);
+				Assert.assertTrue(!accountholdername.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Given("User_607 Check Special Promotion Campaign should be editable")
+	public void user_607_check_special_promotion_campaign_should_be_editable() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper
+						.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("Special Promotion/Campaign"))
+						.click();
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+
+		String dropdownLength = "";
+
+		boolean isDropdownValueSelected = false;
+
+		String dropdownString = "";
+
+		for (int i = 0; i <= 300; i++) {
+
+			try {
+
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+				System.out.println("Dropdown length " + dropdownLength);
+
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+					break;
+
+				}
+
+			} catch (Exception e) {
+
+				if (i == 300) {
+
+					Assert.fail(e.getMessage());
+
+				}
+
+			}
+
+		}
+
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+			for (int l = 0; l <= 300; l++) {
+
+				try {
+
+					System.out.println("L value is " + l);
+
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+					dropdownString = javascriptHelper.executeScript(
+
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+							.toString();
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (l == 300 && !(dropdownString.isBlank())) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+				if (!(dropdownString.isEmpty())) {
+
+					System.out.println(dropdownString);
+
+					System.out.println("Loop count " + l + " got breaked");
+
+					break;
+
+				}
+
+			}
+
+			System.out.println("String " + dropdownString.trim());
+
+			System.out.println("Map " + testData.get("Special Promotion/Campaign").trim());
+
+			if ((dropdownString.trim()).equalsIgnoreCase(testData.get("Special Promotion/Campaign").trim())) {
+
+				for (int k = 0; k <= 300; k++) {
+
+					try {
+
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						isDropdownValueSelected = true;
+
+						break;
+
+					} catch (Exception e) {
+
+						if (k == 300) {
+
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+
+				break;
+
+			}
+		}
+
+	}
+
+	@Given("User_607 Check Sourcing Channel should be mandatory")
+	public void user_607_check_sourcing_channel_should_be_mandatory() {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String repayment = AutoLoanCustomerSearchPaths.getElement("SourcingChannel*");
+				// String repayment
+				// ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+				String accountholdername = (String) javascriptHelper.executeScript("return " + repayment);
+				System.out.println(accountholdername);
+				Assert.assertTrue(accountholdername.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Given("User_607 Check Sourcing Channel should be editable")
+	public void user_607_check_sourcing_channel_should_be_editable() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("SourcingChannel"))
+						.click();
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+
+		String dropdownLength = "";
+
+		boolean isDropdownValueSelected = false;
+
+		String dropdownString = "";
+
+		for (int i = 0; i <= 300; i++) {
+
+			try {
+
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+				System.out.println("Dropdown length " + dropdownLength);
+
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+					break;
+
+				}
+
+			} catch (Exception e) {
+
+				if (i == 300) {
+
+					Assert.fail(e.getMessage());
+
+				}
+
+			}
+
+		}
+
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+			for (int l = 0; l <= 300; l++) {
+
+				try {
+
+					System.out.println("L value is " + l);
+
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+					dropdownString = javascriptHelper.executeScript(
+
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+							.toString();
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (l == 300 && !(dropdownString.isBlank())) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+				if (!(dropdownString.isEmpty())) {
+
+					System.out.println(dropdownString);
+
+					System.out.println("Loop count " + l + " got breaked");
+
+					break;
+
+				}
+
+			}
+
+			System.out.println("String " + dropdownString.trim());
+
+			System.out.println("Map " + testData.get("SourcingChannel").trim());
+
+			if ((dropdownString.trim()).equalsIgnoreCase(testData.get("SourcingChannel").trim())) {
+
+				for (int k = 0; k <= 300; k++) {
+
+					try {
+
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						isDropdownValueSelected = true;
+
+						break;
+
+					} catch (Exception e) {
+
+						if (k == 300) {
+
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+
+				break;
+
+			}
+		}
+
+	}
+
+	@Given("User_607 Check Business Center Code should be mandatory")
+	public void user_607_check_business_center_code_should_be_mandatory() {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String repayment = AutoLoanCustomerSearchPaths.getElement("BusinessCenterCode*");
+				// String repayment
+				// ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+				String accountholdername = (String) javascriptHelper.executeScript("return " + repayment);
+				System.out.println(accountholdername);
+				Assert.assertTrue(accountholdername.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@Given("User_607 Check Business Center Code should be editable")
+	public void user_607_check_business_center_code_should_be_editable() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("BusinessCenterCode"))
+						.click();
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+
+		String dropdownLength = "";
+
+		boolean isDropdownValueSelected = false;
+
+		String dropdownString = "";
+
+		for (int i = 0; i <= 300; i++) {
+
+			try {
+
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+				System.out.println("Dropdown length " + dropdownLength);
+
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+					break;
+
+				}
+
+			} catch (Exception e) {
+
+				if (i == 300) {
+
+					Assert.fail(e.getMessage());
+
+				}
+
+			}
+
+		}
+
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+			for (int l = 0; l <= 300; l++) {
+
+				try {
+
+					System.out.println("L value is " + l);
+
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+					dropdownString = javascriptHelper.executeScript(
+
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+							.toString();
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (l == 300 && !(dropdownString.isBlank())) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+				if (!(dropdownString.isEmpty())) {
+
+					System.out.println(dropdownString);
+
+					System.out.println("Loop count " + l + " got breaked");
+
+					break;
+
+				}
+
+			}
+
+			System.out.println("String " + dropdownString.trim());
+
+			System.out.println("Map " + testData.get("BusinessCenterCode").trim());
+
+			if ((dropdownString.trim()).equalsIgnoreCase(testData.get("BusinessCenterCode").trim())) {
+
+				for (int k = 0; k <= 300; k++) {
+
+					try {
+
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						isDropdownValueSelected = true;
+
+						break;
+
+					} catch (Exception e) {
+
+						if (k == 300) {
+
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+
+				break;
+
+			}
+		}
+
+	}
+
+	@Given("User_607 Check Servicing Type should be mandatory")
+	public void user_607_check_servicing_type_should_be_mandatory() {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String repayment = AutoLoanCustomerSearchPaths.getElement("ServicingType*");
+				// String repayment
+				// ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+				String accountholdername = (String) javascriptHelper.executeScript("return " + repayment);
+				System.out.println(accountholdername);
+				Assert.assertTrue(accountholdername.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@Given("User_607 Check Servicing Type should be editable")
+	public void user_607_check_servicing_type_should_be_editable() {
+		javascriptHelper.scrollIntoView(
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("ReferenceCode")));
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("ServicingType")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+
+		String dropdownLength = "";
+
+		boolean isDropdownValueSelected = false;
+
+		String dropdownString = "";
+
+		for (int i = 0; i <= 300; i++) {
+
+			try {
+
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+				System.out.println("Dropdown length " + dropdownLength);
+
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+					break;
+
+				}
+
+			} catch (Exception e) {
+
+				if (i == 300) {
+
+					Assert.fail(e.getMessage());
+
+				}
+
+			}
+
+		}
+
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+			for (int l = 0; l <= 300; l++) {
+
+				try {
+
+					System.out.println("L value is " + l);
+
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+					dropdownString = javascriptHelper.executeScript(
+
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+							.toString();
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (l == 300 && !(dropdownString.isBlank())) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+				if (!(dropdownString.isEmpty())) {
+
+					System.out.println(dropdownString);
+
+					System.out.println("Loop count " + l + " got breaked");
+
+					break;
+
+				}
+
+			}
+
+			System.out.println("String " + dropdownString.trim());
+
+			System.out.println("Map " + testData.get("ServicingType").trim());
+
+			if ((dropdownString.trim()).equalsIgnoreCase(testData.get("ServicingType").trim())) {
+
+				for (int k = 0; k <= 300; k++) {
+
+					try {
+
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						isDropdownValueSelected = true;
+
+						break;
+
+					} catch (Exception e) {
+
+						if (k == 300) {
+
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+
+				break;
+
+			}
+		}
+
+	}
+
+	@Given("User_607 Check Region should be mandatory")
+	public void user_607_check_region_should_be_mandatory() {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String repayment = AutoLoanCustomerSearchPaths.getElement("Region*");
+				// String repayment
+				// ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+				String accountholdername = (String) javascriptHelper.executeScript("return " + repayment);
+				System.out.println(accountholdername);
+				Assert.assertTrue(accountholdername.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@Given("User_607 Check Region should be editable")
+	public void user_607_check_region_should_be_editable() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("Region")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+
+		String dropdownLength = "";
+
+		boolean isDropdownValueSelected = false;
+
+		String dropdownString = "";
+
+		for (int i = 0; i <= 300; i++) {
+
+			try {
+
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+				System.out.println("Dropdown length " + dropdownLength);
+
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+					break;
+
+				}
+
+			} catch (Exception e) {
+
+				if (i == 300) {
+
+					Assert.fail(e.getMessage());
+
+				}
+
+			}
+
+		}
+
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+			for (int l = 0; l <= 300; l++) {
+
+				try {
+
+					System.out.println("L value is " + l);
+
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+					dropdownString = javascriptHelper.executeScript(
+
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+							.toString();
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (l == 300 && !(dropdownString.isBlank())) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+				if (!(dropdownString.isEmpty())) {
+
+					System.out.println(dropdownString);
+
+					System.out.println("Loop count " + l + " got breaked");
+					break;
+				}
+
+			}
+
+			System.out.println("String " + dropdownString.trim());
+
+			System.out.println("Map " + testData.get("Region").trim());
+
+			if ((dropdownString.trim()).equalsIgnoreCase(testData.get("Region").trim())) {
+
+				for (int k = 0; k <= 300; k++) {
+
+					try {
+
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						isDropdownValueSelected = true;
+
+						break;
+
+					} catch (Exception e) {
+
+						if (k == 300) {
+
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+
+				break;
+
+			}
+		}
+
+	}
+
+	@Given("User_607 Check Servicing Branch should be mandatory")
+	public void user_607_check_servicing_branch_should_be_mandatory() throws Throwable {
+		Thread.sleep(3000);
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String repayment = AutoLoanCustomerSearchPaths.getElement("ServicingBranch*");
+				// String repayment
+				// ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+				String accountholdername = (String) javascriptHelper.executeScript("return " + repayment);
+				System.out.println(accountholdername);
+				Assert.assertTrue(accountholdername.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@Given("User_607 Check Servicing Branch should be editable")
+	public void user_607_check_servicing_branch_should_be_editable() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("ServicingBranch"))
+						.click();
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+
+		String dropdownLength = "";
+
+		boolean isDropdownValueSelected = false;
+
+		String dropdownString = "";
+
+		for (int i = 0; i <= 300; i++) {
+
+			try {
+
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+				System.out.println("Dropdown length " + dropdownLength);
+
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+					break;
+
+				}
+
+			} catch (Exception e) {
+
+				if (i == 300) {
+
+					Assert.fail(e.getMessage());
+
+				}
+
+			}
+
+		}
+
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+			for (int l = 0; l <= 300; l++) {
+
+				try {
+
+					System.out.println("L value is " + l);
+
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+					dropdownString = javascriptHelper.executeScript(
+
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+							.toString();
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (l == 300 && !(dropdownString.isBlank())) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+				if (!(dropdownString.isEmpty())) {
+
+					System.out.println(dropdownString);
+
+					System.out.println("Loop count " + l + " got breaked");
+
+					break;
+
+				}
+
+			}
+
+			System.out.println("String " + dropdownString.trim());
+
+			System.out.println("Map " + testData.get("ServicingBranch").trim());
+
+			if ((dropdownString.trim()).equalsIgnoreCase(testData.get("ServicingBranch").trim())) {
+
+				for (int k = 0; k <= 300; k++) {
+
+					try {
+
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						isDropdownValueSelected = true;
+
+						break;
+
+					} catch (Exception e) {
+
+						if (k == 300) {
+
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+
+				break;
+
+			}
+		}
+
+	}
+
+	@Given("User_607 Check Spoke Location should be Non mandatory")
+	public void user_607_check_spoke_location_should_be_non_mandatory() {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String repayment = AutoLoanCustomerSearchPaths.getElement("SpokeLocationCheckNonMan");
+				// String repayment
+				// ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+				String accountholdername = (String) javascriptHelper.executeScript("return " + repayment);
+				System.out.println(accountholdername);
+				Assert.assertTrue(!accountholdername.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@Given("User_607 Check Spoke Location should be editable")
+	public void user_607_check_spoke_location_should_be_editable() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("SpokeLocation")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+
+		String dropdownLength = "";
+
+		boolean isDropdownValueSelected = false;
+
+		String dropdownString = "";
+
+		for (int i = 0; i <= 300; i++) {
+
+			try {
+
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+				System.out.println("Dropdown length " + dropdownLength);
+
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+					break;
+
+				}
+
+			} catch (Exception e) {
+
+				if (i == 300) {
+
+					Assert.fail(e.getMessage());
+
+				}
+
+			}
+
+		}
+
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+			for (int l = 0; l <= 300; l++) {
+
+				try {
+
+					System.out.println("L value is " + l);
+
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+					dropdownString = javascriptHelper.executeScript(
+
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+							.toString();
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (l == 300 && !(dropdownString.isBlank())) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+				if (!(dropdownString.isEmpty())) {
+
+					System.out.println(dropdownString);
+
+					System.out.println("Loop count " + l + " got breaked");
+
+					break;
+
+				}
+
+			}
+
+			System.out.println("String " + dropdownString.trim());
+
+			System.out.println("Map " + testData.get("SpokeLocation").trim());
+
+			if ((dropdownString.trim()).equalsIgnoreCase(testData.get("SpokeLocation").trim())) {
+
+				for (int k = 0; k <= 300; k++) {
+
+					try {
+
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						isDropdownValueSelected = true;
+
+						break;
+
+					} catch (Exception e) {
+
+						if (k == 300) {
+
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+
+				break;
+
+			}
+		}
+
+	}
+
+	@Given("User_607 Check Closing Staff Or Servicing Staff Or RM should be mandatory")
+	public void user_607_check_closing_staff_or_servicing_staff_or_rm_should_be_mandatory() {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String repayment = AutoLoanCustomerSearchPaths.getElement("ClosingStaffOrServicingStaffOrRM*");
+				// String repayment
+				// ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+				String accountholdername = (String) javascriptHelper.executeScript("return " + repayment);
+				System.out.println(accountholdername);
+				Assert.assertTrue(accountholdername.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@Given("User_607 Check Closing Staff Or Servicing Staff Or RM should be editable")
+	public void user_607_check_closing_staff_or_servicing_staff_or_rm_should_be_editable() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(
+						AutoLoanCustomerSearchPaths.getElement("ClosingStaffOrServicingStaffOrRM")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+
+		String dropdownLength = "";
+
+		boolean isDropdownValueSelected = false;
+
+		String dropdownString = "";
+
+		for (int i = 0; i <= 300; i++) {
+
+			try {
+
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+				System.out.println("Dropdown length " + dropdownLength);
+
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+					break;
+
+				}
+
+			} catch (Exception e) {
+
+				if (i == 300) {
+
+					Assert.fail(e.getMessage());
+
+				}
+
+			}
+
+		}
+
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+			for (int l = 0; l <= 300; l++) {
+
+				try {
+
+					System.out.println("L value is " + l);
+
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+					dropdownString = javascriptHelper.executeScript(
+
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+							.toString();
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (l == 300 && !(dropdownString.isBlank())) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+				if (!(dropdownString.isEmpty())) {
+
+					System.out.println(dropdownString);
+
+					System.out.println("Loop count " + l + " got breaked");
+
+					break;
+
+				}
+
+			}
+
+			System.out.println("String " + dropdownString.trim());
+
+			System.out.println("Map " + testData.get("ClosingStaffOrServicingStaffOrRM").trim());
+
+			if ((dropdownString.trim()).equalsIgnoreCase(testData.get("ClosingStaffOrServicingStaffOrRM").trim())) {
+
+				for (int k = 0; k <= 300; k++) {
+
+					try {
+
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						isDropdownValueSelected = true;
+
+						break;
+
+					} catch (Exception e) {
+
+						if (k == 300) {
+
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+
+				break;
+
+			}
+		}
+	}
+
+	@Given("User_607 Check Topup Type should be Non mandatory")
+	public void user_607_check_topup_type_should_be_non_mandatory() {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String repayment = AutoLoanCustomerSearchPaths.getElement("TopupTypeCheckNonMan");
+				// String repayment
+				// ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+				String accountholdername = (String) javascriptHelper.executeScript("return " + repayment);
+				System.out.println(accountholdername);
+				Assert.assertTrue(!accountholdername.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@Given("User_607 Check Topup Type should be editable")
+	public void user_607_check_topup_type_should_be_editable() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("TopupType")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+
+		String dropdownLength = "";
+
+		boolean isDropdownValueSelected = false;
+
+		String dropdownString = "";
+
+		for (int i = 0; i <= 300; i++) {
+
+			try {
+
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+				System.out.println("Dropdown length " + dropdownLength);
+
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+					break;
+
+				}
+
+			} catch (Exception e) {
+
+				if (i == 300) {
+
+					Assert.fail(e.getMessage());
+
+				}
+
+			}
+
+		}
+
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+			for (int l = 0; l <= 300; l++) {
+
+				try {
+
+					System.out.println("L value is " + l);
+
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+					dropdownString = javascriptHelper.executeScript(
+
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+							.toString();
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (l == 300 && !(dropdownString.isBlank())) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+				if (!(dropdownString.isEmpty())) {
+
+					System.out.println(dropdownString);
+
+					System.out.println("Loop count " + l + " got breaked");
+
+					break;
+
+				}
+
+			}
+
+			System.out.println("String " + dropdownString.trim());
+
+			System.out.println("Map " + testData.get("TopupType").trim());
+
+			if ((dropdownString.trim()).equalsIgnoreCase(" BT Topup ".trim())) {
+
+				for (int k = 0; k <= 300; k++) {
+
+					try {
+
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						isDropdownValueSelected = true;
+
+						break;
+
+					} catch (Exception e) {
+
+						if (k == 300) {
+
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+
+				break;
+
+			}
+		}
+
+	}
+
+	@Given("User_607 Check Topup Application No should be Non mandatory")
+	public void user_607_check_topup_application_no_should_be_non_mandatory() {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String repayment = AutoLoanCustomerSearchPaths.getElement("TopupApplicationNoCheckNonMan");
+				// String repayment
+				// ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+				String accountholdername = (String) javascriptHelper.executeScript("return " + repayment);
+				System.out.println(accountholdername);
+				Assert.assertTrue(!accountholdername.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Given("User_607 Check Topup Application No should be editable")
+	public void user_607_check_topup_application_no_should_be_editable() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("TopupApplicationNo"))
+						.click();
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("TopupApplicationNo"))
+						.sendKeys(testData.get("TopupApplicationNo"));
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Given("User_607 Check Sourcing Type should be mandatory")
+	public void user_607_check_sourcing_type_should_be_mandatory() {
+		javascriptHelper.scrollIntoView(
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("SourcingStaff")));
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String repayment = AutoLoanCustomerSearchPaths.getElement("SourcingType*");
+				// String repayment
+				// ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+				String accountholdername = (String) javascriptHelper.executeScript("return " + repayment);
+				System.out.println(accountholdername);
+				Assert.assertTrue(accountholdername.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Given("User_607 Check Sourcing Type should be editable")
+	public void user_607_check_sourcing_type_should_be_editable() {
+
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("SourcingType")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+				System.out.println("Dropdown length " + dropdownLength);
+
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+			for (int l = 0; l <= 300; l++) {
+
+				try {
+
+					System.out.println("L value is " + l);
+
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+					dropdownString = javascriptHelper.executeScript(
+
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+							.toString();
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (l == 300 && !(dropdownString.isBlank())) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+				if (!(dropdownString.isEmpty())) {
+
+					System.out.println(dropdownString);
+
+					System.out.println("Loop count " + l + " got breaked");
+
+					break;
+
+				}
+
+			}
+
+			System.out.println("String " + dropdownString.trim());
+
+			System.out.println("Map " + testData.get("SourcingType").trim());
+
+			if ((dropdownString.trim()).equalsIgnoreCase(testData.get("SourcingType").trim())) {
+
+				for (int k = 0; k <= 300; k++) {
+
+					try {
+
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						isDropdownValueSelected = true;
+
+						break;
+
+					} catch (Exception e) {
+
+						if (k == 300) {
+
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+
+				break;
+
+			}
+		}
+	}
+
+	@Given("User_607 Check Sourcing Office should be mandatory")
+	public void user_607_check_sourcing_office_should_be_mandatory() throws Throwable {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				javascriptHelper.scrollIntoView(
+						javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("Status")));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		Thread.sleep(2000);
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String repayment = AutoLoanCustomerSearchPaths.getElement("SourcingOffice*");
+				// String repayment
+				// ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+				String accountholdername = (String) javascriptHelper.executeScript("return " + repayment);
+				System.out.println(accountholdername);
+				Assert.assertTrue(accountholdername.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@Given("User_607 Check Sourcing Office should be editable")
+	public void user_607_check_sourcing_office_should_be_editable() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("SourcingOffice")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+				System.out.println("Dropdown length " + dropdownLength);
+
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+			for (int l = 0; l <= 300; l++) {
+
+				try {
+
+					System.out.println("L value is " + l);
+
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+					dropdownString = javascriptHelper.executeScript(
+
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+							.toString();
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (l == 300 && !(dropdownString.isBlank())) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+				if (!(dropdownString.isEmpty())) {
+
+					System.out.println(dropdownString);
+
+					System.out.println("Loop count " + l + " got breaked");
+
+					break;
+
+				}
+
+			}
+
+			System.out.println("String " + dropdownString.trim());
+
+			System.out.println("Map " + " East Zone ".trim());
+
+			if ((dropdownString.trim()).equalsIgnoreCase(" East Zone ".trim())) {
+
+				for (int k = 0; k <= 300; k++) {
+
+					try {
+
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						isDropdownValueSelected = true;
+
+						break;
+
+					} catch (Exception e) {
+
+						if (k == 300) {
+
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+
+				break;
+
+			}
+		}
+
+	}
+
+	@Given("User_607 Check Sourcing Entity should be mandatory")
+	public void user_607_check_sourcing_entity_should_be_mandatory() {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String repayment = AutoLoanCustomerSearchPaths.getElement("SourcingEntity*");
+				// String repayment
+				// ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+				String accountholdername = (String) javascriptHelper.executeScript("return " + repayment);
+				System.out.println(accountholdername);
+				Assert.assertTrue(accountholdername.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@Given("User_607 Check Sourcing Entity should be editable")
+	public void user_607_check_sourcing_entity_should_be_editable() {
+		javascriptHelper.scrollIntoView(
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("ReferenceCode")));
+
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("SourcingEntity")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+				System.out.println("Dropdown length " + dropdownLength);
+
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+			for (int l = 0; l <= 300; l++) {
+
+				try {
+
+					System.out.println("L value is " + l);
+
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+					dropdownString = javascriptHelper.executeScript(
+
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+							.toString();
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (l == 300 && !(dropdownString.isBlank())) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+				if (!(dropdownString.isEmpty())) {
+
+					System.out.println(dropdownString);
+
+					System.out.println("Loop count " + l + " got breaked");
+
+					break;
+
+				}
+
+			}
+
+			System.out.println("String " + dropdownString.trim());
+
+			System.out.println("Map " + " East Zone ".trim());
+
+			if ((dropdownString.trim()).equalsIgnoreCase(" East Zone ".trim())) {
+
+				for (int k = 0; k <= 300; k++) {
+
+					try {
+
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						isDropdownValueSelected = true;
+
+						break;
+
+					} catch (Exception e) {
+
+						if (k == 300) {
+
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+
+				break;
+
+			}
+		}
+
+	}
+
+	@Given("User_607 Check Sourcing Staff should be mandatory")
+	public void user_607_check_sourcing_staff_should_be_mandatory() {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String repayment = AutoLoanCustomerSearchPaths.getElement("SourcingStaff*");
+				// String repayment
+				// ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+				String accountholdername = (String) javascriptHelper.executeScript("return " + repayment);
+				System.out.println(accountholdername);
+				Assert.assertTrue(accountholdername.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Given("User_607 Check Sourcing Staff should be nonmandatory")
+	public void user_607_check_sourcing_staff_should_be_nonmandatory() {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String repayment = AutoLoanCustomerSearchPaths.getElement("SourcingStaff*");
+				// String repayment
+				// ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+				String accountholdername = (String) javascriptHelper.executeScript("return " + repayment);
+				System.out.println(accountholdername);
+				Assert.assertTrue(!accountholdername.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Given("User_607 Check Sourcing Staff should be editable")
+	public void user_607_check_sourcing_staff_should_be_editable() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("SourcingStaff")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+				System.out.println("Dropdown length " + dropdownLength);
+
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+			for (int l = 0; l <= 300; l++) {
+
+				try {
+
+					System.out.println("L value is " + l);
+
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+					dropdownString = javascriptHelper.executeScript(
+
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+							.toString();
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (l == 300 && !(dropdownString.isBlank())) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+				if (!(dropdownString.isEmpty())) {
+
+					System.out.println(dropdownString);
+
+					System.out.println("Loop count " + l + " got breaked");
+
+					break;
+
+				}
+
+			}
+
+			System.out.println("String " + dropdownString.trim());
+
+			System.out.println("Map " + " Amruta ".trim());
+
+			if ((dropdownString.trim()).equalsIgnoreCase(" Amruta ".trim())) {
+
+				for (int k = 0; k <= 300; k++) {
+
+					try {
+
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						isDropdownValueSelected = true;
+
+						break;
+
+					} catch (Exception e) {
+
+						if (k == 300) {
+
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+
+				break;
+
+			}
+		}
+
+	}
+
+	@Given("User_607 Check Reference Type should be non mandatory")
+	public void user_607_check_reference_type_should_be_non_mandatory() {
+		for (int i = 0; i < 100; i++) {
+			try {
+				javascriptHelper.scrollIntoView(
+						javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("ReferenceCode")));
+				break;
+			} catch (Exception e) {
+				if (i == 99) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String repayment = AutoLoanCustomerSearchPaths.getElement("ReferenceTypeCheckNonMan");
+				// String repayment
+				// ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+				String accountholdername = (String) javascriptHelper.executeScript("return " + repayment);
+				System.out.println(accountholdername);
+				Assert.assertTrue(!accountholdername.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@Given("User_607 Check Reference Type should be editable")
+	public void user_607_check_reference_type_should_be_editable() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("ReferenceType")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+				System.out.println("Dropdown length " + dropdownLength);
+
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+			for (int l = 0; l <= 300; l++) {
+
+				try {
+
+					System.out.println("L value is " + l);
+
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+					dropdownString = javascriptHelper.executeScript(
+
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+							.toString();
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (l == 300 && !(dropdownString.isBlank())) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+				if (!(dropdownString.isEmpty())) {
+
+					System.out.println(dropdownString);
+
+					System.out.println("Loop count " + l + " got breaked");
+
+					break;
+
+				}
+
+			}
+
+			System.out.println("String " + dropdownString.trim());
+
+			System.out.println("Map " + " AGENT ".trim());
+
+			if ((dropdownString.trim()).equalsIgnoreCase(" AGENT ".trim())) {
+
+				for (int k = 0; k <= 300; k++) {
+
+					try {
+
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						isDropdownValueSelected = true;
+
+						break;
+
+					} catch (Exception e) {
+
+						if (k == 300) {
+
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+
+				break;
+
+			}
+		}
+
+	}
+
+	@Given("User_607 Check Reference Entity should be non mandatory")
+	public void user_607_check_reference_entity_should_be_non_mandatory() {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String repayment = AutoLoanCustomerSearchPaths.getElement("ReferenceEntityCheckNonMan");
+				// String repayment
+				// ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+				String accountholdername = (String) javascriptHelper.executeScript("return " + repayment);
+				System.out.println(accountholdername);
+				Assert.assertTrue(!accountholdername.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@Given("User_607 Check Reference Entity should be editable")
+	public void user_607_check_reference_entity_should_be_editable() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("ReferenceEntity"))
+						.click();
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+				System.out.println("Dropdown length " + dropdownLength);
+
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+			for (int l = 0; l <= 300; l++) {
+
+				try {
+
+					System.out.println("L value is " + l);
+
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+					dropdownString = javascriptHelper.executeScript(
+
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+							.toString();
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (l == 300 && !(dropdownString.isBlank())) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+				if (!(dropdownString.isEmpty())) {
+
+					System.out.println(dropdownString);
+
+					System.out.println("Loop count " + l + " got breaked");
+
+					break;
+
+				}
+
+			}
+
+			System.out.println("String " + dropdownString.trim());
+
+			System.out.println("Map " + " East Zone ".trim());
+
+			if ((dropdownString.trim()).equalsIgnoreCase(" East Zone ".trim())) {
+
+				for (int k = 0; k <= 300; k++) {
+
+					try {
+
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						isDropdownValueSelected = true;
+
+						break;
+
+					} catch (Exception e) {
+
+						if (k == 300) {
+
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+
+				break;
+
+			}
+		}
+
+	}
+
+	@Given("User_607 Check Reference Code should be non mandatory")
+	public void user_607_check_reference_code_should_be_non_mandatory() {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String repayment = AutoLoanCustomerSearchPaths.getElement("ReferenceCodeCheckNonMan");
+				// String repayment
+				// ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+				String accountholdername = (String) javascriptHelper.executeScript("return " + repayment);
+				System.out.println(accountholdername);
+				Assert.assertTrue(!accountholdername.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@Given("User_607 Check Reference Code should be editable")
+	public void user_607_check_reference_code_should_be_editable() {
+		javascriptHelper.scrollIntoView(
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("ReferenceCode")));
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("ReferenceCode"))
+						.sendKeys("1500");
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Given("User_607 Click Back button")
+	public void user_607_click_back_button() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.JSEClick(
+						javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("GoBack")));
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Given("User_607 Check system should navigate to the previous screen")
+	public void user_607_check_system_should_navigate_to_the_previous_screen() {
+		if (!javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("selectRecord"))
+				.isDisplayed()) {
+			Assert.fail();
+		}
+
+	}
+
+	@Given("User_607 Click Add button in application details")
+	public void user_607_click_add_button_in_application_details() throws Throwable {
+		Thread.sleep(3000);
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.JSEClick(
+						javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("AddButton")));
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Given("User_607 Select ID type")
+	public void user_607_select_id_type() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("IdType")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+				System.out.println("Dropdown length " + dropdownLength);
+
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+			for (int l = 0; l <= 300; l++) {
+
+				try {
+
+					System.out.println("L value is " + l);
+
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+					dropdownString = javascriptHelper.executeScript(
+
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+							.toString();
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (l == 300 && !(dropdownString.isBlank())) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+				if (!(dropdownString.isEmpty())) {
+
+					System.out.println(dropdownString);
+
+					System.out.println("Loop count " + l + " got breaked");
+
+					break;
+
+				}
+
+			}
+
+			System.out.println("String " + dropdownString.trim());
+
+			System.out.println("Map " + testData.get("ID Type").trim());
+
+			if ((dropdownString.trim()).equalsIgnoreCase(testData.get("ID Type").trim())) {
+
+				for (int k = 0; k <= 300; k++) {
+					try {
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						isDropdownValueSelected = true;
+						break;
+
+					} catch (Exception e) {
+
+						if (k == 300) {
+
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+
+				break;
+			}
+		}
+	}
+
+	@Given("User_607 Enter Customer ID number")
+	public void user_607_enter_customer_id_number() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("IdNumber"))
+						.sendKeys(testData.get("Customer ID"));
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@Given("User_607 Enter date of birth")
+	public void user_607_enter_date_of_birth() throws Throwable {
+		javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("DateOfBirth")).click();
+		javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("DateOfBirth"))
+				.sendKeys(testData.get("Date Of Birth"));
+		Thread.sleep(1000);
+		javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("SelectDate")).click();
+
+	}
+
+	@Given("User_607 Click Search button after filled the fields")
+	public void user_607_click_search_button_after_filled_the_fields() throws Throwable {
+		for (int i = 0; i < 700; i++) {
+			try {
+				// javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("SearchButton")).click();
+				WebElement search = javascriptHelper
+						.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("SearchButton"));
+				javascriptHelper.JSEClick(search);
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@Given("User_607 Click Create New button")
+	public void user_607_click_create_new_button() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("CreateNewbutton"))
+						.click();
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@Given("User_607 Click save button in creating new reord screen")
+	public void user_607_click_save_button_in_creating_new_reord_screen() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("Savebutton")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Given("User_607 Check Please Fill Details Popup showing or not")
+	public void user_607_check_please_fill_details_popup_showing_or_not() throws Throwable {
+		Thread.sleep(1000);
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String text = javascriptHelper
+						.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("PleaseFillDetailsPopup"))
+						.getText();
+				Assert.assertTrue(text.contains("Please fill all the details"));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Given("User_607 User Check negative value accepct or not in the numaric field")
+	public void user_607_user_check_negative_value_accepct_or_not_in_the_numaric_field() {
+		javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("TotalFinanceAmountRequested"))
+				.sendKeys("-10");
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String CheckField = javascriptHelper
+						.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("TotalFinanceAmountRequested"))
+						.getAttribute("aria-valuenow");
+				String accountholdername = javascriptHelper.executeScript("return " + CheckField).toString();
+				Assert.assertFalse(accountholdername.contains("-"));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@Given("User_607 Check Negative Total Finance Amount Requested should be editable")
+	public void user_607_check_negative_total_finance_amount_requested_should_be_editable() {
+
+		for (int i = 0; i < 700; i++) {
+			try {
+				// javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("TotalFinanceAmountRequested")).click();
+				clicksAndActionsHelper.doubleClick((javascriptHelper
+						.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("TotalFinanceAmountRequested"))));
+				javascriptHelper
+						.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("TotalFinanceAmountRequested"))
+						.sendKeys("-100");
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@Given("User_607 Update testdata from AT_AL_CUS_01")
+	public void user_607_update_testdata_from_AT_AL_CUS_01() {
+		AutoLoanExecution = AutoLoanExecutionExcel.getTestdata("AT_AL_CUS_01");
+		testData = AutoLoanCustomer_Search.getTestdata(AutoLoanExecution.get("dataSet_ID"));
+	}
+	
+	@Given("User_607 Update testdata from AT_IJCS_01")
+	public void user_update_testdata_from_AT_IJCS_01() {
+		testData = Customer_Search.getTestdata("DS_AT_IJCS_01");
+	}
+	
+	@Given("User_607 Update testdata from AT_IJCS_02")
+	public void user_update_testdata_from_AT_IJCS_02() {
+		testData = Customer_Search.getTestdata("DS_AT_IJCS_02");
+	}
+	
+	@Given("User_607 Update testdata from AT_IJCS_03")
+	public void user_update_testdata_from_AT_IJCS_03() {
+		testData = Customer_Search.getTestdata("DS_AT_IJCS_03");
+	}
+	
+	@Given("User_607 Update testdata from AT_IJCS_04")
+	public void user_update_testdata_from_AT_IJCS_04() {
+		testData = Customer_Search.getTestdata("DS_AT_IJCS_04");
+	}
+	@Given("User_607 click the menu icon in after login screen")
+	public void user_607_click_the_menu_icon_in_after_login_screen() {
+		for (int i = 0; i < 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("MenuButton")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_607 navigate to the Transactions flag")
+	public void user_607_navigate_to_the_transactions_flag() {
+		for (int i = 0; i < 500; i++) {
+			try {
+				System.out.println(AutoLoanCustomerSearchPaths.getElement("MenuButton"));
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("Transactions")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_607 navigate to the Application manager flag")
+	public void user_607_navigate_to_the_application_manager_flag() {
+		for (int i = 0; i < 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("ApplicationManager"))
+						.click();
+				break;
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_607 click the Application details flag")
+	public void user_607_click_the_application_details_flag() throws Throwable {
+//		for (int i = 0; i < 500; i++) {
+//			try {
+//				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("ApplicationDetails"))
+//						.click();
+//				break;
+//			} catch (Exception e) {
+//				if (i == 499) {
+//					Assert.fail(e.getMessage());
+//				}
+//			}
+//		}
+		Thread.sleep(1000);
+		String listOfAddButtonQuery = "document.querySelectorAll('ion-accordion[value=\"Transactions\"] ion-item').length";
+		String listOfAddButton = "";
+		String addButtonScreenName = "";
+		boolean isAddButtonClicked = false;
+		for (int i = 0; i <= 300; i++) {
+			try {
+				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
+				System.out.println("List of add button " + listOfAddButton);
+				if (!(listOfAddButton.isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		int premitiveListOfAddButton = Integer.parseInt(listOfAddButton);
+		for (int j = 0; j < premitiveListOfAddButton; j++) {
+			for (int k = 0; k <= 500; k++) {
+				try {
+					addButtonScreenName = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-accordion[value=\"Transactions\"] ion-item')[" + j
+									+ "].textContent")
+							.toString();
+					System.out.println("Screen Name " + addButtonScreenName);
+					if (!(addButtonScreenName.isBlank())) {
+						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
+						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Application Details").trim())) {
+							System.out.println("Inside nested loop");
+							System.out.println(
+									"document.querySelectorAll('ion-accordion[value=\"Transactions\"] ion-item')[" + j
+											+ "].querySelector('ion-button')");
+							javascriptHelper.executeScriptWithWebElement(
+									"document.querySelectorAll('ion-accordion[value=\"Transactions\"] ion-item')[" + j
+											+ "].querySelector('ion-button')")
+									.click();
+							isAddButtonClicked = true;
+							break;
+						}
+					}
+				} catch (Exception e) {
+					if (k == 500) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			if (isAddButtonClicked == true) {
+				break;
+			}
+		}
+
+	}
+
+	@And("User_607 click the add icon to add the customer details")
+	public void user_607_click_the_add_icon_to_add_the_customer_details() {
+		for (int i = 0; i < 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("AddIcon")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Given("User_607 Check Customer Type should be mandatory")
+	public void user_607_check_customer_type_should_be_mandatory() {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String repayment = AutoLoanCustomerSearchPaths.getElement("CustomerType*");
+				// String repayment
+				// ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+				String accountholdername = (String) javascriptHelper.executeScript("return " + repayment);
+				System.out.println(accountholdername);
+				Assert.assertTrue(accountholdername.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Given("User_607 Select Customer type")
+	public void user_607_select_customer_type() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("CustomerType")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+				System.out.println("Dropdown length " + dropdownLength);
+
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+			for (int l = 0; l <= 300; l++) {
+
+				try {
+
+					System.out.println("L value is " + l);
+
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+					dropdownString = javascriptHelper.executeScript(
+
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+							.toString();
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (l == 300 && !(dropdownString.isBlank())) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+				if (!(dropdownString.isEmpty())) {
+
+					System.out.println(dropdownString);
+
+					System.out.println("Loop count " + l + " got breaked");
+
+					break;
+
+				}
+
+			}
+
+			System.out.println("String " + dropdownString.trim());
+
+			System.out.println("Map " + testData.get("Customer Type").trim());
+
+			if ((dropdownString.trim()).equalsIgnoreCase(testData.get("Customer Type").trim())) {
+
+				for (int k = 0; k <= 300; k++) {
+
+					try {
+
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						isDropdownValueSelected = true;
+
+						break;
+
+					} catch (Exception e) {
+
+						if (k == 300) {
+
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+
+				break;
+
+			}
+		}
+
+	}
+
+	@Given("User_607 Check Customer Type Field should be Selectable")
+	public void user_607_check_customer_type_field_should_be_selectable() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("CustomerType")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+				System.out.println("Dropdown length " + dropdownLength);
+
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+			for (int l = 0; l <= 300; l++) {
+
+				try {
+
+					System.out.println("L value is " + l);
+
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+					dropdownString = javascriptHelper.executeScript(
+
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+							.toString();
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (l == 300 && !(dropdownString.isBlank())) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+				if (!(dropdownString.isEmpty())) {
+
+					System.out.println(dropdownString);
+
+					System.out.println("Loop count " + l + " got breaked");
+
+					break;
+
+				}
+
+			}
+
+			System.out.println("String " + dropdownString.trim());
+
+			System.out.println("Map " + testData.get("Customer Type").trim());
+
+			if ((dropdownString.trim()).equalsIgnoreCase(testData.get("Customer Type").trim())) {
+
+				for (int k = 0; k <= 300; k++) {
+
+					try {
+
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						isDropdownValueSelected = true;
+
+						break;
+
+					} catch (Exception e) {
+
+						if (k == 300) {
+
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+
+				break;
+
+			}
+		}
+
+	}
+
+	@Given("User_607 Check CIF ID Field should be Editable")
+	public void user_607_check_cif_id_field_should_be_editable() {
+		javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("CustomerType"))
+				.sendKeys(testData.get("CIF ID"));
+
+	}
+
+	@Given("User_607 Check CIF ID Field should be numeric")
+	public void user_607_check_cif_id_field_should_be_numeric() {
+		javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("CustomerType"))
+				.sendKeys(testData.get("Check CIF ID"));
+		String attribute = javascriptHelper
+				.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("CIFIDGetValue"))
+				.getAttribute("ng-reflect-model");
+		if (!(attribute == null)) {
+			Assert.fail();
+		}
+	}
+
+	@Given("User_607 Check ID Type Field should be Selectable")
+	public void user_607_check_id_type_field_should_be_selectable() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("IDType")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+				System.out.println("Dropdown length " + dropdownLength);
+
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+			for (int l = 0; l <= 300; l++) {
+
+				try {
+
+					System.out.println("L value is " + l);
+
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+					dropdownString = javascriptHelper.executeScript(
+
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+							.toString();
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (l == 300 && !(dropdownString.isBlank())) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+				if (!(dropdownString.isEmpty())) {
+
+					System.out.println(dropdownString);
+
+					System.out.println("Loop count " + l + " got breaked");
+
+					break;
+
+				}
+
+			}
+
+			System.out.println("String " + dropdownString.trim());
+
+			System.out.println("Map " + testData.get("ID Type").trim());
+
+			if ((dropdownString.trim()).equalsIgnoreCase(testData.get("ID Type").trim())) {
+
+				for (int k = 0; k <= 300; k++) {
+
+					try {
+
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						isDropdownValueSelected = true;
+
+						break;
+
+					} catch (Exception e) {
+
+						if (k == 300) {
+
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+				break;
+			}
+		}
+
+	}
+
+	@Given("User_607 Enter Customer Name")
+	public void user_607_enter_customer_name() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("CustomerName"))
+						.sendKeys(testData.get("Customer Name"));
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Given("User_607 Check ID Number Field should be Alphanumeric")
+	public void user_607_check_id_number_field_should_be_alphanumeric() {
+		javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("IDNumber"))
+				.sendKeys(testData.get("Check ID Number"));
+		String attribute = javascriptHelper
+				.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("IDNumbergetValue"))
+				.getAttribute("ng-reflect-model");
+		System.out.println(attribute);
+		if (!attribute.matches("[A-Za-z0-9]+")) {
+			Assert.fail();
+		}
+	}
+
+	@Given("User_607 Check Customer Name Field should be Editable")
+	public void user_607_check_customer_name_field_should_be_editable() {
+		for (int i = 0; i < 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("CustomerName"))
+						.sendKeys(testData.get("Customer Name"));
+				break;
+			} catch (Exception e) {
+			}
+		}
+	}
+
+	@Given("User_607 Check Mobile Number Field should be non mandatory")
+	public void user_607_check_mobile_number_field_should_be_non_mandatory() {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String repayment = AutoLoanCustomerSearchPaths.getElement("MobileNumberNon*");
+				// String repayment
+				// ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+				String accountholdername = (String) javascriptHelper.executeScript("return " + repayment);
+				System.out.println(accountholdername);
+				Assert.assertTrue(!accountholdername.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@Given("User_607 Check Mobile Number Field should accept only numeric values")
+	public void user_607_check_mobile_number_field_should_accept_only_numeric_values() {
+		javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("MobileNumber"))
+				.sendKeys(testData.get("Check Mobile Number numeric"));
+		String attribute = javascriptHelper
+				.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("MobileNumberGetValue"))
+				.getAttribute("ng-reflect-model");
+		if (!(attribute == null)) {
+			Assert.fail();
+		}
+	}
+
+	@Given("User_607 Check Mobile Number Field should be editable")
+	public void user_607_check_mobile_number_field_should_be_editable() {
+		javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("MobileNumber"))
+				.sendKeys("9123121233");
+
+	}
+
+	@Given("User_607 Check Date of birth Field should be mandatory")
+	public void user_607_check_date_of_birth_field_should_be_mandatory() {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String repayment = AutoLoanCustomerSearchPaths.getElement("DateofBirth*");
+				// String repayment
+				// ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+				String accountholdername = (String) javascriptHelper.executeScript("return " + repayment);
+				System.out.println(accountholdername);
+				Assert.assertTrue(accountholdername.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@Given("User_607 Check Email ID Field should be non-mandatory")
+	public void user_607_check_email_id_field_should_be_non_mandatory() {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String repayment = AutoLoanCustomerSearchPaths.getElement("EmailIDNon*");
+				// String repayment
+				// ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+				String accountholdername = (String) javascriptHelper.executeScript("return " + repayment);
+				System.out.println(accountholdername);
+				Assert.assertTrue(!accountholdername.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@Given("User_607 Check Email ID Field should be alphanumeric")
+	public void user_607_check_email_id_field_should_be_alphanumeric() {
+		javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("EmailID"))
+				.sendKeys(testData.get("Check Email ID alphanumeric"));
+
+	}
+
+	@Given("User_607 Check System must redirect the Application Details page")
+	public void user_607_check_system_must_redirect_the_application_details_page() throws Throwable {
+		Thread.sleep(3000);
+		if (!javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("ApplicationDetails"))
+				.isDisplayed()) {
+			Assert.fail();
+		}
+	}
+
+	@Given("User_607 Check able to enter characters value in numeric field")
+	public void user_607_check_able_to_enter_characters_value_in_numeric_field() throws Throwable {
+		Thread.sleep(1000);
+		javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("DeclaredNetMonthlyIncome"))
+				.sendKeys("enter");
+		String attribute = javascriptHelper
+				.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("DeclaredNetMonthlyIncome"))
+				.getAttribute("aria-valuenow");
+		if (!(attribute == null)) {
+			Assert.fail();
+		}
+	}
+
+	@Given("User_607 Check able to enter special characters in any field")
+	public void user_607_check_able_to_enter_special_characters_in_any_field() {
+		javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("TotalFinanceAmountRequested"))
+				.sendKeys(testData.get("special characters"));
+		String attribute = javascriptHelper
+				.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("TotalFinanceAmountRequested"))
+				.getAttribute("aria-valuenow");
+		if (!(attribute == null)) {
+			Assert.fail();
+		}
+	}
+
+	@Given("User_607 Select LOS in module name")
+	public void user_607_select_los_in_module_name() {
+
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("ModuleName")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+				System.out.println("Dropdown length " + dropdownLength);
+
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+			for (int l = 0; l <= 300; l++) {
+
+				try {
+
+					System.out.println("L value is " + l);
+
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+					dropdownString = javascriptHelper.executeScript(
+
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+							.toString();
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (l == 300 && !(dropdownString.isBlank())) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+				if (!(dropdownString.isEmpty())) {
+
+					System.out.println(dropdownString);
+
+					System.out.println("Loop count " + l + " got breaked");
+
+					break;
+
+				}
+
+			}
+
+			System.out.println("String " + dropdownString.trim());
+
+			System.out.println("Map " + "LOS".trim());
+
+			if ((dropdownString.trim()).equalsIgnoreCase("LOS".trim())) {
+
+				for (int k = 0; k <= 300; k++) {
+
+					try {
+
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						isDropdownValueSelected = true;
+
+						break;
+
+					} catch (Exception e) {
+
+						if (k == 300) {
+
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+				break;
+			}
+		}
+	}
+
+	@Given("User_607 Check Sourcing Office should be mandatory in application Details")
+	public void user_607_check_sourcing_office_should_be_mandatory_in_application_details() {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String repayment = AutoLoanCustomerSearchPaths.getElement("SourcingOffice*");
+				// String repayment
+				// ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+				String accountholdername = (String) javascriptHelper.executeScript("return " + repayment);
+				System.out.println(accountholdername);
+				Assert.assertTrue(accountholdername.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Given("User_607 Enter characters in Total Finance Amount Requested")
+	public void user_607_enter_characters_in_total_finance_amount_requested() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				// javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("TotalFinanceAmountRequested")).click();
+				clicksAndActionsHelper.doubleClick((javascriptHelper
+						.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("TotalFinanceAmountRequested"))));
+				javascriptHelper
+						.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("TotalFinanceAmountRequested"))
+						.sendKeys("Test");
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@Given("User_607 Enter characters in Declared Net Monthly Income")
+	public void user_607_enter_characters_in_declared_net_monthly_income() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				// javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("DeclaredNetMonthlyIncome")).click();
+				clicksAndActionsHelper.doubleClick((javascriptHelper
+						.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("DeclaredNetMonthlyIncome"))));
+				javascriptHelper
+						.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("DeclaredNetMonthlyIncome"))
+						.sendKeys("Test");
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@Given("User_607 Enter characters in characters in Declared Current Obligations")
+	public void user_607_enter_characters_in_characters_in_declared_current_obligations() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				// javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("DeclaredNetMonthlyIncome")).click();
+				clicksAndActionsHelper.doubleClick((javascriptHelper
+						.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("DeclaredNetMonthlyIncome"))));
+				javascriptHelper
+						.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("DeclaredNetMonthlyIncome"))
+						.sendKeys("Test");
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@Given("User_607 Enter characters in Reference Code")
+	public void user_607_enter_characters_in_reference_code() {
+		javascriptHelper.scrollIntoView(
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("ReferenceCode")));
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("ReferenceCode"))
+						.sendKeys("Test");
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Given("User_607 Check Product Field should be editable in Murabha AppDataEntry Application Details")
+	public void user_607_check_product_field_should_be_editable_in_murabha_app_data_entry_application_details()
+			throws Throwable {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("Product1")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		Thread.sleep(2000);
+
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+
+		String dropdownLength = "";
+
+		boolean isDropdownValueSelected = false;
+
+		String dropdownString = "";
+
+		for (int i = 0; i <= 300; i++) {
+
+			try {
+
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+				System.out.println("Dropdown length " + dropdownLength);
+
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+					break;
+
+				}
+
+			} catch (Exception e) {
+
+				if (i == 300) {
+
+					Assert.fail(e.getMessage());
+
+				}
+
+			}
+
+		}
+
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+			for (int l = 0; l <= 300; l++) {
+
+				try {
+
+					System.out.println("L value is " + l);
+
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+					dropdownString = javascriptHelper.executeScript(
+
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+							.toString();
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (l == 300 && !(dropdownString.isBlank())) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+				if (!(dropdownString.isEmpty())) {
+
+					System.out.println(dropdownString);
+
+					System.out.println("Loop count " + l + " got breaked");
+
+					break;
+
+				}
+
+			}
+
+			System.out.println("String " + dropdownString.trim());
+
+			System.out.println("Map " + testData.get("SelectOptionInProduct").trim());
+
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("SelectOptionInProduct")).trim())) {
+
+				for (int k = 0; k <= 300; k++) {
+
+					try {
+
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						isDropdownValueSelected = true;
+
+						break;
+
+					} catch (Exception e) {
+
+						if (k == 300) {
+
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+
+				break;
+
+			}
+		}
+
+	}
+
+	@Given("User_607 Check Sub Product Field should be editable in Murabha AppDataEntry Application Details")
+	public void user_607_check_sub_product_field_should_be_editable_in_murabha_app_data_entry_application_details() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(AutoLoanCustomerSearchPaths.getElement("Subproduct1")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+
+		String dropdownLength = "";
+
+		boolean isDropdownValueSelected = false;
+
+		String dropdownString = "";
+
+		for (int i = 0; i <= 300; i++) {
+
+			try {
+
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+
+				System.out.println("Dropdown length " + dropdownLength);
+
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+
+					break;
+
+				}
+
+			} catch (Exception e) {
+
+				if (i == 300) {
+
+					Assert.fail(e.getMessage());
+
+				}
+
+			}
+
+		}
+
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+
+			for (int l = 0; l <= 300; l++) {
+
+				try {
+
+					System.out.println("L value is " + l);
+
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+
+					dropdownString = javascriptHelper.executeScript(
+
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
+
+							.toString();
+
+					if (!(dropdownString.isEmpty())) {
+
+						System.out.println(dropdownString);
+
+						System.out.println("Loop count " + l + " got breaked");
+
+						break;
+
+					}
+
+				} catch (Exception e) {
+
+					if (l == 300 && !(dropdownString.isBlank())) {
+
+						Assert.fail(e.getMessage());
+
+					}
+
+				}
+
+				if (!(dropdownString.isEmpty())) {
+
+					System.out.println(dropdownString);
+
+					System.out.println("Loop count " + l + " got breaked");
+
+					break;
+
+				}
+
+			}
+
+			System.out.println("String " + dropdownString.trim());
+
+			System.out.println("Map " + (testData.get("SubProductField")).trim());
+
+			if ((dropdownString.trim()).equalsIgnoreCase(testData.get("SubProductField").trim())) {
+
+				for (int k = 0; k <= 300; k++) {
+
+					try {
+
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+
+						isDropdownValueSelected = true;
+
+						break;
+
+					} catch (Exception e) {
+
+						if (k == 300) {
+
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+
+				break;
+
+			}
+		}
+	}
+
+	@Given("User_607 Check Product field should be mandatory in Murabha AppDataEntry Application Details")
+	public void user_607_check_product_field_should_be_mandatory_in_murabha_app_data_entry_application_details() {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String repayment = AutoLoanCustomerSearchPaths.getElement("Product1*");
+				String accountholdername = (String) javascriptHelper.executeScript("return " + repayment);
+				Assert.assertTrue(accountholdername.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Given("User_607 Check Sub Product field should be mandatory in Murabha AppDataEntry Application Details")
+	public void user_607_check_sub_product_field_should_be_mandatory_in_murabha_app_data_entry_application_details() {
+		for (int i = 0; i < 2000; i++) {
+			try {
+				String repayment = AutoLoanCustomerSearchPaths.getElement("Subproduct1*");
+				// String repayment
+				// ="document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
+				String accountholdername = (String) javascriptHelper.executeScript("return " + repayment);
+				System.out.println(accountholdername);
+				Assert.assertTrue(accountholdername.contains("*"));
+				break;
+			} catch (Exception e) {
+				if (i == 1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+}

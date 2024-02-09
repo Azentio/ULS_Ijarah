@@ -6,11 +6,12 @@ Feature: Auto Loan Appdata entry Income details
     Given navigate the IJARA URL
     And login with valid credentials7
     And User_607 get the test data for test case AT_AL_INC_01
-    And User_607 Select LOS in module name
-    And User_607 Click inbox in the home page
-    And User_607 Click Search in inbox
+    And click on module dropdown in IJRARAH
+    And click on LOS option in module dropdown
+		And click on mail box
+		And click on search box upon click on the mail box
     And User_607 Search in the search Field Auto Loan App Data Entry Income Details
-    And User_607 Select record after search
+    And User_608 click the Entitle button under inbox
     And User_607 click the Customer Financials tab in Auto Loan App Data Entry Income Details List
     And User_607 click the pencil icon under Customer Financials tab
     And User_607 click Add button under Income section in Customer Financials tab
@@ -44,7 +45,7 @@ Feature: Auto Loan Appdata entry Income details
     And User_607 validate Currency field available under Income details screen
     And User_607 click the Back button under Income details screen
     And User_607 verify system should navigate to the previous screen in Customer Financials tab
-    Then logout from the ULSApplication
+    Then logout from the ULS Application
 
   # INC_01_04
   @AT_AL_INC_02
@@ -52,10 +53,12 @@ Feature: Auto Loan Appdata entry Income details
     Given navigate the IJARA URL
     And login with valid credentials7
     And User_607 get the test data for test case AT_AL_INC_01
-    And User_607 Select LOS in module name
-    And User_607 Click inbox in the home page
-    And User_607 Click Search in inbox
-    And User_607 Select record after search
+    And click on module dropdown in IJRARAH
+    And click on LOS option in module dropdown
+		And click on mail box
+		And click on search box upon click on the mail box
+    And User_607 Search in the search Field Auto Loan App Data Entry Income Details
+    And User_608 click the Entitle button under inbox
     And User_607 click the Customer Financials tab in Auto Loan App Data Entry Income Details List
     And User_607 click the pencil icon under Customer Financials tab
     And User_607 click Add button under Income section in Customer Financials tab
@@ -75,7 +78,7 @@ Feature: Auto Loan Appdata entry Income details
     And User_607 select the Currency under Income screen in Customer Financials tab
     And User_607 click the Save button under Income details screen
     And User_607 validate the confirmation message as success under Income details screen
-    Then logout from the ULSApplication
+    Then logout from the ULS Application
 
   # INC_01_04 -->  INC_01_27
   @AT_AL_INC_03
@@ -83,10 +86,12 @@ Feature: Auto Loan Appdata entry Income details
     Given navigate the IJARA URL
     And login with valid credentials7
     And User_607 get the test data for test case AT_AL_INC_01
-    And User_607 Select LOS in module name
-    And User_607 Click inbox in the home page
-    And User_607 Click Search in inbox
-    And User_607 Select record after search
+   And click on module dropdown in IJRARAH
+    And click on LOS option in module dropdown
+		And click on mail box
+		And click on search box upon click on the mail box
+    And User_607 Search in the search Field Auto Loan App Data Entry Income Details
+    And User_608 click the Entitle button under inbox
     And User_607 click the Customer Financials tab in Auto Loan App Data Entry Income Details List
     And User_607 click the pencil icon under Customer Financials tab
     And User_607 click the pencil button under Income section in Customer Financials tab
@@ -112,7 +117,7 @@ Feature: Auto Loan Appdata entry Income details
     And User_607 verify Branch Name field should be Non-mandatory, LOV and Allow to user select any value from LOV
     And User_607 click Add Row button system should add a row under Income screen
     And User_607 click Delete Row button system should delete a row under Income screen
-    Then logout from the ULSApplication
+    Then logout from the ULS Application
 
   # INC_02_01,  INC_02_02, INC_02_03
   @AT_AL_INC_04
@@ -120,10 +125,12 @@ Feature: Auto Loan Appdata entry Income details
     Given navigate the IJARA URL
     And login with valid credentials7
     And User_607 get the test data for test case AT_AL_INC_01
-    And User_607 Select LOS in module name
-    And User_607 Click inbox in the home page
-    And User_607 Click Search in inbox
-    And User_607 Select record after search
+    And click on module dropdown in IJRARAH
+    And click on LOS option in module dropdown
+		And click on mail box
+		And click on search box upon click on the mail box
+    And User_607 Search in the search Field Auto Loan App Data Entry Income Details
+    And User_608 click the Entitle button under inbox
     And User_607 click the Customer Financials tab in Auto Loan App Data Entry Income Details List
     And User_607 click the pencil icon under Customer Financials tab
     And User_607 click Add button under Income section in Customer Financials tab
@@ -133,17 +140,19 @@ Feature: Auto Loan Appdata entry Income details
     And User_607 select the Frequency option under Income screen in Customer Financials tab
     And User_607 click the Save button with mandatory field blank under Income details screen
     And User_607 verify validation message for mandatory field as blank under Income details screen
-    Then logout from the ULSApplication
+    Then logout from the ULS Application
 
   @AT_AL_INC_05
   Scenario: Modification of Income details record
     Given navigate the IJARA URL
     And login with valid credentials7
     And User_607 get the test data for test case AT_AL_INC_01
-    And User_607 Select LOS in module name
-    And User_607 Click inbox in the home page
-    And User_607 Click Search in inbox
-    And User_607 Select record after search
+   And click on module dropdown in IJRARAH
+    And click on LOS option in module dropdown
+		And click on mail box
+		And click on search box upon click on the mail box
+    And User_607 Search in the search Field Auto Loan App Data Entry Income Details
+    And User_608 click the Entitle button under inbox
     And User_607 click the Customer Financials tab in Auto Loan App Data Entry Income Details List
     And User_607 click the pencil icon under Customer Financials tab
     And User_607 click the pencil button under Income section in Customer Financials tab
@@ -166,17 +175,19 @@ Feature: Auto Loan Appdata entry Income details
     And User_607 again click the pencil button under Income section in Customer Financials tab
     And User_607 Post clicking on back button system should navigate to the previous screen
     And User_607 verify system should navigate to the previous screen in Customer Financials tab
-    Then logout from the ULSApplication
+    Then logout from the ULS Application
 
   @AT_AL_INC_06
   Scenario: System should display the list of below mention fields for Income List
     Given navigate the IJARA URL
     And login with valid credentials7
    And User_607 get the test data for test case AT_AL_INC_01
-    And User_607 Select LOS in module name
-    And User_607 Click inbox in the home page
-    And User_607 Click Search in inbox
-    And User_607 Select record after search
+   And click on module dropdown in IJRARAH
+    And click on LOS option in module dropdown
+		And click on mail box
+		And click on search box upon click on the mail box
+    And User_607 Search in the search Field Auto Loan App Data Entry Income Details
+    And User_608 click the Entitle button under inbox
     And User_607 click the Customer Financials tab in Auto Loan App Data Entry Income Details List
     And User_607 click the pencil icon under Customer Financials tab
     And User_607 verify the Back button available in Income list view under Customer Financials tab
@@ -191,17 +202,19 @@ Feature: Auto Loan Appdata entry Income details
     And User_607 click the Back button under Income details screen
     And User_607 verify the functionality of Add button under Income section in Customer Financials tab
     And User_607 post clicking on Add button system should navigate to new Income details screen
-    Then logout from the ULSApplication
+    Then logout from the ULS Application
 
   @AT_AL_INC_07
   Scenario: System should display the list of below mention fields for Income List
     Given navigate the IJARA URL
     And login with valid credentials7
     And User_607 get the test data for test case AT_AL_INC_01
-    And User_607 Select LOS in module name
-    And User_607 Click inbox in the home page
-    And User_607 Click Search in inbox
-    And User_607 Select record after search
+    And click on module dropdown in IJRARAH
+    And click on LOS option in module dropdown
+		And click on mail box
+		And click on search box upon click on the mail box
+    And User_607 Search in the search Field Auto Loan App Data Entry Income Details
+    And User_608 click the Entitle button under inbox
     And User_607 click the Customer Financials tab in Auto Loan App Data Entry Income Details List
     And User_607 click the pencil icon under Customer Financials tab
     And User_607 click Search button in Income section under Customer Financials tab
@@ -209,17 +222,19 @@ Feature: Auto Loan Appdata entry Income details
     #And User_607 verify entering any matching value system should display all the possible matching records under Income section
     #And User_607 verify the functionality of Search box with mismatch data in Income section
     And User_607 verify system should not display any records or system should display the message as No data found under Income section
-    Then logout from the ULSApplication
+    Then logout from the ULS Application
 
   @AT_AL_INC_08
   Scenario: System should display the list of below mention fields for Income List
     Given navigate the IJARA URL
     And login with valid credentials7
     And User_607 get the test data for test case AT_AL_INC_01
-    And User_607 Select LOS in module name
-    And User_607 Click inbox in the home page
-    And User_607 Click Search in inbox
-    And User_607 Select record after search
+   And click on module dropdown in IJRARAH
+    And click on LOS option in module dropdown
+		And click on mail box
+		And click on search box upon click on the mail box
+    And User_607 Search in the search Field Auto Loan App Data Entry Income Details
+    And User_608 click the Entitle button under inbox
     And User_607 click the Customer Financials tab in Auto Loan App Data Entry Income Details List
     And User_607 click the pencil icon under Customer Financials tab
     And User_607 verify the functionality of Export to PDF button
@@ -228,4 +243,4 @@ Feature: Auto Loan Appdata entry Income details
     And User_607 post clicking on Export to Excel button system should download the Excel file of that records
     And User_607 to verify the functionality of Back button under Customer Financials tab
     And User_607 post clicking on Back button under Customer Finanacials tab, system should navigate to the previous screen
-    Then logout from the ULSApplication
+    Then logout from the ULS Application
