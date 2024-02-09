@@ -7,5 +7,9 @@ public class TestA {
 		this.a = a;
 	System.out.println("Test A");
 	}
+	public void mergeTestCodeOne()
+	{
+		System.out.println("Working done");
+	}
 
 }
