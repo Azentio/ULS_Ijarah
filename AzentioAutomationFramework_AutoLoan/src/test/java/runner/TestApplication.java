@@ -9,7 +9,7 @@ import utilities.ExtentManager;
 import utilities.ExtentTestManager;
 
 @CucumberOptions(features = {
-		"src/test/java/features/autoloan/AutoLoanCustomerSearch.feature"}, glue = "stepdefinitions",
+		"src/test/java/features/autoloan/AutoLoan_AppDataEntry_Identification.feature"}, glue = "stepdefinitions",
 		// monochrome=false, //to make steps in color
 		plugin = { "pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 				"rerun:ReRunScenarios/FailedReRun.txt" }

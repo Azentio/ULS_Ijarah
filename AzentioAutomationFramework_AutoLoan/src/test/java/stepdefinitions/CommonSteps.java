@@ -16,11 +16,64 @@ public class CommonSteps extends BaseClass {
 	ConfigFileReader configFileReader = new ConfigFileReader();
 	JSPaths commonJSPaths = new JSPaths(configFileReader.getJSFilePath(), "iJarah_CommonElements",
 			"Ijarah_CommonFieldName", "JSPath");
+	JSPaths customerDebtJsPaths = new JSPaths(configFileReader.getJSFilePath(), "CF_Debt_Elements", "CF_Debt FieldName",
+			"JSPath");
 	IjaraLogin ijaraLogin = new IjaraLogin();
 
 	@Given("navigate to uls url")
 	public void navigate_to_uls_url() throws Throwable {
 		driver.get(configFileReader.getIjaraApplicationURL());
+	}
+	@And("login with valid credentials for Autoloan_Identification")
+	public void login_with_valid_credentials_for_autoloan_identification() {
+		ijaraLogin.loginWithIjaraApplication("userType15");
+	    
+	}
+	@And("User click the Mail box in ULS application")
+	public void user_click_the_mail_box_in_uls_application() throws Throwable {
+
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("mailBox")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User click the Entitle button under inbox")
+	public void user_click_the_entitle_button_under_inbox() throws Throwable {
+		Thread.sleep(800);
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("inboxEntitleBtn")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User click the Search button under inbox")
+	public void user_click_the_search_button_under_inbox() throws Throwable {
+
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("mailInboxSearchBtn"))
+						.click();
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		Thread.sleep(500);
 	}
 
 	@And("login with valid credentials for new application stage")
@@ -160,4 +213,8 @@ public class CommonSteps extends BaseClass {
 		}
 	}
 
+	@And("login with valid credentials for Auto loan_Offering_Application details")
+	public void login_with_valid_credentials_for_auto_loan_offering_application_details() {
+		ijaraLogin.loginWithIjaraApplication("userType20");
+	}
 }
