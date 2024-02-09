@@ -6,12 +6,11 @@ Feature: Auto Loan Appdata entry Income details
     Given navigate the IJARA URL
     And login with valid credentials7
     And User_607 get the test data for test case AT_AL_INC_01
-    #And User_607 Select LOS in module name
+    And User_607 Select LOS in module name
     And User_607 Click inbox in the home page
     And User_607 Click Search in inbox
-    And User_607 Search in the search Field Auto Loan App Data Entry Income Details List
+    And User_607 Search in the search Field Auto Loan App Data Entry Income Details
     And User_607 Select record after search
-    And User_607 get the test data for test case AT_TW_AD_INC_01
     And User_607 click the Customer Financials tab in Auto Loan App Data Entry Income Details List
     And User_607 click the pencil icon under Customer Financials tab
     And User_607 click Add button under Income section in Customer Financials tab
@@ -52,12 +51,10 @@ Feature: Auto Loan Appdata entry Income details
   Scenario: To verify the functionality of Save button
     Given navigate the IJARA URL
     And login with valid credentials7
-    And User_607 get the test data for test case AT_AL_INC_02
-    #	And User_607 Select LOS in module name
+    And User_607 get the test data for test case AT_AL_INC_01
+    And User_607 Select LOS in module name
     And User_607 Click inbox in the home page
     And User_607 Click Search in inbox
-    And User_607 Search in the search Field Auto Loan App Data Entry Income Details List
-    And User_607 get the test data for test case AT_TW_AD_INC_02
     And User_607 Select record after search
     And User_607 click the Customer Financials tab in Auto Loan App Data Entry Income Details List
     And User_607 click the pencil icon under Customer Financials tab
@@ -85,12 +82,10 @@ Feature: Auto Loan Appdata entry Income details
   Scenario: To verify the below fields under income details section. 
     Given navigate the IJARA URL
     And login with valid credentials7
-    And User_607 get the test data for test case AT_AL_INC_03
-    #And User_607 Select LOS in module name
+    And User_607 get the test data for test case AT_AL_INC_01
+    And User_607 Select LOS in module name
     And User_607 Click inbox in the home page
     And User_607 Click Search in inbox
-    And User_607 Search in the search Field Auto Loan App Data Entry Income Details List
-    And User_607 get the test data for test case AT_TW_AD_INC_03
     And User_607 Select record after search
     And User_607 click the Customer Financials tab in Auto Loan App Data Entry Income Details List
     And User_607 click the pencil icon under Customer Financials tab
@@ -124,13 +119,11 @@ Feature: Auto Loan Appdata entry Income details
   Scenario: To verify the functionality of Save button with mandatory field as blank
     Given navigate the IJARA URL
     And login with valid credentials7
-    And User_607 get the test data for test case AT_AL_INC_04
-    #And User_607 Select LOS in module name
+    And User_607 get the test data for test case AT_AL_INC_01
+    And User_607 Select LOS in module name
     And User_607 Click inbox in the home page
     And User_607 Click Search in inbox
-    And User_607 Search in the search Field Auto Loan App Data Entry Income Details List
     And User_607 Select record after search
-    And User_607 get the test data for test case AT_TW_AD_INC_04
     And User_607 click the Customer Financials tab in Auto Loan App Data Entry Income Details List
     And User_607 click the pencil icon under Customer Financials tab
     And User_607 click Add button under Income section in Customer Financials tab
@@ -146,13 +139,11 @@ Feature: Auto Loan Appdata entry Income details
   Scenario: Modification of Income details record
     Given navigate the IJARA URL
     And login with valid credentials7
-    And User_607 get the test data for test case AT_AL_INC_05
-    #And User_607 Select LOS in module name
+    And User_607 get the test data for test case AT_AL_INC_01
+    And User_607 Select LOS in module name
     And User_607 Click inbox in the home page
     And User_607 Click Search in inbox
-    And User_607 Search in the search Field Auto Loan App Data Entry Income Details List
     And User_607 Select record after search
-    And User_607 get the test data for test case AT_TW_AD_INC_05
     And User_607 click the Customer Financials tab in Auto Loan App Data Entry Income Details List
     And User_607 click the pencil icon under Customer Financials tab
     And User_607 click the pencil button under Income section in Customer Financials tab
@@ -181,13 +172,11 @@ Feature: Auto Loan Appdata entry Income details
   Scenario: System should display the list of below mention fields for Income List
     Given navigate the IJARA URL
     And login with valid credentials7
-    And User_607 get the test data for test case AT_AL_INC_06
-    #And User_607 Select LOS in module name
+   And User_607 get the test data for test case AT_AL_INC_01
+    And User_607 Select LOS in module name
     And User_607 Click inbox in the home page
     And User_607 Click Search in inbox
-    And User_607 Search in the search Field Auto Loan App Data Entry Income Details List
     And User_607 Select record after search
-    And User_607 get the test data for test case AT_TW_AD_INC_06
     And User_607 click the Customer Financials tab in Auto Loan App Data Entry Income Details List
     And User_607 click the pencil icon under Customer Financials tab
     And User_607 verify the Back button available in Income list view under Customer Financials tab
@@ -208,13 +197,11 @@ Feature: Auto Loan Appdata entry Income details
   Scenario: System should display the list of below mention fields for Income List
     Given navigate the IJARA URL
     And login with valid credentials7
-    And User_607 get the test data for test case AT_AL_INC_07
-    #And User_607 Select LOS in module name
+    And User_607 get the test data for test case AT_AL_INC_01
+    And User_607 Select LOS in module name
     And User_607 Click inbox in the home page
     And User_607 Click Search in inbox
-    And User_607 Search in the search Field Auto Loan App Data Entry Income Details List
     And User_607 Select record after search
-    And User_607 get the test data for test case AT_TW_AD_INC_07
     And User_607 click the Customer Financials tab in Auto Loan App Data Entry Income Details List
     And User_607 click the pencil icon under Customer Financials tab
     And User_607 click Search button in Income section under Customer Financials tab
@@ -228,13 +215,11 @@ Feature: Auto Loan Appdata entry Income details
   Scenario: System should display the list of below mention fields for Income List
     Given navigate the IJARA URL
     And login with valid credentials7
-    And User_607 get the test data for test case AT_AL_INC_08
-    #And User_607 Select LOS in module name
+    And User_607 get the test data for test case AT_AL_INC_01
+    And User_607 Select LOS in module name
     And User_607 Click inbox in the home page
     And User_607 Click Search in inbox
-    And User_607 Search in the search Field Auto Loan App Data Entry Income Details List
     And User_607 Select record after search
-    And User_607 get the test data for test case AT_TW_AD_INC_07
     And User_607 click the Customer Financials tab in Auto Loan App Data Entry Income Details List
     And User_607 click the pencil icon under Customer Financials tab
     And User_607 verify the functionality of Export to PDF button

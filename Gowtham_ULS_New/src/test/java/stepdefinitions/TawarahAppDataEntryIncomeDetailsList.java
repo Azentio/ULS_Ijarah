@@ -30,7 +30,7 @@ public class TawarahAppDataEntryIncomeDetailsList {
 	ExcelData IjaraAppDataCheckQuationInfoexelData = new ExcelData(excelTestDataPath, "IjaraAppDataCheckQuationInfo", "Data Set ID");
 	ExcelData MurabhAppdataEntryInsuranceInfo = new ExcelData(excelTestDataPath, "MurabhAppdataEntryInsuranceInfo", "Data Set ID");
 	ExcelData IncomeDetailsListexelData = new ExcelData(excelTestDataPath, "Living_Expense", "Data Set ID");
-	
+	Map<String, String> executionData;
 	ExcelData TawaAppDataEntryIncomeDetailsexelData = new ExcelData(excelTestDataPath, "TawaAppDataEntryIncomeDetails", "Data Set ID");
 	Map<String, String> testData;
 	
@@ -43,8 +43,17 @@ public class TawarahAppDataEntryIncomeDetailsList {
 	DropDownHelper DropDownHelper = new DropDownHelper(driver);
 	SoftAssert SoftAssert = new SoftAssert();
 	BrowserHelper browserHelper = new BrowserHelper(driver);
+	ExcelData ALAppdataEntryIncomedetailsTestData = new ExcelData(excelTestDataPath, "ALAppdataEntryIncomedetails", "Data Set ID");
+	Map<String, String> ALAppdataEntryIncomedetails;
 	
+	ExcelData AutoLoanExecutionExcel = new ExcelData(excelTestDataPath, "AutoLoanExecution", "TestCase ID");
+	Map<String, String> AutoLoanExecution;
 	
+	@And("^User_607 get the test data for test case AT_AL_INC_01$")
+    public void get_the_test_data_for_test_case_AT_AL_INC_01() throws Throwable {
+		AutoLoanExecution = AutoLoanExecutionExcel.getTestdata("AT_AL_INC_01");
+		ALAppdataEntryIncomedetails = ALAppdataEntryIncomedetailsTestData.getTestdata(AutoLoanExecution.get("dataSet_ID"));
+    }
 	
 	@Given("User_607 Update testdata from AT_INC_01")
 	public void user_607_update_testdata_from_at_inc() {
@@ -80,7 +89,20 @@ public class TawarahAppDataEntryIncomeDetailsList {
 	public void user_607_update_testdata_from_AT_INS_01() {
 		testData = MurabhAppdataEntryInsuranceInfo.getTestdata("DS_AT_INS_01");
 	}
-
+	@Given("User_607 Search in the search Field Auto Loan App Data Entry Income Details")
+	public void user_search_in_the_search_field_auto_loan_app_data_entry_Income_Details() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(TawaAppDataEntryIncomeDetails.getElement("searchInInbox")).sendKeys(ALAppdataEntryIncomedetails.get("Search Record"));
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
 	@And("User_607 click the Customer Financials tab")
 	public void user_607_click_the_customer_financials_tab() throws Throwable {
 		Thread.sleep(1000);
@@ -240,6 +262,8 @@ public class TawarahAppDataEntryIncomeDetailsList {
 			}
 		}	    
 	}
+	
+	
 
 	@And("User_607 validate Frequency field available under Income details screen")
 	public void user_607_validate_frequency_field_available_under_income_details_screen() throws Throwable {
@@ -934,6 +958,8 @@ public class TawarahAppDataEntryIncomeDetailsList {
 		}
 	}
 	
+	
+	
 	@Given("User_607 Search in the search Field Tawarah App Data Entry Income Details List")
 	public void user_607_search_in_the_search_field_tawarah_app_data_entry_income_details_list() {
 		for (int i = 0; i < 700; i++) {
@@ -994,19 +1020,7 @@ public class TawarahAppDataEntryIncomeDetailsList {
 		}
 	}
 	
-	@Given("User_607 Search the Ref Id under inbox Auto Loan Appdata Entry Contact Details")
-	public void user_607_search_the_ref_id_under_inbox_auto_loan_appdata_entry_contact_details() {
-		for (int i = 0; i < 700; i++) {
-			try {
-				javascriptHelper.executeScriptWithWebElement(TawaAppDataEntryIncomeDetails.getElement("searchInInbox")).sendKeys("4138",Keys.ENTER);
-				break;
-			} catch (Exception e) {
-				if (i==699) {
-					Assert.fail(e.getMessage());
-				}
-			}
-	}
-	}
+	
 	
 	@Given("User_607 Search the Ref Id under inbox Tawaraq AppData Check Address Details")
 	public void user_search_the_ref_id_under_inbox_tawaraq_app_data_check_address_details() {
@@ -1533,42 +1547,50 @@ public class TawarahAppDataEntryIncomeDetailsList {
 //	Murabaha -- App Data Entry -- Income Details screen
 	@And("^User_607 get the test data for test case AT_TW_AD_INC_01$")
     public void get_the_test_data_for_test_case_AT_TW_AD_INC_01() throws Throwable {
-		testData = TawaAppDataEntryIncomeDetailsexelData.getTestdata("DS_AT_TW_AD_INC_01");
+		executionData = AutoLoanExecutionExcel.getTestdata("AT_TW_AD_INC_01");
+		testData = TawaAppDataEntryIncomeDetailsexelData.getTestdata(executionData.get("dataSet_ID"));
     }
 	
 	@And("^User_607 get the test data for test case AT_TW_AD_INC_02$")
     public void get_the_test_data_for_test_case_AT_TW_AD_INC_02() throws Throwable {
-		testData = TawaAppDataEntryIncomeDetailsexelData.getTestdata("DS_AT_TW_AD_INC_02");
+		executionData = AutoLoanExecutionExcel.getTestdata("AT_TW_AD_INC_02");
+		testData = TawaAppDataEntryIncomeDetailsexelData.getTestdata(executionData.get("dataSet_ID"));
     }
 	
 	@And("^User_607 get the test data for test case AT_TW_AD_INC_03$")
     public void get_the_test_data_for_test_case_AT_TW_AD_INC_03() throws Throwable {
-		testData = TawaAppDataEntryIncomeDetailsexelData.getTestdata("DS_AT_TW_AD_INC_03");
+		executionData = AutoLoanExecutionExcel.getTestdata("AT_TW_AD_INC_03");
+		testData = TawaAppDataEntryIncomeDetailsexelData.getTestdata(executionData.get("dataSet_ID"));
     }
 	
 	@And("^User_607 get the test data for test case AT_TW_AD_INC_04$")
     public void get_the_test_data_for_test_case_AT_TW_AD_INC_04() throws Throwable {
-		testData = TawaAppDataEntryIncomeDetailsexelData.getTestdata("DS_AT_TW_AD_INC_04");
+		executionData = AutoLoanExecutionExcel.getTestdata("AT_TW_AD_INC_04");
+		testData = TawaAppDataEntryIncomeDetailsexelData.getTestdata(executionData.get("dataSet_ID"));
     }
 	
 	@And("^User_607 get the test data for test case AT_TW_AD_INC_05$")
     public void get_the_test_data_for_test_case_AT_TW_AD_INC_05() throws Throwable {
-		testData = TawaAppDataEntryIncomeDetailsexelData.getTestdata("DS_AT_TW_AD_INC_05");
+		executionData = AutoLoanExecutionExcel.getTestdata("AT_TW_AD_INC_05");
+		testData = TawaAppDataEntryIncomeDetailsexelData.getTestdata(executionData.get("dataSet_ID"));
     }
 	
 	@And("^User_607 get the test data for test case AT_TW_AD_INC_06$")
     public void get_the_test_data_for_test_case_AT_TW_AD_INC_06() throws Throwable {
-		testData = TawaAppDataEntryIncomeDetailsexelData.getTestdata("DS_AT_TW_AD_INC_06");
+		executionData = AutoLoanExecutionExcel.getTestdata("AT_TW_AD_INC_06");
+		testData = TawaAppDataEntryIncomeDetailsexelData.getTestdata(executionData.get("dataSet_ID"));
     }
 	
 	@And("^User_607 get the test data for test case AT_TW_AD_INC_07$")
     public void get_the_test_data_for_test_case_AT_TW_AD_INC_07() throws Throwable {
-		testData = TawaAppDataEntryIncomeDetailsexelData.getTestdata("DS_AT_TW_AD_INC_07");
+		executionData = AutoLoanExecutionExcel.getTestdata("AT_TW_AD_INC_07");
+		testData = TawaAppDataEntryIncomeDetailsexelData.getTestdata(executionData.get("dataSet_ID"));
     }
 	
 	@And("^User_607 get the test data for test case AT_TW_AD_INC_08$")
     public void get_the_test_data_for_test_case_AT_TW_AD_INC_08() throws Throwable {
-		testData = TawaAppDataEntryIncomeDetailsexelData.getTestdata("DS_AT_TW_AD_INC_08");
+		executionData = AutoLoanExecutionExcel.getTestdata("AT_TW_AD_INC_08");
+		testData = TawaAppDataEntryIncomeDetailsexelData.getTestdata(executionData.get("dataSet_ID"));
     }
 	
 	

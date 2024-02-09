@@ -13,6 +13,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.aventstack.extentreports.Status;
 
+import dataprovider.ConfigFileReader;
 import dataprovider.ExcelData;
 import helper.ScreenshotHelper;
 import io.cucumber.java.After;
@@ -26,26 +27,26 @@ import utilities.ExtentTestManager;
 
 public class HooksClass extends BaseClass {
 	WebDriver driver;
-	String flag = "No";
-//	String path = System.getProperty("user.dir") + "\\TestData\\CSMTestData.xlsx";
-//	ExcelData testExecution = new ExcelData(path, "Transaction_ExecutionTracker", "TestCaseID");
+	ConfigFileReader configFileReader = new ConfigFileReader();
+	String path = System.getProperty("user.dir") + "\\TestData\\ijaraTestData.xlsx";
+	ExcelData testExecution = new ExcelData(path, "AutoLoanExecution", "TestCase ID");
 	Map<String, String> testExecutionData;
-//	ExcelTest excelTest = new ExcelTest(path, "Transaction_ExecutionTracker", "TestCaseID");
-	//List<String> testCaseTagsFromExcel = excelTest.getTestCaseTagsfromExcel();
+	ExcelTest excelTest = new ExcelTest(path, "AutoLoanExecution", "TestCase ID");
+	List<String> testCaseTagsFromExcel = excelTest.getTestCaseTagsfromExcel();
 
 	ScreenshotHelper screenshotHelper = new ScreenshotHelper(driver);
 
 	@Before
 	public void browserSetup(Scenario scenario) throws IOException {
 		// get flag status from excel and skip the test cases
-//		if (flag.equalsIgnoreCase("yes")) {
-//			if (testExecution.getTestdata(NewExcelTestRunner.getCurrentExecutionTag()).get("ExecuteYes/No")
-//					.equalsIgnoreCase("No")) {
-//				
-//				System.out.println("Status of the flag"+testExecution.getTestdata(NewExcelTestRunner.getCurrentExecutionTag()).get("ExecuteYes/No"));
-//				Assume.assumeTrue(false);
-//			}
-//		}
+		if (configFileReader.getExcelRunnerFlag().equalsIgnoreCase("yes")) {
+			if (testExecution.getTestdata(NewExcelTestRunner.getCurrentExecutionTag()).get("ExecuteYes/No")
+					.equalsIgnoreCase("No")) {
+				
+				System.out.println("Status of the flag"+testExecution.getTestdata(NewExcelTestRunner.getCurrentExecutionTag()).get("ExecuteYes/No"));
+				Assume.assumeTrue(false);
+			}
+		}
 
 		driver = initializeDriver();
 		System.out.println("Driver Initiated");
@@ -79,20 +80,20 @@ public class HooksClass extends BaseClass {
 		String currentExecutionStatus = status.toString();
 
 		ExtentTestManager.getTest().log(Status.FAIL, "Test Failed");
-		if (flag.equals("yes")) {
+		if (configFileReader.getExcelRunnerFlag().equals("yes")) {
 			if (currentExecutionStatus.equalsIgnoreCase("FAILED")) {
 
 				// change flag to "No" for dependent scenarios in excel when main Scenario got
 				// failed
-//				for (int i = 1; i < testCaseTagsFromExcel.size(); i++) {
-//					testExecutionData = testExecution.getTestdata(NewExcelTestRunner.getCurrentExecutionTag());
-//					Collection<String> values = testExecutionData.values();
-//					values.remove(NewExcelTestRunner.getCurrentExecutionTag());
-//					if (values.contains(testCaseTagsFromExcel.get(i))) {
-//						testExecution.updateTestData(testCaseTagsFromExcel.get(i), "ExecuteYes/No", "No");
-//					}
-//
-//				}
+				for (int i = 1; i < testCaseTagsFromExcel.size(); i++) {
+					testExecutionData = testExecution.getTestdata(NewExcelTestRunner.getCurrentExecutionTag());
+					Collection<String> values = testExecutionData.values();
+					values.remove(NewExcelTestRunner.getCurrentExecutionTag());
+					if (values.contains(testCaseTagsFromExcel.get(i))) {
+						testExecution.updateTestData(testCaseTagsFromExcel.get(i), "ExecuteYes/No", "No");
+					}
+
+				}
 
 			}
 		}

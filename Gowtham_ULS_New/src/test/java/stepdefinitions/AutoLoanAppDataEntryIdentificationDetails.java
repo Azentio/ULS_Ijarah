@@ -21,6 +21,7 @@ import helper.JavascriptHelper;
 import helper.Selenium_Actions;
 import helper.WaitHelper;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import pageobjects.JSPaths;
 import resources.BaseClass;
@@ -36,6 +37,7 @@ public class AutoLoanAppDataEntryIdentificationDetails {
 	ConfigFileReader configFileReader = new ConfigFileReader();
 	ExcelData ALADEntryIdentificationDetailsexelData1 = new ExcelData(excelTestDataPath, "ALADEntryIdentificationDetails", "Data Set ID");
 	Map<String, String> ALADEntryIdentificationDetailsexelData;
+	JSPaths TawaAppDataEntryIncomeDetails = new JSPaths(excelPath, "TawaAppDataEntryIncomeDetails", "FieldName", "JSPath");
 //	Map<String, String> ALADEntryIdentificationDetailsexelData = new HashMap<>();
 //	Map<String, String> TestData = new HashMap<>();
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
@@ -51,37 +53,61 @@ public class AutoLoanAppDataEntryIdentificationDetails {
 	int indexOfListView = 0;
 	String listViewIDNumber = "";
 	Robot robot;
+	ExcelData AutoLoanExecutionExcel = new ExcelData(excelTestDataPath, "AutoLoanExecution", "TestCase ID");
+	Map<String, String> executionData;
 	
 	@And("user_607 get the test data for test case id AT_AL_IND_01")
 	public void user_607_get_the_test_data_for_test_case_id_AT_AL_IND_01() throws Throwable {
-		ALADEntryIdentificationDetailsexelData = ALADEntryIdentificationDetailsexelData1.getTestdata("DS_AT_AL_IND_01");
+		executionData = AutoLoanExecutionExcel.getTestdata("AT_AL_IND_01");
+		ALADEntryIdentificationDetailsexelData = ALADEntryIdentificationDetailsexelData1.getTestdata(executionData.get("dataSet_ID"));
 	}
 
 	@And("user_607 get the test data for test case id AT_AL_IND_02")
 	public void user_607_get_the_test_data_for_test_case_id_AT_AL_IND_02() throws Throwable {
-		ALADEntryIdentificationDetailsexelData = ALADEntryIdentificationDetailsexelData1.getTestdata("DS_AT_AL_IND_02");
+		executionData = AutoLoanExecutionExcel.getTestdata("AT_AL_IND_02");
+		ALADEntryIdentificationDetailsexelData = ALADEntryIdentificationDetailsexelData1.getTestdata(executionData.get("dataSet_ID"));
 	}
 
 	@And("user_607 get the test data for test case id AT_AL_IND_03")
 	public void user_607_get_the_test_data_for_test_case_AT_AL_IND_03() throws Throwable {
-		ALADEntryIdentificationDetailsexelData = ALADEntryIdentificationDetailsexelData1.getTestdata("DS_AT_AL_IND_03");
+		executionData = AutoLoanExecutionExcel.getTestdata("AT_AL_IND_03");
+		ALADEntryIdentificationDetailsexelData = ALADEntryIdentificationDetailsexelData1.getTestdata(executionData.get("dataSet_ID"));
 	}
 
 	@And("user_607 get the test data for test case id AT_AL_IND_04")
 	public void user_607_get_the_test_data_for_test_case_id_AT_AL_IND_04() throws Throwable {
-		ALADEntryIdentificationDetailsexelData = ALADEntryIdentificationDetailsexelData1.getTestdata("DS_AT_AL_IND_04");
+		executionData = AutoLoanExecutionExcel.getTestdata("AT_AL_IND_04");
+		ALADEntryIdentificationDetailsexelData = ALADEntryIdentificationDetailsexelData1.getTestdata(executionData.get("dataSet_ID"));
 	
 	}
 
 	@And("user_607 get the test data for test case id AT_AL_IND_05")
 	public void user_607_get_the_test_data_for_test_case_id_AT_AL_IND_05() throws Throwable {
-		ALADEntryIdentificationDetailsexelData = ALADEntryIdentificationDetailsexelData1.getTestdata("DS_AT_AL_IND_05");
+		executionData = AutoLoanExecutionExcel.getTestdata("AT_AL_IND_05");
+		ALADEntryIdentificationDetailsexelData = ALADEntryIdentificationDetailsexelData1.getTestdata(executionData.get("dataSet_ID"));
 	}
 
 	@And("user_607 get the test data for test case id AT_AL_IND_06")
 	public void user_607_get_the_test_data_for_test_case_id_AT_AL_IND_06() throws Throwable {
-		ALADEntryIdentificationDetailsexelData = ALADEntryIdentificationDetailsexelData1.getTestdata("DS_AT_AL_IND_06");
+		executionData = AutoLoanExecutionExcel.getTestdata("AT_AL_IND_06");
+		ALADEntryIdentificationDetailsexelData = ALADEntryIdentificationDetailsexelData1.getTestdata(executionData.get("dataSet_ID"));
 	}
+	
+	@Given("User_607 Search in the search Field Auto Loan App Data Entry Identification Details")
+	public void user_search_in_the_search_field_auto_loan_app_data_entry_Identification_Details() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(TawaAppDataEntryIncomeDetails.getElement("searchInInbox")).sendKeys(ALADEntryIdentificationDetailsexelData.get("Record No"));
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	
 
 	@And("user_607 search the new application stage customer identification details record reference number")
 	public void user_607_search_the_new_application_stage_customer_identification_details_record_reference_number()
@@ -1618,6 +1644,8 @@ public class AutoLoanAppDataEntryIdentificationDetails {
 			throws Throwable {
 		softAssert.assertAll();
 	}
+	
+	
 
 
 }

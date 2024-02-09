@@ -5,6 +5,7 @@ Feature: Auto Loan Appdata Entry Contact Details
     Given navigate the IJARA URL
     And login with valid credentials7
     And user_607 get the test data for the test case ID AT_AL_APD_CD_01
+    And User_607 Select LOS in module name
     And User_607 Click inbox in the home page
     And User_607 Click Search in inbox
     And User_607 Search the Ref Id under inbox Auto Loan Appdata Entry Contact Details
@@ -30,6 +31,7 @@ Feature: Auto Loan Appdata Entry Contact Details
     Given navigate the IJARA URL
     And login with valid credentials7
     And user_607 get the test data for the test case ID AT_AL_APD_CD_02
+    And User_607 Select LOS in module name
     And User_607 Click inbox in the home page
     And User_607 Click Search in inbox
     And User_607 Search the Ref Id under inbox Auto Loan Appdata Entry Contact Details
@@ -55,6 +57,7 @@ Feature: Auto Loan Appdata Entry Contact Details
     Given navigate the IJARA URL
     And login with valid credentials7
     And user_607 get the test data for the test case ID AT_AL_APD_CD_03
+    And User_607 Select LOS in module name
     And User_607 Click inbox in the home page
     And User_607 Click Search in inbox
     And User_607 Search the Ref Id under inbox Auto Loan Appdata Entry Contact Details
@@ -73,6 +76,7 @@ Feature: Auto Loan Appdata Entry Contact Details
     Given navigate the IJARA URL
     And login with valid credentials7
     And user_607 get the test data for the test case ID AT_AL_APD_CD_04
+    And User_607 Select LOS in module name
     And User_607 Click inbox in the home page
     And User_607 Click Search in inbox
     And User_607 Search the Ref Id under inbox Auto Loan Appdata Entry Contact Details
@@ -98,6 +102,7 @@ Feature: Auto Loan Appdata Entry Contact Details
     Given navigate the IJARA URL
     And login with valid credentials7
     And user_607 get the test data for the test case ID AT_AL_APD_CD_05
+    And User_607 Select LOS in module name
     And User_607 Click inbox in the home page
     And User_607 Click Search in inbox
     And User_607 Search the Ref Id under inbox Auto Loan Appdata Entry Contact Details
@@ -125,6 +130,7 @@ Feature: Auto Loan Appdata Entry Contact Details
     Given navigate the IJARA URL
     And login with valid credentials7
     And user_607 get the test data for the test case ID AT_AL_APD_CD_05
+    And User_607 Select LOS in module name
     And User_607 Click inbox in the home page
     And User_607 Click Search in inbox
     And User_607 Search the Ref Id under inbox Auto Loan Appdata Entry Contact Details

@@ -79,6 +79,13 @@ public class ConfigFileReader {
 		else
 			throw new RuntimeException("pollingTime not specified in the Configuration.properties file.");
 	}
+	public String getExcelRunnerFlag() {
+		String flag = properties.getProperty("ExcelRunner");
+		if (flag != null)
+			return flag;
+		else
+			throw new RuntimeException("ExcelRunner not specified in the Configuration.properties file.");
+	}
 
 	
 	}

@@ -4,4 +4,4 @@ Feature: Title of your feature
 
   @tag1
   Scenario: Verify the fields in document details info tab Auto Loan App Data Entry
- 		And User_607 Click okay in the confirm save popup
+ 		And User_607 get the test data for test case AT_Al_DOC_09

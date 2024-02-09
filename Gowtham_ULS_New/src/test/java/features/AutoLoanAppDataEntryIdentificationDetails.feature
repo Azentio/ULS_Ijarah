@@ -4,13 +4,12 @@ Feature: Auto Loan AppData Entry Identification Details
   Scenario: to test the customer identification details screen with valid input at new app stage
     Given navigate the IJARA URL
     And login with valid credentials7
-    And User_607 get the test data for test case AT_AL_INC_01
-    #And User_607 Select LOS in module name
+    And user_607 get the test data for test case id AT_AL_IND_01
+    And User_607 Select LOS in module name
     And User_607 Click inbox in the home page
     And User_607 Click Search in inbox
-    And User_607 Search in the search Field Auto Loan App Data Entry Income Details List
+    And User_607 Search in the search Field Auto Loan App Data Entry Identification Details
     And User_607 Select record after search
-    And user_607 get the test data for test case id AT_AL_IND_01
     And user_607 click on additional customer info tab in new application stage
     And user_607 click on edit button customer personal information screen at new app stage
     And user_607 click on add button in customer identification screen
@@ -26,13 +25,12 @@ Feature: Auto Loan AppData Entry Identification Details
   Scenario: to test the customer identification details screen with valid input at new app stage
     Given navigate the IJARA URL
     And login with valid credentials7
-    And User_607 get the test data for test case AT_AL_INC_01
-    #And User_607 Select LOS in module name
+    And user_607 get the test data for test case id AT_AL_IND_01
+    And User_607 Select LOS in module name
     And User_607 Click inbox in the home page
     And User_607 Click Search in inbox
-    And User_607 Search in the search Field Auto Loan App Data Entry Income Details List
+    And User_607 Search in the search Field Auto Loan App Data Entry Identification Details
     And User_607 Select record after search
-    And user_607 get the test data for test case id AT_AL_IND_01
     And user_607 click on additional customer info tab in new application stage
     And user_607 click on edit button customer personal information screen at new app stage
     And user_607 click on add button in customer identification screen
@@ -53,13 +51,12 @@ Feature: Auto Loan AppData Entry Identification Details
   Scenario: to test the customer identificatin details screen with in valid input at new app stage
     Given navigate the IJARA URL
     And login with valid credentials7
-    And User_607 get the test data for test case AT_AL_INC_01
-    #And User_607 Select LOS in module name
+    And user_607 get the test data for test case id AT_AL_IND_01
+    And User_607 Select LOS in module name
     And User_607 Click inbox in the home page
     And User_607 Click Search in inbox
-    And User_607 Search in the search Field Auto Loan App Data Entry Income Details List
+    And User_607 Search in the search Field Auto Loan App Data Entry Identification Details
     And User_607 Select record after search
-    And user_607 get the test data for test case id AT_AL_IND_02
     And user_607 click on additional customer info tab in new application stage
     And user_607 click on edit button customer personal information screen at new app stage
     And user_607 click on add button in customer identification screen
@@ -77,13 +74,12 @@ Feature: Auto Loan AppData Entry Identification Details
   Scenario: to verify user can able to update the customer identification details record from list view
      Given navigate the IJARA URL
     And login with valid credentials7
-    And User_607 get the test data for test case AT_AL_INC_01
-    #And User_607 Select LOS in module name
+    And user_607 get the test data for test case id AT_AL_IND_01
+    And User_607 Select LOS in module name
     And User_607 Click inbox in the home page
     And User_607 Click Search in inbox
-    And User_607 Search in the search Field Auto Loan App Data Entry Income Details List
+    And User_607 Search in the search Field Auto Loan App Data Entry Identification Details
     And User_607 Select record after search
-    And user_607 get the test data for test case id AT_AL_IND_03
     And user_607 click on additional customer info tab in new application stage
     And user_607 click on edit button customer personal information screen at new app stage
     And user_607 click on edit button of customer identification details list view record
@@ -98,13 +94,12 @@ Feature: Auto Loan AppData Entry Identification Details
   Scenario: to test the customer identificatin details screen with in valid input at new app stage
      Given navigate the IJARA URL
     And login with valid credentials7
-    And User_607 get the test data for test case AT_AL_INC_01
-    #And User_607 Select LOS in module name
+    And user_607 get the test data for test case id AT_AL_IND_01
+    And User_607 Select LOS in module name
     And User_607 Click inbox in the home page
     And User_607 Click Search in inbox
-    And User_607 Search in the search Field Auto Loan App Data Entry Income Details List
+    And User_607 Search in the search Field Auto Loan App Data Entry Identification Details
     And User_607 Select record after search
-    And user_607 get the test data for test case id AT_AL_IND_04
     And user_607 click on additional customer info tab in new application stage
     And user_607 click on edit button customer personal information screen at new app stage
     And user_607 click on edit button of customer identification details list view record
@@ -121,13 +116,12 @@ Feature: Auto Loan AppData Entry Identification Details
   Scenario: To test the customer identification details screen in new app stage
      Given navigate the IJARA URL
     And login with valid credentials7
-    And User_607 get the test data for test case AT_AL_INC_01
-    #And User_607 Select LOS in module name
+    And user_607 get the test data for test case id AT_AL_IND_01
+    And User_607 Select LOS in module name
     And User_607 Click inbox in the home page
     And User_607 Click Search in inbox
-    And User_607 Search in the search Field Auto Loan App Data Entry Income Details List
+    And User_607 Search in the search Field Auto Loan App Data Entry Identification Details
     And User_607 Select record after search
-    And user_607 get the test data for test case id AT_AL_IND_05
     And user_607 click on additional customer info tab in new application stage
     And user_607 click on edit button customer personal information screen at new app stage
     And user_607 click on edit button of customer identification details list view record
@@ -144,13 +138,12 @@ Feature: Auto Loan AppData Entry Identification Details
   Scenario: To test the customer identification details screen in new app stage
      Given navigate the IJARA URL
     And login with valid credentials7
-    And User_607 get the test data for test case AT_AL_INC_01
-    #And User_607 Select LOS in module name
+    And user_607 get the test data for test case id AT_AL_IND_01
+    And User_607 Select LOS in module name
     And User_607 Click inbox in the home page
     And User_607 Click Search in inbox
-    And User_607 Search in the search Field Auto Loan App Data Entry Income Details List
+    And User_607 Search in the search Field Auto Loan App Data Entry Identification Details
     And User_607 Select record after search
-    And user_607 get the test data for test case id AT_AL_IND_06
     And user_607 click on additional customer info tab in new application stage
     And user_607 click on edit button customer personal information screen at new app stage
     And user_607 verify identification list view record should be read only not editable at new app stage

@@ -12,6 +12,12 @@ public class ClicksAndActionsHelper {
 	private WebDriver driver;
 	JavascriptHelper javascriptHelper;
 	Logger Log = LogManager.getLogger(WaitHelper.class.getName());
+	
+	// scrollIntoView
+		public void scrollIntoView(WebElement element) {
+			Actions actions = new Actions(driver);
+			actions.scrollToElement(element).build().perform();
+		}
 
 	// Click helper constrcutor
 	public ClicksAndActionsHelper(WebDriver driver) {

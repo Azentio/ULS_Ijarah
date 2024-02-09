@@ -29,8 +29,9 @@ public class AutoLoanAppdataEntryContactDetails {
 	JSPaths ALoanAppdataEntryContactDetails = new JSPaths(excelPath, "ALoanAppdataEntryContactDetails", "FieldName", "JSPath");
 	JSPaths IjADataEntryIdentifiDetails = new JSPaths(excelPath, "IjADataEntryIdentifiDetails", "FieldName", "JSPath");
 	ExcelData ALoanAppdataEntryContactDetailsexelData = new ExcelData(excelTestDataPath, "ALoanAppdataEntryContactDetails", "Data Set ID");
+	ExcelData AutoLoanExecutionExcel = new ExcelData(excelTestDataPath, "AutoLoanExecution", "TestCase ID");
 	Map<String, String> testData;
-	
+	JSPaths TawaAppDataEntryIncomeDetails = new JSPaths(excelPath, "TawaAppDataEntryIncomeDetails", "FieldName", "JSPath");
 //	Map<String, String> TestData = new HashMap<>();
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
 	WaitHelper waitHelper = new WaitHelper(driver);
@@ -45,30 +46,50 @@ public class AutoLoanAppdataEntryContactDetails {
 	String recordStatus = "";
 	Robot robot;
 	int indexOfListView;
+	Map<String, String> AutoLoanExecution;
 
 	@And("user_607 get the test data for the test case ID AT_AL_APD_CD_01")
 	public void user_607_get_the_test_data_for_the_test_case_id_AT_AL_APD_CD_01() throws Throwable {
-		testData = ALoanAppdataEntryContactDetailsexelData.getTestdata("DS_AT_AL_APD_CD_01");
+		AutoLoanExecution = AutoLoanExecutionExcel.getTestdata("AT_AL_APD_CD_01");
+		testData = ALoanAppdataEntryContactDetailsexelData.getTestdata(AutoLoanExecution.get("dataSet_ID"));
 	}
 	
 	@And("user_607 get the test data for the test case ID AT_AL_APD_CD_02")
 	public void user_607_get_the_test_data_for_the_test_case_id_AT_AL_APD_CD_02() throws Throwable {
-		testData = ALoanAppdataEntryContactDetailsexelData.getTestdata("DS_AT_AL_APD_CD_02");
+		AutoLoanExecution = AutoLoanExecutionExcel.getTestdata("AT_AL_APD_CD_02");
+		testData = ALoanAppdataEntryContactDetailsexelData.getTestdata(AutoLoanExecution.get("dataSet_ID"));
 	}
 	
 	@And("user_607 get the test data for the test case ID AT_AL_APD_CD_03")
 	public void user_607_get_the_test_data_for_the_test_case_id_AT_AL_APD_CD_03() throws Throwable {
-		testData = ALoanAppdataEntryContactDetailsexelData.getTestdata("DS_AT_AL_APD_CD_03");
+		AutoLoanExecution = AutoLoanExecutionExcel.getTestdata("AT_AL_APD_CD_03");
+		testData = ALoanAppdataEntryContactDetailsexelData.getTestdata(AutoLoanExecution.get("dataSet_ID"));
 	}
 	
 	@And("user_607 get the test data for the test case ID AT_AL_APD_CD_04")
 	public void user_607_get_the_test_data_for_the_test_case_id_AT_AL_APD_CD_04() throws Throwable {
-		testData = ALoanAppdataEntryContactDetailsexelData.getTestdata("DS_AT_AL_APD_CD_04");
+		AutoLoanExecution = AutoLoanExecutionExcel.getTestdata("AT_AL_APD_CD_04");
+		testData = ALoanAppdataEntryContactDetailsexelData.getTestdata(AutoLoanExecution.get("dataSet_ID"));
 	}
 	
 	@And("user_607 get the test data for the test case ID AT_AL_APD_CD_05")
 	public void user_607_get_the_test_data_for_the_test_case_id_AT_AL_APD_CD_05() throws Throwable {
-		testData = ALoanAppdataEntryContactDetailsexelData.getTestdata("DS_AT_AL_APD_CD_05");
+		AutoLoanExecution = AutoLoanExecutionExcel.getTestdata("AT_AL_APD_CD_05");
+		testData = ALoanAppdataEntryContactDetailsexelData.getTestdata(AutoLoanExecution.get("dataSet_ID"));
+	}
+	
+	@Given("User_607 Search the Ref Id under inbox Auto Loan Appdata Entry Contact Details")
+	public void user_607_search_the_ref_id_under_inbox_auto_loan_appdata_entry_contact_details() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(TawaAppDataEntryIncomeDetails.getElement("searchInInbox")).sendKeys(testData.get("record_reference_number"),Keys.ENTER);
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+	}
 	}
 
 

@@ -30,6 +30,7 @@ public class New_Application {
 	ExcelData New_ApplicationexelData = new ExcelData(excelTestDataPath, "New_Application", "Data Set ID");
 	Map<String, String> testData;
 	ExcelData Customer_Search = new ExcelData(excelTestDataPath, "Customer_Search", "Data Set ID");
+	ExcelData AutoLoanCustomer_Search = new ExcelData(excelTestDataPath, "AutoLoanCustomerSearch", "Data Set ID");
 	ExcelData MurApDataEntryAppDetailsexelData = new ExcelData(excelTestDataPath, "MurApDataEntryAppDetails",
 			"Data Set ID");
 //	Map<String, String> TestData = new HashMap<>();
@@ -40,6 +41,8 @@ public class New_Application {
 	JavascriptHelper JavascriptHelper = new JavascriptHelper(driver);
 	DropDownHelper DropDownHelper = new DropDownHelper(driver);
 	SoftAssert SoftAssert = new SoftAssert();
+	ExcelData AutoLoanExecutionExcel = new ExcelData(excelTestDataPath, "AutoLoanExecution", "TestCase ID");
+	Map<String, String> AutoLoanExecution;
 
 	@Given("User_607 Update testdata from AT_NEWAPP_02")
 	public void user_607_update_testdata_from_at_newapp_02() {
@@ -3568,27 +3571,32 @@ public class New_Application {
 			}
 		}
 	}
-
+	
+	@Given("User_607 Update testdata from AT_AL_CUS_01")
+	public void user_607_update_testdata_from_AT_AL_CUS_01() {
+		AutoLoanExecution = AutoLoanExecutionExcel.getTestdata("AT_AL_CUS_01");
+		testData = AutoLoanCustomer_Search.getTestdata(AutoLoanExecution.get("dataSet_ID"));
+	}
+	
 	@Given("User_607 Update testdata from AT_IJCS_01")
-	public void user_607_update_testdata_from_AT_IJCS_01() {
+	public void user_update_testdata_from_AT_IJCS_01() {
 		testData = Customer_Search.getTestdata("DS_AT_IJCS_01");
 	}
-
+	
 	@Given("User_607 Update testdata from AT_IJCS_02")
-	public void user_607_update_testdata_from_AT_IJCS_02() {
+	public void user_update_testdata_from_AT_IJCS_02() {
 		testData = Customer_Search.getTestdata("DS_AT_IJCS_02");
 	}
-
+	
 	@Given("User_607 Update testdata from AT_IJCS_03")
-	public void user_607_update_testdata_from_AT_IJCS_03() {
+	public void user_update_testdata_from_AT_IJCS_03() {
 		testData = Customer_Search.getTestdata("DS_AT_IJCS_03");
 	}
-
+	
 	@Given("User_607 Update testdata from AT_IJCS_04")
-	public void user_607_update_testdata_from_AT_IJCS_04() {
+	public void user_update_testdata_from_AT_IJCS_04() {
 		testData = Customer_Search.getTestdata("DS_AT_IJCS_04");
 	}
-
 	@Given("User_607 click the menu icon in after login screen")
 	public void user_607_click_the_menu_icon_in_after_login_screen() {
 		for (int i = 0; i < 500; i++) {

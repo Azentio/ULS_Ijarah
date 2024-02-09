@@ -36,7 +36,33 @@ public class AutoLoanAppDataEntryDocumentDetails {
 	DropDownHelper DropDownHelper = new DropDownHelper(driver);
 	SoftAssert softAssert = new SoftAssert();
 	BrowserHelper browserHelper = new BrowserHelper(driver);
+	JSPaths TawaAppDataEntryIncomeDetails = new JSPaths(excelPath, "TawaAppDataEntryIncomeDetails", "FieldName", "JSPath");
+	ExcelData ALAppdataEntryDocumentsDetailsexelData1 = new ExcelData(excelTestDataPath, "ALAppdataEntryDocumentsDetails", "Data Set ID");
+	Map<String, String> ALAppdataEntryDocumentsDetails;
+	ExcelData AutoLoanExecutionExcel = new ExcelData(excelTestDataPath, "AutoLoanExecution", "TestCase ID");
+	Map<String, String> executionData;
 	
+	
+	
+	@Given("User_607 get the test data for test case AT_Al_DOC_09")
+	public void user_get_the_test_data_for_test_case_at_al_doc() {
+		executionData = AutoLoanExecutionExcel.getTestdata("AT_Al_DOC_09");
+		ALAppdataEntryDocumentsDetails = ALAppdataEntryDocumentsDetailsexelData1.getTestdata(executionData.get("dataSet_ID"));
+	}
+	
+	@Given("User_607 Search in the search Field Auto Loan App Data Entry Document Details")
+	public void user_search_in_the_search_field_auto_loan_app_data_entry_document_details() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(TawaAppDataEntryIncomeDetails.getElement("searchInInbox")).sendKeys(ALAppdataEntryDocumentsDetails.get("Search Record"));
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
 	
 	@And("User_607 click on document details info tab Auto Loan App Data Entry")
 	public void user_607_click_on_document_details_info_tab_auto_loan_app_data_entry() {
@@ -58,9 +84,11 @@ public class AutoLoanAppDataEntryDocumentDetails {
 	public void user_607_verify_back_button_in_document_details_auto_loan_app_data_entry() {
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(
-						ALAppDataEntryDocumentDetails.getElement("BackButtonInListView")).isDisplayed() ;
-			
+				if (javascriptHelper.executeScriptWithWebElement(
+						ALAppDataEntryDocumentDetails.getElement("BackButtonInListView")).isDisplayed()) {
+					break;
+				}
+				
 			} catch (Exception e) {
 				if (i == 500) {
 					Assert.fail(e.getMessage());
@@ -74,9 +102,10 @@ public class AutoLoanAppDataEntryDocumentDetails {
 	public void user_607_verify_add_button_in_document_details_auto_loan_app_data_entry() {
 		for (int i = 0; i <= 500; i++) {
 			try {
-					javascriptHelper.executeScriptWithWebElement(
-						ALAppDataEntryDocumentDetails.getElement("AddButton")).isDisplayed();
-					
+				if (javascriptHelper.executeScriptWithWebElement(
+						ALAppDataEntryDocumentDetails.getElement("AddButton")).isDisplayed()) {
+					break;
+				}
 			} catch (Exception e) {
 				if (i == 500) {
 					Assert.fail(e.getMessage());
@@ -90,8 +119,10 @@ public class AutoLoanAppDataEntryDocumentDetails {
 	public void user_607_verify_search_box_in_document_details_auto_loan_app_data_entry() {
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(
-						ALAppDataEntryDocumentDetails.getElement("SearchButton")).isDisplayed();
+				if (javascriptHelper.executeScriptWithWebElement(
+						ALAppDataEntryDocumentDetails.getElement("SearchButton")).isDisplayed()) {
+					break;
+				}
 					
 			} catch (Exception e) {
 				if (i == 500) {
@@ -377,8 +408,10 @@ public class AutoLoanAppDataEntryDocumentDetails {
 		}
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(
-						ALAppDataEntryDocumentDetails.getElement("EditButton")).isDisplayed();
+				if (javascriptHelper.executeScriptWithWebElement(
+						ALAppDataEntryDocumentDetails.getElement("EditButton")).isDisplayed()) {
+					break;
+				}
 			} catch (Exception e) {
 				if (i == 500) {
 					Assert.fail(e.getMessage());
