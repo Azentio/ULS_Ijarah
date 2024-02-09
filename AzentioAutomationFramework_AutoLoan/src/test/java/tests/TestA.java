@@ -1,10 +1,11 @@
 package tests;
 
 public class TestA {
-	int a;
+	double a;
 
 	public TestA(int a) {
 		this.a = a;
+	System.out.println("Test A");
 	}
 
 }
