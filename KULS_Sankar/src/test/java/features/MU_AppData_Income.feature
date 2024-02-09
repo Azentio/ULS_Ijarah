@@ -259,4 +259,3 @@ And User_608 post clicking on Export to Excel button system should download the 
 And User_608 to verify the functionality of Back button under Customer Financials tab
 And User_608 post clicking on Back button under Customer Finanacials tab, system should navigate to the previous screen
 Then logout from the ijaraApplication
-

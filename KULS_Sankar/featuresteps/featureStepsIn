@@ -1,4 +1,3 @@
-And User_608 click the Eye button under Living Expenses tab
-And User_608 click the Eye button under Facility Info tab
-And User_608 click the Eye button under Quotation Info tab
-And User_608 click the Eye button under Insurance Info tab
+And User_608 enter invalid Deviation Amount under Finance configuration section in Offer Decision tab
+And User_608 enter Deviation Amount value under Finance configuration section in Offer Decision tab
+And User_608 enter Deviation Tenure value under Finance configuration section in Offer Decision tab

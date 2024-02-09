@@ -46,11 +46,12 @@ public class Tawarruq_Steps {
 	SoftAssert softAssert = new SoftAssert();
 	
 	ExcelData AppDataEntryCustomerDetails  = new ExcelData(excelTestDataPath,"TW_AppData_CustomerDetails","DataSet ID");
-	ExcelData identificatioDetailsExcelData  = new ExcelData(excelTestDataPath,"TW_NewApp_IdentificationDetails","DataSet ID");
+	ExcelData identificationDetailsExcelData  = new ExcelData(excelTestDataPath,"TW_NewApp_IdentificationDetails","DataSet ID");
 	ExcelData offerDetailsExcelData  = new ExcelData(excelTestDataPath,"TW_Offering_OfferDetails","DataSet ID");
 	ExcelData ApplicationDetailsExcelData  = new ExcelData(excelTestDataPath,"TW_DataCheck_AppDetails","DataSet ID");
 	ExcelData underwriterExcelData  = new ExcelData(excelTestDataPath,"TW_Underwriter","DataSet ID");
 	
+	ExcelData testExecution = new ExcelData(excelTestDataPath, "ULSExecution", "TestCase ID");
 	Map<String, String> testExecutionData;
 	Map<String, String> testData;
 
@@ -58,141 +59,167 @@ public class Tawarruq_Steps {
 //	Tawarruq -- App Data Entry Stage  -- Customer Details screen 
 	@And("^User_608 get the test data for test case AT_TW_CD_01_01$")
     public void get_the_test_data_for_test_case_AT_TW_CD_01_01() throws Throwable {
-		testData = AppDataEntryCustomerDetails.getTestdata("DS_AT_TW_CD_01_01");
+		testExecutionData = testExecution.getTestdata("AT_TW_CD_01_01");
+		testData = AppDataEntryCustomerDetails.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_TW_CD_01_02$")
     public void get_the_test_data_for_test_case_AT_TW_CD_01_02() throws Throwable {
-		testData = AppDataEntryCustomerDetails.getTestdata("DS_AT_TW_CD_01_02");
+		testExecutionData = testExecution.getTestdata("AT_TW_CD_01_02");
+		testData = AppDataEntryCustomerDetails.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_TW_CD_02$")
     public void get_the_test_data_for_test_case_AT_TW_CD_02() throws Throwable {
-		testData = AppDataEntryCustomerDetails.getTestdata("DS_AT_TW_CD_02");
+		testExecutionData = testExecution.getTestdata("AT_TW_CD_02");
+		testData = AppDataEntryCustomerDetails.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	
 //	Tawarruq -- App Data Entry Stage  -- Application Details screen
 	@And("^User_608 get the test data for test case AT_TW_AD_06$")
     public void get_the_test_data_for_test_case_AT_TW_AD_06() throws Throwable {
-		testData = AppDataEntryCustomerDetails.getTestdata("DS_AT_TW_AD_06");
+		testExecutionData = testExecution.getTestdata("AT_TW_AD_06");
+		testData = AppDataEntryCustomerDetails.getTestdata(testExecutionData.get("dataSet_ID"));
+//		testData = AppDataEntryCustomerDetails.getTestdata("DS_AT_TW_AD_06");
     }
 	
 	
 //	Tawarruq -- App Data Entry Stage  -- Document Details screen
 	@And("^User_608 get the test data for test case AT_TW_AD_DOC_05$")
     public void get_the_test_data_for_test_case_AT_TW_AD_DOC_05() throws Throwable {
-		testData = AppDataEntryCustomerDetails.getTestdata("DS_AT_TW_AD_DOC_05");
+		testExecutionData = testExecution.getTestdata("AT_TW_AD_DOC_05");
+		testData = AppDataEntryCustomerDetails.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	
 //	Tawarruq -- App Data Entry Stage  -- Idetification Details screen	
 	@And("^User_608 get the test data for test case AT_IDA_03$")
     public void get_the_test_data_for_test_case_AT_IDA_03() throws Throwable {
-		testData = identificatioDetailsExcelData.getTestdata("DS_AT_IDA_03");
+		testExecutionData = testExecution.getTestdata("AT_IDA_03");
+		testData = identificationDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	
 //	Tawarruq -- New Application Stage  -- Idetification Details screen
 	@And("^User_608 get the test data for test case AT_TW_NEWAPP_IDA_01$")
     public void get_the_test_data_for_test_case_AT_TW_NEWAPP_IDA_01() throws Throwable {
-		testData = identificatioDetailsExcelData.getTestdata("DS_AT_TW_NEWAPP_IDA_01");
+		testExecutionData = testExecution.getTestdata("AT_TW_NEWAPP_IDA_01");
+		testData = identificationDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_TW_NEWAPP_IDA_02$")
     public void get_the_test_data_for_test_case_AT_TW_NEWAPP_IDA_02() throws Throwable {
-		testData = identificatioDetailsExcelData.getTestdata("DS_AT_TW_NEWAPP_IDA_02");
+		testExecutionData = testExecution.getTestdata("AT_TW_NEWAPP_IDA_02");
+		testData = identificationDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_TW_NEWAPP_IDA_03$")
     public void get_the_test_data_for_test_case_AT_TW_NEWAPP_IDA_03() throws Throwable {
-		testData = identificatioDetailsExcelData.getTestdata("DS_AT_TW_NEWAPP_IDA_03");
+		testExecutionData = testExecution.getTestdata("AT_TW_NEWAPP_IDA_03");
+		testData = identificationDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_TW_NEWAPP_IDA_04$")
     public void get_the_test_data_for_test_case_AT_TW_NEWAPP_IDA_04() throws Throwable {
-		testData = identificatioDetailsExcelData.getTestdata("DS_AT_TW_NEWAPP_IDA_04");
+		testExecutionData = testExecution.getTestdata("AT_TW_NEWAPP_IDA_04");
+		testData = identificationDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_TW_NEWAPP_IDA_05$")
     public void get_the_test_data_for_test_case_AT_TW_NEWAPP_IDA_05() throws Throwable {
-		testData = identificatioDetailsExcelData.getTestdata("DS_AT_TW_NEWAPP_IDA_05");
+		testExecutionData = testExecution.getTestdata("AT_TW_NEWAPP_IDA_05");
+		testData = identificationDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }	
 	
 	@And("^User_608 get the test data for test case AT_TW_NEWAPP_IDA_06$")
     public void get_the_test_data_for_test_case_AT_TW_NEWAPP_IDA_06() throws Throwable {
-		testData = identificatioDetailsExcelData.getTestdata("DS_AT_TW_NEWAPP_IDA_06");
+		testExecutionData = testExecution.getTestdata("AT_TW_NEWAPP_IDA_06");
+		testData = identificationDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	
 //	Offering -- Offer Details
 	@And("^User_608 get the test data for test case AT_TW_OFO_12$")
     public void get_the_test_data_for_test_case_AT_TW_OFO_12() throws Throwable {
-		testData = offerDetailsExcelData.getTestdata("DS_AT_TW_OFO_12");
+		testExecutionData = testExecution.getTestdata("AT_TW_OFO_12");
+		testData = offerDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	
 //	Tawarruq -- App Data Check  -- Application Details screen
 	@And("^User_608 get the test data for test case AT_TW_ADC_AD_01$")
     public void get_the_test_data_for_test_case_AT_TW_ADC_AD_01() throws Throwable {
-		testData = ApplicationDetailsExcelData.getTestdata("DS_AT_TW_ADC_AD_01");
+		testExecutionData = testExecution.getTestdata("AT_TW_ADC_AD_01");
+		testData = ApplicationDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_TW_ADC_AD_02$")
     public void get_the_test_data_for_test_case_AT_TW_ADC_AD_02() throws Throwable {
-		testData = ApplicationDetailsExcelData.getTestdata("DS_AT_TW_ADC_AD_02");
+		testExecutionData = testExecution.getTestdata("AT_TW_ADC_AD_02");
+		testData = ApplicationDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_TW_ADC_AD_03$")
     public void get_the_test_data_for_test_case_AT_TW_ADC_AD_03() throws Throwable {
-		testData = ApplicationDetailsExcelData.getTestdata("DS_AT_TW_ADC_AD_03");
+		testExecutionData = testExecution.getTestdata("AT_TW_ADC_AD_03");
+		testData = ApplicationDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_TW_ADC_AD_04$")
     public void get_the_test_data_for_test_case_AT_TW_ADC_AD_04() throws Throwable {
-		testData = ApplicationDetailsExcelData.getTestdata("DS_AT_TW_ADC_AD_04");
+		testExecutionData = testExecution.getTestdata("AT_TW_ADC_AD_04");
+		testData = ApplicationDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_TW_ADC_AD_05$")
     public void get_the_test_data_for_test_case_AT_TW_ADC_AD_05() throws Throwable {
-		testData = ApplicationDetailsExcelData.getTestdata("DS_AT_TW_ADC_AD_05");
+		testExecutionData = testExecution.getTestdata("AT_TW_ADC_AD_05");
+		testData = ApplicationDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	
 //	Tawarruq -- Underwriter
 	@And("^User_608 get the test data for test case AT_TW_UNW_01$")
     public void get_the_test_data_for_test_case_AT_TW_UNW_01() throws Throwable {
-		testData = underwriterExcelData.getTestdata("DS_AT_TW_UNW_01");
+		testExecutionData = testExecution.getTestdata("AT_TW_UNW_01");
+		testData = underwriterExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_TW_UNW_02$")
     public void get_the_test_data_for_test_case_AT_TW_UNW_02() throws Throwable {
-		testData = underwriterExcelData.getTestdata("DS_AT_TW_UNW_02");
+		testExecutionData = testExecution.getTestdata("AT_TW_UNW_02");
+		testData = underwriterExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_TW_UNW_03$")
     public void get_the_test_data_for_test_case_AT_TW_UNW_03() throws Throwable {
-		testData = underwriterExcelData.getTestdata("DS_AT_TW_UNW_03");
+		testExecutionData = testExecution.getTestdata("AT_TW_UNW_03");
+		testData = underwriterExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_TW_UNW_04$")
     public void get_the_test_data_for_test_case_AT_TW_UNW_04() throws Throwable {
-		testData = underwriterExcelData.getTestdata("DS_AT_TW_UNW_04");
+		testExecutionData = testExecution.getTestdata("AT_TW_UNW_04");
+		testData = underwriterExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_TW_UNW_05$")
     public void get_the_test_data_for_test_case_AT_TW_UNW_05() throws Throwable {
-		testData = underwriterExcelData.getTestdata("DS_AT_TW_UNW_05");
+		testExecutionData = testExecution.getTestdata("AT_TW_UNW_05");
+		testData = underwriterExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_TW_UNW_06$")
     public void get_the_test_data_for_test_case_AT_TW_UNW_06() throws Throwable {
-		testData = underwriterExcelData.getTestdata("DS_AT_TW_UNW_06");
+		testExecutionData = testExecution.getTestdata("AT_TW_UNW_06");
+		testData = underwriterExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_TW_UNW_07$")
     public void get_the_test_data_for_test_case_AT_TW_UNW_07() throws Throwable {
-		testData = underwriterExcelData.getTestdata("DS_AT_TW_UNW_07");
+		testExecutionData = testExecution.getTestdata("AT_TW_UNW_07");
+		testData = underwriterExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	
@@ -2939,10 +2966,10 @@ public class Tawarruq_Steps {
 
 	@And("User_608 verify Action field available in list view under Application Details screen")
 	public void user_608_verify_action_field_available_in_list_view_under_application_details_screen() throws Throwable {
-		Thread.sleep(500);
-		WebElement listview_Action = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("listview_Action"));
 		for (int i = 0; i <= 1500; i++) {
 			try {
+				WebElement listview_Action = javascriptHelper.executeScriptWithWebElement(
+						appDataAppDetailsJsPaths.getElement("listview_Action"));
 				javascriptHelper.backgroundColor(listview_Action);
 				softAssert.assertTrue(listview_Action.isDisplayed(), "Action field should display in List view");
 				break;
@@ -3133,10 +3160,11 @@ public class Tawarruq_Steps {
 	}
 
 	@And("User_608 verify the all the possible matching records are displayed under Application Details screen")
-	public void user_608_verify_the_all_the_possible_matching_records_are_displayed_under_application_details_screen() throws Throwable {
-		WebElement searchResult = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("searchResult"));
+	public void user_608_verify_the_all_the_possible_matching_records_are_displayed_under_application_details_screen() throws Throwable {		
 		for (int i = 0; i <= 500; i++) {
 			try {
+				WebElement searchResult = javascriptHelper.executeScriptWithWebElement(
+						appDataAppDetailsJsPaths.getElement("searchResult"));
 				javascriptHelper.backgroundColor(searchResult);
 				String text = searchResult.getText().substring(13, 14);
 				System.out.println("Result value: "+text);
@@ -3167,9 +3195,10 @@ public class Tawarruq_Steps {
 
 	@And("User_608 verify the system is should not displayed any records under Application Details screen")
 	public void user_608_verify_the_system_is_should_not_displayed_any_records_under_application_details_screen() throws Throwable {
-		WebElement searchResult = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("searchResult"));
 		for (int i = 0; i <= 500; i++) {
 			try {
+				WebElement searchResult = javascriptHelper.executeScriptWithWebElement(
+						appDataAppDetailsJsPaths.getElement("searchResult"));
 				javascriptHelper.backgroundColor(searchResult);
 				String text = searchResult.getText().substring(13, 14);
 				System.out.println("Result value: "+text);
@@ -3184,10 +3213,11 @@ public class Tawarruq_Steps {
 	}
 	
 	@And("User_608 click the Export button under Application Details screen")
-	public void user_608_click_the_export_button_under_application_details_screen() throws Throwable {
-		WebElement exportBtn = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("exportBtn"));
+	public void user_608_click_the_export_button_under_application_details_screen() throws Throwable {		
 		for (int i = 0; i <= 1500; i++) {
 			try {
+				WebElement exportBtn = javascriptHelper.executeScriptWithWebElement(
+						appDataAppDetailsJsPaths.getElement("exportBtn"));
 				javascriptHelper.backgroundBorder(exportBtn);
 				exportBtn.click();
 				break;
@@ -3201,7 +3231,6 @@ public class Tawarruq_Steps {
 
 	@And("User_608 click the PDF and verify under Application Details screen")
 	public void user_608_click_the_pdf_and_verify_under_application_details_screen() throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("exportPDF")));
 		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("exportPDF")).click();
@@ -3261,10 +3290,10 @@ public class Tawarruq_Steps {
 	
 	
 	@And("User_608 click the Add button under Application Details screen")
-	public void user_608_click_the_add_button_under_application_details_screen() throws Throwable {
-		WebElement addBtn = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("addBtn"));
+	public void user_608_click_the_add_button_under_application_details_screen() throws Throwable {		
 		for (int i = 0; i <= 150000; i++) {
 			try {
+				WebElement addBtn = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("addBtn"));
 				javascriptHelper.backgroundBorder(addBtn);
 				addBtn.click();
 				break;
@@ -5001,7 +5030,7 @@ public class Tawarruq_Steps {
 					WebElement successMsg = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("alert_SuccessMsg"));
 					String text = successMsg.getText();
 					System.out.println("Number: "+ text.substring(32, 36));
-					identificatioDetailsExcelData.updateTestData(testData.get("DataSet ID"),"Record_ID", text.substring(32, 36));
+					identificationDetailsExcelData.updateTestData(testData.get("DataSet ID"),"Record_ID", text.substring(32, 36));
 					break;
 				} catch (Exception e) {
 					if (i == 1000) {
@@ -5269,14 +5298,14 @@ public class Tawarruq_Steps {
 
 		@And("User_608 post clicking on View Summary button system should display the workflow of the record")
 		public void user_608_post_clicking_on_view_summary_button_system_should_display_the_workflow_of_the_record() throws Throwable {
-			WebElement popup = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("summaryPopup"));
-			for (int i = 0; i <= 150000; i++) {
-				try {
+			for (int i = 0; i <= 1500; i++) {
+				try {					
+					WebElement popup = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("summaryPopup"));
 					javascriptHelper.backgroundBorder(popup);
 					softAssert.assertTrue(popup.isDisplayed(), "Display the summary of workflow");
 					break;
 				} catch (Exception e) {
-					if (i == 150000) {
+					if (i == 1500) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -5635,10 +5664,12 @@ public class Tawarruq_Steps {
 					}
 				}
 			}
+		}		
+		
+		@And("User_608 invoke soft assert in Tawarruq Underwriter stage Offer Decision tab")
+		public void user_608_invoke_soft_assert_in_tawarruq_underwriter_stage_offer_decision_tab() throws Throwable {
+			softAssert.assertAll();
 		}
-		
-		
-		
 		
 		
 		

@@ -1,12 +1,9 @@
-@And("^User_608 click the Eye button under Living Expenses tab$")
-public void user_608_click_the_eye_button_under_living_expenses_tab()throws Throwable{
+@And("^User_608 enter invalid Deviation Amount under Finance configuration section in Offer Decision tab$")
+public void user_608_enter_invalid_deviation_amount_under_finance_configuration_section_in_offer_decision_tab()throws Throwable{
 }
-@And("^User_608 click the Eye button under Facility Info tab$")
-public void user_608_click_the_eye_button_under_facility_info_tab()throws Throwable{
+@And("^User_608 enter Deviation Amount value under Finance configuration section in Offer Decision tab$")
+public void user_608_enter_deviation_amount_value_under_finance_configuration_section_in_offer_decision_tab()throws Throwable{
 }
-@And("^User_608 click the Eye button under Quotation Info tab$")
-public void user_608_click_the_eye_button_under_quotation_info_tab()throws Throwable{
-}
-@And("^User_608 click the Eye button under Insurance Info tab$")
-public void user_608_click_the_eye_button_under_insurance_info_tab()throws Throwable{
+@And("^User_608 enter Deviation Tenure value under Finance configuration section in Offer Decision tab$")
+public void user_608_enter_deviation_tenure_value_under_finance_configuration_section_in_offer_decision_tab()throws Throwable{
 }

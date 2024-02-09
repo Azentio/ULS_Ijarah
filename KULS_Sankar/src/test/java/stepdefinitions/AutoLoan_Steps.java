@@ -46,6 +46,7 @@ public class AutoLoan_Steps {
 	ExcelData AppDataEntryCFDebtExcelData = new ExcelData(excelTestDataPath,"AL_AppData_CustomerDebt","DataSet ID");
 	ExcelData UnderwriterL1ExcelData = new ExcelData(excelTestDataPath,"AL_Underwriter_L1","DataSet ID");
 	
+	ExcelData testExecution = new ExcelData(excelTestDataPath, "ULSExecution", "TestCase ID");
 	Map<String, String> testExecutionData;
 	Map<String, String> testData;
 
@@ -53,134 +54,160 @@ public class AutoLoan_Steps {
 //	Auto Loan -- App Data Entry Stage  -- Application Details screen 
 	@And("^User_608 get the test data for test case AT_AL_APP_01$")
     public void get_the_test_data_for_test_case_AT_AL_APP_01() throws Throwable {
-		testData = AppDataEntryApplicationDetails.getTestdata("DS_AT_AL_APP_01");
+		testExecutionData = testExecution.getTestdata("AT_AL_APP_01");
+		testData = AppDataEntryApplicationDetails.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_AL_APP_02$")
     public void get_the_test_data_for_test_case_AT_AL_APP_02() throws Throwable {
-		testData = AppDataEntryApplicationDetails.getTestdata("DS_AT_AL_APP_02");
+		testExecutionData = testExecution.getTestdata("AT_AL_APP_02");
+		testData = AppDataEntryApplicationDetails.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_AL_APP_03$")
     public void get_the_test_data_for_test_case_AT_AL_APP_03() throws Throwable {
-		testData = AppDataEntryApplicationDetails.getTestdata("DS_AT_AL_APP_03");
+		testExecutionData = testExecution.getTestdata("AT_AL_APP_03");
+		testData = AppDataEntryApplicationDetails.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_AL_APP_04$")
     public void get_the_test_data_for_test_case_AT_AL_APP_04() throws Throwable {
-		testData = AppDataEntryApplicationDetails.getTestdata("DS_AT_AL_APP_04");
+		testExecutionData = testExecution.getTestdata("AT_AL_APP_04");
+		testData = AppDataEntryApplicationDetails.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_AL_APP_05$")
     public void get_the_test_data_for_test_case_AT_AL_APP_05() throws Throwable {
-		testData = AppDataEntryApplicationDetails.getTestdata("DS_AT_AL_APP_05");
+		testExecutionData = testExecution.getTestdata("AT_AL_APP_05");
+		testData = AppDataEntryApplicationDetails.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_AL_APP_06$")
     public void get_the_test_data_for_test_case_AT_AL_APP_06() throws Throwable {
-		testData = AppDataEntryApplicationDetails.getTestdata("DS_AT_AL_APP_06");
+		testExecutionData = testExecution.getTestdata("AT_AL_APP_06");
+		testData = AppDataEntryApplicationDetails.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_AL_APP_07$")
     public void get_the_test_data_for_test_case_AT_AL_APP_07() throws Throwable {
-		testData = AppDataEntryApplicationDetails.getTestdata("DS_AT_AL_APP_07");
+		testExecutionData = testExecution.getTestdata("AT_AL_APP_07");
+		testData = AppDataEntryApplicationDetails.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_AL_APP_08$")
     public void get_the_test_data_for_test_case_AT_AL_APP_08() throws Throwable {
-		testData = AppDataEntryApplicationDetails.getTestdata("DS_AT_AL_APP_08");
+		testExecutionData = testExecution.getTestdata("AT_AL_APP_08");
+		testData = AppDataEntryApplicationDetails.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_AL_APP_09$")
     public void get_the_test_data_for_test_case_AT_AL_APP_09() throws Throwable {
-		testData = AppDataEntryApplicationDetails.getTestdata("DS_AT_AL_APP_09");
+		testExecutionData = testExecution.getTestdata("AT_AL_APP_09");
+		testData = AppDataEntryApplicationDetails.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_AL_APP_10$")
     public void get_the_test_data_for_test_case_AT_AL_APP_10() throws Throwable {
-		testData = AppDataEntryApplicationDetails.getTestdata("DS_AT_AL_APP_10");
+		testExecutionData = testExecution.getTestdata("AT_AL_APP_10");
+		testData = AppDataEntryApplicationDetails.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_AL_APP_11$")
     public void get_the_test_data_for_test_case_AT_AL_APP_11() throws Throwable {
-		testData = AppDataEntryApplicationDetails.getTestdata("DS_AT_AL_APP_11");
+		testExecutionData = testExecution.getTestdata("AT_AL_APP_11");
+		testData = AppDataEntryApplicationDetails.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_AL_APP_12$")
     public void get_the_test_data_for_test_case_AT_AL_APP_12() throws Throwable {
-		testData = AppDataEntryApplicationDetails.getTestdata("DS_AT_AL_APP_12");
+		testExecutionData = testExecution.getTestdata("AT_AL_APP_12");
+		testData = AppDataEntryApplicationDetails.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 //	Auto Loan -- App Data Entry Stage  -- Customer Debt screen
 	@And("^User_608 get the test data for test case AT_AL_CUD_01$")
     public void get_the_test_data_for_test_case_AT_AL_CUD_01() throws Throwable {
-		testData = AppDataEntryCFDebtExcelData.getTestdata("DS_AT_AL_CUD_01");
+		testExecutionData = testExecution.getTestdata("AT_AL_CUD_01");
+		testData = AppDataEntryCFDebtExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_AL_CUD_02$")
     public void get_the_test_data_for_test_case_AT_AL_CUD_02() throws Throwable {
-		testData = AppDataEntryCFDebtExcelData.getTestdata("DS_AT_AL_CUD_02");
+		testExecutionData = testExecution.getTestdata("AT_AL_CUD_02");
+		testData = AppDataEntryCFDebtExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_AL_CUD_03$")
     public void get_the_test_data_for_test_case_AT_AL_CUD_03() throws Throwable {
-		testData = AppDataEntryCFDebtExcelData.getTestdata("DS_AT_AL_CUD_03");
+		testExecutionData = testExecution.getTestdata("AT_AL_CUD_03");
+		testData = AppDataEntryCFDebtExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_AL_CUD_04$")
     public void get_the_test_data_for_test_case_AT_AL_CUD_04() throws Throwable {
-		testData = AppDataEntryCFDebtExcelData.getTestdata("DS_AT_AL_CUD_04");
+		testExecutionData = testExecution.getTestdata("AT_AL_CUD_04");
+		testData = AppDataEntryCFDebtExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_AL_CUD_05$")
     public void get_the_test_data_for_test_case_AT_AL_CUD_05() throws Throwable {
-		testData = AppDataEntryCFDebtExcelData.getTestdata("DS_AT_AL_CUD_05");
+		testExecutionData = testExecution.getTestdata("AT_AL_CUD_05");
+		testData = AppDataEntryCFDebtExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_AL_CUD_06$")
     public void get_the_test_data_for_test_case_AT_AL_CUD_06() throws Throwable {
-		testData = AppDataEntryCFDebtExcelData.getTestdata("DS_AT_AL_CUD_06");
+		testExecutionData = testExecution.getTestdata("AT_AL_CUD_06");
+		testData = AppDataEntryCFDebtExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_AL_CUD_07$")
     public void get_the_test_data_for_test_case_AT_AL_CUD_07() throws Throwable {
-		testData = AppDataEntryCFDebtExcelData.getTestdata("DS_AT_AL_CUD_07");
+		testExecutionData = testExecution.getTestdata("AT_AL_CUD_07");
+		testData = AppDataEntryCFDebtExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_AL_CUD_08$")
     public void get_the_test_data_for_test_case_AT_AL_CUD_08() throws Throwable {
-		testData = AppDataEntryCFDebtExcelData.getTestdata("DS_AT_AL_CUD_08");
+		testExecutionData = testExecution.getTestdata("AT_AL_CUD_08");
+		testData = AppDataEntryCFDebtExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_AL_CUD_09$")
     public void get_the_test_data_for_test_case_AT_AL_CUD_09() throws Throwable {
-		testData = AppDataEntryCFDebtExcelData.getTestdata("DS_AT_AL_CUD_09");
+		testExecutionData = testExecution.getTestdata("AT_AL_CUD_09");
+		testData = AppDataEntryCFDebtExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 //	Auto Loan -- Underwriter L1 
 	@And("^User_608 get the test data for test case AT_AL_UNWL1_01$")
     public void get_the_test_data_for_test_case_AT_AL_UNWL1_01() throws Throwable {
-		testData = UnderwriterL1ExcelData.getTestdata("DS_AT_AL_UNWL1_01");
+		testExecutionData = testExecution.getTestdata("AT_AL_UNWL1_01");
+		testData = UnderwriterL1ExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_AL_UNWL1_02$")
     public void get_the_test_data_for_test_case_AT_AL_UNWL1_02() throws Throwable {
-		testData = UnderwriterL1ExcelData.getTestdata("DS_AT_AL_UNWL1_02");
+		testExecutionData = testExecution.getTestdata("AT_AL_UNWL1_02");
+		testData = UnderwriterL1ExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_AL_UNWL1_03$")
     public void get_the_test_data_for_test_case_AT_AL_UNWL1_03() throws Throwable {
-		testData = UnderwriterL1ExcelData.getTestdata("DS_AT_AL_UNWL1_03");
+		testExecutionData = testExecution.getTestdata("AT_AL_UNWL1_03");
+		testData = UnderwriterL1ExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_AL_UNWL1_04$")
     public void get_the_test_data_for_test_case_AT_AL_UNWL1_04() throws Throwable {
-		testData = UnderwriterL1ExcelData.getTestdata("DS_AT_AL_UNWL1_04");
+		testExecutionData = testExecution.getTestdata("AT_AL_UNWL1_04");
+		testData = UnderwriterL1ExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_AL_UNWL1_05$")
     public void get_the_test_data_for_test_case_AT_AL_UNWL1_05() throws Throwable {
-		testData = UnderwriterL1ExcelData.getTestdata("DS_AT_AL_UNWL1_05");
+		testExecutionData = testExecution.getTestdata("AT_AL_UNWL1_05");
+		testData = UnderwriterL1ExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	
@@ -3216,7 +3243,7 @@ public class AutoLoan_Steps {
 //	AT_AL_APP_08
 	@And("User_608 click the View Summary button in Application Details screen")
 	public void user_608_click_the_view_summary_button_in_application_details_screen() throws Throwable {		
-		for (int i = 0; i <= 150000; i++) {
+		for (int i = 0; i <= 500; i++) {
 			try {
 				WebElement btn = javascriptHelper.executeScriptWithWebElement(
 						appDataAppDetailsJsPaths.getElement("AppDetailsViewSummaryBtn"));
@@ -3225,7 +3252,7 @@ public class AutoLoan_Steps {
 				javascriptHelper.JSEClick(btn);
 				break;
 			} catch (Exception e) {
-				if (i == 150000) {
+				if (i == 500) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3457,14 +3484,14 @@ public class AutoLoan_Steps {
 	
 	@And("User_608 click the Edit button if the status of record is in-Active under Application Details screen")
 	public void user_click_the_edit_button_if_the_status_of_record_is_in_active_under_application_details_screen() throws Throwable {
-		for (int i = 0; i <= 500000; i++) {
+		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(
 						appDataAppDetailsJsPaths.getElement("pencilEditBtn")));
 				javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("pencilEditBtn")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 500000) {
+				if (i == 500) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3510,50 +3537,42 @@ public class AutoLoan_Steps {
 	
 	@And("User_608 verify values in List view should be non-editable and must be populated correctly in Application Details screen")
 	public void user_608_verify_values_in_list_view_should_be_non_editable_and_must_be_populated_correctly_in_application_details_screen() throws Throwable {
-		String listOfRecords = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
-		String listOfValues = "";
-		String addButtonScreenName = "";
-		for (int i = 0; i <= 30; i++) {
+		String length = null;
+		for (int i = 0; i < 300; i++) {
 			try {
-				listOfValues = javascriptHelper.executeScript("return " + listOfRecords).toString();
-				System.out.println("List of add button " + listOfValues);
-				if (!(listOfValues.isBlank())) {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+						.toString();
+//				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 30) {
+				if (i == 299) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		int values = Integer.parseInt(listOfValues);
-		for (int j = 0; j < values; j++) {
-			for (int k = 0; k <= 100; k++) {
-				try {
-					addButtonScreenName = javascriptHelper.executeScript(
-							"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
-									+ j + "].textContent")
-							.toString();
-					System.out.println("Screen Name " + addButtonScreenName);
-					if (!(addButtonScreenName.isBlank())) {
-						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
-						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Application Details").trim())) {
-							System.out.println("Inside nested loop");
-							System.out.println("document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]");
-							WebElement nonEdit = javascriptHelper.executeScriptWithWebElement(
-									"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j
-											+ "].parentElement.parentElement.parentElement.nextElementSibling.querySelectorAll('table tbody tr td p-celleditor')[4]");
-							javascriptHelper.backgroundBorder(nonEdit);
-							System.out.println("Is Non Editable: "
-									+ javascriptHelper.executeScript("return arguments[0].readOnly", nonEdit));
-							System.out.println("Field Name: " + nonEdit.getText());
-							break;
-						}
+		for (int i = 0; i < 500; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains("Application Details")) {
+						String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]"
+								+ ".parentElement.parentElement.querySelector('table').querySelectorAll('td p-celleditor')[4]";
+						WebElement field = javascriptHelper.executeScriptWithWebElement(jspath);
+						String output = field.getAttribute("readonly");
+						System.out.println("Out: "+ output);
+						javascriptHelper.backgroundBorder(field);
+						softAssert.assertNull(output,
+								"Listview values should be non editable under Asset Details section");
+						break;
 					}
-				} catch (Exception e) {
-					if (k == 100) {
-						Assert.fail(e.getMessage());
-					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
 				}
 			}
 		}
@@ -3748,9 +3767,9 @@ public class AutoLoan_Steps {
 
 	@And("User_608 enter the Account Number in Financial Commitments-Customer Debt screen")
 	public void user_608_enter_the_account_number_in_financial_commitments_customer_debt_screen() throws Throwable {
-		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionAmtInput")).click();
 		for (int i = 0; i <= 500; i++) {
 			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionAmtInput")).click();
 				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("accountNbr"))
 				.sendKeys(testData.get("Account Nbr"));
 				break;
@@ -3763,10 +3782,10 @@ public class AutoLoan_Steps {
 	}
 
 	@And("User_608 enter the Sanction Amount in Financial Commitments-Customer Debt screen")
-	public void user_608_enter_the_sanction_amount_in_financial_commitments_customer_debt_screen() throws Throwable {
-		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionAmtInput")).click();
+	public void user_608_enter_the_sanction_amount_in_financial_commitments_customer_debt_screen() throws Throwable {		
 		for (int i = 0; i <= 500; i++) {
 			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionAmtInput")).click();
 				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionAmtInput"))
 				.sendKeys(testData.get("Sanction Amt"));
 				break;
@@ -4677,10 +4696,10 @@ public class AutoLoan_Steps {
 //	AT_AL_CUD_07
 	@And("User_608 to verify the functionality of Search box with matching data under Financial Commitments section")
 	public void user_608_to_verify_the_functionality_of_search_box_with_matching_data_under_financial_commitments_section() throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentSearchInput")));
 		for (int i = 0; i <= 500; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentSearchInput"))
+				javascriptHelper.executeScriptWithWebElement(
+						customerDebtJsPaths.getElement("financialCommitmentSearchInput"))
 				.sendKeys(testData.get("Matched Currency"));
 				break;
 			} catch (Exception e) {
@@ -5228,7 +5247,42 @@ public class AutoLoan_Steps {
 					Assert.fail(e.getMessage());
 				}
 			}
-		}	    
+		}
+		
+		String length1 = null;
+		for (int i = 0; i < 500; i++) {
+			try {
+				length1 = javascriptHelper.executeScript("return document.querySelectorAll('ion-item ion-title').length")
+						.toString();
+				System.out.println(length1);
+				if (!length1.isBlank() && !length1.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 500; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length1); j++) {
+					String title = "return document.querySelectorAll('ion-item ion-title')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains("Application Details")) {
+						String jspath = "document.querySelectorAll('ion-item ion-title')[" + j + "]";
+						WebElement section = javascriptHelper.executeScriptWithWebElement(jspath);
+						softAssert.assertTrue(section.isDisplayed(), "Application Details title available under Offer Decision tab");
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
 	}
 
 	@And("User_608 verify all the populate data correctly at this stage and display only in Application details screen")

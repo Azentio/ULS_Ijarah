@@ -7,6 +7,8 @@ Application Details section & Referral/Sourcing Details section
 Given navigate the IJARA URL
 And login with valid credentials - Auto Loan - App Data Entry
 And User_608 get the test data for test case AT_AL_APP_01
+And User_608 click the module name dropdown in ULS application
+And User_608 select the module name as LOS in ULS application
 And User_608 click the Mail box in ULS application
 And User_608 click the Search button under inbox
 And User_608 search the Reference ID for Auto Loan
@@ -58,6 +60,8 @@ Scenario: Creation of Application- Add --> To verify the functionality of save b
 Given navigate the IJARA URL
 And login with valid credentials - Auto Loan - App Data Entry
 And User_608 get the test data for test case AT_AL_APP_02
+And User_608 click the module name dropdown in ULS application
+And User_608 select the module name as LOS in ULS application
 And User_608 click the Mail box in ULS application
 And User_608 click the Search button under inbox
 And User_608 search the Reference ID for Auto Loan
@@ -101,6 +105,8 @@ Scenario: Creation of Application- Add --> To verify the below fields Mandatory/
 Given navigate the IJARA URL
 And login with valid credentials - Auto Loan - App Data Entry
 And User_608 get the test data for test case AT_AL_APP_03
+And User_608 click the module name dropdown in ULS application
+And User_608 select the module name as LOS in ULS application
 And User_608 click the Mail box in ULS application
 And User_608 click the Search button under inbox
 And User_608 search the Reference ID for Auto Loan
@@ -142,6 +148,8 @@ Scenario: Creation of Application- Add --> To verify the below fields Mandatory/
 Given navigate the IJARA URL
 And login with valid credentials - Auto Loan - App Data Entry
 And User_608 get the test data for test case AT_AL_APP_04
+And User_608 click the module name dropdown in ULS application
+And User_608 select the module name as LOS in ULS application
 And User_608 click the Mail box in ULS application
 And User_608 click the Search button under inbox
 And User_608 search the Reference ID for Auto Loan
@@ -175,6 +183,8 @@ Scenario: Creation of Application- Add --> To verify the impact when user keep a
 Given navigate the IJARA URL
 And login with valid credentials - Auto Loan - App Data Entry
 And User_608 get the test data for test case AT_AL_APP_05
+And User_608 click the module name dropdown in ULS application
+And User_608 select the module name as LOS in ULS application
 And User_608 click the Mail box in ULS application
 And User_608 click the Search button under inbox
 And User_608 search the Reference ID for Auto Loan
@@ -212,6 +222,8 @@ Scenario: Modification of Application Detail record --> Application Detail scree
 Given navigate the IJARA URL
 And login with valid credentials - Auto Loan - App Data Entry
 And User_608 get the test data for test case AT_AL_APP_06
+And User_608 click the module name dropdown in ULS application
+And User_608 select the module name as LOS in ULS application
 And User_608 click the Mail box in ULS application
 And User_608 click the Search button under inbox
 And User_608 search the Reference ID for Auto Loan
@@ -235,6 +247,8 @@ Scenario: Modification of Application Details record -> To verify system allow u
 Given navigate the IJARA URL
 And login with valid credentials - Auto Loan - App Data Entry
 And User_608 get the test data for test case AT_AL_APP_07
+And User_608 click the module name dropdown in ULS application
+And User_608 select the module name as LOS in ULS application
 And User_608 click the Mail box in ULS application
 And User_608 click the Search button under inbox
 And User_608 search the Reference ID for Auto Loan
@@ -256,6 +270,8 @@ Scenario: Modification of Application Details record -> To verify system allow u
 Given navigate the IJARA URL
 And login with valid credentials - Auto Loan - App Data Entry
 And User_608 get the test data for test case AT_AL_APP_08
+And User_608 click the module name dropdown in ULS application
+And User_608 select the module name as LOS in ULS application
 And User_608 click the Mail box in ULS application
 And User_608 click the Search button under inbox
 And User_608 search the Reference ID for Auto Loan
@@ -274,6 +290,8 @@ Scenario: Modification of Application Details record -> To verify the functional
 Given navigate the IJARA URL
 And login with valid credentials - Auto Loan - App Data Entry
 And User_608 get the test data for test case AT_AL_APP_09
+And User_608 click the module name dropdown in ULS application
+And User_608 select the module name as LOS in ULS application
 And User_608 click the Mail box in ULS application
 And User_608 click the Search button under inbox
 And User_608 search the Reference ID for Auto Loan
@@ -305,6 +323,8 @@ Scenario: Application Detail List View -> System should display the below mentio
 Given navigate the IJARA URL
 And login with valid credentials - Auto Loan - App Data Entry
 And User_608 get the test data for test case AT_AL_APP_10
+And User_608 click the module name dropdown in ULS application
+And User_608 select the module name as LOS in ULS application
 And User_608 click the Mail box in ULS application
 And User_608 click the Search button under inbox
 And User_608 search the Reference ID for Auto Loan
@@ -312,7 +332,6 @@ And User_608 click the Entitle button under inbox
 #And User_608 click the Update button under Application Details screen
 And User_608 click the Save button under Application Details screen
 And User_608 click the Confimation popup Ok button in Application Details screen
-And User_608 search the record ID under Application Details screen
 And User_608 verify Action field available in list view under Application Details screen
 And User_608 verify Client Name field available in list view under Application Details screen
 And User_608 verify Client Name(Alternate Lanuguage) field available in list view under Application Details screen
@@ -337,6 +356,8 @@ Scenario: Application Detail List View -> To verify the functionality of Search 
 Given navigate the IJARA URL
 And login with valid credentials - Auto Loan - App Data Entry
 And User_608 get the test data for test case AT_AL_APP_11
+And User_608 click the module name dropdown in ULS application
+And User_608 select the module name as LOS in ULS application
 And User_608 click the Mail box in ULS application
 And User_608 click the Search button under inbox
 And User_608 search the Reference ID for Auto Loan
@@ -359,6 +380,8 @@ Scenario: Application Detail List View -> To verify the functionality of Export 
 Given navigate the IJARA URL
 And login with valid credentials - Auto Loan - App Data Entry
 And User_608 get the test data for test case AT_AL_APP_12
+And User_608 click the module name dropdown in ULS application
+And User_608 select the module name as LOS in ULS application
 And User_608 click the Mail box in ULS application
 And User_608 click the Search button under inbox
 And User_608 search the Reference ID for Auto Loan

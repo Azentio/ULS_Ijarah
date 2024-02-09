@@ -2,7 +2,6 @@ Feature: To check the Auto Loan -- Underwriter L1 stage
 
 @AT_AL_UNWL1_01
 Scenario: To verify the Tab - Offer decision screen
-
 Given navigate the IJARA URL
 And login with valid credentials - Auto Loan - Underwriter L1
 And User_608 get the test data for test case AT_AL_UNWL1_01
@@ -26,7 +25,6 @@ And User_608 verify Decision field under Decision section in Offer Decision tab
 And User_608 System should able to select Accept\Reject from dropdown Decision section in Offer Decision tab
 Then logout from the ijaraApplication
 And User_608 invoke soft assert in Offer Decision screen at Auto loan - Underwriter L1 stage
-
 
 @AT_AL_UNWL1_02
 Scenario: To verify Below fields are available under Facility Details, Finance configuration, Pricing Details, Pricing Details sections
@@ -68,7 +66,6 @@ And User_608 verify the Instalment Amount field is displayed under Installment D
 Then logout from the ijaraApplication
 And User_608 invoke soft assert in Offer Decision screen at Auto loan - Underwriter L1 stage
 
-
 #AZ1LN-8932
 @AT_AL_UNWL1_03
 Scenario: To check underwriter user can add new record in recommendation/sanction condition screen
@@ -93,7 +90,6 @@ And User_608 enter Remarks under Recommendation\Sanction Hyperlink screen
 And User_608 click the Save button under Recommendation\Sanction Hyperlink screen
 Then logout from the ijaraApplication
 And User_608 invoke soft assert in Offer Decision screen at Auto loan - Underwriter L1 stage
-
 
 #Every time we run the scenario, record move to offering stage in another user(0371), then we move to L1 stage
 @AT_AL_UNWL1_04

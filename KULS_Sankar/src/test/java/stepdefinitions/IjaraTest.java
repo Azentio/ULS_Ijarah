@@ -110,13 +110,18 @@ public class IjaraTest extends BaseClass{
 		ijaraLogin.loginWithIjaraApplication("userType10");
 	}
 	
-//	Auto Loan Product -- Underwriter L1 Stage ---> userType10
+//	Auto Loan Product -- Underwriter L1 Stage ---> userType11
 	@And("login with valid credentials - Auto Loan - Underwriter L1")
 	public void login_with_valid_credentials_auto_loan_underwriter_l1()throws Throwable {
 		ijaraLogin.loginWithIjaraApplication("userType11");
 	}
 	
 	
+//	Personal loan Product -- Underwriter Stage ---> UserType15
+	@And("login with valid credentials-Personal loan Underwriter")
+	public void login_with_valid_credentials_personal_loan_underwriter()throws Throwable {
+		ijaraLogin.loginWithIjaraApplication("userType15");
+	}
 	
 	
 	

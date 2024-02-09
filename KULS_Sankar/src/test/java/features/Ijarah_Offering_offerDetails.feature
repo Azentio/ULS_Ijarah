@@ -158,5 +158,3 @@ And User_608 verify Tenure field is non-editable under Finance Details section
 And User_608 verify Profit Amount field is non-editable under Finance Details section
 And User_608 verify Down Payment Amount field is non-editable under Finance Details section
 Then logout from the ijaraApplication
-
-

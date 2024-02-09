@@ -117,6 +117,3 @@ And User_608 verify the Servicing Type Dropdown field available under Applicatio
 And User_608 verify the Region Dropdown field available under Application details screen
 And User_608 verify the Servicing Branch Dropdown field available under Application details screen
 Then logout from the ijaraApplication
-
-
-

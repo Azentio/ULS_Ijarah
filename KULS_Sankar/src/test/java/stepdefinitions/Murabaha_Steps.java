@@ -52,6 +52,7 @@ public class Murabaha_Steps {
 	ExcelData AppDataAssetDetailsExcelData  = new ExcelData(excelTestDataPath,"MU_AppData_AssetDetails","DataSet ID");
 	ExcelData DataCheckAddressDetailsExcelData  = new ExcelData(excelTestDataPath,"MU_DataCheck_AddressDetails","DataSet ID");
 	
+	ExcelData testExecution = new ExcelData(excelTestDataPath, "ULSExecution", "TestCase ID");
 	Map<String, String> testExecutionData;
 	Map<String, String> testData;
 
@@ -59,235 +60,280 @@ public class Murabaha_Steps {
 //	Murabaha -- App Data Entry -- Customer Debt screen
 	@And("^User_608 get the test data for test case AT_MCUD_01$")
     public void get_the_test_data_for_test_case_AT_MCUD_01() throws Throwable {
-		testData = AppDataCFDebtExcelData.getTestdata("DS_AT_MCUD_01");
+		testExecutionData = testExecution.getTestdata("AT_MCUD_01");
+		testData = AppDataCFDebtExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MCUD_02$")
     public void get_the_test_data_for_test_case_AT_MCUD_02() throws Throwable {
-		testData = AppDataCFDebtExcelData.getTestdata("DS_AT_MCUD_02");
+		testExecutionData = testExecution.getTestdata("AT_MCUD_02");
+		testData = AppDataCFDebtExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MCUD_03$")
     public void get_the_test_data_for_test_case_AT_MCUD_03() throws Throwable {
-		testData = AppDataCFDebtExcelData.getTestdata("DS_AT_MCUD_03");
+		testExecutionData = testExecution.getTestdata("AT_MCUD_03");
+		testData = AppDataCFDebtExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MCUD_05$")
     public void get_the_test_data_for_test_case_AT_MCUD_05() throws Throwable {
-		testData = AppDataCFDebtExcelData.getTestdata("DS_AT_MCUD_05");
+		testExecutionData = testExecution.getTestdata("AT_MCUD_05");
+		testData = AppDataCFDebtExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MCUD_06$")
     public void get_the_test_data_for_test_case_AT_MCUD_06() throws Throwable {
-		testData = AppDataCFDebtExcelData.getTestdata("DS_AT_MCUD_06");
+		testExecutionData = testExecution.getTestdata("AT_MCUD_06");
+		testData = AppDataCFDebtExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MCUD_07$")
     public void get_the_test_data_for_test_case_AT_MCUD_07() throws Throwable {
-		testData = AppDataCFDebtExcelData.getTestdata("DS_AT_MCUD_07");
+		testExecutionData = testExecution.getTestdata("AT_MCUD_07");
+		testData = AppDataCFDebtExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MCUD_08$")
     public void get_the_test_data_for_test_case_AT_MCUD_08() throws Throwable {
-		testData = AppDataCFDebtExcelData.getTestdata("DS_AT_MCUD_08");
+		testExecutionData = testExecution.getTestdata("AT_MCUD_08");
+		testData = AppDataCFDebtExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MCUD_11$")
     public void get_the_test_data_for_test_case_AT_MCUD_11() throws Throwable {
-		testData = AppDataCFDebtExcelData.getTestdata("DS_AT_MCUD_11");
+		testExecutionData = testExecution.getTestdata("AT_MCUD_11");
+		testData = AppDataCFDebtExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MCUD_12$")
     public void get_the_test_data_for_test_case_AT_MCUD_12() throws Throwable {
-		testData = AppDataCFDebtExcelData.getTestdata("DS_AT_MCUD_12");
+		testExecutionData = testExecution.getTestdata("AT_MCUD_12");
+		testData = AppDataCFDebtExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 //	Murabaha -- Data Check -- Application Details screen
 	@And("^User_608 get the test data for test case AT_MU_AD_01$")
     public void get_the_test_data_for_test_case_AT_MU_AD_01() throws Throwable {
-		testData = DataCheckAppDetailsExcelData.getTestdata("DS_AT_MU_AD_01");
+		testExecutionData = testExecution.getTestdata("AT_MU_AD_01");
+		testData = DataCheckAppDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MU_AD_02$")
     public void get_the_test_data_for_test_case_AT_MU_AD_02() throws Throwable {
-		testData = DataCheckAppDetailsExcelData.getTestdata("DS_AT_MU_AD_02");
+		testExecutionData = testExecution.getTestdata("AT_MU_AD_02");
+		testData = DataCheckAppDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MU_AD_03$")
     public void get_the_test_data_for_test_case_AT_MU_AD_03() throws Throwable {
-		testData = DataCheckAppDetailsExcelData.getTestdata("DS_AT_MU_AD_03");
+		testExecutionData = testExecution.getTestdata("AT_MU_AD_03");
+		testData = DataCheckAppDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MU_AD_04$")
     public void get_the_test_data_for_test_case_AT_MU_AD_04() throws Throwable {
-		testData = DataCheckAppDetailsExcelData.getTestdata("DS_AT_MU_AD_04");
+		testExecutionData = testExecution.getTestdata("AT_MU_AD_04");
+		testData = DataCheckAppDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MU_AD_05$")
     public void get_the_test_data_for_test_case_AT_MU_AD_05() throws Throwable {
-		testData = DataCheckAppDetailsExcelData.getTestdata("DS_AT_MU_AD_05");
+		testExecutionData = testExecution.getTestdata("AT_MU_AD_05");
+		testData = DataCheckAppDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	
 //	Murabaha -- App Data Entry -- Income Details screen
 	@And("^User_608 get the test data for test case AT_MU_INC_01$")
     public void get_the_test_data_for_test_case_AT_MU_INC_01() throws Throwable {
-		testData = AppDataIncomeExcelData.getTestdata("DS_AT_MU_INC_01");
+		testExecutionData = testExecution.getTestdata("AT_MU_INC_01");
+		testData = AppDataIncomeExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MU_INC_02$")
     public void get_the_test_data_for_test_case_AT_MU_INC_02() throws Throwable {
-		testData = AppDataIncomeExcelData.getTestdata("DS_AT_MU_INC_02");
+		testExecutionData = testExecution.getTestdata("AT_MU_INC_02");
+		testData = AppDataIncomeExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MU_INC_03$")
     public void get_the_test_data_for_test_case_AT_MU_INC_03() throws Throwable {
-		testData = AppDataIncomeExcelData.getTestdata("DS_AT_MU_INC_03");
+		testExecutionData = testExecution.getTestdata("AT_MU_INC_03");
+		testData = AppDataIncomeExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MU_INC_04$")
     public void get_the_test_data_for_test_case_AT_MU_INC_04() throws Throwable {
-		testData = AppDataIncomeExcelData.getTestdata("DS_AT_MU_INC_04");
+		testExecutionData = testExecution.getTestdata("AT_MU_INC_04");
+		testData = AppDataIncomeExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MU_INC_05$")
     public void get_the_test_data_for_test_case_AT_MU_INC_05() throws Throwable {
-		testData = AppDataIncomeExcelData.getTestdata("DS_AT_MU_INC_05");
+		testExecutionData = testExecution.getTestdata("AT_MU_INC_05");
+		testData = AppDataIncomeExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MU_INC_06$")
     public void get_the_test_data_for_test_case_AT_MU_INC_06() throws Throwable {
-		testData = AppDataIncomeExcelData.getTestdata("DS_AT_MU_INC_06");
+		testExecutionData = testExecution.getTestdata("AT_MU_INC_06");
+		testData = AppDataIncomeExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MU_INC_07$")
     public void get_the_test_data_for_test_case_AT_MU_INC_07() throws Throwable {
-		testData = AppDataIncomeExcelData.getTestdata("DS_AT_MU_INC_07");
+		testExecutionData = testExecution.getTestdata("AT_MU_INC_07");
+		testData = AppDataIncomeExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MU_INC_08$")
     public void get_the_test_data_for_test_case_AT_MU_INC_08() throws Throwable {
-		testData = AppDataIncomeExcelData.getTestdata("DS_AT_MU_INC_08");
+		testExecutionData = testExecution.getTestdata("AT_MU_INC_08");
+		testData = AppDataIncomeExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	
 //	Murabaha -- Data Check stage -- Employement Details screen
 	@And("^User_608 get the test data for test case AT_MU_EDC_01$")
     public void get_the_test_data_for_test_case_AT_MU_EDC_01() throws Throwable {
-		testData = DataCheckEmpDetailsExcelData.getTestdata("DS_AT_MU_EDC_01");
+		testExecutionData = testExecution.getTestdata("AT_MU_EDC_01");
+		testData = DataCheckEmpDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MU_EDC_02$")
     public void get_the_test_data_for_test_case_AT_MU_EDC_02() throws Throwable {
-		testData = DataCheckEmpDetailsExcelData.getTestdata("DS_AT_MU_EDC_02");
+		testExecutionData = testExecution.getTestdata("AT_MU_EDC_02");
+		testData = DataCheckEmpDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MU_EDC_03$")
     public void get_the_test_data_for_test_case_AT_MU_EDC_03() throws Throwable {
-		testData = DataCheckEmpDetailsExcelData.getTestdata("DS_AT_MU_EDC_03");
+		testExecutionData = testExecution.getTestdata("AT_MU_EDC_03");
+		testData = DataCheckEmpDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MU_EDC_04$")
     public void get_the_test_data_for_test_case_AT_MU_EDC_04() throws Throwable {
-		testData = DataCheckEmpDetailsExcelData.getTestdata("DS_AT_MU_EDC_04");
+		testExecutionData = testExecution.getTestdata("AT_MU_EDC_04");
+		testData = DataCheckEmpDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MU_EDC_05$")
     public void get_the_test_data_for_test_case_AT_MU_EDC_05() throws Throwable {
-		testData = DataCheckEmpDetailsExcelData.getTestdata("DS_AT_MU_EDC_05");
+		testExecutionData = testExecution.getTestdata("AT_MU_EDC_05");
+		testData = DataCheckEmpDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MU_EDC_06$")
     public void get_the_test_data_for_test_case_AT_MU_EDC_06() throws Throwable {
-		testData = DataCheckEmpDetailsExcelData.getTestdata("DS_AT_MU_EDC_06");
+		testExecutionData = testExecution.getTestdata("AT_MU_EDC_06");
+		testData = DataCheckEmpDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MU_EDC_07$")
     public void get_the_test_data_for_test_case_AT_MU_EDC_07() throws Throwable {
-		testData = DataCheckEmpDetailsExcelData.getTestdata("DS_AT_MU_EDC_07");
+		testExecutionData = testExecution.getTestdata("AT_MU_EDC_07");
+		testData = DataCheckEmpDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MU_EDC_08$")
     public void get_the_test_data_for_test_case_AT_MU_EDC_08() throws Throwable {
-		testData = DataCheckEmpDetailsExcelData.getTestdata("DS_AT_MU_EDC_08");
+		testExecutionData = testExecution.getTestdata("AT_MU_EDC_08");
+		testData = DataCheckEmpDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MU_EDC_09$")
     public void get_the_test_data_for_test_case_AT_MU_EDC_09() throws Throwable {
-		testData = DataCheckEmpDetailsExcelData.getTestdata("DS_AT_MU_EDC_09");
+		testExecutionData = testExecution.getTestdata("AT_MU_EDC_09");
+		testData = DataCheckEmpDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	
 //	Murabaha -- App Data Entry -- Asset Details screen
 	@And("^User_608 get the test data for test case AT_MU_ADE_IAD_01$")
     public void get_the_test_data_for_test_case_AT_MU_ADE_IAD_01() throws Throwable {
-		testData = AppDataAssetDetailsExcelData.getTestdata("DS_AT_MU_ADE_IAD_01");
+		testExecutionData = testExecution.getTestdata("AT_MU_ADE_IAD_01");
+		testData = AppDataAssetDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MU_ADE_IAD_02$")
     public void get_the_test_data_for_test_case_AT_MU_ADE_IAD_02() throws Throwable {
-		testData = AppDataAssetDetailsExcelData.getTestdata("DS_AT_MU_ADE_IAD_02");
+		testExecutionData = testExecution.getTestdata("AT_MU_ADE_IAD_02");
+		testData = AppDataAssetDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MU_ADE_IAD_03$")
     public void get_the_test_data_for_test_case_AT_MU_ADE_IAD_03() throws Throwable {
-		testData = AppDataAssetDetailsExcelData.getTestdata("DS_AT_MU_ADE_IAD_03");
+		testExecutionData = testExecution.getTestdata("AT_MU_ADE_IAD_03");
+		testData = AppDataAssetDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MU_ADE_IAD_05$")
     public void get_the_test_data_for_test_case_AT_MU_ADE_IAD_05() throws Throwable {
-		testData = AppDataAssetDetailsExcelData.getTestdata("DS_AT_MU_ADE_IAD_05");
+		testExecutionData = testExecution.getTestdata("AT_MU_ADE_IAD_05");
+		testData = AppDataAssetDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MU_ADE_IAD_06$")
     public void get_the_test_data_for_test_case_AT_MU_ADE_IAD_06() throws Throwable {
-		testData = AppDataAssetDetailsExcelData.getTestdata("DS_AT_MU_ADE_IAD_06");
+		testExecutionData = testExecution.getTestdata("AT_MU_ADE_IAD_06");
+		testData = AppDataAssetDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MU_ADE_IAD_07$")
     public void get_the_test_data_for_test_case_AT_MU_ADE_IAD_07() throws Throwable {
-		testData = AppDataAssetDetailsExcelData.getTestdata("DS_AT_MU_ADE_IAD_07");
+		testExecutionData = testExecution.getTestdata("AT_MU_ADE_IAD_07");
+		testData = AppDataAssetDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MU_ADE_IAD_08$")
     public void get_the_test_data_for_test_case_AT_MU_ADE_IAD_08() throws Throwable {
-		testData = AppDataAssetDetailsExcelData.getTestdata("DS_AT_MU_ADE_IAD_08");
+		testExecutionData = testExecution.getTestdata("AT_MU_ADE_IAD_08");
+		testData = AppDataAssetDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MU_ADE_IAD_09$")
     public void get_the_test_data_for_test_case_AT_MU_ADE_IAD_09() throws Throwable {
-		testData = AppDataAssetDetailsExcelData.getTestdata("DS_AT_MU_ADE_IAD_09");
+		testExecutionData = testExecution.getTestdata("AT_MU_ADE_IAD_09");
+		testData = AppDataAssetDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MU_ADE_IAD_10$")
     public void get_the_test_data_for_test_case_AT_MU_ADE_IAD_10() throws Throwable {
-		testData = AppDataAssetDetailsExcelData.getTestdata("DS_AT_MU_ADE_IAD_10");
+		testExecutionData = testExecution.getTestdata("AT_MU_ADE_IAD_10");
+		testData = AppDataAssetDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 //	Murabaha -- Data Check -- Address Details screen
 	@And("^User_608 get the test data for test case AT_MU_DATACHECK_ADC_01$")
     public void get_the_test_data_for_test_case_AT_MU_DATACHECK_ADC_01() throws Throwable {
-		testData = DataCheckAddressDetailsExcelData.getTestdata("DS_AT_MU_DATACHECK_ADC_01");
+		testExecutionData = testExecution.getTestdata("AT_MU_DATACHECK_ADC_01");
+		testData = DataCheckAddressDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MU_DATACHECK_ADC_02$")
     public void get_the_test_data_for_test_case_AT_MU_DATACHECK_ADC_02() throws Throwable {
-		testData = DataCheckAddressDetailsExcelData.getTestdata("DS_AT_MU_DATACHECK_ADC_02");
+		testExecutionData = testExecution.getTestdata("AT_MU_DATACHECK_ADC_02");
+		testData = DataCheckAddressDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MU_DATACHECK_ADC_03$")
     public void get_the_test_data_for_test_case_AT_MU_DATACHECK_ADC_03() throws Throwable {
-		testData = DataCheckAddressDetailsExcelData.getTestdata("DS_AT_MU_DATACHECK_ADC_03");
+		testExecutionData = testExecution.getTestdata("AT_MU_DATACHECK_ADC_03");
+		testData = DataCheckAddressDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MU_DATACHECK_ADC_04$")
     public void get_the_test_data_for_test_case_AT_MU_DATACHECK_ADC_04() throws Throwable {
-		testData = DataCheckAddressDetailsExcelData.getTestdata("DS_AT_MU_DATACHECK_ADC_04");
+		testExecutionData = testExecution.getTestdata("AT_MU_DATACHECK_ADC_04");
+		testData = DataCheckAddressDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@And("^User_608 get the test data for test case AT_MU_DATACHECK_ADC_05$")
     public void get_the_test_data_for_test_case_AT_MU_DATACHECK_ADC_05() throws Throwable {
-		testData = DataCheckAddressDetailsExcelData.getTestdata("DS_AT_MU_DATACHECK_ADC_05");
+		testExecutionData = testExecution.getTestdata("AT_MU_DATACHECK_ADC_05");
+		testData = DataCheckAddressDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	
@@ -1181,24 +1227,40 @@ public class Murabaha_Steps {
 	}
 	
 	@And("User_608 click the Back button Under Customer Debt screen to navigate the previous screen")
-	public void user_click_the_back_button_under_customer_debt_screen_to_navigate_the_previous_screen() throws Throwable {
-		WebElement pageTop = javascriptHelper.executeScriptWithWebElement("document.querySelector('[ng-reflect-layout=\"COMPACT\"]')");
-		for (int i = 0; i <= 1000; i++) {
+	public void user_click_the_back_button_under_customer_debt_screen_to_navigate_the_previous_screen() throws Throwable {		
+		String length = null;
+		for (int i = 0; i < 500; i++) {
 			try {
-				javascriptHelper.scrollIntoView(pageTop);
-				break;
+				length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i <= 1000; i++) {
-			try {				
-				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerDebtBackBtn")).click();						
+		for (int i = 0; i < 500; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('form button')[" + j + "].getAttribute('ng-reflect-text')";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().contains("Go Back")) {
+						System.out.println("condition true");
+						String jspath = "document.querySelectorAll('form button')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.scrollToElement(btn).build().perform();
+						btn.click();
+						break;
+					}
+				}
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1210,16 +1272,16 @@ public class Murabaha_Steps {
 //	AT_MCUD_03
 	@And("User_608 verify Finance Type as Mandatory and LOV field under Customer Debt screen in Customer Financials tab")
 	public void user_verify_finance_type_as_mandatory_and_lov_field_under_customer_debt_screen_in_customer_financials_tab() {
-//		Mandatory field
-		WebElement financeTypeField = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financeTypeField"));
-		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financeTypeField")).getText();
-		for (int i = 0; i <20000; i++) {
+//		Mandatory field		
+		for (int i = 0; i <500; i++) {
             try {
+            	WebElement financeTypeField = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financeTypeField"));
+        		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financeTypeField")).getText();
             	javascriptHelper.backgroundColor(financeTypeField);
             	softAssert.assertTrue(text.contains("*"), "Finance Type field as Mandatory");
                 break;
             } catch (Exception e) {
-                if (i==19999) {
+                if (i==499) {
                     Assert.fail(e.getMessage());
                 }
             }
@@ -3389,57 +3451,43 @@ public class Murabaha_Steps {
 //	@AT_MU_INC_01
 	@And("User_608 click Add button under Income section in Customer Financials tab")
 	public void user_click_add_button_under_income_section_in_customer_financials_tab() {
-		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
-		String listOfAddButton = "";
-		String addButtonScreenName = "";
-		boolean isAddButtonClicked = false;
-		for (int i = 0; i <= 300; i++) {
+		String length = null;
+		for (int i = 0; i < 500; i++) {
 			try {
-				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
-				System.out.println("List of add button " + listOfAddButton);
-				if (!(listOfAddButton.isBlank())) {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0") && !length.equals("1")) {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 300) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		
-		int premitiveListOfAddButton = Integer.parseInt(listOfAddButton);
-		for (int j = 0; j < premitiveListOfAddButton; j++) {
-			for (int k = 0; k <= 300; k++) {
-				try {
-					addButtonScreenName = javascriptHelper.executeScript(
-							"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
-									+ j + "].textContent")
-							.toString();
-					System.out.println("Screen Name " + addButtonScreenName);
-					if (!(addButtonScreenName.isBlank())) {
-						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
-						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Income").trim())) {
-							System.out.println("Inside nested loop");
-							System.out.println("document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]");
-							javascriptHelper
-							.scrollIntoView(
-									javascriptHelper.executeScriptWithWebElement("document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')[" + j + "]"));
-							javascriptHelper
-									.executeScriptWithWebElement(
-											"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]")
-									.click();
-							isAddButtonClicked = true;
-							break;
-						}
-					}
-				} catch (Exception e) {
-					if (k == 300) {
-						Assert.fail(e.getMessage());
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().contains("Income")) {
+						System.out.println("condition true");
+						String titlePath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]";
+						actions.scrollToElement(javascriptHelper.executeScriptWithWebElement(titlePath)).build().perform();
+						String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]"
+								+ ".parentElement.parentElement.querySelector('button[icon=\"pi pi-plus\"]')";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						btn.click();
+						break;
 					}
 				}
-			}
-			if (isAddButtonClicked == true) {
 				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
 			}
 		}
 	}
@@ -9291,7 +9339,7 @@ public class Murabaha_Steps {
 	@And("User_608 clicks on the Asset Details tab")
 	public void user_608_clicks_on_the_asset_details_tab() throws Throwable {
 		String length = null;
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
 						.toString();
@@ -9300,7 +9348,7 @@ public class Murabaha_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -9331,7 +9379,7 @@ public class Murabaha_Steps {
 	@And("User_608 click the Add button under Asset Details tab")
 	public void user_608_click_the_add_button_under_asset_details_tab() throws Throwable {
 		String length = null;
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
 						.toString();
@@ -9340,12 +9388,12 @@ public class Murabaha_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
@@ -9359,7 +9407,7 @@ public class Murabaha_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -9409,7 +9457,7 @@ public class Murabaha_Steps {
 	@And("User_608 verify Save button availble in Asset Details screen")
 	public void user_608_verify_save_button_availble_in_asset_details_screen() throws Throwable {
 		String length = null;
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
 						.toString();
@@ -9418,12 +9466,12 @@ public class Murabaha_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('form button')[" + j + "].getAttribute('ng-reflect-text')";
@@ -9439,7 +9487,7 @@ public class Murabaha_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -9465,7 +9513,7 @@ public class Murabaha_Steps {
 			}
 		}
 		String length = null;
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio-group ion-label').length")
 						.toString();
@@ -9474,12 +9522,12 @@ public class Murabaha_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].textContent";
@@ -9493,7 +9541,7 @@ public class Murabaha_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -9514,7 +9562,7 @@ public class Murabaha_Steps {
 			}
 		}
 		String length = null;
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio-group ion-label').length")
 						.toString();
@@ -9523,12 +9571,12 @@ public class Murabaha_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].textContent";
@@ -9542,7 +9590,7 @@ public class Murabaha_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -9551,19 +9599,19 @@ public class Murabaha_Steps {
 
 	@And("User_608 select the Asset Manufacture under Asset Details section in Asset Details screen")
 	public void user_608_select_the_asset_manufacture_under_asset_details_section_in_asset_details_screen() throws Throwable {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetManufactureDropdown"))
 				.click();
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 500) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 		String length = null;
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio-group ion-label').length")
 						.toString();
@@ -9572,12 +9620,12 @@ public class Murabaha_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].textContent";
@@ -9591,7 +9639,7 @@ public class Murabaha_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -9600,19 +9648,19 @@ public class Murabaha_Steps {
 
 	@And("User_608 select the Asset Model under Asset Details section in Asset Details screen")
 	public void user_608_select_the_asset_model_under_asset_details_section_in_asset_details_screen() throws Throwable {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetModelDropdown"))
 				.click();
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 500) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 		String length = null;
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio-group ion-label').length")
 						.toString();
@@ -9621,12 +9669,12 @@ public class Murabaha_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].textContent";
@@ -9640,7 +9688,7 @@ public class Murabaha_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -9649,19 +9697,19 @@ public class Murabaha_Steps {
 
 	@And("User_608 select the Asset Model Type under Asset Details section in Asset Details screen")
 	public void user_608_select_the_asset_model_type_under_asset_details_section_in_asset_details_screen() throws Throwable {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetModelTypeDropdown"))
 				.click();
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 500) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 		String length = null;
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio-group ion-label').length")
 						.toString();
@@ -9670,12 +9718,12 @@ public class Murabaha_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].textContent";
@@ -9689,7 +9737,7 @@ public class Murabaha_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -9698,19 +9746,19 @@ public class Murabaha_Steps {
 
 	@And("User_608 select the Asset Condition under Asset Details section in Asset Details screen")
 	public void user_608_select_the_asset_condition_under_asset_details_section_in_asset_details_screen() throws Throwable {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetConditionDropdown"))
 				.click();
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 500) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 		String length = null;
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio-group ion-label').length")
 						.toString();
@@ -9719,12 +9767,12 @@ public class Murabaha_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].textContent";
@@ -9738,7 +9786,7 @@ public class Murabaha_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -9798,20 +9846,20 @@ public class Murabaha_Steps {
 
 	@And("User_608 select the Asset Dealer under Dealer Details section in Asset Details screen")
 	public void user_608_select_the_asset_dealer_under_dealer_details_section_in_asset_details_screen() throws Throwable {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 500; i++) {
 			try {
 				WebElement element = javascriptHelper.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetDealerDropdown"));
 				actions.scrollToElement(element).build().perform();
 				element.click();
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 500) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 		String length = null;
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio-group ion-label').length")
 						.toString();
@@ -9820,12 +9868,12 @@ public class Murabaha_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].textContent";
@@ -9839,7 +9887,7 @@ public class Murabaha_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -9866,19 +9914,19 @@ public class Murabaha_Steps {
 
 	@And("User_608 select the Asset Fulfilment Location under Asset Price & Down Payment Details section")
 	public void user_608_select_the_asset_fulfilment_location_under_asset_price_down_payment_details_section() throws Throwable {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(assetDetailsJsPaths.getElement("fulfilmentLocationDropdown"))
 				.click();
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 500) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 		String length = null;
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio-group ion-label').length")
 						.toString();
@@ -9887,12 +9935,12 @@ public class Murabaha_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].textContent";
@@ -9906,7 +9954,7 @@ public class Murabaha_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -9915,19 +9963,19 @@ public class Murabaha_Steps {
 
 	@And("User_608 select the Location of Signing under Asset Price & Down Payment Details section")
 	public void user_608_select_the_location_of_signing_under_asset_price_down_payment_details_section() throws Throwable {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(assetDetailsJsPaths.getElement("locationOfSigningDropdown"))
 				.click();
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 500) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 		String length = null;
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio-group ion-label').length")
 						.toString();
@@ -9936,12 +9984,12 @@ public class Murabaha_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].textContent";
@@ -9955,7 +10003,7 @@ public class Murabaha_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -9982,7 +10030,7 @@ public class Murabaha_Steps {
 	@And("User_608 to verify the impact when user keep any mandatory field and click on save button in Asset Details screen")
 	public void user_608_to_verify_the_impact_when_user_keep_any_mandatory_field_and_click_on_save_button_in_asset_details_screen() throws Throwable {
 		String length = null;
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
 						.toString();
@@ -9991,12 +10039,12 @@ public class Murabaha_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('form button')[" + j + "].getAttribute('ng-reflect-text')";
@@ -10010,7 +10058,7 @@ public class Murabaha_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -10019,7 +10067,7 @@ public class Murabaha_Steps {
 
 	@And("User_608 to verify system should show the proper validation message for blank field in Asset Details screen")
 	public void user_608_to_verify_system_should_show_the_proper_validation_message_for_blank_field_in_asset_details_screen() throws Throwable {
-		for (int i = 0; i < 2000; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
 				WebElement element = javascriptHelper
 						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("mandatoryFillToastMsg"));
@@ -10029,7 +10077,7 @@ public class Murabaha_Steps {
 						"Mandatory field blank message in Customer Debt screen");
 				break;
 			} catch (Exception e) {
-				if (i == 1999) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -10039,7 +10087,7 @@ public class Murabaha_Steps {
 	@And("User_608 clicks on the Save button under Asset Details screen")
 	public void user_608_clicks_on_the_save_button_under_asset_details_screen() throws Throwable {
 		String length = null;
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
 						.toString();
@@ -10048,12 +10096,12 @@ public class Murabaha_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('form button')[" + j + "].getAttribute('ng-reflect-text')";
@@ -10068,7 +10116,7 @@ public class Murabaha_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -10077,7 +10125,7 @@ public class Murabaha_Steps {
 
 	@And("User_608 verify post clicking on save button system should display the confirmation message")
 	public void user_608_verify_post_clicking_on_save_button_system_should_display_the_confirmation_message() throws Throwable {
-		for (int i = 0; i < 2000; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
 				String text = javascriptHelper
 						.executeScriptWithWebElement(customerDebtJsPaths.getElement("successMsg")).getText();
@@ -10085,7 +10133,7 @@ public class Murabaha_Steps {
 						"System should display the confirmation message as SUCCESS");
 				break;
 			} catch (Exception e) {
-				if (i == 1999) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -10107,7 +10155,7 @@ public class Murabaha_Steps {
 //	@AT_MU_ADE_IAD_02
 	@And("User_608 verify Asset Category field available under Asset Details section in Asset Details screen")
 	public void user_608_verify_asset_category_field_available_under_asset_details_section_in_asset_details_screen() throws Throwable {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 500; i++) {
 			try {
 				WebElement label = javascriptHelper
 						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetCategoryLabel"));
@@ -10120,7 +10168,7 @@ public class Murabaha_Steps {
 				softAssert.assertTrue(dropdown.isDisplayed(),"Asset Category field available under Asset Details section");
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 500) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -10129,7 +10177,7 @@ public class Murabaha_Steps {
 
 	@And("User_608 verify Asset Type field available under Asset Details section in Asset Details screen")
 	public void user_608_verify_asset_type_field_available_under_asset_details_section_in_asset_details_screen() throws Throwable {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 500; i++) {
 			try {
 				WebElement label = javascriptHelper
 						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetTypeLabel"));
@@ -10142,7 +10190,7 @@ public class Murabaha_Steps {
 				softAssert.assertTrue(dropdown.isDisplayed(),"Asset Type field available under Asset Details section");
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 500) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -10151,7 +10199,7 @@ public class Murabaha_Steps {
 
 	@And("User_608 verify Asset Manufacture field available under Asset Details section in Asset Details screen")
 	public void user_608_verify_asset_manufacture_field_available_under_asset_details_section_in_asset_details_screen() throws Throwable {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 500; i++) {
 			try {
 				WebElement label = javascriptHelper
 						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetManufactureLabel"));
@@ -10164,7 +10212,7 @@ public class Murabaha_Steps {
 				softAssert.assertTrue(dropdown.isDisplayed(),"Asset Manufacture field available under Asset Details section");
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 500) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -10173,7 +10221,7 @@ public class Murabaha_Steps {
 
 	@And("User_608 verify Asset Model under field available under Details section in Asset Details screen")
 	public void user_608_verify_asset_model_under_field_available_under_details_section_in_asset_details_screen() throws Throwable {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 500; i++) {
 			try {
 				WebElement label = javascriptHelper
 						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetModelLabel"));
@@ -10186,7 +10234,7 @@ public class Murabaha_Steps {
 				softAssert.assertTrue(dropdown.isDisplayed(),"Asset Model field available under Asset Details section");
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 500) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -10195,7 +10243,7 @@ public class Murabaha_Steps {
 
 	@And("User_608 verify Asset Model Type field available under Asset Details section in Asset Details screen")
 	public void user_608_verify_asset_model_type_field_available_under_asset_details_section_in_asset_details_screen() throws Throwable {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 500; i++) {
 			try {
 				WebElement label = javascriptHelper
 						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetModelTypeLabel"));
@@ -10208,7 +10256,7 @@ public class Murabaha_Steps {
 				softAssert.assertTrue(dropdown.isDisplayed(),"Asset Model Type field available under Asset Details section");
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 500) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -10217,7 +10265,7 @@ public class Murabaha_Steps {
 
 	@And("User_608 verify Year Of Manufacture field available under Asset Details section in Asset Details screen")
 	public void user_608_verify_year_of_manufacture_field_available_under_asset_details_section_in_asset_details_screen() throws Throwable {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 500; i++) {
 			try {
 				WebElement label = javascriptHelper
 						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("yearOfManufactureLabel"));
@@ -10230,7 +10278,7 @@ public class Murabaha_Steps {
 				softAssert.assertTrue(input.isDisplayed(),"Year Of Manufacture field available under Asset Details section");
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 500) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -10239,7 +10287,7 @@ public class Murabaha_Steps {
 
 	@And("User_608 verify Asset Condition field available under Asset Details section in Asset Details screen")
 	public void user_608_verify_asset_condition_field_available_under_asset_details_section_in_asset_details_screen() throws Throwable {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 500; i++) {
 			try {
 				WebElement label = javascriptHelper
 						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetConditionLabel"));
@@ -10252,7 +10300,7 @@ public class Murabaha_Steps {
 				softAssert.assertTrue(dropdown.isDisplayed(),"Asset Condition field available under Asset Details section");
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 500) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -10261,7 +10309,7 @@ public class Murabaha_Steps {
 
 	@And("User_608 verify Asset Color field available under Asset Details section in Asset Details screen")
 	public void user_608_verify_asset_color_field_available_under_asset_details_section_in_asset_details_screen() throws Throwable {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 500; i++) {
 			try {
 				WebElement label = javascriptHelper
 						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("assetColorLabel"));
@@ -10274,7 +10322,7 @@ public class Murabaha_Steps {
 				softAssert.assertTrue(dropdown.isDisplayed(),"Asset Color field available under Asset Details section");
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 500) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -10283,7 +10331,7 @@ public class Murabaha_Steps {
 
 	@And("User_608 verify Drivetrine field available under Asset Details section in Asset Details screen")
 	public void user_608_verify_drivetrine_field_available_under_asset_details_section_in_asset_details_screen() throws Throwable {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 500; i++) {
 			try {
 				WebElement label = javascriptHelper
 						.executeScriptWithWebElement(assetDetailsJsPaths.getElement("drivetrainLabel"));
@@ -10296,7 +10344,7 @@ public class Murabaha_Steps {
 				softAssert.assertTrue(dropdown.isDisplayed(),"Drivetrine field available under Asset Details section");
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 500) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -12483,7 +12531,6 @@ public class Murabaha_Steps {
 			try {
 				WebElement element = javascriptHelper.executeScriptWithWebElement(
 						assetDetailsJsPaths.getElement("chasisNumberInput"));
-				element.click();
 				element.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 				element.sendKeys(testData.get("ChasisNbr"));
 				break;
@@ -12497,7 +12544,6 @@ public class Murabaha_Steps {
 			try {
 				WebElement element = javascriptHelper.executeScriptWithWebElement(
 						assetDetailsJsPaths.getElement("plateNumberInput"));
-				element.click();
 				element.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 				element.sendKeys(testData.get("PlateNbr"));
 				break;
@@ -12511,7 +12557,6 @@ public class Murabaha_Steps {
 			try {
 				WebElement element = javascriptHelper.executeScriptWithWebElement(
 						assetDetailsJsPaths.getElement("plateNbrArabicInput"));
-				element.click();
 				element.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 				element.sendKeys(testData.get("PlateNbr_Arabic"));
 				break;
@@ -12923,16 +12968,16 @@ public class Murabaha_Steps {
 	public void user_608_verify_values_in_list_view_should_be_non_editable_under_asset_details_tab() throws Throwable {
 //		String jspath = "document.querySelectorAll('table')[1].querySelectorAll('td p-celleditor')";
 		String length = null;
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 300; i++) {
 			try {
-				length = javascriptHelper.executeScript("return document.querySelectorAll('table')[1].querySelectorAll('td p-celleditor').length")
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
 						.toString();
-				System.out.println(length);
+//				System.out.println(length);
 				if (!length.isBlank() && !length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 299) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -12940,18 +12985,19 @@ public class Murabaha_Steps {
 		for (int i = 0; i < 500; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
-					String jspath = "document.querySelectorAll('table')[1].querySelectorAll('td p-celleditor')[" + j + "]";
-					javascriptHelper.backgroundBorder(javascriptHelper.executeScriptWithWebElement(jspath));
-					String title = "return document.querySelectorAll('table')[1].querySelectorAll('td p-celleditor')[" + j + "].isContentEditable";
-//					String result = javascriptHelper.executeScript(title).toString();
-//					System.out.println(result);					
-//					softAssert.assertTrue(result.contains("false"), "Asset details list view values are non editable");
-					WebElement field = javascriptHelper.executeScriptWithWebElement(title);
-					String output = field.getAttribute("readonly");
-					System.out.println("Out: "+ output);
-					javascriptHelper.backgroundBorder(field);
-					softAssert.assertNull(output,
-							"Listview values should be non editable under Asset Details section");
+					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains("Asset Details")) {
+						String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]"
+								+ ".parentElement.parentElement.querySelector('table').querySelectorAll('td p-celleditor')[1]";
+						WebElement field = javascriptHelper.executeScriptWithWebElement(jspath);
+						String output = field.getAttribute("readonly");
+						System.out.println("Out: "+ output);
+						javascriptHelper.backgroundBorder(field);
+						softAssert.assertNull(output,
+								"Listview values should be non editable under Asset Details section");
+						break;
+					}
 				}
 				break;
 			} catch (Exception e) {
@@ -12959,7 +13005,7 @@ public class Murabaha_Steps {
 					Assert.fail(e.getMessage());
 				}
 			}
-		}		
+		}	
 	}
 	
 	@And("User_608 verify the functionality of Add button under Asset Details tab")
@@ -12997,13 +13043,21 @@ public class Murabaha_Steps {
 					Assert.fail(e.getMessage());
 				}
 			}
-		}	    
+		}	
+		for (int i = 0; i <= 100; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("toastMsgCloseBtn")).click();				
+				break;
+			} catch (Exception e) {
+				
+			}
+		}
 	}
 
 	@And("User_608 click the Back button in Asset Details screen")
 	public void user_608_click_the_back_button_in_asset_details_screen() {
 		String length = null;
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
 						.toString();
@@ -13012,12 +13066,12 @@ public class Murabaha_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('form button')[" + j + "].getAttribute('ng-reflect-text')";
@@ -13032,7 +13086,7 @@ public class Murabaha_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -13042,7 +13096,7 @@ public class Murabaha_Steps {
 	@And("User_608 verify the functionality of Edit button under Asset Details tab")
 	public void user_608_verify_the_functionality_of_edit_button_under_asset_details_tab() {
 		String length = null;
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
 						.toString();
@@ -13051,12 +13105,12 @@ public class Murabaha_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
@@ -13070,11 +13124,19 @@ public class Murabaha_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
-		}	    
+		}
+		for (int i = 0; i <= 100; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("toastMsgCloseBtn")).click();				
+				break;
+			} catch (Exception e) {
+				
+			}
+		}
 	}
 	
 	

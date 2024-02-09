@@ -1,7 +1,7 @@
 Feature: To check the Tawarruq - Underwriter test cases
 
 @AT_TW_UNW_01
-Scenario: To verify the Underwriter stage below tabs should be display on screen
+Scenario: To verify the Tawarruq - Underwriter stage below tabs should be display on screen
 
 Given navigate the IJARA URL
 And login with valid credentials-Tawarruq Underwriter
@@ -22,7 +22,7 @@ And User_608 verify the Insurance Info tab is displayed in Underwriter
 And User_608 verify the Policy Check tab is displayed in Underwriter
 And User_608 verify the Document Details tab is displayed in Underwriter
 Then logout from the ijaraApplication
-
+And User_608 invoke soft assert in Tawarruq Underwriter stage Offer Decision tab
 
 @AT_TW_UNW_02
 Scenario: To verify Offer decision tab below sections should be display under offer decision tab. Below fields should be auto populated under decision section
@@ -50,6 +50,7 @@ And User_608 verify Decision field under Decision section in Offer Decision tab
 And User_608 select the Decision value as Accept\Reject under Decision section in Offer Decision tab
 And User_608 verify the Offer amount under Finance Configuration section in Offer Decision tab
 Then logout from the ijaraApplication
+And User_608 invoke soft assert in Tawarruq Underwriter stage Offer Decision tab
 
 @AT_TW_UNW_03
 Scenario: Below fields should be display under Facility details section & below fields should be auto populated under Finance configuration.
@@ -93,6 +94,7 @@ And User_608 verify the Recompute button available under Offer Decision screen
 And User_608 verify the Save button available under Offer Decision screen
 And User_608 verify the Offer button available under Offer Decision screen
 Then logout from the ijaraApplication
+And User_608 invoke soft assert in Tawarruq Underwriter stage Offer Decision tab
 
 @AT_TW_UNW_04
 Scenario: Recommendations/Sanction Conditions Approval History Details screen should get open & System should able to add new record.
@@ -116,6 +118,7 @@ And User_608 enter Date under Recommendation\Sanction Hyperlink screen
 And User_608 enter Remarks in Recommendation\Sanction Hyperlink screen
 And User_608 click the Save button under Recommendation\Sanction Hyperlink screen
 Then logout from the ijaraApplication
+And User_608 invoke soft assert in Tawarruq Underwriter stage Offer Decision tab
 
 @AT_TW_UNW_05
 Scenario: To verify the save button & Offer button under offer decision
@@ -138,6 +141,7 @@ And User_608 select the Decision value under Decision section in Offer Decision 
 And User_608 click the Offer button without selecting the Decision under Offer Decision tab
 And User_608 verify the validation messgage without selecting decision under Offer Decision tab
 Then logout from the ijaraApplication
+And User_608 invoke soft assert in Tawarruq Underwriter stage Offer Decision tab
 
 # Return the Record from offering to L1
 @Return
@@ -156,9 +160,10 @@ And User_608 select L1 Approval from dropdown in Return popup screen
 And User_608 enter the Remarks under Return popup screen
 And User_608 click the Return button under Return popup screen
 Then logout from the ijaraApplication
+And User_608 invoke soft assert in Tawarruq Underwriter stage Offer Decision tab
 
 @AT_TW_UNW_06
-Scenario: To verify the save button & Offer button under offer decision
+Scenario: To check whether underwriter is allowed to deviate on Offered Amount or not
 
 Given navigate the IJARA URL
 And login with valid credentials-Tawarruq Underwriter
@@ -181,9 +186,10 @@ And User_608 click the Pencil icon under Offer Decision tab
 And User_608 click the Deviate button under Offer Decision screen
 And User_608 to check whether underwriter is able to view the previous offers generated of the application if deviation is accepted
 Then logout from the ijaraApplication
+And User_608 invoke soft assert in Tawarruq Underwriter stage Offer Decision tab
 
 @AT_TW_UNW_07
-Scenario: To verify the save button & Offer button under offer decision
+Scenario: To verify the below tab system should populate all the data at this stage correctly & All data must be for display only
 
 Given navigate the IJARA URL
 And login with valid credentials-Tawarruq Underwriter
@@ -218,3 +224,4 @@ And User_608 verify the Policy Check tab in Underwriter stage
 And User_608 verify the Document Details tab in Underwriter stage
 #And User_608 click the Eye button under Document Details tab
 Then logout from the ijaraApplication
+And User_608 invoke soft assert in Tawarruq Underwriter stage Offer Decision tab

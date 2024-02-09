@@ -63,7 +63,8 @@ public class IJARAH_Steps {
 			"DataSet ID");
 	ExcelData contractSign_RepaymentModeExcelData = new ExcelData(excelTestDataPath, "Ijarah_CS_RepaymentMode",
 			"DataSet ID");
-
+	
+	ExcelData testExecution = new ExcelData(excelTestDataPath, "ULSExecution", "TestCase ID");
 	Map<String, String> testExecutionData;
 	Map<String, String> testData;
 
@@ -73,215 +74,246 @@ public class IJARAH_Steps {
 //	@AT_CUD_001
 	@And("^User_608 get the test data for test case AT_CUD_001$")
 	public void get_the_test_data_for_test_case_AT_CUD_001() throws Throwable {
-		testData = customerDebtExcelData.getTestdata("DS_AT_CUD_001");
+		testExecutionData = testExecution.getTestdata("AT_CUD_001");
+		testData = customerDebtExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 //	@AT_CUD_002
 	@And("^User_608 get the test data for test case AT_CUD_002$")
 	public void get_the_test_data_for_test_case_AT_CUD_002() throws Throwable {
-		testData = customerDebtExcelData.getTestdata("DS_AT_CUD_002");
+		testExecutionData = testExecution.getTestdata("AT_CUD_002");
+		testData = customerDebtExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 //	@AT_CUD_003
 	@And("^User_608 get the test data for test case AT_CUD_003$")
 	public void get_the_test_data_for_test_case_AT_CUD_003() throws Throwable {
-		testData = customerDebtExcelData.getTestdata("DS_AT_CUD_003");
+		testExecutionData = testExecution.getTestdata("AT_CUD_003");
+		testData = customerDebtExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 //	@AT_CUD_004
 	@And("^User_608 get the test data for test case AT_CUD_004$")
 	public void get_the_test_data_for_test_case_AT_CUD_004() throws Throwable {
-		testData = customerDebtExcelData.getTestdata("DS_AT_CUD_004");
+		testExecutionData = testExecution.getTestdata("AT_CUD_004");
+		testData = customerDebtExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 //	@AT_CUD_005
 	@And("^User_608 get the test data for test case AT_CUD_005$")
 	public void get_the_test_data_for_test_case_AT_CUD_005() throws Throwable {
-		testData = customerDebtExcelData.getTestdata("DS_AT_CUD_005");
+		testExecutionData = testExecution.getTestdata("AT_CUD_005");
+		testData = customerDebtExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 	
 //	@AT_CUD_006
 	@And("^User_608 get the test data for test case AT_CUD_006$")
 	public void get_the_test_data_for_test_case_AT_CUD_006() throws Throwable {
-		testData = customerDebtExcelData.getTestdata("DS_AT_CUD_006");
+		testExecutionData = testExecution.getTestdata("AT_CUD_006");
+		testData = customerDebtExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
+	
 //	Underwriter feature
 //	@AT_UNW_001_01
 	@And("^User_608 get the test data for test case AT_UNW_001_01$")
 	public void get_the_test_data_for_test_case_AT_UNW_001_01() throws Throwable {
-		testData = underWriterExcelData.getTestdata("DS_AT_UNW_001_01");
+		testExecutionData = testExecution.getTestdata("AT_UNW_001_01");
+		testData = underWriterExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 //	@AT_UNW_001_02
 	@And("^User_608 get the test data for test case AT_UNW_001_02$")
 	public void get_the_test_data_for_test_case_AT_UNW_001_02() throws Throwable {
-		testData = underWriterExcelData.getTestdata("DS_AT_UNW_001_02");
+		testExecutionData = testExecution.getTestdata("AT_UNW_001_02");
+		testData = underWriterExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 //	@AT_UNW_002
 	@And("^User_608 get the test data for test case AT_UNW_002$")
 	public void get_the_test_data_for_test_case_AT_UNW_002() throws Throwable {
-		testData = underWriterExcelData.getTestdata("DS_AT_UNW_002");
+		testExecutionData = testExecution.getTestdata("AT_UNW_002");
+		testData = underWriterExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 //	@AT_UNW_004
 	@And("^User_608 get the test data for test case AT_UNW_004$")
 	public void get_the_test_data_for_test_case_AT_UNW_004() throws Throwable {
-		testData = underWriterExcelData.getTestdata("DS_AT_UNW_004");
+		testExecutionData = testExecution.getTestdata("AT_UNW_004");
+		testData = underWriterExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 //	@AT_UNW_003 --> Underwriter -Arul
 	@And("^User_608 get the test data for test case AT_UNW_003$")
 	public void get_the_test_data_for_test_case_AT_UNW_003() throws Throwable {
-		testData = underWriterExcelData.getTestdata("DS_AT_UNW_003");
+		testExecutionData = testExecution.getTestdata("AT_UNW_003");
+		testData = underWriterExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 //	@AT_UNW_006 --> Underwriter - Karthi
 	@And("^User_608 get the test data for test case AT_UNW_006$")
 	public void get_the_test_data_for_test_case_AT_UNW_006() throws Throwable {
-		testData = underWriterExcelData.getTestdata("DS_AT_UNW_006");
-	}
+		testExecutionData = testExecution.getTestdata("AT_UNW_006");
+		testData = underWriterExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
+	}	
 
 //	App Data Check -- Income
 	@And("^User_608 get the test data for test case AT_INCD_01$")
 	public void get_the_test_data_for_test_case_AT_INCD_01() throws Throwable {
-		testData = dataCheck_IncomeExcelData.getTestdata("DS_AT_INCD_01");
+		testExecutionData = testExecution.getTestdata("AT_INCD_01");
+		testData = dataCheck_IncomeExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 	@And("^User_608 get the test data for test case AT_INCD_02$")
 	public void get_the_test_data_for_test_case_AT_INCD_02() throws Throwable {
-		testData = dataCheck_IncomeExcelData.getTestdata("DS_AT_INCD_02");
+		testExecutionData = testExecution.getTestdata("AT_INCD_02");
+		testData = dataCheck_IncomeExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 	@And("^User_608 get the test data for test case AT_INCD_03$")
 	public void get_the_test_data_for_test_case_AT_INCD_03() throws Throwable {
-		testData = dataCheck_IncomeExcelData.getTestdata("DS_AT_INCD_03");
+		testExecutionData = testExecution.getTestdata("AT_INCD_03");
+		testData = dataCheck_IncomeExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 	@And("^User_608 get the test data for test case AT_INCD_04$")
 	public void get_the_test_data_for_test_case_AT_INCD_04() throws Throwable {
-		testData = dataCheck_IncomeExcelData.getTestdata("DS_AT_INCD_04");
+		testExecutionData = testExecution.getTestdata("AT_INCD_04");
+		testData = dataCheck_IncomeExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 	@And("^User_608 get the test data for test case AT_INCD_05$")
 	public void get_the_test_data_for_test_case_AT_INCD_05() throws Throwable {
-		testData = dataCheck_IncomeExcelData.getTestdata("DS_AT_INCD_05");
+		testExecutionData = testExecution.getTestdata("AT_INCD_05");
+		testData = dataCheck_IncomeExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 	@And("^User_608 get the test data for test case AT_INCD_06$")
 	public void get_the_test_data_for_test_case_AT_INCD_06() throws Throwable {
-		testData = dataCheck_IncomeExcelData.getTestdata("DS_AT_INCD_06");
+		testExecutionData = testExecution.getTestdata("AT_INCD_06");
+		testData = dataCheck_IncomeExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 //	App Data Check -- Application Details
 	@And("^User_608 get the test data for test case AT_ADC_01$")
 	public void get_the_test_data_for_test_case_AT_ADC_01() throws Throwable {
-		testData = dataCheck_ApplicationDetailsExcelData.getTestdata("DS_AT_ADC_01");
+		testExecutionData = testExecution.getTestdata("AT_ADC_01");
+		testData = dataCheck_ApplicationDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 	@And("^User_608 get the test data for test case AT_ADC_02$")
 	public void get_the_test_data_for_test_case_AT_ADC_02() throws Throwable {
-		testData = dataCheck_ApplicationDetailsExcelData.getTestdata("DS_AT_ADC_02");
+		testExecutionData = testExecution.getTestdata("AT_ADC_02");
+		testData = dataCheck_ApplicationDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 	@And("^User_608 get the test data for test case AT_ADC_03$")
 	public void get_the_test_data_for_test_case_AT_ADC_03() throws Throwable {
-		testData = dataCheck_ApplicationDetailsExcelData.getTestdata("DS_AT_ADC_03");
+		testExecutionData = testExecution.getTestdata("AT_ADC_03");
+		testData = dataCheck_ApplicationDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 	@And("^User_608 get the test data for test case AT_ADC_05$")
 	public void get_the_test_data_for_test_case_AT_ADC_05() throws Throwable {
-		testData = dataCheck_ApplicationDetailsExcelData.getTestdata("DS_AT_ADC_05");
+		testExecutionData = testExecution.getTestdata("AT_ADC_05");
+		testData = dataCheck_ApplicationDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 	@And("^User_608 get the test data for test case AT_ADC_06$")
 	public void get_the_test_data_for_test_case_AT_ADC_06() throws Throwable {
-		testData = dataCheck_ApplicationDetailsExcelData.getTestdata("DS_AT_ADC_06");
+		testExecutionData = testExecution.getTestdata("AT_ADC_06");
+		testData = dataCheck_ApplicationDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 //	Offering Stage -- Offer Details tab
 	@And("^User_608 get the test data for test case AT_OFO_01$")
 	public void get_the_test_data_for_test_case_AT_OFO_01() throws Throwable {
-		testData = offering_OfferDetailsExcelData.getTestdata("DS_AT_OFO_01");
+		testExecutionData = testExecution.getTestdata("AT_OFO_01");
+		testData = offering_OfferDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 	@And("^User_608 get the test data for test case AT_OFO_02$")
 	public void get_the_test_data_for_test_case_AT_OFO_02() throws Throwable {
-		testData = offering_OfferDetailsExcelData.getTestdata("DS_AT_OFO_02");
+		testExecutionData = testExecution.getTestdata("AT_OFO_02");
+		testData = offering_OfferDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 	@And("^User_608 get the test data for test case AT_OFO_03$")
 	public void get_the_test_data_for_test_case_AT_OFO_03() throws Throwable {
-		testData = offering_OfferDetailsExcelData.getTestdata("DS_AT_OFO_03");
+		testExecutionData = testExecution.getTestdata("AT_OFO_03");
+		testData = offering_OfferDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 	@And("^User_608 get the test data for test case AT_OFO_04$")
 	public void get_the_test_data_for_test_case_AT_OFO_04() throws Throwable {
-		testData = offering_OfferDetailsExcelData.getTestdata("DS_AT_OFO_04");
+		testExecutionData = testExecution.getTestdata("AT_OFO_04");
+		testData = offering_OfferDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 	@And("^User_608 get the test data for test case AT_OFO_05$")
 	public void get_the_test_data_for_test_case_AT_OFO_05() throws Throwable {
-		testData = offering_OfferDetailsExcelData.getTestdata("DS_AT_OFO_05");
+		testExecutionData = testExecution.getTestdata("AT_OFO_05");
+		testData = offering_OfferDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 	@And("^User_608 get the test data for test case AT_OFO_06$")
 	public void get_the_test_data_for_test_case_AT_OFO_06() throws Throwable {
-		testData = offering_OfferDetailsExcelData.getTestdata("DS_AT_OFO_06");
+		testExecutionData = testExecution.getTestdata("AT_OFO_06");
+		testData = offering_OfferDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 //	Contract Signing -- Application Details Tab
 	@And("^User_608 get the test data for test case AT_CSAD_01$")
 	public void get_the_test_data_for_test_case_AT_CSAD_01() throws Throwable {
-		testData = contractSign_ApplicationDetailsExcelData.getTestdata("DS_AT_CSAD_01");
+		testExecutionData = testExecution.getTestdata("AT_CSAD_01");
+		testData = contractSign_ApplicationDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 	@And("^User_608 get the test data for test case AT_CSAD_02$")
 	public void get_the_test_data_for_test_case_AT_CSAD_02() throws Throwable {
-		testData = contractSign_ApplicationDetailsExcelData.getTestdata("DS_AT_CSAD_02");
+		testExecutionData = testExecution.getTestdata("AT_CSAD_02");
+		testData = contractSign_ApplicationDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 	@And("^User_608 get the test data for test case AT_CSAD_03$")
 	public void get_the_test_data_for_test_case_AT_CSAD_03() throws Throwable {
-		testData = contractSign_ApplicationDetailsExcelData.getTestdata("DS_AT_CSAD_03");
+		testExecutionData = testExecution.getTestdata("AT_CSAD_03");
+		testData = contractSign_ApplicationDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 	@And("^User_608 get the test data for test case AT_CSAD_04$")
 	public void get_the_test_data_for_test_case_AT_CSAD_04() throws Throwable {
-		testData = contractSign_ApplicationDetailsExcelData.getTestdata("DS_AT_CSAD_04");
+		testExecutionData = testExecution.getTestdata("AT_CSAD_04");
+		testData = contractSign_ApplicationDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 	@And("^User_608 get the test data for test case AT_CSAD_05$")
 	public void get_the_test_data_for_test_case_AT_CSAD_05() throws Throwable {
-		testData = contractSign_ApplicationDetailsExcelData.getTestdata("DS_AT_CSAD_05");
+		testExecutionData = testExecution.getTestdata("AT_CSAD_05");
+		testData = contractSign_ApplicationDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 
 //	Contract Signing -- Repayment mode Tab
 	@And("^User_608 get the test data for test case AT_CS_RDC_01$")
 	public void get_the_test_data_for_test_case_AT_CS_RDC_01() throws Throwable {
-		testData = contractSign_RepaymentModeExcelData.getTestdata("DS_AT_CS_RDC_01");
+		testExecutionData = testExecution.getTestdata("AT_CS_RDC_01");
+		testData = contractSign_RepaymentModeExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 	
 	@And("^User_608 get the test data for test case AT_CS_RDC_02$")
 	public void get_the_test_data_for_test_case_AT_CS_RDC_02() throws Throwable {
-		testData = contractSign_RepaymentModeExcelData.getTestdata("DS_AT_CS_RDC_02");
+		testExecutionData = testExecution.getTestdata("AT_CS_RDC_02");
+		testData = contractSign_RepaymentModeExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 	
-	
-	
-	
-	
-	
-	
-	
+		
 	@And("User_608 click the module name dropdown in ULS application")
 	public void user_608_click_the_module_name_dropdown_in_uls_application() throws Throwable {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				WebElement element = javascriptHelper.executeScriptWithWebElement(
 						customerDebtJsPaths.getElement("moduleNameDropdown"));
-				javascriptHelper.JSEClick(element);
+				element.click();
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -332,14 +364,14 @@ public class IJARAH_Steps {
 
 	@And("User_608 click the Mail box in ULS application")
 	public void user_608_click_the_mail_box_in_uls_application() throws Throwable {
-		for (int i = 0; i <= 50000; i++) {
+		for (int i = 0; i <= 500; i++) {
 			try {
 				WebElement element = javascriptHelper.executeScriptWithWebElement(
 						customerDebtJsPaths.getElement("mailBox"));
-				javascriptHelper.JSEClick(element);
+				element.click();
 				break;
 			} catch (Exception e) {
-				if (i == 50000) {
+				if (i == 500) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -352,7 +384,7 @@ public class IJARAH_Steps {
 			try {
 				WebElement element = javascriptHelper.executeScriptWithWebElement(
 						customerDebtJsPaths.getElement("mailInboxSearchBtn"));
-				javascriptHelper.JSEClick(element);
+				element.click();
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -438,7 +470,7 @@ public class IJARAH_Steps {
 						System.out.println("condition true");
 						String jspath = "document.querySelectorAll('ion-segment-button')[" + j + "]";
 						WebElement tab = javascriptHelper.executeScriptWithWebElement(jspath);
-						javascriptHelper.JSEClick(tab);
+						tab.click();
 						break;
 					}
 				}
@@ -453,41 +485,94 @@ public class IJARAH_Steps {
 
 	@And("User_608 click the pencil icon under Customer Financials tab")
 	public void user_608_click_the_pencil_icon_under_customer_financials_tab() throws Throwable {
-		String length = null;
-		for (int i = 0; i < 5000; i++) {
+		String listOfRecords = "document.querySelector('button[icon=\"pi pi-plus\"]').parentElement.parentElement.parentElement.parentElement.querySelectorAll('td').length";
+		String listOfEyeBtn = "";
+		String recordName = "";
+		boolean isEyeBtnClicked = false;
+		for (int i = 0; i <= 500; i++) {
 			try {
-				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
-						.toString();
-				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0")) {
+				listOfEyeBtn = javascriptHelper.executeScript("return " + listOfRecords).toString();
+				System.out.println("List of add button " + listOfEyeBtn);
+				if (!(listOfEyeBtn.isBlank())) {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 500) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 5000; i++) {
-			try {
-				for (int j = 0; j < Integer.parseInt(length); j++) {
-					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
-					String titlename = javascriptHelper.executeScript(title).toString();			
-					if (titlename.trim().contains("Customer Personal Information")) {
-						String jspath = "document.querySelectorAll('button[icon=\"pi pi-pencil\"]')[" + j + "]";
-						WebElement pencilBtn = javascriptHelper.executeScriptWithWebElement(jspath);
-						javascriptHelper.backgroundBorder(pencilBtn);
-						pencilBtn.click();
-						break;
+		
+		int premitiveListOfEyeButton = Integer.parseInt(listOfEyeBtn);
+		for (int j = 0; j < premitiveListOfEyeButton; j++) {
+			for (int k = 0; k <= 100; k++) {
+				try {
+					recordName = javascriptHelper.executeScript(
+							"return document.querySelector('button[icon=\"pi pi-plus\"]').parentElement.parentElement.parentElement.parentElement.querySelectorAll('td')["
+									+ j + "].textContent")
+							.toString();
+					System.out.println("Screen Name " + recordName);
+					if (!(recordName.isBlank())) {
+						System.out.println("Screen Name" + recordName + " is Not null");
+						if ((recordName.trim()).equalsIgnoreCase(("Active").trim())) {
+							System.out.println("Inside nested loop");
+							javascriptHelper.backgroundColor(
+									javascriptHelper
+									.executeScriptWithWebElement(
+											"document.querySelector('button[icon=\"pi pi-plus\"]').parentElement.parentElement.parentElement.parentElement.querySelectorAll('td')[" + j + "].parentElement.querySelector('button')"));
+							javascriptHelper
+									.executeScriptWithWebElement(
+											"document.querySelector('button[icon=\"pi pi-plus\"]').parentElement.parentElement.parentElement.parentElement.querySelectorAll('td')[" + j + "].parentElement.querySelector('button')")
+									.click();
+							isEyeBtnClicked = true;
+							break;
+						}
+					}
+				} catch (Exception e) {
+					if (k == 100) {
+						Assert.fail(e.getMessage());
 					}
 				}
+			}
+			if (isEyeBtnClicked == true) {
 				break;
-			} catch (Exception e) {
-				if (i == 4999) {
-					Assert.fail(e.getMessage());
-				}
 			}
 		}
+//		String length = null;
+//		for (int i = 0; i < 500; i++) {
+//			try {
+//				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+//						.toString();
+//				System.out.println(length);
+//				if (!length.isBlank() && !length.equals("0")) {
+//					break;
+//				}
+//			} catch (Exception e) {
+//				if (i == 499) {
+//					Assert.fail(e.getMessage());
+//				}
+//			}
+//		}
+//		for (int i = 0; i < 500; i++) {
+//			try {
+//				for (int j = 0; j < Integer.parseInt(length); j++) {
+//					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+//					String titlename = javascriptHelper.executeScript(title).toString();			
+//					if (titlename.trim().contains("Customer Personal Information")) {
+//						String jspath = "document.querySelectorAll('button[icon=\"pi pi-pencil\"]')[" + (j) + "]";
+//						WebElement pencilBtn = javascriptHelper.executeScriptWithWebElement(jspath);
+//						javascriptHelper.backgroundBorder(pencilBtn);
+//						pencilBtn.click();
+//						break;
+//					}
+//				}
+//				break;
+//			} catch (Exception e) {
+//				if (i == 499) {
+//					Assert.fail(e.getMessage());
+//				}
+//			}
+//		}
 	}
 
 	@And("User_608 click Add button in Financial Commitments under Customer Financials tab")
@@ -545,16 +630,16 @@ public class IJARAH_Steps {
 	}
 
 	@And("User_608 validate the Customer Debt screen is available in Financial Commitments")
-	public void user_608_validate_the_customer_debt_screen_is_available_in_financial_commitments() throws Throwable {
-		WebElement customerDebtDetailsScreen = javascriptHelper
-				.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerDebtDetailsScreen"));
-		for (int i = 0; i <= 200000; i++) {
+	public void user_608_validate_the_customer_debt_screen_is_available_in_financial_commitments() throws Throwable {		
+		for (int i = 0; i <= 500; i++) {
 			try {
+				WebElement customerDebtDetailsScreen = javascriptHelper
+						.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerDebtDetailsScreen"));
 				javascriptHelper.backgroundColor(customerDebtDetailsScreen);
 				softAssert.assertTrue(customerDebtDetailsScreen.isDisplayed(), "Customer Debt screen should be displayed");
 				break;
 			} catch (Exception e) {
-				if (i == 200000) {
+				if (i == 500) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -563,39 +648,15 @@ public class IJARAH_Steps {
 
 	@And("User_608 validate the Save button available in Customer Debt screen")
 	public void user_608_validate_the_save_button_available_in_customer_debt_screen() throws Throwable {
-		String length = null;
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i <= 2000; i++) {
 			try {
-				length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
-						.toString();
-				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0")) {
-					break;
-				}
-			} catch (Exception e) {
-				if (i == 4999) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-		for (int i = 0; i < 5000; i++) {
-			try {
-				for (int j = 0; j < Integer.parseInt(length); j++) {
-					String title = "return document.querySelectorAll('form button')[" + j + "].getAttribute('ng-reflect-text')";
-					String titlename = javascriptHelper.executeScript(title).toString();
-					System.out.println(titlename);
-					if (titlename.trim().contains("Save")) {
-						System.out.println("condition true");
-						String jspath = "document.querySelectorAll('form button')[" + j + "]";
-						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
-						javascriptHelper.backgroundBorder(btn);
-						softAssert.assertTrue(btn.isDisplayed(),"Save button should be displayed in Customer Debt screen");
-						break;
-					}
-				}
+				WebElement btn = javascriptHelper.executeScriptWithWebElement(
+						customerDebtJsPaths.getElement("customerDebtSaveBtn"));
+				javascriptHelper.backgroundBorder(btn);		
+				softAssert.assertTrue(btn.isDisplayed(), "Save button displayed under Customer Debt screen");
 				break;
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 2000) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -604,39 +665,16 @@ public class IJARAH_Steps {
 
 	@And("User_608 validate the Update button available in Customer Debt screen")
 	public void user_608_validate_the_update_button_available_in_customer_debt_screen() throws Throwable {
-		String length = null;
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i <= 2000; i++) {
 			try {
-				length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
-						.toString();
-				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0")) {
-					break;
-				}
-			} catch (Exception e) {
-				if (i == 4999) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-		for (int i = 0; i < 5000; i++) {
-			try {
-				for (int j = 0; j < Integer.parseInt(length); j++) {
-					String title = "return document.querySelectorAll('form button')[" + j + "].getAttribute('ng-reflect-text')";
-					String titlename = javascriptHelper.executeScript(title).toString();
-					System.out.println(titlename);
-					if (titlename.trim().contains("Update")) {
-						System.out.println("condition true");
-						String jspath = "document.querySelectorAll('form button')[" + j + "]";
-						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
-						javascriptHelper.backgroundBorder(btn);
-						softAssert.assertTrue(btn.isDisplayed(),"Update button should be displayed in Customer Debt screen");
-						break;
-					}
-				}
+				WebElement btn = javascriptHelper.executeScriptWithWebElement(
+						customerDebtJsPaths.getElement("customerDebtUpdateBtn"));
+				actions.moveToElement(btn).build().perform();
+				javascriptHelper.backgroundBorder(btn);	
+				softAssert.assertTrue(btn.isDisplayed(), "Update button displayed under Customer Debt screen");				
 				break;
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 2000) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1729,25 +1767,15 @@ public class IJARAH_Steps {
 
 	@When("User_608 click the Save button in Customer Debt screen")
 	public void user_608_click_the_save_button_in_customer_debt_screen() throws Throwable {
-		WebElement pageTop = javascriptHelper
-				.executeScriptWithWebElement("document.querySelector('[ng-reflect-layout=\"COMPACT\"]')");
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <= 2000; i++) {
 			try {
-				javascriptHelper.scrollIntoView(pageTop);
+				WebElement btn = javascriptHelper.executeScriptWithWebElement(
+						customerDebtJsPaths.getElement("customerDebtSaveBtn"));
+				actions.scrollToElement(btn).build().perform();
+				btn.click();
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-		for (int i = 0; i <= 1000; i++) {
-			try {
-				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerDebtSaveBtn"))
-						.click();
-				break;
-			} catch (Exception e) {
-				if (i == 1000) {
+				if (i == 2000) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2009,25 +2037,15 @@ public class IJARAH_Steps {
 
 	@And("User_608 Update the record with mandatory field blank in Customer Debt screen")
 	public void user_608_update_the_record_with_mandatory_field_blank_in_customer_debt_screen() throws Throwable {
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <= 2000; i++) {
 			try {
-				WebElement pageTop = javascriptHelper
-						.executeScriptWithWebElement("document.querySelector('[ng-reflect-layout=\"COMPACT\"]')");
-				javascriptHelper.scrollIntoView(pageTop);
+				WebElement btn = javascriptHelper.executeScriptWithWebElement(
+						customerDebtJsPaths.getElement("customerDebtUpdateBtn"));
+				actions.scrollToElement(btn).build().perform();
+				btn.click();				
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-		for (int i = 0; i <= 1000; i++) {
-			try {
-				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerDebtUpdateBtn"))
-						.click();
-				break;
-			} catch (Exception e) {
-				if (i == 1000) {
+				if (i == 2000) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2036,25 +2054,15 @@ public class IJARAH_Steps {
 	
 	@When("User_608 click the Update button with invalid data in Customer Debt screen")
 	public void user_608_click_the_update_button_with_invalid_data_in_customer_debt_screen() throws Throwable {
-		WebElement pageTop = javascriptHelper
-				.executeScriptWithWebElement("document.querySelector('[ng-reflect-layout=\"COMPACT\"]')");
-		for (int i = 0; i <= 5000; i++) {
+		for (int i = 0; i <= 2000; i++) {
 			try {
-				javascriptHelper.scrollIntoView(pageTop);
+				WebElement btn = javascriptHelper.executeScriptWithWebElement(
+						customerDebtJsPaths.getElement("customerDebtUpdateBtn"));
+				actions.scrollToElement(btn).build().perform();
+				btn.click();				
 				break;
 			} catch (Exception e) {
-				if (i == 5000) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-		for (int i = 0; i <= 1000; i++) {
-			try {
-				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerDebtUpdateBtn"))
-						.click();
-				break;
-			} catch (Exception e) {
-				if (i == 1000) {
+				if (i == 2000) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2063,25 +2071,15 @@ public class IJARAH_Steps {
 	
 	@When("User_608 click the Update button with valid data in Customer Debt screen")
 	public void user_608_click_the_update_button_with_valid_data_in_customer_debt_screen() throws Throwable {
-		WebElement pageTop = javascriptHelper
-				.executeScriptWithWebElement("document.querySelector('[ng-reflect-layout=\"COMPACT\"]')");
-		for (int i = 0; i <= 5000; i++) {
+		for (int i = 0; i <= 2000; i++) {
 			try {
-				javascriptHelper.scrollIntoView(pageTop);
+				WebElement btn = javascriptHelper.executeScriptWithWebElement(
+						customerDebtJsPaths.getElement("customerDebtUpdateBtn"));
+				actions.scrollToElement(btn).build().perform();
+				btn.click();				
 				break;
 			} catch (Exception e) {
-				if (i == 5000) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-		for (int i = 0; i <= 1000; i++) {
-			try {
-				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerDebtUpdateBtn"))
-						.click();
-				break;
-			} catch (Exception e) {
-				if (i == 1000) {
+				if (i == 2000) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2090,38 +2088,25 @@ public class IJARAH_Steps {
 
 	@When("User_608 click the Update button in Customer Debt screen")
 	public void user_608_click_the_update_button_in_customer_debt_screen() throws Throwable {
-		WebElement pageTop = javascriptHelper
-				.executeScriptWithWebElement("document.querySelector('[ng-reflect-layout=\"COMPACT\"]')");
-		for (int i = 0; i <= 5000; i++) {
+		for (int i = 0; i <= 2000; i++) {
 			try {
-				javascriptHelper.scrollIntoView(pageTop);
+				WebElement btn = javascriptHelper.executeScriptWithWebElement(
+						customerDebtJsPaths.getElement("customerDebtUpdateBtn"));
+				actions.scrollToElement(btn).build().perform();
+				btn.click();				
 				break;
 			} catch (Exception e) {
-				if (i == 5000) {
+				if (i == 2000) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 		for (int i = 0; i <= 1000; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerDebtUpdateBtn"))
-						.click();
+				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("alertCloseBtn")).click();
 				break;
 			} catch (Exception e) {
 				if (i == 1000) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-		for (int i = 0; i <= 500; i++) {
-			try {
-				softAssert.assertTrue(javascriptHelper
-						.executeScriptWithWebElement(customerDebtJsPaths.getElement("successMsg")).isDisplayed());
-				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("toastMsgCloseBtn"))
-						.click();
-				break;
-			} catch (Exception e) {
-				if (i == 500) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2132,7 +2117,7 @@ public class IJARAH_Steps {
 	@And("User_608 verify the Offer Decision tab is displayed in Underwriter")
 	public void user_608_verify_the_offer_decision_tab_is_displayed_in_underwriter() throws Throwable {		
 		String length = null;
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button ion-label').length")
 						.toString();
@@ -2141,7 +2126,7 @@ public class IJARAH_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2948,11 +2933,12 @@ public class IJARAH_Steps {
 				}
 			}
 		}
-		WebElement decision_ApprovalLevel = javascriptHelper
-				.executeScriptWithWebElement(underWriterJsPaths.getElement("decision_ApprovalLevel"));
-		System.out.println("Field Name: " + decision_ApprovalLevel.getText());
+		
 		for (int i = 0; i <= 1000; i++) {
 			try {
+				WebElement decision_ApprovalLevel = javascriptHelper
+						.executeScriptWithWebElement(underWriterJsPaths.getElement("decision_ApprovalLevel"));
+				System.out.println("Field Name: " + decision_ApprovalLevel.getText());
 				javascriptHelper.backgroundColor(decision_ApprovalLevel);
 				softAssert.assertTrue(decision_ApprovalLevel.isDisplayed(),
 						"Verify Approval level field available under Decision section in Offer Decision tab");
@@ -3070,7 +3056,6 @@ public class IJARAH_Steps {
 		int targetValue = 1000000;
 		if (Integer.parseInt(offerAmt) < targetValue) {
 			softAssert.assertEquals("LEVEL1", approveValue);
-//			Assert.assertEquals("LEVEL1", approveValue);
 		} else {
 			System.out.println("Offer amount Greater than targer value");
 		}
@@ -3089,7 +3074,6 @@ public class IJARAH_Steps {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
 						"document.querySelectorAll('ion-select[ng-reflect-interface=\"popover\"]')[3]").click();
-//				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("decision_DecisionDropdown")).click();
 				break;
 			} catch (Exception e) {
 				if (i == 1000) {
@@ -3097,68 +3081,38 @@ public class IJARAH_Steps {
 				}
 			}
 		}
-		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-item').length";
-		String dropdownLength = "";
-		boolean isDropdownValueSelected = false;
-		String dropdownString = "";
-		for (int i = 0; i <= 300; i++) {
+		String length = null;
+		for (int i = 0; i < 500; i++) {
 			try {
-				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
-				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio-group ion-label').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 300) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
-		for (int j = 0; j <= premitiveDropdownLength; j++) {
-			for (int l = 0; l <= 300; l++) {
-				try {
-					System.out.println("L value is " + l);
-					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
-					dropdownString = javascriptHelper.executeScript(
-							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
-							.toString();
-					if (!(dropdownString.isEmpty())) {
-						System.out.println(dropdownString);
-						System.out.println("Loop count " + l + " got breaked");
+		for (int i = 0; i < 500; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains(testData.get("Decision Dropdown"))) {
+						String jspath = "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.moveToElement(btn).click().build().perform();
 						break;
 					}
-				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
-						Assert.fail(e.getMessage());
-					}
 				}
-				if (!(dropdownString.isEmpty())) {
-					System.out.println(dropdownString);
-					System.out.println("Loop count " + l + " got breaked");
-					break;
-				}
-			}
-			System.out.println("String " + dropdownString.trim());
-			System.out.println("Map " + testData.get("Decision Dropdown").trim());
-			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("Decision Dropdown")).trim())) {
-				for (int k = 0; k <= 300; k++) {
-					try {
-						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
-								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
-								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-						isDropdownValueSelected = true;
-						break;
-					} catch (Exception e) {
-						if (k == 300) {
-							Assert.fail(e.getMessage());
-						}
-					}
-				}
-			}
-			if (isDropdownValueSelected == true) {
 				break;
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
 			}
 		}
 	}
@@ -4096,10 +4050,10 @@ public class IJARAH_Steps {
 
 	@And("User_608 verify the Recompute button available under Offer Decision screen")
 	public void user_608_verify_the_recompute_button_available_under_offer_decision_screen() throws Throwable {
-		WebElement offer_RecomputeBtn = javascriptHelper
-				.executeScriptWithWebElement(underWriterJsPaths.getElement("offer_RecomputeBtn"));
 		for (int i = 0; i <= 500; i++) {
 			try {
+				WebElement offer_RecomputeBtn = javascriptHelper
+						.executeScriptWithWebElement(underWriterJsPaths.getElement("offer_RecomputeBtn"));
 				javascriptHelper.backgroundBorder(offer_RecomputeBtn);
 				Assert.assertTrue(offer_RecomputeBtn.isDisplayed());
 				break;
@@ -4182,7 +4136,6 @@ public class IJARAH_Steps {
 				}
 			}
 		}
-
 	}
 
 	@And("User_608 click the Offer button after selecting the Decision under Offer Decision tab")
@@ -4247,68 +4200,39 @@ public class IJARAH_Steps {
 				}
 			}
 		}
-		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-item').length";
-		String dropdownLength = "";
-		boolean isDropdownValueSelected = false;
-		String dropdownString = "";
-		for (int i = 0; i <= 300; i++) {
+		String length = null;
+		for (int i = 0; i < 5000; i++) {
 			try {
-				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
-				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio-group ion-label').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 300) {
+				if (i == 4999) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
-		for (int j = 0; j <= premitiveDropdownLength; j++) {
-			for (int l = 0; l <= 300; l++) {
-				try {
-					System.out.println("L value is " + l);
-					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
-					dropdownString = javascriptHelper.executeScript(
-							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
-							.toString();
-					if (!(dropdownString.isEmpty())) {
-						System.out.println(dropdownString);
-						System.out.println("Loop count " + l + " got breaked");
+		for (int i = 0; i < 5000; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println("Option: "+titlename);				
+					if (titlename.trim().equalsIgnoreCase(testData.get("Decision Dropdown1"))) {
+						String jspath = "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.moveToElement(btn).click().build().perform();
 						break;
 					}
-				} catch (Exception e) {
-					if (l == 300 && !(dropdownString.isBlank())) {
-						Assert.fail(e.getMessage());
-					}
 				}
-				if (!(dropdownString.isEmpty())) {
-					System.out.println(dropdownString);
-					System.out.println("Loop count " + l + " got breaked");
-					break;
-				}
-			}
-			System.out.println("String " + dropdownString.trim());
-//			System.out.println("Map " + "Select".trim());
-			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("Decision Dropdown1")).trim())) {
-				for (int k = 0; k <= 300; k++) {
-					try {
-						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
-								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
-								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-						isDropdownValueSelected = true;
-						break;
-					} catch (Exception e) {
-						if (k == 300) {
-							Assert.fail(e.getMessage());
-						}
-					}
-				}
-			}
-			if (isDropdownValueSelected == true) {
 				break;
+			} catch (Exception e) {
+				if (i == 4999) {
+					Assert.fail(e.getMessage());
+				}
 			}
 		}
 	}
@@ -4762,14 +4686,12 @@ public class IJARAH_Steps {
 	public void user_608_verify_the_approve_button_under_application_details() throws Throwable {
 		for (int i = 0; i < 2000; i++) {
 			try {
-				actions.scrollToElement(javascriptHelper
-						.executeScriptWithWebElement(underWriterJsPaths.getElement("appDetailsApproveBtn"))).build()
+				WebElement btn = javascriptHelper
+				.executeScriptWithWebElement(underWriterJsPaths.getElement("appDetailsApproveBtn"));
+				actions.scrollToElement(btn).build()
 						.perform();
-				javascriptHelper.backgroundBorder(javascriptHelper
-						.executeScriptWithWebElement(underWriterJsPaths.getElement("appDetailsApproveBtn")));
-				Assert.assertTrue(javascriptHelper
-						.executeScriptWithWebElement(underWriterJsPaths.getElement("appDetailsApproveBtn"))
-						.isDisplayed());
+				javascriptHelper.backgroundBorder(btn);
+				softAssert.assertTrue(btn.isDisplayed(), "Approve button displayed under Application Details");
 				break;
 			} catch (Exception e) {
 				if (i == 1999) {
@@ -4784,11 +4706,10 @@ public class IJARAH_Steps {
 	public void user_608_verify_the_reject_button_under_application_details() throws Throwable {
 		for (int i = 0; i < 200; i++) {
 			try {
-				javascriptHelper.backgroundBorder(javascriptHelper
-						.executeScriptWithWebElement(underWriterJsPaths.getElement("appDetailsRejectBtn")));
-				Assert.assertTrue(javascriptHelper
-						.executeScriptWithWebElement(underWriterJsPaths.getElement("appDetailsRejectBtn"))
-						.isDisplayed());
+				WebElement btn = javascriptHelper
+						.executeScriptWithWebElement(underWriterJsPaths.getElement("appDetailsRejectBtn"));
+				javascriptHelper.backgroundBorder(btn);
+				softAssert.assertTrue(btn.isDisplayed(), "Reject button displayed under Application Details");
 				break;
 			} catch (Exception e) {
 				if (i == 199) {
@@ -4803,11 +4724,10 @@ public class IJARAH_Steps {
 	public void user_608_verify_the_return_button_under_application_details() throws Throwable {
 		for (int i = 0; i < 200; i++) {
 			try {
-				javascriptHelper.backgroundBorder(javascriptHelper
-						.executeScriptWithWebElement(underWriterJsPaths.getElement("appDetailsReturnBtn")));
-				Assert.assertTrue(javascriptHelper
-						.executeScriptWithWebElement(underWriterJsPaths.getElement("appDetailsReturnBtn"))
-						.isDisplayed());
+				WebElement btn = javascriptHelper
+						.executeScriptWithWebElement(underWriterJsPaths.getElement("appDetailsReturnBtn"));
+				javascriptHelper.backgroundBorder(btn);
+				softAssert.assertTrue(btn.isDisplayed(), "Return button displayed under Application Details");
 				break;
 			} catch (Exception e) {
 				if (i == 199) {
@@ -4822,11 +4742,10 @@ public class IJARAH_Steps {
 	public void user_608_verify_the_view_summary_button_under_application_details() throws Throwable {
 		for (int i = 0; i < 200; i++) {
 			try {
-				javascriptHelper.backgroundBorder(javascriptHelper
-						.executeScriptWithWebElement(underWriterJsPaths.getElement("appDetailsViewSummaryBtn")));
-				Assert.assertTrue(javascriptHelper
-						.executeScriptWithWebElement(underWriterJsPaths.getElement("appDetailsViewSummaryBtn"))
-						.isDisplayed());
+				WebElement btn = javascriptHelper
+						.executeScriptWithWebElement(underWriterJsPaths.getElement("appDetailsViewSummaryBtn"));
+				javascriptHelper.backgroundBorder(btn);
+				softAssert.assertTrue(btn.isDisplayed(), "View summary button displayed under Application Details");
 				break;
 			} catch (Exception e) {
 				if (i == 199) {
@@ -4879,14 +4798,15 @@ public class IJARAH_Steps {
 	@And("User_608 to verify system should populate all the data under Customer details tab at this stage")
 	public void user_608_to_verify_system_should_populate_all_the_data_under_customer_details_tab_at_this_stage()
 			throws Throwable {
-		String eyeBtn = "document.querySelector('button[icon=\"pi pi-eye\"]')";
-		for (int i = 0; i < 200; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
-				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(eyeBtn));
-				javascriptHelper.executeScriptWithWebElement(eyeBtn).click();
+				WebElement element = javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("eyeBtn"));
+				actions.moveToElement(element).build().perform();
+				javascriptHelper.backgroundColor(element);
+				element.click();
 				break;
 			} catch (Exception e) {
-				if (i == 199) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4936,14 +4856,15 @@ public class IJARAH_Steps {
 	@And("User_608 to verify system should populate all the data under Additional Customer info tab at this stage")
 	public void user_608_to_verify_system_should_populate_all_the_data_under_additional_customer_info_details_tab_at_this_stage()
 			throws Throwable {
-		String eyeBtn = "document.querySelector('button[icon=\"pi pi-eye\"]')";
-		for (int i = 0; i < 200; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
-				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(eyeBtn));
-				javascriptHelper.executeScriptWithWebElement(eyeBtn).click();
+				WebElement element = javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("eyeBtn"));
+				actions.moveToElement(element).build().perform();
+				javascriptHelper.backgroundColor(element);
+				element.click();
 				break;
 			} catch (Exception e) {
-				if (i == 199) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4993,14 +4914,15 @@ public class IJARAH_Steps {
 	@And("User_608 to verify system should populate all the data under Customer Financials tab at this stage")
 	public void user_608_to_verify_system_should_populate_all_the_data_under_customer_financials_details_tab_at_this_stage()
 			throws Throwable {
-		String eyeBtn = "document.querySelector('button[icon=\"pi pi-eye\"]')";
-		for (int i = 0; i < 200; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
-				javascriptHelper.backgroundColor(javascriptHelper.executeScriptWithWebElement(eyeBtn));
-				javascriptHelper.executeScriptWithWebElement(eyeBtn).click();
+				WebElement element = javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("eyeBtn"));
+				actions.moveToElement(element).build().perform();
+				javascriptHelper.backgroundColor(element);
+				element.click();
 				break;
 			} catch (Exception e) {
-				if (i == 199) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5241,6 +5163,22 @@ public class IJARAH_Steps {
 		}
 	}
 
+	@And("^User_608 click the Eye button under Asset Details tab$")
+	public void user_608_click_the_eye_button_under_asset_details_tab() throws Throwable {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				WebElement element = javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("eyeBtn"));
+				actions.moveToElement(element).build().perform();
+				element.click();
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
 	@And("^User_608 click the Eye button under Quotation Info tab$")
 	public void user_608_click_the_eye_button_under_quotation_info_tab() throws Throwable {
 		for (int i = 0; i <= 1000; i++) {
@@ -5357,7 +5295,6 @@ public class IJARAH_Steps {
 //	AT_CUD_004
 	@And("User_608 click Search button in Financial Commitments under Customer Financials tab")
 	public void user_608_click_search_button_in_financial_commitments_under_customer_financials_tab() throws Throwable {
-		Thread.sleep(500);
 		String length = null;
 		for (int i = 0; i < 500; i++) {
 			try {
@@ -5383,10 +5320,10 @@ public class IJARAH_Steps {
 						System.out.println("condition true");
 						String titlePath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]";
 						javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(titlePath));
-						String jspath = "document.querySelectorAll('button[icon=\"pi pi-search\"]')[" + j + "]";
+						String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].parentElement.parentElement.querySelector('button[icon=\"pi pi-search\"]')";
 						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
 						actions.moveToElement(btn).build().perform();
-						javascriptHelper.JSEClick(btn);
+						btn.click();
 						break;
 					}
 				}
@@ -5406,8 +5343,7 @@ public class IJARAH_Steps {
 			try {
 //				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentSearchInput"))
 //				.sendKeys("USD");
-				javascriptHelper
-						.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentSearchInput"))
+				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentSearchInput"))
 						.sendKeys(testData.get("Matched Currency"));
 				break;
 			} catch (Exception e) {
@@ -5442,52 +5378,44 @@ public class IJARAH_Steps {
 	// CUD_04_06 & CUD_04_06
 	@And("User_608 click the Export button in Financial Commitments under Customer Financials tab")
 	public void user_608_click_the_export_button_in_financial_commitments_under_customer_financials_tab() throws Throwable {
-		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[mode=\"md\"]').length";
-		String listOfAddButton = "";
-		String addButtonScreenName = "";
-		boolean isAddButtonClicked = false;
-		for (int i = 0; i <= 300; i++) {
+		String length = null;
+		for (int i = 0; i < 500; i++) {
 			try {
-				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
-				System.out.println("List of add button " + listOfAddButton);
-				if (!(listOfAddButton.isBlank())) {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 300) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		int premitiveListOfAddButton = Integer.parseInt(listOfAddButton);
-		first: for (int j = 0; j < premitiveListOfAddButton; j++) {
-			for (int k = 0; k <= 300; k++) {
-				try {
-					addButtonScreenName = javascriptHelper.executeScript(
-							"return document.querySelectorAll('ion-title[mode=\"md\"]')["+ j + "].textContent")
-							.toString();
-					System.out.println("Screen Name " + addButtonScreenName);
-					if (!(addButtonScreenName.isBlank())) {
-						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Financial Commitments").trim())) {
-							javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
-									"document.querySelectorAll('ion-title[mode=\"md\"]')["+ j + "]"));
-							String jspath =	"document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].parentElement.parentElement.querySelector('p-dropdown')";
-							WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
-							actions.moveToElement(btn).click().build().perform();
-//							javascriptHelper.JSEClick(btn);
-							isAddButtonClicked = true;
-							break first;
-						}
-					}
-				} catch (Exception e) {
-					if (k == 300) {
-						Assert.fail(e.getMessage());
+		for (int i = 0; i < 500; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().contains("Financial Commitments")) {
+						System.out.println("condition true");
+						String titlePath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]";
+						javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(titlePath));
+						String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]"
+								+ ".parentElement.parentElement.querySelector('p-dropdown')";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.moveToElement(btn).build().perform();
+						btn.click();
+						break;
 					}
 				}
-
-			}
-			if (isAddButtonClicked == true) {
 				break;
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
+				}
 			}
 		}
 	}
@@ -5690,7 +5618,7 @@ public class IJARAH_Steps {
 	@And("User_608 verify the first row status as In-Active under Financial Commitments in Customer Financials tab")
 	public void user_608_verify_the_first_row_status_under_financial_commitments_in_customer_financials_tab() throws Throwable {
 		String length = null;
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
 						.toString();
@@ -5699,7 +5627,7 @@ public class IJARAH_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5982,49 +5910,42 @@ public class IJARAH_Steps {
 //	CUD_04_02
 	@And("User_608 verify list view values should be not editable under Financial Commitments")
 	public void user_608_verify_list_view_values_should_be_not_editable_under_financial_commitments() throws Throwable {
-		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
-		String listOfAddButton = "";
-		String addButtonScreenName = "";
-		for (int i = 0; i <= 300; i++) {
+		String length = null;
+		for (int i = 0; i < 300; i++) {
 			try {
-				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
-				System.out.println("List of add button " + listOfAddButton);
-				if (!(listOfAddButton.isBlank())) {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+						.toString();
+//				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0") && !length.equals("1")) {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 300) {
+				if (i == 299) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		int premitiveListOfAddButton = Integer.parseInt(listOfAddButton);
-		for (int j = 0; j < premitiveListOfAddButton; j++) {
-			for (int k = 0; k <= 300; k++) {
-				try {
-					addButtonScreenName = javascriptHelper.executeScript(
-							"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
-									+ j + "].textContent")
-							.toString();
-//					System.out.println("Screen Name " + addButtonScreenName);
-					if (!(addButtonScreenName.isBlank())) {
-//						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
-						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Financial Commitments").trim())) {
-							WebElement nonEdit = javascriptHelper.executeScriptWithWebElement(
-									"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j
-											+ "].parentElement.parentElement.parentElement.nextElementSibling.querySelectorAll('table tbody tr td p-celleditor')[1]");
-							System.out.println("Field Name: " + nonEdit.getText());
-							javascriptHelper.backgroundBorder(nonEdit);							
-							System.out.println("Is Non Editable: "
-									+ javascriptHelper.executeScript("return arguments[0].readOnly", nonEdit));
-//							softAssert.assertTrue(javascriptHelper.executeScript(nonEdit,"return arguments[0].readOnly"));
-							break;
-						}
+		for (int i = 0; i < 500; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains("Financial Commitments")) {
+						String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]"
+								+ ".parentElement.parentElement.querySelector('table').querySelectorAll('td p-celleditor')[1]";
+						WebElement field = javascriptHelper.executeScriptWithWebElement(jspath);
+						String output = field.getAttribute("readonly");
+						System.out.println("Out: "+ output);
+						javascriptHelper.backgroundBorder(field);
+						softAssert.assertNull(output,
+								"Listview values should be non editable under Financial Commitments section");
+						break;
 					}
-				} catch (Exception e) {
-					if (k == 300) {
-						Assert.fail(e.getMessage());
-					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 499) {
+					Assert.fail(e.getMessage());
 				}
 			}
 		}
@@ -8028,7 +7949,7 @@ public class IJARAH_Steps {
 		WebElement topupTypeLabel = javascriptHelper
 				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("topupTypeLabel"));
 		WebElement topupType = javascriptHelper
-				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("topupType"));
+				.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("topupTypeDropdown"));
 		System.out.println("Field Name: " + topupTypeLabel.getText());
 		for (int i = 0; i <= 2000; i++) {
 			try {
@@ -11122,14 +11043,14 @@ public class IJARAH_Steps {
 
 	@And("User_608 post clicking on deviate button system should able to deviate offered amount")
 	public void user_608_post_clicking_on_deviate_button_system_should_able_to_deviate_offered_amount() throws Throwable {
-		for (int i = 0; i <= 50000; i++) {
+		for (int i = 0; i <= 500; i++) {
 			try {
 				String string = "document.querySelector('button[icon=\"pi pi-arrow-left\"]').parentElement";
 				softAssert.assertTrue(javascriptHelper.executeScriptWithWebElement(string).isDisplayed(),
 						"Offer Details table should be display");
 				break;
 			} catch (Exception e) {
-				if (i == 50000) {
+				if (i == 500) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -11252,7 +11173,8 @@ public class IJARAH_Steps {
 					if (titlename.trim().contains("Return")) {
 						String jspath = "document.querySelectorAll('kub-workflow-decision button')[" + j + "]";
 						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
-						javascriptHelper.JSEClick(btn);
+						actions.scrollToElement(btn).build().perform();
+						btn.click();
 						break;
 					}
 				}
@@ -11359,7 +11281,7 @@ public class IJARAH_Steps {
 			try {
 				WebElement btn = javascriptHelper
 						.executeScriptWithWebElement(underWriterJsPaths.getElement("return_Btn"));
-				javascriptHelper.JSEClick(btn);
+				btn.click();
 				break;
 			} catch (Exception e) {
 				if (i == 500) {

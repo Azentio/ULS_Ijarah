@@ -1,12 +1,13 @@
 Feature: To check the Auto Loan - App Data Entry stage -> Customer Financial tab -> Financial Commitments/Customer Debt screen
 
 @AT_AL_CUD_01
-Scenario: Creation of Customer Dept record - Customer Debt screen should get open with all valid fields in 
-					proper format with below mention buttons
+Scenario: Creation of Customer Dept record - Customer Debt screen should get open with all valid fields in proper format with below mention buttons
 
 Given navigate the IJARA URL
 And login with valid credentials - Auto Loan - App Data Entry
 And User_608 get the test data for test case AT_AL_CUD_01
+And User_608 click the module name dropdown in ULS application
+And User_608 select the module name as LOS in ULS application
 And User_608 click the Mail box in ULS application
 And User_608 click the Search button under inbox
 And User_608 search the Reference ID for Auto Loan
@@ -14,8 +15,8 @@ And User_608 click the Entitle button under inbox
 And User_608 click the Customer Financials tab
 And User_608 click the pencil icon under Customer Financials tab
 And User_608 click Add button in Financial Commitments under Customer Financials tab
-And User_608 validate the Save button available in Customer Debt screen
 And User_608 validate the Back button available in Customer Debt screen
+And User_608 validate the Save button available in Customer Debt screen
 And User_608 verify Finance Type field is available under Customer Debt screen in Customer Financials tab
 And User_608 verify Financial Institution field is available under Customer Debt screen in Customer Financials tab
 And User_608 verify Account Number field is available under Customer Debt screen in Customer Financials tab
@@ -49,12 +50,13 @@ And User_608 invoke soft assert in Customer Debt screen at Auto Loan App Data En
 
 
 @AT_AL_CUD_02
-Scenario: Creation of Customer Dept record - System allow user to save the record with valid data and
-					System display the confirmation message
+Scenario: Creation of Customer Dept record - System allow user to save the record with valid data and	System display the confirmation message
 
 Given navigate the IJARA URL
 And login with valid credentials - Auto Loan - App Data Entry
 And User_608 get the test data for test case AT_AL_CUD_02
+And User_608 click the module name dropdown in ULS application
+And User_608 select the module name as LOS in ULS application
 And User_608 click the Mail box in ULS application
 And User_608 click the Search button under inbox
 And User_608 search the Reference ID for Auto Loan
@@ -82,6 +84,8 @@ Scenario: Creation of Customer Dept record - To verfiy the below fields should b
 Given navigate the IJARA URL
 And login with valid credentials - Auto Loan - App Data Entry
 And User_608 get the test data for test case AT_AL_CUD_03
+And User_608 click the module name dropdown in ULS application
+And User_608 select the module name as LOS in ULS application
 And User_608 click the Mail box in ULS application
 And User_608 click the Search button under inbox
 And User_608 search the Reference ID for Auto Loan
@@ -133,13 +137,14 @@ And User_608 verify NPA Classification as Non-Mandatory and LOV field under Cust
 Then logout from the ijaraApplication
 And User_608 invoke soft assert in Customer Debt screen at Auto Loan App Data Entry stage
 
-
 @AT_AL_CUD_04
 Scenario: Creation of Customer Dept record - To verify the impact when user keep any mandatory field blank, enter characters value in numeric field and click on save button
 
 Given navigate the IJARA URL
 And login with valid credentials - Auto Loan - App Data Entry
 And User_608 get the test data for test case AT_AL_CUD_04
+And User_608 click the module name dropdown in ULS application
+And User_608 select the module name as LOS in ULS application
 And User_608 click the Mail box in ULS application
 And User_608 click the Search button under inbox
 And User_608 search the Reference ID for Auto Loan
@@ -168,6 +173,8 @@ Scenario: Modification of Customer Debt record - To verify system allow user to 
 Given navigate the IJARA URL
 And login with valid credentials - Auto Loan - App Data Entry
 And User_608 get the test data for test case AT_AL_CUD_05
+And User_608 click the module name dropdown in ULS application
+And User_608 select the module name as LOS in ULS application
 And User_608 click the Mail box in ULS application
 And User_608 click the Search button under inbox
 And User_608 search the Reference ID for Auto Loan
@@ -175,8 +182,8 @@ And User_608 click the Entitle button under inbox
 And User_608 click the Customer Financials tab
 And User_608 click the pencil icon under Customer Financials tab
 And User_608 click the pencil button under Financial Commitments in Customer Financials tab
-And User_608 validate the Update button available in Customer Debt screen
 And User_608 validate the Back button available in Customer Debt screen
+And User_608 validate the Update button available in Customer Debt screen
 And User_608 to verify system allow user to modify the Customer Debt Information in Customer Debt screen
 And User_608 clear the mandatory field value in Customer Debt screen
 And User_608 Update the record with mandatory field blank in Customer Debt screen
@@ -197,6 +204,8 @@ Scenario: List view of Customer Debt - To verify system allow user to modify the
 Given navigate the IJARA URL
 And login with valid credentials - Auto Loan - App Data Entry
 And User_608 get the test data for test case AT_AL_CUD_06
+And User_608 click the module name dropdown in ULS application
+And User_608 select the module name as LOS in ULS application
 And User_608 click the Mail box in ULS application
 And User_608 click the Search button under inbox
 And User_608 search the Reference ID for Auto Loan
@@ -225,6 +234,8 @@ Scenario: List view of Customer Debt - To verify system allow user to modify the
 Given navigate the IJARA URL
 And login with valid credentials - Auto Loan - App Data Entry
 And User_608 get the test data for test case AT_AL_CUD_07
+And User_608 click the module name dropdown in ULS application
+And User_608 select the module name as LOS in ULS application
 And User_608 click the Mail box in ULS application
 And User_608 click the Search button under inbox
 And User_608 search the Reference ID for Auto Loan
@@ -246,6 +257,8 @@ Scenario: List view of Customer Debt - To verify the functionality of Export to 
 Given navigate the IJARA URL
 And login with valid credentials - Auto Loan - App Data Entry
 And User_608 get the test data for test case AT_AL_CUD_08
+And User_608 click the module name dropdown in ULS application
+And User_608 select the module name as LOS in ULS application
 And User_608 click the Mail box in ULS application
 And User_608 click the Search button under inbox
 And User_608 search the Reference ID for Auto Loan
@@ -267,6 +280,8 @@ And User_608 invoke soft assert in Customer Debt screen at Auto Loan App Data En
 #Given navigate the IJARA URL
 #And login with valid credentials - Auto Loan - App Data Entry
 #And User_608 get the test data for test case AT_AL_CUD_09
+#And User_608 click the module name dropdown in ULS application
+#And User_608 select the module name as LOS in ULS application
 #And User_608 click the Mail box in ULS application
 #And User_608 click the Search button under inbox
 #And User_608 search the Reference ID for Auto Loan
