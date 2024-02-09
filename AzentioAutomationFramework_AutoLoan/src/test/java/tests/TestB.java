@@ -9,6 +9,7 @@ public class TestB {
 		TestA testA = new TestA(15);
 		a = testA.a;
 		System.out.println("a " + a);
+		System.out.println("Code execution done");
 	}
 
 }
