@@ -178,12 +178,17 @@ public class AutoLoan_AppDataEntry_IdentificationDetails_Step074 {
 	@And("User_074 Click on Add button in Autoloan_Identification details")
 	public void user_074_click_on_add_button_in_autoloan_identification_details() {
 		String length = null;
+
 		for (int i = 0; i < 500; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title').length")
 						.toString();
 				System.out.println(length);
-				if (!length.isBlank() && !length.equalsIgnoreCase("0")) {
+				int premitiveNofListView;
+				premitiveNofListView = Integer.parseInt(length);
+
+				if (!length.isBlank() && !length.equalsIgnoreCase("0") && (premitiveNofListView > 3)) {
+					System.out.println(length);
 					break;
 				}
 			} catch (Exception e) {
@@ -202,9 +207,10 @@ public class AutoLoan_AppDataEntry_IdentificationDetails_Step074 {
 						System.out.println("condition true");
 						String jspath = "document.querySelectorAll('ion-title')[" + j
 								+ "].parentElement.nextElementSibling.querySelector('button')";
+
 						WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
-						javascriptHelper.JSEClick(addButton);
-						// addButton.click();
+						clicksAndActionsHelper.scrollIntoView(addButton);
+						addButton.click();
 						break;
 					}
 				}
@@ -580,9 +586,8 @@ public class AutoLoan_AppDataEntry_IdentificationDetails_Step074 {
 	public void user_074_click_on_edit_icon_of_existing_record_in_autoloan_identification_details() {
 		for (int i = 0; i <= 50; i++) {
 			try {
-				javascriptHelper.JSEClick(javascriptHelper
-						.executeScriptWithWebElement(identificationdetailsJsPaths.getElement("EditIcon")));
-				// javascriptHelper.executeScriptWithWebElement(identificationdetailsJsPaths.getElement("SaveIcon")).click();
+				javascriptHelper.executeScriptWithWebElement(identificationdetailsJsPaths.getElement("EditIcon"))
+						.click();
 				break;
 			} catch (Exception e) {
 				if (i == 50) {
@@ -892,8 +897,10 @@ public class AutoLoan_AppDataEntry_IdentificationDetails_Step074 {
 	public void user_074_update_status_to_inactive_in_autoloan_identification_details() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
-				javascriptHelper.JSEClick(javascriptHelper
-						.executeScriptWithWebElement(identificationdetailsJsPaths.getElement("ActiveInactie")));
+
+				javascriptHelper.executeScriptWithWebElement(identificationdetailsJsPaths.getElement("ActiveInactie"))
+						.click();
+
 				// javascriptHelper.executeScriptWithWebElement(identificationdetailsJsPaths.getElement("SaveIcon")).click();
 				break;
 			} catch (Exception e) {
@@ -909,9 +916,8 @@ public class AutoLoan_AppDataEntry_IdentificationDetails_Step074 {
 	public void user_074_update_status_to_active_in_autoloan_identification_details() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
-				javascriptHelper.JSEClick(javascriptHelper
-						.executeScriptWithWebElement(identificationdetailsJsPaths.getElement("ActiveInactie")));
-				// javascriptHelper.executeScriptWithWebElement(identificationdetailsJsPaths.getElement("SaveIcon")).click();
+				javascriptHelper.executeScriptWithWebElement(identificationdetailsJsPaths.getElement("ActiveInactie"))
+						.click();
 				break;
 			} catch (Exception e) {
 				if (i == 1000) {
@@ -935,9 +941,9 @@ public class AutoLoan_AppDataEntry_IdentificationDetails_Step074 {
 	public void user_074_validate_back_button_functionality_in_autoloan_identification_details() {
 		for (int i = 0; i <= 50; i++) {
 			try {
-				javascriptHelper.JSEClick(javascriptHelper
-						.executeScriptWithWebElement(identificationdetailsJsPaths.getElement("BackButton")));
-				// javascriptHelper.executeScriptWithWebElement(identificationdetailsJsPaths.getElement("SaveIcon")).click();
+				javascriptHelper.executeScriptWithWebElement(identificationdetailsJsPaths.getElement("BackButton"))
+						.click();
+
 				break;
 			} catch (Exception e) {
 				if (i == 50) {

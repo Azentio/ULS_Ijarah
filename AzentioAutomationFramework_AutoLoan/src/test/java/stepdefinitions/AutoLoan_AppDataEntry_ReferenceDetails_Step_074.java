@@ -947,9 +947,7 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step_074 {
 	public void click_on_save_icon_in_autoloan_employment_details() {
 		for (int i = 0; i <= 50; i++) {
 			try {
-				javascriptHelper.JSEClick(
-						javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("SaveIcon")));
-				// javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("SaveIcon")).click();
+				javascriptHelper.executeScriptWithWebElement(employmentdetailsJsPaths.getElement("SaveIcon")).click();
 				break;
 			} catch (Exception e) {
 				if (i == 50) {
@@ -1499,8 +1497,7 @@ public class AutoLoan_AppDataEntry_ReferenceDetails_Step_074 {
 						String jspath = "document.querySelectorAll('ion-title')[" + j
 								+ "].parentElement.nextElementSibling.querySelectorAll('button[icon=\"pi pi-pencil\"]')[0]";
 						WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
-						javascriptHelper.JSEClick(addButton);
-						// addButton.click();
+						 addButton.click();
 						break;
 					}
 				}

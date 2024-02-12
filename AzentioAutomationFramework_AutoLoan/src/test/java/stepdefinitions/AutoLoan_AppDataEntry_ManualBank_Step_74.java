@@ -45,43 +45,43 @@ public class AutoLoan_AppDataEntry_ManualBank_Step_74 {
 
 	@And("^User_074 get the test data for test case AT_AL_MB_01$")
 	public void get_the_test_data_for_test_case_AT_AL_MB_01() throws Throwable {
-		executionData=autoLoanExecutionSheet.getTestdata("AT_AL_MB_01");
+		executionData = autoLoanExecutionSheet.getTestdata("AT_AL_MB_01");
 		testData = manualbankExcelData.getTestdata(executionData.get("dataSet_ID"));
 	}
 
 	@And("^User_074 get the test data for test case AT_AL_MB_02$")
 	public void get_the_test_data_for_test_case_AT_AL_MB_02() throws Throwable {
-		executionData=autoLoanExecutionSheet.getTestdata("AT_AL_MB_02");
+		executionData = autoLoanExecutionSheet.getTestdata("AT_AL_MB_02");
 		testData = manualbankExcelData.getTestdata(executionData.get("dataSet_ID"));
 	}
 
 	@And("^User_074 get the test data for test case AT_AL_MB_03$")
 	public void get_the_test_data_for_test_case_AT_AL_MB_03() throws Throwable {
-		executionData=autoLoanExecutionSheet.getTestdata("AT_AL_MB_03");
+		executionData = autoLoanExecutionSheet.getTestdata("AT_AL_MB_03");
 		testData = manualbankExcelData.getTestdata(executionData.get("dataSet_ID"));
 	}
 
 	@And("^User_074 get the test data for test case AT_AL_MB_04$")
 	public void get_the_test_data_for_test_case_AT_AL_MB_04() throws Throwable {
-		executionData=autoLoanExecutionSheet.getTestdata("AT_AL_MB_04");
+		executionData = autoLoanExecutionSheet.getTestdata("AT_AL_MB_04");
 		testData = manualbankExcelData.getTestdata(executionData.get("dataSet_ID"));
 	}
 
 	@And("^User_074 get the test data for test case AT_AL_MB_05$")
 	public void get_the_test_data_for_test_case_AT_AL_MB_05() throws Throwable {
-		executionData=autoLoanExecutionSheet.getTestdata("AT_AL_MB_05");
+		executionData = autoLoanExecutionSheet.getTestdata("AT_AL_MB_05");
 		testData = manualbankExcelData.getTestdata(executionData.get("dataSet_ID"));
 	}
 
 	@And("^User_074 get the test data for test case AT_AL_MB_06$")
 	public void get_the_test_data_for_test_case_AT_AL_MB_06() throws Throwable {
-		executionData=autoLoanExecutionSheet.getTestdata("AT_AL_MB_06");
+		executionData = autoLoanExecutionSheet.getTestdata("AT_AL_MB_06");
 		testData = manualbankExcelData.getTestdata(executionData.get("dataSet_ID"));
 	}
 
 	@And("^User_074 get the test data for test case AT_AL_MB_07$")
 	public void get_the_test_data_for_test_case_AT_AL_MB_07() throws Throwable {
-		executionData=autoLoanExecutionSheet.getTestdata("AT_AL_MB_07");
+		executionData = autoLoanExecutionSheet.getTestdata("AT_AL_MB_07");
 		testData = manualbankExcelData.getTestdata(executionData.get("dataSet_ID"));
 	}
 
@@ -106,20 +106,12 @@ public class AutoLoan_AppDataEntry_ManualBank_Step_74 {
 
 	@And("Navigate to Manual bank tab in Autoloan_Manual bank")
 	public void navigate_to_manual_bank_tab_in_autoloan_manual_bank() {
-		for (int i = 0; i <= 4; i++) {
-			try {
-				javascriptHelper.executeScriptWithWebElement(manualbankJsPaths.getElement("nextBtn")).click();
-				break;
-			} catch (Exception e) {
-
-			}
-		}
 		for (int i = 0; i <= 1000; i++) {
 			try {
-				javascriptHelper.JSEClick(
-						javascriptHelper.executeScriptWithWebElement(manualbankJsPaths.getElement("ManualBankTab")));
+				javascriptHelper.executeScriptWithWebElement(manualbankJsPaths.getElement("ManualBankTab")).click();
 				break;
 			} catch (Exception e) {
+				javascriptHelper.executeScriptWithWebElement(manualbankJsPaths.getElement("nextBtn")).click();
 				if (i == 1000) {
 					Assert.fail(e.getMessage());
 				}

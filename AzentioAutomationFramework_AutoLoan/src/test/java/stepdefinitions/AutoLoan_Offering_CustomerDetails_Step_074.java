@@ -86,8 +86,10 @@ public class AutoLoan_Offering_CustomerDetails_Step_074 {
 	public void click_on_eye_icon_of_existing_record_in_auto_loan_offering_customer_details() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
-				javascriptHelper.JSEClick(javascriptHelper
-						.executeScriptWithWebElement(customerdetailsJsPaths.getElement("EyeIconInViewlist")));
+				
+				javascriptHelper
+				.executeScriptWithWebElement(customerdetailsJsPaths.getElement("EyeIconInViewlist")).click();
+				
 				break;
 			} catch (Exception e) {
 				if (i == 1000) {

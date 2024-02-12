@@ -301,9 +301,8 @@ public class AutoLoan_Offering_ApplicationDetails_Step_074 {
 	public void validate_the_back_button_functionality_of_application_details() {
 		for (int i = 0; i <= 50; i++) {
 			try {
-				javascriptHelper.JSEClick(javascriptHelper
-						.executeScriptWithWebElement(applicationdetailsJsPaths.getElement("BackButton")));
-				// javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("SaveIcon")).click();
+				javascriptHelper
+				.executeScriptWithWebElement(applicationdetailsJsPaths.getElement("BackButton")).click();
 				break;
 			} catch (Exception e) {
 
@@ -313,3 +312,15 @@ public class AutoLoan_Offering_ApplicationDetails_Step_074 {
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
