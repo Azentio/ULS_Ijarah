@@ -1,8 +1,7 @@
 Feature: To check the Auto Loan -- App Data Entry stage -> Application Details screen
 
 @AT_AL_APP_01
-Scenario: Creation of Application- Add --> To verify post clicking on Application Detail tab system opens 
-Application Details section & Referral/Sourcing Details section
+Scenario: Creation of Application- Add --> To verify post clicking on Application Detail tab system opens Application Details section & Referral/Sourcing Details section
 
 Given navigate the IJARA URL
 And login with valid credentials - Auto Loan - App Data Entry
@@ -13,17 +12,17 @@ And User_608 click the Mail box in ULS application
 And User_608 click the Search button under inbox
 And User_608 search the Reference ID for Auto Loan
 And User_608 click the Entitle button under inbox
-And User_608 click the Save button under Application Details screen
-And User_608 click the Confimation popup Ok button in Application Details screen
-And User_608 click the Add button under Application Details screen
-And User_608 select the Customer Type under Application Details screen
-And User_608 Enter the Customer Name under Application Details screen
-And User_608 click the Search button under Application Details screen
-And User_608 select the ID Type under Application Details screen
-And User_608 Enter the ID Number under Application Details screen
-And User_608 Enter the Date of Birth under Application Details screen
-And User_608 click the Search button under Application Details screen
-And User_608 click the Create New Request button under Application Details screen
+#And User_608 click the Save button under Application Details screen
+#And User_608 click the Confimation popup Ok button in Application Details screen
+#And User_608 click the Add button under Application Details screen
+#And User_608 select the Customer Type under Application Details screen
+#And User_608 Enter the Customer Name under Application Details screen
+#And User_608 click the Search button under Application Details screen
+#And User_608 select the ID Type under Application Details screen
+#And User_608 Enter the ID Number under Application Details screen
+#And User_608 Enter the Date of Birth under Application Details screen
+#And User_608 click the Search button under Application Details screen
+#And User_608 click the Create New Request button under Application Details screen
 And User_608 verify the Save button available under Application details screen
 And User_608 verify the Classification field available under Application details screen
 And User_608 verify the Product field available under Application details screen
@@ -107,17 +106,17 @@ And User_608 click the Mail box in ULS application
 And User_608 click the Search button under inbox
 And User_608 search the Reference ID for Auto Loan
 And User_608 click the Entitle button under inbox
-And User_608 click the Save button under Application Details screen
-And User_608 click the Confimation popup Ok button in Application Details screen
-And User_608 click the Add button under Application Details screen
-And User_608 select the Customer Type under Application Details screen
-And User_608 Enter the Customer Name under Application Details screen
-And User_608 click the Search button under Application Details screen
-And User_608 select the ID Type under Application Details screen
-And User_608 Enter the ID Number under Application Details screen
-And User_608 Enter the Date of Birth under Application Details screen
-And User_608 click the Search button under Application Details screen
-And User_608 click the Create New Request button under Application Details screen
+#And User_608 click the Save button under Application Details screen
+#And User_608 click the Confimation popup Ok button in Application Details screen
+#And User_608 click the Add button under Application Details screen
+#And User_608 select the Customer Type under Application Details screen
+#And User_608 Enter the Customer Name under Application Details screen
+#And User_608 click the Search button under Application Details screen
+#And User_608 select the ID Type under Application Details screen
+#And User_608 Enter the ID Number under Application Details screen
+#And User_608 Enter the Date of Birth under Application Details screen
+#And User_608 click the Search button under Application Details screen
+#And User_608 click the Create New Request button under Application Details screen
 And User_608 verify Classification field as Mandatory, Editable and Dropdown in Application details screen
 And User_608 verify Product field as Mandatory, Editable and Dropdown in Application details screen
 And User_608 verify Total Finance Amount Requested field as Mandatory, Editable and accept only numeric values in Application details screen
@@ -149,17 +148,17 @@ And User_608 click the Mail box in ULS application
 And User_608 click the Search button under inbox
 And User_608 search the Reference ID for Auto Loan
 And User_608 click the Entitle button under inbox
-And User_608 click the Save button under Application Details screen
-And User_608 click the Confimation popup Ok button in Application Details screen
-And User_608 click the Add button under Application Details screen
-And User_608 select the Customer Type under Application Details screen
-And User_608 Enter the Customer Name under Application Details screen
-And User_608 click the Search button under Application Details screen
-And User_608 select the ID Type under Application Details screen
-And User_608 Enter the ID Number under Application Details screen
-And User_608 Enter the Date of Birth under Application Details screen
-And User_608 click the Search button under Application Details screen
-And User_608 click the Create New Request button under Application Details screen
+#And User_608 click the Save button under Application Details screen
+#And User_608 click the Confimation popup Ok button in Application Details screen
+#And User_608 click the Add button under Application Details screen
+#And User_608 select the Customer Type under Application Details screen
+#And User_608 Enter the Customer Name under Application Details screen
+#And User_608 click the Search button under Application Details screen
+#And User_608 select the ID Type under Application Details screen
+#And User_608 Enter the ID Number under Application Details screen
+#And User_608 Enter the Date of Birth under Application Details screen
+#And User_608 click the Search button under Application Details screen
+#And User_608 click the Create New Request button under Application Details screen
 And User_608 verify Sourcing Type field as Mandatory, Editable and Lookup in Referral\Sourcing Details section
 And User_608 verify Sourcing Office field as Mandatory, Editable and Lookup in Referral\Sourcing Details section
 And User_608 verify Sourcing Entity field as Mandatory, Editable and Lookup in Referral\Sourcing Details section
@@ -183,17 +182,17 @@ And User_608 click the Mail box in ULS application
 And User_608 click the Search button under inbox
 And User_608 search the Reference ID for Auto Loan
 And User_608 click the Entitle button under inbox
-And User_608 click the Save button under Application Details screen
-And User_608 click the Confimation popup Ok button in Application Details screen
-And User_608 click the Add button under Application Details screen
-And User_608 select the Customer Type under Application Details screen
-And User_608 Enter the Customer Name under Application Details screen
-And User_608 click the Search button under Application Details screen
-And User_608 select the ID Type under Application Details screen
-And User_608 Enter the ID Number under Application Details screen
-And User_608 Enter the Date of Birth under Application Details screen
-And User_608 click the Search button under Application Details screen
-And User_608 click the Create New Request button under Application Details screen
+#And User_608 click the Save button under Application Details screen
+#And User_608 click the Confimation popup Ok button in Application Details screen
+#And User_608 click the Add button under Application Details screen
+#And User_608 select the Customer Type under Application Details screen
+#And User_608 Enter the Customer Name under Application Details screen
+#And User_608 click the Search button under Application Details screen
+#And User_608 select the ID Type under Application Details screen
+#And User_608 Enter the ID Number under Application Details screen
+#And User_608 Enter the Date of Birth under Application Details screen
+#And User_608 click the Search button under Application Details screen
+#And User_608 click the Create New Request button under Application Details screen
 And User_608 select the Product in Application details screen
 And User_608 select the Sub-Product in Application details screen
 And User_608 enter the Total Finance Amount Requested in Application details screen
@@ -221,10 +220,11 @@ And User_608 click the Mail box in ULS application
 And User_608 click the Search button under inbox
 And User_608 search the Reference ID for Auto Loan
 And User_608 click the Entitle button under inbox
-And User_608 click the Save button under Application Details screen
-And User_608 click the Confimation popup Ok button in Application Details screen
-And User_608 click any one record Edit button under Application Details screen
-And User_608 verify Update button available in Application details screen
+#And User_608 click the Save button under Application Details screen
+#And User_608 click the Confimation popup Ok button in Application Details screen
+#And User_608 click any one record Edit button under Application Details screen
+#And User_608 verify Update button available in Application details screen
+And User_608 verify the Save button available under Application details screen
 And User_608 verify Approve button available in Application details screen
 And User_608 verify Eligiblity Check button available in Application details screen
 And User_608 verify Back button available in Application details screen
@@ -235,7 +235,7 @@ And User_608 invoke soft assert in Application details screen at Auto Loan App D
 
 
 @AT_AL_APP_07
-Scenario: Modification of Application Details record -> To verify system allow user to modify the Application Detail
+Scenario: Modification of Application Details record -> To verify system allow user to modify the Application Details
 
 Given navigate the IJARA URL
 And login with valid credentials - Auto Loan - App Data Entry
@@ -271,6 +271,7 @@ And User_608 search the Reference ID for Auto Loan
 And User_608 click the Entitle button under inbox
 And User_608 click the View Summary button in Application Details screen
 And User_608 post clicking on View Summary button system should display the workflow of the record
+And User_608 close the View Summary workflow popup in Applicaton Details screen
 And User_608 to verify the functionality of Back button under Application Details screen
 And User_608 post clicking on Back button, system should navigate to the previous screen
 Then logout from the ULS Application

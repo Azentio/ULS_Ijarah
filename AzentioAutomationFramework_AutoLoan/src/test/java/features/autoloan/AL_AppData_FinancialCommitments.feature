@@ -200,7 +200,7 @@ And User_608 invoke soft assert in Customer Debt screen at Auto Loan App Data En
 
 
 @AT_AL_CUD_06
-Scenario: List view of Customer Debt - To verify system allow user to modify the Customer Debt Information
+Scenario: List view of Customer Debt - to verify below fields are available in Financial commitments list view
 
 Given navigate the IJARA URL
 And login with valid credentials - Auto Loan - App Data Entry
@@ -230,7 +230,7 @@ And User_608 invoke soft assert in Customer Debt screen at Auto Loan App Data En
 
 
 @AT_AL_CUD_07
-Scenario: List view of Customer Debt - To verify system allow user to modify the Customer Debt Information
+Scenario: List view of Customer Debt - verify the functionality of Search box with matching & mismatch data
 
 Given navigate the IJARA URL
 And login with valid credentials - Auto Loan - App Data Entry

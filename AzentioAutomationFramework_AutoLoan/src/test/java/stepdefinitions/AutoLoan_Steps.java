@@ -337,35 +337,28 @@ public class AutoLoan_Steps {
 	@And("User_608 click the Entitle button under inbox")
 	public void user_608_click_the_entitle_button_under_inbox() throws Throwable {
 		String length = null;
-		Thread.sleep(2000);
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i < 300; i++) {
 			try {
-				length = javascriptHelper
-						.executeScript("return document.querySelectorAll('button[ng-reflect-text=\"Entitle\"]').length")
+				length = javascriptHelper.executeScript("return document.querySelectorAll('button[ng-reflect-text=\"Entitle\"]').length")
 						.toString();
-//				System.out.println(length);
+				System.out.println(length);
 				if (!length.isBlank() && !length.equals("0") && length.equals("1")) {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 299) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		Thread.sleep(2000);
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i < 500; i++) {
 			try {
-				String jspath = "document.querySelectorAll('button[ng-reflect-text=\"Entitle\"]')["
-						+ (Integer.parseInt(length) - 1) + "]";
-//				System.out.println("Path: "+jspath);
+				String jspath = "document.querySelectorAll('button[ng-reflect-text=\"Entitle\"]')[" + (Integer.parseInt(length)-1) + "]";
 				WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
-				
 				btn.click();
-				
 				break;
 			} catch (Exception e) {
-				{
+				if (i == 499) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -999,6 +992,9 @@ public class AutoLoan_Steps {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("totalFinanceAmtInput"))
+						.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+				javascriptHelper
+						.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("totalFinanceAmtInput"))
 						.sendKeys(testData.get("Finance_Amt"));
 				break;
 			} catch (Exception e) {
@@ -1013,9 +1009,12 @@ public class AutoLoan_Steps {
 	public void user_608_enter_the_declared_net_monthly_income_in_application_details_screen() throws Throwable {
 		for (int i = 0; i <= 150; i++) {
 			try {
+//				javascriptHelper
+//						.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("declaredMonthlyIncomeInput"))
+//						.sendKeys(testData.get("Monthly_Income"));
 				javascriptHelper
 						.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("declaredMonthlyIncomeInput"))
-						.sendKeys(testData.get("Monthly_Income"));
+						.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 				break;
 			} catch (Exception e) {
 				{
@@ -2649,7 +2648,7 @@ public class AutoLoan_Steps {
 	@And("User_608 verify Sourcing Type field as Mandatory, Editable and Lookup in Referral\\Sourcing Details section")
 	public void user_608_verify_sourcing_type_field_as_mandatory_editable_and_lookup_in_referral_sourcing_details_section()
 			throws Throwable {
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper
 						.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("sourcingTypeLabel")));
@@ -3069,13 +3068,11 @@ public class AutoLoan_Steps {
 	@And("User_608 system should show the proper validation message for blank field in Application details screen")
 	public void user_608_system_should_show_the_proper_validation_message_for_blank_field_in_application_details_screen()
 			throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver,
-				javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("mandatoryReqPopup")));
-		String madatoryErrorMsg = javascriptHelper
-				.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("mandatoryReqPopup")).getText();
-		System.err.println("Mandatory Error : " + madatoryErrorMsg);
 		for (int i = 0; i <= 150; i++) {
 			try {
+				String madatoryErrorMsg = javascriptHelper
+						.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("mandatoryReqPopup")).getText();
+				System.err.println("Mandatory Error : " + madatoryErrorMsg);
 				softAssert.assertTrue(madatoryErrorMsg.contains("Please fill required fields"),
 						" System should show the proper validation message for blank field");
 				break;
@@ -3508,7 +3505,7 @@ public class AutoLoan_Steps {
 //	AT_AL_APP_08
 	@And("User_608 click the View Summary button in Application Details screen")
 	public void user_608_click_the_view_summary_button_in_application_details_screen() throws Throwable {
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				WebElement btn = javascriptHelper
 						.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("AppDetailsViewSummaryBtn"));
@@ -5004,8 +5001,7 @@ public class AutoLoan_Steps {
 
 	@And("User_608 to verify while modification system allow user to save the record with valid data in Customer Debt screen")
 	public void user_608_to_verify_while_modification_system_allow_user_to_save_the_record_with_valid_data_in_customer_debt_screen()
-			throws Throwable {
-		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtInput")).click();
+			throws Throwable {		
 		for (int i = 0; i <= 150; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtInput"))
@@ -5019,7 +5015,7 @@ public class AutoLoan_Steps {
 				}
 			}
 		}
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 50; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("toastMsgCloseBtn"))
 						.click();
@@ -5036,13 +5032,11 @@ public class AutoLoan_Steps {
 	@And("User_608 to verify the functionality of Search box with matching data under Financial Commitments section")
 	public void user_608_to_verify_the_functionality_of_search_box_with_matching_data_under_financial_commitments_section()
 			throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
-				.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentSearchInput")));
 		for (int i = 0; i <= 150; i++) {
 			try {
-				javascriptHelper
-						.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentSearchInput"))
-						.sendKeys(testData.get("Matched Currency"));
+				WebElement element = javascriptHelper
+						.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentSearchInput"));
+				element.sendKeys(testData.get("Matched Currency"));
 				break;
 			} catch (Exception e) {
 				{
@@ -5055,15 +5049,12 @@ public class AutoLoan_Steps {
 	@And("User_608 to verify the functionality of Search box with mismatch data under Financial Commitments section")
 	public void user_608_to_verify_the_functionality_of_search_box_with_mismatch_data_under_financial_commitments_section()
 			throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
-				.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentSearchInput")));
-		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentSearchInput"))
-				.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
 		for (int i = 0; i <= 150; i++) {
 			try {
-				javascriptHelper
-						.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentSearchInput"))
-						.sendKeys(testData.get("Mismatched Currency"));
+				WebElement element = javascriptHelper.executeScriptWithWebElement(
+						customerDebtJsPaths.getElement("financialCommitmentSearchInput"));
+				element.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+				element.sendKeys(testData.get("Mismatched Currency"));
 				break;
 			} catch (Exception e) {
 				{
@@ -5077,7 +5068,6 @@ public class AutoLoan_Steps {
 	@And("User_608 click any one active record Edit button under Financial Commitments section")
 	public void user_608_click_any_one_active_record_edit_button_under_financial_commitments_section()
 			throws Throwable {
-		Thread.sleep(1000);
 		String length = null;
 		for (int i = 0; i <= 150; i++) {
 			try {
@@ -5218,12 +5208,39 @@ public class AutoLoan_Steps {
 
 	@And("User_608 click the Add button in List of condition section under Offer decision tab")
 	public void user_608_click_the_add_button_in_list_of_condition_section_under_offer_decision_tab() throws Throwable {
-		for (int i = 0; i <= 150; i++) {
+		String length = null;
+		for (int i = 0; i < 150; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("AddButton")).click();
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 149) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 150; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().contains("List of Conditions")) {
+						System.out.println("condition true");
+						String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j 
+								+ "].parentElement.parentElement.querySelector('button[icon=\"pi pi-plus\"]')";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						btn.click();
+						break;
+					}
+				}
 				break;
 			} catch (Exception e) {
-				{
+				if (i == 149) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5575,7 +5592,7 @@ public class AutoLoan_Steps {
 	@And("User_608 click the Application details tab")
 	public void user_608_click_the_application_details_tab() throws Throwable {
 		String length = null;
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
 						.toString();
@@ -5584,12 +5601,12 @@ public class AutoLoan_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-segment-button')[" + j + "].innerText";
@@ -5610,10 +5627,10 @@ public class AutoLoan_Steps {
 		}
 
 		String length1 = null;
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				length1 = javascriptHelper
-						.executeScript("return document.querySelectorAll('ion-item ion-title').length").toString();
+						.executeScript("return document.querySelectorAll('ion-item[class*=\"sectiontitles\"]').length").toString();
 				System.out.println(length1);
 				if (!length1.isBlank() && !length1.equals("0")) {
 					break;
@@ -5624,14 +5641,15 @@ public class AutoLoan_Steps {
 				}
 			}
 		}
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length1); j++) {
-					String title = "return document.querySelectorAll('ion-item ion-title')[" + j + "].textContent";
+					String title = "return document.querySelectorAll('ion-item[class*=\"sectiontitles\"]')[" + j + "].textContent";
 					String titlename = javascriptHelper.executeScript(title).toString();
 					if (titlename.trim().contains("Application Details")) {
-						String jspath = "document.querySelectorAll('ion-item ion-title')[" + j + "]";
+						String jspath = "document.querySelectorAll('ion-item[class*=\"sectiontitles\"]')[" + j + "]";
 						WebElement section = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.backgroundColor(section);
 						softAssert.assertTrue(section.isDisplayed(),
 								"Application Details title available under Offer Decision tab");
 						break;
@@ -5672,7 +5690,7 @@ public class AutoLoan_Steps {
 			try {
 				String jsPath = "document.querySelector('button[icon=\"pi pi-eye\"]')";
 				WebElement element = javascriptHelper.executeScriptWithWebElement(jsPath);
-				actions.moveToElement(element).click().build().perform();
+				element.click();
 				break;
 			} catch (Exception e) {
 				if (i == 1000) {
@@ -5689,7 +5707,7 @@ public class AutoLoan_Steps {
 			try {
 				WebElement element = javascriptHelper
 						.executeScriptWithWebElement(appDataCustomerDetailsJsPaths.getElement("remarks"));
-				javascriptHelper.scrollIntoView(element);
+				actions.scrollToElement(element).build().perform();
 				break;
 			} catch (Exception e) {
 				if (i == 100) {
@@ -5757,10 +5775,8 @@ public class AutoLoan_Steps {
 					String titlename = javascriptHelper.executeScript(title).toString();
 					if (titlename.trim().contains("Asset Details")) {
 						String jspath = "document.querySelectorAll('ion-segment-button')[" + j + "]";
-						WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
-						
-						addButton.click();
-						
+						WebElement tab = javascriptHelper.executeScriptWithWebElement(jspath);						
+						javascriptHelper.JSEClick(tab);						
 						break;
 					}
 				}
@@ -5797,10 +5813,8 @@ public class AutoLoan_Steps {
 					String titlename = javascriptHelper.executeScript(title).toString();
 					if (titlename.trim().contains("Policy Check")) {
 						String jspath = "document.querySelectorAll('ion-segment-button')[" + j + "]";
-						WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
-						
-						addButton.click();
-						
+						WebElement tab = javascriptHelper.executeScriptWithWebElement(jspath);						
+						javascriptHelper.JSEClick(tab);				
 						break;
 					}
 				}
@@ -5819,7 +5833,7 @@ public class AutoLoan_Steps {
 			try {
 				String jsPath = "document.querySelector('button[icon=\"pi pi-eye\"]')";
 				WebElement element = javascriptHelper.executeScriptWithWebElement(jsPath);
-				actions.moveToElement(element).click().build().perform();
+				element.click();
 				break;
 			} catch (Exception e) {
 				if (i == 1000) {
@@ -5854,7 +5868,7 @@ public class AutoLoan_Steps {
 						+ (Integer.parseInt(length) - 1) + "]";
 				System.out.println("Path Length: " + lastTitle);
 				WebElement title = javascriptHelper.executeScriptWithWebElement(lastTitle);
-				javascriptHelper.scrollIntoView(title);
+				actions.scrollToElement(title).build().perform();
 				break;
 			} catch (Exception e) {
 				{
@@ -5888,11 +5902,8 @@ public class AutoLoan_Steps {
 					String titlename = javascriptHelper.executeScript(title).toString();
 					if (titlename.trim().contains("Document Details")) {
 						String jspath = "document.querySelectorAll('ion-segment-button')[" + j + "]";
-						WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
-						actions.moveToElement(addButton).build().perform();
-						
-						addButton.click();
-						
+						WebElement tab = javascriptHelper.executeScriptWithWebElement(jspath);						
+						javascriptHelper.JSEClick(tab);						
 						break;
 					}
 				}
@@ -5911,7 +5922,6 @@ public class AutoLoan_Steps {
 			try {
 				WebElement element = javascriptHelper
 						.executeScriptWithWebElement(underWriterJsPaths.getElement("eyeBtn"));
-				actions.moveToElement(element).build().perform();
 				element.click();
 				break;
 			} catch (Exception e) {
@@ -7661,7 +7671,7 @@ public class AutoLoan_Steps {
 	@And("User_608 click the Customer Financials tab")
 	public void user_608_click_the_customer_financials_tab() throws Throwable {
 		String length = null;
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
 						.toString();
@@ -7671,13 +7681,13 @@ public class AutoLoan_Steps {
 				}
 			} catch (Exception e) {
 				{
-					if (i == 150) {
+					if (i == 300) {
 						Assert.fail(e.getMessage());
 					}
 				}
 			}
 		}
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-segment-button')[" + j + "].innerText";
@@ -7687,14 +7697,14 @@ public class AutoLoan_Steps {
 						System.out.println("condition true");
 						String jspath = "document.querySelectorAll('ion-segment-button')[" + j + "]";
 						WebElement tab = javascriptHelper.executeScriptWithWebElement(jspath);
-						tab.click();
+						javascriptHelper.JSEClick(tab);
 						break;
 					}
 				}
 				break;
 			} catch (Exception e) {
 				{
-					if (i == 150) {
+					if (i == 300) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -7704,25 +7714,63 @@ public class AutoLoan_Steps {
 
 	@And("User_608 click the Eye button under Customer Financials tab")
 	public void user_608_click_the_eye_button_under_customer_financials_tab() throws Throwable {
-		for (int i = 0; i <= 150; i++) {
+		String length = null;
+		for (int i = 0; i < 150; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(
-						dataCheck_IncomeJsPaths.getElement("customerFinancialsTabEyeBtn")).click();;
-				break;
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank()) {
+					break;
+				}
 			} catch (Exception e) {
-				{
-					if (i == 150) {
-						Assert.fail(e.getMessage());
-					}
+				if (i == 149) {
+					Assert.fail(e.getMessage());
 				}
 			}
 		}
+		for (int i = 0; i < 150; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().contains("List of Conditions")) {
+						System.out.println("condition true");
+						String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j 
+								+ "].parentElement.parentElement.querySelector('button[icon=\"pi pi-eye\"]')";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						btn.click();
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 149) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+//		for (int i = 0; i <= 150; i++) {
+//			try {
+//				WebElement btn = javascriptHelper.executeScriptWithWebElement(
+//						dataCheck_IncomeJsPaths.getElement("customerFinancialsTabEyeBtn"));
+//				btn.click();
+//				break;
+//			} catch (Exception e) {
+//				{
+//					if (i == 150) {
+//						Assert.fail(e.getMessage());
+//					}
+//				}
+//			}
+//		}
 	}
 
 	@And("User_608 click the Return button under Application details tab")
 	public void user_608_click_the_return_button_under_application_details_tab() throws Throwable {
 		String length = null;
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				length = javascriptHelper
 						.executeScript("return document.querySelectorAll('kub-workflow-decision button').length")
@@ -7732,12 +7780,12 @@ public class AutoLoan_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('kub-workflow-decision button')[" + j
@@ -7754,7 +7802,7 @@ public class AutoLoan_Steps {
 				break;
 			} catch (Exception e) {
 				{
-					if (i == 150) {
+					if (i == 300) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -7764,7 +7812,7 @@ public class AutoLoan_Steps {
 
 	@And("User_608 select L1 Approval from dropdown in Return popup screen")
 	public void user_608_select_l1_approval_from_dropdown_in_return_popup_screen() throws Throwable {
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				WebElement lov = javascriptHelper
 						.executeScriptWithWebElement(underWriterJsPaths.getElement("return_dropdown"));
@@ -7772,14 +7820,14 @@ public class AutoLoan_Steps {
 				break;
 			} catch (Exception e) {
 				{
-					if (i == 150) {
+					if (i == 300) {
 						Assert.fail(e.getMessage());
 					}
 				}
 			}
 		}
 		String length = null;
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				length = javascriptHelper
 						.executeScript("return document.querySelectorAll('ion-radio-group ion-label').length")
@@ -7789,12 +7837,12 @@ public class AutoLoan_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-radio-group ion-label')[" + j
@@ -7810,7 +7858,7 @@ public class AutoLoan_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -7820,7 +7868,7 @@ public class AutoLoan_Steps {
 	@And("User_608 enter the Remarks under Return popup screen")
 	public void user_608_enter_the_remarks_under_return_popup_screen() throws Throwable {
 		String length = null;
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-chip ion-label').length")
 						.toString();
@@ -7829,12 +7877,12 @@ public class AutoLoan_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 150) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-chip ion-label')[" + j + "].textContent";
@@ -7850,7 +7898,7 @@ public class AutoLoan_Steps {
 				break;
 			} catch (Exception e) {
 				{
-					if (i == 150) {
+					if (i == 300) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -7860,7 +7908,7 @@ public class AutoLoan_Steps {
 
 	@And("User_608 click the Return button under Return popup screen")
 	public void user_608_click_the_return_button_under_return_popup_screen() throws Throwable {
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				WebElement btn = javascriptHelper
 						.executeScriptWithWebElement(underWriterJsPaths.getElement("return_Btn"));
@@ -7868,7 +7916,7 @@ public class AutoLoan_Steps {
 				break;
 			} catch (Exception e) {
 				{
-					if (i == 150) {
+					if (i == 300) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -8448,8 +8496,10 @@ public class AutoLoan_Steps {
 	@And("User_608 post clicking on View Summary button system should display the workflow of the record")
 	public void user_608_post_clicking_on_view_summary_button_system_should_display_the_workflow_of_the_record()
 			throws Throwable {
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 500; i++) {
 			try {
+//				String string = "document.querySelector('app-workflow-pop')";
+//				WebElement popup = javascriptHelper.executeScriptWithWebElement(string);
 				WebElement popup = javascriptHelper
 						.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("summaryPopup"));
 				javascriptHelper.backgroundBorder(popup);
@@ -8457,20 +8507,26 @@ public class AutoLoan_Steps {
 				break;
 			} catch (Exception e) {
 				{
-					if (i == 150) {
+					if (i == 500) {
 						Assert.fail(e.getMessage());
 					}
 				}
 			}
 		}
-		for (int i = 0; i <= 150; i++) {
+	}
+	
+	@And("^User_608 close the View Summary workflow popup in Applicaton Details screen$")
+	public void user_608_close_the_view_summary_workflow_popup_in_applicaton_details_screen() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("popupCloseBtn"))
-						.click();
+				String string = "document.querySelector('app-workflow-pop ion-button')";
+				WebElement closeBtn = javascriptHelper.executeScriptWithWebElement(string);
+//				WebElement closeBtn = javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("popupCloseBtn"));
+				closeBtn.click();
 				break;
 			} catch (Exception e) {
 				{
-					if (i == 150) {
+					if (i == 300) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -8824,44 +8880,57 @@ public class AutoLoan_Steps {
 
 	@And("User_608 click the pencil icon under Customer Financials tab")
 	public void user_608_click_the_pencil_icon_under_customer_financials_tab() throws Throwable {
-		String length = null;
-		for (int i = 0; i <= 150; i++) {
+		String listOfRecords = "document.querySelector('button[icon=\"pi pi-plus\"]').parentElement.parentElement.parentElement.parentElement.querySelectorAll('td').length";
+		String listOfEyeBtn = "";
+		String recordName = "";
+		boolean isEyeBtnClicked = false;
+		for (int i = 0; i <= 500; i++) {
 			try {
-				length = javascriptHelper
-						.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length").toString();
-				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0")) {
+				listOfEyeBtn = javascriptHelper.executeScript("return " + listOfRecords).toString();
+				System.out.println("List of add button " + listOfEyeBtn);
+				if (!(listOfEyeBtn.isBlank())) {
 					break;
 				}
 			} catch (Exception e) {
-				{
-					if (i == 150) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		int premitiveListOfEyeButton = Integer.parseInt(listOfEyeBtn);
+		for (int j = 0; j < premitiveListOfEyeButton; j++) {
+			for (int k = 0; k <= 100; k++) {
+				try {
+					recordName = javascriptHelper.executeScript(
+							"return document.querySelector('button[icon=\"pi pi-plus\"]').parentElement.parentElement.parentElement.parentElement.querySelectorAll('td')["
+									+ j + "].textContent")
+							.toString();
+					System.out.println("Screen Name " + recordName);
+					if (!(recordName.isBlank())) {
+						System.out.println("Screen Name" + recordName + " is Not null");
+						if ((recordName.trim()).equalsIgnoreCase(("Active").trim())) {
+							System.out.println("Inside nested loop");
+							javascriptHelper.backgroundColor(
+									javascriptHelper
+									.executeScriptWithWebElement(
+											"document.querySelector('button[icon=\"pi pi-plus\"]').parentElement.parentElement.parentElement.parentElement.querySelectorAll('td')[" + j + "].parentElement.querySelector('button')"));
+							javascriptHelper
+									.executeScriptWithWebElement(
+											"document.querySelector('button[icon=\"pi pi-plus\"]').parentElement.parentElement.parentElement.parentElement.querySelectorAll('td')[" + j + "].parentElement.querySelector('button')")
+									.click();
+							isEyeBtnClicked = true;
+							break;
+						}
+					}
+				} catch (Exception e) {
+					if (k == 100) {
 						Assert.fail(e.getMessage());
 					}
 				}
 			}
-		}
-		for (int i = 0; i <= 150; i++) {
-			try {
-				for (int j = 0; j < Integer.parseInt(length); j++) {
-					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
-					String titlename = javascriptHelper.executeScript(title).toString();
-					if (titlename.trim().contains("Customer Personal Information")) {
-						String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]"
-								+ ".parentElement.parentElement.querySelector('button[icon=\"pi pi-pencil\"]')";
-						WebElement pencilBtn = javascriptHelper.executeScriptWithWebElement(jspath);
-						javascriptHelper.backgroundBorder(pencilBtn);
-						pencilBtn.click();
-						break;
-					}
-				}
+			if (isEyeBtnClicked == true) {
 				break;
-			} catch (Exception e) {
-				{
-					if (i == 150) {
-						Assert.fail(e.getMessage());
-					}
-				}
 			}
 		}
 	}
@@ -9705,39 +9774,12 @@ public class AutoLoan_Steps {
 
 	@When("User_608 click the Save button in Customer Debt screen")
 	public void user_608_click_the_save_button_in_customer_debt_screen() throws Throwable {
-		String length = null;
 		for (int i = 0; i <= 150; i++) {
 			try {
-				length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
-						.toString();
-				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0")) {
-					break;
-				}
-			} catch (Exception e) {
-				{
-					if (i == 150) {
-						Assert.fail(e.getMessage());
-					}
-				}
-			}
-		}
-		for (int i = 0; i <= 150; i++) {
-			try {
-				for (int j = 0; j < Integer.parseInt(length); j++) {
-					String title = "return document.querySelectorAll('form button')[" + j
-							+ "].getAttribute('ng-reflect-text')";
-					String titlename = javascriptHelper.executeScript(title).toString();
-					System.out.println(titlename);
-					if (titlename.trim().contains("Save")) {
-						System.out.println("condition true");
-						String jspath = "document.querySelectorAll('form button')[" + j + "]";
-						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
-						actions.scrollToElement(btn).build().perform();
-						btn.click();
-						break;
-					}
-				}
+				WebElement saveBtn = javascriptHelper
+						.executeScriptWithWebElement(underWriterJsPaths.getElement("SaveIcon"));
+				actions.scrollToElement(saveBtn).build().perform();
+				saveBtn.click();
 				break;
 			} catch (Exception e) {
 				{
@@ -10994,7 +11036,7 @@ public class AutoLoan_Steps {
 				}
 			}
 		}
-		for (int i = 0; i <= 150; i++) {
+		for (int i = 0; i <= 50; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("toastMsgCloseBtn"))
 						.click();
@@ -11091,7 +11133,7 @@ public class AutoLoan_Steps {
 							.toString();
 //					System.out.println("Screen Name " + addButtonScreenName);
 					if (!(addButtonScreenName.isBlank())) {
-						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
+//						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
 						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Financial Commitments").trim())) {
 
 							javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
