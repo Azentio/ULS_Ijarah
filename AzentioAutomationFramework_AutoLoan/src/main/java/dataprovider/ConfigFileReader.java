@@ -206,5 +206,17 @@ public class ConfigFileReader {
 		recordReferenceNumber = properties.getProperty("AutoLoanDisbMkrRecordNo");
 		return recordReferenceNumber;
 	}
+	public String getAutoLoanDataEntryRecordReferenceNumber()
+	{
+		String recordReferenceNumber;
+		recordReferenceNumber = properties.getProperty("getAutoLoanDataEntryReferenceNumber");
+		return recordReferenceNumber;
+	}
 	
+	public String getAutoLoanOfferingReferedReferenceNumber()
+	{
+		String recordReferenceNumber;
+		recordReferenceNumber = properties.getProperty("getAutoLoanOfferingReferenceNumber");
+		return recordReferenceNumber;
+	}
 }
