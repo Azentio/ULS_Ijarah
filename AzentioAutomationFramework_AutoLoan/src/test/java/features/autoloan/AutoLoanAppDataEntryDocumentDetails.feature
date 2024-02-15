@@ -33,8 +33,9 @@ Feature: Auto Loan App Data Entry Document Details
     And click on module dropdown in IJRARAH
     And click on LOS option in module dropdown
 		And click on mail box
+		And User_607 get the test data for test case AT_Al_DOC_09
 		And click on search box upon click on the mail box
-    And User_607 get the test data for test case AT_Al_DOC_09
+		And User_607 Search in the search Field Auto Loan App Data Entry Document Details
     And User_608 click the Entitle button under inbox
     And User_607 click on document details info tab Auto Loan App Data Entry
     And User_607 Verify Export to PDF in document details Auto Loan App Data Entry

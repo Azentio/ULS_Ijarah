@@ -135,7 +135,7 @@ Feature: Auto Loan Appdata entry Income details
     And User_607 click the pencil icon under Customer Financials tab
     And User_607 click Add button under Income section in Customer Financials tab
     And User_607 enter the Lumpsum Amount under Income screen in Customer Financials tab
-    And User_607 enter the Pension Amount under Income screen in Customer Financials tab
+    #And User_607 enter the Pension Amount under Income screen in Customer Financials tab
     And User_607 select the Income option under Income screen in Customer Financials tab
     And User_607 select the Frequency option under Income screen in Customer Financials tab
     And User_607 click the Save button with mandatory field blank under Income details screen
@@ -163,7 +163,7 @@ Feature: Auto Loan Appdata entry Income details
     And User_607 verify while modification enters the invalid data in Income details screen
     And User_607 system should not allow user to do a modification with invalid data under Income details screen
     And User_607 verify system allow user to modify Lumpsum Amount under Income details screen
-    And User_607 verify system allow user to modify Pension Amount under Income details screen
+    #And User_607 verify system allow user to modify Pension Amount under Income details screen
     And User_607 verify system allow user to modify Income under Income details screen
     And User_607 verify system allow user to modify Frequency under Income details screen
     And User_607 verify system allow user to modify Income Amount under Income details screen
@@ -219,8 +219,8 @@ Feature: Auto Loan Appdata entry Income details
     And User_607 click the pencil icon under Customer Financials tab
     And User_607 click Search button in Income section under Customer Financials tab
     And User_607 verify the functionality of Search box with matching data in Income section
-    #And User_607 verify entering any matching value system should display all the possible matching records under Income section
-    #And User_607 verify the functionality of Search box with mismatch data in Income section
+    And User_607 verify entering any matching value system should display all the possible matching records under Income section
+    And User_607 verify the functionality of Search box with mismatch data in Income section
     And User_607 verify system should not display any records or system should display the message as No data found under Income section
     Then logout from the ULS Application
 

@@ -16,7 +16,7 @@ Feature: Auto Loan Appdata Entry Contact Details
     And user_607 click on add butto in contact details screen in new app stage
     Then user_607 verify contact details screen should get open with save buttton and back button
     Then user_607 verify phone type field should be editable numeric field at new app stage
-    #Then user_607 verify phone number field should be editable numeric field at new app stage
+    Then user_607 verify phone number field should be editable numeric field at new app stage
     Then user_607 verify Consent for Phone Contact should be editable numeric at new app stage
     Then user_607 verify prefered phone contact type field should be editable email format at new app stage
     Then user_607 verify prefered time for contact field should be editable number format at new app stage

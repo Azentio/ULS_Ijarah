@@ -1082,33 +1082,28 @@ public class AutoLoanAppdataEntryContactDetails {
 	public void user_607_verify_phone_number_field_should_be_editable_numeric_field_at_new_app_stage()
 			throws Throwable {
 		String fieldValidation = "";
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <= 700; i++) {
 			try {
-				javascriptHelper
-						.executeScriptWithWebElement(ALoanAppdataEntryContactDetails.getElement("phone_number_input"))
+				javascriptHelper.executeScriptWithWebElement(ALoanAppdataEntryContactDetails.getElement("phone_number_input"))
 						.click();
-				javascriptHelper
-						.executeScriptWithWebElement(ALoanAppdataEntryContactDetails.getElement("phone_number_input"))
+				javascriptHelper.executeScriptWithWebElement(ALoanAppdataEntryContactDetails.getElement("phone_number_input"))
 						.sendKeys(testData.get("character input"));
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i == 700) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <= 700; i++) {
 			try {
-				fieldValidation = javascriptHelper
-						.executeScript(
-								"return " + ALoanAppdataEntryContactDetails.getElement("phone_number_field_validation"))
-						.toString();
+				fieldValidation = javascriptHelper.executeScript("return " + ALoanAppdataEntryContactDetails.getElement("phone_number_field_validation")).toString();
 				if ((!fieldValidation.isBlank())) {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i == 700) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1118,11 +1113,9 @@ public class AutoLoanAppdataEntryContactDetails {
 				"Mobile number field is text input hence failed");
 		for (int i = 0; i < 10; i++) {
 			try {
-				javascriptHelper
-						.executeScriptWithWebElement(ALoanAppdataEntryContactDetails.getElement("phone_number_input"))
+				javascriptHelper.executeScriptWithWebElement(ALoanAppdataEntryContactDetails.getElement("phone_number_input"))
 						.click();
-				javascriptHelper
-						.executeScriptWithWebElement(ALoanAppdataEntryContactDetails.getElement("phone_number_input"))
+				javascriptHelper.executeScriptWithWebElement(ALoanAppdataEntryContactDetails.getElement("phone_number_input"))
 						.sendKeys(Keys.chord(Keys.CONTROL, "A", Keys.DELETE));
 
 			} catch (Exception e) {
@@ -1131,11 +1124,9 @@ public class AutoLoanAppdataEntryContactDetails {
 
 		for (int i = 0; i <= 200; i++) {
 			try {
-				javascriptHelper
-						.executeScriptWithWebElement(ALoanAppdataEntryContactDetails.getElement("phone_number_input"))
+				javascriptHelper.executeScriptWithWebElement(ALoanAppdataEntryContactDetails.getElement("phone_number_input"))
 						.click();
-				javascriptHelper
-						.executeScriptWithWebElement(ALoanAppdataEntryContactDetails.getElement("phone_number_input"))
+				javascriptHelper.executeScriptWithWebElement(ALoanAppdataEntryContactDetails.getElement("phone_number_input"))
 						.sendKeys(testData.get("phone number"));
 				break;
 			} catch (Exception e) {

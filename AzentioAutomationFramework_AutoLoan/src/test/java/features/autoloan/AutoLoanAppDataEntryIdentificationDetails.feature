@@ -122,7 +122,7 @@ Feature: Auto Loan AppData Entry Identification Details
      Given navigate the IJARA URL
     And login with valid credentials7
     And user_607 get the test data for test case id AT_AL_IND_01
-    And click on module dropdown in IJRARAH
+   And click on module dropdown in IJRARAH
     And click on LOS option in module dropdown
 		And click on mail box
 		And click on search box upon click on the mail box
@@ -132,9 +132,9 @@ Feature: Auto Loan AppData Entry Identification Details
     And user_607 click on edit button customer personal information screen at new app stage
     And user_607 click on edit button of customer identification details list view record
     Then user_607 verify system should change the identification record status active and in active at new app stage
-    And user_607 click on edit button of the list view record of customer identification at new app stage
+    And user_607 click on edit button of customer identification details list view record
     Then user_607 verify system should change the identification record status active and in active at new app stage
-    And user_607 click on edit button of the list view record of customer identification at new app stage
+    And user_607 click on edit button of customer identification details list view record
     And user_607 click on view summary button in identification new app stage record
     Then user_607 verify system should show the record summary of identification at new app stage
     Then logout from the ULS Application
