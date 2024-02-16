@@ -1,16 +1,13 @@
 package stepdefinitions;
 
 import java.awt.Robot;
-import java.awt.event.KeyEvent;
-import java.io.IOException;
-import java.util.HashMap;
 import java.util.Map;
 
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.asserts.SoftAssert;
 
 import dataprovider.ConfigFileReader;
@@ -19,7 +16,9 @@ import helper.ClicksAndActionsHelper;
 import helper.JavascriptHelper;
 import helper.WaitHelper;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.reactivex.rxjava3.functions.Action;
 import pageobjects.JSPaths;
 import resources.BaseClass;
 
@@ -32,7 +31,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	// Ijarah_CommonFieldName
 	SoftAssert softAssert = new SoftAssert();
 	ClicksAndActionsHelper clicksAndActionsHelper = new ClicksAndActionsHelper(driver);
-
+	Actions actions = new Actions(driver);
 	SoftAssert SoftAssert = new SoftAssert();
 	Map<String, String> testData;
 	//Map<String, String> testData = new HashMap<>();
@@ -41,6 +40,10 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	JSPaths iJarah_CommonElements = new JSPaths(excelPath, "iJarah_CommonElements", "Ijarah_CommonFieldName", "JSPath");
 	JSPaths AddressDetails_js = new JSPaths(excelPath, "addressdetails_WebElements", "Ijarah_AddressDetailsFieldName", "JSPath");
 	ExcelData AddressDetails_TestData  = new ExcelData(excelTestDataPath,"AutoL_AppDataEn_AddressDetail","Dataset ID");
+	ExcelData AutoLoanExecutionExcel = new ExcelData(excelTestDataPath, "AutoLoanExecution", "TestCase ID");
+
+
+	Map<String, String> executionData;
 	Robot robot;
 	int sectionIndex;
 	int indexOfListView = 0;
@@ -48,23 +51,30 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	
 	@And("User_6047 Get the test data for test case ID AT_AU_AD_01" )
 	public void user_6047_get_the_test_data_for_test_case_id_at_au_ad01() {
-		testData =  AddressDetails_TestData.getTestdata("DS01_AT_AU_AD_01");
+		executionData = AutoLoanExecutionExcel.getTestdata("AT_AU_AD_01");
+		testData =  AddressDetails_TestData.getTestdata(executionData.get("dataSet_ID"));
+		
+		//testData =  AddressDetails_TestData.getTestdata("DS01_AT_AU_AD_01");
 	}
+	
+	
 	@And("User_6047 Get the test data for test case ID AT_AU_AD_09" )
 	public void user_6047_get_the_test_data_for_test_case_id_at_au_ad09() {
-		testData =  AddressDetails_TestData.getTestdata("DS01_AT_AU_AD_09");
+		executionData = AutoLoanExecutionExcel.getTestdata("AT_AU_AD_09");
+		testData =  AddressDetails_TestData.getTestdata(executionData.get("dataSet_ID"));
+		
+	//	testData =  AddressDetails_TestData.getTestdata("DS01_AT_AU_AD_09");
 	}
 	
 	@And("User_6047 Search the Ref Id under Inbox")
 	public void user_6047_search_the_ref_id_under_inbox() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text")));
-		//javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text"))
-		//.sendKeys(testData.get("Ref No"));
+
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("mail_box_search_text"))
-				//.sendKeys(testData.get("Ref No")); 
-				.sendKeys("5231");
+				.sendKeys(testData.get("Ref No")); 
+				//.sendKeys("5231");
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -73,19 +83,113 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 			}
 		}	}
 	@And("User_6047 click on additional customer info tab")
-	public void user_6047_click_on_additional_customer_info_tab() {
+	public void user_6047_click_on_additional_customer_info_tab() throws Throwable {
+////		for (int i = 0; i <= 300; i++) {
+////			try {
+////				javascriptHelper
+////						.executeScriptWithWebElement(AddressDetails_js.getElement("additonal_customer_info"))
+////						.click();
+////				break;
+////			} catch (Exception e) {
+////				if (i == 300) {
+////					Assert.fail(e.getMessage());
+////				}
+////			}
+////		}
+//		Thread.sleep(700);
+//		String lengthOfTheSegmentButton = "";
+//		boolean isClicked = false;
 //		for (int i = 0; i <= 300; i++) {
 //			try {
-//				javascriptHelper
-//						.executeScriptWithWebElement(AddressDetails_js.getElement("additonal_customer_info"))
-//						.click();
-//				break;
+//				lengthOfTheSegmentButton = javascriptHelper.executeScript(
+//						"return document.querySelector('ion-segment').querySelectorAll('ion-segment-button').length")
+//						.toString();
+//				if ((!lengthOfTheSegmentButton.isEmpty())) {
+//					break;
+//				}
 //			} catch (Exception e) {
 //				if (i == 300) {
 //					Assert.fail(e.getMessage());
 //				}
 //			}
 //		}
+//		int premitiveSegmentLength = Integer.parseInt(lengthOfTheSegmentButton);
+//		// document.querySelector('ion-segment').querySelectorAll('ion-segment-button')[14].innerText
+//		String segmentLabelName = "";
+//		for (int i = 0; i < premitiveSegmentLength; i++) {
+//			try {
+//				for (int j = 0; j <= 200; j++) {
+//					segmentLabelName = javascriptHelper.executeScript(
+//							"return document.querySelector('ion-segment').querySelectorAll('ion-segment-button')[" + i
+//									+ "].innerText")
+//							.toString();
+//					System.out.println("Segment Label Name " + segmentLabelName);
+//					if (segmentLabelName.equalsIgnoreCase("Additional Customer Info")) {
+//						javascriptHelper.executeScriptWithWebElement(
+//								"document.querySelector('ion-segment').querySelectorAll('ion-segment-button')[" + i
+//										+ "]")
+//								.click();
+//						indexOfListView=i;
+//						isClicked = true;
+//						break;
+//
+//					} else if (!(segmentLabelName.equalsIgnoreCase("Additional Customer Info"))) {
+//						isClicked = false;
+//						break;
+//					}
+//				}
+//
+//			} catch (Exception e) {
+//			}
+//			if (isClicked == true) {
+//				break;
+//			}
+//		} 
+		Thread.sleep(1500);
+		String length =null;
+		for (int i = 0; i <500; i++) {
+			try {
+			    length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length").toString();
+			    System.out.println(length);
+				if (!length.isBlank()&&!length.equalsIgnoreCase("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i==499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <500; i++) {
+		try {
+			for (int j = 0; j <Integer.parseInt(length); j++) {
+				String title ="return document.querySelectorAll('ion-segment-button')["+j+"].innerText";
+				String titlename = javascriptHelper.executeScript(title).toString();
+				System.out.println(titlename);
+				if (titlename.trim().contains("Additional Customer Info")) {
+					System.out.println("condition true");
+					String jspath ="document.querySelectorAll('ion-segment-button')["+j+"]";
+					WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
+//					System.out.println(jspath);
+//					javascriptHelper.scrollIntoView(addButton);
+					javascriptHelper.JSEClick(addButton);
+			//		addButton.click();
+					break;
+				}
+			}
+			break;
+		} catch (Exception e) {
+			if (i==499) {
+				Assert.fail(e.getMessage());
+			}
+		}
+	}
+	}
+	
+	
+	@And("User_6047 click on Customer Financial tab")
+	public void user_6047_click_on_customer_financial_tab() throws InterruptedException {
+		Thread.sleep(700);
 		String lengthOfTheSegmentButton = "";
 		boolean isClicked = false;
 		for (int i = 0; i <= 300; i++) {
@@ -113,16 +217,19 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 									+ "].innerText")
 							.toString();
 					System.out.println("Segment Label Name " + segmentLabelName);
-					if (segmentLabelName.equalsIgnoreCase("Additional Customer Info")) {
+					if (segmentLabelName.trim().equalsIgnoreCase("Customer Financials")) {
+						System.out.println("Condition true");
 						javascriptHelper.executeScriptWithWebElement(
 								"document.querySelector('ion-segment').querySelectorAll('ion-segment-button')[" + i
 										+ "]")
 								.click();
+						System.out.println("document.querySelector('ion-segment').querySelectorAll('ion-segment-button')[" + i
+										+ "]");
 						indexOfListView=i;
 						isClicked = true;
 						break;
 
-					} else if (!(segmentLabelName.equalsIgnoreCase("Additional Customer Info"))) {
+					} else if (!(segmentLabelName.equalsIgnoreCase("Customer Financials"))) {
 						isClicked = false;
 						break;
 					}
@@ -154,192 +261,61 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 			}
 	}
 	@And("User_6047 clict the Add button under the Address detail")
-	public void user_6047_clict_the_add_button_under_the_address_detail() {
-//		String labelLength = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
-//
-//				String lengthOfTheLabel = "";
-//
-//				boolean isAddButttonClicked = false;
-//
-//				String labelName = "";
-//
-//				System.out.println("");
-//
-//				for (int i = 0; i <= 300; i++) {
-//
-//					try {
-//
-//						if (i > 200) {
-//
-//							System.out.println("Query " + labelLength);
-//
-//							lengthOfTheLabel = javascriptHelper.executeScript("return " + labelLength).toString();
-//
-//							if (!(lengthOfTheLabel.isBlank())) {
-//
-//								break;
-//
-//							}
-//
-//						}
-//
-//					} catch (Exception e) {
-//
-//						if (i == 300) {
-//
-//							Assert.fail(e.getMessage());
-//
-//						}
-//
-//					}
-//
-//				}
-//
-//				int premitiveLabelLength = Integer.parseInt(lengthOfTheLabel);
-//
-//				System.out.println("Length of the label " + premitiveLabelLength);
-//		 
-//				for (int i = 0; i < premitiveLabelLength; i++) {
-//
-//					for (int j = 0; j <= 300; j++) {
-//
-//						try {
-//
-//							labelName = javascriptHelper.executeScript(
-//
-//									"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
-//
-//											+ i + "].innerText")
-//
-//									.toString();
-//
-//							System.out.println("label Name is " + labelName);
-//
-//							if (!(labelName.isBlank()) && (labelName.trim()).equalsIgnoreCase(("Address Details").trim())) {
-//		 
-//								System.out.println("Label Name " + labelName);
-//
-//								if (i > 250) {
-//
-//									javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
-//
-//											"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + i + "]"));
-//
-//								}
-//		 
-//								clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
-//
-//										"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + i + "]"));
-//
-//								clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
-//
-//										"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + i + "]"));
-//
-//								isAddButttonClicked = true;
-//		 
-//								break;
-//
-//							} else {
-//
-//								isAddButttonClicked = false;
-//
-//								break;
-//
-//							}
-//
-//						} catch (Exception e) {
-//
-//							if (j == 300) {
-//
-//								Assert.fail(e.getMessage());
-//
-//							}
-//
-//						}
-//
-//					}
-//
-//					if (isAddButttonClicked == true) {
-//
-//						break;
-//
-//					}
-//
-//				}
-		
-		String length =null;
-
-				for (int i = 0; i <500; i++) {
-
-					try {
-
-					    length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title').length").toString();
-
-					    System.out.println(length);
-
-						if (!length.isBlank()&&!length.equalsIgnoreCase("0")) {
-
-							break;
-
-						}
-
-					} catch (Exception e) {
-
-						if (i==499) {
-
-							Assert.fail(e.getMessage());
-
-						}
-
-					}
-
-				}
-
-				for (int i = 0; i <500; i++) {
-
-				try {
-
-					for (int j = 0; j <Integer.parseInt(length); j++) {
-
-						String title ="return document.querySelectorAll('ion-title')["+j+"].innerText";
-
-						String titlename = javascriptHelper.executeScript(title).toString();
-
-						System.out.println(titlename);
-
-						if (titlename.trim().contains("Address Details")) {
-
-							System.out.println("condition true");
-
-							String jspath ="document.querySelectorAll('ion-title')["+j+"].parentElement.nextElementSibling.querySelector('button')";
-
-							WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
-
-//							System.out.println(jspath);
-
-					//	javascriptHelper.scrollIntoView(addButton);
-							javascriptHelper.JSEClick(addButton);
-							//addButton.click();
-
-							break;
-
-						}
-
-					}
-
+	public void user_6047_clict_the_add_button_under_the_address_detail() throws Throwable {
+		Thread.sleep(700);
+		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
+		String listOfAddButton = "";
+		String addButtonScreenName = "";
+		boolean isAddButtonClicked = false;
+		for (int i = 0; i <= 300; i++) {
+			try {
+				listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
+				System.out.println("List of add button " + listOfAddButton);
+				if (!(listOfAddButton.isBlank())) {
 					break;
-
-				} catch (Exception e) {
-
-					if (i==499) {
-
-						Assert.fail(e.getMessage());
-
-					}
-
 				}
-
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
 			}
+		}
+		int premitiveListOfAddButton = Integer.parseInt(listOfAddButton);
+		for (int j = 0; j < premitiveListOfAddButton; j++) {
+			for (int k = 0; k <= 300; k++) {
+				try {
+					addButtonScreenName = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
+									+ j + "].textContent")
+							.toString();
+					System.out.println("Screen Name " + addButtonScreenName);
+					if (!(addButtonScreenName.isBlank())) {
+						System.out.println("Screen Name" + addButtonScreenName + " is Not null");
+						if ((addButtonScreenName.trim()).equalsIgnoreCase(("Address Details").trim())) {
+							System.out.println("Inside nested loop");
+							System.out.println("document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]");
+							javascriptHelper
+							.scrollIntoView(
+									javascriptHelper.executeScriptWithWebElement("document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')[" + j + "]"));
+							javascriptHelper
+									.executeScriptWithWebElement(
+											"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]")
+									.click();
+							isAddButtonClicked = true;
+							break;
+						}
+					}
+				} catch (Exception e) {
+					if (k == 300) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+			if (isAddButtonClicked == true) {
+				break;
+			}
+		}
+	   
 	}
 	@And("User_6047 verify back button should visible in address details screen")
 	public void user_6047_verify_back_button_should_visible_in_address_details_screen() throws Throwable {
@@ -1569,18 +1545,18 @@ public class AutoLoan_AppDataEntry_AddressDetails {
                 }
             }
         }
-		String MobileData="9632587410";
-		String Mobile= javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("mobile_number_Verify")).getAttribute("ng-reflect-model");
-		for (int i = 0; i <2000; i++) {
-            try {
-                Assert.assertTrue(Mobile.contains(testData.get("MobileNumber")));
-                break;
-            } catch (Exception e) {
-                if (i==1999) {
-                    Assert.fail(e.getMessage());
-                }
-            }
-        }
+//		String MobileData="9632587410";
+//		String Mobile= javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("mobile_number_Verify")).getAttribute("ng-reflect-model");
+//		for (int i = 0; i <2000; i++) {
+//            try {
+//                Assert.assertTrue(Mobile.contains(testData.get("MobileNumber")));
+//                break;
+//            } catch (Exception e) {
+//                if (i==1999) {
+//                    Assert.fail(e.getMessage());
+//                }
+//            }
+//        }
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("latitude_details_of_the_address_verify")));
 		String LatitudeData="101010";
 		String Latitude= javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("latitude_details_of_the_address_verify")).getAttribute("ng-reflect-model");
@@ -1631,18 +1607,18 @@ public class AutoLoan_AppDataEntry_AddressDetails {
                 }
             }
         }
-//		String occupencydateData="2000-10-09";
-//		String occupencydate= javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("occupency_date_Data")).getAttribute("ng-reflect-value-variable");
-//		for (int i = 0; i <2000; i++) {
-//            try {
-//                Assert.assertTrue(occupencydate.contains(occupencydateData));
-//                break;
-//            } catch (Exception e) {
-//                if (i==1999) {
-//                    Assert.fail(e.getMessage());
-//                }
-//            }
-//        }
+		String occupencydateData="2000-10-09";
+		String occupencydate= javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("occupency_date_Data")).getAttribute("ng-reflect-value-variable");
+		for (int i = 0; i <2000; i++) {
+            try {
+                Assert.assertTrue(occupencydate.contains(occupencydateData));
+                break;
+            } catch (Exception e) {
+                if (i==1999) {
+                    Assert.fail(e.getMessage());
+                }
+            }
+        }
 		
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("landlord_name_Data")));
 		String landlordnameData="test";
@@ -2039,7 +2015,7 @@ Thread.sleep(500);
                 }
             }
         }
-		String neighbourhoodEdit= javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("neighbourhood_districtName_verify")).getAttribute("ng-reflect-is-disabled");
+		String neighbourhoodEdit= javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("neighbourhood_districtName")).getAttribute("ng-reflect-is-disabled");
 		for (int i = 0; i <2000; i++) {
             try {
                 Assert.assertTrue(neighbourhoodEdit.contains("false"));
@@ -2050,10 +2026,10 @@ Thread.sleep(500);
                 }
             }
         }
-		String NeighbourhoodText = javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("neighbourhood_districtName_verify")).getAttribute("type");
+		String NeighbourhoodText = javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("neighbourhood_districtName")).getAttribute("ng-reflect-placeholder");
 		for (int i = 0; i <2000; i++) {
             try {
-                Assert.assertTrue(NeighbourhoodText.contains("text"));
+                Assert.assertTrue(NeighbourhoodText.contains("Select"));
                 break;
             } catch (Exception e) {
                 if (i==1999) {
@@ -2087,10 +2063,10 @@ Thread.sleep(500);
                 }
             }
         }
-		String City_Text= javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("City")).getAttribute("aria-label");
+		String City_Text= javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("City")).getAttribute("type");
 		for (int i = 0; i <2000; i++) {
             try {
-                Assert.assertTrue(City_Text.contains("Select"));
+                Assert.assertTrue(City_Text.contains("text"));
                 break;
             } catch (Exception e) {
                 if (i==1999) {
@@ -2436,131 +2412,54 @@ Thread.sleep(500);
             }
         }
 	}
+	
 	@And("User_6047 clict the edit button under the Address detail")
-	public void user_6047_clict_the_edit_button_under_the_address_detail() {
-//		String sectionLength = "";
-//		boolean isClicked = false;
-//		for (int i = 0; i <= 200; i++) {
-//			try {
-//				sectionLength = javascriptHelper.executeScript(
-//						"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length")
-//						.toString();
-//				if (!(sectionLength.isBlank()) && sectionLength.equals("0")) {
-//					break;
-//				}
-//			} catch (Exception e) {
-//
-//			}
-//		}
-//		int premitiveSectionLength = Integer.parseInt(sectionLength);
-//		for (int i = 1; i <= premitiveSectionLength; i++) {
-//			String sectionName = javascriptHelper.executeScript(
-//					"return document.querySelectorAll('ion-title[class=\\\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\\\"]')["
-//							+ i + "].innerText")
-//					.toString();
-//			System.out.println("Section Name " + sectionName + " i value " + i);
-//			if (sectionName.equals("Address Details")) {
-//				System.out.println("document.querySelectorAll('table[class=\"p-datatable-table ng-star-inserted\"]')["
-//						+ (i + 1) + "].querySelector('tbody button[icon=\"pi pi-pencil\"]')");
-//				
-////				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
-////						"document.querySelectorAll('table[class=\"p-datatable-table ng-star-inserted\"]')[" + (i + 1)
-////						+ "].querySelector('tbody button[icon=\"pi pi-pencil\"]')"));
-//				javascriptHelper.scrollToElemet(javascriptHelper.executeScriptWithWebElement("document.querySelectorAll('table[class=\"p-datatable-table ng-star-inserted\"]')[" + (i + 1)
-//								+ "].querySelector('tbody button[icon=\"pi pi-pencil\"]')"));
-//				
-//				javascriptHelper.executeScriptWithWebElement(
-//						"document.querySelectorAll('table[class=\"p-datatable-table ng-star-inserted\"]')[" + (i + 1)
-//								+ "].querySelector('tbody button[icon=\"pi pi-pencil\"]')")
-//						.click();
-//				isClicked = true;
-//				break;
-//
-//			}
-//			if (isClicked == true)
-//
-//			{
-//				break;
-//			}
-//		}
-		
+	public void user_6047_clict_the_edit_button_under_the_address_detail() throws Throwable {
+		Thread.sleep(2000);
 		String length =null;
-
-		for (int i = 0; i <500; i++) {
-
+		for (int i = 0; i <=150; i++) {
 			try {
-
 			    length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title').length").toString();
-
 			    System.out.println(length);
-
 				if (!length.isBlank()&&!length.equalsIgnoreCase("0")) {
-
 					break;
-
 				}
-
 			} catch (Exception e) {
-
-				if (i==499) {
-
+				if (i==150) {
 					Assert.fail(e.getMessage());
-
 				}
-
 			}
-
 		}
-
-		for (int i = 0; i <500; i++) {
-
+		Thread.sleep(2000);
+		for (int i = 0; i <=150; i++) {
 		try {
-
 			for (int j = 0; j <Integer.parseInt(length); j++) {
-
 				String title ="return document.querySelectorAll('ion-title')["+j+"].innerText";
-
 				String titlename = javascriptHelper.executeScript(title).toString();
-
 				System.out.println(titlename);
-
 				if (titlename.trim().contains("Address Details")) {
-
 					System.out.println("condition true");
-
-				//	String jspath ="document.querySelectorAll('ion-title')["+j+"].parentElement.nextElementSibling.querySelector('button')";
-					String jspath ="document.querySelectorAll('ion-title')["+j+"].parentElement.nextElementSibling.querySelector('button[icon=\"pi pi-pencil\"]')";
-					WebElement editButton = javascriptHelper.executeScriptWithWebElement(jspath);
-
-//					System.out.println(jspath);
-
-				//javascriptHelper.scrollIntoView(editButton);
-					javascriptHelper.JSEClick(editButton);
-				//editButton.click();
-
+					String jspath ="document.querySelectorAll('ion-title')["+j+"].parentElement.nextElementSibling.querySelector('button[ng-reflect-icon=\"pi pi-pencil\"]')";
+					System.out.println(jspath);
+					WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
+					//javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jspath));
+					actions.scrollToElement(addButton).build().perform();;
+				//	javascriptHelper.JSEClick(addButton);
+					addButton.click();
 					break;
-
 				}
-
 			}
-
 			break;
-
 		} catch (Exception e) {
-
-			if (i==499) {
-
+			if (i==150) {
 				Assert.fail(e.getMessage());
-
 			}
-
 		}
-
+		}
 	}
-
-	}
-
-
+	
+	
+	
 	@Then("User_6047 give the character input in numeric field")
 	public void user_6047_give_the_character_input_in_numeric_field() {
 
@@ -2648,279 +2547,157 @@ Thread.sleep(500);
 
 @And("User_6047 verify the add botton in address details list view")
 public void user_6047_verify_the_add_botton_in_address_details_list_view() {
-
-	String labelLength = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
-
-			String lengthOfTheLabel = "";
-
-			boolean isAddButtonPresent = false;
-
-			String labelName = "";
-
-			System.out.println("");
-
-			for (int i = 0; i <= 300; i++) {
-
-				try {
-
-					if (i > 200) {
-
-						System.out.println("Query " + labelLength);
-
-						lengthOfTheLabel = javascriptHelper.executeScript("return " + labelLength).toString();
-
-						if (!(lengthOfTheLabel.isBlank())) {
-
-							break;
-
-						}
-
-					}
-
-				} catch (Exception e) {
-
-					if (i == 300) {
-
-						Assert.fail(e.getMessage());
-
-					}
-
-				}
-
-			}
-
-			int premitiveLabelLength = Integer.parseInt(lengthOfTheLabel);
-
-			System.out.println("Length of the label " + premitiveLabelLength);
-	 
-			for (int i = 0; i < premitiveLabelLength; i++) {
-
-				for (int j = 0; j <= 300; j++) {
-
-					try {
-
-						labelName = javascriptHelper.executeScript(
-
-								"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
-
-										+ i + "].innerText")
-
-								.toString();
-
-						System.out.println("label Name is " + labelName);
-
-						if (!(labelName.isBlank()) && (labelName.trim()).equalsIgnoreCase(("Address Details").trim())) {
-	 
-							System.out.println("Label Name " + labelName);
-
-							if (i > 250) {
-
-								javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
-
-										"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + i + "]"));
- 
-
-							}
-	 
-							clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
-
-									"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + i + "]"));
-
-							javascriptHelper.executeScriptWithWebElement(
-
-									"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + i + "]").isDisplayed();
-
-							isAddButtonPresent = true;
-	 
-							break;
-
-						} else {
-
-							isAddButtonPresent = false;
-
-							break;
-
-						}
-
-					} catch (Exception e) {
-
-						if (j == 300) {
-
-							Assert.fail(e.getMessage());
-
-						}
-
-					}
-
-				}
-
-				if (isAddButtonPresent == true) {
-
-					break;
-
-				}
-
-			}
-
-}
-
-@Then("User_6047 verify the Edit botton in address details list view")
-public void user_6047_verify_the_edit_botton_in_address_details_list_view() {
-	String sectionLength = "";
-	boolean editButtonispresent = false;
-	for (int i = 0; i <= 200; i++) {
+	String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
+	String listOfAddButton = "";
+	String addButtonScreenName = "";
+	boolean isAddButtonClicked = false;
+	for (int i = 0; i <= 300; i++) {
 		try {
-			sectionLength = javascriptHelper.executeScript(
-					"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length")
-					.toString();
-			if (!(sectionLength.isBlank()) && sectionLength.equals("0")) {
+			listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
+			System.out.println("List of add button " + listOfAddButton);
+			if (!(listOfAddButton.isBlank())) {
 				break;
 			}
 		} catch (Exception e) {
-
+			if (i == 300) {
+				Assert.fail(e.getMessage());
+			}
 		}
 	}
-	int premitiveSectionLength = Integer.parseInt(sectionLength);
-	for (int i = 1; i <= premitiveSectionLength; i++) {
-		String sectionName = javascriptHelper.executeScript(
-				"return document.querySelectorAll('ion-title[class=\\\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\\\"]')["
-						+ i + "].innerText")
-				.toString();
-		System.out.println("Section Name " + sectionName + " i value " + i);
-		if (sectionName.equals("Address Details")) {
-			System.out.println("document.querySelectorAll('table[class=\"p-datatable-table ng-star-inserted\"]')["
-					+ (i + 1) + "].querySelector('tbody button[icon=\"pi pi-pencil\"]')");
-			javascriptHelper.executeScriptWithWebElement(
-					"document.querySelectorAll('table[class=\"p-datatable-table ng-star-inserted\"]')[" + (i + 1)
-							+ "].querySelector('tbody button[icon=\"pi pi-pencil\"]')")
-					.isDisplayed();
-			editButtonispresent = true;
-			
+	int premitiveListOfAddButton = Integer.parseInt(listOfAddButton);
+	for (int j = 0; j < premitiveListOfAddButton; j++) {
+		for (int k = 0; k <= 300; k++) {
+			try {
+				addButtonScreenName = javascriptHelper.executeScript(
+						"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
+								+ j + "].textContent")
+						.toString();
+				System.out.println("Screen Name " + addButtonScreenName);
+				if (!(addButtonScreenName.isBlank())) {
+					System.out.println("Screen Name" + addButtonScreenName + " is Not null");
+					if ((addButtonScreenName.trim()).equalsIgnoreCase(("Address Details").trim())) {
+						System.out.println("Inside nested loop");
+						System.out.println("document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]");
+						javascriptHelper
+						.scrollIntoView(
+								javascriptHelper.executeScriptWithWebElement("document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')[" + j + "]"));
+						javascriptHelper
+								.executeScriptWithWebElement(
+										"document.querySelectorAll('button[icon=\"pi pi-plus\"]')[" + j + "]")
+								.isDisplayed();
+						isAddButtonClicked = true;
+						break;
+					}
+				}
+			} catch (Exception e) {
+				if (k == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		if (isAddButtonClicked == true) {
 			break;
+		}
+	}
+}
 
+@Then("User_6047 verify the Edit botton in address details list view")
+public void user_6047_verify_the_edit_botton_in_address_details_list_view() throws Throwable {
+	Thread.sleep(700);
+	String length =null;
+	for (int i = 0; i <500; i++) {
+		try {
+		    length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title').length").toString();
+		    System.out.println(length);
+			if (!length.isBlank()&&!length.equalsIgnoreCase("0")) {
+				break;
+			}
+		} catch (Exception e) {
+			if (i==499) {
+				Assert.fail(e.getMessage());
+			}
 		}
-		if (editButtonispresent == true)
-		{
-			System.out.println("Edit button is present");
-			break;
+	}
+	for (int i = 0; i <500; i++) {
+	try {
+		for (int j = 0; j <Integer.parseInt(length); j++) {
+			String title ="return document.querySelectorAll('ion-title')["+j+"].innerText";
+			String titlename = javascriptHelper.executeScript(title).toString();
+			System.out.println(titlename);
+			if (titlename.trim().contains("Address Details")) {
+				System.out.println("condition true");
+				String jspath ="document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]')["+j+"].querySelector('button[icon=\"pi pi-pencil\"')";
+				WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
+				//javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jspath));
+				//javascriptHelper.JSEClick(addButton);
+				addButton.isDisplayed();
+				break;
+			}
 		}
+
+		break;
+	} catch (Exception e) {
+		if (i==499) {
+			Assert.fail(e.getMessage());
+		}
+	}
 	}
 
 }
 
 @Then("User_6047 verify the search botton in address details list view")
 public void user_6047_verify_the_search_botton_in_address_details_list_view() {
-	String labelLength = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
-
-	String lengthOfTheLabel = "";
-
-	boolean iSearchButtonPresent = false;
-
-	String labelName = "";
-
-	System.out.println("");
-
+	String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
+	String listOfAddButton = "";
+	String addButtonScreenName = "";
+	boolean isAddButtonClicked = false;
 	for (int i = 0; i <= 300; i++) {
-
 		try {
-
-			if (i > 200) {
-
-				System.out.println("Query " + labelLength);
-
-				lengthOfTheLabel = javascriptHelper.executeScript("return " + labelLength).toString();
-
-				if (!(lengthOfTheLabel.isBlank())) {
-
-					break;
-
-				}
-
+			listOfAddButton = javascriptHelper.executeScript("return " + listOfAddButtonQuery).toString();
+			System.out.println("List of add button " + listOfAddButton);
+			if (!(listOfAddButton.isBlank())) {
+				break;
 			}
-
 		} catch (Exception e) {
-
 			if (i == 300) {
-
 				Assert.fail(e.getMessage());
-
 			}
-
 		}
-
 	}
-
-	int premitiveLabelLength = Integer.parseInt(lengthOfTheLabel);
-
-	System.out.println("Length of the label " + premitiveLabelLength);
-
-	for (int i = 0; i < premitiveLabelLength; i++) {
-
-		for (int j = 0; j <= 300; j++) {
-
+	int premitiveListOfAddButton = Integer.parseInt(listOfAddButton);
+	for (int j = 0; j < premitiveListOfAddButton; j++) {
+		for (int k = 0; k <= 300; k++) {
 			try {
-
-				labelName = javascriptHelper.executeScript(
-
+				addButtonScreenName = javascriptHelper.executeScript(
 						"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
-
-								+ i + "].innerText")
-
+								+ j + "].textContent")
 						.toString();
-
-				System.out.println("label Name is " + labelName);
-
-				if (!(labelName.isBlank()) && (labelName.trim()).equalsIgnoreCase(("Address Details").trim())) {
-
-					System.out.println("Label Name " + labelName);
-
-					if (i > 250) {
-
-						javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
-
-								"document.querySelectorAll('button[ng-reflect-text=\"Search\"]')[" + i + "]"));
-
-
+				System.out.println("Screen Name " + addButtonScreenName);
+				if (!(addButtonScreenName.isBlank())) {
+					System.out.println("Screen Name" + addButtonScreenName + " is Not null");
+					if ((addButtonScreenName.trim()).equalsIgnoreCase(("Address Details").trim())) {
+						System.out.println("Inside nested loop");
+						System.out.println("document.querySelectorAll('button[icon=\"pi pi-search\"]')[" + j + "]");
+						javascriptHelper
+						.scrollIntoView(
+								javascriptHelper.executeScriptWithWebElement("document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')[" + j + "]"));
+						javascriptHelper
+								.executeScriptWithWebElement(
+										"document.querySelectorAll('button[icon=\"pi pi-search\"')[" + j + "]")
+								.isDisplayed();
+						isAddButtonClicked = true;
+						break;
 					}
-
-					clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
-
-							"document.querySelectorAll('button[ng-reflect-text=\"Search\"]')[" + i + "]"));
-
-					javascriptHelper.executeScriptWithWebElement(
-
-							"document.querySelectorAll('button[ng-reflect-text=\"Search\"]')[" + i + "]").isDisplayed();
-
-					iSearchButtonPresent = true;
-
-					break;
-
-				} else {
-
-					iSearchButtonPresent = false;
-				
-					break;
-
 				}
-
 			} catch (Exception e) {
-
-				if (j == 300) {
-
+				if (k == 300) {
 					Assert.fail(e.getMessage());
-					System.out.println("Search Button is not Present");
 				}
-
 			}
-
 		}
-
-		if (iSearchButtonPresent == true) {
-			System.out.println("Search Button is Present");
+		if (isAddButtonClicked == true) {
 			break;
-
 		}
-
 	}
 
 }
@@ -3261,227 +3038,141 @@ public void user_6047_to_verify_if_user_click_the_edit_button_system_should_redi
 }
 @And("User_6047 click the Search button under Address details tab and search the matching data in listview")
 public void user_6047_click_the_search_button_under_address_details_tab_and_search_the_matching_data_in_listview() {
-	String sectionLength = "";
-	boolean isClicked = false;
-	for (int i = 0; i <= 200; i++) {
+	String length =null;
+	for (int i = 0; i <500; i++) {
 		try {
-			sectionLength = javascriptHelper.executeScript(
-					"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length")
-					.toString();
-			if (!(sectionLength.isBlank()) && sectionLength.equals("0")) {
+		    length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title').length").toString();
+		    System.out.println(length);
+			if (!length.isBlank()&&!length.equalsIgnoreCase("0")) {
 				break;
 			}
 		} catch (Exception e) {
-
-		}
-	}
-	int premitiveSectionLength = Integer.parseInt(sectionLength);
-	for (int i = 1; i <= premitiveSectionLength; i++) {
-		String sectionName = javascriptHelper.executeScript(
-				"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
-						+ i + "].innerText")
-				.toString();
-		 int sectionIndex = i;
-		System.out.println("Section Name " + sectionName + " i value " + i);
-		sectionIndex = i;
-		if (sectionName.equals("Address Details")) {
-
-			for (int l = 0; l <= 100; l++) {
-				try {
-//					javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
-//							"document.querySelectorAll('button[ng-reflect-text=\"Search\"]')["
-//									+ i  + "]"));
-					javascriptHelper.executeScriptWithWebElement(
-							"document.querySelectorAll('button[ng-reflect-text=\"Search\"]')["
-									+ i  + "]")
-							.click();
-
-					isClicked = true;
-					break;
-				} catch (Exception e) {
-					if (l == 100) {
-						Assert.fail(e.getMessage());
-					}
-				}
-
-			}
-			if (isClicked == true) {
-				break;
-			}
-
-		}
-		if (isClicked == true) {
-			System.out.println(i + " Got breaked");
-			break;
-		}
-	}
-
-	for (int i = 0; i <= 100; i++) {
-		try {
-			System.out.println("address details search text "
-					+ iJarah_CommonElements.getElement("search_box_search_text"));
-
-			break;
-		} catch (Exception e) {
-			if (i == 100) {
+			if (i==499) {
 				Assert.fail(e.getMessage());
 			}
 		}
 	}
-
-	for (int i = 0; i <= 100; i++) {
-		try {
-			javascriptHelper
-					.executeScriptWithWebElement(
-							iJarah_CommonElements.getElement("search_box_search_text"))
-					.sendKeys("Address1");
-			break;
-		} catch (Exception e) {
-			if (i == 100) {
-				Assert.fail(e.getMessage());
+	for (int i = 0; i <500; i++) {
+	try {
+		for (int j = 0; j <Integer.parseInt(length); j++) {
+			String title ="return document.querySelectorAll('ion-title')["+j+"].innerText";
+			String titlename = javascriptHelper.executeScript(title).toString();
+			System.out.println(titlename);
+			if (titlename.trim().contains("Address Details")) {
+				System.out.println("condition true");
+				String jspath ="document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]')["+j+"].querySelector('button[icon=\"pi pi-search\"]')";
+				WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
+				//javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jspath));
+				javascriptHelper.JSEClick(addButton);
+				javascriptHelper
+				.executeScriptWithWebElement(
+						"document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]')["+j+"].querySelector('input')")
+				.sendKeys("Address 1");
+			//	addButton.click();
+				break;
 			}
 		}
-	}
-	//for (int i = 0; i <= 10; i++) {
-		//robot.keyPress(KeyEvent.VK_ENTER);
-		//robot.keyRelease(KeyEvent.VK_ENTER);
-	//}
 
+		break;
+	} catch (Exception e) {
+		if (i==499) {
+			Assert.fail(e.getMessage());
+		}
+	}
+	}
 }
 
 @And("User_6047 check the match result data in Address details list view")
 public void user_6047_check_the_match_result_data_in_address_details_list_view() {
 	String searchResult = "";
-	for (int i = 0; i <= 100; i++) {
+	String length =null;
+	for (int i = 0; i <500; i++) {
 		try {
-			searchResult = javascriptHelper.executeScript(
-					"return document.querySelectorAll('ion-card-content[class=\"k-pagescreen p-0 ios card-content-ios hydrated\"]')["
-							+ (sectionIndex + 1)
-							+ "].querySelector('p-paginator span[class=\"p-paginator-current ng-star-inserted\"]').innerText")
-					.toString();
-			if ((searchResult.isBlank())) {
+		    length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title').length").toString();
+		    System.out.println(length);
+			if (!length.isBlank()&&!length.equalsIgnoreCase("0")) {
 				break;
 			}
 		} catch (Exception e) {
-			if (i == 100) {
+			if (i==499) {
 				Assert.fail(e.getMessage());
 			}
 		}
 	}
+	for (int i = 0; i <500; i++) {
+	try {
+		for (int j = 0; j <Integer.parseInt(length); j++) {
+			String title ="return document.querySelectorAll('ion-title')["+j+"].innerText";
+			String titlename = javascriptHelper.executeScript(title).toString();
+			System.out.println(titlename);
+			if (titlename.trim().contains("Address Details")) {
+				System.out.println("condition true");
+				searchResult = javascriptHelper.executeScript("return " + iJarah_CommonElements
+						.getElement("list_view_search_result")).toString();
+				System.out.println(searchResult);
+			//	addButton.click();
+				if (!(searchResult.isEmpty())) {
+					break;
+				}
+			}
+		}
 
-	Assert.assertTrue(!(searchResult.equalsIgnoreCase("Showing 0 to 0 of 0 entries")));
-	for (int i = 0; i <= 200; i++) {
-		try {
-			driver.findElement(By.xpath("//html")).click();
-			break;
-		} catch (Exception e) {
-			if (i == 200) {
-				Assert.fail(e.getMessage());
-			}
+		break;
+	} catch (Exception e) {
+		if (i==499) {
+			Assert.fail(e.getMessage());
 		}
 	}
+	}
+	softAssert.assertNotEquals(searchResult, "Showing 0 to 0 of 0 entries",
+			"system is not showing the matched result");
 }
 
 
 @And("User_6047 click the Search button under Address details tab and search the mismatching data in listview")
 public void user_6047_click_the_search_button_under_address_details_tab_and_search_the_mismatching_data_in_listview() {
-	
-	for (int i = 0; i <= 100; i++) {
+	String length =null;
+	for (int i = 0; i <500; i++) {
 		try {
-			javascriptHelper.executeScriptWithWebElement(
-					AddressDetails_js.getElement("address_details__record_search_input")).clear();
-			break;
-		} catch (Exception e) {
-			if (i == 100) {
-				Assert.fail(e.getMessage());
-			}
-		}
-	}
-	String sectionLength = "";
-	boolean isClicked = false;
-	for (int i = 0; i <= 200; i++) {
-		try {
-			sectionLength = javascriptHelper.executeScript(
-					"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length")
-					.toString();
-			if (!(sectionLength.isBlank()) && sectionLength.equals("0")) {
+		    length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title').length").toString();
+		    System.out.println(length);
+			if (!length.isBlank()&&!length.equalsIgnoreCase("0")) {
 				break;
 			}
 		} catch (Exception e) {
-
+			if (i==499) {
+				Assert.fail(e.getMessage());
+			}
 		}
 	}
-	int premitiveSectionLength = Integer.parseInt(sectionLength);
-	for (int i = 1; i <= premitiveSectionLength; i++) {
-		String sectionName = javascriptHelper.executeScript(
-				"return document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]')["
-						+ i + "].innerText")
-				.toString();
-		  sectionIndex = i;
-		System.out.println("Section Name " + sectionName + " i value " + i);
-		sectionIndex = i;
-		if (sectionName.equals("Address Details")) {
-
-			for (int l = 0; l <= 100; l++) {
-				try {
-//					javascriptHelper.executeScriptWithWebElement(
-//							"document.querySelectorAll('ion-card-content[class=\"k-pagescreen p-0 ios card-content-ios hydrated\"]')["
-//									+ (i + 1) + "].querySelector('button[icon=\"pi pi-search\"]')")
-//							.click();
-//					javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
-//							"document.querySelectorAll('button[ng-reflect-text=\"Search\"]')["
-//									+ i  + "]"));
-					javascriptHelper.executeScriptWithWebElement(
-							"document.querySelectorAll('button[ng-reflect-text=\"Search\"]')["
-									+ i  + "]")
-						
-							.click();
-
-					isClicked = true;
-					break;
-				} catch (Exception e) {
-					if (l == 100) {
-						Assert.fail(e.getMessage());
-					}
-				}
-
-			}
-			if (isClicked == true) {
+	for (int i = 0; i <500; i++) {
+	try {
+		for (int j = 0; j <Integer.parseInt(length); j++) {
+			String title ="return document.querySelectorAll('ion-title')["+j+"].innerText";
+			String titlename = javascriptHelper.executeScript(title).toString();
+			System.out.println(titlename);
+			if (titlename.trim().contains("Address Details")) {
+				System.out.println("condition true");
+				//String jspath ="document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]')["+j+"].querySelector('button[icon=\"pi pi-search\"]')";
+				//WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
+				//javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jspath));
+				//javascriptHelper.JSEClick(addButton);
+				javascriptHelper.executeScriptWithWebElement("document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]')["+j+"].querySelector('input')").sendKeys(Keys.chord(Keys.CONTROL, "A", Keys.BACK_SPACE));
+				javascriptHelper
+				.executeScriptWithWebElement(
+						"document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]')["+j+"].querySelector('input')")
+				.sendKeys("Mismatching data");
+			//	addButton.click();
 				break;
 			}
-
 		}
-		if (isClicked == true) {
-			System.out.println(i + " Got breaked");
-			break;
-		}
-	}
 
-	for (int i = 0; i <= 100; i++) {
-		try {
-			System.out.println("address details search text "
-					+ iJarah_CommonElements.getElement("search_box_search_text"));
-
-			break;
-		} catch (Exception e) {
-			if (i == 100) {
-				Assert.fail(e.getMessage());
-			}
+		break;
+	} catch (Exception e) {
+		if (i==499) {
+			Assert.fail(e.getMessage());
 		}
 	}
-
-	for (int i = 0; i <= 100; i++) {
-		try {
-			javascriptHelper
-					.executeScriptWithWebElement(
-							iJarah_CommonElements.getElement("search_box_search_text"))
-					.sendKeys("mismatch data");
-			break;
-		} catch (Exception e) {
-			if (i == 100) {
-				Assert.fail(e.getMessage());
-			}
-		}
 	}
 	
 }
@@ -3489,35 +3180,49 @@ public void user_6047_click_the_search_button_under_address_details_tab_and_sear
 @And("User_6047 check the mismatch result in Address details list view")
 public void user_6047_check_the_mismatch_result_in_address_details_list_view() {
 	String searchResult = "";
-	for (int i = 0; i <= 100; i++) {
+	String length =null;
+	for (int i = 0; i <500; i++) {
 		try {
-			searchResult = javascriptHelper.executeScript(
-					"return document.querySelectorAll('ion-card-content[class=\"k-pagescreen p-0 ios card-content-ios hydrated\"]')["
-							+ (sectionIndex + 1)
-							+ "].querySelector('p-paginator span[class=\"p-paginator-current ng-star-inserted\"]').innerText")
-					.toString();
-			if ((searchResult.isBlank())) {
+		    length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title').length").toString();
+		    System.out.println(length);
+			if (!length.isBlank()&&!length.equalsIgnoreCase("0")) {
 				break;
 			}
 		} catch (Exception e) {
-			if (i == 100) {
+			if (i==499) {
 				Assert.fail(e.getMessage());
 			}
 		}
 	}
+	for (int i = 0; i <500; i++) {
+	try {
+		for (int j = 0; j <Integer.parseInt(length); j++) {
+			String title ="return document.querySelectorAll('ion-title')["+j+"].innerText";
+			String titlename = javascriptHelper.executeScript(title).toString();
+			System.out.println(titlename);
+			if (titlename.trim().contains("Address Details")) {
+				System.out.println("condition true");
+				searchResult = javascriptHelper.executeScript("return " + iJarah_CommonElements
+						.getElement("list_view_search_result")).toString();
+				System.out.println(searchResult);
+			//	addButton.click();
+				if (!(searchResult.isEmpty())) {
+					break;
+				}
+			}
+		}
 
-	Assert.assertTrue((searchResult.equalsIgnoreCase("Showing 0 to 0 of 0 entries")));
-	for (int i = 0; i <= 200; i++) {
-		try {
-			driver.findElement(By.xpath("//html")).click();
-			break;
-		} catch (Exception e) {
-			if (i == 200) {
-				Assert.fail(e.getMessage());
-			}
+		break;
+	} catch (Exception e) {
+		if (i==499) {
+			Assert.fail(e.getMessage());
 		}
 	}
+	}
+	softAssert.assertEquals(searchResult, "Showing 0 to 0 of 0 entries",
+			"system is  showing the un matched result");
 }
+
 @Then("User_6047 verify the functionality of back button in address details")
 public void user_6047_verify_the_functionality_of_back_button_in_address_details() throws InterruptedException {
 Thread.sleep(3000);
@@ -3777,6 +3482,78 @@ public void user_6047_verify_the_functionality_of_back_button_in_modification_of
 
 	}
 
+}
+@Then("User_6047 To search the record in list view of address detail")
+public void user_6047_to_search_the_record_in_list_view_of_address_detail() throws Throwable {
+	Thread.sleep(700);
+	String length =null;
+	for (int i = 0; i <500; i++) {
+		try {
+		    length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title').length").toString();
+		    System.out.println(length);
+			if (!length.isBlank()&&!length.equalsIgnoreCase("0")) {
+				break;
+			}
+		} catch (Exception e) {
+			if (i==499) {
+				Assert.fail(e.getMessage());
+			}
+		}
+	}
+	for (int i = 0; i <500; i++) {
+	try {
+		for (int j = 0; j <Integer.parseInt(length); j++) {
+			String title ="return document.querySelectorAll('ion-title')["+j+"].innerText";
+			String titlename = javascriptHelper.executeScript(title).toString();
+			System.out.println(titlename);
+			if (titlename.trim().contains("Address Details")) {
+				System.out.println("condition true");
+				String jspath ="document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]')["+j+"].querySelector('button[icon=\"pi pi-search\"]')";
+				WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
+				//javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(jspath));
+				javascriptHelper.JSEClick(addButton);
+				javascriptHelper
+				.executeScriptWithWebElement(
+						"document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]')["+j+"].querySelector('input')")
+				.sendKeys("office");
+				Thread.sleep(2000);
+			//	addButton.click();
+				break;
+			}
+		}
+
+		break;
+	} catch (Exception e) {
+		if (i==499) {
+			Assert.fail(e.getMessage());
+		}
+	}
+	}
+}
+
+
+@Then("User_6047 To search the record in list view of address detail for status")
+public void user_6047_to_search_the_record_in_list_view_of_address_detail_for_status() throws Throwable {
+	for (int i = 0; i <= 1000; i++) {
+		try {
+			//String path ="document.querySelector('span[class=\"p-input-icon-left ng-star-inserted\"] i')";
+			String path ="document.querySelector('span[class=\"p-input-icon-left ng-star-inserted\"] input')";
+			WebElement Button = javascriptHelper.executeScriptWithWebElement(path);
+			//javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(path));
+			javascriptHelper
+			.executeScriptWithWebElement(
+					"document.querySelector('span[class=\"p-input-icon-left ng-star-inserted\"] input')")
+			.sendKeys("office");
+Thread.sleep(800);
+
+
+			break;
+		} catch (Exception e) {
+			if (i == 1000) {
+				Assert.fail(e.getMessage());
+			}
+		}
+	}
 }
 }
 

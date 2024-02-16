@@ -121,9 +121,13 @@ public class IjaraTest extends BaseClass {
 	public void user_6047_login_with_valid_credentials_auto_loan_disbursion_maker_margin_money() {
 		ijaraLogin.loginWithIjaraApplication_AutoLoan_DisbursionMaker_MarginMoney();
 	}
-	@Given("User_6047 Login with valid credentials_PersonalLoan_NewApp_Customer Details")
+	@And("User_6047 Login with valid credentials_PersonalLoan_NewApp_Customer Details")
 	public void user_6047_login_with_valid_credentials_personal_loan_new_app_customer_details() {
 		ijaraLogin.loginWithIjaraApplication_PersonalLoan_NewApp_ustomerDetails();
+	}
+	@And("User_6047 Login With valid credentials-AutoLoan_AppDataEntry_ContactDetails")
+	public void user_6047_login_with_valid_credentials_auto_loan_app_data_entry_contact_details() {
+		ijaraLogin.loginWithIjaraApplication_AutoLoan_AppDataEntry_ContactDetails();
 	}
 	
 	@Then("logout from the ijaraApplication")

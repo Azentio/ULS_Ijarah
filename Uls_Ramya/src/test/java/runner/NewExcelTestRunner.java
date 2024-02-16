@@ -14,17 +14,16 @@ import utilities.ExtentManager;
 import utilities.ExtentTestManager;
 
 public class NewExcelTestRunner {
-	String path = System.getProperty("user.dir") + "\\TestData\\CSMTestData.xlsx";
-	ExcelData testExecution = new ExcelData(path,
-			"Transaction_ExecutionTracker", "TestCaseID");
+	String path = System.getProperty("user.dir") + "\\TestData\\ijaraTestData.xlsx";
+	ExcelData testExecution = new ExcelData(path,"AutoLoanExecution", "TestCase ID");
 	Map<String, String> testExecutionData;
 	
-	ExcelTest excelTest = new ExcelTest(path, "Transaction_ExecutionTracker", "TestCaseID");
+	ExcelTest excelTest = new ExcelTest(path, "AutoLoanExecution", "TestCase ID");
 	List<String> testCaseTagsFromExcel = excelTest.getTestCaseTagsfromExcel();
 	static String currentExecutionTag;
 	public void excelTestArea(String tags, int listSize, int tagIndex) {
 		String[] parameter = {
-				"src/test/java/features/CSM_TransactionsFEATURE.feature",
+				"src/test/java/features",
 				"--glue", "stepdefinitions", "--plugin", "pretty", "--plugin",
 				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:", "--plugin",
 				"rerun:ReRunScenarios/FailedReRun.txt", "--tags", "@" + tags };
@@ -38,17 +37,17 @@ public class NewExcelTestRunner {
 
 	@Test()
 	public void test() {
-		String path = System.getProperty("user.dir") + "\\TestData\\CSMTestData.xlsx";
-		ExcelTest excelTest = new ExcelTest(path, "Transaction_ExecutionTracker", "TestCaseID");
+		String path = System.getProperty("user.dir") + "\\TestData\\ijaraTestData.xlsx";
+		ExcelTest excelTest = new ExcelTest(path, "AutoLoanExecution", "TestCase ID");
 		testCaseTagsFromExcel = excelTest.getTestCaseTagsfromExcel();
 		NewExcelTestRunner newExcelTestRunner = new NewExcelTestRunner();
 
 		for (String string : testCaseTagsFromExcel) {
-			ExcelTest excelTest2 = new ExcelTest(path, "Transaction_ExecutionTracker", "TestCaseID");
+			ExcelTest excelTest2 = new ExcelTest(path, "AutoLoanExecution", "TestCase ID");
 			testCaseTagsFromExcel = excelTest2.getTestCaseTagsfromExcel();
 			System.out.println(string);
 			currentExecutionTag = string;
-			ExcelData testExecution = new ExcelData(path, "Transaction_ExecutionTracker", "TestCaseID");
+			ExcelData testExecution = new ExcelData(path, "AutoLoanExecution", "TestCase ID");
 			testExecutionData = testExecution.getTestdata(string);
 			// run the scenarios based on tags from excel
 			newExcelTestRunner.excelTestArea(string, testCaseTagsFromExcel.size(),

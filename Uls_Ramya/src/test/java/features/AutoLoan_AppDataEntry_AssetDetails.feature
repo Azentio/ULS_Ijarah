@@ -5,8 +5,8 @@ Scenario:  Asset Detailtab should get open with the required field
 Given Navigate the IJARA URL
 And User_6047 Login with valid credentials-AppDataEntry-AutoLoan-AssetDetails
 And User_6047 Get the test data for test case ID AT_AL_ASD_01
-#And And User click the module name dropdown in ULS application
-#And User select the module name as LOS in ULS application
+And User_6047 Click the module name dropdown in ULS application
+And User_6047 Select the module name as LOS in ULS application
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
 And User_6047 Search the Referen Id under inbox 
@@ -38,8 +38,8 @@ Scenario:  To verify the field should be Mandatory,editable,lookup value,non man
 Given Navigate the IJARA URL
 And User_6047 Login with valid credentials-AppDataEntry-AutoLoan-AssetDetails
 And User_6047 Get the test data for test case ID AT_AL_ASD_01
-#And And User click the module name dropdown in ULS application
-#And User select the module name as LOS in ULS application
+And User_6047 Click the module name dropdown in ULS application
+And User_6047 Select the module name as LOS in ULS application
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
 And User_6047 Search the Referen Id under inbox 
@@ -57,8 +57,8 @@ Scenario:  To verify the field should be Mandatory,editable,lookup value,non man
 Given Navigate the IJARA URL
 And User_6047 Login with valid credentials-AppDataEntry-AutoLoan-AssetDetails
 And User_6047 Get the test data for test case ID AT_AL_ASD_01
-#And And User click the module name dropdown in ULS application
-#And User select the module name as LOS in ULS application
+And User_6047 Click the module name dropdown in ULS application
+And User_6047 Select the module name as LOS in ULS application
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
 And User_6047 Search the Referen Id under inbox 
@@ -78,8 +78,8 @@ Scenario:  To verify the field should be Mandatory,editable,lookup value,non man
 Given Navigate the IJARA URL
 And User_6047 Login with valid credentials-AppDataEntry-AutoLoan-AssetDetails
 And User_6047 Get the test data for test case ID AT_AL_ASD_01
-#And And User click the module name dropdown in ULS application
-#And User select the module name as LOS in ULS application
+And User_6047 Click the module name dropdown in ULS application
+And User_6047 Select the module name as LOS in ULS application
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
 And User_6047 Search the Referen Id under inbox 
@@ -98,8 +98,8 @@ Scenario:  To verify Dealer Details and Registration Agent Detail section
 Given Navigate the IJARA URL
 And User_6047 Login with valid credentials-AppDataEntry-AutoLoan-AssetDetails
 And User_6047 Get the test data for test case ID AT_AL_ASD_01
-#And And User click the module name dropdown in ULS application
-#And User select the module name as LOS in ULS application
+And User_6047 Click the module name dropdown in ULS application
+And User_6047 Select the module name as LOS in ULS application
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
 And User_6047 Search the Referen Id under inbox 
@@ -119,8 +119,8 @@ Scenario:  To verify the field should be Mandatory,editable,lookup value,non man
 Given Navigate the IJARA URL
 And User_6047 Login with valid credentials-AppDataEntry-AutoLoan-AssetDetails
 And User_6047 Get the test data for test case ID AT_AL_ASD_01
-#And And User click the module name dropdown in ULS application
-#And User select the module name as LOS in ULS application
+And User_6047 Click the module name dropdown in ULS application
+And User_6047 Select the module name as LOS in ULS application
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
 And User_6047 Search the Referen Id under inbox 
@@ -138,8 +138,8 @@ Scenario:  To verify the Asset Price and Down Payment Details section in Asset
 Given Navigate the IJARA URL
 And User_6047 Login with valid credentials-AppDataEntry-AutoLoan-AssetDetails
 And User_6047 Get the test data for test case ID AT_AL_ASD_01
-#And And User click the module name dropdown in ULS application
-#And User select the module name as LOS in ULS application
+And User_6047 Click the module name dropdown in ULS application
+And User_6047 Select the module name as LOS in ULS application
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
 And User_6047 Search the Referen Id under inbox 
@@ -165,8 +165,8 @@ Scenario:  To verify the Asset Price and Down Payment Details should be non-Man
 Given Navigate the IJARA URL
 And User_6047 Login with valid credentials-AppDataEntry-AutoLoan-AssetDetails
 And User_6047 Get the test data for test case ID AT_AL_ASD_01
-#And And User click the module name dropdown in ULS application
-#And User select the module name as LOS in ULS application
+And User_6047 Click the module name dropdown in ULS application
+And User_6047 Select the module name as LOS in ULS application
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
 And User_6047 Search the Referen Id under inbox 
@@ -184,8 +184,8 @@ Scenario:  To verify the Asset Price and Down Payment Details should be non-Man
 Given Navigate the IJARA URL
 And User_6047 Login with valid credentials-AppDataEntry-AutoLoan-AssetDetails
 And User_6047 Get the test data for test case ID AT_AL_ASD_01
-#And And User click the module name dropdown in ULS application
-#And User select the module name as LOS in ULS application
+And User_6047 Click the module name dropdown in ULS application
+And User_6047 Select the module name as LOS in ULS application
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
 And User_6047 Search the Referen Id under inbox 
@@ -202,8 +202,8 @@ Scenario:  To verify the Asset Price and Down Payment Details should be non-Man
 Given Navigate the IJARA URL
 And User_6047 Login with valid credentials-AppDataEntry-AutoLoan-AssetDetails
 And User_6047 Get the test data for test case ID AT_AL_ASD_01
-#And And User click the module name dropdown in ULS application
-#And User select the module name as LOS in ULS application
+And User_6047 Click the module name dropdown in ULS application
+And User_6047 Select the module name as LOS in ULS application
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
 And User_6047 Search the Referen Id under inbox 
@@ -220,8 +220,8 @@ Scenario:  To verify the To test the asset details screen with invalid inputs
 Given Navigate the IJARA URL
 And User_6047 Login with valid credentials-AppDataEntry-AutoLoan-AssetDetails
 And User_6047 Get the test data for test case ID AT_AL_ASD_01
-#And And User click the module name dropdown in ULS application
-#And User select the module name as LOS in ULS application
+And User_6047 Click the module name dropdown in ULS application
+And User_6047 Select the module name as LOS in ULS application
 And User_6047 Click the Mail box in ULS application
 And User_6047 Click the Search button under inbox
 And User_6047 Search the Referen Id under inbox 

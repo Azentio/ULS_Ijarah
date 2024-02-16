@@ -88,8 +88,6 @@ Then User_6047 To verify the fields in list view of margin money
 Then User_6047 Click the export button 
 Then User_6047 To verify Export to PDF in listview screen
 Then User_6047 To verify Export to Excel in listview screen
-Then User_6047 To verify Export to Excel in listview screen
-Then User_6047 To verify Export to Excel in listview screen
 Then User_6047 To verify the system should display the records on the list view
 Then User_6047 click the add button
 Then User_6047 to verify Add button system should allow user to create new record in Margin money
@@ -113,6 +111,7 @@ And User_6047 check the matching result data in list view
 And User_6047 clear the search box in listview
 And User_6047 click the Search button and search the mismatching record in listview
 And User_6047 check the mismatching result in list view
+Then logout from the ijaraApplication
 
 @AT_AL_DSB_MM_09
 Scenario: To verify the functionality of  export to excel and pdf button
@@ -131,3 +130,4 @@ Then User_6047 verify the system is downloading the excel file
 Then User_6047 Click the export button
 Then User_6047 click on export to pdf button
 Then User_6047 verify the system is downloading the pdf file
+Then logout from the ijaraApplication

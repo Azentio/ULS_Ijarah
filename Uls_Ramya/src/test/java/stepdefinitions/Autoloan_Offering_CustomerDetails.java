@@ -25,8 +25,8 @@ public class Autoloan_Offering_CustomerDetails {
 	// Ijarah_CommonFieldName
 	SoftAssert softAssert = new SoftAssert();
 	ClicksAndActionsHelper clicksAndActionsHelper = new ClicksAndActionsHelper(driver);
-
 	Map<String, String> testData;
+	Map<String, String> executionData;
 	WaitHelper waitHelper = new WaitHelper(driver);
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
 
@@ -35,11 +35,13 @@ public class Autoloan_Offering_CustomerDetails {
 			"CustomerDetailsElements", "JSPath");
 	ExcelData AL_OFF_CustomerDetails_TestData = new ExcelData(excelTestDataPath, "AL_OF_CustomerDetail",
 			"Dataset ID");
-	//JSPaths appDataEntry_js = new JSPaths(excelPath, "appDataEntry_js", "AppDataEntryElements", "JSPath");
+	ExcelData AutoLoanExecutionExcel = new ExcelData(excelTestDataPath, "AutoLoanExecution", "TestCase ID");
 	
 	@And("User_6047 Get the test data for test case ID AT_AL_OFF_CD_01")
 	public void user_get_the_test_data_for_test_case_id_at_al_off_cd_01() {
-		testData = AL_OFF_CustomerDetails_TestData.getTestdata("DS01_AT_AL_OFF_CD_001");
+		executionData = AutoLoanExecutionExcel.getTestdata("AT_AL_OFF_CD_001");
+		testData =  AL_OFF_CustomerDetails_TestData.getTestdata(executionData.get("dataSet_ID"));
+		//testData = AL_OFF_CustomerDetails_TestData.getTestdata("DS01_AT_AL_OFF_CD_001");
 	}
 	@And("User_6047 Click the Customer Details screen")
 	public void user_6047_click_customer_details_() {
@@ -697,7 +699,8 @@ public void user_verify_the_field_back_button() {
 	}
 }
 @Then("User_6047 verify the field Phone number")
-public void user_6047_verify_the_field_phone_number() {
+public void user_6047_verify_the_field_phone_number() throws Throwable {
+	Thread.sleep(700);
 	javascriptHelper.scrollIntoView(javascriptHelper
 			.executeScriptWithWebElement(AL_CustomerDetailsElements.getElement("PhoneNumber")));
 	for (int i = 0; i < 200; i++) {
@@ -1261,7 +1264,8 @@ public void user_6047_verify_the_data_in_preferred_contact_method() {
     }
 }
 @Then("User_6047 verify the field Customer Type should be display only,dropdown,mandatory,data")
-public void user_6047_verify_the_field_customer_type_should_be_display_only_dropdown_mandatory_data() {
+public void user_6047_verify_the_field_customer_type_should_be_display_only_dropdown_mandatory_data() throws Throwable {
+	Thread.sleep(900);
 	String CustomerType = javascriptHelper.executeScriptWithWebElement(AL_CustomerDetailsElements.getElement("Customertype"))
 			.getAttribute("aria-label");
 

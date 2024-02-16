@@ -7,12 +7,13 @@ import java.util.Map;
 
 import org.apache.commons.io.FileUtils;
 import org.junit.Assume;
-import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 import com.aventstack.extentreports.Status;
+import com.mongodb.MapReduceCommand.OutputType;
 
+import dataprovider.ConfigFileReader;
 import dataprovider.ExcelData;
 import helper.ScreenshotHelper;
 import io.cucumber.java.After;
@@ -27,25 +28,29 @@ import utilities.ExtentTestManager;
 public class HooksClass extends BaseClass {
 	WebDriver driver;
 	String flag = "No";
-//	String path = System.getProperty("user.dir") + "\\TestData\\CSMTestData.xlsx";
-//	ExcelData testExecution = new ExcelData(path, "Transaction_ExecutionTracker", "TestCaseID");
+	
+	ConfigFileReader configFileReader = new ConfigFileReader();
+	//String path = configFileReader.getAutoLoanTestDataFilePath();
+	
+	String path = System.getProperty("user.dir") + "\\TestData\\ijaraTestData.xlsx";
+	ExcelData testExecution = new ExcelData(path, "AutoLoanExecution", "TestCase ID");
 	Map<String, String> testExecutionData;
-//	ExcelTest excelTest = new ExcelTest(path, "Transaction_ExecutionTracker", "TestCaseID");
-	//List<String> testCaseTagsFromExcel = excelTest.getTestCaseTagsfromExcel();
+	ExcelTest excelTest = new ExcelTest(path, "AutoLoanExecution", "TestCase ID");
+	List<String> testCaseTagsFromExcel = excelTest.getTestCaseTagsfromExcel();
 
 	ScreenshotHelper screenshotHelper = new ScreenshotHelper(driver);
 
 	@Before
 	public void browserSetup(Scenario scenario) throws IOException {
 		// get flag status from excel and skip the test cases
-//		if (flag.equalsIgnoreCase("yes")) {
-//			if (testExecution.getTestdata(NewExcelTestRunner.getCurrentExecutionTag()).get("ExecuteYes/No")
-//					.equalsIgnoreCase("No")) {
-//				
-//				System.out.println("Status of the flag"+testExecution.getTestdata(NewExcelTestRunner.getCurrentExecutionTag()).get("ExecuteYes/No"));
-//				Assume.assumeTrue(false);
-//			}
-//		}
+		if (flag.equalsIgnoreCase("yes")) {
+			if (testExecution.getTestdata(NewExcelTestRunner.getCurrentExecutionTag()).get("ExecuteYes/No")
+					.equalsIgnoreCase("No")) {
+				
+				System.out.println("Status of the flag"+testExecution.getTestdata(NewExcelTestRunner.getCurrentExecutionTag()).get("ExecuteYes/No"));
+				Assume.assumeTrue(false);
+			}
+		}
 
 		driver = initializeDriver();
 		System.out.println("Driver Initiated");
@@ -59,7 +64,7 @@ public class HooksClass extends BaseClass {
 		driver = BaseClass.driver;
 		System.out.println("Screen shot got added");
 		try {
-			java.io.File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			java.io.File screenshot = ((TakesScreenshot) driver).getScreenshotAs(org.openqa.selenium.OutputType.FILE);
 			byte[] fileContent = FileUtils.readFileToByteArray(screenshot);
 			scenario.attach(fileContent, "image/png", "screenshot");
 		} catch (Exception e) {
@@ -84,15 +89,15 @@ public class HooksClass extends BaseClass {
 
 				// change flag to "No" for dependent scenarios in excel when main Scenario got
 				// failed
-//				for (int i = 1; i < testCaseTagsFromExcel.size(); i++) {
-//					testExecutionData = testExecution.getTestdata(NewExcelTestRunner.getCurrentExecutionTag());
-//					Collection<String> values = testExecutionData.values();
-//					values.remove(NewExcelTestRunner.getCurrentExecutionTag());
-//					if (values.contains(testCaseTagsFromExcel.get(i))) {
-//						testExecution.updateTestData(testCaseTagsFromExcel.get(i), "ExecuteYes/No", "No");
-//					}
-//
-//				}
+				for (int i = 1; i < testCaseTagsFromExcel.size(); i++) {
+					testExecutionData = testExecution.getTestdata(NewExcelTestRunner.getCurrentExecutionTag());
+					Collection<String> values = testExecutionData.values();
+					values.remove(NewExcelTestRunner.getCurrentExecutionTag());
+					if (values.contains(testCaseTagsFromExcel.get(i))) {
+						testExecution.updateTestData(testCaseTagsFromExcel.get(i), "ExecuteYes/No", "No");
+					}
+
+				}
 
 			}
 		}

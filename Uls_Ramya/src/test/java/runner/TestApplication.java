@@ -8,18 +8,18 @@ import io.cucumber.testng.CucumberOptions;
 import utilities.ExtentManager;
 import utilities.ExtentTestManager;
 
-@CucumberOptions(features = { //"src/test/java/features/Tawarooq_AppDataEntry_CustomerDetails.feature",
+@CucumberOptions(features = { //"src/test/java/features/AutoLoan_AppDataEntry_ContactDetails.feature",
 
-		"src/test/java/features/PersonalLoan_NewApp_CustomerDetails.feature"} , glue = "stepdefinitions",
+		//"src/test/java/features/AutoLoan_AppDataEntry_ContactDetails.feature"} , glue = "stepdefinitions",
 	
-			//"src/test/java/features/AutoLoan_AppDataEntry_AddressDetails.feature" }, glue = "stepdefinitions",
+			"src/test/java/features/AutoLoan_AppDataEntry_AddressDetails.feature" }, glue = "stepdefinitions",
 		// monochrome=false, //to make steps in color
 		plugin = { "pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 				"rerun:ReRunScenarios/FailedReRun.txt" }
 
 // ,dryRun = false //to check compilation errors
-//, tags = "@AT_AL_DSB_MM_04 or @AT_AL_DSB_MM_05 or @AT_AL_DSB_MM_07 or @AT_AL_DSB_MM_08 or @AT_AL_DSB_MM_09"
-//, tags="@AT_AL_DSB_MM_05" 	
+//, tags = "@AT_AL_DSB_MM_04 or @AT_AL_DSB_MM_05"
+, tags=" @AT_AU_AD_02" 	
  
 
 )

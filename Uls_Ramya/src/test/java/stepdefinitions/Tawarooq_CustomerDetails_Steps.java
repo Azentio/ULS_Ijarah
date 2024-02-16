@@ -6,6 +6,7 @@ import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.asserts.SoftAssert;
 
 import dataprovider.ConfigFileReader;
@@ -26,6 +27,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 	String excelTestDataPath = System.getProperty("user.dir") + "\\TestData\\ijaraTestData.xlsx";
 	// Ijarah_CommonFieldName
 	SoftAssert softAssert = new SoftAssert();
+	Actions actions = new Actions(driver);
 	ClicksAndActionsHelper clicksAndActionsHelper = new ClicksAndActionsHelper(driver);
 	JSPaths commonJSPaths = new JSPaths(excelPath, "iJarah_CommonElements", "Ijarah_CommonFieldName", "JSPath");
 	Map<String, String> testData;
@@ -541,9 +543,8 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 	public void user_6047_click_the_save_button() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
-				javascriptHelper.JSEClick(
-						javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("SaveButton")));
-
+				actions.scrollToElement(javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("SaveButton"))).build().perform();
+				javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("SaveButton")).click();
 				break;
 			} catch (Exception e) {
 				if (i == 1000) {
@@ -775,6 +776,7 @@ public void user_6047_verify_the_functionality_of_back_button_in_customer_identi
 		} else if (recordStatus.equals("true")) {
 			softAssert.assertEquals(listViewRecordStatus, "Active");
 		}
+		Thread.sleep(1500);
 	}
 
 	@Then("User_6047 to verify the fields on list view of Customer Personal Information")

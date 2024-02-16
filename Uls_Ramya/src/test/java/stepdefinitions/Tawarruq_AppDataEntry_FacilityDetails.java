@@ -645,7 +645,7 @@ public class Tawarruq_AppDataEntry_FacilityDetails {
 //				}
 //			}
 //		}
-		javascriptHelper.executeScriptWithWebElement("document.querySelector('kub-prime-ccy[ng-reflect-name=\"amountRequested\"] input')")
+		javascriptHelper.executeScriptWithWebElement("document.querySelector('kub-prime-ccy[id=\"requestedAmount\"] input')")
 		.sendKeys(testData.get("RequestedAmount"));
 		
 
@@ -775,7 +775,7 @@ public void user_6047_to_verify_the_validation_message_for_blank_field() throws 
 public void user_6047_enter_the_negative_numeric_value_to_requested_amount_field() {
 	javascriptHelper.executeScriptWithWebElement(FacilityDetails_js.getElement("RequestedAmount")).click();
 
-	javascriptHelper.executeScriptWithWebElement("document.querySelector('kub-prime-ccy[ng-reflect-name=\"amountRequested\"] input')")
+	javascriptHelper.executeScriptWithWebElement("document.querySelector('kub-prime-ccy[id=\"requestedAmount\"] input')")
 	.sendKeys(testData.get("negativeValue"));
 }
 
@@ -798,9 +798,9 @@ public void user_6047_to_verify_negative_numeric_value_in_request_amout_field() 
 @Then("User_6047 enter the character value to requested amount field")
 public void user_6047_enter_the_character_value_to_requested_amount_field() throws Throwable {
 
-	javascriptHelper.executeScriptWithWebElement("document.querySelector('kub-prime-ccy[ng-reflect-name=\"amountRequested\"] input')").sendKeys(Keys.chord(Keys.CONTROL, "A", Keys.BACK_SPACE));
+	javascriptHelper.executeScriptWithWebElement("document.querySelector('kub-prime-ccy[id=\"requestedAmount\"] input')").sendKeys(Keys.chord(Keys.CONTROL, "A", Keys.BACK_SPACE));
 
-	javascriptHelper.executeScriptWithWebElement("document.querySelector('kub-prime-ccy[ng-reflect-name=\"amountRequested\"] input')")
+	javascriptHelper.executeScriptWithWebElement("document.querySelector('kub-prime-ccy[id=\"requestedAmount\"] input')")
 	.sendKeys(testData.get("characterValue"));
 }
 
@@ -830,8 +830,8 @@ public void user_6047_to_verify_character_value_value_in_request_amout_field() {
 @Then("User_6047 enter the special character value to requested amount field")
 public void user_6047_enter_the_special_character_value_to_requested_amount_field() {
 	//javascriptHelper.executeScriptWithWebElement(FacilityDetails_js.getElement("RequestedAmount")).click();
-	javascriptHelper.executeScriptWithWebElement("document.querySelector('kub-prime-ccy[ng-reflect-name=\"amountRequested\"] input')").clear();
-	javascriptHelper.executeScriptWithWebElement("document.querySelector('kub-prime-ccy[ng-reflect-name=\"amountRequested\"] input')")
+	javascriptHelper.executeScriptWithWebElement("document.querySelector('kub-prime-ccy[id=\"requestedAmount\"] input')").clear();
+	javascriptHelper.executeScriptWithWebElement("document.querySelector('kub-prime-ccy[id=\"requestedAmount\"] input')")
 	.sendKeys(testData.get("specialCharacter"));
 }
 
@@ -918,7 +918,7 @@ public void user_6047_check_same_record_saved_in_loan_tenure_field_under_facilit
 public void user_6047_enter_the_invalid_data_to_required_amount_field() {
 	javascriptHelper.executeScriptWithWebElement(FacilityDetails_js.getElement("RequestedAmount")).click();
 
-	javascriptHelper.executeScriptWithWebElement("document.querySelector('kub-prime-ccy[ng-reflect-name=\"amountRequested\"] input')")
+	javascriptHelper.executeScriptWithWebElement("document.querySelector('kub-prime-ccy[id=\"requestedAmount\"] input')")
 	.sendKeys(testData.get("negativeValue"));
 }
 

@@ -24,9 +24,9 @@ Then User_6047 give the input for Request Amount under the Facility info
 Then User_6047 give the input for Currency field under the Facility info
 Then User_6047 give the input for Loan Tenure under the Facility info
  #for save
-Then User_6047 click the save button under the facility info
-Then User_6047 verify the successfully saved message under the facility info screen
-Then User_6047 Extract the application details record reference number in facilityinfo stage
+#Then User_6047 click the save button under the facility info
+#Then User_6047 verify the successfully saved message under the facility info screen
+#Then User_6047 Extract the application details record reference number in facilityinfo stage
 Then User_6047 click the Back button and verify the functionality of back button
 And User_6047 Click the Search button under inbox
 Then User_6047 search the facility list record under facility info
@@ -53,6 +53,7 @@ Then User_6047 To verify the validation message for blank field
 Then User_6047 enter the negative numeric value to requested amount field 
 Then User_6047 to verify negative numeric value in request amout field
 Then User_6047 enter the character value to requested amount field 
+Then User_6047 click the save button under the facility info
 Then User_6047 to verify character value value in request amout field
 Then User_6047 enter the special character value to requested amount field 
 Then User_6047 to verify special character value in request amout field

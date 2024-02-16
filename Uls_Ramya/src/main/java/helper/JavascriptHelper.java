@@ -64,7 +64,7 @@ public JavascriptHelper(WebDriver driver)
 		scrollIntoView(element);
 		element.click();
 		//Log.info(element);
-		//ExtentTestManager.getTest().info("Scrooll to the view and clicked");
+		//ExtentTestManager.getTest().info("Scroll to the view and clicked");
 	}
 //scrollDownVertically
 	public void scrollDownVertically() {

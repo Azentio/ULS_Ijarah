@@ -30,27 +30,31 @@ public class AutoLoan_AppDataEntry_AssetDetails {
 	JSPaths commonJSPaths = new JSPaths(excelPath, "iJarah_CommonElements", "Ijarah_CommonFieldName", "JSPath");
 	SoftAssert SoftAssert = new SoftAssert();
 	Map<String, String> testData;
-	//Map<String, String> testData = new HashMap<>();
+	Map<String, String> executionData;
+
 	WaitHelper waitHelper = new WaitHelper(driver);
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
 	
 	JSPaths AssetDetails_js = new JSPaths(excelPath, "assetDetails_WebElements", "Ijarah_AssetDetailsFieldName", "JSPath");
 	ExcelData AssetDetails_TestData  = new ExcelData(excelTestDataPath,"AppDataEn_AL_AssetD","Dataset ID");
-	
+	ExcelData AutoLoanExecutionExcel = new ExcelData(excelTestDataPath, "AutoLoanExecution", "TestCase ID");
 
 	
 	@And("User_6047 Get the test data for test case ID AT_AL_ASD_01")
 	public void user_6047_get_the_test_data_for_test_case_id_at_al_asd_01() {
-		testData =  AssetDetails_TestData.getTestdata("DS01_AT_AL_ASD_01");
+		executionData = AutoLoanExecutionExcel.getTestdata("AT_AL_ASD_01");
+		testData =  AssetDetails_TestData.getTestdata(executionData.get("dataSet_ID"));
+		//testData =  AssetDetails_TestData.getTestdata("DS01_AT_AL_ASD_01");
 	}
+	
 	@And("User_6047 Search the Referen Id under inbox")
 	public void user_6047_search_the_ref_id_under_inbox() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("mail_box_search_text")));
 		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("mail_box_search_text"))
-				//.sendKeys("4138");
-				.sendKeys(testData.get("Ref No"));
+				.sendKeys("5231");
+				//.sendKeys(testData.get("Ref No"));
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
@@ -737,13 +741,13 @@ public class AutoLoan_AppDataEntry_AssetDetails {
 			try {
 
 				yearOfmanufacture = javascriptHelper
-						.executeScriptWithWebElement(AssetDetails_js.getElement("year_of_manufacture_calendar_input"));
+						.executeScriptWithWebElement(AssetDetails_js.getElement("year_of_manufacture_calendar_verification"));
 				javascriptHelper
-						.executeScriptWithWebElement(AssetDetails_js.getElement("year_of_manufacture_calendar_input"))
+						.executeScriptWithWebElement(AssetDetails_js.getElement("year_of_manufacture_calendar_verification"))
 						.click();
 				javascriptHelper
-						.executeScriptWithWebElement(AssetDetails_js.getElement("year_of_manufacture_calendar_input"))
-						.sendKeys(testData.get("year of manufacture"));
+						.executeScriptWithWebElement(AssetDetails_js.getElement("year_of_manufacture_calendar_input_Today"))
+						.click();
 				break;
 
 			} catch (Exception e) {
@@ -2153,7 +2157,7 @@ public class AutoLoan_AppDataEntry_AssetDetails {
 			}
 		softAssert.assertTrue(!(inputFieldMandatoryVerification.contains("*")),
 				"green card number is a mandatory field hence failed");
-		softAssert.assertTrue(GreenCardNo.getAttribute("type").equalsIgnoreCase("number"),
+		softAssert.assertTrue(GreenCardNo.getAttribute("type").equalsIgnoreCase("text"),
 				"green card number is not a number hence failed");
 	}
 

@@ -75,5 +75,11 @@ public class ConfigFileReader {
 			throw new RuntimeException("pollingTime not specified in the Configuration.properties file.");
 	}
 
-	
+	public String getAutoLoanTestDataFilePath() {
+
+		String filePath;
+		filePath = System.getProperty("user.dir") + "\\TestData\\AutoL_AppDataEn_AddressDetail.xlsx";
+
+		return filePath;
+	}
 	}
