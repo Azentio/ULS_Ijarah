@@ -817,8 +817,6 @@ public class AutoLoanAppDataEntryIdentificationDetails {
 					break;
 				}
 			}
-			
-			
 			break;
 		} catch (Exception e) {
 			if (i==499) {
@@ -844,7 +842,6 @@ public class AutoLoanAppDataEntryIdentificationDetails {
 						"document.querySelectorAll('ion-col[class=\"m-0 p-0 ng-star-inserted md hydrated\"]')["
 								+ indexOfListView + "].querySelector('button[icon=\"pi pi-pencil\"')")
 						.click();
-
 				break;
 			} catch (Exception e) {
 

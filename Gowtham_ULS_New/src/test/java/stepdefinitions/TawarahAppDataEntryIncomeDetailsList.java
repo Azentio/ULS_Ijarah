@@ -89,6 +89,7 @@ public class TawarahAppDataEntryIncomeDetailsList {
 	public void user_607_update_testdata_from_AT_INS_01() {
 		testData = MurabhAppdataEntryInsuranceInfo.getTestdata("DS_AT_INS_01");
 	}
+	
 	@Given("User_607 Search in the search Field Auto Loan App Data Entry Income Details")
 	public void user_search_in_the_search_field_auto_loan_app_data_entry_Income_Details() {
 		for (int i = 0; i < 700; i++) {

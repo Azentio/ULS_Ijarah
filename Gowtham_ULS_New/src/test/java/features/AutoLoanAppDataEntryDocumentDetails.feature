@@ -29,11 +29,11 @@ Feature: Auto Loan App Data Entry Document Details
     Scenario: Verify the fields in document details Auto Loan App Data Entry
     Given navigate the IJARA URL
     And login with valid credentials7
-    And User_607 get the test data for test case AT_AL_INC_01
     And User_607 Select LOS in module name
     And User_607 Click inbox in the home page
     And User_607 Click Search in inbox
     And User_607 get the test data for test case AT_Al_DOC_09
+    And User_607 Search in the search Field Auto Loan App Data Entry Document Details
     And User_607 Select record after search
     And User_607 click on document details info tab Auto Loan App Data Entry
     And User_607 Verify Export to PDF in document details Auto Loan App Data Entry

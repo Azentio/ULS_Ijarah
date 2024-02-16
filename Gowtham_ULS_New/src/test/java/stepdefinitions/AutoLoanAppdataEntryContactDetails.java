@@ -965,16 +965,25 @@ public class AutoLoanAppdataEntryContactDetails {
 	@Then("user_607 verify contact details screen should get open with save buttton and back button")
 	public void user_607_verify_contact_details_screen_should_get_open_with_save_buttton_and_back_button()
 			throws Throwable {
+		Thread.sleep(1000);
 		boolean backButtonVerification = false;
 		boolean saveButtonVerification = false;
 		for (int i = 0; i <= 200; i++) {
-			backButtonVerification = javascriptHelper
-					.executeScriptWithWebElement(ALoanAppdataEntryContactDetails.getElement("back_button")).isDisplayed();
+		try {
+			
+				backButtonVerification = javascriptHelper
+						.executeScriptWithWebElement(ALoanAppdataEntryContactDetails.getElement("back_button")).isDisplayed();
 
-			if (backButtonVerification == true) {
-				break;
+				if (backButtonVerification == true) {
+					break;
+				}
+		} catch (Exception e) {
+			if (i == 200) {
+				Assert.fail(e.getMessage());
 			}
 		}
+			}
+		
 		softAssert.assertTrue(backButtonVerification, "Back button is not visible hence failed");
 		for (int i = 0; i <= 200; i++) {
 			saveButtonVerification = javascriptHelper

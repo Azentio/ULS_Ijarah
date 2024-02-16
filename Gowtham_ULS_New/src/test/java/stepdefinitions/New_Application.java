@@ -43,6 +43,13 @@ public class New_Application {
 	SoftAssert SoftAssert = new SoftAssert();
 	ExcelData AutoLoanExecutionExcel = new ExcelData(excelTestDataPath, "AutoLoanExecution", "TestCase ID");
 	Map<String, String> AutoLoanExecution;
+	
+	ExcelData RtALAppDataEntryApplicationDetails = new ExcelData(excelTestDataPath, "RtALAppDataEntryApplicationDeta", "Data Set ID");
+
+	@Given("User_607 Update testdata from AT_RD_ADE_AD_01")
+	public void user_607_update_testdata_from_AT_RD_ADE_AD_01() {
+		testData = RtALAppDataEntryApplicationDetails.getTestdata("AT_RD_ADE_AD_01_D1");
+	}
 
 	@Given("User_607 Update testdata from AT_NEWAPP_02")
 	public void user_607_update_testdata_from_at_newapp_02() {
@@ -63,6 +70,79 @@ public class New_Application {
 	public void user_607_get_the_test_data_for_test_case_at_mu_ape_ad_01() {
 		testData = MurApDataEntryAppDetailsexelData.getTestdata("DS_AT_MU_APE_AD_01");
 	}
+	
+	@Given("User_607 Search in the search Field Auto Loan App Data Entry")
+	public void user_search_in_the_search_field_auto_loan_app_data_entry_Income_Details() {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("searchInInbox")).sendKeys(testData.get("Search Record"));
+				break;
+			} catch (Exception e) {
+				if (i==699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@Given("user_607 Delete the value in Declared Net Monthly Income field")
+	public void user_delete_the_value_in_declared_net_monthly_income_field() throws Throwable {
+		for (int i = 0; i < 700; i++) {
+			try {
+				javascriptHelper
+						.executeScriptWithWebElement(New_ApplicationPaths.getElement("DeclaredNetMonthlyIncome"))
+						.sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.chord(Keys.DELETE)));
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		Thread.sleep(5000);
+	}
+	
+	@Given("user_607 click on Application details tab")
+	public void user_click_on_application_details_tab() {
+		String length =null;
+		for (int i = 0; i <500; i++) {
+			try {
+			    length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length").toString();
+			    System.out.println(length);
+				if (!length.isBlank()&&!length.equalsIgnoreCase("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i==499) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <500; i++) {
+		try {
+			for (int j = 0; j <Integer.parseInt(length); j++) {
+				String title ="return document.querySelectorAll('ion-segment-button')["+j+"].innerText";
+				String titlename = javascriptHelper.executeScript(title).toString();
+				System.out.println(titlename);
+				if (titlename.trim().contains("Application details")) {
+					System.out.println("condition true");
+					String jspath ="document.querySelectorAll('ion-segment-button')["+j+"]";
+					WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
+//					System.out.println(jspath);
+//					javascriptHelper.scrollIntoView(addButton);
+					addButton.click();
+					break;
+				}
+			}
+			break;
+		} catch (Exception e) {
+			if (i==499) {
+				Assert.fail(e.getMessage());
+			}
+		}
+	}
+		
+	}
 
 	@Given("User_607 Check GoBack Field")
 	public void user_607_check_go_back_field() {
@@ -82,6 +162,14 @@ public class New_Application {
 	@Given("User_607 Check Submit button Field")
 	public void user_607_check_submit_button_field() {
 		if (!javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("Submitbutton"))
+				.isDisplayed()) {
+			SoftAssert.fail();
+		}
+	}
+	
+	@Given("User_607 Check Save button Field in AutoLoan Application details")
+	public void user_check_save_button_field_in_auto_loan_application_details() {
+		if (!javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("SavetextBtn"))
 				.isDisplayed()) {
 			SoftAssert.fail();
 		}
@@ -299,6 +387,22 @@ public class New_Application {
 			SoftAssert.fail();
 		}
 
+	}
+	
+	@Given("User_607 Save the record in AutoLoan Application details")
+	public void user_save_the_record_in_auto_loan_application_details() throws Throwable {
+		Thread.sleep(2000);
+		for (int i = 0; i < 700; i++) {
+			try {
+				 javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("SavetextBtn")).click();
+			//	javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("SavetextBtn")));
+				break;
+			} catch (Exception e) {
+				if (i == 699) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
 	}
 
 	@Given("User_607 Save the record")
@@ -2336,9 +2440,10 @@ public class New_Application {
 	}
 
 	@Given("User_607 Check Sourcing Type should be mandatory")
-	public void user_607_check_sourcing_type_should_be_mandatory() {
+	public void user_607_check_sourcing_type_should_be_mandatory() throws Throwable {
+		Thread.sleep(2000);
 		javascriptHelper.scrollIntoView(
-				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("SourcingStaff")));
+				javascriptHelper.executeScriptWithWebElement(New_ApplicationPaths.getElement("SourcingStaffText")));
 		for (int i = 0; i < 2000; i++) {
 			try {
 				String repayment = New_ApplicationPaths.getElement("SourcingType*");

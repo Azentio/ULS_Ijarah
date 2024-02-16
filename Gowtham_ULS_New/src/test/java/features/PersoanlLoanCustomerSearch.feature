@@ -17,7 +17,6 @@ Feature: Persoanl Loan Customer Search
 		And User_607 Check CIF ID Field should be numeric
 		And User_607 Check ID Type Field should be Selectable
 		And User_607 Check ID Number Field should be Alphanumeric
-		
 		And logout from the ULSApplication
 		
 		@AT_PL_CS_02

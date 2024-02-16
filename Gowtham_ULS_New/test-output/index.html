@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\inindc00607\AppData\Local\Temp\testng-eclipse-806057612\testng-customsuite.xml</span>
+                    <span>C:\Users\inindc00607\AppData\Local\Temp\testng-eclipse-733714509\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -61,7 +61,7 @@
                 </li>
                 <li>
                   <a href="#" panel-name="group-Default_suite" class="navigator-link ">
-                    <span>0 groups</span>
+                    <span>1 group</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,21 +93,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Default_suite" class="hide-methods passed suite-Default_suite"> (hide)</a> <!-- hide-methods passed suite-Default_suite -->
-                      <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
                     </span>
-                    <div class="method-list-content passed suite-Default_suite">
+                    <div class="method-list-content failed suite-Default_suite">
                       <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="runner.NewExcelTestRunner" class="method navigator-link" hash-for-method="test">test</a> <!-- method navigator-link -->
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="runner.TestApplication" class="method navigator-link" hash-for-method="runScenario(&quot;To verify user can able to create the contact details record with valid input data&quot;, &quot;Optional[Auto...)">runScenario("To verify user can able to create the contact details record with valid input data", "Optional[Auto...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-Default_suite -->
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -119,25 +119,33 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-passed">
+          <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">runner.NewExcelTestRunner</span>
+              <img src="failed.png"/>
+              <span class="class-name">runner.TestApplication</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="test">
-                  </a> <!-- test -->
-                  <span class="method-name">test</span>
+                  <a name="runScenario(&quot;To verify user can able to create the contact details record with valid input data&quot;, &quot;Optional[Auto...)">
+                  </a> <!-- runScenario("To verify user can able to create the contact details record with valid input data", "Optional[Auto...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("To verify user can able to create the contact details record with valid input data", "Optional[Auto Loan Appdata Entry Contact Details]")</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.isDisplayed()&quot; because the return value of &quot;helper.JavascriptHelper.executeScriptWithWebElement(String)&quot; is null
+	at stepdefinitions.AutoLoanAppdataEntryContactDetails.user_607_verify_contact_details_screen_should_get_open_with_save_buttton_and_back_button(AutoLoanAppdataEntryContactDetails.java:973)
+	at ✽.user_607 verify contact details screen should get open with save buttton and back button(file:///C:/Users/inindc00607/git/ULS_Ijarah_1/Gowtham_ULS_New/src/test/java/features/AutoLoanAppdataEntryContactDetails.feature:16)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Default_suite-class-passed -->
+          </div> <!-- suite-Default_suite-class-failed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\inindc00607\AppData\Local\Temp\testng-eclipse-806057612\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\inindc00607\AppData\Local\Temp\testng-eclipse-733714509\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -146,7 +154,7 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;runner.NewExcelTestRunner&quot;/&gt;
+      &lt;class name=&quot;runner.TestApplication&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -170,6 +178,14 @@
             <span class="header-content">Groups for Default suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">cucumber</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">runScenario</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="times-Default_suite" class="panel">
@@ -188,14 +204,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'test')
-data.setCell(0, 2, 'runner.NewExcelTestRunner')
-data.setCell(0, 3, 304478);
+data.setCell(0, 1, 'runScenario')
+data.setCell(0, 2, 'runner.TestApplication')
+data.setCell(0, 3, 29034);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 5 minutes</span>
+              <span class="suite-total-time">Total running time: 29 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -221,19 +237,21 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">runner.NewExcelTestRunner</div> <!-- chronological-class-name -->
-              <div class="configuration-test before">
-                <span class="method-name">beforeTest</span>
+              <div class="chronological-class-name">runner.TestApplication</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setUpClass</span>
                 <span class="method-start">0 ms</span>
-              </div> <!-- configuration-test before -->
+              </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">test</span>
-                <span class="method-start">32 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("To verify user can able to create the contact details record with valid input data", "Optional[Auto...)</span>
+                <span class="method-start">1017 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-test after">
-                <span class="method-name">afterTest</span>
-                <span class="method-start">304515 ms</span>
-              </div> <!-- configuration-test after -->
+              <div class="configuration-class after">
+                <span class="method-name">tearDownClass</span>
+                <span class="method-start">30064 ms</span>
+              </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

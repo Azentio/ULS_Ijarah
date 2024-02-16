@@ -126,9 +126,11 @@ Feature: Auto Loan AppData Entry Identification Details
     And user_607 click on edit button customer personal information screen at new app stage
     And user_607 click on edit button of customer identification details list view record
     Then user_607 verify system should change the identification record status active and in active at new app stage
-    And user_607 click on edit button of the list view record of customer identification at new app stage
+    And user_607 click on edit button of customer identification details list view record
+    #And user_607 click on edit button of the list view record of customer identification at new app stage
     Then user_607 verify system should change the identification record status active and in active at new app stage
-    And user_607 click on edit button of the list view record of customer identification at new app stage
+    #And user_607 click on edit button of the list view record of customer identification at new app stage
+    And user_607 click on edit button of customer identification details list view record
     And user_607 click on view summary button in identification new app stage record
     Then user_607 verify system should show the record summary of identification at new app stage
     Then logout from the ULSApplication
