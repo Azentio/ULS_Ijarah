@@ -1,3 +1,8 @@
-And User_608 enter invalid Deviation Amount under Finance configuration section in Offer Decision tab
-And User_608 enter Deviation Amount value under Finance configuration section in Offer Decision tab
-And User_608 enter Deviation Tenure value under Finance configuration section in Offer Decision tab
+And User_608 Delete the Mandatory field value in Employment Details screen
+And User_608 verify while modification, when user keep any mandatory field blank and click on save button in Employment details screen
+And User_608 enters the invalid data in Employment Details screen
+And User_608 verify system should not allow to do a modification with invalid data in Employment Details screen
+And User_608 verify system should allow to modify the Employment details record in Employment details screen
+And User_608 verify while modification system allow to save the record with valid data in Employment details screen
+And User_608 click Update button in Employment details screen
+And User_608 verify the confirmation message post clicking on Update button in Employment Details screen

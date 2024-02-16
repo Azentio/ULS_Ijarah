@@ -1,9 +1,24 @@
-@And("^User_608 enter invalid Deviation Amount under Finance configuration section in Offer Decision tab$")
-public void user_608_enter_invalid_deviation_amount_under_finance_configuration_section_in_offer_decision_tab()throws Throwable{
+@And("^User_608 Delete the Mandatory field value in Employment Details screen$")
+public void user_608_delete_the_mandatory_field_value_in_employment_details_screen()throws Throwable{
 }
-@And("^User_608 enter Deviation Amount value under Finance configuration section in Offer Decision tab$")
-public void user_608_enter_deviation_amount_value_under_finance_configuration_section_in_offer_decision_tab()throws Throwable{
+@And("^User_608 verify while modification, when user keep any mandatory field blank and click on save button in Employment details screen$")
+public void user_608_verify_while_modification_when_user_keep_any_mandatory_field_blank_and_click_on_save_button_in_employment_details_screen()throws Throwable{
 }
-@And("^User_608 enter Deviation Tenure value under Finance configuration section in Offer Decision tab$")
-public void user_608_enter_deviation_tenure_value_under_finance_configuration_section_in_offer_decision_tab()throws Throwable{
+@And("^User_608 enters the invalid data in Employment Details screen$")
+public void user_608_enters_the_invalid_data_in_employment_details_screen()throws Throwable{
+}
+@And("^User_608 verify system should not allow to do a modification with invalid data in Employment Details screen$")
+public void user_608_verify_system_should_not_allow_to_do_a_modification_with_invalid_data_in_employment_details_screen()throws Throwable{
+}
+@And("^User_608 verify system should allow to modify the Employment details record in Employment details screen$")
+public void user_608_verify_system_should_allow_to_modify_the_employment_details_record_in_employment_details_screen()throws Throwable{
+}
+@And("^User_608 verify while modification system allow to save the record with valid data in Employment details screen$")
+public void user_608_verify_while_modification_system_allow_to_save_the_record_with_valid_data_in_employment_details_screen()throws Throwable{
+}
+@And("^User_608 click Update button in Employment details screen$")
+public void user_608_click_update_button_in_employment_details_screen()throws Throwable{
+}
+@And("^User_608 verify the confirmation message post clicking on Update button in Employment Details screen$")
+public void user_608_verify_the_confirmation_message_post_clicking_on_update_button_in_employment_details_screen()throws Throwable{
 }

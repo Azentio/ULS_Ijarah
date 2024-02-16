@@ -342,7 +342,7 @@ public class Murabaha_Steps {
 	
 	
 	@And("User_608 search the Ref id under inbox in ULS Application")
-	public void user_search_the_ref_id_under_inbox() throws Throwable {
+	public void user_608_search_the_ref_id_under_inbox() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("inboxSearchInput")));
 		for (int i = 0; i <= 500; i++) {
 			try {
@@ -360,7 +360,7 @@ public class Murabaha_Steps {
 	
 //	AT_MCUD_01
 	@And("User_608 verify Finance Type field is available under Customer Debt screen in Customer Financials tab")
-	public void user_verify_finance_type_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_verify_finance_type_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement financeTypeField = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financeTypeField"));
 		WebElement field = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financeTypeDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -379,7 +379,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Financial Institution field is available under Customer Debt screen in Customer Financials tab")
-	public void user_verify_financial_institution_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_verify_financial_institution_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement financialInstitutionlabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialInstitutionlabel"));
 		WebElement field = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialInstitutionDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -398,7 +398,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Account Number field is available under Customer Debt screen in Customer Financials tab")
-	public void user_verify_account_number_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_verify_account_number_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement accountNumberLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("accountNumberLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("accountNumberInput"));
 		for (int i = 0; i <= 2000; i++) {
@@ -417,7 +417,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Sanction Date field is available under Customer Debt screen in Customer Financials tab")
-	public void user_verify_sanction_date_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_verify_sanction_date_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement sanctionDateLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionDateLabel"));
 		WebElement calender = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionDateField"));
 		for (int i = 0; i <= 500; i++) {
@@ -436,7 +436,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Sanction Amount field is available under Customer Debt screen in Customer Financials tab")
-	public void user_verify_sanction_amount_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_verify_sanction_amount_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement sanctionAmtLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionAmtLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionAmtInput"));
 		for (int i = 0; i <= 500; i++) {
@@ -455,7 +455,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Interest Rate % field is available under Customer Debt screen in Customer Financials tab")
-	public void user_verify_interest_rate_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_verify_interest_rate_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement interestRateLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("interestRateLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("interestRateInput"));
 		for (int i = 0; i <= 500; i++) {
@@ -474,7 +474,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Current Principal balance field is available under Customer Debt screen in Customer Financials tab")
-	public void user_verify_current_principal_balance_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_verify_current_principal_balance_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement currentPrincipalBalanceLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("currentPrincipalBalanceLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("currentPrincipalBalanceInput"));
 		for (int i = 0; i <= 500; i++) {
@@ -493,7 +493,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Tenure field is available under Customer Debt screen in Customer Financials tab")
-	public void user_verify_tenure_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_verify_tenure_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement tenureMonthLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("tenureMonthLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("tenureMonthInput"));
 		for (int i = 0; i <= 500; i++) {
@@ -512,7 +512,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Maturity Date field is available under Customer Debt screen in Customer Financials tab")
-	public void user_verify_maturity_date_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_verify_maturity_date_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement maturityDateLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("maturityDateLabel"));
 		WebElement calender = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("maturityDateField"));
 		for (int i = 0; i <= 500; i++) {
@@ -531,7 +531,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Installment Amount field is available under Customer Debt screen in Customer Financials tab")
-	public void user_verify_installment_amount_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_verify_installment_amount_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement installmentAmtLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtInput"));
 		for (int i = 0; i <= 11000; i++) {
@@ -550,7 +550,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Amount considered field is available under Customer Debt screen in Customer Financials tab")
-	public void user_verify_amount_considered_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_verify_amount_considered_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement amountConsideredLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("amountConsideredLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("amountConsideredInput"));
 		for (int i = 0; i <= 500; i++) {
@@ -569,7 +569,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Currency field is available under Customer Debt screen in Customer Financials tab")
-	public void user_verify_currency_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_verify_currency_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement currencyLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("currencyLabel"));
 		WebElement field = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("currencyDropdown"));
 		for (int i = 0; i <= 1000; i++) {
@@ -589,7 +589,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Remarks field is available under Customer Debt screen in Customer Financials tab")
-	public void user_verify_remarks_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_verify_remarks_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement remarksLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("remarksLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("remarksInput"));
 		for (int i = 0; i <= 1000; i++) {
@@ -608,7 +608,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Next Due Date field is available under Customer Debt screen in Customer Financials tab")
-	public void user_verify_next_due_date_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_verify_next_due_date_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement nextDueDateLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("nextDueDateLabel"));
 		WebElement calender = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("nextDueDateField"));
 		for (int i = 0; i <= 500; i++) {
@@ -627,7 +627,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Collateral Type is available under Customer Debt screen in Customer Financials tab")
-	public void user_verify_collateral_type_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_verify_collateral_type_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement collateralTypeLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("collateralTypeLabel"));
 		WebElement field = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("collateralTypedDropDown"));
 		for (int i = 0; i <= 1000; i++) {
@@ -647,7 +647,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Close Date field is available under Customer Debt screen in Customer Financials tab")
-	public void user_verify_close_date_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_verify_close_date_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement closeDateLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("closeDateLabel"));
 		WebElement calender = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("closeDateField"));
 		for (int i = 0; i <= 500; i++) {
@@ -666,7 +666,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Frequency field is available under Customer Debt screen in Customer Financials tab")
-	public void user_verify_frequency_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_verify_frequency_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement frequencyLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("frequencyLabel"));
 		WebElement field = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("frequencyDropdown"));
 		for (int i = 0; i <= 500; i++) {
@@ -685,7 +685,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Last payment amount field is available under Customer Debt screen in Customer Financials tab")
-	public void user_verify_last_payment_amount_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_verify_last_payment_amount_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement lastPaymentAmtLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("lastPaymentAmtLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("lastPaymentAmtInput"));
 		for (int i = 0; i <= 500; i++) {
@@ -704,7 +704,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Last payment date field is available under Customer Debt screen in Customer Financials tab")
-	public void user_verify_last_payment_date_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_verify_last_payment_date_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement lastPaymentDateLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("lastPaymentDateLabel"));
 		WebElement field = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("lastPaymentDateField"));
 		for (int i = 0; i <= 500; i++) {
@@ -723,7 +723,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Product Name field is available under Customer Debt screen in Customer Financials tab")
-	public void user_verify_product_name_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_verify_product_name_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement productNameLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("productNameLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("productNameInput"));
 		for (int i = 0; i <= 500; i++) {
@@ -742,7 +742,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Last24 cycle field is available under Customer Debt screen in Customer Financials tab")
-	public void user_verify_last24_cycle_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_verify_last24_cycle_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement last24CycleLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("last24CycleLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("last24CycleInput"));
 		for (int i = 0; i <= 500; i++) {
@@ -761,7 +761,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Balance Transfer flag field is available under Customer Debt screen in Customer Financials tab")
-	public void user_verify_balance_transfer_flag_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_verify_balance_transfer_flag_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement balanceTransferFlagLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("balanceTransferFlagLabel"));
 		WebElement toggle = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("balanceTransferFlag"));
 		for (int i = 0; i <= 2000; i++) {
@@ -780,7 +780,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Facility Status field is available under Customer Debt screen in Customer Financials tab")
-	public void user_verify_facility_status_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_verify_facility_status_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement facilityStatusLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("facilityStatusLabel"));
 		WebElement field = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("facilityStatusDropdown"));
 		for (int i = 0; i <= 500; i++) {
@@ -799,7 +799,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Remaining Tenure field is available under Customer Debt screen in Customer Financials tab")
-	public void user_verify_remaining_tenure_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_verify_remaining_tenure_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement remainingTenureLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("remainingTenureLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("remainingTenureInput"));
 		for (int i = 0; i <= 500; i++) {
@@ -818,7 +818,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Disbursement Date field is available under Customer Debt screen in Customer Financials tab")
-	public void user_verify_disbursement_date_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_verify_disbursement_date_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement disbursementDateLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("disbursementDateLabel"));
 		WebElement calender = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("disbursementDateField"));
 		for (int i = 0; i <= 500; i++) {
@@ -837,7 +837,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Request for Balance Takeover field is available under Customer Debt screen in Customer Financials tab")
-	public void user_verify_request_for_balance_takeover_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_verify_request_for_balance_takeover_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement reqForBalanceTakeoverLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("reqForBalanceTakeoverLabel"));
 		WebElement field = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("reqForBalanceTakeoverDropdown"));
 		for (int i = 0; i <= 500; i++) {
@@ -856,7 +856,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify NPA Classification field is available under Customer Debt screen in Customer Financials tab")
-	public void user_verify_npa_classification_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_verify_npa_classification_field_is_available_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		WebElement NPAClassificationLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("NPAClassificationLabel"));
 		WebElement field = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("NPAClassificationDropdown"));
 		for (int i = 0; i <= 500; i++) {
@@ -882,7 +882,7 @@ public class Murabaha_Steps {
 	
 //	AT_MCUD_02
 	@And("User_608 select the Finanace type under Customer Debt screen in Customer Financials tab")
-	public void user_select_the_finanace_type_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_select_the_finanace_type_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		for (int i = 0; i <= 20000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financeTypeDropdown")).click();
@@ -959,7 +959,7 @@ public class Murabaha_Steps {
 	}
 	
 	@And("User_608 select the Financial Institution value under Customer Debt screen in Customer Financials tab")
-	public void user_select_the_financial_institution_value_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_select_the_financial_institution_value_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -1037,7 +1037,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 enter the Account Number under Customer Debt screen in Customer Financials tab")
-	public void user_enter_the_account_number_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_enter_the_account_number_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionAmtInput")).click();
 		for (int i = 0; i <= 5000; i++) {
 			try {
@@ -1053,7 +1053,7 @@ public class Murabaha_Steps {
 	}
 	
 	@And("User_608 enter the Sanction Amount under Customer Debt screen in Customer Financials tab")
-	public void user_enter_the_sanction_amount_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_enter_the_sanction_amount_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionAmtInput")).click();
 		for (int i = 0; i <= 500; i++) {
 			try {
@@ -1069,7 +1069,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 enter the Tenure under Customer Debt screen in Customer Financials tab")
-	public void user_enter_the_tenure_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_enter_the_tenure_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("tenureMonthInput")).click();
 		for (int i = 0; i <= 500; i++) {
 			try {
@@ -1085,7 +1085,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 enter the Installment Amount under Customer Debt screen in Customer Financials tab")
-	public void user_enter_the_installment_amount_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_enter_the_installment_amount_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtInput")).click();
 		for (int i = 0; i <= 500; i++) {
 			try {
@@ -1113,7 +1113,7 @@ public class Murabaha_Steps {
 	}
 	
 	@And("User_608 select the Currency value under Customer Debt screen in Customer Financials tab")
-	public void user_select_the_currency_value_under_customer_debt_screen_in_customer_financials_tab() {
+	public void user_608_select_the_currency_value_under_customer_debt_screen_in_customer_financials_tab() {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("currencyLabel")));
@@ -1191,7 +1191,7 @@ public class Murabaha_Steps {
 	}
 	
 	@And("User_608 enter the Remaining Tenure under Customer Debt screen in Customer Financials tab")
-	public void user_enter_the_remaining_tenure_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_enter_the_remaining_tenure_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("remainingTenureLabel")));
@@ -1227,7 +1227,7 @@ public class Murabaha_Steps {
 	}
 	
 	@And("User_608 click the Back button Under Customer Debt screen to navigate the previous screen")
-	public void user_click_the_back_button_under_customer_debt_screen_to_navigate_the_previous_screen() throws Throwable {		
+	public void user_608_click_the_back_button_under_customer_debt_screen_to_navigate_the_previous_screen() throws Throwable {		
 		String length = null;
 		for (int i = 0; i < 500; i++) {
 			try {
@@ -1271,7 +1271,7 @@ public class Murabaha_Steps {
 	
 //	AT_MCUD_03
 	@And("User_608 verify Finance Type as Mandatory and LOV field under Customer Debt screen in Customer Financials tab")
-	public void user_verify_finance_type_as_mandatory_and_lov_field_under_customer_debt_screen_in_customer_financials_tab() {
+	public void user_608_verify_finance_type_as_mandatory_and_lov_field_under_customer_debt_screen_in_customer_financials_tab() {
 //		Mandatory field		
 		for (int i = 0; i <500; i++) {
             try {
@@ -1304,7 +1304,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Financial Institution as Non-Mandatory and LOV field under Customer Debt screen in Customer Financials tab")
-	public void user_verify_financial_institution_as_non_mandatory_and_lov_field_under_customer_debt_screen_in_customer_financials_tab() {
+	public void user_608_verify_financial_institution_as_non_mandatory_and_lov_field_under_customer_debt_screen_in_customer_financials_tab() {
 //		Validate Non_mandatory
 		WebElement financialInstitutionlabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialInstitutionlabel"));
 		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialInstitutionlabel")).getText();
@@ -1337,7 +1337,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Account Number as Non-Mandatory and Textbox field under Customer Debt screen in Customer Financials tab")
-	public void user_verify_account_number_as_non_mandatory_and_textbox_field_under_customer_debt_screen_in_customer_financials_tab() {
+	public void user_608_verify_account_number_as_non_mandatory_and_textbox_field_under_customer_debt_screen_in_customer_financials_tab() {
 //		Validate Non_mandatory
 		WebElement accountNumberLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("accountNumberLabel"));
 		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("accountNumberLabel")).getText();
@@ -1370,7 +1370,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Sanction Date as Non-Mandatory and Date under Customer Debt screen in Customer Financials tab")
-	public void user_verify_sanction_date_as_non_mandatory_and_date_under_customer_debt_screen_in_customer_financials_tab() {
+	public void user_608_verify_sanction_date_as_non_mandatory_and_date_under_customer_debt_screen_in_customer_financials_tab() {
 		WebElement sanctionDateLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionDateLabel"));
 //		Validate Non_mandatory
 		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionDateLabel")).getText();
@@ -1404,7 +1404,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Sanction Amount as Mandatory and Textbox field under Customer Debt screen in Customer Financials tab")
-	public void user_verify_sanction_amount_as_mandatory_and_textbox_field_under_customer_debt_screen_in_customer_financials_tab() {
+	public void user_608_verify_sanction_amount_as_mandatory_and_textbox_field_under_customer_debt_screen_in_customer_financials_tab() {
 //		Validate Mandatory
 		WebElement sanctionAmtLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionAmtLabel"));
 		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionAmtLabel")).getText();
@@ -1437,7 +1437,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Interest Rate % as Non-Mandatory and Textbox field under Customer Debt screen in Customer Financials tab")
-	public void user_verify_interest_rate_as_non_mandatory_and_textbox_field_under_customer_debt_screen_in_customer_financials_tab() {
+	public void user_608_verify_interest_rate_as_non_mandatory_and_textbox_field_under_customer_debt_screen_in_customer_financials_tab() {
 		WebElement interestRateLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("interestRateLabel"));
 //		Validate Non_mandatory
 		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("interestRateLabel")).getText();
@@ -1469,7 +1469,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Current Principal balance as Non-Mandatory and Textbox field under Customer Debt screen in Customer Financials tab")
-	public void user_verify_current_principal_balance_as_non_mandatory_and_textbox_field_under_customer_debt_screen_in_customer_financials_tab() {
+	public void user_608_verify_current_principal_balance_as_non_mandatory_and_textbox_field_under_customer_debt_screen_in_customer_financials_tab() {
 		WebElement currentPrincipalBalanceLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("currentPrincipalBalanceLabel"));
 //		Validate Non_mandatory
 		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("currentPrincipalBalanceLabel")).getText();
@@ -1501,7 +1501,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Tenure as Mandatory and Textbox field under Customer Debt screen in Customer Financials tab")
-	public void user_verify_tenure_as_mandatory_and_textbox_field_under_customer_debt_screen_in_customer_financials_tab() {
+	public void user_608_verify_tenure_as_mandatory_and_textbox_field_under_customer_debt_screen_in_customer_financials_tab() {
 		WebElement tenureMonthLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("tenureMonthLabel"));
 //		Validate Mandatory
 		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("tenureMonthLabel")).getText();
@@ -1534,7 +1534,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Maturity Date as Non-Mandatory and Date field under Customer Debt screen in Customer Financials tab")
-	public void user_verify_maturity_date_as_non_mandatory_and_date_field_under_customer_debt_screen_in_customer_financials_tab() {
+	public void user_608_verify_maturity_date_as_non_mandatory_and_date_field_under_customer_debt_screen_in_customer_financials_tab() {
 		WebElement maturityDateLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("maturityDateLabel"));
 //		Validate Non_mandatory
 		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("maturityDateLabel")).getText();
@@ -1567,7 +1567,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Installment Amount as Mandatory and Textbox field under Customer Debt screen in Customer Financials tab")
-	public void user_verify_installment_amount_as_mandatory_and_textbox_field_under_customer_debt_screen_in_customer_financials_tab() {
+	public void user_608_verify_installment_amount_as_mandatory_and_textbox_field_under_customer_debt_screen_in_customer_financials_tab() {
 		WebElement installmentAmtLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtLabel"));
 //		Validate Mandatory
 		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtLabel")).getText();
@@ -1599,7 +1599,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Amount considered as Non-Mandatory and Textbox field under Customer Debt screen in Customer Financials tab")
-	public void user_verify_amount_considered_as_non_mandatory_and_textbox_field_under_customer_debt_screen_in_customer_financials_tab() {
+	public void user_608_verify_amount_considered_as_non_mandatory_and_textbox_field_under_customer_debt_screen_in_customer_financials_tab() {
 		WebElement amountConsideredLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("amountConsideredLabel"));
 //		Validate Non_mandatory
 		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("amountConsideredLabel")).getText();
@@ -1631,7 +1631,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Currency as Non-Mandatory and LOV field under Customer Debt screen in Customer Financials tab")
-	public void user_verify_currency_as_non_mandatory_and_lov_field_under_customer_debt_screen_in_customer_financials_tab() {
+	public void user_608_verify_currency_as_non_mandatory_and_lov_field_under_customer_debt_screen_in_customer_financials_tab() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
@@ -1674,7 +1674,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Remarks as Non-Mandatory and Textbox field under Customer Debt screen in Customer Financials tab")
-	public void user_verify_remarks_as_non_mandatory_and_textbox_field_under_customer_debt_screen_in_customer_financials_tab() {
+	public void user_608_verify_remarks_as_non_mandatory_and_textbox_field_under_customer_debt_screen_in_customer_financials_tab() {
 		WebElement remarksLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("remarksLabel"));
 //		Validate Non_mandatory
 		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("remarksLabel")).getText();
@@ -1707,7 +1707,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Next Due Date as Non-Mandatory and Date field under Customer Debt screen in Customer Financials tab")
-	public void user_verify_next_due_date_as_non_mandatory_and_date_field_under_customer_debt_screen_in_customer_financials_tab() {
+	public void user_608_verify_next_due_date_as_non_mandatory_and_date_field_under_customer_debt_screen_in_customer_financials_tab() {
 		WebElement nextDueDateLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("nextDueDateLabel"));
 //		Validate Non_mandatory
 		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("nextDueDateLabel")).getText();
@@ -1740,7 +1740,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Collateral Type as Non-Mandatory and LOV field under Customer Debt screen in Customer Financials tab")
-	public void user_verify_collateral_type_as_non_mandatory_and_lov_field_under_customer_debt_screen_in_customer_financials_tab() {
+	public void user_608_verify_collateral_type_as_non_mandatory_and_lov_field_under_customer_debt_screen_in_customer_financials_tab() {
 		WebElement collateralTypeLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("collateralTypeLabel"));
 //		Validate Non_mandatory
 		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("collateralTypeLabel")).getText();
@@ -1772,7 +1772,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Close Date as Non-Mandatory and Date field under Customer Debt screen in Customer Financials tab")
-	public void user_verify_close_date_as_non_mandatory_and_date_field_under_customer_debt_screen_in_customer_financials_tab() {
+	public void user_608_verify_close_date_as_non_mandatory_and_date_field_under_customer_debt_screen_in_customer_financials_tab() {
 		WebElement closeDateLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("closeDateLabel"));
 //		Validate Non_mandatory
 		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("closeDateLabel")).getText();
@@ -1806,7 +1806,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Frequency as Non-Mandatory and LOV field under Customer Debt screen in Customer Financials tab")
-	public void user_verify_frequency_as_non_mandatory_and_lov_field_under_customer_debt_screen_in_customer_financials_tab() {
+	public void user_608_verify_frequency_as_non_mandatory_and_lov_field_under_customer_debt_screen_in_customer_financials_tab() {
 		WebElement frequencyLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("frequencyLabel"));
 //		Validate Non_mandatory
 		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("frequencyLabel")).getText();
@@ -1838,7 +1838,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Last payment amount as Non-Mandatory and Textbox field under Customer Debt screen in Customer Financials tab")
-	public void user_verify_last_payment_amount_as_non_mandatory_and_textbox_field_under_customer_debt_screen_in_customer_financials_tab() {	    
+	public void user_608_verify_last_payment_amount_as_non_mandatory_and_textbox_field_under_customer_debt_screen_in_customer_financials_tab() {	    
 		WebElement lastPaymentAmtLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("lastPaymentAmtLabel"));
 //		Validate Non_mandatory
 		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("lastPaymentAmtLabel")).getText();
@@ -1870,7 +1870,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Last payment date as Non-Mandatory and Date field under Customer Debt screen in Customer Financials tab")
-	public void user_verify_last_payment_date_as_non_mandatory_and_date_field_under_customer_debt_screen_in_customer_financials_tab() {
+	public void user_608_verify_last_payment_date_as_non_mandatory_and_date_field_under_customer_debt_screen_in_customer_financials_tab() {
 		WebElement lastPaymentDateLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("lastPaymentDateLabel"));
 //		Validate Non_mandatory
 		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("lastPaymentDateLabel")).getText();
@@ -1903,7 +1903,7 @@ public class Murabaha_Steps {
 	}	
 
 	@And("User_608 verify Product Name as Non-Mandatory and Textbox field under Customer Debt screen in Customer Financials tab")
-	public void user_verify_product_name_as_non_mandatory_and_textbox_field_under_customer_debt_screen_in_customer_financials_tab() {
+	public void user_608_verify_product_name_as_non_mandatory_and_textbox_field_under_customer_debt_screen_in_customer_financials_tab() {
 		WebElement productNameLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("productNameLabel"));
 //		Validate Non_mandatory
 		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("productNameLabel")).getText();
@@ -1934,7 +1934,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Last24 cycle as Non-Mandatory and Textbox field under Customer Debt screen in Customer Financials tab")
-	public void user_verify_last24_cycle_as_non_mandatory_and_textbox_field_under_customer_debt_screen_in_customer_financials_tab() {
+	public void user_608_verify_last24_cycle_as_non_mandatory_and_textbox_field_under_customer_debt_screen_in_customer_financials_tab() {
 		WebElement last24CycleLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("last24CycleLabel"));
 //		Validate Non_mandatory
 		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("last24CycleLabel")).getText();
@@ -1966,7 +1966,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Balance Transfer flag as Non-Mandatory and toggle button under Customer Debt screen in Customer Financials tab")
-	public void user_verify_balance_transfer_flag_as_non_mandatory_and_toggle_button_under_customer_debt_screen_in_customer_financials_tab() {
+	public void user_608_verify_balance_transfer_flag_as_non_mandatory_and_toggle_button_under_customer_debt_screen_in_customer_financials_tab() {
 		WebElement balanceTransferFlagLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("balanceTransferFlagLabel"));
 //		Validate Non_mandatory
 		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("balanceTransferFlagLabel")).getText();
@@ -1998,7 +1998,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Facility Status as Non-Mandatory and LOV field under Customer Debt screen in Customer Financials tab")
-	public void user_verify_facility_status_as_non_mandatory_and_lov_field_under_customer_debt_screen_in_customer_financials_tab() {
+	public void user_608_verify_facility_status_as_non_mandatory_and_lov_field_under_customer_debt_screen_in_customer_financials_tab() {
 		WebElement facilityStatusLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("facilityStatusLabel"));
 //		Validate Non_mandatory
 		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("facilityStatusLabel")).getText();
@@ -2030,7 +2030,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Remaining Tenure as Mandatory and Textbox field under Customer Debt screen in Customer Financials tab")
-	public void user_verify_remaining_tenure_as_mandatory_and_textbox_field_under_customer_debt_screen_in_customer_financials_tab() {
+	public void user_608_verify_remaining_tenure_as_mandatory_and_textbox_field_under_customer_debt_screen_in_customer_financials_tab() {
 		WebElement remainingTenureLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("remainingTenureLabel"));
 //		Validate Mandatory
 		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("remainingTenureLabel")).getText();
@@ -2062,7 +2062,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Disbursement Date as Non-Mandatory and Date field under Customer Debt screen in Customer Financials tab")
-	public void user_verify_disbursement_date_as_non_mandatory_and_date_field_under_customer_debt_screen_in_customer_financials_tab() {
+	public void user_608_verify_disbursement_date_as_non_mandatory_and_date_field_under_customer_debt_screen_in_customer_financials_tab() {
 		WebElement disbursementDateLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("disbursementDateLabel"));
 //		Validate Non_mandatory
 		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("disbursementDateLabel")).getText();
@@ -2095,7 +2095,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Request for Balance Takeover as Non-Mandatory and LOV field under Customer Debt screen in Customer Financials tab")
-	public void user_verify_request_for_balance_takeover_as_non_mandatory_and_lov_field_under_customer_debt_screen_in_customer_financials_tab() {
+	public void user_608_verify_request_for_balance_takeover_as_non_mandatory_and_lov_field_under_customer_debt_screen_in_customer_financials_tab() {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
@@ -2140,7 +2140,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify NPA Classification as Non-Mandatory and LOV field under Customer Debt screen in Customer Financials tab")
-	public void user_verify_npa_classification_as_non_mandatory_and_lov_field_under_customer_debt_screen_in_customer_financials_tab() {
+	public void user_608_verify_npa_classification_as_non_mandatory_and_lov_field_under_customer_debt_screen_in_customer_financials_tab() {
 		WebElement NPAClassificationLabel = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("NPAClassificationLabel"));
 //		Validate Non_mandatory
 		String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("NPAClassificationLabel")).getText();
@@ -2175,7 +2175,7 @@ public class Murabaha_Steps {
 	
 //	AT_MCUD_05
 	@And("User_608 enter the Text value in Remaining Tenure field and validate the error message in Customer Debt screen")
-	public void user_enter_the_text_value_in_remaining_tenure_field_and_validate_the_error_message_in_customer_debt_screen() throws Throwable {
+	public void user_608_enter_the_text_value_in_remaining_tenure_field_and_validate_the_error_message_in_customer_debt_screen() throws Throwable {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("remainingTenureLabel")));
@@ -2228,7 +2228,7 @@ public class Murabaha_Steps {
 	
 //	AT_MCUD_06
 	@And("User_608 modify the Sanction Amount under Customer Debt screen in Customer Financials tab")
-	public void user_modify_the_sanction_amount_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_modify_the_sanction_amount_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionAmtInput")).click();
 		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionAmtInput")).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
 		for (int i = 0; i <= 500; i++) {
@@ -2245,7 +2245,7 @@ public class Murabaha_Steps {
 	}
 	
 	@And("User_608 enter the invalid data in any one field under Customer Debt screen in Customer Financials tab")
-	public void user_enter_the_invalid_data_in_any_one_field_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_enter_the_invalid_data_in_any_one_field_under_customer_debt_screen_in_customer_financials_tab() throws Throwable {
 		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("installmentAmtInput")).click();
 		for (int i = 0; i <= 500; i++) {
 			try {
@@ -2269,7 +2269,7 @@ public class Murabaha_Steps {
 	}
 	
 	@And("User_608 validate the invalid data error message in Customer Debt screen")
-	public void user_validate_the_invalid_data_error_message_in_customer_debt_screen() throws Throwable {
+	public void user_608_validate_the_invalid_data_error_message_in_customer_debt_screen() throws Throwable {
 		for (int i = 0; i<2000; i++) {
           try {
         	  String errorMsg = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("sqlErrorToastMsg")).getText();
@@ -2295,7 +2295,7 @@ public class Murabaha_Steps {
 	}
 	
 	@And("User_608 to verify system display the confirmation message post clicking on update button in Customer Debt screen")
-	public void user_to_verify_system_display_the_confirmation_message_post_clicking_on_update_button_in_customer_debt_screen() throws Throwable {
+	public void user_608_to_verify_system_display_the_confirmation_message_post_clicking_on_update_button_in_customer_debt_screen() throws Throwable {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				String text = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("successMsg")).getText();
@@ -2322,7 +2322,7 @@ public class Murabaha_Steps {
 
 //	AT_MCUD_08
 	@And("User_608 search matching value system should display all the possible matching records under Financial Commitments section")
-	public void user_search_matching_value_system_should_display_all_the_possible_matching_records_under_financial_commitments_section() throws Throwable {
+	public void user_608_search_matching_value_system_should_display_all_the_possible_matching_records_under_financial_commitments_section() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentSearchInput")));
 		for (int i = 0; i <= 500; i++) {
 			try {
@@ -2338,7 +2338,7 @@ public class Murabaha_Steps {
 	}
 	
 	@And("User_608 verify the all the possible matching records are displayed under Financial Commitments section")
-	public void user_verify_the_all_the_possible_matching_records_are_displayed_under_financial_commitments_section() throws Throwable {
+	public void user_608_verify_the_all_the_possible_matching_records_are_displayed_under_financial_commitments_section() throws Throwable {
 		for (int i = 0; i <= 500; i++) {
 			try {
 				WebElement searchResult = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("searchResult"));
@@ -2357,16 +2357,16 @@ public class Murabaha_Steps {
 
 
 	@And("User_608 search mismatch value system should not display any records under Financial Commitments section")
-	public void user_search_mismatch_value_system_should_not_display_any_records_under_financial_commitments_section() throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentSearchInput")));
-		javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentSearchInput")).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
-		for (int i = 0; i <= 500; i++) {
+	public void user_608_search_mismatch_value_system_should_not_display_any_records_under_financial_commitments_section() throws Throwable {
+		javascriptHelper.executeScriptWithWebElement(
+				customerDebtJsPaths.getElement("financialCommitmentSearchInput")).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("financialCommitmentSearchInput"))
 				.sendKeys(testData.get("Mismatched Currency"));
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2374,8 +2374,8 @@ public class Murabaha_Steps {
 	}
 	
 	@And("User_608 verify the system is should not displayed any records under Financial Commitments section")
-	public void user_verify_the_system_is_should_not_displayed_any_records_under_financial_commitments_section() throws Throwable {
-		for (int i = 0; i <= 500; i++) {
+	public void user_608_verify_the_system_is_should_not_displayed_any_records_under_financial_commitments_section() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				WebElement searchResult = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("searchResult"));
 				javascriptHelper.backgroundColor(searchResult);
@@ -2384,7 +2384,7 @@ public class Murabaha_Steps {
 				softAssert.assertTrue(Integer.parseInt(text)==0, "System should display the message as No data found");
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2395,7 +2395,7 @@ public class Murabaha_Steps {
 	
 //	AT_MU_AD_03
 	@And("User_608 verify Classification field as Mandatory, Non-editable and Dropdown under Application details screen")
-	public void user_verify_classification_field_as_mandatory_non_editable_and_dropdown_under_application_details_screen() throws Throwable {
+	public void user_608_verify_classification_field_as_mandatory_non_editable_and_dropdown_under_application_details_screen() throws Throwable {
 //		Verify field as Mandatory		
 		for (int i = 0; i <2000; i++) {
           try {
@@ -2443,7 +2443,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Product field as Mandatory, Non-editable and Dropdown under Application details screen")
-	public void user_verify_product_field_as_mandatory_non_editable_and_dropdown_under_application_details_screen() throws Throwable {
+	public void user_608_verify_product_field_as_mandatory_non_editable_and_dropdown_under_application_details_screen() throws Throwable {
 //		Verify field as Mandatory
 		for (int i = 0; i <2000; i++) {
           try {
@@ -2489,7 +2489,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Total Finance Amount Requested field as Mandatory, Non-editable and Numeric under Application details screen")
-	public void user_verify_total_finance_amount_requested_field_as_mandatory_non_editable_and_numeric_under_application_details_screen() throws Throwable {
+	public void user_608_verify_total_finance_amount_requested_field_as_mandatory_non_editable_and_numeric_under_application_details_screen() throws Throwable {
 //		Verify field as Mandatory
 		String field = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("totalFinanceAmtLabel")).getText();
 		for (int i = 0; i <2000; i++) {
@@ -2534,7 +2534,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Declared Net Monthly Income field as Mandatory, Non-editable and Numeric under Application details screen")
-	public void user_verify_declared_net_monthly_income_field_as_mandatory_non_editable_and_numeric_under_application_details_screen() throws Throwable {
+	public void user_608_verify_declared_net_monthly_income_field_as_mandatory_non_editable_and_numeric_under_application_details_screen() throws Throwable {
 //		Verify field as Mandatory
 		String sourcingType = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("declaredMonthlyIncomeLabel")).getText();
 		for (int i = 0; i <2000; i++) {
@@ -2579,7 +2579,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Declared Current Obligations field as Non-mandatory, Non-editable and Numeric under Application details screen")
-	public void user_verify_declared_current_obligations_field_as_non_mandatory_non_editable_and_numeric_under_application_details_screen() throws Throwable {
+	public void user_608_verify_declared_current_obligations_field_as_non_mandatory_non_editable_and_numeric_under_application_details_screen() throws Throwable {
 //		Verify field as Mandatory
 		String field = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("declaredCurrentObligationsLabel")).getText();
 		for (int i = 0; i <2000; i++) {
@@ -2623,7 +2623,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Special Promotion field as Non-mandatory, Non-editable and Dropdown under Application details screen")
-	public void user_verify_special_promotion_field_as_non_mandatory_non_editable_and_dropdown_under_application_details_screen() throws Throwable {
+	public void user_608_verify_special_promotion_field_as_non_mandatory_non_editable_and_dropdown_under_application_details_screen() throws Throwable {
 //		Verify field as Mandatory
 		String label = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("specialPromotionLabel")).getText();
 		for (int i = 0; i <2000; i++) {
@@ -2671,7 +2671,7 @@ public class Murabaha_Steps {
 	
 //	AT_MU_AD_04
 	@And("User_608 verify Sourcing Channel field as Mandatory, Non-editable and Dropdown under Application details screen")
-	public void user_verify_sourcing_channel_field_as_mandatory_non_editable_and_dropdown_under_application_details_screen() throws Throwable {
+	public void user_608_verify_sourcing_channel_field_as_mandatory_non_editable_and_dropdown_under_application_details_screen() throws Throwable {
 //		Verify field as Mandatory		
 		for (int i = 0; i <2000; i++) {
           try {
@@ -2722,7 +2722,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Business Center Code field as Mandatory, Non-editable and Dropdown under Application details screen")
-	public void user_verify_business_center_code_field_as_mandatory_non_editable_and_dropdown_under_application_details_screen() throws Throwable {
+	public void user_608_verify_business_center_code_field_as_mandatory_non_editable_and_dropdown_under_application_details_screen() throws Throwable {
 //		Verify field as Mandatory
 		for (int i = 0; i <2000; i++) {
           try {
@@ -2771,7 +2771,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Servicing Type field as Mandatory, Non-editable and Dropdown under Application details screen")
-	public void user_verify_servicing_type_field_as_mandatory_non_editable_and_dropdown_under_application_details_screen() throws Throwable {
+	public void user_608_verify_servicing_type_field_as_mandatory_non_editable_and_dropdown_under_application_details_screen() throws Throwable {
 //		Verify field as Mandatory
 		String servicingTypeLabel = javascriptHelper.executeScriptWithWebElement(
 				dataCheck_ApplicationDetailsJsPaths.getElement("servicingTypeLabel")).getText();
@@ -2819,7 +2819,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Region field as Mandatory, Non-editable and Dropdown under Application details screen")
-	public void user_verify_region_field_as_mandatory_non_editable_and_dropdown_under_application_details_screen() throws Throwable {
+	public void user_608_verify_region_field_as_mandatory_non_editable_and_dropdown_under_application_details_screen() throws Throwable {
 //		Verify field as Mandatory
 		String regionLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("regionLabel")).getText();
 		for (int i = 0; i <2000; i++) {
@@ -2864,7 +2864,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Servicing Branch field as Mandatory, Non-editable and Dropdown under Application details screen")
-	public void user_verify_servicing_branch_field_as_mandatory_non_editable_and_dropdown_under_application_details_screen() throws Throwable {
+	public void user_608_verify_servicing_branch_field_as_mandatory_non_editable_and_dropdown_under_application_details_screen() throws Throwable {
 //		Verify field as Mandatory
 		String servicingBrachLabel = javascriptHelper.executeScriptWithWebElement(
 				dataCheck_ApplicationDetailsJsPaths.getElement("servicingBranchLabel")).getText();
@@ -2912,7 +2912,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Spoke Location field as Non-mandatory, Non-editable and Dropdown under Application details screen")
-	public void user_verify_spoke_location_field_as_non_mandatory_non_editable_and_dropdown_under_application_details_screen() throws Throwable {
+	public void user_608_verify_spoke_location_field_as_non_mandatory_non_editable_and_dropdown_under_application_details_screen() throws Throwable {
 //		Verify field as Mandatory
 		String spokeLocationLabel = javascriptHelper.executeScriptWithWebElement(
 				dataCheck_ApplicationDetailsJsPaths.getElement("spokeLocationLabel")).getText();
@@ -2960,7 +2960,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Closing Staff or Servicing Staff or RM field as Mandatory, Non-editable and Dropdown under Application details screen")
-	public void user_verify_closing_staff_or_servicing_staff_or_rm_field_as_mandatory_non_editable_and_dropdown_under_application_details_screen() throws Throwable {
+	public void user_608_verify_closing_staff_or_servicing_staff_or_rm_field_as_mandatory_non_editable_and_dropdown_under_application_details_screen() throws Throwable {
 //		Verify field as Mandatory
 		String closingStaffLabel = javascriptHelper.executeScriptWithWebElement(
 				dataCheck_ApplicationDetailsJsPaths.getElement("closingStaffLabel")).getText();
@@ -3008,7 +3008,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Topup Type field as Non_mandatory, Non-editable and Dropdown under Application details screen")
-	public void user_verify_topup_type_field_as_non_mandatory_non_editable_and_dropdown_under_application_details_screen() throws Throwable {
+	public void user_608_verify_topup_type_field_as_non_mandatory_non_editable_and_dropdown_under_application_details_screen() throws Throwable {
 //		Verify field as Mandatory
 		String topupTypeLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("topupTypeLabel")).getText();
 		for (int i = 0; i <2000; i++) {
@@ -3053,7 +3053,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Topup Application No field as Non_mandatory, Non-editable and Numeric under Application details screen")
-	public void user_verify_topup_application_no_field_as_non_mandatory_non_editable_and_numeric_under_application_details_screen() throws Throwable {
+	public void user_608_verify_topup_application_no_field_as_non_mandatory_non_editable_and_numeric_under_application_details_screen() throws Throwable {
 //		Verify field as Mandatory
 		String topupAppNoLabel = javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("topupAppNoLabel")).getText();
 		for (int i = 0; i <2000; i++) {
@@ -3099,7 +3099,7 @@ public class Murabaha_Steps {
 	
 //	AT_MU_AD_05
 	@And("User_608 verify Sourcing Type field as Mandatory, Non-editable and Dropdown under Referral\\Sourcing Details section")
-	public void user_verify_sourcing_type_field_as_mandatory_non_editable_and_dropdown_under_referral_sourcing_details_section() throws Throwable {
+	public void user_608_verify_sourcing_type_field_as_mandatory_non_editable_and_dropdown_under_referral_sourcing_details_section() throws Throwable {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(dataCheck_ApplicationDetailsJsPaths.getElement("sourcingTypeLabel")));
@@ -3156,7 +3156,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Sourcing Office field as Mandatory, Non-editable and Dropdown under Referral\\Sourcing Details section")
-	public void user_verify_sourcing_office_field_as_mandatory_non_editable_and_dropdown_under_referral_sourcing_details_section() throws Throwable {
+	public void user_608_verify_sourcing_office_field_as_mandatory_non_editable_and_dropdown_under_referral_sourcing_details_section() throws Throwable {
 //		Validate Mandatory
 		for (int i = 0; i <2000; i++) {
           try {
@@ -3204,7 +3204,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Sourcing Entity field as Mandatory, Non-editable and Dropdown under Referral\\Sourcing Details section")
-	public void user_verify_sourcing_entity_field_as_mandatory_non_editable_and_dropdown_under_referral_sourcing_details_section() throws Throwable {
+	public void user_608_verify_sourcing_entity_field_as_mandatory_non_editable_and_dropdown_under_referral_sourcing_details_section() throws Throwable {
 //		Validate Mandatory
 		String sourcingEntity = javascriptHelper.executeScriptWithWebElement(
 				dataCheck_ApplicationDetailsJsPaths.getElement("sourcingEntityLabel")).getText();
@@ -3252,7 +3252,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Sourcing Staff field as Mandatory, Non-editable and Dropdown under Referral\\Sourcing Details section")
-	public void user_verify_sourcing_staff_field_as_mandatory_non_editable_and_dropdown_under_referral_sourcing_details_section() throws Throwable {
+	public void user_608_verify_sourcing_staff_field_as_mandatory_non_editable_and_dropdown_under_referral_sourcing_details_section() throws Throwable {
 //		Validate Mandatory
 		String sourcingStaff = javascriptHelper.executeScriptWithWebElement(
 				dataCheck_ApplicationDetailsJsPaths.getElement("sourcingStaffLabel")).getText();
@@ -3301,7 +3301,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Reference Type field as Non_mandatory, Non-editable and Dropdown under Referral\\Sourcing Details section")
-	public void user_verify_reference_type_field_as_non_mandatory_non_editable_and_dropdown_under_referral_sourcing_details_section() throws Throwable {
+	public void user_608_verify_reference_type_field_as_non_mandatory_non_editable_and_dropdown_under_referral_sourcing_details_section() throws Throwable {
 //		Validate Non-Mandatory
 		String referenceType = javascriptHelper.executeScriptWithWebElement(
 				dataCheck_ApplicationDetailsJsPaths.getElement("referenceTypeLabel")).getText();
@@ -3349,7 +3349,7 @@ public class Murabaha_Steps {
 	}
 	
 	@And("User_608 verify Reference Entity field as Non_mandatory, Non-editable and Dropdown under Referral\\Sourcing Details section")
-	public void user_verify_reference_entity_field_as_non_mandatory_non_editable_and_dropdown_under_referral_sourcing_details_section() throws Throwable {
+	public void user_608_verify_reference_entity_field_as_non_mandatory_non_editable_and_dropdown_under_referral_sourcing_details_section() throws Throwable {
 //		Validate Non-Mandatory
 		String referenceEntity = javascriptHelper.executeScriptWithWebElement(
 				dataCheck_ApplicationDetailsJsPaths.getElement("referenceEntityLabel")).getText();
@@ -3398,7 +3398,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Reference Code field as Non_mandatory, Non-editable and Textbox under Referral\\Sourcing Details section")
-	public void user_verify_reference_code_field_as_non_mandatory_non_editable_and_textbox_under_referral_sourcing_details_section() throws Throwable {
+	public void user_608_verify_reference_code_field_as_non_mandatory_non_editable_and_textbox_under_referral_sourcing_details_section() throws Throwable {
 //		Validate Non-Mandatory
 		String referenceCode = javascriptHelper.executeScriptWithWebElement(
 				dataCheck_ApplicationDetailsJsPaths.getElement("referenceCodeLabel")).getText();
@@ -3450,7 +3450,7 @@ public class Murabaha_Steps {
 	
 //	@AT_MU_INC_01
 	@And("User_608 click Add button under Income section in Customer Financials tab")
-	public void user_click_add_button_under_income_section_in_customer_financials_tab() {
+	public void user_608_click_add_button_under_income_section_in_customer_financials_tab() {
 		String length = null;
 		for (int i = 0; i < 500; i++) {
 			try {
@@ -3493,7 +3493,7 @@ public class Murabaha_Steps {
 	}
 	
 	@And("User_608 validate Pension Amount field available under Income details screen")
-	public void user_validate_pension_amount_field_available_under_income_details_screen() throws Throwable {
+	public void user_608_validate_pension_amount_field_available_under_income_details_screen() throws Throwable {
 		WebElement pensionAmtLabel = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("pensionAmtLabel"));
 		System.out.println("Field Name: "+pensionAmtLabel.getText());
 		for (int i = 0; i <= 2000; i++) {
@@ -3524,7 +3524,7 @@ public class Murabaha_Steps {
 
 	
 	@And("User_608 select the Salary credited to Bank value under Income details screen")
-	public void user_select_the_salary_credited_to_bank_value_under_income_details_screen() throws Throwable {
+	public void user_608_select_the_salary_credited_to_bank_value_under_income_details_screen() throws Throwable {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("salaryCreditedToBankDropdown")).click();
@@ -3600,7 +3600,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 validate Bank Name field available under Income details screen")
-	public void user_validate_bank_name_field_available_under_income_details_screen() throws Throwable {
+	public void user_608_validate_bank_name_field_available_under_income_details_screen() throws Throwable {
 		WebElement bankNameLabel = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("bankNameLabel"));
 		WebElement bankNameDropdown = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("bankNameDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -3619,7 +3619,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 validate Branch Name field available under Income details screen")
-	public void user_validate_branch_name_field_available_under_income_details_screen() throws Throwable {
+	public void user_608_validate_branch_name_field_available_under_income_details_screen() throws Throwable {
 		WebElement branchNameLabel = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("branchNameLabel"));
 		WebElement branchNameDropdown = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("branchNameDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -3639,7 +3639,7 @@ public class Murabaha_Steps {
 	
 	
 	@And("User_608 verify system should navigate to the previous screen in Customer Financials tab")
-	public void user_verify_system_should_navigate_to_the_previous_screen_in_customer_financials_tab() {
+	public void user_608_verify_system_should_navigate_to_the_previous_screen_in_customer_financials_tab() {
 		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
 		String listOfAddButton = "";
 		String addButtonScreenName = "";
@@ -3693,7 +3693,7 @@ public class Murabaha_Steps {
 	
 //	AT_MU_INC_02
 	@And("User_608 enter the Lumpsum Amount under Income screen in Customer Financials tab")
-	public void user_enter_the_lumpsum_amount_under_income_screen_in_customer_financials_tab()throws Throwable {
+	public void user_608_enter_the_lumpsum_amount_under_income_screen_in_customer_financials_tab()throws Throwable {
 	    for (int i = 0; i < 1000; i++) {
 	    	try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("lumpsumAmtInput"))
@@ -3708,7 +3708,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 enter the Pension Amount under Income screen in Customer Financials tab")
-	public void user_enter_the_pension_amount_under_income_screen_in_customer_financials_tab()throws Throwable {
+	public void user_608_enter_the_pension_amount_under_income_screen_in_customer_financials_tab()throws Throwable {
 	    for (int i = 0; i < 1000; i++) {
 	    	try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("pensionAmtInput"))
@@ -3723,7 +3723,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 select the Income option under Income screen in Customer Financials tab")
-	public void user_select_the_income_option_under_income_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_select_the_income_option_under_income_screen_in_customer_financials_tab() throws Throwable {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("incomeDropdown")).click();
@@ -3799,7 +3799,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 select the Frequency option under Income screen in Customer Financials tab")
-	public void user_select_the_frequency_option_under_income_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_select_the_frequency_option_under_income_screen_in_customer_financials_tab() throws Throwable {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("frequencyDropdown")).click();
@@ -3875,7 +3875,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 enter the Income Amount under Income screen in Customer Financials tab")
-	public void user_enter_the_income_amount_under_income_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_enter_the_income_amount_under_income_screen_in_customer_financials_tab() throws Throwable {
 		for (int i = 0; i < 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("amountInput"))
@@ -3890,7 +3890,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 enter the Adjusted% under Income screen in Customer Financials tab")
-	public void user_enter_the_adjusted_under_income_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_enter_the_adjusted_under_income_screen_in_customer_financials_tab() throws Throwable {
 		for (int i = 0; i < 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("adjusted%_Input"))
@@ -3905,7 +3905,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 select the Bank Name under Income screen in Customer Financials tab")
-	public void user_select_the_bank_name_under_income_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_select_the_bank_name_under_income_screen_in_customer_financials_tab() throws Throwable {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("bankNameDropdown")).click();
@@ -3981,7 +3981,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 select the Branch Name under Income screen in Customer Financials tab")
-	public void user_select_the_branch_name_under_income_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_select_the_branch_name_under_income_screen_in_customer_financials_tab() throws Throwable {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("branchNameDropdown")).click();
@@ -4057,7 +4057,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 select the Deduction option under Income screen in Customer Financials tab")
-	public void user_select_the_deduction_option_under_income_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_select_the_deduction_option_under_income_screen_in_customer_financials_tab() throws Throwable {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("deductionDropdown")).click();
@@ -4134,7 +4134,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 select the Deduction Frequency option under Income screen in Customer Financials tab")
-	public void user_select_the_deduction_frequency_option_under_income_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_select_the_deduction_frequency_option_under_income_screen_in_customer_financials_tab() throws Throwable {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("deductionFrequencyDropdown")).click();
@@ -4210,7 +4210,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 enter the Deduction Amount under Income screen in Customer Financials tab")
-	public void user_enter_the_deduction_amount_under_income_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_enter_the_deduction_amount_under_income_screen_in_customer_financials_tab() throws Throwable {
 		for (int i = 0; i < 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("deductionAmtInput")).click();
@@ -4226,7 +4226,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 enter the Deduction Adjusted% under Income screen in Customer Financials tab")
-	public void user_enter_the_deduction_adjusted_under_income_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_enter_the_deduction_adjusted_under_income_screen_in_customer_financials_tab() throws Throwable {
 		for (int i = 0; i < 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("deductionAdj%_Input")).click();
@@ -4242,7 +4242,7 @@ public class Murabaha_Steps {
 	}
 	
 	@And("User_608 select the Currency under Income screen in Customer Financials tab")
-	public void user_select_the_currency_under_income_screen_in_customer_financials_tab() throws Throwable {
+	public void user_608_select_the_currency_under_income_screen_in_customer_financials_tab() throws Throwable {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("currencyDropdown")).click();
@@ -4318,15 +4318,14 @@ public class Murabaha_Steps {
 	}
 	
 	@And("User_608 validate the confirmation message as success under Income details screen")
-	public void user_validate_the_confirmation_message_as_success_under_income_details_screen() throws Throwable {
-		Thread.sleep(1000);
-		WebElement successToastMsg = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("successToastMsg"));
-		for (int i = 0; i <= 50000; i++) {
+	public void user_608_validate_the_confirmation_message_as_success_under_income_details_screen() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
 			try {
+				WebElement successToastMsg = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("successToastMsg"));
 				Assert.assertTrue(successToastMsg.getText().contains("Saved successfully"));				
 				break;
 			} catch (Exception e) {
-				if (i == 50000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4336,8 +4335,7 @@ public class Murabaha_Steps {
 	
 //	@AT_MU_INC_03
 	@And("User_608 click the pencil button under Income section in Customer Financials tab")
-	public void user_click_the_pencil_button_under_income_section_in_customer_financials_tab() throws Throwable {
-		Thread.sleep(1000);
+	public void user_608_click_the_pencil_button_under_income_section_in_customer_financials_tab() throws Throwable {
 		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
 		String listOfAddButton = "";
 		String addButtonScreenName = "";
@@ -4398,16 +4396,15 @@ public class Murabaha_Steps {
 	
 	
 	@And("User_608 verify Employment Type auto populated from Employment details screen")
-	public void user_verify_employment_type_auto_populated_from_employment_details_screen() throws Throwable {
-		Thread.sleep(500);
-		WebElement employementTypeInput = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("employementTypeInput"));
-		for (int i = 0; i <= 2000; i++) {
+	public void user_608_verify_employment_type_auto_populated_from_employment_details_screen() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
 			try {
+				WebElement employementTypeInput = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("employementTypeInput"));
 				javascriptHelper.backgroundBorder(employementTypeInput);
 				Assert.assertTrue(employementTypeInput.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4415,7 +4412,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Lumpsum Amount auto populated from Employment details screen")
-	public void user_verify_lumpsum_amount_auto_populated_from_employment_details_screen() throws Throwable {
+	public void user_608_verify_lumpsum_amount_auto_populated_from_employment_details_screen() throws Throwable {
 		WebElement lumpsumAmtInput = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("lumpsumAmtInput"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
@@ -4431,7 +4428,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Income field should be Mandatory, LOV and Allow to user select any value from LOV")
-	public void user_verify_income_field_should_be_mandatory_lov_and_allow_to_user_select_any_value_from_lov() throws Throwable {
+	public void user_608_verify_income_field_should_be_mandatory_lov_and_allow_to_user_select_any_value_from_lov() throws Throwable {
 		WebElement incomeLabel = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("incomeLabel"));
 		WebElement incomeDropdown = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("incomeDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -4523,7 +4520,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Frequency field should be Mandatory, LOV and Allow to user select any value from LOV")
-	public void user_verify_frequency_field_should_be_mandatory_lov_and_allow_to_user_select_any_value_from_lov() throws Throwable {
+	public void user_608_verify_frequency_field_should_be_mandatory_lov_and_allow_to_user_select_any_value_from_lov() throws Throwable {
 		WebElement frequencyLabel = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("frequencyLabel"));
 		WebElement frequencyDropdown = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("frequencyDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -4615,7 +4612,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify income Amount field should be Mandatory, Textbox and Allow to user enter numeric value manualy")
-	public void user_verify_income_amount_field_should_be_mandatory_textbox_and_allow_to_user_enter_numeric_value_manualy() throws Throwable {
+	public void user_608_verify_income_amount_field_should_be_mandatory_textbox_and_allow_to_user_enter_numeric_value_manualy() throws Throwable {
 		WebElement amountLabel = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("amountLabel"));
 		WebElement amountInput = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("amountInput"));
 		for (int i = 0; i <= 2000; i++) {
@@ -4649,7 +4646,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Defined% field should be Non-mandatory, Textbox and Allow to user enter numeric value manualy")
-	public void user_verify_defined_field_should_be_non_mandatory_textbox_and_allow_to_user_enter_numeric_value_manualy() throws Throwable {
+	public void user_608_verify_defined_field_should_be_non_mandatory_textbox_and_allow_to_user_enter_numeric_value_manualy() throws Throwable {
 		WebElement defined_Label = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("defined%_Label"));
 		WebElement defined_Input = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("defined%_Input"));
 		for (int i = 0; i <= 2000; i++) {
@@ -4668,7 +4665,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Adjusted% field should be Non-mandatory, Textbox and Allow to user enter numeric value manualy")
-	public void user_verify_adjusted_field_should_be_non_mandatory_textbox_and_allow_to_user_enter_numeric_value_manualy() throws Throwable {
+	public void user_608_verify_adjusted_field_should_be_non_mandatory_textbox_and_allow_to_user_enter_numeric_value_manualy() throws Throwable {
 		WebElement adjusted_Label = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("adjusted%_Label"));
 		WebElement adjusted_Input = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("adjusted%_Input"));
 		for (int i = 0; i <= 2000; i++) {
@@ -4701,7 +4698,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Amount Considered field should be auto populated in post entering Adjusted% value")
-	public void user_verify_amount_considered_field_should_be_auto_populated_in_post_entering_adjusted_value() throws Throwable {
+	public void user_608_verify_amount_considered_field_should_be_auto_populated_in_post_entering_adjusted_value() throws Throwable {
 		String incomeValue = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("amountInput")).getAttribute("ng-reflect-model");
 		String definedValue = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("defined%_Input")).getAttribute("ng-reflect-model");
 		String adjustedValue = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("adjusted%_Input")).getAttribute("ng-reflect-model");
@@ -4725,7 +4722,7 @@ public class Murabaha_Steps {
 	
 	
 	@And("User_608 verify Total income value should get auto populated post entering the Amount")
-	public void user_verify_total_income_value_should_get_auto_populated_post_entering_the_amount() throws Throwable {
+	public void user_608_verify_total_income_value_should_get_auto_populated_post_entering_the_amount() throws Throwable {
 		String incomeValue = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("amountInput")).getAttribute("ng-reflect-model");
 		int a = (Integer.parseInt(incomeValue)/12);
 		String substring = Integer.toString(a).split("\\.")[0];
@@ -4746,7 +4743,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Total income considered value should get auto populate post entering the value in Adjusted% field")
-	public void user_verify_total_income_considered_value_should_get_auto_populate_post_entering_the_value_in_adjusted_field() throws Throwable {
+	public void user_608_verify_total_income_considered_value_should_get_auto_populate_post_entering_the_value_in_adjusted_field() throws Throwable {
 		String amountConsideredValue = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("amountConsideredInput")).getAttribute("ng-reflect-model");
 		int a = (Integer.parseInt(amountConsideredValue)/12);
 		String sp = Integer.toString(a).split("\\.")[0];
@@ -4767,7 +4764,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Salary credited to Bank field should be Non-mandatory and Dropdown")
-	public void user_verify_salary_credited_to_bank_field_should_be_non_mandatory_and_dropdown() throws Throwable {
+	public void user_608_verify_salary_credited_to_bank_field_should_be_non_mandatory_and_dropdown() throws Throwable {
 		WebElement salaryCreditedToBankLabel = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("salaryCreditedToBankLabel"));
 		WebElement salaryCreditedToBankDropdown = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("salaryCreditedToBankDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -4786,7 +4783,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Deduction field should be Non-mandatory, LOV and Allow to user select any value from LOV")
-	public void user_verify_deduction_field_should_be_non_mandatory_lov_and_allow_to_user_select_any_value_from_lov() throws Throwable {
+	public void user_608_verify_deduction_field_should_be_non_mandatory_lov_and_allow_to_user_select_any_value_from_lov() throws Throwable {
 		WebElement deductionLabel = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("deductionLabel"));
 		WebElement deductionDropdown = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("deductionDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -4878,7 +4875,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Deduction Amount field should be Non-mandatory, Textbox and Allow to user enter numeric value manualy")
-	public void user_verify_deduction_amount_field_should_be_non_mandatory_textbox_and_allow_to_user_enter_numeric_value_manualy() throws Throwable {
+	public void user_608_verify_deduction_amount_field_should_be_non_mandatory_textbox_and_allow_to_user_enter_numeric_value_manualy() throws Throwable {
 		WebElement deductionAmtLabel = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("deductionAmtLabel"));
 		WebElement deductionAmtInput = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("deductionAmtInput"));
 		for (int i = 0; i <= 2000; i++) {
@@ -4915,7 +4912,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Deduction Defined% field should be Non-mandatory, Textbox and Allow to user enter numeric value manualy")
-	public void user_verify_deduction_defined_field_should_be_non_mandatory_textbox_and_allow_to_user_enter_numeric_value_manualy() throws Throwable {
+	public void user_608_verify_deduction_defined_field_should_be_non_mandatory_textbox_and_allow_to_user_enter_numeric_value_manualy() throws Throwable {
 		WebElement defined_Label = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("deductionDef%_Label"));
 		WebElement defined_Input = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("deductionDef%_Input"));
 		for (int i = 0; i <= 2000; i++) {
@@ -4934,7 +4931,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Deduction Adjusted% field should be Non-mandatory, Textbox and Allow to user enter numeric value manualy")
-	public void user_verify_deduction_adjusted_field_should_be_non_mandatory_textbox_and_allow_to_user_enter_numeric_value_manualy() throws Throwable {
+	public void user_608_verify_deduction_adjusted_field_should_be_non_mandatory_textbox_and_allow_to_user_enter_numeric_value_manualy() throws Throwable {
 		WebElement adjusted_Label = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("deductionAdj%_Label"));
 		WebElement adjusted_Input = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("deductionAdj%_Input"));
 		for (int i = 0; i <= 2000; i++) {
@@ -4967,7 +4964,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Deduction Considered field should be auto populated in post entering Deduction Adj% value")
-	public void user_verify_deduction_considered_field_should_be_auto_populated_in_post_entering_deduction_adj_value() throws Throwable {
+	public void user_608_verify_deduction_considered_field_should_be_auto_populated_in_post_entering_deduction_adj_value() throws Throwable {
 		String deductionAmt = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("deductionAmtInput")).getAttribute("ng-reflect-model");
 		String definedValue = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("deductionDef%_Input")).getAttribute("ng-reflect-model");
 		String adjustedValue = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("deductionAdj%_Input")).getAttribute("ng-reflect-model");
@@ -4990,7 +4987,7 @@ public class Murabaha_Steps {
 	}
 	
 	@And("User_608 verify Total Deduction value should get auto populated post entering the Deduction Amount")
-	public void user_verify_total_deduction_value_should_get_auto_populated_post_entering_the_deduction_amount() throws Throwable {
+	public void user_608_verify_total_deduction_value_should_get_auto_populated_post_entering_the_deduction_amount() throws Throwable {
 		String deductionAmt = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("deductionAmtInput")).getAttribute("ng-reflect-model");
 		int a = Integer.parseInt(deductionAmt)/12;
 		String st = Integer.toString(a).split("\\.")[0];
@@ -5010,7 +5007,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Deduction considered value should get auto populate post entering the value in Deduction Adj% field")
-	public void user_verify_deduction_considered_value_should_get_auto_populate_post_entering_the_value_in_deduction_adj_field() throws Throwable {
+	public void user_608_verify_deduction_considered_value_should_get_auto_populate_post_entering_the_value_in_deduction_adj_field() throws Throwable {
 		String deductionConsidered = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("deductionConsideredInput")).getAttribute("ng-reflect-model");
 		int a = Integer.parseInt(deductionConsidered)/12;
 		String sp = Integer.toString(a).split("\\.")[0];
@@ -5030,7 +5027,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Bank Name field should be Non-mandatory, LOV and Allow to user select any value from LOV")
-	public void user_verify_bank_name_field_should_be_non_mandatory_lov_and_allow_to_user_select_any_value_from_lov() throws Throwable {
+	public void user_608_verify_bank_name_field_should_be_non_mandatory_lov_and_allow_to_user_select_any_value_from_lov() throws Throwable {
 		WebElement bankNameLabel = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("bankNameLabel"));
 		WebElement bankNameDropdown = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("bankNameDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -5123,7 +5120,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Branch Name field should be Non-mandatory, LOV and Allow to user select any value from LOV")
-	public void user_verify_branch_name_field_should_be_non_mandatory_lov_and_allow_to_user_select_any_value_from_lov() throws Throwable {
+	public void user_608_verify_branch_name_field_should_be_non_mandatory_lov_and_allow_to_user_select_any_value_from_lov() throws Throwable {
 		WebElement branchNameLabel = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("branchNameLabel"));
 		WebElement branchNameDropdown = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("branchNameDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -5215,7 +5212,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 click Add Row button system should add a row under Income screen")
-	public void user_click_add_row_button_system_should_add_a_row_under_income_screen() throws Throwable {
+	public void user_608_click_add_row_button_system_should_add_a_row_under_income_screen() throws Throwable {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("actionAddBtn")).click();
@@ -5229,7 +5226,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 click Delete Row button system should delete a row under Income screen")
-	public void user_click_delete_row_button_system_should_delete_a_row_under_income_screen() throws Throwable {
+	public void user_608_click_delete_row_button_system_should_delete_a_row_under_income_screen() throws Throwable {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("actionDeleteBtn")).click();
@@ -5245,14 +5242,14 @@ public class Murabaha_Steps {
 	
 //	AT_MU_INC_04
 	@And("User_608 click the Save button with mandatory field blank under Income details screen")
-	public void user_click_the_save_button_with_mandatory_field_blank_under_income_details_screen() throws Throwable {
-		WebElement incomeSaveBtn = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("incomeSaveBtn"));
-		for (int i = 0; i <= 5000; i++) {
+	public void user_608_click_the_save_button_with_mandatory_field_blank_under_income_details_screen() throws Throwable {		
+		for (int i = 0; i <= 300; i++) {
 			try {
+				WebElement incomeSaveBtn = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("incomeSaveBtn"));
 				incomeSaveBtn.click();
 				break;
 			} catch (Exception e) {
-				if (i == 5000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5260,16 +5257,15 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify validation message for mandatory field as blank under Income details screen")
-	public void user_verify_validation_message_for_mandatory_field_as_blank_under_income_details_screen() throws Throwable {
-		Thread.sleep(1000);
-		WebElement successToastMsg = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("successToastMsg"));
-		for (int i = 0; i <= 50000; i++) {
+	public void user_608_verify_validation_message_for_mandatory_field_as_blank_under_income_details_screen() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
 			try {
+				WebElement successToastMsg = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("successToastMsg"));
 				Assert.assertTrue(successToastMsg.getText().contains("Fill Mandatory fields"));
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("successToastCloseBtn")).click();				
 				break;
 			} catch (Exception e) {
-				if (i == 50000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5279,7 +5275,7 @@ public class Murabaha_Steps {
 	
 //	AT_MU_INC_05
 	@And("User_608 verify system allow user to modify Lumpsum Amount under Income details screen")
-	public void user_verify_system_allow_user_to_modify_lumpsum_amount_under_income_details_screen() throws Throwable {
+	public void user_608_verify_system_allow_user_to_modify_lumpsum_amount_under_income_details_screen() throws Throwable {
 		for (int i = 0; i < 1000; i++) {
 	    	try {
 	    		javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("lumpsumAmtInput"))
@@ -5296,7 +5292,7 @@ public class Murabaha_Steps {
 	}
 	
 	@And("User_608 verify system allow user to modify Pension Amount under Income details screen")
-	public void user_verify_system_allow_user_to_modify_pension_amount_under_income_details_screen() throws Throwable {
+	public void user_608_verify_system_allow_user_to_modify_pension_amount_under_income_details_screen() throws Throwable {
 		for (int i = 0; i < 1000; i++) {
 	    	try {
 	    		javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("pensionAmtInput"))
@@ -5313,7 +5309,7 @@ public class Murabaha_Steps {
 	}
 	
 	@And("User_608 verify system allow user to modify Income under Income details screen")
-	public void user_verify_system_allow_user_to_modify_income_under_income_details_screen() throws Throwable {
+	public void user_608_verify_system_allow_user_to_modify_income_under_income_details_screen() throws Throwable {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("incomeDropdown")).click();
@@ -5389,7 +5385,7 @@ public class Murabaha_Steps {
 	}
 	
 	@And("User_608 verify system allow user to modify Frequency under Income details screen")
-	public void user_verify_system_allow_user_to_modify_frequency_under_income_details_screen() throws Throwable {
+	public void user_608_verify_system_allow_user_to_modify_frequency_under_income_details_screen() throws Throwable {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("frequencyDropdown")).click();
@@ -5465,7 +5461,7 @@ public class Murabaha_Steps {
 	}
 	
 	@And("User_608 verify system allow user to modify Income Amount under Income details screen")
-	public void user_verify_system_allow_user_to_modify_income_amount_under_income_details_screen() throws Throwable {
+	public void user_608_verify_system_allow_user_to_modify_income_amount_under_income_details_screen() throws Throwable {
 		for (int i = 0; i < 1000; i++) {
 	    	try {
 	    		javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("amountInput"))
@@ -5482,7 +5478,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify while modification system allow user to save the record with valid data")
-	public void user_verify_while_modification_system_allow_user_to_save_the_record_with_valid_data() throws Throwable {
+	public void user_608_verify_while_modification_system_allow_user_to_save_the_record_with_valid_data() throws Throwable {
 		WebElement incomeSaveBtn = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("incomeSaveBtn"));
 		for (int i = 0; i <= 5000; i++) {
 			try {
@@ -5497,16 +5493,15 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 post clicking on save button system should display the confirmation message as Success")
-	public void user_post_clicking_on_save_button_system_should_display_the_confirmation_message_as_success() throws Throwable {
-		Thread.sleep(1000);
-		WebElement successToastMsg = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("successToastMsg"));
-		for (int i = 0; i <= 50000; i++) {
+	public void user_608_post_clicking_on_save_button_system_should_display_the_confirmation_message_as_success() throws Throwable {		
+		for (int i = 0; i <= 300; i++) {
 			try {
+				WebElement successToastMsg = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("successToastMsg"));
 				Assert.assertTrue(successToastMsg.getText().contains("Saved successfully"));
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("successToastCloseBtn")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 50000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5515,8 +5510,7 @@ public class Murabaha_Steps {
 	
 	
 	@And("User_608 again click the pencil button under Income section in Customer Financials tab")
-	public void user_again_click_the_pencil_button_under_income_section_in_customer_financials_tab() throws Throwable {
-		Thread.sleep(1000);
+	public void user_608_again_click_the_pencil_button_under_income_section_in_customer_financials_tab() throws Throwable {
 		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
 		String listOfAddButton = "";
 		String addButtonScreenName = "";
@@ -5577,7 +5571,7 @@ public class Murabaha_Steps {
 	
 	
 	@And("User_608 verify while modification, when user keep any mandatory field blank and click on save button")
-	public void user_verify_while_modification_when_user_keep_any_mandatory_field_blank_and_click_on_save_button() throws Throwable {
+	public void user_608_verify_while_modification_when_user_keep_any_mandatory_field_blank_and_click_on_save_button() throws Throwable {
 		for (int i = 0; i < 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("amountInput"))
@@ -5593,7 +5587,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify while modification enters the invalid data in Income details screen")
-	public void user_verify_while_modification_enters_the_invalid_data_in_income_details_screen() throws Throwable {
+	public void user_608_verify_while_modification_enters_the_invalid_data_in_income_details_screen() throws Throwable {
 		for (int i = 0; i < 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("amountInput"))
@@ -5610,7 +5604,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 system should not allow user to do a modification with invalid data under Income details screen")
-	public void user_system_should_not_allow_user_to_do_a_modification_with_invalid_data_under_income_details_screen() throws Throwable {
+	public void user_608_system_should_not_allow_user_to_do_a_modification_with_invalid_data_under_income_details_screen() throws Throwable {
 		for (int i = 0; i < 1000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("incomeSaveBtn")).click();
@@ -5621,7 +5615,6 @@ public class Murabaha_Steps {
 				}
 			}
 		}
-		Thread.sleep(1000);
 		WebElement successToastMsg = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("successToastMsg"));
 		for (int i = 0; i <= 50000; i++) {
 			try {
@@ -5637,7 +5630,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 Post clicking on back button system should navigate to the previous screen")
-	public void user_post_clicking_on_back_button_system_should_navigate_to_the_previous_screen() throws Throwable {
+	public void user_608_post_clicking_on_back_button_system_should_navigate_to_the_previous_screen() throws Throwable {
 		WebElement incomeBackBtn = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("incomeBackBtn"));
 		for (int i = 0; i <= 1000; i++) {
 			try {
@@ -5654,7 +5647,7 @@ public class Murabaha_Steps {
 	
 //	AT_MU_INC_06
 	@And("User_608 verify the Back button available in Income list view under Customer Financials tab")
-	public void user_verify_the_back_button_available_in_income_list_view_under_customer_financials_tab() throws Throwable {
+	public void user_608_verify_the_back_button_available_in_income_list_view_under_customer_financials_tab() throws Throwable {
 		WebElement backBtn = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("customerFinancialsTabBackBtn"));
 		for (int i = 0; i <= 1000; i++) {
 			try {
@@ -5671,7 +5664,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Add button available under Income section list view in Customer Financials tab")
-	public void user_verify_add_button_available_under_income_section_list_view_in_customer_financials_tab() throws Throwable {
+	public void user_608_verify_add_button_available_under_income_section_list_view_in_customer_financials_tab() throws Throwable {
 		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
 		String listOfAddButton = "";
 		String addButtonScreenName = "";
@@ -5726,7 +5719,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Nature of Employement field available under Income section list view in Customer Financials tab")
-	public void user_verify_nature_of_employement_field_available_under_income_section_list_view_in_customer_financials_tab() throws Throwable {
+	public void user_608_verify_nature_of_employement_field_available_under_income_section_list_view_in_customer_financials_tab() throws Throwable {
 		WebElement natureOfEmployment = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("listview_NatureOfEmployment"));
 		for (int i = 0; i <= 1000; i++) {
 			try {
@@ -5742,7 +5735,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Net Income field available under Income section list view in Customer Financials tab")
-	public void user_verify_net_income_field_available_under_income_section_list_view_in_customer_financials_tab() throws Throwable {
+	public void user_608_verify_net_income_field_available_under_income_section_list_view_in_customer_financials_tab() throws Throwable {
 		WebElement netIncome = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("listview_NetIncome"));
 		for (int i = 0; i <= 1000; i++) {
 			try {
@@ -5758,7 +5751,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Net Deduction field available under Income section list view in Customer Financials tab")
-	public void user_verify_net_deduction_field_available_under_income_section_list_view_in_customer_financials_tab() throws Throwable {
+	public void user_608_verify_net_deduction_field_available_under_income_section_list_view_in_customer_financials_tab() throws Throwable {
 		WebElement netDeduction = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("listview_NetDeduction"));
 		for (int i = 0; i <= 1000; i++) {
 			try {
@@ -5774,7 +5767,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Considered Income field available under Income section list view in Customer Financials tab")
-	public void user_verify_considered_income_field_available_under_income_section_list_view_in_customer_financials_tab() throws Throwable {
+	public void user_608_verify_considered_income_field_available_under_income_section_list_view_in_customer_financials_tab() throws Throwable {
 		WebElement consideredIncome = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("listview_ConsideredIncome"));
 		for (int i = 0; i <= 1000; i++) {
 			try {
@@ -5790,7 +5783,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Currency field available under Income section list view in Customer Financials tab")
-	public void user_verify_currency_field_available_under_income_section_list_view_in_customer_financials_tab() throws Throwable {
+	public void user_608_verify_currency_field_available_under_income_section_list_view_in_customer_financials_tab() throws Throwable {
 		WebElement currency = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("listview_Currency"));
 		for (int i = 0; i <= 1000; i++) {
 			try {
@@ -5806,7 +5799,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Status field available under Income section list view in Customer Financials tab")
-	public void user_verify_status_field_available_under_income_section_list_view_in_customer_financials_tab() throws Throwable {
+	public void user_608_verify_status_field_available_under_income_section_list_view_in_customer_financials_tab() throws Throwable {
 		WebElement status = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("listview_Status"));
 		for (int i = 0; i <= 1000; i++) {
 			try {
@@ -5822,7 +5815,7 @@ public class Murabaha_Steps {
 	}
 	
 	@And("User_608 verify on clicks of list view record, details should be populated in the fields under Income screen")
-	public void user_verify_on_clicks_of_list_view_record_details_should_be_populated_in_the_fields_under_income_screen() throws Throwable {
+	public void user_608_verify_on_clicks_of_list_view_record_details_should_be_populated_in_the_fields_under_income_screen() throws Throwable {
 		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
 		String listOfAddButton = "";
 		String addButtonScreenName = "";
@@ -5882,7 +5875,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify the functionality of Add button under Income section in Customer Financials tab")
-	public void user_verify_the_functionality_of_add_button_under_income_section_in_customer_financials_tab() throws Throwable {
+	public void user_608_verify_the_functionality_of_add_button_under_income_section_in_customer_financials_tab() throws Throwable {
 		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
 		String listOfAddButton = "";
 		String addButtonScreenName = "";
@@ -5939,15 +5932,15 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 post clicking on Add button system should navigate to new Income details screen")
-	public void user_post_clicking_on_add_button_system_should_navigate_to_new_income_details_screen() throws Throwable {
-		WebElement incomeScreenTitle = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("incomeScreenTitle"));
-		for (int i = 0; i <= 100000; i++) {
+	public void user_608_post_clicking_on_add_button_system_should_navigate_to_new_income_details_screen() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
 			try {
+				WebElement incomeScreenTitle = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("incomeScreenTitle"));
 				javascriptHelper.backgroundBorder(incomeScreenTitle);
 				incomeScreenTitle.isDisplayed();
 				break;
 			} catch (Exception e) {
-				if (i == 100000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5958,7 +5951,7 @@ public class Murabaha_Steps {
 	
 //	AT_MU_INC_07
 	@And("User_608 click Search button in Income section under Customer Financials tab")
-	public void user_click_search_button_in_income_section_under_customer_financials_tab() throws Throwable {
+	public void user_608_click_search_button_in_income_section_under_customer_financials_tab() throws Throwable {
 		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
 		String listOfAddButton = "";
 		String addButtonScreenName = "";
@@ -6014,7 +6007,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify the functionality of Search box with matching data in Income section")
-	public void user_verify_the_functionality_of_search_box_with_matching_data_in_income_section() throws Throwable {
+	public void user_608_verify_the_functionality_of_search_box_with_matching_data_in_income_section() throws Throwable {
 		for (int i = 0; i <= 2000; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("incomeSectionSearchbox"))
@@ -6029,7 +6022,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify entering any matching value system should display all the possible matching records under Income section")
-	public void user_verify_entering_any_matching_value_system_should_display_all_the_possible_matching_records_under_income_section() throws Throwable {
+	public void user_608_verify_entering_any_matching_value_system_should_display_all_the_possible_matching_records_under_income_section() throws Throwable {
 		WebElement searchResult = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("searchResult"));
 		for (int i = 0; i <= 500; i++) {
 			try {
@@ -6047,7 +6040,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify the functionality of Search box with mismatch data in Income section")
-	public void user_verify_the_functionality_of_search_box_with_mismatch_data_in_income_section() throws Throwable {
+	public void user_608_verify_the_functionality_of_search_box_with_mismatch_data_in_income_section() throws Throwable {
 		javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("incomeSectionSearchbox")).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
 		for (int i = 0; i <= 500; i++) {
 			try {
@@ -6063,11 +6056,10 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify system should not display any records or system should display the message as No data found under Income section")
-	public void user_verify_system_should_not_display_any_records_or_system_should_display_the_message_as_no_data_found_under_income_section() throws Throwable {
-		Thread.sleep(1000);
-		WebElement searchResult = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("searchResult"));
+	public void user_608_verify_system_should_not_display_any_records_or_system_should_display_the_message_as_no_data_found_under_income_section() throws Throwable {
 		for (int i = 0; i <= 500; i++) {
 			try {
+				WebElement searchResult = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("searchResult"));
 				javascriptHelper.backgroundColor(searchResult);
 				String text = searchResult.getText().substring(13, 14);
 				System.out.println("Result value: "+text);
@@ -6084,8 +6076,7 @@ public class Murabaha_Steps {
 	 
 //	AT_MU_INC_08
 	@And("User_608 verify the functionality of Export to PDF button")
-	public void user_verify_the_functionality_of_export_to_pdf_button() throws Throwable {
-		Thread.sleep(200);
+	public void user_608_verify_the_functionality_of_export_to_pdf_button() throws Throwable {
 		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
 		String listOfAddButton = "";
 		String addButtonScreenName = "";
@@ -6140,7 +6131,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 post clicking on Export to PDF button system should download the PDF file of that records")
-	public void user_post_clicking_on_export_to_pdf_button_system_should_download_the_pdf_file_of_that_records() throws Throwable {
+	public void user_608_post_clicking_on_export_to_pdf_button_system_should_download_the_pdf_file_of_that_records() throws Throwable {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("exportPDF")).click();
@@ -6171,7 +6162,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify the functionality of Export to Excel button")
-	public void user_verify_the_functionality_of_export_to_excel_button() throws Throwable {
+	public void user_608_verify_the_functionality_of_export_to_excel_button() throws Throwable {
 		String listOfAddButtonQuery = "document.querySelectorAll('ion-title[class=\"pl-2 pr-2 ion-color ion-color-dark md title-default hydrated\"]').length";
 		String listOfAddButton = "";
 		String addButtonScreenName = "";
@@ -6236,7 +6227,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 post clicking on Export to Excel button system should download the Excel file of that records")
-	public void user_post_clicking_on_export_to_excel_button_system_should_download_the_excel_file_of_that_records() throws Throwable {
+	public void user_608_post_clicking_on_export_to_excel_button_system_should_download_the_excel_file_of_that_records() throws Throwable {
 		String homePath = System.getProperty("user.home");
 		String filePath = homePath + "/Downloads";
 		File file = new File(filePath);
@@ -6254,11 +6245,13 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 to verify the functionality of Back button under Customer Financials tab")
-	public void user_to_verify_the_functionality_of_back_button_under_customer_financials_tab() throws Throwable {
+	public void user_608_to_verify_the_functionality_of_back_button_under_customer_financials_tab() throws Throwable {
 		for (int i = 0; i <= 300; i++) {
 			try {
-				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("customerFinancialsTabBackBtn")));
-				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("customerFinancialsTabBackBtn")).click();
+				WebElement backBtn = javascriptHelper.executeScriptWithWebElement(
+						appData_IncomeJsPaths.getElement("customerFinancialsTabBackBtn"));
+				actions.scrollToElement(backBtn).build().perform();
+				backBtn.click();
 				break;
 			} catch (Exception e) {
 				if (i == 300) {
@@ -6269,14 +6262,14 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 post clicking on Back button under Customer Finanacials tab, system should navigate to the previous screen")
-	public void user_post_clicking_on_back_button_under_customer_inanacials_tab_system_should_navigate_to_the_previous_screen() throws Throwable {
-		for (int i = 0; i <= 3000; i++) {
+	public void user_608_post_clicking_on_back_button_under_customer_inanacials_tab_system_should_navigate_to_the_previous_screen() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.backgroundBorder(javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("customerInfoTitle")));
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("customerInfoTitle")).isDisplayed();
 				break;
 			} catch (Exception e) {
-				if (i == 3000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -6287,11 +6280,10 @@ public class Murabaha_Steps {
 	
 //	@AT_MU_EDC_01
 	@And("User_608 click the Business record Eye button under Employment List section in Customer Financials tab")
-	public void user_click_the_business_record_eye_button_under_employment_list_section_in_customer_financials_tab() throws Throwable  {
+	public void user_608_click_the_business_record_eye_button_under_employment_list_section_in_customer_financials_tab() throws Throwable  {
 		for (int i = 0; i <= 300; i++) {
 			try {
-				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("customerFinancialsTabBackBtn")));
-//				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("businessEmpDetails_eyeBtn")).click();
+				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("customerFinancialsTabBackBtn")));				
 				break;
 			} catch (Exception e) {
 				if (i == 300) {
@@ -6355,17 +6347,17 @@ public class Murabaha_Steps {
 	}
 	
 	@And("User_608 verify Back button available under Employment details screen")
-	public void user_verify_back_button_available_under_employment_details_screen() throws Throwable {
-		WebElement customerFinancialsTab = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerFinancialsTab"));
-		WebElement backBtn = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("customerEmploymentBackBtn"));
-		for (int i = 0; i <= 20000; i++) {
+	public void user_608_verify_back_button_available_under_employment_details_screen() throws Throwable {		
+		for (int i = 0; i <= 500; i++) {
 			try {
+				WebElement customerFinancialsTab = javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerFinancialsTab"));
+				WebElement backBtn = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("customerEmploymentBackBtn"));
 				javascriptHelper.scrollIntoView(customerFinancialsTab);
 				javascriptHelper.backgroundBorder(backBtn);
-				Assert.assertTrue(backBtn.isDisplayed());
+				softAssert.assertTrue(backBtn.isDisplayed(), "Back button available under Employment details screen");
 				break;
 			} catch (Exception e) {
-				if (i == 20000) {
+				if (i == 500) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -6373,7 +6365,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Primary Employment field available under Employment details screen")
-	public void user_verify_primary_employment_field_available_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_primary_employment_field_available_under_employment_details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("primaryEmploymentLabel"));
 		WebElement toggleBtn = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("primaryEmploymentToggleBtn"));
 		for (int i = 0; i <= 20000; i++) {
@@ -6403,7 +6395,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Employment Period field available under Employment details screen")
-	public void user_verify_employment_period_field_available_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_employment_period_field_available_under_employment_details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employmentPeriodLabel"));
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employmentPeriodDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -6422,7 +6414,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Nature of Employment field available under Employment details screen")
-	public void user_verify_nature_of_employment_field_available_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_nature_of_employment_field_available_under_employment_details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("natureOfEmploymentLabel"));
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("natureOfEmploymentDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -6441,7 +6433,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Company Type field available under Employment details screen")
-	public void user_verify_company_type_field_available_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_company_type_field_available_under_employment_details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("companyTypeLabel"));
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("companyTypeDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -6460,7 +6452,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Profession field available under Employment details screen")
-	public void user_verify_profession_field_available_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_profession_field_available_under_employment_details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("professionLabel"));
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("professionDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -6479,7 +6471,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Profession Type field available under Employment details screen")
-	public void user_verify_profession_type_field_available_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_profession_type_field_available_under_employment_details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("professionTypeLabel"));
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("professionTypeDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -6498,7 +6490,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Statutory Authority field available under Employment details screen")
-	public void user_verify_statutory_authority_field_available_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_statutory_authority_field_available_under_employment_details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("statutoryAuthorityLabel"));
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("statutoryAuthorityDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -6517,7 +6509,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Employer Name field available under Employment details screen")
-	public void user_verify_employer_name_field_available_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_employer_name_field_available_under_employment_details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employerNameLabel"));
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employerNameDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -6536,7 +6528,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Employer Name if Others field available under Employment details screen")
-	public void user_verify_employer_name_if_others_field_available_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_employer_name_if_others_field_available_under_employment_details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employerNameOthersLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employerNameOthersInput"));
 		for (int i = 0; i <= 2000; i++) {
@@ -6555,7 +6547,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Employee ID field available under Employment details screen")
-	public void user_verify_employee_id_field_available_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_employee_id_field_available_under_employment_details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employeeIDLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employeeIDInput"));
 		for (int i = 0; i <= 2000; i++) {
@@ -6574,12 +6566,11 @@ public class Murabaha_Steps {
 	}
 	
 	@And("User_608 verify Date of Joining field available under Employment details screen")
-	public void user_verify_date_of_joining_field_available_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_date_of_joining_field_available_under_employment_details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("dateOfJoiningLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("dateOfJoiningCalender"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
-				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employerNameOthersLabel")));
 				javascriptHelper.backgroundColor(label);
 				softAssert.assertTrue(label.isDisplayed(),"Date of Joining label");
 				javascriptHelper.backgroundBorder(input);
@@ -6594,18 +6585,19 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Employment End Date field available under Employment details screen")
-	public void user_verify_employment_end_date_field_available_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_employment_end_date_field_available_under_employment_details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employmentEndDateLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employmentEndDateCalender"));
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 200; i++) {
 			try {
+				javascriptHelper.scrollIntoView(label);
 				javascriptHelper.backgroundColor(label);
 				softAssert.assertTrue(label.isDisplayed(),"Employment End Date label");
 				javascriptHelper.backgroundBorder(input);
 				softAssert.assertTrue(input.isDisplayed(), "Employment End Date Calender");
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 200) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -6613,10 +6605,10 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Department field available under Employment details screen")
-	public void user_verify_department_field_available_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_department_field_available_under_employment_details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("departmentLabel"));
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("departmentDropdown"));
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 200; i++) {
 			try {
 				javascriptHelper.backgroundColor(label);
 				softAssert.assertTrue(label.isDisplayed(),"Department label");
@@ -6624,7 +6616,7 @@ public class Murabaha_Steps {
 				softAssert.assertTrue(dropdown.isDisplayed(), "Department dropdown");
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 200) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -6632,10 +6624,10 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Designation field available under Employment details screen")
-	public void user_verify_designation_field_available_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_designation_field_available_under_employment_details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("designationLabel"));
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("designationDropdown"));
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 200; i++) {
 			try {
 				javascriptHelper.backgroundColor(label);
 				softAssert.assertTrue(label.isDisplayed(),"Designation label");
@@ -6643,7 +6635,7 @@ public class Murabaha_Steps {
 				softAssert.assertTrue(dropdown.isDisplayed(), "Designation dropdown");
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 200) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -6651,7 +6643,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Employment Type field available under Employment details screen")
-	public void user_verify_employment_type_field_available_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_employment_type_field_available_under_employment_details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employmentTypeLabel"));
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employmentTypeDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -6670,7 +6662,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Direct Manager Contact Number Extension field available under Employment details screen")
-	public void user_verify_direct_manager_contact_number_extension_field_available_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_direct_manager_contact_number_extension_field_available_under_employment_details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("directManagerContactNbrLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("directManagerContactNbrInput"));
 		for (int i = 0; i <= 2000; i++) {
@@ -6689,7 +6681,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Direct Manager Telephone field available under Employment details screen")
-	public void user_verify_direct_manager_telephone_field_available_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_direct_manager_telephone_field_available_under_employment_details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("directManagerTelephoneLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("directManagerTelephoneInput"));
 		for (int i = 0; i <= 2000; i++) {
@@ -6708,7 +6700,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Income Paymode field available under Employment details screen")
-	public void user_verify_income_paymode_field_available_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_income_paymode_field_available_under_employment_details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("incomePaymodeLabel"));
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("incomePaymodeDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -6727,7 +6719,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Employer Phone Extension field available under Employment details screen")
-	public void user_verify_employer_phone_extension_field_available_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_employer_phone_extension_field_available_under_employment_details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employerPhoneExLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employerPhoneExInput"));
 		for (int i = 0; i <= 2000; i++) {
@@ -6746,7 +6738,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Employer Phone Number field available under Employment details screen")
-	public void user_verify_employer_phone_number_field_available_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_employer_phone_number_field_available_under_employment_details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employerPhoneNbrLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employerPhoneNbrInput"));
 		for (int i = 0; i <= 2000; i++) {
@@ -6765,11 +6757,12 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify State field available under Employment details screen")
-	public void user_verify_state_field_available_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_state_field_available_under_employment_details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("stateLabel"));
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("stateDropdown"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
+				javascriptHelper.scrollIntoView(label);
 				javascriptHelper.backgroundColor(label);
 				softAssert.assertTrue(label.isDisplayed(),"State label");
 				javascriptHelper.backgroundBorder(dropdown);
@@ -6784,7 +6777,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify City field available under Employment details screen")
-	public void user_verify_city_field_available_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_city_field_available_under_employment_details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("cityLabel"));
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("cityDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -6803,7 +6796,7 @@ public class Murabaha_Steps {
 	}
 	
 	@And("User_608 verify Pincode field available under Employment details screen")
-	public void user_verify_pincode_field_available_under_employment_details_screen() {
+	public void user_608_verify_pincode_field_available_under_employment_details_screen() {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("pincodeLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("pincodeInput"));
 		for (int i = 0; i <= 2000; i++) {
@@ -6822,7 +6815,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Sector field available under Employment details screen")
-	public void user_verify_sector_field_available_under_employment_details_screen() {
+	public void user_608_verify_sector_field_available_under_employment_details_screen() {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("sectorLabel"));
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("sectorDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -6841,7 +6834,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Industry Sub Sector field available under Employment details screen")
-	public void user_verify_industry_sub_sector_field_available_under_employment_details_screen() {
+	public void user_608_verify_industry_sub_sector_field_available_under_employment_details_screen() {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("subSectorLabel"));
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("subSectorDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -6860,7 +6853,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify No Of Partners field available under Employment details screen")
-	public void user_verify_no_of_partners_field_available_under_employment_details_screen() {
+	public void user_608_verify_no_of_partners_field_available_under_employment_details_screen() {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("noOfPartnersLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("noOfPartnersInput"));
 		for (int i = 0; i <= 2000; i++) {
@@ -6879,7 +6872,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Nature of Business field available under Employment details screen")
-	public void user_verify_nature_of_business_field_available_under_employment_details_screen() {
+	public void user_608_verify_nature_of_business_field_available_under_employment_details_screen() {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("natureOfBusinessLabel"));
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("natureOfBusinessDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -6899,7 +6892,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Registered Business Name field available under Employment details screen")
-	public void user_verify_registered_business_name_field_available_under_employment_details_screen() {
+	public void user_608_verify_registered_business_name_field_available_under_employment_details_screen() {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("regBusinessNameLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("regBusinessNameInput"));
 		for (int i = 0; i <= 2000; i++) {
@@ -6918,7 +6911,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Registered Business Number field available under Employment details screen")
-	public void user_verify_registered_business_number_field_available_under_employment_details_screen() {
+	public void user_608_verify_registered_business_number_field_available_under_employment_details_screen() {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("regBusinessNbrLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("regBusinessNbrInput"));
 		for (int i = 0; i <= 2000; i++) {
@@ -6937,7 +6930,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Business Registration Date field available under Employment details screen")
-	public void user_verify_business_registration_date_field_available_under_employment_details_screen() {
+	public void user_608_verify_business_registration_date_field_available_under_employment_details_screen() {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("businessRegisteredDateLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("businessRegisteredDateCalender"));
 		for (int i = 0; i <= 2000; i++) {
@@ -6956,7 +6949,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Office Premises Type field available under Employment details screen")
-	public void user_verify_office_premises_type_field_available_under_employment_details_screen() {
+	public void user_608_verify_office_premises_type_field_available_under_employment_details_screen() {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("officePremisesTypeLabel"));
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("officePremisesTypeDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -6975,7 +6968,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Share Holder Percentage field available under Employment details screen")
-	public void user_verify_share_holder_percentage_field_available_under_employment_details_screen() {
+	public void user_608_verify_share_holder_percentage_field_available_under_employment_details_screen() {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("shareHolderPercentLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("shareHolderPercentInput"));
 		for (int i = 0; i <= 2000; i++) {
@@ -6994,7 +6987,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify No of Employees field available under Employment details screen")
-	public void user_verify_no_of_employees_field_available_under_employment_details_screen() {
+	public void user_608_verify_no_of_employees_field_available_under_employment_details_screen() {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("numberOfEmployeesLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("numberOfEmployeesInput"));
 		for (int i = 0; i <= 2000; i++) {
@@ -7013,7 +7006,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Experience At Current Employment field available under Employment details screen")
-	public void user_verify_experience_at_current_employment_field_available_under_employment_details_screen() {
+	public void user_608_verify_experience_at_current_employment_field_available_under_employment_details_screen() {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("experienceAtCurrentEmploymentLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("experienceAtCurrentEmploymentInput"));
 		for (int i = 0; i <= 2000; i++) {
@@ -7032,7 +7025,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Direct Manager Name field available under Employment details screen")
-	public void user_verify_direct_manager_name_field_available_under_employment_details_screen() {
+	public void user_608_verify_direct_manager_name_field_available_under_employment_details_screen() {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("directManagerNameLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("directManagerNameInput"));
 		for (int i = 0; i <= 2000; i++) {
@@ -7051,7 +7044,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Employer City Code field available under Employment details screen")
-	public void user_verify_employer_city_code_field_available_under_employment_details_screen() {
+	public void user_608_verify_employer_city_code_field_available_under_employment_details_screen() {
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employerCityCodeLabel")));
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employerCityCodeLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employerCityCodeInput"));
@@ -7071,7 +7064,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Retirement Age field available under Employment details screen")
-	public void user_verify_retirement_age_field_available_under_employment_details_screen() {
+	public void user_608_verify_retirement_age_field_available_under_employment_details_screen() {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("retirementAgeLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("retirementAgeInput"));
 		for (int i = 0; i <= 2000; i++) {
@@ -7090,7 +7083,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Remarks field available under Employment details screen")
-	public void user_verify_remarks_field_available_under_employment_details_screen() {
+	public void user_608_verify_remarks_field_available_under_employment_details_screen() {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("remarksLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("remarksTextarea"));
 		for (int i = 0; i <= 2000; i++) {
@@ -7109,7 +7102,7 @@ public class Murabaha_Steps {
 	}
 	
 	@And("User_608 verify Employment Period value should populate correctly same as App data entry stage under Employment details screen")
-	public void user_verify_employment_period_value_should_populate_correctly_same_as_app_data_entry_stage_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_employment_period_value_should_populate_correctly_same_as_app_data_entry_stage_under_employment_details_screen() throws Throwable {
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employmentPeriodDropdown"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
@@ -7125,7 +7118,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Nature of Employment value should populate correctly same as App data entry stage under Employment details screen")
-	public void user_verify_nature_of_employment_value_should_populate_correctly_same_as_app_data_entry_stage_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_nature_of_employment_value_should_populate_correctly_same_as_app_data_entry_stage_under_employment_details_screen() throws Throwable {
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("natureOfEmploymentDropdown"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
@@ -7141,7 +7134,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Employer Name if Others value should populate correctly same as App data entry stage under Employment details screen")
-	public void user_verify_employer_name_if_others_value_should_populate_correctly_same_as_app_data_entry_stage_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_employer_name_if_others_value_should_populate_correctly_same_as_app_data_entry_stage_under_employment_details_screen() throws Throwable {
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employerNameOthersInput"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
@@ -7157,7 +7150,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Employee ID value should populate correctly same as App data entry stage under Employment details screen")
-	public void user_verify_employee_id_value_should_populate_correctly_same_as_app_data_entry_stage_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_employee_id_value_should_populate_correctly_same_as_app_data_entry_stage_under_employment_details_screen() throws Throwable {
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employeeIDInput"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
@@ -7173,7 +7166,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Date of Joining value should populate correctly same as App data entry stage under Employment details screen")
-	public void user_verify_date_of_joining_value_should_populate_correctly_same_as_app_data_entry_stage_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_date_of_joining_value_should_populate_correctly_same_as_app_data_entry_stage_under_employment_details_screen() throws Throwable {
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("dateOfJoiningCalender"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
@@ -7190,7 +7183,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Employment Type value should populate correctly same as App data entry stage under Employment details screen")
-	public void user_verify_employment_type_value_should_populate_correctly_same_as_app_data_entry_stage_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_employment_type_value_should_populate_correctly_same_as_app_data_entry_stage_under_employment_details_screen() throws Throwable {
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employmentTypeDropdown"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
@@ -7206,7 +7199,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Share Holder Percentage value should populate correctly same as App data entry stage under Employment details screen")
-	public void user_verify_share_holder_percentage_value_should_populate_correctly_same_as_app_data_entry_stage_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_share_holder_percentage_value_should_populate_correctly_same_as_app_data_entry_stage_under_employment_details_screen() throws Throwable {
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("shareHolderPercentInput"));
 		for (int i = 0; i <= 2000; i++) {
 			try {
@@ -7224,7 +7217,7 @@ public class Murabaha_Steps {
 	
 //	@AT_MU_EDC_02
 	@And("User_608 click the Company\\Firm record Eye button under Employment List section in Customer Financials tab")
-	public void user_click_the_company_firm_record_eye_button_under_employment_list_section_in_customer_financials_tab() {
+	public void user_608_click_the_company_firm_record_eye_button_under_employment_list_section_in_customer_financials_tab() {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("customerFinancialsTabBackBtn")));
@@ -7294,7 +7287,7 @@ public class Murabaha_Steps {
 	
 //	@AT_MU_EDC_03
 	@And("User_608 click the Pensioner record Eye button under Employment List section in Customer Financials tab")
-	public void user_click_the_pensioner_record_eye_button_under_employment_list_section_in_customer_financials_tab() {
+	public void user_608_click_the_pensioner_record_eye_button_under_employment_list_section_in_customer_financials_tab() {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				WebElement element = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("customerFinancialsTabBackBtn"));
@@ -7363,8 +7356,8 @@ public class Murabaha_Steps {
 	
 	
 //	@AT_MU_EDC_04
-	@And("User_608 clickt the pagination next button under Employment details section")
-	public void user_clickt_the_pagination_next_button_under_employment_details_section() {
+	@And("User_608 click the pagination next button under Employment details section")
+	public void user_608_click_the_pagination_next_button_under_employment_details_section() {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("customerFinancialsTabBackBtn")));
@@ -7379,7 +7372,7 @@ public class Murabaha_Steps {
 	}
 	
 	@And("User_608 click the Self-Employed Professional record Eye button under Employment List section in Customer Financials tab")
-	public void user_click_the_self_employed_professional_record_eye_button_under_employment_list_section_in_customer_financials_tab() {
+	public void user_608_click_the_self_employed_professional_record_eye_button_under_employment_list_section_in_customer_financials_tab() {
 //		javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("selfEmployedProfessional_eyeBtn")).click();
 		String listOfRecords = "document.querySelector('button[icon=\"pi pi-arrow-left\"]').parentElement.parentElement.parentElement.querySelectorAll('td').length";
 		String listOfEyeBtn = "";
@@ -7439,7 +7432,7 @@ public class Murabaha_Steps {
 	
 //	@AT_MU_EDC_05
 	@And("User_608 click the Salaried Customer record Eye button under Employment List section in Customer Financials tab")
-	public void user_click_the_salaried_customer_record_eye_button_under_employment_list_section_in_customer_financials_tab() throws Throwable  {
+	public void user_608_click_the_salaried_customer_record_eye_button_under_employment_list_section_in_customer_financials_tab() throws Throwable  {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("customerFinancialsTabBackBtn")));
@@ -7505,7 +7498,7 @@ public class Murabaha_Steps {
 	}
 	
 	@And("User_608 verify Total Experience\\(Years) field available under Employment details screen")
-	public void user_verify_total_experience_years_field_available_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_total_experience_years_field_available_under_employment_details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("totalExperienceLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("totalExperienceInput"));
 		for (int i = 0; i <= 2000; i++) {
@@ -7525,7 +7518,7 @@ public class Murabaha_Steps {
 	
 //	@AT_MU_EDC_06
 	@And("User_608 verify Primary Employment field should be Toggle button, Non-Mandatory and Read only under Employment details screen")
-	public void user_verify_primary_employment_field_should_be_toggle_btn_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_primary_employment_field_should_be_toggle_btn_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
 //		Verify field as Toggle Btn
 		WebElement toggleBtn = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("primaryEmploymentToggleBtn"));
 		for (int i = 0; i <= 20000; i++) {
@@ -7570,7 +7563,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Employment Period field should be Dropdown, Mandatory and Read only under Employment details screen")
-	public void user_verify_employment_period_field_should_be_dropdown_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_employment_period_field_should_be_dropdown_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
 //		Verify field as Dropdown
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employmentPeriodDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -7616,7 +7609,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Nature of Employment field should be Dropdown, Mandatory and Read only under Employment details screen")
-	public void user_verify_nature_of_employment_field_should_be_dropdown_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_nature_of_employment_field_should_be_dropdown_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
 //		Verify field as Dropdown
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("natureOfEmploymentDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -7661,7 +7654,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Employer Name field should be Dropdown, Non-Mandatory and Read only under Employment details screen")
-	public void user_verify_employer_name_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_employer_name_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
 //		Verify field as Dropdown
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employerNameDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -7706,7 +7699,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Employer Name if\\(Others) field should be Textbox, Mandatory and Read only under Employment details screen")
-	public void user_verify_employer_name_if_others_field_should_be_textbox_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_employer_name_if_others_field_should_be_textbox_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employerNameOthersInput"));
 		for (int i = 0; i <= 2000; i++) {
@@ -7751,7 +7744,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Employee ID field should be Textbox, Mandatory and Read only under Employment details screen")
-	public void user_verify_employee_id_field_should_be_textbox_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_employee_id_field_should_be_textbox_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employeeIDInput"));
 		for (int i = 0; i <= 2000; i++) {
@@ -7796,7 +7789,7 @@ public class Murabaha_Steps {
 	}	
 	
 	@And("User_608 verify Date of Joining field should be Date, Mandatory and Read only under Employment details screen")
-	public void user_verify_date_of_joining_field_should_be_date_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_date_of_joining_field_should_be_date_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
 //		Verify field as Date Field
 		WebElement calender = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("dateOfJoiningCalender"));
 		for (int i = 0; i <= 2000; i++) {
@@ -7841,7 +7834,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Employment End Date field should be Date, Non-Mandatory and Read only under Employment details screen")
-	public void user_verify_employment_end_date_field_should_be_date_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_employment_end_date_field_should_be_date_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
 //		Verify field as Date Field
 		WebElement calender = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employmentEndDateCalender"));
 		for (int i = 0; i <= 2000; i++) {
@@ -7886,7 +7879,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Department field should be Dropdown, Non-Mandatory and Read only under Employment details screen")
-	public void user_verify_department_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_department_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
 //		Verify field as Dropdown
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("departmentDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -7931,7 +7924,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Designation field should be Dropdown, Non-Mandatory and Read only under Employment details screen")
-	public void user_verify_designation_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_designation_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
 //		Verify field as Dropdown
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("designationDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -7976,7 +7969,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Employment Type field should be Dropdown, Mandatory and Read only under Employment details screen")
-	public void user_verify_employment_type_field_should_be_dropdown_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_employment_type_field_should_be_dropdown_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
 //		Verify field as Dropdown
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employmentTypeDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8023,7 +8016,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Direct Manager Contact Number field should be Textbox, Non-Mandatory and Read only under Employment details screen")
-	public void user_verify_direct_manager_contact_number_field_should_be_textbox_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_direct_manager_contact_number_field_should_be_textbox_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("directManagerContactNbrInput"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8068,7 +8061,7 @@ public class Murabaha_Steps {
 	}
 	
 	@And("User_608 verify Direct Manager Telephone field should be Textbox, Non-Mandatory and Read only under Employment details screen")
-	public void user_verify_direct_manager_telephone_field_should_be_textbox_non_mandatory_and_read_only_under_employment_details_screen() {
+	public void user_608_verify_direct_manager_telephone_field_should_be_textbox_non_mandatory_and_read_only_under_employment_details_screen() {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("directManagerTelephoneInput"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8114,7 +8107,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Income Paymode field should be Dropdown, Non-Mandatory and Read only under Employment details screen")
-	public void user_verify_income_paymode_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_details_screen() {
+	public void user_608_verify_income_paymode_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_details_screen() {
 //		Verify field as Dropdown
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("incomePaymodeDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8159,7 +8152,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Employer Phone Extension field should be Textbox, Non-Mandatory and Read only under Employment details screen")
-	public void user_verify_employer_phone_extension_field_should_be_textbox_non_mandatory_and_read_only_under_employment_details_screen() {
+	public void user_608_verify_employer_phone_extension_field_should_be_textbox_non_mandatory_and_read_only_under_employment_details_screen() {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employerPhoneExInput"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8204,7 +8197,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Employer Phone Number field should be Textbox, Non-Mandatory and Read only under Employment details screen")
-	public void user_verify_employer_phone_number_field_should_be_textbox_non_mandatory_and_read_only_under_employment_details_screen() {
+	public void user_608_verify_employer_phone_number_field_should_be_textbox_non_mandatory_and_read_only_under_employment_details_screen() {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employerPhoneNbrInput"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8249,7 +8242,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Total Experience\\(Years) field should be Textbox, Mandatory and Read only under Employment details screen")
-	public void user_verify_total_experience_years_field_should_be_textbox_mandatory_and_read_only_under_employment_details_screen() {
+	public void user_608_verify_total_experience_years_field_should_be_textbox_mandatory_and_read_only_under_employment_details_screen() {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("totalExperienceInput"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8294,7 +8287,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Experience At Current Employment field should be Textbox, Non-Mandatory and Read only under Employment details screen")
-	public void user_verify_experience_at_current_employment_field_should_be_textbox_non_mandatory_and_read_only_under_employment_details_screen() {
+	public void user_608_verify_experience_at_current_employment_field_should_be_textbox_non_mandatory_and_read_only_under_employment_details_screen() {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("experienceAtCurrentEmploymentInput"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8339,7 +8332,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Direct Manager Name field should be Textbox, Non-Mandatory and Read only under Employment details screen")
-	public void user_verify_direct_manager_name_field_should_be_textbox_non_mandatory_and_read_only_under_employment_details_screen() {
+	public void user_608_verify_direct_manager_name_field_should_be_textbox_non_mandatory_and_read_only_under_employment_details_screen() {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("directManagerNameInput"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8384,7 +8377,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Employer City Code field should be Textbox, Non-Mandatory and Read only under Employment details screen")
-	public void user_verify_employer_city_code_field_should_be_textbox_non_mandatory_and_read_only_under_employment_details_screen() {
+	public void user_608_verify_employer_city_code_field_should_be_textbox_non_mandatory_and_read_only_under_employment_details_screen() {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employerCityCodeInput"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8429,7 +8422,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Remarks field should be Textbox, Non-Mandatory and Read only under Employment details screen")
-	public void user_verify_remarks_field_should_be_textbox_non_mandatory_and_read_only_under_employment_details_screen() {
+	public void user_608_verify_remarks_field_should_be_textbox_non_mandatory_and_read_only_under_employment_details_screen() {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("remarksTextarea"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8474,14 +8467,14 @@ public class Murabaha_Steps {
 	}
 	
 	@And("User_608 invoke soft assert in Employment details screen under Customer Financials tab at Data Check stage")
-	public void user_invoke_soft_assert_in_employment_details_screen_under_customer_financials_tab_at_data_check_stage() throws Throwable {
+	public void user_608_invoke_soft_assert_in_employment_details_screen_under_customer_financials_tab_at_data_check_stage() throws Throwable {
 	    softAssert.assertAll();
 	}
 	
 	
 //	@AT_MU_EDC_07
 	@And("User_608 click the Self-Employed Customer record Eye button under Employment List section in Customer Financials tab")
-	public void user_click_the_self_employed_customer_record_eye_button_under_employment_list_section_in_customer_financials_tab() throws Throwable  {
+	public void user_608_click_the_self_employed_customer_record_eye_button_under_employment_list_section_in_customer_financials_tab() throws Throwable  {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("customerFinancialsTabBackBtn")));
@@ -8547,7 +8540,7 @@ public class Murabaha_Steps {
 	}
 	
 	@And("User_608 verify Company Type field should be Dropdown, Non-Mandatory and Read only under Employment details screen")
-	public void user_verify_company_type_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_company_type_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
 //		Verify field as Dropdown
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("companyTypeDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8590,7 +8583,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Profession field should be Dropdown, Non-Mandatory and Read only under Employment details screen")
-	public void user_verify_profession_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_profession_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
 //		Verify field as Dropdown
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("professionDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8633,7 +8626,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Profession Type field should be Dropdown, Non-Mandatory and Read only under Employment details screen")
-	public void user_verify_profession_type_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_profession_type_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
 //		Verify field as Dropdown
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("professionTypeDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8676,7 +8669,7 @@ public class Murabaha_Steps {
 	}
 	
 	@And("User_608 verify Statutory Authority field should be Dropdown, Non-Mandatory and Read only under Employment details screen")
-	public void user_verify_statutory_authority_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_statutory_authority_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
 //		Verify field as Dropdown
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("statutoryAuthorityDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8719,7 +8712,7 @@ public class Murabaha_Steps {
 	}
 	
 	@And("User_608 verify No Of Partners field should be Textbox, Non-Mandatory and Read only under Employment details screen")
-	public void user_verify_no_of_partners_field_should_be_textbox_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_no_of_partners_field_should_be_textbox_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("noOfPartnersInput"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8762,7 +8755,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Nature of Business field should be Dropdown, Non-Mandatory and Read only under Employment details screen")
-	public void user_verify_nature_of_business_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_nature_of_business_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
 //		Verify field as Dropdown
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("natureOfBusinessDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8805,7 +8798,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Registered Business Name field should be Textbox, Non-Mandatory and Read only under Employment details screen")
-	public void user_verify_registered_business_name_field_should_be_textbox_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_registered_business_name_field_should_be_textbox_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("regBusinessNameInput"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8848,7 +8841,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Registered Business Number field should be Textbox, Non-Mandatory and Read only under Employment details screen")
-	public void user_verify_registered_business_number_field_should_be_textbox_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_registered_business_number_field_should_be_textbox_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("regBusinessNbrInput"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8891,7 +8884,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Business Registration Date field should be Date, Non-Mandatory and Read only under Employment details screen")
-	public void user_verify_business_registration_date_field_should_be_date_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_business_registration_date_field_should_be_date_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
 //		Verify field as Date Field
 		WebElement calender = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("businessRegisteredDateCalender"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8935,7 +8928,7 @@ public class Murabaha_Steps {
 	
 	
 	@And("User_608 verify Office Premises Type field should be Dropdown, Non-Mandatory and Read only under Employment details screen")
-	public void user_verify_office_premises_type_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_office_premises_type_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
 //		Verify field as Dropdown
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("officePremisesTypeDropdown"));
 		for (int i = 0; i <= 2000; i++) {
@@ -8978,7 +8971,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Share Holder Percentage field should be Textbox, Mandatory and Read only under Employment details screen")
-	public void user_verify_share_holder_percentage_field_should_be_textbox_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_share_holder_percentage_field_should_be_textbox_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("shareHolderPercentInput"));
 		for (int i = 0; i <= 2000; i++) {
@@ -9021,7 +9014,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify No of Employees field should be Textbox, Non-Mandatory and Read only under Employment details screen")
-	public void user_verify_no_of_employees_field_should_be_textbox_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_no_of_employees_field_should_be_textbox_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("numberOfEmployeesInput"));
 		for (int i = 0; i <= 2000; i++) {
@@ -9064,7 +9057,7 @@ public class Murabaha_Steps {
 	}
 	
 	@And("User_608 verify the functionality of Back button under Employment details screen")
-	public void user_verify_the_functionality_of_back_button_under_employment_details_screen() throws Throwable {
+	public void user_608_verify_the_functionality_of_back_button_under_employment_details_screen() throws Throwable {
 		WebElement pageTop = javascriptHelper.executeScriptWithWebElement("document.querySelector('ion-card[class*=\"k-pagescreen\"]')");
 		WebElement backBtn = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("customerEmploymentBackBtn"));
 		for (int i = 0; i <= 20000; i++) {
@@ -9131,25 +9124,28 @@ public class Murabaha_Steps {
 	
 //	AT_MU_EDC_08
 	@And("User_608 verify Back button available in Customer Employment section list view under Customer Financials tab")
-	public void user_verify_back_button_available_in_customer_employment_section_list_view_under_customer_financials_tab() throws Throwable {
-		WebElement backBtn = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("customerFinancialsTabBackBtn"));
-		for (int i = 0; i <= 3000; i++) {
+	public void user_608_verify_back_button_available_in_customer_employment_section_list_view_under_customer_financials_tab() throws Throwable {	
+		for (int i = 0; i <= 300; i++) {
 			try {				
-				javascriptHelper.scrollIntoView(backBtn);
+				WebElement backBtn = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("customerFinancialsTabBackBtn"));
+//				javascriptHelper.scrollIntoView(backBtn);
+				actions.scrollToElement(backBtn).build().perform();
 				break;
 			} catch (Exception e) {
-				if (i == 3000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		} 
-		for (int i = 0; i <= 3000; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {				
+				WebElement backBtn = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("customerFinancialsTabBackBtn"));
+				actions.scrollToElement(backBtn).build().perform();
 				javascriptHelper.backgroundBorder(backBtn);
 				softAssert.assertTrue(backBtn.isDisplayed(), "Customer Employment Back button");
 				break;
 			} catch (Exception e) {
-				if (i == 3000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -9157,15 +9153,16 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Search button available under Customer Employment section list view in Customer Financials tab")
-	public void user_verify_search_button_available_under_customer_employment_section_list_view_in_customer_financials_tab() throws Throwable {
-		WebElement searchBtn = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("listview_SearchBtn"));
-		for (int i = 0; i <= 3000; i++) {
+	public void user_608_verify_search_button_available_under_customer_employment_section_list_view_in_customer_financials_tab() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
 			try {
+				WebElement searchBtn = javascriptHelper.executeScriptWithWebElement(
+						employmentDetailsJsPaths.getElement("listview_SearchBtn"));
 				javascriptHelper.backgroundBorder(searchBtn);
 				softAssert.assertTrue(searchBtn.isDisplayed(), "Customer Employment Search button");
 				break;
 			} catch (Exception e) {
-				if (i == 3000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -9173,10 +9170,10 @@ public class Murabaha_Steps {
 	}
 	
 	@And("User_608 verify Nature of Employment field available under Customer Employment section list view in Customer Financials tab")
-	public void user_verify_nature_of_employment_field_available_under_customer_employment_section_list_view_in_customer_financials_tab() throws Throwable {
-		WebElement field = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("listview_NatureOfEmployment"));
+	public void user_608_verify_nature_of_employment_field_available_under_customer_employment_section_list_view_in_customer_financials_tab() throws Throwable {
 		for (int i = 0; i <= 300; i++) {
 			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("listview_NatureOfEmployment"));
 				javascriptHelper.backgroundColor(field);
 				softAssert.assertTrue(field.isDisplayed(), "Customer Employment - Nature of Employment field");
 				break;
@@ -9189,10 +9186,10 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Employer Name field available under Customer Employment section list view in Customer Financials tab")
-	public void user_verify_employer_name_field_available_under_customer_employment_section_list_view_in_customer_financials_tab() throws Throwable {
-		WebElement field = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("listview_EmployerName"));
+	public void user_608_verify_employer_name_field_available_under_customer_employment_section_list_view_in_customer_financials_tab() throws Throwable {
 		for (int i = 0; i <= 300; i++) {
 			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("listview_EmployerName"));
 				javascriptHelper.backgroundColor(field);
 				softAssert.assertTrue(field.isDisplayed(), "Customer Employment - Employer Name field");
 				break;
@@ -9205,7 +9202,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Employment Status field available under Customer Employment section list view in Customer Financials tab")
-	public void user_verify_employment_status_field_available_under_customer_employment_section_list_view_in_customer_financials_tab() throws Throwable {
+	public void user_608_verify_employment_status_field_available_under_customer_employment_section_list_view_in_customer_financials_tab() throws Throwable {
 		WebElement field = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("listview_EmploymentStatus"));
 		for (int i = 0; i <= 300; i++) {
 			try {
@@ -9222,15 +9219,43 @@ public class Murabaha_Steps {
 	
 	
 	@And("User_608 verify system should display the records on the list view under Customer Employment section in Customer Financials tab")
-	public void user_verify_system_should_display_the_records_on_the_list_view_under_customer_employment_section_in_customer_financials_tab() throws Throwable {
-		WebElement values = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("listview_EmpValues"));
-		for (int i = 0; i <= 300; i++) {
+	public void user_608_verify_system_should_display_the_records_on_the_list_view_under_customer_employment_section_in_customer_financials_tab() throws Throwable {
+		String length = null;
+		for (int i = 0; i < 300; i++) {
 			try {
-				javascriptHelper.backgroundBorder(values);
-				softAssert.assertTrue(values.isDisplayed(), "Customer Employment - Employment row values");
+				length = javascriptHelper.executeScript("return document.querySelector('th[ng-reflect-field=\"employmentTypeDesc\"]')"
+						+ ".parentElement.parentElement.parentElement.querySelectorAll('td').length")
+						.toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0") && !length.equals("1")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 300; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelector('th[ng-reflect-field=\"employmentTypeDesc\"]')"
+							+ ".parentElement.parentElement.parentElement.querySelectorAll('td')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println("Option: "+titlename);				
+					if (titlename.trim().contains("Salaried")) {
+						String jspath = "document.querySelector('th[ng-reflect-field=\"employmentTypeDesc\"]')"
+								+ ".parentElement.parentElement.parentElement.querySelectorAll('td')[" + j + "].parentElement";
+						WebElement recordValues = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.scrollToElement(recordValues).build().perform();
+						javascriptHelper.backgroundColor(recordValues);
+						softAssert.assertTrue(recordValues.isDisplayed(), "list view values are displayed in Customer Employment section");
+						break;
+					}
+				}
 				break;
 			} catch (Exception e) {
-				if (i == 300) {
+				if (i == 299) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -9240,7 +9265,7 @@ public class Murabaha_Steps {
 	
 //	@AT_MU_EDC_09
 	@And("User_608 click the Search button under Customer Employment section in Customer Financials tab")
-	public void user_click_the_search_button_under_customer_employment_section_in_customer_financials_tab() throws Throwable {
+	public void user_608_click_the_search_button_under_customer_employment_section_in_customer_financials_tab() throws Throwable {
 		for (int i = 0; i <= 3000; i++) {
 			try {				
 				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("customerFinancialsTabBackBtn")));
@@ -9265,14 +9290,14 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify the functionality of Search box with matching data under Customer Employment section")
-	public void user_verify_the_functionality_of_search_box_with_matching_data_under_customer_employment_section() throws Throwable {
-		for (int i = 0; i <= 500; i++) {
+	public void user_608_verify_the_functionality_of_search_box_with_matching_data_under_customer_employment_section() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
 			try {				
 				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("searchbox_Input"))
 				.sendKeys(testData.get("Matching_Data"));
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -9280,17 +9305,17 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify system should display all the possible matching records under Customer Employment section")
-	public void user_verify_system_should_display_all_the_possible_matching_records_under_customer_employment_section() throws Throwable {
-		WebElement searchResult = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("searchResult"));
-		for (int i = 0; i <= 500; i++) {
+	public void user_608_verify_system_should_display_all_the_possible_matching_records_under_customer_employment_section() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
 			try {
+				WebElement searchResult = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("searchResult"));
 				javascriptHelper.backgroundColor(searchResult);
 				String text = searchResult.getText().substring(13, 14);
 				System.out.println("Result value: "+text);
 				softAssert.assertTrue(Integer.parseInt(text)>0, "Matching Data Result should be greater than 0");
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -9298,9 +9323,9 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify the functionality of Search box with mismatch data under Customer Employment section")
-	public void user_verify_the_functionality_of_search_box_with_mismatch_data_under_customer_employment_section()
+	public void user_608_verify_the_functionality_of_search_box_with_mismatch_data_under_customer_employment_section()
 			throws Throwable {
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("searchbox_Input"))
 				.sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
@@ -9308,7 +9333,7 @@ public class Murabaha_Steps {
 				.sendKeys(testData.get("Mismatching_Data"));
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -9316,18 +9341,18 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify system should not display any records or system should display the message as No data found under Customer Employment section")
-	public void user_verify_system_should_not_display_any_records_or_system_should_display_the_message_as_no_data_found_under_customer_employment_section()
+	public void user_608_verify_system_should_not_display_any_records_or_system_should_display_the_message_as_no_data_found_under_customer_employment_section()
 			throws Throwable {
-		WebElement searchResult = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("searchResult"));
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
+				WebElement searchResult = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("searchResult"));
 				javascriptHelper.backgroundColor(searchResult);
 				String text = searchResult.getText().substring(13, 14);
 				System.out.println("Result value: "+text);
 				softAssert.assertTrue(Integer.parseInt(text)==0, "Mismatch data should be display as 0");
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -10486,7 +10511,7 @@ public class Murabaha_Steps {
 	
 //	AT_MU_ADE_IAD_03
 	@And("User_608 verify Asset Category field as Mandatory, Editable and Lookup value in Asset Details section")
-	public void user_verify_asset_category_field_as_mandatory_editable_and_lookup_value_in_asset_details_section() throws Throwable {
+	public void user_608_verify_asset_category_field_as_mandatory_editable_and_lookup_value_in_asset_details_section() throws Throwable {
 //		Validate Mandatory
 		for (int i = 0; i < 2000; i++) {
 			try {
@@ -10536,7 +10561,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Asset Type field as Mandatory, Editable and Lookup value in Asset Details section")
-	public void user_verify_asset_type_field_as_mandatory_editable_and_lookup_value_in_asset_details_section() throws Throwable {
+	public void user_608_verify_asset_type_field_as_mandatory_editable_and_lookup_value_in_asset_details_section() throws Throwable {
 //		Validate Mandatory
 		for (int i = 0; i < 2000; i++) {
 			try {
@@ -10586,7 +10611,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Asset Manufacture field as Mandatory, Editable and Lookup value in Asset Details section")
-	public void user_verify_asset_manufacture_field_as_mandatory_editable_and_lookup_value_in_asset_details_section() throws Throwable {
+	public void user_608_verify_asset_manufacture_field_as_mandatory_editable_and_lookup_value_in_asset_details_section() throws Throwable {
 //		Validate Mandatory
 		for (int i = 0; i < 2000; i++) {
 			try {
@@ -10636,7 +10661,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Asset Model under field as Mandatory, Editable and Lookup value in Details section")
-	public void user_verify_asset_model_under_field_as_mandatory_editable_and_lookup_value_in_details_section() throws Throwable {
+	public void user_608_verify_asset_model_under_field_as_mandatory_editable_and_lookup_value_in_details_section() throws Throwable {
 //		Validate Mandatory
 		for (int i = 0; i < 2000; i++) {
 			try {
@@ -10686,7 +10711,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Asset Model Type field as Mandatory, Editable and Lookup value in Asset Details section")
-	public void user_verify_asset_model_type_field_as_mandatory_editable_and_lookup_value_in_asset_details_section() throws Throwable {
+	public void user_608_verify_asset_model_type_field_as_mandatory_editable_and_lookup_value_in_asset_details_section() throws Throwable {
 //		Validate Mandatory
 		for (int i = 0; i < 2000; i++) {
 			try {
@@ -10736,7 +10761,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Year Of Manufacture field as Non-mandatory, Editable and Calendar in Asset Details section")
-	public void user_verify_year_of_manufacture_field_as_non_mandatory_editable_and_calendar_in_asset_details_section() throws Throwable {
+	public void user_608_verify_year_of_manufacture_field_as_non_mandatory_editable_and_calendar_in_asset_details_section() throws Throwable {
 //		Validate Non-mandatory
 		for (int i = 0; i < 2000; i++) {
 			try {
@@ -10786,7 +10811,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Asset Condition field as Mandatory, Editable and Lookup value in Asset Details section")
-	public void user_verify_asset_condition_field_as_mandatory_editable_and_lookup_value_in_asset_details_section() throws Throwable {
+	public void user_608_verify_asset_condition_field_as_mandatory_editable_and_lookup_value_in_asset_details_section() throws Throwable {
 //		Validate Mandatory
 		for (int i = 0; i < 2000; i++) {
 			try {
@@ -10836,7 +10861,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Asset Color field as Non-mandatory, Editable and Lookup value in Asset Details section")
-	public void user_verify_asset_color_field_as_non_mandatory_editable_and_lookup_value_in_asset_details_section() throws Throwable {
+	public void user_608_verify_asset_color_field_as_non_mandatory_editable_and_lookup_value_in_asset_details_section() throws Throwable {
 //		Validate Non-mandatory
 		for (int i = 0; i < 2000; i++) {
 			try {
@@ -10886,7 +10911,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Drivetrine field as Non-mandatory, Editable and Lookup value in Asset Details section")
-	public void user_verify_drivetrine_field_as_non_mandatory_editable_and_lookup_value_in_asset_details_section() throws Throwable {
+	public void user_608_verify_drivetrine_field_as_non_mandatory_editable_and_lookup_value_in_asset_details_section() throws Throwable {
 //		Validate Non-mandatory
 		for (int i = 0; i < 2000; i++) {
 			try {
@@ -10936,7 +10961,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Number of Cylinder field as Non-mandatory, Editable and Numeric in Asset Details section")
-	public void user_verify_number_of_cylinder_field_as_non_mandatory_editable_and_numeric_in_asset_details_section() throws Throwable {
+	public void user_608_verify_number_of_cylinder_field_as_non_mandatory_editable_and_numeric_in_asset_details_section() throws Throwable {
 //		Validate Non-mandatory
 		for (int i = 0; i < 2000; i++) {
 			try {
@@ -10986,7 +11011,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Volume Of Engine field as Non-mandatory, Editable and Numeric in Asset Details section")
-	public void user_verify_volume_of_engine_field_as_non_mandatory_editable_and_numeric_in_asset_details_section() throws Throwable {
+	public void user_608_verify_volume_of_engine_field_as_non_mandatory_editable_and_numeric_in_asset_details_section() throws Throwable {
 //		Validate Non-mandatory
 		for (int i = 0; i < 2000; i++) {
 			try {
@@ -11036,7 +11061,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Number Of Units field as Non-mandatory, Editable and Numeric in Asset Details section")
-	public void user_verify_number_of_units_field_as_non_mandatory_editable_and_numeric_in_asset_details_section() throws Throwable {
+	public void user_608_verify_number_of_units_field_as_non_mandatory_editable_and_numeric_in_asset_details_section() throws Throwable {
 //		Validate Non-mandatory
 		for (int i = 0; i < 2000; i++) {
 			try {
@@ -11086,7 +11111,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Chasis Number field as Mandatory, Editable and Textbox in Asset Details section")
-	public void user_verify_chasis_number_field_as_mandatory_editable_and_textbox_in_asset_details_section() throws Throwable {
+	public void user_608_verify_chasis_number_field_as_mandatory_editable_and_textbox_in_asset_details_section() throws Throwable {
 //		Validate Mandatory
 		for (int i = 0; i < 2000; i++) {
 			try {
@@ -11136,7 +11161,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Plate Number field as Mandatory, Editable and Textbox in Asset Details section")
-	public void user_verify_plate_number_field_as_mandatory_editable_and_textbox_in_asset_details_section() throws Throwable {
+	public void user_608_verify_plate_number_field_as_mandatory_editable_and_textbox_in_asset_details_section() throws Throwable {
 //		Validate Mandatory
 		for (int i = 0; i < 2000; i++) {
 			try {
@@ -11186,7 +11211,7 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Plate Number Arabic field as Mandatory, Editable and Textbox in Asset Details section")
-	public void user_verify_plate_number_arabic_field_as_mandatory_editable_and_textbox_in_asset_details_section() throws Throwable {
+	public void user_608_verify_plate_number_arabic_field_as_mandatory_editable_and_textbox_in_asset_details_section() throws Throwable {
 //		Validate Mandatory
 		for (int i = 0; i < 2000; i++) {
 			try {
@@ -12717,7 +12742,7 @@ public class Murabaha_Steps {
 	@And("User_608 verify Search button is available in list view under Asset Details tab")
 	public void user_608_verify_search_button_is_available_in_list_view_under_asset_details_tab() {
 		String length = null;
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 300; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('div[class*=\"grid \"] button').length")
 						.toString();
@@ -12726,12 +12751,12 @@ public class Murabaha_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 299) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('div[class*=\"grid \"] button')[" + j + "].getAttribute('ng-reflect-text')";
@@ -12746,7 +12771,7 @@ public class Murabaha_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 299) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -12755,20 +12780,20 @@ public class Murabaha_Steps {
 
 	@And("User_608 verify Export to PDF button is available in list view under Asset Details tab")
 	public void user_608_verify_export_to_pdf_button_is_available_in_list_view_under_asset_details_tab() {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				WebElement btn = javascriptHelper.executeScriptWithWebElement(
 						assetDetailsJsPaths.getElement("exportBtn"));
 				btn.click();
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 		String length = null;
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 300; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('p-dropdownitem').length")
 						.toString();
@@ -12777,12 +12802,12 @@ public class Murabaha_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 299) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('p-dropdownitem li')[" + j + "].textContent";
@@ -12798,7 +12823,7 @@ public class Murabaha_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 299) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -12808,7 +12833,7 @@ public class Murabaha_Steps {
 	@And("User_608 verify Export to Excel button is available in list view under Asset Details tab")
 	public void user_608_verify_export_to_excel_button_is_available_in_list_view_under_asset_details_tab() {
 		String length = null;
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 300; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('p-dropdownitem').length")
 						.toString();
@@ -12817,12 +12842,12 @@ public class Murabaha_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 299) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('p-dropdownitem li')[" + j + "].textContent";
@@ -12838,7 +12863,7 @@ public class Murabaha_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 299) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -13380,7 +13405,7 @@ public class Murabaha_Steps {
 			if (downloadsFile.getName().contains("Application Asset")) {
 //				System.out.println("If condition " + downloadsFile.getName());
 				softAssert.assertTrue(downloadsFile.getName().contains("Application Asset"),
-						"File is nott downloaded hence failed");
+						"File is not downloaded hence failed");
 				downloadsFile.delete();
 			}
 		}	    

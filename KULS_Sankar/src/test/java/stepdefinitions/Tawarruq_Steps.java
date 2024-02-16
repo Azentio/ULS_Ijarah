@@ -2952,12 +2952,12 @@ public class Tawarruq_Steps {
 				}
 			}
 		}
-		for (int i = 0; i <= 500000; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appDataAppDetailsJsPaths.getElement("popupCloseBtn")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 500000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4587,13 +4587,14 @@ public class Tawarruq_Steps {
 			}
 			
 //			Validate the field should be lookup value[Dropdown]
-			WebElement dropdown = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("countryOfIssueDropdown"));
-			for (int i = 0; i <= 2000; i++) {
+			for (int i = 0; i <= 300; i++) {
 				try {
+					WebElement dropdown = javascriptHelper.executeScriptWithWebElement(
+							identificatioDetailsJsPaths.getElement("countryOfIssueDropdown"));
 					softAssert.assertTrue(dropdown.getAttribute("ng-reflect-placeholder").contains("Select"), "Country Of Issue field should be Dropdown/Lookup");
 					break;
 				} catch (Exception e) {
-					if (i == 2000) {
+					if (i == 300) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -4602,14 +4603,15 @@ public class Tawarruq_Steps {
 		
 		@And("User_608 to verify the functionality of Help button under Customer Identification screen")
 		public void user_608_to_verify_the_functionality_of_help_button_under_customer_identification_screen() throws Throwable {
-			WebElement backBtn = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("identificationDetailsHelpBtn"));
-			for (int i = 0; i <= 150000; i++) {
+			for (int i = 0; i <= 300; i++) {
 				try {
+					WebElement backBtn = javascriptHelper.executeScriptWithWebElement(
+							identificatioDetailsJsPaths.getElement("identificationDetailsHelpBtn"));
 					javascriptHelper.backgroundBorder(backBtn);
 					backBtn.click();
 					break;
 				} catch (Exception e) {
-					if (i == 150000) {
+					if (i == 300) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -4618,9 +4620,10 @@ public class Tawarruq_Steps {
 
 		@And("User_608 post clicking on Help button, system should display the description of all the fields in details")
 		public void user_608_post_clicking_on_help_button_system_should_display_the_description_of_all_the_fields_in_details() throws Throwable {
-			WebElement helpBtn = javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("help_fieldDescription"));
-			for (int i = 0; i <= 1000; i++) {
+			for (int i = 0; i <= 300; i++) {
 				try {
+					WebElement helpBtn = javascriptHelper.executeScriptWithWebElement(
+							identificatioDetailsJsPaths.getElement("help_fieldDescription"));
 					javascriptHelper.scrollIntoView(helpBtn);
 					javascriptHelper.backgroundBorder(helpBtn);
 					WebElement element = javascriptHelper.executeScriptWithWebElement(
@@ -4629,7 +4632,7 @@ public class Tawarruq_Steps {
 							"post clicking on Help button,System display the description of all the fields in details");
 					break;
 				} catch (Exception e) { 
-					if (i == 1000) {
+					if (i == 300) {
 						Assert.fail(e.getMessage());
 					}
 				}

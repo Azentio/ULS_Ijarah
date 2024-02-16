@@ -42,7 +42,7 @@ And User_608 validate Total Deduction field available under Income details scree
 And User_608 validate Total Deduction Considered field available under Income details screen
 And User_608 validate Currency field available under Income details screen
 Then logout from the ijaraApplication
-
+And User_608 invoke soft assert in Income details screen under Customer Financials tab at Ijarah Data Check stage
 
 # IDC_01_03, IDC_01_04
 @AT_INCD_02
@@ -65,7 +65,7 @@ And User_608 click the Eye button under Customer Financials tab
 And User_608 click the Eye button under Income section in Customer Financials Tab
 And User_608 click the Back button under Income details screen
 Then logout from the ijaraApplication
-
+And User_608 invoke soft assert in Income details screen under Customer Financials tab at Ijarah Data Check stage
 
 # IDC_01_05 <--> IDC_01_25
 @AT_INCD_03
@@ -103,7 +103,7 @@ And User_608 validate Deduction Considered field available under Income details 
 And User_608 validate Total Deduction field available under Income details screen
 And User_608 validate Total Deduction Considered field available under Income details screen
 Then logout from the ijaraApplication
-
+And User_608 invoke soft assert in Income details screen under Customer Financials tab at Ijarah Data Check stage
 
 # IDC_01_26, IDC_01_27
 @AT_INCD_04
@@ -125,7 +125,7 @@ And User_608 click the Back button in Customer Employement screen under Customer
 And User_608 verfiy Income section available under Customer Financials tab
 And User_608 click the Eye button under Income section in Customer Financials Tab
 Then logout from the ijaraApplication
-
+And User_608 invoke soft assert in Income details screen under Customer Financials tab at Ijarah Data Check stage
 
 # IDC_01_28, IDC_01_29
 @AT_INCD_05
@@ -144,7 +144,6 @@ And User_608 verify Self Employed customer available under Income section in Cus
 And User_608 verify Self Employed income field is available under Income section in Customer Financials Tab
 Then logout from the ijaraApplication
 And User_608 invoke soft assert in Income details screen under Customer Financials tab at Ijarah Data Check stage
-
 
 # IDC_01_30
 @AT_INCD_06

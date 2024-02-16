@@ -161,7 +161,6 @@ And User_608 verify Remarks field available under Employment details screen
 Then logout from the ijaraApplication
 And User_608 invoke soft assert in Employment details screen under Customer Financials tab at Data Check stage
 
-
 #EDC_01_07
 @AT_MU_EDC_04
 Scenario: Employment Details screen should get open with below mentioned Fields when Nature of Employment is : Self-employed Professional
@@ -177,7 +176,7 @@ And User_608 search the Ref id under inbox in ULS Application
 And User_608 click the Entitle button under inbox
 And User_608 click the Customer Financials tab
 And User_608 click the Eye button under Customer Financials tab
-And User_608 clickt the pagination next button under Employment details section
+And User_608 click the pagination next button under Employment details section
 And User_608 click the Self-Employed Professional record Eye button under Employment List section in Customer Financials tab
 And User_608 verify Nature of Employment field available under Employment details screen
 And User_608 verify Company Type field available under Employment details screen
@@ -280,7 +279,7 @@ And User_608 verify Total Experience(Years) field should be Textbox, Mandatory a
 And User_608 verify Experience At Current Employment field should be Textbox, Non-Mandatory and Read only under Employment details screen
 And User_608 verify Direct Manager Name field should be Textbox, Non-Mandatory and Read only under Employment details screen
 #And User_608 verify Employer City Code field should be Textbox, Non-Mandatory and Read only under Employment details screen
-#And User_608 verify Remarks field should be Textbox, Non-Mandatory and Read only under Employment details screen
+And User_608 verify Remarks field should be Textbox, Non-Mandatory and Read only under Employment details screen
 Then logout from the ijaraApplication
 And User_608 invoke soft assert in Employment details screen under Customer Financials tab at Data Check stage
 
