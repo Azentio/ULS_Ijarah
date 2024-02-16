@@ -48,7 +48,7 @@ And User_608 validate the Request for Balance Takeover field is available in Cus
 And User_608 validate the NPA Classification field is available in Customer Debt screen
 And User_608 click the Back button in Customer Debt screen navigate to the previous screen
 Then logout from the ULS Application
-
+And User_608 invoke soft assert in Customer Debt screen at Ijarah App data entry stage
 
 @AT_CUD_002
 Scenario: To verify user is able to add new Customer Dept record in the system by entering invalid data
@@ -75,7 +75,7 @@ And User_608 enter the Text value in numeric field and validate the error messag
 When User_608 click the Save button in Customer Debt screen
 And User_608 validate the message for invalid data in Customer Debt screen
 Then logout from the ULS Application
-
+And User_608 invoke soft assert in Customer Debt screen at Ijarah App data entry stage
 
 @AT_CUD_003
 Scenario: To verify user is able to modify Customer Debt record in the system
@@ -102,11 +102,11 @@ And User_608 validate the mandatory field blank message in Customer Debt screen
 And User_608 enter the Installment Amount in Customer Debt screen
 When User_608 click the Update button in Customer Debt screen
 Then logout from the ULS Application
-
+And User_608 invoke soft assert in Customer Debt screen at Ijarah App data entry stage
 
 # CUD_04_04, CUD_04_05, CUD_04_06, CUD_04_07
 @AT_CUD_004
-Scenario: To verify the Customer Debt List view
+Scenario: To verify the Customer Debt List view & verify the functionality of search button with matching & mismatching data - Export to PDF&b XLS button
 
 Given navigate the IJARA URL
 And login with valid credentials for new application stage
@@ -126,20 +126,18 @@ And User_608 verify the Tenure field is displayed in list view under Financial C
 And User_608 verify the Next Due Date field is displayed in list view under Financial Commitments
 And User_608 verify the Principal Balance field is displayed in list view under Financial Commitments
 And User_608 verify the Currency field is displayed in list view under Financial Commitments
-
 And User_608 verify list view values should be not editable under Financial Commitments
-
+And User_608 click the Export button in Financial Commitments under Customer Financials tab
+And User_608 click the PDF and verify under Export in Financial Commitments
+And User_608 click the Export button in Financial Commitments under Customer Financials tab
+And User_608 click the XLS and verify under Export in Financial Commitments
 And User_608 click Search button in Financial Commitments under Customer Financials tab
 And User_608 search the matched record in Financial Commitments under Customer Financials tab
 And User_608 verify the all the possible matching records are displayed under Financial Commitments section
 And User_608 search the mismatched record in Financial Commitments under Customer Financials tab
 And User_608 verify the system is should not displayed any records under Financial Commitments section
-And User_608 click the Export button in Financial Commitments under Customer Financials tab
-And User_608 click the PDF and verify under Export in Financial Commitments
-And User_608 click the Export button in Financial Commitments under Customer Financials tab
-And User_608 click the XLS and verify under Export in Financial Commitments
 Then logout from the ULS Application
-
+And User_608 invoke soft assert in Customer Debt screen at Ijarah App data entry stage
 
 @AT_CUD_005
 Scenario: To verify while creating customer debt, system allow user to save the record with valid data
@@ -164,8 +162,7 @@ And User_608 enter the Remaining Tenure in Customer Debt screen
 When User_608 click the Save button in Customer Debt screen
 Then User_608 validate the confirm message in Customer Debt screen
 Then logout from the ULS Application
-
-
+And User_608 invoke soft assert in Customer Debt screen at Ijarah App data entry stage
 
 # CUD_04_08
 @AT_CUD_006
@@ -188,8 +185,7 @@ And User_608 click the Status Radio button under Customer Debt screen
 When User_608 click the Update button in Customer Debt screen
 And User_608 verify the first row status as In-Active under Financial Commitments in Customer Financials tab
 Then logout from the ULS Application
-
-
+And User_608 invoke soft assert in Customer Debt screen at Ijarah App data entry stage
 
 # CUD_04_09
 @AT_CUD_006
@@ -211,6 +207,4 @@ And User_608 click the Status Radio button under Customer Debt screen
 When User_608 click the Update button in Customer Debt screen
 And User_608 verify the first row status as Active under Financial Commitments in Customer Financials tab
 Then logout from the ULS Application
-
-
-
+And User_608 invoke soft assert in Customer Debt screen at Ijarah App data entry stage

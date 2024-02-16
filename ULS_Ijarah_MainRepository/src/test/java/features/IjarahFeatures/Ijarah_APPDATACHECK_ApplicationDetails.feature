@@ -77,6 +77,7 @@ And User_608 verify the Sourcing Office field available in Referral\Sourcing Det
 And User_608 verify the Sourcing Entity field available in Referral\Sourcing Details section under Application Details tab
 And User_608 verify the Sourcing Staff field available in Referral\Sourcing Details section under Application Details tab
 And User_608 verify the Reference Type field available in Referral\Sourcing Details section under Application Details tab
+And User_608 verify the Reference Entity field available in Referral\Sourcing Details section under Application Details tab
 And User_608 verify the Reference Code field available in Referral\Sourcing Details section under Application Details tab
 Then logout from the ULS Application
 
