@@ -1,36 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-16T16:44:44 IST" name="Default suite" finished-at="2024-02-16T16:45:43 IST" duration-ms="58992">
+  <suite started-at="2024-02-19T12:31:03 IST" name="Default suite" finished-at="2024-02-19T12:32:13 IST" duration-ms="69919">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestApplication@74ea2410]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-02-16T16:44:44 IST" name="Default test" finished-at="2024-02-16T16:45:43 IST" duration-ms="58992">
+    <test started-at="2024-02-19T12:31:03 IST" name="Default test" finished-at="2024-02-19T12:32:13 IST" duration-ms="69919">
       <class name="runner.TestApplication">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:runner.TestApplication@74ea2410]" started-at="2024-02-16T16:44:44 IST" name="setUpClass" finished-at="2024-02-16T16:44:45 IST" duration-ms="916" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:runner.TestApplication@74ea2410]" started-at="2024-02-19T12:31:03 IST" name="setUpClass" finished-at="2024-02-19T12:31:04 IST" duration-ms="904" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestApplication@74ea2410]" started-at="2024-02-16T16:44:45 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-16T16:45:31 IST" duration-ms="46174" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestApplication@74ea2410]" started-at="2024-02-19T12:31:04 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-19T12:31:55 IST" duration-ms="50339" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["To verify the impact when user keep invalid input in address datails field"]]>
+                <![CDATA["To verify the Facility Details screen is getting open with all valid fields"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[To verify the AutoLoan-AppDataEntry-Address Details screen]"]]>
+                <![CDATA["Optional[To test the Retail-AutoLoan-App Data Entry- Facility Details]"]]>
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Cannot invoke "org.openqa.selenium.WebElement.isDisplayed()" because "DeclaredDownPaymentAmount" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Cannot invoke "org.openqa.selenium.WebElement.isDisplayed()" because "DeclaredDownPaymentAmount" is null
+at org.junit.Assert.fail(Assert.java:88)
+at stepdefinitions.Retail_AotoLoan_AppDataEntry_FacilityDetails.user_6047_to_verify_the_declared_down_payment_amount_under_the_facility_info(Retail_AotoLoan_AppDataEntry_FacilityDetails.java:265)
+at ✽.User_6047 To verify the Declared Down payment amount under the Facility info(file:///C:/Users/ININDC00071/git/ULs_Ramya1/Uls_Ramya/src/test/java/retail_feature/Retail_AutoLoan_AppDataEntry_FacilityDetails.feature:26)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.TestApplication@74ea2410]" started-at="2024-02-16T16:45:31 IST" name="tearDownClass" finished-at="2024-02-16T16:45:43 IST" duration-ms="11858" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.TestApplication@74ea2410]" started-at="2024-02-19T12:31:55 IST" name="tearDownClass" finished-at="2024-02-19T12:32:13 IST" duration-ms="18626" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

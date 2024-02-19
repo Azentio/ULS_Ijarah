@@ -21,7 +21,7 @@ import pageobjects.JSPaths;
 import resources.BaseClass;
 import stepdefinitions.IjaraLogin;
 
-public class AutoLoan_AppDataEntry_ContactDetails {
+public class Retail_AutoLoan_AppDataEntry_ContactDetails {
 
 	WebDriver driver = BaseClass.driver;
 	ConfigFileReader configFileReader = new ConfigFileReader();

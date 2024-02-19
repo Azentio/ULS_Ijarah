@@ -3,5 +3,4 @@
 Feature: steps creation
 
  Scenario:  To create steps
- 
- And User_6047 click on Customer Financial tab
+Then User_6047 search the facility list record under facility info screen

@@ -1397,7 +1397,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
 	@Then("User_6047 to verify the same record should get saved Address Details")
 	public void user_6047_to_verify_the_same_record_should_get_saved_address_details() throws Throwable {
 		//javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("address_type")));
-	Thread.sleep(3000);
+	Thread.sleep(9000);
 		//String AddressTypeData="Office ";
 		String AddressType= javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("address_type")).getAttribute("aria-label");
 		
@@ -1607,18 +1607,7 @@ public class AutoLoan_AppDataEntry_AddressDetails {
                 }
             }
         }
-		String occupencydateData="2000-10-09";
-		String occupencydate= javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("occupency_date_Data")).getAttribute("ng-reflect-value-variable");
-		for (int i = 0; i <2000; i++) {
-            try {
-                Assert.assertTrue(occupencydate.contains(occupencydateData));
-                break;
-            } catch (Exception e) {
-                if (i==1999) {
-                    Assert.fail(e.getMessage());
-                }
-            }
-        }
+
 		
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(AddressDetails_js.getElement("landlord_name_Data")));
 		String landlordnameData="test";

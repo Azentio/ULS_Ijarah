@@ -31,7 +31,7 @@ public class Tawarruq_AppDataEntry_FacilityDetails {
 	// Ijarah_CommonFieldName	
 	JSPaths iJarah_CommonElements = new JSPaths(excelPath, "iJarah_CommonElements", "Ijarah_CommonFieldName", "JSPath");
 	
-	JSPaths FacilityDetails_js = new JSPaths(excelPath, "appDataEntry_js", "AppDataEntryElements", "JSPath");
+	JSPaths FacilityDetails_js = new JSPaths(excelPath, "AppDataEn_FacilityDetails", "AppDataEntryElements", "JSPath");
 	ExcelData FacilityDetails_testdata  = new ExcelData(excelTestDataPath,"Tawar_Entry_FacilityInfo","Dataset ID");
 
 	String toastMessageForReferenceNumber = "";

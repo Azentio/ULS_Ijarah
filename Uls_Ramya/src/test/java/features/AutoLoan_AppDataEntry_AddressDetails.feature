@@ -81,6 +81,9 @@ Then User_6047 Give the input for Rent Amount
 Then User_6047 Give the input for Frequency Of Rent 
 And User_6047 click the Save Button
 Then User_6047 verify the successfully saved message popup
+#And User_6047 To click the back button in Modification of Address details screen
+And User_6047 click on additional customer info tab
+And User_6047 Click edit icon
 And User_6047 To search the record in list view of address detail
 And User_6047 clict the edit button under the Address detail
 Then User_6047 to verify the same record should get saved Address Details
@@ -349,7 +352,10 @@ And User_6047 To verify system should not allow modification with invalid data
 And User_6047 To modify with valid data in Modification of Address details screen
 Then User_6047 click the Save button
 Then User_6047 verify the successfully saved message popup
-Then User_6047 To search the record in list view of address detail for status
+And User_6047 click on additional customer info tab
+And User_6047 Click edit icon
+And User_6047 To search the record in list view of address detail
+#Then User_6047 To search the record in list view of address detail for status
 And User_6047 clict the edit button under the Address detail
 Then User_6047 To verify same record should get saved in Modification of Address details screen
 And User_6047 To click the back button in Modification of Address details screen

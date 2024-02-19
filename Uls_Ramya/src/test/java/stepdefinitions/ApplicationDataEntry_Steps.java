@@ -37,7 +37,7 @@ public class ApplicationDataEntry_Steps extends BaseClass {
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
 	JSPaths Ijarah_CustomerDebt = new JSPaths(excelPath, "CustomerDebt", "Ijarah_CustomerDebt", "JSPath");
 	JSPaths iJarah_CommonElements = new JSPaths(excelPath, "iJarah_CommonElements", "Ijarah_CommonFieldName", "JSPath");
-	JSPaths appDataEntry_js = new JSPaths(excelPath, "appDataEntry_js", "AppDataEntryElements", "JSPath");
+	JSPaths appDataEntry_js = new JSPaths(excelPath, "AppDataEn_FacilityDetails", "AppDataEntryElements", "JSPath");
 	ExcelData ApplicationDataEntry_testdata  = new ExcelData(excelTestDataPath,"ApplicationDataEntry_testdata","Dataset ID");
 	
 	ExcelData FacilityDetails_testdata  = new ExcelData(excelTestDataPath,"Tawar_Entry_FacilityInfo","Dataset ID");
