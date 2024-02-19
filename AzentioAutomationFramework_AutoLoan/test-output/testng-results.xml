@@ -1,36 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-15T16:50:59 IST" name="Default suite" finished-at="2024-02-15T16:52:45 IST" duration-ms="105678">
+  <suite started-at="2024-02-19T11:09:48 IST" name="Default suite" finished-at="2024-02-19T11:13:43 IST" duration-ms="235031">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestApplication@202b0582]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestApplication@343570b7]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-02-15T16:50:59 IST" name="Default test" finished-at="2024-02-15T16:52:45 IST" duration-ms="105678">
+    <test started-at="2024-02-19T11:09:48 IST" name="Default test" finished-at="2024-02-19T11:13:43 IST" duration-ms="235031">
       <class name="runner.TestApplication">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:runner.TestApplication@202b0582]" started-at="2024-02-15T16:50:59 IST" name="setUpClass" finished-at="2024-02-15T16:51:00 IST" duration-ms="1066" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:runner.TestApplication@343570b7]" started-at="2024-02-19T11:09:48 IST" name="setUpClass" finished-at="2024-02-19T11:09:49 IST" duration-ms="717" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestApplication@202b0582]" started-at="2024-02-15T16:51:00 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-15T16:52:26 IST" duration-ms="85607" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestApplication@343570b7]" started-at="2024-02-19T11:09:49 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-19T11:11:49 IST" duration-ms="120422" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["To verify the below fields under income details section."]]>
+                <![CDATA["To verify payment schedule field should have mentioned sections and mentioned fields"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[Auto Loan Appdata entry Income details]"]]>
+                <![CDATA["Optional[To test the payment schedule section in disbursement maker stage]"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.TestApplication@202b0582]" started-at="2024-02-15T16:52:26 IST" name="tearDownClass" finished-at="2024-02-15T16:52:45 IST" duration-ms="18958" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestApplication@343570b7]" started-at="2024-02-19T11:11:49 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-19T11:12:39 IST" duration-ms="49937" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To verify user can able to add record in payment details section and verify the field in payment details"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To test the payment schedule section in disbursement maker stage]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestApplication@343570b7]" started-at="2024-02-19T11:12:39 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-19T11:13:14 IST" duration-ms="35122" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To verify user can able to add record in payment details section and verify the field in payment details"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To test the payment schedule section in disbursement maker stage]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.TestApplication@343570b7]" started-at="2024-02-19T11:13:14 IST" name="tearDownClass" finished-at="2024-02-19T11:13:43 IST" duration-ms="28779" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
