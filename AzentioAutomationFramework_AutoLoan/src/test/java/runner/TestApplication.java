@@ -12,12 +12,12 @@ import utilities.ExtentTestManager;
 
 		//"src/test/java/features/autoloan/AutoLoan_AppDataEntry_DocumentsDetails_610.feature",
 	//	"src/test/java/features/autoloan/AutoLoan_AppDataEntry_CustomerDetails_610.feature",
-		"src/test/java/features/autoloan/AutoLoan_DisbursmentMaker_PaymentScheduleFEATURE.feature" }, glue = "stepdefinitions",
+		"src/test/java/features/autoloan/AutoLoan_AppDataEntry_AssetDetails.feature" }, glue = "stepdefinitions",
 		// monochrome=false, //to make steps in color
 		plugin = { "pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 				"rerun:ReRunScenarios/FailedReRun.txt" }
 // ,dryRun = false //to check compilation errors
- //, tags = "@AT_AL_INC_03"
+//, tags = "@AT_AU_AD_12 "
 // , tags = "@AT_AL_UNWL1_04 or @Return"
 )
 public class TestApplication extends AbstractTestNGCucumberTests {
