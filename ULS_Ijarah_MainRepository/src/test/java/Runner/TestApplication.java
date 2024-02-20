@@ -11,7 +11,7 @@ import utilities.ExtentTestManager;
 @CucumberOptions(features = {
 //		"src\\test\\java\\features\\IjarahFeatures"
 //		"src\\test\\java\\features\\IjarahFeatures\\Ijarah_UNDERWRITER.feature",
-		"src\\test\\java\\features\\IjarahFeatures\\Ijarah_APPDATACHECK_Income.feature",
+		"src\\test\\java\\features\\IjarahFeatures\\Ijarah_OFFERING_offerDetails.feature",
 //		"src\\test\\java\\features\\IjarahFeatures\\Ijarah_APPDATAENTRY_CFIncome.feature",
 //		"src\\test\\java\\features\\IjarahFeatures\\Ijarah_APPDATAENTRY_Customer_FollowUpDetails_610.feature",
 //		"src\\test\\java\\features\\IjarahFeatures\\Ijarah_CONTRACTSIGN_ApplicationDetails1.feature",
@@ -29,7 +29,7 @@ import utilities.ExtentTestManager;
 		plugin = { "pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 				"rerun:ReRunScenarios/FailedReRun.txt" }
 // ,dryRun = false //to check compilation errors
- , tags = "@AT_INCD_02"
+ , tags = "@AT_OFO_03"
 
 )
 public class TestApplication extends AbstractTestNGCucumberTests {

@@ -41,6 +41,8 @@ And User_608 validate Deduction Action button field available under Income detai
 And User_608 validate Total Deduction field available under Income details screen
 And User_608 validate Total Deduction Considered field available under Income details screen
 And User_608 validate Currency field available under Income details screen
+And User_608 click the Back button under Income details screen
+And User_608 verify system should navigate to the previous screen in Customer Financials tab
 Then logout from the ULS Application
 And User_608 invoke soft assert in Income details screen under Customer Financials tab at Ijarah Data Check stage
 
@@ -60,10 +62,6 @@ And User_608 click the Eye button under Customer Financials tab
 And User_608 click the Eye button under Income section in Customer Financials Tab
 And User_608 click the Save button under Income details screen
 And User_608 validate the confirmation message under Income details screen
-And User_608 click the Customer Financials tab
-And User_608 click the Eye button under Customer Financials tab
-And User_608 click the Eye button under Income section in Customer Financials Tab
-And User_608 click the Back button under Income details screen
 Then logout from the ULS Application
 And User_608 invoke soft assert in Income details screen under Customer Financials tab at Ijarah Data Check stage
 
@@ -162,4 +160,3 @@ And User_608 click the Eye button under Customer Financials tab
 And User_608 verify the Salaried customer available under Income section in Customer Financials Tab
 Then logout from the ULS Application
 And User_608 invoke soft assert in Income details screen under Customer Financials tab at Ijarah Data Check stage
-
