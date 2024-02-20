@@ -10,16 +10,15 @@ import utilities.ExtentTestManager;
 
 @CucumberOptions(features = {
 
-		//"src/test/java/features/autoloan/AutoLoan_AppDataEntry_DocumentsDetails_610.feature",
-	//	"src/test/java/features/autoloan/AutoLoan_AppDataEntry_CustomerDetails_610.feature",
-		"src/test/java/features/autoloan/AutoLoan_AppDataEntry_AssetDetails.feature" }, glue = "stepdefinitions",
+		// "src/test/java/features/autoloan/AutoLoan_AppDataEntry_DocumentsDetails_610.feature",
+		// "src/test/java/features/autoloan/AutoLoan_AppDataEntry_CustomerDetails_610.feature",
+		"src/test/java/features/autoloan" }, glue = "stepdefinitions",
 		// monochrome=false, //to make steps in color
 		plugin = { "pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 				"rerun:ReRunScenarios/FailedReRun.txt" }
 // ,dryRun = false //to check compilation errors
 //, tags = "@AT_AU_AD_12 "
-// , tags = "@AT_AL_UNWL1_04 or @Return"
-)
+		, tags = "@AT_AL_APPDETAILS_01")
 public class TestApplication extends AbstractTestNGCucumberTests {
 	/*
 	 * @Override

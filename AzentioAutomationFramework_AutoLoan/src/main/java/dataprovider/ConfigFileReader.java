@@ -132,6 +132,11 @@ public class ConfigFileReader {
 		String recordReferenceNumber;
 		recordReferenceNumber = properties.getProperty("autoLoanReferenceNumber");
 		return recordReferenceNumber;
+	}public String getAutoLoanNewAppReferenceNumber()
+	{
+		String recordReferenceNumber;
+		recordReferenceNumber = properties.getProperty("getAutoLoanNewAppReferenceNumber");
+		return recordReferenceNumber;
 	}
 	public String getAutioLoanAppDataEntryRefNo()
 	{

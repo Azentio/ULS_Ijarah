@@ -205,7 +205,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 			try {
 				searchTextBox = javascriptHelper
 						.executeScriptWithWebElement(commonJSElements.getElement("mail_box_search_text"));
-				searchTextBox.sendKeys(configFileReader.getAutoLoanReferenceNumber());
+				searchTextBox.sendKeys(configFileReader.getAutoLoanNewAppReferenceNumber());
 				break;
 			} catch (Exception e) {
 				if (i == 150) {
@@ -242,7 +242,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 									+ j + "].textContent")
 							.toString();
 					System.out.println("Number of record in mail box " + recordRefNumber);
-					if (recordRefNumber.equals(configFileReader.getAutoLoanReferenceNumber())) {
+					if (recordRefNumber.equals(configFileReader.getAutoLoanNewAppReferenceNumber())) {
 						System.out.println("document.querySelectorAll('button[icon=\"pi pi-user-edit\"]')[" + j + "]");
 						// document.querySelectorAll('button[icon="pi pi-user-edit"]')[0]
 						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
