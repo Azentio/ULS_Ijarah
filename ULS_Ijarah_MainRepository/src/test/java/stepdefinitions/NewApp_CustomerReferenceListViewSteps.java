@@ -32,10 +32,8 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 			"Dataset ID");
 	ExcelData excelTestDataForIjarahCustomerReference = new ExcelData(excelTestDataPath, "IJ_NewApp_CustRef_TestData",
 			"Dataset ID");
-	ExcelData IjarahExecution = new ExcelData(excelTestDataPath, "Ijarah_ExecutionTracker",
-			"TestCase ID");
-	ExcelData MurabahaExecution = new ExcelData(excelTestDataPath, "Murabaha_ExecutionTracker",
-			"TestCase ID");
+	ExcelData IjarahExecution = new ExcelData(excelTestDataPath, "Ijarah_ExecutionTracker", "TestCase ID");
+	ExcelData MurabahaExecution = new ExcelData(excelTestDataPath, "Murabaha_ExecutionTracker", "TestCase ID");
 	Map<String, String> customerReferenceTestData = new HashMap<>();
 	Map<String, String> customerReferenceExecutionData = new HashMap<>();
 	ClicksAndActionsHelper clicksAndActionsHelper = new ClicksAndActionsHelper(driver);
@@ -52,49 +50,55 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 		customerReferenceTestData = excelTestDataForCustomerReference
 				.getTestdata(customerReferenceExecutionData.get("dataSet_ID"));
 	}
+
 	@And("user_076 get the test data for test case id AT_IJ_NewApp_CR_01")
 	public void user_076_076_076_076_get_the_test_data_for_test_case_id_AT_IJ_NewApp_CR_01() throws Throwable {
 		customerReferenceExecutionData = IjarahExecution.getTestdata("AT_IJ_NewApp_CR_01");
 		customerReferenceTestData = excelTestDataForIjarahCustomerReference
 				.getTestdata(customerReferenceExecutionData.get("dataSet_ID"));
 	}
+
 	@And("user_076 get the test data for test case id AT_IJ_NewApp_CR_02")
 	public void user_076_076_076_076_get_the_test_data_for_test_case_id_AT_IJ_NewApp_CR_02() throws Throwable {
 		customerReferenceExecutionData = IjarahExecution.getTestdata("AT_IJ_NewApp_CR_02");
 		customerReferenceTestData = excelTestDataForIjarahCustomerReference
 				.getTestdata(customerReferenceExecutionData.get("dataSet_ID"));
 	}
+
 	@And("user_076 get the test data for test case id AT_IJ_NewApp_CR_03")
 	public void user_076_076_076_076_get_the_test_data_for_test_case_id_AT_IJ_NewApp_CR_03() throws Throwable {
 		customerReferenceExecutionData = IjarahExecution.getTestdata("AT_IJ_NewApp_CR_01");
 		customerReferenceTestData = excelTestDataForIjarahCustomerReference
 				.getTestdata(customerReferenceExecutionData.get("dataSet_ID"));
 	}
+
 	@And("user_076 get the test data for test case id AT_IJ_NewApp_CR_04")
 	public void user_076_076_076_076_get_the_test_data_for_test_case_id_AT_IJ_NewApp_CR_04() throws Throwable {
 		customerReferenceExecutionData = IjarahExecution.getTestdata("AT_IJ_NewApp_CR_04");
 		customerReferenceTestData = excelTestDataForIjarahCustomerReference
 				.getTestdata(customerReferenceExecutionData.get("dataSet_ID"));
 	}
+
 	@And("user_076 get the test data for test case id AT_IJ_NewApp_CR_05")
 	public void user_076_076_076_076_get_the_test_data_for_test_case_id_AT_IJ_NewApp_CR_05() throws Throwable {
 		customerReferenceExecutionData = IjarahExecution.getTestdata("AT_IJ_NewApp_CR_05");
 		customerReferenceTestData = excelTestDataForIjarahCustomerReference
 				.getTestdata(customerReferenceExecutionData.get("dataSet_ID"));
 	}
+
 	@And("user_076 get the test data for test case id AT_IJ_NewApp_CR_06")
 	public void user_076_076_076_076_get_the_test_data_for_test_case_id_AT_IJ_NewApp_CR_06() throws Throwable {
 		customerReferenceExecutionData = IjarahExecution.getTestdata("AT_IJ_NewApp_CR_06");
 		customerReferenceTestData = excelTestDataForIjarahCustomerReference
 				.getTestdata(customerReferenceExecutionData.get("dataSet_ID"));
 	}
+
 	@And("user_076 get the test data for test case id AT_IJ_NewApp_CR_07")
 	public void user_076_076_076_076_get_the_test_data_for_test_case_id_AT_IJ_NewApp_CR_07() throws Throwable {
 		customerReferenceExecutionData = IjarahExecution.getTestdata("AT_IJ_NewApp_CR_07");
 		customerReferenceTestData = excelTestDataForIjarahCustomerReference
 				.getTestdata(customerReferenceExecutionData.get("dataSet_ID"));
 	}
-	
 
 	@And("user_076 get the test data for test case id AT_NewApp_M_CR_02")
 	public void user_076_076_076_076_get_the_test_data_for_test_case_id_AT_NewApp_M_CR_02() throws Throwable {
@@ -144,6 +148,8 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 		WebElement searchTextBox;
 		for (int i = 0; i <= 300; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(CommonJSElements.getElement("mail_box_search_text")));
 				searchTextBox = javascriptHelper
 						.executeScriptWithWebElement(CommonJSElements.getElement("mail_box_search_text"));
 				searchTextBox.sendKeys(customerReferenceTestData.get("record_reference_number"));
@@ -187,6 +193,8 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 					if (recordRefNumber.equals(customerReferenceTestData.get("record_reference_number"))) {
 						System.out.println("document.querySelectorAll('button[icon=\"pi pi-user-edit\"]')[" + j + "]");
 						// document.querySelectorAll('button[icon="pi pi-user-edit"]')[0]
+						clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('button[icon=\"pi pi-user-edit\"]')[" + j + "]"));
 						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
 								"document.querySelectorAll('button[icon=\"pi pi-user-edit\"]')[" + j + "]"));
 						break;
@@ -299,6 +307,8 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 		String fieldValidation = "";
 		for (int i = 0; i <= 150; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						customerReferenceJsPaths.getElement("relationship_type_dropdown")));
 				mandatoryVerification = javascriptHelper
 						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("relationship_type_dropdown"))
 						.getAttribute("aria-label");
@@ -320,6 +330,8 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 		softAssert.assertTrue(fieldValidation.contains("Select"), "relationship field is not a dropdown hence failed");
 		for (int i = 0; i <= 150; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						customerReferenceJsPaths.getElement("relationship_type_dropdown")));
 				javascriptHelper
 						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("relationship_type_dropdown"))
 						.click();
@@ -342,6 +354,8 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 		String fieldValidation = "";
 		for (int i = 0; i <= 150; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("salutation_dropdown")));
 				mandatoryVerification = javascriptHelper
 						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("salutation_dropdown"))
 						.getAttribute("aria-label");
@@ -362,6 +376,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 		softAssert.assertTrue(fieldValidation.contains("Select"), "salutation field is not a dropdown hence failed");
 		for (int i = 0; i <= 150; i++) {
 			try {
+
 				javascriptHelper.executeScriptWithWebElement(customerReferenceJsPaths.getElement("salutation_dropdown"))
 						.click();
 				break;
@@ -384,6 +399,8 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 
 		for (int i = 0; i <= 150; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("first_name_input")));
 				mandatoryVerification = javascriptHelper
 						.executeScript(
 								"return " + customerReferenceJsPaths.getElement("first_name_mandatory_verification"))
@@ -433,6 +450,8 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.executeScript(
 								"return " + customerReferenceJsPaths.getElement("middle_name_mandatory_verification"))
 						.toString();
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("middle_name_input")));
 				fieldValidation = javascriptHelper
 						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("middle_name_input"))
 						.getAttribute("type");
@@ -450,6 +469,8 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 
 		for (int i = 0; i <= 150; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("middle_name_input")));
 				javascriptHelper.executeScriptWithWebElement(customerReferenceJsPaths.getElement("middle_name_input"))
 						.click();
 				javascriptHelper.executeScriptWithWebElement(customerReferenceJsPaths.getElement("middle_name_input"))
@@ -474,6 +495,8 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.executeScript(
 								"return " + customerReferenceJsPaths.getElement("last_name_mandatory_verification"))
 						.toString();
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("last_name_input")));
 				fieldValidation = javascriptHelper
 						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("last_name_input"))
 						.getAttribute("type");
@@ -516,6 +539,8 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.executeScript("return "
 								+ customerReferenceJsPaths.getElement("customer_full_name_mandatory_verification"))
 						.toString();
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("last_name_input")));
 				fieldValidation = javascriptHelper
 						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("last_name_input"))
 						.getAttribute("type");
@@ -559,6 +584,8 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.executeScriptWithWebElement(
 								customerReferenceJsPaths.getElement("identification_type_dropdown"))
 						.getAttribute("aria-label");
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						customerReferenceJsPaths.getElement("identification_type_dropdown")));
 				fieldValidation = javascriptHelper
 						.executeScriptWithWebElement(
 								customerReferenceJsPaths.getElement("identification_type_dropdown"))
@@ -602,6 +629,8 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.executeScript("return "
 								+ customerReferenceJsPaths.getElement("identification_number_mandatory_verification"))
 						.toString();
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						customerReferenceJsPaths.getElement("identification_number_input")));
 				fieldValidation = javascriptHelper
 						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("identification_number_input"))
 						.getAttribute("type");
@@ -641,10 +670,13 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 		String fieldValidation = "";
 		for (int i = 0; i <= 150; i++) {
 			try {
+
 				mandatoryVerification = javascriptHelper
 						.executeScript("return "
 								+ customerReferenceJsPaths.getElement("residential_address_mandatory_verification"))
 						.toString();
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("residential_address_input")));
 				fieldValidation = javascriptHelper
 						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("residential_address_input"))
 						.getAttribute("name");
@@ -689,6 +721,8 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.executeScript("return "
 								+ customerReferenceJsPaths.getElement("office_address_mandatory_verification"))
 						.toString();
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("office_address_input")));
 				fieldValidation = javascriptHelper
 						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("office_address_input"))
 						.getAttribute("name");
@@ -706,6 +740,8 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 
 		for (int i = 0; i <= 150; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("office_address_input")));
 				javascriptHelper
 						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("office_address_input"))
 						.click();
@@ -733,6 +769,8 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.executeScript("return "
 								+ customerReferenceJsPaths.getElement("contact_number_mandatory_verification"))
 						.toString();
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("contact_number_input")));
 				fieldValidation = javascriptHelper
 						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("contact_number_input"))
 						.getAttribute("type");
@@ -776,6 +814,8 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.executeScript("return "
 								+ customerReferenceJsPaths.getElement("office_phone_number_mandatory_verification"))
 						.toString();
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("office_phone_number_input")));
 				fieldValidation = javascriptHelper
 						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("office_phone_number_input"))
 						.getAttribute("type");
@@ -820,6 +860,8 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.executeScript("return "
 								+ customerReferenceJsPaths.getElement("primary_mobile_number_mandatory_verification"))
 						.toString();
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						customerReferenceJsPaths.getElement("primary_mobile_number_input")));
 				fieldValidation = javascriptHelper
 						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("primary_mobile_number_input"))
 						.getAttribute("type");
@@ -860,10 +902,13 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 		String fieldValidation = "";
 		for (int i = 0; i <= 150; i++) {
 			try {
+
 				mandatoryVerification = javascriptHelper
 						.executeScript("return "
 								+ customerReferenceJsPaths.getElement("alternate_mobile_number_mandatory_verification"))
 						.toString();
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						customerReferenceJsPaths.getElement("altername_mobile_number_input")));
 				fieldValidation = javascriptHelper
 						.executeScriptWithWebElement(
 								customerReferenceJsPaths.getElement("altername_mobile_number_input"))
@@ -908,6 +953,8 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.executeScript(
 								"return " + customerReferenceJsPaths.getElement("email_id_mandatory_verification"))
 						.toString();
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("email_id_input")));
 				fieldValidation = javascriptHelper
 						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("email_id_input"))
 						.getAttribute("type");
@@ -950,6 +997,8 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.executeScript(
 								"return " + customerReferenceJsPaths.getElement("years_known_mandatory_verification"))
 						.toString();
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("years_known_input")));
 				fieldValidation = javascriptHelper
 						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("years_known_input"))
 						.getAttribute("type");
@@ -992,6 +1041,8 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 						.executeScript(
 								"return " + customerReferenceJsPaths.getElement("CIF_number_mandatory_verification"))
 						.toString();
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("cif_number_input")));
 				fieldValidation = javascriptHelper
 						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("cif_number_input"))
 						.getAttribute("type");
@@ -1028,6 +1079,8 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 
 		for (int i = 0; i <= 150; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(
+						javascriptHelper.executeScriptWithWebElement(CommonJSElements.getElement("save_button")));
 				javascriptHelper.executeScriptWithWebElement(CommonJSElements.getElement("save_button")).click();
 				break;
 			} catch (Exception e) {
@@ -1073,6 +1126,8 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 			throws Throwable {
 		for (int i = 0; i <= 150; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(
+						javascriptHelper.executeScriptWithWebElement(CommonJSElements.getElement("save_button")));
 				javascriptHelper.executeScriptWithWebElement(CommonJSElements.getElement("save_button")).click();
 				break;
 			} catch (Exception e) {
@@ -1112,6 +1167,8 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 
 		for (int i = 0; i <= 150; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("first_name_input")));
 				javascriptHelper.executeScriptWithWebElement(customerReferenceJsPaths.getElement("first_name_input"))
 						.click();
 				javascriptHelper.executeScriptWithWebElement(customerReferenceJsPaths.getElement("first_name_input"))
@@ -1157,6 +1214,8 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 			throws Throwable {
 		for (int i = 0; i <= 150; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("email_id_input")));
 				javascriptHelper.executeScriptWithWebElement(customerReferenceJsPaths.getElement("email_id_input"))
 						.click();
 				javascriptHelper.executeScriptWithWebElement(customerReferenceJsPaths.getElement("email_id_input"))
@@ -1200,6 +1259,8 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 			throws Throwable {
 		for (int i = 0; i <= 150; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("years_known_input")));
 				javascriptHelper.executeScriptWithWebElement(customerReferenceJsPaths.getElement("years_known_input"))
 						.click();
 				javascriptHelper.executeScriptWithWebElement(customerReferenceJsPaths.getElement("years_known_input"))
@@ -1238,6 +1299,8 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 	public void user_076_076_076_click_on_back_button_in_customer_reference_screen_at_new_app_stage() throws Throwable {
 		for (int i = 0; i <= 150; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(
+						javascriptHelper.executeScriptWithWebElement(CommonJSElements.getElement("back_button")));
 				javascriptHelper.executeScriptWithWebElement(CommonJSElements.getElement("back_button")).click();
 				break;
 			} catch (Exception e) {
@@ -1413,6 +1476,8 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 	public void user_076_076_update_the_first_name_in_customer_reference_at_new_app_stage() throws Throwable {
 		for (int i = 0; i < 300; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("first_name_input")));
 				javascriptHelper.executeScriptWithWebElement(customerReferenceJsPaths.getElement("first_name_input"))
 						.sendKeys(Keys.chord(Keys.CONTROL, "A", Keys.BACK_SPACE));
 				break;
@@ -1488,6 +1553,8 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 	public void user_076_076_make_salutation_first_as_blank_option_at_customer_reference_screen() throws Throwable {
 		for (int i = 0; i <= 150; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("salutation_dropdown")));
 				javascriptHelper.executeScriptWithWebElement(customerReferenceJsPaths.getElement("salutation_dropdown"))
 						.click();
 				break;
@@ -1505,6 +1572,8 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 	public void user_076_076_make_first_name_fild_as_blank_field_in_customer_reference_screen() throws Throwable {
 		for (int i = 0; i < 5; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("first_name_input")));
 				javascriptHelper.executeScriptWithWebElement(customerReferenceJsPaths.getElement("first_name_input"))
 						.sendKeys(Keys.chord(Keys.CONTROL, "A", Keys.BACK_SPACE));
 				break;
@@ -1521,6 +1590,8 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 	public void user_076_076_make_email_id_field_as_blank_field_in_customer_reference_screen() throws Throwable {
 		for (int i = 0; i < 5; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("email_id_input")));
 				javascriptHelper.executeScriptWithWebElement(customerReferenceJsPaths.getElement("email_id_input"))
 						.click();
 				javascriptHelper.executeScriptWithWebElement(customerReferenceJsPaths.getElement("email_id_input"))
@@ -1539,6 +1610,8 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 	public void user_076_076_make_no_of_years_known_field_as_blank_in_customer_reference_screen() throws Throwable {
 		for (int i = 0; i < 5; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("years_known_input")));
 				javascriptHelper.executeScriptWithWebElement(customerReferenceJsPaths.getElement("years_known_input"))
 						.click();
 				javascriptHelper.executeScriptWithWebElement(customerReferenceJsPaths.getElement("years_known_input"))
@@ -1577,6 +1650,8 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 		}
 		for (int i = 0; i <= 150; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(customerReferenceJsPaths.getElement("status_button")));
 				javascriptHelper.executeScriptWithWebElement(customerReferenceJsPaths.getElement("status_button"))
 						.click();
 				break;
@@ -1768,6 +1843,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 		String listViewSearch = "document.querySelector('input[mode=\"ios\"]')";
 		for (int i = 0; i < 5; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(listViewSearch));
 				javascriptHelper.executeScriptWithWebElement(listViewSearch).click();
 				javascriptHelper.executeScriptWithWebElement(listViewSearch)
 						.sendKeys(Keys.chord(Keys.CONTROL, "A", Keys.BACK_SPACE));
@@ -1846,6 +1922,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 
 		for (int i = 0; i <= 300; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(CommonJSElements.getElement("pdf_download")));
 				javascriptHelper.executeScriptWithWebElement(CommonJSElements.getElement("pdf_download")).click();
 				break;
 
@@ -1885,6 +1962,7 @@ public class NewApp_CustomerReferenceListViewSteps extends BaseClass {
 	public void user_076_click_on_xls_export_option_in_customer_reference_at_new_app_stage() {
 		for (int i = 0; i <= 300; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(CommonJSElements.getElement("xls_download")));
 				javascriptHelper.executeScriptWithWebElement(CommonJSElements.getElement("xls_download")).click();
 				break;
 

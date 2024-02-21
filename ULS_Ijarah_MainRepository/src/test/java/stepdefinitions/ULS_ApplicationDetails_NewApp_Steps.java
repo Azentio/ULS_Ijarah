@@ -57,6 +57,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	Map<String, String> newApplicationTestData = new HashMap<>();
 	Map<String, String> newApplicationExecutionData = new HashMap<>();
 	ClicksAndActionsHelper clicksAndActionsHelper = new ClicksAndActionsHelper(driver);
+
 	String toastMessage = "";
 	SoftAssert softAssert = new SoftAssert();
 	SoftAssert updateSoftAssert = new SoftAssert();
@@ -65,16 +66,16 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	@And("user_076 get the test data for test case id AT_IJ_APP_01")
 	public void user_076_get_the_test_data_for_test_case_id_AT_IJ_APP_01() throws Throwable {
 		newApplicationExecutionData = IjarahExecutionSheet.getTestdata("AT_IJ_APP_01");
-		System.out.println("Data Set ID "+newApplicationExecutionData.get("dataSet_ID"));
+		System.out.println("Data Set ID " + newApplicationExecutionData.get("dataSet_ID"));
 		newApplicationTestData = excelDataForApplicationDetailsTestData
 				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
-		System.out.println("Data Set ID "+newApplicationTestData.get("Dataset ID"));
+		System.out.println("Data Set ID " + newApplicationTestData.get("Dataset ID"));
 	}
 
 	@And("user_076 get the test data for test case id AT_IJ_APP_02")
 	public void user_076_get_the_test_data_for_test_case_id_AT_IJ_APP_02() throws Throwable {
 		newApplicationExecutionData = IjarahExecutionSheet.getTestdata("AT_IJ_APP_02");
-		System.out.println("Data Set ID "+newApplicationExecutionData.get("dataSet_ID"));
+		System.out.println("Data Set ID " + newApplicationExecutionData.get("dataSet_ID"));
 		newApplicationTestData = excelDataForApplicationDetailsTestData
 				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
 	}
@@ -178,6 +179,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_076ser_click_on_transactions_module() throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(commonJSPaths.getElement("transaction_main_module")));
 				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("transaction_main_module"))
 						.click();
 				break;
@@ -193,6 +196,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_076ser_click_on_applicationn_manager_feature() throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(commonJSPaths.getElement("application_manager_module")));
 				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("application_manager_module"))
 						.click();
 				break;
@@ -209,9 +214,11 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		WebElement searchTextBox;
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(
+						javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("mail_box_search_text")));
 				searchTextBox = javascriptHelper
 						.executeScriptWithWebElement(commonJSPaths.getElement("mail_box_search_text"));
-				System.out.println("Record reference number "+newApplicationTestData.get("record_reference_number"));
+				System.out.println("Record reference number " + newApplicationTestData.get("record_reference_number"));
 				searchTextBox.sendKeys(newApplicationTestData.get("record_reference_number"));
 				break;
 			} catch (Exception e) {
@@ -253,7 +260,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 					if (recordRefNumber.equals(newApplicationTestData.get("record_reference_number"))) {
 						System.out.println("document.querySelectorAll('button[icon=\"pi pi-user-edit\"]')[" + j + "]");
 						// document.querySelectorAll('button[icon="pi pi-user-edit"]')[0]
-
+						clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('button[icon=\"pi pi-user-edit\"]')[" + j + "]"));
 						javascriptHelper
 								.executeScriptWithWebElement(
 										"document.querySelectorAll('button[icon=\"pi pi-user-edit\"]')[" + j + "]")
@@ -305,6 +313,9 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						"document.querySelectorAll('ion-accordion[value=\"Transactions\"] ion-item ion-list ion-item ion-button')["
+								+ labelLocation + "]"));
 				javascriptHelper.executeScriptWithWebElement(
 						"document.querySelectorAll('ion-accordion[value=\"Transactions\"] ion-item ion-list ion-item ion-button')["
 								+ labelLocation + "]")
@@ -376,6 +387,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		WebElement searchTextBox;
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(
+						javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("mail_box_search_text")));
 				searchTextBox = javascriptHelper
 						.executeScriptWithWebElement(commonJSPaths.getElement("mail_box_search_text"));
 				searchTextBox.sendKeys(newApplicationTestData.get("record_reference_number"));
@@ -393,6 +406,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_076_click_on_save_button_while_open_the_application_details_record() throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(
+						javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("save_button")));
 				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("save_button")).click();
 				if (i > 150) {
 					javascriptHelper.JSEClick(
@@ -412,6 +427,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_076_click_on_add_button_of_application_details_record() throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("application_details_add_button")));
 				javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("application_details_add_button")).click();
 				break;
@@ -427,6 +444,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_076_in_customer_search_screen_select_the_customer_type() throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(customerSearchJSPaths.getElement("customer_type_dropdown")));
 				javascriptHelper.executeScriptWithWebElement(customerSearchJSPaths.getElement("customer_type_dropdown"))
 						.click();
 				break;
@@ -437,75 +456,50 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 			}
 		}
 		clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("customer_type"));
-	/*	String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
-		String dropdownLength = "";
-		boolean isDropdownValueSelected = false;
-		String dropdownString = "";
-		for (int i = 0; i <= 100; i++) {
-			try {
-				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
-				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
-					break;
-				}
-			} catch (Exception e) {
-				if (i == 100) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
-		for (int j = 0; j <= premitiveDropdownLength; j++) {
-
-			for (int l = 0; l <= 100; l++) {
-				try {
-					System.out.println("L value is " + l);
-					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
-					dropdownString = javascriptHelper.executeScript(
-							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
-							.toString();
-					if (!(dropdownString.isEmpty())) {
-						System.out.println(dropdownString);
-						System.out.println("Loop count " + l + " got breaked");
-						break;
-					}
-				} catch (Exception e) {
-					if (l == 100 && !(dropdownString.isEmpty())) {
-						Assert.fail(e.getMessage());
-					}
-				}
-				if (!(dropdownString.isEmpty())) {
-					System.out.println(dropdownString);
-					System.out.println("Loop count " + l + " got breaked");
-					break;
-				}
-			}
-			System.out.println("String " + dropdownString.trim());
-			System.out.println("Map " + newApplicationTestData.get("customer_type").trim());
-			if ((dropdownString.trim()).equalsIgnoreCase((newApplicationTestData.get("customer_type")).trim())) {
-
-				for (int k = 0; k <= 100; k++) {
-					try {
-
-						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
-								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
-								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-						isDropdownValueSelected = true;
-						break;
-					} catch (Exception e) {
-						if (k == 100) {
-							Assert.fail(e.getMessage());
-
-						}
-					}
-				}
-			}
-			if (isDropdownValueSelected == true) {
-				break;
-			}
-
-		}*/
+		/*
+		 * String jqueryForDropdownLength =
+		 * "document.querySelectorAll('ion-radio-group ion-radio').length"; String
+		 * dropdownLength = ""; boolean isDropdownValueSelected = false; String
+		 * dropdownString = ""; for (int i = 0; i <= 100; i++) { try { dropdownLength =
+		 * javascriptHelper.executeScript("return " +
+		 * jqueryForDropdownLength).toString(); System.out.println("Dropdown length " +
+		 * dropdownLength); if (!(dropdownLength.isEmpty()) &&
+		 * !(dropdownLength.equals("0"))) { break; } } catch (Exception e) { if (i ==
+		 * 100) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
+		 * Integer.parseInt(dropdownLength); for (int j = 0; j <=
+		 * premitiveDropdownLength; j++) {
+		 * 
+		 * for (int l = 0; l <= 100; l++) { try { System.out.println("L value is " + l);
+		 * System.out.println("document.querySelectorAll('ion-radio-group ion-label')["
+		 * + j + "].innerText"); dropdownString = javascriptHelper.executeScript(
+		 * "return document.querySelectorAll('ion-radio-group ion-label')[" + j +
+		 * "].innerText") .toString(); if (!(dropdownString.isEmpty())) {
+		 * System.out.println(dropdownString); System.out.println("Loop count " + l +
+		 * " got breaked"); break; } } catch (Exception e) { if (l == 100 &&
+		 * !(dropdownString.isEmpty())) { Assert.fail(e.getMessage()); } } if
+		 * (!(dropdownString.isEmpty())) { System.out.println(dropdownString);
+		 * System.out.println("Loop count " + l + " got breaked"); break; } }
+		 * System.out.println("String " + dropdownString.trim());
+		 * System.out.println("Map " +
+		 * newApplicationTestData.get("customer_type").trim()); if
+		 * ((dropdownString.trim()).equalsIgnoreCase((newApplicationTestData.get(
+		 * "customer_type")).trim())) {
+		 * 
+		 * for (int k = 0; k <= 100; k++) { try {
+		 * 
+		 * clicksAndActionsHelper.moveToElement(javascriptHelper.
+		 * executeScriptWithWebElement(
+		 * "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+		 * clicksAndActionsHelper.clickOnElement(javascriptHelper.
+		 * executeScriptWithWebElement(
+		 * "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+		 * isDropdownValueSelected = true; break; } catch (Exception e) { if (k == 100)
+		 * { Assert.fail(e.getMessage());
+		 * 
+		 * } } } } if (isDropdownValueSelected == true) { break; }
+		 * 
+		 * }
+		 */
 
 	}
 
@@ -530,6 +524,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_076_in_custommer_search_screen_select_id_type() throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(customerSearchJSPaths.getElement("id_type_dropdown")));
 				javascriptHelper.executeScriptWithWebElement(customerSearchJSPaths.getElement("id_type_dropdown"))
 						.click();
 				break;
@@ -541,81 +537,56 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		}
 		clicksAndActionsHelper.jsSelectUsingText(newApplicationTestData.get("id_type"));
 		/*
-		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
-		String dropdownLength = "";
-		boolean isDropdownValueSelected = false;
-		String dropdownString = "";
-		for (int i = 0; i <= 100; i++) {
-			try {
-				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
-				System.out.println("Dropdown length " + dropdownLength);
-				if (!(dropdownLength.isEmpty()) && !(dropdownLength.equals("0"))) {
-					break;
-				}
-			} catch (Exception e) {
-				if (i == 100) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
-		for (int j = 0; j <= premitiveDropdownLength; j++) {
-
-			for (int l = 0; l <= 100; l++) {
-				try {
-					System.out.println("L value is " + l);
-					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
-					dropdownString = javascriptHelper.executeScript(
-							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText")
-							.toString();
-					if (!(dropdownString.isEmpty())) {
-						System.out.println(dropdownString);
-						System.out.println("Loop count " + l + " got breaked");
-						break;
-					}
-				} catch (Exception e) {
-					if (l == 100 && !(dropdownString.isEmpty())) {
-						Assert.fail(e.getMessage());
-					}
-				}
-				if (!(dropdownString.isEmpty())) {
-					System.out.println(dropdownString);
-					System.out.println("Loop count " + l + " got breaked");
-					break;
-				}
-			}
-			System.out.println("String " + dropdownString.trim());
-			System.out.println("Map " + newApplicationTestData.get("id_type").trim());
-			if ((dropdownString.trim()).equalsIgnoreCase((newApplicationTestData.get("id_type")).trim())) {
-
-				for (int k = 0; k <= 100; k++) {
-					try {
-
-						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
-								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
-								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
-						isDropdownValueSelected = true;
-						break;
-					} catch (Exception e) {
-						if (k == 100) {
-							Assert.fail(e.getMessage());
-
-						}
-					}
-				}
-			}
-			if (isDropdownValueSelected == true) {
-				break;
-			}
-
-		}*/
+		 * String jqueryForDropdownLength =
+		 * "document.querySelectorAll('ion-radio-group ion-radio').length"; String
+		 * dropdownLength = ""; boolean isDropdownValueSelected = false; String
+		 * dropdownString = ""; for (int i = 0; i <= 100; i++) { try { dropdownLength =
+		 * javascriptHelper.executeScript("return " +
+		 * jqueryForDropdownLength).toString(); System.out.println("Dropdown length " +
+		 * dropdownLength); if (!(dropdownLength.isEmpty()) &&
+		 * !(dropdownLength.equals("0"))) { break; } } catch (Exception e) { if (i ==
+		 * 100) { Assert.fail(e.getMessage()); } } } int premitiveDropdownLength =
+		 * Integer.parseInt(dropdownLength); for (int j = 0; j <=
+		 * premitiveDropdownLength; j++) {
+		 * 
+		 * for (int l = 0; l <= 100; l++) { try { System.out.println("L value is " + l);
+		 * System.out.println("document.querySelectorAll('ion-radio-group ion-label')["
+		 * + j + "].innerText"); dropdownString = javascriptHelper.executeScript(
+		 * "return document.querySelectorAll('ion-radio-group ion-label')[" + j +
+		 * "].innerText") .toString(); if (!(dropdownString.isEmpty())) {
+		 * System.out.println(dropdownString); System.out.println("Loop count " + l +
+		 * " got breaked"); break; } } catch (Exception e) { if (l == 100 &&
+		 * !(dropdownString.isEmpty())) { Assert.fail(e.getMessage()); } } if
+		 * (!(dropdownString.isEmpty())) { System.out.println(dropdownString);
+		 * System.out.println("Loop count " + l + " got breaked"); break; } }
+		 * System.out.println("String " + dropdownString.trim());
+		 * System.out.println("Map " + newApplicationTestData.get("id_type").trim()); if
+		 * ((dropdownString.trim()).equalsIgnoreCase((newApplicationTestData.get(
+		 * "id_type")).trim())) {
+		 * 
+		 * for (int k = 0; k <= 100; k++) { try {
+		 * 
+		 * clicksAndActionsHelper.moveToElement(javascriptHelper.
+		 * executeScriptWithWebElement(
+		 * "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+		 * clicksAndActionsHelper.clickOnElement(javascriptHelper.
+		 * executeScriptWithWebElement(
+		 * "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+		 * isDropdownValueSelected = true; break; } catch (Exception e) { if (k == 100)
+		 * { Assert.fail(e.getMessage());
+		 * 
+		 * } } } } if (isDropdownValueSelected == true) { break; }
+		 * 
+		 * }
+		 */
 	}
 
 	@And("user_076 in customer search screen enter id number")
 	public void user_076_in_customer_search_screen_enter_id_number() throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(customerSearchJSPaths.getElement("id_number_input")));
 				javascriptHelper.executeScriptWithWebElement(customerSearchJSPaths.getElement("id_number_input"))
 						.click();
 				javascriptHelper.executeScriptWithWebElement(customerSearchJSPaths.getElement("id_number_input"))
@@ -633,6 +604,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_076_in_customer_search_screen_enter_date_of_birth_of_the_customer() throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(customerSearchJSPaths.getElement("date_of_birth_calendar_input")));
 				javascriptHelper
 						.executeScriptWithWebElement(customerSearchJSPaths.getElement("date_of_birth_calendar_input"))
 						.click();
@@ -649,6 +622,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		for (int i = 0; i <= 100; i++) {
 			try {
 				System.out.println(customerSearchJSPaths.getElement("date_highlighted_button"));
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(customerSearchJSPaths.getElement("date_highlighted_button")));
 				javascriptHelper
 						.executeScriptWithWebElement(customerSearchJSPaths.getElement("date_highlighted_button"))
 						.click();
@@ -672,6 +647,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		System.out.println("Mobile number js path " + customerSearchJSPaths.getElement("customer_search_mobile_input"));
 		for (int i = 0; i <= 300; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(customerSearchJSPaths.getElement("customer_search_mobile_input")));
 				javascriptHelper
 						.executeScriptWithWebElement(customerSearchJSPaths.getElement("customer_search_mobile_input"))
 						.click();
@@ -692,6 +669,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_076_click_on_the_search_button_in_customer_search_screen() throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						customerSearchJSPaths.getElement("customer_search_search_button")));
 				javascriptHelper
 						.executeScriptWithWebElement(customerSearchJSPaths.getElement("customer_search_search_button"))
 						.click();
@@ -708,6 +687,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_076_click_on_create_new_request_buttton() throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						"document.querySelectorAll('button[class=\"p-element p-button-info p-button-sm w-90 m-2 pull-right p-button p-component\"]')[2]"));
 				javascriptHelper.executeScriptWithWebElement(
 						"document.querySelectorAll('button[class=\"p-element p-button-info p-button-sm w-90 m-2 pull-right p-button p-component\"]')[2]")
 						.click();
@@ -724,17 +705,20 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	@Then("user_076 verify save button and back buttons are visible in new application screen")
 	public void user_076_verify_save_button_and_back_buttons_are_visible_in_new_application_screen() throws Throwable {
 		boolean saveButtonVerification = false;
-		boolean backButtonVerification = false;
+
 		for (int i = 0; i <= 50; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(commonJSPaths.getElement("confirmation_save_button")));
 				saveButtonVerification = javascriptHelper
-						.executeScriptWithWebElement(commonJSPaths.getElement("confirmation_save_button")).isDisplayed();
+						.executeScriptWithWebElement(commonJSPaths.getElement("confirmation_save_button"))
+						.isDisplayed();
 				break;
 			} catch (Exception e) {
 
 			}
 		}
-		
+
 		softAssert.assertTrue(saveButtonVerification, "Save button is not visisble hence failed");
 	}
 
@@ -742,6 +726,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_076_verify_product_field_should_be_mandatory_editable_dropdown() throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("product_product_dropdown")));
 				javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("product_product_dropdown"))
 						.click();
@@ -801,6 +787,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		String fieldTypeValidation = "";
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("product_product_dropdown")));
 				mandatoryVerification = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("product_product_dropdown"))
 						.getAttribute("aria-label");
@@ -827,6 +815,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_076_verify_sub_product_field_should_be_mandatory_editable_dropdown() throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(applicationDetailsElements.getElement("sub_product_dropdown")));
 				javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("sub_product_dropdown"))
 						.click();
@@ -886,6 +876,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		String fieldTypeValidation = "";
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(applicationDetailsElements.getElement("sub_product_dropdown")));
 				mandatoryVerification = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("sub_product_dropdown"))
 						.getAttribute("aria-label");
@@ -912,6 +904,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_verify_clasification_should_be_editable_mandatory_dropdown() throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("product_product_dropdown")));
 				javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("product_product_dropdown"))
 						.click();
@@ -953,6 +947,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_verify_product_field_should_be_editable_mandatory_drodown() throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("product_product_dropdown")));
 				javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("product_product_dropdown"))
 						.click();
@@ -993,6 +989,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_076_verify_total_finance_amount_request_field_should_be_mantatory_numeric() throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("total_amount_requested_input")));
 				javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("total_amount_requested_input")).click();
 				javascriptHelper
@@ -1038,6 +1036,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_076_verify_declared_net_monthly_income_field_should_be_mandatory_numeric() throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("declared_net_income_input")));
 				javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("declared_net_income_input"))
 						.click();
@@ -1083,6 +1083,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 			throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("declared_current_obligation_input")));
 				javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("declared_current_obligation_input")).click();
 				javascriptHelper
@@ -1128,6 +1130,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 			throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("special_promotion_dropdown")));
 				javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("special_promotion_dropdown")).click();
 				break;
@@ -1216,6 +1220,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_076_verify_sourcing_channel_field_should_be_mandatory_editable_dropdown() throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("sourcing_channel_dropdown")));
 				javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("sourcing_channel_dropdown"))
 						.click();
@@ -1302,6 +1308,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_076_verify_business_center_code_field_should_be_mandatory_editable_dropdown() throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("business_center_code_dropdown")));
 				javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("business_center_code_dropdown")).click();
 				break;
@@ -1387,6 +1395,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_076_verify_service_type_field_should_be_mandatory_editable_dropdown() throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(applicationDetailsElements.getElement("servicing_type_dropdown")));
 				javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("servicing_type_dropdown"))
 						.click();
@@ -1473,6 +1483,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_076_verify_region_field_should_be_mandatory_editable_dropdown() throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(applicationDetailsElements.getElement("region_dropdown")));
 				javascriptHelper.executeScriptWithWebElement(applicationDetailsElements.getElement("region_dropdown"))
 						.click();
 				break;
@@ -1558,6 +1570,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_076_verify_servicing_branch_field_should_be_mandatory_editable_dropdown() throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("servicing_branch_dropdown")));
 				javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("servicing_branch_dropdown"))
 						.click();
@@ -1644,6 +1658,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_076_verify_spoke_location_field_should_be_non_mandatory_editable_dropdown() throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(applicationDetailsElements.getElement("spoke_location_dropdown")));
 				javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("spoke_location_dropdown"))
 						.click();
@@ -1731,6 +1747,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 			throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("closing_staff_of_servicing_staff_RM_dropdown")));
 				javascriptHelper
 						.executeScriptWithWebElement(
 								applicationDetailsElements.getElement("closing_staff_of_servicing_staff_RM_dropdown"))
@@ -1823,6 +1841,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		boolean statusOfTheField = false;
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(applicationDetailsElements.getElement("topup_type_dropdown")));
 				statusOfTheField = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("topup_type_dropdown"))
 						.isDisplayed();
@@ -1842,6 +1862,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		boolean statusOfTheField = false;
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(applicationDetailsElements.getElement("topup_type_dropdown")));
 				statusOfTheField = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("topup_type_dropdown"))
 						.isDisplayed();
@@ -1859,6 +1881,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_076_verify_sourcing_type_field_should_be_mandatory_editable_lookup() throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(applicationDetailsElements.getElement("sourcing_type_dropdown")));
 				javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("sourcing_type_dropdown"))
 						.click();
@@ -1945,6 +1969,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_076_verify_sourcing_office_field_should_be_mandatory_editable_lookup() throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("sourcing_office_dropdown")));
 				javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("sourcing_office_dropdown"))
 						.click();
@@ -2031,6 +2057,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_076_verify_sourcing_entity_field_should_be_mandatory_editable_lookup() throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("sourcing_entity_dropdown")));
 				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("sourcing_entity_dropdown")));
 				javascriptHelper
@@ -2119,6 +2147,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_076_verify_sourcing_staff_field_should_be_non_mandatory_editable_lookup() throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(applicationDetailsElements.getElement("sourcing_staff_dropdown")));
 				javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("sourcing_staff_dropdown"))
 						.click();
@@ -2203,6 +2233,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_076_verify_reference_type_field_should_be_non_mandatory_editable_lookup() throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(applicationDetailsElements.getElement("reference_type_dropdown")));
 				javascriptHelper.scrollIntoView(javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("reference_type_dropdown")));
 				javascriptHelper
@@ -2291,6 +2323,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_076_verify_reference_entity_field_should_be_non_mandatory_editable_lookup() throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("reference_entity_dropdown")));
 				javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("reference_entity_dropdown"))
 						.click();
@@ -2377,6 +2411,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_076_verify_reference_code_field_should_be_non_mandatory_editable_textbox() throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(applicationDetailsElements.getElement("reference_code_input")));
 				javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("reference_code_input"))
 						.click();
@@ -2421,6 +2457,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_076_click_on_save_button_in_application_details_new_app_record() throws Throwable {
 		for (int i = 0; i <= 15; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(applicationDetailsElements.getElement("reference_code_input")));
 
 				javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("reference_code_input"))
@@ -2432,7 +2470,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		}
 		for (int i = 0; i <= 100; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("confirmation_save_button")).click();
+				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("confirmation_save_button"))
+						.click();
 				break;
 			} catch (Exception e) {
 				if (i == 100) {
@@ -2442,7 +2481,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		}
 		for (int i = 0; i <= 100; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("save_confirmation_ok_button")).click();
+				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("save_confirmation_ok_button"))
+						.click();
 				break;
 			} catch (Exception e) {
 				if (i == 100) {
@@ -2487,6 +2527,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		System.out.println("Reference Number " + extractedReferenceNumber);
 		configFileReader.setMurabahaRecordReferenceNumber(extractedReferenceNumber);
 	}
+
 	@And("user_076 store the tawruqq record reference number to test new app screens")
 	public void user_076_store_the_tawruqq_record_reference_number_to_test_new_app_screens() throws Throwable {
 		String extractedReferenceNumber = toastMessage.substring(37);
@@ -2501,8 +2542,10 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		excelDataForApplicationDetailsTestDataForMurabha.updateTestData(newApplicationTestData.get("Dataset ID"),
 				"record_reference_number", finalRecordReferenceNumber);
 	}
+
 	@And("user_076 extract the application details record reference number in new app stage for tawruqq")
-	public void user_076_extract_the_application_details_record_reference_number_in_new_app_stage_for_tawruqq() throws Throwable {
+	public void user_076_extract_the_application_details_record_reference_number_in_new_app_stage_for_tawruqq()
+			throws Throwable {
 		String finalRecordReferenceNumber = toastMessageForReferenceNumber.substring(36).trim();
 		System.out.println("Final reference number " + finalRecordReferenceNumber);
 		excelDataForApplicationDetailsTestDataForTawrruq.updateTestData(newApplicationTestData.get("Dataset ID"),
@@ -2547,6 +2590,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 			throws Throwable {
 		for (int i = 0; i <= 10; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("total_amount_requested_input")));
 				javascriptHelper
 						.executeScriptWithWebElement(
 								applicationDetailsElements.getElement("total_amount_requested_input"))
@@ -2562,7 +2607,10 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 			throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
-				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("confirmation_save_button")).click();
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(commonJSPaths.getElement("confirmation_save_button")));
+				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("confirmation_save_button"))
+						.click();
 				break;
 			} catch (Exception e) {
 				if (i == 100) {
@@ -2599,6 +2647,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_076_enter_the_negative_input_in_numeric_field_in_application_details_screen() throws Throwable {
 		for (int i = 0; i <= 20; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("total_amount_requested_input")));
 				javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("total_amount_requested_input")).click();
 				javascriptHelper
@@ -2640,6 +2690,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_076_enter_the_special_character_input_field_in_application_details_screen() throws Throwable {
 		for (int i = 0; i <= 20; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("total_amount_requested_input")));
 				javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("total_amount_requested_input")).click();
 				javascriptHelper
@@ -2695,6 +2747,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 			throws Throwable {
 		for (int i = 0; i <= 10; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("total_amount_requested_input")));
 				javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("total_amount_requested_input")).click();
 				javascriptHelper
@@ -2754,6 +2808,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_076_click_on_edit_button_of_new_application_list_view_record() throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("new_application_listview_edit_button")));
 				javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("new_application_listview_edit_button")).click();
 				break;
@@ -2769,7 +2825,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_076_update_the_list_view_record_of_application_details_record() throws Throwable {
 		for (int i = 0; i < 20; i++) {
 			try {
-
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("total_amount_requested_input")));
 				javascriptHelper
 						.executeScriptWithWebElement(
 								applicationDetailsElements.getElement("total_amount_requested_input"))
@@ -2836,7 +2893,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 
 		for (int i = 0; i <= 50; i++) {
 			try {
-				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("new_application_details_status_button")));
 				javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("new_application_details_status_button")).click();
@@ -2855,6 +2912,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 
 		for (int i = 0; i <= 10; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(applicationDetailsElements.getElement("reference_code_input")));
 				javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("reference_code_input"))
 						.click();
@@ -2868,7 +2927,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 
 		for (int i = 0; i <= 50; i++) {
 			try {
-
+				clicksAndActionsHelper.scrollIntoView(
+						javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("save_button")));
 				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("save_button")).click();
 				break;
 			} catch (Exception e) {
@@ -2914,6 +2974,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 
 		for (int i = 0; i <= 50; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("new_application_listview_edit_button")));
 				javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("new_application_listview_edit_button")).click();
 				break;
@@ -2926,7 +2988,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		Thread.sleep(500);
 		for (int i = 0; i <= 50; i++) {
 			try {
-				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("new_application_details_status_button")));
 				javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("new_application_details_status_button")).click();
@@ -2944,6 +3006,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		}
 		for (int i = 0; i <= 10; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper
+						.executeScriptWithWebElement(applicationDetailsElements.getElement("reference_code_input")));
 				javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("reference_code_input"))
 						.click();
@@ -2957,6 +3021,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 
 		for (int i = 0; i <= 50; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(
+						javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("save_button")));
 				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("save_button")).click();
 				break;
 			} catch (Exception e) {
@@ -3005,6 +3071,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		boolean statusOfSubmitButton = false;
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("new_application_submit_button")));
 				statusOfSubmitButton = javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("new_application_submit_button")).isDisplayed();
 				break;
@@ -3023,6 +3091,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		boolean statusOfReturnButton = false;
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("new_application_return_button")));
 				statusOfReturnButton = javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("new_application_return_button")).isDisplayed();
 				break;
@@ -3040,6 +3110,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		boolean statusOfViewSummaryButton = false;
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("new_aplication_view_summary_button")));
 				statusOfViewSummaryButton = javascriptHelper
 						.executeScriptWithWebElement(
 								applicationDetailsElements.getElement("new_aplication_view_summary_button"))
@@ -3075,6 +3147,9 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 
 		for (int i = 0; i < numberOfViewSummaryButton; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						"document.querySelectorAll('kub-workflow-decision button[icon=\"pi pi-info-circle\"]')[" + i
+								+ "]"));
 				javascriptHelper.executeScriptWithWebElement(
 						"document.querySelectorAll('kub-workflow-decision button[icon=\"pi pi-info-circle\"]')[" + i
 								+ "]")
@@ -3094,6 +3169,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		for (int i = 0; i <= 100; i++) {
 			try {
 				System.out.println(applicationDetailsElements.getElement("view_summary_verification"));
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("view_summary_verification")));
 				statusOfViewSummaryScreen = javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("view_summary_verification"))
 						.isDisplayed();
@@ -3124,6 +3201,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_076_click_on_back_button_in_application_details_update_screen() throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(
+						javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("back_button")));
 				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("back_button")).click();
 				break;
 			} catch (Exception e) {
@@ -3138,6 +3217,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_click_on_list_view_edit_button_in_application_details_record_at_new_app_stage() {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("application_details_list_view_record")));
 				javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("application_details_list_view_record")).click();
 				break;
@@ -3180,6 +3261,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 
 		for (int i = 0; i <= 10; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("total_amount_requested_input")));
 				javascriptHelper
 						.executeScriptWithWebElement(
 								applicationDetailsElements.getElement("total_amount_requested_input"))
@@ -3190,6 +3273,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		}
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("total_amount_requested_input")));
 				javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("total_amount_requested_input")).click();
 				javascriptHelper
@@ -3211,6 +3296,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		boolean addButtonStatus = false;
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("application_details_add_button")));
 				addButtonStatus = javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("application_details_add_button")).isDisplayed();
 				break;
@@ -3228,6 +3315,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 			throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("application_details_view_summary_button")));
 				javascriptHelper
 						.executeScriptWithWebElement(
 								applicationDetailsElements.getElement("application_details_view_summary_button"))
@@ -3249,6 +3338,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		boolean ststauOfViewSummary = false;
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("appllication_details_view_summary_verification")));
 				ststauOfViewSummary = javascriptHelper
 						.executeScriptWithWebElement(
 								applicationDetailsElements.getElement("appllication_details_view_summary_verification"))
@@ -3280,6 +3371,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 			throws Throwable {
 		for (int i = 0; i <= 200; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(
+						javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("back_button")));
 				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("back_button")).click();
 				break;
 			} catch (Exception e) {
@@ -3297,6 +3390,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		boolean statusOfBackButton = false;
 		for (int i = 0; i <= 150; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("application_details_add_button")));
 				statusOfBackButton = javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("application_details_add_button")).isDisplayed();
 				break;
@@ -3318,6 +3413,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 			try {
 				System.out.println(
 						applicationDetailsElements.getElement("application_details_list_view_record_is_read_only"));
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("application_details_list_view_record_is_read_only")));
 				javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("application_details_list_view_record_is_read_only"))
 						.sendKeys("9829787");
@@ -3335,6 +3432,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("application_details_list_view_search_button")));
 				javascriptHelper
 						.executeScriptWithWebElement(
 								applicationDetailsElements.getElement("application_details_list_view_search_button"))
@@ -3353,6 +3452,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 			throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("application_details_list_view_input")));
 				javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("application_details_list_view_input")).click();
 				javascriptHelper
@@ -3395,6 +3496,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 
 		for (int i = 0; i <= 10; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("application_details_list_view_input")));
 				javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("application_details_list_view_input")).click();
 				javascriptHelper
@@ -3409,6 +3512,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("application_details_list_view_input")));
 				javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("application_details_list_view_input")).click();
 				javascriptHelper
@@ -3450,6 +3555,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_076__click_on_export_button_in_application_details_list_view() throws Throwable {
 		for (int i = 0; i <= 150; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
+						applicationDetailsElements.getElement("application_details_list_view_export")));
 				javascriptHelper.executeScriptWithWebElement(
 						applicationDetailsElements.getElement("application_details_list_view_export")).click();
 				break;
@@ -3466,6 +3573,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_076__click_on_pdf_option_in_application_details_list_view() throws Throwable {
 		for (int i = 0; i <= 150; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(
+						javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("pdf_download")));
 				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("pdf_download")).click();
 				break;
 			} catch (Exception e) {
@@ -3534,6 +3643,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_076_click_on_submit_button_in_application_details_record_at_new_app_stage() throws Throwable {
 		for (int i = 0; i <= 500; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(
+						javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("submit_button")));
 				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("submit_button")).click();
 				break;
 			} catch (Exception e) {
@@ -3549,6 +3660,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_076_enter_the_alert_remark_for_application_details_record_in_new_app_stage() throws Throwable {
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(
+						javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("alert_ok")));
 				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("alert_ok")).click();
 				break;
 			} catch (Exception e) {
@@ -3565,6 +3678,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 
 		for (int i = 0; i <= 100; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(
+						javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("alert_submit")));
 				javascriptHelper.executeScriptWithWebElement(commonJSPaths.getElement("alert_submit")).click();
 				break;
 			} catch (Exception e) {
@@ -3579,6 +3694,9 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_update_the_product_while_open_the_new_app_record() throws Throwable {
 		for (int i = 0; i <= 300; i++) {
 			try {
+				clicksAndActionsHelper.scrollIntoView(
+						javascriptHelper
+						.executeScriptWithWebElement(applicationDetailsElements.getElement("product_product_dropdown")));
 				javascriptHelper
 						.executeScriptWithWebElement(applicationDetailsElements.getElement("product_product_dropdown"))
 						.click();
@@ -3598,8 +3716,9 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 	public void user_update_the_clossing_staff_or_servicing_staff_rm_while_open_the_new_app_record() throws Throwable {
 		for (int i = 0; i <= 300; i++) {
 			try {
-				clicksAndActionsHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(
-						applicationDetailsElements.getElement("closing_staff_of_servicing_staff_RM_dropdown")));
+				clicksAndActionsHelper.scrollIntoView(
+						javascriptHelper
+						.executeScriptWithWebElement(applicationDetailsElements.getElement("product_product_dropdown")));
 				javascriptHelper
 						.executeScriptWithWebElement(
 								applicationDetailsElements.getElement("closing_staff_of_servicing_staff_RM_dropdown"))
