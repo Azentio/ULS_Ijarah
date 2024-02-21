@@ -9,7 +9,7 @@ import utilities.ExtentManager;
 import utilities.ExtentTestManager;
 
 @CucumberOptions(features = {
-		"src/test/java/features/AutoLoan/AutoLoan_DisbursementMaker_DrawdownFEATURE.feature"
+		"src/test/java/features/consumerdurables/AppDataEntry_ContactDetails.feature"
 	
 		}, glue = "stepdefinitions",
 		// monochrome=false, //to make steps in color
@@ -17,7 +17,7 @@ import utilities.ExtentTestManager;
 				"rerun:ReRunScenarios/FailedReRun.txt" }
 // ,dryRun = false //to check compilation errors
  //, tags = "@AT_AL_DSB_DD_04"
-		, tags = " @AT_AL_DSB_DD_04"
+		, tags = " @AT_CD_ADE_CD_01"
 )
 public class TestApplication extends AbstractTestNGCucumberTests {
 	/*

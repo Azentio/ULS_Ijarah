@@ -100,4 +100,9 @@ public JavascriptHelper(WebDriver driver)
 		executeScript("arguments[0].style.background='yellow'", element);
 //		executeScript("arguments[0].setAttribute('style', 'border:2px solid black; background:yellow')", element);
 	}
+	
+//	Element background border
+	public void backgroundBorder(WebElement element) {
+		executeScript("arguments[0].style.border='2px solid black'", element);
+	}
 }

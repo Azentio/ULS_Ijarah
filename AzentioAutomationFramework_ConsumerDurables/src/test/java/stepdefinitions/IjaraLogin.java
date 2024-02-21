@@ -18,7 +18,7 @@ public class IjaraLogin extends BaseClass {
 	String excelPath = configFileReader.getJSPathFilePath();
 	String excelTestDataPath = configFileReader.getTestDataFilePath();
 	WebDriver driver = BaseClass.driver;
-	JSPaths jsPaths = new JSPaths(excelPath, "CommonElements", "LoginFieldName", "JSPath");
+	JSPaths jsPaths = new JSPaths(excelPath, "loginElements", "LoginFieldName", "JSPath");
 	JSPaths commonElements = new JSPaths(excelPath, "CommonElements", "CommonFieldName", "JSPath");
 	ExcelData exelData = new ExcelData(excelTestDataPath, "LoginCredentials", "UserType");
 	Map<String, String> loginTestData = new HashMap<>();

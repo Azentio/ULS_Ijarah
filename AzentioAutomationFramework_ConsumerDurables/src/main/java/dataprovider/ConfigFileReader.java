@@ -40,7 +40,7 @@ public class ConfigFileReader {
 	}
 
 	public String getIjaraApplicationURL() {
-		String url = properties.getProperty("IjaraApplicationURL");
+		String url = properties.getProperty("url");
 		if (url != null)
 			return url;
 		else
@@ -89,7 +89,7 @@ public class ConfigFileReader {
  
 	public String getJSPathFilePath() {
 		String jsPathFileName;
-		jsPathFileName = System.getProperty("user.dir")+properties.getProperty("consumerDurablesTestDataFilePath");
+		jsPathFileName = System.getProperty("user.dir")+properties.getProperty("JSPathFilePath");
 		return jsPathFileName;
  
 	}

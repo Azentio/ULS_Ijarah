@@ -2,39 +2,39 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-19T18:43:36 IST" name="Default suite" finished-at="2024-02-19T18:45:19 IST" duration-ms="103182">
+  <suite started-at="2024-02-21T14:24:46 IST" name="Default suite" finished-at="2024-02-21T14:26:05 IST" duration-ms="79362">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@343570b7]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestApplication@4a83a74a]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-02-19T18:43:36 IST" name="Default test" finished-at="2024-02-19T18:45:19 IST" duration-ms="103182">
-      <class name="Runner.TestApplication">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@343570b7]" started-at="2024-02-19T18:43:36 IST" name="setUpClass" finished-at="2024-02-19T18:43:37 IST" duration-ms="1344" status="PASS">
+    <test started-at="2024-02-21T14:24:46 IST" name="Default test" finished-at="2024-02-21T14:26:05 IST" duration-ms="79362">
+      <class name="runner.TestApplication">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:runner.TestApplication@4a83a74a]" started-at="2024-02-21T14:24:46 IST" name="setUpClass" finished-at="2024-02-21T14:24:47 IST" duration-ms="894" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@343570b7]" started-at="2024-02-19T18:43:37 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-19T18:44:58 IST" duration-ms="80492" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestApplication@4a83a74a]" started-at="2024-02-21T14:24:47 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-21T14:25:49 IST" duration-ms="61748" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["To verify payment details should have mentioned list view fields that should be read only mode"]]>
+                <![CDATA["Creation of Contact Details record - Contact Details details screen should get open with Phone details & Email details section with below mentioned Fields"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[To Test the drawdown section at disbursementmaker stage with auto loan product]"]]>
+                <![CDATA["Optional[To check the Consumer Durable - App Data Entry -> Additional Customer info tab -> Contact Details screen]"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@343570b7]" started-at="2024-02-19T18:44:58 IST" name="tearDownClass" finished-at="2024-02-19T18:45:19 IST" duration-ms="21221" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.TestApplication@4a83a74a]" started-at="2024-02-21T14:25:49 IST" name="tearDownClass" finished-at="2024-02-21T14:26:05 IST" duration-ms="16666" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- Runner.TestApplication -->
+      </class> <!-- runner.TestApplication -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
