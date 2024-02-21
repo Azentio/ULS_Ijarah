@@ -1,0 +1,6 @@
+And user_076 find the payment details section index at disbursement in drawdown section maker stage
+Then user_076 verify edit field should be visible in payment details list view in drawdown section at disbursement maker stage
+Then user_076 verify disbursement amount field should be visible in payment details list view in drawdown section at disbursement maker stage
+Then user_076 verify currency field should be visible in payment details list view in drawdown section at disbursement maker stage
+Then user_076 verify loan account field should be visible in payment details list view in drawdown section at disbursement maker stage
+Then user_076 verify disbursement status field should be visible in payment details list view in drawdown section at disbursement maker stage

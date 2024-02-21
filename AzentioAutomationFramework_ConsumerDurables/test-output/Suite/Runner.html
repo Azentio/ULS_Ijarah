@@ -1,0 +1,109 @@
+<html>
+<head>
+<title>TestNG:  Runner</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Runner</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+</tr><tr>
+<td>Started on:</td><td>Mon Oct 30 13:49:18 IST 2023</td>
+</tr>
+<tr><td>Total time:</td><td>218 seconds (218519 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "To test the address details screen at new app stage with valid input (Murabaha)", "Optional[To test the address details screen in new app stage (Murabha)]"</td>
+<td><div><pre>java.lang.AssertionError: The following asserts failed:
+	location category is not a mandatory hence failed expected [true] but found [false],
+	country field is not a dropdown ,
+	Provience ID is not a dropdown hence failed,
+	city field is not a text box hence failed ,
+	po box number field should be non mandatory but here it is mandatory field,
+	mobile number is not a numeric hence failed expected [number] but found [text],
+	duration of stay is not a text box hence failed expected [number] but found [text],
+	landlord mobile number is not a number field hence failed expected [number] but found [text]
+	at stepdefinitions.Ijarah_NewAppAddressDetailsSteps.user_076_user_invoke_soft_assert_in_address_details_screen_at_new_appp_stage(Ijarah_NewAppAddressDetailsSteps.java:1909)
+	at ✽.user_076 invoke soft assert in address details screen at new appp stage(file:///C:/Users/ININDC00076/git/IjarahAnandh/AzentioAutomationFramework_IjaraAnandh/src/test/java/features/MurabhaFeatures/Murabha_AddressDetailsNewAppFEATURE.feature:44)
+... Removed 2 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1274604292", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1274604292'><pre>java.lang.AssertionError: The following asserts failed:
+	location category is not a mandatory hence failed expected [true] but found [false],
+	country field is not a dropdown ,
+	Provience ID is not a dropdown hence failed,
+	city field is not a text box hence failed ,
+	po box number field should be non mandatory but here it is mandatory field,
+	mobile number is not a numeric hence failed expected [number] but found [text],
+	duration of stay is not a text box hence failed expected [number] but found [text],
+	landlord mobile number is not a number field hence failed expected [number] but found [text]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at stepdefinitions.Ijarah_NewAppAddressDetailsSteps.user_076_user_invoke_soft_assert_in_address_details_screen_at_new_appp_stage(Ijarah_NewAppAddressDetailsSteps.java:1909)
+	at ✽.user_076 invoke soft assert in address details screen at new appp stage(file:///C:/Users/ININDC00076/git/IjarahAnandh/AzentioAutomationFramework_IjaraAnandh/src/test/java/features/MurabhaFeatures/Murabha_AddressDetailsNewAppFEATURE.feature:44)
+</pre></div></td>
+<td>196</td>
+<td>Runner.TestApplication@7bba5817</td></tr>
+</table><p>
+</body>
+</html>
