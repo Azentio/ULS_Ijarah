@@ -82,16 +82,22 @@ public class ConfigFileReader {
 
 	public String getTestDataFilePath() {
 		String testDataFilePath;
-		testDataFilePath = properties.getProperty("consumerDurablesTestDataFilePath");
+		testDataFilePath = System.getProperty("user.dir")+properties.getProperty("consumerDurablesTestDataFilePath");
 		return testDataFilePath;
-
+ 
 	}
-
+ 
 	public String getJSPathFilePath() {
 		String jsPathFileName;
-		jsPathFileName = properties.getProperty("consumerDurablesTestDataFilePath");
+		jsPathFileName = System.getProperty("user.dir")+properties.getProperty("consumerDurablesTestDataFilePath");
 		return jsPathFileName;
-
+ 
+	}
+	public String getURL()
+	{
+		String url;
+		url = properties.getProperty("consumerDurablesTestDataFilePath");
+		return url;
 	}
 
 }
