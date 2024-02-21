@@ -452,7 +452,7 @@ public class Ijara_Quotation_Info_Steps {
 			}
 			
 		}
-       for (int i = 0; i < 2000; i++) {
+       for (int i = 0; i <=300; i++) {
     	   try {
     		   javascriptHelper.executeScriptWithWebElement(quotationTabJPaths.getElement("basePremiumInputField")).clear();
     		   break;
@@ -466,12 +466,12 @@ public class Ijara_Quotation_Info_Steps {
     @Then("user_615 verify the please fill the details popup")
     public void user_615_verify_the_please_fill_the_details_popup() throws IOException {
 //    seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(quotationTabJPaths.getElement("invalidDataPopup")));
-    	for (int i = 0; i < 2000; i++) {
+    	for (int i = 0; i <=300; i++) {
     	   try {
     		   Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(quotationTabJPaths.getElement("invalidDataPopup")).isDisplayed());
     		   break;
 		} catch (Exception e) {
-			if (i==1999) {
+			if (i==300) {
 				Assert.fail(e.getMessage());
 			}
 		}
@@ -564,12 +564,12 @@ public class Ijara_Quotation_Info_Steps {
 	
     @Then("user_615 verify the save button under quotation info tab")
     public void user_615_verify_the_save_button_under_quotation_info_tab() {
-        for (int i = 0; i < 2000; i++) {
+        for (int i = 0; i <=300; i++) {
         	try {
 				javascriptHelper.executeScriptWithWebElement(quotationTabJPaths.getElement("saveButton")).isDisplayed();
 				break;
 			} catch (Exception e) {
-				if (i==1999) {
+				if (i==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -579,12 +579,12 @@ public class Ijara_Quotation_Info_Steps {
 
     @Then("user_615 verify the back button under quotation info tab")
     public void user_615_verify_the_back_button_under_quotation_info_tab() {
-        for (int i = 0; i < 2000; i++) {
+        for (int i = 0; i <=300; i++) {
         	try {
 				javascriptHelper.executeScriptWithWebElement(quotationTabJPaths.getElement("backButton")).isDisplayed();
 				break;
 			} catch (Exception e) {
-				if (i==1999) {
+				if (i==300) {
 					Assert.fail();
 				}
 			}

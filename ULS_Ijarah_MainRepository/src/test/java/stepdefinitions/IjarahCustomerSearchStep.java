@@ -32,13 +32,13 @@ public class IjarahCustomerSearchStep extends BaseClass {
 
 	@Then("user click the menu icon in after loginscreen")
 	public void user_click_the_menu_icon_in_after_loginscreen() {
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				// System.out.println(CustomerSearchPaths.getElement("MenuButton"));
 				javascriptHelper.executeScriptWithWebElement(CustomerSearchPaths.getElement("MenuButton")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -47,13 +47,13 @@ public class IjarahCustomerSearchStep extends BaseClass {
 
 	@Then("user navigate to the Transactions flag")
 	public void user_navigate_to_the_transactions_flag() {
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				System.out.println(CustomerSearchPaths.getElement("MenuButton"));
 				javascriptHelper.executeScriptWithWebElement(CustomerSearchPaths.getElement("Transactions")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -62,13 +62,13 @@ public class IjarahCustomerSearchStep extends BaseClass {
 
 	@Then("user navigate to the Application manager flag")
 	public void user_navigate_to_the_application_manager_flag() {
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(CustomerSearchPaths.getElement("ApplicationManager"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -77,13 +77,13 @@ public class IjarahCustomerSearchStep extends BaseClass {
 
 	@Then("user click the Application details flag")
 	public void user_click_the_application_details_flag() {
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(CustomerSearchPaths.getElement("ApplicationDetails"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -93,12 +93,12 @@ public class IjarahCustomerSearchStep extends BaseClass {
 
 	@Then("user click the add icon to add the customer details")
 	public void user_click_the_add_icon_to_add_the_customer_details() {
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(CustomerSearchPaths.getElement("AddIcon")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -155,13 +155,13 @@ public class IjarahCustomerSearchStep extends BaseClass {
 
 	@Then("Select the customer type as individual")
 	public void select_the_customer_type_as_individual() {
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(CustomerSearchPaths.getElement("CustomerTypeIndividual"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -339,12 +339,12 @@ public class IjarahCustomerSearchStep extends BaseClass {
 	@Then("Enter the mandetory fields")
 	public void enter_the_mandetory_fields() {
 		javascriptHelper.executeScriptWithWebElement(CustomerSearchPaths.getElement("CustomerName")).sendKeys("ram");
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(CustomerSearchPaths.getElement("IDType")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -476,7 +476,7 @@ public class IjarahCustomerSearchStep extends BaseClass {
 			}
 
 		}
-		for (int i = 0; i < 300; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(CustomerSearchPaths.getElement("IDNumber"))
 						.sendKeys("9095443283");
@@ -487,7 +487,7 @@ public class IjarahCustomerSearchStep extends BaseClass {
 				}
 			}
 		}
-		for (int i = 0; i < 300; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(CustomerSearchPaths.getElement("DateofBirth")).click();
 				break;
@@ -501,7 +501,7 @@ public class IjarahCustomerSearchStep extends BaseClass {
 
 		}
 
-		for (int i = 0; i < 300; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(CustomerSearchPaths.getElement("DateofBirth"))
 						.sendKeys("01-Jan-2000");
@@ -513,7 +513,7 @@ public class IjarahCustomerSearchStep extends BaseClass {
 			}
 		}
 
-		for (int i = 0; i < 300; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(CustomerSearchPaths.getElement("DateofBirthSelect"))
 						.click();
@@ -526,7 +526,7 @@ public class IjarahCustomerSearchStep extends BaseClass {
 			}
 
 		}
-		for (int i = 0; i < 300; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(CustomerSearchPaths.getElement("SearchIcon")).click();
 				break;
@@ -564,7 +564,7 @@ public class IjarahCustomerSearchStep extends BaseClass {
 
 	@Then("Check Customer field type is mandatory or not")
 	public void check_customer_field_type_is_mandatory_or_not() throws Throwable {
-		for (int i = 0; i < 2000; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				String repayment = CustomerSearchPaths.getElement("CustomerType*");
 				// String repayment
@@ -574,7 +574,7 @@ public class IjarahCustomerSearchStep extends BaseClass {
 				Assert.assertTrue(accountholdername.contains("*"));
 				break;
 			} catch (Exception e) {
-				if (i == 1999) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -583,13 +583,13 @@ public class IjarahCustomerSearchStep extends BaseClass {
 
 	@Given("Check Customer field type is List of View")
 	public void check_customer_field_type_is_list_of_view() throws Throwable {
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(CustomerSearchPaths.getElement("CustomerTypeIndividual"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}

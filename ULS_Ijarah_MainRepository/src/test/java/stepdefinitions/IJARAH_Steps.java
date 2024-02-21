@@ -269,14 +269,14 @@ public class IJARAH_Steps {
 
 	@And("User_608 click the module name dropdown in ULS application")
 	public void user_608_click_the_module_name_dropdown_in_uls_application() throws Throwable {
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				WebElement element = javascriptHelper.executeScriptWithWebElement(
 						customerDebtJsPaths.getElement("moduleNameDropdown"));
 				javascriptHelper.JSEClick(element);
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -340,13 +340,13 @@ public class IJARAH_Steps {
 
 	@And("User_608 click the Search button under inbox")
 	public void user_608_click_the_search_button_under_inbox() throws Throwable {
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("mailInboxSearchBtn"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -357,14 +357,14 @@ public class IJARAH_Steps {
 	public void user_608_search_the_ref_id_under_inbox() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver,
 				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("inboxSearchInput")));
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("inboxSearchInput"))
 						.sendKeys(testData.get("Ref No"),Keys.ENTER);
 				;
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -388,7 +388,7 @@ public class IJARAH_Steps {
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				String jspath = "document.querySelectorAll('button[ng-reflect-text=\"Entitle\"]')[" + (Integer.parseInt(length)-1) + "]";
 				System.out.println("Path: "+jspath);
@@ -396,7 +396,7 @@ public class IJARAH_Steps {
 				javascriptHelper.JSEClick(btn);;
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -449,7 +449,7 @@ public class IJARAH_Steps {
 		String listOfEyeBtn = "";
 		String recordName = "";
 		boolean isEyeBtnClicked = false;
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				listOfEyeBtn = javascriptHelper.executeScript("return " + listOfRecords).toString();
 				System.out.println("List of add button " + listOfEyeBtn);
@@ -457,7 +457,7 @@ public class IJARAH_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -756,14 +756,14 @@ public class IJARAH_Steps {
 	public void user_608_validate_the_sanction_date_field_is_available_in_customer_debt_screen() throws Throwable {
 		WebElement sanctionDataLabel = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("sanctionDataLabel"));
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundColor(sanctionDataLabel);
 				softAssert.assertTrue(sanctionDataLabel.isDisplayed(), 
 						"Sanction Date field is available in Customer Debt screen");
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1049,13 +1049,13 @@ public class IJARAH_Steps {
 	public void user_608_validate_the_remarks_field_is_available_in_customer_debt_screen() throws Throwable {
 		WebElement remarksLabel = javascriptHelper
 				.executeScriptWithWebElement(customerDebtJsPaths.getElement("remarksLabel"));
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundColor(remarksLabel);
 				softAssert.assertTrue(remarksLabel.isDisplayed(), "Remarks field is available in Customer Debt screen");
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1871,7 +1871,7 @@ public class IJARAH_Steps {
 	@And("User_608 click the pencil button under Financial Commitments in Customer Financials tab")
 	public void user_608_click_the_pencil_button_under_financial_commitments_in_customer_financials_tab() throws Throwable {
 		String length = null;
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
 						.toString();
@@ -1880,7 +1880,7 @@ public class IJARAH_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2105,7 +2105,7 @@ public class IJARAH_Steps {
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-segment-button ion-label')[" + j + "].innerText";
@@ -2122,7 +2122,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2146,7 +2146,7 @@ public class IJARAH_Steps {
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-segment-button ion-label')[" + j + "].innerText";
@@ -2161,7 +2161,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2185,7 +2185,7 @@ public class IJARAH_Steps {
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-segment-button ion-label')[" + j + "].innerText";
@@ -2200,7 +2200,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2224,7 +2224,7 @@ public class IJARAH_Steps {
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-segment-button ion-label')[" + j + "].innerText";
@@ -2239,7 +2239,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2263,7 +2263,7 @@ public class IJARAH_Steps {
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-segment-button ion-label')[" + j + "].innerText";
@@ -2278,7 +2278,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2302,7 +2302,7 @@ public class IJARAH_Steps {
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-segment-button ion-label')[" + j + "].innerText";
@@ -2317,7 +2317,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2341,7 +2341,7 @@ public class IJARAH_Steps {
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-segment-button ion-label')[" + j + "].innerText";
@@ -2356,7 +2356,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2380,7 +2380,7 @@ public class IJARAH_Steps {
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-segment-button ion-label')[" + j + "].innerText";
@@ -2395,7 +2395,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2419,7 +2419,7 @@ public class IJARAH_Steps {
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-segment-button ion-label')[" + j + "].innerText";
@@ -2436,7 +2436,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2470,7 +2470,7 @@ public class IJARAH_Steps {
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-segment-button ion-label')[" + j + "].innerText";
@@ -2485,7 +2485,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2519,7 +2519,7 @@ public class IJARAH_Steps {
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-segment-button ion-label')[" + j + "].innerText";
@@ -2534,7 +2534,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2554,7 +2554,7 @@ public class IJARAH_Steps {
 			}
 		}
 		String length = null;
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button ion-label').length")
 						.toString();
@@ -2563,12 +2563,12 @@ public class IJARAH_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-segment-button ion-label')[" + j + "].innerText";
@@ -2583,7 +2583,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2592,7 +2592,7 @@ public class IJARAH_Steps {
 	
 	@And("User_608 click the Pencil icon under Offer Decision tab")
 	public void user_608_click_the_pencil_icon_under_offer_decision_tab() throws Throwable {
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundColor(javascriptHelper
 						.executeScriptWithWebElement(underWriterJsPaths.getElement("offerDecisionPencilEditBtn")));
@@ -2601,7 +2601,7 @@ public class IJARAH_Steps {
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2611,7 +2611,7 @@ public class IJARAH_Steps {
 	@And("User_608 verify Decision section is displayed under Offer Decision tab")
 	public void user_608_verify_decision_section_is_displayed_under_offer_decision_tab() throws Throwable {
 		String length = null;
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-item ion-title').length")
 						.toString();
@@ -2620,12 +2620,12 @@ public class IJARAH_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-item ion-title')[" + j + "].textContent";
@@ -2640,7 +2640,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2650,7 +2650,7 @@ public class IJARAH_Steps {
 	@And("User_608 verify Facility Details section is displayed under Offer Decision tab")
 	public void user_608_verify_facility_details_section_is_displayed_under_offer_decision_tab() throws Throwable {
 		String length = null;
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-item ion-title').length")
 						.toString();
@@ -2659,12 +2659,12 @@ public class IJARAH_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-item ion-title')[" + j + "].textContent";
@@ -2680,7 +2680,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2690,7 +2690,7 @@ public class IJARAH_Steps {
 	@And("User_608 verify Eligibility Details section is displayed under Offer Decision tab")
 	public void user_608_verify_eligibility_details_section_is_displayed_under_offer_decision_tab() throws Throwable {
 		String length = null;
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-item ion-title').length")
 						.toString();
@@ -2699,12 +2699,12 @@ public class IJARAH_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-item ion-title')[" + j + "].textContent";
@@ -2721,7 +2721,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2731,7 +2731,7 @@ public class IJARAH_Steps {
 	@And("User_608 verify Finance Configuration section is displayed under Offer Decision tab")
 	public void user_608_verify_finance_configuration_section_is_displayed_under_offer_decision_tab() throws Throwable {
 		String length = null;
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-item ion-title').length")
 						.toString();
@@ -2740,12 +2740,12 @@ public class IJARAH_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-item ion-title')[" + j + "].textContent";
@@ -2762,7 +2762,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2772,7 +2772,7 @@ public class IJARAH_Steps {
 	@And("User_608 verify Pricing Details section is displayed under Offer Decision tab")
 	public void user_608_verify_pricing_details_section_is_displayed_under_offer_decision_tab() throws Throwable {
 		String length = null;
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-item ion-title').length")
 						.toString();
@@ -2781,12 +2781,12 @@ public class IJARAH_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-item ion-title')[" + j + "].textContent";
@@ -2803,7 +2803,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2813,7 +2813,7 @@ public class IJARAH_Steps {
 	@And("User_608 verify Instlment Details section is displayed under Offer Decision tab")
 	public void user_608_verify_instlment_details_section_is_displayed_under_offer_decision_tab() throws Throwable {
 		String length = null;
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-item ion-title').length")
 						.toString();
@@ -2822,12 +2822,12 @@ public class IJARAH_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-item ion-title')[" + j + "].textContent";
@@ -2844,7 +2844,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2855,7 +2855,7 @@ public class IJARAH_Steps {
 	public void user_608_verify_approval_details_hyperlinks_section_is_displayed_under_offer_decision_tab()
 			throws Throwable {
 		String length = null;
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-item ion-title').length")
 						.toString();
@@ -2864,12 +2864,12 @@ public class IJARAH_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-item ion-title')[" + j + "].textContent";
@@ -2886,7 +2886,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2896,18 +2896,18 @@ public class IJARAH_Steps {
 //	Unw_03
 	@And("User_608 verify Approval level field under Decision section in Offer Decision tab")
 	public void user_608_verify_approval_level_field_under_decision_section_in_offer_decision_tab() throws Throwable {
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(
 						javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("offer_Decision")));
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				WebElement decision_ApprovalLevel = javascriptHelper
 						.executeScriptWithWebElement(underWriterJsPaths.getElement("decision_ApprovalLevel"));
@@ -2917,7 +2917,7 @@ public class IJARAH_Steps {
 						"Verify Approval level field available under Decision section in Offer Decision tab");
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2929,14 +2929,14 @@ public class IJARAH_Steps {
 		WebElement decision_Underwriter = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("decision_Underwriter"));
 		System.out.println("Field Name: " + decision_Underwriter.getText());
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundColor(decision_Underwriter);
 				softAssert.assertTrue(decision_Underwriter.isDisplayed(),
 						"Verify Underwriter field available under Decision section in Offer Decision tab");
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2948,14 +2948,14 @@ public class IJARAH_Steps {
 		WebElement decision_Reviewer = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("decision_Reviewer"));
 		System.out.println("Field Name: " + decision_Reviewer.getText());
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundColor(decision_Reviewer);
 				softAssert.assertTrue(decision_Reviewer.isDisplayed(),
 						"Verify Reviewer field available under Decision section in Offer Decision tab");
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2967,14 +2967,14 @@ public class IJARAH_Steps {
 		WebElement decision_DecisionDate = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("decision_DecisionDate"));
 		System.out.println("Field Name: " + decision_DecisionDate.getText());
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundColor(decision_DecisionDate);
 				softAssert.assertTrue(decision_DecisionDate.isDisplayed(),
 						"Verify Decision Date field available under Decision section in Offer Decision tab");
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2986,14 +2986,14 @@ public class IJARAH_Steps {
 		WebElement decision_DecisionDropdown = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("decision_DecisionField"));
 		System.out.println("Field Name: " + decision_DecisionDropdown.getText());
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundColor(decision_DecisionDropdown);
 				softAssert.assertTrue(decision_DecisionDropdown.isDisplayed(),
 						"Verify Decision field available under Decision section in Offer Decision tab");
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3007,13 +3007,13 @@ public class IJARAH_Steps {
 		String approveValue = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("decision_ApprovalLevelValue")).getText();
 		System.out.println("Appove Level: " + approveValue);
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper
 						.executeScriptWithWebElement(underWriterJsPaths.getElement("offer_FinanceConfiguration")));
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3038,19 +3038,19 @@ public class IJARAH_Steps {
 	@And("User_608 select the Decision dropdown as Accept\\Reject under Decision section in Offer Decision tab")
 	public void user_608_select_the_decision_dropdown_as_accept_reject_under_decision_section_in_offer_decision_tab()
 			throws Throwable {
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
 						"document.querySelectorAll('ion-select[ng-reflect-interface=\"popover\"]')[3]").click();
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 		String length = null;
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio-group ion-label').length")
 						.toString();
@@ -3059,12 +3059,12 @@ public class IJARAH_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].textContent";
@@ -3078,7 +3078,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3088,13 +3088,13 @@ public class IJARAH_Steps {
 //	UNW_07
 	@And("User_608 verify the Product field is displayed under Facility Details section")
 	public void user_608_verify_the_product_field_is_displayed_under_facility_details_section() throws Throwable {
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper
 						.executeScriptWithWebElement(underWriterJsPaths.getElement("offer_FacilityDetails")));
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3102,13 +3102,13 @@ public class IJARAH_Steps {
 		WebElement facility_ProductLabel = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("facility_ProductLabel"));
 		System.out.println("Field Name: " + facility_ProductLabel.getText());
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundColor(facility_ProductLabel);
 				Assert.assertTrue(facility_ProductLabel.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3116,13 +3116,13 @@ public class IJARAH_Steps {
 
 		WebElement facility_ProductInput = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("facility_ProductInput"));
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundBorder(facility_ProductInput);
 				Assert.assertTrue(facility_ProductInput.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3134,13 +3134,13 @@ public class IJARAH_Steps {
 		WebElement facility_SubProductLabel = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("facility_SubProductLabel"));
 		System.out.println("Field Name: " + facility_SubProductLabel.getText());
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundColor(facility_SubProductLabel);
 				Assert.assertTrue(facility_SubProductLabel.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3148,13 +3148,13 @@ public class IJARAH_Steps {
 
 		WebElement facility_SubProductInput = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("facility_SubProductInput"));
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundBorder(facility_SubProductInput);
 				Assert.assertTrue(facility_SubProductInput.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3166,13 +3166,13 @@ public class IJARAH_Steps {
 		WebElement facility_SchemeLabel = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("facility_SchemeLabel"));
 		System.out.println("Field Name: " + facility_SchemeLabel.getText());
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundColor(facility_SchemeLabel);
 				Assert.assertTrue(facility_SchemeLabel.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3180,13 +3180,13 @@ public class IJARAH_Steps {
 
 		WebElement facility_SchemeInput = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("facility_SchemeInput"));
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundBorder(facility_SchemeInput);
 				Assert.assertTrue(facility_SchemeInput.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3198,13 +3198,13 @@ public class IJARAH_Steps {
 		WebElement facility_PricingIndicatorLabel = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("facility_PricingIndicatorLabel"));
 		System.out.println("Field Name: " + facility_PricingIndicatorLabel.getText());
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundColor(facility_PricingIndicatorLabel);
 				Assert.assertTrue(facility_PricingIndicatorLabel.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3212,13 +3212,13 @@ public class IJARAH_Steps {
 
 		WebElement facility_PricingIndicatorInput = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("facility_PricingIndicatorInput"));
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundBorder(facility_PricingIndicatorInput);
 				Assert.assertTrue(facility_PricingIndicatorInput.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3231,13 +3231,13 @@ public class IJARAH_Steps {
 		WebElement facility_RepaymentTypeLabel = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("facility_RepaymentTypeLabel"));
 		System.out.println("Field Name: " + facility_RepaymentTypeLabel.getText());
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundColor(facility_RepaymentTypeLabel);
 				Assert.assertTrue(facility_RepaymentTypeLabel.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3245,13 +3245,13 @@ public class IJARAH_Steps {
 
 		WebElement facility_RepaymentTypeInput = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("facility_RepaymentTypeInput"));
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundBorder(facility_RepaymentTypeInput);
 				Assert.assertTrue(facility_RepaymentTypeInput.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3264,13 +3264,13 @@ public class IJARAH_Steps {
 		WebElement facility_ComputeInstalmentLabel = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("facility_ComputeInstalmentLabel"));
 		System.out.println("Field Name: " + facility_ComputeInstalmentLabel.getText());
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundColor(facility_ComputeInstalmentLabel);
 				Assert.assertTrue(facility_ComputeInstalmentLabel.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3278,13 +3278,13 @@ public class IJARAH_Steps {
 
 		WebElement facility_ComputeInstalmentInput = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("facility_ComputeInstalmentInput"));
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundBorder(facility_ComputeInstalmentInput);
 				Assert.assertTrue(facility_ComputeInstalmentInput.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3297,13 +3297,13 @@ public class IJARAH_Steps {
 		WebElement facility_PrincipalFrequencyLabel = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("facility_PrincipalFrequencyLabel"));
 		System.out.println("Field Name: " + facility_PrincipalFrequencyLabel.getText());
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundColor(facility_PrincipalFrequencyLabel);
 				Assert.assertTrue(facility_PrincipalFrequencyLabel.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3311,13 +3311,13 @@ public class IJARAH_Steps {
 
 		WebElement facility_PrincipalFrequencyInput = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("facility_PrincipalFrequencyInput"));
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundBorder(facility_PrincipalFrequencyInput);
 				Assert.assertTrue(facility_PrincipalFrequencyInput.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3330,13 +3330,13 @@ public class IJARAH_Steps {
 		WebElement facility_InterestFrequencyLabel = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("facility_InterestFrequencyLabel"));
 		System.out.println("Field Name: " + facility_InterestFrequencyLabel.getText());
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundColor(facility_InterestFrequencyLabel);
 				Assert.assertTrue(facility_InterestFrequencyLabel.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3344,13 +3344,13 @@ public class IJARAH_Steps {
 
 		WebElement facility_InterestFrequencyInput = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("facility_InterestFrequencyInput"));
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundBorder(facility_InterestFrequencyInput);
 				Assert.assertTrue(facility_InterestFrequencyInput.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3362,13 +3362,13 @@ public class IJARAH_Steps {
 		WebElement facility_EligibleIncomeLabel = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("facility_EligibleIncomeLabel"));
 		System.out.println("Field Name: " + facility_EligibleIncomeLabel.getText());
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundColor(facility_EligibleIncomeLabel);
 				Assert.assertTrue(facility_EligibleIncomeLabel.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3376,13 +3376,13 @@ public class IJARAH_Steps {
 
 		WebElement facility_EligibleIncomeInput = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("facility_EligibleIncomeInput"));
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundBorder(facility_EligibleIncomeInput);
 				Assert.assertTrue(facility_EligibleIncomeInput.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3395,13 +3395,13 @@ public class IJARAH_Steps {
 		WebElement facility_AverageAccBalanceLabel = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("facility_AverageAccBalanceLabel"));
 		System.out.println("Field Name: " + facility_AverageAccBalanceLabel.getText());
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundColor(facility_AverageAccBalanceLabel);
 				Assert.assertTrue(facility_AverageAccBalanceLabel.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3409,13 +3409,13 @@ public class IJARAH_Steps {
 
 		WebElement facility_AverageAccBalanceInput = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("facility_AverageAccBalanceInput"));
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundBorder(facility_AverageAccBalanceInput);
 				Assert.assertTrue(facility_AverageAccBalanceInput.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3427,13 +3427,13 @@ public class IJARAH_Steps {
 		WebElement facility_ApplicableLTV1Label = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("facility_ApplicableLTV1Label"));
 		System.out.println("Field Name: " + facility_ApplicableLTV1Label.getText());
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundColor(facility_ApplicableLTV1Label);
 				Assert.assertTrue(facility_ApplicableLTV1Label.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3441,13 +3441,13 @@ public class IJARAH_Steps {
 
 		WebElement facility_ApplicableLTV1Input = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("facility_ApplicableLTV1Input"));
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundBorder(facility_ApplicableLTV1Input);
 				Assert.assertTrue(facility_ApplicableLTV1Input.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3459,13 +3459,13 @@ public class IJARAH_Steps {
 		WebElement facility_ApplicableLTV2Label = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("facility_ApplicableLTV2Label"));
 		System.out.println("Field Name: " + facility_ApplicableLTV2Label.getText());
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundColor(facility_ApplicableLTV2Label);
 				Assert.assertTrue(facility_ApplicableLTV2Label.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3473,13 +3473,13 @@ public class IJARAH_Steps {
 
 		WebElement facility_ApplicableLTV2Input = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("facility_ApplicableLTV2Input"));
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundBorder(facility_ApplicableLTV2Input);
 				Assert.assertTrue(facility_ApplicableLTV2Input.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3489,13 +3489,13 @@ public class IJARAH_Steps {
 //	UNW_08
 	@And("User_608 verify Requested Amount field is displayed under Finance configuration section")
 	public void user_608_verify_requested_amount_field_is_displayed_under_finance_configuration_section() throws Throwable {
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper
 						.executeScriptWithWebElement(underWriterJsPaths.getElement("offer_EligibilityDetails")));
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3503,13 +3503,13 @@ public class IJARAH_Steps {
 		WebElement Finance_RequestAmountLabel = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("Finance_RequestAmountLabel"));
 		System.out.println("Field Name: " + Finance_RequestAmountLabel.getText());
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundColor(Finance_RequestAmountLabel);
 				Assert.assertTrue(Finance_RequestAmountLabel.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3517,13 +3517,13 @@ public class IJARAH_Steps {
 
 		WebElement Finance_RequestAmountInput = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("Finance_RequestAmountInput"));
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundBorder(Finance_RequestAmountInput);
 				Assert.assertTrue(Finance_RequestAmountInput.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3535,13 +3535,13 @@ public class IJARAH_Steps {
 		WebElement Finance_RequestTenureLabel = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("Finance_RequestTenureLabel"));
 		System.out.println("Field Name: " + Finance_RequestTenureLabel.getText());
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundColor(Finance_RequestTenureLabel);
 				Assert.assertTrue(Finance_RequestTenureLabel.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3549,13 +3549,13 @@ public class IJARAH_Steps {
 
 		WebElement Finance_RequestTenureInput = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("Finance_RequestTenureInput"));
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundBorder(Finance_RequestTenureInput);
 				Assert.assertTrue(Finance_RequestTenureInput.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3567,13 +3567,13 @@ public class IJARAH_Steps {
 		WebElement Finance_OfferedAmountLabel = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("Finance_OfferedAmountLabel"));
 		System.out.println("Field Name: " + Finance_OfferedAmountLabel.getText());
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundColor(Finance_OfferedAmountLabel);
 				Assert.assertTrue(Finance_OfferedAmountLabel.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3581,13 +3581,13 @@ public class IJARAH_Steps {
 
 		WebElement Finance_OfferedAmountInput = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("Finance_OfferedAmountInput"));
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundBorder(Finance_OfferedAmountInput);
 				Assert.assertTrue(Finance_OfferedAmountInput.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3599,13 +3599,13 @@ public class IJARAH_Steps {
 		WebElement Finance_OfferedTenureLabel = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("Finance_OfferedTenureLabel"));
 		System.out.println("Field Name: " + Finance_OfferedTenureLabel.getText());
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundColor(Finance_OfferedTenureLabel);
 				Assert.assertTrue(Finance_OfferedTenureLabel.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3613,13 +3613,13 @@ public class IJARAH_Steps {
 
 		WebElement Finance_OfferedTenureInput = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("Finance_OfferedTenureInput"));
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundBorder(Finance_OfferedTenureInput);
 				Assert.assertTrue(Finance_OfferedTenureInput.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3631,13 +3631,13 @@ public class IJARAH_Steps {
 		WebElement Finance_DeviationAmountLabel = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("Finance_DeviationAmountLabel"));
 		System.out.println("Field Name: " + Finance_DeviationAmountLabel.getText());
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundColor(Finance_DeviationAmountLabel);
 				Assert.assertTrue(Finance_DeviationAmountLabel.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3645,13 +3645,13 @@ public class IJARAH_Steps {
 
 		WebElement Finance_DeviationAmountInput = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("Finance_DeviationAmountInput"));
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundBorder(Finance_DeviationAmountInput);
 				Assert.assertTrue(Finance_DeviationAmountInput.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3663,13 +3663,13 @@ public class IJARAH_Steps {
 		WebElement Finance_DeviationTenureLabel = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("Finance_DeviationTenureLabel"));
 		System.out.println("Field Name: " + Finance_DeviationTenureLabel.getText());
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundColor(Finance_DeviationTenureLabel);
 				Assert.assertTrue(Finance_DeviationTenureLabel.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3677,13 +3677,13 @@ public class IJARAH_Steps {
 
 		WebElement Finance_DeviationTenureInput = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("Finance_DeviationTenureInput"));
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundBorder(Finance_DeviationTenureInput);
 				Assert.assertTrue(Finance_DeviationTenureInput.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3694,7 +3694,7 @@ public class IJARAH_Steps {
 	@And("User_608 verify Period field is displayed under Pricing Details section")
 	public void user_608_verify_period_field_is_displayed_under_pricing_details_section() throws Throwable {
 		String length = null;
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-item[class*=\"sectiontitles\"]').length")
 						.toString();
@@ -3703,12 +3703,12 @@ public class IJARAH_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-item[class*=\"sectiontitles\"]')[" + j + "].textContent";
@@ -3727,7 +3727,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3737,7 +3737,7 @@ public class IJARAH_Steps {
 	@And("User_608 verify Interest Def field is displayed under Pricing Details section")
 	public void user_608_verify_interest_def_field_is_displayed_under_pricing_details_section() throws Throwable {
 		String length = null;
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-item[class*=\"sectiontitles\"]').length")
 						.toString();
@@ -3746,12 +3746,12 @@ public class IJARAH_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-item[class*=\"sectiontitles\"]')[" + j + "].textContent";
@@ -3768,7 +3768,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3778,7 +3778,7 @@ public class IJARAH_Steps {
 	@And("User_608 verify Rate Type field is displayed under Pricing Details section")
 	public void user_608_verify_rate_type_field_is_displayed_under_pricing_details_section() throws Throwable {
 		String length = null;
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-item[class*=\"sectiontitles\"]').length")
 						.toString();
@@ -3787,12 +3787,12 @@ public class IJARAH_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-item[class*=\"sectiontitles\"]')[" + j + "].textContent";
@@ -3809,7 +3809,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3819,7 +3819,7 @@ public class IJARAH_Steps {
 	@And("User_608 verify Index Rate field is displayed under Pricing Details section")
 	public void user_608_verify_index_rate_field_is_displayed_under_pricing_details_section() throws Throwable {
 		String length = null;
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-item[class*=\"sectiontitles\"]').length")
 						.toString();
@@ -3828,12 +3828,12 @@ public class IJARAH_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-item[class*=\"sectiontitles\"]')[" + j + "].textContent";
@@ -3850,7 +3850,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3860,7 +3860,7 @@ public class IJARAH_Steps {
 	@And("User_608 verify Offer Rate field is displayed under Pricing Details section")
 	public void user_608_verify_offer_rate_field_is_displayed_under_pricing_details_section() throws Throwable {
 		String length = null;
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-item[class*=\"sectiontitles\"]').length")
 						.toString();
@@ -3869,12 +3869,12 @@ public class IJARAH_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-item[class*=\"sectiontitles\"]')[" + j + "].textContent";
@@ -3891,7 +3891,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3901,7 +3901,7 @@ public class IJARAH_Steps {
 	@And("User_608 verify Effective Rate field is displayed under Pricing Details section")
 	public void user_608_verify_effective_rate_field_is_displayed_under_pricing_details_section() throws Throwable {
 		String length = null;
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-item[class*=\"sectiontitles\"]').length")
 						.toString();
@@ -3910,12 +3910,12 @@ public class IJARAH_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-item[class*=\"sectiontitles\"]')[" + j + "].textContent";
@@ -3932,7 +3932,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3943,7 +3943,7 @@ public class IJARAH_Steps {
 	@And("User_608 verify the Instalment Period field is displayed under Installment Details section")
 	public void user_608_verify_the_instalment_period_field_is_displayed_under_installment_details_section()
 			throws Throwable {
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				WebElement Instalment_InstalPeriod = javascriptHelper
 						.executeScriptWithWebElement(underWriterJsPaths.getElement("Instalment_InstalPeriod"));
@@ -3952,7 +3952,7 @@ public class IJARAH_Steps {
 						"Verify Instalment Period field is available under Installment Details section in Offer decision screen");
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3964,14 +3964,14 @@ public class IJARAH_Steps {
 			throws Throwable {
 		WebElement Instalment_InstalAmount = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("Instalment_InstalAmount"));
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundColor(Instalment_InstalAmount);
 				softAssert.assertTrue(Instalment_InstalAmount.isDisplayed(),
 						"Verify Instalment Amount field is available under Installment Details section in Offer decision screen");
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3981,7 +3981,7 @@ public class IJARAH_Steps {
 //	UNW_14
 	@And("User_608 verify the Deviate button under Offer Decision screen")
 	public void user_608_verify_the_deviate_button_under_offer_decision_screen() throws Throwable {
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				WebElement offer_DeviateBtn = javascriptHelper
 						.executeScriptWithWebElement(underWriterJsPaths.getElement("offer_DeviateBtn"));
@@ -3989,7 +3989,7 @@ public class IJARAH_Steps {
 				Assert.assertTrue(offer_DeviateBtn.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3998,7 +3998,7 @@ public class IJARAH_Steps {
 
 	@And("User_608 verify the Recompute button under Offer Decision screen")
 	public void user_608_verify_the_recompute_button_under_offer_decision_screen() throws Throwable {
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				WebElement offer_RecomputeBtn = javascriptHelper
 						.executeScriptWithWebElement(underWriterJsPaths.getElement("offer_RecomputeBtn"));
@@ -4006,7 +4006,7 @@ public class IJARAH_Steps {
 				Assert.assertTrue(offer_RecomputeBtn.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4017,13 +4017,13 @@ public class IJARAH_Steps {
 	public void user_608_verify_the_save_button_under_offer_decision_screen() throws Throwable {
 		WebElement offer_SaveBtn = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("offer_SaveBtn"));
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundBorder(offer_SaveBtn);
 				Assert.assertTrue(offer_SaveBtn.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4034,13 +4034,13 @@ public class IJARAH_Steps {
 	public void user_608_verify_the_offer_button_under_offer_decision_screen() throws Throwable {
 		WebElement offer_OfferBtn = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("offer_OfferBtn"));
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundBorder(offer_OfferBtn);
 				Assert.assertTrue(offer_OfferBtn.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4050,36 +4050,36 @@ public class IJARAH_Steps {
 //	Unw_15
 	@And("User_608 clicks on the Save button under the Offer Decision tab")
 	public void user_608_clicks_on_the_save_button_under_the_offer_decision_tab() throws Throwable {
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("offer_SaveBtn")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				WebElement alertPopup = javascriptHelper
 						.executeScriptWithWebElement(underWriterJsPaths.getElement("offer_SuccessAlert"));
 				softAssert.assertTrue(alertPopup.isDisplayed(), "System should able to save the decision");
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("alertCloseBtn")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4089,12 +4089,12 @@ public class IJARAH_Steps {
 
 	@And("User_608 click the Offer button after selecting the Decision under Offer Decision tab")
 	public void user_608_click_the_offer_button_after_selecting_the_decision_under_offer_decision_tab() throws Throwable {
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("offer_OfferBtn")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4104,7 +4104,7 @@ public class IJARAH_Steps {
 	@And("User_608 verify the validation messgage after clicking Offer button under Offer Decision tab")
 	public void user_608_verify_the_validation_messgage_after_clicking_offer_button_under_offer_decision_tab()
 			throws Throwable {
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				WebElement alertPopup = javascriptHelper
 						.executeScriptWithWebElement(underWriterJsPaths.getElement("offerBtnApprovedPopup"));
@@ -4116,18 +4116,18 @@ public class IJARAH_Steps {
 				softAssert.assertTrue(alertPopup.isDisplayed(), "System should gives 'successfull' message.");
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("alertCloseBtn")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4137,14 +4137,14 @@ public class IJARAH_Steps {
 	@And("User_608 select the Decision dropdown as Select under Decision section in Offer Decision tab")
 	public void user_608_select_the_decision_dropdown_as_select_under_decision_section_in_offer_decision_tab()
 			throws Throwable {
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
 						"document.querySelectorAll('ion-select[ng-reflect-interface=\"popover\"]')[3]").click();
 //				javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("decision_DecisionDropdown")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4217,12 +4217,12 @@ public class IJARAH_Steps {
 
 	@And("User_608 click the Offer button without selecting the Decision under Offer Decision tab")
 	public void user_608_click_the_offer_button_without_selecting_the_decision_under_offer_decision_tab() throws Throwable {
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("offer_OfferBtn")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4233,7 +4233,7 @@ public class IJARAH_Steps {
 	@And("User_608 verify the validation messgage without selecting decision under Offer Decision tab")
 	public void user_608_verify_the_validation_messgage_without_selecting_decision_under_offer_decision_tab()
 			throws Throwable {
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				WebElement alertPopup = javascriptHelper
 						.executeScriptWithWebElement(underWriterJsPaths.getElement("offerBtnErrorPopup"));
@@ -4241,18 +4241,18 @@ public class IJARAH_Steps {
 						"System should gives validation message as 'No underwritter found for allocation'.");
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("alertCloseBtn")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4283,7 +4283,7 @@ public class IJARAH_Steps {
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-segment-button')[" + j + "].innerText";
@@ -4297,7 +4297,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4321,7 +4321,7 @@ public class IJARAH_Steps {
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('kub-workflow-decision button')[" + j + "].textContent";
@@ -4338,7 +4338,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4412,7 +4412,7 @@ public class IJARAH_Steps {
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-chip ion-label')[" + j + "].textContent";
@@ -4426,7 +4426,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4435,14 +4435,14 @@ public class IJARAH_Steps {
 
 	@And("User_608 click the Return button under Return popup screen")
 	public void user_608_click_the_return_button_under_return_popup_screen() throws Throwable {
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				WebElement btn = javascriptHelper
 						.executeScriptWithWebElement(underWriterJsPaths.getElement("return_Btn"));
 				javascriptHelper.JSEClick(btn);
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4571,14 +4571,14 @@ public class IJARAH_Steps {
 
 	@Then("Enter Number in Sequence Number Field Below the Conditions")
 	public void enter_number_in_sequence_number_field_below_the_conditions() {
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("SequenceNumber")).click();
 				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("SequenceNumber"))
 						.sendKeys(testData.get("SequenceNumber"), Keys.TAB);
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4664,13 +4664,13 @@ public class IJARAH_Steps {
 	@Then("Enter Data in Condition Field Below the Conditions")
 	public void enter_data_in_condition_field_below_the_conditions() {
 		javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("Condition")).click();
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("Condition"))
 						.sendKeys(testData.get("Condition"), Keys.TAB);
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4769,13 +4769,13 @@ public class IJARAH_Steps {
 	@Then("Fill The Remarks Field Below the Conditions")
 	public void fill_the_remarks_field_below_the_conditions() {
 		javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("Remarks")).click();
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("Remarks"))
 						.sendKeys(testData.get("Remarks"), Keys.TAB);
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4784,14 +4784,14 @@ public class IJARAH_Steps {
 
 	@Then("Click on the Save button To Save The Conditions Record")
 	public void click_on_the_save_button_to_save_the_conditions_record() {
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.JSEClick(
 						javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("SaveIcon")));
 				// javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("SaveIcon")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4817,7 +4817,7 @@ public class IJARAH_Steps {
 	@And("User_608 verify the Application Details tab in Underwriter stage")
 	public void user_608_verify_the_application_details_tab_in_underwriter_stage() throws Throwable {
 		String length = null;
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
 						.toString();
@@ -4826,12 +4826,12 @@ public class IJARAH_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-segment-button')[" + j + "].innerText";
@@ -4847,7 +4847,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4929,7 +4929,7 @@ public class IJARAH_Steps {
 	@And("User_608 verify the Customer details tab in Underwriter stage")
 	public void user_608_verify_the_customer_details_tab_in_underwriter_stage() throws Throwable {
 		String length = null;
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
 						.toString();
@@ -4938,12 +4938,12 @@ public class IJARAH_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-segment-button')[" + j + "].innerText";
@@ -4959,7 +4959,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4969,7 +4969,7 @@ public class IJARAH_Steps {
 	@And("User_608 to verify system should populate all the data under Customer details tab at this stage")
 	public void user_608_to_verify_system_should_populate_all_the_data_under_customer_details_tab_at_this_stage()
 			throws Throwable {
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				WebElement element = javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("eyeBtn"));
 				actions.moveToElement(element).build().perform();
@@ -4977,7 +4977,7 @@ public class IJARAH_Steps {
 				element.click();
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5028,7 +5028,7 @@ public class IJARAH_Steps {
 	@And("User_608 to verify system should populate all the data under Additional Customer info tab at this stage")
 	public void user_608_to_verify_system_should_populate_all_the_data_under_additional_customer_info_details_tab_at_this_stage()
 			throws Throwable {
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				WebElement element = javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("eyeBtn"));
 				actions.moveToElement(element).build().perform();
@@ -5036,7 +5036,7 @@ public class IJARAH_Steps {
 				element.click();
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5046,7 +5046,7 @@ public class IJARAH_Steps {
 	@And("User_608 verify the Customer Financials tab in Underwriter stage")
 	public void user_608_verify_the_customer_financials_tab_in_underwriter_stage() throws Throwable {
 		String length = null;
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
 						.toString();
@@ -5055,12 +5055,12 @@ public class IJARAH_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-segment-button')[" + j + "].innerText";
@@ -5076,7 +5076,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5086,7 +5086,7 @@ public class IJARAH_Steps {
 	@And("User_608 to verify system should populate all the data under Customer Financials tab at this stage")
 	public void user_608_to_verify_system_should_populate_all_the_data_under_customer_financials_details_tab_at_this_stage()
 			throws Throwable {
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				WebElement element = javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("eyeBtn"));
 				actions.moveToElement(element).build().perform();
@@ -5094,7 +5094,7 @@ public class IJARAH_Steps {
 				element.click();
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5104,7 +5104,7 @@ public class IJARAH_Steps {
 	@And("User_608 verify the Living Expenses tab in Underwriter stage")
 	public void user_608_verify_the_living_expenses_tab_in_underwriter_stage() throws Throwable {
 		String length = null;
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
 						.toString();
@@ -5113,12 +5113,12 @@ public class IJARAH_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-segment-button')[" + j + "].innerText";
@@ -5134,7 +5134,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5144,7 +5144,7 @@ public class IJARAH_Steps {
 	@And("User_608 verify the Facility Info tab in Underwriter stage")
 	public void user_608_verify_the_facility_info_tab_in_underwriter_stage() throws Throwable {
 		String length = null;
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
 						.toString();
@@ -5153,12 +5153,12 @@ public class IJARAH_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-segment-button')[" + j + "].innerText";
@@ -5174,7 +5174,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5184,7 +5184,7 @@ public class IJARAH_Steps {
 	@And("User_608 verify the Asset Details tab in Underwriter stage")
 	public void user_608_verify_the_asset_details_tab_in_underwriter_stage() throws Throwable {
 		String length = null;
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
 						.toString();
@@ -5193,12 +5193,12 @@ public class IJARAH_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-segment-button')[" + j + "].innerText";
@@ -5214,7 +5214,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5224,7 +5224,7 @@ public class IJARAH_Steps {
 	@And("User_608 verify the Quotation Info tab in Underwriter stage")
 	public void user_608_verify_the_quotation_info_tab_in_underwriter_stage() throws Throwable {
 		String length = null;
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
 						.toString();
@@ -5233,12 +5233,12 @@ public class IJARAH_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-segment-button')[" + j + "].innerText";
@@ -5255,7 +5255,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5265,7 +5265,7 @@ public class IJARAH_Steps {
 	@And("User_608 verify the Insurance Info tab in Underwriter stage")
 	public void user_608_verify_the_insurance_info_tab_in_underwriter_stage() throws Throwable {
 		String length = null;
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
 						.toString();
@@ -5274,12 +5274,12 @@ public class IJARAH_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-segment-button')[" + j + "].innerText";
@@ -5296,7 +5296,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5305,14 +5305,14 @@ public class IJARAH_Steps {
 	
 	@And("^User_608 click the Eye button under Living Expenses tab$")
 	public void user_608_click_the_eye_button_under_living_expenses_tab() throws Throwable {
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				WebElement element = javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("eyeBtn"));
 				actions.moveToElement(element).build().perform();
 				element.click();
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5321,14 +5321,14 @@ public class IJARAH_Steps {
 
 	@And("^User_608 click the Eye button under Facility Info tab$")
 	public void user_608_click_the_eye_button_under_facility_info_tab() throws Throwable {
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				WebElement element = javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("eyeBtn"));
 				actions.moveToElement(element).build().perform();
 				element.click();
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5337,14 +5337,14 @@ public class IJARAH_Steps {
 	
 	@And("^User_608 click the Eye button under Asset Details tab$")
 	public void user_608_click_the_eye_button_under_asset_details_tab() throws Throwable {
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				WebElement element = javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("eyeBtn"));
 				actions.moveToElement(element).build().perform();
 				element.click();
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5353,14 +5353,14 @@ public class IJARAH_Steps {
 
 	@And("^User_608 click the Eye button under Quotation Info tab$")
 	public void user_608_click_the_eye_button_under_quotation_info_tab() throws Throwable {
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				WebElement element = javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("eyeBtn"));
 				actions.moveToElement(element).build().perform();
 				element.click();
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5369,14 +5369,14 @@ public class IJARAH_Steps {
 
 	@And("^User_608 click the Eye button under Insurance Info tab$")
 	public void user_608_click_the_eye_button_under_insurance_info_tab() throws Throwable {
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				WebElement element = javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("eyeBtn"));
 				actions.moveToElement(element).build().perform();
 				element.click();
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5386,7 +5386,7 @@ public class IJARAH_Steps {
 	@And("User_608 verify the Policy Check tab in Underwriter stage")
 	public void user_608_verify_the_policy_check_tab_in_underwriter_stage() throws Throwable {
 		String length = null;
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
 						.toString();
@@ -5395,12 +5395,12 @@ public class IJARAH_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-segment-button')[" + j + "].innerText";
@@ -5416,7 +5416,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5426,7 +5426,7 @@ public class IJARAH_Steps {
 	@And("User_608 verify the Document Details tab in Underwriter stage")
 	public void user_608_verify_the_document_details_tab_in_underwriter_stage() throws Throwable {
 		String length = null;
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
 						.toString();
@@ -5435,12 +5435,12 @@ public class IJARAH_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-segment-button')[" + j + "].innerText";
@@ -5457,7 +5457,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -7333,7 +7333,7 @@ public class IJARAH_Steps {
 	public void user_608_verify_the_customer_employement_page_is_available_under_customer_financials_tab()
 			throws Throwable {
 		String length = null;
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
 						.toString();
@@ -7342,7 +7342,7 @@ public class IJARAH_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -11529,13 +11529,13 @@ public class IJARAH_Steps {
 			throws Throwable {
 		WebElement finance_DeviationTenureInput = javascriptHelper
 				.executeScriptWithWebElement(underWriterJsPaths.getElement("Finance_DeviationTenureInput"));
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.backgroundBorder(finance_DeviationTenureInput);
 				finance_DeviationTenureInput.sendKeys(testData.get("Deviation_Tenure"));
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -11544,7 +11544,7 @@ public class IJARAH_Steps {
 
 	@And("User_608 click the Deviate button under Offer Decision screen")
 	public void user_608_click_the_deviate_button_under_offer_decision_screen() throws Throwable {
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				WebElement offer_DeviateBtn = javascriptHelper
 						.executeScriptWithWebElement(underWriterJsPaths.getElement("offer_DeviateBtn"));
@@ -11553,7 +11553,7 @@ public class IJARAH_Steps {
 				offer_DeviateBtn.click();
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -11562,14 +11562,14 @@ public class IJARAH_Steps {
 
 	@And("User_608 post clicking on deviate button system should able to deviate offered amount")
 	public void user_608_post_clicking_on_deviate_button_system_should_able_to_deviate_offered_amount() throws Throwable {		
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				String string = "document.querySelector('button[icon=\"pi pi-arrow-left\"]').parentElement";
 				softAssert.assertTrue(javascriptHelper.executeScriptWithWebElement(string).isDisplayed(),
 						"Offer Details table should be display");
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -11595,12 +11595,12 @@ public class IJARAH_Steps {
 				}
 			}
 		}
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(underWriterJsPaths.getElement("alertCloseBtn")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -11610,7 +11610,7 @@ public class IJARAH_Steps {
 	@And("User_608 click the Offer Decision tab in Underwriter stage")
 	public void user_608_click_the_offer_decision_tab_in_underwriter_stage() throws Throwable {
 		String length = null;
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length")
 						.toString();
@@ -11619,12 +11619,12 @@ public class IJARAH_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-segment-button')[" + j + "].innerText";
@@ -11638,7 +11638,7 @@ public class IJARAH_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -11648,7 +11648,7 @@ public class IJARAH_Steps {
 	@And("User_608 to check whether underwriter is able to view the previous offers generated of the application if deviation is accepted")
 	public void user_608_to_check_whether_underwriter_is_able_to_view_the_previous_offers_generated_of_the_application_if_deviation_is_accepted()
 			throws Throwable {
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				WebElement offerDetailstable = javascriptHelper
 						.executeScriptWithWebElement(underWriterJsPaths.getElement("offerDetailstable"));
@@ -11658,7 +11658,7 @@ public class IJARAH_Steps {
 				softAssert.assertTrue(prevOffer.isDisplayed(), "Previous offers should be displayed");
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}

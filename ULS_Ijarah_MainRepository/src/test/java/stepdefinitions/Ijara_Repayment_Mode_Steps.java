@@ -52,12 +52,12 @@ public class Ijara_Repayment_Mode_Steps {
 	}
 	@And("user_615 click the LOS module name")
 	public void user_615_click_the_los_module_name() {
-	    for (int i = 0; i < 2000; i++) {
+	    for (int i = 0; i <=300; i++) {
 	    	try {
 	    		javascriptHelper.executeScriptWithWebElement(repaymentModeJpaths.getElement("moduleNameDropdown")).click();
 		    	break;
 			} catch (Exception e) {
-				if (i==1999) {
+				if (i==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -80,12 +80,12 @@ public class Ijara_Repayment_Mode_Steps {
 	
 	@And("user_615 click search icon")
     public void user_615_click_search_icon() {
-		for (int i = 0; i < 2000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(repaymentModeJpaths.getElement("searchButton")).click();
 		    	break;
 			} catch (Exception e) {
-				if (i==1999) {
+				if (i==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -301,7 +301,7 @@ public class Ijara_Repayment_Mode_Steps {
 	
 	@Then("user_615 verify the repayment mode field is mandatory and editable")
 	public void user_615_verify_the_repayment_mode_field_is_mandatory_and_editable() throws InterruptedException {
-		for (int i = 0; i <2000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				String repayment ="document.querySelector(\"ion-label[ng-reflect-text='Repayment Mode.TOOLTIP']\").innerText";
 				String repaymentMode = (String) javascriptHelper.executeScript("return "+repayment);
@@ -309,23 +309,23 @@ public class Ijara_Repayment_Mode_Steps {
 				Assert.assertTrue(repaymentMode.contains("*"));
 				break;
 			} catch (Exception e) {
-				if (i==1999) {
+				if (i==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i <2000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement("document.querySelector('ion-label[ng-reflect-text=\"Repayment Mode.TOOLTIP\"]+ion-select')").click();
 				break;
 			} catch (Exception e) {
-				if (i==1999) {
+				if (i==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 		int length=0;
-		for (int i = 0; i <2000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				String string = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio').length").toString();
 				length = Integer.parseInt(string);
@@ -334,7 +334,7 @@ public class Ijara_Repayment_Mode_Steps {
 				}
 				
 			} catch (Exception e) {
-				if (i==1999) {
+				if (i==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -346,7 +346,7 @@ public class Ijara_Repayment_Mode_Steps {
 			String jsPath = "return document.querySelectorAll('ion-radio')["+i+"].shadowRoot.querySelector('label').innerText";
 			//System.out.println(jsPath);
 			String radio=null;
-			for (int j = 0; i <2000; i++) {
+			for (int j = 0; i <=300; i++) {
 				try {
 					radio = (String) javascriptHelper.executeScript(jsPath);
 					if (!(radio.isEmpty())) {
@@ -354,7 +354,7 @@ public class Ijara_Repayment_Mode_Steps {
 					}
 					
 				} catch (Exception e) {
-					if (j==1999) {
+					if (j==300) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -373,7 +373,7 @@ public class Ijara_Repayment_Mode_Steps {
 		
 		@Then("user_615 verify the account holder name field is mandatory")
 		public void user_615_verify_the_account_holder_name_field_is_mandatory() {
-			for (int i = 0; i <2000; i++) {
+			for (int i = 0; i <=300; i++) {
 				try {
 					String repayment ="document.querySelector(\'ion-label[ng-reflect-text=\"Account Holder Name.TOOLTIP\"]').innerText";
 					String accountholdername = (String) javascriptHelper.executeScript("return "+repayment);
@@ -381,7 +381,7 @@ public class Ijara_Repayment_Mode_Steps {
 					Assert.assertTrue(accountholdername.contains("*"));
 					break;
 				} catch (Exception e) {
-					if (i==1999) {
+					if (i==300) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -390,18 +390,18 @@ public class Ijara_Repayment_Mode_Steps {
 
 		@Then("user_615 validate the account holder name field is editable")
 		public void user_615_validate_the_account_holder_name_field_is_editable() {
-			for (int i = 0; i <2000; i++) {
+			for (int i = 0; i <=300; i++) {
 				try {
 					javascriptHelper.executeScriptWithWebElement("document.querySelector('ion-label[ng-reflect-text=\\\"Account Holder Name.TOOLTIP\"]+ion-select')").click();
 					break;
 				} catch (Exception e) {
-					if (i==1999) {
+					if (i==300) {
 						Assert.fail(e.getMessage());
 					}
 				}
 			}
 			int length=0;
-			for (int i = 0; i <2000; i++) {
+			for (int i = 0; i <=300; i++) {
 				try {
 					String string = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio').length").toString();
 					length = Integer.parseInt(string);
@@ -410,7 +410,7 @@ public class Ijara_Repayment_Mode_Steps {
 					}
 					
 				} catch (Exception e) {
-					if (i==1999) {
+					if (i==300) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -422,7 +422,7 @@ public class Ijara_Repayment_Mode_Steps {
 				String jsPath = "return document.querySelectorAll('ion-radio')["+i+"].shadowRoot.querySelector('label').innerText";
 				//System.out.println(jsPath);
 				String radio=null;
-				for (int j = 0; i <2000; i++) {
+				for (int j = 0; i <=300; i++) {
 					try {
 						radio = (String) javascriptHelper.executeScript(jsPath);
 						if (!(radio.isEmpty())) {
@@ -430,7 +430,7 @@ public class Ijara_Repayment_Mode_Steps {
 						}
 						
 					} catch (Exception e) {
-						if (j==1999) {
+						if (j==300) {
 							Assert.fail(e.getMessage());
 						}
 					}
@@ -450,7 +450,7 @@ public class Ijara_Repayment_Mode_Steps {
 
 		@Then("user_615 verify the account type field is mandatory")
 		public void user_615_verify_the_account_type_field_is_mandatory() {
-			for (int i = 0; i <2000; i++) {
+			for (int i = 0; i <=300; i++) {
 				try {
 					String repayment ="document.querySelector(document.querySelector(\"document.querySelector('ion-label[ng-reflect-text=\"Account Type.TOOLTIP\"]).innerText).innerText";
 					String accounttype = (String) javascriptHelper.executeScript("return "+repayment);
@@ -458,7 +458,7 @@ public class Ijara_Repayment_Mode_Steps {
 					Assert.assertTrue(accounttype.contains("*"));
 					break;
 				} catch (Exception e) {
-					if (i==1999) {
+					if (i==300) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -468,18 +468,18 @@ public class Ijara_Repayment_Mode_Steps {
 
 		@Then("user_615 validate the account type field is editable")
 		public void user_615_validate_the_account_type_field_is_editable() {
-			for (int i = 0; i <2000; i++) {
+			for (int i = 0; i <=300; i++) {
 				try {
 					javascriptHelper.executeScriptWithWebElement("document.querySelector('ion-label[ng-reflect-text=\\\"Account Type.TOOLTIP\\\"]+ion-select')").click();
 					break;
 				} catch (Exception e) {
-					if (i==1999) {
+					if (i==300) {
 						Assert.fail(e.getMessage());
 					}
 				}
 			}
 			int length=0;
-			for (int i = 0; i <2000; i++) {
+			for (int i = 0; i <=300; i++) {
 				try {
 					String string = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio').length").toString();
 					length = Integer.parseInt(string);
@@ -488,7 +488,7 @@ public class Ijara_Repayment_Mode_Steps {
 					}
 					
 				} catch (Exception e) {
-					if (i==1999) {
+					if (i==300) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -500,7 +500,7 @@ public class Ijara_Repayment_Mode_Steps {
 				String jsPath = "return document.querySelectorAll('ion-radio')["+i+"].shadowRoot.querySelector('label').innerText";
 				//System.out.println(jsPath);
 				String radio=null;
-				for (int j = 0; i <2000; i++) {
+				for (int j = 0; i <=300; i++) {
 					try {
 						radio = (String) javascriptHelper.executeScript(jsPath);
 						if (!(radio.isEmpty())) {
@@ -508,7 +508,7 @@ public class Ijara_Repayment_Mode_Steps {
 						}
 						
 					} catch (Exception e) {
-						if (j==1999) {
+						if (j==300) {
 							Assert.fail(e.getMessage());
 						}
 					}
@@ -527,7 +527,7 @@ public class Ijara_Repayment_Mode_Steps {
 
 		@Then("user_615 verify the account number field is mandatory")
 		public void user_615_verify_the_account_number_field_is_mandatory() {
-			for (int i = 0; i <2000; i++) {
+			for (int i = 0; i <=300; i++) {
 				try {
 					String repayment ="document.querySelector(document.querySelector(\"document.querySelector('ion-label[ng-reflect-text=\"Account Number.TOOLTIP\"').innerText";
 					String accountnumber = (String) javascriptHelper.executeScript("return "+repayment);
@@ -535,7 +535,7 @@ public class Ijara_Repayment_Mode_Steps {
 					Assert.assertTrue(accountnumber.contains("*"));
 					break;
 				} catch (Exception e) {
-					if (i==1999) {
+					if (i==300) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -560,7 +560,7 @@ public class Ijara_Repayment_Mode_Steps {
 
 		@Then("user_615 verify the bank name field is mandatory")
 		public void user_615_verify_the_bank_name_field_is_mandatory() {
-			for (int i = 0; i <2000; i++) {
+			for (int i = 0; i <=300; i++) {
 				try {
 					String repayment ="document.querySelector(document.querySelector(\"document.querySelector('ion-label[ng-reflect-text=\"Bank Name.TOOLTIP\"').innerText";
 					String bankname = (String) javascriptHelper.executeScript("return "+repayment);
@@ -568,7 +568,7 @@ public class Ijara_Repayment_Mode_Steps {
 					Assert.assertTrue(bankname.contains("*"));
 					break;
 				} catch (Exception e) {
-					if (i==1999) {
+					if (i==300) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -577,7 +577,7 @@ public class Ijara_Repayment_Mode_Steps {
 		
 		@And("user_615 click the account currency field")
 		public void user_615_click_the_account_currency_field() {
-			for (int i = 0; i <2000; i++) {
+			for (int i = 0; i <=300; i++) {
 				try {
 					String repayment ="document.querySelector(document.querySelector(\"document.querySelector('ion-label[ng-reflect-text=\\\"Account Currency.TOOLTIP\\\"').innerText";
 					String accountnumber = (String) javascriptHelper.executeScript("return "+repayment);
@@ -585,7 +585,7 @@ public class Ijara_Repayment_Mode_Steps {
 					Assert.assertTrue(accountnumber.contains("*"));
 					break;
 				} catch (Exception e) {
-					if (i==1999) {
+					if (i==300) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -594,18 +594,18 @@ public class Ijara_Repayment_Mode_Steps {
 
 		@And("user_615 select the value from dropdown in account currency field")
 		public void user_615_select_the_value_from_dropdown_in_account_currency_field() {
-			for (int i = 0; i <2000; i++) {
+			for (int i = 0; i <=300; i++) {
 				try {
 					javascriptHelper.executeScriptWithWebElement("document.querySelector('ion-label[ng-reflect-text=\"Account Currency.TOOLTIP\"]+ion-select')").click();
 					break;
 				} catch (Exception e) {
-					if (i==1999) {
+					if (i==300) {
 						Assert.fail(e.getMessage());
 					}
 				}
 			}
 			int length=0;
-			for (int i = 0; i <2000; i++) {
+			for (int i = 0; i <=300; i++) {
 				try {
 					String string = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio').length").toString();
 					length = Integer.parseInt(string);
@@ -614,7 +614,7 @@ public class Ijara_Repayment_Mode_Steps {
 					}
 					
 				} catch (Exception e) {
-					if (i==1999) {
+					if (i==300) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -626,7 +626,7 @@ public class Ijara_Repayment_Mode_Steps {
 				String jsPath = "return document.querySelectorAll('ion-radio')["+i+"].shadowRoot.querySelector('label').innerText";
 				//System.out.println(jsPath);
 				String radio=null;
-				for (int j = 0; i <2000; i++) {
+				for (int j = 0; i <=300; i++) {
 					try {
 						radio = (String) javascriptHelper.executeScript(jsPath);
 						if (!(radio.isEmpty())) {
@@ -634,7 +634,7 @@ public class Ijara_Repayment_Mode_Steps {
 						}
 						
 					} catch (Exception e) {
-						if (j==1999) {
+						if (j==300) {
 							Assert.fail(e.getMessage());
 						}
 					}
@@ -653,18 +653,18 @@ public class Ijara_Repayment_Mode_Steps {
 
 		@Then("user_615 verify the bank name field is editable")
 		public void user_615_verify_the_bank_name_field_is_editable() {
-			for (int i = 0; i <2000; i++) {
+			for (int i = 0; i <=300; i++) {
 				try {
 					javascriptHelper.executeScriptWithWebElement("document.querySelector('ion-label[ng-reflect-text=\\\"Bank Name.TOOLTIP\\\"]+ion-select')").click();
 					break;
 				} catch (Exception e) {
-					if (i==1999) {
+					if (i==300) {
 						Assert.fail(e.getMessage());
 					}
 				}
 			}
 			int length=0;
-			for (int i = 0; i <2000; i++) {
+			for (int i = 0; i <=300; i++) {
 				try {
 					String string = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio').length").toString();
 					length = Integer.parseInt(string);
@@ -673,7 +673,7 @@ public class Ijara_Repayment_Mode_Steps {
 					}
 					
 				} catch (Exception e) {
-					if (i==1999) {
+					if (i==300) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -685,7 +685,7 @@ public class Ijara_Repayment_Mode_Steps {
 				String jsPath = "return document.querySelectorAll('ion-radio')["+i+"].shadowRoot.querySelector('label').innerText";
 				//System.out.println(jsPath);
 				String radio=null;
-				for (int j = 0; i <2000; i++) {
+				for (int j = 0; i <=300; i++) {
 					try {
 						radio = (String) javascriptHelper.executeScript(jsPath);
 						if (!(radio.isEmpty())) {
@@ -693,7 +693,7 @@ public class Ijara_Repayment_Mode_Steps {
 						}
 						
 					} catch (Exception e) {
-						if (j==1999) {
+						if (j==300) {
 							Assert.fail(e.getMessage());
 						}
 					}
@@ -712,7 +712,7 @@ public class Ijara_Repayment_Mode_Steps {
 
 		@Then("user_615 verify the branch name field is mandatory")
 		public void user_615_verify_the_branch_name_field_is_mandatory() {
-			for (int i = 0; i <2000; i++) {
+			for (int i = 0; i <=300; i++) {
 				try {
 					String repayment ="document.querySelector(document.querySelector(\"document.querySelector('ion-label[ng-reflect-text=\"Bank Branch.TOOLTIP\"').innerText";
 					String branchname = (String) javascriptHelper.executeScript("return "+repayment);
@@ -720,7 +720,7 @@ public class Ijara_Repayment_Mode_Steps {
 					Assert.assertTrue(branchname.contains("*"));
 					break;
 				} catch (Exception e) {
-					if (i==1999) {
+					if (i==300) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -729,18 +729,18 @@ public class Ijara_Repayment_Mode_Steps {
 
 		@Then("user_615 validate the branch name field is editable")
 		public void user_615_validate_the_branch_name_field_is_editable() {
-			for (int i = 0; i <2000; i++) {
+			for (int i = 0; i <=300; i++) {
 				try {
 					javascriptHelper.executeScriptWithWebElement("document.querySelector('ion-label[ng-reflect-text=\\\"Bank Branch.TOOLTIP\\\"]+ion-select')").click();
 					break;
 				} catch (Exception e) {
-					if (i==1999) {
+					if (i==300) {
 						Assert.fail(e.getMessage());
 					}
 				}
 			}
 			int length=0;
-			for (int i = 0; i <2000; i++) {
+			for (int i = 0; i <=300; i++) {
 				try {
 					String string = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio').length").toString();
 					length = Integer.parseInt(string);
@@ -749,7 +749,7 @@ public class Ijara_Repayment_Mode_Steps {
 					}
 					
 				} catch (Exception e) {
-					if (i==1999) {
+					if (i==300) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -761,7 +761,7 @@ public class Ijara_Repayment_Mode_Steps {
 				String jsPath = "return document.querySelectorAll('ion-radio')["+i+"].shadowRoot.querySelector('label').innerText";
 				//System.out.println(jsPath);
 				String radio=null;
-				for (int j = 0; i <2000; i++) {
+				for (int j = 0; i <=300; i++) {
 					try {
 						radio = (String) javascriptHelper.executeScript(jsPath);
 						if (!(radio.isEmpty())) {
@@ -769,7 +769,7 @@ public class Ijara_Repayment_Mode_Steps {
 						}
 						
 					} catch (Exception e) {
-						if (j==1999) {
+						if (j==300) {
 							Assert.fail(e.getMessage());
 						}
 					}
@@ -788,7 +788,7 @@ public class Ijara_Repayment_Mode_Steps {
 
 		@Then("user_615 verify the code field is mandatory")
 		public void user_615_verify_the_code_field_is_mandatory() {
-			for (int i = 0; i <2000; i++) {
+			for (int i = 0; i <=300; i++) {
 				try {
 					String repayment ="document.querySelector(document.querySelector(\"document.querySelector('ion-label[ng-reflect-text=\"ECS CODE.TOOLTIP\"').innerText";
 					String codefield = (String) javascriptHelper.executeScript("return "+repayment);
@@ -796,7 +796,7 @@ public class Ijara_Repayment_Mode_Steps {
 					Assert.assertTrue(codefield.contains("*"));
 					break;
 				} catch (Exception e) {
-					if (i==1999) {
+					if (i==300) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -861,12 +861,12 @@ public class Ijara_Repayment_Mode_Steps {
 		
 		@And("user_615 click save button")
 		public void user_615_click_save_button() throws InterruptedException {
-		    for (int i = 0; i < 2000; i++) {
+		    for (int i = 0; i <=300; i++) {
 		    	try {
 					javascriptHelper.executeScriptWithWebElement(quotationTabJPaths.getElement("saveButton")).click();
 					break;
 				} catch (Exception e) {
-					if (i==1999) {
+					if (i==300) {
 						Assert.fail(e.getMessage());
 					}
 				}

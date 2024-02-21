@@ -163,7 +163,7 @@ public class Ijara_Steps_610 {
 		
 			String moduleListJSpath = "document.querySelectorAll('ion-radio-group ion-item').length";
 	        String moduleLength = "";
-	        for (int i = 0; i <= 500; i++) {
+	        for (int i = 0; i <=300; i++) {
 	            try {
 	                moduleLength = javascriptHelper.executeScript("return " + moduleListJSpath).toString();
 	                System.out.println("Module Length " + moduleLength);
@@ -171,7 +171,7 @@ public class Ijara_Steps_610 {
 	                    break;
 	                }
 	            } catch (Exception e) {
-	                if (i == 499) {
+	                if (i ==300) {
 	                    Assert.fail(e.getMessage());
 	                }
 	            }
@@ -794,7 +794,7 @@ public class Ijara_Steps_610 {
 
 		// ----------------validate mandatory field
 
-		for (int i = 0; i < 2000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				String calledwhen = "document.querySelector('ion-label[ng-reflect-text=\\\"SCR.FOLLOWUPDTL.CALLED_WHEN.TO\\\"').innerText";
 				String calledwhenName = (String) javascriptHelper.executeScript("return " + calledwhen);
@@ -803,7 +803,7 @@ public class Ijara_Steps_610 {
 				
 				break;
 			} catch (Exception e) {
-				if (i == 1999) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -953,7 +953,7 @@ public class Ijara_Steps_610 {
 		
 		// ----------------validate mandatory field ---------bug
 //
-//		for (int b = 0; b < 2000; b++) {
+//		for (int b = 0; b <=300; b++) {
 //			try {
 //				String followUpDate = "document.querySelector('ion-label[ng-reflect-text=\"SCR.FOLLOWUPDTL.FOLL_UP_DT.TOO\"').innerText";
 //				String followUpDateName = (String) javascriptHelper.executeScript("return " + followUpDate);
@@ -962,7 +962,7 @@ public class Ijara_Steps_610 {
 //				
 //				break;
 //			} catch (Exception e) {
-//				if (b == 1999) {
+//				if (b ==300) {
 //					Assert.fail(e.getMessage());
 //				}
 //			}
@@ -1015,7 +1015,7 @@ public class Ijara_Steps_610 {
 		
 		// ----------------validate mandatory field
 
-//		for (int b = 0; b < 2000; b++) {
+//		for (int b = 0; b <=300; b++) {
 //			try {
 //				String statusField = "document.querySelector('ion-label[ng-reflect-text=\"SCR.FOLLOWUPDTL.SIGN_STATUS.TO\"').innerText";
 //				String statusFieldName = (String) javascriptHelper.executeScript("return " + statusField);
@@ -1024,7 +1024,7 @@ public class Ijara_Steps_610 {
 //				
 //				break;
 //			} catch (Exception e) {
-//				if (b == 1999) {
+//				if (b ==300) {
 //					Assert.fail(e.getMessage());
 //				}
 //			}
@@ -1123,7 +1123,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 
 		// ----------------validate mandatory field
 
-//		for (int b = 0; b < 2000; b++) {
+//		for (int b = 0; b <=300; b++) {
 //			try {
 //				String remarksField = "document.querySelector('ion-label[ng-reflect-text=\"SCR.REMARKS.TOOLTIP\"').innerText";
 //				String remarksFielddName = (String) javascriptHelper.executeScript("return " + remarksField);
@@ -1132,7 +1132,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 //				
 //				break;
 //			} catch (Exception e) {
-//				if (b == 1999) {
+//				if (b ==300) {
 //					Assert.fail(e.getMessage());
 //				}
 //			}
@@ -1191,28 +1191,28 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 	@And("User_610 validate the conformation message after save button and close button")
 	public void user_validate_the_conformation_message_after_save_button() {
 		
-		for (int i = 0; i<=500; i++) {
+		for (int i = 0; i<=300; i++) {
          	try {
          		if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("successMsg_610")).isDisplayed()) {
              		softAssert.fail();
          		}
          		break;
 			} catch (Exception e) {
-				if(i==500) {
+				if(i==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 
 		}
 	    
-		for (int i = 0; i<=500; i++) {
+		for (int i = 0; i<=300; i++) {
          	try {
          		if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("toastMsgCloseBtn_610")).isDisplayed()) {
              		softAssert.fail();
          		}
          		break;
 			} catch (Exception e) {
-				if(i==500) {
+				if(i==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1223,14 +1223,14 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 	
 	@And("User_610 vaildate the message for blank field is which mandatory")
 	public void user_vaildate_the_message_for_blank_field_is_which_mandatory() {
-		for (int i = 0; i<=500; i++) {
+		for (int i = 0; i<=300; i++) {
          	try {
          		if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("fillAllTheDetails_Popup_610")).isDisplayed()) {
              		softAssert.fail();
          		}
          		break;
 			} catch (Exception e) {
-				if(i==500) {
+				if(i==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1242,14 +1242,14 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 	
 	@And("User_610 validate Edit button field enabled or not under customer follow details")
 	public void user_validate_edit_button_field_enabled_or_not_under_customer_follow_details() {
-		for (int i = 0; i<=500; i++) {
+		for (int i = 0; i<=300; i++) {
          	try {
          		if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("editBtn_UnderFollowUp_610")).isDisplayed()) {
              		softAssert.fail();
          		}
          		break;
 			} catch (Exception e) {
-				if(i==500) {
+				if(i==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1259,14 +1259,14 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 
 	@And("User_610 validate search for the record field enabled or not under customer follow details")
 	public void user_validate_search_for_the_record_field_enabled_or_not_under_customer_follow_details() {
-		for (int i = 0; i<=500; i++) {
+		for (int i = 0; i<=300; i++) {
          	try {
          		if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("searchForTheRecord_UnderFollowUp_610")).isDisplayed()) {
              		softAssert.fail();
          		}
          		break;
 			} catch (Exception e) {
-				if(i==500) {
+				if(i==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1288,28 +1288,28 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			}
 			}
 		
-		for (int i = 0; i<=500; i++) {
+		for (int i = 0; i<=300; i++) {
          	try {
          		if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("exportToPDF_UnderFollowUp_610")).isDisplayed()) {
              		softAssert.fail();
          		}
          		break;
 			} catch (Exception e) {
-				if(i==500) {
+				if(i==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 
 		}
 		
-		for (int i = 0; i<=500; i++) {
+		for (int i = 0; i<=300; i++) {
          	try {
          		if (!javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("exportToEXCEL_UnderFollowUp_610")).isDisplayed()) {
              		softAssert.fail();
          		}
          		break;
 			} catch (Exception e) {
-				if(i==500) {
+				if(i==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1780,7 +1780,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 		
 		// ----------------validate mandatory field
 
-				for (int i = 0; i < 2000; i++) {
+				for (int i = 0; i <=300; i++) {
 					try {
 						String IdType = "document.querySelector('[ng-reflect-text=\\\"ID Type tooltip\\\"]').innerText";
 						String IdTypeName = (String) javascriptHelper.executeScript("return " + IdType);
@@ -1791,7 +1791,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 						Assert.assertTrue(IdTypeName.contains("*"));
 						break;
 					} catch (Exception e) {
-						if (i == 1999) {
+						if (i ==300) {
 							Assert.fail(e.getMessage());
 						}
 					}
@@ -1816,7 +1816,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 		
 		// ----------------validate mandatory field
 
-		for (int i = 0; i < 2000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				String IdNumber = "document.querySelector('[ng-reflect-text=\\\"SCR.ID_NUMBER.TOOLTIP\\\"]').innerText";
 				String IdNumberName = (String) javascriptHelper.executeScript("return " + IdNumber);
@@ -1825,7 +1825,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 				Assert.assertTrue(IdNumberName.contains("*"));
 				break;
 			} catch (Exception e) {
-				if (i == 1999) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1852,7 +1852,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 	    
 		// ----------------validate non-mandatory field
 
-		for (int i = 0; i < 2000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				String IssueDate = "document.querySelector('label[ng-reflect-text=\"Issue Date\"]').innerText";
 				String IssueDateName = (String) javascriptHelper.executeScript("return " + IssueDate);
@@ -1862,7 +1862,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 				
 				break;
 			} catch (Exception e) {
-				if (i == 1999) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1909,7 +1909,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 		
 		// ----------------validate non-mandatory field
 
-				for (int i = 0; i < 2000; i++) {
+				for (int i = 0; i <=300; i++) {
 					try {
 						String ExpiryDate = "document.querySelector('label[ng-reflect-text=\"Expiry Date\"').innerText";
 						String ExpiryDateName = (String) javascriptHelper.executeScript("return " + ExpiryDate);
@@ -1919,7 +1919,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 						
 						break;
 					} catch (Exception e) {
-						if (i == 1999) {
+						if (i ==300) {
 							Assert.fail(e.getMessage());
 						}
 					}
@@ -1962,7 +1962,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 		
 		// ----------------validate non-mandatory field
 
-//				for (int i = 0; i < 2000; i++) {
+//				for (int i = 0; i <=300; i++) {
 //					try {
 //						String IssuingAuthority = "document.querySelector('ion-label[ng-reflect-text="Issuing Authority"').innerText";
 //						String IssuingAuthorityName = (String) javascriptHelper.executeScript("return " + IssuingAuthority);
@@ -1972,7 +1972,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 //						
 //						break;
 //					} catch (Exception e) {
-//						if (i == 1999) {
+//						if (i ==300) {
 //							Assert.fail(e.getMessage());
 //						}
 //					}
@@ -2001,7 +2001,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 		
 		// ----------------validate non-mandatory field
 
-//				for (int i = 0; i < 2000; i++) {
+//				for (int i = 0; i <=300; i++) {
 //					try {
 //						String CountryofIssue = "document.querySelector('ion-label[ng-reflect-text=\"Country of Issue\"').innerText";
 //						String CountryofIssueName = (String) javascriptHelper.executeScript("return " + CountryofIssue);
@@ -2011,7 +2011,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 //						
 //						break;
 //					} catch (Exception e) {
-//						if (i == 1999) {
+//						if (i ==300) {
 //							Assert.fail(e.getMessage());
 //						}
 //					}
@@ -2220,7 +2220,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 				
 				// ----------------validate mandatory field
 
-				for (int i = 0; i < 2000; i++) {
+				for (int i = 0; i <=300; i++) {
 					try {
 						String productMandtory = "document.querySelector('ion-label[ng-reflect-text=\"SCR.PRODUCT.TOOLTIP\"]').innerText";
 						String productMandtoryName = (String) javascriptHelper.executeScript("return " + productMandtory);
@@ -2230,7 +2230,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 						Assert.assertTrue(productMandtoryName.contains("*"));
 						break;
 					} catch (Exception e) {
-						if (i == 1999) {
+						if (i ==300) {
 							Assert.fail(e.getMessage());
 						}
 					}
@@ -2305,7 +2305,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 		
 		// ----------------validate mandatory field
 
-		for (int i = 0; i < 2000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				String schemeMandtory = "document.querySelector('ion-label[ng-reflect-text=\"SCR.MODULE.FACILITY_DETAILS.SC\"]').innerText";
 				String schemeMandtoryName = (String) javascriptHelper.executeScript("return " + schemeMandtory);
@@ -2315,7 +2315,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 				Assert.assertTrue(schemeMandtoryName.contains("*"));
 				break;
 			} catch (Exception e) {
-				if (i == 1999) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2356,7 +2356,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 		
 		// ----------------validate mandatory field
 
-		for (int i = 0; i < 2000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				String requestAmountMandtory = "document.querySelector('ion-label[ng-reflect-text=\"SCR.MODULE.FACILITY_DETAILS.AM\"]').innerText";
 				String requestAmountMandtoryName = (String) javascriptHelper.executeScript("return " + requestAmountMandtory);
@@ -2366,7 +2366,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 				Assert.assertTrue(requestAmountMandtoryName.contains("*"));
 				break;
 			} catch (Exception e) {
-				if (i == 1999) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -2410,7 +2410,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 				
 				// ----------------validate mandatory field
 
-				for (int i = 0; i < 2000; i++) {
+				for (int i = 0; i <=300; i++) {
 					try {
 						String tenureMonthMandtory = "document.querySelector('ion-label[ng-reflect-text=\"SCR.MODULE.FACILITY_DETAILS.TE\"]').innerText";
 						String tenureMonthMandtoryName = (String) javascriptHelper.executeScript("return " + tenureMonthMandtory);
@@ -2420,7 +2420,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 						Assert.assertTrue(tenureMonthMandtoryName.contains("*"));
 						break;
 					} catch (Exception e) {
-						if (i == 1999) {
+						if (i ==300) {
 							Assert.fail(e.getMessage());
 						}
 					}
@@ -4680,7 +4680,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 	    
 		// ----------------validate mandatory field
 
-				for (int i = 0; i < 2000; i++) {
+				for (int i = 0; i <=300; i++) {
 					try {
 						String DocumentsName = "document.querySelector('ion-label[ng-reflect-text=\"DOCUMENT_NAME.TOOLTIP\"]').innerText";
 						String DocumentsNameName2 = (String) javascriptHelper.executeScript("return " + DocumentsName);
@@ -4689,7 +4689,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 						Assert.assertTrue(DocumentsNameName2.contains("*"));
 						break;
 					} catch (Exception e) {
-						if (i == 1999) {
+						if (i ==300) {
 							Assert.fail(e.getMessage());
 						}
 					}
@@ -4723,7 +4723,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 		
 		// ----------------validate mandatory field
 
-		for (int i = 0; i < 2000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				String DocumentStatus = "document.querySelector('ion-label[ng-reflect-text=\"DOCUMENT_NAME.TOOLTIP\"]').innerText";
 				String DocumentStatusName = (String) javascriptHelper.executeScript("return " + DocumentStatus);
@@ -4732,7 +4732,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 				Assert.assertTrue(DocumentStatusName.contains("*"));
 				break;
 			} catch (Exception e) {
-				if (i == 1999) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5568,7 +5568,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 		
 		// ----------------validate mandatory field
 
-				for (int i = 0; i < 2000; i++) {
+				for (int i = 0; i <=300; i++) {
 					try {
 						String calledwhen = "document.querySelector('label[ng-reflect-text=\"SCR.FOLLOWUPDTL.CALLED_WHEN.TO\"').parentElement.innerText";
 						String calledwhenName = (String) javascriptHelper.executeScript("return " + calledwhen);
@@ -5577,7 +5577,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 						
 						break;
 					} catch (Exception e) {
-						if (i == 1999) {
+						if (i ==300) {
 							Assert.fail(e.getMessage());
 						}
 					}
@@ -5806,14 +5806,14 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 			}
 		}
 		
-		for (int i = 0; i<=500; i++) {
+		for (int i = 0; i<=300; i++) {
          	try {
          		if (javascriptHelper.executeScriptWithWebElement(jsPaths2.getElement("successMsg_610")).isDisplayed()) {
              		Assert.assertTrue(true);
          		}
          		break;
 			} catch (Exception e) {
-				if(i==500) {
+				if(i==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5830,7 +5830,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 //	    String jsPath = "document.querySelectorAll('button[icon=\"pi pi-search\"]')[1]";
 //	    WebElement searchBtn = javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("searchBtnFollowUpDetails_610"));
 //	    WebElement searchBtnString = javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement(jsPath));
-		for (int k = 0; k < 2000; k++) {
+		for (int k = 0; k <=300; k++) {
 			try {
 //				searchBtnString.click();
 				javascriptHelper.executeScriptWithWebElement(jsPaths3.getElement("searchBtnFollowUpDetails_610")).click();
@@ -5838,7 +5838,7 @@ for (int j = 0; j <= premitiveDropdownLength; j++) {
 				.sendKeys(testData01.get("Search BTn  Matching FollowUp Details"));
 				break;
 			} catch (Exception e) {
-				if (k==1999) {
+				if (k==300) {
 					Assert.fail(e.getMessage());
 				}
 				// TODO: handle exception

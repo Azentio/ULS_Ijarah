@@ -88,12 +88,12 @@ public class Ijara_OfferDetails_Steps {
 	@And("Validate the Eligibility type field is displayed in Eligibility details section")
 	public void validate_the_eligibility_type_field_is_displayed_in_eligibility_details_section() throws IOException{
 		
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("EligibilityTypeField")));
 				break;
 			} catch (Exception e) { 
-				if (i == 1000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -312,18 +312,18 @@ public class Ijara_OfferDetails_Steps {
 	@And("Enter the value in New requested amount field in Appeal request section")
 	public void enter_the_value_in_new_requested_amount_field_in_appeal_request_section() {
 		javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("NewRequestedAmount")).click();
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("NewRequestedAmount"))
 				.sendKeys(testData.get("NewRequestedAmount"),Keys.TAB);
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("toastMsgCloseBtn")).click();				
 				break;
@@ -337,18 +337,18 @@ public class Ijara_OfferDetails_Steps {
 	@And("Enter the value in New requested tenure field in Appeal request section")
 	public void enter_the_value_in_new_requested_tenure_field_in_appeal_request_section() {
 		javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("NewRequestedTenure")).click();
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("NewRequestedTenure"))
 				.sendKeys(testData.get("NewRequestedTenure"),Keys.TAB);
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("toastMsgCloseBtn")).click();				
 				break;
@@ -361,12 +361,12 @@ public class Ijara_OfferDetails_Steps {
 
 	@And("Click on Save button in Appeal request section")
 	public void click_on_save_button_in_appeal_request_section() {
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("SaveButton")).click();
 				break;
 			} catch (Exception e) { 
-				if (i == 1000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -376,12 +376,12 @@ public class Ijara_OfferDetails_Steps {
 
 	@And("Click on Appeal button in Appeal request section")
 	public void click_on_appeal_button_in_appeal_request_section() {
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("AppealButton")).click();
 				break;
 			} catch (Exception e) { 
-				if (i == 1000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -416,13 +416,13 @@ public class Ijara_OfferDetails_Steps {
 	public void user_search_the_ref_id_under_inbox_for_offer_details() throws IOException {
 		System.out.println(testData.get("Ref No"));
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("inboxSearchInput")));
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("inboxSearchInput"))
 				.sendKeys(testData.get("Ref No"));;
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -430,13 +430,13 @@ public class Ijara_OfferDetails_Steps {
 	}
 	@And("Click on Pencil icon of existing record in offer details")
 	public void click_on_pencil_icon_of_existing_record_in_offer_details() {
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement(offerdetailsJsPaths.getElement("PencilIcon")));
 				//javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("SaveIcon")).click();
 				break;
 			} catch (Exception e) { 
-				if (i == 1000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}

@@ -96,13 +96,13 @@ public class Ijara_DocumentDetails_Step {
 
 			}
 		}
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.JSEClick(javascriptHelper
 						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DocumentDetails_Button")));
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -112,14 +112,14 @@ public class Ijara_DocumentDetails_Step {
 
 	@And("Click on Add icon in Document details section")
 	public void click_on_add_icon_in_document_details_section() {
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DocumentDetails_AddIcon"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -129,12 +129,12 @@ public class Ijara_DocumentDetails_Step {
 
 	@And("Select the value in Customer name field")
 	public void select_the_value_in_customer_name_field() {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("CustomerName")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -208,12 +208,12 @@ public class Ijara_DocumentDetails_Step {
 
 	@And("Select the value in Document name field")
 	public void select_the_value_in_document_name_field() {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DocumentName")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -287,13 +287,13 @@ public class Ijara_DocumentDetails_Step {
 
 	@And("Select the value in Required at stage field")
 	public void select_the_value_in_required_at_stage_field() {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("RequiredAtStage"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -367,13 +367,13 @@ public class Ijara_DocumentDetails_Step {
 
 	@And("Select the value in Document status field")
 	public void select_the_value_in_document_status_field() {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DocumentStatus"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -447,13 +447,13 @@ public class Ijara_DocumentDetails_Step {
 
 	@And("Select the value in Mandatory optional field")
 	public void select_the_value_in_mandatory_optional_field() {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("MandatoryOptional"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -527,13 +527,13 @@ public class Ijara_DocumentDetails_Step {
 
 	@And("Select the value in Document category field")
 	public void select_the_value_in_document_category_field() {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DocumentCategory"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -607,13 +607,13 @@ public class Ijara_DocumentDetails_Step {
 
 	@And("Select the value in Upload date field")
 	public void select_the_value_in_upload_date_field() {
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("UploadDate")).click();
 				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("TodayButton")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -623,14 +623,14 @@ public class Ijara_DocumentDetails_Step {
 
 	@And("Select the value in Expected receipt date field")
 	public void select_the_value_in_expected_receipt_date_field() {
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("ExpectedReceiptDate"))
 						.click();
 				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("TodayButton")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -640,13 +640,13 @@ public class Ijara_DocumentDetails_Step {
 
 	@And("Select the value in Deferred stage field")
 	public void select_the_value_in_deferred_stage_field() {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DeferralStage"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -720,13 +720,13 @@ public class Ijara_DocumentDetails_Step {
 
 	@And("Select the value in Def approved by field")
 	public void select_the_value_in_def_approved_by_field() {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DefApprovedBy"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -800,14 +800,14 @@ public class Ijara_DocumentDetails_Step {
 
 	@And("Select the value in Change in nature approved by field")
 	public void select_the_value_in_change_in_nature_approved_by_field() {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("ChangeInNatureApprovedBy"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -881,12 +881,12 @@ public class Ijara_DocumentDetails_Step {
 
 	@And("Select the value in Document form field")
 	public void select_the_value_in_document_form_field() {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DocumentForm")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -960,13 +960,13 @@ public class Ijara_DocumentDetails_Step {
 
 	@And("Select the value in Document quality field")
 	public void select_the_value_in_document_quality_field() {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DocumentQuality"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1042,19 +1042,19 @@ public class Ijara_DocumentDetails_Step {
 	public void select_the_value_in_document_reference_number_field() {
 		javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DocumentReferenceNumber"))
 				.click();
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper
 						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DocumentReferenceNumber"))
 						.sendKeys(testData.get("DocumentReferenceNumber"), Keys.TAB);
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("toastMsgCloseBtn"))
 						.click();
@@ -1068,7 +1068,7 @@ public class Ijara_DocumentDetails_Step {
 
 	@And("Select the value in Document received by field")
 	public void select_the_value_in_document_received_by_field() {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(javascriptHelper
 						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DocumentReceivedBy")));
@@ -1076,7 +1076,7 @@ public class Ijara_DocumentDetails_Step {
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1152,13 +1152,13 @@ public class Ijara_DocumentDetails_Step {
 
 	@And("Select the value in Location where received field")
 	public void select_the_value_in_location_where_received_field() {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("LocationWhereReceived"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1233,24 +1233,24 @@ public class Ijara_DocumentDetails_Step {
 	@And("Select the value in Rack No field")
 	public void select_the_value_in_rack_no_field() {
 		javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("RackNo")).click();
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("RackNo"))
 						.sendKeys(testData.get("RackNo"), Keys.TAB);
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("toastMsgCloseBtn"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					// Assert.fail(e.getMessage());
 				}
 			}
@@ -1261,24 +1261,24 @@ public class Ijara_DocumentDetails_Step {
 	@And("Select the value in Shelf No field")
 	public void select_the_value_in_shelf_no_field() {
 		javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("ShelfNo")).click();
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("ShelfNo"))
 						.sendKeys(testData.get("ShelfNo"), Keys.TAB);
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("toastMsgCloseBtn"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					// Assert.fail(e.getMessage());
 				}
 			}
@@ -1289,18 +1289,18 @@ public class Ijara_DocumentDetails_Step {
 	@And("Enter the value in Box No field")
 	public void enter_the_value_in_box_no_field() {
 		javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("BoxNo")).click();
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("BoxNo"))
 						.sendKeys(testData.get("BoxNo"), Keys.TAB);
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("toastMsgCloseBtn"))
 						.click();
@@ -1317,14 +1317,14 @@ public class Ijara_DocumentDetails_Step {
 		DateTimeFormatter dtFormatter = DateTimeFormatter.ofPattern("dd-MMM-yyyy");
 		LocalDate date = LocalDate.now();
 		String format = date.format(dtFormatter);
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				// javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DateOfExpiryInput")).click();
 				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DateOfExpiryInput"))
 						.sendKeys(format, Keys.ENTER);
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1335,18 +1335,18 @@ public class Ijara_DocumentDetails_Step {
 	@And("Enter the value in Lodgement amount field")
 	public void enter_the_value_in_lodgement_amount_field() {
 		javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("LodgementAmount")).click();
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("LodgementAmount"))
 						.sendKeys(testData.get("LodgementAmount"), Keys.TAB);
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("toastMsgCloseBtn"))
 						.click();
@@ -1361,18 +1361,18 @@ public class Ijara_DocumentDetails_Step {
 	@And("Enter the value in Remarks field")
 	public void enter_the_value_in_remarks_field() {
 		javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("Remarks")).click();
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("Remarks"))
 						.sendKeys(testData.get("Remarks"), Keys.TAB);
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("toastMsgCloseBtn"))
 						.click();
@@ -1386,14 +1386,14 @@ public class Ijara_DocumentDetails_Step {
 
 	@And("Click on Save icon to save document details record")
 	public void click_on_save_icon_to_save_document_details_record() {
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.JSEClick(
 						javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("SaveIcon")));
 				// javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("SaveIcon")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1405,14 +1405,14 @@ public class Ijara_DocumentDetails_Step {
 	public void user_search_the_ref_id_under_inbox_for_document_details() throws IOException {
 		waitHelper.waitForElementwithFluentwait(driver,
 				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("inboxSearchInput")));
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("inboxSearchInput"))
 						.sendKeys(testData.get("Ref No"));
 				;
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1421,7 +1421,7 @@ public class Ijara_DocumentDetails_Step {
 
 	@And("Validate that existing records are present in document details view list")
 	public void validate_that_existing_records_are_present_in_document_details_view_list() throws IOException {
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				waitHelper.waitForElementwithFluentwait(driver,
 						javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("EditIcon")));
@@ -1429,7 +1429,7 @@ public class Ijara_DocumentDetails_Step {
 						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("EditIcon")).isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1448,14 +1448,14 @@ public class Ijara_DocumentDetails_Step {
 
 	@And("Click on Back Icon in document section section")
 	public void click_on_back_icon_in_document_section_section() {
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.JSEClick(
 						javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("BackButton")));
 				// javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("SaveIcon")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1465,14 +1465,14 @@ public class Ijara_DocumentDetails_Step {
 
 	@And("Click on Pencil icon of existing record")
 	public void click_on_pencil_icon_of_existing_record() {
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.JSEClick(
 						javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("EditIcon")));
 				// javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("SaveIcon")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1484,7 +1484,7 @@ public class Ijara_DocumentDetails_Step {
 	public void validate_that_upload_button_is_displayed_in_document_details() throws IOException {
 		javascriptHelper.scrollIntoView(
 				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("FileUploadButton")));
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
 						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("FileUploadButton")));
@@ -1493,7 +1493,7 @@ public class Ijara_DocumentDetails_Step {
 						.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1512,7 +1512,7 @@ public class Ijara_DocumentDetails_Step {
 
 	@And("Validate the fields are present in document details view list")
 	public void validate_the_fields_are_present_in_document_details_view_list() throws IOException {
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
 						.executeScriptWithWebElement(documentdetailsJsPaths.getElement("DocumentNameField")));
@@ -1531,7 +1531,7 @@ public class Ijara_DocumentDetails_Step {
 						.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1543,7 +1543,7 @@ public class Ijara_DocumentDetails_Step {
 	public void search_the_document_details_value_with_valid_data() throws IOException {
 		waitHelper.waitForElementwithFluentwait(driver,
 				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("SearchInput")));
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 //				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("financialCommitmentSearchInput"))
 //				.sendKeys("USD");
@@ -1552,7 +1552,7 @@ public class Ijara_DocumentDetails_Step {
 				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("SearchInput")).clear();
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1574,13 +1574,13 @@ public class Ijara_DocumentDetails_Step {
 
 			}
 		}
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("SearchInput"))
 						.sendKeys(testData.get("InvalidInput"));
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1674,7 +1674,7 @@ public class Ijara_DocumentDetails_Step {
 		System.out.println(documentdetailsJsPaths.getElement("SearchButton"));
 		WebElement searchButton = javascriptHelper
 				.executeScriptWithWebElement(documentdetailsJsPaths.getElement("SearchButton"));
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				searchButton.click();
 				// javascriptHelper.JSEClick(searchButton);
@@ -1689,12 +1689,12 @@ public class Ijara_DocumentDetails_Step {
 
 	@And("Click on Export dropdown in document details")
 	public void click_on_export_dropdown_in_document_details() {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(documentdetailsJsPaths.getElement("ExportIcon")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}

@@ -73,14 +73,14 @@ public class ApplicationDetails_ContractSigning {
 	public void user_click_the_module_name_dropdown_in_uls_application_for_application_details_contract_signing_stage() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
 				.executeScriptWithWebElement(appDetails_ContractSigningJsPaths.getElement("moduleNameDropdown")));
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appDetails_ContractSigningJsPaths.getElement("moduleNameDropdown"))
 						.click();
 				System.out.println(testData.get("Module Name"));
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -161,14 +161,14 @@ public class ApplicationDetails_ContractSigning {
 		
 		waitHelper.waitForElementwithFluentwait(driver,
 				javascriptHelper.executeScriptWithWebElement(appDetails_ContractSigningJsPaths.getElement("inboxEntitleBtn")));
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				
 				javascriptHelper.executeScriptWithWebElement(appDetails_ContractSigningJsPaths.getElement("inboxEntitleBtn"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}

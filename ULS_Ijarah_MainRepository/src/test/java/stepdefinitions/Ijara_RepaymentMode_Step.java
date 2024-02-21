@@ -70,12 +70,12 @@ public class Ijara_RepaymentMode_Step {
 
 	@And("Navigate to Repayment mode section")
 	public void navigate_to_repayment_mode_section() {
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement(ijararepaymentmodeJsPaths.getElement("repaymentModeSection")));
 				break;
 			} catch (Exception e) { 
-				if (i == 1000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}

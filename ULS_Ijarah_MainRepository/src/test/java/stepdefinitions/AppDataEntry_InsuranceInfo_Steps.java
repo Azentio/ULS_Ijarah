@@ -52,7 +52,7 @@ public class AppDataEntry_InsuranceInfo_Steps {
 		//waitHelper.waitForElementwithFluentwait(driver, javaScriptHelper.executeScriptWithWebElement(jsPaths.getElement("insuranceInfo")));
 //		String jsPath ="return document.querySelectorAll('ion-label').length";
 //        int length=0;
-//        for (int i = 0; i <2000; i++) {
+//        for (int i = 0; i <=300; i++) {
 //            try {
 //                 String label = javaScriptHelper.executeScript(jsPath).toString();
 //            //     System.out.println(label);
@@ -62,7 +62,7 @@ public class AppDataEntry_InsuranceInfo_Steps {
 //                    break;
 //                }
 //            } catch (Exception e) {
-//                if (i==1999) {
+//                if (i==300) {
 //                    Assert.fail(e.getMessage());
 //                }
 //            }
@@ -358,7 +358,7 @@ public class AppDataEntry_InsuranceInfo_Steps {
 
 	@And("user check the insurancequotation field is mandatory or not")
 	public void user_check_the_insurancequotation_field_is_mandatory_or_not() {
-		for (int i = 0; i <2000; i++) {
+		for (int i = 0; i <=300; i++) {
 	        try {
 	            String insuranceQuotationIdMandatory = jsPaths.getElement("insuranceQuotationIdMandatory") ;
 	            String accountholdername = (String) javaScriptHelper.executeScript("return "+insuranceQuotationIdMandatory);
@@ -366,7 +366,7 @@ public class AppDataEntry_InsuranceInfo_Steps {
 	            Assert.assertTrue(accountholdername.contains("*"));
 	            break;
 	        } catch (Exception e) {
-	            if (i==1999) {
+	            if (i==300) {
 	                Assert.fail(e.getMessage());
 	            }
 	        }
@@ -375,7 +375,7 @@ public class AppDataEntry_InsuranceInfo_Steps {
 	}
 @And("user check the insuranceYear field is mandatory or not")
 public void user_check_the_insurance_year_field_is_mandatory_or_not() {
-	for (int i = 0; i <2000; i++) {
+	for (int i = 0; i <=300; i++) {
         try {
             String insuranceYearMandatory = jsPaths.getElement("insuranceYearMandatory") ;
             String accountholdername = (String) javaScriptHelper.executeScript("return "+insuranceYearMandatory);
@@ -383,7 +383,7 @@ public void user_check_the_insurance_year_field_is_mandatory_or_not() {
             Assert.assertTrue(accountholdername.contains("*"));
             break;
         } catch (Exception e) {
-            if (i==1999) {
+            if (i==300) {
                 Assert.fail(e.getMessage());
             }
         }
@@ -393,7 +393,7 @@ public void user_check_the_insurance_year_field_is_mandatory_or_not() {
 
 @And("user check the depriciation field is mandatory or not")
 public void user_check_the_depriciation_field_is_mandatory_or_not() {
-	 for (int i = 0; i <2000; i++) {
+	 for (int i = 0; i <=300; i++) {
          try {
              String depriciationMandatory = jsPaths.getElement("depriciationMandatory") ;
              String accountholdername = (String) javaScriptHelper.executeScript("return "+depriciationMandatory);
@@ -401,7 +401,7 @@ public void user_check_the_depriciation_field_is_mandatory_or_not() {
              Assert.assertTrue(accountholdername.contains("*"));
              break;
          } catch (Exception e) {
-             if (i==1999) {
+             if (i==300) {
                  Assert.fail(e.getMessage());
              }
          }
@@ -411,7 +411,7 @@ public void user_check_the_depriciation_field_is_mandatory_or_not() {
 
 @And("user check the AssetPrice field is mandatory or not")
 public void user_check_the_asset_price_field_is_mandatory_or_not() {
-	for (int i = 0; i <2000; i++) {
+	for (int i = 0; i <=300; i++) {
         try {
             String AssetPriceMandatory = jsPaths.getElement("AssetPriceMandatory") ;
             String accountholdername = (String) javaScriptHelper.executeScript("return "+AssetPriceMandatory);
@@ -419,7 +419,7 @@ public void user_check_the_asset_price_field_is_mandatory_or_not() {
             Assert.assertTrue(accountholdername.contains("*"));
             break;
         } catch (Exception e) {
-            if (i==1999) {
+            if (i==300) {
                 Assert.fail(e.getMessage());
             }
         }
@@ -429,7 +429,7 @@ public void user_check_the_asset_price_field_is_mandatory_or_not() {
 
 @And("user check the RatePerAsset field is mandatory or not")
 public void user_check_the_rate_per_asset_field_is_mandatory_or_not() {
-	for (int i = 0; i <2000; i++) {
+	for (int i = 0; i <=300; i++) {
         try {
             String RatePerAssetMandatory = jsPaths.getElement("RatePerAssetMandatory") ;
             String accountholdername = (String) javaScriptHelper.executeScript("return "+RatePerAssetMandatory);
@@ -437,7 +437,7 @@ public void user_check_the_rate_per_asset_field_is_mandatory_or_not() {
             Assert.assertTrue(accountholdername.contains("*"));
             break;
         } catch (Exception e) {
-            if (i==1999) {
+            if (i==300) {
                 Assert.fail(e.getMessage());
             }
         }
@@ -449,7 +449,7 @@ public void user_check_the_rate_per_asset_field_is_mandatory_or_not() {
 @And("user check the minimumInsurancePremium field is mandatory or not")
 public void user_check_the_minimum_insurance_premium_field_is_mandatory_or_not() {
     
-	for (int i = 0; i <2000; i++) {
+	for (int i = 0; i <=300; i++) {
         try {
             String minimumInsurancePremiumMandatory = jsPaths.getElement("minimumInsurancePremiumMandatory") ;
             String accountholdername = (String) javaScriptHelper.executeScript("return "+minimumInsurancePremiumMandatory);
@@ -457,7 +457,7 @@ public void user_check_the_minimum_insurance_premium_field_is_mandatory_or_not()
             Assert.assertTrue(accountholdername.contains("*"));
             break;
         } catch (Exception e) {
-            if (i==1999) {
+            if (i==300) {
                 Assert.fail(e.getMessage());
             }
         }
@@ -467,7 +467,7 @@ public void user_check_the_minimum_insurance_premium_field_is_mandatory_or_not()
 @And("user check the BaseInsurancePremium field is mandatory or not")
 public void user_check_the_base_insurance_premium_field_is_mandatory_or_not() {
     
-	for (int i = 0; i <2000; i++) {
+	for (int i = 0; i <=300; i++) {
         try {
             String BaseInsurancePremiumMandatory = jsPaths.getElement("BaseInsurancePremiumMandatory") ;
             String accountholdername = (String) javaScriptHelper.executeScript("return "+BaseInsurancePremiumMandatory);
@@ -475,7 +475,7 @@ public void user_check_the_base_insurance_premium_field_is_mandatory_or_not() {
             Assert.assertTrue(accountholdername.contains("*"));
             break;
         } catch (Exception e) {
-            if (i==1999) {
+            if (i==300) {
                 Assert.fail(e.getMessage());
             }
         }
@@ -484,7 +484,7 @@ public void user_check_the_base_insurance_premium_field_is_mandatory_or_not() {
 
 @And("user check the VATPremium field is mandatory or not")
 public void user_check_the_vat_premium_field_is_mandatory_or_not() {
-	for (int i = 0; i <2000; i++) {
+	for (int i = 0; i <=300; i++) {
         try {
             String VATPremiumMandatory = jsPaths.getElement("VATPremiumMandatory") ;
             String accountholdername = (String) javaScriptHelper.executeScript("return "+VATPremiumMandatory);
@@ -492,7 +492,7 @@ public void user_check_the_vat_premium_field_is_mandatory_or_not() {
             Assert.assertTrue(accountholdername.contains("*"));
             break;
         } catch (Exception e) {
-            if (i==1999) {
+            if (i==300) {
                 Assert.fail(e.getMessage());
             }
         }
@@ -502,7 +502,7 @@ public void user_check_the_vat_premium_field_is_mandatory_or_not() {
 
 @And("user check the NetPremium field is mandatory or not")
 public void user_check_the_net_premium_field_is_mandatory_or_not() {
-	for (int i = 0; i <2000; i++) {
+	for (int i = 0; i <=300; i++) {
         try {
             String NetPremiumMandatory = jsPaths.getElement("NetPremiumMandatory") ;
             String accountholdername = (String) javaScriptHelper.executeScript("return "+NetPremiumMandatory);
@@ -510,7 +510,7 @@ public void user_check_the_net_premium_field_is_mandatory_or_not() {
             Assert.assertTrue(accountholdername.contains("*"));
             break;
         } catch (Exception e) {
-            if (i==1999) {
+            if (i==300) {
                 Assert.fail(e.getMessage());
             }
         }

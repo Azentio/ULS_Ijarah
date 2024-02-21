@@ -49,12 +49,12 @@ public class Ijara_AppDataCheck_ApplicationDetails_Step {
 	
 	@And("Navigate to Application details section")
 	public void navigate_to_application_details_section() {
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement(applicationdetailsJsPaths.getElement("RepaymentModeButton")));
 				break;
 			} catch (Exception e) { 
-				if (i == 1000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -64,14 +64,14 @@ public class Ijara_AppDataCheck_ApplicationDetails_Step {
 
 	@And("Validate that Spoke Location field is present in Application details")
 	public void validate_that_spoke_location_field_is_present_in_application_details() throws IOException{
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(applicationdetailsJsPaths.getElement("SpokeLocation")).isDisplayed());
 				Assert.assertEquals(javascriptHelper.executeScriptWithWebElement(applicationdetailsJsPaths.getElement("SpokeLocation")).getAttribute("ng-reflect-readonly"), "true");
 				//Assert.assertTrue(javascriptHelper.executeScriptWithWebElement(applicationdetailsJsPaths.getElement("SpokeLocation")).isDisplayed());
 				break;
 			} catch (Exception e) { 
-				if (i == 1000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -161,13 +161,13 @@ public class Ijara_AppDataCheck_ApplicationDetails_Step {
 	@And("User search the Ref id under inbox for Application details")
 	public void user_search_the_ref_id_under_inbox_for_application_details() throws IOException {
 		waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(applicationdetailsJsPaths.getElement("inboxSearchInput")));
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(applicationdetailsJsPaths.getElement("inboxSearchInput"))
 				.sendKeys(testData.get("Ref No"));;
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}

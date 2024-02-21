@@ -63,13 +63,13 @@ public class Ijara_AppDataCheck_RepaymentMode_Step {
 
 	@And("User navigate to Repayment mode module")
 	public void user_navigate_to_repayment_mode_module() {
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(repaymentModeJsPaths.getElement("RepaymentMode")).click();
 				// javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement(repaymentModeJsPaths.getElement("RepaymentMode")));
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -79,13 +79,13 @@ public class Ijara_AppDataCheck_RepaymentMode_Step {
 
 	@And("Click on view icon of existing record in repayment mode")
 	public void click_on_view_icon_of_existing_record_in_repayment_mode() {
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.JSEClick(javascriptHelper
 						.executeScriptWithWebElement(repaymentModeJsPaths.getElement("EyeIconInViewlist")));
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -95,7 +95,7 @@ public class Ijara_AppDataCheck_RepaymentMode_Step {
 
 	@And("Validate that Repayment mode field is displayed in repayment mode page")
 	public void validate_that_repayment_mode_field_is_displayed_in_repayment_mode_page() throws IOException {
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				waitHelper.waitForElementwithFluentwait(driver,
 						javascriptHelper.executeScriptWithWebElement(repaymentModeJsPaths.getElement("RepaymentMode")));
@@ -183,7 +183,7 @@ public class Ijara_AppDataCheck_RepaymentMode_Step {
 	@And("Validate that Repayment mode field is displayed in repayment mode module view list")
 	public void validate_that_repayment_mode_field_is_displayed_in_repayment_mode_module_view_list()
 			throws IOException {
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				waitHelper.waitForElementwithFluentwait(driver, javascriptHelper
 						.executeScriptWithWebElement(repaymentModeJsPaths.getElement("RepaymentModeField")));
@@ -192,7 +192,7 @@ public class Ijara_AppDataCheck_RepaymentMode_Step {
 						.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -251,14 +251,14 @@ public class Ijara_AppDataCheck_RepaymentMode_Step {
 		System.out.println(repaymentModeJsPaths.getElement("inboxSearchInput"));
 		// waitHelper.waitForElementwithFluentwait(driver,
 		// javascriptHelper.executeScriptWithWebElement(repaymentModeJsPaths.getElement("inboxSearchInput")));
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <=300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(repaymentModeJsPaths.getElement("inboxSearchInput"))
 						.sendKeys(testData.get("Ref No"));
 				;
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i ==300) {
 					Assert.fail(e.getMessage());
 				}
 			}
