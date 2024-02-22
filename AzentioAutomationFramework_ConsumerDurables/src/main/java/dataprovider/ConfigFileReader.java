@@ -82,22 +82,32 @@ public class ConfigFileReader {
 
 	public String getTestDataFilePath() {
 		String testDataFilePath;
-		testDataFilePath = System.getProperty("user.dir")+properties.getProperty("consumerDurablesTestDataFilePath");
+		testDataFilePath = System.getProperty("user.dir") + properties.getProperty("consumerDurablesTestDataFilePath");
 		return testDataFilePath;
- 
+
 	}
- 
+
 	public String getJSPathFilePath() {
 		String jsPathFileName;
-		jsPathFileName = System.getProperty("user.dir")+properties.getProperty("JSPathFilePath");
+		jsPathFileName = System.getProperty("user.dir") + properties.getProperty("JSPathFilePath");
 		return jsPathFileName;
- 
+
 	}
-	public String getURL()
-	{
+
+	public String getURL() {
 		String url;
-		url = properties.getProperty("consumerDurablesTestDataFilePath");
+		url = properties.getProperty("url");
 		return url;
 	}
 
+	public String getDataEntryReferenceNumber() {
+
+		String url = properties.getProperty("DataEntryReferenceNumber");
+		if (url != null)
+			return url;
+		else
+			throw new RuntimeException(
+					"Data Entry Reference number not specified in the Configuration.properties file.");
+
+	}
 }

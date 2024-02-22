@@ -86,7 +86,6 @@ And User_608 invoke soft assert in Contact details screen under Additional Custo
 
 @AT_CD_ADE_CD_04
 Scenario: Creation of Contact Details record - Verify the below fields should Mandatory/non-mandatory, editable and LOV/textbox
-
 Given navigate the IJARA URL
 And login with valid credentials - Consumer Durable - App Data Entry
 And User_608 get the test data for test case AT_CD_ADE_CD_04
