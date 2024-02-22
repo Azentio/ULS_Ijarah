@@ -3618,38 +3618,57 @@ public class Tawarruq_Steps {
 
 		@And("User_608 click the Pencil Icon button in Customer Personal Info section under Additional Customer Info tab")
 		public void user_608_click_the_pencil_icon_button_in_customer_personal_info_section_under_additional_customer_info_tab() throws Throwable {
-			String length = null;
-			for (int i = 0; i < 5000; i++) {
+			String listOfRecords = "document.querySelector('button[icon=\"pi pi-plus\"]').parentElement.parentElement.parentElement.parentElement.querySelectorAll('td').length";
+			String listOfEyeBtn = "";
+			String recordName = "";
+			boolean isEyeBtnClicked = false;
+			for (int i = 0; i <= 500; i++) {
 				try {
-					length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
-							.toString();
-					System.out.println(length);
-					if (!length.isBlank() && !length.equals("0")) {
+					listOfEyeBtn = javascriptHelper.executeScript("return " + listOfRecords).toString();
+					System.out.println("List of add button " + listOfEyeBtn);
+					if (!(listOfEyeBtn.isBlank())) {
 						break;
 					}
 				} catch (Exception e) {
-					if (i == 4999) {
+					if (i == 500) {
 						Assert.fail(e.getMessage());
 					}
 				}
 			}
-			for (int i = 0; i < 5000; i++) {
-				try {
-					for (int j = 0; j < Integer.parseInt(length); j++) {
-						String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
-						String titlename = javascriptHelper.executeScript(title).toString();			
-						if (titlename.trim().contains("Customer Personal Information")) {
-							String jspath = "document.querySelectorAll('button[icon=\"pi pi-pencil\"]')[" + j + "]";
-							WebElement pencilBtn = javascriptHelper.executeScriptWithWebElement(jspath);
-							pencilBtn.click();
-							break;
+			
+			int premitiveListOfEyeButton = Integer.parseInt(listOfEyeBtn);
+			for (int j = 0; j < premitiveListOfEyeButton; j++) {
+				for (int k = 0; k <= 100; k++) {
+					try {
+						recordName = javascriptHelper.executeScript(
+								"return document.querySelector('button[icon=\"pi pi-plus\"]').parentElement.parentElement.parentElement.parentElement.querySelectorAll('td')["
+										+ j + "].textContent")
+								.toString();
+						System.out.println("Screen Name " + recordName);
+						if (!(recordName.isBlank())) {
+							System.out.println("Screen Name" + recordName + " is Not null");
+							if ((recordName.trim()).equalsIgnoreCase(("Active").trim())) {
+								System.out.println("Inside nested loop");
+								javascriptHelper.backgroundColor(
+										javascriptHelper
+										.executeScriptWithWebElement(
+												"document.querySelector('button[icon=\"pi pi-plus\"]').parentElement.parentElement.parentElement.parentElement.querySelectorAll('td')[" + j + "].parentElement.querySelector('button')"));
+								javascriptHelper
+										.executeScriptWithWebElement(
+												"document.querySelector('button[icon=\"pi pi-plus\"]').parentElement.parentElement.parentElement.parentElement.querySelectorAll('td')[" + j + "].parentElement.querySelector('button')")
+										.click();
+								isEyeBtnClicked = true;
+								break;
+							}
+						}
+					} catch (Exception e) {
+						if (k == 100) {
+							Assert.fail(e.getMessage());
 						}
 					}
+				}
+				if (isEyeBtnClicked == true) {
 					break;
-				} catch (Exception e) {
-					if (i == 4999) {
-						Assert.fail(e.getMessage());
-					}
 				}
 			}
 		}
@@ -3929,7 +3948,7 @@ public class Tawarruq_Steps {
 		@And("User_608 verify Back button available under Identification Details screen in Additional Customer Info tab")
 		public void user_608_verify_back_button_available_under_identification_details_screen_in_additional_customer_info_tab() throws Throwable {
 			String length = null;
-			for (int i = 0; i < 500; i++) {
+			for (int i = 0; i < 300; i++) {
 				try {
 					length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
 							.toString();
@@ -3938,12 +3957,12 @@ public class Tawarruq_Steps {
 						break;
 					}
 				} catch (Exception e) {
-					if (i == 499) {
+					if (i == 299) {
 						Assert.fail(e.getMessage());
 					}
 				}
 			}
-			for (int i = 0; i < 500; i++) {
+			for (int i = 0; i < 150; i++) {
 				try {
 					for (int j = 0; j < Integer.parseInt(length); j++) {
 						String title = "return document.querySelectorAll('form button')[" + j + "].getAttribute('ng-reflect-text')";
@@ -3960,7 +3979,7 @@ public class Tawarruq_Steps {
 					}
 					break;
 				} catch (Exception e) {
-					if (i == 499) {
+					if (i == 149) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -3969,7 +3988,7 @@ public class Tawarruq_Steps {
 
 		@And("User_608 verify Save button available under Identification Details screen in Additional Customer Info tab")
 		public void user_608_verify_save_button_available_under_identification_details_screen_in_additional_customer_info_tab() throws Throwable {			
-			for (int i = 0; i <= 500; i++) {
+			for (int i = 0; i <= 150; i++) {
 				try {
 					WebElement saveBtn = javascriptHelper.executeScriptWithWebElement(
 							identificatioDetailsJsPaths.getElement("identificationDetailsSaveBtn"));
@@ -3977,7 +3996,7 @@ public class Tawarruq_Steps {
 					saveBtn.isDisplayed();
 					break;
 				} catch (Exception e) {
-					if (i == 500) {
+					if (i == 150) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -3986,7 +4005,7 @@ public class Tawarruq_Steps {
 
 		@And("User_608 verify Help button available under Identification Details screen in Additional Customer Info tab")
 		public void user_608_verify_help_button_available_under_identification_details_screen_in_additional_customer_info_tab() throws Throwable {
-			for (int i = 0; i <= 1500; i++) {
+			for (int i = 0; i <= 150; i++) {
 				try {
 					WebElement helpBtn = javascriptHelper.executeScriptWithWebElement(
 							identificatioDetailsJsPaths.getElement("identificationDetailsHelpBtn"));
@@ -3994,7 +4013,7 @@ public class Tawarruq_Steps {
 					helpBtn.isDisplayed();
 					break;
 				} catch (Exception e) {
-					if (i == 1500) {
+					if (i == 150) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -4051,12 +4070,12 @@ public class Tawarruq_Steps {
 
 		@And("User_608 select the Country of Issue in Customer Identification screen")
 		public void user_608_select_the_country_of_issue_in_customer_identification_screen() {
-			for (int i = 0; i <= 2000; i++) {
+			for (int i = 0; i <= 150; i++) {
 				try {
 					javascriptHelper.executeScriptWithWebElement(identificatioDetailsJsPaths.getElement("countryOfIssueDropdown")).click();
 					break;
 				} catch (Exception e) {
-					if (i == 2000) {
+					if (i == 150) {
 						Assert.fail(e.getMessage());
 					}
 				}

@@ -32,6 +32,7 @@ public class AutoLoan_Steps {
 	JSPaths underWriterJsPaths = new JSPaths(excelPath, "Underwriter_Elements", "Underwriter_FieldName", "JSPath");
 	JSPaths appDataCustomerDetailsJsPaths = new JSPaths(excelPath, "AppData_CustomerDetail_Elements", "AppData_CustomerDetails_FieldName", "JSPath");
 	JSPaths employmentDetailsJsPaths = new JSPaths(excelPath, "EmploymentDetails_Elements", "EmploymentDetails_FieldName", "JSPath");
+	JSPaths incomeDetailsJsPaths = new JSPaths(excelPath, "DataCheckIncome_Elements", "DataCheckIncome_FieldName", "JSPath");
 	
 	ExcelData exelData = new ExcelData(excelTestDataPath, "ijara_LoginCredentials", "UserType");
 	Map<String, String> loginTestData = new HashMap<>();
@@ -47,7 +48,8 @@ public class AutoLoan_Steps {
 	ExcelData AppDataEntryApplicationDetails = new ExcelData(excelTestDataPath,"AL_AppData_AppDetails","DataSet ID");
 	ExcelData AppDataEntryCFDebtExcelData = new ExcelData(excelTestDataPath,"AL_AppData_CustomerDebt","DataSet ID");
 	ExcelData UnderwriterL1ExcelData = new ExcelData(excelTestDataPath,"AL_Underwriter_L1","DataSet ID");
-	ExcelData AppDataEntryEmpDetailsExcelData = new ExcelData(excelTestDataPath,"AL_ApppData_EmpDetials","DataSet ID");
+	ExcelData AppDataEntryEmpDetailsExcelData = new ExcelData(excelTestDataPath,"AL_AppData_EmpDetails","DataSet ID");
+	ExcelData AppDataEntryIncomeDetailsExcelData = new ExcelData(excelTestDataPath,"AL_AppData_IncomeDetails","DataSet ID");
 	
 	ExcelData testExecution = new ExcelData(excelTestDataPath, "ULSExecution", "TestCase ID");
 	Map<String, String> testExecutionData;
@@ -287,11 +289,24 @@ public class AutoLoan_Steps {
 		testData = AppDataEntryEmpDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
+//	Auto Loan -- App Data Entry Stage  -- Income Details screen 
+	@And("^User_608 get the test data for test case AT_AL_ADE_INC_01$")
+    public void get_the_test_data_for_test_case_AT_AL_ADE_INC_01() throws Throwable {
+		testExecutionData = testExecution.getTestdata("AT_AL_ADE_INC_01");
+		testData = AppDataEntryIncomeDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
+    }
 	
+	@And("^User_608 get the test data for test case AT_AL_ADE_INC_02$")
+    public void get_the_test_data_for_test_case_AT_AL_ADE_INC_02() throws Throwable {
+		testExecutionData = testExecution.getTestdata("AT_AL_ADE_INC_02");
+		testData = AppDataEntryIncomeDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
+    }
 	
-	
-	
-	
+	@And("^User_608 get the test data for test case AT_AL_ADE_INC_03$")
+    public void get_the_test_data_for_test_case_AT_AL_ADE_INC_03() throws Throwable {
+		testExecutionData = testExecution.getTestdata("AT_AL_ADE_INC_03");
+		testData = AppDataEntryIncomeDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
+    }
 	
 	
 	
@@ -3346,7 +3361,7 @@ public class AutoLoan_Steps {
 						appDataAppDetailsJsPaths.getElement("AppDetailsBackBtn"));
 				actions.moveToElement(btn).build().perform();
 				javascriptHelper.backgroundBorder(btn);
-				javascriptHelper.JSEClick(btn);
+				btn.click();
 				break;
 			} catch (Exception e) {
 				if (i == 300) {
@@ -3370,8 +3385,7 @@ public class AutoLoan_Steps {
 					Assert.fail(e.getMessage());
 				}
 			}
-		} 
-	    
+		}	    
 	}
 	
 //	AT_AL_APP_09
@@ -4712,8 +4726,7 @@ public class AutoLoan_Steps {
 				}
 			}
 		}		
-	}
-	
+	}	
 	
 	@And("User_608 to verify while modification system enters the invalid data in Customer Debt screen")
 	public void user_608_to_verify_while_modification_system_enters_the_invalid_data_in_customer_debt_screen() throws Throwable {
@@ -6942,55 +6955,6 @@ public class AutoLoan_Steps {
 		}
 	}
 
-	@And("^User_608 select Company Type from dropdown in Employment Details screen$")
-	public void user_608_select_company_type_from_dropdown_in_employment_details_screen() throws Throwable {
-		for (int i = 0; i <= 300; i++) {
-			try {
-				javascriptHelper.executeScriptWithWebElement(
-						employmentDetailsJsPaths.getElement("companyTypeDropdown")).click();
-				break;
-			} catch (Exception e) {
-				if (i == 300) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-		String length = null;
-		for (int i = 0; i < 300; i++) {
-			try {
-				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-radio-group ion-label').length")
-						.toString();
-				System.out.println(length);
-				if (!length.isBlank() && !length.equals("0")) {
-					break;
-				}
-			} catch (Exception e) {
-				if (i == 299) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-		for (int i = 0; i < 300; i++) {
-			try {
-				for (int j = 0; j < Integer.parseInt(length); j++) {
-					String title = "return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].textContent";
-					String titlename = javascriptHelper.executeScript(title).toString();
-					System.out.println("Option: "+titlename);				
-					if (titlename.trim().equalsIgnoreCase(testData.get("CompanyType"))) {
-						String jspath = "document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]";
-						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
-						actions.moveToElement(btn).click().build().perform();
-						break;
-					}
-				}
-				break;
-			} catch (Exception e) {
-				if (i == 299) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-	}
 
 	@And("^User_608 enter Date of Joining in Employment Details screen$")
 	public void user_608_enter_date_of_joining_in_employment_details_screen() throws Throwable {
@@ -7167,36 +7131,6 @@ public class AutoLoan_Steps {
 				break;
 			} catch (Exception e) {
 				if (i == 299) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-	}
-
-	@And("^User_608 enter Total Experience in Employment Details screen$")
-	public void user_608_enter_total_experience_in_employment_details_screen() throws Throwable {
-		for (int i = 0; i <= 150; i++) {
-			try {
-				javascriptHelper.executeScriptWithWebElement(
-						employmentDetailsJsPaths.getElement("totalExperienceInput")).sendKeys(testData.get("TotalExperience"));
-				break;
-			} catch (Exception e) {
-				if (i == 150) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-	}
-
-	@And("^User_608 enter Share Holder Percentage in Employment Details screen$")
-	public void user_608_enter_share_holder_percentage_in_employment_details_screen() throws Throwable {
-		for (int i = 0; i <= 150; i++) {
-			try {
-				javascriptHelper.executeScriptWithWebElement(
-						employmentDetailsJsPaths.getElement("shareHolderPercentInput")).sendKeys(testData.get("ShareHolder%"));
-				break;
-			} catch (Exception e) {
-				if (i == 150) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -8021,12 +7955,7 @@ public class AutoLoan_Steps {
 
 	
 	
-	
-	
-	
-	
-	
-	
+
 	
 	
 	

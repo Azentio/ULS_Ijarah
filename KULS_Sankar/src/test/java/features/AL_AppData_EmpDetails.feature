@@ -231,7 +231,7 @@ Then logout from the ijaraApplication
 And User_608 invoke soft assert in Employment details screen under Customer Financials tab at App Data Entry stage
 
 @AT_AL_ADE_EMP_06
-Scenario: Employment Details screen should get open with below mentioned Fields when Nature of Employment is Salaried
+Scenario: Employment Details screen should get open with below mentioned Fields mandatory/non-madatory, dropdown
 
 Given navigate the IJARA URL
 And login with valid credentials - Auto Loan - App Data Entry
@@ -336,14 +336,11 @@ And User_608 click the Customer Financials tab
 And User_608 click the pencil icon under Customer Financials tab
 And User_608 click Add button under Customer Employment list section in Customer Financials tab
 And User_608 select Nature of Employment from dropdown in Employment Details screen
-And User_608 select Company Type from dropdown in Employment Details screen
-And User_608 enter Date of Joining in Employment Details screen 
 And User_608 select Employment Period from dropdown in Employment Details screen
+And User_608 enter Date of Joining in Employment Details screen
 And User_608 select Employer Name from dropdown in Employment Details screen
 And User_608 enter Employee ID in Employment Details screen
 And User_608 select Employment Type from dropdown in Employment Details screen
-#And User_608 enter Total Experience in Employment Details screen
-And User_608 enter Share Holder Percentage in Employment Details screen
 And User_608 click Save button in Employment details screen
 And User_608 verify the confirmation message post clicking on save button in Employment Details screen
 Then logout from the ijaraApplication

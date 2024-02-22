@@ -3452,7 +3452,7 @@ public class Murabaha_Steps {
 	@And("User_608 click Add button under Income section in Customer Financials tab")
 	public void user_608_click_add_button_under_income_section_in_customer_financials_tab() {
 		String length = null;
-		for (int i = 0; i < 500; i++) {
+		for (int i = 0; i < 300; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
 						.toString();
@@ -3461,12 +3461,12 @@ public class Murabaha_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 499) {
+				if (i == 299) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
@@ -3479,13 +3479,14 @@ public class Murabaha_Steps {
 						String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]"
 								+ ".parentElement.parentElement.querySelector('button[icon=\"pi pi-plus\"]')";
 						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.scrollToElement(btn).build().perform();
 						btn.click();
 						break;
 					}
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 4999) {
+				if (i == 299) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3496,26 +3497,26 @@ public class Murabaha_Steps {
 	public void user_608_validate_pension_amount_field_available_under_income_details_screen() throws Throwable {
 		WebElement pensionAmtLabel = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("pensionAmtLabel"));
 		System.out.println("Field Name: "+pensionAmtLabel.getText());
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.backgroundColor(pensionAmtLabel);
 				Assert.assertTrue(pensionAmtLabel.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 		
 		WebElement pensionAmtInput = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("pensionAmtInput"));
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.backgroundBorder(pensionAmtInput);
 				Assert.assertTrue(pensionAmtInput.isDisplayed());
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3525,12 +3526,12 @@ public class Murabaha_Steps {
 	
 	@And("User_608 select the Salary credited to Bank value under Income details screen")
 	public void user_608_select_the_salary_credited_to_bank_value_under_income_details_screen() throws Throwable {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 200; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("salaryCreditedToBankDropdown")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 200) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3689,18 +3690,22 @@ public class Murabaha_Steps {
 		}
 	}
 
-	
+	@And("^User_608 invoke soft assert in Income details screen under Customer Financials tab at App Data Entry stage$")
+	public void user_608_invoke_soft_assert_in_income_details_screen_under_customer_financials_tab_at_app_data_entry_stage()
+			throws Throwable {
+		softAssert.assertAll();
+	}
 	
 //	AT_MU_INC_02
 	@And("User_608 enter the Lumpsum Amount under Income screen in Customer Financials tab")
 	public void user_608_enter_the_lumpsum_amount_under_income_screen_in_customer_financials_tab()throws Throwable {
-	    for (int i = 0; i < 1000; i++) {
+	    for (int i = 0; i < 300; i++) {
 	    	try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("lumpsumAmtInput"))
 				.sendKeys(testData.get("Lumpsum Amount"));
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3724,12 +3729,12 @@ public class Murabaha_Steps {
 
 	@And("User_608 select the Income option under Income screen in Customer Financials tab")
 	public void user_608_select_the_income_option_under_income_screen_in_customer_financials_tab() throws Throwable {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("incomeDropdown")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3800,12 +3805,12 @@ public class Murabaha_Steps {
 
 	@And("User_608 select the Frequency option under Income screen in Customer Financials tab")
 	public void user_608_select_the_frequency_option_under_income_screen_in_customer_financials_tab() throws Throwable {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("frequencyDropdown")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3876,13 +3881,13 @@ public class Murabaha_Steps {
 
 	@And("User_608 enter the Income Amount under Income screen in Customer Financials tab")
 	public void user_608_enter_the_income_amount_under_income_screen_in_customer_financials_tab() throws Throwable {
-		for (int i = 0; i < 1000; i++) {
+		for (int i = 0; i < 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("amountInput"))
 				.sendKeys(testData.get("Amount"));
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3891,13 +3896,13 @@ public class Murabaha_Steps {
 
 	@And("User_608 enter the Adjusted% under Income screen in Customer Financials tab")
 	public void user_608_enter_the_adjusted_under_income_screen_in_customer_financials_tab() throws Throwable {
-		for (int i = 0; i < 1000; i++) {
+		for (int i = 0; i < 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("adjusted%_Input"))
 				.sendKeys(testData.get("Adjusted %"));
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3906,12 +3911,12 @@ public class Murabaha_Steps {
 
 	@And("User_608 select the Bank Name under Income screen in Customer Financials tab")
 	public void user_608_select_the_bank_name_under_income_screen_in_customer_financials_tab() throws Throwable {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("bankNameDropdown")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3982,12 +3987,12 @@ public class Murabaha_Steps {
 
 	@And("User_608 select the Branch Name under Income screen in Customer Financials tab")
 	public void user_608_select_the_branch_name_under_income_screen_in_customer_financials_tab() throws Throwable {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("branchNameDropdown")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4058,12 +4063,12 @@ public class Murabaha_Steps {
 
 	@And("User_608 select the Deduction option under Income screen in Customer Financials tab")
 	public void user_608_select_the_deduction_option_under_income_screen_in_customer_financials_tab() throws Throwable {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("deductionDropdown")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4135,12 +4140,12 @@ public class Murabaha_Steps {
 
 	@And("User_608 select the Deduction Frequency option under Income screen in Customer Financials tab")
 	public void user_608_select_the_deduction_frequency_option_under_income_screen_in_customer_financials_tab() throws Throwable {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("deductionFrequencyDropdown")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4211,14 +4216,14 @@ public class Murabaha_Steps {
 
 	@And("User_608 enter the Deduction Amount under Income screen in Customer Financials tab")
 	public void user_608_enter_the_deduction_amount_under_income_screen_in_customer_financials_tab() throws Throwable {
-		for (int i = 0; i < 1000; i++) {
+		for (int i = 0; i < 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("deductionAmtInput")).click();
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("deductionAmtInput"))
 				.sendKeys(testData.get("Deduction_Amt"));
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4227,14 +4232,14 @@ public class Murabaha_Steps {
 
 	@And("User_608 enter the Deduction Adjusted% under Income screen in Customer Financials tab")
 	public void user_608_enter_the_deduction_adjusted_under_income_screen_in_customer_financials_tab() throws Throwable {
-		for (int i = 0; i < 1000; i++) {
+		for (int i = 0; i < 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("deductionAdj%_Input")).click();
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("deductionAdj%_Input"))
 				.sendKeys(testData.get("Deduction_Adj%"));
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4243,12 +4248,12 @@ public class Murabaha_Steps {
 	
 	@And("User_608 select the Currency under Income screen in Customer Financials tab")
 	public void user_608_select_the_currency_under_income_screen_in_customer_financials_tab() throws Throwable {
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("currencyDropdown")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4401,7 +4406,8 @@ public class Murabaha_Steps {
 			try {
 				WebElement employementTypeInput = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("employementTypeInput"));
 				javascriptHelper.backgroundBorder(employementTypeInput);
-				Assert.assertTrue(employementTypeInput.isDisplayed());
+				softAssert.assertTrue(employementTypeInput.isDisplayed(),
+						"Employment Type auto populated from Employment details screen");
 				break;
 			} catch (Exception e) {
 				if (i == 300) {
@@ -4413,14 +4419,15 @@ public class Murabaha_Steps {
 
 	@And("User_608 verify Lumpsum Amount auto populated from Employment details screen")
 	public void user_608_verify_lumpsum_amount_auto_populated_from_employment_details_screen() throws Throwable {
-		WebElement lumpsumAmtInput = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("lumpsumAmtInput"));
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
+				WebElement lumpsumAmtInput = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("lumpsumAmtInput"));
 				javascriptHelper.backgroundBorder(lumpsumAmtInput);
-				Assert.assertTrue(lumpsumAmtInput.isDisplayed());
+				softAssert.assertTrue(lumpsumAmtInput.isDisplayed(), 
+						"Lumpsum Amount auto populated in Income details screen");
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4428,29 +4435,31 @@ public class Murabaha_Steps {
 	}
 
 	@And("User_608 verify Income field should be Mandatory, LOV and Allow to user select any value from LOV")
-	public void user_608_verify_income_field_should_be_mandatory_lov_and_allow_to_user_select_any_value_from_lov() throws Throwable {
-		WebElement incomeLabel = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("incomeLabel"));
-		WebElement incomeDropdown = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("incomeDropdown"));
-		for (int i = 0; i <= 2000; i++) {
+	public void user_608_verify_income_field_should_be_mandatory_lov_and_allow_to_user_select_any_value_from_lov() throws Throwable {		
+		for (int i = 0; i <= 300; i++) {
 			try {
+				WebElement incomeLabel = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("incomeLabel"));
 				javascriptHelper.backgroundColor(incomeLabel);
-				Assert.assertTrue(incomeLabel.getText().contains("*"));
+				softAssert.assertTrue(incomeLabel.getText().contains("*"),
+						"Income field should be Mandatory");
+				WebElement incomeDropdown = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("incomeDropdown"));
 				javascriptHelper.backgroundBorder(incomeDropdown);
-				Assert.assertTrue(incomeDropdown.getAttribute("ng-reflect-placeholder").contains("Select"));
+				softAssert.assertTrue(incomeDropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Income field should be LOV");
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 //		Select the LOV Value
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("incomeDropdown")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4523,15 +4532,17 @@ public class Murabaha_Steps {
 	public void user_608_verify_frequency_field_should_be_mandatory_lov_and_allow_to_user_select_any_value_from_lov() throws Throwable {
 		WebElement frequencyLabel = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("frequencyLabel"));
 		WebElement frequencyDropdown = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("frequencyDropdown"));
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.backgroundColor(frequencyLabel);
-				Assert.assertTrue(frequencyLabel.getText().contains("*"));
+				softAssert.assertTrue(frequencyLabel.getText().contains("*"),
+						"Frequency field should be Mandatory");
 				javascriptHelper.backgroundBorder(frequencyDropdown);
-				Assert.assertTrue(frequencyDropdown.getAttribute("ng-reflect-placeholder").contains("Select"));
+				softAssert.assertTrue(frequencyDropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Frequency field should be LOV");
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4615,21 +4626,23 @@ public class Murabaha_Steps {
 	public void user_608_verify_income_amount_field_should_be_mandatory_textbox_and_allow_to_user_enter_numeric_value_manualy() throws Throwable {
 		WebElement amountLabel = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("amountLabel"));
 		WebElement amountInput = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("amountInput"));
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.backgroundColor(amountLabel);
-				Assert.assertTrue(amountLabel.getText().contains("*"));
+				softAssert.assertTrue(amountLabel.getText().contains("*"),
+						"verify income Amount field should be Mandatory");
 				javascriptHelper.backgroundBorder(amountInput);
-				Assert.assertTrue(amountInput.getAttribute("type").contains("number"));
+				softAssert.assertTrue(amountInput.getAttribute("type").contains("number"),
+						"verify income Amount field should be Textbox");
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 //	    Allow to user enter the numeric value
-		for (int i = 0; i < 1000; i++) {
+		for (int i = 0; i < 150; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("amountInput"))
 				.sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
@@ -4637,7 +4650,7 @@ public class Murabaha_Steps {
 				.sendKeys(testData.get("Amount"));
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i == 150) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4649,15 +4662,17 @@ public class Murabaha_Steps {
 	public void user_608_verify_defined_field_should_be_non_mandatory_textbox_and_allow_to_user_enter_numeric_value_manualy() throws Throwable {
 		WebElement defined_Label = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("defined%_Label"));
 		WebElement defined_Input = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("defined%_Input"));
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.backgroundColor(defined_Label);
-				Assert.assertTrue(!(defined_Label.getText().contains("*")));
+				softAssert.assertTrue(!(defined_Label.getText().contains("*")),
+						"Defined% field should be Non-mandatory");
 				javascriptHelper.backgroundBorder(defined_Input);
-				Assert.assertTrue(defined_Input.getAttribute("type").contains("number"));
+				softAssert.assertTrue(defined_Input.getAttribute("type").contains("number"),
+						"Defined% field should be Textbox");
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4668,21 +4683,23 @@ public class Murabaha_Steps {
 	public void user_608_verify_adjusted_field_should_be_non_mandatory_textbox_and_allow_to_user_enter_numeric_value_manualy() throws Throwable {
 		WebElement adjusted_Label = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("adjusted%_Label"));
 		WebElement adjusted_Input = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("adjusted%_Input"));
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.backgroundColor(adjusted_Label);
-				Assert.assertTrue(!(adjusted_Label.getText().contains("*")));
+				softAssert.assertTrue(!(adjusted_Label.getText().contains("*")),
+						"Adjusted% field should be Non-mandatory");
 				javascriptHelper.backgroundBorder(adjusted_Input);
-				Assert.assertTrue(adjusted_Input.getAttribute("type").contains("number"));
+				softAssert.assertTrue(adjusted_Input.getAttribute("type").contains("number"),
+						"Adjusted% field should be Textbox");
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 //	    Allow to user enter the numeric value
-		for (int i = 0; i < 1000; i++) {
+		for (int i = 0; i < 150; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("adjusted_Input"))
 				.sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
@@ -4690,7 +4707,7 @@ public class Murabaha_Steps {
 				.sendKeys(testData.get("Adjusted %"));
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i == 150) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4706,14 +4723,16 @@ public class Murabaha_Steps {
 		
 		int ac = (Integer.parseInt(incomeValue)*Integer.parseInt(definedValue))/Integer.parseInt(adjustedValue);
 		System.out.println("AC: "+ ac);
-		WebElement amountConsideredInput = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("amountConsideredInput"));		
-		for (int i = 0; i <= 2000; i++) {
+		WebElement amountConsideredInput = javascriptHelper.executeScriptWithWebElement(
+				appData_IncomeJsPaths.getElement("amountConsideredInput"));		
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.backgroundBorder(amountConsideredInput);
-				Assert.assertEquals(amountConsideredValue, Integer.toString(ac));				
+				softAssert.assertEquals(amountConsideredValue, Integer.toString(ac),
+						"Amount Considered field should be auto populated in post entering Adjusted% value");				
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4727,15 +4746,16 @@ public class Murabaha_Steps {
 		int a = (Integer.parseInt(incomeValue)/12);
 		String substring = Integer.toString(a).split("\\.")[0];
 		System.out.println("A: "+substring);
-		WebElement totalIncomeInput = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("totalIncomeInput"));
-		String value = totalIncomeInput.getAttribute("ng-reflect-model").split("\\.")[0];
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
+				WebElement totalIncomeInput = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("totalIncomeInput"));
+				String value = totalIncomeInput.getAttribute("ng-reflect-model").split("\\.")[0];
 				javascriptHelper.backgroundBorder(totalIncomeInput);
-				Assert.assertEquals(value, substring);				
+				softAssert.assertEquals(value, substring ,
+						"Total income value should get auto populated post entering the Amount");				
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4748,15 +4768,16 @@ public class Murabaha_Steps {
 		int a = (Integer.parseInt(amountConsideredValue)/12);
 		String sp = Integer.toString(a).split("\\.")[0];
 		System.out.println("B: "+sp);
-		WebElement totalIncomeConsideredInput = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("totalIncomeConsideredInput"));
-		String value = totalIncomeConsideredInput.getAttribute("ng-reflect-model").split("\\.")[0];
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
+				WebElement totalIncomeConsideredInput = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("totalIncomeConsideredInput"));
+				String value = totalIncomeConsideredInput.getAttribute("ng-reflect-model").split("\\.")[0];
 				javascriptHelper.backgroundBorder(totalIncomeConsideredInput);
-				Assert.assertEquals(value, sp);				
+				softAssert.assertEquals(value, sp, 
+						"Total income considered value should get auto populate post entering the value in Adjusted% field");				
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4767,15 +4788,17 @@ public class Murabaha_Steps {
 	public void user_608_verify_salary_credited_to_bank_field_should_be_non_mandatory_and_dropdown() throws Throwable {
 		WebElement salaryCreditedToBankLabel = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("salaryCreditedToBankLabel"));
 		WebElement salaryCreditedToBankDropdown = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("salaryCreditedToBankDropdown"));
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.backgroundColor(salaryCreditedToBankLabel);
-				Assert.assertTrue(!(salaryCreditedToBankLabel.getText().contains("*")));
+				softAssert.assertTrue(!(salaryCreditedToBankLabel.getText().contains("*")),
+						"Salary credited to Bank field should be Non-mandatory");
 				javascriptHelper.backgroundBorder(salaryCreditedToBankDropdown);
-				Assert.assertTrue(salaryCreditedToBankDropdown.getAttribute("ng-reflect-placeholder").contains("Select"));
+				softAssert.assertTrue(salaryCreditedToBankDropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Salary credited to Bank field should be Dropdown");
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4786,26 +4809,28 @@ public class Murabaha_Steps {
 	public void user_608_verify_deduction_field_should_be_non_mandatory_lov_and_allow_to_user_select_any_value_from_lov() throws Throwable {
 		WebElement deductionLabel = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("deductionLabel"));
 		WebElement deductionDropdown = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("deductionDropdown"));
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.backgroundColor(deductionLabel);
-				Assert.assertTrue(!(deductionLabel.getText().contains("*")));
+				softAssert.assertTrue(!(deductionLabel.getText().contains("*")),
+						"Deduction field should be Non-mandatory");
 				javascriptHelper.backgroundBorder(deductionDropdown);
-				Assert.assertTrue(deductionDropdown.getAttribute("ng-reflect-placeholder").contains("Select"));
+				softAssert.assertTrue(deductionDropdown.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Deduction field should be LOV");
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 //		Select the LOV Value
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 150; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("deductionDropdown")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 150) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4873,28 +4898,127 @@ public class Murabaha_Steps {
 			}
 		}	    
 	}
+	
+	@And("^User_608 verify Deduction Frequency field should be Non-mandatory, LOV and Allow to user select any value from LOV$")
+	public void user_608_verify_deduction_frequency_field_should_be_nonmandatory_lov_and_allow_to_user_select_any_value_from_lov()
+			throws Throwable {
+		WebElement label = javascriptHelper.executeScriptWithWebElement(
+				appData_IncomeJsPaths.getElement("deductionFrequencyLabel"));
+		WebElement lov = javascriptHelper.executeScriptWithWebElement(
+				appData_IncomeJsPaths.getElement("deductionFrequencyDropdown"));
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.backgroundColor(label);
+				softAssert.assertTrue(!(label.getText().contains("*")),
+						"Deduction Frequency field should be Non-mandatory");
+				javascriptHelper.backgroundBorder(lov);
+				softAssert.assertTrue(lov.getAttribute("ng-reflect-placeholder").contains("Select"),
+						"Deduction Frequency field should be LOV");
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+//		Select the LOV Value
+		for (int i = 0; i <= 150; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("deductionFrequencyDropdown")).click();
+				break;
+			} catch (Exception e) {
+				if (i == 150) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String jqueryForDropdownLength = "document.querySelectorAll('ion-radio-group ion-radio').length";
+		String dropdownLength = "";
+		boolean isDropdownValueSelected = false;
+		String dropdownString = "";
+		for (int i = 0; i <= 300; i++) {
+			try {
+				dropdownLength = javascriptHelper.executeScript("return " + jqueryForDropdownLength).toString();
+				System.out.println("Dropdown length " + dropdownLength);
+				if (!(dropdownLength.isBlank()) && !(dropdownLength.equals("0"))) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		int premitiveDropdownLength = Integer.parseInt(dropdownLength);
+		for (int j = 0; j <= premitiveDropdownLength; j++) {
+			for (int l = 0; l <= 300; l++) {
+				try {
+					System.out.println("L value is " + l);
+					System.out.println("document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText");
+					dropdownString = javascriptHelper.executeScript(
+							"return document.querySelectorAll('ion-radio-group ion-label')[" + j + "].innerText").toString();
+					if (!(dropdownString.isEmpty())) {
+						System.out.println(dropdownString);
+						System.out.println("Loop count " + l + " got breaked");
+						break;
+					}
+				} catch (Exception e) {
+					if (l == 300 && !(dropdownString.isBlank())) {
+						Assert.fail(e.getMessage());
+					}
+				}
+				if (!(dropdownString.isEmpty())) {
+					System.out.println(dropdownString);
+					System.out.println("Loop count " + l + " got breaked");
+					break;
+				}
+			}
+			System.out.println("String " + dropdownString.trim());
+			if ((dropdownString.trim()).equalsIgnoreCase((testData.get("Deduction_Frequency")).trim())) {
+				for (int k = 0; k <= 300; k++) {
+					try {
+						clicksAndActionsHelper.moveToElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						clicksAndActionsHelper.clickOnElement(javascriptHelper.executeScriptWithWebElement(
+								"document.querySelectorAll('ion-radio-group ion-radio')[" + j + "]"));
+						isDropdownValueSelected = true;
+						break;
+					} catch (Exception e) {
+						if (k == 300) {
+							Assert.fail(e.getMessage());
+						}
+					}
+				}
+			}
+			if (isDropdownValueSelected == true) {
+				break;
+			}
+		}
+	}
 
 	@And("User_608 verify Deduction Amount field should be Non-mandatory, Textbox and Allow to user enter numeric value manualy")
 	public void user_608_verify_deduction_amount_field_should_be_non_mandatory_textbox_and_allow_to_user_enter_numeric_value_manualy() throws Throwable {
 		WebElement deductionAmtLabel = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("deductionAmtLabel"));
 		WebElement deductionAmtInput = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("deductionAmtInput"));
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.backgroundColor(deductionAmtLabel);
-				Assert.assertTrue(!(deductionAmtLabel.getText().contains("*")));
+				softAssert.assertTrue(!(deductionAmtLabel.getText().contains("*")),
+						"Deduction Amount field should be Non-mandatory");
 				javascriptHelper.backgroundBorder(deductionAmtInput);
-				Assert.assertTrue(deductionAmtInput.getAttribute("type").contains("number"));
+				softAssert.assertTrue(deductionAmtInput.getAttribute("type").contains("number"),
+						"Deduction Amount field should be Textbox");
 				break;
 			} catch (Exception e) {
 //				e.printStackTrace();
-				if (i == 2000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 //	    Allow to user enter the numeric value
 		System.out.println("Deduction Amount "+testData.get("Deduction_Amt"));
-		for (int i = 0; i < 1000; i++) {
+		for (int i = 0; i < 150; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("deductionAmtInput")).click();
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("deductionAmtInput"))
@@ -4904,7 +5028,7 @@ public class Murabaha_Steps {
 				break;
 			} catch (Exception e) {
 //				e.printStackTrace();
-				if (i == 1000) {
+				if (i == 150) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4915,40 +5039,55 @@ public class Murabaha_Steps {
 	public void user_608_verify_deduction_defined_field_should_be_non_mandatory_textbox_and_allow_to_user_enter_numeric_value_manualy() throws Throwable {
 		WebElement defined_Label = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("deductionDef%_Label"));
 		WebElement defined_Input = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("deductionDef%_Input"));
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.backgroundColor(defined_Label);
-				Assert.assertTrue(!(defined_Label.getText().contains("*")));
+				softAssert.assertTrue(!(defined_Label.getText().contains("*")),
+						"Deduction Defined% field should be Non-mandatory");
 				javascriptHelper.backgroundBorder(defined_Input);
-				Assert.assertTrue(defined_Input.getAttribute("type").contains("text"));
+				softAssert.assertTrue(defined_Input.getAttribute("type").contains("text"),
+						"Deduction Defined% field should be Textbox");
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
-		}	    
+		}
+		for (int i = 0; i <= 150; i++) {
+			try {
+				softAssert.assertTrue(defined_Input.isDisplayed(),
+						"Deduction Defined% auto populated in Income details screen");
+				break;
+			} catch (Exception e) {
+				if (i == 150) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
 	}
 
 	@And("User_608 verify Deduction Adjusted% field should be Non-mandatory, Textbox and Allow to user enter numeric value manualy")
 	public void user_608_verify_deduction_adjusted_field_should_be_non_mandatory_textbox_and_allow_to_user_enter_numeric_value_manualy() throws Throwable {
 		WebElement adjusted_Label = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("deductionAdj%_Label"));
 		WebElement adjusted_Input = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("deductionAdj%_Input"));
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.backgroundColor(adjusted_Label);
-				Assert.assertTrue(!(adjusted_Label.getText().contains("*")));
+				softAssert.assertTrue(!(adjusted_Label.getText().contains("*")),
+						"Deduction Adjusted% field should be Non-mandatory");
 				javascriptHelper.backgroundBorder(adjusted_Input);
-				Assert.assertTrue(adjusted_Input.getAttribute("type").contains("number"));
+				softAssert.assertTrue(adjusted_Input.getAttribute("type").contains("number"),
+						"Deduction Adjusted% field should be Textbox");
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 //	    Allow to user enter the numeric value
-		for (int i = 0; i < 1000; i++) {
+		for (int i = 0; i < 150; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("deductionAdj%_Input"))
 				.sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
@@ -4956,7 +5095,7 @@ public class Murabaha_Steps {
 				.sendKeys(testData.get("Adjusted %"));
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i == 150) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4973,13 +5112,14 @@ public class Murabaha_Steps {
 		int ac = (Integer.parseInt(deductionAmt)*Integer.parseInt(definedValue))/Integer.parseInt(adjustedValue);
 		System.out.println("AC: "+ ac);
 		WebElement amountConsideredInput = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("amountConsideredInput"));		
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.backgroundBorder(amountConsideredInput);
-				Assert.assertEquals(amountConsideredValue, Integer.toString(ac));				
+				softAssert.assertEquals(amountConsideredValue, Integer.toString(ac),
+						"Deduction Considered field should be auto populated in post entering Deduction Adj% value");				
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4993,13 +5133,14 @@ public class Murabaha_Steps {
 		String st = Integer.toString(a).split("\\.")[0];
 		WebElement totalDeduction = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("totalDeductionInput"));
 		String value = totalDeduction.getAttribute("ng-reflect-model").split("\\.")[0];
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.backgroundBorder(totalDeduction);
-				Assert.assertEquals(value, st);				
+				softAssert.assertEquals(value, st, 
+						"Total Deduction value should get auto populated post entering the Deduction Amount");				
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5013,13 +5154,14 @@ public class Murabaha_Steps {
 		String sp = Integer.toString(a).split("\\.")[0];
 		WebElement totalDeductionConsidered = javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("totalDeductionConsideredInput"));
 		String value = totalDeductionConsidered.getAttribute("ng-reflect-model").split("\\.")[0];
-		for (int i = 0; i <= 2000; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.backgroundBorder(totalDeductionConsidered);
-				Assert.assertEquals(value, sp);				
+				softAssert.assertEquals(value, sp,
+						"Deduction considered value should get auto populate post entering the value in Deduction Adj% field");				
 				break;
 			} catch (Exception e) {
-				if (i == 2000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5213,12 +5355,12 @@ public class Murabaha_Steps {
 
 	@And("User_608 click Add Row button system should add a row under Income screen")
 	public void user_608_click_add_row_button_system_should_add_a_row_under_income_screen() throws Throwable {
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("actionAddBtn")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5227,12 +5369,12 @@ public class Murabaha_Steps {
 
 	@And("User_608 click Delete Row button system should delete a row under Income screen")
 	public void user_608_click_delete_row_button_system_should_delete_a_row_under_income_screen() throws Throwable {
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("actionDeleteBtn")).click();
 				break;
 			} catch (Exception e) {
-				if (i == 1000) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}

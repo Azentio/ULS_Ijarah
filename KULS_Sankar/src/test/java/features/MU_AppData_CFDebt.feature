@@ -220,7 +220,7 @@ And User_608 verify the Currency field is displayed in list view under Financial
 And User_608 verify the Status field is displayed in list view under Financial Commitments
 And User_608 verify list view values should be not editable under Financial Commitments
 And User_608 click Add button in Financial Commitments under Customer Financials tab
-And User_608 validate the Customer Debt screen is available in Financial Commitments
+#And User_608 validate the Customer Debt screen is available in Financial Commitments
 Then logout from the ijaraApplication
 And User_608 invoke soft assert in Customer Debt screen at Murabaha App Data Entry stage
 

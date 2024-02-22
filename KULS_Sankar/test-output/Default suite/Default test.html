@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>11/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Feb 16 10:12:19 IST 2024</td>
+<td>Started on:</td><td>Wed Feb 21 10:26:44 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>648 seconds (648741 ms)</td>
+<tr><td>Total time:</td><td>76 seconds (76891 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,44 +67,6 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "To verify the Employment Details Parameter details List view", "Optional[To check the Auto Loan - App Data Entry -> Customer Financial tab -> Customer Employment List]"</td>
-<td><div><pre>java.lang.AssertionError: element not interactable
-  (Session info: chrome=121.0.6167.161)
-Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f10c641a6f3545334fb22ac993518b4d, clickElement {id=D940A7CDEDBC90A2D058CC4DB8229256_element_149}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 121.0.6167.161, chrome: {chromedriverVersion: 121.0.6167.85 (3f98d690ad7e..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63482}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63482/devtoo..., se:cdpVersion: 121.0.6167.161, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [org.openqa.selenium.remote.RemoteWebElement@49309713 -&gt; unknown locator]
-Session ID: f10c641a6f3545334fb22ac993518b4d
-	at org.junit.Assert.fail(Assert.java:88)
-	at stepdefinitions.AutoLoan_Steps.user_608_verify_export_to_pdf_button_available_in_customer_employment_section_list_view_under_customer_financials_tab(AutoLoan_Steps.java:7397)
-	at ✽.User_608 verify export to PDF button available in Customer Employment section list view under Customer Financials tab(file:///C:/Users/inindc00608/git/KULS_Sankar/KULS_Sankar/src/test/java/features/AL_AppData_EmpDetails.feature:394)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1327066232", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1327066232'><pre>java.lang.AssertionError: element not interactable
-  (Session info: chrome=121.0.6167.161)
-Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f10c641a6f3545334fb22ac993518b4d, clickElement {id=D940A7CDEDBC90A2D058CC4DB8229256_element_149}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 121.0.6167.161, chrome: {chromedriverVersion: 121.0.6167.85 (3f98d690ad7e..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63482}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63482/devtoo..., se:cdpVersion: 121.0.6167.161, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [org.openqa.selenium.remote.RemoteWebElement@49309713 -&gt; unknown locator]
-Session ID: f10c641a6f3545334fb22ac993518b4d
-	at org.junit.Assert.fail(Assert.java:88)
-	at stepdefinitions.AutoLoan_Steps.user_608_verify_export_to_pdf_button_available_in_customer_employment_section_list_view_under_customer_financials_tab(AutoLoan_Steps.java:7397)
-	at ✽.User_608 verify export to PDF button available in Customer Employment section list view under Customer Financials tab(file:///C:/Users/inindc00608/git/KULS_Sankar/KULS_Sankar/src/test/java/features/AL_AppData_EmpDetails.feature:394)
-</pre></div></td>
-<td>42</td>
-<td>runner.TestApplication@7ce69770</td></tr>
-</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -113,60 +75,10 @@ Session ID: f10c641a6f3545334fb22ac993518b4d
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Employment Details screen should get open with below mentioned Fields when Nature of Employment is : Pensioner", "Optional[To check the Auto Loan - App Data Entry -> Customer Financial tab -> Customer Employment List]"</td>
+<td title='runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Creation of Contact Details record - Contact Details details screen should get open with Phone details & Email details section with below mentioned Fields", "Optional[To check the Consumer Durable - App Data Entry -> Additional Customer info tab -> Contact Details screen]"</td>
 <td></td>
-<td>43</td>
-<td>runner.TestApplication@7ce69770</td></tr>
-<tr>
-<td title='runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Creation of Employment Details record-Employment Details screen should get open with all valid fields in proper format with below mention buttons", "Optional[To check the Auto Loan - App Data Entry -> Customer Financial tab -> Customer Employment List]"</td>
-<td></td>
-<td>60</td>
-<td>runner.TestApplication@7ce69770</td></tr>
-<tr>
-<td title='runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "To verify the Employment Details Parameter details List view", "Optional[To check the Auto Loan - App Data Entry -> Customer Financial tab -> Customer Employment List]"</td>
-<td></td>
-<td>35</td>
-<td>runner.TestApplication@7ce69770</td></tr>
-<tr>
-<td title='runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Employment Details screen should get open with below mentioned Fields when Nature of Employment is: Self-employed Professional", "Optional[To check the Auto Loan - App Data Entry -> Customer Financial tab -> Customer Employment List]"</td>
-<td></td>
-<td>39</td>
-<td>runner.TestApplication@7ce69770</td></tr>
-<tr>
-<td title='runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Creation of Employment Details record-Employment Details screen should get open with all valid fields in proper format with below mention buttons", "Optional[To check the Auto Loan - App Data Entry -> Customer Financial tab -> Customer Employment List]"</td>
-<td></td>
-<td>33</td>
-<td>runner.TestApplication@7ce69770</td></tr>
-<tr>
-<td title='runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Employment Details screen should get open with below mentioned Fields when Nature of Employment is Salaried", "Optional[To check the Auto Loan - App Data Entry -> Customer Financial tab -> Customer Employment List]"</td>
-<td></td>
-<td>37</td>
-<td>runner.TestApplication@7ce69770</td></tr>
-<tr>
-<td title='runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Employment Details screen should get open with below mentioned Fields when Nature of Employment is : Company/Firm", "Optional[To check the Auto Loan - App Data Entry -> Customer Financial tab -> Customer Employment List]"</td>
-<td></td>
-<td>37</td>
-<td>runner.TestApplication@7ce69770</td></tr>
-<tr>
-<td title='runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Employment Details screen should get open with below mentioned Fields and field validation when Nature of Employment is Self-employed", "Optional[To check the Auto Loan - App Data Entry -> Customer Financial tab -> Customer Employment List]"</td>
-<td></td>
-<td>39</td>
-<td>runner.TestApplication@7ce69770</td></tr>
-<tr>
-<td title='runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Creation of Employment Details record - To verify the functionality of save button post entering all valid details and clicking  on save button", "Optional[To check the Auto Loan - App Data Entry -> Customer Financial tab -> Customer Employment List]"</td>
-<td></td>
-<td>33</td>
-<td>runner.TestApplication@7ce69770</td></tr>
-<tr>
-<td title='runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Employment Details screen should get open with below mentioned Fields when Nature of Employment is Salaried", "Optional[To check the Auto Loan - App Data Entry -> Customer Financial tab -> Customer Employment List]"</td>
-<td></td>
-<td>35</td>
-<td>runner.TestApplication@7ce69770</td></tr>
-<tr>
-<td title='runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Creation of Employment Details record - To verify the impact when user enter invalid values in character field", "Optional[To check the Auto Loan - App Data Entry -> Customer Financial tab -> Customer Employment List]"</td>
-<td></td>
-<td>29</td>
-<td>runner.TestApplication@7ce69770</td></tr>
+<td>52</td>
+<td>runner.TestApplication@7ce026d3</td></tr>
 </table><p>
 </body>
 </html>

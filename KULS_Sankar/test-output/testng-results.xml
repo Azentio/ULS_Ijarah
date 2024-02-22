@@ -1,240 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="12" passed="11" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-16T10:12:19 IST" name="Default suite" finished-at="2024-02-16T10:23:08 IST" duration-ms="648741">
+  <suite started-at="2024-02-21T10:26:44 IST" name="Default suite" finished-at="2024-02-21T10:28:01 IST" duration-ms="76891">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestApplication@7ce69770]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestApplication@7ce026d3]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-02-16T10:12:19 IST" name="Default test" finished-at="2024-02-16T10:23:08 IST" duration-ms="648741">
+    <test started-at="2024-02-21T10:26:44 IST" name="Default test" finished-at="2024-02-21T10:28:01 IST" duration-ms="76891">
       <class name="runner.TestApplication">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:runner.TestApplication@7ce69770]" started-at="2024-02-16T10:12:19 IST" name="setUpClass" finished-at="2024-02-16T10:12:21 IST" duration-ms="1324" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:runner.TestApplication@7ce026d3]" started-at="2024-02-21T10:26:44 IST" name="setUpClass" finished-at="2024-02-21T10:26:45 IST" duration-ms="861" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestApplication@7ce69770]" started-at="2024-02-16T10:12:21 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-16T10:13:21 IST" duration-ms="60621" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestApplication@7ce026d3]" started-at="2024-02-21T10:26:45 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-21T10:27:37 IST" duration-ms="52041" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Creation of Employment Details record-Employment Details screen should get open with all valid fields in proper format with below mention buttons"]]>
+                <![CDATA["Creation of Contact Details record - Contact Details details screen should get open with Phone details & Email details section with below mentioned Fields"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[To check the Auto Loan - App Data Entry -> Customer Financial tab -> Customer Employment List]"]]>
+                <![CDATA["Optional[To check the Consumer Durable - App Data Entry -> Additional Customer info tab -> Contact Details screen]"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestApplication@7ce69770]" started-at="2024-02-16T10:13:21 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-16T10:13:59 IST" duration-ms="37940" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Employment Details screen should get open with below mentioned Fields when Nature of Employment is : Company/Firm"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[To check the Auto Loan - App Data Entry -> Customer Financial tab -> Customer Employment List]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestApplication@7ce69770]" started-at="2024-02-16T10:13:59 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-16T10:14:42 IST" duration-ms="43354" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Employment Details screen should get open with below mentioned Fields when Nature of Employment is : Pensioner"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[To check the Auto Loan - App Data Entry -> Customer Financial tab -> Customer Employment List]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestApplication@7ce69770]" started-at="2024-02-16T10:14:42 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-16T10:15:22 IST" duration-ms="39646" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Employment Details screen should get open with below mentioned Fields when Nature of Employment is: Self-employed Professional"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[To check the Auto Loan - App Data Entry -> Customer Financial tab -> Customer Employment List]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestApplication@7ce69770]" started-at="2024-02-16T10:15:22 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-16T10:15:59 IST" duration-ms="37337" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Employment Details screen should get open with below mentioned Fields when Nature of Employment is Salaried"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[To check the Auto Loan - App Data Entry -> Customer Financial tab -> Customer Employment List]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestApplication@7ce69770]" started-at="2024-02-16T10:15:59 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-16T10:16:35 IST" duration-ms="35642" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Employment Details screen should get open with below mentioned Fields when Nature of Employment is Salaried"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[To check the Auto Loan - App Data Entry -> Customer Financial tab -> Customer Employment List]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestApplication@7ce69770]" started-at="2024-02-16T10:16:35 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-16T10:17:15 IST" duration-ms="39725" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Employment Details screen should get open with below mentioned Fields and field validation when Nature of Employment is Self-employed"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[To check the Auto Loan - App Data Entry -> Customer Financial tab -> Customer Employment List]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestApplication@7ce69770]" started-at="2024-02-16T10:17:15 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-16T10:17:49 IST" duration-ms="33883" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Creation of Employment Details record - To verify the functionality of save button post entering all valid details and clicking  on save button"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[To check the Auto Loan - App Data Entry -> Customer Financial tab -> Customer Employment List]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestApplication@7ce69770]" started-at="2024-02-16T10:17:49 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-16T10:18:19 IST" duration-ms="29974" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Creation of Employment Details record - To verify the impact when user enter invalid values in character field"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[To check the Auto Loan - App Data Entry -> Customer Financial tab -> Customer Employment List]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestApplication@7ce69770]" started-at="2024-02-16T10:18:19 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-16T10:19:01 IST" duration-ms="42106" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["To verify the Employment Details Parameter details List view"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[To check the Auto Loan - App Data Entry -> Customer Financial tab -> Customer Employment List]"]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[element not interactable
-  (Session info: chrome=121.0.6167.161)
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f10c641a6f3545334fb22ac993518b4d, clickElement {id=D940A7CDEDBC90A2D058CC4DB8229256_element_149}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 121.0.6167.161, chrome: {chromedriverVersion: 121.0.6167.85 (3f98d690ad7e..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63482}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63482/devtoo..., se:cdpVersion: 121.0.6167.161, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [org.openqa.selenium.remote.RemoteWebElement@49309713 -> unknown locator]
-Session ID: f10c641a6f3545334fb22ac993518b4d]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: element not interactable
-  (Session info: chrome=121.0.6167.161)
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f10c641a6f3545334fb22ac993518b4d, clickElement {id=D940A7CDEDBC90A2D058CC4DB8229256_element_149}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 121.0.6167.161, chrome: {chromedriverVersion: 121.0.6167.85 (3f98d690ad7e..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63482}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63482/devtoo..., se:cdpVersion: 121.0.6167.161, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [org.openqa.selenium.remote.RemoteWebElement@49309713 -> unknown locator]
-Session ID: f10c641a6f3545334fb22ac993518b4d
-at org.junit.Assert.fail(Assert.java:88)
-at stepdefinitions.AutoLoan_Steps.user_608_verify_export_to_pdf_button_available_in_customer_employment_section_list_view_under_customer_financials_tab(AutoLoan_Steps.java:7397)
-at ✽.User_608 verify export to PDF button available in Customer Employment section list view under Customer Financials tab(file:///C:/Users/inindc00608/git/KULS_Sankar/KULS_Sankar/src/test/java/features/AL_AppData_EmpDetails.feature:394)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestApplication@7ce69770]" started-at="2024-02-16T10:19:01 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-16T10:19:36 IST" duration-ms="35017" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["To verify the Employment Details Parameter details List view"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[To check the Auto Loan - App Data Entry -> Customer Financial tab -> Customer Employment List]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestApplication@7ce69770]" started-at="2024-02-16T10:19:36 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-16T10:20:10 IST" duration-ms="33913" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Creation of Employment Details record-Employment Details screen should get open with all valid fields in proper format with below mention buttons"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[To check the Auto Loan - App Data Entry -> Customer Financial tab -> Customer Employment List]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.TestApplication@7ce69770]" started-at="2024-02-16T10:20:10 IST" name="tearDownClass" finished-at="2024-02-16T10:23:08 IST" duration-ms="178129" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.TestApplication@7ce026d3]" started-at="2024-02-21T10:27:37 IST" name="tearDownClass" finished-at="2024-02-21T10:28:01 IST" duration-ms="23924" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

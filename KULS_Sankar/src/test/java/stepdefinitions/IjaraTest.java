@@ -123,6 +123,11 @@ public class IjaraTest extends BaseClass{
 		ijaraLogin.loginWithIjaraApplication("userType15");
 	}
 	
+//	Consumer Durable Product -- App Data Entry Stage ---> userType16
+	@And("login with valid credentials - Consumer Durable - App Data Entry")
+	public void login_with_valid_credentials_consumer_durable_app_data_entry()throws Throwable {
+		ijaraLogin.loginWithIjaraApplication("userType16");
+	}
 	
 	
 	

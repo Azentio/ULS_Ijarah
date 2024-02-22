@@ -47,10 +47,11 @@ And User_608 validate Currency field available under Income details screen
 And User_608 click the Back button under Income details screen
 And User_608 verify system should navigate to the previous screen in Customer Financials tab
 Then logout from the ijaraApplication
+And User_608 invoke soft assert in Income details screen under Customer Financials tab at App Data Entry stage
 
 # INC_01_04
 @AT_MU_INC_02
-Scenario: To verify the functionality of Save button
+Scenario: To verify the functionality of Save button in Income Details screen
 
 Given navigate the IJARA URL
 And login with valid credentials-Murabaha App Data Entry
@@ -81,7 +82,7 @@ And User_608 select the Currency under Income screen in Customer Financials tab
 And User_608 click the Save button under Income details screen
 And User_608 validate the confirmation message as success under Income details screen
 Then logout from the ijaraApplication
-
+And User_608 invoke soft assert in Income details screen under Customer Financials tab at App Data Entry stage
 
 # INC_01_04 -->  INC_01_27
 @AT_MU_INC_03
@@ -111,6 +112,7 @@ And User_608 verify Total income value should get auto populated post entering t
 And User_608 verify Total income considered value should get auto populate post entering the value in Adjusted% field
 And User_608 verify Salary credited to Bank field should be Non-mandatory and Dropdown
 And User_608 verify Deduction field should be Non-mandatory, LOV and Allow to user select any value from LOV
+And User_608 verify Deduction Frequency field should be Non-mandatory, LOV and Allow to user select any value from LOV
 And User_608 verify Deduction Amount field should be Non-mandatory, Textbox and Allow to user enter numeric value manualy
 And User_608 verify Deduction Defined% field should be Non-mandatory, Textbox and Allow to user enter numeric value manualy
 And User_608 verify Deduction Adjusted% field should be Non-mandatory, Textbox and Allow to user enter numeric value manualy
@@ -122,7 +124,7 @@ And User_608 verify Branch Name field should be Non-mandatory, LOV and Allow to 
 And User_608 click Add Row button system should add a row under Income screen
 And User_608 click Delete Row button system should delete a row under Income screen
 Then logout from the ijaraApplication
-
+And User_608 invoke soft assert in Income details screen under Customer Financials tab at App Data Entry stage
 
 # INC_02_01,  INC_02_02, INC_02_03
 @AT_MU_INC_04
@@ -147,7 +149,7 @@ And User_608 select the Frequency option under Income screen in Customer Financi
 And User_608 click the Save button with mandatory field blank under Income details screen
 And User_608 verify validation message for mandatory field as blank under Income details screen
 Then logout from the ijaraApplication
-
+And User_608 invoke soft assert in Income details screen under Customer Financials tab at App Data Entry stage
 
 @AT_MU_INC_05
 Scenario: Modification of Income details record
@@ -184,8 +186,7 @@ And User_608 again click the pencil button under Income section in Customer Fina
 And User_608 Post clicking on back button system should navigate to the previous screen
 And User_608 verify system should navigate to the previous screen in Customer Financials tab
 Then logout from the ijaraApplication
-
-
+And User_608 invoke soft assert in Income details screen under Customer Financials tab at App Data Entry stage
 
 @AT_MU_INC_06
 Scenario: System should display the list of below mention fields for Income List
@@ -214,7 +215,7 @@ And User_608 click the Back button under Income details screen
 And User_608 verify the functionality of Add button under Income section in Customer Financials tab
 And User_608 post clicking on Add button system should navigate to new Income details screen
 Then logout from the ijaraApplication
-
+And User_608 invoke soft assert in Income details screen under Customer Financials tab at App Data Entry stage
 
 @AT_MU_INC_07
 Scenario: System should display the list of below mention fields for Income List
@@ -236,7 +237,7 @@ And User_608 verify entering any matching value system should display all the po
 And User_608 verify the functionality of Search box with mismatch data in Income section
 And User_608 verify system should not display any records or system should display the message as No data found under Income section
 Then logout from the ijaraApplication
-
+And User_608 invoke soft assert in Income details screen under Customer Financials tab at App Data Entry stage
 
 @AT_MU_INC_08
 Scenario: System should display the list of below mention fields for Income List
@@ -259,3 +260,4 @@ And User_608 post clicking on Export to Excel button system should download the 
 And User_608 to verify the functionality of Back button under Customer Financials tab
 And User_608 post clicking on Back button under Customer Finanacials tab, system should navigate to the previous screen
 Then logout from the ijaraApplication
+And User_608 invoke soft assert in Income details screen under Customer Financials tab at App Data Entry stage

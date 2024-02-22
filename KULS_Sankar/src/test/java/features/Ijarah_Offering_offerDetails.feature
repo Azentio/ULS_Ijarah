@@ -22,7 +22,7 @@ And User_608 verify the Interest Rate Structure section available under Offer De
 And User_608 verify the Installments section available under Offer Details tab
 And User_608 verify the Appeal Request section available under Offer Details tab
 Then logout from the ijaraApplication
-
+And User_608 invoke soft assert in under Offer Details tab at Ijarah offering stage
 
 @AT_OFO_02
 Scenario: To verify if Offer Details section is available with correct fields and button.
@@ -45,7 +45,7 @@ And User_608 verify Nature of Finance field available under Offer Details sectio
 And User_608 verify Currency field available under Offer Details section
 And User_608 verify Eligible Income field available under Offer Details section
 Then logout from the ijaraApplication
-
+And User_608 invoke soft assert in under Offer Details tab at Ijarah offering stage
 
 @AT_OFO_03
 Scenario: To verify if Finance Details section is available with correct fields and button.
@@ -76,7 +76,7 @@ And User_608 verify Tenure field available under Finance Details section
 And User_608 verify Profit Amount field available under Finance Details section
 And User_608 verify Down Payment Amount field available under Finance Details section
 Then logout from the ijaraApplication
-
+And User_608 invoke soft assert in under Offer Details tab at Ijarah offering stage
 
 @AT_OFO_04
 Scenario: To verify the fields are available under Credit Risk Factor and Credit Score Details section
@@ -97,6 +97,7 @@ And User_608 verify the Serial No field available under Credit Score details sec
 And User_608 verify the Customer Name field available under Credit Score details section
 And User_608 verify the Credit Bureau Score field available under Credit Score details section
 Then logout from the ijaraApplication
+And User_608 invoke soft assert in under Offer Details tab at Ijarah offering stage
 
 @AT_OFO_05
 Scenario: To verify if Eligibility Details section is available with correct fields and button
@@ -117,7 +118,7 @@ And User_608 verify the Currency field available under Eligibility Details secti
 And User_608 verify the Actual Percentage field available under Eligibility Details section
 And User_608 verify the Deviation level field available under Eligibility Details section
 Then logout from the ijaraApplication
-
+And User_608 invoke soft assert in under Offer Details tab at Ijarah offering stage
 
 @AT_OFO_06
 Scenario: To verify if all the fields are non-editable under Offer Details tab
@@ -158,3 +159,4 @@ And User_608 verify Tenure field is non-editable under Finance Details section
 And User_608 verify Profit Amount field is non-editable under Finance Details section
 And User_608 verify Down Payment Amount field is non-editable under Finance Details section
 Then logout from the ijaraApplication
+And User_608 invoke soft assert in under Offer Details tab at Ijarah offering stage

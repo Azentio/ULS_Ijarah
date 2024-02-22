@@ -1,8 +1,6 @@
-And User_608 Delete the Mandatory field value in Employment Details screen
-And User_608 verify while modification, when user keep any mandatory field blank and click on save button in Employment details screen
-And User_608 enters the invalid data in Employment Details screen
-And User_608 verify system should not allow to do a modification with invalid data in Employment Details screen
-And User_608 verify system should allow to modify the Employment details record in Employment details screen
-And User_608 verify while modification system allow to save the record with valid data in Employment details screen
-And User_608 click Update button in Employment details screen
-And User_608 verify the confirmation message post clicking on Update button in Employment Details screen
+And User_608 select Phone Type value from dropdown in Contact Details screen
+And User_608 enter the Phone Number in Contact Details screen
+And User_608 select Consent for Phone contact value from dropdown in Contact Details screen
+And User_608 select Prefered Phone Cotact Type value from dropdown in Contact Details screen
+And User_608 select Email Type value from dropdown in Contact Details screen
+And User_608 enter the Email ID in Contact Details screen
