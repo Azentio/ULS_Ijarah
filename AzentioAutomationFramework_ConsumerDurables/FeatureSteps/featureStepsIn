@@ -1,5 +1,2 @@
-And User_608 enter the Special Character value in any field under Contact Details screen
-And User_608 to verify the impact when user enters special characters value in Contact Details screen
-
-And User_608 click the Save button user keep any mandatory field blank in Contact Details screen
-And User_608 to verify the impact when user keep any mandatory field blank in Contact Details screen
+And User_608 enter the Characters values in numeric field under Contact Details screen
+And User_608 to verify the impact when user enter characters value in numeric field under Contact Details screen

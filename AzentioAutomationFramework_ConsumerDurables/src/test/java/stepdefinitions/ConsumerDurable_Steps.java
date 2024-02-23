@@ -1,9 +1,11 @@
 package stepdefinitions;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -72,7 +74,37 @@ public class ConsumerDurable_Steps {
 		testExecutionData = testExecution.getTestdata("AT_CD_ADE_CD_04");
 		testData = contactDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
-
+	
+	@And("^User_608 get the test data for test case AT_CD_ADE_CD_05$")
+	public void get_the_test_data_for_test_case_AT_CD_ADE_CD_05() throws Throwable {
+		testExecutionData = testExecution.getTestdata("AT_CD_ADE_CD_05");
+		testData = contactDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
+	}
+	
+	@And("^User_608 get the test data for test case AT_CD_ADE_CD_06$")
+	public void get_the_test_data_for_test_case_AT_CD_ADE_CD_06() throws Throwable {
+		testExecutionData = testExecution.getTestdata("AT_CD_ADE_CD_06");
+		testData = contactDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
+	}
+	
+	@And("^User_608 get the test data for test case AT_CD_ADE_CD_07$")
+	public void get_the_test_data_for_test_case_AT_CD_ADE_CD_07() throws Throwable {
+		testExecutionData = testExecution.getTestdata("AT_CD_ADE_CD_07");
+		testData = contactDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
+	}
+	
+	@And("^User_608 get the test data for test case AT_CD_ADE_CD_08$")
+	public void get_the_test_data_for_test_case_AT_CD_ADE_CD_08() throws Throwable {
+		testExecutionData = testExecution.getTestdata("AT_CD_ADE_CD_08");
+		testData = contactDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
+	}
+	
+	@And("^User_608 get the test data for test case AT_CD_ADE_CD_09$")
+	public void get_the_test_data_for_test_case_AT_CD_ADE_CD_09() throws Throwable {
+		testExecutionData = testExecution.getTestdata("AT_CD_ADE_CD_09");
+		testData = contactDetailsExcelData.getTestdata(testExecutionData.get("dataSet_ID"));
+	}
+	
 //	===============================================================================================================================
 	@And("User_608 click the module name dropdown in ULS application")
 	public void user_608_click_the_module_name_dropdown_in_uls_application() throws Throwable {
@@ -895,13 +927,13 @@ public class ConsumerDurable_Steps {
 			}
 		}
 
-		for (int i = 0; i < 300; i++) {
+		for (int i = 0; i < 150; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(commonElementsJsPaths.getElement("alert_closeBtn"))
 						.click();
 				break;
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 149) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1372,7 +1404,7 @@ public class ConsumerDurable_Steps {
 						System.out.println("condition true");
 						String titlePath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]";
 						WebElement section = javascriptHelper.executeScriptWithWebElement(titlePath);
-						clicksAndActionsHelper.scrollIntoView(section);
+						actions.scrollToElement(section).build().perform();
 						javascriptHelper.backgroundColor(section);
 						softAssert.assertTrue(section.isDisplayed(), 
 								"Clicking on Back button system should navigate to the previous screen under Additional Customer Info tab");
@@ -1424,6 +1456,43 @@ public class ConsumerDurable_Steps {
 			}
 		}
 	}
+	
+	@And("^User_608 enter the Characters values in numeric field under Contact Details screen$")
+	public void user_608_enter_the_characters_values_in_numeric_field_under_contact_details_screen() throws Throwable {
+		for (int i = 0; i <= 150; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(contactDetailsJsPaths.getElement("phoneNumberInput"))
+				.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+				javascriptHelper.executeScriptWithWebElement(contactDetailsJsPaths.getElement("phoneNumberInput"))
+						.sendKeys(testData.get("CharValues"));
+				break;
+			} catch (Exception e) {
+				if (i == 149) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 to verify the impact when user enter characters value in numeric field under Contact Details screen$")
+	public void user_608_to_verify_the_impact_when_user_enter_characters_value_in_numeric_field_under_contact_details_screen()
+			throws Throwable {
+		for (int i = 0; i < 150; i++) {
+			try {
+				WebElement element = javascriptHelper
+						.executeScriptWithWebElement(commonElementsJsPaths.getElement("invalidNumber_error"));
+				String errorMsg = element.getText();
+				javascriptHelper.backgroundBorder(element);
+				softAssert.assertTrue(errorMsg.contains("Invalid Mobile Number"), 
+						"Impact when user enters characters value in numberic field under Contact Details screen");
+				break;
+			} catch (Exception e) {
+				if (i == 149) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
 
 	@And("^User_608 click the Save button user keep any mandatory field blank in Contact Details screen$")
 	public void user_608_click_the_save_button_user_keep_any_mandatory_field_blank_in_contact_details_screen()
@@ -1463,6 +1532,1095 @@ public class ConsumerDurable_Steps {
 		}
 	}
 
+//	AT_CD_ADE_CD_05
+	@And("^User_608 click the Contact Details record Edit button under Contact Details section in Additional Customer Info tab$")
+	public void user_608_click_the_contact_details_record_edit_button_under_contact_details_section_in_additional_customer_info_tab()
+			throws Throwable {
+		String length = null;
+		for (int i = 0; i < 300; i++) {
+			try {
+				length = javascriptHelper
+						.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length").toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0") && !length.equals("1")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 300; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().contains("Contact Details")) {
+						System.out.println("condition true");
+						String titlePath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]";
+						javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(titlePath));
+						String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j
+								+ "].parentElement.parentElement.querySelector('button[icon=\"pi pi-pencil\"]')";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						javascriptHelper.backgroundColor(btn);
+						btn.click();
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Update button available in Contact Details screen under Additional Customer Info tab$")
+	public void user_608_verify_update_button_available_in_contact_details_screen_under_additional_customer_info_tab()
+			throws Throwable {
+		for (int i = 0; i <= 150; i++) {
+			try {
+				WebElement updateBtn = javascriptHelper
+						.executeScriptWithWebElement(contactDetailsJsPaths.getElement("saveBtn"));
+				javascriptHelper.backgroundBorder(updateBtn);
+				softAssert.assertTrue(updateBtn.isDisplayed(), "Update button available in Contact Details screen");
+				break;
+			} catch (Exception e) {
+				if (i == 150) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@And("^User_608 click the Update button while modification when user keep any mandatory field blank in Contact Details screen$")
+	public void user_608_click_the_update_button_while_modification_when_user_keep_any_mandatory_field_blank_in_contact_details_screen()
+			throws Throwable {
+		for (int i = 0; i <= 150; i++) {
+			try {
+				WebElement element = javascriptHelper.executeScriptWithWebElement(contactDetailsJsPaths.getElement("phoneNumberInput"));
+				actions.scrollToElement(element).build().perform();
+				element.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+				break;
+			} catch (Exception e) {
+				if (i == 150) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		for (int i = 0; i <= 150; i++) {
+			try {
+				WebElement updateBtn = javascriptHelper
+						.executeScriptWithWebElement(contactDetailsJsPaths.getElement("saveBtn"));
+				actions.scrollToElement(updateBtn).build().perform();
+				updateBtn.click();
+				break;
+			} catch (Exception e) {
+				if (i == 150) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify validation message for while modification when user keep any mandatory field blank in Contact Details screen$")
+	public void user_608_verify_validation_message_for_while_modification_when_user_keep_any_mandatory_field_blank_in_contact_details_screen()
+			throws Throwable {
+		for (int i = 0; i < 150; i++) {
+			try {
+				WebElement element = javascriptHelper
+						.executeScriptWithWebElement(commonElementsJsPaths.getElement("mandatoryFillToastMsg"));
+				actions.scrollToElement(element).build().perform();
+				String madatoryErrorMsg = element.getText();
+				System.err.println("Mandatory Error : " + madatoryErrorMsg);
+				softAssert.assertTrue(madatoryErrorMsg.contains("Please fill all the details"), 
+						"Mandatory field blank message in Contact Details screen while modification");
+				break;
+			} catch (Exception e) {
+				if (i == 150) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 while modification system enters the invalid data in Contact Details screen$")
+	public void user_608_while_modification_system_enters_the_invalid_data_in_contact_details_screen()
+			throws Throwable {
+		for (int i = 0; i <= 150; i++) {
+			try {
+				WebElement element = javascriptHelper.executeScriptWithWebElement(contactDetailsJsPaths.getElement("emailIDInput"));
+				actions.scrollToElement(element).build().perform();
+				element.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+				element.sendKeys(testData.get("InvalidData"));
+				break;
+			} catch (Exception e) {
+				if (i == 150) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify system should not allow user to do a modification with invalid data in Contact Details screen$")
+	public void user_608_verify_system_should_not_allow_user_to_do_a_modification_with_invalid_data_in_contact_details_screen()
+			throws Throwable {
+		for (int i = 0; i < 150; i++) {
+			try {
+				WebElement element = javascriptHelper
+						.executeScriptWithWebElement(commonElementsJsPaths.getElement("invalidEmail_error"));
+				actions.scrollToElement(element).build().perform();
+				String errorMsg = element.getText();
+				javascriptHelper.backgroundBorder(element);
+				softAssert.assertTrue(errorMsg.contains("Invalid Email"), 
+						"Impact when user modification with invalid data in Contact Details screen");
+				break;
+			} catch (Exception e) {
+				if (i == 149) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 to verify system allow user to modify the record with valid data in Contact Details screen$")
+	public void user_608_to_verify_system_allow_user_to_modify_the_record_with_valid_data_in_contact_details_screen() throws Throwable {
+		for (int i = 0; i <= 150; i++) {
+			try {
+				WebElement element = javascriptHelper.executeScriptWithWebElement(contactDetailsJsPaths.getElement("emailIDInput"));
+				element.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+				element.sendKeys(testData.get("EmailID"));
+				break;
+			} catch (Exception e) {
+				if (i == 150) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		for (int i = 0; i <= 150; i++) {
+			try {
+				WebElement element = javascriptHelper.executeScriptWithWebElement(contactDetailsJsPaths.getElement("phoneNumberInput"));
+				actions.scrollToElement(element).build().perform();
+				element.sendKeys(testData.get("PhoneNumber"));
+				break;
+			} catch (Exception e) {
+				if (i == 150) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 to verify while modification system allow user to Update the record with valid data in Contact Details screen$")
+	public void user_608_to_verify_while_modification_system_allow_user_to_update_the_record_with_valid_data_in_contact_details_screen()
+			throws Throwable {
+		for (int i = 0; i <= 150; i++) {
+			try {
+				WebElement updateBtn = javascriptHelper
+						.executeScriptWithWebElement(contactDetailsJsPaths.getElement("saveBtn"));
+				actions.scrollToElement(updateBtn).build().perform();
+				updateBtn.click();
+				break;
+			} catch (Exception e) {
+				if (i == 150) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 to verify the Confimation message post clicking on Update button in Contact Details screen$")
+	public void user_608_to_verify_the_confimation_message_post_clicking_on_update_button_in_contact_details_screen()
+			throws Throwable {
+		for (int i = 0; i < 300; i++) {
+			try {
+				WebElement alertMsg = javascriptHelper
+						.executeScriptWithWebElement(commonElementsJsPaths.getElement("alert_SuccessMsg"));
+				String text = alertMsg.getText();
+				softAssert.assertTrue((text.contains("Success")), "System display the confirmation message");
+				break;
+			} catch (Exception e) {
+
+			}
+		}
+
+		for (int i = 0; i < 150; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(commonElementsJsPaths.getElement("alert_closeBtn"))
+						.click();
+				break;
+			} catch (Exception e) {
+				if (i == 149) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+//	AT_CD_ADE_CD_06
+	@And("^User_608 click the Active record Edit button in Contact Details section under Additional Customer Info tab$")
+	public void user_608_click_the_active_record_edit_button_in_contact_details_section_under_additional_customer_info_tab()
+			throws Throwable {
+//		document.querySelector('[ng-reflect-field="PhoneTypeDesc"]').parentElement.parentElement.parentElement.querySelectorAll('td p-celleditor')[4].parentElement.parentElement.querySelector('button[icon="pi pi-pencil"]')
+		String length = null;
+		for (int i = 0; i < 300; i++) {
+			try {
+				length = javascriptHelper
+						.executeScript("return document.querySelector('[ng-reflect-field=\"PhoneTypeDesc\"]').parentElement.parentElement.parentElement.querySelectorAll('td p-celleditor').length").toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0") && !length.equals("1")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 300; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelector('[ng-reflect-field=\"PhoneTypeDesc\"]').parentElement.parentElement.parentElement.querySelectorAll('td p-celleditor')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().equalsIgnoreCase("Active")) {
+						System.out.println("condition true");
+						String titlePath = "document.querySelector('[ng-reflect-field=\"PhoneTypeDesc\"]').parentElement.parentElement.parentElement.querySelectorAll('td p-celleditor')[" + j + "]";
+						actions.scrollToElement(javascriptHelper.executeScriptWithWebElement(titlePath)).build().perform();
+						String jspath = "document.querySelector('[ng-reflect-field=\"PhoneTypeDesc\"]').parentElement.parentElement.parentElement.querySelectorAll('td p-celleditor')[" + j
+								+ "].parentElement.parentElement.querySelector('button[icon=\"pi pi-pencil\"]')";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.moveToElement(btn).build().perform();
+						javascriptHelper.backgroundColor(btn);
+						btn.click();
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 click the Status toggle button in Contact Details screen$")
+	public void user_608_click_the_status_toggle_button_in_contact_details_screen() throws Throwable {
+		for (int i = 0; i <= 150; i++) {
+			try {
+				WebElement toggleBtn = javascriptHelper
+						.executeScriptWithWebElement(contactDetailsJsPaths.getElement("statusTogglebtn"));
+				actions.scrollToElement(toggleBtn).build().perform();
+				toggleBtn.click();
+				break;
+			} catch (Exception e) {
+				if (i == 150) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 click the Update button under Contact Details screen$")
+	public void user_608_click_the_update_button_under_contact_details_screen() throws Throwable {
+		for (int i = 0; i <= 150; i++) {
+			try {
+				WebElement updateBtn = javascriptHelper
+						.executeScriptWithWebElement(contactDetailsJsPaths.getElement("saveBtn"));
+				actions.scrollToElement(updateBtn).build().perform();
+				updateBtn.click();
+				break;
+			} catch (Exception e) {
+				if (i == 150) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		for (int i = 0; i < 150; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(commonElementsJsPaths.getElement("alert_closeBtn"))
+						.click();
+				break;
+			} catch (Exception e) {
+				if (i == 149) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@And("^User_608 verify if Status is Active post clicking on toggle button system should show Deactivate in Contact Details screen$")
+	public void user_608_verify_if_status_is_active_post_clicking_on_toggle_button_system_should_show_deactivate_in_contact_details_screen()
+			throws Throwable {
+		String length = null;
+		for (int i = 0; i < 300; i++) {
+			try {
+				length = javascriptHelper
+						.executeScript("return document.querySelectorAll('th[ng-reflect-field=\"PhoneTypeDesc\"]')[1]"
+								+ ".parentElement.parentElement.parentElement.querySelectorAll('td p-celleditor').length").toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0") && !length.equals("1")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 300; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('th[ng-reflect-field=\"PhoneTypeDesc\"]')[1].parentElement.parentElement.parentElement.querySelectorAll('td p-celleditor')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().equalsIgnoreCase("In-active")) {
+						System.out.println("condition true");
+						String titlePath = "document.querySelectorAll('th[ng-reflect-field=\"PhoneTypeDesc\"]')[1].parentElement.parentElement.parentElement.querySelectorAll('td p-celleditor')[" + j + "]";
+						actions.scrollToElement(javascriptHelper.executeScriptWithWebElement(titlePath)).build().perform();
+						String jspath = "document.querySelectorAll('th[ng-reflect-field=\"PhoneTypeDesc\"]')[1]"
+								+ ".parentElement.parentElement.parentElement.querySelectorAll('td p-celleditor')[" + j	+ "]";
+						WebElement status = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.moveToElement(status).build().perform();
+						javascriptHelper.backgroundBorder(status);
+						softAssert.assertTrue(status.isDisplayed(),
+								"If Status is Active post clicking on toggle button system should show Deactivate in Contact Details screen");
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@And("^User_608 click the Deactivate record Edit button in Contact Details section under Additional Customer Info tab$")
+	public void user_608_click_the_deactivate_record_edit_button_in_contact_details_section_under_additional_customer_info_tab()
+			throws Throwable {
+		String length = null;
+		for (int i = 0; i < 300; i++) {
+			try {
+				length = javascriptHelper
+						.executeScript("return document.querySelectorAll('th[ng-reflect-field=\"PhoneTypeDesc\"]')[1]"
+								+ ".parentElement.parentElement.parentElement.querySelectorAll('td p-celleditor').length").toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0") && !length.equals("1")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 150; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('th[ng-reflect-field=\"PhoneTypeDesc\"]')[1]"
+							+ ".parentElement.parentElement.parentElement.querySelectorAll('td p-celleditor')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().contains("In-active")) {
+						System.out.println("condition true");
+						String jspath = "document.querySelectorAll('th[ng-reflect-field=\"PhoneTypeDesc\"]')[1]"
+								+ ".parentElement.parentElement.parentElement.querySelectorAll('td p-celleditor')[" + j + "]"
+										+ ".parentElement.parentElement.querySelector('button')";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.scrollToElement(btn).build().perform();
+						javascriptHelper.backgroundColor(btn);
+						btn.click();
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 149) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify if Status is Deactivate post clicking on toggle button system should show Active in Contact Details screen$")
+	public void user_608_verify_if_status_is_deactivate_post_clicking_on_toggle_button_system_should_show_active_in_contact_details_screen()
+			throws Throwable {
+		String length = null;
+		for (int i = 0; i < 300; i++) {
+			try {
+				length = javascriptHelper
+						.executeScript("return document.querySelectorAll('th[ng-reflect-field=\"PhoneTypeDesc\"]')[1]"
+								+ ".parentElement.parentElement.parentElement.querySelectorAll('td p-celleditor').length").toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0") && !length.equals("1")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 300; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('th[ng-reflect-field=\"PhoneTypeDesc\"]')[1].parentElement.parentElement.parentElement.querySelectorAll('td p-celleditor')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().equalsIgnoreCase("Active")) {
+						System.out.println("condition true");
+						String titlePath = "document.querySelectorAll('th[ng-reflect-field=\"PhoneTypeDesc\"]')[1].parentElement.parentElement.parentElement.querySelectorAll('td p-celleditor')[" + j + "]";
+						actions.scrollToElement(javascriptHelper.executeScriptWithWebElement(titlePath)).build().perform();
+						String jspath = "document.querySelectorAll('th[ng-reflect-field=\"PhoneTypeDesc\"]')[1]"
+								+ ".parentElement.parentElement.parentElement.querySelectorAll('td p-celleditor')[" + j	+ "]";
+						WebElement status = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.moveToElement(status).build().perform();
+						javascriptHelper.backgroundBorder(status);
+						softAssert.assertTrue(status.isDisplayed(),
+								"If Status is Deactivate post clicking on toggle button system should show Active in Contact Details screen");
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+//	AT_CD_ADE_CD_08
+	@And("^User_608 verify Add button available under Contact details section in Additional Customer Info tab$")
+	public void user_608_verify_add_button_available_under_contact_details_section_in_additional_customer_info_tab()
+			throws Throwable {
+		String length = null;
+		for (int i = 0; i < 300; i++) {
+			try {
+				length = javascriptHelper
+						.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length").toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0") && !length.equals("1")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 300; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().contains("Contact Details")) {
+						System.out.println("condition true");
+						String titlePath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]";
+						javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(titlePath));
+						String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j
+								+ "].parentElement.parentElement.querySelector('button[icon=\"pi pi-plus\"]')";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.scrollToElement(btn).build().perform();
+						javascriptHelper.backgroundBorder(btn);
+						softAssert.assertTrue(btn.isDisplayed(), "Verify Add button available under Contact details section");
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Search button available under Contact details section in Additional Customer Info tab$")
+	public void user_608_verify_search_button_available_under_contact_details_section_in_additional_customer_info_tab()
+			throws Throwable {
+		String length = null;
+		for (int i = 0; i < 300; i++) {
+			try {
+				length = javascriptHelper
+						.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length").toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0") && !length.equals("1")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 300; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().contains("Contact Details")) {
+						System.out.println("condition true");
+						String titlePath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]";
+						javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(titlePath));
+						String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j
+								+ "].parentElement.parentElement.querySelector('button[icon=\"pi pi-search\"]')";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.scrollToElement(btn).build().perform();
+						javascriptHelper.backgroundBorder(btn);
+						softAssert.assertTrue(btn.isDisplayed(), "Verify Search button available under Contact details section");
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Export PDF button available under Contact details section in Additional Customer Info tab$")
+	public void user_608_verify_export_pdf_button_available_under_contact_details_section_in_additional_customer_info_tab()
+			throws Throwable {
+		String length = null;
+		for (int i = 0; i < 300; i++) {
+			try {
+				length = javascriptHelper
+						.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length").toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0") && !length.equals("1")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 300; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().contains("Contact Details")) {
+						System.out.println("condition true");
+						String titlePath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]";
+						javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(titlePath));
+						String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j
+								+ "].parentElement.parentElement.querySelector('p-dropdown')";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.scrollToElement(btn).build().perform();
+						javascriptHelper.backgroundBorder(btn);
+						btn.click();
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+		for (int i = 0; i <= 150; i++) {
+			try {
+				WebElement btn = javascriptHelper.executeScriptWithWebElement(
+						contactDetailsJsPaths.getElement("PDFBtn"));
+				actions.scrollToElement(btn).build().perform();
+				javascriptHelper.backgroundColor(btn);
+				softAssert.assertTrue(btn.isDisplayed(), "Verify Export PDF button available under Contact details section");
+				break;
+			} catch (Exception e) {
+				if (i == 150) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Export Excel button available under Contact details section in Additional Customer Info tab$")
+	public void user_608_verify_export_excel_button_available_under_contact_details_section_in_additional_customer_info_tab()
+			throws Throwable {
+		for (int i = 0; i <= 150; i++) {
+			try {
+				WebElement btn = javascriptHelper.executeScriptWithWebElement(
+						contactDetailsJsPaths.getElement("XLSBtn"));
+				actions.scrollToElement(btn).build().perform();
+				javascriptHelper.backgroundColor(btn);
+				softAssert.assertTrue(btn.isDisplayed(), "Verify Export Excel button available under Contact details section");
+				break;
+			} catch (Exception e) {
+				if (i == 150) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Phone Type field available under Contact Details section listview in Additional Customer Info tab$")
+	public void user_608_verify_phone_type_field_available_under_contact_details_section_listview_in_additional_customer_info_tab()
+			throws Throwable {
+		for (int i = 0; i <= 150; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						contactDetailsJsPaths.getElement("listview_PhoneType"));
+				actions.scrollToElement(field).build().perform();
+				javascriptHelper.backgroundColor(field);
+				softAssert.assertTrue(field.isDisplayed(), "Phone Type field available under Contact Details section listview");
+				break;
+			} catch (Exception e) {
+				if (i == 150) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Phone Number field available under Contact Details section listview in Additional Customer Info tab$")
+	public void user_608_verify_phone_number_field_available_under_contact_details_section_listview_in_additional_customer_info_tab()
+			throws Throwable {
+		for (int i = 0; i <= 150; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						contactDetailsJsPaths.getElement("listview_PhoneNumber"));
+				actions.scrollToElement(field).build().perform();
+				javascriptHelper.backgroundColor(field);
+				softAssert.assertTrue(field.isDisplayed(), "Phone Number field available under Contact Details section listview");
+				break;
+			} catch (Exception e) {
+				if (i == 150) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Email Type field available under Contact Details section listview in Additional Customer Info tab$")
+	public void user_608_verify_email_type_field_available_under_contact_details_section_listview_in_additional_customer_info_tab()
+			throws Throwable {
+		for (int i = 0; i <= 150; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						contactDetailsJsPaths.getElement("listview_EmailType"));
+				actions.scrollToElement(field).build().perform();
+				javascriptHelper.backgroundColor(field);
+				softAssert.assertTrue(field.isDisplayed(), "Email type field available under Contact Details section listview");
+				break;
+			} catch (Exception e) {
+				if (i == 150) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Email ID field available under Contact Details section listview in Additional Customer Info tab$")
+	public void user_608_verify_email_id_field_available_under_contact_details_section_listview_in_additional_customer_info_tab()
+			throws Throwable {
+		for (int i = 0; i <= 150; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						contactDetailsJsPaths.getElement("listview_EmailID"));
+				actions.scrollToElement(field).build().perform();
+				javascriptHelper.backgroundColor(field);
+				softAssert.assertTrue(field.isDisplayed(), "Email ID field available under Contact Details section listview");
+				break;
+			} catch (Exception e) {
+				if (i == 150) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify Status field available under Contact Details section listview in Additional Customer Info tab$")
+	public void user_608_verify_status_field_available_under_contact_details_section_listview_in_additional_customer_info_tab()
+			throws Throwable {
+		for (int i = 0; i <= 150; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						contactDetailsJsPaths.getElement("listview_Status"));
+				actions.scrollToElement(field).build().perform();
+				javascriptHelper.backgroundColor(field);
+				softAssert.assertTrue(field.isDisplayed(), "Status field available under Contact Details section listview");
+				break;
+			} catch (Exception e) {
+				if (i == 150) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("User_608 verify values in listview should be non-editable and must be populated correctly under Contact Details section")
+	public void user_608_verify_values_in_listview_should_be_non_editable_and_must_be_populated_correctly_under_contact_details_section() throws Throwable {
+		String length = null;
+		for (int i = 0; i < 150; i++) {
+			try {
+				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
+						.toString();
+//				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 149) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 150; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					if (titlename.trim().contains("Contact Details")) {
+						String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]"
+								+ ".parentElement.parentElement.querySelector('table').querySelectorAll('td p-celleditor')[0]";
+						WebElement field = javascriptHelper.executeScriptWithWebElement(jspath);
+						String output = field.getAttribute("readonly");
+						System.out.println("Out: "+ output);
+						javascriptHelper.backgroundBorder(field);
+						softAssert.assertNull(output,
+								"Listview values should be non editable under Contact Details section");
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 149) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	
+	@And("^User_608 to verify the functionality of Add button under Contact Details section in Additional Customer Info tab$")
+	public void user_608_to_verify_the_functionality_of_add_button_under_contact_details_section_in_additional_customer_info_tab()
+			throws Throwable {
+		String length = null;
+		for (int i = 0; i < 300; i++) {
+			try {
+				length = javascriptHelper
+						.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length").toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0") && !length.equals("1")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 300; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().contains("Contact Details")) {
+						System.out.println("condition true");
+						String titlePath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]";
+						javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(titlePath));
+						String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j
+								+ "].parentElement.parentElement.querySelector('button[icon=\"pi pi-plus\"]')";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						btn.click();
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify post clicking on Add button system should allow user to create new record of Contact Details$")
+	public void user_608_verify_post_clicking_on_add_button_system_should_allow_user_to_create_new_record_of_contact_details()
+			throws Throwable {
+		for (int i = 0; i <= 150; i++) {
+			try {
+				WebElement field = javascriptHelper.executeScriptWithWebElement(
+						contactDetailsJsPaths.getElement("contactDetailsScreen"));
+				actions.scrollToElement(field).build().perform();
+				javascriptHelper.backgroundBorder(field);
+				softAssert.assertTrue(field.isDisplayed(), "Create new record of Contact Details screen should be open");
+				break;
+			} catch (Exception e) {
+				if (i == 150) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+//	AT_CD_ADE_CD_09
+	@And("^User_608 click the Export button under Contact Details section in Additional Customer Info tab$")
+	public void user_608_click_the_export_button_under_contact_details_section_in_additional_customer_info_tab()
+			throws Throwable {
+		String length = null;
+		for (int i = 0; i < 300; i++) {
+			try {
+				length = javascriptHelper
+						.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length").toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0") && !length.equals("1")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 300; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().contains("Contact Details")) {
+						System.out.println("condition true");
+						String titlePath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]";
+						javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(titlePath));
+						String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j
+								+ "].parentElement.parentElement.querySelector('p-dropdown')";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.scrollToElement(btn).build().perform();
+						javascriptHelper.backgroundBorder(btn);
+						btn.click();
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 to verify the functionality of Export to PDF button under Contact Details section$")
+	public void user_608_to_verify_the_functionality_of_export_to_pdf_button_under_contact_details_section()
+			throws Throwable {
+		for (int i = 0; i <= 150; i++) {
+			try {
+				WebElement btn = javascriptHelper.executeScriptWithWebElement(
+						contactDetailsJsPaths.getElement("PDFBtn"));
+				actions.scrollToElement(btn).build().perform();
+				javascriptHelper.backgroundBorder(btn);
+				btn.click();
+				break;
+			} catch (Exception e) {
+				if (i == 150) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify post clicking on PDF button system should download PDF file of that records in Contact Details section$")
+	public void user_608_verify_post_clicking_on_pdf_button_system_should_download_pdf_file_of_that_records_in_contact_details_section()
+			throws Throwable {
+		browserHelper.SwitchToWindow(1);
+		browserHelper.switchToParentWithChildClose();
+		String homePath = System.getProperty("user.home");
+		String filePath = homePath + "/Downloads";
+		File file = new File(filePath);
+		File[] listFiles = file.listFiles();
+		file.delete();
+		for (File downloadsFile : listFiles) {
+//			System.out.println(downloadsFile.getName());
+			if (downloadsFile.getName().contains("CollateralDataFile")) {
+//				System.out.println("If condition " + downloadsFile.getName());
+				softAssert.assertTrue(downloadsFile.getName().contains("CollateralDataFile"),
+						"File is not downloaded hence failed");
+				downloadsFile.delete();
+			}
+		}
+	}
+
+	@And("^User_608 to verify the functionality of Export to Excel button under Contact Details section$")
+	public void user_608_to_verify_the_functionality_of_export_to_excel_button_under_contact_details_section()
+			throws Throwable {
+		for (int i = 0; i <= 150; i++) {
+			try {
+				WebElement btn = javascriptHelper.executeScriptWithWebElement(
+						contactDetailsJsPaths.getElement("XLSBtn"));
+				actions.scrollToElement(btn).build().perform();
+				javascriptHelper.backgroundBorder(btn);
+				btn.click();
+				break;
+			} catch (Exception e) {
+				if (i == 150) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify post clicking on XLS button system should download Excel file of that records in Contact Details section$")
+	public void user_608_verify_post_clicking_on_xls_button_system_should_download_excel_file_of_that_records_in_contact_details_section()
+			throws Throwable {
+		String homePath = System.getProperty("user.home");
+		String filePath = homePath + "/Downloads";
+		File file = new File(filePath);
+		File[] listFiles = file.listFiles();
+		file.delete();
+		for (File downloadsFile : listFiles) {
+//			System.out.println(downloadsFile.getName());
+			if (downloadsFile.getName().contains("CollateralDataFile")) {
+//				System.out.println("If condition " + downloadsFile.getName());
+				softAssert.assertTrue(downloadsFile.getName().contains("CollateralDataFile"),
+						"File is not downloaded hence failed");
+				downloadsFile.delete();
+			}
+		}
+	}
+
+	@And("^User_608 click the Search button under Contact Details section in Additional Customer Info tab$")
+	public void user_608_click_the_search_button_under_contact_details_section_in_additional_customer_info_tab()
+			throws Throwable {
+		String length = null;
+		for (int i = 0; i < 300; i++) {
+			try {
+				length = javascriptHelper
+						.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length").toString();
+				System.out.println(length);
+				if (!length.isBlank() && !length.equals("0") && !length.equals("1")) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i < 300; i++) {
+			try {
+				for (int j = 0; j < Integer.parseInt(length); j++) {
+					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
+					String titlename = javascriptHelper.executeScript(title).toString();
+					System.out.println(titlename);
+					if (titlename.trim().contains("Contact Details")) {
+						System.out.println("condition true");
+						String titlePath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "]";
+						javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(titlePath));
+						String jspath = "document.querySelectorAll('ion-title[mode=\"md\"]')[" + j
+								+ "].parentElement.parentElement.querySelector('button[icon=\"pi pi-search\"]')";
+						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
+						actions.scrollToElement(btn).build().perform();
+						javascriptHelper.backgroundBorder(btn);
+						btn.click();
+						break;
+					}
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 299) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 to verify functionality of Search box with matching data under Contact Details section$")
+	public void user_608_to_verify_functionality_of_search_box_with_matching_data_under_contact_details_section()
+			throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {				
+				javascriptHelper.executeScriptWithWebElement(contactDetailsJsPaths.getElement("contactDetailsSearchbox"))
+				.sendKeys(testData.get("MatchingData"));
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify system should display all the possible matching records under Contact Details section$")
+	public void user_608_verify_system_should_display_all_the_possible_matching_records_under_contact_details_section()
+			throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				WebElement searchResult = javascriptHelper.executeScriptWithWebElement(
+						contactDetailsJsPaths.getElement("searchResult"));
+				javascriptHelper.backgroundColor(searchResult);
+				String text = searchResult.getText().substring(13, 14);
+				System.out.println("Result value: "+text);
+				softAssert.assertTrue(Integer.parseInt(text)>0, "Matching Data Result should be greater than 0");
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 to verify functionality of Search box with mismatch data under Contact Details section$")
+	public void user_608_to_verify_functionality_of_search_box_with_mismatch_data_under_contact_details_section()
+			throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(contactDetailsJsPaths.getElement("contactDetailsSearchbox"))
+				.sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
+				javascriptHelper.executeScriptWithWebElement(contactDetailsJsPaths.getElement("contactDetailsSearchbox"))
+				.sendKeys(testData.get("MismatchingData"));
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^User_608 verify system should not display any records or system should display the message as No data found under Contact Details section$")
+	public void user_608_verify_system_should_not_display_any_records_or_system_should_display_the_message_as_no_data_found_under_contact_details_section()
+			throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				WebElement searchResult = javascriptHelper.executeScriptWithWebElement(
+						contactDetailsJsPaths.getElement("searchResult"));
+				javascriptHelper.backgroundColor(searchResult);
+				String text = searchResult.getText().substring(13, 14);
+				System.out.println("Result value: "+text);
+				softAssert.assertTrue(Integer.parseInt(text)==0, "Mismatch data should be display as 0");
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	
+	
+	
 	
 	
 	
