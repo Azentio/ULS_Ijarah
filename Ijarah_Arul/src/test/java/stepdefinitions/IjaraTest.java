@@ -97,10 +97,6 @@ public class IjaraTest extends BaseClass{
 	
 	
 	// This login used to another link don't use , I used only take JS path purpose
-	@Given("navigate the IJARA URL1")
-	public void navigate_the_ijara_url1() throws Throwable {
-		driver.get(configFileReader.getIjaraApplicationURL1());	 
-	}
 	
 	@And("login with valid credentials1")
 	public void login_with_valid_credentials1()throws Throwable {

@@ -1,7 +1,7 @@
 Feature: Title of your feature
 
 Scenario: Title of your scenario
-And Update the status to Inactive in Personal loan_New Application
-And Click on Save icon in Personal loan_New Application
-And Update the status to Active in Personal loan_New Application
+And Remove the values in any required field in facility details screen
+And Update character input in tenure months input in facility details
+And Update special character input in amount requested in facility details
 

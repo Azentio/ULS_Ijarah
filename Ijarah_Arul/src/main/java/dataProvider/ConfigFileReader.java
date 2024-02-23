@@ -31,14 +31,6 @@ public class ConfigFileReader {
 		}
 	}
 
-	public String getIjaraApplicationURL1() {
-		String url = properties.getProperty("IjaraApplicationURL1");
-		if (url != null)
-			return url;
-		else
-			throw new RuntimeException("url not specified in the Configuration.properties file.");
-	}
-
 	public long getImplicitlyWait() {
 		String implicitlyWait = properties.getProperty("implicitlyWait");
 		if (implicitlyWait != null)
@@ -88,23 +80,144 @@ public class ConfigFileReader {
 			throw new RuntimeException("pollingTime not specified in the Configuration.properties file.");
 	}
 
-	public String getJSFilePath() {
-		String jsFilePath;
-		jsFilePath = System.getProperty("user.dir") + "\\TestData\\ulsJsPaths.xlsx";
-		return jsFilePath;
-	}
-
 	public String getTestDataFilePath() {
 
 		String filePath;
-		filePath = System.getProperty("user.dir") + "\\TestData\\ulsTestData.xlsx";
+		filePath = System.getProperty("user.dir") + "\\TestData\\ijaraTestData.xlsx";
 
 		return filePath;
 	}
-	public void storePersonalLoanNewAppReferenceNumber(String referenceNumber) throws IOException
+	public String getAutoLoanTestDataFilePath() {
+
+		String filePath;
+		filePath = System.getProperty("user.dir") + "\\TestData\\ULS_AutoLoanTestData.xlsx";
+
+		return filePath;
+	}
+
+	public String getJSFilePath() {
+		String jsFilePath;
+		jsFilePath = System.getProperty("user.dir") + "\\TestData\\IjaraJSPaths.xlsx";
+		return jsFilePath;
+	}
+
+	
+
+	public void setJarahRecordReferenceNumber(String referenceNumber) throws IOException {
+		OutputStream outputStream = new FileOutputStream(new File(propertyFilePath));
+		properties.setProperty("IjarahRecordReferenceNumber", referenceNumber);
+		properties.store(outputStream, null);
+
+	}
+
+	public String getIjarahRecordReferenceNumber() {
+		String recordReferenceNumber;
+		recordReferenceNumber = properties.getProperty("IjarahRecordReferenceNumber");
+		return recordReferenceNumber;
+	}
+
+	public void setTawruqqRecordReferenceNumber(String refernceNumber) throws IOException {
+		OutputStream outputStream = new FileOutputStream(new File(propertyFilePath));
+		properties.setProperty("TawruqqRecordReferenceNumber", refernceNumber);
+		properties.store(outputStream, null);
+	}
+
+	public String getTawruqqRecordRefereneNumber() {
+		String recordReferenceNumber;
+		recordReferenceNumber = properties.getProperty("TawruqqRecordReferenceNumber");
+		return recordReferenceNumber;
+	}
+	public String getAutoLoanReferenceNumber()
+	{
+		String recordReferenceNumber;
+		recordReferenceNumber = properties.getProperty("autoLoanReferenceNumber");
+		return recordReferenceNumber;
+	}
+	public String getAutioLoanAppDataEntryRefNo()
+	{
+		String recordReferenceNumber;
+		recordReferenceNumber = properties.getProperty("autoLoanAppDataEntryReferenceNumber");
+		return recordReferenceNumber;
+	}
+	public void SetAutoLoanReferenceNumber(String referenceNumber) throws IOException
 	{
 		OutputStream outputStream = new FileOutputStream(new File(propertyFilePath));
-		properties.setProperty("personalLoanNewAppReferenceNumber", referenceNumber);
-		properties.store(outputStream, null);		
+		properties.setProperty("autoLoanReferenceNumber", referenceNumber);
+		properties.store(outputStream, null);
 	}
+	public String getTawruqqOfferingRecordReferenceNumber() {
+		String recordReferenceNumber;
+		recordReferenceNumber = properties.getProperty("TawruqqOfferingReferenceNumber");
+		return recordReferenceNumber;
+	}
+
+	public void setMurabahaRecordReferenceNumber(String referenceNumber) throws IOException {
+		OutputStream outputStream = new FileOutputStream(new File(propertyFilePath));
+		properties.setProperty("MurabaharecordReferenceNumber", referenceNumber);
+		properties.store(outputStream, null);
+
+	}
+	public void storePersonalLoanNewAppReferenceNumber(String referenceNumber) throws IOException {
+		OutputStream outputStream = new FileOutputStream(new File(propertyFilePath));
+		properties.setProperty("personalLoanNewAppReferenceNumber", referenceNumber);
+		properties.store(outputStream, null);
+
+	}
+	//personalLoanNewAppReferenceNumber
+	public String getPersonalLoanNewAppReferenceNumber() throws IOException {
+		String recordReferenceNumber;
+		recordReferenceNumber = properties.getProperty("personalLoanNewAppReferenceNumber");
+		return recordReferenceNumber;
+
+	}
+
+	public String getMurabahaPurchaseOrderApprovalRecordReferenceNumber() throws IOException {
+		String recordReferenceNumber;
+		recordReferenceNumber = properties.getProperty("MurabahaPurchaseOrderApprovalRecordNumber");
+		return recordReferenceNumber;
+
+	}
+
+	public String getMurabahaRecordRefereneNumber() {
+		String recordReferenceNumber;
+		recordReferenceNumber = properties.getProperty("MurabaharecordReferenceNumber");
+		return recordReferenceNumber;
+	}
+	public String getTawruqqAppDataCheckReferenceNumber() {
+		String recordReferenceNumber;
+		recordReferenceNumber = properties.getProperty("TawruqqAppDataCheckReferenceNumber");
+		return recordReferenceNumber;
+	}
+	public String getMurabahaPurchaseOrderRecordRefereneNumber() {
+		String recordReferenceNumber;
+		recordReferenceNumber = properties.getProperty("MurabahaPurchaseOrderRefNo");
+		return recordReferenceNumber;
+	}
+	public String getIjarahAppDataEntryRecordReferenceNumber() {
+		String recordReferenceNumber;
+		recordReferenceNumber = properties.getProperty("IjarahAppDataEntryRecordReferenceNumber");
+		return recordReferenceNumber;
+	}
+	public String getMurabahaDataEntryRecordReferenceNumber() {
+		String recordReferenceNumber;
+		recordReferenceNumber = properties.getProperty("murabahaDataEntryRecordReferenceNumber");
+		return recordReferenceNumber;
+	}
+	public String getIjarahDataCheckRecordReferenceNumber() {
+		String recordReferenceNumber;
+		recordReferenceNumber = properties.getProperty("IjarahAppDataCheckRecordReferenceNumber");
+		return recordReferenceNumber;
+	}
+	public String getMurabahaDataCheckRecordReferenceNumber() {
+		String recordReferenceNumber;
+		recordReferenceNumber = properties.getProperty("MurabahaDataCheckRefNo");
+		return recordReferenceNumber;
+	}
+	//AutoLoanDisbMkrRecordNo
+	public String getAutoloanDisMkrRecordNo() {
+		String recordReferenceNumber;
+		recordReferenceNumber = properties.getProperty("AutoLoanDisbMkrRecordNo");
+		return recordReferenceNumber;
+	}
+	
 }
