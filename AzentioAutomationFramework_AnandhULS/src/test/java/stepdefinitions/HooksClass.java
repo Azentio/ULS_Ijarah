@@ -33,10 +33,12 @@ public class HooksClass extends BaseClass {
 	List<String> testCaseTagsFromExcel = excelTest.getTestCaseTagsfromExcel();
 	boolean excelRunnerStatus = false;
 	ScreenshotHelper screenshotHelper = new ScreenshotHelper(driver);
-
+Runtime runTime;
+	@SuppressWarnings("deprecation")
 	@Before
 	public void browserSetup(Scenario scenario) throws IOException {
 		// get flag status from excel and skip the test cases
+		runTime=Runtime.getRuntime();
 		if (excelRunnerStatus == true) {
 			System.out.println("Test excel runner");
 			if (testExecution.getTestdata(NewExcelTestRunner.getCurrentExecutionTag()).get("ExecuteYes/No")
@@ -48,7 +50,8 @@ public class HooksClass extends BaseClass {
 			}
 
 		}
-
+		runTime.exec("jcmd 9696 GC.run");
+		
 		driver = initializeDriver();
 		System.out.println("Driver Initiated");
 		String name = scenario.getName();
@@ -58,7 +61,9 @@ public class HooksClass extends BaseClass {
 
 	@AfterStep
 	public void addScreenshot(Scenario scenario) throws IOException {
+		runTime.exec("jcmd 9696 GC.run");
 		driver = BaseClass.driver;
+		runTime.exec("jcmd 9696 GC.run");
 		System.out.println("Screen shot got added");
 		try {
 			java.io.File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
@@ -74,6 +79,7 @@ public class HooksClass extends BaseClass {
 	public void TearDown(Scenario scenario) throws IOException {
 		driver = BaseClass.driver;
 		driver.quit();
+		runTime.exec("jcmd 9696 GC.run");
 		String testTag = "";
 		System.out.println("Browser closed");
 		String name = scenario.getName();

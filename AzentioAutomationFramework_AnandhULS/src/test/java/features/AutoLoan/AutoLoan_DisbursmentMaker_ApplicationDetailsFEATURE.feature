@@ -19,7 +19,7 @@ And user_076 retive the disbursment checker user ID and store it in excel databa
 Then logout from the ULS Application
 And user_076 invoke soft assert in application details screen at disbursment maker stage
 @AT_AD_AL_DMC_01_01
-Scenario: To test the application details submit fucntionality at disbursment maker stage with auto loan product
+Scenario: To verify application details field should be read only mode and field data should be matched with data entry stage at disbursmet maker stage
 Given navigate to ULS URL
 And user_076 login with valid disbursment checker user id for auto loan product
 And click on mail box
@@ -34,7 +34,7 @@ Then logout from the ULS Application
 And user_076 invoke soft assert in application details screen at disbursment maker stage
 
 @AT_AD_AL_DMC_02
-Scenario: To verify beneficiary details field should be read only mode at field data should be matched with disbursment maker stage 
+Scenario: To verify reject button in application details screen 
 Given navigate to ULS URL
 And user_076 login with valid disbursment maker user id for auto loan product
 And click on mail box
@@ -51,7 +51,7 @@ Then logout from the ULS Application
 And user_076 invoke soft assert in application details screen at disbursment maker stage
 
 @AT_AD_AL_DMC_03
-Scenario: To verify beneficiary details field should be read only mode at field data should be matched with disbursment maker stage 
+Scenario: To verify return functionality in applicatin details 
 Given navigate to ULS URL
 And user_076 login with valid disbursment checker user id for auto loan product
 And click on mail box

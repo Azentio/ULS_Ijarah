@@ -2,24 +2,39 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-02T18:16:11 IST" name="Default suite" finished-at="2024-02-02T18:34:29 IST" duration-ms="1098543">
+  <suite started-at="2024-02-19T18:43:36 IST" name="Default suite" finished-at="2024-02-19T18:45:19 IST" duration-ms="103182">
     <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@343570b7]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-02-02T18:16:11 IST" name="Default test" finished-at="2024-02-02T18:34:29 IST" duration-ms="1098543">
-      <class name="Runner.NewExcelTestRunner">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:Runner.NewExcelTestRunner@3212a8d7]" started-at="2024-02-02T18:16:11 IST" name="beforeTest" finished-at="2024-02-02T18:16:11 IST" duration-ms="23" status="PASS">
+    <test started-at="2024-02-19T18:43:36 IST" name="Default test" finished-at="2024-02-19T18:45:19 IST" duration-ms="103182">
+      <class name="Runner.TestApplication">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@343570b7]" started-at="2024-02-19T18:43:36 IST" name="setUpClass" finished-at="2024-02-19T18:43:37 IST" duration-ms="1344" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method signature="test()[pri:0, instance:Runner.NewExcelTestRunner@3212a8d7]" started-at="2024-02-02T18:16:11 IST" name="test" finished-at="2024-02-02T18:34:29 IST" duration-ms="1098304" status="PASS">
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@343570b7]" started-at="2024-02-19T18:43:37 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-19T18:44:58 IST" duration-ms="80492" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To verify payment details should have mentioned list view fields that should be read only mode"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[To Test the drawdown section at disbursementmaker stage with auto loan product]"]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:Runner.NewExcelTestRunner@3212a8d7]" started-at="2024-02-02T18:34:29 IST" name="afterTest" finished-at="2024-02-02T18:34:29 IST" duration-ms="128" status="PASS">
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@343570b7]" started-at="2024-02-19T18:44:58 IST" name="tearDownClass" finished-at="2024-02-19T18:45:19 IST" duration-ms="21221" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterTest -->
-      </class> <!-- Runner.NewExcelTestRunner -->
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- Runner.TestApplication -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

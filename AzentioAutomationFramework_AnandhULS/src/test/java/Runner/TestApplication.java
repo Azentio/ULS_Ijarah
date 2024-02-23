@@ -9,15 +9,15 @@ import utilities.ExtentManager;
 import utilities.ExtentTestManager;
 
 @CucumberOptions(features = {
-		"src/test/java/features/AutoLoan/AutoLoan_DisbursmentMaker_ApplicationDetailsFEATURE.feature"
+		"src/test/java/features/AutoLoan/AutoLoan_DisbursementMaker_DrawdownFEATURE.feature"
 	
 		}, glue = "stepdefinitions",
 		// monochrome=false, //to make steps in color
 		plugin = { "pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 				"rerun:ReRunScenarios/FailedReRun.txt" }
 // ,dryRun = false //to check compilation errors
- //, tags = "@AT_M_PUR_12"
-		, tags = "@AT_AD_AL_DMC_02"
+ //, tags = "@AT_AL_DSB_DD_04"
+		, tags = " @AT_AL_DSB_DD_04"
 )
 public class TestApplication extends AbstractTestNGCucumberTests {
 	/*

@@ -1,3 +1,18 @@
-@And("^user_076 save button and back button isvisible in beneficiary details at disbursment maker stage$")
-public void user_076_save_button_and_back_button_isvisible_in_beneficiary_details_at_disbursment_maker_stage()throws Throwable{
+@And("^user_076 find the payment details section index at disbursement in drawdown section maker stage$")
+public void user_076_find_the_payment_details_section_index_at_disbursement_in_drawdown_section_maker_stage()throws Throwable{
+}
+@Then("^user_076 verify edit field should be visible in payment details list view in drawdown section at disbursement maker stage$")
+public void user_076_verify_edit_field_should_be_visible_in_payment_details_list_view_in_drawdown_section_at_disbursement_maker_stage()throws Throwable{
+}
+@Then("^user_076 verify disbursement amount field should be visible in payment details list view in drawdown section at disbursement maker stage$")
+public void user_076_verify_disbursement_amount_field_should_be_visible_in_payment_details_list_view_in_drawdown_section_at_disbursement_maker_stage()throws Throwable{
+}
+@Then("^user_076 verify currency field should be visible in payment details list view in drawdown section at disbursement maker stage$")
+public void user_076_verify_currency_field_should_be_visible_in_payment_details_list_view_in_drawdown_section_at_disbursement_maker_stage()throws Throwable{
+}
+@Then("^user_076 verify loan account field should be visible in payment details list view in drawdown section at disbursement maker stage$")
+public void user_076_verify_loan_account_field_should_be_visible_in_payment_details_list_view_in_drawdown_section_at_disbursement_maker_stage()throws Throwable{
+}
+@Then("^user_076 verify disbursement status field should be visible in payment details list view in drawdown section at disbursement maker stage$")
+public void user_076_verify_disbursement_status_field_should_be_visible_in_payment_details_list_view_in_drawdown_section_at_disbursement_maker_stage()throws Throwable{
 }
