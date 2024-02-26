@@ -24,14 +24,14 @@ import io.cucumber.java.en.Given;
 import pageobjects.JSPaths;
 import resources.BaseClass;
 
-public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
+public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 	ConfigFileReader configFileReader = new ConfigFileReader();
 	String excelPath = configFileReader.getJSPathFilePath();
 	String excelTestDataPath = configFileReader.getTestDataFilePath();
 	WebDriver driver = BaseClass.driver;
 	
 	JSPaths dataCheck_ApplicationDetailsJsPaths = new JSPaths(excelPath, "ApplicationDetails_Elements", "ApplicationDetails_FieldName", "JSPath");
-	JSPaths employmentDetailsJsPaths = new JSPaths(excelPath, "AppDataEntryEmployementDetailes", "EmploymentDetails_FieldName", "JSPath");
+	JSPaths employmentDetailsJsPaths = new JSPaths(excelPath, "AppDataEntryEmployementDetails", "EmploymentDetails_FieldName", "JSPath");
 	
 	ExcelData exelData = new ExcelData(excelTestDataPath, "ijara_LoginCredentials", "UserType");
 	Map<String, String> loginTestData = new HashMap<>();
@@ -44,49 +44,49 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 	Actions actions = new Actions(driver);
 	SoftAssert softAssert = new SoftAssert();
 	
-	ExcelData AppDataEntryEmployementDetailes  = new ExcelData(excelTestDataPath,"AppDataEntryEmployementDetailes","DataSet ID");
+	ExcelData AppDataEntryEmployementDetails  = new ExcelData(excelTestDataPath,"AppDataEntryEmployementDetails","DataSet ID");
 	
 	ExcelData testExecution = new ExcelData(excelTestDataPath, "ConumerDurablesExeSheet", "TestCase ID");
 	Map<String, String> testExecutionData;
 	Map<String, String> testData;
 	
 	
-	@Given("User_607 get the test data for test case AT_CD_APD_CFE_01")
+	@And("User_607 get the test data for test case AT_CD_APD_CFE_01")
 	public void user_get_the_test_data_for_test_case_at_cd_apd_cfe_01() {
 		testExecutionData = testExecution.getTestdata("AT_CD_APD_CFE_01");
-		testData = AppDataEntryEmployementDetailes.getTestdata(testExecutionData.get("dataSet_ID"));
+		testData = AppDataEntryEmployementDetails.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 	
-	@Given("User_607 get the test data for test case AT_CD_APD_CFE_08")
+	@And("User_607 get the test data for test case AT_CD_APD_CFE_08")
 	public void user_get_the_test_data_for_test_case_at_cd_apd_cfe_08() {
 		testExecutionData = testExecution.getTestdata("AT_CD_APD_CFE_08");
-		testData = AppDataEntryEmployementDetailes.getTestdata(testExecutionData.get("dataSet_ID"));
+		testData = AppDataEntryEmployementDetails.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 	
-	@Given("User_607 get the test data for test case AT_CD_APD_CFE_09")
+	@And("User_607 get the test data for test case AT_CD_APD_CFE_09")
 	public void user_get_the_test_data_for_test_case_at_cd_apd_cfe_09() {
 		testExecutionData = testExecution.getTestdata("AT_CD_APD_CFE_09");
-		testData = AppDataEntryEmployementDetailes.getTestdata(testExecutionData.get("dataSet_ID"));
+		testData = AppDataEntryEmployementDetails.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 	
-	@Given("User_607 get the test data for test case AT_CD_APD_CFE_10")
+	@And("User_607 get the test data for test case AT_CD_APD_CFE_10")
 	public void user_get_the_test_data_for_test_case_at_cd_apd_cfe_10() {
 		testExecutionData = testExecution.getTestdata("AT_CD_APD_CFE_10");
-		testData = AppDataEntryEmployementDetailes.getTestdata(testExecutionData.get("dataSet_ID"));
+		testData = AppDataEntryEmployementDetails.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 	
 	@Given("User_607 get the test data for test case AT_CD_APD_CFE_11")
 	public void user_get_the_test_data_for_test_case_at_cd_apd_cfe_11() {
 		testExecutionData = testExecution.getTestdata("AT_CD_APD_CFE_11");
-		testData = AppDataEntryEmployementDetailes.getTestdata(testExecutionData.get("dataSet_ID"));
+		testData = AppDataEntryEmployementDetails.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
-	@Given("User_607 get the test data for test case AT_CD_APD_CFE_12")
+	@And("User_607 get the test data for test case AT_CD_APD_CFE_12")
 	public void user_get_the_test_data_for_test_case_at_cd_apd_cfe_12() {
 		testExecutionData = testExecution.getTestdata("AT_CD_APD_CFE_12");
-		testData = AppDataEntryEmployementDetailes.getTestdata(testExecutionData.get("dataSet_ID"));
+		testData = AppDataEntryEmployementDetails.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 	
-	@And("User_607 search the Reference ID for Consume rDurables AppData Entry Empolyememt Detailes")
+	@And("User_607 search the Reference ID for Consume rDurables AppData Entry Empolyememt Details")
 	public void user_search_the_reference_id_for_auto_loan() throws Throwable {
 		for (int i = 0; i <= 300; i++) {
 			try {
@@ -280,14 +280,14 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 	
-	@And("User_607 verify Save button available under Employment details screen")
-	public void user_verify_back_button_available_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Save button available under Employment Details screen")
+	public void user_verify_back_button_available_under_employment_Details_screen() throws Throwable {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				WebElement saveBtn = javascriptHelper.executeScriptWithWebElement(
 						employmentDetailsJsPaths.getElement("saveBtn"));
 				javascriptHelper.backgroundBorder(saveBtn);
-				softAssert.assertTrue(saveBtn.isDisplayed(), "Save button available under Employment details screen");
+				softAssert.assertTrue(saveBtn.isDisplayed(), "Save button available under Employment Details screen");
 				break;
 			} catch (Exception e) {
 				if (i == 300) {
@@ -297,8 +297,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 	
-	@And("^User_607 to verify the Primary Employment toggle should be Yes in Employment details screen$")
-	public void user_607_to_verify_the_primary_employment_toggle_should_be_yes_in_employment_details_screen()
+	@And("^User_607 to verify the Primary Employment toggle should be Yes in Employment Details screen$")
+	public void user_607_to_verify_the_primary_employment_toggle_should_be_yes_in_employment_Details_screen()
 			throws Throwable {
 		for (int i = 0; i <= 300; i++) {
 			try {
@@ -306,7 +306,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 						employmentDetailsJsPaths.getElement("primaryEmploymentToggleBtn"));
 				String attribute = toggleBtn.getAttribute("aria-checked");
 				System.out.println(attribute);
-				softAssert.assertTrue(attribute.contains("true"), "Primary Employment toggle should be Yes in Employment details screen");
+				softAssert.assertTrue(attribute.contains("true"), "Primary Employment toggle should be Yes in Employment Details screen");
 				
 				break;
 			} catch (Exception e) {
@@ -584,25 +584,25 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 	@And("^User_607 get the test data for test case AT_MCUD_01$")
     public void get_the_test_data_for_test_case_AT_MCUD_01() throws Throwable {
 		testExecutionData = testExecution.getTestdata("AT_MCUD_01");
-		testData = AppDataEntryEmployementDetailes.getTestdata(testExecutionData.get("dataSet_ID"));
+		testData = AppDataEntryEmployementDetails.getTestdata(testExecutionData.get("dataSet_ID"));
     }
 	
 	@Given("User_607 get the test data for test case AT_RD_ADE_CD_01")
 	public void user_607_get_the_test_data_for_test_case_at_rd_ade_cd_01() {
 		testExecutionData = testExecution.getTestdata("AT_MCUD_01");
-		testData = AppDataEntryEmployementDetailes.getTestdata(testExecutionData.get("dataSet_ID"));
+		testData = AppDataEntryEmployementDetails.getTestdata(testExecutionData.get("dataSet_ID"));
 	}
 	
 	
-	@And("User_607 verify Back button available under Employment details screen")
-	public void user_607_verify_back_button_available_under_employment_details_screen() throws Throwable {		
+	@And("User_607 verify Back button available under Employment Details screen")
+	public void user_607_verify_back_button_available_under_employment_Details_screen() throws Throwable {		
 		for (int i = 0; i <=200; i++) {
 			try {
 				WebElement customerFinancialsTab = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("customerFinancialsTab"));
 				WebElement backBtn = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("customerEmploymentBackBtn"));
 				actions.scrollToElement(customerFinancialsTab).build().perform();
 				javascriptHelper.backgroundBorder(backBtn);
-				softAssert.assertTrue(backBtn.isDisplayed(), "Back button available under Employment details screen");
+				softAssert.assertTrue(backBtn.isDisplayed(), "Back button available under Employment Details screen");
 				break;
 			} catch (Exception e) {
 				if (i ==200) {
@@ -612,8 +612,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Primary Employment field available under Employment details screen")
-	public void user_607_verify_primary_employment_field_available_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Primary Employment field available under Employment Details screen")
+	public void user_607_verify_primary_employment_field_available_under_employment_Details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("primaryEmploymentLabel"));
 		WebElement toggleBtn = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("primaryEmploymentToggleBtn"));
 		for (int i = 0; i <=200; i++) {
@@ -642,8 +642,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 
-	@And("User_607 verify Employment Period field available under Employment details screen")
-	public void user_607_verify_employment_period_field_available_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Employment Period field available under Employment Details screen")
+	public void user_607_verify_employment_period_field_available_under_employment_Details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employmentPeriodLabel"));
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employmentPeriodDropdown"));
 		for (int i = 0; i <=200; i++) {
@@ -661,8 +661,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	 		
 	}
 
-	@And("User_607 verify Nature of Employment field available under Employment details screen")
-	public void user_607_verify_nature_of_employment_field_available_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Nature of Employment field available under Employment Details screen")
+	public void user_607_verify_nature_of_employment_field_available_under_employment_Details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("natureOfEmploymentLabel"));
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("natureOfEmploymentDropdown"));
 		for (int i = 0; i <=200; i++) {
@@ -680,8 +680,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 
-	@And("User_607 verify Company Type field available under Employment details screen")
-	public void user_607_verify_company_type_field_available_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Company Type field available under Employment Details screen")
+	public void user_607_verify_company_type_field_available_under_employment_Details_screen() throws Throwable {
 		for (int i = 0; i <=200; i++) {
 			try {
 				WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("companyTypeLabel"));
@@ -699,8 +699,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Profession field available under Employment details screen")
-	public void user_607_verify_profession_field_available_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Profession field available under Employment Details screen")
+	public void user_607_verify_profession_field_available_under_employment_Details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("professionLabel"));
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("professionDropdown"));
 		for (int i = 0; i <=200; i++) {
@@ -718,8 +718,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Profession Type field available under Employment details screen")
-	public void user_607_verify_profession_type_field_available_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Profession Type field available under Employment Details screen")
+	public void user_607_verify_profession_type_field_available_under_employment_Details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("professionTypeLabel"));
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("professionTypeDropdown"));
 		for (int i = 0; i <=200; i++) {
@@ -737,8 +737,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Statutory Authority field available under Employment details screen")
-	public void user_607_verify_statutory_authority_field_available_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Statutory Authority field available under Employment Details screen")
+	public void user_607_verify_statutory_authority_field_available_under_employment_Details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("statutoryAuthorityLabel"));
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("statutoryAuthorityDropdown"));
 		for (int i = 0; i <=200; i++) {
@@ -756,8 +756,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Employer Name field available under Employment details screen")
-	public void user_607_verify_employer_name_field_available_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Employer Name field available under Employment Details screen")
+	public void user_607_verify_employer_name_field_available_under_employment_Details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employerNameLabel"));
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employerNameDropdown"));
 		for (int i = 0; i <=200; i++) {
@@ -775,8 +775,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Employer Name if Others field available under Employment details screen")
-	public void user_607_verify_employer_name_if_others_field_available_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Employer Name if Others field available under Employment Details screen")
+	public void user_607_verify_employer_name_if_others_field_available_under_employment_Details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employerNameOthersLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employerNameOthersInput"));
 		for (int i = 0; i <=200; i++) {
@@ -794,8 +794,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	
 	}
 
-	@And("User_607 verify Employee ID field available under Employment details screen")
-	public void user_607_verify_employee_id_field_available_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Employee ID field available under Employment Details screen")
+	public void user_607_verify_employee_id_field_available_under_employment_Details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employeeIDLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employeeIDInput"));
 		for (int i = 0; i <=200; i++) {
@@ -813,8 +813,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 	
-	@And("User_607 verify Date of Joining field available under Employment details screen")
-	public void user_607_verify_date_of_joining_field_available_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Date of Joining field available under Employment Details screen")
+	public void user_607_verify_date_of_joining_field_available_under_employment_Details_screen() throws Throwable {
 		for (int i = 0; i <=200; i++) {
 			try {
 				WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("dateOfJoiningLabel"));
@@ -832,8 +832,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}		
 	}
 
-	@And("User_607 verify Employment End Date field available under Employment details screen")
-	public void user_607_verify_employment_end_date_field_available_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Employment End Date field available under Employment Details screen")
+	public void user_607_verify_employment_end_date_field_available_under_employment_Details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employmentEndDateLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employmentEndDateCalender"));
 		for (int i = 0; i <= 200; i++) {
@@ -852,8 +852,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Department field available under Employment details screen")
-	public void user_607_verify_department_field_available_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Department field available under Employment Details screen")
+	public void user_607_verify_department_field_available_under_employment_Details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("departmentLabel"));
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("departmentDropdown"));
 		for (int i = 0; i <= 200; i++) {
@@ -871,8 +871,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Designation field available under Employment details screen")
-	public void user_607_verify_designation_field_available_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Designation field available under Employment Details screen")
+	public void user_607_verify_designation_field_available_under_employment_Details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("designationLabel"));
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("designationDropdown"));
 		for (int i = 0; i <= 200; i++) {
@@ -890,8 +890,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Employment Type field available under Employment details screen")
-	public void user_607_verify_employment_type_field_available_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Employment Type field available under Employment Details screen")
+	public void user_607_verify_employment_type_field_available_under_employment_Details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employmentTypeLabel"));
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employmentTypeDropdown"));
 		for (int i = 0; i <=200; i++) {
@@ -909,8 +909,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	
 	}
 
-	@And("User_607 verify Direct Manager Contact Number Extension field available under Employment details screen")
-	public void user_607_verify_direct_manager_contact_number_extension_field_available_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Direct Manager Contact Number Extension field available under Employment Details screen")
+	public void user_607_verify_direct_manager_contact_number_extension_field_available_under_employment_Details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("directManagerContactNbrLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("directManagerContactNbrInput"));
 		for (int i = 0; i <=200; i++) {
@@ -928,14 +928,14 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 	
-	@And("^User_607 invoke soft assert in Employment details screen under Customer Financials tab at App Data Entry stage$")
-	public void user_607_invoke_soft_assert_in_employment_details_screen_under_customer_financials_tab_at_app_data_entry_stage()
+	@And("^User_607 invoke soft assert in Employment Details screen under Customer Financials tab at App Data Entry stage$")
+	public void user_607_invoke_soft_assert_in_employment_Details_screen_under_customer_financials_tab_at_app_data_entry_stage()
 			throws Throwable {
 		softAssert.assertAll();
 	}
 
-	@And("User_607 verify Direct Manager Telephone field available under Employment details screen")
-	public void user_607_verify_direct_manager_telephone_field_available_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Direct Manager Telephone field available under Employment Details screen")
+	public void user_607_verify_direct_manager_telephone_field_available_under_employment_Details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("directManagerTelephoneLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("directManagerTelephoneInput"));
 		for (int i = 0; i <=200; i++) {
@@ -953,8 +953,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Income Paymode field available under Employment details screen")
-	public void user_607_verify_income_paymode_field_available_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Income Paymode field available under Employment Details screen")
+	public void user_607_verify_income_paymode_field_available_under_employment_Details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("incomePaymodeLabel"));
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("incomePaymodeDropdown"));
 		for (int i = 0; i <=200; i++) {
@@ -972,8 +972,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Employer Phone Extension field available under Employment details screen")
-	public void user_607_verify_employer_phone_extension_field_available_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Employer Phone Extension field available under Employment Details screen")
+	public void user_607_verify_employer_phone_extension_field_available_under_employment_Details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employerPhoneExLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employerPhoneExInput"));
 		for (int i = 0; i <=200; i++) {
@@ -991,8 +991,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Employer Phone Number field available under Employment details screen")
-	public void user_607_verify_employer_phone_number_field_available_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Employer Phone Number field available under Employment Details screen")
+	public void user_607_verify_employer_phone_number_field_available_under_employment_Details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employerPhoneNbrLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employerPhoneNbrInput"));
 		for (int i = 0; i <=200; i++) {
@@ -1010,8 +1010,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify State field available under Employment details screen")
-	public void user_607_verify_state_field_available_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify State field available under Employment Details screen")
+	public void user_607_verify_state_field_available_under_employment_Details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("stateLabel"));
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("stateDropdown"));
 		for (int i = 0; i <=200; i++) {
@@ -1030,8 +1030,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify City field available under Employment details screen")
-	public void user_607_verify_city_field_available_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify City field available under Employment Details screen")
+	public void user_607_verify_city_field_available_under_employment_Details_screen() throws Throwable {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("cityLabel"));
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("cityDropdown"));
 		for (int i = 0; i <=200; i++) {
@@ -1049,8 +1049,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 	
-	@And("User_607 verify Pincode field available under Employment details screen")
-	public void user_607_verify_pincode_field_available_under_employment_details_screen() {
+	@And("User_607 verify Pincode field available under Employment Details screen")
+	public void user_607_verify_pincode_field_available_under_employment_Details_screen() {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("pincodeLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("pincodeInput"));
 		for (int i = 0; i <=200; i++) {
@@ -1068,8 +1068,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Sector field available under Employment details screen")
-	public void user_607_verify_sector_field_available_under_employment_details_screen() {
+	@And("User_607 verify Sector field available under Employment Details screen")
+	public void user_607_verify_sector_field_available_under_employment_Details_screen() {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("sectorLabel"));
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("sectorDropdown"));
 		for (int i = 0; i <=200; i++) {
@@ -1087,8 +1087,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Industry Sub Sector field available under Employment details screen")
-	public void user_607_verify_industry_sub_sector_field_available_under_employment_details_screen() {
+	@And("User_607 verify Industry Sub Sector field available under Employment Details screen")
+	public void user_607_verify_industry_sub_sector_field_available_under_employment_Details_screen() {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("subSectorLabel"));
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("subSectorDropdown"));
 		for (int i = 0; i <=200; i++) {
@@ -1106,8 +1106,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify No Of Partners field available under Employment details screen")
-	public void user_607_verify_no_of_partners_field_available_under_employment_details_screen() {
+	@And("User_607 verify No Of Partners field available under Employment Details screen")
+	public void user_607_verify_no_of_partners_field_available_under_employment_Details_screen() {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("noOfPartnersLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("noOfPartnersInput"));
 		for (int i = 0; i <=200; i++) {
@@ -1125,8 +1125,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Nature of Business field available under Employment details screen")
-	public void user_607_verify_nature_of_business_field_available_under_employment_details_screen() {
+	@And("User_607 verify Nature of Business field available under Employment Details screen")
+	public void user_607_verify_nature_of_business_field_available_under_employment_Details_screen() {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("natureOfBusinessLabel"));
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("natureOfBusinessDropdown"));
 		for (int i = 0; i <=200; i++) {
@@ -1145,8 +1145,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Registered Business Name field available under Employment details screen")
-	public void user_607_verify_registered_business_name_field_available_under_employment_details_screen() {
+	@And("User_607 verify Registered Business Name field available under Employment Details screen")
+	public void user_607_verify_registered_business_name_field_available_under_employment_Details_screen() {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("regBusinessNameLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("regBusinessNameInput"));
 		for (int i = 0; i <=200; i++) {
@@ -1164,8 +1164,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Registered Business Number field available under Employment details screen")
-	public void user_607_verify_registered_business_number_field_available_under_employment_details_screen() {
+	@And("User_607 verify Registered Business Number field available under Employment Details screen")
+	public void user_607_verify_registered_business_number_field_available_under_employment_Details_screen() {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("regBusinessNbrLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("regBusinessNbrInput"));
 		for (int i = 0; i <=200; i++) {
@@ -1183,8 +1183,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Business Registration Date field available under Employment details screen")
-	public void user_607_verify_business_registration_date_field_available_under_employment_details_screen() {
+	@And("User_607 verify Business Registration Date field available under Employment Details screen")
+	public void user_607_verify_business_registration_date_field_available_under_employment_Details_screen() {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("businessRegisteredDateLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("businessRegisteredDateCalender"));
 		for (int i = 0; i <=200; i++) {
@@ -1202,8 +1202,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Office Premises Type field available under Employment details screen")
-	public void user_607_verify_office_premises_type_field_available_under_employment_details_screen() {
+	@And("User_607 verify Office Premises Type field available under Employment Details screen")
+	public void user_607_verify_office_premises_type_field_available_under_employment_Details_screen() {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("officePremisesTypeLabel"));
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("officePremisesTypeDropdown"));
 		for (int i = 0; i <=200; i++) {
@@ -1221,8 +1221,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 
-	@And("User_607 verify Share Holder Percentage field available under Employment details screen")
-	public void user_607_verify_share_holder_percentage_field_available_under_employment_details_screen() {
+	@And("User_607 verify Share Holder Percentage field available under Employment Details screen")
+	public void user_607_verify_share_holder_percentage_field_available_under_employment_Details_screen() {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("shareHolderPercentLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("shareHolderPercentInput"));
 		for (int i = 0; i <=200; i++) {
@@ -1240,8 +1240,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 
-	@And("User_607 verify No of Employees field available under Employment details screen")
-	public void user_607_verify_no_of_employees_field_available_under_employment_details_screen() {
+	@And("User_607 verify No of Employees field available under Employment Details screen")
+	public void user_607_verify_no_of_employees_field_available_under_employment_Details_screen() {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("numberOfEmployeesLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("numberOfEmployeesInput"));
 		for (int i = 0; i <=200; i++) {
@@ -1259,8 +1259,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Experience At Current Employment field available under Employment details screen")
-	public void user_607_verify_experience_at_current_employment_field_available_under_employment_details_screen() {
+	@And("User_607 verify Experience At Current Employment field available under Employment Details screen")
+	public void user_607_verify_experience_at_current_employment_field_available_under_employment_Details_screen() {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("experienceAtCurrentEmploymentLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("experienceAtCurrentEmploymentInput"));
 		for (int i = 0; i <=200; i++) {
@@ -1278,8 +1278,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Direct Manager Name field available under Employment details screen")
-	public void user_607_verify_direct_manager_name_field_available_under_employment_details_screen() {
+	@And("User_607 verify Direct Manager Name field available under Employment Details screen")
+	public void user_607_verify_direct_manager_name_field_available_under_employment_Details_screen() {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("directManagerNameLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("directManagerNameInput"));
 		for (int i = 0; i <=200; i++) {
@@ -1297,8 +1297,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Employer City Code field available under Employment details screen")
-	public void user_607_verify_employer_city_code_field_available_under_employment_details_screen() {
+	@And("User_607 verify Employer City Code field available under Employment Details screen")
+	public void user_607_verify_employer_city_code_field_available_under_employment_Details_screen() {
 		javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employerCityCodeLabel")));
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employerCityCodeLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employerCityCodeInput"));
@@ -1317,8 +1317,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Retirement Age field available under Employment details screen")
-	public void user_607_verify_retirement_age_field_available_under_employment_details_screen() {
+	@And("User_607 verify Retirement Age field available under Employment Details screen")
+	public void user_607_verify_retirement_age_field_available_under_employment_Details_screen() {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("retirementAgeLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("retirementAgeInput"));
 		for (int i = 0; i <=200; i++) {
@@ -1336,8 +1336,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Remarks field available under Employment details screen")
-	public void user_607_verify_remarks_field_available_under_employment_details_screen() {
+	@And("User_607 verify Remarks field available under Employment Details screen")
+	public void user_607_verify_remarks_field_available_under_employment_Details_screen() {
 		WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("remarksLabel"));
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("remarksTextarea"));
 		for (int i = 0; i <=200; i++) {
@@ -1355,8 +1355,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 	
-	@And("User_607 verify Employment Period value should populate correctly same as App data entry stage under Employment details screen")
-	public void user_607_verify_employment_period_value_should_populate_correctly_same_as_app_data_entry_stage_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Employment Period value should populate correctly same as App data entry stage under Employment Details screen")
+	public void user_607_verify_employment_period_value_should_populate_correctly_same_as_app_data_entry_stage_under_employment_Details_screen() throws Throwable {
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employmentPeriodDropdown"));
 		for (int i = 0; i <=200; i++) {
 			try {
@@ -1371,8 +1371,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Nature of Employment value should populate correctly same as App data entry stage under Employment details screen")
-	public void user_607_verify_nature_of_employment_value_should_populate_correctly_same_as_app_data_entry_stage_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Nature of Employment value should populate correctly same as App data entry stage under Employment Details screen")
+	public void user_607_verify_nature_of_employment_value_should_populate_correctly_same_as_app_data_entry_stage_under_employment_Details_screen() throws Throwable {
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("natureOfEmploymentDropdown"));
 		for (int i = 0; i <=200; i++) {
 			try {
@@ -1387,8 +1387,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Employer Name if Others value should populate correctly same as App data entry stage under Employment details screen")
-	public void user_607_verify_employer_name_if_others_value_should_populate_correctly_same_as_app_data_entry_stage_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Employer Name if Others value should populate correctly same as App data entry stage under Employment Details screen")
+	public void user_607_verify_employer_name_if_others_value_should_populate_correctly_same_as_app_data_entry_stage_under_employment_Details_screen() throws Throwable {
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employerNameOthersInput"));
 		for (int i = 0; i <=200; i++) {
 			try {
@@ -1403,8 +1403,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Employee ID value should populate correctly same as App data entry stage under Employment details screen")
-	public void user_607_verify_employee_id_value_should_populate_correctly_same_as_app_data_entry_stage_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Employee ID value should populate correctly same as App data entry stage under Employment Details screen")
+	public void user_607_verify_employee_id_value_should_populate_correctly_same_as_app_data_entry_stage_under_employment_Details_screen() throws Throwable {
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employeeIDInput"));
 		for (int i = 0; i <=200; i++) {
 			try {
@@ -1419,8 +1419,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Date of Joining value should populate correctly same as App data entry stage under Employment details screen")
-	public void user_607_verify_date_of_joining_value_should_populate_correctly_same_as_app_data_entry_stage_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Date of Joining value should populate correctly same as App data entry stage under Employment Details screen")
+	public void user_607_verify_date_of_joining_value_should_populate_correctly_same_as_app_data_entry_stage_under_employment_Details_screen() throws Throwable {
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("dateOfJoiningCalender"));
 		for (int i = 0; i <=200; i++) {
 			try {
@@ -1436,8 +1436,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Employment Type value should populate correctly same as App data entry stage under Employment details screen")
-	public void user_607_verify_employment_type_value_should_populate_correctly_same_as_app_data_entry_stage_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Employment Type value should populate correctly same as App data entry stage under Employment Details screen")
+	public void user_607_verify_employment_type_value_should_populate_correctly_same_as_app_data_entry_stage_under_employment_Details_screen() throws Throwable {
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employmentTypeDropdown"));
 		for (int i = 0; i <=200; i++) {
 			try {
@@ -1452,8 +1452,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Share Holder Percentage value should populate correctly same as App data entry stage under Employment details screen")
-	public void user_607_verify_share_holder_percentage_value_should_populate_correctly_same_as_app_data_entry_stage_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Share Holder Percentage value should populate correctly same as App data entry stage under Employment Details screen")
+	public void user_607_verify_share_holder_percentage_value_should_populate_correctly_same_as_app_data_entry_stage_under_employment_Details_screen() throws Throwable {
 		WebElement input = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("shareHolderPercentInput"));
 		for (int i = 0; i <=200; i++) {
 			try {
@@ -1521,8 +1521,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 	
 	
 //	@AT_MU_EDC_04
-//	@And("User_607 click the pagination next button under Employment details section")
-//	public void user_607_click_the_pagination_next_button_under_employment_details_section() {
+//	@And("User_607 click the pagination next button under Employment Details section")
+//	public void user_607_click_the_pagination_next_button_under_employment_Details_section() {
 //		for (int i = 0; i <= 300; i++) {
 //			try {
 //				javascriptHelper.scrollIntoView(javascriptHelper.executeScriptWithWebElement(appData_IncomeJsPaths.getElement("customerFinancialsTabBackBtn")));
@@ -1598,8 +1598,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 //	@AT_MU_EDC_05
 	
 	
-	@And("User_607 verify Total Experience\\(Years) field available under Employment details screen")
-	public void user_607_verify_total_experience_years_field_available_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Total Experience\\(Years) field available under Employment Details screen")
+	public void user_607_verify_total_experience_years_field_available_under_employment_Details_screen() throws Throwable {
 		for (int i = 0; i <=200; i++) {
 			try {
 				WebElement label = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("totalExperienceLabel"));
@@ -1618,8 +1618,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 	}
 	
 //	@AT_MU_EDC_06
-	@And("User_607 verify Primary Employment field should be Toggle button, Non-Mandatory and Read only under Employment details screen")
-	public void user_607_verify_primary_employment_field_should_be_toggle_btn_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Primary Employment field should be Toggle button, Non-Mandatory and Read only under Employment Details screen")
+	public void user_607_verify_primary_employment_field_should_be_toggle_btn_non_mandatory_and_read_only_under_employment_Details_screen() throws Throwable {
 //		Verify field as Toggle Btn
 		for (int i = 0; i <=200; i++) {
 			try {
@@ -1663,8 +1663,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Employment Period field should be Dropdown, Mandatory and Read only under Employment details screen")
-	public void user_607_verify_employment_period_field_should_be_dropdown_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Employment Period field should be Dropdown, Mandatory and Read only under Employment Details screen")
+	public void user_607_verify_employment_period_field_should_be_dropdown_mandatory_and_read_only_under_employment_Details_screen() throws Throwable {
 //		Verify field as Dropdown
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employmentPeriodDropdown"));
 		for (int i = 0; i <=200; i++) {
@@ -1709,8 +1709,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Nature of Employment field should be Dropdown, Mandatory and Read only under Employment details screen")
-	public void user_607_verify_nature_of_employment_field_should_be_dropdown_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Nature of Employment field should be Dropdown, Mandatory and Read only under Employment Details screen")
+	public void user_607_verify_nature_of_employment_field_should_be_dropdown_mandatory_and_read_only_under_employment_Details_screen() throws Throwable {
 //		Verify field as Dropdown
 		for (int i = 0; i <=200; i++) {
 			try {
@@ -1754,8 +1754,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Employer Name field should be Dropdown, Non-Mandatory and Read only under Employment details screen")
-	public void user_607_verify_employer_name_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Employer Name field should be Dropdown, Non-Mandatory and Read only under Employment Details screen")
+	public void user_607_verify_employer_name_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_Details_screen() throws Throwable {
 //		Verify field as Dropdown
 		for (int i = 0; i <=200; i++) {
 			try {
@@ -1799,8 +1799,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Employer Name if\\(Others) field should be Textbox, Mandatory and Read only under Employment details screen")
-	public void user_607_verify_employer_name_if_others_field_should_be_textbox_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Employer Name if\\(Others) field should be Textbox, Mandatory and Read only under Employment Details screen")
+	public void user_607_verify_employer_name_if_others_field_should_be_textbox_mandatory_and_read_only_under_employment_Details_screen() throws Throwable {
 //		Verify field as Textbox
 		
 		for (int i = 0; i <=200; i++) {
@@ -1845,8 +1845,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Employee ID field should be Textbox, Mandatory and Read only under Employment details screen")
-	public void user_607_verify_employee_id_field_should_be_textbox_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Employee ID field should be Textbox, Mandatory and Read only under Employment Details screen")
+	public void user_607_verify_employee_id_field_should_be_textbox_mandatory_and_read_only_under_employment_Details_screen() throws Throwable {
 //		Verify field as Textbox
 		for (int i = 0; i <=200; i++) {
 			try {
@@ -1890,8 +1890,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}	
 	
-	@And("User_607 verify Date of Joining field should be Date, Mandatory and Read only under Employment details screen")
-	public void user_607_verify_date_of_joining_field_should_be_date_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Date of Joining field should be Date, Mandatory and Read only under Employment Details screen")
+	public void user_607_verify_date_of_joining_field_should_be_date_mandatory_and_read_only_under_employment_Details_screen() throws Throwable {
 //		Verify field as Date Field
 		
 		for (int i = 0; i <=200; i++) {
@@ -1936,8 +1936,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Employment End Date field should be Date, Non-Mandatory and Read only under Employment details screen")
-	public void user_607_verify_employment_end_date_field_should_be_date_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Employment End Date field should be Date, Non-Mandatory and Read only under Employment Details screen")
+	public void user_607_verify_employment_end_date_field_should_be_date_non_mandatory_and_read_only_under_employment_Details_screen() throws Throwable {
 //		Verify field as Date Field
 		
 		for (int i = 0; i <=200; i++) {
@@ -1982,8 +1982,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Department field should be Dropdown, Non-Mandatory and Read only under Employment details screen")
-	public void user_607_verify_department_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Department field should be Dropdown, Non-Mandatory and Read only under Employment Details screen")
+	public void user_607_verify_department_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_Details_screen() throws Throwable {
 //		Verify field as Dropdown
 		
 		for (int i = 0; i <=200; i++) {
@@ -2028,8 +2028,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Designation field should be Dropdown, Non-Mandatory and Read only under Employment details screen")
-	public void user_607_verify_designation_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Designation field should be Dropdown, Non-Mandatory and Read only under Employment Details screen")
+	public void user_607_verify_designation_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_Details_screen() throws Throwable {
 //		Verify field as Dropdown
 		
 		for (int i = 0; i <=200; i++) {
@@ -2074,8 +2074,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Employment Type field should be Dropdown, Mandatory and Read only under Employment details screen")
-	public void user_607_verify_employment_type_field_should_be_dropdown_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Employment Type field should be Dropdown, Mandatory and Read only under Employment Details screen")
+	public void user_607_verify_employment_type_field_should_be_dropdown_mandatory_and_read_only_under_employment_Details_screen() throws Throwable {
 //		Verify field as Dropdown
 		
 		for (int i = 0; i <=200; i++) {
@@ -2122,8 +2122,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 	    
 	}
 
-	@And("User_607 verify Direct Manager Contact Number field should be Textbox, Non-Mandatory and Read only under Employment details screen")
-	public void user_607_verify_direct_manager_contact_number_field_should_be_textbox_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Direct Manager Contact Number field should be Textbox, Non-Mandatory and Read only under Employment Details screen")
+	public void user_607_verify_direct_manager_contact_number_field_should_be_textbox_non_mandatory_and_read_only_under_employment_Details_screen() throws Throwable {
 //		Verify field as Textbox
 		
 		for (int i = 0; i <=200; i++) {
@@ -2168,8 +2168,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 	
-	@And("User_607 verify Direct Manager Telephone field should be Textbox, Non-Mandatory and Read only under Employment details screen")
-	public void user_607_verify_direct_manager_telephone_field_should_be_textbox_non_mandatory_and_read_only_under_employment_details_screen() {
+	@And("User_607 verify Direct Manager Telephone field should be Textbox, Non-Mandatory and Read only under Employment Details screen")
+	public void user_607_verify_direct_manager_telephone_field_should_be_textbox_non_mandatory_and_read_only_under_employment_Details_screen() {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("directManagerTelephoneInput"));
 		for (int i = 0; i <=200; i++) {
@@ -2214,8 +2214,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Income Paymode field should be Dropdown, Non-Mandatory and Read only under Employment details screen")
-	public void user_607_verify_income_paymode_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_details_screen() {
+	@And("User_607 verify Income Paymode field should be Dropdown, Non-Mandatory and Read only under Employment Details screen")
+	public void user_607_verify_income_paymode_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_Details_screen() {
 //		Verify field as Dropdown
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("incomePaymodeDropdown"));
 		for (int i = 0; i <=200; i++) {
@@ -2259,8 +2259,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Employer Phone Extension field should be Textbox, Non-Mandatory and Read only under Employment details screen")
-	public void user_607_verify_employer_phone_extension_field_should_be_textbox_non_mandatory_and_read_only_under_employment_details_screen() {
+	@And("User_607 verify Employer Phone Extension field should be Textbox, Non-Mandatory and Read only under Employment Details screen")
+	public void user_607_verify_employer_phone_extension_field_should_be_textbox_non_mandatory_and_read_only_under_employment_Details_screen() {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employerPhoneExInput"));
 		for (int i = 0; i <=200; i++) {
@@ -2304,8 +2304,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Employer Phone Number field should be Textbox, Non-Mandatory and Read only under Employment details screen")
-	public void user_607_verify_employer_phone_number_field_should_be_textbox_non_mandatory_and_read_only_under_employment_details_screen() {
+	@And("User_607 verify Employer Phone Number field should be Textbox, Non-Mandatory and Read only under Employment Details screen")
+	public void user_607_verify_employer_phone_number_field_should_be_textbox_non_mandatory_and_read_only_under_employment_Details_screen() {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employerPhoneNbrInput"));
 		for (int i = 0; i <=200; i++) {
@@ -2349,8 +2349,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Total Experience\\(Years) field should be Textbox, Mandatory and Read only under Employment details screen")
-	public void user_607_verify_total_experience_years_field_should_be_textbox_mandatory_and_read_only_under_employment_details_screen() {
+	@And("User_607 verify Total Experience\\(Years) field should be Textbox, Mandatory and Read only under Employment Details screen")
+	public void user_607_verify_total_experience_years_field_should_be_textbox_mandatory_and_read_only_under_employment_Details_screen() {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("totalExperienceInput"));
 		for (int i = 0; i <=200; i++) {
@@ -2394,8 +2394,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Experience At Current Employment field should be Textbox, Non-Mandatory and Read only under Employment details screen")
-	public void user_607_verify_experience_at_current_employment_field_should_be_textbox_non_mandatory_and_read_only_under_employment_details_screen() {
+	@And("User_607 verify Experience At Current Employment field should be Textbox, Non-Mandatory and Read only under Employment Details screen")
+	public void user_607_verify_experience_at_current_employment_field_should_be_textbox_non_mandatory_and_read_only_under_employment_Details_screen() {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("experienceAtCurrentEmploymentInput"));
 		for (int i = 0; i <=200; i++) {
@@ -2439,8 +2439,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Direct Manager Name field should be Textbox, Non-Mandatory and Read only under Employment details screen")
-	public void user_607_verify_direct_manager_name_field_should_be_textbox_non_mandatory_and_read_only_under_employment_details_screen() {
+	@And("User_607 verify Direct Manager Name field should be Textbox, Non-Mandatory and Read only under Employment Details screen")
+	public void user_607_verify_direct_manager_name_field_should_be_textbox_non_mandatory_and_read_only_under_employment_Details_screen() {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("directManagerNameInput"));
 		for (int i = 0; i <=200; i++) {
@@ -2484,8 +2484,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Employer City Code field should be Textbox, Non-Mandatory and Read only under Employment details screen")
-	public void user_607_verify_employer_city_code_field_should_be_textbox_non_mandatory_and_read_only_under_employment_details_screen() {
+	@And("User_607 verify Employer City Code field should be Textbox, Non-Mandatory and Read only under Employment Details screen")
+	public void user_607_verify_employer_city_code_field_should_be_textbox_non_mandatory_and_read_only_under_employment_Details_screen() {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employerCityCodeInput"));
 		for (int i = 0; i <=200; i++) {
@@ -2529,8 +2529,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Remarks field should be Textbox, Non-Mandatory and Read only under Employment details screen")
-	public void user_607_verify_remarks_field_should_be_textbox_non_mandatory_and_read_only_under_employment_details_screen() {
+	@And("User_607 verify Remarks field should be Textbox, Non-Mandatory and Read only under Employment Details screen")
+	public void user_607_verify_remarks_field_should_be_textbox_non_mandatory_and_read_only_under_employment_Details_screen() {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("remarksTextarea"));
 		for (int i = 0; i <=200; i++) {
@@ -2574,16 +2574,16 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 	
-	@And("User_607 invoke soft assert in Employment details screen under Customer Financials tab at Data Check stage")
-	public void user_607_invoke_soft_assert_in_employment_details_screen_under_customer_financials_tab_at_data_check_stage() throws Throwable {
+	@And("User_607 invoke soft assert in Employment Details screen under Customer Financials tab at Data Check stage")
+	public void user_607_invoke_soft_assert_in_employment_Details_screen_under_customer_financials_tab_at_data_check_stage() throws Throwable {
 	    softAssert.assertAll();
 	}
 	
 	
 //	@AT_MU_EDC_07
 	
-	@And("User_607 verify Company Type field should be Dropdown, Non-Mandatory and Read only under Employment details screen")
-	public void user_607_verify_company_type_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Company Type field should be Dropdown, Non-Mandatory and Read only under Employment Details screen")
+	public void user_607_verify_company_type_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_Details_screen() throws Throwable {
 //		Verify field as Dropdown
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("companyTypeDropdown"));
 		for (int i = 0; i <=200; i++) {
@@ -2625,8 +2625,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Profession field should be Dropdown, Non-Mandatory and Read only under Employment details screen")
-	public void user_607_verify_profession_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Profession field should be Dropdown, Non-Mandatory and Read only under Employment Details screen")
+	public void user_607_verify_profession_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_Details_screen() throws Throwable {
 //		Verify field as Dropdown
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("professionDropdown"));
 		for (int i = 0; i <=200; i++) {
@@ -2668,8 +2668,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Profession Type field should be Dropdown, Non-Mandatory and Read only under Employment details screen")
-	public void user_607_verify_profession_type_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Profession Type field should be Dropdown, Non-Mandatory and Read only under Employment Details screen")
+	public void user_607_verify_profession_type_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_Details_screen() throws Throwable {
 //		Verify field as Dropdown
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("professionTypeDropdown"));
 		for (int i = 0; i <=200; i++) {
@@ -2711,8 +2711,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 	
-	@And("User_607 verify Statutory Authority field should be Dropdown, Non-Mandatory and Read only under Employment details screen")
-	public void user_607_verify_statutory_authority_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Statutory Authority field should be Dropdown, Non-Mandatory and Read only under Employment Details screen")
+	public void user_607_verify_statutory_authority_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_Details_screen() throws Throwable {
 //		Verify field as Dropdown
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("statutoryAuthorityDropdown"));
 		for (int i = 0; i <=200; i++) {
@@ -2754,8 +2754,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}		
 	}
 	
-	@And("User_607 verify No Of Partners field should be Textbox, Non-Mandatory and Read only under Employment details screen")
-	public void user_607_verify_no_of_partners_field_should_be_textbox_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify No Of Partners field should be Textbox, Non-Mandatory and Read only under Employment Details screen")
+	public void user_607_verify_no_of_partners_field_should_be_textbox_non_mandatory_and_read_only_under_employment_Details_screen() throws Throwable {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("noOfPartnersInput"));
 		for (int i = 0; i <=200; i++) {
@@ -2797,8 +2797,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Nature of Business field should be Dropdown, Non-Mandatory and Read only under Employment details screen")
-	public void user_607_verify_nature_of_business_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Nature of Business field should be Dropdown, Non-Mandatory and Read only under Employment Details screen")
+	public void user_607_verify_nature_of_business_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_Details_screen() throws Throwable {
 //		Verify field as Dropdown
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("natureOfBusinessDropdown"));
 		for (int i = 0; i <=200; i++) {
@@ -2840,8 +2840,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Registered Business Name field should be Textbox, Non-Mandatory and Read only under Employment details screen")
-	public void user_607_verify_registered_business_name_field_should_be_textbox_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Registered Business Name field should be Textbox, Non-Mandatory and Read only under Employment Details screen")
+	public void user_607_verify_registered_business_name_field_should_be_textbox_non_mandatory_and_read_only_under_employment_Details_screen() throws Throwable {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("regBusinessNameInput"));
 		for (int i = 0; i <=200; i++) {
@@ -2883,8 +2883,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Registered Business Number field should be Textbox, Non-Mandatory and Read only under Employment details screen")
-	public void user_607_verify_registered_business_number_field_should_be_textbox_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Registered Business Number field should be Textbox, Non-Mandatory and Read only under Employment Details screen")
+	public void user_607_verify_registered_business_number_field_should_be_textbox_non_mandatory_and_read_only_under_employment_Details_screen() throws Throwable {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("regBusinessNbrInput"));
 		for (int i = 0; i <=200; i++) {
@@ -2926,8 +2926,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Business Registration Date field should be Date, Non-Mandatory and Read only under Employment details screen")
-	public void user_607_verify_business_registration_date_field_should_be_date_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Business Registration Date field should be Date, Non-Mandatory and Read only under Employment Details screen")
+	public void user_607_verify_business_registration_date_field_should_be_date_non_mandatory_and_read_only_under_employment_Details_screen() throws Throwable {
 //		Verify field as Date Field
 		WebElement calender = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("businessRegisteredDateCalender"));
 		for (int i = 0; i <=200; i++) {
@@ -2970,8 +2970,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 	}
 	
 	
-	@And("User_607 verify Office Premises Type field should be Dropdown, Non-Mandatory and Read only under Employment details screen")
-	public void user_607_verify_office_premises_type_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Office Premises Type field should be Dropdown, Non-Mandatory and Read only under Employment Details screen")
+	public void user_607_verify_office_premises_type_field_should_be_dropdown_non_mandatory_and_read_only_under_employment_Details_screen() throws Throwable {
 //		Verify field as Dropdown
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("officePremisesTypeDropdown"));
 		for (int i = 0; i <=200; i++) {
@@ -3013,8 +3013,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify Share Holder Percentage field should be Textbox, Mandatory and Read only under Employment details screen")
-	public void user_607_verify_share_holder_percentage_field_should_be_textbox_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify Share Holder Percentage field should be Textbox, Mandatory and Read only under Employment Details screen")
+	public void user_607_verify_share_holder_percentage_field_should_be_textbox_mandatory_and_read_only_under_employment_Details_screen() throws Throwable {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("shareHolderPercentInput"));
 		for (int i = 0; i <=200; i++) {
@@ -3056,8 +3056,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 
-	@And("User_607 verify No of Employees field should be Textbox, Non-Mandatory and Read only under Employment details screen")
-	public void user_607_verify_no_of_employees_field_should_be_textbox_non_mandatory_and_read_only_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify No of Employees field should be Textbox, Non-Mandatory and Read only under Employment Details screen")
+	public void user_607_verify_no_of_employees_field_should_be_textbox_non_mandatory_and_read_only_under_employment_Details_screen() throws Throwable {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("numberOfEmployeesInput"));
 		for (int i = 0; i <=200; i++) {
@@ -3099,8 +3099,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}	    
 	}
 	
-	@And("User_607 verify the functionality of Back button under Employment details screen")
-	public void user_607_verify_the_functionality_of_back_button_under_employment_details_screen() throws Throwable {
+	@And("User_607 verify the functionality of Back button under Employment Details screen")
+	public void user_607_verify_the_functionality_of_back_button_under_employment_Details_screen() throws Throwable {
 		WebElement pageTop = javascriptHelper.executeScriptWithWebElement("document.querySelector('ion-card[class*=\"k-pagescreen\"]')");
 		WebElement backBtn = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("customerEmploymentBackBtn"));
 		for (int i = 0; i <=200; i++) {
@@ -3404,8 +3404,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 	    
 	}
 	
-	@And("^User_607 verify Date of Joining field should be Date, Mandatory under Employment details screen$")
-	public void user_607_verify_date_of_joining_field_should_be_date_mandatory_under_employment_details_screen()
+	@And("^User_607 verify Date of Joining field should be Date, Mandatory under Employment Details screen$")
+	public void user_607_verify_date_of_joining_field_should_be_date_mandatory_under_employment_Details_screen()
 			throws Throwable {
 //		Verify field as Date Field		
 		for (int i = 0; i <= 300; i++) {
@@ -3437,8 +3437,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 
-	@And("^User_607 verify Employment Period field should be Dropdown, Mandatory under Employment details screen$")
-	public void user_607_verify_employment_period_field_should_be_dropdown_mandatory_under_employment_details_screen()
+	@And("^User_607 verify Employment Period field should be Dropdown, Mandatory under Employment Details screen$")
+	public void user_607_verify_employment_period_field_should_be_dropdown_mandatory_under_employment_Details_screen()
 			throws Throwable {
 //		Verify field as Dropdown
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employmentPeriodDropdown"));
@@ -3469,8 +3469,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 
-	@And("^User_607 verify Nature of Employment field should be Dropdown, Mandatory under Employment details screen$")
-	public void user_607_verify_nature_of_employment_field_should_be_dropdown_mandatory_under_employment_details_screen()
+	@And("^User_607 verify Nature of Employment field should be Dropdown, Mandatory under Employment Details screen$")
+	public void user_607_verify_nature_of_employment_field_should_be_dropdown_mandatory_under_employment_Details_screen()
 			throws Throwable {
 //		Verify field as Dropdown
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("natureOfEmploymentDropdown"));
@@ -3501,8 +3501,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 
-	@And("^User_607 verify Employer Name field should be Dropdown, Non-Mandatory under Employment details screen$")
-	public void user_607_verify_employer_name_field_should_be_dropdown_nonmandatory_under_employment_details_screen()
+	@And("^User_607 verify Employer Name field should be Dropdown, Non-Mandatory under Employment Details screen$")
+	public void user_607_verify_employer_name_field_should_be_dropdown_nonmandatory_under_employment_Details_screen()
 			throws Throwable {
 //		Verify field as Dropdown
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employerNameDropdown"));
@@ -3533,8 +3533,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 
-	@And("User_607 verify Employer Name if\\(Others) field should be Textbox, Mandatory under Employment details screen")
-	public void user_607_verify_employer_name_ifothers_field_should_be_textbox_mandatory_under_employment_details_screen()
+	@And("User_607 verify Employer Name if\\(Others) field should be Textbox, Mandatory under Employment Details screen")
+	public void user_607_verify_employer_name_ifothers_field_should_be_textbox_mandatory_under_employment_Details_screen()
 			throws Throwable {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employerNameOthersInput"));
@@ -3565,8 +3565,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 
-	@And("^User_607 verify Employee ID field should be Textbox, Mandatory under Employment details screen$")
-	public void user_607_verify_employee_id_field_should_be_textbox_mandatory_under_employment_details_screen()
+	@And("^User_607 verify Employee ID field should be Textbox, Mandatory under Employment Details screen$")
+	public void user_607_verify_employee_id_field_should_be_textbox_mandatory_under_employment_Details_screen()
 			throws Throwable {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employeeIDInput"));
@@ -3597,8 +3597,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 
-	@And("^User_607 verify Employment Type field should be Dropdown, Mandatory under Employment details screen$")
-	public void user_607_verify_employment_type_field_should_be_dropdown_mandatory_under_employment_details_screen()
+	@And("^User_607 verify Employment Type field should be Dropdown, Mandatory under Employment Details screen$")
+	public void user_607_verify_employment_type_field_should_be_dropdown_mandatory_under_employment_Details_screen()
 			throws Throwable {
 //		Verify field as Dropdown
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employmentTypeDropdown"));
@@ -3629,8 +3629,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 
-	@And("User_607 verify Total Experience\\(Years) field should be Textbox, Mandatory under Employment details screen")
-	public void user_607_verify_total_experienceyears_field_should_be_textbox_mandatory_under_employment_details_screen()
+	@And("User_607 verify Total Experience\\(Years) field should be Textbox, Mandatory under Employment Details screen")
+	public void user_607_verify_total_experienceyears_field_should_be_textbox_mandatory_under_employment_Details_screen()
 			throws Throwable {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("totalExperienceInput"));
@@ -3661,8 +3661,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 
-	@And("^User_607 verify Direct Manager Contact Number field should be Textbox, Non-Mandatory under Employment details screen$")
-	public void user_607_verify_direct_manager_contact_number_field_should_be_textbox_nonmandatory_under_employment_details_screen()
+	@And("^User_607 verify Direct Manager Contact Number field should be Textbox, Non-Mandatory under Employment Details screen$")
+	public void user_607_verify_direct_manager_contact_number_field_should_be_textbox_nonmandatory_under_employment_Details_screen()
 			throws Throwable {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("directManagerContactNbrInput"));
@@ -3693,8 +3693,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 
-	@And("^User_607 verify Employment End Date field should be Date, Non-Mandatory under Employment details screen$")
-	public void user_607_verify_employment_end_date_field_should_be_date_nonmandatory_under_employment_details_screen()
+	@And("^User_607 verify Employment End Date field should be Date, Non-Mandatory under Employment Details screen$")
+	public void user_607_verify_employment_end_date_field_should_be_date_nonmandatory_under_employment_Details_screen()
 			throws Throwable {
 //		Verify field as Date Field
 		WebElement calender = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employmentEndDateCalender"));
@@ -3725,8 +3725,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 
-	@And("^User_607 verify Primary Employment field should be Toggle button, Non-Mandatory under Employment details screen$")
-	public void user_607_verify_primary_employment_field_should_be_toggle_button_nonmandatory_under_employment_details_screen()
+	@And("^User_607 verify Primary Employment field should be Toggle button, Non-Mandatory under Employment Details screen$")
+	public void user_607_verify_primary_employment_field_should_be_toggle_button_nonmandatory_under_employment_Details_screen()
 			throws Throwable {
 //		Verify field as Toggle Btn
 		WebElement toggleBtn = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("primaryEmploymentToggleBtn"));
@@ -3757,8 +3757,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 
-	@And("^User_607 verify Department field should be Dropdown, Non-Mandatory under Employment details screen$")
-	public void user_607_verify_department_field_should_be_dropdown_nonmandatory_under_employment_details_screen()
+	@And("^User_607 verify Department field should be Dropdown, Non-Mandatory under Employment Details screen$")
+	public void user_607_verify_department_field_should_be_dropdown_nonmandatory_under_employment_Details_screen()
 			throws Throwable {
 //		Verify field as Dropdown
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("departmentDropdown"));
@@ -3789,8 +3789,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 
-	@And("^User_607 verify Designation field should be Dropdown, Non-Mandatory under Employment details screen$")
-	public void user_607_verify_designation_field_should_be_dropdown_nonmandatory_under_employment_details_screen()
+	@And("^User_607 verify Designation field should be Dropdown, Non-Mandatory under Employment Details screen$")
+	public void user_607_verify_designation_field_should_be_dropdown_nonmandatory_under_employment_Details_screen()
 			throws Throwable {
 //		Verify field as Dropdown
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("designationDropdown"));
@@ -3821,8 +3821,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 
-	@And("^User_607 verify Direct Manager Telephone field should be Textbox, Non-Mandatory under Employment details screen$")
-	public void user_607_verify_direct_manager_telephone_field_should_be_textbox_nonmandatory_under_employment_details_screen()
+	@And("^User_607 verify Direct Manager Telephone field should be Textbox, Non-Mandatory under Employment Details screen$")
+	public void user_607_verify_direct_manager_telephone_field_should_be_textbox_nonmandatory_under_employment_Details_screen()
 			throws Throwable {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("directManagerTelephoneInput"));
@@ -3854,8 +3854,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 
-	@And("^User_607 verify Employer Phone Extension field should be Textbox, Non-Mandatory under Employment details screen$")
-	public void user_607_verify_employer_phone_extension_field_should_be_textbox_nonmandatory_under_employment_details_screen()
+	@And("^User_607 verify Employer Phone Extension field should be Textbox, Non-Mandatory under Employment Details screen$")
+	public void user_607_verify_employer_phone_extension_field_should_be_textbox_nonmandatory_under_employment_Details_screen()
 			throws Throwable {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employerPhoneExInput"));
@@ -3886,8 +3886,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 
-	@And("^User_607 verify Employer Phone Number field should be Textbox, Non-Mandatory under Employment details screen$")
-	public void user_607_verify_employer_phone_number_field_should_be_textbox_nonmandatory_under_employment_details_screen()
+	@And("^User_607 verify Employer Phone Number field should be Textbox, Non-Mandatory under Employment Details screen$")
+	public void user_607_verify_employer_phone_number_field_should_be_textbox_nonmandatory_under_employment_Details_screen()
 			throws Throwable {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employerPhoneNbrInput"));
@@ -3918,8 +3918,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 
-	@And("^User_607 verify Direct Manager Name field should be Textbox, Non-Mandatory under Employment details screen$")
-	public void user_607_verify_direct_manager_name_field_should_be_textbox_nonmandatory_under_employment_details_screen()
+	@And("^User_607 verify Direct Manager Name field should be Textbox, Non-Mandatory under Employment Details screen$")
+	public void user_607_verify_direct_manager_name_field_should_be_textbox_nonmandatory_under_employment_Details_screen()
 			throws Throwable {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("directManagerNameInput"));
@@ -3950,8 +3950,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 
-	@And("^User_607 verify Remarks field should be Textbox, Non-Mandatory under Employment details screen$")
-	public void user_607_verify_remarks_field_should_be_textbox_nonmandatory_under_employment_details_screen()
+	@And("^User_607 verify Remarks field should be Textbox, Non-Mandatory under Employment Details screen$")
+	public void user_607_verify_remarks_field_should_be_textbox_nonmandatory_under_employment_Details_screen()
 			throws Throwable {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("remarksTextarea"));
@@ -4028,8 +4028,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 	}
 	
 	
-	@And("^User_607 verify Company Type field should be Dropdown, Mandatory under Employment details screen$")
-	public void user_607_verify_company_type_field_should_be_dropdown_mandatory_under_employment_details_screen()
+	@And("^User_607 verify Company Type field should be Dropdown, Mandatory under Employment Details screen$")
+	public void user_607_verify_company_type_field_should_be_dropdown_mandatory_under_employment_Details_screen()
 			throws Throwable {
 //		Verify field as Dropdown
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("companyTypeDropdown"));
@@ -4058,8 +4058,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 
-	@And("^User_607 verify Profession Type field should be Dropdown, Non-Mandatory under Employment details screen$")
-	public void user_607_verify_profession_type_field_should_be_dropdown_nonmandatory_under_employment_details_screen()
+	@And("^User_607 verify Profession Type field should be Dropdown, Non-Mandatory under Employment Details screen$")
+	public void user_607_verify_profession_type_field_should_be_dropdown_nonmandatory_under_employment_Details_screen()
 			throws Throwable {
 //		Verify field as Dropdown
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("professionTypeDropdown"));
@@ -4088,8 +4088,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 
-	@And("^User_607 verify Statutory Authority field should be Dropdown, Non-Mandatory under Employment details screen$")
-	public void user_607_verify_statutory_authority_field_should_be_dropdown_nonmandatory_under_employment_details_screen()
+	@And("^User_607 verify Statutory Authority field should be Dropdown, Non-Mandatory under Employment Details screen$")
+	public void user_607_verify_statutory_authority_field_should_be_dropdown_nonmandatory_under_employment_Details_screen()
 			throws Throwable {
 //		Verify field as Dropdown
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("statutoryAuthorityDropdown"));
@@ -4118,13 +4118,13 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 
-	@And("^User_607 verify Profession field should be Dropdown, Non-Mandatory under Employment details screen$")
-	public void user_607_verify_profession_field_should_be_dropdown_nonmandatory_under_employment_details_screen()
+	@And("^User_607 verify Profession field should be Dropdown, Non-Mandatory under Employment Details screen$")
+	public void user_607_verify_profession_field_should_be_dropdown_nonmandatory_under_employment_Details_screen()
 			throws Throwable {
 	}
 
-	@And("^User_607 verify Share Holder Percentage field should be Textbox, Mandatory under Employment details screen$")
-	public void user_607_verify_share_holder_percentage_field_should_be_textbox_mandatory_under_employment_details_screen()
+	@And("^User_607 verify Share Holder Percentage field should be Textbox, Mandatory under Employment Details screen$")
+	public void user_607_verify_share_holder_percentage_field_should_be_textbox_mandatory_under_employment_Details_screen()
 			throws Throwable {
 //		Verify field as Dropdown
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("professionDropdown"));
@@ -4153,8 +4153,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 
-	@And("^User_607 verify No Of Partners field should be Textbox, Non-Mandatory under Employment details screen$")
-	public void user_607_verify_no_of_partners_field_should_be_textbox_nonmandatory_under_employment_details_screen()
+	@And("^User_607 verify No Of Partners field should be Textbox, Non-Mandatory under Employment Details screen$")
+	public void user_607_verify_no_of_partners_field_should_be_textbox_nonmandatory_under_employment_Details_screen()
 			throws Throwable {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("noOfPartnersInput"));
@@ -4183,8 +4183,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 
-	@And("^User_607 verify Nature of Business field should be Dropdown, Non-Mandatory under Employment details screen$")
-	public void user_607_verify_nature_of_business_field_should_be_dropdown_nonmandatory_under_employment_details_screen()
+	@And("^User_607 verify Nature of Business field should be Dropdown, Non-Mandatory under Employment Details screen$")
+	public void user_607_verify_nature_of_business_field_should_be_dropdown_nonmandatory_under_employment_Details_screen()
 			throws Throwable {
 //		Verify field as Dropdown
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("natureOfBusinessDropdown"));
@@ -4213,8 +4213,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 
-	@And("^User_607 verify Registered Business Name field should be Textbox, Non-Mandatory under Employment details screen$")
-	public void user_607_verify_registered_business_name_field_should_be_textbox_nonmandatory_under_employment_details_screen()
+	@And("^User_607 verify Registered Business Name field should be Textbox, Non-Mandatory under Employment Details screen$")
+	public void user_607_verify_registered_business_name_field_should_be_textbox_nonmandatory_under_employment_Details_screen()
 			throws Throwable {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("regBusinessNameInput"));
@@ -4243,8 +4243,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 
-	@And("^User_607 verify Registered Business Number field should be Textbox, Non-Mandatory under Employment details screen$")
-	public void user_607_verify_registered_business_number_field_should_be_textbox_nonmandatory_under_employment_details_screen()
+	@And("^User_607 verify Registered Business Number field should be Textbox, Non-Mandatory under Employment Details screen$")
+	public void user_607_verify_registered_business_number_field_should_be_textbox_nonmandatory_under_employment_Details_screen()
 			throws Throwable {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("regBusinessNbrInput"));
@@ -4273,8 +4273,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 
-	@And("^User_607 verify Business Registration Date field should be Date, Non-Mandatory under Employment details screen$")
-	public void user_607_verify_business_registration_date_field_should_be_date_nonmandatory_under_employment_details_screen()
+	@And("^User_607 verify Business Registration Date field should be Date, Non-Mandatory under Employment Details screen$")
+	public void user_607_verify_business_registration_date_field_should_be_date_nonmandatory_under_employment_Details_screen()
 			throws Throwable {
 //		Verify field as Date Field
 		WebElement calender = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("businessRegisteredDateCalender"));
@@ -4303,8 +4303,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 
-	@And("^User_607 verify Office Premises Type field should be Dropdown, Non-Mandatory under Employment details screen$")
-	public void user_607_verify_office_premises_type_field_should_be_dropdown_nonmandatory_under_employment_details_screen()
+	@And("^User_607 verify Office Premises Type field should be Dropdown, Non-Mandatory under Employment Details screen$")
+	public void user_607_verify_office_premises_type_field_should_be_dropdown_nonmandatory_under_employment_Details_screen()
 			throws Throwable {
 //		Verify field as Dropdown
 		WebElement dropdown = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("officePremisesTypeDropdown"));
@@ -4333,8 +4333,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 
-	@And("^User_607 verify No of Employees field should be Textbox, Non-Mandatory under Employment details screen$")
-	public void user_607_verify_no_of_employees_field_should_be_textbox_nonmandatory_under_employment_details_screen()
+	@And("^User_607 verify No of Employees field should be Textbox, Non-Mandatory under Employment Details screen$")
+	public void user_607_verify_no_of_employees_field_should_be_textbox_nonmandatory_under_employment_Details_screen()
 			throws Throwable {
 //		Verify field as Textbox
 		WebElement textBox = javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("numberOfEmployeesInput"));
@@ -4365,7 +4365,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 
 //	AT_AL_ADE_EMP_08
 	@And("^User_607 select Nature of Employment from dropdown in Employment Details screen$")
-	public void user_607_select_nature_of_employment_from_dropdown_in_employment_details_screen() throws Throwable {
+	public void user_607_select_nature_of_employment_from_dropdown_in_employment_Details_screen() throws Throwable {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -4415,7 +4415,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 	}
 
 	@And("^User_607 select Company Type from dropdown in Employment Details screen$")
-	public void user_607_select_company_type_from_dropdown_in_employment_details_screen() throws Throwable {
+	public void user_607_select_company_type_from_dropdown_in_employment_Details_screen() throws Throwable {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -4465,7 +4465,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 	}
 
 	@And("^User_607 enter Date of Joining in Employment Details screen$")
-	public void user_607_enter_date_of_joining_in_employment_details_screen() throws Throwable {
+	public void user_607_enter_date_of_joining_in_employment_Details_screen() throws Throwable {
 		for (int i = 0; i <= 150; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -4481,7 +4481,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 	}
 
 	@And("^User_607 select Employment Period from dropdown in Employment Details screen$")
-	public void user_607_select_employment_period_from_dropdown_in_employment_details_screen() throws Throwable {
+	public void user_607_select_employment_period_from_dropdown_in_employment_Details_screen() throws Throwable {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -4531,7 +4531,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 	}
 
 	@And("^User_607 select Employer Name from dropdown in Employment Details screen$")
-	public void user_607_select_employer_name_from_dropdown_in_employment_details_screen() throws Throwable {
+	public void user_607_select_employer_name_from_dropdown_in_employment_Details_screen() throws Throwable {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -4581,7 +4581,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 	}
 
 	@And("^User_607 enter Employee ID in Employment Details screen$")
-	public void user_607_enter_employee_id_in_employment_details_screen() throws Throwable {
+	public void user_607_enter_employee_id_in_employment_Details_screen() throws Throwable {
 		for (int i = 0; i <= 150; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -4596,7 +4596,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 	}
 
 	@And("^User_607 select Employment Type from dropdown in Employment Details screen$")
-	public void user_607_select_employment_type_from_dropdown_in_employment_details_screen() throws Throwable {
+	public void user_607_select_employment_type_from_dropdown_in_employment_Details_screen() throws Throwable {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -4646,7 +4646,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 	}
 
 	@And("^User_607 enter Total Experience in Employment Details screen$")
-	public void user_607_enter_total_experience_in_employment_details_screen() throws Throwable {
+	public void user_607_enter_total_experience_in_employment_Details_screen() throws Throwable {
 		for (int i = 0; i <= 150; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -4661,7 +4661,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 	}
 
 	@And("^User_607 enter Share Holder Percentage in Employment Details screen$")
-	public void user_607_enter_share_holder_percentage_in_employment_details_screen() throws Throwable {
+	public void user_607_enter_share_holder_percentage_in_employment_Details_screen() throws Throwable {
 		for (int i = 0; i <= 150; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -4675,8 +4675,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 	
-	@And("^User_607 click Save button in Employment details screen$")
-	public void user_607_click_save_button_in_employment_details_screen() throws Throwable {
+	@And("^User_607 click Save button in Employment Details screen$")
+	public void user_607_click_save_button_in_employment_Details_screen() throws Throwable {
 		for (int i = 0; i <= 150; i++) {
 			try {
 				WebElement saveBtn = javascriptHelper.executeScriptWithWebElement(
@@ -4692,7 +4692,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 	}
 
 	@And("^User_607 verify the confirmation message post clicking on save button in Employment Details screen$")
-	public void user_607_verify_the_confirmation_message_post_clicking_on_save_button_in_employment_details_screen()
+	public void user_607_verify_the_confirmation_message_post_clicking_on_save_button_in_employment_Details_screen()
 			throws Throwable {
 		for (int i = 0; i <200; i++) {
 			try {
@@ -4720,7 +4720,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 
 //	AT_AL_ADE_EMP_09
 	@And("^User_607 to verify impact when user keep mandatory field blank and click on save button in Employment Details screen$")
-	public void user_607_to_verify_impact_when_user_keep_mandatory_field_blank_and_click_on_save_button_in_employment_details_screen()
+	public void user_607_to_verify_impact_when_user_keep_mandatory_field_blank_and_click_on_save_button_in_employment_Details_screen()
 			throws Throwable {
 		for (int i = 0; i <200; i++) {
 			try {
@@ -4728,7 +4728,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 						.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("mandatoryFillToastMsg"));
 				String madatoryErrorMsg = element.getText();
 				System.err.println("Mandatory Error : " + madatoryErrorMsg);
-				softAssert.assertTrue(madatoryErrorMsg.contains("Please fill all the details"), 
+				softAssert.assertTrue(madatoryErrorMsg.contains("Please fill all the Details"), 
 						"Mandatory field blank message in Customer Debt screen");
 				break;
 			} catch (Exception e) {
@@ -4740,7 +4740,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 	}
 
 	@And("^User_607 enter the character values in numeric field in Employment Details screen$")
-	public void user_607_enter_the_character_values_in_numeric_field_in_employment_details_screen() throws Throwable {
+	public void user_607_enter_the_character_values_in_numeric_field_in_employment_Details_screen() throws Throwable {
 		for (int i = 0; i <= 150; i++) {
 			try {
 				WebElement element = javascriptHelper.executeScriptWithWebElement(
@@ -4757,7 +4757,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 	}
 
 	@And("^User_607 to verify the impact when user enter characters value in numeric field in Employment Details screen$")
-	public void user_607_to_verify_the_impact_when_user_enter_characters_value_in_numeric_field_in_employment_details_screen()
+	public void user_607_to_verify_the_impact_when_user_enter_characters_value_in_numeric_field_in_employment_Details_screen()
 			throws Throwable {
 		for (int i = 0; i <200; i++) {
 			try {
@@ -4777,7 +4777,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 	}
 
 	@And("^User_607 only enters the Special character in Employment Details screen$")
-	public void user_607_only_enters_the_special_character_in_employment_details_screen() throws Throwable {
+	public void user_607_only_enters_the_special_character_in_employment_Details_screen() throws Throwable {
 		for (int i = 0; i <= 150; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -4792,7 +4792,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 	}
 
 	@And("^User_607 to verify the impact when user enter special characters value in Employment Details screen$")
-	public void user_607_to_verify_the_impact_when_user_enter_special_characters_value_in_employment_details_screen()
+	public void user_607_to_verify_the_impact_when_user_enter_special_characters_value_in_employment_Details_screen()
 			throws Throwable {
 		for (int i = 0; i <200; i++) {
 			try {
@@ -4896,7 +4896,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 						String jspath = "document.querySelectorAll('p-dropdownitem li')[" + j + "]";
 						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
 						javascriptHelper.backgroundColor(btn);
-						softAssert.assertTrue(btn.isDisplayed(),"PDF button available under asset details tab");
+						softAssert.assertTrue(btn.isDisplayed(),"PDF button available under asset Details tab");
 						break;
 					}
 				}
@@ -4937,7 +4937,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 						String jspath = "document.querySelectorAll('p-dropdownitem li')[" + j + "]";
 						WebElement btn = javascriptHelper.executeScriptWithWebElement(jspath);
 						javascriptHelper.backgroundColor(btn);
-						softAssert.assertTrue(btn.isDisplayed(),"Excel button available under asset details tab");
+						softAssert.assertTrue(btn.isDisplayed(),"Excel button available under asset Details tab");
 						break;
 					}
 				}
@@ -5210,15 +5210,15 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 	
-	@And("^User_607 to verify post clicking on Add button system should allow to create new record of Customer Employment details$")
-	public void user_607_to_verify_post_clicking_on_add_button_system_should_allow_to_create_new_record_of_customer_employment_details()
+	@And("^User_607 to verify post clicking on Add button system should allow to create new record of Customer Employment Details$")
+	public void user_607_to_verify_post_clicking_on_add_button_system_should_allow_to_create_new_record_of_customer_employment_Details()
 			throws Throwable {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				WebElement screenTitle = javascriptHelper.executeScriptWithWebElement(
 						employmentDetailsJsPaths.getElement("customerEmploymentScreen"));
 				javascriptHelper.backgroundBorder(screenTitle);
-				softAssert.assertTrue(screenTitle.isDisplayed(), "Creating new record of Customer Employment details screen");
+				softAssert.assertTrue(screenTitle.isDisplayed(), "Creating new record of Customer Employment Details screen");
 				break;
 			} catch (Exception e) {
 				if (i == 300) {
@@ -5231,7 +5231,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 	
 //	AT_AL_ADE_EMP_12
 	@And("^User_607 Delete the Mandatory field value in Employment Details screen$")
-	public void user_607_delete_the_mandatory_field_value_in_employment_details_screen() throws Throwable {
+	public void user_607_delete_the_mandatory_field_value_in_employment_Details_screen() throws Throwable {
 		for (int i = 0; i <= 150; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("employeeIDInput"))
@@ -5245,8 +5245,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 
-	@And("^User_607 verify while modification, when user keep any mandatory field blank and click on Update button in Employment details screen$")
-	public void user_607_verify_while_modification_when_user_keep_any_mandatory_field_blank_and_click_on_update_button_in_employment_details_screen()
+	@And("^User_607 verify while modification, when user keep any mandatory field blank and click on Update button in Employment Details screen$")
+	public void user_607_verify_while_modification_when_user_keep_any_mandatory_field_blank_and_click_on_update_button_in_employment_Details_screen()
 			throws Throwable {
 		for (int i = 0; i <200; i++) {
 			try {
@@ -5254,7 +5254,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 						.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("mandatoryFillToastMsg"));
 				String madatoryErrorMsg = element.getText();
 				System.err.println("Mandatory Error : " + madatoryErrorMsg);
-				softAssert.assertTrue(madatoryErrorMsg.contains("Please fill all the details"), 
+				softAssert.assertTrue(madatoryErrorMsg.contains("Please fill all the Details"), 
 						"Mandatory field blank message in Customer Debt screen");
 				break;
 			} catch (Exception e) {
@@ -5266,7 +5266,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 	}
 
 	@And("^User_607 enters the invalid data in Employment Details screen$")
-	public void user_607_enters_the_invalid_data_in_employment_details_screen() throws Throwable {
+	public void user_607_enters_the_invalid_data_in_employment_Details_screen() throws Throwable {
 		for (int i = 0; i <= 150; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(
@@ -5281,7 +5281,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 	}
 
 	@And("^User_607 verify system should not allow to do a modification with invalid data in Employment Details screen$")
-	public void user_607_verify_system_should_not_allow_to_do_a_modification_with_invalid_data_in_employment_details_screen()
+	public void user_607_verify_system_should_not_allow_to_do_a_modification_with_invalid_data_in_employment_Details_screen()
 			throws Throwable {
 		for (int i = 0; i <200; i++) {
 			try {
@@ -5300,8 +5300,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 
-	@And("^User_607 verify system should allow to modify the Employment details record in Employment details screen$")
-	public void user_607_verify_system_should_allow_to_modify_the_employment_details_record_in_employment_details_screen()
+	@And("^User_607 verify system should allow to modify the Employment Details record in Employment Details screen$")
+	public void user_607_verify_system_should_allow_to_modify_the_employment_Details_record_in_employment_Details_screen()
 			throws Throwable {
 		for (int i = 0; i <= 150; i++) {
 			try {
@@ -5318,8 +5318,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 
-	@And("^User_607 verify while modification system allow to Update the record with valid data in Employment details screen$")
-	public void user_607_verify_while_modification_system_allow_to_update_the_record_with_valid_data_in_employment_details_screen()
+	@And("^User_607 verify while modification system allow to Update the record with valid data in Employment Details screen$")
+	public void user_607_verify_while_modification_system_allow_to_update_the_record_with_valid_data_in_employment_Details_screen()
 			throws Throwable {
 		for (int i = 0; i <= 300; i++) {
 			try {
@@ -5369,8 +5369,8 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 		}
 	}
 
-	@And("^User_607 click Update button in Employment details screen$")
-	public void user_607_click_update_button_in_employment_details_screen() throws Throwable {
+	@And("^User_607 click Update button in Employment Details screen$")
+	public void user_607_click_update_button_in_employment_Details_screen() throws Throwable {
 		for (int i = 0; i <= 150; i++) {
 			try {
 				WebElement saveBtn = javascriptHelper.executeScriptWithWebElement(
@@ -5386,7 +5386,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetailes {
 	}
 
 	@And("^User_607 verify the confirmation message post clicking on Update button in Employment Details screen$")
-	public void user_607_verify_the_confirmation_message_post_clicking_on_update_button_in_employment_details_screen()
+	public void user_607_verify_the_confirmation_message_post_clicking_on_update_button_in_employment_Details_screen()
 			throws Throwable {
 		for (int i = 0; i <200; i++) {
 			try {

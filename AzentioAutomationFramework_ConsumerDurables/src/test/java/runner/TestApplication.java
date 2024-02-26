@@ -9,7 +9,7 @@ import utilities.ExtentManager;
 import utilities.ExtentTestManager;
 
 @CucumberOptions(features = {
-		"src/test/java/features/consumerdurables/AppDataEntry_ContactDetails.feature"
+		"src/test/java/features/consumerdurables/CD_ADE_AddressDetails_610.feature"
 //		"src/test/java/features/consumerdurables"	
 		}, glue = "stepdefinitions",
 		// monochrome=false, //to make steps in color
@@ -17,7 +17,7 @@ import utilities.ExtentTestManager;
 				"rerun:ReRunScenarios/FailedReRun.txt" }
 // ,dryRun = false //to check compilation errors
 // , tags = "@AT_CD_AD_APPDETAILS_05_PostReq"
-		, tags = " @AT_CD_ADE_CD_04"
+	//	, tags = " @AT_CD_ADE_CD_04"
 )
 public class TestApplication extends AbstractTestNGCucumberTests {
 	/*
