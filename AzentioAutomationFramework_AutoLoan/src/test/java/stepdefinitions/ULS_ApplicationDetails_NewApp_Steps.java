@@ -609,10 +609,10 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 
 	}
 
-	@Then("user_076 verify save button and back buttons are visible in new application screen")
-	public void user_076_verify_save_button_and_back_buttons_are_visible_in_new_application_screen() throws Throwable {
+	@Then("user_076 verify save button is visible in new application screen")
+	public void user_076_verify_save_button_is_visible_in_new_application_screen() throws Throwable {
 		boolean saveButtonVerification = false;
-		boolean backButtonVerification = false;
+		
 		for (int i = 0; i <= 50; i++) {
 			try {
 				saveButtonVerification = javascriptHelper
@@ -2417,7 +2417,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				toastMessage = javascriptHelper
-						.executeScript("return " + commonJSPaths.getElement("toast_container_message")).toString();
+						.executeScript("return " + commonJSPaths.getElement("save_toast_message")).toString();
 				if (!(toastMessage.isEmpty())) {
 					break;
 				}

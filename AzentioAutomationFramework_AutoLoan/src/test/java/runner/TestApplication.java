@@ -10,16 +10,17 @@ import utilities.ExtentTestManager;
 
 @CucumberOptions(features = {
 
-		 "src/test/java/features/autoloan/AutoLoan_DisbursementMaker_DrawdownFEATURE.feature",
+		"src/test/java/features/autoloan/AutoLoan_NewApp_CustomerDetailsFEATURE_076.feature",
 		// "src/test/java/features/autoloan/AutoLoan_AppDataEntry_CustomerDetails_610.feature",
-		 }, glue = "stepdefinitions",
+}, glue = "stepdefinitions",
 		// monochrome=false, //to make steps in color
 		plugin = { "pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 				"rerun:ReRunScenarios/FailedReRun.txt" }
 // ,dryRun = false //to check compilation errors
 //, tags = "@AT_AU_AD_12 "
-		//, tags = "@AT_AL_APPDETAILS_01")
+ , tags = "@AT_AL_CUSDETAILS_01"
 )
+
 public class TestApplication extends AbstractTestNGCucumberTests {
 	/*
 	 * @Override

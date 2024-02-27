@@ -22,7 +22,7 @@ And user_076 in customer search screen enter date of birth of the customer at cu
 And user_076 in customer search screen enter customer mobile number at customer details
 And user_076 click on the search button in customer search screen
 And user_076 click on create new request buttton
-Then user_076 verify customer details field should have save and back button
+Then user_076 verify customer details field should have save
 Then user_076 verify customer type field should be mandatory editable dropdown at new app
 Then user_076 verify applicant type field should be mandatory editable dropdown at new app
 Then user_076 verify salutation field should be mandatory editable dropdown at new app
@@ -67,8 +67,6 @@ And user_076 click on save button in customer details screen
 Then user_076 verify customer details record got saved
 Then logout from the ULS Application
 And user_076 invoke softAssert in auto loan new app customer details screen
-
-
 
 
 

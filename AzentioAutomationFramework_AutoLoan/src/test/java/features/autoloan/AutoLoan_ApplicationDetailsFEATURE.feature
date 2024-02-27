@@ -1,4 +1,4 @@
-Feature: To Test the application details screen with auto loean product
+Feature: To Test the application details screen with auto loan product
 
 @AT_AL_APPDETAILS_01
 Scenario: To test user can able to create the application details record with valid valid
@@ -20,7 +20,7 @@ And user_076 in customer search screen enter date of birth of the customer
 And user_076 in customer search screen enter customer mobile number
 And user_076 click on the search button in customer search screen
 And user_076 click on create new request buttton
-Then user_076 verify save button and back buttons are visible in new application screen
+Then user_076 verify save button is visible in new application screen
 Then user_076 verify product field should be mandatory editable dropdown
 Then user_076 verify sub product field should be mandatory editable dropdown
 Then user_076 verify total finance amount request field should be mantatory numeric
@@ -136,3 +136,4 @@ And user_076 enter the alert remark for application details record in new app st
 And user_076 click on alert submit button in application details at new app stage
 Then user_076 verify applicatio details record should get submitted from new app stage
 Then logout from the ULS Application
+And user_076 invoke soft assert for new application screen

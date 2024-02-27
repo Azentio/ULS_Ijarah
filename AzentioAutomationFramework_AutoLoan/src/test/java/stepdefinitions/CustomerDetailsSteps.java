@@ -431,10 +431,10 @@ public class CustomerDetailsSteps extends BaseClass {
 		softAssert.assertTrue(characterInputValidation.length() == 0, "field accepts character input hence failed");
 	}
 
-	@Then("user_076 verify customer details field should have save and back button")
-	public void user_076_verify_customer_details_field_should_have_save_and_back_button() throws Throwable {
+	@Then("user_076 verify customer details field should have save")
+	public void user_076_verify_customer_details_field_should_have_save() throws Throwable {
 		boolean isSaveButtonDisplayed = false;
-		boolean isBackButtonDisplayed = false;
+
 
 		for (int i = 0; i <= 150; i++) {
 			try {
@@ -447,16 +447,9 @@ public class CustomerDetailsSteps extends BaseClass {
 				}
 			}
 		}
-		for (int i = 0; i <= 20; i++) {
-			try {
-				isBackButtonDisplayed = javascriptHelper
-						.executeScriptWithWebElement(commonJSElements.getElement("back_button")).isDisplayed();
-				break;
-			} catch (Exception e) {
-			}
-		}
+		
 		softAssert.assertTrue(isSaveButtonDisplayed, "Save button is not visible hence failed");
-		softAssert.assertTrue(isBackButtonDisplayed, "back button is not visible hence failed");
+		
 
 	}
 

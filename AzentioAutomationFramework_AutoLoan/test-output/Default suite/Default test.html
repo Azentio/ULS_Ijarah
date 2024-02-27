@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>5/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Feb 23 10:34:58 IST 2024</td>
+<td>Started on:</td><td>Tue Feb 27 16:06:22 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>271 seconds (271069 ms)</td>
+<tr><td>Total time:</td><td>88 seconds (88519 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,8 +67,8 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
@@ -76,29 +76,18 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "To verify in drawdown details section facility info section should have mentioned fields", "Optional[To test the drawdown details section in disbursment maker stage]"</td>
-<td></td>
-<td>45</td>
-<td>runner.TestApplication@343570b7</td></tr>
-<tr>
-<td title='runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "To verify drawdown sectionn should have facility detais and schedule details drawdown section and payment details section", "Optional[To test the drawdown details section in disbursment maker stage]"</td>
-<td></td>
-<td>59</td>
-<td>runner.TestApplication@343570b7</td></tr>
-<tr>
-<td title='runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "To verify schedule details should have mentioned list view fields that should be read only mode", "Optional[To test the drawdown details section in disbursment maker stage]"</td>
-<td></td>
-<td>38</td>
-<td>runner.TestApplication@343570b7</td></tr>
-<tr>
-<td title='runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "To verify schedule details should have mentioned list view fields that should be read only mode", "Optional[To test the drawdown details section in disbursment maker stage]"</td>
-<td></td>
-<td>41</td>
-<td>runner.TestApplication@343570b7</td></tr>
-<tr>
-<td title='runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "To verify payment details should have mentioned list view fields that should be read only mode", "Optional[To test the drawdown details section in disbursment maker stage]"</td>
-<td></td>
-<td>39</td>
+<td title='runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "To verify customer details field and user can able to create customer details record with valid input for auto loan product", "Optional[To Test the customer details screen with auto loan product]"</td>
+<td><div><pre>java.lang.AssertionError: Element must be set
+	at org.junit.Assert.fail(Assert.java:88)
+	at stepdefinitions.ULS_ApplicationDetails_NewApp_Steps.user_076_click_on_create_new_request_buttton(ULS_ApplicationDetails_NewApp_Steps.java:605)
+	at ✽.user_076 click on create new request buttton(file:///C:/Users/ININDC00076/git/ULS_IjarahULSAutoLoan/AzentioAutomationFramework_AutoLoan/src/test/java/features/autoloan/AutoLoan_NewApp_CustomerDetailsFEATURE_076.feature:24)
+</pre></div><a href='#' onClick='toggleBox("stack-trace996098043", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace996098043'><pre>java.lang.AssertionError: Element must be set
+	at org.junit.Assert.fail(Assert.java:88)
+	at stepdefinitions.ULS_ApplicationDetails_NewApp_Steps.user_076_click_on_create_new_request_buttton(ULS_ApplicationDetails_NewApp_Steps.java:605)
+	at ✽.user_076 click on create new request buttton(file:///C:/Users/ININDC00076/git/ULS_IjarahULSAutoLoan/AzentioAutomationFramework_AutoLoan/src/test/java/features/autoloan/AutoLoan_NewApp_CustomerDetailsFEATURE_076.feature:24)
+</pre></div></td>
+<td>68</td>
 <td>runner.TestApplication@343570b7</td></tr>
 </table><p>
 </body>
