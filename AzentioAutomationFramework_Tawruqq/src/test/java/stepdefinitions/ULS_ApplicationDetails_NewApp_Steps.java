@@ -136,6 +136,8 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 		newApplicationTestData = excelDataForApplicationDetailsTestData
 				.getTestdata(newApplicationExecutionData.get("dataSet_ID"));
 	}
+	
+	
 
 	@Given("user_0482 get the test data for test case id AT_TW_AD_03")
 	public void user_get_the_test_data_for_test_case_id_AT_TW_AD_03() {

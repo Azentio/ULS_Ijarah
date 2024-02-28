@@ -23,6 +23,8 @@ public class ULS_CommonSteps extends BaseClass {
 	String excelPath = configFileReader.getJSFilePath();
 	SoftAssert softAssert = new SoftAssert();
 	JSPaths commonJSPaths = new JSPaths(excelPath, "iJarah_CommonElements", "Ijarah_CommonFieldName", "JSPath");
+	JSPaths appDataCustomerDetailsJsPaths = new JSPaths(excelPath, "AppData_CustomerDetail_Elements",
+			"AppData_CustomerDetails_FieldName", "JSPath");
 	JSPaths addressDetailsJSPaths = new JSPaths(excelPath, "addressdetails_WebElements",
 			"Ijarah_AddressDetailsFieldName", "JSPath");
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
@@ -51,6 +53,11 @@ public class ULS_CommonSteps extends BaseClass {
 	@Given("login with valid credentials for auto loan app data entry stage")
 	public void login_with_valid_credentials_for_auto_loan_app_data_entry_stage() {
 		ijaraLogin.loginWithIjaraApplication("userType07");
+	}
+	
+	@And("login with valid credentials-Tawarruq App Data Entry")
+	public void login_with_valid_credentials_tawarruq_app_data_entry()throws Throwable {
+		ijaraLogin.loginWithIjaraApplication("userType08");
 	}
 
 	@And("user_076 login with valid offering stage user credentials")
@@ -159,7 +166,7 @@ public class ULS_CommonSteps extends BaseClass {
 		}
 
 	}
-
+	
 	@And("click on mail box")
 	public void click_on_mail_box() throws Throwable {
 		for (int i = 0; i <= 100; i++) {

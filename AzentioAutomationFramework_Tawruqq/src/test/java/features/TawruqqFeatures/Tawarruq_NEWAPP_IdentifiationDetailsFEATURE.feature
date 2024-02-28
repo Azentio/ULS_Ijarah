@@ -1,6 +1,8 @@
-Feature: To Test the identificatio details screen at new app stage with Tawruqq product
+Feature: To check the Tawarruq -- New Application Stage -- Addition customer info --> Identification Details screen
+
 @AT_TW_NEWAPP_IDA_01
 Scenario: To Test the identification details screen with valid input (Tawruqq)
+
 Given navigate the Tawarruq URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
@@ -29,6 +31,7 @@ And user_076 invoke soft asset in customer identification details screen at new 
 
 @AT_TW_NEWAPP_IDA_02
 Scenario: to test the customer identificatin details screen with in valid input at new app stage (Tawruqq)
+
 Given navigate the Tawarruq URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
@@ -51,8 +54,10 @@ Then user_076 verify system should show the validation for the id number field a
 And user_076 click on back button in customer identification details in new app stage
 Then logout from the ULS Application
 And user_076 invoke soft asset in customer identification details screen at new app stage
+
 @AT_TW_NEWAPP_IDA_03
 Scenario: to verify user can able to update the customer identification details record from list view (Tawruqq)
+
 Given navigate the Tawarruq URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
@@ -75,6 +80,7 @@ Then logout from the ULS Application
 
 @AT_TW_NEWAPP_IDA_04
 Scenario: to test the customer identificatin details screen with in valid input at new app stage (Tawruqq)
+
 Given navigate the Tawarruq URL
 And login with valid credentials for new application stage
 And click on module dropdown in IJRARAH
@@ -144,6 +150,7 @@ And user_076 search for in valid search text in customer identification details 
 Then user_076 system should not show the search result in customer identification details list view at new app stage
 Then logout from the ULS Application
 And user_076 invoke soft asset in customer identification details screen at new app stage
+
 @AT_TW_NEWAPP_IDA_07
 Scenario: To test the export functionality in identification details list view (Tawruqq)
 Given navigate the Tawarruq URL

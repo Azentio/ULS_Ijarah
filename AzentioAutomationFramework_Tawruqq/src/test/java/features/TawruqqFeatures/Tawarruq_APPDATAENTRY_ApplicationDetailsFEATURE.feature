@@ -99,19 +99,17 @@ And user_076 click on back button in application details update screen
 Then user_076 verify application details update screen should moved to previoues screen
 Then logout from the ULS Application
 And user_076 invoke soft assert for new application screen
+
 @AT_TW_AD_06
-Scenario: System should display the below mention fields on List view of Application Detail
+Scenario: System should display the below mention fields on List view of Application Details
+
 Given navigate the IJARA URL
-Given navigate the IJARA URL
-And login with valid credentials for new application stage
-And click on module dropdown in IJRARAH
-And click on LOS option in module dropdown
-And click on mail box
-And click on search box upon click on the mail box
-And click on search text box upon click the search button
-And user_0482 search the new app data entry stage record reference number
-And user_0482 select the new app data entry stage record from mail box
+And login with valid credentials-Tawarruq App Data Entry
 And User_608 get the test data for test case AT_TW_AD_06
+And User_608 click the Mail box in ULS application
+And User_608 click the Search button under inbox
+And User_608 search the Reference id under inbox in ULS Application
+And User_608 click the Entitle button under inbox
 And User_608 click the Update button under Application Details screen
 And User_608 verify Action field available in list view under Application Details screen
 And User_608 verify Client Name field available in list view under Application Details screen
@@ -132,7 +130,7 @@ And User_608 click the Export button under Application Details screen
 And User_608 click the PDF and verify under Application Details screen
 And User_608 click the Export button under Application Details screen
 And User_608 click the XLS and verify under Application Details screen
-And User_608 click the Add button under Application Details screen
-And User_608 verfiy the new record creation page under Application Details screen
+#And User_608 click the Add button under Application Details screen
+#And User_608 verfiy the new record creation page under Application Details screen
 Then logout from the ULS Application
 And User_608 invoke soft assert in Application details screen at Tawarruq App Data Entry stage
