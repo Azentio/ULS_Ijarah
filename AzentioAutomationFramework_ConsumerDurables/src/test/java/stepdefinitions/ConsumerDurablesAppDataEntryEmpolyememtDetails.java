@@ -174,22 +174,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 		}	    
 	}
 	
-	@And("User_607 post clicking on Back button under Customer Finanacials tab, system should navigate to the previous screen")
-	public void user_607_post_clicking_on_back_button_under_customer_inanacials_tab_system_should_navigate_to_the_previous_screen() throws Throwable {
-		for (int i = 0; i <= 300; i++) {
-			try {
-				javascriptHelper.backgroundBorder(javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("customerInfoTitle")));
-				javascriptHelper.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("customerInfoTitle")).isDisplayed();
-				break;
-			} catch (Exception e) {
-				if (i == 300) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-	    
-	}
-
+	
 	
 	@And("^User_607 click Add button under Customer Employment list section in Customer Financials tab$")
 	public void user_607_click_add_button_under_customer_employment_list_section_in_customer_financials_tab()
@@ -204,7 +189,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -228,7 +213,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -249,7 +234,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -273,7 +258,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -380,7 +365,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -404,7 +389,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -426,7 +411,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -450,7 +435,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -466,7 +451,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -486,7 +471,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -507,7 +492,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -531,7 +516,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1484,7 +1469,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1508,7 +1493,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3275,7 +3260,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3299,7 +3284,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -3996,7 +3981,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4020,7 +4005,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4387,7 +4372,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4407,7 +4392,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4437,7 +4422,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4457,7 +4442,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4503,7 +4488,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4523,7 +4508,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4553,7 +4538,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4573,7 +4558,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4618,7 +4603,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4638,7 +4623,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4728,11 +4713,11 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 						.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("mandatoryFillToastMsg"));
 				String madatoryErrorMsg = element.getText();
 				System.err.println("Mandatory Error : " + madatoryErrorMsg);
-				softAssert.assertTrue(madatoryErrorMsg.contains("Please fill all the Details"), 
+				softAssert.assertTrue(madatoryErrorMsg.contains("Please fill all the details"), 
 						"Mandatory field blank message in Customer Debt screen");
 				break;
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4769,7 +4754,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 						"Invalid Mobile Number message displayed in Employment Details screen");
 				break;
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4804,7 +4789,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 						"Only Alphanumeric characters are allowed message displayed in Employment Details screen");
 				break;
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4825,7 +4810,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4848,7 +4833,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4881,7 +4866,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4902,7 +4887,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4922,7 +4907,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4943,7 +4928,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -4961,7 +4946,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5006,7 +4991,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5030,7 +5015,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5069,7 +5054,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5089,7 +5074,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5130,7 +5115,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5150,7 +5135,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5254,11 +5239,11 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 						.executeScriptWithWebElement(employmentDetailsJsPaths.getElement("mandatoryFillToastMsg"));
 				String madatoryErrorMsg = element.getText();
 				System.err.println("Mandatory Error : " + madatoryErrorMsg);
-				softAssert.assertTrue(madatoryErrorMsg.contains("Please fill all the Details"), 
+				softAssert.assertTrue(madatoryErrorMsg.contains("Please fill all the details"), 
 						"Mandatory field blank message in Customer Debt screen");
 				break;
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5293,7 +5278,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 						"Only Alphanumeric characters are allowed message displayed in Employment Details screen");
 				break;
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5342,7 +5327,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -5362,7 +5347,7 @@ public class ConsumerDurablesAppDataEntryEmpolyememtDetails {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 299) {
+				if (i == 199) {
 					Assert.fail(e.getMessage());
 				}
 			}
