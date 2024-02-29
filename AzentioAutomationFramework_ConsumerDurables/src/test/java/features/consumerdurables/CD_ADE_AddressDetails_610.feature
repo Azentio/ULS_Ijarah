@@ -1,6 +1,6 @@
 Feature: Consumer Durable AppData Entry Address Details
 
-  @DS_AT_CON_DUR_ADE_AD_01
+  @AT_CON_DUR_ADE_AD_01
   Scenario: verify the field
     Given navigate the IJARA URL
     And login with valid credentials - Consumer Durable - App Data Entry
@@ -23,7 +23,7 @@ Feature: Consumer Durable AppData Entry Address Details
     And User_610 validate the save button and confirmation message
     Then logout from the ULS Application
 
-  @DS_AT_CON_DUR_ADE_AD_02
+  @AT_CON_DUR_ADE_AD_02
   Scenario: verify the field
     Given navigate the IJARA URL
     And login with valid credentials - Consumer Durable - App Data Entry
@@ -48,7 +48,7 @@ Feature: Consumer Durable AppData Entry Address Details
     Then logout from the ULS Application
 
     
-     @DS_AT_CON_DUR_ADE_AD_03
+     @AT_CON_DUR_ADE_AD_03
   Scenario: verify the field
     Given navigate the IJARA URL
     And login with valid credentials - Consumer Durable - App Data Entry
