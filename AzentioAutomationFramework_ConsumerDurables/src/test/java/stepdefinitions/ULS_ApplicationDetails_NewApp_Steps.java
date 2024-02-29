@@ -407,38 +407,7 @@ public class ULS_ApplicationDetails_NewApp_Steps extends BaseClass {
 
 	}
 
-	@And("user_076 click on the search button in customer search screen")
-	public void user_076_click_on_the_search_button_in_customer_search_screen() throws Throwable {
-		for (int i = 0; i <= 300; i++) {
-			try {
-				javascriptHelper
-						.executeScriptWithWebElement(customerSearchJSPaths.getElement("customer_search_search_button"))
-						.click();
-				break;
-			} catch (Exception e) {
-				if (i == 300) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-	}
 
-	@And("user_076 click on create new request buttton")
-	public void user_076_click_on_create_new_request_buttton() throws Throwable {
-		for (int i = 0; i <= 300; i++) {
-			try {
-				javascriptHelper.executeScriptWithWebElement(
-						"document.querySelectorAll('button[class=\"p-element p-button-info p-button-sm w-90 m-2 pull-right p-button p-component\"]')[2]")
-						.click();
-				break;
-			} catch (Exception e) {
-				if (i == 300) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-
-	}
 
 	@Then("user_076 verify save button and back buttons are visible in new application screen")
 	public void user_076_verify_save_button_and_back_buttons_are_visible_in_new_application_screen() throws Throwable {
