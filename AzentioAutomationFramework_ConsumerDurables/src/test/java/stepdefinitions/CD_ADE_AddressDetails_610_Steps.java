@@ -244,7 +244,7 @@ public class CD_ADE_AddressDetails_610_Steps {
 	@And("User_610 click the Eye button under Customer Personal Info section in Additional Customer Info tab")
 	public void user_610_click_the_eye_button_under_customer_personal_info_section_in_additional_customer_info_tab() throws Throwable {
 		String length = null;
-		for (int i = 0; i < 3000; i++) {
+		for (int i = 0; i < 300; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('ion-title[mode=\"md\"]').length")
 						.toString();
@@ -253,12 +253,12 @@ public class CD_ADE_AddressDetails_610_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 2999) {
+				if (i == 299) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 3000; i++) {
+		for (int i = 0; i < 300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('ion-title[mode=\"md\"]')[" + j + "].textContent";
@@ -272,7 +272,7 @@ public class CD_ADE_AddressDetails_610_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 2999) {
+				if (i == 299) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -404,7 +404,7 @@ public class CD_ADE_AddressDetails_610_Steps {
 				}
 			}
 		}
-		Thread.sleep(2000);
+		Thread.sleep(300);
 	}
 	
 	@And("User_610 change the status INactive under Address Details section in Additional Customer Info tab")
@@ -498,7 +498,7 @@ public class CD_ADE_AddressDetails_610_Steps {
 	public void User_610_verify_Back_button_available_in_Address_Details_screen_under_Additional_Customer_info_tab()
 			throws Throwable {
 		String length = null;
-		for (int i = 0; i < 3000; i++) {
+		for (int i = 0; i < 300; i++) {
 			try {
 				length = javascriptHelper.executeScript("return document.querySelectorAll('form button').length")
 						.toString();
@@ -507,12 +507,12 @@ public class CD_ADE_AddressDetails_610_Steps {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 2999) {
+				if (i == 299) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
-		for (int i = 0; i < 3000; i++) {
+		for (int i = 0; i < 300; i++) {
 			try {
 				for (int j = 0; j < Integer.parseInt(length); j++) {
 					String title = "return document.querySelectorAll('form button')[" + j + "].getAttribute('ng-reflect-text')";
@@ -528,7 +528,7 @@ public class CD_ADE_AddressDetails_610_Steps {
 				}
 				break;
 			} catch (Exception e) {
-				if (i == 2999) {
+				if (i == 299) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -908,7 +908,7 @@ public class CD_ADE_AddressDetails_610_Steps {
 
 
 	
-	//---------------------------------------- @DS_AT_CON_DUR_ADE_AD_02 ----------------------------------------
+	//---------------------------------------- @DS_AT_CON_DUR_ADE_AD_05 ----------------------------------------
 	
 			
 		@And("User_610 change the status of the record as active or deactive")
@@ -1018,30 +1018,12 @@ public class CD_ADE_AddressDetails_610_Steps {
 				javascriptHelper.JSEClick(javascriptHelper.executeScriptWithWebElement("document.querySelector('[ng-reflect-icon=\"pi pi-save\"]')"));
 			
 				
-				Thread.sleep(2000);
-	    
-				
-//			String InActive= "In-active";
-//			String InActivee = javascriptHelper.executeScriptWithWebElement(ADE_AddressDetails_610.getElement("ActiveInActiveFirstRow"))
-//					.getAttribute("ng-reflect-value");
-//			System.err.println("InActive : "+ InActivee);
-//			Assert.assertEquals(InActive, InActivee);
-			
-				}
+				Thread.sleep(300);
+	    				
+					}
 
 		@And("User_610 verify the back button customer details screen")
 		public void user_610_verify_the_back_button_customer_details_screen() throws Throwable {
-//			for (int i = 0; i < 200; i++) {
-//				try {
-//					javascriptHelper.executeScriptWithWebElement(commonElementsJsPaths.getElement("AddBtn")).click();
-//					break;
-//				} catch (Exception e) {
-//					if (i == 199) {
-//						Assert.fail(e.getMessage());
-//					}
-//				}
-//			}
-//			Thread.sleep(300);
 			
 			for (int i = 0; i < 200; i++) {
 				try {
@@ -1158,7 +1140,7 @@ public class CD_ADE_AddressDetails_610_Steps {
 		@And("^User_610 verify PDF button available in listview under Address Details section$")
 		public void user_610_verify_pdf_button_available_in_listview_under_address_details_section() throws Throwable {
 			String length = null;
-			for (int i = 0; i < 3000; i++) {
+			for (int i = 0; i < 300; i++) {
 				try {
 					length = javascriptHelper.executeScript("return document.querySelectorAll('p-dropdownitem').length")
 							.toString();
@@ -1167,12 +1149,12 @@ public class CD_ADE_AddressDetails_610_Steps {
 						break;
 					}
 				} catch (Exception e) {
-					if (i == 2999) {
+					if (i == 299) {
 						Assert.fail(e.getMessage());
 					}
 				}
 			}
-			for (int i = 0; i < 3000; i++) {
+			for (int i = 0; i < 300; i++) {
 				try {
 					for (int j = 0; j < Integer.parseInt(length); j++) {
 						String title = "return document.querySelectorAll('p-dropdownitem li')[" + j + "].textContent";
@@ -1188,7 +1170,7 @@ public class CD_ADE_AddressDetails_610_Steps {
 					}
 					break;
 				} catch (Exception e) {
-					if (i == 2999) {
+					if (i == 299) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -1198,7 +1180,7 @@ public class CD_ADE_AddressDetails_610_Steps {
 		@And("^User_610 verify Excel button available in listview under Address Details section$")
 		public void user_610_verify_excel_button_available_in_listview_under_address_details_section() throws Throwable {
 			String length = null;
-			for (int i = 0; i < 3000; i++) {
+			for (int i = 0; i < 300; i++) {
 				try {
 					length = javascriptHelper.executeScript("return document.querySelectorAll('p-dropdownitem').length")
 							.toString();
@@ -1207,12 +1189,12 @@ public class CD_ADE_AddressDetails_610_Steps {
 						break;
 					}
 				} catch (Exception e) {
-					if (i == 2999) {
+					if (i == 299) {
 						Assert.fail(e.getMessage());
 					}
 				}
 			}
-			for (int i = 0; i < 3000; i++) {
+			for (int i = 0; i < 300; i++) {
 				try {
 					for (int j = 0; j < Integer.parseInt(length); j++) {
 						String title = "return document.querySelectorAll('p-dropdownitem li')[" + j + "].textContent";
@@ -1228,7 +1210,7 @@ public class CD_ADE_AddressDetails_610_Steps {
 					}
 					break;
 				} catch (Exception e) {
-					if (i == 2999) {
+					if (i == 299) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -1238,7 +1220,7 @@ public class CD_ADE_AddressDetails_610_Steps {
 		@And("^User_610 verify Address Type field available in listview under Address Details section$")
 		public void user_610_verify_address_type_field_available_in_listview_under_address_details_section()
 				throws Throwable {
-			for (int i = 0; i <= 2000; i++) {
+			for (int i = 0; i <= 300; i++) {
 				try {
 					WebElement field = javascriptHelper.executeScriptWithWebElement(
 							ADE_AddressDetails_610.getElement("listview_AddressType"));
@@ -1246,7 +1228,7 @@ public class CD_ADE_AddressDetails_610_Steps {
 					softAssert.assertTrue(field.isDisplayed(), "Address Type field available in Address Details listview");
 					break;
 				} catch (Exception e) {
-					if (i == 2000) {
+					if (i == 300) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -1255,7 +1237,7 @@ public class CD_ADE_AddressDetails_610_Steps {
 
 		@And("^User_610 verify Country field available in listview under Address Details section$")
 		public void user_610_verify_country_field_available_in_listview_under_address_details_section() throws Throwable {
-			for (int i = 0; i <= 2000; i++) {
+			for (int i = 0; i <= 300; i++) {
 				try {
 					WebElement field = javascriptHelper.executeScriptWithWebElement(
 							ADE_AddressDetails_610.getElement("listview_Country"));
@@ -1263,7 +1245,7 @@ public class CD_ADE_AddressDetails_610_Steps {
 					softAssert.assertTrue(field.isDisplayed(), "Country field available in Address Details listview");
 					break;
 				} catch (Exception e) {
-					if (i == 2000) {
+					if (i == 300) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -1273,7 +1255,7 @@ public class CD_ADE_AddressDetails_610_Steps {
 		@And("^User_610 verify Occupancy Status field available in listview under Address Details section$")
 		public void user_610_verify_occupancy_status_field_available_in_listview_under_address_details_section()
 				throws Throwable {
-			for (int i = 0; i <= 2000; i++) {
+			for (int i = 0; i <= 300; i++) {
 				try {
 					WebElement field = javascriptHelper.executeScriptWithWebElement(
 							ADE_AddressDetails_610.getElement("listview_OccupancyStatus"));
@@ -1281,7 +1263,7 @@ public class CD_ADE_AddressDetails_610_Steps {
 					softAssert.assertTrue(field.isDisplayed(), "Occupancy Status field available in Address Details listview");
 					break;
 				} catch (Exception e) {
-					if (i == 2000) {
+					if (i == 300) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -1291,7 +1273,7 @@ public class CD_ADE_AddressDetails_610_Steps {
 		@And("^User_610 verify Occupance Since field available in listview under Address Details section$")
 		public void user_610_verify_occupance_since_field_available_in_listview_under_address_details_section()
 				throws Throwable {
-			for (int i = 0; i <= 2000; i++) {
+			for (int i = 0; i <= 300; i++) {
 				try {
 					WebElement field = javascriptHelper.executeScriptWithWebElement(
 							ADE_AddressDetails_610.getElement("listview_OccupanceSince"));
@@ -1299,7 +1281,7 @@ public class CD_ADE_AddressDetails_610_Steps {
 					softAssert.assertTrue(field.isDisplayed(), "Occupance Since field available in Address Details listview");
 					break;
 				} catch (Exception e) {
-					if (i == 2000) {
+					if (i == 300) {
 						Assert.fail(e.getMessage());
 					}
 				}
@@ -1309,7 +1291,7 @@ public class CD_ADE_AddressDetails_610_Steps {
 		@And("^User_610 verify Contact Address field available in listview under Address Details section$")
 		public void user_610_verify_contact_address_field_available_in_listview_under_address_details_section()
 				throws Throwable {
-			for (int i = 0; i <= 2000; i++) {
+			for (int i = 0; i <= 300; i++) {
 				try {
 					WebElement field = javascriptHelper.executeScriptWithWebElement(
 							ADE_AddressDetails_610.getElement("listview_ContactAddress"));
@@ -1317,7 +1299,7 @@ public class CD_ADE_AddressDetails_610_Steps {
 					softAssert.assertTrue(field.isDisplayed(), "Contact Address field available in Address Details listview");
 					break;
 				} catch (Exception e) {
-					if (i == 2000) {
+					if (i == 300) {
 						Assert.fail(e.getMessage());
 					}
 				}

@@ -11,7 +11,6 @@ Feature: Consumer Durable AppData Entry Address Details
     And User_610 click the Search button under inbox
     And User_610 search the Reference ID for Consumer Durable
     And User_610 click the Entitle button under inbox
-    #
     And User_610 click Addition Customer Info Under New Application RD
     And User_610 click the Eye button under Customer Personal Info section in Additional Customer Info tab
     And User_610 click the Edit button under Address Details section in Additional Customer Info tab
@@ -35,14 +34,12 @@ Feature: Consumer Durable AppData Entry Address Details
     And User_610 click the Search button under inbox
     And User_610 search the Reference ID for Consumer Durable
     And User_610 click the Entitle button under inbox
-    #
     And User_610 click Addition Customer Info Under New Application RD
     And User_610 click the Eye button under Customer Personal Info section in Additional Customer Info tab
     And User_610 click the Edit button under Address Details section in Additional Customer Info tab
     And User_610 change the status of the record as active or deactive
     And User_610 label should toggle based on the status if status is active
     And User_610 change the status active under Address Details section in Additional Customer Info tab
-    #
     And User_610 click Addition Customer Info Under New Application RD
     And User_610 click the Eye button under Customer Personal Info section in Additional Customer Info tab
     And User_610 click the Edit button under Address Details section in Additional Customer Info tab
@@ -64,7 +61,6 @@ Feature: Consumer Durable AppData Entry Address Details
     And User_610 click the Entitle button under inbox
     And User_610 click Addition Customer Info Under New Application RD
     And User_610 click the Eye button under Customer Personal Info section in Additional Customer Info tab
-    #
     And User_610 click the Export button under Address Details section in Additional Customer Info tab
     And User_610 verify PDF button available in listview under Address Details section
     And User_610 verify Excel button available in listview under Address Details section
@@ -75,7 +71,6 @@ Feature: Consumer Durable AppData Entry Address Details
     And User_610 verify Contact Address field available in listview under Address Details section
     And User_610 verify Status field available in listview under Address Details section
     And User_610 verify values in List view should be non editable under Address Details section
-    #
     And User_610 click the Search button under Address Details section in Additional Customer Info tab
     And User_610 to verify the functionality of Search box with matching data under Address Details section
     And User_610 to verify post entering any matching value system display all the possible matching records in Address Details section
