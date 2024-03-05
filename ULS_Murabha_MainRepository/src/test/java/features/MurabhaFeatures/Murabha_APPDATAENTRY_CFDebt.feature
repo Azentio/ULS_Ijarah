@@ -16,7 +16,6 @@ And User_608 click the Entitle button under inbox
 And User_608 click the Customer Financials tab
 And User_608 click the pencil icon under Customer Financials tab
 And User_608 click Add button in Financial Commitments under Customer Financials tab
-And User_608 validate the Customer Debt screen is available in Financial Commitments
 And User_608 validate the Save button available in Customer Debt screen
 And User_608 validate the Back button available in Customer Debt screen
 And User_608 verify Finance Type field is available under Customer Debt screen in Customer Financials tab
@@ -48,7 +47,7 @@ And User_608 verify Request for Balance Takeover field is available under Custom
 And User_608 verify NPA Classification field is available under Customer Debt screen in Customer Financials tab
 And User_608 click the Back button Under Customer Debt screen to navigate the previous screen
 Then logout from the ULS Application
-
+And User_608 invoke soft assert in Customer Debt screen at Murabaha App Data Entry stage
 
 #CUD_01_02, CUD_01_03
 @AT_MCUD_02
@@ -66,7 +65,6 @@ And User_608 click the Entitle button under inbox
 And User_608 click the Customer Financials tab
 And User_608 click the pencil icon under Customer Financials tab
 And User_608 click Add button in Financial Commitments under Customer Financials tab
-And User_608 validate the Customer Debt screen is available in Financial Commitments
 And User_608 select the Finanacy type under Customer Debt screen in Customer Financials tab
 And User_608 select the Financial Institution value under Customer Debt screen in Customer Financials tab
 And User_608 enter the Account Number under Customer Debt screen in Customer Financials tab
@@ -78,7 +76,7 @@ And User_608 enter the Remaining Tenure under Customer Debt screen in Customer F
 When User_608 click the Save button in Customer Debt screen
 Then User_608 validate the confirm message in Customer Debt screen
 Then logout from the ULS Application
-
+And User_608 invoke soft assert in Customer Debt screen at Murabaha App Data Entry stage
 
 #CUD_01_05 -->  CUD_01_30
 @AT_MCUD_03
@@ -96,7 +94,6 @@ And User_608 click the Entitle button under inbox
 And User_608 click the Customer Financials tab
 And User_608 click the pencil icon under Customer Financials tab
 And User_608 click Add button in Financial Commitments under Customer Financials tab
-And User_608 validate the Customer Debt screen is available in Financial Commitments
 And User_608 verify Finance Type as Mandatory and LOV field under Customer Debt screen in Customer Financials tab
 And User_608 verify Financial Institution as Non-Mandatory and LOV field under Customer Debt screen in Customer Financials tab
 And User_608 verify Account Number as Non-Mandatory and Textbox field under Customer Debt screen in Customer Financials tab
@@ -125,7 +122,7 @@ And User_608 verify Disbursement Date as Non-Mandatory and Date field under Cust
 And User_608 verify Request for Balance Takeover as Non-Mandatory and LOV field under Customer Debt screen in Customer Financials tab
 And User_608 verify NPA Classification as Non-Mandatory and LOV field under Customer Debt screen in Customer Financials tab
 Then logout from the ULS Application
-
+And User_608 invoke soft assert in Customer Debt screen at Murabaha App Data Entry stage
 
 #CUD_02_01, CUD_02_02, CUD_02_03
 @AT_MCUD_05
@@ -143,7 +140,6 @@ And User_608 click the Entitle button under inbox
 And User_608 click the Customer Financials tab
 And User_608 click the pencil icon under Customer Financials tab
 And User_608 click Add button in Financial Commitments under Customer Financials tab
-And User_608 validate the Customer Debt screen is available in Financial Commitments
 And User_608 select the Finanacy type under Customer Debt screen in Customer Financials tab
 And User_608 select the Financial Institution value under Customer Debt screen in Customer Financials tab
 And User_608 enter the Account Number under Customer Debt screen in Customer Financials tab
@@ -156,7 +152,7 @@ And User_608 enter the Text value in Remaining Tenure field and validate the err
 When User_608 click the Save button in Customer Debt screen
 And User_608 validate the message for invalid data in Customer Debt screen
 Then logout from the ULS Application
-
+And User_608 invoke soft assert in Customer Debt screen at Murabaha App Data Entry stage
 
 #CUD_03_01 --> CUD_03_07
 @AT_MCUD_06
@@ -174,20 +170,20 @@ And User_608 click the Entitle button under inbox
 And User_608 click the Customer Financials tab
 And User_608 click the pencil icon under Customer Financials tab
 And User_608 click the pencil button under Financial Commitments in Customer Financials tab
-And User_608 validate the Customer Debt screen is available in Financial Commitments
 And User_608 validate the Update button available in Customer Debt screen
 And User_608 validate the Back button available in Customer Debt screen
-And User_608 modify the Sanction Amount under Customer Debt screen in Customer Financials tab
-When User_608 click the Update button in Customer Debt screen
-And User_608 again click the first row pencil button under Financial Commitments in Customer Financials tab
 And User_608 clear the mandatory field value in Customer Debt screen
 And User_608 Update the record with mandatory field blank in Customer Debt screen
 And User_608 validate the mandatory field blank message in Customer Debt screen
 And User_608 enter the invalid data in any one field under Customer Debt screen in Customer Financials tab
-And User_608 Update the record with mandatory field blank in Customer Debt screen
-And User_608 validate the Error message in Customer Debt screen
+When User_608 click the Update button with invalid data in Customer Debt screen
+And User_608 validate the invalid data error message in Customer Debt screen
+And User_608 enter the Installment Amount under Customer Debt screen in Customer Financials tab
+And User_608 modify the Sanction Amount under Customer Debt screen in Customer Financials tab
+When User_608 click the Update button with valid data in Customer Debt screen
+And User_608 to verify system display the confirmation message post clicking on update button in Customer Debt screen
 Then logout from the ULS Application
-
+And User_608 invoke soft assert in Customer Debt screen at Murabaha App Data Entry stage
 
 #CUD_04_01, CUD_04_02, CUD_04_03
 @AT_MCUD_07
@@ -217,7 +213,7 @@ And User_608 verify list view values should be not editable under Financial Comm
 And User_608 click Add button in Financial Commitments under Customer Financials tab
 And User_608 validate the Customer Debt screen is available in Financial Commitments
 Then logout from the ULS Application
-
+And User_608 invoke soft assert in Customer Debt screen at Murabaha App Data Entry stage
 
 # CUD_04_04, CUD_04_05
 @AT_MCUD_08
@@ -240,7 +236,7 @@ And User_608 verify the all the possible matching records are displayed under Fi
 And User_608 search mismatch value system should not display any records under Financial Commitments section
 And User_608 verify the system is should not displayed any records under Financial Commitments section
 Then logout from the ULS Application
-
+And User_608 invoke soft assert in Customer Debt screen at Murabaha App Data Entry stage
 
 #CUD_04_08
 @AT_MCUD_11
@@ -262,7 +258,7 @@ And User_608 click the Status Radio button under Customer Debt screen
 When User_608 click the Update button in Customer Debt screen
 And User_608 verify the first row status as In-Active under Financial Commitments in Customer Financials tab
 Then logout from the ULS Application
-
+And User_608 invoke soft assert in Customer Debt screen at Murabaha App Data Entry stage
 
 #CUD_04_09
 @AT_MCUD_12
@@ -284,3 +280,4 @@ And User_608 click the Status Radio button under Customer Debt screen
 When User_608 click the Update button in Customer Debt screen
 And User_608 verify the first row status as Active under Financial Commitments in Customer Financials tab
 Then logout from the ULS Application
+And User_608 invoke soft assert in Customer Debt screen at Murabaha App Data Entry stage

@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/9/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Jan 11 10:30:38 IST 2024</td>
+<td>Started on:</td><td>Thu Feb 29 16:04:51 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>88 seconds (88728 ms)</td>
+<tr><td>Total time:</td><td>1328 seconds (1328622 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,18 +67,225 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "verify the Screen", "Optional[Murabha app data check Quatation info]"</td>
-<td></td>
-<td>77</td>
-<td>Runner.TestApplication@268f106e</td></tr>
+<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "To verify the impact when user keep any mandatory field blank, enter character value in numeric filed and click on save button", "Optional[To check the Murabaha --> App Data Entry stage, Customer Debt screen]"</td>
+<td><div><pre>java.lang.AssertionError: Cannot invoke &quot;org.openqa.selenium.WebElement.click()&quot; because the return value of &quot;helper.JavascriptHelper.executeScriptWithWebElement(String)&quot; is null
+	at org.junit.Assert.fail(Assert.java:88)
+	at stepdefinitions.Murabaha_Steps.user_select_the_finanacy_type_under_customer_debt_screen_in_customer_financials_tab(Murabaha_Steps.java:839)
+	at ✽.User_608 select the Finanacy type under Customer Debt screen in Customer Financials tab(file:///C:/Users/inindc00608/git/ULS_Ijarah_MurabahaMaster/ULS_Murabha_MainRepository/src/test/java/features/MurabhaFeatures/Murabha_APPDATAENTRY_CFDebt.feature:143)
+</pre></div><a href='#' onClick='toggleBox("stack-trace590313790", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace590313790'><pre>java.lang.AssertionError: Cannot invoke &quot;org.openqa.selenium.WebElement.click()&quot; because the return value of &quot;helper.JavascriptHelper.executeScriptWithWebElement(String)&quot; is null
+	at org.junit.Assert.fail(Assert.java:88)
+	at stepdefinitions.Murabaha_Steps.user_select_the_finanacy_type_under_customer_debt_screen_in_customer_financials_tab(Murabaha_Steps.java:839)
+	at ✽.User_608 select the Finanacy type under Customer Debt screen in Customer Financials tab(file:///C:/Users/inindc00608/git/ULS_Ijarah_MurabahaMaster/ULS_Murabha_MainRepository/src/test/java/features/MurabhaFeatures/Murabha_APPDATAENTRY_CFDebt.feature:143)
+</pre></div></td>
+<td>139</td>
+<td>Runner.TestApplication@1caa0244</td></tr>
+<tr>
+<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "To verify the Customer Debt details List view", "Optional[To check the Murabaha --> App Data Entry stage, Customer Debt screen]"</td>
+<td><div><pre>java.lang.AssertionError: javascript error: Cannot read properties of null (reading &apos;parentElement&apos;)
+  (Session info: chrome=122.0.6261.94)
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [37696a9d45674d589a66c280db076d33, executeScript {script=return document.querySelector(&apos;button[icon=&quot;pi pi-plus&quot;]&apos;).parentElement.parentElement.parentElement.parentElement.querySelectorAll(&apos;td&apos;).length, args=[]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.94, chrome: {chromedriverVersion: 122.0.6261.94 (880dbf29479c..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57860}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57860/devtoo..., se:cdpVersion: 122.0.6261.94, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 37696a9d45674d589a66c280db076d33
+	at org.junit.Assert.fail(Assert.java:88)
+	at stepdefinitions.MURABHA_Steps.user_608_click_the_pencil_icon_under_customer_financials_tab(MURABHA_Steps.java:475)
+	at ✽.User_608 click the pencil icon under Customer Financials tab(file:///C:/Users/inindc00608/git/ULS_Ijarah_MurabahaMaster/ULS_Murabha_MainRepository/src/test/java/features/MurabhaFeatures/Murabha_APPDATAENTRY_CFDebt.feature:202)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1202918674", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1202918674'><pre>java.lang.AssertionError: javascript error: Cannot read properties of null (reading &apos;parentElement&apos;)
+  (Session info: chrome=122.0.6261.94)
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [37696a9d45674d589a66c280db076d33, executeScript {script=return document.querySelector(&apos;button[icon=&quot;pi pi-plus&quot;]&apos;).parentElement.parentElement.parentElement.parentElement.querySelectorAll(&apos;td&apos;).length, args=[]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.94, chrome: {chromedriverVersion: 122.0.6261.94 (880dbf29479c..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57860}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57860/devtoo..., se:cdpVersion: 122.0.6261.94, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 37696a9d45674d589a66c280db076d33
+	at org.junit.Assert.fail(Assert.java:88)
+	at stepdefinitions.MURABHA_Steps.user_608_click_the_pencil_icon_under_customer_financials_tab(MURABHA_Steps.java:475)
+	at ✽.User_608 click the pencil icon under Customer Financials tab(file:///C:/Users/inindc00608/git/ULS_Ijarah_MurabahaMaster/ULS_Murabha_MainRepository/src/test/java/features/MurabhaFeatures/Murabha_APPDATAENTRY_CFDebt.feature:202)
+</pre></div></td>
+<td>35</td>
+<td>Runner.TestApplication@1caa0244</td></tr>
+<tr>
+<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "To verify user is able to change the status of Debt record from Active to Inactive", "Optional[To check the Murabaha --> App Data Entry stage, Customer Debt screen]"</td>
+<td><div><pre>java.lang.AssertionError: javascript error: Cannot read properties of null (reading &apos;parentElement&apos;)
+  (Session info: chrome=122.0.6261.94)
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d867076d3ed39c325f6edb77e1cd2932, executeScript {script=return document.querySelector(&apos;ion-label[ng-reflect-text=&quot;Status&quot;]&apos;).parentElement.nextElementSibling.firstChild, args=[]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.94, chrome: {chromedriverVersion: 122.0.6261.94 (880dbf29479c..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57984}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57984/devtoo..., se:cdpVersion: 122.0.6261.94, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d867076d3ed39c325f6edb77e1cd2932
+	at org.junit.Assert.fail(Assert.java:88)
+	at stepdefinitions.MURABHA_Steps.user_608_click_the_status_radio_button_under_customer_debt_screen(MURABHA_Steps.java:4919)
+	at ✽.User_608 click the Status Radio button under Customer Debt screen(file:///C:/Users/inindc00608/git/ULS_Ijarah_MurabahaMaster/ULS_Murabha_MainRepository/src/test/java/features/MurabhaFeatures/Murabha_APPDATAENTRY_CFDebt.feature:257)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1994898548", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1994898548'><pre>java.lang.AssertionError: javascript error: Cannot read properties of null (reading &apos;parentElement&apos;)
+  (Session info: chrome=122.0.6261.94)
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d867076d3ed39c325f6edb77e1cd2932, executeScript {script=return document.querySelector(&apos;ion-label[ng-reflect-text=&quot;Status&quot;]&apos;).parentElement.nextElementSibling.firstChild, args=[]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.94, chrome: {chromedriverVersion: 122.0.6261.94 (880dbf29479c..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57984}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57984/devtoo..., se:cdpVersion: 122.0.6261.94, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d867076d3ed39c325f6edb77e1cd2932
+	at org.junit.Assert.fail(Assert.java:88)
+	at stepdefinitions.MURABHA_Steps.user_608_click_the_status_radio_button_under_customer_debt_screen(MURABHA_Steps.java:4919)
+	at ✽.User_608 click the Status Radio button under Customer Debt screen(file:///C:/Users/inindc00608/git/ULS_Ijarah_MurabahaMaster/ULS_Murabha_MainRepository/src/test/java/features/MurabhaFeatures/Murabha_APPDATAENTRY_CFDebt.feature:257)
+</pre></div></td>
+<td>214</td>
+<td>Runner.TestApplication@1caa0244</td></tr>
+<tr>
+<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Customer Debt screen should get open with all valid fields in proper format with below mention buttons and all valid fields", "Optional[To check the Murabaha --> App Data Entry stage, Customer Debt screen]"</td>
+<td><div><pre>java.lang.AssertionError: element not interactable
+  (Session info: chrome=122.0.6261.94)
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a31593a374373fa760d9142870db54f0, clickElement {id=f.6B3BB77A78FAFBDA1CE5E9591B8CEEA8.d.82187C01928AA1EF51713EED84808110.e.97}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.94, chrome: {chromedriverVersion: 122.0.6261.94 (880dbf29479c..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57626}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57626/devtoo..., se:cdpVersion: 122.0.6261.94, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [org.openqa.selenium.remote.RemoteWebElement@3a86866d -&gt; unknown locator]
+Session ID: a31593a374373fa760d9142870db54f0
+	at org.junit.Assert.fail(Assert.java:88)
+	at stepdefinitions.MURABHA_Steps.user_608_click_add_button_in_financial_commitments_under_customer_financials_tab(MURABHA_Steps.java:567)
+	at ✽.User_608 click Add button in Financial Commitments under Customer Financials tab(file:///C:/Users/inindc00608/git/ULS_Ijarah_MurabahaMaster/ULS_Murabha_MainRepository/src/test/java/features/MurabhaFeatures/Murabha_APPDATAENTRY_CFDebt.feature:18)
+</pre></div><a href='#' onClick='toggleBox("stack-trace2085833558", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2085833558'><pre>java.lang.AssertionError: element not interactable
+  (Session info: chrome=122.0.6261.94)
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a31593a374373fa760d9142870db54f0, clickElement {id=f.6B3BB77A78FAFBDA1CE5E9591B8CEEA8.d.82187C01928AA1EF51713EED84808110.e.97}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.94, chrome: {chromedriverVersion: 122.0.6261.94 (880dbf29479c..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57626}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57626/devtoo..., se:cdpVersion: 122.0.6261.94, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [org.openqa.selenium.remote.RemoteWebElement@3a86866d -&gt; unknown locator]
+Session ID: a31593a374373fa760d9142870db54f0
+	at org.junit.Assert.fail(Assert.java:88)
+	at stepdefinitions.MURABHA_Steps.user_608_click_add_button_in_financial_commitments_under_customer_financials_tab(MURABHA_Steps.java:567)
+	at ✽.User_608 click Add button in Financial Commitments under Customer Financials tab(file:///C:/Users/inindc00608/git/ULS_Ijarah_MurabahaMaster/ULS_Murabha_MainRepository/src/test/java/features/MurabhaFeatures/Murabha_APPDATAENTRY_CFDebt.feature:18)
+</pre></div></td>
+<td>114</td>
+<td>Runner.TestApplication@1caa0244</td></tr>
+<tr>
+<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "To verify while modification system allow user to save the record with valid data", "Optional[To check the Murabaha --> App Data Entry stage, Customer Debt screen]"</td>
+<td><div><pre>java.lang.AssertionError: javascript error: Cannot read properties of null (reading &apos;parentElement&apos;)
+  (Session info: chrome=122.0.6261.94)
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f07183b869d5b759b769115436d5e538, executeScript {script=return document.querySelector(&apos;button[icon=&quot;pi pi-plus&quot;]&apos;).parentElement.parentElement.parentElement.parentElement.querySelectorAll(&apos;td&apos;).length, args=[]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.94, chrome: {chromedriverVersion: 122.0.6261.94 (880dbf29479c..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57823}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57823/devtoo..., se:cdpVersion: 122.0.6261.94, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f07183b869d5b759b769115436d5e538
+	at org.junit.Assert.fail(Assert.java:88)
+	at stepdefinitions.MURABHA_Steps.user_608_click_the_pencil_icon_under_customer_financials_tab(MURABHA_Steps.java:475)
+	at ✽.User_608 click the pencil icon under Customer Financials tab(file:///C:/Users/inindc00608/git/ULS_Ijarah_MurabahaMaster/ULS_Murabha_MainRepository/src/test/java/features/MurabhaFeatures/Murabha_APPDATAENTRY_CFDebt.feature:171)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1488086261", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1488086261'><pre>java.lang.AssertionError: javascript error: Cannot read properties of null (reading &apos;parentElement&apos;)
+  (Session info: chrome=122.0.6261.94)
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f07183b869d5b759b769115436d5e538, executeScript {script=return document.querySelector(&apos;button[icon=&quot;pi pi-plus&quot;]&apos;).parentElement.parentElement.parentElement.parentElement.querySelectorAll(&apos;td&apos;).length, args=[]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.94, chrome: {chromedriverVersion: 122.0.6261.94 (880dbf29479c..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57823}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57823/devtoo..., se:cdpVersion: 122.0.6261.94, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f07183b869d5b759b769115436d5e538
+	at org.junit.Assert.fail(Assert.java:88)
+	at stepdefinitions.MURABHA_Steps.user_608_click_the_pencil_icon_under_customer_financials_tab(MURABHA_Steps.java:475)
+	at ✽.User_608 click the pencil icon under Customer Financials tab(file:///C:/Users/inindc00608/git/ULS_Ijarah_MurabahaMaster/ULS_Murabha_MainRepository/src/test/java/features/MurabhaFeatures/Murabha_APPDATAENTRY_CFDebt.feature:171)
+</pre></div></td>
+<td>37</td>
+<td>Runner.TestApplication@1caa0244</td></tr>
+<tr>
+<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "To verify while creating customer debt, system allow user to save the record with valid data & confirmation popup", "Optional[To check the Murabaha --> App Data Entry stage, Customer Debt screen]"</td>
+<td><div><pre>java.lang.AssertionError: element not interactable
+  (Session info: chrome=122.0.6261.94)
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d481e6e64d1a9c13d14d76e8c176dcc0, clickElement {id=f.6DA3D9B8B28CBBDC255324B746B2D3B9.d.A01DB98E5E621AC0A9D14678E7E798AD.e.109}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.94, chrome: {chromedriverVersion: 122.0.6261.94 (880dbf29479c..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57680}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57680/devtoo..., se:cdpVersion: 122.0.6261.94, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [org.openqa.selenium.remote.RemoteWebElement@abca6adb -&gt; unknown locator]
+Session ID: d481e6e64d1a9c13d14d76e8c176dcc0
+	at org.junit.Assert.fail(Assert.java:88)
+	at stepdefinitions.MURABHA_Steps.user_608_click_add_button_in_financial_commitments_under_customer_financials_tab(MURABHA_Steps.java:567)
+	at ✽.User_608 click Add button in Financial Commitments under Customer Financials tab(file:///C:/Users/inindc00608/git/ULS_Ijarah_MurabahaMaster/ULS_Murabha_MainRepository/src/test/java/features/MurabhaFeatures/Murabha_APPDATAENTRY_CFDebt.feature:67)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1940779252", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1940779252'><pre>java.lang.AssertionError: element not interactable
+  (Session info: chrome=122.0.6261.94)
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d481e6e64d1a9c13d14d76e8c176dcc0, clickElement {id=f.6DA3D9B8B28CBBDC255324B746B2D3B9.d.A01DB98E5E621AC0A9D14678E7E798AD.e.109}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.94, chrome: {chromedriverVersion: 122.0.6261.94 (880dbf29479c..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57680}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57680/devtoo..., se:cdpVersion: 122.0.6261.94, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [org.openqa.selenium.remote.RemoteWebElement@abca6adb -&gt; unknown locator]
+Session ID: d481e6e64d1a9c13d14d76e8c176dcc0
+	at org.junit.Assert.fail(Assert.java:88)
+	at stepdefinitions.MURABHA_Steps.user_608_click_add_button_in_financial_commitments_under_customer_financials_tab(MURABHA_Steps.java:567)
+	at ✽.User_608 click Add button in Financial Commitments under Customer Financials tab(file:///C:/Users/inindc00608/git/ULS_Ijarah_MurabahaMaster/ULS_Murabha_MainRepository/src/test/java/features/MurabhaFeatures/Murabha_APPDATAENTRY_CFDebt.feature:67)
+</pre></div></td>
+<td>97</td>
+<td>Runner.TestApplication@1caa0244</td></tr>
+<tr>
+<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "To verify the below fields are mantatory/non-mandatory and LOV in Customer Debt screen", "Optional[To check the Murabaha --> App Data Entry stage, Customer Debt screen]"</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.getText()&quot; because the return value of &quot;helper.JavascriptHelper.executeScriptWithWebElement(String)&quot; is null
+	at stepdefinitions.Murabaha_Steps.user_608_verify_sanction_date_as_non_mandatory_and_date_under_customer_debt_screen_in_customer_financials_tab(Murabaha_Steps.java:1318)
+	at ✽.User_608 verify Sanction Date as Non-Mandatory and Date under Customer Debt screen in Customer Financials tab(file:///C:/Users/inindc00608/git/ULS_Ijarah_MurabahaMaster/ULS_Murabha_MainRepository/src/test/java/features/MurabhaFeatures/Murabha_APPDATAENTRY_CFDebt.feature:100)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1874200687", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1874200687'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.getText()&quot; because the return value of &quot;helper.JavascriptHelper.executeScriptWithWebElement(String)&quot; is null
+	at stepdefinitions.Murabaha_Steps.user_608_verify_sanction_date_as_non_mandatory_and_date_under_customer_debt_screen_in_customer_financials_tab(Murabaha_Steps.java:1318)
+	at ✽.User_608 verify Sanction Date as Non-Mandatory and Date under Customer Debt screen in Customer Financials tab(file:///C:/Users/inindc00608/git/ULS_Ijarah_MurabahaMaster/ULS_Murabha_MainRepository/src/test/java/features/MurabhaFeatures/Murabha_APPDATAENTRY_CFDebt.feature:100)
+</pre></div></td>
+<td>57</td>
+<td>Runner.TestApplication@1caa0244</td></tr>
+<tr>
+<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "To verify user is able to change the status of Debt record from Inctive to Active", "Optional[To check the Murabaha --> App Data Entry stage, Customer Debt screen]"</td>
+<td><div><pre>java.lang.AssertionError: javascript error: Cannot read properties of null (reading &apos;parentElement&apos;)
+  (Session info: chrome=122.0.6261.94)
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8564b38ae91b263efd9a6d474c165b07, executeScript {script=return document.querySelector(&apos;ion-label[ng-reflect-text=&quot;Status&quot;]&apos;).parentElement.nextElementSibling.firstChild, args=[]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.94, chrome: {chromedriverVersion: 122.0.6261.94 (880dbf29479c..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58040}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58040/devtoo..., se:cdpVersion: 122.0.6261.94, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8564b38ae91b263efd9a6d474c165b07
+	at org.junit.Assert.fail(Assert.java:88)
+	at stepdefinitions.MURABHA_Steps.user_608_click_the_status_radio_button_under_customer_debt_screen(MURABHA_Steps.java:4919)
+	at ✽.User_608 click the Status Radio button under Customer Debt screen(file:///C:/Users/inindc00608/git/ULS_Ijarah_MurabahaMaster/ULS_Murabha_MainRepository/src/test/java/features/MurabhaFeatures/Murabha_APPDATAENTRY_CFDebt.feature:279)
+</pre></div><a href='#' onClick='toggleBox("stack-trace989839413", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace989839413'><pre>java.lang.AssertionError: javascript error: Cannot read properties of null (reading &apos;parentElement&apos;)
+  (Session info: chrome=122.0.6261.94)
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8564b38ae91b263efd9a6d474c165b07, executeScript {script=return document.querySelector(&apos;ion-label[ng-reflect-text=&quot;Status&quot;]&apos;).parentElement.nextElementSibling.firstChild, args=[]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.94, chrome: {chromedriverVersion: 122.0.6261.94 (880dbf29479c..., userDataDir: C:\Users\ININDC~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58040}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58040/devtoo..., se:cdpVersion: 122.0.6261.94, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8564b38ae91b263efd9a6d474c165b07
+	at org.junit.Assert.fail(Assert.java:88)
+	at stepdefinitions.MURABHA_Steps.user_608_click_the_status_radio_button_under_customer_debt_screen(MURABHA_Steps.java:4919)
+	at ✽.User_608 click the Status Radio button under Customer Debt screen(file:///C:/Users/inindc00608/git/ULS_Ijarah_MurabahaMaster/ULS_Murabha_MainRepository/src/test/java/features/MurabhaFeatures/Murabha_APPDATAENTRY_CFDebt.feature:279)
+</pre></div></td>
+<td>219</td>
+<td>Runner.TestApplication@1caa0244</td></tr>
+<tr>
+<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "To verify the functionality of Search box with matching and mismatch data", "Optional[To check the Murabaha --> App Data Entry stage, Customer Debt screen]"</td>
+<td><div><pre>java.lang.AssertionError: Cannot invoke &quot;org.openqa.selenium.WebElement.sendKeys(java.lang.CharSequence[])&quot; because the return value of &quot;helper.JavascriptHelper.executeScriptWithWebElement(String)&quot; is null
+	at org.junit.Assert.fail(Assert.java:88)
+	at stepdefinitions.Murabaha_Steps.user_search_matching_value_system_should_display_all_the_possible_matching_records_under_financial_commitments_section(Murabaha_Steps.java:2313)
+	at ✽.User_608 search matching value system should display all the possible matching records under Financial Commitments section(file:///C:/Users/inindc00608/git/ULS_Ijarah_MurabahaMaster/ULS_Murabha_MainRepository/src/test/java/features/MurabhaFeatures/Murabha_APPDATAENTRY_CFDebt.feature:234)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1328614351", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1328614351'><pre>java.lang.AssertionError: Cannot invoke &quot;org.openqa.selenium.WebElement.sendKeys(java.lang.CharSequence[])&quot; because the return value of &quot;helper.JavascriptHelper.executeScriptWithWebElement(String)&quot; is null
+	at org.junit.Assert.fail(Assert.java:88)
+	at stepdefinitions.Murabaha_Steps.user_search_matching_value_system_should_display_all_the_possible_matching_records_under_financial_commitments_section(Murabaha_Steps.java:2313)
+	at ✽.User_608 search matching value system should display all the possible matching records under Financial Commitments section(file:///C:/Users/inindc00608/git/ULS_Ijarah_MurabahaMaster/ULS_Murabha_MainRepository/src/test/java/features/MurabhaFeatures/Murabha_APPDATAENTRY_CFDebt.feature:234)
+</pre></div></td>
+<td>343</td>
+<td>Runner.TestApplication@1caa0244</td></tr>
 </table><p>
 </body>
 </html>

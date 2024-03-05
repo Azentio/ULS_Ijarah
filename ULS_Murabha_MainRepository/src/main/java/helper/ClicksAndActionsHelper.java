@@ -82,7 +82,6 @@ public class ClicksAndActionsHelper {
 	public void scrollIntoView(WebElement element) {
 		Actions actions = new Actions(driver);
 		actions.scrollToElement(element).build().perform();
-		;
 	}
 
 	public void scrollByIndex() {
