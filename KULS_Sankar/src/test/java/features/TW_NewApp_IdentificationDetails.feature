@@ -29,7 +29,6 @@ And User_608 to verify system display the confirmation message post clicking on 
 Then logout from the ijaraApplication
 And User_608 invoke soft assert in Identification details screen under Additional Customer Info tab at Tawarruq New Application stage
 
-
 @AT_TW_NEWAPP_IDA_02
 Scenario: Identification Details details screen get open with below mentioned Fields & field should be Mandatory/Non-mandatory, Editable and Lookup/textbox/calendar
 
@@ -92,7 +91,6 @@ And User_608 verify the Special character validation in Customer Identification 
 Then logout from the ijaraApplication
 And User_608 invoke soft assert in Identification details screen under Additional Customer Info tab at Tawarruq New Application stage
 
-
 @AT_TW_NEWAPP_IDA_04
 Scenario: To verify user is able to modify Identification Details record in the system 
 
@@ -147,7 +145,6 @@ And User_608 get the test data for test case AT_TW_NEWAPP_IDA_05
 And User_608 click the Search button in Customer Identification section
 And User_608 search the Record ID in Customer Identification section
 And User_608 to verify if Status is Active then click the button system should show Deactivate under Customer Identification section
-
 And User_608 click the lable on button if the status of record is Deactive under Customer Identification section
 And User_608 change the status Deactive to Active under Customer Identification section
 And User_608 click the Update button under Customer Identification screen

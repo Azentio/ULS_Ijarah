@@ -16,7 +16,6 @@ And User_608 click the Entitle button under inbox
 And User_608 click the Customer Financials tab
 And User_608 click the pencil icon under Customer Financials tab
 And User_608 click Add button in Financial Commitments under Customer Financials tab
-And User_608 validate the Customer Debt screen is available in Financial Commitments
 And User_608 validate the Save button available in Customer Debt screen
 And User_608 validate the Back button available in Customer Debt screen
 And User_608 verify Finance Type field is available under Customer Debt screen in Customer Financials tab
@@ -67,7 +66,6 @@ And User_608 click the Entitle button under inbox
 And User_608 click the Customer Financials tab
 And User_608 click the pencil icon under Customer Financials tab
 And User_608 click Add button in Financial Commitments under Customer Financials tab
-#And User_608 validate the Customer Debt screen is available in Financial Commitments
 And User_608 select the Finanace type under Customer Debt screen in Customer Financials tab
 And User_608 select the Financial Institution value under Customer Debt screen in Customer Financials tab
 And User_608 enter the Account Number under Customer Debt screen in Customer Financials tab
@@ -80,7 +78,6 @@ When User_608 click the Save button in Customer Debt screen
 Then User_608 validate the confirm message in Customer Debt screen
 Then logout from the ijaraApplication
 And User_608 invoke soft assert in Customer Debt screen at Murabaha App Data Entry stage
-
 
 #CUD_01_05 -->  CUD_01_30
 @AT_MCUD_03
@@ -98,7 +95,6 @@ And User_608 click the Entitle button under inbox
 And User_608 click the Customer Financials tab
 And User_608 click the pencil icon under Customer Financials tab
 And User_608 click Add button in Financial Commitments under Customer Financials tab
-#And User_608 validate the Customer Debt screen is available in Financial Commitments
 And User_608 verify Finance Type as Mandatory and LOV field under Customer Debt screen in Customer Financials tab
 And User_608 verify Financial Institution as Non-Mandatory and LOV field under Customer Debt screen in Customer Financials tab
 And User_608 verify Account Number as Non-Mandatory and Textbox field under Customer Debt screen in Customer Financials tab
@@ -129,7 +125,6 @@ And User_608 verify NPA Classification as Non-Mandatory and LOV field under Cust
 Then logout from the ijaraApplication
 And User_608 invoke soft assert in Customer Debt screen at Murabaha App Data Entry stage
 
-
 #CUD_02_01, CUD_02_02, CUD_02_03
 @AT_MCUD_05
 Scenario: To verify the impact when user keep any mandatory field blank, enter character value in numeric filed and click on save button
@@ -146,7 +141,6 @@ And User_608 click the Entitle button under inbox
 And User_608 click the Customer Financials tab
 And User_608 click the pencil icon under Customer Financials tab
 And User_608 click Add button in Financial Commitments under Customer Financials tab
-#And User_608 validate the Customer Debt screen is available in Financial Commitments
 And User_608 select the Finanace type under Customer Debt screen in Customer Financials tab
 And User_608 select the Financial Institution value under Customer Debt screen in Customer Financials tab
 And User_608 enter the Account Number under Customer Debt screen in Customer Financials tab
@@ -160,7 +154,6 @@ When User_608 click the Save button in Customer Debt screen
 And User_608 validate the message for invalid data in Customer Debt screen
 Then logout from the ijaraApplication
 And User_608 invoke soft assert in Customer Debt screen at Murabaha App Data Entry stage
-
 
 #CUD_03_01 --> CUD_03_07
 @AT_MCUD_06
@@ -178,7 +171,6 @@ And User_608 click the Entitle button under inbox
 And User_608 click the Customer Financials tab
 And User_608 click the pencil icon under Customer Financials tab
 And User_608 click the pencil button under Financial Commitments in Customer Financials tab
-#And User_608 validate the Customer Debt screen is available in Financial Commitments
 And User_608 validate the Update button available in Customer Debt screen
 And User_608 validate the Back button available in Customer Debt screen
 And User_608 clear the mandatory field value in Customer Debt screen
@@ -220,7 +212,7 @@ And User_608 verify the Currency field is displayed in list view under Financial
 And User_608 verify the Status field is displayed in list view under Financial Commitments
 And User_608 verify list view values should be not editable under Financial Commitments
 And User_608 click Add button in Financial Commitments under Customer Financials tab
-#And User_608 validate the Customer Debt screen is available in Financial Commitments
+And User_608 validate the Customer Debt screen is available in Financial Commitments
 Then logout from the ijaraApplication
 And User_608 invoke soft assert in Customer Debt screen at Murabaha App Data Entry stage
 
@@ -267,7 +259,7 @@ And User_608 click the Status Radio button under Customer Debt screen
 When User_608 click the Update button in Customer Debt screen
 And User_608 verify the first row status as In-Active under Financial Commitments in Customer Financials tab
 Then logout from the ijaraApplication
-
+And User_608 invoke soft assert in Customer Debt screen at Murabaha App Data Entry stage
 
 #CUD_04_09
 @AT_MCUD_12
@@ -289,3 +281,4 @@ And User_608 click the Status Radio button under Customer Debt screen
 When User_608 click the Update button in Customer Debt screen
 And User_608 verify the first row status as Active under Financial Commitments in Customer Financials tab
 Then logout from the ijaraApplication
+And User_608 invoke soft assert in Customer Debt screen at Murabaha App Data Entry stage

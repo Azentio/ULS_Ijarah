@@ -1,5 +1,4 @@
-Feature: To check the Tawarruq -- App Data Entry -- Additional Customer Info feature
-
+Feature: To check the Tawarruq -- App Data Entry -- Additional Customer Info -- Identification Details Screen
 
 # IDA_02_01,IDA_02_04    (IDA_02_02,IDA_02_03--> not scriptable)
 @AT_IDA_03

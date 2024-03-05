@@ -152,7 +152,7 @@ Then logout from the ijaraApplication
 And User_608 invoke soft assert in Income details screen under Customer Financials tab at App Data Entry stage
 
 @AT_MU_INC_05
-Scenario: Modification of Income details record
+Scenario: Modification of Income details record - Verify while modification when user keep any mandatory field blank & enters the invalid data in Income details screen 
 
 Given navigate the IJARA URL
 And login with valid credentials-Murabaha App Data Entry
@@ -189,7 +189,7 @@ Then logout from the ijaraApplication
 And User_608 invoke soft assert in Income details screen under Customer Financials tab at App Data Entry stage
 
 @AT_MU_INC_06
-Scenario: System should display the list of below mention fields for Income List
+Scenario: Scenario: List view of Income Section - System should display the list of below mention fields for Income List
 
 Given navigate the IJARA URL
 And login with valid credentials-Murabaha App Data Entry

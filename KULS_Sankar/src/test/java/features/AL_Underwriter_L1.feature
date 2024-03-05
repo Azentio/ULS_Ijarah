@@ -66,7 +66,7 @@ And User_608 verify the Instalment Amount field is displayed under Installment D
 Then logout from the ijaraApplication
 And User_608 invoke soft assert in Offer Decision screen at Auto loan - Underwriter L1 stage
 
-#AZ1LN-8932
+#AZ1LN-8932 - resolved
 @AT_AL_UNWL1_03
 Scenario: To check underwriter user can add new record in recommendation/sanction condition screen
 

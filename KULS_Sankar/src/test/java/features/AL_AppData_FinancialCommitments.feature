@@ -48,7 +48,6 @@ And User_608 click the Back button Under Customer Debt screen to navigate the pr
 Then logout from the ijaraApplication
 And User_608 invoke soft assert in Customer Debt screen at Auto Loan App Data Entry stage
 
-
 @AT_AL_CUD_02
 Scenario: Creation of Customer Dept record - System allow user to save the record with valid data and	System display the confirmation message
 
@@ -76,7 +75,6 @@ When User_608 click the Save button in Customer Debt screen
 Then User_608 validate the confirm message in Customer Debt screen
 Then logout from the ijaraApplication
 And User_608 invoke soft assert in Customer Debt screen at Auto Loan App Data Entry stage
-
 
 @AT_AL_CUD_03
 Scenario: Creation of Customer Dept record - To verfiy the below fields should be mandatory/Non-Mandatory and LOV/Textbox
@@ -166,7 +164,6 @@ And User_608 validate the message for invalid data in Customer Debt screen
 Then logout from the ijaraApplication
 And User_608 invoke soft assert in Customer Debt screen at Auto Loan App Data Entry stage
 
-
 @AT_AL_CUD_05
 Scenario: Modification of Customer Debt record - To verify system allow user to modify the Customer Debt Information
 
@@ -197,9 +194,8 @@ And User_608 to verify system display the confirmation message post clicking on 
 Then logout from the ijaraApplication
 And User_608 invoke soft assert in Customer Debt screen at Auto Loan App Data Entry stage
 
-
 @AT_AL_CUD_06
-Scenario: List view of Customer Debt - To verify system allow user to modify the Customer Debt Information
+Scenario: List view of Customer Debt - To verify the below field are available in Financial commitments listview
 
 Given navigate the IJARA URL
 And login with valid credentials - Auto Loan - App Data Entry
@@ -227,7 +223,6 @@ And User_608 validate the Customer Debt screen is available in Financial Commitm
 Then logout from the ijaraApplication
 And User_608 invoke soft assert in Customer Debt screen at Auto Loan App Data Entry stage
 
-
 @AT_AL_CUD_07
 Scenario: List view of Customer Debt - To verify system allow user to modify the Customer Debt Information
 
@@ -249,7 +244,6 @@ And User_608 to verify the functionality of Search box with mismatch data under 
 And User_608 verify the system is should not displayed any records under Financial Commitments section
 Then logout from the ijaraApplication
 And User_608 invoke soft assert in Customer Debt screen at Auto Loan App Data Entry stage
-
 
 @AT_AL_CUD_08
 Scenario: List view of Customer Debt - To verify the functionality of Export to PDF and Excel button

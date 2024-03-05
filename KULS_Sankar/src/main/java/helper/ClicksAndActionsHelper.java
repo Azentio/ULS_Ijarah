@@ -24,7 +24,12 @@ public class ClicksAndActionsHelper {
 		
 	}
 	
-	
+	// scrollIntoView
+		public void scrollIntoView(WebElement element) {
+			Actions actions = new Actions(driver);
+			actions.scrollToElement(element).build().perform();
+		}
+		
 	//click to the element
 		public void JSEClick(WebElement Element) {
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", Element);

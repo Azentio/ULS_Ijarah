@@ -30,6 +30,7 @@ And User_608 verify the Closing Staff or Servicing Staff or RM field available u
 And User_608 verify the Topup Type field available under Application details screen
 And User_608 verify the Topup Application No field available under Application details screen
 Then logout from the ijaraApplication
+And User_608 invoke soft assert in Application Details screen at Murabaha App Data Check stage
 
 #AD_03
 @AT_MU_AD_02
@@ -53,7 +54,7 @@ And User_608 verify the Reference Type field available in Referral\Sourcing Deta
 And User_608 verify the Reference Entity field available in Referral\Sourcing Details section under Application Details tab
 And User_608 verify the Reference Code field available in Referral\Sourcing Details section under Application Details tab
 Then logout from the ijaraApplication
-
+And User_608 invoke soft assert in Application Details screen at Murabaha App Data Check stage
 
 @AT_MU_AD_03
 Scenario: To verify the fields are Mandatory,Non-editable and Dropdown or Input.
@@ -74,7 +75,7 @@ And User_608 verify Declared Net Monthly Income field as Mandatory, Non-editable
 And User_608 verify Declared Current Obligations field as Non-mandatory, Non-editable and Numeric under Application details screen
 And User_608 verify Special Promotion field as Non-mandatory, Non-editable and Dropdown under Application details screen
 Then logout from the ijaraApplication
-
+And User_608 invoke soft assert in Application Details screen at Murabaha App Data Check stage
 
 @AT_MU_AD_04
 Scenario: To verify the fields are Mandatory,Non-editable and Dropdown or Input.
@@ -98,8 +99,7 @@ And User_608 verify Closing Staff or Servicing Staff or RM field as Mandatory, N
 And User_608 verify Topup Type field as Non_mandatory, Non-editable and Dropdown under Application details screen
 And User_608 verify Topup Application No field as Non_mandatory, Non-editable and Numeric under Application details screen
 Then logout from the ijaraApplication
-
-
+And User_608 invoke soft assert in Application Details screen at Murabaha App Data Check stage
 
 # Mandatory, display correct data, non-editable, lookup data
 @AT_MU_AD_05
@@ -122,5 +122,4 @@ And User_608 verify Reference Type field as Non_mandatory, Non-editable and Drop
 And User_608 verify Reference Entity field as Non_mandatory, Non-editable and Dropdown under Referral\Sourcing Details section
 And User_608 verify Reference Code field as Non_mandatory, Non-editable and Textbox under Referral\Sourcing Details section
 Then logout from the ijaraApplication
-
-
+And User_608 invoke soft assert in Application Details screen at Murabaha App Data Check stage

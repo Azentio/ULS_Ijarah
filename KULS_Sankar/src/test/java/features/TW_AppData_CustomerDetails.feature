@@ -1,6 +1,5 @@
 Feature: To check the Tawarruq --> App Data Entry stage --> Customer details screen
 
-
 @AT_TW_CD_01_01
 Scenario: Personal Details screen should get open with Customer Information screen and below mentioned Fields
 

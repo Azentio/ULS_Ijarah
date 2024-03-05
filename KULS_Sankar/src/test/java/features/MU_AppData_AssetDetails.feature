@@ -161,7 +161,6 @@ And User_608 verify Remarks field as Mandatory, Editable and Textbox in Asset Pr
 Then logout from the ijaraApplication
 And User_608 invoke soft assert in Asset Details screen at Murabaha App Data Entry stage
 
-
 @AT_MU_ADE_IAD_07
 Scenario: Modification of Asset Details record - To verify below sections,button are available & while modification system allow user to save the record with valid data
 
@@ -189,7 +188,6 @@ And User_608 clicks on the Update button under Asset Details screen
 And User_608 to verify system display the confirmation message post clicking on update button
 Then logout from the ijaraApplication
 And User_608 invoke soft assert in Asset Details screen at Murabaha App Data Entry stage
-
 
 @AT_MU_ADE_IAD_08
 Scenario: List view of of Asset Details - System display the below mention fields on List view in Asset Details & verify functionality of Add and Edit button
@@ -223,7 +221,6 @@ And User_608 verify the functionality of Edit button under Asset Details tab
 Then logout from the ijaraApplication
 And User_608 invoke soft assert in Asset Details screen at Murabaha App Data Entry stage
 
-
 @AT_MU_ADE_IAD_09
 Scenario: List view of of Asset Details - To verify the functionality of Search box with matching data & mismatch data
 
@@ -244,8 +241,6 @@ And User_608 to verify the functionality of Search box with mismatch data under 
 And User_608 to verify post entering any mismatch value system should not display any records
 Then logout from the ijaraApplication
 And User_608 invoke soft assert in Asset Details screen at Murabaha App Data Entry stage
-
-
 
 @AT_MU_ADE_IAD_10
 Scenario: List view of of Asset Details - To verify the functionality of Export to PDF & Excel button
