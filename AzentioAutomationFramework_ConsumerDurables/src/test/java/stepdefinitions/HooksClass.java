@@ -25,14 +25,13 @@ import utilities.ExtentTestManager;
 
 public class HooksClass extends BaseClass {
 	WebDriver driver;
-
 	ConfigFileReader configFileReader = new ConfigFileReader();
 	String path = configFileReader.getTestDataFilePath();
 	ExcelData testExecution = new ExcelData(path, "ConumerDurablesExeSheet", "TestCase ID");
 	Map<String, String> testExecutionData;
 	ExcelTest excelTest = new ExcelTest(path, "ConumerDurablesExeSheet", "TestCase ID");
 	List<String> testCaseTagsFromExcel = excelTest.getTestCaseTagsfromExcel();
-	boolean excelRunnerStatus = true;
+	boolean excelRunnerStatus = false;
 	ScreenshotHelper screenshotHelper = new ScreenshotHelper(driver);
 
 	@SuppressWarnings("deprecation")
