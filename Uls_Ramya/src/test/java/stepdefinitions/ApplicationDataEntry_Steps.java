@@ -1,6 +1,7 @@
 package stepdefinitions;
 
 import java.awt.Robot;
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -13,6 +14,7 @@ import org.testng.asserts.SoftAssert;
 
 import dataprovider.ConfigFileReader;
 import dataprovider.ExcelData;
+import helper.BrowserHelper;
 import helper.ClicksAndActionsHelper;
 import helper.JavascriptHelper;
 import helper.WaitHelper;
@@ -30,6 +32,7 @@ public class ApplicationDataEntry_Steps extends BaseClass {
 	String excelTestDataPath = System.getProperty("user.dir") + "\\TestData\\ijaraTestData.xlsx";
 	// Ijarah_CommonFieldName
 	SoftAssert softAssert = new SoftAssert();
+	BrowserHelper browserHelper = new BrowserHelper(driver);
 	ClicksAndActionsHelper clicksAndActionsHelper = new ClicksAndActionsHelper(driver);
 	JSPaths commonJSPaths = new JSPaths(excelPath, "iJarah_CommonElements", "Ijarah_CommonFieldName", "JSPath");
 	Map<String, String> testData;
@@ -115,7 +118,7 @@ public class ApplicationDataEntry_Steps extends BaseClass {
 		for (int i = 0; i <= 1000; i++) {
 			try {
 				Thread.sleep(3000);
-				javascriptHelper.executeScriptWithWebElement(Ijarah_CustomerDebt.getElement("inboxEntitleBtn")).click();
+				javascriptHelper.executeScriptWithWebElement(iJarah_CommonElements.getElement("inboxEntitleBtn")).click();
 				break;
 			} catch (Exception e) {
 				if (i == 1000) {
@@ -145,7 +148,20 @@ public class ApplicationDataEntry_Steps extends BaseClass {
 
 	@And("User_6047 Click Add button under the Facility info")
 	public void user_6047_click_add_button_under_the_facility_info() {
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <= 100; i++) {
+			try {
+				javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("AddButton_under_FacilityInfo")).click();
+				break;
+			} catch (Exception e) { 
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	@And("User_6047 Click edit button under the Facility info")
+	public void user_6047_click_edit_button_under_the_facility_info() {
+		for (int i = 0; i <= 100; i++) {
 			try {
 				javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("AddButton_under_FacilityInfo")).click();
 				break;
@@ -370,7 +386,7 @@ waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWi
 		}
 	}
 
-	@Given("User_6047 Verify the Classification field should be mandatory,editable,text lookup")
+	@Then("User_6047 Verify the Classification field should be mandatory,editable,text lookup")
 	public void user_6047_verify_the_classification_field_should_be_mandatory_editable_text_lookup() {
 		String Classification_Mandy= javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("Classification")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
@@ -410,7 +426,7 @@ waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWi
 	     }
 	 }
 
-	@Given("User_6047 Verify the Product field should be mandatory,editable,text lookup")
+	@Then("User_6047 Verify the Product field should be mandatory,editable,text lookup")
 	public void user_6047_verify_the_product_field_should_be_mandatory_editable_text_lookup() {
 		String Product_Mandy= javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("Product")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
@@ -450,7 +466,7 @@ waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWi
 	    }
 	}
 
-	@Given("User_6047 Verify the Scheme field should be mandatory,editable,text lookup")
+	@Then("User_6047 Verify the Scheme field should be mandatory,editable,text lookup")
 	public void user_6047_verify_the_scheme_field_should_be_mandatory_editable_numeric_lookup() {
 		String Scheme_mandy= javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("Scheme")).getAttribute("aria-label");
 		for (int i = 0; i <2000; i++) {
@@ -602,7 +618,8 @@ waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWi
 
 
 	@Then("User_6047 Verify the Requested amount field should be mandatory,editable,num")
-	public void user_6047_verify_the_requested_amount_field_should_be_mandatory_editable_num() {
+	public void user_6047_verify_the_requested_amount_field_should_be_mandatory_editable_num() throws Throwable {
+	Thread.sleep(900);
 		String RequestedAmount_mandy= javascriptHelper.executeScriptWithWebElement(appDataEntry_js.getElement("RequestedAmount_mandy")).getText();
 		for (int i = 0; i <2000; i++) {
 	        try {
@@ -2335,7 +2352,46 @@ public void user_6047_click_the_excel_button_under_export() throws Throwable {
 		
 
 }
+@Then("User_6047 verify the system is downloading the excel file in Facility Details")
+public void user_6047_verify_the_system_is_downloading_the_excel_file_in_facility_details() 
+	throws Throwable {
+		String homePath = System.getProperty("user.home");
+		String filePath = homePath + "/Downloads";
+		File file = new File(filePath);
+		File[] listFiles = file.listFiles();
+		file.delete();
+		for (File downloadsFile : listFiles) {
+			System.out.println(downloadsFile.getName());
+			if (downloadsFile.getName().contains("FacilityDetailsDataFile_export_")) {
+				System.out.println("If condition " + downloadsFile.getName());
+				softAssert.assertTrue(downloadsFile.getName().contains("FacilityDetailsDataFile_export_"),
+						"File is not downloaded hence failed");
+				downloadsFile.delete();
+			}
+		}
+}
+@Then("User_6047 verify the system is downloading the pdf file in Facility Details")
+public void user_6047_verify_the_system_is_downloading_the_pdf_file_in_facility_details() 
+	throws Throwable {
+	browserHelper.SwitchToWindow(1);
+	browserHelper.switchToParentWithChildClose();
 
+	String homePath = System.getProperty("user.home");
+	String filePath = homePath + "/Downloads";
+	File file = new File(filePath);
+	File[] listFiles = file.listFiles();
+	file.delete();
+	for (File downloadsFile : listFiles) {
+		System.out.println(downloadsFile.getName());
+		if (downloadsFile.getName().contains("FacilityDetailsDataFile")) {
+			System.out.println("If condition " + downloadsFile.getName());
+			softAssert.assertTrue(downloadsFile.getName().contains("FacilityDetailsDataFile"),
+					"File is not downloaded hence failed");
+			downloadsFile.delete();
+		}
+
+	}
+}
 
 }
 

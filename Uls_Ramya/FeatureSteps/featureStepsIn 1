@@ -1,0 +1,9 @@
+ And User_047 click the Cif Types charges in Transaction Type screen
+    And User_047 Check if the charges type is added
+    And User_047 click the add button in CifType charges screen
+    And User_047 Enter the cif type in CifType charges screen
+    And User_047 Enter the charges schema in CifType charges screen
+    And User_047 select the all in dropdown in CifType charges screen
+    And User_047 select the cash in dropdown in CifType charges screen
+    And User_047 select the Authorize in dropdown in CifType charges screen
+    And User_047 click the ok button in CifType charges screen

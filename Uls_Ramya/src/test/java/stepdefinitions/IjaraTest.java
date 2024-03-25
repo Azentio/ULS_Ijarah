@@ -134,6 +134,10 @@ public class IjaraTest extends BaseClass {
     public void user_6047_login_with_valid_credentials_retail_auto_loan_app_data_entry_facility_info() {
 		ijaraLogin.loginWithIjaraApplication_Retail_AutoLoan_AppDataEntry_FacilityDetails();
     }
+	@And("User_6047 Login with valid credentials-ConsumerDurable-AppDataEntry_FacilityInfo")
+	public void user_6047_login_with_valid_credentials_consumer_durable_app_data_entry_facility_info() {
+		ijaraLogin.loginWithIjaraApplication_consumerDurable_AppDataEntry_FacilityDetails();
+	}
 	@Then("logout from the ijaraApplication")
 	public void logout_from_the_ijara_application() throws Throwable {
 		ijaraLogin.logoutFromIjara();

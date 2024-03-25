@@ -2635,17 +2635,56 @@ if (i==1999) {
 @And("User_6047 click the Customer Financials tab")
 public void user_6047_6047_click_the_customer_financials_tab() throws Throwable {
 //	waitHelper.waitForElementwithFluentwait(driver, javascriptHelper.executeScriptWithWebElement(customerDebtJsPaths.getElement("customerFinancialsTab")));
-	for (int i = 0; i <= 1000; i++) {
+//	for (int i = 0; i <= 1000; i++) {
+//		try {
+//			javascriptHelper.executeScriptWithWebElement(Ijarah_CustomerDebt.getElement("customerFinancialsTab")).click();
+//			Thread.sleep(3000);
+//			break;
+//		} catch (Exception e) { 
+//			if (i == 1000) {
+//				Assert.fail(e.getMessage());
+//			}
+//		}
+//	}
+	Thread.sleep(1500);
+	String length =null;
+	for (int i = 0; i <500; i++) {
 		try {
-			javascriptHelper.executeScriptWithWebElement(Ijarah_CustomerDebt.getElement("customerFinancialsTab")).click();
-			Thread.sleep(3000);
-			break;
-		} catch (Exception e) { 
-			if (i == 1000) {
+		    length = javascriptHelper.executeScript("return document.querySelectorAll('ion-segment-button').length").toString();
+		    System.out.println(length);
+			if (!length.isBlank()&&!length.equalsIgnoreCase("0")) {
+				break;
+			}
+		} catch (Exception e) {
+			if (i==499) {
 				Assert.fail(e.getMessage());
 			}
 		}
 	}
+	for (int i = 0; i <500; i++) {
+	try {
+		for (int j = 0; j <Integer.parseInt(length); j++) {
+			String title ="return document.querySelectorAll('ion-segment-button')["+j+"].innerText";
+			String titlename = javascriptHelper.executeScript(title).toString();
+			System.out.println(titlename);
+			if (titlename.trim().contains("Additional Customer Info")) {
+				System.out.println("condition true");
+				String jspath ="document.querySelectorAll('ion-segment-button')["+j+"]";
+				WebElement addButton = javascriptHelper.executeScriptWithWebElement(jspath);
+//				System.out.println(jspath);
+//				javascriptHelper.scrollIntoView(addButton);
+				javascriptHelper.JSEClick(addButton);
+		//		addButton.click();
+				break;
+			}
+		}
+		break;
+	} catch (Exception e) {
+		if (i==499) {
+			Assert.fail(e.getMessage());
+		}
+	}
+}
 }
 
 

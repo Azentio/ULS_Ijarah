@@ -39,7 +39,7 @@ public class Autoloan_Offering_CustomerDetails {
 	
 	@And("User_6047 Get the test data for test case ID AT_AL_OFF_CD_01")
 	public void user_get_the_test_data_for_test_case_id_at_al_off_cd_01() {
-		executionData = AutoLoanExecutionExcel.getTestdata("AT_AL_OFF_CD_001");
+		executionData = AutoLoanExecutionExcel.getTestdata("AT_AL_OFF_CD_01");
 		testData =  AL_OFF_CustomerDetails_TestData.getTestdata(executionData.get("dataSet_ID"));
 		//testData = AL_OFF_CustomerDetails_TestData.getTestdata("DS01_AT_AL_OFF_CD_001");
 	}

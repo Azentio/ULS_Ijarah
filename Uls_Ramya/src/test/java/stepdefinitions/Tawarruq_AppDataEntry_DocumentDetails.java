@@ -1296,12 +1296,12 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 			}
 		}
 		String Location_Dropdown= javascriptHelper.executeScriptWithWebElement(DocumentDetails_js.getElement("locationWhereReceived")).getAttribute("ng-reflect-placeholder");
-		for (int i = 0; i <2000; i++) {
+		for (int i = 0; i <200; i++) {
 			try {
 				Assert.assertTrue(Location_Dropdown.contains("Select"));
 				break;
 			} catch (Exception e) {
-				if (i==1999) {
+				if (i==199) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -1311,7 +1311,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 	@Then("User_6047 to verify the Rack Number field should be nonmandatory,Text box")
 	public void user_6047_to_verify_the_rack_number_field_should_be_mandatory_text_box() {
 		String RackNumber_Mandy= javascriptHelper.executeScriptWithWebElement(DocumentDetails_js.getElement("rackNo_nonmandy")).getAttribute("ng-reflect-required");
-		for (int i = 0; i <2000; i++) {
+		for (int i = 0; i <200; i++) {
 			try {
 				Assert.assertTrue(RackNumber_Mandy.contains("false"));
 				break;
@@ -1327,7 +1327,7 @@ public class Tawarruq_AppDataEntry_DocumentDetails {
 				Assert.assertTrue(RackNumber_Text.contains("text"));
 				break;
 			} catch (Exception e) {
-				if (i==1999) {
+				if (i==199) {
 					Assert.fail(e.getMessage());
 				}
 			}

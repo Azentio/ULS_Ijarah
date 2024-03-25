@@ -35,7 +35,7 @@ public class Murabha_RepaymentMode_Steps extends BaseClass {
 	JSPaths iJarah_CommonElements = new JSPaths(excelPath, "iJarah_CommonElements", "Ijarah_CommonFieldName", "JSPath");
 	JSPaths Murabha_Repayment_js = new JSPaths(excelPath, "Murabha_Repayment_js", "RepaymentElement", "JSPath");
 	ExcelData Murabha_Repayment_TestData  = new ExcelData(excelTestDataPath,"Murabha_Repayment_TestData","Dataset ID");
-	JSPaths appDataEntry_js = new JSPaths(excelPath, "appDataEntry_js", "AppDataEntryElements", "JSPath");
+	JSPaths appDataEntry_js = new JSPaths(excelPath, "AppDataEn_FacilityDetails", "AppDataEntryElements", "JSPath");
 	ExcelData Murabha_identificationDetail_TestData  = new ExcelData(excelTestDataPath,"mura_identificationDetail","Dataset ID");
 	
 	String toastMessageForReferenceNumber = "";

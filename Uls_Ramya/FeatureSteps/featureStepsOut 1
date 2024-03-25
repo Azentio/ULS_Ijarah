@@ -1,0 +1,12 @@
+@And("^user_076 get the test data for test case ID AT_MU_IDC_03$")
+public void user_076_get_the_test_data_for_test_case_id_at_mu_idc_03()throws Throwable{
+}
+@Then("^user_076 click on add button$")
+public void user_076_click_on_add_button()throws Throwable{
+}
+@And("^user_0988 verify screen is opened#$")
+public void user_0988_verify_screen_is_opened()throws Throwable{
+}
+@Then("^user_076 click on add button$")
+public void user_076_click_on_add_button()throws Throwable{
+}

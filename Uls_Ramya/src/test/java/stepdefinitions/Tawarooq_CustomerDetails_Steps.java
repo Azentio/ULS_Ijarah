@@ -39,7 +39,7 @@ public class Tawarooq_CustomerDetails_Steps extends BaseClass {
 			"New_App_CustomerDetailsElements", "JSPath");
 	ExcelData Tawarruq_CustomerDetails_TestData = new ExcelData(excelTestDataPath, "CustomerDetails_TestData",
 			"Dataset ID");
-	JSPaths appDataEntry_js = new JSPaths(excelPath, "appDataEntry_js", "AppDataEntryElements", "JSPath");
+	JSPaths appDataEntry_js = new JSPaths(excelPath, "AppDataEn_FacilityDetails", "AppDataEntryElements", "JSPath");
 
 	String listViewRecordStatus = "";
 

@@ -274,7 +274,13 @@ And User_6047 Search the Ref Id under inbox
 Then User_6047 click the Entitle button under inbox 
 Then User_6047 Click the Facility info tab
 And User_6047 Click the Export button under Facility info tab
-And User_6047 Click the Excel button under Export
-And User_6047 Click the PDF button under Export
+#And User_6047 Click the Excel button under Export
+#Then User_6047 Click the export button
+Then User_6047 click on export to excel button
+And User_6047 verify the system is downloading the excel file in Facility Details
+#And User_6047 Click the PDF button under Export
+Then User_6047 Click the export button
+Then User_6047 click on export to pdf button
+And User_6047 verify the system is downloading the pdf file
 Then logout from the ijaraApplication
 

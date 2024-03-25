@@ -12,13 +12,13 @@ import utilities.ExtentTestManager;
 
 		//"src/test/java/features/AutoLoan_AppDataEntry_ContactDetails.feature"} , glue = "stepdefinitions",
 	
-			"src/test/java/retail_feature/Retail_AutoLoan_AppDataEntry_FacilityDetails.feature" }, glue = "stepdefinitions",
+			"src/test/java/consumerDurable_features/ConsumerDurable_AppDataEntry_FacilityDetails.feature" }, glue = "stepdefinitions",
 		// monochrome=false, //to make steps in color
 		plugin = { "pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 				"rerun:ReRunScenarios/FailedReRun.txt" }
 
 // ,dryRun = false //to check compilation errors
-//, tags = "@AT_AL_DSB_MM_04 or @AT_AL_DSB_MM_05"
+//, tags = "@AT_FI_013"
 //, tags=" @AT_AU_AD_02" 	
  
 
